@@ -7,15 +7,13 @@ namespace stellar_dotnetcore_sdk
     {
         private static string PUBLIC = "Public Global Stellar Network ; September 2015";
         private static string TESTNET = "Test SDF Network ; September 2015";
-
         private static Network _current;
 
-        private static string _networkPassphrase;
+        private string _networkPassphrase;
 
         public Network(string networkPassphrase)
         {
-            if (!String.IsNullOrEmpty(networkPassphrase))
-                throw new ArgumentNullException(nameof(networkPassphrase));
+            _networkPassphrase = networkPassphrase ?? throw new ArgumentNullException(nameof(networkPassphrase), "networkPassphrase cannot be null");               
         }
 
         public string NetworkPassphrase
@@ -29,10 +27,7 @@ namespace stellar_dotnetcore_sdk
             get => Util.Hash(Encoding.UTF8.GetBytes(_current.NetworkPassphrase));
         }
 
-        public static Network Current()
-        {
-            return _current;
-        }
+        public static Network Current { get => _current; }
 
         public static void Use(Network network)
         {
