@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -88,6 +87,9 @@ namespace stellar_dotnetcore_sdk
                 arr[i] = value;
             }
         }
+
     }
 }
+
+
 
