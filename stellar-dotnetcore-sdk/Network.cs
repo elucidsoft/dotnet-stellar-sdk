@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace stellar_dotnetcore_sdk
 {
@@ -25,9 +26,7 @@ namespace stellar_dotnetcore_sdk
 
         public byte[] NetworkId
         {
-            //TODO: Implement
-            get;
-            set;
+            get => Util.Hash(Encoding.UTF8.GetBytes(_current.NetworkPassphrase));
         }
 
         public static Network Current()
