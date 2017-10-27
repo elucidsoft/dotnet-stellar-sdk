@@ -27,8 +27,8 @@ namespace stellar_dotnetcore_sdk
             byte[] data = new byte[len / 2];
             for (int i = 0; i < len; i += 2)
             {
-                data[i / 2] = (byte)((Convert.ToByte(s.Substring(i), 16) << 4)
-                    + Convert.ToByte(s.Substring(i + 1), 16));
+                data[i / 2] = (byte)((Convert.ToByte(s[i].ToString(), 16) << 4)
+                    + Convert.ToByte(s[i + 1].ToString(), 16));
             }
             return data;
         }
@@ -51,7 +51,7 @@ namespace stellar_dotnetcore_sdk
         /// <param name="bytes">byte array</param>
         /// <param name="length">length</param>
         /// <returns>zero padded byte array</returns>
-        static byte[] PaddedByteArray(byte[] bytes, int length)
+        public static byte[] PaddedByteArray(byte[] bytes, int length)
         {
             byte[] finalBytes = new byte[length];
             Fill(finalBytes, (byte)0);
@@ -66,7 +66,7 @@ namespace stellar_dotnetcore_sdk
         /// <param name="source">string to pad</param>
         /// <param name="length">length</param>
         /// <returns>zero padded byte array</returns>
-        static byte[] PaddedByteArray(string source, int length)
+        public static byte[] PaddedByteArray(string source, int length)
         {
             return PaddedByteArray(Encoding.Default.GetBytes(source), length);
         }
@@ -76,7 +76,7 @@ namespace stellar_dotnetcore_sdk
         /// </summary>
         /// <param name="bytes">byte array</param>
         /// <returns>string with padded zeros removed</returns>
-        static string PaddedByteArrayToString(byte[] bytes)
+        public static string PaddedByteArrayToString(byte[] bytes)
         {
             return Encoding.Default.GetString(bytes).Split('\0')[0];
         }
