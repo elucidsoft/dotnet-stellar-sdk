@@ -1,12 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <RootNamespace>stellar_dotnetcore_sdk</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="xdr\" />
-  </ItemGroup>
 
 </Project>
