@@ -2,11 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using static stellar_dotnetcore_sdk.responses.JsonSingleton;
 
 namespace stellar_dotnetcore_sdk.responses
 {
     public class AccountResponse
     {
+        private AccountResponse() { }
+
         public AccountResponse(KeyPair keyPair) => KeyPair = keyPair;
 
         public AccountResponse(KeyPair keyPair, long sequenceNumber)
@@ -69,13 +72,13 @@ namespace stellar_dotnetcore_sdk.responses
         }
 
         [JsonProperty(PropertyName = "low_threshold")]
-        public int LowThreshold { get; set; }
+        public int LowThreshold { get; private set; }
 
         [JsonProperty(PropertyName = "med_threshold")]
-        public int MedThreshold { get; set; }
+        public int MedThreshold { get; private set; }
 
         [JsonProperty(PropertyName = "high_threshold")]
-        public int HighThreshold { get; set; }
+        public int HighThreshold { get; private set; }
     }
 
     /// <summary>
@@ -83,11 +86,17 @@ namespace stellar_dotnetcore_sdk.responses
     /// </summary>
     public class Flags
     {
+        public Flags(bool authRequired, bool authRevocable)
+        {
+            AuthRequired = authRequired;
+            AuthRevocable = authRevocable;
+        }
+
         [JsonProperty(PropertyName = "auth_required")]
-        public bool AuthRequired { get; set; }
+        public bool AuthRequired { get; private set; }
 
         [JsonProperty(PropertyName = "auth_revocable")]
-        public bool AuthRevocable { get; set; }
+        public bool AuthRevocable { get; private set; }
     }
 
 
@@ -96,20 +105,32 @@ namespace stellar_dotnetcore_sdk.responses
     /// </summary>
     public class Balance
     {
+        [JsonProperty(PropertyName = "asset_issuer")]
+        private string _assetIssuer;
+
+        public Balance(string assetType, string assetCode, string assetIssuer, string balance, string limit)
+        {
+            AssetType = assetType ?? throw new ArgumentNullException(nameof(assetType), "assertType cannot be null");
+            BalanceString = balance ?? throw new ArgumentNullException(nameof(balance), "balance cannot be null");
+            Limit = limit;
+            AssetCode = assetCode;
+            _assetIssuer = assetIssuer;
+        }
+
         [JsonProperty(PropertyName = "asset_type")]
-        public string AssetType { get; set; }
+        public string AssetType { get; private set; }
 
         [JsonProperty(PropertyName = "asset_code")]
-        public string AssetCode { get; set; }
+        public string AssetCode { get; private set; }
 
-        [JsonProperty(PropertyName = "asset_issuer")]
-        public string AssetIssuer { get; set; }
+        //This prop is dynamic based on private field serialized above.
+        public KeyPair AssetIssuer { get => KeyPair.FromAccountId(_assetIssuer); }
 
         [JsonProperty(PropertyName = "limit")]
-        public string Limit { get; set; }
+        public string Limit { get; private set; }
 
         [JsonProperty(PropertyName = "balance")]
-        public string BalanceString { get; set; }
+        public string BalanceString { get; private set; }
     }
 
     /// <summary>
@@ -124,10 +145,10 @@ namespace stellar_dotnetcore_sdk.responses
         }
 
         [JsonProperty(PropertyName = "public_key")]
-        public string AccountId { get; set; }
+        public string AccountId { get; private set; }
 
         [JsonProperty(PropertyName = "weight")]
-        public int Weight { get; set; }
+        public int Weight { get; private set; }
     }
 
     public class Links
@@ -142,18 +163,18 @@ namespace stellar_dotnetcore_sdk.responses
         }
 
         [JsonProperty(PropertyName = "effects")]
-        public Link Effects { get; set; }
+        public Link Effects { get; private set; }
 
         [JsonProperty(PropertyName = "offers")]
-        public Link Offers { get; set; }
+        public Link Offers { get; private set; }
 
         [JsonProperty(PropertyName = "operations")]
-        public Link Operations { get; set; }
+        public Link Operations { get; private set; }
 
         [JsonProperty(PropertyName = "self")]
-        public Link Self { get; set; }
+        public Link Self { get; private set; }
 
         [JsonProperty(PropertyName = "transactions")]
-        public Link Transactions { get; set; }
+        public Link Transactions { get; private set; }
     }
 }

@@ -18,4 +18,10 @@
     <ProjectReference Include="..\stellar-dotnetcore-sdk\stellar-dotnetcore-sdk.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="responses\account.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

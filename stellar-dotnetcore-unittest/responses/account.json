@@ -1,0 +1,62 @@
+﻿{
+  "_links": {
+    "effects": {
+      "href": "/accounts/GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7/effects{?cursor,limit,order}",
+      "templated": true
+    },
+    "offers": {
+      "href": "/accounts/GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7/offers{?cursor,limit,order}",
+      "templated": true
+    },
+    "operations": {
+      "href": "/accounts/GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7/operations{?cursor,limit,order}",
+      "templated": true
+    },
+    "self": {
+      "href": "/accounts/GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7"
+    },
+    "transactions": {
+      "href": "/accounts/GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7/transactions{?cursor,limit,order}",
+      "templated": true
+    }
+  },
+  "id": "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7",
+  "paging_token": "1",
+  "account_id": "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7",
+  "sequence": 2319149195853854,
+  "subentry_count": 0,
+  "inflation_destination": "GAGRSA6QNQJN2OQYCBNQGMFLO4QLZFNEHIFXOMTQVSUTWVTWT66TOFSC",
+  "home_domain": "stellar.org",
+  "thresholds": {
+    "low_threshold": 10,
+    "med_threshold": 20,
+    "high_threshold": 30
+  },
+  "flags": {
+    "auth_required": false,
+    "auth_revocable": true
+  },
+  "balances": [
+    {
+      "balance": "1001.0000000",
+      "limit": "12000.4775807",
+      "asset_type": "credit_alphanum4",
+      "asset_code": "ABC",
+      "asset_issuer": "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU"
+    },
+    {
+      "asset_type": "native",
+      "balance": "20.0000300"
+    }
+  ],
+  "signers": [
+    {
+      "public_key": "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7",
+      "weight": 0
+    },
+    {
+      "public_key": "GCR2KBCIU6KQXSQY5F5GZYC4WLNHCHCKW4NEGXNEZRYWLTNZIRJJY7D2",
+      "weight": 1
+    }
+  ]
+}
