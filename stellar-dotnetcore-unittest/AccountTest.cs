@@ -20,7 +20,7 @@ namespace stellar_dotnetcore_unittest
 
             try
             {
-                new Account(KeyPair.random(), null);
+                new Account(KeyPair.Random(), null);
                 Assert.Fail();
             }
             catch (NullReferenceException) { }
@@ -29,7 +29,7 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestGetIncrementedSequenceNumber()
         {
-            Account account = new Account(KeyPair.random(), 100L);
+            Account account = new Account(KeyPair.Random(), 100L);
             long incremented;
             incremented = account.GetIncrementedSequenceNumber();
             Assert.AreEqual(100L, account.GetSequenceNumber());
@@ -42,7 +42,7 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestIncrementSequenceNumber()
         {
-            Account account = new Account(KeyPair.random(), 100L);
+            Account account = new Account(KeyPair.Random(), 100L);
             account.IncrementSequenceNumber();
             Assert.AreEqual(account.GetSequenceNumber(), 101L);
         }
@@ -50,7 +50,7 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestGetters()
         {
-            KeyPair keypair = KeyPair.random();
+            KeyPair keypair = KeyPair.Random();
             Account account = new Account(keypair, 100L);
             Assert.AreEqual(account.GetKeypair().getAccountId(), keypair.getAccountId());
             Assert.AreEqual(account.GetSequenceNumber(), 100L);
