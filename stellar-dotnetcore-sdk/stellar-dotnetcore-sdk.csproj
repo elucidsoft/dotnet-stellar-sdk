@@ -5,6 +5,10 @@
     <RootNamespace>stellar_dotnetcore_sdk</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
   <ItemGroup>
     <Folder Include="xdr\" />
   </ItemGroup>
