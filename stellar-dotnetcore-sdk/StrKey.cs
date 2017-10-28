@@ -8,30 +8,38 @@ namespace stellar_dotnetcore_sdk
 {
     public class StrKey
     {
-        public class VersionByte
+        public enum VersionByte : byte
         {
-            public const byte ACCOUNT_ID = (6 << 3);    //G
-            public const byte SEED = (18 << 3);         //S
-            public const byte PRE_AUTH_TX = (19 << 3);  //T
-            public const byte SHA256_HASH = (23 << 3);  //X
-
-
-            public VersionByte(byte value) => Value = value;
-
-            public byte Value { get; set; }
-
+            ACCOUNT_ID = (6 << 3),
+            SEED = (18 << 3),
+            PRE_AUTH_TX = (19 << 3),
+            SHA256_HASH = (23 << 3)
         }
 
         public static string EncodeStellarAccountId(byte[] data)
         {
-            throw new NotImplementedException();
+            return EncodeCheck(VersionByte.ACCOUNT_ID, data);
         }
 
+        public static string EncodeStellarSecretSeed(byte[] data)
+        {
+            return EncodeCheck(VersionByte.SEED, data);
+        }
+
+        public static byte[] DecodeStellarAccountId(string data)
+        {
+            return DecodeCheck(VersionByte.ACCOUNT_ID, data);
+        }
+
+        public static byte[] DecodeStellarSecretSeed(string data)
+        {
+            return DecodeCheck(VersionByte.SEED, data);
+        }
 
         public static string EncodeCheck(VersionByte versionByte, byte[] data)
         {
             List<byte> bytes = new List<byte>();
-            bytes.Add(versionByte.Value);
+            bytes.Add((byte)versionByte);
             bytes.AddRange(data);
 
             byte[] checksum = CalculateChecksum(bytes.ToArray());
@@ -61,7 +69,7 @@ namespace stellar_dotnetcore_sdk
             byte[] checksum = new byte[2];
             Array.Copy(decoded, decoded.Length - 2, checksum, 0, checksum.Length);
 
-            if (decodedVersionByte != versionByte.Value)
+            if (decodedVersionByte != (byte)versionByte)
             {
                 throw new FormatException("Version byte is invalid");
             }

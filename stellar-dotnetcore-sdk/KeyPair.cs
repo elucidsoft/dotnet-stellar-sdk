@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chaos.NaCl;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -36,31 +37,12 @@ namespace stellar_dotnetcore_sdk
         /// </summary>
         /// <param name="seed">eed Char array containing strkey encoded Stellar secret seed.</param>
         /// <returns><see cref="KeyPair"/></returns>
-        public static KeyPair FromSecretSeed(char[] seed)
+        public static KeyPair FromSecretSeed(string seed)
         {
-            throw new NotImplementedException();
-
-            //byte[] decoded = StrKey.decodeStellarSecretSeed(seed);
-            //KeyPair keypair = fromSecretSeed(decoded);
-            //Arrays.fill(decoded, (byte)0);
-            //return keypair;
-        }
-
-        /// <summary>
-        /// **INSECURE** Creates a new Stellar KeyPair from a strkey encoded Stellar secret seed.
-        /// This method is insecure. Use only if you are aware of security implications.
-        /// </summary>
-        /// <param name="seed">The strkey encoded Stellar secret seed.</param>
-        /// <returns><see cref="KeyPair"/></returns>
-        public static KeyPair fromSecretSeed(String seed)
-        {
-            throw new NotImplementedException();
-
-            //char[] charSeed = seed.toCharArray();
-            //byte[] decoded = StrKey.decodeStellarSecretSeed(charSeed);
-            //KeyPair keypair = fromSecretSeed(decoded);
-            //Arrays.fill(charSeed, ' ');
-            //return keypair;
+            byte[] decoded = StrKey.DecodeStellarSecretSeed(seed);
+            KeyPair keypair = FromSecretSeed(decoded);
+            Array.Fill(decoded, (byte)0);
+            return keypair;
         }
 
         /// <summary>
@@ -70,18 +52,11 @@ namespace stellar_dotnetcore_sdk
         /// <returns><see cref="KeyPair"/></returns>
         public static KeyPair FromSecretSeed(byte[] seed)
         {
-            throw new NotImplementedException();
+            Ed25519.KeyPairFromSeed(out byte[] publicKey, out byte[] privateKey, seed);
 
-            //EdDSAPrivateKeySpec privKeySpec = new EdDSAPrivateKeySpec(seed, ed25519);
-            //EdDSAPublicKeySpec publicKeySpec = new EdDSAPublicKeySpec(privKeySpec.getA().toByteArray(), ed25519);
-            //return new KeyPair(new EdDSAPublicKey(publicKeySpec), new EdDSAPrivateKey(privKeySpec));
+            return new KeyPair(publicKey, privateKey);
         }
 
-        /**
- * 
- * @param 
- * @return {@link KeyPair}
- */
 
         /// <summary>
         /// Creates a new Stellar KeyPair from a strkey encoded Stellar account ID.
@@ -94,12 +69,6 @@ namespace stellar_dotnetcore_sdk
             //byte[] decoded = StrKey.decodeStellarAccountId(accountId);
             //return fromPublicKey(decoded);
         }
-
-        /**
-      * 
-      * @param 
-      * @return {@link KeyPair}
-      */
 
         /// <summary>
         /// Creates a new Stellar keypair from a 32 byte address.
@@ -204,29 +173,19 @@ namespace stellar_dotnetcore_sdk
         //    //return KeyPair.fromPublicKey(key.getEd25519().getUint256());
         //}
 
-        /**
-         * Sign the provided data with the keypair's private key.
-         * @param data The data to sign.
-         * @return signed bytes, null if the private key for this keypair is null.
-         */
-        public byte[] sign(byte[] data)
+        /// <summary>
+        /// Sign the provided data with the keypair's private key.
+        /// </summary>
+        /// <param name="data">The data to sign.</param>
+        /// <returns>signed bytes, null if the private key for this keypair is null.</returns>
+        public byte[] Sign(byte[] data)
         {
-            throw new NotImplementedException();
-            //if (_privateKey == null)
-            //{
-            //    throw new RuntimeException("KeyPair does not contain secret key. Use KeyPair.fromSecretSeed method to create a new KeyPair with a secret key.");
-            //}
-            //try
-            //{
-            //    Signature sgr = new EdDSAEngine(MessageDigest.getInstance("SHA-512"));
-            //    sgr.initSign(_privateKey);
-            //    sgr.update(data);
-            //    return sgr.sign();
-            //}
-            //catch (GeneralSecurityException e)
-            //{
-            //    throw new RuntimeException(e);
-            //}
+            if (_privateKey == null)
+            {
+                throw new Exception("KeyPair does not contain secret key. Use KeyPair.fromSecretSeed method to create a new KeyPair with a secret key.");
+            }
+
+            return Ed25519.Sign(data, _privateKey);
         }
 
         /**
@@ -247,6 +206,7 @@ namespace stellar_dotnetcore_sdk
         //    //return decoratedSignature;
         //}
 
+
         /**
          * Verify the provided data and signature match this keypair's public key.
          * @param data The data that was signed.
@@ -254,24 +214,17 @@ namespace stellar_dotnetcore_sdk
          * @return True if they match, false otherwise.
          * @throws RuntimeException
          */
-        public bool verify(byte[] data, byte[] signature)
+        public bool Verify(byte[] data, byte[] signature)
         {
-            throw new NotImplementedException();
-            //try
-            //{
-            //    Signature sgr = new EdDSAEngine(MessageDigest.getInstance("SHA-512"));
-            //    sgr.initVerify(mPublicKey);
-            //    sgr.update(data);
-            //    return sgr.verify(signature);
-            //}
-            //catch (SignatureException e)
-            //{
-            //    return false;
-            //}
-            //catch (GeneralSecurityException e)
-            //{
-            //    throw new RuntimeException(e);
-            //}
+            var result = false;
+
+            try
+            {
+                result = Ed25519.Verify(signature, data, _publicKey);
+            }
+            catch { result = false; }
+
+            return result;
         }
 
 

@@ -13,8 +13,8 @@ namespace stellar_dotnetcore_unittest
         public void TestDecodeEncode()
         {
             string seed = "SDJHRQF4GCMIIKAAAQ6IHY42X73FQFLHUULAPSKKD4DFDM7UXWWCRHBE";
-            byte[] secret = StrKey.DecodeCheck(new StrKey.VersionByte(StrKey.VersionByte.SEED), seed);
-            string encoded = StrKey.EncodeCheck(new StrKey.VersionByte(StrKey.VersionByte.SEED), secret);
+            byte[] secret = StrKey.DecodeCheck(StrKey.VersionByte.SEED, seed);
+            string encoded = StrKey.EncodeCheck(StrKey.VersionByte.SEED, secret);
 
             Assert.AreEqual(seed, encoded);
         }
@@ -24,7 +24,7 @@ namespace stellar_dotnetcore_unittest
         public void TestDecodeInvalidVersionByte()
         {
             string address = "GCZHXL5HXQX5ABDM26LHYRCQZ5OJFHLOPLZX47WEBP3V2PF5AVFK2A5D";
-            StrKey.DecodeCheck(new StrKey.VersionByte(StrKey.VersionByte.SEED), address);
+            StrKey.DecodeCheck(StrKey.VersionByte.SEED, address);
         }
 
         [TestMethod]
@@ -32,7 +32,7 @@ namespace stellar_dotnetcore_unittest
         public void TestDecodeInvalidSeed()
         {
             string seed = "SAA6NXOBOXP3RXGAXBW6PGFI5BPK4ODVAWITS4VDOMN5C2M4B66ZML";
-            StrKey.DecodeCheck(new StrKey.VersionByte(StrKey.VersionByte.SEED), seed);
+            StrKey.DecodeCheck(StrKey.VersionByte.SEED, seed);
         }
     }
 }
