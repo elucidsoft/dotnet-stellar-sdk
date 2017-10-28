@@ -18,7 +18,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class ManageDataResult  {
   public ManageDataResult () {}
 
-  ManageDataResultCode Discriminant { get; set; } = new ManageDataResultCode();
+  public ManageDataResultCode Discriminant { get; set; } = new ManageDataResultCode();
 
   public static void Encode(IByteWriter stream, ManageDataResult encodedManageDataResult) {
   XdrEncoding.EncodeInt32((int)encodedManageDataResult.Discriminant.InnerValue, stream);

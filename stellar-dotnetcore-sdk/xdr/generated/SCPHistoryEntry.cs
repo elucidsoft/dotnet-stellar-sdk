@@ -16,7 +16,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class SCPHistoryEntry  {
   public SCPHistoryEntry () {}
 
-  int Discriminant { get; set; } = new int();
+  public int Discriminant { get; set; } = new int();
 
   public SCPHistoryEntryV0 V0 {get; set;}
   public static void Encode(IByteWriter stream, SCPHistoryEntry encodedSCPHistoryEntry) {

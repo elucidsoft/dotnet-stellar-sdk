@@ -50,7 +50,7 @@ public class ManageOfferSuccessResult  {
   public class ManageOfferSuccessResultOffer {
     public ManageOfferSuccessResultOffer () {}
 
-    ManageOfferEffect Discriminant { get; set; } = new ManageOfferEffect();
+    public ManageOfferEffect Discriminant { get; set; } = new ManageOfferEffect();
 
     public OfferEntry Offer {get; set;}
     public static void Encode(IByteWriter stream, ManageOfferSuccessResultOffer encodedManageOfferSuccessResultOffer) {

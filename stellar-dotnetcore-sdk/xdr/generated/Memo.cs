@@ -24,7 +24,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class Memo  {
   public Memo () {}
 
-  MemoType Discriminant { get; set; } = new MemoType();
+  public MemoType Discriminant { get; set; } = new MemoType();
 
   public String Text {get; set;}
   public Uint64 Id {get; set;}

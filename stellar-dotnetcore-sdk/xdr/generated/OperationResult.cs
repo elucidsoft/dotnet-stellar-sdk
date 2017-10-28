@@ -43,7 +43,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class OperationResult  {
   public OperationResult () {}
 
-  OperationResultCode Discriminant { get; set; } = new OperationResultCode();
+  public OperationResultCode Discriminant { get; set; } = new OperationResultCode();
 
   public OperationResultTr Tr {get; set;}
   public static void Encode(IByteWriter stream, OperationResult encodedOperationResult) {
@@ -73,7 +73,7 @@ public class OperationResult  {
   public class OperationResultTr {
     public OperationResultTr () {}
 
-    OperationType Discriminant { get; set; } = new OperationType();
+    public OperationType Discriminant { get; set; } = new OperationType();
 
     public CreateAccountResult CreateAccountResult {get; set;}
     public PaymentResult PaymentResult {get; set;}

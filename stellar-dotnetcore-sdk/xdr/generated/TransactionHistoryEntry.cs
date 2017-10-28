@@ -43,7 +43,7 @@ public class TransactionHistoryEntry  {
   public class TransactionHistoryEntryExt {
     public TransactionHistoryEntryExt () {}
 
-    int Discriminant { get; set; } = new int();
+    public int Discriminant { get; set; } = new int();
 
     public static void Encode(IByteWriter stream, TransactionHistoryEntryExt encodedTransactionHistoryEntryExt) {
     XdrEncoding.EncodeInt32((int)encodedTransactionHistoryEntryExt.Discriminant, stream);

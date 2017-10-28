@@ -18,7 +18,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class AccountMergeResult  {
   public AccountMergeResult () {}
 
-  AccountMergeResultCode Discriminant { get; set; } = new AccountMergeResultCode();
+  public AccountMergeResultCode Discriminant { get; set; } = new AccountMergeResultCode();
 
   public Int64 SourceAccountBalance {get; set;}
   public static void Encode(IByteWriter stream, AccountMergeResult encodedAccountMergeResult) {

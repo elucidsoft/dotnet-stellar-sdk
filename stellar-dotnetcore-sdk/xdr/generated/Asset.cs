@@ -32,7 +32,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class Asset  {
   public Asset () {}
 
-  AssetType Discriminant { get; set; } = new AssetType();
+  public AssetType Discriminant { get; set; } = new AssetType();
 
   public AssetAlphaNum4 AlphaNum4 {get; set;}
   public AssetAlphaNum12 AlphaNum12 {get; set;}

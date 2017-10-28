@@ -21,7 +21,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class AuthenticatedMessage  {
   public AuthenticatedMessage () {}
 
-  Uint32 Discriminant { get; set; } = new Uint32();
+  public Uint32 Discriminant { get; set; } = new Uint32();
 
   public AuthenticatedMessageV0 V0 {get; set;}
   public static void Encode(IByteWriter stream, AuthenticatedMessage encodedAuthenticatedMessage) {

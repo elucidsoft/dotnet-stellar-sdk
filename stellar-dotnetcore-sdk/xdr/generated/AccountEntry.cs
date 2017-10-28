@@ -93,7 +93,7 @@ public class AccountEntry  {
   public class AccountEntryExt {
     public AccountEntryExt () {}
 
-    int Discriminant { get; set; } = new int();
+    public int Discriminant { get; set; } = new int();
 
     public static void Encode(IByteWriter stream, AccountEntryExt encodedAccountEntryExt) {
     XdrEncoding.EncodeInt32((int)encodedAccountEntryExt.Discriminant, stream);

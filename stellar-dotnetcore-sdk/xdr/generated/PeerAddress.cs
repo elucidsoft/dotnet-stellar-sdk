@@ -43,7 +43,7 @@ public class PeerAddress  {
   public class PeerAddressIp {
     public PeerAddressIp () {}
 
-    IPAddrType Discriminant { get; set; } = new IPAddrType();
+    public IPAddrType Discriminant { get; set; } = new IPAddrType();
 
     public byte[] Ipv4 {get; set;}
     public byte[] Ipv6 {get; set;}

@@ -22,7 +22,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class LedgerEntryChange  {
   public LedgerEntryChange () {}
 
-  LedgerEntryChangeType Discriminant { get; set; } = new LedgerEntryChangeType();
+  public LedgerEntryChangeType Discriminant { get; set; } = new LedgerEntryChangeType();
 
   public LedgerEntry Created {get; set;}
   public LedgerEntry Updated {get; set;}

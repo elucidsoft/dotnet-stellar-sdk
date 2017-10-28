@@ -57,7 +57,7 @@ public class TrustLineEntry  {
   public class TrustLineEntryExt {
     public TrustLineEntryExt () {}
 
-    int Discriminant { get; set; } = new int();
+    public int Discriminant { get; set; } = new int();
 
     public static void Encode(IByteWriter stream, TrustLineEntryExt encodedTrustLineEntryExt) {
     XdrEncoding.EncodeInt32((int)encodedTrustLineEntryExt.Discriminant, stream);

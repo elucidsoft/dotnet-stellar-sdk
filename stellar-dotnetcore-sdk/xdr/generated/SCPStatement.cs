@@ -68,7 +68,7 @@ public class SCPStatement  {
   public class SCPStatementPledges {
     public SCPStatementPledges () {}
 
-    SCPStatementType Discriminant { get; set; } = new SCPStatementType();
+    public SCPStatementType Discriminant { get; set; } = new SCPStatementType();
 
     public SCPStatementPrepare Prepare {get; set;}
     public SCPStatementConfirm Confirm {get; set;}

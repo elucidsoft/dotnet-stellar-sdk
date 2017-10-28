@@ -18,7 +18,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class PaymentResult  {
   public PaymentResult () {}
 
-  PaymentResultCode Discriminant { get; set; } = new PaymentResultCode();
+  public PaymentResultCode Discriminant { get; set; } = new PaymentResultCode();
 
   public static void Encode(IByteWriter stream, PaymentResult encodedPaymentResult) {
   XdrEncoding.EncodeInt32((int)encodedPaymentResult.Discriminant.InnerValue, stream);
