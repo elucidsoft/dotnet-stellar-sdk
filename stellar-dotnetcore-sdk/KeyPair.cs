@@ -119,10 +119,8 @@ namespace stellar_dotnetcore_sdk
         /// <returns><see cref="KeyPair"/></returns>
         public static KeyPair FromSecretSeed(string seed)
         {
-            byte[] decoded = StrKey.DecodeStellarSecretSeed(seed);
-            KeyPair keypair = FromSecretSeed(decoded);
-            Array.Fill(decoded, (byte)0);
-            return keypair;
+            byte[] bytes = StrKey.DecodeStellarSecretSeed(seed);
+            return FromSecretSeed(bytes);
         }
 
         /// <summary>
@@ -188,25 +186,16 @@ namespace stellar_dotnetcore_sdk
             return Ed25519.Sign(data, PrivateKey);
         }
 
-        //TODO: Implement once XDR objects are defined.
-        ///**
-        // * Sign the provided data with the keypair's private key and returns {@link DecoratedSignature}.
-        // * @param data
-        // */
-        //public DecoratedSignature signDecorated(byte[] data)
-        //{
+        public DecoratedSignature SignDecorated(byte[] message)
+        {
+            var rawSig = Sign(message);
 
-
-        //    //byte[] signatureBytes = Sign(data);
-
-        //    //org.stellar.sdk.xdr.Signature signature = new org.stellar.sdk.xdr.Signature();
-        //    //signature.setSignature(signatureBytes);
-
-        //    //DecoratedSignature decoratedSignature = new DecoratedSignature();
-        //    //decoratedSignature.setHint(this.getSignatureHint());
-        //    //decoratedSignature.setSignature(signature);
-        //    //return decoratedSignature;
-        //}
+            return new DecoratedSignature
+            {
+                Hint = new SignatureHint(SignatureHint.InnerValue),
+                Signature = new Signature(rawSig)
+            };
+        }
 
         /// <summary>
         /// Verify the provided data and signature match this keypair's public key.
