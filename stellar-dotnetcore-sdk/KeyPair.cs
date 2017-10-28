@@ -58,8 +58,11 @@ namespace stellar_dotnetcore_sdk
         {
             get
             {
-                PublicKey publicKey = new PublicKey();
-                publicKey.Discriminant = new PublicKeyType() { InnerValue = PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519 };
+                PublicKey publicKey = new PublicKey
+                {
+                    Discriminant = new PublicKeyType() { InnerValue = PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519 }
+                };
+
                 Uint256 uint256 = new Uint256(PublicKey);
                 publicKey.Ed25519 = uint256;
 
@@ -71,8 +74,11 @@ namespace stellar_dotnetcore_sdk
         {
             get
             {
-                SignerKey signerKey = new SignerKey();
-                signerKey.Discriminant = new SignerKeyType() { InnerValue = SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519 };
+                SignerKey signerKey = new SignerKey
+                {
+                    Discriminant = new SignerKeyType() { InnerValue = SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519 }
+                };
+
                 Uint256 uint256 = new Uint256(PublicKey);
                 signerKey.Ed25519 = uint256;
 

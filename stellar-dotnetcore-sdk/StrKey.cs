@@ -38,10 +38,12 @@ namespace stellar_dotnetcore_sdk
 
         public static string EncodeCheck(VersionByte versionByte, byte[] data)
         {
-            List<byte> bytes = new List<byte>();
-            bytes.Add((byte)versionByte);
-            bytes.AddRange(data);
+            List<byte> bytes = new List<byte>
+            {
+                (byte)versionByte
+            };
 
+            bytes.AddRange(data);
             byte[] checksum = CalculateChecksum(bytes.ToArray());
             bytes.AddRange(checksum);
             return Base32Encoding.ToString(bytes.ToArray());
