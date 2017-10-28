@@ -80,7 +80,26 @@ namespace stellar_dotnetcore_sdk
             return Encoding.Default.GetString(bytes).Split('\0')[0];
         }
 
-        private static void Fill<T>(this T[] arr, T value)
+
+        public static bool IsIdentical(this byte[] a1, byte[] a2)
+        {
+            if (a1.Length != a2.Length)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < a1.Length; i++)
+            {
+                if (a1[i] != a2[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        public static void Fill<T>(this T[] arr, T value)
         {
             for (int i = 0; i < arr.Length; i++)
             {

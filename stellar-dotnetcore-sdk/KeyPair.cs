@@ -9,7 +9,8 @@ namespace stellar_dotnetcore_sdk
         private byte[] _publicKey;
         private byte[] _privateKey;
 
-        public KeyPair(byte[] publicKey) : this(publicKey, null)
+        public KeyPair(byte[] publicKey)
+            : this(publicKey, null)
         {
 
         }
@@ -20,20 +21,22 @@ namespace stellar_dotnetcore_sdk
             _privateKey = privateKey;
         }
 
-        /**
-   * Returns true if this Keypair is capable of signing
-   */
-        public bool canSign()
+
+        /// <summary>
+        ///  Returns true if this Keypair is capable of signing
+        /// </summary>
+        /// <returns></returns>
+        public bool CanSign()
         {
             return _privateKey != null;
         }
 
-        /**
-         * Creates a new Stellar KeyPair from a strkey encoded Stellar secret seed.
-         * @param seed Char array containing strkey encoded Stellar secret seed.
-         * @return {@link KeyPair}
-         */
-        public static KeyPair fromSecretSeed(char[] seed)
+        /// <summary>
+        /// Creates a new Stellar KeyPair from a strkey encoded Stellar secret seed.
+        /// </summary>
+        /// <param name="seed">eed Char array containing strkey encoded Stellar secret seed.</param>
+        /// <returns><see cref="KeyPair"/></returns>
+        public static KeyPair FromSecretSeed(char[] seed)
         {
             throw new NotImplementedException();
 
@@ -43,13 +46,12 @@ namespace stellar_dotnetcore_sdk
             //return keypair;
         }
 
-        /**
-         * <strong>Insecure</strong> Creates a new Stellar KeyPair from a strkey encoded Stellar secret seed.
-         * This method is <u>insecure</u>. Use only if you are aware of security implications.
-         * @see <a href="http://docs.oracle.com/javase/1.5.0/docs/guide/security/jce/JCERefGuide.html#PBEEx" target="_blank">Using Password-Based Encryption</a>
-         * @param seed The strkey encoded Stellar secret seed.
-         * @return {@link KeyPair}
-         */
+        /// <summary>
+        /// **INSECURE** Creates a new Stellar KeyPair from a strkey encoded Stellar secret seed.
+        /// This method is insecure. Use only if you are aware of security implications.
+        /// </summary>
+        /// <param name="seed">The strkey encoded Stellar secret seed.</param>
+        /// <returns><see cref="KeyPair"/></returns>
         public static KeyPair fromSecretSeed(String seed)
         {
             throw new NotImplementedException();
@@ -61,11 +63,11 @@ namespace stellar_dotnetcore_sdk
             //return keypair;
         }
 
-        /**
-         * Creates a new Stellar keypair from a raw 32 byte secret seed.
-         * @param seed The 32 byte secret seed.
-         * @return {@link KeyPair}
-         */
+        /// <summary>
+        ///  Creates a new Stellar keypair from a raw 32 byte secret seed.
+        /// </summary>
+        /// <param name="seed">seed The 32 byte secret seed.</param>
+        /// <returns><see cref="KeyPair"/></returns>
         public static KeyPair FromSecretSeed(byte[] seed)
         {
             throw new NotImplementedException();
@@ -76,10 +78,16 @@ namespace stellar_dotnetcore_sdk
         }
 
         /**
-         * Creates a new Stellar KeyPair from a strkey encoded Stellar account ID.
-         * @param accountId The strkey encoded Stellar account ID.
-         * @return {@link KeyPair}
-         */
+ * 
+ * @param 
+ * @return {@link KeyPair}
+ */
+
+        /// <summary>
+        /// Creates a new Stellar KeyPair from a strkey encoded Stellar account ID.
+        /// </summary>
+        /// <param name="accountId">accountId The strkey encoded Stellar account ID.</param>
+        /// <returns><see cref="KeyPair"/></returns>
         public static KeyPair fromAccountId(String accountId)
         {
             throw new NotImplementedException();
@@ -88,10 +96,16 @@ namespace stellar_dotnetcore_sdk
         }
 
         /**
-         * Creates a new Stellar keypair from a 32 byte address.
-         * @param publicKey The 32 byte public key.
-         * @return {@link KeyPair}
-         */
+      * 
+      * @param 
+      * @return {@link KeyPair}
+      */
+
+        /// <summary>
+        /// Creates a new Stellar keypair from a 32 byte address.
+        /// </summary>
+        /// <param name="publicKey">publicKey The 32 byte public key.</param>
+        /// <returns><see cref="KeyPair"/></returns>
         public static KeyPair fromPublicKey(byte[] publicKey)
         {
             throw new NotImplementedException();
@@ -99,10 +113,10 @@ namespace stellar_dotnetcore_sdk
             //return new KeyPair(new EdDSAPublicKey(publicKeySpec));
         }
 
-        /**
-         * Generates a random Stellar keypair.
-         * @return a random Stellar keypair.
-         */
+        /// <summary>
+        /// Generates a random Stellar keypair.
+        /// </summary>
+        /// <returns>a random Stellar keypair</returns>
         public static KeyPair random()
         {
             throw new NotImplementedException();
@@ -110,9 +124,10 @@ namespace stellar_dotnetcore_sdk
             //return new KeyPair((EdDSAPublicKey)keypair.getPublic(), (EdDSAPrivateKey)keypair.getPrivate());
         }
 
-        /**
-         * Returns the human readable account ID encoded in strkey.
-         */
+        /// <summary>
+        /// Returns the human readable account ID encoded in strkey.
+        /// </summary>
+        /// <returns></returns>
         public String getAccountId()
         {
             throw new NotImplementedException();
