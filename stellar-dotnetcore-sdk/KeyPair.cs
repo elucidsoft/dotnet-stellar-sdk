@@ -13,6 +13,7 @@ namespace stellar_dotnetcore_sdk
         public byte[] PublicKey { get; private set; }
         public byte[] PrivateKey { get; private set; }
         public byte[] SeedBytes { get; private set; }
+
         public string AccountId
         {
             get
