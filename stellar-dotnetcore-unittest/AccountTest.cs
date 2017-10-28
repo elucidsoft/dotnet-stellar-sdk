@@ -6,6 +6,7 @@ using System.Text;
 
 namespace stellar_dotnetcore_unittest
 {
+    [TestClass]
     public class AccountTest
     {
         [TestMethod]
@@ -16,14 +17,14 @@ namespace stellar_dotnetcore_unittest
                 new Account(null, 10L);
                 Assert.Fail();
             }
-            catch (NullReferenceException) { }
+            catch (ArgumentNullException) { }
 
             try
             {
                 new Account(KeyPair.Random(), null);
                 Assert.Fail();
             }
-            catch (NullReferenceException) { }
+            catch (ArgumentNullException) { }
         }
 
         [TestMethod]
@@ -32,10 +33,10 @@ namespace stellar_dotnetcore_unittest
             Account account = new Account(KeyPair.Random(), 100L);
             long incremented;
             incremented = account.GetIncrementedSequenceNumber();
-            Assert.AreEqual(100L, account.GetSequenceNumber());
+            Assert.AreEqual(100L, account.SequenceNumber);
             Assert.AreEqual(101L, incremented);
             incremented = account.GetIncrementedSequenceNumber();
-            Assert.AreEqual(100L, account.GetSequenceNumber());
+            Assert.AreEqual(100L, account.SequenceNumber);
             Assert.AreEqual(101L, incremented);
         }
 
@@ -44,7 +45,7 @@ namespace stellar_dotnetcore_unittest
         {
             Account account = new Account(KeyPair.Random(), 100L);
             account.IncrementSequenceNumber();
-            Assert.AreEqual(account.GetSequenceNumber(), 101L);
+            Assert.AreEqual(account.SequenceNumber, 101L);
         }
 
         [TestMethod]
@@ -52,8 +53,8 @@ namespace stellar_dotnetcore_unittest
         {
             KeyPair keypair = KeyPair.Random();
             Account account = new Account(keypair, 100L);
-            Assert.AreEqual(account.GetKeypair().AccountId, keypair.AccountId);
-            Assert.AreEqual(account.GetSequenceNumber(), 100L);
+            Assert.AreEqual(account.KeyPair.AccountId, keypair.AccountId);
+            Assert.AreEqual(account.SequenceNumber, 100L);
         }
     }
 }

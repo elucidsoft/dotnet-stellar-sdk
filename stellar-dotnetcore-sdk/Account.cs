@@ -4,10 +4,14 @@ using System.Text;
 
 namespace stellar_dotnetcore_sdk
 {
-    public class Account : TransactionBuilderAccount
+    public class Account : ITransactionBuilderAccount
     {
         private KeyPair _keyPair;
         private long _sequenceNumber;
+
+
+        public KeyPair KeyPair { get { return _keyPair; } }
+        public long SequenceNumber { get { return _sequenceNumber; } }
 
         /**
          * Class constructor.
@@ -21,21 +25,9 @@ namespace stellar_dotnetcore_sdk
         }
 
 
-        public KeyPair GetKeypair()
-        {
-            return _keyPair;
-        }
-
-
-        public long GetSequenceNumber()
-        {
-            return _sequenceNumber;
-        }
-
-
         public long GetIncrementedSequenceNumber()
         {
-            return  _sequenceNumber + 1;
+            return  SequenceNumber + 1;
         }
 
         /**
