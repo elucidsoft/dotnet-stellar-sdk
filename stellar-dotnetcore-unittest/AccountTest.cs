@@ -52,7 +52,7 @@ namespace stellar_dotnetcore_unittest
         {
             KeyPair keypair = KeyPair.Random();
             Account account = new Account(keypair, 100L);
-            Assert.AreEqual(account.GetKeypair().getAccountId(), keypair.getAccountId());
+            Assert.AreEqual(account.GetKeypair().AccountId, keypair.AccountId);
             Assert.AreEqual(account.GetSequenceNumber(), 100L);
         }
     }

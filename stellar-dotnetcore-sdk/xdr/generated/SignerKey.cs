@@ -22,7 +22,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class SignerKey  {
   public SignerKey () {}
 
-  SignerKeyType Discriminant { get; set; } = new SignerKeyType();
+  public SignerKeyType Discriminant { get; set; } = new SignerKeyType();
 
   public Uint256 Ed25519 {get; set;}
   public Uint256 PreAuthTx {get; set;}

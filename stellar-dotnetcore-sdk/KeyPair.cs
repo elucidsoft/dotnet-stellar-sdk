@@ -1,6 +1,8 @@
 ﻿using Chaos.NaCl;
+using stellar_dotnetcore_sdk.xdr;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -8,9 +10,74 @@ namespace stellar_dotnetcore_sdk
 {
     public class KeyPair
     {
-        private byte[] _publicKey;
-        private byte[] _privateKey;
-        private byte[] _seedBytes;
+        public byte[] PublicKey { get; private set; }
+        public byte[] PrivateKey { get; private set; }
+        public byte[] SeedBytes { get; private set; }
+        public string AccountId
+        {
+            get
+            {
+                return StrKey.EncodeStellarAccountId(PublicKey);
+            }
+        }
+
+        public string Address
+        {
+            get
+            {
+                return StrKey.EncodeCheck(StrKey.VersionByte.ACCOUNT_ID, PublicKey);
+            }
+        }
+
+        public string SecretSeed
+        {
+            get
+            {
+                return StrKey.EncodeStellarSecretSeed(SeedBytes);
+            }
+        }
+
+        public SignatureHint SignatureHint
+        {
+            get
+            {
+                var stream = new ByteWriter();
+                AccountID accountId = new AccountID(XdrPublicKey);
+                AccountID.Encode(stream, accountId);
+                var bytes = stream.ToArray();
+                var length = bytes.Length;
+                var signatureHintBytes = bytes.Skip(length - 4).Take(4).ToArray();
+
+                var signatureHint = new SignatureHint(signatureHintBytes);
+                return signatureHint;
+            }
+        }
+
+        public PublicKey XdrPublicKey
+        {
+            get
+            {
+                PublicKey publicKey = new PublicKey();
+                publicKey.Discriminant = new PublicKeyType() { InnerValue = PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519 };
+                Uint256 uint256 = new Uint256(PublicKey);
+                publicKey.Ed25519 = uint256;
+
+                return publicKey;
+            }
+        }
+
+        public SignerKey XdrSignerKey
+        {
+            get
+            {
+                SignerKey signerKey = new SignerKey();
+                signerKey.Discriminant = new SignerKeyType() { InnerValue = SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519 };
+                Uint256 uint256 = new Uint256(PublicKey);
+                signerKey.Ed25519 = uint256;
+
+                return signerKey;
+            }
+        }
 
         public KeyPair(byte[] publicKey)
             : this(publicKey, null, null)
@@ -20,11 +87,20 @@ namespace stellar_dotnetcore_sdk
 
         public KeyPair(byte[] publicKey, byte[] privateKey, byte[] seed)
         {
-            _publicKey = publicKey ?? throw new ArgumentNullException(nameof(publicKey), "publicKey cannot be null"); ;
-            _privateKey = privateKey;
-            _seedBytes = seed;
+            PublicKey = publicKey ?? throw new ArgumentNullException(nameof(publicKey), "publicKey cannot be null"); ;
+            PrivateKey = privateKey;
+            SeedBytes = seed;
         }
 
+        public static KeyPair FromXdrPublicKey(PublicKey publicKey)
+        {
+            return FromPublicKey(publicKey.Ed25519.InnerValue);
+        }
+
+        public static KeyPair FromXdrSignerKey(SignerKey signerKey)
+        {
+            return FromPublicKey(signerKey.Ed25519.InnerValue);
+        }
 
         /// <summary>
         ///  Returns true if this Keypair is capable of signing
@@ -32,7 +108,7 @@ namespace stellar_dotnetcore_sdk
         /// <returns></returns>
         public bool CanSign()
         {
-            return _privateKey != null;
+            return PrivateKey != null;
         }
 
         /// <summary>
@@ -66,11 +142,10 @@ namespace stellar_dotnetcore_sdk
         /// </summary>
         /// <param name="accountId">accountId The strkey encoded Stellar account ID.</param>
         /// <returns><see cref="KeyPair"/></returns>
-        public static KeyPair fromAccountId(String accountId)
+        public static KeyPair FromAccountId(String accountId)
         {
-            throw new NotImplementedException();
-            //byte[] decoded = StrKey.decodeStellarAccountId(accountId);
-            //return fromPublicKey(decoded);
+            byte[] decoded = StrKey.DecodeStellarAccountId(accountId);
+            return FromPublicKey(decoded);
         }
 
         /// <summary>
@@ -78,11 +153,9 @@ namespace stellar_dotnetcore_sdk
         /// </summary>
         /// <param name="publicKey">publicKey The 32 byte public key.</param>
         /// <returns><see cref="KeyPair"/></returns>
-        public static KeyPair fromPublicKey(byte[] publicKey)
+        public static KeyPair FromPublicKey(byte[] publicKey)
         {
-            throw new NotImplementedException();
-            //EdDSAPublicKeySpec publicKeySpec = new EdDSAPublicKeySpec(publicKey, ed25519);
-            //return new KeyPair(new EdDSAPublicKey(publicKeySpec));
+            return new KeyPair(publicKey);
         }
 
         /// <summary>
@@ -100,92 +173,18 @@ namespace stellar_dotnetcore_sdk
         }
 
         /// <summary>
-        /// Returns the human readable account ID encoded in strkey.
-        /// </summary>
-        /// <returns></returns>
-        public String getAccountId()
-        {
-            throw new NotImplementedException();
-            //return StrKey.encodeStellarAccountId(mPublicKey.getAbyte());
-        }
-
-        /**
-         * Returns the human readable secret seed encoded in strkey.
-         */
-
-        //TODO: Implement once XDR objects are defined.
-        //public SignatureHint getSignatureHint()
-        //{
-        //    throw new NotImplementedException();
-        //    //try
-        //    //{
-        //    //    ByteArrayOutputStream publicKeyBytesStream = new ByteArrayOutputStream();
-        //    //    XdrDataOutputStream xdrOutputStream = new XdrDataOutputStream(publicKeyBytesStream);
-        //    //    PublicKey.encode(xdrOutputStream, this.getXdrPublicKey());
-        //    //    byte[] publicKeyBytes = publicKeyBytesStream.toByteArray();
-        //    //    byte[] signatureHintBytes = Arrays.copyOfRange(publicKeyBytes, publicKeyBytes.length - 4, publicKeyBytes.length);
-
-        //    //    SignatureHint signatureHint = new SignatureHint();
-        //    //    signatureHint.setSignatureHint(signatureHintBytes);
-        //    //    return signatureHint;
-        //    //}
-        //    //catch (IOException e)
-        //    //{
-        //    //    throw new AssertionError(e);
-        //    //}
-        //}
-
-        //TODO: Implement once XDR objects are defined.
-        //public PublicKey getXdrPublicKey()
-        //{
-        //    throw new NotImplementedException();
-        //    //PublicKey publicKey = new PublicKey();
-        //    //publicKey.setDiscriminant(PublicKeyType.PUBLIC_KEY_TYPE_ED25519);
-        //    //Uint256 uint256 = new Uint256();
-        //    //uint256.setUint256(getPublicKey());
-        //    //publicKey.setEd25519(uint256);
-        //    //return publicKey;
-        //}
-
-        //TODO: Implement once XDR objects are defined.
-        //public SignerKey getXdrSignerKey()
-        //{
-        //    throw new NotImplementedException();
-        //    //SignerKey signerKey = new SignerKey();
-        //    //signerKey.setDiscriminant(SignerKeyType.SIGNER_KEY_TYPE_ED25519);
-        //    //Uint256 uint256 = new Uint256();
-        //    //uint256.setUint256(getPublicKey());
-        //    //signerKey.setEd25519(uint256);
-        //    //return signerKey;
-        //}
-
-        //TODO: Implement once XDR objects are defined.
-        //public static KeyPair fromXdrPublicKey(PublicKey key)
-        //{
-        //    throw new NotImplementedException();
-        //    //return KeyPair.fromPublicKey(key.getEd25519().getUint256());
-        //}
-
-        //TODO: Implement once XDR objects are defined.
-        //public static KeyPair fromXdrSignerKey(SignerKey key)
-        //{
-        //    throw new NotImplementedException();
-        //    //return KeyPair.fromPublicKey(key.getEd25519().getUint256());
-        //}
-
-        /// <summary>
         /// Sign the provided data with the keypair's private key.
         /// </summary>
         /// <param name="data">The data to sign.</param>
         /// <returns>signed bytes, null if the private key for this keypair is null.</returns>
         public byte[] Sign(byte[] data)
         {
-            if (_privateKey == null)
+            if (PrivateKey == null)
             {
                 throw new Exception("KeyPair does not contain secret key. Use KeyPair.fromSecretSeed method to create a new KeyPair with a secret key.");
             }
 
-            return Ed25519.Sign(data, _privateKey);
+            return Ed25519.Sign(data, PrivateKey);
         }
 
         //TODO: Implement once XDR objects are defined.
@@ -220,32 +219,12 @@ namespace stellar_dotnetcore_sdk
 
             try
             {
-                result = Ed25519.Verify(signature, data, _publicKey);
+                result = Ed25519.Verify(signature, data, PublicKey);
             }
             catch { result = false; }
 
             return result;
         }
 
-        public string Address
-        {
-            get
-            {
-                return StrKey.EncodeCheck(StrKey.VersionByte.ACCOUNT_ID, _publicKey);
-            }
-        }
-
-        public string SecretSeed
-        {
-            get
-            {
-                return StrKey.EncodeStellarSecretSeed(_seedBytes);
-            }
-        }
-
-        public byte[] PublicKey
-        {
-            get { return _publicKey; }
-        }
     }
 }
