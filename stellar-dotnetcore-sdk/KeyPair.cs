@@ -1,6 +1,7 @@
 ﻿using Chaos.NaCl;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace stellar_dotnetcore_sdk
@@ -9,17 +10,19 @@ namespace stellar_dotnetcore_sdk
     {
         private byte[] _publicKey;
         private byte[] _privateKey;
+        private byte[] _seedBytes;
 
         public KeyPair(byte[] publicKey)
-            : this(publicKey, null)
+            : this(publicKey, null, null)
         {
 
         }
 
-        public KeyPair(byte[] publicKey, byte[] privateKey)
+        public KeyPair(byte[] publicKey, byte[] privateKey, byte[] seed)
         {
             _publicKey = publicKey ?? throw new ArgumentNullException(nameof(publicKey), "publicKey cannot be null"); ;
             _privateKey = privateKey;
+            _seedBytes = seed;
         }
 
 
@@ -54,7 +57,7 @@ namespace stellar_dotnetcore_sdk
         {
             Ed25519.KeyPairFromSeed(out byte[] publicKey, out byte[] privateKey, seed);
 
-            return new KeyPair(publicKey, privateKey);
+            return new KeyPair(publicKey, privateKey, seed);
         }
 
 
@@ -86,11 +89,14 @@ namespace stellar_dotnetcore_sdk
         /// Generates a random Stellar keypair.
         /// </summary>
         /// <returns>a random Stellar keypair</returns>
-        public static KeyPair random()
+        public static KeyPair Random()
         {
-            throw new NotImplementedException();
-            //java.security.KeyPair keypair = new KeyPairGenerator().generateKeyPair();
-            //return new KeyPair((EdDSAPublicKey)keypair.getPublic(), (EdDSAPrivateKey)keypair.getPrivate());
+            var b = new byte[32];
+            using (var rngCrypto = new RNGCryptoServiceProvider())
+            {
+                rngCrypto.GetBytes(b);
+            }
+            return FromSecretSeed(b);
         }
 
         /// <summary>
@@ -106,18 +112,8 @@ namespace stellar_dotnetcore_sdk
         /**
          * Returns the human readable secret seed encoded in strkey.
          */
-        public char[] getSecretSeed()
-        {
-            throw new NotImplementedException();
-            //return StrKey.encodeStellarSecretSeed(_privateKey.getSeed());
-        }
 
-        public byte[] getPublicKey()
-        {
-            throw new NotImplementedException();
-            //return mPublicKey.getAbyte();
-        }
-
+        //TODO: Implement once XDR objects are defined.
         //public SignatureHint getSignatureHint()
         //{
         //    throw new NotImplementedException();
@@ -139,6 +135,7 @@ namespace stellar_dotnetcore_sdk
         //    //}
         //}
 
+        //TODO: Implement once XDR objects are defined.
         //public PublicKey getXdrPublicKey()
         //{
         //    throw new NotImplementedException();
@@ -150,6 +147,7 @@ namespace stellar_dotnetcore_sdk
         //    //return publicKey;
         //}
 
+        //TODO: Implement once XDR objects are defined.
         //public SignerKey getXdrSignerKey()
         //{
         //    throw new NotImplementedException();
@@ -161,12 +159,14 @@ namespace stellar_dotnetcore_sdk
         //    //return signerKey;
         //}
 
+        //TODO: Implement once XDR objects are defined.
         //public static KeyPair fromXdrPublicKey(PublicKey key)
         //{
         //    throw new NotImplementedException();
         //    //return KeyPair.fromPublicKey(key.getEd25519().getUint256());
         //}
 
+        //TODO: Implement once XDR objects are defined.
         //public static KeyPair fromXdrSignerKey(SignerKey key)
         //{
         //    throw new NotImplementedException();
@@ -188,14 +188,16 @@ namespace stellar_dotnetcore_sdk
             return Ed25519.Sign(data, _privateKey);
         }
 
-        /**
-         * Sign the provided data with the keypair's private key and returns {@link DecoratedSignature}.
-         * @param data
-         */
+        //TODO: Implement once XDR objects are defined.
+        ///**
+        // * Sign the provided data with the keypair's private key and returns {@link DecoratedSignature}.
+        // * @param data
+        // */
         //public DecoratedSignature signDecorated(byte[] data)
         //{
-        //    throw new NotImplementedException();
-        //    //byte[] signatureBytes = this.sign(data);
+
+
+        //    //byte[] signatureBytes = Sign(data);
 
         //    //org.stellar.sdk.xdr.Signature signature = new org.stellar.sdk.xdr.Signature();
         //    //signature.setSignature(signatureBytes);
@@ -206,14 +208,12 @@ namespace stellar_dotnetcore_sdk
         //    //return decoratedSignature;
         //}
 
-
-        /**
-         * Verify the provided data and signature match this keypair's public key.
-         * @param data The data that was signed.
-         * @param signature The signature.
-         * @return True if they match, false otherwise.
-         * @throws RuntimeException
-         */
+        /// <summary>
+        /// Verify the provided data and signature match this keypair's public key.
+        /// </summary>
+        /// <param name="data">The data that was signed.</param>
+        /// <param name="signature">The signature.</param>
+        /// <returns>True if they match, false otherwise.</returns>
         public bool Verify(byte[] data, byte[] signature)
         {
             var result = false;
@@ -227,10 +227,25 @@ namespace stellar_dotnetcore_sdk
             return result;
         }
 
+        public string Address
+        {
+            get
+            {
+                return StrKey.EncodeCheck(StrKey.VersionByte.ACCOUNT_ID, _publicKey);
+            }
+        }
 
-        //public bool equals(Object obj)
-        //{
-        //    return super.equals(obj);
-        //}
+        public string SecretSeed
+        {
+            get
+            {
+                return StrKey.EncodeStellarSecretSeed(_seedBytes);
+            }
+        }
+
+        public byte[] PublicKey
+        {
+            get { return _publicKey; }
+        }
     }
 }
