@@ -18,7 +18,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class AllowTrustResult  {
   public AllowTrustResult () {}
 
-  AllowTrustResultCode Discriminant { get; set; } = new AllowTrustResultCode();
+  public AllowTrustResultCode Discriminant { get; set; } = new AllowTrustResultCode();
 
   public static void Encode(IByteWriter stream, AllowTrustResult encodedAllowTrustResult) {
   XdrEncoding.EncodeInt32((int)encodedAllowTrustResult.Discriminant.InnerValue, stream);

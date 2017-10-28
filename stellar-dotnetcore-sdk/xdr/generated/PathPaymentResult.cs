@@ -24,7 +24,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class PathPaymentResult  {
   public PathPaymentResult () {}
 
-  PathPaymentResultCode Discriminant { get; set; } = new PathPaymentResultCode();
+  public PathPaymentResultCode Discriminant { get; set; } = new PathPaymentResultCode();
 
   public PathPaymentResultSuccess Success {get; set;}
   public Asset NoIssuer {get; set;}

@@ -16,7 +16,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class PublicKey  {
   public PublicKey () {}
 
-  PublicKeyType Discriminant { get; set; } = new PublicKeyType();
+  public PublicKeyType Discriminant { get; set; } = new PublicKeyType();
 
   public Uint256 Ed25519 {get; set;}
   public static void Encode(IByteWriter stream, PublicKey encodedPublicKey) {

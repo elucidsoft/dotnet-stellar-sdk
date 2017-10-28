@@ -43,7 +43,7 @@ public class LedgerHeaderHistoryEntry  {
   public class LedgerHeaderHistoryEntryExt {
     public LedgerHeaderHistoryEntryExt () {}
 
-    int Discriminant { get; set; } = new int();
+    public int Discriminant { get; set; } = new int();
 
     public static void Encode(IByteWriter stream, LedgerHeaderHistoryEntryExt encodedLedgerHeaderHistoryEntryExt) {
     XdrEncoding.EncodeInt32((int)encodedLedgerHeaderHistoryEntryExt.Discriminant, stream);

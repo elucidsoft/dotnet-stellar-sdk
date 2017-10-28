@@ -36,7 +36,7 @@ public class TransactionSignaturePayload  {
   public class TransactionSignaturePayloadTaggedTransaction {
     public TransactionSignaturePayloadTaggedTransaction () {}
 
-    EnvelopeType Discriminant { get; set; } = new EnvelopeType();
+    public EnvelopeType Discriminant { get; set; } = new EnvelopeType();
 
     public Transaction Tx {get; set;}
     public static void Encode(IByteWriter stream, TransactionSignaturePayloadTaggedTransaction encodedTransactionSignaturePayloadTaggedTransaction) {

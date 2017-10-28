@@ -48,7 +48,7 @@ public class AllowTrustOp  {
   public class AllowTrustOpAsset {
     public AllowTrustOpAsset () {}
 
-    AssetType Discriminant { get; set; } = new AssetType();
+    public AssetType Discriminant { get; set; } = new AssetType();
 
     public byte[] AssetCode4 {get; set;}
     public byte[] AssetCode12 {get; set;}

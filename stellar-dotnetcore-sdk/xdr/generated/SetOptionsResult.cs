@@ -18,7 +18,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class SetOptionsResult  {
   public SetOptionsResult () {}
 
-  SetOptionsResultCode Discriminant { get; set; } = new SetOptionsResultCode();
+  public SetOptionsResultCode Discriminant { get; set; } = new SetOptionsResultCode();
 
   public static void Encode(IByteWriter stream, SetOptionsResult encodedSetOptionsResult) {
   XdrEncoding.EncodeInt32((int)encodedSetOptionsResult.Discriminant.InnerValue, stream);

@@ -16,7 +16,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class TransactionMeta  {
   public TransactionMeta () {}
 
-  int Discriminant { get; set; } = new int();
+  public int Discriminant { get; set; } = new int();
 
   public OperationMeta[] Operations {get; set;}
   public static void Encode(IByteWriter stream, TransactionMeta encodedTransactionMeta) {

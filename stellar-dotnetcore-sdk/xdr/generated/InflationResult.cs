@@ -18,7 +18,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class InflationResult  {
   public InflationResult () {}
 
-  InflationResultCode Discriminant { get; set; } = new InflationResultCode();
+  public InflationResultCode Discriminant { get; set; } = new InflationResultCode();
 
   public InflationPayout[] Payouts {get; set;}
   public static void Encode(IByteWriter stream, InflationResult encodedInflationResult) {

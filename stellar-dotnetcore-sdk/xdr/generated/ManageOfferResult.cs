@@ -18,7 +18,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class ManageOfferResult  {
   public ManageOfferResult () {}
 
-  ManageOfferResultCode Discriminant { get; set; } = new ManageOfferResultCode();
+  public ManageOfferResultCode Discriminant { get; set; } = new ManageOfferResultCode();
 
   public ManageOfferSuccessResult Success {get; set;}
   public static void Encode(IByteWriter stream, ManageOfferResult encodedManageOfferResult) {

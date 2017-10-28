@@ -40,7 +40,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class LedgerKey  {
   public LedgerKey () {}
 
-  LedgerEntryType Discriminant { get; set; } = new LedgerEntryType();
+  public LedgerEntryType Discriminant { get; set; } = new LedgerEntryType();
 
   public LedgerKeyAccount Account {get; set;}
   public LedgerKeyTrustLine TrustLine {get; set;}

@@ -69,7 +69,7 @@ public class OfferEntry  {
   public class OfferEntryExt {
     public OfferEntryExt () {}
 
-    int Discriminant { get; set; } = new int();
+    public int Discriminant { get; set; } = new int();
 
     public static void Encode(IByteWriter stream, OfferEntryExt encodedOfferEntryExt) {
     XdrEncoding.EncodeInt32((int)encodedOfferEntryExt.Discriminant, stream);

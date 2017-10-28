@@ -18,7 +18,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class CreateAccountResult  {
   public CreateAccountResult () {}
 
-  CreateAccountResultCode Discriminant { get; set; } = new CreateAccountResultCode();
+  public CreateAccountResultCode Discriminant { get; set; } = new CreateAccountResultCode();
 
   public static void Encode(IByteWriter stream, CreateAccountResult encodedCreateAccountResult) {
   XdrEncoding.EncodeInt32((int)encodedCreateAccountResult.Discriminant.InnerValue, stream);

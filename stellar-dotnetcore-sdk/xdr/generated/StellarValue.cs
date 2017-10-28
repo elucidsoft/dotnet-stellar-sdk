@@ -61,7 +61,7 @@ public class StellarValue  {
   public class StellarValueExt {
     public StellarValueExt () {}
 
-    int Discriminant { get; set; } = new int();
+    public int Discriminant { get; set; } = new int();
 
     public static void Encode(IByteWriter stream, StellarValueExt encodedStellarValueExt) {
     XdrEncoding.EncodeInt32((int)encodedStellarValueExt.Discriminant, stream);

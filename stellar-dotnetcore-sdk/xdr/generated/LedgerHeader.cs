@@ -110,7 +110,7 @@ public class LedgerHeader  {
   public class LedgerHeaderExt {
     public LedgerHeaderExt () {}
 
-    int Discriminant { get; set; } = new int();
+    public int Discriminant { get; set; } = new int();
 
     public static void Encode(IByteWriter stream, LedgerHeaderExt encodedLedgerHeaderExt) {
     XdrEncoding.EncodeInt32((int)encodedLedgerHeaderExt.Discriminant, stream);

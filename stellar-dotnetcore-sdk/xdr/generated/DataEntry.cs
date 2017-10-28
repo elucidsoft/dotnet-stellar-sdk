@@ -47,7 +47,7 @@ public class DataEntry  {
   public class DataEntryExt {
     public DataEntryExt () {}
 
-    int Discriminant { get; set; } = new int();
+    public int Discriminant { get; set; } = new int();
 
     public static void Encode(IByteWriter stream, DataEntryExt encodedDataEntryExt) {
     XdrEncoding.EncodeInt32((int)encodedDataEntryExt.Discriminant, stream);

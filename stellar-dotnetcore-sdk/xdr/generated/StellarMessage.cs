@@ -44,7 +44,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class StellarMessage  {
   public StellarMessage () {}
 
-  MessageType Discriminant { get; set; } = new MessageType();
+  public MessageType Discriminant { get; set; } = new MessageType();
 
   public Error Error {get; set;}
   public Hello Hello {get; set;}

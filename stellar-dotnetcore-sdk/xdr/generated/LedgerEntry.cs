@@ -55,7 +55,7 @@ public class LedgerEntry  {
   public class LedgerEntryData {
     public LedgerEntryData () {}
 
-    LedgerEntryType Discriminant { get; set; } = new LedgerEntryType();
+    public LedgerEntryType Discriminant { get; set; } = new LedgerEntryType();
 
     public AccountEntry Account {get; set;}
     public TrustLineEntry TrustLine {get; set;}
@@ -103,7 +103,7 @@ public class LedgerEntry  {
   public class LedgerEntryExt {
     public LedgerEntryExt () {}
 
-    int Discriminant { get; set; } = new int();
+    public int Discriminant { get; set; } = new int();
 
     public static void Encode(IByteWriter stream, LedgerEntryExt encodedLedgerEntryExt) {
     XdrEncoding.EncodeInt32((int)encodedLedgerEntryExt.Discriminant, stream);

@@ -52,7 +52,7 @@ public class TransactionResult  {
   public class TransactionResultResult {
     public TransactionResultResult () {}
 
-    TransactionResultCode Discriminant { get; set; } = new TransactionResultCode();
+    public TransactionResultCode Discriminant { get; set; } = new TransactionResultCode();
 
     public OperationResult[] Results {get; set;}
     public static void Encode(IByteWriter stream, TransactionResultResult encodedTransactionResultResult) {
@@ -93,7 +93,7 @@ public class TransactionResult  {
   public class TransactionResultExt {
     public TransactionResultExt () {}
 
-    int Discriminant { get; set; } = new int();
+    public int Discriminant { get; set; } = new int();
 
     public static void Encode(IByteWriter stream, TransactionResultExt encodedTransactionResultExt) {
     XdrEncoding.EncodeInt32((int)encodedTransactionResultExt.Discriminant, stream);

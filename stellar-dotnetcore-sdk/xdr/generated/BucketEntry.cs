@@ -19,7 +19,7 @@ namespace stellar_dotnetcore_sdk.xdr {
 public class BucketEntry  {
   public BucketEntry () {}
 
-  BucketEntryType Discriminant { get; set; } = new BucketEntryType();
+  public BucketEntryType Discriminant { get; set; } = new BucketEntryType();
 
   public LedgerEntry LiveEntry {get; set;}
   public LedgerKey DeadEntry {get; set;}

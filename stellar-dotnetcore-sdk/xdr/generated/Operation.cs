@@ -69,7 +69,7 @@ public class Operation  {
   public class OperationBody {
     public OperationBody () {}
 
-    OperationType Discriminant { get; set; } = new OperationType();
+    public OperationType Discriminant { get; set; } = new OperationType();
 
     public CreateAccountOp CreateAccountOp {get; set;}
     public PaymentOp PaymentOp {get; set;}

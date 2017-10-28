@@ -84,7 +84,7 @@ public class Transaction  {
   public class TransactionExt {
     public TransactionExt () {}
 
-    int Discriminant { get; set; } = new int();
+    public int Discriminant { get; set; } = new int();
 
     public static void Encode(IByteWriter stream, TransactionExt encodedTransactionExt) {
     XdrEncoding.EncodeInt32((int)encodedTransactionExt.Discriminant, stream);
