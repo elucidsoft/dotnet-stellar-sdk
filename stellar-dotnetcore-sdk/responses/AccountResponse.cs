@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 using static stellar_dotnetcore_sdk.responses.JsonSingleton;
 
-namespace stellar_dotnetcore_sdk.responses
+namespace stellar_dotnetcore_sdk.responses.accountResponse
 {
-    public class AccountResponse
+    public class AccountResponse : Response
     {
         private AccountResponse() { }
 
@@ -57,6 +57,8 @@ namespace stellar_dotnetcore_sdk.responses
         {
             SequenceNumber++;
         }
+
+
     }
 
     /// <summary>
@@ -98,7 +100,6 @@ namespace stellar_dotnetcore_sdk.responses
         [JsonProperty(PropertyName = "auth_revocable")]
         public bool AuthRevocable { get; private set; }
     }
-
 
     /// <summary>
     /// Represents account balance.

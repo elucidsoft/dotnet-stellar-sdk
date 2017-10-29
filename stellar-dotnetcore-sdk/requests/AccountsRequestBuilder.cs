@@ -1,4 +1,4 @@
-﻿using stellar_dotnetcore_sdk.responses;
+﻿using stellar_dotnetcore_sdk.responses.accountResponse;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -22,10 +22,11 @@ namespace stellar_dotnetcore_sdk.requests
         public async Task<AccountResponse> Account(Uri uri)
         {
             var responseHandler = new ResponseHandler<AccountResponse>();
-            var httpClient = new HttpClient();
-
-            var response = await httpClient.GetAsync(uri);
-            return await responseHandler.HandleResponse(response);
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.GetAsync(uri);
+                return await responseHandler.HandleResponse(response);
+            }
         }
 
         public async Task<AccountResponse> Account(KeyPair account)
