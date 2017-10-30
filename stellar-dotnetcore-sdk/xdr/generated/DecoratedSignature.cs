@@ -18,11 +18,11 @@ public class DecoratedSignature  {
   public SignatureHint Hint {get; set;}
   public Signature Signature {get; set;}
 
-  public static void Encode(IByteWriter stream, DecoratedSignature encodedDecoratedSignature) {
+  public static void Encode(XdrDataOutputStream stream, DecoratedSignature encodedDecoratedSignature) {
     SignatureHint.Encode(stream, encodedDecoratedSignature.Hint);
     Signature.Encode(stream, encodedDecoratedSignature.Signature);
   }
-  public static DecoratedSignature Decode(IByteReader stream) {
+  public static DecoratedSignature Decode(XdrDataInputStream stream) {
     DecoratedSignature decodedDecoratedSignature = new DecoratedSignature();
     decodedDecoratedSignature.Hint = SignatureHint.Decode(stream);
     decodedDecoratedSignature.Signature = Signature.Decode(stream);

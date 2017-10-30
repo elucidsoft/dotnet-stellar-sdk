@@ -46,8 +46,8 @@ public class OperationResult  {
   public OperationResultCode Discriminant { get; set; } = new OperationResultCode();
 
   public OperationResultTr Tr {get; set;}
-  public static void Encode(IByteWriter stream, OperationResult encodedOperationResult) {
-  XdrEncoding.EncodeInt32((int)encodedOperationResult.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, OperationResult encodedOperationResult) {
+  stream.WriteInt((int)encodedOperationResult.Discriminant.InnerValue);
   switch (encodedOperationResult.Discriminant.InnerValue) {
   case OperationResultCode.OperationResultCodeEnum.opINNER:
   OperationResultTr.Encode(stream, encodedOperationResult.Tr);
@@ -56,7 +56,7 @@ public class OperationResult  {
   break;
   }
   }
-  public static OperationResult Decode(IByteReader stream) {
+  public static OperationResult Decode(XdrDataInputStream stream) {
   OperationResult decodedOperationResult = new OperationResult();
   OperationResultCode discriminant = OperationResultCode.Decode(stream);
   decodedOperationResult.Discriminant = discriminant;
@@ -86,8 +86,8 @@ public class OperationResult  {
     public AccountMergeResult AccountMergeResult {get; set;}
     public InflationResult InflationResult {get; set;}
     public ManageDataResult ManageDataResult {get; set;}
-    public static void Encode(IByteWriter stream, OperationResultTr encodedOperationResultTr) {
-    XdrEncoding.EncodeInt32((int)encodedOperationResultTr.Discriminant.InnerValue, stream);
+    public static void Encode(XdrDataOutputStream stream, OperationResultTr encodedOperationResultTr) {
+    stream.WriteInt((int)encodedOperationResultTr.Discriminant.InnerValue);
     switch (encodedOperationResultTr.Discriminant.InnerValue) {
     case OperationType.OperationTypeEnum.CREATE_ACCOUNT:
     CreateAccountResult.Encode(stream, encodedOperationResultTr.CreateAccountResult);
@@ -124,7 +124,7 @@ public class OperationResult  {
     break;
     }
     }
-    public static OperationResultTr Decode(IByteReader stream) {
+    public static OperationResultTr Decode(XdrDataInputStream stream) {
     OperationResultTr decodedOperationResultTr = new OperationResultTr();
     OperationType discriminant = OperationType.Decode(stream);
     decodedOperationResultTr.Discriminant = discriminant;

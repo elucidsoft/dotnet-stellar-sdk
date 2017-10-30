@@ -24,15 +24,15 @@ public class AuthenticatedMessage  {
   public Uint32 Discriminant { get; set; } = new Uint32();
 
   public AuthenticatedMessageV0 V0 {get; set;}
-  public static void Encode(IByteWriter stream, AuthenticatedMessage encodedAuthenticatedMessage) {
-  XdrEncoding.EncodeInt32((int)encodedAuthenticatedMessage.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, AuthenticatedMessage encodedAuthenticatedMessage) {
+  stream.WriteInt((int)encodedAuthenticatedMessage.Discriminant.InnerValue);
   switch (encodedAuthenticatedMessage.Discriminant.InnerValue) {
   case 0:
   AuthenticatedMessageV0.Encode(stream, encodedAuthenticatedMessage.V0);
   break;
   }
   }
-  public static AuthenticatedMessage Decode(IByteReader stream) {
+  public static AuthenticatedMessage Decode(XdrDataInputStream stream) {
   AuthenticatedMessage decodedAuthenticatedMessage = new AuthenticatedMessage();
   Uint32 discriminant = Uint32.Decode(stream);
   decodedAuthenticatedMessage.Discriminant = discriminant;
@@ -50,12 +50,12 @@ public class AuthenticatedMessage  {
     public StellarMessage Message {get; set;}
     public HmacSha256Mac Mac {get; set;}
 
-    public static void Encode(IByteWriter stream, AuthenticatedMessageV0 encodedAuthenticatedMessageV0) {
+    public static void Encode(XdrDataOutputStream stream, AuthenticatedMessageV0 encodedAuthenticatedMessageV0) {
       Uint64.Encode(stream, encodedAuthenticatedMessageV0.Sequence);
       StellarMessage.Encode(stream, encodedAuthenticatedMessageV0.Message);
       HmacSha256Mac.Encode(stream, encodedAuthenticatedMessageV0.Mac);
     }
-    public static AuthenticatedMessageV0 Decode(IByteReader stream) {
+    public static AuthenticatedMessageV0 Decode(XdrDataInputStream stream) {
       AuthenticatedMessageV0 decodedAuthenticatedMessageV0 = new AuthenticatedMessageV0();
       decodedAuthenticatedMessageV0.Sequence = Uint64.Decode(stream);
       decodedAuthenticatedMessageV0.Message = StellarMessage.Decode(stream);

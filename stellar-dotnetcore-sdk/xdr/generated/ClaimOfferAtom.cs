@@ -31,7 +31,7 @@ public class ClaimOfferAtom  {
   public Asset AssetBought {get; set;}
   public Int64 AmountBought {get; set;}
 
-  public static void Encode(IByteWriter stream, ClaimOfferAtom encodedClaimOfferAtom) {
+  public static void Encode(XdrDataOutputStream stream, ClaimOfferAtom encodedClaimOfferAtom) {
     AccountID.Encode(stream, encodedClaimOfferAtom.SellerID);
     Uint64.Encode(stream, encodedClaimOfferAtom.OfferID);
     Asset.Encode(stream, encodedClaimOfferAtom.AssetSold);
@@ -39,7 +39,7 @@ public class ClaimOfferAtom  {
     Asset.Encode(stream, encodedClaimOfferAtom.AssetBought);
     Int64.Encode(stream, encodedClaimOfferAtom.AmountBought);
   }
-  public static ClaimOfferAtom Decode(IByteReader stream) {
+  public static ClaimOfferAtom Decode(XdrDataInputStream stream) {
     ClaimOfferAtom decodedClaimOfferAtom = new ClaimOfferAtom();
     decodedClaimOfferAtom.SellerID = AccountID.Decode(stream);
     decodedClaimOfferAtom.OfferID = Uint64.Decode(stream);

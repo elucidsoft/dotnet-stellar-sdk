@@ -20,8 +20,8 @@ public class SetOptionsResult  {
 
   public SetOptionsResultCode Discriminant { get; set; } = new SetOptionsResultCode();
 
-  public static void Encode(IByteWriter stream, SetOptionsResult encodedSetOptionsResult) {
-  XdrEncoding.EncodeInt32((int)encodedSetOptionsResult.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, SetOptionsResult encodedSetOptionsResult) {
+  stream.WriteInt((int)encodedSetOptionsResult.Discriminant.InnerValue);
   switch (encodedSetOptionsResult.Discriminant.InnerValue) {
   case SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_SUCCESS:
   break;
@@ -29,7 +29,7 @@ public class SetOptionsResult  {
   break;
   }
   }
-  public static SetOptionsResult Decode(IByteReader stream) {
+  public static SetOptionsResult Decode(XdrDataInputStream stream) {
   SetOptionsResult decodedSetOptionsResult = new SetOptionsResult();
   SetOptionsResultCode discriminant = SetOptionsResultCode.Decode(stream);
   decodedSetOptionsResult.Discriminant = discriminant;

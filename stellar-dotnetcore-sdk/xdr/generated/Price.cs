@@ -18,11 +18,11 @@ public class Price  {
   public Int32 N {get; set;}
   public Int32 D {get; set;}
 
-  public static void Encode(IByteWriter stream, Price encodedPrice) {
+  public static void Encode(XdrDataOutputStream stream, Price encodedPrice) {
     Int32.Encode(stream, encodedPrice.N);
     Int32.Encode(stream, encodedPrice.D);
   }
-  public static Price Decode(IByteReader stream) {
+  public static Price Decode(XdrDataInputStream stream) {
     Price decodedPrice = new Price();
     decodedPrice.N = Int32.Decode(stream);
     decodedPrice.D = Int32.Decode(stream);

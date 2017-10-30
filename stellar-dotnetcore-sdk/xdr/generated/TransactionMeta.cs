@@ -19,25 +19,25 @@ public class TransactionMeta  {
   public int Discriminant { get; set; } = new int();
 
   public OperationMeta[] Operations {get; set;}
-  public static void Encode(IByteWriter stream, TransactionMeta encodedTransactionMeta) {
-  XdrEncoding.EncodeInt32((int)encodedTransactionMeta.Discriminant, stream);
+  public static void Encode(XdrDataOutputStream stream, TransactionMeta encodedTransactionMeta) {
+  stream.WriteInt((int)encodedTransactionMeta.Discriminant);
   switch (encodedTransactionMeta.Discriminant) {
   case 0:
   int operationssize = encodedTransactionMeta.Operations.Length;
-  XdrEncoding.EncodeInt32(operationssize, stream);
+  stream.WriteInt(operationssize);
   for (int i = 0; i < operationssize; i++) {
     OperationMeta.Encode(stream, encodedTransactionMeta.Operations[i]);
   }
   break;
   }
   }
-  public static TransactionMeta Decode(IByteReader stream) {
+  public static TransactionMeta Decode(XdrDataInputStream stream) {
   TransactionMeta decodedTransactionMeta = new TransactionMeta();
-  int discriminant =  XdrEncoding.DecodeInt32(stream);
+  int discriminant =  stream.ReadInt();
   decodedTransactionMeta.Discriminant = discriminant;
   switch (decodedTransactionMeta.Discriminant) {
   case 0:
-  int operationssize = XdrEncoding.DecodeInt32(stream);
+  int operationssize = stream.ReadInt();
   decodedTransactionMeta.Operations = new OperationMeta[operationssize];
   for (int i = 0; i < operationssize; i++) {
     decodedTransactionMeta.Operations[i] = OperationMeta.Decode(stream);

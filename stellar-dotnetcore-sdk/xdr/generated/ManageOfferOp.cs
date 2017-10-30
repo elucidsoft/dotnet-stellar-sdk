@@ -26,14 +26,14 @@ public class ManageOfferOp  {
   public Price Price {get; set;}
   public Uint64 OfferID {get; set;}
 
-  public static void Encode(IByteWriter stream, ManageOfferOp encodedManageOfferOp) {
+  public static void Encode(XdrDataOutputStream stream, ManageOfferOp encodedManageOfferOp) {
     Asset.Encode(stream, encodedManageOfferOp.Selling);
     Asset.Encode(stream, encodedManageOfferOp.Buying);
     Int64.Encode(stream, encodedManageOfferOp.Amount);
     Price.Encode(stream, encodedManageOfferOp.Price);
     Uint64.Encode(stream, encodedManageOfferOp.OfferID);
   }
-  public static ManageOfferOp Decode(IByteReader stream) {
+  public static ManageOfferOp Decode(XdrDataInputStream stream) {
     ManageOfferOp decodedManageOfferOp = new ManageOfferOp();
     decodedManageOfferOp.Selling = Asset.Decode(stream);
     decodedManageOfferOp.Buying = Asset.Decode(stream);

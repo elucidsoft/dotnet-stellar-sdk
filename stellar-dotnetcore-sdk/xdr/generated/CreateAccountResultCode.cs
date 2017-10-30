@@ -37,8 +37,8 @@ public class CreateAccountResultCode  {
     };
   }
 
-  public static CreateAccountResultCode Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static CreateAccountResultCode Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(CreateAccountResultCodeEnum.CREATE_ACCOUNT_SUCCESS);
       case -1: return Create(CreateAccountResultCodeEnum.CREATE_ACCOUNT_MALFORMED);
@@ -50,8 +50,8 @@ public class CreateAccountResultCode  {
     }
   }
 
-  public static void Encode(IByteWriter stream, CreateAccountResultCode value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, CreateAccountResultCode value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

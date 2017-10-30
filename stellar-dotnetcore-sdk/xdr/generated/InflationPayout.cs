@@ -18,11 +18,11 @@ public class InflationPayout  {
   public AccountID Destination {get; set;}
   public Int64 Amount {get; set;}
 
-  public static void Encode(IByteWriter stream, InflationPayout encodedInflationPayout) {
+  public static void Encode(XdrDataOutputStream stream, InflationPayout encodedInflationPayout) {
     AccountID.Encode(stream, encodedInflationPayout.Destination);
     Int64.Encode(stream, encodedInflationPayout.Amount);
   }
-  public static InflationPayout Decode(IByteReader stream) {
+  public static InflationPayout Decode(XdrDataInputStream stream) {
     InflationPayout decodedInflationPayout = new InflationPayout();
     decodedInflationPayout.Destination = AccountID.Decode(stream);
     decodedInflationPayout.Amount = Int64.Decode(stream);

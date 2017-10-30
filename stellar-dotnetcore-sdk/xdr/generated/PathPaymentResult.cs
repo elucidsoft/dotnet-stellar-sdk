@@ -28,8 +28,8 @@ public class PathPaymentResult  {
 
   public PathPaymentResultSuccess Success {get; set;}
   public Asset NoIssuer {get; set;}
-  public static void Encode(IByteWriter stream, PathPaymentResult encodedPathPaymentResult) {
-  XdrEncoding.EncodeInt32((int)encodedPathPaymentResult.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, PathPaymentResult encodedPathPaymentResult) {
+  stream.WriteInt((int)encodedPathPaymentResult.Discriminant.InnerValue);
   switch (encodedPathPaymentResult.Discriminant.InnerValue) {
   case PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SUCCESS:
   PathPaymentResultSuccess.Encode(stream, encodedPathPaymentResult.Success);
@@ -41,7 +41,7 @@ public class PathPaymentResult  {
   break;
   }
   }
-  public static PathPaymentResult Decode(IByteReader stream) {
+  public static PathPaymentResult Decode(XdrDataInputStream stream) {
   PathPaymentResult decodedPathPaymentResult = new PathPaymentResult();
   PathPaymentResultCode discriminant = PathPaymentResultCode.Decode(stream);
   decodedPathPaymentResult.Discriminant = discriminant;
@@ -63,17 +63,17 @@ public class PathPaymentResult  {
     public ClaimOfferAtom[] Offers {get; set;}
     public SimplePaymentResult Last {get; set;}
 
-    public static void Encode(IByteWriter stream, PathPaymentResultSuccess encodedPathPaymentResultSuccess) {
+    public static void Encode(XdrDataOutputStream stream, PathPaymentResultSuccess encodedPathPaymentResultSuccess) {
       int offerssize = encodedPathPaymentResultSuccess.Offers.Length;
-      XdrEncoding.EncodeInt32(offerssize, stream);
+      stream.WriteInt(offerssize);
       for (int i = 0; i < offerssize; i++) {
         ClaimOfferAtom.Encode(stream, encodedPathPaymentResultSuccess.Offers[i]);
       }
       SimplePaymentResult.Encode(stream, encodedPathPaymentResultSuccess.Last);
     }
-    public static PathPaymentResultSuccess Decode(IByteReader stream) {
+    public static PathPaymentResultSuccess Decode(XdrDataInputStream stream) {
       PathPaymentResultSuccess decodedPathPaymentResultSuccess = new PathPaymentResultSuccess();
-      int offerssize = XdrEncoding.DecodeInt32(stream);
+      int offerssize = stream.ReadInt();
       decodedPathPaymentResultSuccess.Offers = new ClaimOfferAtom[offerssize];
       for (int i = 0; i < offerssize; i++) {
         decodedPathPaymentResultSuccess.Offers[i] = ClaimOfferAtom.Decode(stream);

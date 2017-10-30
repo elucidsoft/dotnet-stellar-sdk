@@ -52,12 +52,12 @@ public class SCPStatement  {
   public Uint64 SlotIndex {get; set;}
   public SCPStatementPledges Pledges {get; set;}
 
-  public static void Encode(IByteWriter stream, SCPStatement encodedSCPStatement) {
+  public static void Encode(XdrDataOutputStream stream, SCPStatement encodedSCPStatement) {
     NodeID.Encode(stream, encodedSCPStatement.NodeID);
     Uint64.Encode(stream, encodedSCPStatement.SlotIndex);
     SCPStatementPledges.Encode(stream, encodedSCPStatement.Pledges);
   }
-  public static SCPStatement Decode(IByteReader stream) {
+  public static SCPStatement Decode(XdrDataInputStream stream) {
     SCPStatement decodedSCPStatement = new SCPStatement();
     decodedSCPStatement.NodeID = NodeID.Decode(stream);
     decodedSCPStatement.SlotIndex = Uint64.Decode(stream);
@@ -74,8 +74,8 @@ public class SCPStatement  {
     public SCPStatementConfirm Confirm {get; set;}
     public SCPStatementExternalize Externalize {get; set;}
     public SCPNomination Nominate {get; set;}
-    public static void Encode(IByteWriter stream, SCPStatementPledges encodedSCPStatementPledges) {
-    XdrEncoding.EncodeInt32((int)encodedSCPStatementPledges.Discriminant.InnerValue, stream);
+    public static void Encode(XdrDataOutputStream stream, SCPStatementPledges encodedSCPStatementPledges) {
+    stream.WriteInt((int)encodedSCPStatementPledges.Discriminant.InnerValue);
     switch (encodedSCPStatementPledges.Discriminant.InnerValue) {
     case SCPStatementType.SCPStatementTypeEnum.SCP_ST_PREPARE:
     SCPStatementPrepare.Encode(stream, encodedSCPStatementPledges.Prepare);
@@ -91,7 +91,7 @@ public class SCPStatement  {
     break;
     }
     }
-    public static SCPStatementPledges Decode(IByteReader stream) {
+    public static SCPStatementPledges Decode(XdrDataInputStream stream) {
     SCPStatementPledges decodedSCPStatementPledges = new SCPStatementPledges();
     SCPStatementType discriminant = SCPStatementType.Decode(stream);
     decodedSCPStatementPledges.Discriminant = discriminant;
@@ -121,33 +121,33 @@ public class SCPStatement  {
       public Uint32 NC {get; set;}
       public Uint32 NH {get; set;}
 
-      public static void Encode(IByteWriter stream, SCPStatementPrepare encodedSCPStatementPrepare) {
+      public static void Encode(XdrDataOutputStream stream, SCPStatementPrepare encodedSCPStatementPrepare) {
         Hash.Encode(stream, encodedSCPStatementPrepare.QuorumSetHash);
         SCPBallot.Encode(stream, encodedSCPStatementPrepare.Ballot);
         if (encodedSCPStatementPrepare.Prepared != null) {
-        XdrEncoding.EncodeInt32(1, stream);
+        stream.WriteInt(1);
         SCPBallot.Encode(stream, encodedSCPStatementPrepare.Prepared);
         } else {
-        XdrEncoding.EncodeInt32(0, stream);
+        stream.WriteInt(0);
         }
         if (encodedSCPStatementPrepare.PreparedPrime != null) {
-        XdrEncoding.EncodeInt32(1, stream);
+        stream.WriteInt(1);
         SCPBallot.Encode(stream, encodedSCPStatementPrepare.PreparedPrime);
         } else {
-        XdrEncoding.EncodeInt32(0, stream);
+        stream.WriteInt(0);
         }
         Uint32.Encode(stream, encodedSCPStatementPrepare.NC);
         Uint32.Encode(stream, encodedSCPStatementPrepare.NH);
       }
-      public static SCPStatementPrepare Decode(IByteReader stream) {
+      public static SCPStatementPrepare Decode(XdrDataInputStream stream) {
         SCPStatementPrepare decodedSCPStatementPrepare = new SCPStatementPrepare();
         decodedSCPStatementPrepare.QuorumSetHash = Hash.Decode(stream);
         decodedSCPStatementPrepare.Ballot = SCPBallot.Decode(stream);
-        int PreparedPresent = XdrEncoding.DecodeInt32(stream);
+        int PreparedPresent = stream.ReadInt();
         if (PreparedPresent != 0) {
         decodedSCPStatementPrepare.Prepared = SCPBallot.Decode(stream);
         }
-        int PreparedPrimePresent = XdrEncoding.DecodeInt32(stream);
+        int PreparedPrimePresent = stream.ReadInt();
         if (PreparedPrimePresent != 0) {
         decodedSCPStatementPrepare.PreparedPrime = SCPBallot.Decode(stream);
         }
@@ -165,14 +165,14 @@ public class SCPStatement  {
       public Uint32 NH {get; set;}
       public Hash QuorumSetHash {get; set;}
 
-      public static void Encode(IByteWriter stream, SCPStatementConfirm encodedSCPStatementConfirm) {
+      public static void Encode(XdrDataOutputStream stream, SCPStatementConfirm encodedSCPStatementConfirm) {
         SCPBallot.Encode(stream, encodedSCPStatementConfirm.Ballot);
         Uint32.Encode(stream, encodedSCPStatementConfirm.NPrepared);
         Uint32.Encode(stream, encodedSCPStatementConfirm.NCommit);
         Uint32.Encode(stream, encodedSCPStatementConfirm.NH);
         Hash.Encode(stream, encodedSCPStatementConfirm.QuorumSetHash);
       }
-      public static SCPStatementConfirm Decode(IByteReader stream) {
+      public static SCPStatementConfirm Decode(XdrDataInputStream stream) {
         SCPStatementConfirm decodedSCPStatementConfirm = new SCPStatementConfirm();
         decodedSCPStatementConfirm.Ballot = SCPBallot.Decode(stream);
         decodedSCPStatementConfirm.NPrepared = Uint32.Decode(stream);
@@ -189,12 +189,12 @@ public class SCPStatement  {
       public Uint32 NH {get; set;}
       public Hash CommitQuorumSetHash {get; set;}
 
-      public static void Encode(IByteWriter stream, SCPStatementExternalize encodedSCPStatementExternalize) {
+      public static void Encode(XdrDataOutputStream stream, SCPStatementExternalize encodedSCPStatementExternalize) {
         SCPBallot.Encode(stream, encodedSCPStatementExternalize.Commit);
         Uint32.Encode(stream, encodedSCPStatementExternalize.NH);
         Hash.Encode(stream, encodedSCPStatementExternalize.CommitQuorumSetHash);
       }
-      public static SCPStatementExternalize Decode(IByteReader stream) {
+      public static SCPStatementExternalize Decode(XdrDataInputStream stream) {
         SCPStatementExternalize decodedSCPStatementExternalize = new SCPStatementExternalize();
         decodedSCPStatementExternalize.Commit = SCPBallot.Decode(stream);
         decodedSCPStatementExternalize.NH = Uint32.Decode(stream);

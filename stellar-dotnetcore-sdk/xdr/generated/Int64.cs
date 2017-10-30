@@ -19,12 +19,12 @@ public class Int64  {
     InnerValue = value;
   }
 
-  public static void Encode(IByteWriter stream, Int64  encodedInt64) {
-  XdrEncoding.EncodeInt64(encodedInt64.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, Int64  encodedInt64) {
+  stream.WriteLong(encodedInt64.InnerValue);
   }
-  public static Int64 Decode(IByteReader stream) {
+  public static Int64 Decode(XdrDataInputStream stream) {
     Int64 decodedInt64 = new Int64();
-  decodedInt64.InnerValue = XdrEncoding.DecodeInt64(stream);
+  decodedInt64.InnerValue = stream.ReadLong();
     return decodedInt64;
   }
 }

@@ -29,8 +29,8 @@ public class EnvelopeType  {
     };
   }
 
-  public static EnvelopeType Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static EnvelopeType Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 1: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_SCP);
       case 2: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_TX);
@@ -40,8 +40,8 @@ public class EnvelopeType  {
     }
   }
 
-  public static void Encode(IByteWriter stream, EnvelopeType value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, EnvelopeType value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

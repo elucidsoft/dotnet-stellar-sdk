@@ -58,8 +58,8 @@ public class StellarMessage  {
   public SCPQuorumSet QSet {get; set;}
   public SCPEnvelope Envelope {get; set;}
   public Uint32 GetSCPLedgerSeq {get; set;}
-  public static void Encode(IByteWriter stream, StellarMessage encodedStellarMessage) {
-  XdrEncoding.EncodeInt32((int)encodedStellarMessage.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, StellarMessage encodedStellarMessage) {
+  stream.WriteInt((int)encodedStellarMessage.Discriminant.InnerValue);
   switch (encodedStellarMessage.Discriminant.InnerValue) {
   case MessageType.MessageTypeEnum.ERROR_MSG:
   Error.Encode(stream, encodedStellarMessage.Error);
@@ -77,7 +77,7 @@ public class StellarMessage  {
   break;
   case MessageType.MessageTypeEnum.PEERS:
   int peerssize = encodedStellarMessage.Peers.Length;
-  XdrEncoding.EncodeInt32(peerssize, stream);
+  stream.WriteInt(peerssize);
   for (int i = 0; i < peerssize; i++) {
     PeerAddress.Encode(stream, encodedStellarMessage.Peers[i]);
   }
@@ -105,7 +105,7 @@ public class StellarMessage  {
   break;
   }
   }
-  public static StellarMessage Decode(IByteReader stream) {
+  public static StellarMessage Decode(XdrDataInputStream stream) {
   StellarMessage decodedStellarMessage = new StellarMessage();
   MessageType discriminant = MessageType.Decode(stream);
   decodedStellarMessage.Discriminant = discriminant;
@@ -125,7 +125,7 @@ public class StellarMessage  {
   case MessageType.MessageTypeEnum.GET_PEERS:
   break;
   case MessageType.MessageTypeEnum.PEERS:
-  int peerssize = XdrEncoding.DecodeInt32(stream);
+  int peerssize = stream.ReadInt();
   decodedStellarMessage.Peers = new PeerAddress[peerssize];
   for (int i = 0; i < peerssize; i++) {
     decodedStellarMessage.Peers[i] = PeerAddress.Decode(stream);

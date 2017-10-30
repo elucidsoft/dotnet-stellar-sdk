@@ -38,8 +38,8 @@ public class AllowTrustResultCode  {
     };
   }
 
-  public static AllowTrustResultCode Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static AllowTrustResultCode Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(AllowTrustResultCodeEnum.ALLOW_TRUST_SUCCESS);
       case -1: return Create(AllowTrustResultCodeEnum.ALLOW_TRUST_MALFORMED);
@@ -52,8 +52,8 @@ public class AllowTrustResultCode  {
     }
   }
 
-  public static void Encode(IByteWriter stream, AllowTrustResultCode value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, AllowTrustResultCode value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

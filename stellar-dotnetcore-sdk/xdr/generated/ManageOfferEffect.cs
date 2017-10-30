@@ -29,8 +29,8 @@ public class ManageOfferEffect  {
     };
   }
 
-  public static ManageOfferEffect Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static ManageOfferEffect Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(ManageOfferEffectEnum.MANAGE_OFFER_CREATED);
       case 1: return Create(ManageOfferEffectEnum.MANAGE_OFFER_UPDATED);
@@ -40,8 +40,8 @@ public class ManageOfferEffect  {
     }
   }
 
-  public static void Encode(IByteWriter stream, ManageOfferEffect value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, ManageOfferEffect value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

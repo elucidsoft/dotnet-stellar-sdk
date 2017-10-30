@@ -32,16 +32,16 @@ public class AllowTrustOp  {
   public AllowTrustOpAsset Asset {get; set;}
   public bool Authorize {get; set;}
 
-  public static void Encode(IByteWriter stream, AllowTrustOp encodedAllowTrustOp) {
+  public static void Encode(XdrDataOutputStream stream, AllowTrustOp encodedAllowTrustOp) {
     AccountID.Encode(stream, encodedAllowTrustOp.Trustor);
     AllowTrustOpAsset.Encode(stream, encodedAllowTrustOp.Asset);
-    XdrEncoding.WriteBool(stream, encodedAllowTrustOp.Authorize);
+    stream.WriteInt(encodedAllowTrustOp.Authorize ? 1 : 0);
   }
-  public static AllowTrustOp Decode(IByteReader stream) {
+  public static AllowTrustOp Decode(XdrDataInputStream stream) {
     AllowTrustOp decodedAllowTrustOp = new AllowTrustOp();
     decodedAllowTrustOp.Trustor = AccountID.Decode(stream);
     decodedAllowTrustOp.Asset = AllowTrustOpAsset.Decode(stream);
-    decodedAllowTrustOp.Authorize = XdrEncoding.ReadBool(stream);
+    decodedAllowTrustOp.Authorize = stream.ReadInt() == 1 ? true : false;
     return decodedAllowTrustOp;
   }
 
@@ -52,20 +52,20 @@ public class AllowTrustOp  {
 
     public byte[] AssetCode4 {get; set;}
     public byte[] AssetCode12 {get; set;}
-    public static void Encode(IByteWriter stream, AllowTrustOpAsset encodedAllowTrustOpAsset) {
-    XdrEncoding.EncodeInt32((int)encodedAllowTrustOpAsset.Discriminant.InnerValue, stream);
+    public static void Encode(XdrDataOutputStream stream, AllowTrustOpAsset encodedAllowTrustOpAsset) {
+    stream.WriteInt((int)encodedAllowTrustOpAsset.Discriminant.InnerValue);
     switch (encodedAllowTrustOpAsset.Discriminant.InnerValue) {
     case AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4:
     int assetCode4size = encodedAllowTrustOpAsset.AssetCode4.Length;
-    XdrEncoding.WriteFixOpaque(stream, (uint)assetCode4size, encodedAllowTrustOpAsset.AssetCode4);
+    stream.Write(encodedAllowTrustOpAsset.AssetCode4, 0, assetCode4size);
     break;
     case AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12:
     int assetCode12size = encodedAllowTrustOpAsset.AssetCode12.Length;
-    XdrEncoding.WriteFixOpaque(stream, (uint)assetCode12size, encodedAllowTrustOpAsset.AssetCode12);
+    stream.Write(encodedAllowTrustOpAsset.AssetCode12, 0, assetCode12size);
     break;
     }
     }
-    public static AllowTrustOpAsset Decode(IByteReader stream) {
+    public static AllowTrustOpAsset Decode(XdrDataInputStream stream) {
     AllowTrustOpAsset decodedAllowTrustOpAsset = new AllowTrustOpAsset();
     AssetType discriminant = AssetType.Decode(stream);
     decodedAllowTrustOpAsset.Discriminant = discriminant;
@@ -73,12 +73,12 @@ public class AllowTrustOp  {
     case AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4:
     int assetCode4size = 4;
     decodedAllowTrustOpAsset.AssetCode4 = new byte[assetCode4size];
-      XdrEncoding.ReadFixOpaque(stream, (uint)assetCode4size);
+    stream.Read(decodedAllowTrustOpAsset.AssetCode4,0,assetCode4size);
     break;
     case AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12:
     int assetCode12size = 12;
     decodedAllowTrustOpAsset.AssetCode12 = new byte[assetCode12size];
-      XdrEncoding.ReadFixOpaque(stream, (uint)assetCode12size);
+    stream.Read(decodedAllowTrustOpAsset.AssetCode12,0,assetCode12size);
     break;
     }
       return decodedAllowTrustOpAsset;

@@ -20,12 +20,12 @@ public class AuthCert  {
   public Uint64 Expiration {get; set;}
   public Signature Sig {get; set;}
 
-  public static void Encode(IByteWriter stream, AuthCert encodedAuthCert) {
+  public static void Encode(XdrDataOutputStream stream, AuthCert encodedAuthCert) {
     Curve25519Public.Encode(stream, encodedAuthCert.Pubkey);
     Uint64.Encode(stream, encodedAuthCert.Expiration);
     Signature.Encode(stream, encodedAuthCert.Sig);
   }
-  public static AuthCert Decode(IByteReader stream) {
+  public static AuthCert Decode(XdrDataInputStream stream) {
     AuthCert decodedAuthCert = new AuthCert();
     decodedAuthCert.Pubkey = Curve25519Public.Decode(stream);
     decodedAuthCert.Expiration = Uint64.Decode(stream);

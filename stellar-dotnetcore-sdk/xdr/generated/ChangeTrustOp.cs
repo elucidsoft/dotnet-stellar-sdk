@@ -20,11 +20,11 @@ public class ChangeTrustOp  {
   public Asset Line {get; set;}
   public Int64 Limit {get; set;}
 
-  public static void Encode(IByteWriter stream, ChangeTrustOp encodedChangeTrustOp) {
+  public static void Encode(XdrDataOutputStream stream, ChangeTrustOp encodedChangeTrustOp) {
     Asset.Encode(stream, encodedChangeTrustOp.Line);
     Int64.Encode(stream, encodedChangeTrustOp.Limit);
   }
-  public static ChangeTrustOp Decode(IByteReader stream) {
+  public static ChangeTrustOp Decode(XdrDataInputStream stream) {
     ChangeTrustOp decodedChangeTrustOp = new ChangeTrustOp();
     decodedChangeTrustOp.Line = Asset.Decode(stream);
     decodedChangeTrustOp.Limit = Int64.Decode(stream);

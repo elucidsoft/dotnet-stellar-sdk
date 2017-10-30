@@ -29,8 +29,8 @@ public class LedgerUpgradeType  {
     };
   }
 
-  public static LedgerUpgradeType Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static LedgerUpgradeType Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 1: return Create(LedgerUpgradeTypeEnum.LEDGER_UPGRADE_VERSION);
       case 2: return Create(LedgerUpgradeTypeEnum.LEDGER_UPGRADE_BASE_FEE);
@@ -40,8 +40,8 @@ public class LedgerUpgradeType  {
     }
   }
 
-  public static void Encode(IByteWriter stream, LedgerUpgradeType value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, LedgerUpgradeType value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

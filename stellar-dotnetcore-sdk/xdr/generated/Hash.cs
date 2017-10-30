@@ -19,15 +19,15 @@ public class Hash  {
     InnerValue = value;
   }
 
-  public static void Encode(IByteWriter stream, Hash  encodedHash) {
+  public static void Encode(XdrDataOutputStream stream, Hash  encodedHash) {
   int Hashsize = encodedHash.InnerValue.Length;
-  XdrEncoding.WriteFixOpaque(stream, (uint)Hashsize, encodedHash.InnerValue);
+  stream.Write(encodedHash.InnerValue, 0, Hashsize);
   }
-  public static Hash Decode(IByteReader stream) {
+  public static Hash Decode(XdrDataInputStream stream) {
     Hash decodedHash = new Hash();
   int Hashsize = 32;
   decodedHash.InnerValue = new byte[Hashsize];
-  XdrEncoding.ReadFixOpaque(stream, (uint)Hashsize);
+  stream.Read(decodedHash.InnerValue, 0, Hashsize);
     return decodedHash;
   }
 }

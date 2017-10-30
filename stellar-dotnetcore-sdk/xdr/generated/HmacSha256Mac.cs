@@ -16,15 +16,15 @@ public class HmacSha256Mac  {
   public HmacSha256Mac () {}
   public byte[] Mac {get; set;}
 
-  public static void Encode(IByteWriter stream, HmacSha256Mac encodedHmacSha256Mac) {
+  public static void Encode(XdrDataOutputStream stream, HmacSha256Mac encodedHmacSha256Mac) {
     int macsize = encodedHmacSha256Mac.Mac.Length;
-    XdrEncoding.WriteFixOpaque(stream, (uint)macsize, encodedHmacSha256Mac.Mac);
+    stream.Write(encodedHmacSha256Mac.Mac, 0, macsize);
   }
-  public static HmacSha256Mac Decode(IByteReader stream) {
+  public static HmacSha256Mac Decode(XdrDataInputStream stream) {
     HmacSha256Mac decodedHmacSha256Mac = new HmacSha256Mac();
     int macsize = 32;
     decodedHmacSha256Mac.Mac = new byte[macsize];
-      XdrEncoding.ReadFixOpaque(stream, (uint)macsize);
+    stream.Read(decodedHmacSha256Mac.Mac,0,macsize);
     return decodedHmacSha256Mac;
   }
 }

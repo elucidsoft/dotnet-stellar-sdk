@@ -27,12 +27,12 @@ public class TransactionHistoryResultEntry  {
   public TransactionResultSet TxResultSet {get; set;}
   public TransactionHistoryResultEntryExt Ext {get; set;}
 
-  public static void Encode(IByteWriter stream, TransactionHistoryResultEntry encodedTransactionHistoryResultEntry) {
+  public static void Encode(XdrDataOutputStream stream, TransactionHistoryResultEntry encodedTransactionHistoryResultEntry) {
     Uint32.Encode(stream, encodedTransactionHistoryResultEntry.LedgerSeq);
     TransactionResultSet.Encode(stream, encodedTransactionHistoryResultEntry.TxResultSet);
     TransactionHistoryResultEntryExt.Encode(stream, encodedTransactionHistoryResultEntry.Ext);
   }
-  public static TransactionHistoryResultEntry Decode(IByteReader stream) {
+  public static TransactionHistoryResultEntry Decode(XdrDataInputStream stream) {
     TransactionHistoryResultEntry decodedTransactionHistoryResultEntry = new TransactionHistoryResultEntry();
     decodedTransactionHistoryResultEntry.LedgerSeq = Uint32.Decode(stream);
     decodedTransactionHistoryResultEntry.TxResultSet = TransactionResultSet.Decode(stream);
@@ -45,16 +45,16 @@ public class TransactionHistoryResultEntry  {
 
     public int Discriminant { get; set; } = new int();
 
-    public static void Encode(IByteWriter stream, TransactionHistoryResultEntryExt encodedTransactionHistoryResultEntryExt) {
-    XdrEncoding.EncodeInt32((int)encodedTransactionHistoryResultEntryExt.Discriminant, stream);
+    public static void Encode(XdrDataOutputStream stream, TransactionHistoryResultEntryExt encodedTransactionHistoryResultEntryExt) {
+    stream.WriteInt((int)encodedTransactionHistoryResultEntryExt.Discriminant);
     switch (encodedTransactionHistoryResultEntryExt.Discriminant) {
     case 0:
     break;
     }
     }
-    public static TransactionHistoryResultEntryExt Decode(IByteReader stream) {
+    public static TransactionHistoryResultEntryExt Decode(XdrDataInputStream stream) {
     TransactionHistoryResultEntryExt decodedTransactionHistoryResultEntryExt = new TransactionHistoryResultEntryExt();
-    int discriminant =  XdrEncoding.DecodeInt32(stream);
+    int discriminant =  stream.ReadInt();
     decodedTransactionHistoryResultEntryExt.Discriminant = discriminant;
     switch (decodedTransactionHistoryResultEntryExt.Discriminant) {
     case 0:

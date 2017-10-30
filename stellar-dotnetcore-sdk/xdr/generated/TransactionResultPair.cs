@@ -18,11 +18,11 @@ public class TransactionResultPair  {
   public Hash TransactionHash {get; set;}
   public TransactionResult Result {get; set;}
 
-  public static void Encode(IByteWriter stream, TransactionResultPair encodedTransactionResultPair) {
+  public static void Encode(XdrDataOutputStream stream, TransactionResultPair encodedTransactionResultPair) {
     Hash.Encode(stream, encodedTransactionResultPair.TransactionHash);
     TransactionResult.Encode(stream, encodedTransactionResultPair.Result);
   }
-  public static TransactionResultPair Decode(IByteReader stream) {
+  public static TransactionResultPair Decode(XdrDataInputStream stream) {
     TransactionResultPair decodedTransactionResultPair = new TransactionResultPair();
     decodedTransactionResultPair.TransactionHash = Hash.Decode(stream);
     decodedTransactionResultPair.Result = TransactionResult.Decode(stream);

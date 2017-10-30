@@ -29,13 +29,13 @@ public class DataEntry  {
   public DataValue DataValue {get; set;}
   public DataEntryExt Ext {get; set;}
 
-  public static void Encode(IByteWriter stream, DataEntry encodedDataEntry) {
+  public static void Encode(XdrDataOutputStream stream, DataEntry encodedDataEntry) {
     AccountID.Encode(stream, encodedDataEntry.AccountID);
     String64.Encode(stream, encodedDataEntry.DataName);
     DataValue.Encode(stream, encodedDataEntry.DataValue);
     DataEntryExt.Encode(stream, encodedDataEntry.Ext);
   }
-  public static DataEntry Decode(IByteReader stream) {
+  public static DataEntry Decode(XdrDataInputStream stream) {
     DataEntry decodedDataEntry = new DataEntry();
     decodedDataEntry.AccountID = AccountID.Decode(stream);
     decodedDataEntry.DataName = String64.Decode(stream);
@@ -49,16 +49,16 @@ public class DataEntry  {
 
     public int Discriminant { get; set; } = new int();
 
-    public static void Encode(IByteWriter stream, DataEntryExt encodedDataEntryExt) {
-    XdrEncoding.EncodeInt32((int)encodedDataEntryExt.Discriminant, stream);
+    public static void Encode(XdrDataOutputStream stream, DataEntryExt encodedDataEntryExt) {
+    stream.WriteInt((int)encodedDataEntryExt.Discriminant);
     switch (encodedDataEntryExt.Discriminant) {
     case 0:
     break;
     }
     }
-    public static DataEntryExt Decode(IByteReader stream) {
+    public static DataEntryExt Decode(XdrDataInputStream stream) {
     DataEntryExt decodedDataEntryExt = new DataEntryExt();
-    int discriminant =  XdrEncoding.DecodeInt32(stream);
+    int discriminant =  stream.ReadInt();
     decodedDataEntryExt.Discriminant = discriminant;
     switch (decodedDataEntryExt.Discriminant) {
     case 0:

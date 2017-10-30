@@ -39,12 +39,12 @@ public class LedgerEntry  {
   public LedgerEntryData Data {get; set;}
   public LedgerEntryExt Ext {get; set;}
 
-  public static void Encode(IByteWriter stream, LedgerEntry encodedLedgerEntry) {
+  public static void Encode(XdrDataOutputStream stream, LedgerEntry encodedLedgerEntry) {
     Uint32.Encode(stream, encodedLedgerEntry.LastModifiedLedgerSeq);
     LedgerEntryData.Encode(stream, encodedLedgerEntry.Data);
     LedgerEntryExt.Encode(stream, encodedLedgerEntry.Ext);
   }
-  public static LedgerEntry Decode(IByteReader stream) {
+  public static LedgerEntry Decode(XdrDataInputStream stream) {
     LedgerEntry decodedLedgerEntry = new LedgerEntry();
     decodedLedgerEntry.LastModifiedLedgerSeq = Uint32.Decode(stream);
     decodedLedgerEntry.Data = LedgerEntryData.Decode(stream);
@@ -61,8 +61,8 @@ public class LedgerEntry  {
     public TrustLineEntry TrustLine {get; set;}
     public OfferEntry Offer {get; set;}
     public DataEntry Data {get; set;}
-    public static void Encode(IByteWriter stream, LedgerEntryData encodedLedgerEntryData) {
-    XdrEncoding.EncodeInt32((int)encodedLedgerEntryData.Discriminant.InnerValue, stream);
+    public static void Encode(XdrDataOutputStream stream, LedgerEntryData encodedLedgerEntryData) {
+    stream.WriteInt((int)encodedLedgerEntryData.Discriminant.InnerValue);
     switch (encodedLedgerEntryData.Discriminant.InnerValue) {
     case LedgerEntryType.LedgerEntryTypeEnum.ACCOUNT:
     AccountEntry.Encode(stream, encodedLedgerEntryData.Account);
@@ -78,7 +78,7 @@ public class LedgerEntry  {
     break;
     }
     }
-    public static LedgerEntryData Decode(IByteReader stream) {
+    public static LedgerEntryData Decode(XdrDataInputStream stream) {
     LedgerEntryData decodedLedgerEntryData = new LedgerEntryData();
     LedgerEntryType discriminant = LedgerEntryType.Decode(stream);
     decodedLedgerEntryData.Discriminant = discriminant;
@@ -105,16 +105,16 @@ public class LedgerEntry  {
 
     public int Discriminant { get; set; } = new int();
 
-    public static void Encode(IByteWriter stream, LedgerEntryExt encodedLedgerEntryExt) {
-    XdrEncoding.EncodeInt32((int)encodedLedgerEntryExt.Discriminant, stream);
+    public static void Encode(XdrDataOutputStream stream, LedgerEntryExt encodedLedgerEntryExt) {
+    stream.WriteInt((int)encodedLedgerEntryExt.Discriminant);
     switch (encodedLedgerEntryExt.Discriminant) {
     case 0:
     break;
     }
     }
-    public static LedgerEntryExt Decode(IByteReader stream) {
+    public static LedgerEntryExt Decode(XdrDataInputStream stream) {
     LedgerEntryExt decodedLedgerEntryExt = new LedgerEntryExt();
-    int discriminant =  XdrEncoding.DecodeInt32(stream);
+    int discriminant =  stream.ReadInt();
     decodedLedgerEntryExt.Discriminant = discriminant;
     switch (decodedLedgerEntryExt.Discriminant) {
     case 0:

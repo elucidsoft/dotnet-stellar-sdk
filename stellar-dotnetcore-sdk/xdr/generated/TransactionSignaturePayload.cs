@@ -22,11 +22,11 @@ public class TransactionSignaturePayload  {
   public Hash NetworkId {get; set;}
   public TransactionSignaturePayloadTaggedTransaction TaggedTransaction {get; set;}
 
-  public static void Encode(IByteWriter stream, TransactionSignaturePayload encodedTransactionSignaturePayload) {
+  public static void Encode(XdrDataOutputStream stream, TransactionSignaturePayload encodedTransactionSignaturePayload) {
     Hash.Encode(stream, encodedTransactionSignaturePayload.NetworkId);
     TransactionSignaturePayloadTaggedTransaction.Encode(stream, encodedTransactionSignaturePayload.TaggedTransaction);
   }
-  public static TransactionSignaturePayload Decode(IByteReader stream) {
+  public static TransactionSignaturePayload Decode(XdrDataInputStream stream) {
     TransactionSignaturePayload decodedTransactionSignaturePayload = new TransactionSignaturePayload();
     decodedTransactionSignaturePayload.NetworkId = Hash.Decode(stream);
     decodedTransactionSignaturePayload.TaggedTransaction = TransactionSignaturePayloadTaggedTransaction.Decode(stream);
@@ -39,15 +39,15 @@ public class TransactionSignaturePayload  {
     public EnvelopeType Discriminant { get; set; } = new EnvelopeType();
 
     public Transaction Tx {get; set;}
-    public static void Encode(IByteWriter stream, TransactionSignaturePayloadTaggedTransaction encodedTransactionSignaturePayloadTaggedTransaction) {
-    XdrEncoding.EncodeInt32((int)encodedTransactionSignaturePayloadTaggedTransaction.Discriminant.InnerValue, stream);
+    public static void Encode(XdrDataOutputStream stream, TransactionSignaturePayloadTaggedTransaction encodedTransactionSignaturePayloadTaggedTransaction) {
+    stream.WriteInt((int)encodedTransactionSignaturePayloadTaggedTransaction.Discriminant.InnerValue);
     switch (encodedTransactionSignaturePayloadTaggedTransaction.Discriminant.InnerValue) {
     case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX:
     Transaction.Encode(stream, encodedTransactionSignaturePayloadTaggedTransaction.Tx);
     break;
     }
     }
-    public static TransactionSignaturePayloadTaggedTransaction Decode(IByteReader stream) {
+    public static TransactionSignaturePayloadTaggedTransaction Decode(XdrDataInputStream stream) {
     TransactionSignaturePayloadTaggedTransaction decodedTransactionSignaturePayloadTaggedTransaction = new TransactionSignaturePayloadTaggedTransaction();
     EnvelopeType discriminant = EnvelopeType.Decode(stream);
     decodedTransactionSignaturePayloadTaggedTransaction.Discriminant = discriminant;

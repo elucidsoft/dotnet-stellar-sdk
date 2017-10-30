@@ -29,8 +29,8 @@ public class AssetType  {
     };
   }
 
-  public static AssetType Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static AssetType Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(AssetTypeEnum.ASSET_TYPE_NATIVE);
       case 1: return Create(AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4);
@@ -40,8 +40,8 @@ public class AssetType  {
     }
   }
 
-  public static void Encode(IByteWriter stream, AssetType value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, AssetType value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

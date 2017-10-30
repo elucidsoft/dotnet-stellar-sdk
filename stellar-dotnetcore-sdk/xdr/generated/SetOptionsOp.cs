@@ -39,97 +39,97 @@ public class SetOptionsOp  {
   public String32 HomeDomain {get; set;}
   public Signer Signer {get; set;}
 
-  public static void Encode(IByteWriter stream, SetOptionsOp encodedSetOptionsOp) {
+  public static void Encode(XdrDataOutputStream stream, SetOptionsOp encodedSetOptionsOp) {
     if (encodedSetOptionsOp.InflationDest != null) {
-    XdrEncoding.EncodeInt32(1, stream);
+    stream.WriteInt(1);
     AccountID.Encode(stream, encodedSetOptionsOp.InflationDest);
     } else {
-    XdrEncoding.EncodeInt32(0, stream);
+    stream.WriteInt(0);
     }
     if (encodedSetOptionsOp.ClearFlags != null) {
-    XdrEncoding.EncodeInt32(1, stream);
+    stream.WriteInt(1);
     Uint32.Encode(stream, encodedSetOptionsOp.ClearFlags);
     } else {
-    XdrEncoding.EncodeInt32(0, stream);
+    stream.WriteInt(0);
     }
     if (encodedSetOptionsOp.SetFlags != null) {
-    XdrEncoding.EncodeInt32(1, stream);
+    stream.WriteInt(1);
     Uint32.Encode(stream, encodedSetOptionsOp.SetFlags);
     } else {
-    XdrEncoding.EncodeInt32(0, stream);
+    stream.WriteInt(0);
     }
     if (encodedSetOptionsOp.MasterWeight != null) {
-    XdrEncoding.EncodeInt32(1, stream);
+    stream.WriteInt(1);
     Uint32.Encode(stream, encodedSetOptionsOp.MasterWeight);
     } else {
-    XdrEncoding.EncodeInt32(0, stream);
+    stream.WriteInt(0);
     }
     if (encodedSetOptionsOp.LowThreshold != null) {
-    XdrEncoding.EncodeInt32(1, stream);
+    stream.WriteInt(1);
     Uint32.Encode(stream, encodedSetOptionsOp.LowThreshold);
     } else {
-    XdrEncoding.EncodeInt32(0, stream);
+    stream.WriteInt(0);
     }
     if (encodedSetOptionsOp.MedThreshold != null) {
-    XdrEncoding.EncodeInt32(1, stream);
+    stream.WriteInt(1);
     Uint32.Encode(stream, encodedSetOptionsOp.MedThreshold);
     } else {
-    XdrEncoding.EncodeInt32(0, stream);
+    stream.WriteInt(0);
     }
     if (encodedSetOptionsOp.HighThreshold != null) {
-    XdrEncoding.EncodeInt32(1, stream);
+    stream.WriteInt(1);
     Uint32.Encode(stream, encodedSetOptionsOp.HighThreshold);
     } else {
-    XdrEncoding.EncodeInt32(0, stream);
+    stream.WriteInt(0);
     }
     if (encodedSetOptionsOp.HomeDomain != null) {
-    XdrEncoding.EncodeInt32(1, stream);
+    stream.WriteInt(1);
     String32.Encode(stream, encodedSetOptionsOp.HomeDomain);
     } else {
-    XdrEncoding.EncodeInt32(0, stream);
+    stream.WriteInt(0);
     }
     if (encodedSetOptionsOp.Signer != null) {
-    XdrEncoding.EncodeInt32(1, stream);
+    stream.WriteInt(1);
     Signer.Encode(stream, encodedSetOptionsOp.Signer);
     } else {
-    XdrEncoding.EncodeInt32(0, stream);
+    stream.WriteInt(0);
     }
   }
-  public static SetOptionsOp Decode(IByteReader stream) {
+  public static SetOptionsOp Decode(XdrDataInputStream stream) {
     SetOptionsOp decodedSetOptionsOp = new SetOptionsOp();
-    int InflationDestPresent = XdrEncoding.DecodeInt32(stream);
+    int InflationDestPresent = stream.ReadInt();
     if (InflationDestPresent != 0) {
     decodedSetOptionsOp.InflationDest = AccountID.Decode(stream);
     }
-    int ClearFlagsPresent = XdrEncoding.DecodeInt32(stream);
+    int ClearFlagsPresent = stream.ReadInt();
     if (ClearFlagsPresent != 0) {
     decodedSetOptionsOp.ClearFlags = Uint32.Decode(stream);
     }
-    int SetFlagsPresent = XdrEncoding.DecodeInt32(stream);
+    int SetFlagsPresent = stream.ReadInt();
     if (SetFlagsPresent != 0) {
     decodedSetOptionsOp.SetFlags = Uint32.Decode(stream);
     }
-    int MasterWeightPresent = XdrEncoding.DecodeInt32(stream);
+    int MasterWeightPresent = stream.ReadInt();
     if (MasterWeightPresent != 0) {
     decodedSetOptionsOp.MasterWeight = Uint32.Decode(stream);
     }
-    int LowThresholdPresent = XdrEncoding.DecodeInt32(stream);
+    int LowThresholdPresent = stream.ReadInt();
     if (LowThresholdPresent != 0) {
     decodedSetOptionsOp.LowThreshold = Uint32.Decode(stream);
     }
-    int MedThresholdPresent = XdrEncoding.DecodeInt32(stream);
+    int MedThresholdPresent = stream.ReadInt();
     if (MedThresholdPresent != 0) {
     decodedSetOptionsOp.MedThreshold = Uint32.Decode(stream);
     }
-    int HighThresholdPresent = XdrEncoding.DecodeInt32(stream);
+    int HighThresholdPresent = stream.ReadInt();
     if (HighThresholdPresent != 0) {
     decodedSetOptionsOp.HighThreshold = Uint32.Decode(stream);
     }
-    int HomeDomainPresent = XdrEncoding.DecodeInt32(stream);
+    int HomeDomainPresent = stream.ReadInt();
     if (HomeDomainPresent != 0) {
     decodedSetOptionsOp.HomeDomain = String32.Decode(stream);
     }
-    int SignerPresent = XdrEncoding.DecodeInt32(stream);
+    int SignerPresent = stream.ReadInt();
     if (SignerPresent != 0) {
     decodedSetOptionsOp.Signer = Signer.Decode(stream);
     }

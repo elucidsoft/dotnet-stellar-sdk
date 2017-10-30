@@ -20,8 +20,8 @@ public class CreateAccountResult  {
 
   public CreateAccountResultCode Discriminant { get; set; } = new CreateAccountResultCode();
 
-  public static void Encode(IByteWriter stream, CreateAccountResult encodedCreateAccountResult) {
-  XdrEncoding.EncodeInt32((int)encodedCreateAccountResult.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, CreateAccountResult encodedCreateAccountResult) {
+  stream.WriteInt((int)encodedCreateAccountResult.Discriminant.InnerValue);
   switch (encodedCreateAccountResult.Discriminant.InnerValue) {
   case CreateAccountResultCode.CreateAccountResultCodeEnum.CREATE_ACCOUNT_SUCCESS:
   break;
@@ -29,7 +29,7 @@ public class CreateAccountResult  {
   break;
   }
   }
-  public static CreateAccountResult Decode(IByteReader stream) {
+  public static CreateAccountResult Decode(XdrDataInputStream stream) {
   CreateAccountResult decodedCreateAccountResult = new CreateAccountResult();
   CreateAccountResultCode discriminant = CreateAccountResultCode.Decode(stream);
   decodedCreateAccountResult.Discriminant = discriminant;

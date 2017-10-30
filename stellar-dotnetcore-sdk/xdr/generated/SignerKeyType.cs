@@ -29,8 +29,8 @@ public class SignerKeyType  {
     };
   }
 
-  public static SignerKeyType Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static SignerKeyType Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519);
       case 1: return Create(SignerKeyTypeEnum.SIGNER_KEY_TYPE_PRE_AUTH_TX);
@@ -40,8 +40,8 @@ public class SignerKeyType  {
     }
   }
 
-  public static void Encode(IByteWriter stream, SignerKeyType value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, SignerKeyType value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

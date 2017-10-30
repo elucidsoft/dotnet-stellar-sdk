@@ -20,12 +20,12 @@ public class PaymentOp  {
   public Asset Asset {get; set;}
   public Int64 Amount {get; set;}
 
-  public static void Encode(IByteWriter stream, PaymentOp encodedPaymentOp) {
+  public static void Encode(XdrDataOutputStream stream, PaymentOp encodedPaymentOp) {
     AccountID.Encode(stream, encodedPaymentOp.Destination);
     Asset.Encode(stream, encodedPaymentOp.Asset);
     Int64.Encode(stream, encodedPaymentOp.Amount);
   }
-  public static PaymentOp Decode(IByteReader stream) {
+  public static PaymentOp Decode(XdrDataInputStream stream) {
     PaymentOp decodedPaymentOp = new PaymentOp();
     decodedPaymentOp.Destination = AccountID.Decode(stream);
     decodedPaymentOp.Asset = Asset.Decode(stream);

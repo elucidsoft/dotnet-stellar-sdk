@@ -18,11 +18,11 @@ public class TimeBounds  {
   public Uint64 MinTime {get; set;}
   public Uint64 MaxTime {get; set;}
 
-  public static void Encode(IByteWriter stream, TimeBounds encodedTimeBounds) {
+  public static void Encode(XdrDataOutputStream stream, TimeBounds encodedTimeBounds) {
     Uint64.Encode(stream, encodedTimeBounds.MinTime);
     Uint64.Encode(stream, encodedTimeBounds.MaxTime);
   }
-  public static TimeBounds Decode(IByteReader stream) {
+  public static TimeBounds Decode(XdrDataInputStream stream) {
     TimeBounds decodedTimeBounds = new TimeBounds();
     decodedTimeBounds.MinTime = Uint64.Decode(stream);
     decodedTimeBounds.MaxTime = Uint64.Decode(stream);

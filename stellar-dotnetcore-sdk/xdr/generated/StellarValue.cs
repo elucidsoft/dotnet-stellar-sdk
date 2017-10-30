@@ -35,21 +35,21 @@ public class StellarValue  {
   public UpgradeType[] Upgrades {get; set;}
   public StellarValueExt Ext {get; set;}
 
-  public static void Encode(IByteWriter stream, StellarValue encodedStellarValue) {
+  public static void Encode(XdrDataOutputStream stream, StellarValue encodedStellarValue) {
     Hash.Encode(stream, encodedStellarValue.TxSetHash);
     Uint64.Encode(stream, encodedStellarValue.CloseTime);
     int upgradessize = encodedStellarValue.Upgrades.Length;
-    XdrEncoding.EncodeInt32(upgradessize, stream);
+    stream.WriteInt(upgradessize);
     for (int i = 0; i < upgradessize; i++) {
       UpgradeType.Encode(stream, encodedStellarValue.Upgrades[i]);
     }
     StellarValueExt.Encode(stream, encodedStellarValue.Ext);
   }
-  public static StellarValue Decode(IByteReader stream) {
+  public static StellarValue Decode(XdrDataInputStream stream) {
     StellarValue decodedStellarValue = new StellarValue();
     decodedStellarValue.TxSetHash = Hash.Decode(stream);
     decodedStellarValue.CloseTime = Uint64.Decode(stream);
-    int upgradessize = XdrEncoding.DecodeInt32(stream);
+    int upgradessize = stream.ReadInt();
     decodedStellarValue.Upgrades = new UpgradeType[upgradessize];
     for (int i = 0; i < upgradessize; i++) {
       decodedStellarValue.Upgrades[i] = UpgradeType.Decode(stream);
@@ -63,16 +63,16 @@ public class StellarValue  {
 
     public int Discriminant { get; set; } = new int();
 
-    public static void Encode(IByteWriter stream, StellarValueExt encodedStellarValueExt) {
-    XdrEncoding.EncodeInt32((int)encodedStellarValueExt.Discriminant, stream);
+    public static void Encode(XdrDataOutputStream stream, StellarValueExt encodedStellarValueExt) {
+    stream.WriteInt((int)encodedStellarValueExt.Discriminant);
     switch (encodedStellarValueExt.Discriminant) {
     case 0:
     break;
     }
     }
-    public static StellarValueExt Decode(IByteReader stream) {
+    public static StellarValueExt Decode(XdrDataInputStream stream) {
     StellarValueExt decodedStellarValueExt = new StellarValueExt();
-    int discriminant =  XdrEncoding.DecodeInt32(stream);
+    int discriminant =  stream.ReadInt();
     decodedStellarValueExt.Discriminant = discriminant;
     switch (decodedStellarValueExt.Discriminant) {
     case 0:

@@ -47,41 +47,41 @@ public class AccountEntry  {
   public Signer[] Signers {get; set;}
   public AccountEntryExt Ext {get; set;}
 
-  public static void Encode(IByteWriter stream, AccountEntry encodedAccountEntry) {
+  public static void Encode(XdrDataOutputStream stream, AccountEntry encodedAccountEntry) {
     AccountID.Encode(stream, encodedAccountEntry.AccountID);
     Int64.Encode(stream, encodedAccountEntry.Balance);
     SequenceNumber.Encode(stream, encodedAccountEntry.SeqNum);
     Uint32.Encode(stream, encodedAccountEntry.NumSubEntries);
     if (encodedAccountEntry.InflationDest != null) {
-    XdrEncoding.EncodeInt32(1, stream);
+    stream.WriteInt(1);
     AccountID.Encode(stream, encodedAccountEntry.InflationDest);
     } else {
-    XdrEncoding.EncodeInt32(0, stream);
+    stream.WriteInt(0);
     }
     Uint32.Encode(stream, encodedAccountEntry.Flags);
     String32.Encode(stream, encodedAccountEntry.HomeDomain);
     Thresholds.Encode(stream, encodedAccountEntry.Thresholds);
     int signerssize = encodedAccountEntry.Signers.Length;
-    XdrEncoding.EncodeInt32(signerssize, stream);
+    stream.WriteInt(signerssize);
     for (int i = 0; i < signerssize; i++) {
       Signer.Encode(stream, encodedAccountEntry.Signers[i]);
     }
     AccountEntryExt.Encode(stream, encodedAccountEntry.Ext);
   }
-  public static AccountEntry Decode(IByteReader stream) {
+  public static AccountEntry Decode(XdrDataInputStream stream) {
     AccountEntry decodedAccountEntry = new AccountEntry();
     decodedAccountEntry.AccountID = AccountID.Decode(stream);
     decodedAccountEntry.Balance = Int64.Decode(stream);
     decodedAccountEntry.SeqNum = SequenceNumber.Decode(stream);
     decodedAccountEntry.NumSubEntries = Uint32.Decode(stream);
-    int InflationDestPresent = XdrEncoding.DecodeInt32(stream);
+    int InflationDestPresent = stream.ReadInt();
     if (InflationDestPresent != 0) {
     decodedAccountEntry.InflationDest = AccountID.Decode(stream);
     }
     decodedAccountEntry.Flags = Uint32.Decode(stream);
     decodedAccountEntry.HomeDomain = String32.Decode(stream);
     decodedAccountEntry.Thresholds = Thresholds.Decode(stream);
-    int signerssize = XdrEncoding.DecodeInt32(stream);
+    int signerssize = stream.ReadInt();
     decodedAccountEntry.Signers = new Signer[signerssize];
     for (int i = 0; i < signerssize; i++) {
       decodedAccountEntry.Signers[i] = Signer.Decode(stream);
@@ -95,16 +95,16 @@ public class AccountEntry  {
 
     public int Discriminant { get; set; } = new int();
 
-    public static void Encode(IByteWriter stream, AccountEntryExt encodedAccountEntryExt) {
-    XdrEncoding.EncodeInt32((int)encodedAccountEntryExt.Discriminant, stream);
+    public static void Encode(XdrDataOutputStream stream, AccountEntryExt encodedAccountEntryExt) {
+    stream.WriteInt((int)encodedAccountEntryExt.Discriminant);
     switch (encodedAccountEntryExt.Discriminant) {
     case 0:
     break;
     }
     }
-    public static AccountEntryExt Decode(IByteReader stream) {
+    public static AccountEntryExt Decode(XdrDataInputStream stream) {
     AccountEntryExt decodedAccountEntryExt = new AccountEntryExt();
-    int discriminant =  XdrEncoding.DecodeInt32(stream);
+    int discriminant =  stream.ReadInt();
     decodedAccountEntryExt.Discriminant = discriminant;
     switch (decodedAccountEntryExt.Discriminant) {
     case 0:

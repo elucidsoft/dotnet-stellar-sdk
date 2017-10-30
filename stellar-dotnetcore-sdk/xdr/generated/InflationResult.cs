@@ -21,12 +21,12 @@ public class InflationResult  {
   public InflationResultCode Discriminant { get; set; } = new InflationResultCode();
 
   public InflationPayout[] Payouts {get; set;}
-  public static void Encode(IByteWriter stream, InflationResult encodedInflationResult) {
-  XdrEncoding.EncodeInt32((int)encodedInflationResult.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, InflationResult encodedInflationResult) {
+  stream.WriteInt((int)encodedInflationResult.Discriminant.InnerValue);
   switch (encodedInflationResult.Discriminant.InnerValue) {
   case InflationResultCode.InflationResultCodeEnum.INFLATION_SUCCESS:
   int payoutssize = encodedInflationResult.Payouts.Length;
-  XdrEncoding.EncodeInt32(payoutssize, stream);
+  stream.WriteInt(payoutssize);
   for (int i = 0; i < payoutssize; i++) {
     InflationPayout.Encode(stream, encodedInflationResult.Payouts[i]);
   }
@@ -35,13 +35,13 @@ public class InflationResult  {
   break;
   }
   }
-  public static InflationResult Decode(IByteReader stream) {
+  public static InflationResult Decode(XdrDataInputStream stream) {
   InflationResult decodedInflationResult = new InflationResult();
   InflationResultCode discriminant = InflationResultCode.Decode(stream);
   decodedInflationResult.Discriminant = discriminant;
   switch (decodedInflationResult.Discriminant.InnerValue) {
   case InflationResultCode.InflationResultCodeEnum.INFLATION_SUCCESS:
-  int payoutssize = XdrEncoding.DecodeInt32(stream);
+  int payoutssize = stream.ReadInt();
   decodedInflationResult.Payouts = new InflationPayout[payoutssize];
   for (int i = 0; i < payoutssize; i++) {
     decodedInflationResult.Payouts[i] = InflationPayout.Decode(stream);

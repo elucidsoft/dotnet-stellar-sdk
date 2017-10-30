@@ -18,12 +18,12 @@ public class Auth  {
   public Auth () {}
   public int Unused {get; set;}
 
-  public static void Encode(IByteWriter stream, Auth encodedAuth) {
-    XdrEncoding.EncodeInt32(encodedAuth.Unused, stream);
+  public static void Encode(XdrDataOutputStream stream, Auth encodedAuth) {
+    stream.WriteInt(encodedAuth.Unused);
   }
-  public static Auth Decode(IByteReader stream) {
+  public static Auth Decode(XdrDataInputStream stream) {
     Auth decodedAuth = new Auth();
-    decodedAuth.Unused = XdrEncoding.DecodeInt32(stream);
+    decodedAuth.Unused = stream.ReadInt();
     return decodedAuth;
   }
 }

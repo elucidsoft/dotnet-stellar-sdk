@@ -19,12 +19,12 @@ public class String32  {
     InnerValue = value;
   }
 
-  public static void Encode(IByteWriter stream, String32  encodedString32) {
-  XdrEncoding.WriteString(stream, encodedString32.InnerValue);
+  public static void Encode(XdrDataOutputStream stream, String32  encodedString32) {
+  stream.WriteString(encodedString32.InnerValue);
   }
-  public static String32 Decode(IByteReader stream) {
+  public static String32 Decode(XdrDataInputStream stream) {
     String32 decodedString32 = new String32();
-  decodedString32.InnerValue = XdrEncoding.ReadString(stream);
+  decodedString32.InnerValue = stream.ReadString();
     return decodedString32;
   }
 }

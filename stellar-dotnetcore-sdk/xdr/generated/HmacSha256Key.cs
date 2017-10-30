@@ -16,15 +16,15 @@ public class HmacSha256Key  {
   public HmacSha256Key () {}
   public byte[] Key {get; set;}
 
-  public static void Encode(IByteWriter stream, HmacSha256Key encodedHmacSha256Key) {
+  public static void Encode(XdrDataOutputStream stream, HmacSha256Key encodedHmacSha256Key) {
     int keysize = encodedHmacSha256Key.Key.Length;
-    XdrEncoding.WriteFixOpaque(stream, (uint)keysize, encodedHmacSha256Key.Key);
+    stream.Write(encodedHmacSha256Key.Key, 0, keysize);
   }
-  public static HmacSha256Key Decode(IByteReader stream) {
+  public static HmacSha256Key Decode(XdrDataInputStream stream) {
     HmacSha256Key decodedHmacSha256Key = new HmacSha256Key();
     int keysize = 32;
     decodedHmacSha256Key.Key = new byte[keysize];
-      XdrEncoding.ReadFixOpaque(stream, (uint)keysize);
+    stream.Read(decodedHmacSha256Key.Key,0,keysize);
     return decodedHmacSha256Key;
   }
 }

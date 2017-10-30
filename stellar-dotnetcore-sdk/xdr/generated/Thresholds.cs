@@ -19,15 +19,15 @@ public class Thresholds  {
     InnerValue = value;
   }
 
-  public static void Encode(IByteWriter stream, Thresholds  encodedThresholds) {
+  public static void Encode(XdrDataOutputStream stream, Thresholds  encodedThresholds) {
   int Thresholdssize = encodedThresholds.InnerValue.Length;
-  XdrEncoding.WriteFixOpaque(stream, (uint)Thresholdssize, encodedThresholds.InnerValue);
+  stream.Write(encodedThresholds.InnerValue, 0, Thresholdssize);
   }
-  public static Thresholds Decode(IByteReader stream) {
+  public static Thresholds Decode(XdrDataInputStream stream) {
     Thresholds decodedThresholds = new Thresholds();
   int Thresholdssize = 4;
   decodedThresholds.InnerValue = new byte[Thresholdssize];
-  XdrEncoding.ReadFixOpaque(stream, (uint)Thresholdssize);
+  stream.Read(decodedThresholds.InnerValue, 0, Thresholdssize);
     return decodedThresholds;
   }
 }

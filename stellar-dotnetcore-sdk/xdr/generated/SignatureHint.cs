@@ -19,15 +19,15 @@ public class SignatureHint  {
     InnerValue = value;
   }
 
-  public static void Encode(IByteWriter stream, SignatureHint  encodedSignatureHint) {
+  public static void Encode(XdrDataOutputStream stream, SignatureHint  encodedSignatureHint) {
   int SignatureHintsize = encodedSignatureHint.InnerValue.Length;
-  XdrEncoding.WriteFixOpaque(stream, (uint)SignatureHintsize, encodedSignatureHint.InnerValue);
+  stream.Write(encodedSignatureHint.InnerValue, 0, SignatureHintsize);
   }
-  public static SignatureHint Decode(IByteReader stream) {
+  public static SignatureHint Decode(XdrDataInputStream stream) {
     SignatureHint decodedSignatureHint = new SignatureHint();
   int SignatureHintsize = 4;
   decodedSignatureHint.InnerValue = new byte[SignatureHintsize];
-  XdrEncoding.ReadFixOpaque(stream, (uint)SignatureHintsize);
+  stream.Read(decodedSignatureHint.InnerValue, 0, SignatureHintsize);
     return decodedSignatureHint;
   }
 }

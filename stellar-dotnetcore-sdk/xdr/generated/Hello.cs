@@ -32,25 +32,25 @@ public class Hello  {
   public AuthCert Cert {get; set;}
   public Uint256 Nonce {get; set;}
 
-  public static void Encode(IByteWriter stream, Hello encodedHello) {
+  public static void Encode(XdrDataOutputStream stream, Hello encodedHello) {
     Uint32.Encode(stream, encodedHello.LedgerVersion);
     Uint32.Encode(stream, encodedHello.OverlayVersion);
     Uint32.Encode(stream, encodedHello.OverlayMinVersion);
     Hash.Encode(stream, encodedHello.NetworkID);
-    XdrEncoding.WriteString(stream, encodedHello.VersionStr);
-    XdrEncoding.EncodeInt32(encodedHello.ListeningPort, stream);
+    stream.WriteString(encodedHello.VersionStr);
+    stream.WriteInt(encodedHello.ListeningPort);
     NodeID.Encode(stream, encodedHello.PeerID);
     AuthCert.Encode(stream, encodedHello.Cert);
     Uint256.Encode(stream, encodedHello.Nonce);
   }
-  public static Hello Decode(IByteReader stream) {
+  public static Hello Decode(XdrDataInputStream stream) {
     Hello decodedHello = new Hello();
     decodedHello.LedgerVersion = Uint32.Decode(stream);
     decodedHello.OverlayVersion = Uint32.Decode(stream);
     decodedHello.OverlayMinVersion = Uint32.Decode(stream);
     decodedHello.NetworkID = Hash.Decode(stream);
-    decodedHello.VersionStr = XdrEncoding.ReadString(stream);
-    decodedHello.ListeningPort = XdrEncoding.DecodeInt32(stream);
+    decodedHello.VersionStr = stream.ReadString();
+    decodedHello.ListeningPort = stream.ReadInt();
     decodedHello.PeerID = NodeID.Decode(stream);
     decodedHello.Cert = AuthCert.Decode(stream);
     decodedHello.Nonce = Uint256.Decode(stream);

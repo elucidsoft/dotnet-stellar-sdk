@@ -20,8 +20,8 @@ public class PaymentResult  {
 
   public PaymentResultCode Discriminant { get; set; } = new PaymentResultCode();
 
-  public static void Encode(IByteWriter stream, PaymentResult encodedPaymentResult) {
-  XdrEncoding.EncodeInt32((int)encodedPaymentResult.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, PaymentResult encodedPaymentResult) {
+  stream.WriteInt((int)encodedPaymentResult.Discriminant.InnerValue);
   switch (encodedPaymentResult.Discriminant.InnerValue) {
   case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SUCCESS:
   break;
@@ -29,7 +29,7 @@ public class PaymentResult  {
   break;
   }
   }
-  public static PaymentResult Decode(IByteReader stream) {
+  public static PaymentResult Decode(XdrDataInputStream stream) {
   PaymentResult decodedPaymentResult = new PaymentResult();
   PaymentResultCode discriminant = PaymentResultCode.Decode(stream);
   decodedPaymentResult.Discriminant = discriminant;

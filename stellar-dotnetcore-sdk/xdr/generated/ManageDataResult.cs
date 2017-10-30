@@ -20,8 +20,8 @@ public class ManageDataResult  {
 
   public ManageDataResultCode Discriminant { get; set; } = new ManageDataResultCode();
 
-  public static void Encode(IByteWriter stream, ManageDataResult encodedManageDataResult) {
-  XdrEncoding.EncodeInt32((int)encodedManageDataResult.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, ManageDataResult encodedManageDataResult) {
+  stream.WriteInt((int)encodedManageDataResult.Discriminant.InnerValue);
   switch (encodedManageDataResult.Discriminant.InnerValue) {
   case ManageDataResultCode.ManageDataResultCodeEnum.MANAGE_DATA_SUCCESS:
   break;
@@ -29,7 +29,7 @@ public class ManageDataResult  {
   break;
   }
   }
-  public static ManageDataResult Decode(IByteReader stream) {
+  public static ManageDataResult Decode(XdrDataInputStream stream) {
   ManageDataResult decodedManageDataResult = new ManageDataResult();
   ManageDataResultCode discriminant = ManageDataResultCode.Decode(stream);
   decodedManageDataResult.Discriminant = discriminant;

@@ -26,8 +26,8 @@ public class OfferEntryFlags  {
     };
   }
 
-  public static OfferEntryFlags Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static OfferEntryFlags Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 1: return Create(OfferEntryFlagsEnum.PASSIVE_FLAG);
       default:
@@ -35,8 +35,8 @@ public class OfferEntryFlags  {
     }
   }
 
-  public static void Encode(IByteWriter stream, OfferEntryFlags value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, OfferEntryFlags value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

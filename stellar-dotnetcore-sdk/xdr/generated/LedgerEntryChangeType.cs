@@ -31,8 +31,8 @@ public class LedgerEntryChangeType  {
     };
   }
 
-  public static LedgerEntryChangeType Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static LedgerEntryChangeType Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(LedgerEntryChangeTypeEnum.LEDGER_ENTRY_CREATED);
       case 1: return Create(LedgerEntryChangeTypeEnum.LEDGER_ENTRY_UPDATED);
@@ -43,8 +43,8 @@ public class LedgerEntryChangeType  {
     }
   }
 
-  public static void Encode(IByteWriter stream, LedgerEntryChangeType value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, LedgerEntryChangeType value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

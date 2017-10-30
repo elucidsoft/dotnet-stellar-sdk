@@ -21,8 +21,8 @@ public class ManageOfferResult  {
   public ManageOfferResultCode Discriminant { get; set; } = new ManageOfferResultCode();
 
   public ManageOfferSuccessResult Success {get; set;}
-  public static void Encode(IByteWriter stream, ManageOfferResult encodedManageOfferResult) {
-  XdrEncoding.EncodeInt32((int)encodedManageOfferResult.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, ManageOfferResult encodedManageOfferResult) {
+  stream.WriteInt((int)encodedManageOfferResult.Discriminant.InnerValue);
   switch (encodedManageOfferResult.Discriminant.InnerValue) {
   case ManageOfferResultCode.ManageOfferResultCodeEnum.MANAGE_OFFER_SUCCESS:
   ManageOfferSuccessResult.Encode(stream, encodedManageOfferResult.Success);
@@ -31,7 +31,7 @@ public class ManageOfferResult  {
   break;
   }
   }
-  public static ManageOfferResult Decode(IByteReader stream) {
+  public static ManageOfferResult Decode(XdrDataInputStream stream) {
   ManageOfferResult decodedManageOfferResult = new ManageOfferResult();
   ManageOfferResultCode discriminant = ManageOfferResultCode.Decode(stream);
   decodedManageOfferResult.Discriminant = discriminant;
