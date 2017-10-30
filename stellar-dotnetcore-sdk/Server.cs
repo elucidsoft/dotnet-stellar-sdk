@@ -1,4 +1,5 @@
-﻿using System;
+﻿using stellar_dotnetcore_sdk.requests;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -24,6 +25,11 @@ namespace stellar_dotnetcore_sdk
             }
         }
 
+        public AccountsRequestBuilder Accounts
+        {
+            get => new AccountsRequestBuilder(_serverUri);
+        }
 
+        //TODO: Implement the rest of this class, has many many dependencies...
     }
 }

@@ -4,11 +4,15 @@ using System.Text;
 
 namespace stellar_dotnetcore_sdk.requests
 {
+    public enum OrderDirection { ASC, DESC }
+
     /// <summary>
     /// Abstract class for request builders.
     /// </summary>
-    public class RequestBuilder
+    public class RequestBuilder<T>
     {
+       
+
         protected UriBuilder _uriBuilder;
         private List<string> _segments;
         private Boolean _segmentsAdded;
@@ -26,7 +30,7 @@ namespace stellar_dotnetcore_sdk.requests
             _segmentsAdded = false;  //Allow overwriting segments
         }
 
-        protected RequestBuilder SetSegments(params string[] segments)
+        protected RequestBuilder<T> SetSegments(params string[] segments)
         {
             if (_segmentsAdded)
                 throw new Exception("URL segments have been already added.");
@@ -52,7 +56,7 @@ namespace stellar_dotnetcore_sdk.requests
         /// </summary>
         /// <param name="cursor"></param>
         /// <returns></returns>
-        public RequestBuilder Cursor(string cursor)
+        public virtual RequestBuilder<T> Cursor(string cursor)
         {
             _uriBuilder.SetQueryParam("cursor", cursor);
 
@@ -66,7 +70,7 @@ namespace stellar_dotnetcore_sdk.requests
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        public RequestBuilder Limit(int number)
+        public virtual RequestBuilder<T> Limit(int number)
         {
             _uriBuilder.SetQueryParam("limit", number.ToString());
 
@@ -78,14 +82,14 @@ namespace stellar_dotnetcore_sdk.requests
         /// </summary>
         /// <param name="direction"></param>
         /// <returns></returns>
-        public RequestBuilder Order(OrderDirection direction)
+        public virtual RequestBuilder<T> Order(OrderDirection direction)
         {
-            _uriBuilder.SetQueryParam("order", direction.Value);
+            _uriBuilder.SetQueryParam("order", direction.ToString().ToLower());
 
             return this;
         }
 
-        private Uri BuildUri()
+        public Uri BuildUri()
         {
             if(_segments.Count > 0)
             {
@@ -111,27 +115,6 @@ namespace stellar_dotnetcore_sdk.requests
             throw new NotSupportedException("No segments defined.");
         }
 
-        /// <summary>
-        /// Represents possible order parameter value.
-        /// </summary>
-        public class OrderDirection
-        {
-            public enum Values { ASC, DESC }
-
-            private const string ASC = "asc";
-            private const string DESC = "desc";
-
-            private string _value;
-
-            public OrderDirection(Values value)
-            {
-                if (value == Values.ASC)
-                    _value = ASC;
-                else if (value == Values.DESC)
-                    _value = DESC;
-            }
-
-            public string Value { get => _value; }
-        }
+      
     }
 }
