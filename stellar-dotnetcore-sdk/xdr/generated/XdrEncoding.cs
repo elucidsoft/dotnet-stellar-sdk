@@ -254,13 +254,13 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public static void WriteString(IByteWriter w, uint max, string v)
         {
-            WriteVarOpaque(w, max, Encoding.ASCII.GetBytes(v));
+            WriteVarOpaque(w, max, Encoding.UTF8.GetBytes(v));
         }
 
 		public static void WriteString(IByteWriter w, string v)
         {
             EncodeInt32(v.Length, w);
-            WriteVarOpaque(w, (uint)v.Length, Encoding.ASCII.GetBytes(v));
+            WriteVarOpaque(w, (uint)v.Length, Encoding.UTF8.GetBytes(v));
         }
 
 		public static void WriteBool(IByteWriter w, bool v)
