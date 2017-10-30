@@ -5,24 +5,29 @@ using System.Text;
 
 namespace stellar_dotnetcore_sdk.xdr
 {
-    public class XdrDataOuputStream : BinaryWriter
+    public class XdrDataOutputStream : BinaryWriter
     {
-        public XdrDataOuputStream(Stream output) :
+        public XdrDataOutputStream()
+        {
+
+        }
+
+        public XdrDataOutputStream(Stream output) :
             base(output)
         {
         }
 
-        public XdrDataOuputStream(Stream output, Encoding encoding) :
+        public XdrDataOutputStream(Stream output, Encoding encoding) :
             base(output, encoding)
         {
         }
 
-        public XdrDataOuputStream(Stream output, Encoding encoding, bool leaveOpen) :
+        public XdrDataOutputStream(Stream output, Encoding encoding, bool leaveOpen) :
             base(output, encoding, leaveOpen)
         {
         }
 
-        protected XdrDataOuputStream()
+        protected XdrDataOutputStream()
         {
         }
 
