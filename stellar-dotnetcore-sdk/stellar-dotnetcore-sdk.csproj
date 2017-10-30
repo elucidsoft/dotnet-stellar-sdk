@@ -10,10 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="xdr\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Chaos.NaCl\Chaos.NaCl.csproj" />
   </ItemGroup>
 
