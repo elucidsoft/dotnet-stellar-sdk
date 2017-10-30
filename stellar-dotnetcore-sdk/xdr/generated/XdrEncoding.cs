@@ -196,12 +196,12 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public static string ReadString(IByteReader r, uint max)
         {
-            return Encoding.ASCII.GetString(ReadVarOpaque(r, max));
+            return Encoding.UTF8.GetString(ReadVarOpaque(r, max));
         }
 
 		public static string ReadString(IByteReader r)
         {
-            return Encoding.ASCII.GetString(ReadVarOpaque(r, uint.MaxValue));
+            return Encoding.UTF8.GetString(ReadVarOpaque(r, uint.MaxValue));
         }
 
         public static void WriteFixOpaque(IByteWriter w, uint len, byte[] v)

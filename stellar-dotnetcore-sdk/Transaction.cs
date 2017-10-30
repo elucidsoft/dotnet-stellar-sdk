@@ -1,6 +1,8 @@
-﻿using System;
+﻿using stellar_dotnetcore_sdk.xdr;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -16,7 +18,7 @@ namespace stellar_dotnetcore_sdk
         private readonly Operation[] _Operations;
         private readonly Memo _Memo;
         private readonly TimeBounds _TimeBounds;
-        private List<xdr.DecoratedSignature> _Signatures;
+        private List<DecoratedSignature> _Signatures;
 
         public int Fee { get { return _Fee; } }
         public KeyPair SourceAccount { get { return _SourceAccount; } }
@@ -24,7 +26,7 @@ namespace stellar_dotnetcore_sdk
         public Operation[] Operations { get { return _Operations; } }
         public Memo Memo { get { return _Memo; } }
         public TimeBounds TimeBounds { get { return _TimeBounds; } }
-        public List<xdr.DecoratedSignature> Signatures { get { return _Signatures; } }
+        public List<DecoratedSignature> Signatures { get { return _Signatures; } }
 
         Transaction(KeyPair sourceAccount, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)
         {
@@ -49,7 +51,7 @@ namespace stellar_dotnetcore_sdk
             if (signer == null)
                 throw new ArgumentNullException(nameof(signer), "signer cannot be null");
 
-            byte[] txHash = this.Hash();
+            byte[] txHash = Hash();
             _Signatures.Add(signer.SignDecorated(txHash));
         }
 
@@ -59,7 +61,7 @@ namespace stellar_dotnetcore_sdk
          */
         public void Sign(byte[] preimage)
         {
-            xdr.Signature signature = new xdr.Signature();
+            Signature signature = new Signature();
             signature.InnerValue = preimage ?? throw new ArgumentNullException(nameof(preimage), "preimage cannot be null");
 
             byte[] hash = Util.Hash(preimage);
@@ -67,10 +69,10 @@ namespace stellar_dotnetcore_sdk
             var length = hash.Length;
             var signatureHintBytes = hash.Skip(length - 4).Take(4).ToArray();
 
-            xdr.SignatureHint signatureHint = new xdr.SignatureHint();
+            SignatureHint signatureHint = new SignatureHint();
             signatureHint.InnerValue = signatureHintBytes;
 
-            xdr.DecoratedSignature decoratedSignature = new xdr.DecoratedSignature();
+            DecoratedSignature decoratedSignature = new DecoratedSignature();
             decoratedSignature.Hint = signatureHint;
             decoratedSignature.Signature = signature;
 
@@ -82,7 +84,7 @@ namespace stellar_dotnetcore_sdk
          */
         public byte[] Hash()
         {
-            return Util.Hash(this.SignatureBase());
+            return Util.Hash(SignatureBase());
         }
 
         /**
@@ -95,18 +97,21 @@ namespace stellar_dotnetcore_sdk
                 throw new NoNetworkSelectedException();
             }
 
-            var writer = new xdr.ByteWriter();
+            var writer = new ByteWriter();
 
             // Hashed NetworkID
             writer.Write(Network.Current.NetworkId);
 
             // Envelope Type - 4 bytes
-            xdr.EnvelopeType.Encode(writer, xdr.EnvelopeType.Create(xdr.EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX));
+            //
+            var envelopeBytes = new ByteWriter();
+
+            EnvelopeType.Encode(envelopeBytes, EnvelopeType.Create(EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX));
+            writer.Write(envelopeBytes.ToArray());
 
             // Transaction XDR bytes
-            var txWriter = new xdr.ByteWriter();
-            xdr.Transaction.Encode(txWriter, this.ToXdr());
-
+            var txWriter = new ByteWriter();
+            xdr.Transaction.Encode(txWriter, ToXdr());
             writer.Write(txWriter.ToArray());
 
             return writer.ToArray();
@@ -119,16 +124,19 @@ namespace stellar_dotnetcore_sdk
         public xdr.Transaction ToXdr()
         {
             // fee
-            xdr.Uint32 fee = new xdr.Uint32();
+            Uint32 fee = new Uint32();
             fee.InnerValue = (uint)_Fee;
+
             // sequenceNumber
-            xdr.Uint64 sequenceNumberUint = new xdr.Uint64();
+            Uint64 sequenceNumberUint = new Uint64();
             sequenceNumberUint.InnerValue = (ulong)_SequenceNumber;
-            xdr.SequenceNumber sequenceNumber = new xdr.SequenceNumber();
+            SequenceNumber sequenceNumber = new SequenceNumber();
             sequenceNumber.InnerValue = sequenceNumberUint;
+
             // sourceAccount
-            xdr.AccountID sourceAccount = new xdr.AccountID();
+            AccountID sourceAccount = new AccountID();
             sourceAccount.InnerValue = _SourceAccount.XdrPublicKey;
+
             // operations
             xdr.Operation[] operations = new xdr.Operation[_Operations.Length];
 
@@ -136,6 +144,7 @@ namespace stellar_dotnetcore_sdk
             {
                 operations[i] = _Operations[i].ToXdr();
             }
+
             // ext
             xdr.Transaction.TransactionExt ext = new xdr.Transaction.TransactionExt();
             ext.Discriminant = 0;
@@ -161,11 +170,11 @@ namespace stellar_dotnetcore_sdk
                 throw new NotEnoughSignaturesException("Transaction must be signed by at least one signer. Use transaction.sign().");
             }
 
-            xdr.TransactionEnvelope thisXdr = new xdr.TransactionEnvelope();
-            xdr.Transaction transaction = this.ToXdr();
+            TransactionEnvelope thisXdr = new TransactionEnvelope();
+            xdr.Transaction transaction = ToXdr();
             thisXdr.Tx = transaction;
 
-            xdr.DecoratedSignature[] signatures = new xdr.DecoratedSignature[_Signatures.Count];
+            DecoratedSignature[] signatures = new DecoratedSignature[_Signatures.Count];
             signatures = _Signatures.ToArray();
             thisXdr.Signatures = signatures;
             return thisXdr;
@@ -176,9 +185,10 @@ namespace stellar_dotnetcore_sdk
          */
         public String ToEnvelopeXdrBase64()
         {
-            xdr.TransactionEnvelope envelope = this.ToEnvelopeXdr();
-            var writer = new xdr.ByteWriter();
-            xdr.TransactionEnvelope.Encode(writer, envelope);
+            TransactionEnvelope envelope = ToEnvelopeXdr();
+            var writer = new ByteWriter();
+            TransactionEnvelope.Encode(writer, envelope);
+
             return Convert.ToBase64String(writer.ToArray());
         }
 

@@ -17,7 +17,7 @@
             memo.Discriminant = xdr.MemoType.Create(xdr.MemoType.MemoTypeEnum.MEMO_RETURN);
 
             xdr.Hash hash = new xdr.Hash();
-            hash.InnerValue= MemoBytes;
+            hash.InnerValue = MemoBytes;
 
             memo.Hash = hash;
 
