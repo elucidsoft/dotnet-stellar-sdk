@@ -17,7 +17,7 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public override string ReadString()
         {
-            int l = Read();
+            int l = ReadInt();
             byte[] bytes = new byte[l];
             Read(bytes, 0, bytes.Length);
             return Encoding.UTF8.GetString(bytes);
@@ -95,7 +95,6 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public int Read()
         {
-            var buffer = _memoryStream.GetBuffer();
             int read = _memoryStream.ReadByte();
             if (read >= 0)
                 _count++;
