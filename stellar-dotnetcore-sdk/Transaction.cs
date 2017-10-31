@@ -97,22 +97,25 @@ namespace stellar_dotnetcore_sdk
                 throw new NoNetworkSelectedException();
             }
 
-            var writer = new ByteWriter();
+            var memoryStream = new MemoryStream();
+            var writer = new XdrOutputStream(memoryStream);
 
             // Hashed NetworkID
             writer.Write(Network.Current.NetworkId);
 
             // Envelope Type - 4 bytes
             //
-            var envelopeBytes = new ByteWriter();
+            var envelopeMemoryStream = new MemoryStream();
+            var envelopeDataOutputStream = new XdrDataOutputStream(envelopeMemoryStream);
 
-            EnvelopeType.Encode(envelopeBytes, EnvelopeType.Create(EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX));
-            writer.Write(envelopeBytes.ToArray());
+            EnvelopeType.Encode(envelopeDataOutputStream, EnvelopeType.Create(EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX));
+            writer.Write(envelopeMemoryStream.ToArray());
 
             // Transaction XDR bytes
-            var txWriter = new ByteWriter();
+            var txMemoryStream = new MemoryStream();
+            var txWriter = new XdrDataOutputStream(txMemoryStream);
             xdr.Transaction.Encode(txWriter, ToXdr());
-            writer.Write(txWriter.ToArray());
+            writer.Write(txMemoryStream.ToArray());
 
             return writer.ToArray();
 
@@ -125,11 +128,11 @@ namespace stellar_dotnetcore_sdk
         {
             // fee
             Uint32 fee = new Uint32();
-            fee.InnerValue = (uint)_Fee;
+            fee.InnerValue = _Fee;
 
             // sequenceNumber
             Uint64 sequenceNumberUint = new Uint64();
-            sequenceNumberUint.InnerValue = (ulong)_SequenceNumber;
+            sequenceNumberUint.InnerValue = _SequenceNumber;
             SequenceNumber sequenceNumber = new SequenceNumber();
             sequenceNumber.InnerValue = sequenceNumberUint;
 
@@ -186,10 +189,11 @@ namespace stellar_dotnetcore_sdk
         public String ToEnvelopeXdrBase64()
         {
             TransactionEnvelope envelope = ToEnvelopeXdr();
-            var writer = new ByteWriter();
+            var memoryStream = new MemoryStream();
+            var writer = new XdrDataOutputStream(memoryStream);
             TransactionEnvelope.Encode(writer, envelope);
 
-            return Convert.ToBase64String(writer.ToArray());
+            return Convert.ToBase64String(memoryStream.ToArray());
         }
 
         /**

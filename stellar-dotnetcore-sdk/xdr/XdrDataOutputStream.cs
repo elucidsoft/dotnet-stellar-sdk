@@ -29,6 +29,11 @@ namespace stellar_dotnetcore_sdk.xdr
             Write(chars);
         }
 
+        internal void WriteLong(long innerValue)
+        {
+            Write(innerValue);
+        }
+
         public void WriteIntArray(int[] a)
         {
             Write(a.Length);

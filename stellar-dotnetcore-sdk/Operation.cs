@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Numerics;
 using System.Text;
 
@@ -58,9 +59,10 @@ namespace stellar_dotnetcore_sdk
         public String ToXdrBase64()
         {
             xdr.Operation operation = this.ToXdr();
-            var writer = new xdr.ByteWriter();
+            var memoryStream = new MemoryStream();
+            var writer = new xdr.XdrDataOutputStream(memoryStream);
             xdr.Operation.Encode(writer, operation);
-            return Convert.ToBase64String(writer.ToArray());
+            return Convert.ToBase64String(memoryStream.ToArray());
         }
 
         /**

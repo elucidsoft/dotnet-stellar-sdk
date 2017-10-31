@@ -25,7 +25,7 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public int[] ReadIntArray()
         {
-            int l = ReadInt32();
+            int l = base.ReadInt32();
             return ReadIntArray(l);
         }
 
@@ -34,19 +34,24 @@ namespace stellar_dotnetcore_sdk.xdr
             int[] arr = new int[l];
             for (int i = 0; i < l; i++)
             {
-                arr[i] = ReadInt32();
+                arr[i] = base.ReadInt32();
             }
             return arr;
         }
 
-        public uint ReadInt()
+        internal long ReadLong()
         {
-            return ReadUInt32();
+            return base.ReadInt64();
+        }
+
+        public int ReadInt()
+        {
+            return base.ReadInt32();
         }
 
         public float[] ReadSingleArray()
         {
-            int l = ReadInt32();
+            int l = base.ReadInt32();
             return ReadSingleArray(l);
         }
 

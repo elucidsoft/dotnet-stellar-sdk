@@ -30,8 +30,8 @@ namespace stellar_dotnetcore_sdk
             xdr.TimeBounds timeBounds = new xdr.TimeBounds();
             Uint64 minTime = new Uint64();
             Uint64 maxTime = new Uint64();
-            minTime.InnerValue = (ulong)_MinTime;
-            maxTime.InnerValue = (ulong)_MaxTime;
+            minTime.InnerValue = _MinTime;
+            maxTime.InnerValue = _MaxTime;
             timeBounds.MinTime = minTime;
             timeBounds.MaxTime = maxTime;
             return timeBounds;

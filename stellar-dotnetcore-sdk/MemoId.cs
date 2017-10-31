@@ -25,7 +25,7 @@ namespace stellar_dotnetcore_sdk
             xdr.Memo memo = new xdr.Memo();
             memo.Discriminant = xdr.MemoType.Create(xdr.MemoType.MemoTypeEnum.MEMO_ID);
             xdr.Uint64 idXdr = new xdr.Uint64();
-            idXdr.InnerValue = (ulong)id;
+            idXdr.InnerValue = id;
             memo.Id = idXdr;
             return memo;
         }
