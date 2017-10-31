@@ -98,18 +98,13 @@ namespace stellar_dotnetcore_sdk
             }
 
             var memoryStream = new MemoryStream();
-            var writer = new XdrOutputStream(memoryStream);
+            var writer = new BinaryWriter(memoryStream);
 
             // Hashed NetworkID
             writer.Write(Network.Current.NetworkId);
 
             // Envelope Type - 4 bytes
-            //
-            var envelopeMemoryStream = new MemoryStream();
-            var envelopeDataOutputStream = new XdrDataOutputStream(envelopeMemoryStream);
-
-            EnvelopeType.Encode(envelopeDataOutputStream, EnvelopeType.Create(EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX));
-            writer.Write(envelopeMemoryStream.ToArray());
+            writer.Write((int)EnvelopeType.Create(EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX).InnerValue);
 
             // Transaction XDR bytes
             var txMemoryStream = new MemoryStream();
@@ -117,7 +112,7 @@ namespace stellar_dotnetcore_sdk
             xdr.Transaction.Encode(txWriter, ToXdr());
             writer.Write(txMemoryStream.ToArray());
 
-            return writer.ToArray();
+            return memoryStream.ToArray();
 
         }
 
