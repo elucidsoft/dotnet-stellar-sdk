@@ -12,6 +12,16 @@ namespace stellar_dotnetcore_sdk.xdr
         {
         }
 
+        public void WriteInt(int i)
+        {
+            Write(i);
+        }
+
+        public void WriteInt(uint i)
+        {
+            Write(i);
+        }
+
         public void WriteString(string s)
         {
             byte[] chars = Encoding.UTF8.GetBytes(s);

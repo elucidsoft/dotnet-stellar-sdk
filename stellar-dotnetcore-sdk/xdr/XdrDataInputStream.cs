@@ -17,7 +17,7 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public override string ReadString()
         {
-            int l = ReadInt32();
+            int l = Read();
             byte[] bytes = new byte[l];
             Read(bytes, 0, bytes.Length);
             return Encoding.UTF8.GetString(bytes);
@@ -37,6 +37,11 @@ namespace stellar_dotnetcore_sdk.xdr
                 arr[i] = ReadInt32();
             }
             return arr;
+        }
+
+        public uint ReadInt()
+        {
+            return ReadUInt32();
         }
 
         public float[] ReadSingleArray()
