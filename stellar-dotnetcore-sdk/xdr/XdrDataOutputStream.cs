@@ -7,27 +7,8 @@ namespace stellar_dotnetcore_sdk.xdr
 {
     public class XdrDataOutputStream : BinaryWriter
     {
-        public XdrDataOutputStream()
-        {
-
-        }
-
-        public XdrDataOutputStream(Stream output) :
-            base(output)
-        {
-        }
-
-        public XdrDataOutputStream(Stream output, Encoding encoding) :
-            base(output, encoding)
-        {
-        }
-
-        public XdrDataOutputStream(Stream output, Encoding encoding, bool leaveOpen) :
-            base(output, encoding, leaveOpen)
-        {
-        }
-
-        protected XdrDataOutputStream()
+        public XdrDataOutputStream(MemoryStream xdrOutputStream)
+            : base(new XdrOutputStream(xdrOutputStream))
         {
         }
 
@@ -83,11 +64,12 @@ namespace stellar_dotnetcore_sdk.xdr
 
     public class XdrOutputStream : MemoryStream
     {
+        private MemoryStream _memoryStream;
         private int _count = 0;
 
-        public XdrOutputStream(byte[] buffer) :
-            base(buffer)
+        public XdrOutputStream(MemoryStream ms)
         {
+            _memoryStream = ms;
         }
 
         public void Write(int b)
@@ -95,19 +77,19 @@ namespace stellar_dotnetcore_sdk.xdr
             // > The byte to be written is the eight low-order bits of the argument b.
             // > The 24 high-order bits of b are ignored.
 
-            WriteByte((byte)(Convert.ToByte(b) & 0xff));
+            _memoryStream.WriteByte((byte)(Convert.ToByte(b) & 0xff));
         }
 
         public override void Write(byte[] buffer, int offset, int count)
         {
-            base.Write(buffer, offset, count);
+            _memoryStream.Write(buffer, offset, count);
             _count += count;
             Pad();
         }
 
         public void Write(byte[] b)
         {
-            Write(b, 0, b.Length);
+            _memoryStream.Write(b, 0, b.Length);
         }
 
         private void Pad()

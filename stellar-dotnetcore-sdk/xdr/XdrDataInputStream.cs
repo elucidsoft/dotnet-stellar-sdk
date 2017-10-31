@@ -9,20 +9,11 @@ namespace stellar_dotnetcore_sdk.xdr
 {
     public class XdrDataInputStream : BinaryReader
     {
-        public XdrDataInputStream(Stream input) :
-            base(input)
+        public XdrDataInputStream(MemoryStream xdrInputStream)
+           : base(new XdrInputStream(xdrInputStream))
         {
         }
 
-        public XdrDataInputStream(Stream input, Encoding encoding) :
-            base(input, encoding)
-        {
-        }
-
-        public XdrDataInputStream(Stream input, Encoding encoding, bool leaveOpen) :
-            base(input, encoding, leaveOpen)
-        {
-        }
 
         public override string ReadString()
         {
@@ -85,16 +76,17 @@ namespace stellar_dotnetcore_sdk.xdr
     public class XdrInputStream : MemoryStream
     {
         int _count = 0;
-        public XdrInputStream(byte[] buffer) :
-            base(buffer)
-        {
+        MemoryStream _memoryStream;
 
+        public XdrInputStream(MemoryStream ms) 
+        {
+            _memoryStream = ms;
         }
 
         public int Read()
         {
-            var buffer = base.GetBuffer();
-            int read = base.ReadByte();
+            var buffer = _memoryStream.GetBuffer();
+            int read = _memoryStream.ReadByte();
             if (read >= 0)
                 _count++;
 
@@ -103,12 +95,12 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public int Read(byte[] b)
         {
-            return base.Read(b, 0, b.Length);
+            return _memoryStream.Read(b, 0, b.Length);
         }
 
         public override int Read(byte[] buffer, int offset, int count)
         {
-            int read = base.Read(buffer, offset, count);
+            int read = _memoryStream.Read(buffer, offset, count);
             _count += read;
             Pad();
 
