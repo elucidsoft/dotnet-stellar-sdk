@@ -20,8 +20,8 @@ public class ChangeTrustResult  {
 
   public ChangeTrustResultCode Discriminant { get; set; } = new ChangeTrustResultCode();
 
-  public static void Encode(IByteWriter stream, ChangeTrustResult encodedChangeTrustResult) {
-  XdrEncoding.EncodeInt32((int)encodedChangeTrustResult.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, ChangeTrustResult encodedChangeTrustResult) {
+  stream.WriteInt((int)encodedChangeTrustResult.Discriminant.InnerValue);
   switch (encodedChangeTrustResult.Discriminant.InnerValue) {
   case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SUCCESS:
   break;
@@ -29,7 +29,7 @@ public class ChangeTrustResult  {
   break;
   }
   }
-  public static ChangeTrustResult Decode(IByteReader stream) {
+  public static ChangeTrustResult Decode(XdrDataInputStream stream) {
   ChangeTrustResult decodedChangeTrustResult = new ChangeTrustResult();
   ChangeTrustResultCode discriminant = ChangeTrustResultCode.Decode(stream);
   decodedChangeTrustResult.Discriminant = discriminant;

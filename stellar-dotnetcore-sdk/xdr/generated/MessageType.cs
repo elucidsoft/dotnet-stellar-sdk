@@ -56,8 +56,8 @@ public class MessageType  {
     };
   }
 
-  public static MessageType Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static MessageType Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(MessageTypeEnum.ERROR_MSG);
       case 2: return Create(MessageTypeEnum.AUTH);
@@ -77,8 +77,8 @@ public class MessageType  {
     }
   }
 
-  public static void Encode(IByteWriter stream, MessageType value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, MessageType value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

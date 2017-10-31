@@ -33,8 +33,8 @@ public class MemoType  {
     };
   }
 
-  public static MemoType Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static MemoType Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(MemoTypeEnum.MEMO_NONE);
       case 1: return Create(MemoTypeEnum.MEMO_TEXT);
@@ -46,8 +46,8 @@ public class MemoType  {
     }
   }
 
-  public static void Encode(IByteWriter stream, MemoType value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, MemoType value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

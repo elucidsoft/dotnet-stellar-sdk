@@ -27,12 +27,12 @@ public class LedgerHeaderHistoryEntry  {
   public LedgerHeader Header {get; set;}
   public LedgerHeaderHistoryEntryExt Ext {get; set;}
 
-  public static void Encode(IByteWriter stream, LedgerHeaderHistoryEntry encodedLedgerHeaderHistoryEntry) {
+  public static void Encode(XdrDataOutputStream stream, LedgerHeaderHistoryEntry encodedLedgerHeaderHistoryEntry) {
     Hash.Encode(stream, encodedLedgerHeaderHistoryEntry.Hash);
     LedgerHeader.Encode(stream, encodedLedgerHeaderHistoryEntry.Header);
     LedgerHeaderHistoryEntryExt.Encode(stream, encodedLedgerHeaderHistoryEntry.Ext);
   }
-  public static LedgerHeaderHistoryEntry Decode(IByteReader stream) {
+  public static LedgerHeaderHistoryEntry Decode(XdrDataInputStream stream) {
     LedgerHeaderHistoryEntry decodedLedgerHeaderHistoryEntry = new LedgerHeaderHistoryEntry();
     decodedLedgerHeaderHistoryEntry.Hash = Hash.Decode(stream);
     decodedLedgerHeaderHistoryEntry.Header = LedgerHeader.Decode(stream);
@@ -45,16 +45,16 @@ public class LedgerHeaderHistoryEntry  {
 
     public int Discriminant { get; set; } = new int();
 
-    public static void Encode(IByteWriter stream, LedgerHeaderHistoryEntryExt encodedLedgerHeaderHistoryEntryExt) {
-    XdrEncoding.EncodeInt32((int)encodedLedgerHeaderHistoryEntryExt.Discriminant, stream);
+    public static void Encode(XdrDataOutputStream stream, LedgerHeaderHistoryEntryExt encodedLedgerHeaderHistoryEntryExt) {
+    stream.WriteInt((int)encodedLedgerHeaderHistoryEntryExt.Discriminant);
     switch (encodedLedgerHeaderHistoryEntryExt.Discriminant) {
     case 0:
     break;
     }
     }
-    public static LedgerHeaderHistoryEntryExt Decode(IByteReader stream) {
+    public static LedgerHeaderHistoryEntryExt Decode(XdrDataInputStream stream) {
     LedgerHeaderHistoryEntryExt decodedLedgerHeaderHistoryEntryExt = new LedgerHeaderHistoryEntryExt();
-    int discriminant =  XdrEncoding.DecodeInt32(stream);
+    int discriminant =  stream.ReadInt();
     decodedLedgerHeaderHistoryEntryExt.Discriminant = discriminant;
     switch (decodedLedgerHeaderHistoryEntryExt.Discriminant) {
     case 0:

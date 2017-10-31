@@ -35,8 +35,8 @@ public class ManageDataResultCode  {
     };
   }
 
-  public static ManageDataResultCode Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static ManageDataResultCode Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(ManageDataResultCodeEnum.MANAGE_DATA_SUCCESS);
       case -1: return Create(ManageDataResultCodeEnum.MANAGE_DATA_NOT_SUPPORTED_YET);
@@ -48,8 +48,8 @@ public class ManageDataResultCode  {
     }
   }
 
-  public static void Encode(IByteWriter stream, ManageDataResultCode value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, ManageDataResultCode value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

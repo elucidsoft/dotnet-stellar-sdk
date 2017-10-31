@@ -23,8 +23,8 @@ public class BucketEntry  {
 
   public LedgerEntry LiveEntry {get; set;}
   public LedgerKey DeadEntry {get; set;}
-  public static void Encode(IByteWriter stream, BucketEntry encodedBucketEntry) {
-  XdrEncoding.EncodeInt32((int)encodedBucketEntry.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, BucketEntry encodedBucketEntry) {
+  stream.WriteInt((int)encodedBucketEntry.Discriminant.InnerValue);
   switch (encodedBucketEntry.Discriminant.InnerValue) {
   case BucketEntryType.BucketEntryTypeEnum.LIVEENTRY:
   LedgerEntry.Encode(stream, encodedBucketEntry.LiveEntry);
@@ -34,7 +34,7 @@ public class BucketEntry  {
   break;
   }
   }
-  public static BucketEntry Decode(IByteReader stream) {
+  public static BucketEntry Decode(XdrDataInputStream stream) {
   BucketEntry decodedBucketEntry = new BucketEntry();
   BucketEntryType discriminant = BucketEntryType.Decode(stream);
   decodedBucketEntry.Discriminant = discriminant;

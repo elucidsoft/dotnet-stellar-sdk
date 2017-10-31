@@ -18,19 +18,19 @@ public class ManageDataOp  {
   public String64 DataName {get; set;}
   public DataValue DataValue {get; set;}
 
-  public static void Encode(IByteWriter stream, ManageDataOp encodedManageDataOp) {
+  public static void Encode(XdrDataOutputStream stream, ManageDataOp encodedManageDataOp) {
     String64.Encode(stream, encodedManageDataOp.DataName);
     if (encodedManageDataOp.DataValue != null) {
-    XdrEncoding.EncodeInt32(1, stream);
+    stream.WriteInt(1);
     DataValue.Encode(stream, encodedManageDataOp.DataValue);
     } else {
-    XdrEncoding.EncodeInt32(0, stream);
+    stream.WriteInt(0);
     }
   }
-  public static ManageDataOp Decode(IByteReader stream) {
+  public static ManageDataOp Decode(XdrDataInputStream stream) {
     ManageDataOp decodedManageDataOp = new ManageDataOp();
     decodedManageDataOp.DataName = String64.Decode(stream);
-    int DataValuePresent = XdrEncoding.DecodeInt32(stream);
+    int DataValuePresent = stream.ReadInt();
     if (DataValuePresent != 0) {
     decodedManageDataOp.DataValue = DataValue.Decode(stream);
     }

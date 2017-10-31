@@ -55,8 +55,8 @@ public class ManageOfferResultCode  {
     };
   }
 
-  public static ManageOfferResultCode Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static ManageOfferResultCode Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(ManageOfferResultCodeEnum.MANAGE_OFFER_SUCCESS);
       case -1: return Create(ManageOfferResultCodeEnum.MANAGE_OFFER_MALFORMED);
@@ -76,8 +76,8 @@ public class ManageOfferResultCode  {
     }
   }
 
-  public static void Encode(IByteWriter stream, ManageOfferResultCode value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, ManageOfferResultCode value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

@@ -22,13 +22,13 @@ public class CreatePassiveOfferOp  {
   public Int64 Amount {get; set;}
   public Price Price {get; set;}
 
-  public static void Encode(IByteWriter stream, CreatePassiveOfferOp encodedCreatePassiveOfferOp) {
+  public static void Encode(XdrDataOutputStream stream, CreatePassiveOfferOp encodedCreatePassiveOfferOp) {
     Asset.Encode(stream, encodedCreatePassiveOfferOp.Selling);
     Asset.Encode(stream, encodedCreatePassiveOfferOp.Buying);
     Int64.Encode(stream, encodedCreatePassiveOfferOp.Amount);
     Price.Encode(stream, encodedCreatePassiveOfferOp.Price);
   }
-  public static CreatePassiveOfferOp Decode(IByteReader stream) {
+  public static CreatePassiveOfferOp Decode(XdrDataInputStream stream) {
     CreatePassiveOfferOp decodedCreatePassiveOfferOp = new CreatePassiveOfferOp();
     decodedCreatePassiveOfferOp.Selling = Asset.Decode(stream);
     decodedCreatePassiveOfferOp.Buying = Asset.Decode(stream);

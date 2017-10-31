@@ -27,8 +27,8 @@ public class SignerKey  {
   public Uint256 Ed25519 {get; set;}
   public Uint256 PreAuthTx {get; set;}
   public Uint256 HashX {get; set;}
-  public static void Encode(IByteWriter stream, SignerKey encodedSignerKey) {
-  XdrEncoding.EncodeInt32((int)encodedSignerKey.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, SignerKey encodedSignerKey) {
+  stream.WriteInt((int)encodedSignerKey.Discriminant.InnerValue);
   switch (encodedSignerKey.Discriminant.InnerValue) {
   case SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519:
   Uint256.Encode(stream, encodedSignerKey.Ed25519);
@@ -41,7 +41,7 @@ public class SignerKey  {
   break;
   }
   }
-  public static SignerKey Decode(IByteReader stream) {
+  public static SignerKey Decode(XdrDataInputStream stream) {
   SignerKey decodedSignerKey = new SignerKey();
   SignerKeyType discriminant = SignerKeyType.Decode(stream);
   decodedSignerKey.Discriminant = discriminant;

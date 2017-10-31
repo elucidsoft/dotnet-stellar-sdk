@@ -18,14 +18,14 @@ public class Error  {
   public ErrorCode Code {get; set;}
   public String Msg {get; set;}
 
-  public static void Encode(IByteWriter stream, Error encodedError) {
+  public static void Encode(XdrDataOutputStream stream, Error encodedError) {
     ErrorCode.Encode(stream, encodedError.Code);
-    XdrEncoding.WriteString(stream, encodedError.Msg);
+    stream.WriteString(encodedError.Msg);
   }
-  public static Error Decode(IByteReader stream) {
+  public static Error Decode(XdrDataInputStream stream) {
     Error decodedError = new Error();
     decodedError.Code = ErrorCode.Decode(stream);
-    decodedError.Msg = XdrEncoding.ReadString(stream);
+    decodedError.Msg = stream.ReadString();
     return decodedError;
   }
 }

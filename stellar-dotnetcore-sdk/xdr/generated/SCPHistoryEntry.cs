@@ -19,17 +19,17 @@ public class SCPHistoryEntry  {
   public int Discriminant { get; set; } = new int();
 
   public SCPHistoryEntryV0 V0 {get; set;}
-  public static void Encode(IByteWriter stream, SCPHistoryEntry encodedSCPHistoryEntry) {
-  XdrEncoding.EncodeInt32((int)encodedSCPHistoryEntry.Discriminant, stream);
+  public static void Encode(XdrDataOutputStream stream, SCPHistoryEntry encodedSCPHistoryEntry) {
+  stream.WriteInt((int)encodedSCPHistoryEntry.Discriminant);
   switch (encodedSCPHistoryEntry.Discriminant) {
   case 0:
   SCPHistoryEntryV0.Encode(stream, encodedSCPHistoryEntry.V0);
   break;
   }
   }
-  public static SCPHistoryEntry Decode(IByteReader stream) {
+  public static SCPHistoryEntry Decode(XdrDataInputStream stream) {
   SCPHistoryEntry decodedSCPHistoryEntry = new SCPHistoryEntry();
-  int discriminant =  XdrEncoding.DecodeInt32(stream);
+  int discriminant =  stream.ReadInt();
   decodedSCPHistoryEntry.Discriminant = discriminant;
   switch (decodedSCPHistoryEntry.Discriminant) {
   case 0:

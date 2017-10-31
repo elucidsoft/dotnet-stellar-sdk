@@ -28,17 +28,17 @@ public class ManageOfferSuccessResult  {
   public ClaimOfferAtom[] OffersClaimed {get; set;}
   public ManageOfferSuccessResultOffer Offer {get; set;}
 
-  public static void Encode(IByteWriter stream, ManageOfferSuccessResult encodedManageOfferSuccessResult) {
+  public static void Encode(XdrDataOutputStream stream, ManageOfferSuccessResult encodedManageOfferSuccessResult) {
     int offersClaimedsize = encodedManageOfferSuccessResult.OffersClaimed.Length;
-    XdrEncoding.EncodeInt32(offersClaimedsize, stream);
+    stream.WriteInt(offersClaimedsize);
     for (int i = 0; i < offersClaimedsize; i++) {
       ClaimOfferAtom.Encode(stream, encodedManageOfferSuccessResult.OffersClaimed[i]);
     }
     ManageOfferSuccessResultOffer.Encode(stream, encodedManageOfferSuccessResult.Offer);
   }
-  public static ManageOfferSuccessResult Decode(IByteReader stream) {
+  public static ManageOfferSuccessResult Decode(XdrDataInputStream stream) {
     ManageOfferSuccessResult decodedManageOfferSuccessResult = new ManageOfferSuccessResult();
-    int offersClaimedsize = XdrEncoding.DecodeInt32(stream);
+    int offersClaimedsize = stream.ReadInt();
     decodedManageOfferSuccessResult.OffersClaimed = new ClaimOfferAtom[offersClaimedsize];
     for (int i = 0; i < offersClaimedsize; i++) {
       decodedManageOfferSuccessResult.OffersClaimed[i] = ClaimOfferAtom.Decode(stream);
@@ -53,8 +53,8 @@ public class ManageOfferSuccessResult  {
     public ManageOfferEffect Discriminant { get; set; } = new ManageOfferEffect();
 
     public OfferEntry Offer {get; set;}
-    public static void Encode(IByteWriter stream, ManageOfferSuccessResultOffer encodedManageOfferSuccessResultOffer) {
-    XdrEncoding.EncodeInt32((int)encodedManageOfferSuccessResultOffer.Discriminant.InnerValue, stream);
+    public static void Encode(XdrDataOutputStream stream, ManageOfferSuccessResultOffer encodedManageOfferSuccessResultOffer) {
+    stream.WriteInt((int)encodedManageOfferSuccessResultOffer.Discriminant.InnerValue);
     switch (encodedManageOfferSuccessResultOffer.Discriminant.InnerValue) {
     case ManageOfferEffect.ManageOfferEffectEnum.MANAGE_OFFER_CREATED:
     case ManageOfferEffect.ManageOfferEffectEnum.MANAGE_OFFER_UPDATED:
@@ -64,7 +64,7 @@ public class ManageOfferSuccessResult  {
     break;
     }
     }
-    public static ManageOfferSuccessResultOffer Decode(IByteReader stream) {
+    public static ManageOfferSuccessResultOffer Decode(XdrDataInputStream stream) {
     ManageOfferSuccessResultOffer decodedManageOfferSuccessResultOffer = new ManageOfferSuccessResultOffer();
     ManageOfferEffect discriminant = ManageOfferEffect.Decode(stream);
     decodedManageOfferSuccessResultOffer.Discriminant = discriminant;

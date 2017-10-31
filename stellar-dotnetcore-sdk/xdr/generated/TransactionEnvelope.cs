@@ -21,18 +21,18 @@ public class TransactionEnvelope  {
   public Transaction Tx {get; set;}
   public DecoratedSignature[] Signatures {get; set;}
 
-  public static void Encode(IByteWriter stream, TransactionEnvelope encodedTransactionEnvelope) {
+  public static void Encode(XdrDataOutputStream stream, TransactionEnvelope encodedTransactionEnvelope) {
     Transaction.Encode(stream, encodedTransactionEnvelope.Tx);
     int signaturessize = encodedTransactionEnvelope.Signatures.Length;
-    XdrEncoding.EncodeInt32(signaturessize, stream);
+    stream.WriteInt(signaturessize);
     for (int i = 0; i < signaturessize; i++) {
       DecoratedSignature.Encode(stream, encodedTransactionEnvelope.Signatures[i]);
     }
   }
-  public static TransactionEnvelope Decode(IByteReader stream) {
+  public static TransactionEnvelope Decode(XdrDataInputStream stream) {
     TransactionEnvelope decodedTransactionEnvelope = new TransactionEnvelope();
     decodedTransactionEnvelope.Tx = Transaction.Decode(stream);
-    int signaturessize = XdrEncoding.DecodeInt32(stream);
+    int signaturessize = stream.ReadInt();
     decodedTransactionEnvelope.Signatures = new DecoratedSignature[signaturessize];
     for (int i = 0; i < signaturessize; i++) {
       decodedTransactionEnvelope.Signatures[i] = DecoratedSignature.Decode(stream);

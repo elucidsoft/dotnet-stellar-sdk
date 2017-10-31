@@ -44,35 +44,35 @@ public class Transaction  {
   public Operation[] Operations {get; set;}
   public TransactionExt Ext {get; set;}
 
-  public static void Encode(IByteWriter stream, Transaction encodedTransaction) {
+  public static void Encode(XdrDataOutputStream stream, Transaction encodedTransaction) {
     AccountID.Encode(stream, encodedTransaction.SourceAccount);
     Uint32.Encode(stream, encodedTransaction.Fee);
     SequenceNumber.Encode(stream, encodedTransaction.SeqNum);
     if (encodedTransaction.TimeBounds != null) {
-    XdrEncoding.EncodeInt32(1, stream);
+    stream.WriteInt(1);
     TimeBounds.Encode(stream, encodedTransaction.TimeBounds);
     } else {
-    XdrEncoding.EncodeInt32(0, stream);
+    stream.WriteInt(0);
     }
     Memo.Encode(stream, encodedTransaction.Memo);
     int operationssize = encodedTransaction.Operations.Length;
-    XdrEncoding.EncodeInt32(operationssize, stream);
+    stream.WriteInt(operationssize);
     for (int i = 0; i < operationssize; i++) {
       Operation.Encode(stream, encodedTransaction.Operations[i]);
     }
     TransactionExt.Encode(stream, encodedTransaction.Ext);
   }
-  public static Transaction Decode(IByteReader stream) {
+  public static Transaction Decode(XdrDataInputStream stream) {
     Transaction decodedTransaction = new Transaction();
     decodedTransaction.SourceAccount = AccountID.Decode(stream);
     decodedTransaction.Fee = Uint32.Decode(stream);
     decodedTransaction.SeqNum = SequenceNumber.Decode(stream);
-    int TimeBoundsPresent = XdrEncoding.DecodeInt32(stream);
+    int TimeBoundsPresent = stream.ReadInt();
     if (TimeBoundsPresent != 0) {
     decodedTransaction.TimeBounds = TimeBounds.Decode(stream);
     }
     decodedTransaction.Memo = Memo.Decode(stream);
-    int operationssize = XdrEncoding.DecodeInt32(stream);
+    int operationssize = stream.ReadInt();
     decodedTransaction.Operations = new Operation[operationssize];
     for (int i = 0; i < operationssize; i++) {
       decodedTransaction.Operations[i] = Operation.Decode(stream);
@@ -86,16 +86,16 @@ public class Transaction  {
 
     public int Discriminant { get; set; } = new int();
 
-    public static void Encode(IByteWriter stream, TransactionExt encodedTransactionExt) {
-    XdrEncoding.EncodeInt32((int)encodedTransactionExt.Discriminant, stream);
+    public static void Encode(XdrDataOutputStream stream, TransactionExt encodedTransactionExt) {
+    stream.WriteInt((int)encodedTransactionExt.Discriminant);
     switch (encodedTransactionExt.Discriminant) {
     case 0:
     break;
     }
     }
-    public static TransactionExt Decode(IByteReader stream) {
+    public static TransactionExt Decode(XdrDataInputStream stream) {
     TransactionExt decodedTransactionExt = new TransactionExt();
-    int discriminant =  XdrEncoding.DecodeInt32(stream);
+    int discriminant =  stream.ReadInt();
     decodedTransactionExt.Discriminant = discriminant;
     switch (decodedTransactionExt.Discriminant) {
     case 0:

@@ -20,28 +20,28 @@ public class SCPNomination  {
   public Value[] Votes {get; set;}
   public Value[] Accepted {get; set;}
 
-  public static void Encode(IByteWriter stream, SCPNomination encodedSCPNomination) {
+  public static void Encode(XdrDataOutputStream stream, SCPNomination encodedSCPNomination) {
     Hash.Encode(stream, encodedSCPNomination.QuorumSetHash);
     int votessize = encodedSCPNomination.Votes.Length;
-    XdrEncoding.EncodeInt32(votessize, stream);
+    stream.WriteInt(votessize);
     for (int i = 0; i < votessize; i++) {
       Value.Encode(stream, encodedSCPNomination.Votes[i]);
     }
     int acceptedsize = encodedSCPNomination.Accepted.Length;
-    XdrEncoding.EncodeInt32(acceptedsize, stream);
+    stream.WriteInt(acceptedsize);
     for (int i = 0; i < acceptedsize; i++) {
       Value.Encode(stream, encodedSCPNomination.Accepted[i]);
     }
   }
-  public static SCPNomination Decode(IByteReader stream) {
+  public static SCPNomination Decode(XdrDataInputStream stream) {
     SCPNomination decodedSCPNomination = new SCPNomination();
     decodedSCPNomination.QuorumSetHash = Hash.Decode(stream);
-    int votessize = XdrEncoding.DecodeInt32(stream);
+    int votessize = stream.ReadInt();
     decodedSCPNomination.Votes = new Value[votessize];
     for (int i = 0; i < votessize; i++) {
       decodedSCPNomination.Votes[i] = Value.Decode(stream);
     }
-    int acceptedsize = XdrEncoding.DecodeInt32(stream);
+    int acceptedsize = stream.ReadInt();
     decodedSCPNomination.Accepted = new Value[acceptedsize];
     for (int i = 0; i < acceptedsize; i++) {
       decodedSCPNomination.Accepted[i] = Value.Decode(stream);

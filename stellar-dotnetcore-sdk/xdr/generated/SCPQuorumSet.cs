@@ -20,28 +20,28 @@ public class SCPQuorumSet  {
   public PublicKey[] Validators {get; set;}
   public SCPQuorumSet[] InnerSets {get; set;}
 
-  public static void Encode(IByteWriter stream, SCPQuorumSet encodedSCPQuorumSet) {
+  public static void Encode(XdrDataOutputStream stream, SCPQuorumSet encodedSCPQuorumSet) {
     Uint32.Encode(stream, encodedSCPQuorumSet.Threshold);
     int validatorssize = encodedSCPQuorumSet.Validators.Length;
-    XdrEncoding.EncodeInt32(validatorssize, stream);
+    stream.WriteInt(validatorssize);
     for (int i = 0; i < validatorssize; i++) {
       PublicKey.Encode(stream, encodedSCPQuorumSet.Validators[i]);
     }
     int innerSetssize = encodedSCPQuorumSet.InnerSets.Length;
-    XdrEncoding.EncodeInt32(innerSetssize, stream);
+    stream.WriteInt(innerSetssize);
     for (int i = 0; i < innerSetssize; i++) {
       SCPQuorumSet.Encode(stream, encodedSCPQuorumSet.InnerSets[i]);
     }
   }
-  public static SCPQuorumSet Decode(IByteReader stream) {
+  public static SCPQuorumSet Decode(XdrDataInputStream stream) {
     SCPQuorumSet decodedSCPQuorumSet = new SCPQuorumSet();
     decodedSCPQuorumSet.Threshold = Uint32.Decode(stream);
-    int validatorssize = XdrEncoding.DecodeInt32(stream);
+    int validatorssize = stream.ReadInt();
     decodedSCPQuorumSet.Validators = new PublicKey[validatorssize];
     for (int i = 0; i < validatorssize; i++) {
       decodedSCPQuorumSet.Validators[i] = PublicKey.Decode(stream);
     }
-    int innerSetssize = XdrEncoding.DecodeInt32(stream);
+    int innerSetssize = stream.ReadInt();
     decodedSCPQuorumSet.InnerSets = new SCPQuorumSet[innerSetssize];
     for (int i = 0; i < innerSetssize; i++) {
       decodedSCPQuorumSet.InnerSets[i] = SCPQuorumSet.Decode(stream);

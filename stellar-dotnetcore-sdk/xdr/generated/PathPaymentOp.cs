@@ -30,26 +30,26 @@ public class PathPaymentOp  {
   public Int64 DestAmount {get; set;}
   public Asset[] Path {get; set;}
 
-  public static void Encode(IByteWriter stream, PathPaymentOp encodedPathPaymentOp) {
+  public static void Encode(XdrDataOutputStream stream, PathPaymentOp encodedPathPaymentOp) {
     Asset.Encode(stream, encodedPathPaymentOp.SendAsset);
     Int64.Encode(stream, encodedPathPaymentOp.SendMax);
     AccountID.Encode(stream, encodedPathPaymentOp.Destination);
     Asset.Encode(stream, encodedPathPaymentOp.DestAsset);
     Int64.Encode(stream, encodedPathPaymentOp.DestAmount);
     int pathsize = encodedPathPaymentOp.Path.Length;
-    XdrEncoding.EncodeInt32(pathsize, stream);
+    stream.WriteInt(pathsize);
     for (int i = 0; i < pathsize; i++) {
       Asset.Encode(stream, encodedPathPaymentOp.Path[i]);
     }
   }
-  public static PathPaymentOp Decode(IByteReader stream) {
+  public static PathPaymentOp Decode(XdrDataInputStream stream) {
     PathPaymentOp decodedPathPaymentOp = new PathPaymentOp();
     decodedPathPaymentOp.SendAsset = Asset.Decode(stream);
     decodedPathPaymentOp.SendMax = Int64.Decode(stream);
     decodedPathPaymentOp.Destination = AccountID.Decode(stream);
     decodedPathPaymentOp.DestAsset = Asset.Decode(stream);
     decodedPathPaymentOp.DestAmount = Int64.Decode(stream);
-    int pathsize = XdrEncoding.DecodeInt32(stream);
+    int pathsize = stream.ReadInt();
     decodedPathPaymentOp.Path = new Asset[pathsize];
     for (int i = 0; i < pathsize; i++) {
       decodedPathPaymentOp.Path[i] = Asset.Decode(stream);

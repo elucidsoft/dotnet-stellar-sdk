@@ -33,8 +33,8 @@ public class ErrorCode  {
     };
   }
 
-  public static ErrorCode Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static ErrorCode Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(ErrorCodeEnum.ERR_MISC);
       case 1: return Create(ErrorCodeEnum.ERR_DATA);
@@ -46,8 +46,8 @@ public class ErrorCode  {
     }
   }
 
-  public static void Encode(IByteWriter stream, ErrorCode value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, ErrorCode value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

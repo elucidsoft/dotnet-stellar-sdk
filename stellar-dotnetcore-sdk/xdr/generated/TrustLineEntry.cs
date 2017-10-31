@@ -35,7 +35,7 @@ public class TrustLineEntry  {
   public Uint32 Flags {get; set;}
   public TrustLineEntryExt Ext {get; set;}
 
-  public static void Encode(IByteWriter stream, TrustLineEntry encodedTrustLineEntry) {
+  public static void Encode(XdrDataOutputStream stream, TrustLineEntry encodedTrustLineEntry) {
     AccountID.Encode(stream, encodedTrustLineEntry.AccountID);
     Asset.Encode(stream, encodedTrustLineEntry.Asset);
     Int64.Encode(stream, encodedTrustLineEntry.Balance);
@@ -43,7 +43,7 @@ public class TrustLineEntry  {
     Uint32.Encode(stream, encodedTrustLineEntry.Flags);
     TrustLineEntryExt.Encode(stream, encodedTrustLineEntry.Ext);
   }
-  public static TrustLineEntry Decode(IByteReader stream) {
+  public static TrustLineEntry Decode(XdrDataInputStream stream) {
     TrustLineEntry decodedTrustLineEntry = new TrustLineEntry();
     decodedTrustLineEntry.AccountID = AccountID.Decode(stream);
     decodedTrustLineEntry.Asset = Asset.Decode(stream);
@@ -59,16 +59,16 @@ public class TrustLineEntry  {
 
     public int Discriminant { get; set; } = new int();
 
-    public static void Encode(IByteWriter stream, TrustLineEntryExt encodedTrustLineEntryExt) {
-    XdrEncoding.EncodeInt32((int)encodedTrustLineEntryExt.Discriminant, stream);
+    public static void Encode(XdrDataOutputStream stream, TrustLineEntryExt encodedTrustLineEntryExt) {
+    stream.WriteInt((int)encodedTrustLineEntryExt.Discriminant);
     switch (encodedTrustLineEntryExt.Discriminant) {
     case 0:
     break;
     }
     }
-    public static TrustLineEntryExt Decode(IByteReader stream) {
+    public static TrustLineEntryExt Decode(XdrDataInputStream stream) {
     TrustLineEntryExt decodedTrustLineEntryExt = new TrustLineEntryExt();
-    int discriminant =  XdrEncoding.DecodeInt32(stream);
+    int discriminant =  stream.ReadInt();
     decodedTrustLineEntryExt.Discriminant = discriminant;
     switch (decodedTrustLineEntryExt.Discriminant) {
     case 0:

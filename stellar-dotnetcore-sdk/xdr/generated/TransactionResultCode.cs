@@ -50,8 +50,8 @@ public class TransactionResultCode  {
     };
   }
 
-  public static TransactionResultCode Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static TransactionResultCode Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(TransactionResultCodeEnum.txSUCCESS);
       case -1: return Create(TransactionResultCodeEnum.txFAILED);
@@ -70,8 +70,8 @@ public class TransactionResultCode  {
     }
   }
 
-  public static void Encode(IByteWriter stream, TransactionResultCode value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, TransactionResultCode value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

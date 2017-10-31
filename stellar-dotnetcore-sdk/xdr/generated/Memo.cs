@@ -30,13 +30,13 @@ public class Memo  {
   public Uint64 Id {get; set;}
   public Hash Hash {get; set;}
   public Hash RetHash {get; set;}
-  public static void Encode(IByteWriter stream, Memo encodedMemo) {
-  XdrEncoding.EncodeInt32((int)encodedMemo.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, Memo encodedMemo) {
+  stream.WriteInt((int)encodedMemo.Discriminant.InnerValue);
   switch (encodedMemo.Discriminant.InnerValue) {
   case MemoType.MemoTypeEnum.MEMO_NONE:
   break;
   case MemoType.MemoTypeEnum.MEMO_TEXT:
-  XdrEncoding.WriteString(stream, encodedMemo.Text);
+  stream.WriteString(encodedMemo.Text);
   break;
   case MemoType.MemoTypeEnum.MEMO_ID:
   Uint64.Encode(stream, encodedMemo.Id);
@@ -49,7 +49,7 @@ public class Memo  {
   break;
   }
   }
-  public static Memo Decode(IByteReader stream) {
+  public static Memo Decode(XdrDataInputStream stream) {
   Memo decodedMemo = new Memo();
   MemoType discriminant = MemoType.Decode(stream);
   decodedMemo.Discriminant = discriminant;
@@ -57,7 +57,7 @@ public class Memo  {
   case MemoType.MemoTypeEnum.MEMO_NONE:
   break;
   case MemoType.MemoTypeEnum.MEMO_TEXT:
-  decodedMemo.Text = XdrEncoding.ReadString(stream);
+  decodedMemo.Text = stream.ReadString();
   break;
   case MemoType.MemoTypeEnum.MEMO_ID:
   decodedMemo.Id = Uint64.Decode(stream);

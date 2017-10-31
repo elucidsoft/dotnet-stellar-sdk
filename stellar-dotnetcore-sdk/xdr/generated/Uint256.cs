@@ -19,15 +19,15 @@ public class Uint256  {
     InnerValue = value;
   }
 
-  public static void Encode(IByteWriter stream, Uint256  encodedUint256) {
+  public static void Encode(XdrDataOutputStream stream, Uint256  encodedUint256) {
   int uint256size = encodedUint256.InnerValue.Length;
-  XdrEncoding.WriteFixOpaque(stream, (uint)uint256size, encodedUint256.InnerValue);
+  stream.Write(encodedUint256.InnerValue, 0, uint256size);
   }
-  public static Uint256 Decode(IByteReader stream) {
+  public static Uint256 Decode(XdrDataInputStream stream) {
     Uint256 decodedUint256 = new Uint256();
   int uint256size = 32;
   decodedUint256.InnerValue = new byte[uint256size];
-  XdrEncoding.ReadFixOpaque(stream, (uint)uint256size);
+  stream.Read(decodedUint256.InnerValue, 0, uint256size);
     return decodedUint256;
   }
 }

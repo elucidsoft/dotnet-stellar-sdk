@@ -19,16 +19,16 @@ public class Signature  {
     InnerValue = value;
   }
 
-  public static void Encode(IByteWriter stream, Signature  encodedSignature) {
+  public static void Encode(XdrDataOutputStream stream, Signature  encodedSignature) {
   int Signaturesize = encodedSignature.InnerValue.Length;
-  XdrEncoding.EncodeInt32(Signaturesize, stream);
-  XdrEncoding.WriteFixOpaque(stream, (uint)Signaturesize, encodedSignature.InnerValue);
+  stream.WriteInt(Signaturesize);
+  stream.Write(encodedSignature.InnerValue, 0, Signaturesize);
   }
-  public static Signature Decode(IByteReader stream) {
+  public static Signature Decode(XdrDataInputStream stream) {
     Signature decodedSignature = new Signature();
-  int Signaturesize = XdrEncoding.DecodeInt32(stream);
+  int Signaturesize = stream.ReadInt();
   decodedSignature.InnerValue = new byte[Signaturesize];
-  XdrEncoding.ReadFixOpaque(stream, (uint)Signaturesize);
+  stream.Read(decodedSignature.InnerValue, 0, Signaturesize);
     return decodedSignature;
   }
 }

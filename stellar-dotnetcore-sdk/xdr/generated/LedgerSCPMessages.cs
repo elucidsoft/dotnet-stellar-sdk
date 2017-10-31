@@ -18,18 +18,18 @@ public class LedgerSCPMessages  {
   public Uint32 LedgerSeq {get; set;}
   public SCPEnvelope[] Messages {get; set;}
 
-  public static void Encode(IByteWriter stream, LedgerSCPMessages encodedLedgerSCPMessages) {
+  public static void Encode(XdrDataOutputStream stream, LedgerSCPMessages encodedLedgerSCPMessages) {
     Uint32.Encode(stream, encodedLedgerSCPMessages.LedgerSeq);
     int messagessize = encodedLedgerSCPMessages.Messages.Length;
-    XdrEncoding.EncodeInt32(messagessize, stream);
+    stream.WriteInt(messagessize);
     for (int i = 0; i < messagessize; i++) {
       SCPEnvelope.Encode(stream, encodedLedgerSCPMessages.Messages[i]);
     }
   }
-  public static LedgerSCPMessages Decode(IByteReader stream) {
+  public static LedgerSCPMessages Decode(XdrDataInputStream stream) {
     LedgerSCPMessages decodedLedgerSCPMessages = new LedgerSCPMessages();
     decodedLedgerSCPMessages.LedgerSeq = Uint32.Decode(stream);
-    int messagessize = XdrEncoding.DecodeInt32(stream);
+    int messagessize = stream.ReadInt();
     decodedLedgerSCPMessages.Messages = new SCPEnvelope[messagessize];
     for (int i = 0; i < messagessize; i++) {
       decodedLedgerSCPMessages.Messages[i] = SCPEnvelope.Decode(stream);

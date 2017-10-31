@@ -21,8 +21,8 @@ public class AccountMergeResult  {
   public AccountMergeResultCode Discriminant { get; set; } = new AccountMergeResultCode();
 
   public Int64 SourceAccountBalance {get; set;}
-  public static void Encode(IByteWriter stream, AccountMergeResult encodedAccountMergeResult) {
-  XdrEncoding.EncodeInt32((int)encodedAccountMergeResult.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, AccountMergeResult encodedAccountMergeResult) {
+  stream.WriteInt((int)encodedAccountMergeResult.Discriminant.InnerValue);
   switch (encodedAccountMergeResult.Discriminant.InnerValue) {
   case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SUCCESS:
   Int64.Encode(stream, encodedAccountMergeResult.SourceAccountBalance);
@@ -31,7 +31,7 @@ public class AccountMergeResult  {
   break;
   }
   }
-  public static AccountMergeResult Decode(IByteReader stream) {
+  public static AccountMergeResult Decode(XdrDataInputStream stream) {
   AccountMergeResult decodedAccountMergeResult = new AccountMergeResult();
   AccountMergeResultCode discriminant = AccountMergeResultCode.Decode(stream);
   decodedAccountMergeResult.Discriminant = discriminant;

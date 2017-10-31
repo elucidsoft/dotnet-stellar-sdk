@@ -36,12 +36,12 @@ public class TransactionResult  {
   public TransactionResultResult Result {get; set;}
   public TransactionResultExt Ext {get; set;}
 
-  public static void Encode(IByteWriter stream, TransactionResult encodedTransactionResult) {
+  public static void Encode(XdrDataOutputStream stream, TransactionResult encodedTransactionResult) {
     Int64.Encode(stream, encodedTransactionResult.FeeCharged);
     TransactionResultResult.Encode(stream, encodedTransactionResult.Result);
     TransactionResultExt.Encode(stream, encodedTransactionResult.Ext);
   }
-  public static TransactionResult Decode(IByteReader stream) {
+  public static TransactionResult Decode(XdrDataInputStream stream) {
     TransactionResult decodedTransactionResult = new TransactionResult();
     decodedTransactionResult.FeeCharged = Int64.Decode(stream);
     decodedTransactionResult.Result = TransactionResultResult.Decode(stream);
@@ -55,13 +55,13 @@ public class TransactionResult  {
     public TransactionResultCode Discriminant { get; set; } = new TransactionResultCode();
 
     public OperationResult[] Results {get; set;}
-    public static void Encode(IByteWriter stream, TransactionResultResult encodedTransactionResultResult) {
-    XdrEncoding.EncodeInt32((int)encodedTransactionResultResult.Discriminant.InnerValue, stream);
+    public static void Encode(XdrDataOutputStream stream, TransactionResultResult encodedTransactionResultResult) {
+    stream.WriteInt((int)encodedTransactionResultResult.Discriminant.InnerValue);
     switch (encodedTransactionResultResult.Discriminant.InnerValue) {
     case TransactionResultCode.TransactionResultCodeEnum.txSUCCESS:
     case TransactionResultCode.TransactionResultCodeEnum.txFAILED:
     int resultssize = encodedTransactionResultResult.Results.Length;
-    XdrEncoding.EncodeInt32(resultssize, stream);
+    stream.WriteInt(resultssize);
     for (int i = 0; i < resultssize; i++) {
       OperationResult.Encode(stream, encodedTransactionResultResult.Results[i]);
     }
@@ -70,14 +70,14 @@ public class TransactionResult  {
     break;
     }
     }
-    public static TransactionResultResult Decode(IByteReader stream) {
+    public static TransactionResultResult Decode(XdrDataInputStream stream) {
     TransactionResultResult decodedTransactionResultResult = new TransactionResultResult();
     TransactionResultCode discriminant = TransactionResultCode.Decode(stream);
     decodedTransactionResultResult.Discriminant = discriminant;
     switch (decodedTransactionResultResult.Discriminant.InnerValue) {
     case TransactionResultCode.TransactionResultCodeEnum.txSUCCESS:
     case TransactionResultCode.TransactionResultCodeEnum.txFAILED:
-    int resultssize = XdrEncoding.DecodeInt32(stream);
+    int resultssize = stream.ReadInt();
     decodedTransactionResultResult.Results = new OperationResult[resultssize];
     for (int i = 0; i < resultssize; i++) {
       decodedTransactionResultResult.Results[i] = OperationResult.Decode(stream);
@@ -95,16 +95,16 @@ public class TransactionResult  {
 
     public int Discriminant { get; set; } = new int();
 
-    public static void Encode(IByteWriter stream, TransactionResultExt encodedTransactionResultExt) {
-    XdrEncoding.EncodeInt32((int)encodedTransactionResultExt.Discriminant, stream);
+    public static void Encode(XdrDataOutputStream stream, TransactionResultExt encodedTransactionResultExt) {
+    stream.WriteInt((int)encodedTransactionResultExt.Discriminant);
     switch (encodedTransactionResultExt.Discriminant) {
     case 0:
     break;
     }
     }
-    public static TransactionResultExt Decode(IByteReader stream) {
+    public static TransactionResultExt Decode(XdrDataInputStream stream) {
     TransactionResultExt decodedTransactionResultExt = new TransactionResultExt();
-    int discriminant =  XdrEncoding.DecodeInt32(stream);
+    int discriminant =  stream.ReadInt();
     decodedTransactionResultExt.Discriminant = discriminant;
     switch (decodedTransactionResultExt.Discriminant) {
     case 0:

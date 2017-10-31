@@ -27,12 +27,12 @@ public class TransactionHistoryEntry  {
   public TransactionSet TxSet {get; set;}
   public TransactionHistoryEntryExt Ext {get; set;}
 
-  public static void Encode(IByteWriter stream, TransactionHistoryEntry encodedTransactionHistoryEntry) {
+  public static void Encode(XdrDataOutputStream stream, TransactionHistoryEntry encodedTransactionHistoryEntry) {
     Uint32.Encode(stream, encodedTransactionHistoryEntry.LedgerSeq);
     TransactionSet.Encode(stream, encodedTransactionHistoryEntry.TxSet);
     TransactionHistoryEntryExt.Encode(stream, encodedTransactionHistoryEntry.Ext);
   }
-  public static TransactionHistoryEntry Decode(IByteReader stream) {
+  public static TransactionHistoryEntry Decode(XdrDataInputStream stream) {
     TransactionHistoryEntry decodedTransactionHistoryEntry = new TransactionHistoryEntry();
     decodedTransactionHistoryEntry.LedgerSeq = Uint32.Decode(stream);
     decodedTransactionHistoryEntry.TxSet = TransactionSet.Decode(stream);
@@ -45,16 +45,16 @@ public class TransactionHistoryEntry  {
 
     public int Discriminant { get; set; } = new int();
 
-    public static void Encode(IByteWriter stream, TransactionHistoryEntryExt encodedTransactionHistoryEntryExt) {
-    XdrEncoding.EncodeInt32((int)encodedTransactionHistoryEntryExt.Discriminant, stream);
+    public static void Encode(XdrDataOutputStream stream, TransactionHistoryEntryExt encodedTransactionHistoryEntryExt) {
+    stream.WriteInt((int)encodedTransactionHistoryEntryExt.Discriminant);
     switch (encodedTransactionHistoryEntryExt.Discriminant) {
     case 0:
     break;
     }
     }
-    public static TransactionHistoryEntryExt Decode(IByteReader stream) {
+    public static TransactionHistoryEntryExt Decode(XdrDataInputStream stream) {
     TransactionHistoryEntryExt decodedTransactionHistoryEntryExt = new TransactionHistoryEntryExt();
-    int discriminant =  XdrEncoding.DecodeInt32(stream);
+    int discriminant =  stream.ReadInt();
     decodedTransactionHistoryEntryExt.Discriminant = discriminant;
     switch (decodedTransactionHistoryEntryExt.Discriminant) {
     case 0:

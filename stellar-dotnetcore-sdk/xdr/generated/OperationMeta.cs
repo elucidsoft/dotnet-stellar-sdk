@@ -16,10 +16,10 @@ public class OperationMeta  {
   public OperationMeta () {}
   public LedgerEntryChanges Changes {get; set;}
 
-  public static void Encode(IByteWriter stream, OperationMeta encodedOperationMeta) {
+  public static void Encode(XdrDataOutputStream stream, OperationMeta encodedOperationMeta) {
     LedgerEntryChanges.Encode(stream, encodedOperationMeta.Changes);
   }
-  public static OperationMeta Decode(IByteReader stream) {
+  public static OperationMeta Decode(XdrDataInputStream stream) {
     OperationMeta decodedOperationMeta = new OperationMeta();
     decodedOperationMeta.Changes = LedgerEntryChanges.Decode(stream);
     return decodedOperationMeta;

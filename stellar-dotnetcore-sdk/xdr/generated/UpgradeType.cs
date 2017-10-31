@@ -19,16 +19,16 @@ public class UpgradeType  {
     InnerValue = value;
   }
 
-  public static void Encode(IByteWriter stream, UpgradeType  encodedUpgradeType) {
+  public static void Encode(XdrDataOutputStream stream, UpgradeType  encodedUpgradeType) {
   int UpgradeTypesize = encodedUpgradeType.InnerValue.Length;
-  XdrEncoding.EncodeInt32(UpgradeTypesize, stream);
-  XdrEncoding.WriteFixOpaque(stream, (uint)UpgradeTypesize, encodedUpgradeType.InnerValue);
+  stream.WriteInt(UpgradeTypesize);
+  stream.Write(encodedUpgradeType.InnerValue, 0, UpgradeTypesize);
   }
-  public static UpgradeType Decode(IByteReader stream) {
+  public static UpgradeType Decode(XdrDataInputStream stream) {
     UpgradeType decodedUpgradeType = new UpgradeType();
-  int UpgradeTypesize = XdrEncoding.DecodeInt32(stream);
+  int UpgradeTypesize = stream.ReadInt();
   decodedUpgradeType.InnerValue = new byte[UpgradeTypesize];
-  XdrEncoding.ReadFixOpaque(stream, (uint)UpgradeTypesize);
+  stream.Read(decodedUpgradeType.InnerValue, 0, UpgradeTypesize);
     return decodedUpgradeType;
   }
 }

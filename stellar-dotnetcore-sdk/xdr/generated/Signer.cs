@@ -18,11 +18,11 @@ public class Signer  {
   public SignerKey Key {get; set;}
   public Uint32 Weight {get; set;}
 
-  public static void Encode(IByteWriter stream, Signer encodedSigner) {
+  public static void Encode(XdrDataOutputStream stream, Signer encodedSigner) {
     SignerKey.Encode(stream, encodedSigner.Key);
     Uint32.Encode(stream, encodedSigner.Weight);
   }
-  public static Signer Decode(IByteReader stream) {
+  public static Signer Decode(XdrDataInputStream stream) {
     Signer decodedSigner = new Signer();
     decodedSigner.Key = SignerKey.Decode(stream);
     decodedSigner.Weight = Uint32.Decode(stream);

@@ -25,8 +25,8 @@ public class PublicKeyType  {
     };
   }
 
-  public static PublicKeyType Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static PublicKeyType Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519);
       default:
@@ -34,8 +34,8 @@ public class PublicKeyType  {
     }
   }
 
-  public static void Encode(IByteWriter stream, PublicKeyType value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, PublicKeyType value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

@@ -45,8 +45,8 @@ public class OperationType  {
     };
   }
 
-  public static OperationType Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static OperationType Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(OperationTypeEnum.CREATE_ACCOUNT);
       case 1: return Create(OperationTypeEnum.PAYMENT);
@@ -64,8 +64,8 @@ public class OperationType  {
     }
   }
 
-  public static void Encode(IByteWriter stream, OperationType value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, OperationType value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

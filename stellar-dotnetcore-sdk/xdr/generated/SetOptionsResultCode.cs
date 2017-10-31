@@ -45,8 +45,8 @@ public class SetOptionsResultCode  {
     };
   }
 
-  public static SetOptionsResultCode Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static SetOptionsResultCode Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(SetOptionsResultCodeEnum.SET_OPTIONS_SUCCESS);
       case -1: return Create(SetOptionsResultCodeEnum.SET_OPTIONS_LOW_RESERVE);
@@ -63,8 +63,8 @@ public class SetOptionsResultCode  {
     }
   }
 
-  public static void Encode(IByteWriter stream, SetOptionsResultCode value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, SetOptionsResultCode value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

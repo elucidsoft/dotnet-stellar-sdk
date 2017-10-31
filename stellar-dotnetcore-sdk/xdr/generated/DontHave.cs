@@ -18,11 +18,11 @@ public class DontHave  {
   public MessageType Type {get; set;}
   public Uint256 ReqHash {get; set;}
 
-  public static void Encode(IByteWriter stream, DontHave encodedDontHave) {
+  public static void Encode(XdrDataOutputStream stream, DontHave encodedDontHave) {
     MessageType.Encode(stream, encodedDontHave.Type);
     Uint256.Encode(stream, encodedDontHave.ReqHash);
   }
-  public static DontHave Decode(IByteReader stream) {
+  public static DontHave Decode(XdrDataInputStream stream) {
     DontHave decodedDontHave = new DontHave();
     decodedDontHave.Type = MessageType.Decode(stream);
     decodedDontHave.ReqHash = Uint256.Decode(stream);

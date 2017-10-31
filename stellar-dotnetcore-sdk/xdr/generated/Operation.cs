@@ -47,18 +47,18 @@ public class Operation  {
   public AccountID SourceAccount {get; set;}
   public OperationBody Body {get; set;}
 
-  public static void Encode(IByteWriter stream, Operation encodedOperation) {
+  public static void Encode(XdrDataOutputStream stream, Operation encodedOperation) {
     if (encodedOperation.SourceAccount != null) {
-    XdrEncoding.EncodeInt32(1, stream);
+    stream.WriteInt(1);
     AccountID.Encode(stream, encodedOperation.SourceAccount);
     } else {
-    XdrEncoding.EncodeInt32(0, stream);
+    stream.WriteInt(0);
     }
     OperationBody.Encode(stream, encodedOperation.Body);
   }
-  public static Operation Decode(IByteReader stream) {
+  public static Operation Decode(XdrDataInputStream stream) {
     Operation decodedOperation = new Operation();
-    int SourceAccountPresent = XdrEncoding.DecodeInt32(stream);
+    int SourceAccountPresent = stream.ReadInt();
     if (SourceAccountPresent != 0) {
     decodedOperation.SourceAccount = AccountID.Decode(stream);
     }
@@ -81,8 +81,8 @@ public class Operation  {
     public AllowTrustOp AllowTrustOp {get; set;}
     public AccountID Destination {get; set;}
     public ManageDataOp ManageDataOp {get; set;}
-    public static void Encode(IByteWriter stream, OperationBody encodedOperationBody) {
-    XdrEncoding.EncodeInt32((int)encodedOperationBody.Discriminant.InnerValue, stream);
+    public static void Encode(XdrDataOutputStream stream, OperationBody encodedOperationBody) {
+    stream.WriteInt((int)encodedOperationBody.Discriminant.InnerValue);
     switch (encodedOperationBody.Discriminant.InnerValue) {
     case OperationType.OperationTypeEnum.CREATE_ACCOUNT:
     CreateAccountOp.Encode(stream, encodedOperationBody.CreateAccountOp);
@@ -118,7 +118,7 @@ public class Operation  {
     break;
     }
     }
-    public static OperationBody Decode(IByteReader stream) {
+    public static OperationBody Decode(XdrDataInputStream stream) {
     OperationBody decodedOperationBody = new OperationBody();
     OperationType discriminant = OperationType.Decode(stream);
     decodedOperationBody.Discriminant = discriminant;

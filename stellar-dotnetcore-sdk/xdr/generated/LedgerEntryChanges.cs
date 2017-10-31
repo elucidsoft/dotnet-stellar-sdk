@@ -19,16 +19,16 @@ public class LedgerEntryChanges  {
     InnerValue = value;
   }
 
-  public static void Encode(IByteWriter stream, LedgerEntryChanges  encodedLedgerEntryChanges) {
+  public static void Encode(XdrDataOutputStream stream, LedgerEntryChanges  encodedLedgerEntryChanges) {
   int LedgerEntryChangessize = encodedLedgerEntryChanges.InnerValue.Length;
-  XdrEncoding.EncodeInt32(LedgerEntryChangessize, stream);
+  stream.WriteInt(LedgerEntryChangessize);
   for (int i = 0; i < LedgerEntryChangessize; i++) {
     LedgerEntryChange.Encode(stream, encodedLedgerEntryChanges.InnerValue[i]);
   }
   }
-  public static LedgerEntryChanges Decode(IByteReader stream) {
+  public static LedgerEntryChanges Decode(XdrDataInputStream stream) {
     LedgerEntryChanges decodedLedgerEntryChanges = new LedgerEntryChanges();
-  int LedgerEntryChangessize = XdrEncoding.DecodeInt32(stream);
+  int LedgerEntryChangessize = stream.ReadInt();
   decodedLedgerEntryChanges.InnerValue = new LedgerEntryChange[LedgerEntryChangessize];
   for (int i = 0; i < LedgerEntryChangessize; i++) {
     decodedLedgerEntryChanges.InnerValue[i] = LedgerEntryChange.Decode(stream);

@@ -18,11 +18,11 @@ public class SCPEnvelope  {
   public SCPStatement Statement {get; set;}
   public Signature Signature {get; set;}
 
-  public static void Encode(IByteWriter stream, SCPEnvelope encodedSCPEnvelope) {
+  public static void Encode(XdrDataOutputStream stream, SCPEnvelope encodedSCPEnvelope) {
     SCPStatement.Encode(stream, encodedSCPEnvelope.Statement);
     Signature.Encode(stream, encodedSCPEnvelope.Signature);
   }
-  public static SCPEnvelope Decode(IByteReader stream) {
+  public static SCPEnvelope Decode(XdrDataInputStream stream) {
     SCPEnvelope decodedSCPEnvelope = new SCPEnvelope();
     decodedSCPEnvelope.Statement = SCPStatement.Decode(stream);
     decodedSCPEnvelope.Signature = Signature.Decode(stream);

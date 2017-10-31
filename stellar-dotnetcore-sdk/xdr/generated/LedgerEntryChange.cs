@@ -28,8 +28,8 @@ public class LedgerEntryChange  {
   public LedgerEntry Updated {get; set;}
   public LedgerKey Removed {get; set;}
   public LedgerEntry State {get; set;}
-  public static void Encode(IByteWriter stream, LedgerEntryChange encodedLedgerEntryChange) {
-  XdrEncoding.EncodeInt32((int)encodedLedgerEntryChange.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, LedgerEntryChange encodedLedgerEntryChange) {
+  stream.WriteInt((int)encodedLedgerEntryChange.Discriminant.InnerValue);
   switch (encodedLedgerEntryChange.Discriminant.InnerValue) {
   case LedgerEntryChangeType.LedgerEntryChangeTypeEnum.LEDGER_ENTRY_CREATED:
   LedgerEntry.Encode(stream, encodedLedgerEntryChange.Created);
@@ -45,7 +45,7 @@ public class LedgerEntryChange  {
   break;
   }
   }
-  public static LedgerEntryChange Decode(IByteReader stream) {
+  public static LedgerEntryChange Decode(XdrDataInputStream stream) {
   LedgerEntryChange decodedLedgerEntryChange = new LedgerEntryChange();
   LedgerEntryChangeType discriminant = LedgerEntryChangeType.Decode(stream);
   decodedLedgerEntryChange.Discriminant = discriminant;

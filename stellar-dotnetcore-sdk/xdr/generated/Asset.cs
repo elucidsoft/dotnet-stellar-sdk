@@ -36,8 +36,8 @@ public class Asset  {
 
   public AssetAlphaNum4 AlphaNum4 {get; set;}
   public AssetAlphaNum12 AlphaNum12 {get; set;}
-  public static void Encode(IByteWriter stream, Asset encodedAsset) {
-  XdrEncoding.EncodeInt32((int)encodedAsset.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, Asset encodedAsset) {
+  stream.WriteInt((int)encodedAsset.Discriminant.InnerValue);
   switch (encodedAsset.Discriminant.InnerValue) {
   case AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE:
   break;
@@ -49,7 +49,7 @@ public class Asset  {
   break;
   }
   }
-  public static Asset Decode(IByteReader stream) {
+  public static Asset Decode(XdrDataInputStream stream) {
   Asset decodedAsset = new Asset();
   AssetType discriminant = AssetType.Decode(stream);
   decodedAsset.Discriminant = discriminant;
@@ -71,16 +71,16 @@ public class Asset  {
     public byte[] AssetCode {get; set;}
     public AccountID Issuer {get; set;}
 
-    public static void Encode(IByteWriter stream, AssetAlphaNum4 encodedAssetAlphaNum4) {
+    public static void Encode(XdrDataOutputStream stream, AssetAlphaNum4 encodedAssetAlphaNum4) {
       int assetCodesize = encodedAssetAlphaNum4.AssetCode.Length;
-      XdrEncoding.WriteFixOpaque(stream, (uint)assetCodesize, encodedAssetAlphaNum4.AssetCode);
+      stream.Write(encodedAssetAlphaNum4.AssetCode, 0, assetCodesize);
       AccountID.Encode(stream, encodedAssetAlphaNum4.Issuer);
     }
-    public static AssetAlphaNum4 Decode(IByteReader stream) {
+    public static AssetAlphaNum4 Decode(XdrDataInputStream stream) {
       AssetAlphaNum4 decodedAssetAlphaNum4 = new AssetAlphaNum4();
       int assetCodesize = 4;
       decodedAssetAlphaNum4.AssetCode = new byte[assetCodesize];
-        XdrEncoding.ReadFixOpaque(stream, (uint)assetCodesize);
+      stream.Read(decodedAssetAlphaNum4.AssetCode,0,assetCodesize);
       decodedAssetAlphaNum4.Issuer = AccountID.Decode(stream);
       return decodedAssetAlphaNum4;
     }
@@ -91,16 +91,16 @@ public class Asset  {
     public byte[] AssetCode {get; set;}
     public AccountID Issuer {get; set;}
 
-    public static void Encode(IByteWriter stream, AssetAlphaNum12 encodedAssetAlphaNum12) {
+    public static void Encode(XdrDataOutputStream stream, AssetAlphaNum12 encodedAssetAlphaNum12) {
       int assetCodesize = encodedAssetAlphaNum12.AssetCode.Length;
-      XdrEncoding.WriteFixOpaque(stream, (uint)assetCodesize, encodedAssetAlphaNum12.AssetCode);
+      stream.Write(encodedAssetAlphaNum12.AssetCode, 0, assetCodesize);
       AccountID.Encode(stream, encodedAssetAlphaNum12.Issuer);
     }
-    public static AssetAlphaNum12 Decode(IByteReader stream) {
+    public static AssetAlphaNum12 Decode(XdrDataInputStream stream) {
       AssetAlphaNum12 decodedAssetAlphaNum12 = new AssetAlphaNum12();
       int assetCodesize = 12;
       decodedAssetAlphaNum12.AssetCode = new byte[assetCodesize];
-        XdrEncoding.ReadFixOpaque(stream, (uint)assetCodesize);
+      stream.Read(decodedAssetAlphaNum12.AssetCode,0,assetCodesize);
       decodedAssetAlphaNum12.Issuer = AccountID.Decode(stream);
       return decodedAssetAlphaNum12;
     }

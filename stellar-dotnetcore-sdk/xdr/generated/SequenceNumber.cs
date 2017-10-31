@@ -19,10 +19,10 @@ public class SequenceNumber  {
     InnerValue = value;
   }
 
-  public static void Encode(IByteWriter stream, SequenceNumber  encodedSequenceNumber) {
+  public static void Encode(XdrDataOutputStream stream, SequenceNumber  encodedSequenceNumber) {
   Uint64.Encode(stream, encodedSequenceNumber.InnerValue);
   }
-  public static SequenceNumber Decode(IByteReader stream) {
+  public static SequenceNumber Decode(XdrDataInputStream stream) {
     SequenceNumber decodedSequenceNumber = new SequenceNumber();
   decodedSequenceNumber.InnerValue = Uint64.Decode(stream);
     return decodedSequenceNumber;

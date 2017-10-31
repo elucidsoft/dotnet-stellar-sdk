@@ -18,18 +18,18 @@ public class TransactionSet  {
   public Hash PreviousLedgerHash {get; set;}
   public TransactionEnvelope[] Txs {get; set;}
 
-  public static void Encode(IByteWriter stream, TransactionSet encodedTransactionSet) {
+  public static void Encode(XdrDataOutputStream stream, TransactionSet encodedTransactionSet) {
     Hash.Encode(stream, encodedTransactionSet.PreviousLedgerHash);
     int txssize = encodedTransactionSet.Txs.Length;
-    XdrEncoding.EncodeInt32(txssize, stream);
+    stream.WriteInt(txssize);
     for (int i = 0; i < txssize; i++) {
       TransactionEnvelope.Encode(stream, encodedTransactionSet.Txs[i]);
     }
   }
-  public static TransactionSet Decode(IByteReader stream) {
+  public static TransactionSet Decode(XdrDataInputStream stream) {
     TransactionSet decodedTransactionSet = new TransactionSet();
     decodedTransactionSet.PreviousLedgerHash = Hash.Decode(stream);
-    int txssize = XdrEncoding.DecodeInt32(stream);
+    int txssize = stream.ReadInt();
     decodedTransactionSet.Txs = new TransactionEnvelope[txssize];
     for (int i = 0; i < txssize; i++) {
       decodedTransactionSet.Txs[i] = TransactionEnvelope.Decode(stream);

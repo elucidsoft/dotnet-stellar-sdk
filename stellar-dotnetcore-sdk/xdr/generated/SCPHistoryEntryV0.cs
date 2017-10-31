@@ -18,17 +18,17 @@ public class SCPHistoryEntryV0  {
   public SCPQuorumSet[] QuorumSets {get; set;}
   public LedgerSCPMessages LedgerMessages {get; set;}
 
-  public static void Encode(IByteWriter stream, SCPHistoryEntryV0 encodedSCPHistoryEntryV0) {
+  public static void Encode(XdrDataOutputStream stream, SCPHistoryEntryV0 encodedSCPHistoryEntryV0) {
     int quorumSetssize = encodedSCPHistoryEntryV0.QuorumSets.Length;
-    XdrEncoding.EncodeInt32(quorumSetssize, stream);
+    stream.WriteInt(quorumSetssize);
     for (int i = 0; i < quorumSetssize; i++) {
       SCPQuorumSet.Encode(stream, encodedSCPHistoryEntryV0.QuorumSets[i]);
     }
     LedgerSCPMessages.Encode(stream, encodedSCPHistoryEntryV0.LedgerMessages);
   }
-  public static SCPHistoryEntryV0 Decode(IByteReader stream) {
+  public static SCPHistoryEntryV0 Decode(XdrDataInputStream stream) {
     SCPHistoryEntryV0 decodedSCPHistoryEntryV0 = new SCPHistoryEntryV0();
-    int quorumSetssize = XdrEncoding.DecodeInt32(stream);
+    int quorumSetssize = stream.ReadInt();
     decodedSCPHistoryEntryV0.QuorumSets = new SCPQuorumSet[quorumSetssize];
     for (int i = 0; i < quorumSetssize; i++) {
       decodedSCPHistoryEntryV0.QuorumSets[i] = SCPQuorumSet.Decode(stream);

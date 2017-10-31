@@ -29,8 +29,8 @@ public class CryptoKeyType  {
     };
   }
 
-  public static CryptoKeyType Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static CryptoKeyType Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 0: return Create(CryptoKeyTypeEnum.KEY_TYPE_ED25519);
       case 1: return Create(CryptoKeyTypeEnum.KEY_TYPE_PRE_AUTH_TX);
@@ -40,8 +40,8 @@ public class CryptoKeyType  {
     }
   }
 
-  public static void Encode(IByteWriter stream, CryptoKeyType value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, CryptoKeyType value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

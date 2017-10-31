@@ -19,16 +19,16 @@ public class DataValue  {
     InnerValue = value;
   }
 
-  public static void Encode(IByteWriter stream, DataValue  encodedDataValue) {
+  public static void Encode(XdrDataOutputStream stream, DataValue  encodedDataValue) {
   int DataValuesize = encodedDataValue.InnerValue.Length;
-  XdrEncoding.EncodeInt32(DataValuesize, stream);
-  XdrEncoding.WriteFixOpaque(stream, (uint)DataValuesize, encodedDataValue.InnerValue);
+  stream.WriteInt(DataValuesize);
+  stream.Write(encodedDataValue.InnerValue, 0, DataValuesize);
   }
-  public static DataValue Decode(IByteReader stream) {
+  public static DataValue Decode(XdrDataInputStream stream) {
     DataValue decodedDataValue = new DataValue();
-  int DataValuesize = XdrEncoding.DecodeInt32(stream);
+  int DataValuesize = stream.ReadInt();
   decodedDataValue.InnerValue = new byte[DataValuesize];
-  XdrEncoding.ReadFixOpaque(stream, (uint)DataValuesize);
+  stream.Read(decodedDataValue.InnerValue, 0, DataValuesize);
     return decodedDataValue;
   }
 }

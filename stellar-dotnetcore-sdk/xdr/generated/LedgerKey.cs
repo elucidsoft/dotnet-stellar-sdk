@@ -46,8 +46,8 @@ public class LedgerKey  {
   public LedgerKeyTrustLine TrustLine {get; set;}
   public LedgerKeyOffer Offer {get; set;}
   public LedgerKeyData Data {get; set;}
-  public static void Encode(IByteWriter stream, LedgerKey encodedLedgerKey) {
-  XdrEncoding.EncodeInt32((int)encodedLedgerKey.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, LedgerKey encodedLedgerKey) {
+  stream.WriteInt((int)encodedLedgerKey.Discriminant.InnerValue);
   switch (encodedLedgerKey.Discriminant.InnerValue) {
   case LedgerEntryType.LedgerEntryTypeEnum.ACCOUNT:
   LedgerKeyAccount.Encode(stream, encodedLedgerKey.Account);
@@ -63,7 +63,7 @@ public class LedgerKey  {
   break;
   }
   }
-  public static LedgerKey Decode(IByteReader stream) {
+  public static LedgerKey Decode(XdrDataInputStream stream) {
   LedgerKey decodedLedgerKey = new LedgerKey();
   LedgerEntryType discriminant = LedgerEntryType.Decode(stream);
   decodedLedgerKey.Discriminant = discriminant;
@@ -88,10 +88,10 @@ public class LedgerKey  {
     public LedgerKeyAccount () {}
     public AccountID AccountID {get; set;}
 
-    public static void Encode(IByteWriter stream, LedgerKeyAccount encodedLedgerKeyAccount) {
+    public static void Encode(XdrDataOutputStream stream, LedgerKeyAccount encodedLedgerKeyAccount) {
       AccountID.Encode(stream, encodedLedgerKeyAccount.AccountID);
     }
-    public static LedgerKeyAccount Decode(IByteReader stream) {
+    public static LedgerKeyAccount Decode(XdrDataInputStream stream) {
       LedgerKeyAccount decodedLedgerKeyAccount = new LedgerKeyAccount();
       decodedLedgerKeyAccount.AccountID = AccountID.Decode(stream);
       return decodedLedgerKeyAccount;
@@ -103,11 +103,11 @@ public class LedgerKey  {
     public AccountID AccountID {get; set;}
     public Asset Asset {get; set;}
 
-    public static void Encode(IByteWriter stream, LedgerKeyTrustLine encodedLedgerKeyTrustLine) {
+    public static void Encode(XdrDataOutputStream stream, LedgerKeyTrustLine encodedLedgerKeyTrustLine) {
       AccountID.Encode(stream, encodedLedgerKeyTrustLine.AccountID);
       Asset.Encode(stream, encodedLedgerKeyTrustLine.Asset);
     }
-    public static LedgerKeyTrustLine Decode(IByteReader stream) {
+    public static LedgerKeyTrustLine Decode(XdrDataInputStream stream) {
       LedgerKeyTrustLine decodedLedgerKeyTrustLine = new LedgerKeyTrustLine();
       decodedLedgerKeyTrustLine.AccountID = AccountID.Decode(stream);
       decodedLedgerKeyTrustLine.Asset = Asset.Decode(stream);
@@ -120,11 +120,11 @@ public class LedgerKey  {
     public AccountID SellerID {get; set;}
     public Uint64 OfferID {get; set;}
 
-    public static void Encode(IByteWriter stream, LedgerKeyOffer encodedLedgerKeyOffer) {
+    public static void Encode(XdrDataOutputStream stream, LedgerKeyOffer encodedLedgerKeyOffer) {
       AccountID.Encode(stream, encodedLedgerKeyOffer.SellerID);
       Uint64.Encode(stream, encodedLedgerKeyOffer.OfferID);
     }
-    public static LedgerKeyOffer Decode(IByteReader stream) {
+    public static LedgerKeyOffer Decode(XdrDataInputStream stream) {
       LedgerKeyOffer decodedLedgerKeyOffer = new LedgerKeyOffer();
       decodedLedgerKeyOffer.SellerID = AccountID.Decode(stream);
       decodedLedgerKeyOffer.OfferID = Uint64.Decode(stream);
@@ -137,11 +137,11 @@ public class LedgerKey  {
     public AccountID AccountID {get; set;}
     public String64 DataName {get; set;}
 
-    public static void Encode(IByteWriter stream, LedgerKeyData encodedLedgerKeyData) {
+    public static void Encode(XdrDataOutputStream stream, LedgerKeyData encodedLedgerKeyData) {
       AccountID.Encode(stream, encodedLedgerKeyData.AccountID);
       String64.Encode(stream, encodedLedgerKeyData.DataName);
     }
-    public static LedgerKeyData Decode(IByteReader stream) {
+    public static LedgerKeyData Decode(XdrDataInputStream stream) {
       LedgerKeyData decodedLedgerKeyData = new LedgerKeyData();
       decodedLedgerKeyData.AccountID = AccountID.Decode(stream);
       decodedLedgerKeyData.DataName = String64.Decode(stream);

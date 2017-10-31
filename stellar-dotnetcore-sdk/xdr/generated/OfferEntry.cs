@@ -43,7 +43,7 @@ public class OfferEntry  {
   public Uint32 Flags {get; set;}
   public OfferEntryExt Ext {get; set;}
 
-  public static void Encode(IByteWriter stream, OfferEntry encodedOfferEntry) {
+  public static void Encode(XdrDataOutputStream stream, OfferEntry encodedOfferEntry) {
     AccountID.Encode(stream, encodedOfferEntry.SellerID);
     Uint64.Encode(stream, encodedOfferEntry.OfferID);
     Asset.Encode(stream, encodedOfferEntry.Selling);
@@ -53,7 +53,7 @@ public class OfferEntry  {
     Uint32.Encode(stream, encodedOfferEntry.Flags);
     OfferEntryExt.Encode(stream, encodedOfferEntry.Ext);
   }
-  public static OfferEntry Decode(IByteReader stream) {
+  public static OfferEntry Decode(XdrDataInputStream stream) {
     OfferEntry decodedOfferEntry = new OfferEntry();
     decodedOfferEntry.SellerID = AccountID.Decode(stream);
     decodedOfferEntry.OfferID = Uint64.Decode(stream);
@@ -71,16 +71,16 @@ public class OfferEntry  {
 
     public int Discriminant { get; set; } = new int();
 
-    public static void Encode(IByteWriter stream, OfferEntryExt encodedOfferEntryExt) {
-    XdrEncoding.EncodeInt32((int)encodedOfferEntryExt.Discriminant, stream);
+    public static void Encode(XdrDataOutputStream stream, OfferEntryExt encodedOfferEntryExt) {
+    stream.WriteInt((int)encodedOfferEntryExt.Discriminant);
     switch (encodedOfferEntryExt.Discriminant) {
     case 0:
     break;
     }
     }
-    public static OfferEntryExt Decode(IByteReader stream) {
+    public static OfferEntryExt Decode(XdrDataInputStream stream) {
     OfferEntryExt decodedOfferEntryExt = new OfferEntryExt();
-    int discriminant =  XdrEncoding.DecodeInt32(stream);
+    int discriminant =  stream.ReadInt();
     decodedOfferEntryExt.Discriminant = discriminant;
     switch (decodedOfferEntryExt.Discriminant) {
     case 0:

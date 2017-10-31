@@ -19,15 +19,15 @@ public class PublicKey  {
   public PublicKeyType Discriminant { get; set; } = new PublicKeyType();
 
   public Uint256 Ed25519 {get; set;}
-  public static void Encode(IByteWriter stream, PublicKey encodedPublicKey) {
-  XdrEncoding.EncodeInt32((int)encodedPublicKey.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, PublicKey encodedPublicKey) {
+  stream.WriteInt((int)encodedPublicKey.Discriminant.InnerValue);
   switch (encodedPublicKey.Discriminant.InnerValue) {
   case PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519:
   Uint256.Encode(stream, encodedPublicKey.Ed25519);
   break;
   }
   }
-  public static PublicKey Decode(IByteReader stream) {
+  public static PublicKey Decode(XdrDataInputStream stream) {
   PublicKey decodedPublicKey = new PublicKey();
   PublicKeyType discriminant = PublicKeyType.Decode(stream);
   decodedPublicKey.Discriminant = discriminant;

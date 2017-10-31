@@ -19,10 +19,10 @@ public class AccountID  {
     InnerValue = value;
   }
 
-  public static void Encode(IByteWriter stream, AccountID  encodedAccountID) {
+  public static void Encode(XdrDataOutputStream stream, AccountID  encodedAccountID) {
   PublicKey.Encode(stream, encodedAccountID.InnerValue);
   }
-  public static AccountID Decode(IByteReader stream) {
+  public static AccountID Decode(XdrDataInputStream stream) {
     AccountID decodedAccountID = new AccountID();
   decodedAccountID.InnerValue = PublicKey.Decode(stream);
     return decodedAccountID;

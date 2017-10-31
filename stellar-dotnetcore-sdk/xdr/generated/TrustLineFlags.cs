@@ -26,8 +26,8 @@ public class TrustLineFlags  {
     };
   }
 
-  public static TrustLineFlags Decode(IByteReader stream) {
-    int value = XdrEncoding.DecodeInt32(stream);
+  public static TrustLineFlags Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
     switch (value) {
       case 1: return Create(TrustLineFlagsEnum.AUTHORIZED_FLAG);
       default:
@@ -35,8 +35,8 @@ public class TrustLineFlags  {
     }
   }
 
-  public static void Encode(IByteWriter stream, TrustLineFlags value) {
-    XdrEncoding.EncodeInt32((int)value.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, TrustLineFlags value) {
+    stream.WriteInt((int)value.InnerValue);
   }
 }
 }

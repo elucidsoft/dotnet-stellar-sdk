@@ -25,8 +25,8 @@ public class LedgerUpgrade  {
   public Uint32 NewLedgerVersion {get; set;}
   public Uint32 NewBaseFee {get; set;}
   public Uint32 NewMaxTxSetSize {get; set;}
-  public static void Encode(IByteWriter stream, LedgerUpgrade encodedLedgerUpgrade) {
-  XdrEncoding.EncodeInt32((int)encodedLedgerUpgrade.Discriminant.InnerValue, stream);
+  public static void Encode(XdrDataOutputStream stream, LedgerUpgrade encodedLedgerUpgrade) {
+  stream.WriteInt((int)encodedLedgerUpgrade.Discriminant.InnerValue);
   switch (encodedLedgerUpgrade.Discriminant.InnerValue) {
   case LedgerUpgradeType.LedgerUpgradeTypeEnum.LEDGER_UPGRADE_VERSION:
   Uint32.Encode(stream, encodedLedgerUpgrade.NewLedgerVersion);
@@ -39,7 +39,7 @@ public class LedgerUpgrade  {
   break;
   }
   }
-  public static LedgerUpgrade Decode(IByteReader stream) {
+  public static LedgerUpgrade Decode(XdrDataInputStream stream) {
   LedgerUpgrade decodedLedgerUpgrade = new LedgerUpgrade();
   LedgerUpgradeType discriminant = LedgerUpgradeType.Decode(stream);
   decodedLedgerUpgrade.Discriminant = discriminant;

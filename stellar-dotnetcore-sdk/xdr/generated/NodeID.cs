@@ -19,10 +19,10 @@ public class NodeID  {
     InnerValue = value;
   }
 
-  public static void Encode(IByteWriter stream, NodeID  encodedNodeID) {
+  public static void Encode(XdrDataOutputStream stream, NodeID  encodedNodeID) {
   PublicKey.Encode(stream, encodedNodeID.InnerValue);
   }
-  public static NodeID Decode(IByteReader stream) {
+  public static NodeID Decode(XdrDataInputStream stream) {
     NodeID decodedNodeID = new NodeID();
   decodedNodeID.InnerValue = PublicKey.Decode(stream);
     return decodedNodeID;

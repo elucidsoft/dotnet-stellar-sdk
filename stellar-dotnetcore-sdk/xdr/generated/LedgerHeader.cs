@@ -63,7 +63,7 @@ public class LedgerHeader  {
   public Hash[] SkipList {get; set;}
   public LedgerHeaderExt Ext {get; set;}
 
-  public static void Encode(IByteWriter stream, LedgerHeader encodedLedgerHeader) {
+  public static void Encode(XdrDataOutputStream stream, LedgerHeader encodedLedgerHeader) {
     Uint32.Encode(stream, encodedLedgerHeader.LedgerVersion);
     Hash.Encode(stream, encodedLedgerHeader.PreviousLedgerHash);
     StellarValue.Encode(stream, encodedLedgerHeader.ScpValue);
@@ -83,7 +83,7 @@ public class LedgerHeader  {
     }
     LedgerHeaderExt.Encode(stream, encodedLedgerHeader.Ext);
   }
-  public static LedgerHeader Decode(IByteReader stream) {
+  public static LedgerHeader Decode(XdrDataInputStream stream) {
     LedgerHeader decodedLedgerHeader = new LedgerHeader();
     decodedLedgerHeader.LedgerVersion = Uint32.Decode(stream);
     decodedLedgerHeader.PreviousLedgerHash = Hash.Decode(stream);
@@ -112,16 +112,16 @@ public class LedgerHeader  {
 
     public int Discriminant { get; set; } = new int();
 
-    public static void Encode(IByteWriter stream, LedgerHeaderExt encodedLedgerHeaderExt) {
-    XdrEncoding.EncodeInt32((int)encodedLedgerHeaderExt.Discriminant, stream);
+    public static void Encode(XdrDataOutputStream stream, LedgerHeaderExt encodedLedgerHeaderExt) {
+    stream.WriteInt((int)encodedLedgerHeaderExt.Discriminant);
     switch (encodedLedgerHeaderExt.Discriminant) {
     case 0:
     break;
     }
     }
-    public static LedgerHeaderExt Decode(IByteReader stream) {
+    public static LedgerHeaderExt Decode(XdrDataInputStream stream) {
     LedgerHeaderExt decodedLedgerHeaderExt = new LedgerHeaderExt();
-    int discriminant =  XdrEncoding.DecodeInt32(stream);
+    int discriminant =  stream.ReadInt();
     decodedLedgerHeaderExt.Discriminant = discriminant;
     switch (decodedLedgerHeaderExt.Discriminant) {
     case 0:
