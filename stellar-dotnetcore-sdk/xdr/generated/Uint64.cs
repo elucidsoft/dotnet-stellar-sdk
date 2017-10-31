@@ -10,11 +10,11 @@ namespace stellar_dotnetcore_sdk.xdr {
 
 //  ===========================================================================
 public class Uint64  {
-  public ulong InnerValue {get; set;} = default(ulong);
+  public int InnerValue {get; set;} = default(int);
 
   public Uint64() {}
 
-  public Uint64(ulong value)
+  public Uint64(int value)
   {
     InnerValue = value;
   }
