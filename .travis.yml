@@ -5,3 +5,4 @@ dist: trusty
 script:
  - dotnet restore
  - dotnet build ./stellar-dotnetcore-sdk/
+ - dotnet test ./stellar-dotnetcore-unittest/
