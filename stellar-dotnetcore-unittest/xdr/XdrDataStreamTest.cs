@@ -19,7 +19,7 @@ namespace stellar_dotnetcore_unittest.xdr
             byte[] xdrByteOutput = byteOutputStream.ToArray();
 
             //XDR back to string
-            XdrDataInputStream xdrInputStream = new XdrDataInputStream(new MemoryStream(xdrByteOutput));
+            XdrDataInputStream xdrInputStream = new XdrDataInputStream(xdrByteOutput);
             string outputString = xdrInputStream.ReadString();
 
             return outputString;
