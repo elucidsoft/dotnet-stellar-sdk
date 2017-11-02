@@ -7,4 +7,8 @@ __This project is under heavy active development and is not currently ready for 
 
 The .NET Core Stellar Sdk library provides APIs to build transactions and connect to [Horizon](https://github.com/stellar/horizon).
  
- 
+## Basic Usage
+For some examples on how to use this library, take a look at the [Get Started docs in the developers site](https://www.stellar.org/developers/guides/get-started/create-account.html).
+
+## License
+java-stellar-sdk is licensed under an Apache-2.0 license. See the [LICENSE](https://github.com/stellar/java-stellar-sdk/blob/master/LICENSE) file for details.
