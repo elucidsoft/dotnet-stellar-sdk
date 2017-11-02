@@ -14,7 +14,7 @@ namespace stellar_dotnetcore_unittest.responses
         [TestMethod]
         public void TestDeserializeAccountResponse()
         {
-            var json = File.ReadAllText(@"responses\testdata\account.json");
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "account.json"));
             AccountResponse account = JsonSingleton.GetInstance<AccountResponse>(json);
 
             Assert.AreEqual(account.KeyPair.AccountId, "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
