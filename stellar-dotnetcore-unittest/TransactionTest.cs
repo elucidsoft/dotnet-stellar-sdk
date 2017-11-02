@@ -3,6 +3,11 @@ using stellar_dotnetcore_sdk;
 using System;
 using System.Linq;
 using System.Security.Cryptography;
+using stellar_dotnetcore_sdk.xdr;
+using Memo = stellar_dotnetcore_sdk.Memo;
+using TimeBounds = stellar_dotnetcore_sdk.TimeBounds;
+using Transaction = stellar_dotnetcore_sdk.Transaction;
+using XdrTransaction = stellar_dotnetcore_sdk.xdr.Transaction;
 
 namespace stellar_dotnetcore_unittest
 {
@@ -59,35 +64,30 @@ namespace stellar_dotnetcore_unittest
                     transaction.ToEnvelopeXdrBase64());
         }
 
-        //[TestMethod]
-        //public void TestBuilderTimeBounds()
-        //{
-        //    //TODO: Fix me!
-        //    Assert.Fail();
-        //    // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
-        //    KeyPair source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
-        //    KeyPair destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+        [TestMethod]
+        public void TestBuilderTimeBounds()
+        {
+            // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
+            KeyPair source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            KeyPair destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
-        //    Account account = new Account(source, 2908908335136768L);
-        //    Transaction transaction = new Transaction.Builder(account)
-        //            .AddOperation(new CreateAccountOperation.Builder(destination, "2000").build())
-        //            .AddTimeBounds(new TimeBounds(42, 1337))
-        //            .Build();
+            Account account = new Account(source, 2908908335136768L);
+            Transaction transaction = new Transaction.Builder(account)
+                    .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                    .AddTimeBounds(new TimeBounds(42, 1337))
+                    .Build();
 
-        //    transaction.Sign(source);
+            transaction.Sign(source);
 
-        //    // Convert transaction to binary XDR and back again to make sure timebounds are correctly de/serialized.
-        //    XdrDataInputStream is = new XdrDataInputStream(
+            // Convert transaction to binary XDR and back again to make sure timebounds are correctly de/serialized.
+            var bytes = transaction.ToEnvelopeXdrBase64().ToCharArray();
+            var xdrDataInputStream = new XdrDataInputStream(Convert.FromBase64CharArray(bytes, 0, bytes.Length));
 
-        //            new ByteArrayInputStream(
-        //                    javax.xml.bind.DatatypeConverter.parseBase64Binary(transaction.toEnvelopeXdrBase64())
-        //            )
-        //    );
-        //    org.stellar.sdk.xdr.Transaction decodedTransaction = org.stellar.sdk.xdr.Transaction.decode(is);
+            XdrTransaction decodedTransaction = XdrTransaction.Decode(xdrDataInputStream);
 
-        //    Assert.AreEqual(decodedTransaction.getTimeBounds().getMinTime().getUint64().longValue(), 42);
-        //    Assert.AreEqual(decodedTransaction.getTimeBounds().getMaxTime().getUint64().longValue(), 1337);
-        //}
+            Assert.AreEqual(decodedTransaction.TimeBounds.MinTime.InnerValue, 42);
+            Assert.AreEqual(decodedTransaction.TimeBounds.MaxTime.InnerValue, 1337);
+        }
 
         [TestMethod]
         public void TestBuilderSuccessPublic()
