@@ -60,7 +60,7 @@ namespace stellar_dotnetcore_sdk
         {
             xdr.Operation operation = this.ToXdr();
             var memoryStream = new MemoryStream();
-            var writer = new xdr.XdrDataOutputStream(memoryStream);
+            var writer = new xdr.XdrDataOutputStream();
             xdr.Operation.Encode(writer, operation);
             return Convert.ToBase64String(memoryStream.ToArray());
         }

@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.IO;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace stellar_dotnetcore_sdk.xdr
 {
     public class XdrDataInputStream
     {
-        //private readonly MemoryStream _memoryStream;
         private readonly byte[] _bytes;
-        private int _pos = 0;
-
-        //public byte[] Buffer => _memoryStream.ToArray();
+        private int _pos;
 
         public XdrDataInputStream(byte[] bytes)
         {
@@ -37,22 +29,20 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public string ReadString()
         {
-           return Encoding.UTF8.GetString(ReadVarOpaque(uint.MaxValue));
+            return Encoding.UTF8.GetString(ReadVarOpaque(uint.MaxValue));
         }
 
         public int[] ReadIntArray()
         {
-            int l = ReadInt();
+            var l = ReadInt();
             return ReadIntArray(l);
         }
 
         private int[] ReadIntArray(int l)
         {
-            int[] arr = new int[l];
-            for (int i = 0; i < l; i++)
-            {
+            var arr = new int[l];
+            for (var i = 0; i < l; i++)
                 arr[i] = ReadInt();
-            }
             return arr;
         }
 
@@ -66,7 +56,7 @@ namespace stellar_dotnetcore_sdk.xdr
                 ((long)_bytes[_pos++] << 24) |
                 ((long)_bytes[_pos++] << 16) |
                 ((long)_bytes[_pos++] << 8) |
-                (long)_bytes[_pos++];
+                _bytes[_pos++];
         }
 
         public int ReadInt()
@@ -84,51 +74,47 @@ namespace stellar_dotnetcore_sdk.xdr
                 ((uint)_bytes[_pos++] << 0x18) |
                 ((uint)_bytes[_pos++] << 0x10) |
                 ((uint)_bytes[_pos++] << 0x08) |
-                (uint)_bytes[_pos++];
+                _bytes[_pos++];
         }
 
         private unsafe float ReadSingle()
         {
-            int num = ReadInt();
-            return *(float*)(&num);
+            var num = ReadInt();
+            return *(float*)&num;
         }
 
         public float[] ReadSingleArray()
         {
-            int l = ReadInt();
+            var l = ReadInt();
             return ReadSingleArray(l);
         }
 
         private float[] ReadSingleArray(int l)
         {
-            float[] arr = new float[l];
-            for (int i = 0; i < l; i++)
-            {
+            var arr = new float[l];
+            for (var i = 0; i < l; i++)
                 arr[i] = ReadSingle();
-            }
 
             return arr;
         }
 
         private unsafe double ReadDouble()
         {
-            long num = ReadLong();
-            return *(double*)(&num);
+            var num = ReadLong();
+            return *(double*)&num;
         }
 
         public double[] ReadDoubleArray()
         {
-            int l = ReadInt();
+            var l = ReadInt();
             return ReadDoubleArray(l);
         }
 
         private double[] ReadDoubleArray(int l)
         {
-            double[] arr = new double[l];
-            for (int i = 0; i < l; i++)
-            {
+            var arr = new double[l];
+            for (var i = 0; i < l; i++)
                 arr[i] = ReadDouble();
-            }
             return arr;
         }
 
@@ -144,10 +130,10 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public byte[] ReadFixOpaque(uint len)
         {
-            byte[] result = new byte[len];
+            var result = new byte[len];
             Read(result, 0, (int)len);
 
-            uint tail = len % 4u;
+            var tail = len % 4u;
             if (tail != 0)
                 Read(_bytes, 0, (int)(4u - tail));
 
@@ -172,69 +158,4 @@ namespace stellar_dotnetcore_sdk.xdr
             return len;
         }
     }
-
-    //public class XdrInputStream : MemoryStream
-    //{
-    //    int _count = 0;
-    //    MemoryStream _memoryStream;
-
-    //    public XdrInputStream(MemoryStream ms) 
-    //    {
-    //        _memoryStream = ms;
-    //    }
-
-    //    public int Read()
-    //    {
-    //        int read = _memoryStream.ReadByte();
-    //        if (read >= 0)
-    //            _count++;
-
-    //        return read;
-    //    }
-
-    //    public override int ReadByte()
-    //    {
-    //        int read = Read(_memoryStream.ToArray(), 0, 1);
-    //        return read;
-    //    }
-
-    //    public int Read(byte[] b)
-    //    {
-    //        return Read(b, 0, b.Length);
-    //    }
-
-    //    public override int Read(byte[] buffer, int offset, int count)
-    //    {
-    //        int read = _memoryStream.Read(buffer, offset, count);
-    //        _count += read;
-    //        Pad();
-
-    //        return read;
-    //    }
-
-    //    public override bool CanWrite => false;
-
-    //    public override bool CanSeek => false;
-
-    //    public override bool CanRead => true;
-
-    //    private void Pad()
-    //    {
-    //        int pad = 0;
-    //        int mod = _count % 4;
-    //        if (mod > 0)
-    //        {
-    //            pad = 4 - mod;
-    //        }
-
-    //        while (pad-- > 0)
-    //        {
-    //            int b = Read();
-    //            if (b != 0)
-    //            {
-    //                throw new IOException("non-zero padding");
-    //            }
-    //        }
-    //    }
-    //}
 }

@@ -42,11 +42,10 @@ namespace stellar_dotnetcore_sdk
         {
             get
             {
-                var memoryStream = new System.IO.MemoryStream();
-                var stream = new XdrDataOutputStream(memoryStream);
+               var stream = new XdrDataOutputStream();
                 AccountID accountId = new AccountID(XdrPublicKey);
                 AccountID.Encode(stream, accountId);
-                var bytes = memoryStream.ToArray();
+                var bytes = stream.ToArray();
                 var length = bytes.Length;
                 var signatureHintBytes = bytes.Skip(length - 4).Take(4).ToArray();
 

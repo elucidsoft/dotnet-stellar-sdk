@@ -1,130 +1,164 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.IO;
 using System.Text;
 
 namespace stellar_dotnetcore_sdk.xdr
 {
-    public class XdrDataOutputStream : BinaryWriter
+    public class XdrDataOutputStream
     {
-        public XdrDataOutputStream(MemoryStream xdrOutputStream)
-            : base(new XdrOutputStream(xdrOutputStream))
+        private readonly List<byte> _bytes;
+
+        private readonly byte[][] _tails = {
+            null,
+            new byte[] { 0x00},
+            new byte[] { 0x00, 0x00},
+            new byte[] { 0x00, 0x00, 0x00}
+        };
+
+        public XdrDataOutputStream()
         {
+            _bytes = new List<byte>();
         }
 
-        public void WriteInt(int i)
+        public void Write(byte b)
         {
-            Write(i);
+            _bytes.Add(b);
         }
 
-        public void WriteInt(uint i)
+        public void Write(byte[] bytes)
         {
-            Write(i);
+            _bytes.AddRange(bytes);
         }
 
-        public void WriteString(string s)
+        public void Write(byte[] bytes, int offset, int count)
         {
-            byte[] chars = Encoding.UTF8.GetBytes(s);
-            Write(chars.Length);
-            Write(chars);
+            var newBytes = new byte[count];
+            Array.Copy(bytes, offset, newBytes, 0, count);
+
+            _bytes.AddRange(newBytes);
         }
 
-        internal void WriteLong(long innerValue)
+        public void WriteString(string str)
         {
-            Write(innerValue);
+            WriteVarOpaque((uint)str.Length, Encoding.UTF8.GetBytes(str));
         }
 
         public void WriteIntArray(int[] a)
         {
-            Write(a.Length);
+            WriteInt(a.Length);
             WriteIntArray(a, a.Length);
         }
 
         private void WriteIntArray(int[] a, int l)
         {
-            for (int i = 0; i < l; i++)
-            {
-                Write(a[i]);
-            }
+            for (var i = 0; i < l; i++)
+                WriteInt(a[i]);
         }
 
-        public void WriteSingleArray(Single[] a)
+        public void WriteLong(long v)
         {
-            Write(a.Length);
+            Write((byte)((v >> 56) & 0xff));
+            Write((byte)((v >> 48) & 0xff));
+            Write((byte)((v >> 40) & 0xff));
+            Write((byte)((v >> 32) & 0xff));
+            Write((byte)((v >> 24) & 0xff));
+            Write((byte)((v >> 16) & 0xff));
+            Write((byte)((v >> 8) & 0xff));
+            Write((byte)(v & 0xff));
+        }
+
+        public void WriteInt(int i)
+        {
+            Write((byte)((i >> 0x18) & 0xff));
+            Write((byte)((i >> 0x10) & 0xff));
+            Write((byte)((i >> 8) & 0xff));
+            Write((byte)(i & 0xff));
+
+        }
+
+        public void WriteUInt(uint i)
+        {
+            Write((byte)((i >> 0x18) & 0xff));
+            Write((byte)((i >> 0x10) & 0xff));
+            Write((byte)((i >> 8) & 0xff));
+            Write((byte)(i & 0xff));
+        }
+
+        private unsafe void WriteSingle(float v)
+        {
+            WriteInt(*(int*)(&v));
+        }
+
+        public void WriteSingleArray(float[] a)
+        {
+            WriteInt(a.Length);
             WriteSingleArray(a, a.Length);
         }
 
         private void WriteSingleArray(float[] a, int l)
         {
-            for (int i = 0; i < l; i++)
-            {
-                Write(a[i]);
-            }
+            for (var i = 0; i < l; i++)
+                WriteSingle(a[i]);
+        }
+
+        private unsafe void WriteDouble(double v)
+        {
+            WriteLong(*(long*)(&v));
         }
 
         public void WriteDoubleArray(double[] a)
         {
-            Write(a.Length);
+            WriteInt(a.Length);
             WriteDoubleArray(a, a.Length);
         }
 
         private void WriteDoubleArray(double[] a, int l)
         {
-            for (int i = 0; i < l; i++)
+            for (var i = 0; i < l; i++)
+                WriteDouble(a[i]);
+
+        }
+
+        public byte[] ToArray()
+        {
+            return _bytes.ToArray();
+        }
+
+        public void WriteVarOpaque(uint max, byte[] v)
+        {
+            uint len = (uint)v.LongLength;
+            if (len > max)
+                throw new FormatException("unexpected length: " + len.ToString());
+
+            try
             {
-                Write(a[i]);
+                WriteUInt(len);
+            }
+            catch (SystemException ex)
+            {
+                throw new FormatException("can't write length", ex);
+            }
+            NoCheckWriteFixOpaque(len, v);
+        }
+
+
+
+        private void NoCheckWriteFixOpaque(uint len, byte[] v)
+        {
+            try
+            {
+                Write(v);
+                uint tail = len % 4u;
+                if (tail != 0)
+                    Write(_tails[4u - tail]);
+            }
+            catch (SystemException ex)
+            {
+                throw new FormatException("can't write byte array", ex);
             }
         }
     }
 
-    public class XdrOutputStream : MemoryStream
-    {
-        private MemoryStream _memoryStream;
-        private int _count = 0;
-
-        public XdrOutputStream(MemoryStream ms)
-        {
-            _memoryStream = ms;
-        }
-
-        public void Write(int b)
-        {
-            // > The byte to be written is the eight low-order bits of the argument b.
-            // > The 24 high-order bits of b are ignored.
-
-            _memoryStream.WriteByte((byte)(Convert.ToByte(b) & 0xff));
-        }
-
-        public override void Write(byte[] buffer, int offset, int count)
-        {
-            _memoryStream.Write(buffer, offset, count);
-            _count += count;
-            Pad();
-        }
-
-        public void Write(byte[] b)
-        {
-            _memoryStream.Write(b, 0, b.Length);
-        }
-
-        private void Pad()
-        {
-            int pad = 0;
-            int mod = _count % 4;
-            if (mod > 0)
-            {
-                pad = 4 - mod;
-            }
-            while (pad-- > 0)
-            {
-                Write(0);
-            }
-        }
-
-        public override bool CanRead => true;
-
-        public override bool CanSeek => false;
-
-        public override bool CanWrite => true;
-    }
 }

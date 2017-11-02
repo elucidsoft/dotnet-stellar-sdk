@@ -1,10 +1,8 @@
-﻿using stellar_dotnetcore_sdk.xdr;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
+using stellar_dotnetcore_sdk.xdr;
 
 namespace stellar_dotnetcore_sdk
 {
@@ -12,35 +10,33 @@ namespace stellar_dotnetcore_sdk
     {
         private readonly int BASE_FEE = 100;
 
-        private readonly int _Fee;
-        private readonly KeyPair _SourceAccount;
-        private readonly long _SequenceNumber;
-        private readonly Operation[] _Operations;
-        private readonly Memo _Memo;
-        private readonly TimeBounds _TimeBounds;
-        private List<DecoratedSignature> _Signatures;
-
-        public int Fee { get { return _Fee; } }
-        public KeyPair SourceAccount { get { return _SourceAccount; } }
-        public long SequenceNumber { get { return _SequenceNumber; } }
-        public Operation[] Operations { get { return _Operations; } }
-        public Memo Memo { get { return _Memo; } }
-        public TimeBounds TimeBounds { get { return _TimeBounds; } }
-        public List<DecoratedSignature> Signatures { get { return _Signatures; } }
-
-        Transaction(KeyPair sourceAccount, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)
+        private Transaction(KeyPair sourceAccount, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)
         {
-            _SourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
-            _SequenceNumber = sequenceNumber;
-            _Operations = operations ?? throw new ArgumentNullException(nameof(operations), "operations cannot be null");
+            SourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
+            SequenceNumber = sequenceNumber;
+            Operations = operations ?? throw new ArgumentNullException(nameof(operations), "operations cannot be null");
             if (operations.Length == 0)
                 throw new ArgumentException(nameof(operations), "At least one operation required");
 
-            _Fee = operations.Length * BASE_FEE;
-            _Signatures = new List<xdr.DecoratedSignature>();
-            _Memo = memo != null ? memo : Memo.None();
-            _TimeBounds = timeBounds;
+            Fee = operations.Length * BASE_FEE;
+            Signatures = new List<DecoratedSignature>();
+            Memo = memo != null ? memo : Memo.None();
+            TimeBounds = timeBounds;
         }
+
+        public int Fee { get; }
+
+        public KeyPair SourceAccount { get; }
+
+        public long SequenceNumber { get; }
+
+        public Operation[] Operations { get; }
+
+        public Memo Memo { get; }
+
+        public TimeBounds TimeBounds { get; }
+
+        public List<DecoratedSignature> Signatures { get; }
 
         /**
          * Adds a new signature ed25519PublicKey to this transaction.
@@ -51,8 +47,8 @@ namespace stellar_dotnetcore_sdk
             if (signer == null)
                 throw new ArgumentNullException(nameof(signer), "signer cannot be null");
 
-            byte[] txHash = Hash();
-            _Signatures.Add(signer.SignDecorated(txHash));
+            var txHash = Hash();
+            Signatures.Add(signer.SignDecorated(txHash));
         }
 
         /**
@@ -61,22 +57,22 @@ namespace stellar_dotnetcore_sdk
          */
         public void Sign(byte[] preimage)
         {
-            Signature signature = new Signature();
+            var signature = new Signature();
             signature.InnerValue = preimage ?? throw new ArgumentNullException(nameof(preimage), "preimage cannot be null");
 
-            byte[] hash = Util.Hash(preimage);
+            var hash = Util.Hash(preimage);
 
             var length = hash.Length;
             var signatureHintBytes = hash.Skip(length - 4).Take(4).ToArray();
 
-            SignatureHint signatureHint = new SignatureHint();
+            var signatureHint = new SignatureHint();
             signatureHint.InnerValue = signatureHintBytes;
 
-            DecoratedSignature decoratedSignature = new DecoratedSignature();
+            var decoratedSignature = new DecoratedSignature();
             decoratedSignature.Hint = signatureHint;
             decoratedSignature.Signature = signature;
 
-            _Signatures.Add(decoratedSignature);
+            Signatures.Add(decoratedSignature);
         }
 
         /**
@@ -93,27 +89,23 @@ namespace stellar_dotnetcore_sdk
         public byte[] SignatureBase()
         {
             if (Network.Current == null)
-            {
                 throw new NoNetworkSelectedException();
-            }
 
-            var memoryStream = new MemoryStream();
-            var writer = new BinaryWriter(memoryStream);
+            var writer = new XdrDataOutputStream();
 
             // Hashed NetworkID
             writer.Write(Network.Current.NetworkId);
 
             // Envelope Type - 4 bytes
-            writer.Write((int)EnvelopeType.Create(EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX).InnerValue);
+            EnvelopeType.Encode(writer, EnvelopeType.Create(EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX));
 
             // Transaction XDR bytes
-            var txMemoryStream = new MemoryStream();
-            var txWriter = new XdrDataOutputStream(txMemoryStream);
+            var txWriter = new XdrDataOutputStream();
             xdr.Transaction.Encode(txWriter, ToXdr());
-            writer.Write(txMemoryStream.ToArray());
 
-            return memoryStream.ToArray();
+            writer.Write(txWriter.ToArray());
 
+            return writer.ToArray();
         }
 
         /**
@@ -122,38 +114,36 @@ namespace stellar_dotnetcore_sdk
         public xdr.Transaction ToXdr()
         {
             // fee
-            Uint32 fee = new Uint32();
-            fee.InnerValue = _Fee;
+            var fee = new Uint32();
+            fee.InnerValue = Fee;
 
             // sequenceNumber
-            Uint64 sequenceNumberUint = new Uint64();
-            sequenceNumberUint.InnerValue = _SequenceNumber;
-            SequenceNumber sequenceNumber = new SequenceNumber();
+            var sequenceNumberUint = new Uint64();
+            sequenceNumberUint.InnerValue = SequenceNumber;
+            var sequenceNumber = new SequenceNumber();
             sequenceNumber.InnerValue = sequenceNumberUint;
 
             // sourceAccount
-            AccountID sourceAccount = new AccountID();
-            sourceAccount.InnerValue = _SourceAccount.XdrPublicKey;
+            var sourceAccount = new AccountID();
+            sourceAccount.InnerValue = SourceAccount.XdrPublicKey;
 
             // operations
-            xdr.Operation[] operations = new xdr.Operation[_Operations.Length];
+            var operations = new xdr.Operation[Operations.Length];
 
-            for (int i = 0; i < _Operations.Length; i++)
-            {
-                operations[i] = _Operations[i].ToXdr();
-            }
+            for (var i = 0; i < Operations.Length; i++)
+                operations[i] = Operations[i].ToXdr();
 
             // ext
-            xdr.Transaction.TransactionExt ext = new xdr.Transaction.TransactionExt();
+            var ext = new xdr.Transaction.TransactionExt();
             ext.Discriminant = 0;
 
-            xdr.Transaction transaction = new xdr.Transaction();
+            var transaction = new xdr.Transaction();
             transaction.Fee = fee;
             transaction.SeqNum = sequenceNumber;
             transaction.SourceAccount = sourceAccount;
             transaction.Operations = operations;
-            transaction.Memo = _Memo.ToXdr();
-            transaction.TimeBounds = _TimeBounds == null ? null : _TimeBounds.ToXdr();
+            transaction.Memo = Memo.ToXdr();
+            transaction.TimeBounds = TimeBounds == null ? null : TimeBounds.ToXdr();
             transaction.Ext = ext;
             return transaction;
         }
@@ -161,19 +151,17 @@ namespace stellar_dotnetcore_sdk
         /**
          * Generates TransactionEnvelope XDR object. Transaction need to have at least one signature.
          */
-        public xdr.TransactionEnvelope ToEnvelopeXdr()
+        public TransactionEnvelope ToEnvelopeXdr()
         {
-            if (_Signatures.Count == 0)
-            {
+            if (Signatures.Count == 0)
                 throw new NotEnoughSignaturesException("Transaction must be signed by at least one signer. Use transaction.sign().");
-            }
 
-            TransactionEnvelope thisXdr = new TransactionEnvelope();
-            xdr.Transaction transaction = ToXdr();
+            var thisXdr = new TransactionEnvelope();
+            var transaction = ToXdr();
             thisXdr.Tx = transaction;
 
-            DecoratedSignature[] signatures = new DecoratedSignature[_Signatures.Count];
-            signatures = _Signatures.ToArray();
+            var signatures = new DecoratedSignature[Signatures.Count];
+            signatures = Signatures.ToArray();
             thisXdr.Signatures = signatures;
             return thisXdr;
         }
@@ -181,14 +169,13 @@ namespace stellar_dotnetcore_sdk
         /**
          * Returns base64-encoded TransactionEnvelope XDR object. Transaction need to have at least one signature.
          */
-        public String ToEnvelopeXdrBase64()
+        public string ToEnvelopeXdrBase64()
         {
-            TransactionEnvelope envelope = ToEnvelopeXdr();
-            var memoryStream = new MemoryStream();
-            var writer = new XdrDataOutputStream(memoryStream);
+            var envelope = ToEnvelopeXdr();
+            var writer = new XdrDataOutputStream();
             TransactionEnvelope.Encode(writer, envelope);
 
-            return Convert.ToBase64String(memoryStream.ToArray());
+            return Convert.ToBase64String(writer.ToArray());
         }
 
         /**
@@ -198,8 +185,8 @@ namespace stellar_dotnetcore_sdk
         {
             private readonly ITransactionBuilderAccount mSourceAccount;
             private Memo mMemo;
+            private readonly BlockingCollection<Operation> mOperations;
             private TimeBounds mTimeBounds;
-            BlockingCollection<Operation> mOperations;
 
             /**
              * Construct a new transaction builder.
@@ -230,9 +217,7 @@ namespace stellar_dotnetcore_sdk
             public Builder AddOperation(Operation operation)
             {
                 if (operation == null)
-                {
                     throw new ArgumentNullException(nameof(operation), "operation cannot be null");
-                }
 
                 mOperations.Add(operation);
                 return this;
@@ -247,9 +232,7 @@ namespace stellar_dotnetcore_sdk
             public Builder AddMemo(Memo memo)
             {
                 if (mMemo != null)
-                {
                     throw new ArgumentException(nameof(memo), "Memo has been already added.");
-                }
 
                 mMemo = memo ?? throw new ArgumentNullException(nameof(memo), "memo cannot be null");
 
@@ -265,9 +248,7 @@ namespace stellar_dotnetcore_sdk
             public Builder AddTimeBounds(TimeBounds timeBounds)
             {
                 if (mTimeBounds != null)
-                {
                     throw new ArgumentException(nameof(timeBounds), "TimeBounds has been already added.");
-                }
 
                 mTimeBounds = timeBounds ?? throw new ArgumentNullException(nameof(timeBounds), "timeBounds cannot be null");
 
@@ -279,9 +260,9 @@ namespace stellar_dotnetcore_sdk
              */
             public Transaction Build()
             {
-                Operation[] operations = mOperations.ToArray();
+                var operations = mOperations.ToArray();
 
-                Transaction transaction = new Transaction(mSourceAccount.KeyPair, mSourceAccount.GetIncrementedSequenceNumber(), operations, mMemo, mTimeBounds);
+                var transaction = new Transaction(mSourceAccount.KeyPair, mSourceAccount.GetIncrementedSequenceNumber(), operations, mMemo, mTimeBounds);
                 // Increment sequence number when there were no exceptions when creating a transaction
                 mSourceAccount.IncrementSequenceNumber();
                 return transaction;

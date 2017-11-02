@@ -12,11 +12,10 @@ namespace stellar_dotnetcore_unittest.xdr
     {
         public static string BackAndForthXdrStreaming(string inputString)
         {
-            MemoryStream byteOutputStream = new MemoryStream();
-            XdrDataOutputStream xdrOutputStream = new XdrDataOutputStream(byteOutputStream);
+            XdrDataOutputStream xdrOutputStream = new XdrDataOutputStream();
             xdrOutputStream.WriteString(inputString);
 
-            byte[] xdrByteOutput = byteOutputStream.ToArray();
+            byte[] xdrByteOutput = xdrOutputStream.ToArray();
 
             //XDR back to string
             XdrDataInputStream xdrInputStream = new XdrDataInputStream(xdrByteOutput);
