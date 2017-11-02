@@ -1,5 +1,5 @@
 # dotnetcore-stellar-sdk
-Stellar API SDK for DotNetCore 2.x
+Stellar API SDK for .NET Core 2.x
 
 [![Build Status](https://travis-ci.org/elucidsoft/dotnetcore-stellar-sdk.svg?branch=master)](https://travis-ci.org/elucidsoft/dotnetcore-stellar-sdk)
 
