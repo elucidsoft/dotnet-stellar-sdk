@@ -1,7 +1,4 @@
-﻿using System;
-using stellar_dotnetcore_sdk.xdr;
-
-namespace stellar_dotnetcore_sdk
+﻿namespace stellar_dotnetcore_sdk
 {
     public abstract class Memo
     {
@@ -17,7 +14,7 @@ namespace stellar_dotnetcore_sdk
          * Creates new {@link MemoText} instance.
          * @param text
          */
-        public static MemoText Text(String text)
+        public static MemoText Text(string text)
         {
             return new MemoText(text);
         }
@@ -45,7 +42,7 @@ namespace stellar_dotnetcore_sdk
          * @param hexString
          * @throws DecoderException
          */
-        public static MemoHash Hash(String hexString)
+        public static MemoHash Hash(string hexString)
         {
             return new MemoHash(hexString);
         }
@@ -64,7 +61,7 @@ namespace stellar_dotnetcore_sdk
          * @param hexString
          * @throws DecoderException
          */
-        public static MemoReturnHash returnHash(String hexString)
+        public static MemoReturnHash returnHash(string hexString)
         {
             return new MemoReturnHash(hexString);
         }

@@ -1,27 +1,25 @@
 ﻿using System;
+using stellar_dotnetcore_sdk.xdr;
 
 namespace stellar_dotnetcore_sdk
 {
     public class MemoId
     {
-        private long _Id;
-
-        public long Id { get { return _Id; } }
         public MemoId(long id)
         {
             if (id < 0)
-            {
                 throw new ArgumentException("id must be a positive number");
-            }
-            this._Id = id;
+            Id = id;
         }
+
+        public long Id { get; }
 
         public xdr.Memo ToXdr()
         {
-            xdr.Memo memo = new xdr.Memo();
-            memo.Discriminant = xdr.MemoType.Create(xdr.MemoType.MemoTypeEnum.MEMO_ID);
-            xdr.Uint64 idXdr = new xdr.Uint64();
-            idXdr.InnerValue = _Id;
+            var memo = new xdr.Memo();
+            memo.Discriminant = MemoType.Create(MemoType.MemoTypeEnum.MEMO_ID);
+            var idXdr = new Uint64();
+            idXdr.InnerValue = Id;
             memo.Id = idXdr;
             return memo;
         }

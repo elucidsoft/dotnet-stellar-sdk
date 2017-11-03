@@ -1,35 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using stellar_dotnetcore_sdk.xdr;
+using Int64 = stellar_dotnetcore_sdk.xdr.Int64;
 
 namespace stellar_dotnetcore_sdk
 {
     public class CreateAccountOperation : Operation
     {
-        private readonly KeyPair _Destination;
-        private readonly string _StartingBalance;
-
-        public KeyPair Destination { get { return _Destination; } }
-        public string StartingBalance { get { return _StartingBalance; } }
-
-        public CreateAccountOperation(KeyPair destination, String startingBalance)
+        public CreateAccountOperation(KeyPair destination, string startingBalance)
         {
-            this._Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
-            this._StartingBalance = startingBalance ?? throw new ArgumentNullException(nameof(startingBalance), "startingBalance cannot be null");
+            Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
+            StartingBalance = startingBalance ?? throw new ArgumentNullException(nameof(startingBalance), "startingBalance cannot be null");
         }
+
+        public KeyPair Destination { get; }
+
+        public string StartingBalance { get; }
 
         public override xdr.Operation.OperationBody ToOperationBody()
         {
-            CreateAccountOp op = new CreateAccountOp();
-            AccountID destination = new AccountID();
+            var op = new CreateAccountOp();
+            var destination = new AccountID();
             destination.InnerValue = Destination.XdrPublicKey;
             op.Destination = destination;
-            xdr.Int64 startingBalance = new xdr.Int64();
-            startingBalance.InnerValue = Operation.ToXdrAmount(StartingBalance);
+            var startingBalance = new Int64();
+            startingBalance.InnerValue = ToXdrAmount(StartingBalance);
             op.StartingBalance = startingBalance;
 
-            xdr.Operation.OperationBody body = new xdr.Operation.OperationBody();
+            var body = new xdr.Operation.OperationBody();
             body.Discriminant = OperationType.Create(OperationType.OperationTypeEnum.CREATE_ACCOUNT);
             body.CreateAccountOp = op;
             return body;
@@ -38,21 +35,22 @@ namespace stellar_dotnetcore_sdk
         public class Builder
         {
             private readonly KeyPair destination;
-            private readonly String startingBalance;
+            private readonly string startingBalance;
 
             private KeyPair _SourceAccount;
 
             public Builder(CreateAccountOp createAccountOp)
             {
                 destination = KeyPair.FromXdrPublicKey(createAccountOp.Destination.InnerValue);
-                startingBalance = Operation.FromXdrAmount(createAccountOp.StartingBalance.InnerValue);
+                startingBalance = FromXdrAmount(createAccountOp.StartingBalance.InnerValue);
             }
 
-            public Builder(KeyPair destination, String startingBalance)
+            public Builder(KeyPair destination, string startingBalance)
             {
                 this.destination = destination;
                 this.startingBalance = startingBalance;
             }
+
             public Builder SetSourceAccount(KeyPair account)
             {
                 _SourceAccount = account;
@@ -61,11 +59,9 @@ namespace stellar_dotnetcore_sdk
 
             public CreateAccountOperation Build()
             {
-                CreateAccountOperation operation = new CreateAccountOperation(destination, startingBalance);
+                var operation = new CreateAccountOperation(destination, startingBalance);
                 if (_SourceAccount != null)
-                {
                     operation.SourceAccount = _SourceAccount;
-                }
                 return operation;
             }
         }

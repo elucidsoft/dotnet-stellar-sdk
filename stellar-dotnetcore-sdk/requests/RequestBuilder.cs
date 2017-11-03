@@ -1,33 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace stellar_dotnetcore_sdk.requests
 {
-    public enum OrderDirection { ASC, DESC }
+    public enum OrderDirection
+    {
+        ASC,
+        DESC
+    }
 
     /// <summary>
-    /// Abstract class for request builders.
+    ///     Abstract class for request builders.
     /// </summary>
     public class RequestBuilder<T>
     {
-       
+        private readonly List<string> _segments;
+        private bool _segmentsAdded;
+
 
         protected UriBuilder _uriBuilder;
-        private List<string> _segments;
-        private Boolean _segmentsAdded;
 
         public RequestBuilder(Uri serverUri, string defaultSegment)
         {
             _uriBuilder = new UriBuilder(serverUri);
             _segments = new List<string>();
 
-            if(!String.IsNullOrEmpty(defaultSegment))
-            {
+            if (!string.IsNullOrEmpty(defaultSegment))
                 SetSegments(defaultSegment);
-            }
 
-            _segmentsAdded = false;  //Allow overwriting segments
+            _segmentsAdded = false; //Allow overwriting segments
         }
 
         protected RequestBuilder<T> SetSegments(params string[] segments)
@@ -40,19 +41,17 @@ namespace stellar_dotnetcore_sdk.requests
             //Remove default segments
             _segments.Clear();
 
-            foreach(var segment in segments)
-            {
+            foreach (var segment in segments)
                 _segments.Add(segment);
-            }
 
             return this;
         }
 
         /// <summary>
-        /// Sets <code>cursor</code> parameter on the request. 
-        /// A cursor is a value that points to a specific location in a collection of resources. 
-        /// The cursor attribute itself is an opaque value meaning that users should not try to parse it.
-        /// Read https://www.stellar.org/developers/horizon/reference/resources/page.html for more information.
+        ///     Sets <code>cursor</code> parameter on the request.
+        ///     A cursor is a value that points to a specific location in a collection of resources.
+        ///     The cursor attribute itself is an opaque value meaning that users should not try to parse it.
+        ///     Read https://www.stellar.org/developers/horizon/reference/resources/page.html for more information.
         /// </summary>
         /// <param name="cursor"></param>
         /// <returns></returns>
@@ -64,9 +63,9 @@ namespace stellar_dotnetcore_sdk.requests
         }
 
         /// <summary>
-        ///  Sets <code>limit</code> parameter on the request.
-        ///  It defines maximum number of records to return. 
-        ///  For range and default values check documentation of the endpoint requested.
+        ///     Sets <code>limit</code> parameter on the request.
+        ///     It defines maximum number of records to return.
+        ///     For range and default values check documentation of the endpoint requested.
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
@@ -78,7 +77,7 @@ namespace stellar_dotnetcore_sdk.requests
         }
 
         /// <summary>
-        /// Sets order parameter on request.
+        ///     Sets order parameter on request.
         /// </summary>
         /// <param name="direction"></param>
         /// <returns></returns>
@@ -91,14 +90,12 @@ namespace stellar_dotnetcore_sdk.requests
 
         public Uri BuildUri()
         {
-            if(_segments.Count > 0)
+            if (_segments.Count > 0)
             {
-                string path = "";
+                var path = "";
 
-                foreach(string segment in _segments)
-                {
+                foreach (var segment in _segments)
                     path += "/" + segment;
-                }
 
                 _uriBuilder.Path = path;
 
@@ -106,7 +103,7 @@ namespace stellar_dotnetcore_sdk.requests
                 {
                     return _uriBuilder.Uri;
                 }
-                catch(UriFormatException)
+                catch (UriFormatException)
                 {
                     throw;
                 }
@@ -114,7 +111,5 @@ namespace stellar_dotnetcore_sdk.requests
 
             throw new NotSupportedException("No segments defined.");
         }
-
-      
     }
 }

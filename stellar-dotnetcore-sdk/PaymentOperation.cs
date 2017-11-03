@@ -1,44 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using stellar_dotnetcore_sdk.xdr;
+using Int64 = stellar_dotnetcore_sdk.xdr.Int64;
 
 namespace stellar_dotnetcore_sdk
 {
     public class PaymentOperation : Operation
     {
-
-        private readonly KeyPair _Destination;
-        private readonly Asset _Asset;
-        private readonly string _Amount;
-
-        public KeyPair Destination { get { return _Destination; } }
-        public Asset Asset { get { return _Asset; } }
-        public string Amount { get { return _Amount; } }
-
-        private PaymentOperation(KeyPair destination, Asset asset, String amount)
+        private PaymentOperation(KeyPair destination, Asset asset, string amount)
         {
-            this._Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
-            this._Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
-            this._Amount = amount ?? throw new ArgumentNullException(nameof(amount), "amount cannot be null");
+            Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
+            Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
+            Amount = amount ?? throw new ArgumentNullException(nameof(amount), "amount cannot be null");
         }
+
+        public KeyPair Destination { get; }
+
+        public Asset Asset { get; }
+
+        public string Amount { get; }
 
         public override xdr.Operation.OperationBody ToOperationBody()
         {
-            PaymentOp op = new PaymentOp();
+            var op = new PaymentOp();
 
             // destination
-            AccountID destination = new AccountID();
-            destination.InnerValue = this._Destination.XdrPublicKey;
+            var destination = new AccountID();
+            destination.InnerValue = Destination.XdrPublicKey;
             op.Destination = destination;
             // asset
-            op.Asset = _Asset.ToXdr();
+            op.Asset = Asset.ToXdr();
             // amount
-            xdr.Int64 amount = new xdr.Int64();
-            amount.InnerValue = Operation.ToXdrAmount(this._Amount);
+            var amount = new Int64();
+            amount.InnerValue = ToXdrAmount(Amount);
             op.Amount = amount;
 
-            xdr.Operation.OperationBody body = new xdr.Operation.OperationBody();
+            var body = new xdr.Operation.OperationBody();
             body.Discriminant = OperationType.Create(OperationType.OperationTypeEnum.PAYMENT);
             body.PaymentOp = op;
             return body;
@@ -50,9 +46,9 @@ namespace stellar_dotnetcore_sdk
          */
         public class Builder
         {
-            private readonly KeyPair destination;
+            private readonly string amount;
             private readonly Asset asset;
-            private readonly String amount;
+            private readonly KeyPair destination;
 
             private KeyPair mSourceAccount;
 
@@ -64,7 +60,7 @@ namespace stellar_dotnetcore_sdk
             {
                 destination = KeyPair.FromXdrPublicKey(op.Destination.InnerValue);
                 asset = Asset.FromXdr(op.Asset);
-                amount = Operation.FromXdrAmount(op.Amount.InnerValue);
+                amount = FromXdrAmount(op.Amount.InnerValue);
             }
 
             /**
@@ -74,7 +70,7 @@ namespace stellar_dotnetcore_sdk
              * @param amount The amount to send in lumens.
              * @throws ArithmeticException when amount has more than 7 decimal places.
              */
-            public Builder(KeyPair destination, Asset asset, String amount)
+            public Builder(KeyPair destination, Asset asset, string amount)
             {
                 this.destination = destination;
                 this.asset = asset;
@@ -97,11 +93,9 @@ namespace stellar_dotnetcore_sdk
              */
             public PaymentOperation Build()
             {
-                PaymentOperation operation = new PaymentOperation(destination, asset, amount);
+                var operation = new PaymentOperation(destination, asset, amount);
                 if (mSourceAccount != null)
-                {
                     operation.SourceAccount = mSourceAccount;
-                }
                 return operation;
             }
         }

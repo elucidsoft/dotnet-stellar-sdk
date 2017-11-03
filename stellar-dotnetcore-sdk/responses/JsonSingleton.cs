@@ -1,19 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Linq;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using stellar_dotnetcore_sdk.responses.accountResponse;
 using stellar_dotnetcore_sdk.responses.page;
-using System.Collections.Generic;
-using System.Text;
-using System;
-using System.Linq;
 
 namespace stellar_dotnetcore_sdk.responses
 {
-    public static partial class JsonSingleton
+    public static class JsonSingleton
     {
         public static T GetInstance<T>(string content)
         {
-            var pageResponseConvertersions = new Type[]
+            var pageResponseConvertersions = new[]
             {
                 typeof(Page<AccountResponse>) //TODO: ,
                 //TODO: typeof(Page<EffectResponse>),
@@ -30,7 +27,7 @@ namespace stellar_dotnetcore_sdk.responses
                 new KeyPairTypeAdapter()
             };
 
-            if(pageResponseConvertersions.Contains(typeof(T)))
+            if (pageResponseConvertersions.Contains(typeof(T)))
                 content = PageAccountResponseConverter(content);
 
             return JsonConvert.DeserializeObject<T>(content, jsonConverters);
@@ -38,8 +35,8 @@ namespace stellar_dotnetcore_sdk.responses
 
         private static string PageAccountResponseConverter(string content)
         {
-            JObject json = JObject.Parse(content);
-            JObject newJson = new JObject();
+            var json = JObject.Parse(content);
+            var newJson = new JObject();
             newJson.Add("records", json.SelectToken("$._embedded.records"));
             newJson.Add("links", json.SelectToken("$.._links"));
 

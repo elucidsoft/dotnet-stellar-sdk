@@ -1,15 +1,13 @@
-﻿using stellar_dotnetcore_sdk.requests;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Net.Http;
-using System.Text;
+using stellar_dotnetcore_sdk.requests;
 
 namespace stellar_dotnetcore_sdk
 {
     public class Server
     {
-        private Uri _serverUri;
         private HttpClient _httpClient;
+        private readonly Uri _serverUri;
 
         public Server(string uri)
         {
@@ -19,7 +17,7 @@ namespace stellar_dotnetcore_sdk
             {
                 _serverUri = new Uri(uri);
             }
-            catch(UriFormatException)
+            catch (UriFormatException)
             {
                 throw;
             }

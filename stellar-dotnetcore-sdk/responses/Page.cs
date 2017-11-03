@@ -1,16 +1,15 @@
-﻿using Newtonsoft.Json;
-using stellar_dotnetcore_sdk.requests;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using stellar_dotnetcore_sdk.requests;
 
 namespace stellar_dotnetcore_sdk.responses.page
 {
     /// <summary>
-    ///  Represents page of objects.
-    ///  https://www.stellar.org/developers/horizon/reference/resources/page.html
+    ///     Represents page of objects.
+    ///     https://www.stellar.org/developers/horizon/reference/resources/page.html
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class Page<T> : Response
@@ -21,10 +20,8 @@ namespace stellar_dotnetcore_sdk.responses.page
         [JsonProperty(PropertyName = "links")]
         public Links Links { get; private set; }
 
-        public Page() { }
-
         /// <summary>
-        /// The next page of results or null when there is no more results
+        ///     The next page of results or null when there is no more results
         /// </summary>
         /// <returns></returns>
         public async Task<Page<T>> NextPage()
@@ -32,10 +29,10 @@ namespace stellar_dotnetcore_sdk.responses.page
             if (Links.Next == null)
                 return null;
 
-            ResponseHandler<Page<T>> responseHandler = new ResponseHandler<Page<T>>();
-            Uri uri = new Uri(Links.Next.Href);
+            var responseHandler = new ResponseHandler<Page<T>>();
+            var uri = new Uri(Links.Next.Href);
 
-            using (HttpClient httpClient = new HttpClient())
+            using (var httpClient = new HttpClient())
             {
                 var response = await httpClient.GetAsync(uri);
                 return await responseHandler.HandleResponse(response);
@@ -44,7 +41,7 @@ namespace stellar_dotnetcore_sdk.responses.page
     }
 
     /// <summary>
-    /// Links connected to page response.
+    ///     Links connected to page response.
     /// </summary>
     public class Links
     {
@@ -55,10 +52,10 @@ namespace stellar_dotnetcore_sdk.responses.page
             Self = self;
         }
 
-        public Link Next { get; private set; }
+        public Link Next { get; }
 
-        public Link Prev { get; private set; }
+        public Link Prev { get; }
 
-        public Link Self { get; private set; }
+        public Link Self { get; }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.IO;
 using System.Text;
 
 namespace stellar_dotnetcore_sdk.xdr
@@ -10,11 +8,12 @@ namespace stellar_dotnetcore_sdk.xdr
     {
         private readonly List<byte> _bytes;
 
-        private readonly byte[][] _tails = {
+        private readonly byte[][] _tails =
+        {
             null,
-            new byte[] { 0x00},
-            new byte[] { 0x00, 0x00},
-            new byte[] { 0x00, 0x00, 0x00}
+            new byte[] {0x00},
+            new byte[] {0x00, 0x00},
+            new byte[] {0x00, 0x00, 0x00}
         };
 
         public XdrDataOutputStream()
@@ -43,7 +42,7 @@ namespace stellar_dotnetcore_sdk.xdr
         public void WriteString(string str)
         {
             var bytes = Encoding.UTF8.GetBytes(str);
-            WriteVarOpaque((uint)bytes.Length, bytes);
+            WriteVarOpaque((uint) bytes.Length, bytes);
         }
 
         public void WriteIntArray(int[] a)
@@ -60,36 +59,35 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public void WriteLong(long v)
         {
-            Write((byte)((v >> 56) & 0xff));
-            Write((byte)((v >> 48) & 0xff));
-            Write((byte)((v >> 40) & 0xff));
-            Write((byte)((v >> 32) & 0xff));
-            Write((byte)((v >> 24) & 0xff));
-            Write((byte)((v >> 16) & 0xff));
-            Write((byte)((v >> 8) & 0xff));
-            Write((byte)(v & 0xff));
+            Write((byte) ((v >> 56) & 0xff));
+            Write((byte) ((v >> 48) & 0xff));
+            Write((byte) ((v >> 40) & 0xff));
+            Write((byte) ((v >> 32) & 0xff));
+            Write((byte) ((v >> 24) & 0xff));
+            Write((byte) ((v >> 16) & 0xff));
+            Write((byte) ((v >> 8) & 0xff));
+            Write((byte) (v & 0xff));
         }
 
         public void WriteInt(int i)
         {
-            Write((byte)((i >> 0x18) & 0xff));
-            Write((byte)((i >> 0x10) & 0xff));
-            Write((byte)((i >> 8) & 0xff));
-            Write((byte)(i & 0xff));
-
+            Write((byte) ((i >> 0x18) & 0xff));
+            Write((byte) ((i >> 0x10) & 0xff));
+            Write((byte) ((i >> 8) & 0xff));
+            Write((byte) (i & 0xff));
         }
 
         public void WriteUInt(uint i)
         {
-            Write((byte)((i >> 0x18) & 0xff));
-            Write((byte)((i >> 0x10) & 0xff));
-            Write((byte)((i >> 8) & 0xff));
-            Write((byte)(i & 0xff));
+            Write((byte) ((i >> 0x18) & 0xff));
+            Write((byte) ((i >> 0x10) & 0xff));
+            Write((byte) ((i >> 8) & 0xff));
+            Write((byte) (i & 0xff));
         }
 
         private unsafe void WriteSingle(float v)
         {
-            WriteInt(*(int*)(&v));
+            WriteInt(*(int*) &v);
         }
 
         public void WriteSingleArray(float[] a)
@@ -106,7 +104,7 @@ namespace stellar_dotnetcore_sdk.xdr
 
         private unsafe void WriteDouble(double v)
         {
-            WriteLong(*(long*)(&v));
+            WriteLong(*(long*) &v);
         }
 
         public void WriteDoubleArray(double[] a)
@@ -119,7 +117,6 @@ namespace stellar_dotnetcore_sdk.xdr
         {
             for (var i = 0; i < l; i++)
                 WriteDouble(a[i]);
-
         }
 
         public byte[] ToArray()
@@ -129,9 +126,9 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public void WriteVarOpaque(uint max, byte[] v)
         {
-            uint len = (uint)v.LongLength;
+            var len = (uint) v.LongLength;
             if (len > max)
-                throw new FormatException("unexpected length: " + len.ToString());
+                throw new FormatException("unexpected length: " + len);
 
             try
             {
@@ -145,13 +142,12 @@ namespace stellar_dotnetcore_sdk.xdr
         }
 
 
-
         private void NoCheckWriteFixOpaque(uint len, byte[] v)
         {
             try
             {
                 Write(v);
-                uint tail = len % 4u;
+                var tail = len % 4u;
                 if (tail != 0)
                     Write(_tails[4u - tail]);
             }
@@ -161,5 +157,4 @@ namespace stellar_dotnetcore_sdk.xdr
             }
         }
     }
-
 }

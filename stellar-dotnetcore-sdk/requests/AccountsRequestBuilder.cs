@@ -1,34 +1,30 @@
-﻿using EventSource4Net;
+﻿using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+using EventSource4Net;
 using stellar_dotnetcore_sdk.responses;
 using stellar_dotnetcore_sdk.responses.accountResponse;
 using stellar_dotnetcore_sdk.responses.page;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace stellar_dotnetcore_sdk.requests
 {
     /// <summary>
-    /// Builds requests connected to accounts.
+    ///     Builds requests connected to accounts.
     /// </summary>
     public class AccountsRequestBuilder : RequestBuilder<AccountsRequestBuilder>
     {
-
         /// <summary>
-        /// Builds requests connected to accounts.
+        ///     Builds requests connected to accounts.
         /// </summary>
         /// <param name="serverUri"></param>
         public AccountsRequestBuilder(Uri serverUri)
             : base(serverUri, "accounts")
         {
-
         }
 
         /// <summary>
-        /// Requests specific uri and returns AccountResponse
-        /// This method is helpful for getting the links.
+        ///     Requests specific uri and returns AccountResponse
+        ///     This method is helpful for getting the links.
         /// </summary>
         /// <param name="uri"></param>
         /// <returns></returns>
@@ -43,8 +39,8 @@ namespace stellar_dotnetcore_sdk.requests
         }
 
         /// <summary>
-        /// Requests GET /accounts/{account}
-        /// https://www.stellar.org/developers/horizon/reference/accounts-single.html
+        ///     Requests GET /accounts/{account}
+        ///     https://www.stellar.org/developers/horizon/reference/accounts-single.html
         /// </summary>
         /// <param name="account">Account to fetch</param>
         /// <returns></returns>
@@ -55,12 +51,12 @@ namespace stellar_dotnetcore_sdk.requests
         }
 
         /// <summary>
-        /// Requests specific uri and returns Page of AccountResponse.
-        /// This method is helpful for getting the next set of results.
+        ///     Requests specific uri and returns Page of AccountResponse.
+        ///     This method is helpful for getting the next set of results.
         /// </summary>
         /// <param name="uri"></param>
         /// <returns>Page of AccountResponse</returns>
-        public async static Task<Page<AccountResponse>> Execute(Uri uri)
+        public static async Task<Page<AccountResponse>> Execute(Uri uri)
         {
             var responseHandler = new ResponseHandler<Page<AccountResponse>>();
             using (var httpClient = new HttpClient())
@@ -71,24 +67,25 @@ namespace stellar_dotnetcore_sdk.requests
         }
 
         /// <summary>
-        /// llows to stream SSE events from horizon.
-        /// Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
-        /// This mode will keep the connection to horizon open and horizon will continue to return
-        /// http://www.w3.org/TR/eventsource/
-        /// "https://www.stellar.org/developers/horizon/learn/responses.html
-        /// responses as ledgers close.
+        ///     llows to stream SSE events from horizon.
+        ///     Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
+        ///     This mode will keep the connection to horizon open and horizon will continue to return
+        ///     http://www.w3.org/TR/eventsource/
+        ///     "https://www.stellar.org/developers/horizon/learn/responses.html
+        ///     responses as ledgers close.
         /// </summary>
-        /// <param name="listener">EventListener implementation with AccountResponse type
-        /// <returns>EventSource object, so you can close() connection when not needed anymore</returns>
+        /// <param name="listener">
+        ///     EventListener implementation with AccountResponse type
+        ///     <returns>EventSource object, so you can close() connection when not needed anymore</returns>
         public EventSource Stream(EventHandler<AccountResponse> listener)
         {
-            EventSource es = new EventSource(BuildUri());
+            var es = new EventSource(BuildUri());
             es.Message += (sender, e) =>
             {
-                if(e.Data == "\"hello\"")
+                if (e.Data == "\"hello\"")
                     return;
 
-                AccountResponse account = JsonSingleton.GetInstance<AccountResponse>(e.Data);
+                var account = JsonSingleton.GetInstance<AccountResponse>(e.Data);
                 listener?.Invoke(this, account);
             };
 

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using stellar_dotnetcore_sdk.xdr;
 
 namespace stellar_dotnetcore_sdk
 {
@@ -9,13 +7,11 @@ namespace stellar_dotnetcore_sdk
         public AssetTypeCreditAlphaNum12(string code, KeyPair issuer) : base(code, issuer)
         {
             if (code.Length < 5 || code.Length > 12)
-            {
                 throw new AssetCodeLengthInvalidException();
-            }
         }
 
 
-        public override String GetType()
+        public override string GetType()
         {
             return "credit_alphanum12";
         }
@@ -23,11 +19,11 @@ namespace stellar_dotnetcore_sdk
 
         public override xdr.Asset ToXdr()
         {
-            xdr.Asset thisXdr = new xdr.Asset();
-            thisXdr.Discriminant = xdr.AssetType.Create(xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12);
-            xdr.Asset.AssetAlphaNum12 credit = new xdr.Asset.AssetAlphaNum12();
-            credit.AssetCode = (Util.PaddedByteArray(Code, 12));
-            xdr.AccountID accountID = new xdr.AccountID();
+            var thisXdr = new xdr.Asset();
+            thisXdr.Discriminant = AssetType.Create(AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12);
+            var credit = new xdr.Asset.AssetAlphaNum12();
+            credit.AssetCode = Util.PaddedByteArray(Code, 12);
+            var accountID = new AccountID();
             accountID.InnerValue = Issuer.XdrPublicKey;
             credit.Issuer = accountID;
             thisXdr.AlphaNum12 = credit;

@@ -1,16 +1,18 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using static stellar_dotnetcore_sdk.responses.JsonSingleton;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace stellar_dotnetcore_sdk.responses.accountResponse
 {
     public class AccountResponse : Response
     {
-        private AccountResponse() { }
+        private AccountResponse()
+        {
+        }
 
-        public AccountResponse(KeyPair keyPair) => KeyPair = keyPair;
+        public AccountResponse(KeyPair keyPair)
+        {
+            KeyPair = keyPair;
+        }
 
         public AccountResponse(KeyPair keyPair, long sequenceNumber)
             : this(keyPair)
@@ -51,18 +53,16 @@ namespace stellar_dotnetcore_sdk.responses.accountResponse
         [JsonProperty(PropertyName = "_links")]
         public Links Links { get; set; }
 
-        public long IncrementedSequenceNumber { get => SequenceNumber + 1; }
+        public long IncrementedSequenceNumber => SequenceNumber + 1;
 
         public void IncrementSequenceNumber()
         {
             SequenceNumber++;
         }
-
-
     }
 
     /// <summary>
-    /// Represents account thresholds.
+    ///     Represents account thresholds.
     /// </summary>
     public class Thresholds
     {
@@ -84,7 +84,7 @@ namespace stellar_dotnetcore_sdk.responses.accountResponse
     }
 
     /// <summary>
-    /// Represents account flags.
+    ///     Represents account flags.
     /// </summary>
     public class Flags
     {
@@ -102,12 +102,11 @@ namespace stellar_dotnetcore_sdk.responses.accountResponse
     }
 
     /// <summary>
-    /// Represents account balance.
+    ///     Represents account balance.
     /// </summary>
     public class Balance
     {
-        [JsonProperty(PropertyName = "asset_issuer")]
-        private string _assetIssuer;
+        [JsonProperty(PropertyName = "asset_issuer")] private string _assetIssuer;
 
         public Balance(string assetType, string assetCode, string assetIssuer, string balance, string limit)
         {
@@ -125,7 +124,7 @@ namespace stellar_dotnetcore_sdk.responses.accountResponse
         public string AssetCode { get; private set; }
 
         //This prop is dynamic based on private field serialized above.
-        public KeyPair AssetIssuer { get => KeyPair.FromAccountId(_assetIssuer); }
+        public KeyPair AssetIssuer => KeyPair.FromAccountId(_assetIssuer);
 
         [JsonProperty(PropertyName = "limit")]
         public string Limit { get; private set; }
@@ -135,7 +134,7 @@ namespace stellar_dotnetcore_sdk.responses.accountResponse
     }
 
     /// <summary>
-    /// Represents account signers.
+    ///     Represents account signers.
     /// </summary>
     public class Signer
     {

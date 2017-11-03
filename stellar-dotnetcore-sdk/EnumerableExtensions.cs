@@ -7,26 +7,26 @@ namespace stellar_dotnetcore_sdk
     public static class EnumerableExtensions
     {
         /// <summary>
-        /// Creates a string from the sequence by concatenating the result
-        /// of the specified string selector function for each element.
+        ///     Creates a string from the sequence by concatenating the result
+        ///     of the specified string selector function for each element.
         /// </summary>
         public static string ToConcatenatedString<T>(this IEnumerable<T> source,
             Func<T, string> stringSelector)
         {
-            return source.ToConcatenatedString(stringSelector, String.Empty);
+            return source.ToConcatenatedString(stringSelector, string.Empty);
         }
 
         /// <summary>
-        /// Creates a string from the sequence by concatenating the result
-        /// of the specified string selector function for each element.
+        ///     Creates a string from the sequence by concatenating the result
+        ///     of the specified string selector function for each element.
         /// </summary>
-        ///<param name="separator">The string which separates each concatenated item.</param>
+        /// <param name="separator">The string which separates each concatenated item.</param>
         public static string ToConcatenatedString<T>(this IEnumerable<T> source,
             Func<T, string> stringSelector,
             string separator)
         {
             var b = new StringBuilder();
-            bool needsSeparator = false; // don't use for first item
+            var needsSeparator = false; // don't use for first item
 
             foreach (var item in source)
             {
@@ -41,6 +41,3 @@ namespace stellar_dotnetcore_sdk
         }
     }
 }
-
-
-

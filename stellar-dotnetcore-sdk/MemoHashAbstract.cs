@@ -1,31 +1,24 @@
-﻿using System;
-using stellar_dotnetcore_sdk.xdr;
-
-namespace stellar_dotnetcore_sdk
+﻿namespace stellar_dotnetcore_sdk
 {
     public abstract class MemoHashAbstract : Memo
     {
         protected byte[] _MemoBytes;
 
-        public byte[] MemoBytes { get { return _MemoBytes; } }
-
         public MemoHashAbstract(byte[] bytes)
         {
             if (bytes.Length < 32)
-            {
                 bytes = Util.PaddedByteArray(bytes, 32);
-            }
             else if (bytes.Length > 32)
-            {
                 throw new MemoTooLongException("MEMO_HASH can contain 32 bytes at max.");
-            }
 
-            this._MemoBytes = bytes;
+            _MemoBytes = bytes;
         }
 
-        public MemoHashAbstract(string hexString): this(Util.HexToBytes(hexString))
+        public MemoHashAbstract(string hexString) : this(Util.HexToBytes(hexString))
         {
         }
+
+        public byte[] MemoBytes => _MemoBytes;
 
         /**
          * <p>Returns hex representation of bytes contained in this memo.</p>
@@ -39,7 +32,7 @@ namespace stellar_dotnetcore_sdk
          */
         public string GetHexValue()
         {
-            return Util.BytesToHex(this.MemoBytes);
+            return Util.BytesToHex(MemoBytes);
         }
 
         /**
@@ -54,9 +47,9 @@ namespace stellar_dotnetcore_sdk
          */
         public string GetTrimmedHexValue()
         {
-            return this.GetHexValue().Split("00")[0].ToLower();
+            return GetHexValue().Split("00")[0].ToLower();
         }
 
-        public override abstract xdr.Memo ToXdr();
+        public abstract override xdr.Memo ToXdr();
     }
 }

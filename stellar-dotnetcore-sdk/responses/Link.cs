@@ -1,7 +1,5 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace stellar_dotnetcore_sdk.responses
 {
@@ -27,7 +25,7 @@ namespace stellar_dotnetcore_sdk.responses
                 {
                     return new Uri(Href);
                 }
-                catch(UriFormatException)
+                catch (UriFormatException)
                 {
                     throw;
                 }

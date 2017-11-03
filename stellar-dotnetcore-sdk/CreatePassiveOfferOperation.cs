@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using stellar_dotnetcore_sdk.xdr;
 
 namespace stellar_dotnetcore_sdk

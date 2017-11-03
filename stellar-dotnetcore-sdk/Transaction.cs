@@ -183,9 +183,9 @@ namespace stellar_dotnetcore_sdk
          */
         public class Builder
         {
+            private readonly BlockingCollection<Operation> mOperations;
             private readonly ITransactionBuilderAccount mSourceAccount;
             private Memo mMemo;
-            private readonly BlockingCollection<Operation> mOperations;
             private TimeBounds mTimeBounds;
 
             /**

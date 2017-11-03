@@ -1,39 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Numerics;
-using System.Text;
+using stellar_dotnetcore_sdk.xdr;
 
 namespace stellar_dotnetcore_sdk
 {
     public abstract class Operation
     {
-        public Operation() { }
+        private static readonly decimal ONE = new decimal(10000000);
 
         private KeyPair _sourceAccount;
 
         public KeyPair SourceAccount
         {
-            get { return _sourceAccount; }
-            set { _sourceAccount = value ?? throw new ArgumentNullException(nameof(value), "keypair cannot be null"); }
+            get => _sourceAccount;
+            set => _sourceAccount = value ?? throw new ArgumentNullException(nameof(value), "keypair cannot be null");
         }
 
-        private static readonly Decimal ONE = new Decimal(10000000);
-
-        protected static long ToXdrAmount(String value)
+        protected static long ToXdrAmount(string value)
         {
             if (string.IsNullOrEmpty(value))
                 throw new ArgumentNullException(nameof(value), "value cannot be null");
 
 
             //This bascially takes a decimal value and turns it into a large integer.
-            long amount = (long)(Decimal.Parse(value) * Operation.ONE);
+            var amount = (long) (decimal.Parse(value) * ONE);
             return amount;
         }
 
-        protected static String FromXdrAmount(long value)
+        protected static string FromXdrAmount(long value)
         {
-            Decimal amount = new Decimal(value) * Operation.ONE;
+            var amount = new decimal(value) * ONE;
             return amount.ToString();
         }
 
@@ -42,10 +38,10 @@ namespace stellar_dotnetcore_sdk
          */
         public xdr.Operation ToXdr()
         {
-            xdr.Operation thisXdr = new xdr.Operation();
+            var thisXdr = new xdr.Operation();
             if (SourceAccount != null)
             {
-                xdr.AccountID sourceAccount = new xdr.AccountID();
+                var sourceAccount = new AccountID();
                 sourceAccount.InnerValue = SourceAccount.XdrPublicKey;
                 thisXdr.SourceAccount = sourceAccount;
             }
@@ -56,11 +52,11 @@ namespace stellar_dotnetcore_sdk
         /**
          * Returns base64-encoded Operation XDR object.
          */
-        public String ToXdrBase64()
+        public string ToXdrBase64()
         {
-            xdr.Operation operation = this.ToXdr();
+            var operation = ToXdr();
             var memoryStream = new MemoryStream();
-            var writer = new xdr.XdrDataOutputStream();
+            var writer = new XdrDataOutputStream();
             xdr.Operation.Encode(writer, operation);
             return Convert.ToBase64String(memoryStream.ToArray());
         }
@@ -71,47 +67,45 @@ namespace stellar_dotnetcore_sdk
          */
         public static Operation FromXdr(xdr.Operation thisXdr)
         {
-            xdr.Operation.OperationBody body = thisXdr.Body;
+            var body = thisXdr.Body;
             Operation operation;
             switch (body.Discriminant.InnerValue)
             {
-                case xdr.OperationType.OperationTypeEnum.CREATE_ACCOUNT:
+                case OperationType.OperationTypeEnum.CREATE_ACCOUNT:
                     operation = new CreateAccountOperation.Builder(body.CreateAccountOp).Build();
                     break;
-                case xdr.OperationType.OperationTypeEnum.PAYMENT:
+                case OperationType.OperationTypeEnum.PAYMENT:
                     operation = new PaymentOperation.Builder(body.PaymentOp).Build();
                     break;
-                case xdr.OperationType.OperationTypeEnum.PATH_PAYMENT:
+                case OperationType.OperationTypeEnum.PATH_PAYMENT:
                     operation = new PathPaymentOperation.Builder(body.PathPaymentOp).build();
                     break;
-                case xdr.OperationType.OperationTypeEnum.MANAGE_OFFER:
+                case OperationType.OperationTypeEnum.MANAGE_OFFER:
                     operation = new ManageOfferOperation.Builder(body.ManageOfferOp).build();
                     break;
-                case xdr.OperationType.OperationTypeEnum.CREATE_PASSIVE_OFFER:
+                case OperationType.OperationTypeEnum.CREATE_PASSIVE_OFFER:
                     operation = new CreatePassiveOfferOperation.Builder(body.CreatePassiveOfferOp).build();
                     break;
-                case xdr.OperationType.OperationTypeEnum.SET_OPTIONS:
+                case OperationType.OperationTypeEnum.SET_OPTIONS:
                     operation = new SetOptionsOperation.Builder(body.SetOptionsOp).build();
                     break;
-                case xdr.OperationType.OperationTypeEnum.CHANGE_TRUST:
+                case OperationType.OperationTypeEnum.CHANGE_TRUST:
                     operation = new ChangeTrustOperation.Builder(body.ChangeTrustOp).build();
                     break;
-                case xdr.OperationType.OperationTypeEnum.ALLOW_TRUST:
+                case OperationType.OperationTypeEnum.ALLOW_TRUST:
                     operation = new AllowTrustOperation.Builder(body.AllowTrustOp).build();
                     break;
-                case xdr.OperationType.OperationTypeEnum.ACCOUNT_MERGE:
+                case OperationType.OperationTypeEnum.ACCOUNT_MERGE:
                     operation = new AccountMergeOperation.Builder(body).build();
                     break;
-                case xdr.OperationType.OperationTypeEnum.MANAGE_DATA:
+                case OperationType.OperationTypeEnum.MANAGE_DATA:
                     operation = new ManageDataOperation.Builder(body.ManageDataOp).build();
                     break;
                 default:
                     throw new Exception("Unknown operation body " + body.Discriminant.InnerValue);
             }
             if (thisXdr.SourceAccount != null)
-            {
                 operation.SourceAccount = KeyPair.FromXdrPublicKey(thisXdr.SourceAccount.InnerValue);
-            }
             return operation;
         }
 

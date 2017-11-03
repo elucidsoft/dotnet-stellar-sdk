@@ -25,7 +25,7 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public void Read(byte[] buffer, int offset, int count)
         {
-            ReadFixOpaque((uint)count);
+            ReadFixOpaque((uint) count);
             Array.Copy(_bytes, _pos, buffer, offset, count);
             _pos += count;
         }
@@ -52,13 +52,13 @@ namespace stellar_dotnetcore_sdk.xdr
         internal long ReadLong()
         {
             return
-                ((long)_bytes[_pos++] << 56) |
-                ((long)_bytes[_pos++] << 48) |
-                ((long)_bytes[_pos++] << 40) |
-                ((long)_bytes[_pos++] << 32) |
-                ((long)_bytes[_pos++] << 24) |
-                ((long)_bytes[_pos++] << 16) |
-                ((long)_bytes[_pos++] << 8) |
+                ((long) _bytes[_pos++] << 56) |
+                ((long) _bytes[_pos++] << 48) |
+                ((long) _bytes[_pos++] << 40) |
+                ((long) _bytes[_pos++] << 32) |
+                ((long) _bytes[_pos++] << 24) |
+                ((long) _bytes[_pos++] << 16) |
+                ((long) _bytes[_pos++] << 8) |
                 _bytes[_pos++];
         }
 
@@ -74,16 +74,16 @@ namespace stellar_dotnetcore_sdk.xdr
         public uint ReadUInt()
         {
             return
-                ((uint)_bytes[_pos++] << 0x18) |
-                ((uint)_bytes[_pos++] << 0x10) |
-                ((uint)_bytes[_pos++] << 0x08) |
+                ((uint) _bytes[_pos++] << 0x18) |
+                ((uint) _bytes[_pos++] << 0x10) |
+                ((uint) _bytes[_pos++] << 0x08) |
                 _bytes[_pos++];
         }
 
         private unsafe float ReadSingle()
         {
             var num = ReadInt();
-            return *(float*)&num;
+            return *(float*) &num;
         }
 
         public float[] ReadSingleArray()
@@ -104,7 +104,7 @@ namespace stellar_dotnetcore_sdk.xdr
         private unsafe double ReadDouble()
         {
             var num = ReadLong();
-            return *(double*)&num;
+            return *(double*) &num;
         }
 
         public double[] ReadDoubleArray()
@@ -134,7 +134,7 @@ namespace stellar_dotnetcore_sdk.xdr
         public byte[] ReadFixOpaque(uint len)
         {
             var result = new byte[len];
-            Array.Copy(_bytes, _pos, result, 0, (int)len);
+            Array.Copy(_bytes, _pos, result, 0, (int) len);
 
             var tail = len % 4u;
             if (tail != 0)
@@ -144,10 +144,10 @@ namespace stellar_dotnetcore_sdk.xdr
 
                 Array.Copy(_bytes, _pos + len, tailBytes, 0, tailLength);
 
-                if(tailBytes.Any(a => a != 0))
+                if (tailBytes.Any(a => a != 0))
                     throw new IOException("non-zero padding");
 
-                _pos += (int)len + tailLength;
+                _pos += (int) len + tailLength;
             }
 
             return result;

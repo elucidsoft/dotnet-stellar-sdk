@@ -17,13 +17,28 @@ using System.Threading;
 namespace EventSource4Net
 {
     /// <summary>
-    /// An EventSource represents a long-lived HTTP connection through which a Web server can “push” textual messages.
-    /// To use these “Server Sent Events”, pass the server URL to the EventSource() constructor and then register
-    /// a message event handler on the resulting Event Source object. The EventSource attempts to be resilient to
-    /// transitory network errors and interruptions by automatically retrying connections to maintain persistence.
+    ///     An EventSource represents a long-lived HTTP connection through which a Web server can “push” textual messages.
+    ///     To use these “Server Sent Events”, pass the server URL to the EventSource() constructor and then register
+    ///     a message event handler on the resulting Event Source object. The EventSource attempts to be resilient to
+    ///     transitory network errors and interruptions by automatically retrying connections to maintain persistence.
     /// </summary>
     public class EventSource : IDisposable
     {
+        #region Public Enums
+
+        /// <summary>
+        ///     The possible values of the readyState property.
+        /// </summary>
+        public enum EventSourceState
+        {
+            Connecting = 0,
+            Open = 1,
+            Closed = 2,
+            Shutdown = 3
+        }
+
+        #endregion Public Enums
+
         #region Protected Fields
 
         protected static readonly TraceSource Trace = new TraceSource("EventSource");
@@ -34,7 +49,6 @@ namespace EventSource4Net
         #region Private Fields
 
         private readonly byte[] _buffer = new byte[8192];
-        private string _eventId;
         private StringBuilder _eventStream;
         private string _eventType;
         private Stream _httpStream;
@@ -50,7 +64,7 @@ namespace EventSource4Net
         #region Public Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventSource"/> class.
+        ///     Initializes a new instance of the <see cref="EventSource" /> class.
         /// </summary>
         /// <param name="requestUriString">The URL.</param>
         public EventSource(string requestUriString)
@@ -59,7 +73,7 @@ namespace EventSource4Net
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventSource"/> class.
+        ///     Initializes a new instance of the <see cref="EventSource" /> class.
         /// </summary>
         /// <param name="requestUriString">The URL.</param>
         public EventSource(Uri requestUriString)
@@ -74,62 +88,47 @@ namespace EventSource4Net
         #region Public Events
 
         /// <summary>
-        /// Occurs when an error occurs.
+        ///     Occurs when an error occurs.
         /// </summary>
         public event EventHandler<ServerSentErrorEventArgs> Error;
 
         /// <summary>
-        /// Occurs when a message is available.
+        ///     Occurs when a message is available.
         /// </summary>
         public event EventHandler<ServerSentEventArgs> Message;
 
         /// <summary>
-        /// Occurs when the ready state changes.
+        ///     Occurs when the ready state changes.
         /// </summary>
         public event EventHandler<StateChangeEventArgs> StateChange;
 
         #endregion Public Events
 
-        #region Public Enums
-
-        /// <summary>
-        /// The possible values of the readyState property.
-        /// </summary>
-        public enum EventSourceState
-        {
-            Connecting = 0,
-            Open = 1,
-            Closed = 2,
-            Shutdown = 3
-        }
-
-        #endregion Public Enums
-
         #region Public Properties
 
         /// <summary>
-        /// Gets or sets the headers to be sent in the request. For more
-        /// customization override the ConfigureWebRequest method.
+        ///     Gets or sets the headers to be sent in the request. For more
+        ///     customization override the ConfigureWebRequest method.
         /// </summary>
         public NameValueCollection Headers { get; set; }
 
         /// <summary>
-        /// Gets or sets an optional message type filter. If set,
-        /// this filter specifies which event types to pass through.
+        ///     Gets or sets an optional message type filter. If set,
+        ///     this filter specifies which event types to pass through.
         /// </summary>
-        public string[] MessageTypes { get; set; } 
+        public string[] MessageTypes { get; set; }
 
         /// <summary>
-        /// Gets the last event identifier.
+        ///     Gets the last event identifier.
         /// </summary>
-        public string LastEventId { get { return _eventId; } }
+        public string LastEventId { get; private set; }
 
         /// <summary>
-        /// Gets the state of the connection.
+        ///     Gets the state of the connection.
         /// </summary>
         public EventSourceState ReadyState
         {
-            get { return _readyState; }
+            get => _readyState;
             private set
             {
                 _readyState = value;
@@ -138,27 +137,27 @@ namespace EventSource4Net
         }
 
         /// <summary>
-        /// Gets or sets the initial connection timeout. 
-        /// There is no timeout on the connection once established.
+        ///     Gets or sets the initial connection timeout.
+        ///     There is no timeout on the connection once established.
         /// </summary>
         public int Timeout { get; set; }
 
         /// <summary>
-        /// The absolute URL to which the EventSource is connected.
+        ///     The absolute URL to which the EventSource is connected.
         /// </summary>
-        public Uri Url { get; private set; }
+        public Uri Url { get; }
 
         #endregion Public Properties
 
         #region Public Methods
 
         /// <summary>
-        /// Begin the process to connect to the the EventSource. The EventSource attempts to be resilient to
-        /// transitory network errors and interruptions by automatically retrying connections to maintain persistence.
+        ///     Begin the process to connect to the the EventSource. The EventSource attempts to be resilient to
+        ///     transitory network errors and interruptions by automatically retrying connections to maintain persistence.
         /// </summary>
         public void Connect()
         {
-            if (ReadyState == EventSourceState.Connecting || ReadyState == EventSourceState.Open) 
+            if (ReadyState == EventSourceState.Connecting || ReadyState == EventSourceState.Open)
                 throw new InvalidOperationException("Cannot call connect while connection is " + ReadyState);
 
             _shutdownToken = false;
@@ -166,7 +165,7 @@ namespace EventSource4Net
         }
 
         /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        ///     Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
         public void Dispose()
         {
@@ -177,7 +176,7 @@ namespace EventSource4Net
         }
 
         /// <summary>
-        /// This method shutsdown the connection.
+        ///     This method shutsdown the connection.
         /// </summary>
         public void Shutdown()
         {
@@ -193,8 +192,8 @@ namespace EventSource4Net
         #region Protected Methods
 
         /// <summary>
-        /// Configures the web request object. Override this method to add custom
-        /// headers and settings to the request object as required.
+        ///     Configures the web request object. Override this method to add custom
+        ///     headers and settings to the request object as required.
         /// </summary>
         /// <param name="request">The HttpWebRequest request.</param>
         protected virtual void ConfigureWebRequest(HttpWebRequest request)
@@ -208,9 +207,9 @@ namespace EventSource4Net
         }
 
         /// <summary>
-        /// Called when a complete message is received (indicates by two newlines)
-        /// to process the line(s) and dispatch the event. Override this method to
-        /// customize the parsing.
+        ///     Called when a complete message is received (indicates by two newlines)
+        ///     to process the line(s) and dispatch the event. Override this method to
+        ///     customize the parsing.
         /// </summary>
         /// <param name="content">The lines received.</param>
         protected virtual void DispatchEvent(string[] content)
@@ -232,7 +231,7 @@ namespace EventSource4Net
                 switch (type)
                 {
                     case "id":
-                        _eventId = value;
+                        LastEventId = value;
                         break;
 
                     case "event":
@@ -257,15 +256,15 @@ namespace EventSource4Net
 
             OnMessageEvent(new ServerSentEventArgs
             {
-                EventId = _eventId,
+                EventId = LastEventId,
                 EventType = _eventType,
                 Data = sb.ToString()
             });
         }
 
         /// <summary>
-        /// Determines whether the specified event type is filtered. By default this checks against
-        /// the list of MessageTypes (if specified) but can be overriden for additional tests.
+        ///     Determines whether the specified event type is filtered. By default this checks against
+        ///     the list of MessageTypes (if specified) but can be overriden for additional tests.
         /// </summary>
         /// <param name="eventType">Type of the event.</param>
         /// <param name="value">The event value string.</param>
@@ -276,49 +275,43 @@ namespace EventSource4Net
         }
 
         /// <summary>
-        /// Raises the <see cref="E:ErrorEvent" /> event.
+        ///     Raises the <see cref="E:ErrorEvent" /> event.
         /// </summary>
-        /// <param name="e">The <see cref="ServerSentErrorEventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="ServerSentErrorEventArgs" /> instance containing the event data.</param>
         protected virtual void OnErrorEvent(ServerSentErrorEventArgs e)
         {
             Trace.TraceInformation("Raising OnErrorEvent ({0})", e.Exception.Message);
             var handler = Error;
             if (handler != null)
-            {
                 handler(this, e);
-            }
         }
 
         /// <summary>
-        /// Raises the <see cref="E:MessageEvent" /> event.
+        ///     Raises the <see cref="E:MessageEvent" /> event.
         /// </summary>
-        /// <param name="e">The <see cref="ServerSentEventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="ServerSentEventArgs" /> instance containing the event data.</param>
         protected virtual void OnMessageEvent(ServerSentEventArgs e)
         {
             Trace.TraceInformation("Raising OnMessageEvent ({0})", _eventType);
             var handler = Message;
             if (handler != null)
-            {
                 handler(this, e);
-            }
         }
 
         /// <summary>
-        /// Raises the <see cref="E:StateChange" /> event.
+        ///     Raises the <see cref="E:StateChange" /> event.
         /// </summary>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         protected virtual void OnStateChangeEvent(StateChangeEventArgs e)
         {
             Trace.TraceInformation("Raising OnStateChangeEvent ({0})", e.NewState);
             var handler = StateChange;
             if (handler != null)
-            {
                 handler(this, e);
-            }
         }
 
         /// <summary>
-        /// Retries the connection after delay using a simple backoff mechanism.
+        ///     Retries the connection after delay using a simple backoff mechanism.
         /// </summary>
         protected virtual void RetryAfterDelay(bool backoff = true)
         {
@@ -336,7 +329,7 @@ namespace EventSource4Net
                 System.Threading.Timeout.Infinite); // Single shot timer
 
             // Increase backoff timer up to a minute each retry
-            if (backoff) _retryInterval = (int)Math.Min(_retryInterval * 1.5, 60000);
+            if (backoff) _retryInterval = (int) Math.Min(_retryInterval * 1.5, 60000);
         }
 
         #endregion Protected Methods
@@ -344,7 +337,7 @@ namespace EventSource4Net
         #region Private Methods
 
         /// <summary>
-        /// Closes the connection.
+        ///     Closes the connection.
         /// </summary>
         private void CloseConnection()
         {
@@ -352,29 +345,23 @@ namespace EventSource4Net
             Trace.TraceInformation("CloseConnection");
 
             if (_httpWebRequest != null)
-            {
                 _httpWebRequest.Abort();
-            }
 
             if (_httpWebResponse != null)
-            {
                 _httpWebResponse.Close();
-            }
 
             if (_retryTimer != null)
-            {
                 _retryTimer.Dispose();
-            }
 
             _eventStream = null;
-            _eventId = null;
+            LastEventId = null;
             _eventType = null;
 
             ReadyState = EventSourceState.Closed;
         }
 
         /// <summary>
-        /// Connects to the event source.
+        ///     Connects to the event source.
         /// </summary>
         private void ConnectAsync()
         {
@@ -394,7 +381,7 @@ namespace EventSource4Net
                     {
                         if (!timedOut || _httpWebRequest == null || _shutdownToken) return;
                         Trace.TraceInformation("ConnectAsync (Timed Out)", Url);
-                        OnErrorEvent(new ServerSentErrorEventArgs { Exception = new TimeoutException() });
+                        OnErrorEvent(new ServerSentErrorEventArgs {Exception = new TimeoutException()});
                         CloseConnection();
                         RetryAfterDelay();
                     },
@@ -406,7 +393,7 @@ namespace EventSource4Net
             {
                 if (ex is WebException || ex is IOException)
                 {
-                    OnErrorEvent(new ServerSentErrorEventArgs { Exception = ex });
+                    OnErrorEvent(new ServerSentErrorEventArgs {Exception = ex});
                     CloseConnection();
                     RetryAfterDelay();
                     return;
@@ -415,8 +402,9 @@ namespace EventSource4Net
                 throw;
             }
         }
+
         /// <summary>
-        /// Ends the async get response.
+        ///     Ends the async get response.
         /// </summary>
         /// <param name="result">The IAsyncResult.</param>
         /// <exception cref="System.NullReferenceException">GetResponseStream() returned null</exception>
@@ -426,13 +414,13 @@ namespace EventSource4Net
 
             try
             {
-                _httpWebResponse = (HttpWebResponse)_httpWebRequest.EndGetResponse(result);
+                _httpWebResponse = (HttpWebResponse) _httpWebRequest.EndGetResponse(result);
                 _httpStream = _httpWebResponse.GetResponseStream();
                 if (_shutdownToken) return;
             }
             catch (WebException ex)
             {
-                OnErrorEvent(new ServerSentErrorEventArgs { Exception = ex });
+                OnErrorEvent(new ServerSentErrorEventArgs {Exception = ex});
                 CloseConnection();
                 RetryAfterDelay();
             }
@@ -445,8 +433,8 @@ namespace EventSource4Net
                 // If we get the wrong content type or status code, as per spec, do not attempt to reconnect.
                 OnErrorEvent(new ServerSentErrorEventArgs
                 {
-                    Exception = new Exception("Unexpected response from server. Status " + 
-                        _httpWebResponse.StatusCode + ". Media Type " + contentType.MediaType)
+                    Exception = new Exception("Unexpected response from server. Status " +
+                                              _httpWebResponse.StatusCode + ". Media Type " + contentType.MediaType)
                 });
                 CloseConnection();
                 return;
@@ -456,7 +444,7 @@ namespace EventSource4Net
             _retryInterval = DefaultRetryInterval;
 
             _eventStream = new StringBuilder();
-            _eventId = null;
+            LastEventId = null;
             _eventType = null;
 
             if (_shutdownToken) return;
@@ -465,7 +453,7 @@ namespace EventSource4Net
         }
 
         /// <summary>
-        /// Recursive method to read the network stream and process the data.
+        ///     Recursive method to read the network stream and process the data.
         /// </summary>
         /// <param name="result">The IAsyncResult.</param>
         private void EndReadFromStream(IAsyncResult result)
@@ -482,25 +470,23 @@ namespace EventSource4Net
                 {
                     CloseConnection();
                     RetryAfterDelay();
-                    return;                    
+                    return;
                 }
 
                 for (var i = 0; i < bytesRead; i++)
-                {
-                    if (i > 0 && _buffer[i] == '\n' && _buffer[i-1] == '\n' )
+                    if (i > 0 && _buffer[i] == '\n' && _buffer[i - 1] == '\n')
                     {
                         DispatchEvent(_eventStream.ToString().Split('\n'));
                         _eventStream.Length = 0;
                     }
                     else
                     {
-                        _eventStream.Append((char)_buffer[i]);
+                        _eventStream.Append((char) _buffer[i]);
                     }
-                }
             }
             catch (WebException ex)
             {
-                OnErrorEvent(new ServerSentErrorEventArgs { Exception = ex });
+                OnErrorEvent(new ServerSentErrorEventArgs {Exception = ex});
                 CloseConnection();
                 RetryAfterDelay();
                 return;
@@ -516,7 +502,7 @@ namespace EventSource4Net
         #region Public Classes
 
         /// <summary>
-        /// Server Sent Error Event Object
+        ///     Server Sent Error Event Object
         /// </summary>
         public sealed class ServerSentErrorEventArgs : EventArgs
         {
@@ -528,24 +514,24 @@ namespace EventSource4Net
         }
 
         /// <summary>
-        /// Server Sent Event Message Object
+        ///     Server Sent Event Message Object
         /// </summary>
         public sealed class ServerSentEventArgs : EventArgs
         {
             #region Public Properties
 
             /// <summary>
-            /// Gets the data.
+            ///     Gets the data.
             /// </summary>
             public string Data { get; internal set; }
 
             /// <summary>
-            /// Gets the event identifier.
+            ///     Gets the event identifier.
             /// </summary>
             public string EventId { get; internal set; }
 
             /// <summary>
-            /// Gets the type of the event.
+            ///     Gets the type of the event.
             /// </summary>
             public string EventType { get; internal set; }
 
@@ -553,13 +539,13 @@ namespace EventSource4Net
         }
 
         /// <summary>
-        /// Server Sent Error Event Object
+        ///     Server Sent Error Event Object
         /// </summary>
         public sealed class StateChangeEventArgs : EventArgs
         {
             #region Public Properties
 
-            public  EventSourceState NewState { get; internal set; }
+            public EventSourceState NewState { get; internal set; }
 
             #endregion Public Properties
         }

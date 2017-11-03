@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace stellar_dotnetcore_sdk
 {
     public class Account : ITransactionBuilderAccount
     {
-        private KeyPair _keyPair;
-        private long _sequenceNumber;
-
-
-        public KeyPair KeyPair { get { return _keyPair; } }
-        public long SequenceNumber { get { return _sequenceNumber; } }
-
         /**
          * Class constructor.
          * @param keypair KeyPair associated with this Account
@@ -20,14 +11,19 @@ namespace stellar_dotnetcore_sdk
          */
         public Account(KeyPair keypair, long? sequenceNumber)
         {
-            _keyPair = keypair ?? throw new ArgumentNullException(nameof(keypair), "keypair cannot be null");
-            _sequenceNumber = sequenceNumber ?? throw new ArgumentNullException(nameof(sequenceNumber), "sequenceNumber cannot be null");
+            KeyPair = keypair ?? throw new ArgumentNullException(nameof(keypair), "keypair cannot be null");
+            SequenceNumber = sequenceNumber ?? throw new ArgumentNullException(nameof(sequenceNumber), "sequenceNumber cannot be null");
         }
+
+
+        public KeyPair KeyPair { get; }
+
+        public long SequenceNumber { get; private set; }
 
 
         public long GetIncrementedSequenceNumber()
         {
-            return  SequenceNumber + 1;
+            return SequenceNumber + 1;
         }
 
         /**
@@ -35,7 +31,7 @@ namespace stellar_dotnetcore_sdk
          */
         public void IncrementSequenceNumber()
         {
-            _sequenceNumber++;
+            SequenceNumber++;
         }
     }
 }
