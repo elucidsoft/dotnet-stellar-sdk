@@ -28,7 +28,7 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public void Write(byte[] bytes)
         {
-            _bytes.AddRange(bytes);
+            Write(bytes, 0, bytes.Length);
         }
 
         public void Write(byte[] bytes, int offset, int count)
@@ -37,6 +37,9 @@ namespace stellar_dotnetcore_sdk.xdr
             Array.Copy(bytes, offset, newBytes, 0, count);
 
             _bytes.AddRange(newBytes);
+
+            Padd((uint)count);
+
         }
 
         public void WriteString(string str)
@@ -147,13 +150,24 @@ namespace stellar_dotnetcore_sdk.xdr
             try
             {
                 Write(v);
-                var tail = len % 4u;
-                if (tail != 0)
-                    Write(_tails[4u - tail]);
             }
             catch (SystemException ex)
             {
                 throw new FormatException("can't write byte array", ex);
+            }
+        }
+
+        private void Padd(uint length)
+        {
+            var tail = length % 4u;
+            if (tail != 0)
+            {
+                var padd = _tails[4u - tail];
+
+                for (int i = 0; i < padd.Length; i++)
+                {
+                    Write(padd[i]);
+                }
             }
         }
     }

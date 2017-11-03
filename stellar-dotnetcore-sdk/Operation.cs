@@ -23,13 +23,19 @@ namespace stellar_dotnetcore_sdk
 
 
             //This bascially takes a decimal value and turns it into a large integer.
-            var amount = (long) (decimal.Parse(value) * ONE);
-            return amount;
+            var amount = (decimal.Parse(value) * ONE);
+
+            //MJM: Added to satify the OperationTest unit test of making sure a failure
+            //happens when casting a decimal with fractional places into a long.
+            if ((amount % 1) > 0)
+                throw new ArithmeticException("Unable to cast decimal with fractional places into long.");
+
+            return (long)amount;
         }
 
         public static string FromXdrAmount(long value)
         {
-            var amount = new decimal(value) * ONE;
+            var amount =Decimal.Divide(new decimal(value), ONE);
             return amount.ToString();
         }
 
@@ -55,10 +61,9 @@ namespace stellar_dotnetcore_sdk
         public string ToXdrBase64()
         {
             var operation = ToXdr();
-            var memoryStream = new MemoryStream();
             var writer = new XdrDataOutputStream();
             xdr.Operation.Encode(writer, operation);
-            return Convert.ToBase64String(memoryStream.ToArray());
+            return Convert.ToBase64String(writer.ToArray());
         }
 
         /**
@@ -81,13 +86,13 @@ namespace stellar_dotnetcore_sdk
                     operation = new PathPaymentOperation.Builder(body.PathPaymentOp).Build();
                     break;
                 case OperationType.OperationTypeEnum.MANAGE_OFFER:
-                    operation = new ManageOfferOperation.Builder(body.ManageOfferOp).build();
+                    operation = new ManageOfferOperation.Builder(body.ManageOfferOp).Build();
                     break;
                 case OperationType.OperationTypeEnum.CREATE_PASSIVE_OFFER:
-                    operation = new CreatePassiveOfferOperation.Builder(body.CreatePassiveOfferOp).build();
+                    operation = new CreatePassiveOfferOperation.Builder(body.CreatePassiveOfferOp).Build();
                     break;
                 case OperationType.OperationTypeEnum.SET_OPTIONS:
-                    operation = new SetOptionsOperation.Builder(body.SetOptionsOp).build();
+                    operation = new SetOptionsOperation.Builder(body.SetOptionsOp).Build();
                     break;
                 case OperationType.OperationTypeEnum.CHANGE_TRUST:
                     operation = new ChangeTrustOperation.Builder(body.ChangeTrustOp).Build();
@@ -99,7 +104,7 @@ namespace stellar_dotnetcore_sdk
                     operation = new AccountMergeOperation.Builder(body).Build();
                     break;
                 case OperationType.OperationTypeEnum.MANAGE_DATA:
-                    operation = new ManageDataOperation.Builder(body.ManageDataOp).build();
+                    operation = new ManageDataOperation.Builder(body.ManageDataOp).Build();
                     break;
                 default:
                     throw new Exception("Unknown operation body " + body.Discriminant.InnerValue);

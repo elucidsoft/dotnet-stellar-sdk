@@ -20,7 +20,7 @@ namespace stellar_dotnetcore_sdk
             var body = new xdr.Operation.OperationBody();
             var destination = new AccountID { InnerValue = Destination.XdrPublicKey };
             body.Destination = destination;
-            body.Discriminant.InnerValue = OperationType.OperationTypeEnum.ACCOUNT_MERGE;
+            body.Discriminant = xdr.OperationType.Create(OperationType.OperationTypeEnum.ACCOUNT_MERGE);
             return body;
         }
 
@@ -53,7 +53,17 @@ namespace stellar_dotnetcore_sdk
             public KeyPair SourceAccount
             {
                 get => _mSourceAccount;
-                set => _mSourceAccount = value ?? throw new ArgumentNullException(nameof(value), "keypair cannot be null");
+            }
+
+            ///<summary>
+            /// Sets the source account for this operation.
+            /// </summary>
+            /// <param name="sourceAccount">The operation's source account.</param> 
+            /// <returns>Builder object so you can chain methods.</returns>
+            public Builder SetSourceAccount(KeyPair sourceAccount)
+            {
+                _mSourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
+                return this;
             }
 
             /// <summary>
