@@ -20,7 +20,7 @@ namespace stellar_dotnetcore_sdk
         ///<param name="n">Numerator</param>
         ///<param name="d">Denominator</param>
         ///
-        Price(int n, int d)
+        public Price(int n, int d)
         {
             this._Numerator = n;
             this._Denominator = d;
