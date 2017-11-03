@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace stellar_dotnetcore_sdk.xdr
@@ -23,6 +25,7 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public void Read(byte[] buffer, int offset, int count)
         {
+            ReadFixOpaque((uint)count);
             Array.Copy(_bytes, _pos, buffer, offset, count);
             _pos += count;
         }
@@ -131,11 +134,21 @@ namespace stellar_dotnetcore_sdk.xdr
         public byte[] ReadFixOpaque(uint len)
         {
             var result = new byte[len];
-            Read(result, 0, (int)len);
+            Array.Copy(_bytes, _pos, result, 0, (int)len);
 
             var tail = len % 4u;
             if (tail != 0)
-                Read(_bytes, 0, (int)(4u - tail));
+            {
+                var tailLength = (int) (4u - tail);
+                var tailBytes = new byte[tailLength];
+
+                Array.Copy(_bytes, _pos + len, tailBytes, 0, tailLength);
+
+                if(tailBytes.Any(a => a != 0))
+                    throw new IOException("non-zero padding");
+
+                _pos += (int)len + tailLength;
+            }
 
             return result;
         }
