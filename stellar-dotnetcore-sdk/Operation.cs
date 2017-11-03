@@ -16,7 +16,7 @@ namespace stellar_dotnetcore_sdk
             set => _sourceAccount = value ?? throw new ArgumentNullException(nameof(value), "keypair cannot be null");
         }
 
-        protected static long ToXdrAmount(string value)
+        public static long ToXdrAmount(string value)
         {
             if (string.IsNullOrEmpty(value))
                 throw new ArgumentNullException(nameof(value), "value cannot be null");
@@ -27,7 +27,7 @@ namespace stellar_dotnetcore_sdk
             return amount;
         }
 
-        protected static string FromXdrAmount(long value)
+        public static string FromXdrAmount(long value)
         {
             var amount = new decimal(value) * ONE;
             return amount.ToString();
@@ -78,7 +78,7 @@ namespace stellar_dotnetcore_sdk
                     operation = new PaymentOperation.Builder(body.PaymentOp).Build();
                     break;
                 case OperationType.OperationTypeEnum.PATH_PAYMENT:
-                    operation = new PathPaymentOperation.Builder(body.PathPaymentOp).build();
+                    operation = new PathPaymentOperation.Builder(body.PathPaymentOp).Build();
                     break;
                 case OperationType.OperationTypeEnum.MANAGE_OFFER:
                     operation = new ManageOfferOperation.Builder(body.ManageOfferOp).build();
@@ -90,10 +90,10 @@ namespace stellar_dotnetcore_sdk
                     operation = new SetOptionsOperation.Builder(body.SetOptionsOp).build();
                     break;
                 case OperationType.OperationTypeEnum.CHANGE_TRUST:
-                    operation = new ChangeTrustOperation.Builder(body.ChangeTrustOp).build();
+                    operation = new ChangeTrustOperation.Builder(body.ChangeTrustOp).Build();
                     break;
                 case OperationType.OperationTypeEnum.ALLOW_TRUST:
-                    operation = new AllowTrustOperation.Builder(body.AllowTrustOp).build();
+                    operation = new AllowTrustOperation.Builder(body.AllowTrustOp).Build();
                     break;
                 case OperationType.OperationTypeEnum.ACCOUNT_MERGE:
                     operation = new AccountMergeOperation.Builder(body).build();
