@@ -42,7 +42,8 @@ namespace stellar_dotnetcore_sdk.xdr
 
         public void WriteString(string str)
         {
-            WriteVarOpaque((uint)str.Length, Encoding.UTF8.GetBytes(str));
+            var bytes = Encoding.UTF8.GetBytes(str);
+            WriteVarOpaque((uint)bytes.Length, bytes);
         }
 
         public void WriteIntArray(int[] a)

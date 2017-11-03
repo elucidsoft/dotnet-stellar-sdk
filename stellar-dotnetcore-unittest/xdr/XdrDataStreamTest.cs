@@ -30,5 +30,19 @@ namespace stellar_dotnetcore_unittest.xdr
             string memo = "Dollar Sign $";
             Assert.AreEqual(memo, BackAndForthXdrStreaming(memo));
         }
+
+        [TestMethod]
+        public void BackAndForthXdrStreamingWithNonStandardAscii()
+        {
+            string memo = "Euro Sign €";
+            Assert.AreEqual(memo, BackAndForthXdrStreaming(memo));
+        }
+
+        [TestMethod]
+        public void BackAndForthXdrStreamingWithAllNonStandardAscii()
+        {
+            string memo = "øûý™€♠♣♥†‡µ¢£€";
+            Assert.AreEqual(memo, BackAndForthXdrStreaming(memo));
     }
+}
 }
