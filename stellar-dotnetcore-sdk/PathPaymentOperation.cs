@@ -92,7 +92,7 @@ namespace stellar_dotnetcore_sdk
 
             private KeyPair _SourceAccount;
 
-            Builder(sdkxdr.PathPaymentOp op)
+            public Builder(sdkxdr.PathPaymentOp op)
             {
                 _SendAsset = Asset.FromXdr(op.SendAsset);
                 _SendMax = Operation.FromXdrAmount(op.SendMax.InnerValue);

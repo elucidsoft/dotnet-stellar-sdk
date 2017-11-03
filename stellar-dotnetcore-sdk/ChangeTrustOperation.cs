@@ -43,7 +43,7 @@ namespace stellar_dotnetcore_sdk
 
             private KeyPair _SourceAccount;
 
-            Builder(sdkxdr.ChangeTrustOp op)
+            public Builder(sdkxdr.ChangeTrustOp op)
             {
                 _Asset = Asset.FromXdr(op.Line);
                 _Limit = Operation.FromXdrAmount(op.Limit.InnerValue);

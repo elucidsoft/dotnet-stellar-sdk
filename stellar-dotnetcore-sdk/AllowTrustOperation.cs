@@ -64,7 +64,7 @@ namespace stellar_dotnetcore_sdk
 
             private KeyPair mSourceAccount;
 
-            Builder(sdkxdr.AllowTrustOp op)
+            public Builder(sdkxdr.AllowTrustOp op)
             {
                 _Trustor = KeyPair.FromXdrPublicKey(op.Trustor.InnerValue);
                 switch (op.Asset.Discriminant.InnerValue)
