@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace stellar_dotnetcore_sdk
 {
     [Serializable]
-    internal class MemoTooLongException : Exception
+    public class MemoTooLongException : Exception
     {
         public MemoTooLongException()
         {
