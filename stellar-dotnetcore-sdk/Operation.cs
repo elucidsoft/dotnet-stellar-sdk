@@ -96,7 +96,7 @@ namespace stellar_dotnetcore_sdk
                     operation = new AllowTrustOperation.Builder(body.AllowTrustOp).Build();
                     break;
                 case OperationType.OperationTypeEnum.ACCOUNT_MERGE:
-                    operation = new AccountMergeOperation.Builder(body).build();
+                    operation = new AccountMergeOperation.Builder(body).Build();
                     break;
                 case OperationType.OperationTypeEnum.MANAGE_DATA:
                     operation = new ManageDataOperation.Builder(body.ManageDataOp).build();
