@@ -10,7 +10,7 @@ namespace stellar_dotnetcore_unittest
     public class AssetTest
     {
         [TestMethod]
-        public void testAssetTypeNative()
+        public void TestAssetTypeNative()
         {
             AssetTypeNative asset = new AssetTypeNative();
             stellar_dotnetcore_sdk.xdr.Asset thisXdr = asset.ToXdr();
@@ -19,7 +19,7 @@ namespace stellar_dotnetcore_unittest
         }
 
         [TestMethod]
-        public void testAssetTypeCreditAlphaNum4()
+        public void TestAssetTypeCreditAlphaNum4()
         {
             String code = "USDA";
             KeyPair issuer = KeyPair.Random();
@@ -31,7 +31,7 @@ namespace stellar_dotnetcore_unittest
         }
 
         [TestMethod]
-        public void testAssetTypeCreditAlphaNum12()
+        public void TestAssetTypeCreditAlphaNum12()
         {
             String code = "TESTTEST";
             KeyPair issuer = KeyPair.Random();
@@ -43,7 +43,7 @@ namespace stellar_dotnetcore_unittest
         }
 
         [TestMethod]
-        public void testHashCode()
+        public void TestHashCode()
         {
             KeyPair issuer1 = KeyPair.Random();
             KeyPair issuer2 = KeyPair.Random();
@@ -65,7 +65,7 @@ namespace stellar_dotnetcore_unittest
         }
 
         [TestMethod]
-        public void testAssetEquals()
+        public void TestAssetEquals()
         {
             KeyPair issuer1 = KeyPair.Random();
             KeyPair issuer2 = KeyPair.Random();
