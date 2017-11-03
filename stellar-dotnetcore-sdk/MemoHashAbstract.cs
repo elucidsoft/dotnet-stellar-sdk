@@ -54,7 +54,7 @@ namespace stellar_dotnetcore_sdk
          */
         public string GetTrimmedHexValue()
         {
-            return this.GetHexValue().Split("00")[0];
+            return this.GetHexValue().Split("00")[0].ToLower();
         }
 
         public override abstract xdr.Memo ToXdr();
