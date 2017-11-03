@@ -1,10 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnetcore_sdk.responses;
 using stellar_dotnetcore_sdk.responses.accountResponse;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 
 namespace stellar_dotnetcore_unittest.responses
 {
@@ -15,7 +12,7 @@ namespace stellar_dotnetcore_unittest.responses
         public void TestDeserializeAccountResponse()
         {
             var json = File.ReadAllText(Path.Combine("responses", "testdata", "account.json"));
-            AccountResponse account = JsonSingleton.GetInstance<AccountResponse>(json);
+            var account = JsonSingleton.GetInstance<AccountResponse>(json);
 
             Assert.AreEqual(account.KeyPair.AccountId, "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
             Assert.AreEqual(account.PagingToken, "1");

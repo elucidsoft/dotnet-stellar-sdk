@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using stellar_dotnetcore_sdk;
-using System;
+﻿using System;
 using System.Linq;
 using System.Security.Cryptography;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using stellar_dotnetcore_sdk;
 using stellar_dotnetcore_sdk.xdr;
 using Memo = stellar_dotnetcore_sdk.Memo;
 using TimeBounds = stellar_dotnetcore_sdk.TimeBounds;
@@ -24,20 +24,20 @@ namespace stellar_dotnetcore_unittest
         public void TestBuilderSuccessTestnet()
         {
             // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
-            KeyPair source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
-            KeyPair destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
-            long sequenceNumber = 2908908335136768L;
-            Account account = new Account(source, sequenceNumber);
-            Transaction transaction = new Transaction.Builder(account)
-                    .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
-                    .Build();
+            var sequenceNumber = 2908908335136768L;
+            var account = new Account(source, sequenceNumber);
+            var transaction = new Transaction.Builder(account)
+                .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                .Build();
 
             transaction.Sign(source);
 
             Assert.AreEqual(
-                    "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAEqBfIAAAAAAAAAAABtoeVYgAAAEDLki9Oi700N60Lo8gUmEFHbKvYG4QSqXiLIt9T0ru2O5BphVl/jR9tYtHAD+UeDYhgXNgwUxqTEu1WukvEyYcD",
-                    transaction.ToEnvelopeXdrBase64());
+                "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAEqBfIAAAAAAAAAAABtoeVYgAAAEDLki9Oi700N60Lo8gUmEFHbKvYG4QSqXiLIt9T0ru2O5BphVl/jR9tYtHAD+UeDYhgXNgwUxqTEu1WukvEyYcD",
+                transaction.ToEnvelopeXdrBase64());
 
             Assert.AreEqual(transaction.SourceAccount, source);
             Assert.AreEqual(transaction.SequenceNumber, sequenceNumber + 1);
@@ -46,36 +46,36 @@ namespace stellar_dotnetcore_unittest
 
         [TestMethod]
         public void TestBuilderMemoText()
-        {            
+        {
             // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
-            KeyPair source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
-            KeyPair destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
-            Account account = new Account(source, 2908908335136768);
-            Transaction transaction = new Transaction.Builder(account)
-                    .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
-                    .AddMemo(Memo.Text("Hello world!"))
-                    .Build();
+            var account = new Account(source, 2908908335136768);
+            var transaction = new Transaction.Builder(account)
+                .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                .AddMemo(Memo.Text("Hello world!"))
+                .Build();
 
             transaction.Sign(source);
 
             Assert.AreEqual(
-                    "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAEAAAAMSGVsbG8gd29ybGQhAAAAAQAAAAAAAAAAAAAAAO3gUmG83C+VCqO6FztuMtXJF/l7grZA7MjRzqdZ9W8QAAAABKgXyAAAAAAAAAAAAbaHlWIAAABAxzofBhoayuUnz8t0T1UNWrTgmJ+lCh9KaeOGu2ppNOz9UGw0abGLhv+9oWQsstaHx6YjwWxL+8GBvwBUVWRlBQ==",
-                    transaction.ToEnvelopeXdrBase64());
+                "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAEAAAAMSGVsbG8gd29ybGQhAAAAAQAAAAAAAAAAAAAAAO3gUmG83C+VCqO6FztuMtXJF/l7grZA7MjRzqdZ9W8QAAAABKgXyAAAAAAAAAAAAbaHlWIAAABAxzofBhoayuUnz8t0T1UNWrTgmJ+lCh9KaeOGu2ppNOz9UGw0abGLhv+9oWQsstaHx6YjwWxL+8GBvwBUVWRlBQ==",
+                transaction.ToEnvelopeXdrBase64());
         }
 
         [TestMethod]
         public void TestBuilderTimeBounds()
         {
             // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
-            KeyPair source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
-            KeyPair destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
-            Account account = new Account(source, 2908908335136768L);
-            Transaction transaction = new Transaction.Builder(account)
-                    .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
-                    .AddTimeBounds(new TimeBounds(42, 1337))
-                    .Build();
+            var account = new Account(source, 2908908335136768L);
+            var transaction = new Transaction.Builder(account)
+                .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                .AddTimeBounds(new TimeBounds(42, 1337))
+                .Build();
 
             transaction.Sign(source);
 
@@ -83,7 +83,7 @@ namespace stellar_dotnetcore_unittest
             var bytes = transaction.ToEnvelopeXdrBase64().ToCharArray();
             var xdrDataInputStream = new XdrDataInputStream(Convert.FromBase64CharArray(bytes, 0, bytes.Length));
 
-            XdrTransaction decodedTransaction = XdrTransaction.Decode(xdrDataInputStream);
+            var decodedTransaction = XdrTransaction.Decode(xdrDataInputStream);
 
             Assert.AreEqual(decodedTransaction.TimeBounds.MinTime.InnerValue, 42);
             Assert.AreEqual(decodedTransaction.TimeBounds.MaxTime.InnerValue, 1337);
@@ -95,19 +95,19 @@ namespace stellar_dotnetcore_unittest
             Network.UsePublicNetwork();
 
             // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
-            KeyPair source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
-            KeyPair destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
-            Account account = new Account(source, 2908908335136768L);
-            Transaction transaction = new Transaction.Builder(account)
-                    .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
-                    .Build();
+            var account = new Account(source, 2908908335136768L);
+            var transaction = new Transaction.Builder(account)
+                .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                .Build();
 
             transaction.Sign(source);
 
             Assert.AreEqual(
-                    "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAEqBfIAAAAAAAAAAABtoeVYgAAAEDzfR5PgRFim5Wdvq9ImdZNWGBxBWwYkQPa9l5iiBdtPLzAZv6qj+iOfSrqinsoF0XrLkwdIcZQVtp3VRHhRoUE",
-                    transaction.ToEnvelopeXdrBase64());
+                "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAEqBfIAAAAAAAAAAABtoeVYgAAAEDzfR5PgRFim5Wdvq9ImdZNWGBxBWwYkQPa9l5iiBdtPLzAZv6qj+iOfSrqinsoF0XrLkwdIcZQVtp3VRHhRoUE",
+                transaction.ToEnvelopeXdrBase64());
         }
 
         [TestMethod]
@@ -115,20 +115,20 @@ namespace stellar_dotnetcore_unittest
         {
             Network.UsePublicNetwork();
 
-            KeyPair source = KeyPair.FromAccountId("GBBM6BKZPEHWYO3E3YKREDPQXMS4VK35YLNU7NFBRI26RAN7GI5POFBB");
-            KeyPair destination = KeyPair.FromAccountId("GDJJRRMBK4IWLEPJGIE6SXD2LP7REGZODU7WDC3I2D6MR37F4XSHBKX2");
+            var source = KeyPair.FromAccountId("GBBM6BKZPEHWYO3E3YKREDPQXMS4VK35YLNU7NFBRI26RAN7GI5POFBB");
+            var destination = KeyPair.FromAccountId("GDJJRRMBK4IWLEPJGIE6SXD2LP7REGZODU7WDC3I2D6MR37F4XSHBKX2");
 
-            Account account = new Account(source, 0L);
-            Transaction transaction = new Transaction.Builder(account)
-                    .AddOperation(new PaymentOperation.Builder(destination, new AssetTypeNative(), "2000").Build())
-                    .Build();
+            var account = new Account(source, 0L);
+            var transaction = new Transaction.Builder(account)
+                .AddOperation(new PaymentOperation.Builder(destination, new AssetTypeNative(), "2000").Build())
+                .Build();
 
-            byte[] preimage = new byte[64];
+            var preimage = new byte[64];
 
-            RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
+            var rngCsp = new RNGCryptoServiceProvider();
 
             rngCsp.GetBytes(preimage);
-            byte[] hash = Util.Hash(preimage);
+            var hash = Util.Hash(preimage);
 
             transaction.Sign(preimage);
 
@@ -145,13 +145,13 @@ namespace stellar_dotnetcore_unittest
         public void TestToBase64EnvelopeXdrBuilderNoSignatures()
         {
             // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
-            KeyPair source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
-            KeyPair destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
-            Account account = new Account(source, 2908908335136768L);
-            Transaction transaction = new Transaction.Builder(account)
-                    .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
-                    .Build();
+            var account = new Account(source, 2908908335136768L);
+            var transaction = new Transaction.Builder(account)
+                .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                .Build();
 
             try
             {
@@ -168,12 +168,12 @@ namespace stellar_dotnetcore_unittest
         public void TestNoOperations()
         {
             // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
-            KeyPair source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
 
-            Account account = new Account(source, 2908908335136768L);
+            var account = new Account(source, 2908908335136768L);
             try
             {
-                Transaction transaction = new Transaction.Builder(account).Build();
+                var transaction = new Transaction.Builder(account).Build();
                 Assert.Fail();
             }
             catch (Exception exception)
@@ -187,16 +187,16 @@ namespace stellar_dotnetcore_unittest
         public void TestTryingToAddMemoTwice()
         {
             // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
-            KeyPair source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
-            KeyPair destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
             try
             {
-                Account account = new Account(source, 2908908335136768L);
+                var account = new Account(source, 2908908335136768L);
                 new Transaction.Builder(account)
-                              .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
-                              .AddMemo(Memo.None())
-                              .AddMemo(Memo.None());
+                    .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                    .AddMemo(Memo.None())
+                    .AddMemo(Memo.None());
                 Assert.Fail();
             }
             catch (Exception exception)

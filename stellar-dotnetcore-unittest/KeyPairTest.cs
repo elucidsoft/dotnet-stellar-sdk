@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using stellar_dotnetcore_sdk;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using stellar_dotnetcore_sdk;
 
 namespace stellar_dotnetcore_unittest
 {
@@ -15,12 +15,12 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestSign()
         {
-            string expectedSig = "587d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
-            KeyPair keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
-            string data = "hello world";
+            var expectedSig = "587d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
+            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
+            var data = "hello world";
 
-            byte[] bytes = Encoding.UTF8.GetBytes(data);
-            byte[] sig = keyPair.Sign(bytes);
+            var bytes = Encoding.UTF8.GetBytes(data);
+            var sig = keyPair.Sign(bytes);
 
             Assert.IsTrue(Util.HexToBytes(expectedSig).SequenceEqual(sig));
         }
@@ -28,9 +28,9 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestVerifyTrue()
         {
-            string sig = "587d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
-            string data = "hello world";
-            KeyPair keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
+            var sig = "587d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
+            var data = "hello world";
+            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
 
             var bytes = Encoding.UTF8.GetBytes(data);
             Assert.IsTrue(keyPair.Verify(bytes, Util.HexToBytes(sig)));
@@ -39,10 +39,10 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestVerifyFalse()
         {
-            string badSig = "687d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
-            byte[] corrupt = { 0x00 };
-            string data = "hello world";
-            KeyPair keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
+            var badSig = "687d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
+            byte[] corrupt = {0x00};
+            var data = "hello world";
+            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
 
             var bytes = Encoding.UTF8.GetBytes(data);
             Assert.IsFalse(keyPair.Verify(bytes, Util.HexToBytes(badSig)));
@@ -54,17 +54,17 @@ namespace stellar_dotnetcore_unittest
         {
             var keypairs = new Dictionary<string, string>
             {
-                { "SDJHRQF4GCMIIKAAAQ6IHY42X73FQFLHUULAPSKKD4DFDM7UXWWCRHBE", "GCZHXL5HXQX5ABDM26LHYRCQZ5OJFHLOPLZX47WEBP3V2PF5AVFK2A5D" },
-                { "SDTQN6XUC3D2Z6TIG3XLUTJIMHOSON2FMSKCTM2OHKKH2UX56RQ7R5Y4", "GDEAOZWTVHQZGGJY6KG4NAGJQ6DXATXAJO3AMW7C4IXLKMPWWB4FDNFZ" },
-                { "SDIREFASXYQVEI6RWCQW7F37E6YNXECQJ4SPIOFMMMJRU5CMDQVW32L5", "GD2EVR7DGDLNKWEG366FIKXO2KCUAIE3HBUQP4RNY7LEZR5LDKBYHMM6" },
-                { "SDAPE6RHEJ7745VQEKCI2LMYKZB3H6H366I33A42DG7XKV57673XLCC2", "GDLXVH2BTLCLZM53GF7ELZFF4BW4MHH2WXEA4Z5Z3O6DPNZNR44A56UJ" },
-                { "SDYZ5IYOML3LTWJ6WIAC2YWORKVO7GJRTPPGGNJQERH72I6ZCQHDAJZN", "GABXJTV7ELEB2TQZKJYEGXBUIG6QODJULKJDI65KZMIZZG2EACJU5EA7" }
+                {"SDJHRQF4GCMIIKAAAQ6IHY42X73FQFLHUULAPSKKD4DFDM7UXWWCRHBE", "GCZHXL5HXQX5ABDM26LHYRCQZ5OJFHLOPLZX47WEBP3V2PF5AVFK2A5D"},
+                {"SDTQN6XUC3D2Z6TIG3XLUTJIMHOSON2FMSKCTM2OHKKH2UX56RQ7R5Y4", "GDEAOZWTVHQZGGJY6KG4NAGJQ6DXATXAJO3AMW7C4IXLKMPWWB4FDNFZ"},
+                {"SDIREFASXYQVEI6RWCQW7F37E6YNXECQJ4SPIOFMMMJRU5CMDQVW32L5", "GD2EVR7DGDLNKWEG366FIKXO2KCUAIE3HBUQP4RNY7LEZR5LDKBYHMM6"},
+                {"SDAPE6RHEJ7745VQEKCI2LMYKZB3H6H366I33A42DG7XKV57673XLCC2", "GDLXVH2BTLCLZM53GF7ELZFF4BW4MHH2WXEA4Z5Z3O6DPNZNR44A56UJ"},
+                {"SDYZ5IYOML3LTWJ6WIAC2YWORKVO7GJRTPPGGNJQERH72I6ZCQHDAJZN", "GABXJTV7ELEB2TQZKJYEGXBUIG6QODJULKJDI65KZMIZZG2EACJU5EA7"}
             };
 
             foreach (var pair in keypairs)
             {
-                string accountId = pair.Value;
-                KeyPair keypair = KeyPair.FromSecretSeed(pair.Key);
+                var accountId = pair.Value;
+                var keypair = KeyPair.FromSecretSeed(pair.Key);
 
                 Assert.AreEqual(accountId, keypair.Address);
                 Assert.AreEqual(pair.Key, keypair.SecretSeed);
@@ -74,7 +74,7 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestCanSign()
         {
-            KeyPair keyPair = KeyPair.FromSecretSeed("SDJHRQF4GCMIIKAAAQ6IHY42X73FQFLHUULAPSKKD4DFDM7UXWWCRHBE");
+            var keyPair = KeyPair.FromSecretSeed("SDJHRQF4GCMIIKAAAQ6IHY42X73FQFLHUULAPSKKD4DFDM7UXWWCRHBE");
             Assert.IsTrue(keyPair.CanSign());
 
             keyPair = KeyPair.FromAccountId("GABXJTV7ELEB2TQZKJYEGXBUIG6QODJULKJDI65KZMIZZG2EACJU5EA7");
@@ -85,14 +85,14 @@ namespace stellar_dotnetcore_unittest
         [ExpectedException(typeof(Exception))]
         public void TestSignWithoutSecret()
         {
-            KeyPair keyPair = KeyPair.FromAccountId("GDEAOZWTVHQZGGJY6KG4NAGJQ6DXATXAJO3AMW7C4IXLKMPWWB4FDNFZ");
-            string data = "hello world";
+            var keyPair = KeyPair.FromAccountId("GDEAOZWTVHQZGGJY6KG4NAGJQ6DXATXAJO3AMW7C4IXLKMPWWB4FDNFZ");
+            var data = "hello world";
 
             try
             {
-                byte[] sig = keyPair.Sign(Encoding.UTF8.GetBytes(data));
+                var sig = keyPair.Sign(Encoding.UTF8.GetBytes(data));
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Assert.AreEqual("KeyPair does not contain secret key. Use KeyPair.fromSecretSeed method to create a new KeyPair with a secret key.", e.Message);
                 throw;
@@ -100,4 +100,3 @@ namespace stellar_dotnetcore_unittest
         }
     }
 }
-

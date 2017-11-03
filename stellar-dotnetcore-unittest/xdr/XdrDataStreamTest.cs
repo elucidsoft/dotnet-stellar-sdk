@@ -1,9 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnetcore_sdk.xdr;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 
 namespace stellar_dotnetcore_unittest.xdr
 {
@@ -12,14 +8,14 @@ namespace stellar_dotnetcore_unittest.xdr
     {
         public static string BackAndForthXdrStreaming(string inputString)
         {
-            XdrDataOutputStream xdrOutputStream = new XdrDataOutputStream();
+            var xdrOutputStream = new XdrDataOutputStream();
             xdrOutputStream.WriteString(inputString);
 
-            byte[] xdrByteOutput = xdrOutputStream.ToArray();
+            var xdrByteOutput = xdrOutputStream.ToArray();
 
             //XDR back to string
-            XdrDataInputStream xdrInputStream = new XdrDataInputStream(xdrByteOutput);
-            string outputString = xdrInputStream.ReadString();
+            var xdrInputStream = new XdrDataInputStream(xdrByteOutput);
+            var outputString = xdrInputStream.ReadString();
 
             return outputString;
         }
@@ -27,22 +23,22 @@ namespace stellar_dotnetcore_unittest.xdr
         [TestMethod]
         public void BackAndForthXdrStreamingWithStandardAscii()
         {
-            string memo = "Dollar Sign $";
+            var memo = "Dollar Sign $";
             Assert.AreEqual(memo, BackAndForthXdrStreaming(memo));
         }
 
         [TestMethod]
         public void BackAndForthXdrStreamingWithNonStandardAscii()
         {
-            string memo = "Euro Sign €";
+            var memo = "Euro Sign €";
             Assert.AreEqual(memo, BackAndForthXdrStreaming(memo));
         }
 
         [TestMethod]
         public void BackAndForthXdrStreamingWithAllNonStandardAscii()
         {
-            string memo = "øûý™€♠♣♥†‡µ¢£€";
+            var memo = "øûý™€♠♣♥†‡µ¢£€";
             Assert.AreEqual(memo, BackAndForthXdrStreaming(memo));
+        }
     }
-}
 }
