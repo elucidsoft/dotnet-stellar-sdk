@@ -12,7 +12,7 @@ namespace stellar_dotnetcore_sdk.responses
         {
             var pageResponseConvertersions = new[]
             {
-                typeof(Page<AccountResponse>) //TODO: ,
+                typeof(Page<AccountResponse>)
                 //TODO: typeof(Page<EffectResponse>),
                 //TODO: typeof(Page<LedgerResponse>),
                 //TODO: typeof(Page<OfferResponse>),
@@ -24,7 +24,8 @@ namespace stellar_dotnetcore_sdk.responses
 
             var jsonConverters = new JsonConverter[]
             {
-                new KeyPairTypeAdapter()
+                new KeyPairTypeAdapter(),
+                new AssetDeserializer()
             };
 
             if (pageResponseConvertersions.Contains(typeof(T)))
