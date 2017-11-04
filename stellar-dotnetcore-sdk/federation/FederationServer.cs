@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Nett;
+using stellar_dotnetcore_sdk.requests;
 
 namespace stellar_dotnetcore_sdk.federation
 {
@@ -19,8 +21,6 @@ namespace stellar_dotnetcore_sdk.federation
     /// </summary>
     public class FederationServer
     {
-        private Uri _serverUri;
-        private string _domain;
         private static HttpClient _httpClient;
 
         public FederationServer(Uri serverUri, string domain)
@@ -28,12 +28,12 @@ namespace stellar_dotnetcore_sdk.federation
             if (serverUri.Scheme != "https")
                 throw new FederationServerInvalidException();
 
-            _serverUri = serverUri;
+            ServerUri = serverUri;
 
             if (Uri.CheckHostName(domain) == UriHostNameType.Unknown)
                 throw new ArgumentException("Invalid internet domain name supplied.", nameof(domain));
 
-            _domain = domain;
+            Domain = domain;
         }
 
         public FederationServer(string serverUri, string domain)
@@ -63,7 +63,7 @@ namespace stellar_dotnetcore_sdk.federation
                 _httpClient = new HttpClient();
                 var response = await _httpClient.GetAsync(stellarTomUri, HttpCompletionOption.ResponseContentRead);
 
-                if ((int) response.StatusCode >= 300)
+                if ((int)response.StatusCode >= 300)
                 {
                     throw new StellarTomlNotFoundInvalidException();
                 }
@@ -77,18 +77,53 @@ namespace stellar_dotnetcore_sdk.federation
             }
 
             string federationServer = stellarToml["FEDERATION_SERVER"].ToString();
-            if(String.IsNullOrWhiteSpace(federationServer))
+            if (String.IsNullOrWhiteSpace(federationServer))
                 throw new NoFederationServerException();
 
             return new FederationServer(federationServer, domain);
         }
 
-        //TODO: ResolveAddress
+        public async Task<FederationResponse> ResolveAddress(string address)
+        {
+            string[] tokens = Regex.Split(address, "\\*");
+            if (tokens.Length != 2)
+                throw new MalformedAddressException();
 
-        //TODO: ServerUri
+            UriBuilder uriBuilder = new UriBuilder(ServerUri);
+            uriBuilder.SetQueryParam("type", "name");
+            uriBuilder.SetQueryParam("q", address);
+            Uri uri = uriBuilder.Uri;
 
-        //TODO: Domain
+            try
+            {
+                ResponseHandler<FederationResponse> federationResponse = new ResponseHandler<FederationResponse>();
 
-        //TODO: HttpClient
+                try
+                {
+                    var response = await _httpClient.GetAsync(uri);
+                    return await federationResponse.HandleResponse(response);
+                }
+                catch (HttpResponseException e)
+                {
+                    if (e.StatusCode == 404)
+                        throw new NotFoundException();
+
+                    throw new ServerErrorException();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new ConnectionErrorException(e.Message);
+            }
+        }
+
+        public Uri ServerUri { get; }
+
+        public string Domain { get; }
+
+        public HttpClient HttpClient
+        {
+            set => _httpClient = value;
+        }
     }
 }
