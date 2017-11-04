@@ -528,7 +528,7 @@ namespace stellar_dotnetcore_unittest
                 Assert.Fail();
             }
             catch (ArithmeticException) { }
-            catch (Exception e) { Assert.Fail(); }
+            catch (Exception) { Assert.Fail(); }
 
             try
             {
@@ -536,7 +536,7 @@ namespace stellar_dotnetcore_unittest
                 Assert.Fail();
             }
             catch (ArithmeticException) { }
-            catch (Exception e) { Assert.Fail(); }
+            catch (Exception) { Assert.Fail(); }
         }
 
         [TestMethod]
