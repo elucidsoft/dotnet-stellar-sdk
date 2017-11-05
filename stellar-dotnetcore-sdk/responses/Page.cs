@@ -18,7 +18,7 @@ namespace stellar_dotnetcore_sdk.responses.page
         public List<T> Records { get; private set; }
 
         [JsonProperty(PropertyName = "links")]
-        public Links Links { get; private set; }
+        public PageLinks Links { get; private set; }
 
         /// <summary>
         ///     The next page of results or null when there is no more results
@@ -43,9 +43,9 @@ namespace stellar_dotnetcore_sdk.responses.page
     /// <summary>
     ///     Links connected to page response.
     /// </summary>
-    public class Links
+    public class PageLinks
     {
-        public Links(Link next, Link prev, Link self)
+        public PageLinks(Link next, Link prev, Link self)
         {
             Next = next;
             Prev = prev;
