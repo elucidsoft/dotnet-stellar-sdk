@@ -36,6 +36,13 @@ namespace stellar_dotnetcore_unittest.federation
             _server.HttpClient = _httpClient;
         }
 
+        [TestCleanup]
+        public void Cleanup()
+        {
+            _httpClient.Dispose();
+            _server.Dispose();
+        }
+
         private void When(HttpStatusCode httpStatusCode, string content)
         {
             _fakeHttpMessageHandler.Setup(a => a.Send(It.IsAny<HttpRequestMessage>())).Returns(new HttpResponseMessage
@@ -50,10 +57,12 @@ namespace stellar_dotnetcore_unittest.federation
         {
             When(_httpOk, _stellarToml);
 
-            var server = await FederationServer.CreateForDomain("stellar.org");
+            using (var server = await FederationServer.CreateForDomain("stellar.org"))
+            {
 
-            Assert.AreEqual(server.ServerUri, "https://api.stellar.org/federation");
-            Assert.AreEqual(server.Domain, "stellar.org");
+                Assert.AreEqual(server.ServerUri, "https://api.stellar.org/federation");
+                Assert.AreEqual(server.Domain, "stellar.org");
+            }
 
             _fakeHttpMessageHandler.Verify(a => a.Send(It.IsAny<HttpRequestMessage>()));
 

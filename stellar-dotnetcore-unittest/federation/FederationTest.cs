@@ -30,6 +30,13 @@ namespace stellar_dotnetcore_unittest.federation
             _server.HttpClient = _httpClient;
         }
 
+        [TestCleanup]
+        public void Cleanup()
+        {
+            _httpClient.Dispose();
+            _server.Dispose();
+        }
+
         private ISetupSequentialResult<HttpResponseMessage> When()
         {
             return _fakeHttpMessageHandler.SetupSequence(a => a.Send(It.IsAny<HttpRequestMessage>()));

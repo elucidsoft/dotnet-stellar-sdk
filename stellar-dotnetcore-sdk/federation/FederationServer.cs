@@ -17,7 +17,7 @@ namespace stellar_dotnetcore_sdk.federation
     ///     to query use Federation#resolve(String).
     ///     See Federation docs: https://www.stellar.org/developers/learn/concepts/federation.html
     /// </summary>
-    public class FederationServer
+    public class FederationServer : IDisposable
     {
         private static HttpClient _httpClient;
 
@@ -117,6 +117,11 @@ namespace stellar_dotnetcore_sdk.federation
             {
                 throw new ConnectionErrorException(e.Message);
             }
+        }
+
+        public void Dispose()
+        {
+            _httpClient.Dispose();
         }
     }
 }

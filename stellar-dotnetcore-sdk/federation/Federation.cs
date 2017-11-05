@@ -32,8 +32,10 @@ namespace stellar_dotnetcore_sdk.federation
             if (tokens.Length == 2)
             {
                 var domain = tokens[1];
-                var server = await FederationServer.CreateForDomain(domain);
-                return await server.ResolveAddress(value);
+                using (var server = await FederationServer.CreateForDomain(domain))
+                {
+                    return await server.ResolveAddress(value);
+                }
             }
 
             throw new MalformedAddressException();
