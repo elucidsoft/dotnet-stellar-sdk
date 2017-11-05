@@ -6,8 +6,8 @@ namespace stellar_dotnetcore_sdk
 {
     public class Server
     {
-        private HttpClient _httpClient;
         private readonly Uri _serverUri;
+        private HttpClient _httpClient;
 
         public Server(string uri)
         {

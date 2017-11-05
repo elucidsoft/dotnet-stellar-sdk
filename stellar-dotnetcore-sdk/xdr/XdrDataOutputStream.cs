@@ -38,8 +38,7 @@ namespace stellar_dotnetcore_sdk.xdr
 
             _bytes.AddRange(newBytes);
 
-            Padd((uint)count);
-
+            Padd((uint) count);
         }
 
         public void WriteString(string str)
@@ -164,10 +163,8 @@ namespace stellar_dotnetcore_sdk.xdr
             {
                 var padd = _tails[4u - tail];
 
-                for (int i = 0; i < padd.Length; i++)
-                {
+                for (var i = 0; i < padd.Length; i++)
                     Write(padd[i]);
-                }
             }
         }
     }

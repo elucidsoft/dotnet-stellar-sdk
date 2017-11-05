@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using stellar_dotnetcore_sdk.xdr;
 
 namespace stellar_dotnetcore_sdk
@@ -23,19 +22,19 @@ namespace stellar_dotnetcore_sdk
 
 
             //This bascially takes a decimal value and turns it into a large integer.
-            var amount = (decimal.Parse(value) * ONE);
+            var amount = decimal.Parse(value) * ONE;
 
             //MJM: Added to satify the OperationTest unit test of making sure a failure
             //happens when casting a decimal with fractional places into a long.
-            if ((amount % 1) > 0)
+            if (amount % 1 > 0)
                 throw new ArithmeticException("Unable to cast decimal with fractional places into long.");
 
-            return (long)amount;
+            return (long) amount;
         }
 
         public static string FromXdrAmount(long value)
         {
-            var amount =Decimal.Divide(new decimal(value), ONE);
+            var amount = decimal.Divide(new decimal(value), ONE);
             return amount.ToString();
         }
 

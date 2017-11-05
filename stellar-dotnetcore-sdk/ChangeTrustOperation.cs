@@ -5,64 +5,68 @@ namespace stellar_dotnetcore_sdk
 {
     public class ChangeTrustOperation : Operation
     {
-        private readonly Asset _Asset;
-        private readonly String _Limit;
-
-        public Asset Asset => _Asset;
-        public string Limit => _Limit;
-
-        private ChangeTrustOperation(Asset asset, String limit)
+        private ChangeTrustOperation(Asset asset, string limit)
         {
-            this._Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
-            this._Limit = limit ?? throw new ArgumentNullException(nameof(limit), "limit cannot be null");
+            Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
+            Limit = limit ?? throw new ArgumentNullException(nameof(limit), "limit cannot be null");
         }
+
+        public Asset Asset { get; }
+
+        public string Limit { get; }
 
 
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {
-            sdkxdr.ChangeTrustOp op = new sdkxdr.ChangeTrustOp();
+            var op = new sdkxdr.ChangeTrustOp();
             op.Line = Asset.ToXdr();
-            sdkxdr.Int64 limit = new sdkxdr.Int64();
-            limit.InnerValue = Operation.ToXdrAmount(this.Limit);
+            var limit = new sdkxdr.Int64();
+            limit.InnerValue = ToXdrAmount(Limit);
             op.Limit = limit;
 
-            sdkxdr.Operation.OperationBody body = new sdkxdr.Operation.OperationBody();
+            var body = new sdkxdr.Operation.OperationBody();
             body.Discriminant = sdkxdr.OperationType.Create(sdkxdr.OperationType.OperationTypeEnum.CHANGE_TRUST);
             body.ChangeTrustOp = op;
             return body;
         }
 
         /// <summary>
-        /// Builds ChangeTrust operation.
+        ///     Builds ChangeTrust operation.
         /// </summary>
-        /// <see cref="ChangeTrustOperation"/>
+        /// <see cref="ChangeTrustOperation" />
         public class Builder
         {
             private readonly Asset _Asset;
-            private readonly String _Limit;
+            private readonly string _Limit;
 
             private KeyPair _SourceAccount;
 
             public Builder(sdkxdr.ChangeTrustOp op)
             {
                 _Asset = Asset.FromXdr(op.Line);
-                _Limit = Operation.FromXdrAmount(op.Limit.InnerValue);
+                _Limit = FromXdrAmount(op.Limit.InnerValue);
             }
 
             /// <summary>
-            /// Creates a new ChangeTrust builder.
+            ///     Creates a new ChangeTrust builder.
             /// </summary>
-            /// <param name="asset">The asset of the trustline. For example, if a gateway extends a trustline of up to 200 USD to a user, the line is USD.</param> 
-            /// <param name="limit">The limit of the trustline. For example, if a gateway extends a trustline of up to 200 USD to a user, the limit is 200.</param> 
+            /// <param name="asset">
+            ///     The asset of the trustline. For example, if a gateway extends a trustline of up to 200 USD to a
+            ///     user, the line is USD.
+            /// </param>
+            /// <param name="limit">
+            ///     The limit of the trustline. For example, if a gateway extends a trustline of up to 200 USD to a
+            ///     user, the limit is 200.
+            /// </param>
             /// <exception cref="ArithmeticException">When limit has more than 7 decimal places.</exception>
-            public Builder(Asset asset, String limit)
+            public Builder(Asset asset, string limit)
             {
-                this._Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
-                this._Limit = limit ?? throw new ArgumentNullException(nameof(limit), "limit cannot be null");
+                _Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
+                _Limit = limit ?? throw new ArgumentNullException(nameof(limit), "limit cannot be null");
             }
 
             /// <summary>
-            /// Set source account of this operation
+            ///     Set source account of this operation
             /// </summary>
             /// <returns>Builder object so you can chain methods.</returns>
             public Builder SetSourceAccount(KeyPair sourceAccount)
@@ -72,15 +76,13 @@ namespace stellar_dotnetcore_sdk
             }
 
             /// <summary>
-            /// Builds an operation
+            ///     Builds an operation
             /// </summary>
             public ChangeTrustOperation Build()
             {
-                ChangeTrustOperation operation = new ChangeTrustOperation(_Asset, _Limit);
+                var operation = new ChangeTrustOperation(_Asset, _Limit);
                 if (_SourceAccount != null)
-                {
                     operation.SourceAccount = _SourceAccount;
-                }
                 return operation;
             }
         }

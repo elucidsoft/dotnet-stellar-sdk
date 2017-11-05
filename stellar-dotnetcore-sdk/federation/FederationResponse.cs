@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace stellar_dotnetcore_sdk.federation
 {
     /// <summary>
-    /// Object to hold a response from a federation server.
-    /// See https://www.stellar.org/developers/learn/concepts/federation.html
+    ///     Object to hold a response from a federation server.
+    ///     See https://www.stellar.org/developers/learn/concepts/federation.html
     /// </summary>
     public class FederationResponse
     {
@@ -18,7 +15,7 @@ namespace stellar_dotnetcore_sdk.federation
             MemoType = memoType;
             Memo = memo;
         }
-        
+
         [JsonProperty(PropertyName = "stellar_address")]
         public string StellarAddress { get; private set; }
 

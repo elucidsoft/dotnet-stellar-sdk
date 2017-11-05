@@ -5,89 +5,83 @@ namespace stellar_dotnetcore_sdk
 {
     public class PathPaymentOperation : Operation
     {
-        private readonly Asset _SendAsset;
-        private readonly String _SendMax;
-        private readonly KeyPair _Destination;
-        private readonly Asset _DestAsset;
-        private readonly String _DestAmount;
-        private readonly Asset[] _Path;
-
-
-        public Asset SendAsset { get { return _SendAsset; } }
-        public String SendMax { get { return _SendMax; } }
-        public KeyPair Destination { get { return _Destination; } }
-        public Asset DestAsset { get { return _DestAsset; } }
-        public String DestAmount { get { return _DestAmount; } }
-        public Asset[] Path { get { return _Path; } }
-
-        private PathPaymentOperation(Asset sendAsset, String sendMax, KeyPair destination,
-            Asset destAsset, String destAmount, Asset[] path)
+        private PathPaymentOperation(Asset sendAsset, string sendMax, KeyPair destination,
+            Asset destAsset, string destAmount, Asset[] path)
         {
-            this._SendAsset = sendAsset ?? throw new ArgumentNullException(nameof(sendAsset), "sendAsset cannot be null");
-            this._SendMax = sendMax ?? throw new ArgumentNullException(nameof(sendMax), "sendMax cannot be null");
-            this._Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
-            this._DestAsset = destAsset ?? throw new ArgumentNullException(nameof(destAsset), "destAsset cannot be null");
-            this._DestAmount = destAmount ?? throw new ArgumentNullException(nameof(destAmount), "destAmount cannot be null");
+            SendAsset = sendAsset ?? throw new ArgumentNullException(nameof(sendAsset), "sendAsset cannot be null");
+            SendMax = sendMax ?? throw new ArgumentNullException(nameof(sendMax), "sendMax cannot be null");
+            Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
+            DestAsset = destAsset ?? throw new ArgumentNullException(nameof(destAsset), "destAsset cannot be null");
+            DestAmount = destAmount ?? throw new ArgumentNullException(nameof(destAmount), "destAmount cannot be null");
 
             if (path == null)
             {
-                this._Path = new Asset[0];
+                Path = new Asset[0];
             }
             else
             {
                 if (path.Length > 5)
-                {
                     throw new ArgumentException(nameof(path), "The maximum number of assets in the path is 5");
-                }
-                this._Path = path;
+                Path = path;
             }
         }
 
+
+        public Asset SendAsset { get; }
+
+        public string SendMax { get; }
+
+        public KeyPair Destination { get; }
+
+        public Asset DestAsset { get; }
+
+        public string DestAmount { get; }
+
+        public Asset[] Path { get; }
+
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {
-            sdkxdr.PathPaymentOp op = new sdkxdr.PathPaymentOp();
+            var op = new sdkxdr.PathPaymentOp();
 
             // sendAsset
             op.SendAsset = SendAsset.ToXdr();
             // sendMax
-            sdkxdr.Int64 sendMax = new sdkxdr.Int64();
-            sendMax.InnerValue = Operation.ToXdrAmount(this.SendMax);
+            var sendMax = new sdkxdr.Int64();
+            sendMax.InnerValue = ToXdrAmount(SendMax);
             op.SendMax = sendMax;
             // destination
-            sdkxdr.AccountID destination = new sdkxdr.AccountID();
-            destination.InnerValue = this.Destination.XdrPublicKey;
+            var destination = new sdkxdr.AccountID();
+            destination.InnerValue = Destination.XdrPublicKey;
             op.Destination = destination;
             // destAsset
-            op.DestAsset = this.DestAsset.ToXdr();
+            op.DestAsset = DestAsset.ToXdr();
             // destAmount
-            sdkxdr.Int64 destAmount = new sdkxdr.Int64();
-            destAmount.InnerValue = Operation.ToXdrAmount(this.DestAmount);
+            var destAmount = new sdkxdr.Int64();
+            destAmount.InnerValue = ToXdrAmount(DestAmount);
             op.DestAmount = destAmount;
             // path
-            sdkxdr.Asset[] path = new sdkxdr.Asset[this.Path.Length];
-            for (int i = 0; i < this.Path.Length; i++)
-            {
-                path[i] = this._Path[i].ToXdr();
-            }
+            var path = new sdkxdr.Asset[Path.Length];
+            for (var i = 0; i < Path.Length; i++)
+                path[i] = Path[i].ToXdr();
             op.Path = path;
 
-            sdkxdr.Operation.OperationBody body = new sdkxdr.Operation.OperationBody();
+            var body = new sdkxdr.Operation.OperationBody();
             body.Discriminant = sdkxdr.OperationType.Create(sdkxdr.OperationType.OperationTypeEnum.PATH_PAYMENT);
             body.PathPaymentOp = op;
             return body;
         }
 
         /// <summary>
-        /// Builds PathPayment operation.
+        ///     Builds PathPayment operation.
         /// </summary>
         /// <see cref="PathPaymentOperation" />
         public class Builder
         {
-            private readonly Asset _SendAsset;
-            private readonly String _SendMax;
-            private readonly KeyPair _Destination;
+            private readonly string _DestAmount;
             private readonly Asset _DestAsset;
-            private readonly String _DestAmount;
+            private readonly KeyPair _Destination;
+            private readonly Asset _SendAsset;
+            private readonly string _SendMax;
             private Asset[] _Path;
 
             private KeyPair _SourceAccount;
@@ -95,51 +89,54 @@ namespace stellar_dotnetcore_sdk
             public Builder(sdkxdr.PathPaymentOp op)
             {
                 _SendAsset = Asset.FromXdr(op.SendAsset);
-                _SendMax = Operation.FromXdrAmount(op.SendMax.InnerValue);
+                _SendMax = FromXdrAmount(op.SendMax.InnerValue);
                 _Destination = KeyPair.FromXdrPublicKey(op.Destination.InnerValue);
                 _DestAsset = Asset.FromXdr(op.DestAsset);
-                _DestAmount = Operation.FromXdrAmount(op.DestAmount.InnerValue);
+                _DestAmount = FromXdrAmount(op.DestAmount.InnerValue);
                 _Path = new Asset[op.Path.Length];
-                for (int i = 0; i < op.Path.Length; i++)
-                {
+                for (var i = 0; i < op.Path.Length; i++)
                     _Path[i] = Asset.FromXdr(op.Path[i]);
-                }
             }
 
             /// <summary>
-            /// Creates a new PathPaymentOperation builder.
-            /// <param name="sendAsset"> The asset deducted from the sender's account.</param>
-            /// <param name="sendMax"> The asset deducted from the sender's account.</param>
-            /// <param name="destination"> Payment destination.</param>
-            /// <param name="destAsset"> The asset the destination account receives.</param>
-            /// <param name="destAmount"> The amount of destination asset the destination account receives.</param>
-            /// <exception cref="ArithmeticException"> When sendMax or destAmount has more than 7 decimal places.</exception> 
-            public Builder(Asset sendAsset, String sendMax, KeyPair destination, Asset destAsset, String destAmount)
+            ///     Creates a new PathPaymentOperation builder.
+            ///     <param name="sendAsset"> The asset deducted from the sender's account.</param>
+            ///     <param name="sendMax"> The asset deducted from the sender's account.</param>
+            ///     <param name="destination"> Payment destination.</param>
+            ///     <param name="destAsset"> The asset the destination account receives.</param>
+            ///     <param name="destAmount"> The amount of destination asset the destination account receives.</param>
+            ///     <exception cref="ArithmeticException"> When sendMax or destAmount has more than 7 decimal places.</exception>
+            public Builder(Asset sendAsset, string sendMax, KeyPair destination, Asset destAsset, string destAmount)
             {
-                this._SendAsset = sendAsset ?? throw new ArgumentNullException(nameof(sendAsset), "sendAsset cannot be null");
-                this._SendMax = sendMax ?? throw new ArgumentNullException(nameof(sendMax), "sendMax cannot be null");
-                this._Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
-                this._DestAsset = destAsset ?? throw new ArgumentNullException(nameof(destAsset), "destAsset cannot be null");
-                this._DestAmount = destAmount ?? throw new ArgumentNullException(nameof(destAmount), "destAmount cannot be null");
+                _SendAsset = sendAsset ?? throw new ArgumentNullException(nameof(sendAsset), "sendAsset cannot be null");
+                _SendMax = sendMax ?? throw new ArgumentNullException(nameof(sendMax), "sendMax cannot be null");
+                _Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
+                _DestAsset = destAsset ?? throw new ArgumentNullException(nameof(destAsset), "destAsset cannot be null");
+                _DestAmount = destAmount ?? throw new ArgumentNullException(nameof(destAmount), "destAmount cannot be null");
             }
 
             /// <summary>
-            /// Sets path for this operation
-            /// <param name="path">The assets (other than send asset and destination asset) involved in the offers the path takes. For example, if you can only find a path from USD to EUR through XLM and BTC, the path would be USD -&raquo; XLM -&raquo; BTC -&raquo; EUR and the path field would contain XLM and BTC.</param>
-            /// <returns>Builder object so you can chain methods</returns>.
+            ///     Sets path for this operation
+            ///     <param name="path">
+            ///         The assets (other than send asset and destination asset) involved in the offers the path takes.
+            ///         For example, if you can only find a path from USD to EUR through XLM and BTC, the path would be USD -&raquo;
+            ///         XLM -&raquo; BTC -&raquo; EUR and the path field would contain XLM and BTC.
+            ///     </param>
+            ///     <returns>Builder object so you can chain methods</returns>
+            ///     .
             public Builder SetPath(Asset[] path)
             {
                 if (path == null)
                     throw new ArgumentNullException(nameof(path), "path cannot be null");
 
-                if(path.Length > 5)
-                    throw new ArgumentException (nameof(path), "The maximum number of assets in the path is 5");
-                this._Path = path;
+                if (path.Length > 5)
+                    throw new ArgumentException(nameof(path), "The maximum number of assets in the path is 5");
+                _Path = path;
                 return this;
             }
 
             /// <summary>
-            /// Sets the source account for this operation.
+            ///     Sets the source account for this operation.
             /// </summary>
             /// <param name="sourceAccount"> The operation's source account.</param>
             /// <returns>Builder object so you can chain methods.</returns>
@@ -151,16 +148,14 @@ namespace stellar_dotnetcore_sdk
 
 
             /// <summary>
-            /// Builds an operation
+            ///     Builds an operation
             /// </summary>
             /// <returns></returns>
             public PathPaymentOperation Build()
             {
-                PathPaymentOperation operation = new PathPaymentOperation(_SendAsset, _SendMax, _Destination, _DestAsset, _DestAmount, _Path);
+                var operation = new PathPaymentOperation(_SendAsset, _SendMax, _Destination, _DestAsset, _DestAmount, _Path);
                 if (_SourceAccount != null)
-                {
                     operation.SourceAccount = _SourceAccount;
-                }
                 return operation;
             }
         }
