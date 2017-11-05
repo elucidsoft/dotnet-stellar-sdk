@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnetcore_sdk.responses;
-using stellar_dotnetcore_sdk.responses.accountResponse;
 
 namespace stellar_dotnetcore_unittest.responses
 {

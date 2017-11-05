@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using stellar_dotnetcore_sdk.responses.accountResponse;
 using stellar_dotnetcore_sdk.responses.page;
 
 namespace stellar_dotnetcore_sdk.responses

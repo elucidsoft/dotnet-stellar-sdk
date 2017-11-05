@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace stellar_dotnetcore_sdk.responses.accountResponse
+namespace stellar_dotnetcore_sdk.responses
 {
     public class AccountResponse : Response
     {
@@ -51,7 +51,7 @@ namespace stellar_dotnetcore_sdk.responses.accountResponse
         public Signer[] Signers { get; set; }
 
         [JsonProperty(PropertyName = "_links")]
-        public Links Links { get; set; }
+        public AccountResponseLinks Links { get; set; }
 
         public long IncrementedSequenceNumber => SequenceNumber + 1;
 
@@ -151,9 +151,9 @@ namespace stellar_dotnetcore_sdk.responses.accountResponse
         public int Weight { get; private set; }
     }
 
-    public class Links
+    public class AccountResponseLinks
     {
-        public Links(Link effects, Link offers, Link operations, Link self, Link transactions)
+        public AccountResponseLinks(Link effects, Link offers, Link operations, Link self, Link transactions)
         {
             Effects = effects;
             Offers = offers;

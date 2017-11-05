@@ -10,7 +10,7 @@ namespace stellar_dotnetcore_sdk.responses
     /// </summary>
     public class OfferResponse : Response
     {
-        public OfferResponse(long id, string pagingToken, KeyPair seller, Asset selling, Asset buying, string amount, string price, Links links)
+        public OfferResponse(long id, string pagingToken, KeyPair seller, Asset selling, Asset buying, string amount, string price, OfferResponseLinks links)
         {
             Id = id;
             PagingToken = pagingToken;
@@ -44,21 +44,21 @@ namespace stellar_dotnetcore_sdk.responses
         public string Price { get; private set; }
 
         [JsonProperty(PropertyName = "_links")]
-        public Links Links { get; private set; }
+        public OfferResponseLinks Links { get; private set; }
     }
 
-    public class Links
+    public class OfferResponseLinks
     {
-        public Links(Links self, Links offerMager)
+        public OfferResponseLinks(Link self, Link offerMager)
         {
             Self = self;
             OfferMager = offerMager;
         }
 
         [JsonProperty(PropertyName = "self")]
-        public Links Self { get; private set; }
+        public Link Self { get; private set; }
 
         [JsonProperty(PropertyName = "offer_maker")]
-        public Links OfferMager { get; private set; }
+        public Link OfferMager { get; private set; }
     }
 }
