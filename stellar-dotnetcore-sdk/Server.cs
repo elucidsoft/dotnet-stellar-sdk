@@ -25,6 +25,8 @@ namespace stellar_dotnetcore_sdk
 
         public AccountsRequestBuilder Accounts => new AccountsRequestBuilder(_serverUri);
 
+        public EffectsRequestBuilder Effects => new EffectsRequestBuilder(_serverUri);
+
         //TODO: Implement the rest of this class, has many many dependencies...
     }
 }
