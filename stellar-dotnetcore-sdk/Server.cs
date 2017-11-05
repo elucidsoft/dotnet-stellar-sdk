@@ -31,6 +31,8 @@ namespace stellar_dotnetcore_sdk
 
         public OffersRequestBuilder Offers => new OffersRequestBuilder(_serverUri);
 
+        public OrderBookRequestBuilder OrderBook => new OrderBookRequestBuilder(_serverUri);
+
         public PathsRequestBuilder Paths => new PathsRequestBuilder(_serverUri);
 
         //TODO: Implement the rest of this class, has many many dependencies...
