@@ -1,41 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Net.Sockets;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using stellar_dotnetcore_sdk.federation;
-using stellar_dotnetcore_sdk.xdr;
 
 namespace stellar_dotnetcore_unittest.federation
 {
     [TestClass]
     public class FederationServerTest
     {
-        private FederationServer _server;
-        private HttpClient _httpClient;
+        private static readonly string _successResponse = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\"}";
+        private static readonly string _successResponseWithMemo = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\", \"memo_type\": \"text\", \"memo\": \"test\"}";
+        private static readonly string _notFoundResponse = "{\"code\":\"not_found\",\"message\":\"Account not found\"}";
+
+
+        private static readonly string _stellarToml = "FEDERATION_SERVER = \"https://api.stellar.org/federation\"";
         private Mock<FakeHttpMessageHandler> _fakeHttpMessageHandler;
+        private HttpClient _httpClient;
 
-        private HttpStatusCode _httpOk = HttpStatusCode.OK;
+        private readonly HttpStatusCode _httpNotFound = HttpStatusCode.NotFound;
 
-        private static string _successResponse = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\"}";
-        private static string _successResponseWithMemo = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\", \"memo_type\": \"text\", \"memo\": \"test\"}";
-
-        private HttpStatusCode _httpNotFound = HttpStatusCode.NotFound;
-        private static string _notFoundResponse = "{\"code\":\"not_found\",\"message\":\"Account not found\"}";
-
-
-        private static string _stellarToml = "FEDERATION_SERVER = \"https://api.stellar.org/federation\"";
+        private readonly HttpStatusCode _httpOk = HttpStatusCode.OK;
+        private FederationServer _server;
 
         [TestInitialize]
         public void Setup()
         {
             _server = new FederationServer("https://api.stellar.org/federation", "stellar.org");
 
-            _fakeHttpMessageHandler = new Mock<FakeHttpMessageHandler>() { CallBase = true };
+            _fakeHttpMessageHandler = new Mock<FakeHttpMessageHandler> {CallBase = true};
             _httpClient = new HttpClient(_fakeHttpMessageHandler.Object);
             _server.HttpClient = _httpClient;
         }
@@ -54,7 +50,7 @@ namespace stellar_dotnetcore_unittest.federation
         {
             When(_httpOk, _stellarToml);
 
-            FederationServer server = await FederationServer.CreateForDomain("stellar.org");
+            var server = await FederationServer.CreateForDomain("stellar.org");
 
             Assert.AreEqual(server.ServerUri, "https://api.stellar.org/federation");
             Assert.AreEqual(server.Domain, "stellar.org");
@@ -69,7 +65,7 @@ namespace stellar_dotnetcore_unittest.federation
         {
             When(_httpOk, _successResponse);
 
-            FederationResponse response = await _server.ResolveAddress("bob*stellar.org");
+            var response = await _server.ResolveAddress("bob*stellar.org");
             Assert.AreEqual(response.StellarAddress, "bob*stellar.org");
             Assert.AreEqual(response.AccountId, "GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY");
             Assert.IsNull(response.MemoType);
@@ -81,7 +77,7 @@ namespace stellar_dotnetcore_unittest.federation
         {
             When(_httpOk, _successResponseWithMemo);
 
-            FederationResponse response = await _server.ResolveAddress("bob*stellar.org");
+            var response = await _server.ResolveAddress("bob*stellar.org");
             Assert.AreEqual(response.StellarAddress, "bob*stellar.org");
             Assert.AreEqual(response.AccountId, "GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY");
             Assert.AreEqual(response.MemoType, "text");
@@ -107,7 +103,7 @@ namespace stellar_dotnetcore_unittest.federation
             throw new NotImplementedException();
         }
 
-        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, System.Threading.CancellationToken cancellationToken)
+        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             RequestUri = request.RequestUri;
             return await Task.FromResult(Send(request));
