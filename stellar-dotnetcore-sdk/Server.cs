@@ -33,7 +33,10 @@ namespace stellar_dotnetcore_sdk
 
         public OrderBookRequestBuilder OrderBook => new OrderBookRequestBuilder(_serverUri);
 
+        public PaymentsRequestBuilder Payments => new PaymentsRequestBuilder(_serverUri);
+
         public PathsRequestBuilder Paths => new PathsRequestBuilder(_serverUri);
+
 
         //TODO: Implement the rest of this class, has many many dependencies...
     }
