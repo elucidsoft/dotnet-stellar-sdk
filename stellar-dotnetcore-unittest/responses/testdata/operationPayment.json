@@ -1,0 +1,29 @@
+﻿{
+  "_links": {
+    "effects": {
+      "href": "/operations/3940808587743233/effects{?cursor,limit,order}",
+      "templated": true
+    },
+    "precedes": {
+      "href": "/operations?cursor=3940808587743233&order=asc"
+    },
+    "self": {
+      "href": "/operations/3940808587743233"
+    },
+    "succeeds": {
+      "href": "/operations?cursor=3940808587743233&order=desc"
+    },
+    "transaction": {
+      "href": "/transactions/9a140b8942da440c27b65658061c2d7fafe4d0de8424fa832568f3282793fa33"
+    }
+  },
+  "amount": "100.0",
+  "asset_type": "native",
+  "from": "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ",
+  "id": 3940808587743233,
+  "paging_token": "3940808587743233",
+  "source_account": "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ",
+  "to": "GDWNY2POLGK65VVKIH5KQSH7VWLKRTQ5M6ADLJAYC2UEHEBEARCZJWWI",
+  "type": "payment",
+  "type_i": 1
+}
