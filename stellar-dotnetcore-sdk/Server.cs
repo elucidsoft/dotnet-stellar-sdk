@@ -29,6 +29,8 @@ namespace stellar_dotnetcore_sdk
 
         public LedgersRequestBuilder Ledgers => new LedgersRequestBuilder(_serverUri);
 
+        public OffersRequestBuilder Offers => new OffersRequestBuilder(_serverUri);
+
         //TODO: Implement the rest of this class, has many many dependencies...
     }
 }
