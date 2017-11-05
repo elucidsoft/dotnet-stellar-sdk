@@ -30,10 +30,10 @@ namespace stellar_dotnetcore_sdk.responses
         [JsonProperty(PropertyName = "max_tx_set_size")]
         public int MaxTxSetSize { get; private set; }
         [JsonProperty(PropertyName = "_links")]
-        public Links LedgerResponseLinks { get; private set; }
+        public LedgerResponseLinks Links { get; private set; }
 
 
-        public LedgerResponse(long sequence, String hash, String pagingToken, String prevHash, int transactionCount, int operationCount, String closedAt, String totalCoins, String feePool, long baseFee, String baseReserve, int maxTxSetSize, Links links)
+        public LedgerResponse(long sequence, String hash, String pagingToken, String prevHash, int transactionCount, int operationCount, String closedAt, String totalCoins, String feePool, long baseFee, String baseReserve, int maxTxSetSize, LedgerResponseLinks links)
         {
             this.Sequence = sequence;
             this.Hash = hash;
@@ -47,7 +47,7 @@ namespace stellar_dotnetcore_sdk.responses
             this.BaseFee = baseFee;
             this.BaseReserve = baseReserve;
             this.MaxTxSetSize = maxTxSetSize;
-            this.LedgerResponseLinks = links;
+            this.Links = links;
         }
 
       
@@ -55,7 +55,7 @@ namespace stellar_dotnetcore_sdk.responses
         ///
         /// Links connected to ledger.
         ///
-        public class Links
+        public class LedgerResponseLinks
         {
             [JsonProperty(PropertyName = "effects")]
             public Link Effects { get; private set; }
@@ -66,7 +66,7 @@ namespace stellar_dotnetcore_sdk.responses
             [JsonProperty(PropertyName = "transactions")]
             public Link Transactions { get; private set; }
 
-            Links(Link effects, Link operations, Link self, Link transactions)
+            public LedgerResponseLinks(Link effects, Link operations, Link self, Link transactions)
             {
                 Effects = effects;
                 Operations = operations;
