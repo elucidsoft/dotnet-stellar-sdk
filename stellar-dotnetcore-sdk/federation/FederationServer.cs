@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -60,7 +61,6 @@ namespace stellar_dotnetcore_sdk.federation
             TomlTable stellarToml;
             try
             {
-                _httpClient = new HttpClient();
                 var response = await _httpClient.GetAsync(stellarTomUri, HttpCompletionOption.ResponseContentRead);
 
                 if ((int)response.StatusCode >= 300)
@@ -76,7 +76,7 @@ namespace stellar_dotnetcore_sdk.federation
                 throw new ConnectionErrorException(e.Message);
             }
 
-            string federationServer = stellarToml["FEDERATION_SERVER"].ToString();
+            var federationServer = stellarToml.Rows.Single(a => a.Key == "FEDERATION_SERVER").Value.Get<string>();
             if (String.IsNullOrWhiteSpace(federationServer))
                 throw new NoFederationServerException();
 
@@ -97,19 +97,16 @@ namespace stellar_dotnetcore_sdk.federation
             try
             {
                 ResponseHandler<FederationResponse> federationResponse = new ResponseHandler<FederationResponse>();
+                
+                var response = await _httpClient.GetAsync(uri);
+                return await federationResponse.HandleResponse(response);
+            }
+            catch (HttpResponseException e)
+            {
+                if (e.StatusCode == 404)
+                    throw new NotFoundException();
 
-                try
-                {
-                    var response = await _httpClient.GetAsync(uri);
-                    return await federationResponse.HandleResponse(response);
-                }
-                catch (HttpResponseException e)
-                {
-                    if (e.StatusCode == 404)
-                        throw new NotFoundException();
-
-                    throw new ServerErrorException();
-                }
+                throw new ServerErrorException();
             }
             catch (Exception e)
             {
