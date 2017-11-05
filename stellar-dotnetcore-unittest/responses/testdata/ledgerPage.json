@@ -1,0 +1,337 @@
+﻿{
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "effects": {
+            "href": "/ledgers/899239/effects{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "/ledgers/899239/operations{?cursor,limit,order}",
+            "templated": true
+          },
+          "self": {
+            "href": "/ledgers/899239"
+          },
+          "transactions": {
+            "href": "/ledgers/899239/transactions{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "f6fc9a29b5ecec90348e17a10a60e019c5cb8ea24f66a1063e92c13391b09b8d",
+        "paging_token": "3862202096287744",
+        "hash": "f6fc9a29b5ecec90348e17a10a60e019c5cb8ea24f66a1063e92c13391b09b8d",
+        "prev_hash": "0bc807d3be86e8a9f7c913bc0e408f67402f50fbf4c0ea6583bc0f788075a567",
+        "sequence": 899239,
+        "transaction_count": 0,
+        "operation_count": 0,
+        "closed_at": "2015-11-19T22:01:34Z",
+        "total_coins": "101343867604.8975480",
+        "fee_pool": "1908.2251218",
+        "base_fee": 100,
+        "base_reserve": "10.0000000",
+        "max_tx_set_size": 50
+      },
+      {
+        "_links": {
+          "effects": {
+            "href": "/ledgers/899238/effects{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "/ledgers/899238/operations{?cursor,limit,order}",
+            "templated": true
+          },
+          "self": {
+            "href": "/ledgers/899238"
+          },
+          "transactions": {
+            "href": "/ledgers/899238/transactions{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "0bc807d3be86e8a9f7c913bc0e408f67402f50fbf4c0ea6583bc0f788075a567",
+        "paging_token": "3862197801320448",
+        "hash": "0bc807d3be86e8a9f7c913bc0e408f67402f50fbf4c0ea6583bc0f788075a567",
+        "prev_hash": "4a88c758baf11ff4265df0d7b304b737db7c7fad4b605deb887abaa1994c9be7",
+        "sequence": 899238,
+        "transaction_count": 0,
+        "operation_count": 0,
+        "closed_at": "2015-11-19T22:01:27Z",
+        "total_coins": "101343867604.8975480",
+        "fee_pool": "1908.2251218",
+        "base_fee": 100,
+        "base_reserve": "10.0000000",
+        "max_tx_set_size": 50
+      },
+      {
+        "_links": {
+          "effects": {
+            "href": "/ledgers/899237/effects{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "/ledgers/899237/operations{?cursor,limit,order}",
+            "templated": true
+          },
+          "self": {
+            "href": "/ledgers/899237"
+          },
+          "transactions": {
+            "href": "/ledgers/899237/transactions{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "4a88c758baf11ff4265df0d7b304b737db7c7fad4b605deb887abaa1994c9be7",
+        "paging_token": "3862193506353152",
+        "hash": "4a88c758baf11ff4265df0d7b304b737db7c7fad4b605deb887abaa1994c9be7",
+        "prev_hash": "6c8c24c0f4668e8f67d868bbfc851863f309da50f70341607a442f201da17190",
+        "sequence": 899237,
+        "transaction_count": 0,
+        "operation_count": 0,
+        "closed_at": "2015-11-19T22:01:25Z",
+        "total_coins": "101343867604.8975480",
+        "fee_pool": "1908.2251218",
+        "base_fee": 100,
+        "base_reserve": "10.0000000",
+        "max_tx_set_size": 50
+      },
+      {
+        "_links": {
+          "effects": {
+            "href": "/ledgers/899236/effects{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "/ledgers/899236/operations{?cursor,limit,order}",
+            "templated": true
+          },
+          "self": {
+            "href": "/ledgers/899236"
+          },
+          "transactions": {
+            "href": "/ledgers/899236/transactions{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "6c8c24c0f4668e8f67d868bbfc851863f309da50f70341607a442f201da17190",
+        "paging_token": "3862189211385856",
+        "hash": "6c8c24c0f4668e8f67d868bbfc851863f309da50f70341607a442f201da17190",
+        "prev_hash": "32efbdd295310a379621bda41397258708e5a4e606ad3c33c5a343289979ee7f",
+        "sequence": 899236,
+        "transaction_count": 0,
+        "operation_count": 0,
+        "closed_at": "2015-11-19T22:01:20Z",
+        "total_coins": "101343867604.8975480",
+        "fee_pool": "1908.2251218",
+        "base_fee": 100,
+        "base_reserve": "10.0000000",
+        "max_tx_set_size": 50
+      },
+      {
+        "_links": {
+          "effects": {
+            "href": "/ledgers/899235/effects{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "/ledgers/899235/operations{?cursor,limit,order}",
+            "templated": true
+          },
+          "self": {
+            "href": "/ledgers/899235"
+          },
+          "transactions": {
+            "href": "/ledgers/899235/transactions{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "32efbdd295310a379621bda41397258708e5a4e606ad3c33c5a343289979ee7f",
+        "paging_token": "3862184916418560",
+        "hash": "32efbdd295310a379621bda41397258708e5a4e606ad3c33c5a343289979ee7f",
+        "prev_hash": "65349e138f295aff14f30d1bcce6f9fb76055ca561004416194572e90cb2d05f",
+        "sequence": 899235,
+        "transaction_count": 0,
+        "operation_count": 0,
+        "closed_at": "2015-11-19T22:01:15Z",
+        "total_coins": "101343867604.8975480",
+        "fee_pool": "1908.2251218",
+        "base_fee": 100,
+        "base_reserve": "10.0000000",
+        "max_tx_set_size": 50
+      },
+      {
+        "_links": {
+          "effects": {
+            "href": "/ledgers/899234/effects{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "/ledgers/899234/operations{?cursor,limit,order}",
+            "templated": true
+          },
+          "self": {
+            "href": "/ledgers/899234"
+          },
+          "transactions": {
+            "href": "/ledgers/899234/transactions{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "65349e138f295aff14f30d1bcce6f9fb76055ca561004416194572e90cb2d05f",
+        "paging_token": "3862180621451264",
+        "hash": "65349e138f295aff14f30d1bcce6f9fb76055ca561004416194572e90cb2d05f",
+        "prev_hash": "ec548930241d677c712381cfc72b0c57bd4c0ce10ef7e7c3b7c693387f932aa5",
+        "sequence": 899234,
+        "transaction_count": 0,
+        "operation_count": 0,
+        "closed_at": "2015-11-19T22:01:12Z",
+        "total_coins": "101343867604.8975480",
+        "fee_pool": "1908.2251218",
+        "base_fee": 100,
+        "base_reserve": "10.0000000",
+        "max_tx_set_size": 50
+      },
+      {
+        "_links": {
+          "effects": {
+            "href": "/ledgers/899233/effects{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "/ledgers/899233/operations{?cursor,limit,order}",
+            "templated": true
+          },
+          "self": {
+            "href": "/ledgers/899233"
+          },
+          "transactions": {
+            "href": "/ledgers/899233/transactions{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "ec548930241d677c712381cfc72b0c57bd4c0ce10ef7e7c3b7c693387f932aa5",
+        "paging_token": "3862176326483968",
+        "hash": "ec548930241d677c712381cfc72b0c57bd4c0ce10ef7e7c3b7c693387f932aa5",
+        "prev_hash": "03dfe28b30dad13a95eaf20681613ecad1795f527182103524e1f5b106fefd53",
+        "sequence": 899233,
+        "transaction_count": 0,
+        "operation_count": 0,
+        "closed_at": "2015-11-19T22:01:09Z",
+        "total_coins": "101343867604.8975480",
+        "fee_pool": "1908.2251218",
+        "base_fee": 100,
+        "base_reserve": "10.0000000",
+        "max_tx_set_size": 50
+      },
+      {
+        "_links": {
+          "effects": {
+            "href": "/ledgers/899232/effects{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "/ledgers/899232/operations{?cursor,limit,order}",
+            "templated": true
+          },
+          "self": {
+            "href": "/ledgers/899232"
+          },
+          "transactions": {
+            "href": "/ledgers/899232/transactions{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "03dfe28b30dad13a95eaf20681613ecad1795f527182103524e1f5b106fefd53",
+        "paging_token": "3862172031516672",
+        "hash": "03dfe28b30dad13a95eaf20681613ecad1795f527182103524e1f5b106fefd53",
+        "prev_hash": "03abed895270fd6a534c7d8813778e932dd6b5894aa350b085ce8d9e46ce32fa",
+        "sequence": 899232,
+        "transaction_count": 0,
+        "operation_count": 0,
+        "closed_at": "2015-11-19T22:01:05Z",
+        "total_coins": "101343867604.8975480",
+        "fee_pool": "1908.2251218",
+        "base_fee": 100,
+        "base_reserve": "10.0000000",
+        "max_tx_set_size": 50
+      },
+      {
+        "_links": {
+          "effects": {
+            "href": "/ledgers/899231/effects{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "/ledgers/899231/operations{?cursor,limit,order}",
+            "templated": true
+          },
+          "self": {
+            "href": "/ledgers/899231"
+          },
+          "transactions": {
+            "href": "/ledgers/899231/transactions{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "03abed895270fd6a534c7d8813778e932dd6b5894aa350b085ce8d9e46ce32fa",
+        "paging_token": "3862167736549376",
+        "hash": "03abed895270fd6a534c7d8813778e932dd6b5894aa350b085ce8d9e46ce32fa",
+        "prev_hash": "8552b7d130e602ed068bcfec729b3056d0c8b94d77f06d91cd1ec8323c2d6177",
+        "sequence": 899231,
+        "transaction_count": 0,
+        "operation_count": 0,
+        "closed_at": "2015-11-19T22:01:02Z",
+        "total_coins": "101343867604.8975480",
+        "fee_pool": "1908.2251218",
+        "base_fee": 100,
+        "base_reserve": "10.0000000",
+        "max_tx_set_size": 50
+      },
+      {
+        "_links": {
+          "effects": {
+            "href": "/ledgers/899230/effects{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "/ledgers/899230/operations{?cursor,limit,order}",
+            "templated": true
+          },
+          "self": {
+            "href": "/ledgers/899230"
+          },
+          "transactions": {
+            "href": "/ledgers/899230/transactions{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "8552b7d130e602ed068bcfec729b3056d0c8b94d77f06d91cd1ec8323c2d6177",
+        "paging_token": "3862163441582080",
+        "hash": "8552b7d130e602ed068bcfec729b3056d0c8b94d77f06d91cd1ec8323c2d6177",
+        "prev_hash": "62efa4d5059f438aef2e3c059162b8fca9c59317bdbdd1b04dc92924302a455e",
+        "sequence": 899230,
+        "transaction_count": 0,
+        "operation_count": 0,
+        "closed_at": "2015-11-19T22:00:59Z",
+        "total_coins": "101343867604.8975480",
+        "fee_pool": "1908.2251218",
+        "base_fee": 100,
+        "base_reserve": "10.0000000",
+        "max_tx_set_size": 50
+      }
+    ]
+  },
+  "_links": {
+    "next": {
+      "href": "/ledgers?order=desc&limit=10&cursor=3862163441582080"
+    },
+    "prev": {
+      "href": "/ledgers?order=asc&limit=10&cursor=3862202096287744"
+    },
+    "self": {
+      "href": "/ledgers?order=desc&limit=10&cursor="
+    }
+  }
+}

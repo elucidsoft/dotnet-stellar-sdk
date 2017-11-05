@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using stellar_dotnetcore_sdk.responses.effects;
+using stellar_dotnetcore_sdk.responses.operations;
 using stellar_dotnetcore_sdk.responses.page;
 
 namespace stellar_dotnetcore_sdk.responses
@@ -12,11 +14,11 @@ namespace stellar_dotnetcore_sdk.responses
             var pageResponseConversions = new[]
             {
                 typeof(Page<AccountResponse>),
-                //TODO: typeof(Page<EffectResponse>),
-                //TODO: typeof(Page<LedgerResponse>),
+                typeof(Page<EffectResponse>),
+                typeof(Page<LedgerResponse>),
                 typeof(Page<OfferResponse>),
-                //TODO: typeof(Page<OperationResponse>),
-                 typeof(Page<PathResponse>),
+                typeof(Page<OperationResponse>),
+                typeof(Page<PathResponse>),
                 //TODO: typeof(Page<TradeResponse>),
                 //TODO: typeof(Page<TransactionResponse>)
             };
