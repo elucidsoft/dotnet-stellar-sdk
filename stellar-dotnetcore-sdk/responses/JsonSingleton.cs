@@ -16,7 +16,7 @@ namespace stellar_dotnetcore_sdk.responses
                 //TODO: typeof(Page<LedgerResponse>),
                 typeof(Page<OfferResponse>),
                 //TODO: typeof(Page<OperationResponse>),
-                //TODO: typeof(Page<PathResponse>),
+                 typeof(Page<PathResponse>),
                 //TODO: typeof(Page<TradeResponse>),
                 //TODO: typeof(Page<TransactionResponse>)
             };

@@ -1,0 +1,61 @@
+﻿{
+  "_embedded": {
+    "records": [
+      {
+        "destination_amount": "20.0000000",
+        "destination_asset_code": "EUR",
+        "destination_asset_issuer": "GDSBCQO34HWPGUGQSP3QBFEXVTSR2PW46UIGTHVWGWJGQKH3AFNHXHXN",
+        "destination_asset_type": "credit_alphanum4",
+        "path": [],
+        "source_amount": "30.0000000",
+        "source_asset_code": "USD",
+        "source_asset_issuer": "GDSBCQO34HWPGUGQSP3QBFEXVTSR2PW46UIGTHVWGWJGQKH3AFNHXHXN",
+        "source_asset_type": "credit_alphanum4"
+      },
+      {
+        "destination_amount": "50.0000000",
+        "destination_asset_code": "EUR",
+        "destination_asset_issuer": "GBFMFKDUFYYITWRQXL4775CVUV3A3WGGXNJUAP4KTXNEQ2HG7JRBITGH",
+        "destination_asset_type": "credit_alphanum4",
+        "path": [
+          {
+            "asset_code": "GBP",
+            "asset_issuer": "GDSBCQO34HWPGUGQSP3QBFEXVTSR2PW46UIGTHVWGWJGQKH3AFNHXHXN",
+            "asset_type": "credit_alphanum4"
+          }
+        ],
+        "source_amount": "60.0000000",
+        "source_asset_code": "USD",
+        "source_asset_issuer": "GBRAOXQDNQZRDIOK64HZI4YRDTBFWNUYH3OIHQLY4VEK5AIGMQHCLGXI",
+        "source_asset_type": "credit_alphanum4"
+      },
+      {
+        "destination_amount": "200.0000000",
+        "destination_asset_code": "EUR",
+        "destination_asset_issuer": "GBRCOBK7C7UE72PB5JCPQU3ZI45ZCEM7HKQ3KYV3YD3XB7EBOPBEDN2G",
+        "destination_asset_type": "credit_alphanum4",
+        "path": [
+          {
+            "asset_code": "GBP",
+            "asset_issuer": "GAX7B3ZT3EOZW5POAMV4NGPPKCYUOYW2QQDIAF23JAXF72NMGRYPYOPM",
+            "asset_type": "credit_alphanum4"
+          },
+          {
+            "asset_code": "PLN",
+            "asset_issuer": "GACWIA2XGDFWWN3WKPX63JTK4S2J5NDPNOIVYMZY6RVTS7LWF2VHZLV3",
+            "asset_type": "credit_alphanum4"
+          }
+        ],
+        "source_amount": "300.0000000",
+        "source_asset_code": "USD",
+        "source_asset_issuer": "GC7J5IHS3GABSX7AZLRINXWLHFTL3WWXLU4QX2UGSDEAIAQW2Q72U3KH",
+        "source_asset_type": "credit_alphanum4"
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "/paths"
+    }
+  }
+}
