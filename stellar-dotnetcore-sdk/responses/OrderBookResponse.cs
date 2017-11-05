@@ -29,13 +29,13 @@ namespace stellar_dotnetcore_sdk.responses
         public class Row
         {
             [JsonProperty(PropertyName = "amount")]
-            public String Amount { get; private set; }
+            public string Amount { get; private set; }
             [JsonProperty(PropertyName = "price")]
-            public String Price { get; private set; }
+            public string Price { get; private set; }
             [JsonProperty(PropertyName = "price_r")]
             public Price PriceR { get; private set; }
 
-            public Row(String amount, String price, Price priceR)
+            public Row(string amount, string price, Price priceR)
             {
                 this.Amount = amount ?? throw new ArgumentNullException(nameof(amount), "amount cannot be null");
                 this.Price = price ?? throw new ArgumentNullException(nameof(price), "price cannot be null");

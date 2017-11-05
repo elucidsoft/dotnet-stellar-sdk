@@ -6,15 +6,15 @@ namespace stellar_dotnetcore_sdk.responses
     public class TransactionResponse
     {
         [JsonProperty(PropertyName = "hash")]
-        public String hash { get; private set; }
+        public string hash { get; private set; }
         [JsonProperty(PropertyName = "ledger")]
         public long ledger { get; private set; }
         [JsonProperty(PropertyName = "created_at")]
-        public String createdAt { get; private set; }
+        public string createdAt { get; private set; }
         [JsonProperty(PropertyName = "source_account")]
         public KeyPair sourceAccount { get; private set; }
         [JsonProperty(PropertyName = "paging_token")]
-        public String pagingToken { get; private set; }
+        public string pagingToken { get; private set; }
         [JsonProperty(PropertyName = "source_account_sequence")]
         public long sourceAccountSequence { get; private set; }
         [JsonProperty(PropertyName = "fee_paid")]
@@ -22,11 +22,11 @@ namespace stellar_dotnetcore_sdk.responses
         [JsonProperty(PropertyName = "operation_count")]
         public int operationCount { get; private set; }
         [JsonProperty(PropertyName = "envelope_xdr")]
-        public String envelopeXdr { get; private set; }
+        public string envelopeXdr { get; private set; }
         [JsonProperty(PropertyName = "result_xdr")]
-        public String resultXdr { get; private set; }
+        public string resultXdr { get; private set; }
         [JsonProperty(PropertyName = "result_meta_xdr")]
-        public String resultMetaXdr { get; private set; }
+        public string resultMetaXdr { get; private set; }
         [JsonProperty(PropertyName = "_links")]
         public TransactionResponseLinks Links { get; private set; }
 
@@ -51,7 +51,7 @@ namespace stellar_dotnetcore_sdk.responses
         [JsonIgnore]
         private Memo _Memo;
 
-        public TransactionResponse(String hash, long ledger, String createdAt, KeyPair sourceAccount, String pagingToken, long sourceAccountSequence, long feePaid, int operationCount, String envelopeXdr, String resultXdr, String resultMetaXdr, Memo memo, TransactionResponseLinks links)
+        public TransactionResponse(string hash, long ledger, string createdAt, KeyPair sourceAccount, string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr, string resultXdr, string resultMetaXdr, Memo memo, TransactionResponseLinks links)
         {
             this.hash = hash;
             this.ledger = ledger;

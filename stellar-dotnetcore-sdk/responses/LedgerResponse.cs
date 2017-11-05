@@ -8,32 +8,32 @@ namespace stellar_dotnetcore_sdk.responses
         [JsonProperty(PropertyName = "sequence")]
         public long Sequence { get; private set; }
         [JsonProperty(PropertyName = "hash")]
-        public String Hash { get; private set; }
+        public string Hash { get; private set; }
         [JsonProperty(PropertyName = "paging_token")]
-        public String PagingToken { get; private set; }
+        public string PagingToken { get; private set; }
         [JsonProperty(PropertyName = "prev_hash")]
-        public String PrevHash { get; private set; }
+        public string PrevHash { get; private set; }
         [JsonProperty(PropertyName = "transaction_count")]
         public int TransactionCount { get; private set; }
         [JsonProperty(PropertyName = "operation_count")]
         public int OperationCount { get; private set; }
         [JsonProperty(PropertyName = "closed_at")]
-        public String ClosedAt { get; private set; }
+        public string ClosedAt { get; private set; }
         [JsonProperty(PropertyName = "total_coins")]
-        public String TotalCoins { get; private set; }
+        public string TotalCoins { get; private set; }
         [JsonProperty(PropertyName = "fee_pool")]
-        public String FeePool { get; private set; }
+        public string FeePool { get; private set; }
         [JsonProperty(PropertyName = "base_fee")]
         public long BaseFee { get; private set; }
         [JsonProperty(PropertyName = "base_reserve")]
-        public String BaseReserve { get; private set; }
+        public string BaseReserve { get; private set; }
         [JsonProperty(PropertyName = "max_tx_set_size")]
         public int MaxTxSetSize { get; private set; }
         [JsonProperty(PropertyName = "_links")]
         public LedgerResponseLinks Links { get; private set; }
 
 
-        public LedgerResponse(long sequence, String hash, String pagingToken, String prevHash, int transactionCount, int operationCount, String closedAt, String totalCoins, String feePool, long baseFee, String baseReserve, int maxTxSetSize, LedgerResponseLinks links)
+        public LedgerResponse(long sequence, string hash, string pagingToken, string prevHash, int transactionCount, int operationCount, string closedAt, string totalCoins, string feePool, long baseFee, String baseReserve, int maxTxSetSize, LedgerResponseLinks links)
         {
             this.Sequence = sequence;
             this.Hash = hash;
