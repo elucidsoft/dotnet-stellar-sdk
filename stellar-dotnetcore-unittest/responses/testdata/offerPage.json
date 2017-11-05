@@ -1,0 +1,46 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "https://horizon-testnet.stellar.org/accounts/GA2IYMIZSAMDD6QQTTSIEL73H2BKDJQTA7ENDEEAHJ3LMVF7OYIZPXQD/offers?order=asc&limit=10&cursor="
+    },
+    "next": {
+      "href": "https://horizon-testnet.stellar.org/accounts/GA2IYMIZSAMDD6QQTTSIEL73H2BKDJQTA7ENDEEAHJ3LMVF7OYIZPXQD/offers?order=asc&limit=10&cursor=241"
+    },
+    "prev": {
+      "href": "https://horizon-testnet.stellar.org/accounts/GA2IYMIZSAMDD6QQTTSIEL73H2BKDJQTA7ENDEEAHJ3LMVF7OYIZPXQD/offers?order=desc&limit=10&cursor=241"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon-testnet.stellar.org/offers/241"
+          },
+          "offer_maker": {
+            "href": "https://horizon-testnet.stellar.org/accounts/GA2IYMIZSAMDD6QQTTSIEL73H2BKDJQTA7ENDEEAHJ3LMVF7OYIZPXQD"
+          }
+        },
+        "id": 241,
+        "paging_token": "241",
+        "seller": "GA2IYMIZSAMDD6QQTTSIEL73H2BKDJQTA7ENDEEAHJ3LMVF7OYIZPXQD",
+        "selling": {
+          "asset_type": "credit_alphanum4",
+          "asset_code": "INR",
+          "asset_issuer": "GA2IYMIZSAMDD6QQTTSIEL73H2BKDJQTA7ENDEEAHJ3LMVF7OYIZPXQD"
+        },
+        "buying": {
+          "asset_type": "credit_alphanum4",
+          "asset_code": "USD",
+          "asset_issuer": "GA2IYMIZSAMDD6QQTTSIEL73H2BKDJQTA7ENDEEAHJ3LMVF7OYIZPXQD"
+        },
+        "amount": "10.0000000",
+        "price_r": {
+          "n": 10,
+          "d": 1
+        },
+        "price": "11.0000000"
+      }
+    ]
+  }
+}

@@ -12,10 +12,10 @@ namespace stellar_dotnetcore_sdk.responses
         {
             var pageResponseConversions = new[]
             {
-                typeof(Page<AccountResponse>)
+                typeof(Page<AccountResponse>),
                 //TODO: typeof(Page<EffectResponse>),
                 //TODO: typeof(Page<LedgerResponse>),
-                //TODO: typeof(Page<OfferResponse>),
+                typeof(Page<OfferResponse>),
                 //TODO: typeof(Page<OperationResponse>),
                 //TODO: typeof(Page<PathResponse>),
                 //TODO: typeof(Page<TradeResponse>),
@@ -39,7 +39,7 @@ namespace stellar_dotnetcore_sdk.responses
             var json = JObject.Parse(content);
             var newJson = new JObject();
             newJson.Add("records", json.SelectToken("$._embedded.records"));
-            newJson.Add("links", json.SelectToken("$.._links"));
+            newJson.Add("links", json.SelectToken("$._links"));
 
             return newJson.Root.ToString();
         }
