@@ -11,9 +11,9 @@ namespace stellar_dotnetcore_sdk.requests
     /// <summary>
     /// Builds requests connected to paths.
     /// </summary>
-    class PathsRequestBuilder : RequestBuilder<PathsRequestBuilder>
+    public class PathsRequestBuilder : RequestBuilder<PathsRequestBuilder>
     {
-        public PathsRequestBuilder(Uri serverUri, string defaultSegment) 
+        public PathsRequestBuilder(Uri serverUri) 
             : base(serverUri, "paths")
         {
         }

@@ -35,6 +35,9 @@ namespace stellar_dotnetcore_sdk
 
         public PaymentsRequestBuilder Payments => new PaymentsRequestBuilder(_serverUri);
 
+        public PathsRequestBuilder Paths => new PathsRequestBuilder(_serverUri);
+
+
         //TODO: Implement the rest of this class, has many many dependencies...
     }
 }
