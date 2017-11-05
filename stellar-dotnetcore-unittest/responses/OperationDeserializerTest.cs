@@ -31,6 +31,24 @@ namespace stellar_dotnetcore_unittest.responses
 
         //TODO: TestDeserializePaymentOperation
 
+        //TODO TestDeserializeAllowTrustOperation
 
+        //TODO: TestDeserializeChangeTrustOperation
+
+        //TODO: TestDeserializeSetOperationsOperation
+
+        //TODO: TestDeserializeAccountMergeOperation
+
+        //TODO: TestDeserializeManageOfferOperation
+
+        //TODO: TestDeserializePathPaymentOperation
+
+        //TODO: TestDeserializeCreatePassiveOfferOperation
+
+        //TODO: TestDeserializeInflationOperation
+
+        //TODO: TestDeserializeManageDataOperation
+        
+        //TODO: TestDeserializeManageDataOperationValueEmpty
     }
 }
