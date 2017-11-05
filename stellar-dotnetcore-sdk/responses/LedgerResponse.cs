@@ -30,7 +30,7 @@ namespace stellar_dotnetcore_sdk.responses
         [JsonProperty(PropertyName = "max_tx_set_size")]
         public int MaxTxSetSize { get; private set; }
         [JsonProperty(PropertyName = "_links")]
-        public Links LinksValue { get; private set; }
+        public Links LedgerResponseLinks { get; private set; }
 
 
         public LedgerResponse(long sequence, String hash, String pagingToken, String prevHash, int transactionCount, int operationCount, String closedAt, String totalCoins, String feePool, long baseFee, String baseReserve, int maxTxSetSize, Links links)
@@ -47,7 +47,7 @@ namespace stellar_dotnetcore_sdk.responses
             this.BaseFee = baseFee;
             this.BaseReserve = baseReserve;
             this.MaxTxSetSize = maxTxSetSize;
-            this.LinksValue = links;
+            this.LedgerResponseLinks = links;
         }
 
       
