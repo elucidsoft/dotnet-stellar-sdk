@@ -47,7 +47,7 @@ namespace stellar_dotnetcore_sdk.requests
         /// <a href="https://www.stellar.org/developers/horizon/reference/payments-for-transaction.html">Effect for Transaction</a>
         /// </Summary>
         /// <param name="transactionId">Transaction ID for which to get payments</param>
-        public PaymentsRequestBuilder ForTransaction(String transactionId)
+        public PaymentsRequestBuilder ForTransaction(string transactionId)
         {
             transactionId = transactionId ?? throw new ArgumentNullException(nameof(transactionId), "transactionId cannot be null");
             SetSegments("transactions", transactionId, "payments");
@@ -102,7 +102,7 @@ namespace stellar_dotnetcore_sdk.requests
         }
 
 
-        public override RequestBuilder<PaymentsRequestBuilder> Cursor(String token)
+        public override RequestBuilder<PaymentsRequestBuilder> Cursor(string token)
         {
             base.Cursor(token);
             return this;

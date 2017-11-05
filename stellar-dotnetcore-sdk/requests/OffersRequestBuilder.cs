@@ -49,7 +49,7 @@ namespace stellar_dotnetcore_sdk.requests
         }
 
 
-        public override RequestBuilder<OffersRequestBuilder> Cursor(String token)
+        public override RequestBuilder<OffersRequestBuilder> Cursor(string token)
         {
             base.Cursor(token);
             return this;

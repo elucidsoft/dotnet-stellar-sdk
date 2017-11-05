@@ -90,7 +90,7 @@ namespace stellar_dotnetcore_sdk.requests
         }
 
 
-        public override RequestBuilder<LedgersRequestBuilder> Cursor(String token)
+        public override RequestBuilder<LedgersRequestBuilder> Cursor(string token)
         {
             base.Cursor(token);
             return this;

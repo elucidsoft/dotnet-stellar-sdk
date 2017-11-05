@@ -7,26 +7,37 @@ namespace stellar_dotnetcore_sdk.responses
     {
         [JsonProperty(PropertyName = "hash")]
         public string Hash { get; private set; }
+
         [JsonProperty(PropertyName = "ledger")]
         public long Ledger { get; private set; }
+
         [JsonProperty(PropertyName = "created_at")]
         public string CreatedAt { get; private set; }
+
         [JsonProperty(PropertyName = "source_account")]
         public KeyPair SourceAccount { get; private set; }
+
         [JsonProperty(PropertyName = "paging_token")]
         public string PagingToken { get; private set; }
+
         [JsonProperty(PropertyName = "source_account_sequence")]
         public long SourceAccountSequence { get; private set; }
+
         [JsonProperty(PropertyName = "fee_paid")]
         public long FeePaid { get; private set; }
+
         [JsonProperty(PropertyName = "operation_count")]
         public int OperationCount { get; private set; }
+
         [JsonProperty(PropertyName = "envelope_xdr")]
         public string EnvelopeXdr { get; private set; }
+
         [JsonProperty(PropertyName = "result_xdr")]
         public string ResultXdr { get; private set; }
+
         [JsonProperty(PropertyName = "result_meta_xdr")]
         public string ResultMetaXdr { get; private set; }
+
         [JsonProperty(PropertyName = "_links")]
         public TransactionResponseLinks Links { get; private set; }
 
@@ -75,16 +86,22 @@ namespace stellar_dotnetcore_sdk.responses
         {
             [JsonProperty(PropertyName = "account")]
             public Link Account { get; private set; }
+
             [JsonProperty(PropertyName = "effects")]
             public Link Effects { get; private set; }
+
             [JsonProperty(PropertyName = "ledger")]
             public Link Ledger { get; private set; }
+
             [JsonProperty(PropertyName = "operations")]
             public Link Operations { get; private set; }
+
             [JsonProperty(PropertyName = "precedes")]
             public Link Precedes { get; private set; }
+
             [JsonProperty(PropertyName = "self")]
             public Link Self { get; private set; }
+
             [JsonProperty(PropertyName = "succeeds")]
             public Link Succeeds { get; private set; }
 

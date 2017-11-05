@@ -2,9 +2,7 @@
 using stellar_dotnetcore_sdk.responses;
 using stellar_dotnetcore_sdk.responses.page;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace stellar_dotnetcore_sdk.requests
@@ -37,7 +35,7 @@ namespace stellar_dotnetcore_sdk.requests
         /// <a href="https://www.stellar.org/developers/horizon/reference/ledgers-single.html">Ledger Details</a>
         ///</summary>
         ///<param name="ledgerSeq">Ledger to fetch</param>
-        public Task<TransactionResponse> Transaction(String transactionId)
+        public Task<TransactionResponse> Transaction(string transactionId)
         {
             SetSegments("transactions", transactionId);
             return Transaction(this.BuildUri());
@@ -114,7 +112,7 @@ namespace stellar_dotnetcore_sdk.requests
         }
 
 
-        public override RequestBuilder<TransactionsRequestBuilder> Cursor(String token)
+        public override RequestBuilder<TransactionsRequestBuilder> Cursor(string token)
         {
             base.Cursor(token);
             return this;
