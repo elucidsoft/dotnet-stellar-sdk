@@ -19,13 +19,13 @@ namespace stellar_dotnetcore_sdk.responses.effects
         public string PagingToken { get; protected set; }
 
         [JsonProperty(PropertyName = "_links")]
-        public EffectResponseLinks LinksValue { get; protected set; }
+        public Links EffectsResponseLinks { get; protected set; }
 
 
         /// <summary>
         /// Represents effect links.
         /// </summary>
-        public class EffectResponseLinks
+        public class Links
         {
             [JsonProperty(PropertyName = "operation")]
             public Link Operation { get; }
@@ -37,11 +37,11 @@ namespace stellar_dotnetcore_sdk.responses.effects
             [JsonProperty(PropertyName = "succeeds")]
             public Link Succeeds { get; }
 
-            public EffectResponseLinks(Link operation, Link precedes, Link succeeds)
+            public Links(Link operation, Link precedes, Link succeeds)
             {
                 Operation = operation;
                 Precedes = precedes;
-                this.Succeeds = succeeds;
+                Succeeds = succeeds;
             }
         }
     }

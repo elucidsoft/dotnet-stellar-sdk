@@ -27,6 +27,8 @@ namespace stellar_dotnetcore_sdk
 
         public EffectsRequestBuilder Effects => new EffectsRequestBuilder(_serverUri);
 
+        public LedgersRequestBuilder Ledgers => new LedgersRequestBuilder(_serverUri);
+
         //TODO: Implement the rest of this class, has many many dependencies...
     }
 }
