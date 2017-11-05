@@ -10,7 +10,7 @@ namespace stellar_dotnetcore_sdk.responses
     {
         public static T GetInstance<T>(string content)
         {
-            var pageResponseConvertersions = new[]
+            var pageResponseConversions = new[]
             {
                 typeof(Page<AccountResponse>)
                 //TODO: typeof(Page<EffectResponse>),
@@ -28,7 +28,7 @@ namespace stellar_dotnetcore_sdk.responses
                 new AssetDeserializer()
             };
 
-            if (pageResponseConvertersions.Contains(typeof(T)))
+            if (pageResponseConversions.Contains(typeof(T)))
                 content = PageAccountResponseConverter(content);
 
             return JsonConvert.DeserializeObject<T>(content, jsonConverters);
