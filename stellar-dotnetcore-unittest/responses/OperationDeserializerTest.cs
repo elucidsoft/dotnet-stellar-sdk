@@ -14,7 +14,7 @@ namespace stellar_dotnetcore_unittest.responses
         {
             var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationCreateAccount.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            
+
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is CreateAccountOperationResponse);
             var operation = (CreateAccountOperationResponse)instance;
@@ -43,7 +43,20 @@ namespace stellar_dotnetcore_unittest.responses
 
         //TODO: TestDeserializeSetOperationsOperation
 
-        //TODO: TestDeserializeAccountMergeOperation
+        [TestMethod]
+        public void TestDeserializeAccountMergeOperation()
+        {
+
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationAccountMerge.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is AccountMergeOperationResponse);
+            var operation = (AccountMergeOperationResponse)instance;
+
+            Assert.AreEqual(operation.Account.AccountId, "GD6GKRABNDVYDETEZJQEPS7IBQMERCN44R5RCI4LJNX6BMYQM2KPGGZ2");
+            Assert.AreEqual(operation.Into.AccountId, "GAZWSWPDQTBHFIPBY4FEDFW2J6E2LE7SZHJWGDZO6Q63W7DBSRICO2KN");
+        }
 
         //TODO: TestDeserializeManageOfferOperation
 

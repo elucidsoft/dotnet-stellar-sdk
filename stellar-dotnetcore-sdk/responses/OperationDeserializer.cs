@@ -37,8 +37,8 @@ namespace stellar_dotnetcore_sdk.responses
                 //    return gson.fromJson(json, ChangeTrustOperationResponse.class);
                 //case 7:
                 //    return gson.fromJson(json, AllowTrustOperationResponse.class);
-                //case 8:
-                //    return gson.fromJson(json, AccountMergeOperationResponse.class);
+                case 8:
+                    return JsonSingleton.GetInstance<AccountMergeOperationResponse>(jsonObject.Root.ToString());
                 //case 9:
                 //    return gson.fromJson(json, InflationOperationResponse.class);
                 //case 10:
