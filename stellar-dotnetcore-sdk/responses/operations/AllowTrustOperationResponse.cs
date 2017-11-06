@@ -2,6 +2,12 @@
 
 namespace stellar_dotnetcore_sdk.responses.operations
 {
+    /// <summary>
+    /// Represents AllowTrust operation response.
+    /// See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+    /// <seealso cref="OperationRequestBuilder"/>
+    /// <seealso cref="Server"/>
+    /// </summary>
     public class AllowTrustOperationResponse : OperationResponse
     {
         public AllowTrustOperationResponse(KeyPair trustor, KeyPair trustee, string assetType, string assetCode, string assetIssuer, bool authorize)

@@ -69,7 +69,27 @@ namespace stellar_dotnetcore_unittest.responses
             Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", KeyPair.FromAccountId("GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM")));
         }
 
-        //TODO: TestDeserializeSetOperationsOperation
+        [TestMethod]
+        public void TestDeserializeSetOptionsOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationSetOptions.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is SetOptionsOperationResponse);
+            var operation = (SetOptionsOperationResponse)instance;
+
+            Assert.AreEqual(operation.SignerKey.AccountId, "GD3ZYXVC7C3ECD5I4E5NGPBFJJSULJ6HJI2FBHGKYFV34DSIWB4YEKJZ");
+            Assert.AreEqual(operation.SignerWeight, 1);
+            Assert.AreEqual(operation.HomeDomain, "stellar.org");
+            Assert.AreEqual(operation.InflationDestination.AccountId, "GBYWSY4NPLLPTP22QYANGTT7PEHND64P4D4B6LFEUHGUZRVYJK2H4TBE");
+            Assert.AreEqual(operation.LowThreshold, 1);
+            Assert.AreEqual(operation.MedThreshold, 2);
+            Assert.AreEqual(operation.HighThreshold, 3);
+            Assert.AreEqual(operation.MasterKeyWeight, 4);
+            Assert.AreEqual(operation.SetFlags[0], "auth_required_flag");
+            Assert.AreEqual(operation.ClearFlags[0], "auth_revocable_flag");
+        }
 
         [TestMethod]
         public void TestDeserializeAccountMergeOperation()

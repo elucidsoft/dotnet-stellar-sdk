@@ -31,8 +31,8 @@ namespace stellar_dotnetcore_sdk.responses
                     return JsonSingleton.GetInstance<ManageOfferOperationResponse>(jsonObject.Root.ToString());
                 case 4:
                     return JsonSingleton.GetInstance<CreatePassiveOfferOperationResponse>(jsonObject.Root.ToString());
-                //case 5:
-                //    return gson.fromJson(json, SetOptionsOperationResponse.class);
+                case 5:
+                    return JsonSingleton.GetInstance<SetOptionsOperationResponse>(jsonObject.Root.ToString());
                 case 6:
                     return JsonSingleton.GetInstance<ChangeTrustOperationResponse>(jsonObject.Root.ToString());
                 case 7:

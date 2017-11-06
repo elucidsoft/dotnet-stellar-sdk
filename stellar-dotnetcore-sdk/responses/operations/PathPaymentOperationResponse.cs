@@ -2,6 +2,12 @@
 
 namespace stellar_dotnetcore_sdk.responses.operations
 {
+    /// <summary>
+    /// Represents PathPayment operation response.
+    /// See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+    /// <seealso cref="OperationRequestBuilder"/>
+    /// <seealso cref="Server"/>
+    /// </summary>
     public class PathPaymentOperationResponse : OperationResponse
     {
         public PathPaymentOperationResponse(string amount, string sourceAmount, KeyPair from, KeyPair to, string assetType, string assetCode, string assetIssuer, string sendAssetType, string sendAssetCode, string sendAssetIssuer)
