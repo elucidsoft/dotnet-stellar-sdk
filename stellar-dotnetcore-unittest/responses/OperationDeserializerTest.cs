@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using stellar_dotnetcore_sdk;
 using stellar_dotnetcore_sdk.responses;
 using stellar_dotnetcore_sdk.responses.operations;
 
@@ -48,7 +49,20 @@ namespace stellar_dotnetcore_unittest.responses
 
         //TODO: TestDeserializePathPaymentOperation
 
-        //TODO: TestDeserializeCreatePassiveOfferOperation
+        [TestMethod]
+        public void TestDeserializeCreatePassiveOfferOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationPassiveOffer.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is CreatePassiveOfferOperationResponse);
+            var operation = (CreatePassiveOfferOperationResponse)instance;
+
+            Assert.AreEqual(operation.Amount, "11.27827");
+            Assert.AreEqual(operation.BuyingAsset, Asset.CreateNonNativeAsset("USD", KeyPair.FromAccountId("GDS5JW5E6DRSSN5XK4LW7E6VUMFKKE2HU5WCOVFTO7P2RP7OXVCBLJ3Y")));
+            Assert.AreEqual(operation.SellingAsset, new AssetTypeNative());
+        }
 
         //TODO: TestDeserializeInflationOperation
 

@@ -9,11 +9,6 @@ namespace stellar_dotnetcore_sdk.responses
 {
     public class OperationDeserializer : JsonConverter
     {
-        private Type[] operationResponseTypes = new[]
-        {
-            typeof(CreateAccountOperation)
-        };
-
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             throw new NotImplementedException();
@@ -34,8 +29,8 @@ namespace stellar_dotnetcore_sdk.responses
                 //    return gson.fromJson(json, PathPaymentOperationResponse.class);
                 //case 3:
                 //    return gson.fromJson(json, ManageOfferOperationResponse.class);
-                //case 4:
-                //    return gson.fromJson(json, CreatePassiveOfferOperationResponse.class);
+                case 4:
+                    return JsonSingleton.GetInstance<CreatePassiveOfferOperationResponse>(jsonObject.Root.ToString());
                 //case 5:
                 //    return gson.fromJson(json, SetOptionsOperationResponse.class);
                 //case 6:

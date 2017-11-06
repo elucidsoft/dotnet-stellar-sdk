@@ -12,7 +12,7 @@ namespace stellar_dotnetcore_sdk.responses.operations
     /// <seealso cref="OperationRequestBuilder"/>
     /// <seealso cref="Server"/>
     /// </summary>
-    public class OperationResponse
+    public abstract class OperationResponse
     {
 
         [JsonProperty(PropertyName = "id")]

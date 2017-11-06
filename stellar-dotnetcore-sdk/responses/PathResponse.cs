@@ -37,17 +37,8 @@ namespace stellar_dotnetcore_sdk.responses
         [JsonProperty(PropertyName = "_links")]
         public PathResponseLinks Links { get; }
 
-        public Asset DestinationAsset => GetNonNativeAsset(DestinationAssetType, DestinationAssetIssuer, DestinationAssetCode);
-        public Asset SourceAsset => GetNonNativeAsset(SourceAssetType, SourceAssetIssuer, SourceAssetCode);
-
-        private Asset GetNonNativeAsset(string destinationAssetType, string accountId, string code)
-        {
-            if (destinationAssetType == "native")
-                return new AssetTypeNative();
-
-            KeyPair issuer = KeyPair.FromAccountId(accountId);
-            return Asset.CreateNonNativeAsset(code, issuer);
-        }
+        public Asset DestinationAsset => Asset.GetNonNativeAsset(DestinationAssetType, DestinationAssetIssuer, DestinationAssetCode);
+        public Asset SourceAsset => Asset.GetNonNativeAsset(SourceAssetType, SourceAssetIssuer, SourceAssetCode);
         
         public PathResponse(string destinationAmount, string destinationAssetType, string destinationAssetCode, string destinationAssetIssuer, string sourceAmount, 
             string sourceAssetType, string sourceAssetCode, string sourceAssetIssuer, List<Asset> path, PathResponseLinks links)

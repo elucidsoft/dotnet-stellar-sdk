@@ -64,5 +64,14 @@ namespace stellar_dotnetcore_sdk
         {
             return base.GetHashCode();
         }
+
+        public static Asset GetNonNativeAsset(string assetType, string accountId, string code)
+        {
+            if (assetType == "native")
+                return new AssetTypeNative();
+
+            KeyPair issuer = KeyPair.FromAccountId(accountId);
+            return CreateNonNativeAsset(code, issuer);
+        }
     }
 }
