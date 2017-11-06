@@ -26,7 +26,8 @@ namespace stellar_dotnetcore_sdk.responses
             var jsonConverters = new JsonConverter[]
             {
                 new KeyPairTypeAdapter(),
-                new AssetDeserializer()
+                new AssetDeserializer(),
+                new OperationDeserializer(), 
             };
 
             if (pageResponseConversions.Contains(typeof(T)))
