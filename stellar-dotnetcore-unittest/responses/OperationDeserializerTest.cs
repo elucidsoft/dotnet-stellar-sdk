@@ -183,6 +183,17 @@ namespace stellar_dotnetcore_unittest.responses
             Assert.AreEqual(operation.Value, "MjAwMA==");
         }
 
-        //TODO: TestDeserializeManageDataOperationValueEmpty
+        [TestMethod]
+        public void TestDeserializeManageDataOperationValueEmpty()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationManageDataValueEmpty.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is ManageDataOperationResponse);
+            var operation = (ManageDataOperationResponse)instance;
+
+            Assert.AreEqual(operation.Value, null);
+        }
     }
 }
