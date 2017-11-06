@@ -2,13 +2,13 @@
 
 namespace stellar_dotnetcore_sdk.responses.operations
 {
-    public class CreatePassiveOfferOperationResponse : OperationResponse
+    public class ManageOfferOperationResponse : OperationResponse
     {
-        public CreatePassiveOfferOperationResponse(int offerId, string amount, string price, string buyingAssetType, string buyingAssetCode, string buyingAssetIssuer, string sellingAssetType, string sellingAssetCode, string sellingAssetIssuer)
+        public ManageOfferOperationResponse(int offerId, string amount, string price, string buyingAssetType, string buyingAssetCode, string buyingAssetIssuer, string sellingAssetType, string sellingAssetCode, string sellingAssetIssuer)
         {
             OfferId = offerId;
             Amount = amount;
-            Price1 = price;
+            Price = price;
             BuyingAssetType = buyingAssetType;
             BuyingAssetCode = buyingAssetCode;
             BuyingAssetIssuer = buyingAssetIssuer;
@@ -26,7 +26,7 @@ namespace stellar_dotnetcore_sdk.responses.operations
         // Price is not implemented yet in horizon
 
         [JsonProperty(PropertyName = "price")]
-        public string Price1 { get; }
+        public string Price { get; }
 
 
         [JsonProperty(PropertyName = "buying_asset_type")]

@@ -27,16 +27,16 @@ namespace stellar_dotnetcore_sdk.responses
                 //    return gson.fromJson(json, PaymentOperationResponse.class);
                 //case 2:
                 //    return gson.fromJson(json, PathPaymentOperationResponse.class);
-                //case 3:
-                //    return gson.fromJson(json, ManageOfferOperationResponse.class);
+                case 3:
+                    return JsonSingleton.GetInstance<ManageOfferOperationResponse>(jsonObject.Root.ToString());
                 case 4:
                     return JsonSingleton.GetInstance<CreatePassiveOfferOperationResponse>(jsonObject.Root.ToString());
                 //case 5:
                 //    return gson.fromJson(json, SetOptionsOperationResponse.class);
-                //case 6:
-                //    return gson.fromJson(json, ChangeTrustOperationResponse.class);
-                //case 7:
-                //    return gson.fromJson(json, AllowTrustOperationResponse.class);
+                case 6:
+                    return JsonSingleton.GetInstance<ChangeTrustOperationResponse>(jsonObject.Root.ToString());
+                case 7:
+                    return JsonSingleton.GetInstance<AllowTrustOperationResponse>(jsonObject.Root.ToString());
                 case 8:
                     return JsonSingleton.GetInstance<AccountMergeOperationResponse>(jsonObject.Root.ToString());
                 //case 9:

@@ -1,0 +1,30 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "http://horizon-testnet.stellar.org/operations/3320426331639809"
+    },
+    "transaction": {
+      "href": "http://horizon-testnet.stellar.org/transactions/1f8fc03b26110e917d124381645d7dcf85927f17e46d8390d254a0bd99cfb0ad"
+    },
+    "effects": {
+      "href": "http://horizon-testnet.stellar.org/operations/3320426331639809/effects"
+    },
+    "succeeds": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=desc&cursor=3320426331639809"
+    },
+    "precedes": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=asc&cursor=3320426331639809"
+    }
+  },
+  "id": "3320426331639809",
+  "paging_token": "3320426331639809",
+  "source_account": "GCR6QXX7IRIJVIM5WA5ASQ6MWDOEJNBW3V6RTC5NJXEMOLVTUVKZ725X",
+  "type": "manage_offer",
+  "type_i": 3,
+  "offer_id": 0,
+  "amount": "100.0",
+  "buying_asset_type": "credit_alphanum4",
+  "buying_asset_code": "CNY",
+  "buying_asset_issuer": "GAZWSWPDQTBHFIPBY4FEDFW2J6E2LE7SZHJWGDZO6Q63W7DBSRICO2KN",
+  "selling_asset_type": "native"
+}

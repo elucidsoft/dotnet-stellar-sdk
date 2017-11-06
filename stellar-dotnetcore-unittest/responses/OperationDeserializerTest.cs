@@ -37,9 +37,37 @@ namespace stellar_dotnetcore_unittest.responses
 
         //TODO: TestDeserializePaymentOperation
 
-        //TODO TestDeserializeAllowTrustOperation
+        [TestMethod]
+        public void TestDeserializeAllowTrustOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationAllowTrust.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
-        //TODO: TestDeserializeChangeTrustOperation
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is AllowTrustOperationResponse);
+            var operation = (AllowTrustOperationResponse)instance;
+
+            Assert.AreEqual(operation.Trustee.AccountId, "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
+            Assert.AreEqual(operation.Trustor.AccountId, "GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F");
+            Assert.AreEqual(operation.Authorize, true);
+            Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", KeyPair.FromAccountId("GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM")));
+        }
+
+        [TestMethod]
+        public void TestDeserializeChangeTrustOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationChangeTrust.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is ChangeTrustOperationResponse);
+            var operation = (ChangeTrustOperationResponse)instance;
+
+            Assert.AreEqual(operation.Trustee.AccountId, "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
+            Assert.AreEqual(operation.Trustor.AccountId, "GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F");
+            Assert.AreEqual(operation.Limit, "922337203685.4775807");
+            Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", KeyPair.FromAccountId("GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM")));
+        }
 
         //TODO: TestDeserializeSetOperationsOperation
 
@@ -58,7 +86,21 @@ namespace stellar_dotnetcore_unittest.responses
             Assert.AreEqual(operation.Into.AccountId, "GAZWSWPDQTBHFIPBY4FEDFW2J6E2LE7SZHJWGDZO6Q63W7DBSRICO2KN");
         }
 
-        //TODO: TestDeserializeManageOfferOperation
+        [TestMethod]
+        public void TestDeserializeManageOfferOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationManageOffer.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is ManageOfferOperationResponse);
+            var operation = (ManageOfferOperationResponse)instance;
+
+            Assert.AreEqual(operation.OfferId, 0);
+            Assert.AreEqual(operation.Amount, "100.0");
+            Assert.AreEqual(operation.BuyingAsset, Asset.CreateNonNativeAsset("CNY", KeyPair.FromAccountId("GAZWSWPDQTBHFIPBY4FEDFW2J6E2LE7SZHJWGDZO6Q63W7DBSRICO2KN")));
+            Assert.AreEqual(operation.SellingAsset, new AssetTypeNative());
+        }
 
         //TODO: TestDeserializePathPaymentOperation
 
