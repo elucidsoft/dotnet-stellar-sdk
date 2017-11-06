@@ -25,8 +25,8 @@ namespace stellar_dotnetcore_sdk.responses
                     return JsonSingleton.GetInstance<CreateAccountOperationResponse>(jsonObject.Root.ToString());
                 //case 1:
                 //    return gson.fromJson(json, PaymentOperationResponse.class);
-                //case 2:
-                //    return gson.fromJson(json, PathPaymentOperationResponse.class);
+                case 2:
+                    return JsonSingleton.GetInstance<PathPaymentOperationResponse>(jsonObject.Root.ToString());
                 case 3:
                     return JsonSingleton.GetInstance<ManageOfferOperationResponse>(jsonObject.Root.ToString());
                 case 4:
@@ -39,10 +39,10 @@ namespace stellar_dotnetcore_sdk.responses
                     return JsonSingleton.GetInstance<AllowTrustOperationResponse>(jsonObject.Root.ToString());
                 case 8:
                     return JsonSingleton.GetInstance<AccountMergeOperationResponse>(jsonObject.Root.ToString());
-                //case 9:
-                //    return gson.fromJson(json, InflationOperationResponse.class);
-                //case 10:
-                //    return gson.fromJson(json, ManageDataOperationResponse.class);
+                case 9:
+                    return JsonSingleton.GetInstance<InflationOperationResponse>(jsonObject.Root.ToString());
+                case 10:
+                    return JsonSingleton.GetInstance<ManageDataOperationResponse>(jsonObject.Root.ToString());
                 default:
                     throw new Exception("Invalid operation type");
             }

@@ -2,6 +2,12 @@
 
 namespace stellar_dotnetcore_sdk.responses.operations
 {
+    /// <summary>
+    /// Represents ChangeTrust operation response.
+    /// See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+    /// <seealso cref="OperationRequestBuilder"/>
+    /// <seealso cref="Server"/>
+    /// </summary>
     public class ChangeTrustOperationResponse : OperationResponse
     {
         public ChangeTrustOperationResponse(string assetCode, string assetIssuer, string assetType, string limit, KeyPair trustee, KeyPair trustor)

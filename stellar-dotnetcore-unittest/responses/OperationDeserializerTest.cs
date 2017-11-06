@@ -102,7 +102,23 @@ namespace stellar_dotnetcore_unittest.responses
             Assert.AreEqual(operation.SellingAsset, new AssetTypeNative());
         }
 
-        //TODO: TestDeserializePathPaymentOperation
+        [TestMethod]
+        public void TestDeserializePathPaymentOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationPathPayment.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is PathPaymentOperationResponse);
+            var operation = (PathPaymentOperationResponse)instance;
+
+            Assert.AreEqual(operation.From.AccountId, "GCXKG6RN4ONIEPCMNFB732A436Z5PNDSRLGWK7GBLCMQLIFO4S7EYWVU");
+            Assert.AreEqual(operation.To.AccountId, "GA5WBPYA5Y4WAEHXWR2UKO2UO4BUGHUQ74EUPKON2QHV4WRHOIRNKKH2");
+            Assert.AreEqual(operation.Amount, "10.0");
+            Assert.AreEqual(operation.SourceAmount, "100.0");
+            Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", KeyPair.FromAccountId("GCQPYGH4K57XBDENKKX55KDTWOTK5WDWRQOH2LHEDX3EKVIQRLMESGBG")));
+            Assert.AreEqual(operation.SendAsset, Asset.CreateNonNativeAsset("USD", KeyPair.FromAccountId("GC23QF2HUE52AMXUFUH3AYJAXXGXXV2VHXYYR6EYXETPKDXZSAW67XO4")));
+        }
 
         [TestMethod]
         public void TestDeserializeCreatePassiveOfferOperation()
@@ -119,9 +135,33 @@ namespace stellar_dotnetcore_unittest.responses
             Assert.AreEqual(operation.SellingAsset, new AssetTypeNative());
         }
 
-        //TODO: TestDeserializeInflationOperation
+        [TestMethod]
+        public void TestDeserializeInfationOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationInflation.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
-        //TODO: TestDeserializeManageDataOperation
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is InflationOperationResponse);
+            var operation = (InflationOperationResponse)instance;
+
+            Assert.AreEqual(operation.Id, 12884914177L);
+        }
+
+        [TestMethod]
+        public void TestManageDataOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationManageData.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is ManageDataOperationResponse);
+            var operation = (ManageDataOperationResponse)instance;
+
+            Assert.AreEqual(operation.Id, 14336188517191688L);
+            Assert.AreEqual(operation.Name, "CollateralValue");
+            Assert.AreEqual(operation.Value, "MjAwMA==");
+        }
 
         //TODO: TestDeserializeManageDataOperationValueEmpty
     }

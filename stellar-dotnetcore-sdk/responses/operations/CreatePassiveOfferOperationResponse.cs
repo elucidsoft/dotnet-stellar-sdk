@@ -2,6 +2,12 @@
 
 namespace stellar_dotnetcore_sdk.responses.operations
 {
+    /// <summary>
+    /// Represents CreatePassiveOffer operation response.
+    /// See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+    /// <seealso cref="OperationRequestBuilder"/>
+    /// <seealso cref="Server"/>
+    /// </summary>
     public class CreatePassiveOfferOperationResponse : OperationResponse
     {
         public CreatePassiveOfferOperationResponse(int offerId, string amount, string price, string buyingAssetType, string buyingAssetCode, string buyingAssetIssuer, string sellingAssetType, string sellingAssetCode, string sellingAssetIssuer)

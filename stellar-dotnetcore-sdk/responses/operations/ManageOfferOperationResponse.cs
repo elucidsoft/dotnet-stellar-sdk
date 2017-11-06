@@ -2,6 +2,12 @@
 
 namespace stellar_dotnetcore_sdk.responses.operations
 {
+    /// <summary>
+    /// Represents ManageOffer operation response.
+    /// See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+    /// <seealso cref="OperationRequestBuilder"/>
+    /// <seealso cref="Server"/>
+    /// </summary>
     public class ManageOfferOperationResponse : OperationResponse
     {
         public ManageOfferOperationResponse(int offerId, string amount, string price, string buyingAssetType, string buyingAssetCode, string buyingAssetIssuer, string sellingAssetType, string sellingAssetCode, string sellingAssetIssuer)
