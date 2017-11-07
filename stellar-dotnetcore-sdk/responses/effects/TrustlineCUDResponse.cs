@@ -1,7 +1,29 @@
-﻿namespace stellar_dotnetcore_sdk.responses.effects
+﻿using Newtonsoft.Json;
+
+namespace stellar_dotnetcore_sdk.responses.effects
 {
-    public class TrustlineCUDResponse : EffectResponse
+    public abstract class TrustlineCUDResponse : EffectResponse
     {
-        //TODO: IMPLEMENT!!
+        protected TrustlineCUDResponse(string limit, string assetType, string assetCode, string assetIssuer)
+        {
+            Limit = limit;
+            AssetType = assetType;
+            AssetCode = assetCode;
+            AssetIssuer = assetIssuer;
+        }
+
+        [JsonProperty(PropertyName = "limit")]
+        public string Limit { get; }
+
+        [JsonProperty(PropertyName = "asset_type")]
+        public string AssetType { get; }
+
+        [JsonProperty(PropertyName = "asset_code")]
+        public string AssetCode { get; }
+
+        [JsonProperty(PropertyName = "asset_issuer")]
+        public string AssetIssuer { get; }
+
+        public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);
     }
 }
