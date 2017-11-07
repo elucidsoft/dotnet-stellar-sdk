@@ -87,7 +87,7 @@ namespace stellar_dotnetcore_sdk.responses
             {
                 result = TransactionResult.Decode(xdrInputStream);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return null;
             }

@@ -20,6 +20,7 @@ namespace stellar_dotnetcore_sdk.responses
                 typeof(Page<OfferResponse>),
                 typeof(Page<OperationResponse>),
                 typeof(Page<PathResponse>),
+                typeof(Page<TransactionResponse>)
                 //TODO: typeof(Page<TradeResponse>),
                 //TODO: typeof(Page<TransactionResponse>)
             };
@@ -28,8 +29,9 @@ namespace stellar_dotnetcore_sdk.responses
             {
                 new KeyPairTypeAdapter(),
                 new AssetDeserializer(),
-                new OperationDeserializer(), 
-                new EffectDeserializer(), 
+                new OperationDeserializer(),
+                new EffectDeserializer(),
+                new TransactionDeserializer()
             };
 
            if (pageResponseConversions.Contains(typeof(T)))

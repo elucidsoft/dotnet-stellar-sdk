@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Runtime.Serialization;
 
 namespace stellar_dotnetcore_sdk.responses
 {
@@ -15,6 +16,7 @@ namespace stellar_dotnetcore_sdk.responses
         public string CreatedAt { get; private set; }
 
         [JsonProperty(PropertyName = "source_account")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair SourceAccount { get; private set; }
 
         [JsonProperty(PropertyName = "paging_token")]
@@ -41,28 +43,26 @@ namespace stellar_dotnetcore_sdk.responses
         [JsonProperty(PropertyName = "_links")]
         public TransactionResponseLinks Links { get; private set; }
 
-        // GSON won't serialize `transient` variables automatically. We need this behaviour
-        // because Memo is an abstract class and GSON tries to instantiate it. (JAVA COMMENT)
-        //Replaced transient with a simple JsonIgnore. MJM
-        [JsonIgnore]
         public Memo Memo
         {
             get => _Memo;
-            set {
-                _Memo = value ?? throw new ArgumentNullException(nameof(value), "memo cannot be null");
-
+            set
+            {
                 if (_Memo != null)
                 {
                     throw new Exception("Memo has been already set.");
                 }
+
+                _Memo = value ?? throw new ArgumentNullException(nameof(value), "memo cannot be null");             
                 _Memo = value;
             }
         }
 
-        [JsonIgnore]
         private Memo _Memo;
 
-        public TransactionResponse(string hash, long ledger, string createdAt, KeyPair sourceAccount, string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr, string resultXdr, string resultMetaXdr, Memo memo, TransactionResponseLinks links)
+        public string MemoStr { get; }
+
+        public TransactionResponse(string hash, long ledger, string createdAt, KeyPair sourceAccount, string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr, string resultXdr, string resultMetaXdr, string memo, TransactionResponseLinks links)
         {
             Hash = hash;
             Ledger = ledger;
@@ -75,7 +75,7 @@ namespace stellar_dotnetcore_sdk.responses
             EnvelopeXdr = envelopeXdr;
             ResultXdr = resultXdr;
             ResultMetaXdr = resultMetaXdr;
-            Memo = memo;
+            MemoStr = memo;
             Links = links;
         }
 

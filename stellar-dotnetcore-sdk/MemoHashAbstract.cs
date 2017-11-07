@@ -32,7 +32,7 @@
          */
         public string GetHexValue()
         {
-            return Util.BytesToHex(MemoBytes);
+            return Util.BytesToHex(MemoBytes).ToLower();
         }
 
         /**

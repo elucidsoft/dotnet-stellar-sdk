@@ -3,23 +3,23 @@ using stellar_dotnetcore_sdk.xdr;
 
 namespace stellar_dotnetcore_sdk
 {
-    public class MemoId
+    public class MemoId : Memo
     {
         public MemoId(long id)
         {
             if (id < 0)
                 throw new ArgumentException("id must be a positive number");
-            Id = id;
+            IdValue = id;
         }
 
-        public long Id { get; }
+        public long IdValue { get; }
 
-        public xdr.Memo ToXdr()
+        public override xdr.Memo ToXdr()
         {
             var memo = new xdr.Memo();
             memo.Discriminant = MemoType.Create(MemoType.MemoTypeEnum.MEMO_ID);
             var idXdr = new Uint64();
-            idXdr.InnerValue = Id;
+            idXdr.InnerValue = IdValue;
             memo.Id = idXdr;
             return memo;
         }

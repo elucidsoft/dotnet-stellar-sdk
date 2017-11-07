@@ -65,7 +65,7 @@ namespace stellar_dotnetcore_unittest
         public void TestMemoId()
         {
             var memo = Memo.Id(9223372036854775807L);
-            Assert.AreEqual(9223372036854775807L, memo.Id);
+            Assert.AreEqual(9223372036854775807L, memo.IdValue);
             Assert.AreEqual(sdkxdr.MemoType.MemoTypeEnum.MEMO_ID, memo.ToXdr().Discriminant.InnerValue);
             Assert.AreEqual(9223372036854775807L, memo.ToXdr().Id.InnerValue);
         }
