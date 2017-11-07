@@ -27,8 +27,8 @@ namespace stellar_dotnetcore_sdk.responses
 
             var jsonConverters = new JsonConverter[]
             {
-                new KeyPairTypeAdapter(),
                 new AssetDeserializer(),
+                new KeyPairTypeAdapter(),
                 new OperationDeserializer(),
                 new EffectDeserializer(),
                 new TransactionDeserializer()
