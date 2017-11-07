@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using stellar_dotnetcore_sdk.responses.effects;
@@ -28,9 +29,10 @@ namespace stellar_dotnetcore_sdk.responses
                 new KeyPairTypeAdapter(),
                 new AssetDeserializer(),
                 new OperationDeserializer(), 
+                new EffectDeserializer(), 
             };
 
-            if (pageResponseConversions.Contains(typeof(T)))
+           if (pageResponseConversions.Contains(typeof(T)))
                 content = PageAccountResponseConverter(content);
 
             return JsonConvert.DeserializeObject<T>(content, jsonConverters);
