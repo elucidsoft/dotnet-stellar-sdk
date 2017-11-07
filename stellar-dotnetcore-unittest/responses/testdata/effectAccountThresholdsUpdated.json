@@ -1,0 +1,21 @@
+﻿{
+  "_links": {
+    "operation": {
+      "href": "http://horizon-testnet.stellar.org/operations/18970870550529"
+    },
+    "succeeds": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=desc&cursor=18970870550529-1"
+    },
+    "precedes": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=asc&cursor=18970870550529-1"
+    }
+  },
+  "id": "0000018970870550529-0000000001",
+  "paging_token": "18970870550529-1",
+  "account": "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO",
+  "low_threshold": 2,
+  "med_threshold": 3,
+  "high_threshold": 4,
+  "type": "account_thresholds_updated",
+  "type_i": 4
+}
