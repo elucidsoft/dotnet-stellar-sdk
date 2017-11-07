@@ -20,9 +20,9 @@ namespace stellar_dotnetcore_sdk.responses
                 typeof(Page<OfferResponse>),
                 typeof(Page<OperationResponse>),
                 typeof(Page<PathResponse>),
+                typeof(Page<TransactionResponse>),
+                typeof(Page<TradeResponse>),
                 typeof(Page<TransactionResponse>)
-                //TODO: typeof(Page<TradeResponse>),
-                //TODO: typeof(Page<TransactionResponse>)
             };
 
             var jsonConverters = new JsonConverter[]

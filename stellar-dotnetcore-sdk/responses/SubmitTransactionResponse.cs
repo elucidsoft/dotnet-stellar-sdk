@@ -6,7 +6,7 @@ using System.Text;
 
 namespace stellar_dotnetcore_sdk.responses
 {
-    public class SubmitTransactionResponse
+    public class SubmitTransactionResponse : Response
     {
         private readonly string _EnvelopeXdr;
         private readonly string _ResultXdr;
