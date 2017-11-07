@@ -35,7 +35,40 @@ namespace stellar_dotnetcore_unittest.responses
 
         }
 
-        //TODO: TestDeserializePaymentOperation
+        [TestMethod]
+        public void TestDeserializePaymentOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationPayment.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is PaymentOperationResponse);
+            var operation = (PaymentOperationResponse)instance;
+
+            Assert.AreEqual(operation.SourceAccount.AccountId, "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ");
+            Assert.AreEqual(operation.Id, 3940808587743233L);
+
+            Assert.AreEqual(operation.From.AccountId, "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ");
+            Assert.AreEqual(operation.To.AccountId, "GDWNY2POLGK65VVKIH5KQSH7VWLKRTQ5M6ADLJAYC2UEHEBEARCZJWWI");
+            Assert.AreEqual(operation.Amount, "100.0");
+            Assert.AreEqual(operation.Asset, new AssetTypeNative());
+        }
+
+        [TestMethod]
+        public void TestDeserializeNonNativePaymentOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationPaymentNonNative.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is PaymentOperationResponse);
+            var operation = (PaymentOperationResponse)instance;
+
+            Assert.AreEqual(operation.From.AccountId, "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA");
+            Assert.AreEqual(operation.To.AccountId, "GBHUSIZZ7FS2OMLZVZ4HLWJMXQ336NFSXHYERD7GG54NRITDTEWWBBI6");
+            Assert.AreEqual(operation.Amount, "1000000000.0");
+            Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", KeyPair.FromAccountId("GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA")));
+        }
 
         [TestMethod]
         public void TestDeserializeAllowTrustOperation()

@@ -71,6 +71,9 @@
     <None Update="responses\testdata\operationPayment.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="responses\testdata\operationPaymentNonNative.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="responses\testdata\operationSetOptions.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

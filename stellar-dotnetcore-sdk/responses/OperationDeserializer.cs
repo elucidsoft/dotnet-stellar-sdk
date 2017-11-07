@@ -23,8 +23,8 @@ namespace stellar_dotnetcore_sdk.responses
             {
                 case 0:
                     return JsonSingleton.GetInstance<CreateAccountOperationResponse>(jsonObject.Root.ToString());
-                //case 1:
-                //    return gson.fromJson(json, PaymentOperationResponse.class);
+                case 1:
+                    return JsonSingleton.GetInstance<PaymentOperationResponse>(jsonObject.Root.ToString());
                 case 2:
                     return JsonSingleton.GetInstance<PathPaymentOperationResponse>(jsonObject.Root.ToString());
                 case 3:
