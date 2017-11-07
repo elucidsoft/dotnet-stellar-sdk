@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace stellar_dotnetcore_sdk.responses.effects
 {
-    public class EffectResponse : Response
+    public abstract class EffectResponse : Response
     {
 
         [JsonProperty(PropertyName = "id")]
