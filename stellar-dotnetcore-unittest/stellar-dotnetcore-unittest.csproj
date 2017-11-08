@@ -137,6 +137,12 @@
     <None Update="responses\testdata\pathsPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="responses\testdata\serverFailure.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="responses\testdata\serverSuccess.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="responses\testdata\submitTransactionNoOfferId.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

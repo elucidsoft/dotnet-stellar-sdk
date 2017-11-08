@@ -8,19 +8,20 @@ namespace stellar_dotnetcore_sdk
 {
     public class Transaction
     {
-        private readonly int BASE_FEE = 100;
+        private const int BaseFee = 100;
 
         private Transaction(KeyPair sourceAccount, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)
         {
             SourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
             SequenceNumber = sequenceNumber;
             Operations = operations ?? throw new ArgumentNullException(nameof(operations), "operations cannot be null");
-            if (operations.Length == 0)
-                throw new ArgumentException(nameof(operations), "At least one operation required");
 
-            Fee = operations.Length * BASE_FEE;
+            if (operations.Length == 0)
+                throw new ArgumentNullException(nameof(operations), "At least one operation required");
+
+            Fee = operations.Length * BaseFee;
             Signatures = new List<DecoratedSignature>();
-            Memo = memo != null ? memo : Memo.None();
+            Memo = memo ?? Memo.None();
             TimeBounds = timeBounds;
         }
 
@@ -38,10 +39,10 @@ namespace stellar_dotnetcore_sdk
 
         public List<DecoratedSignature> Signatures { get; }
 
-        /**
-         * Adds a new signature ed25519PublicKey to this transaction.
-         * @param signer {@link KeyPair} object representing a signer
-         */
+        /// <summary>
+        /// Adds a new signature ed25519PublicKey to this transaction.
+        /// </summary>
+        /// <param name="signer"> signer <see cref="KeyPair"/> object representing a signer</param>
         public void Sign(KeyPair signer)
         {
             if (signer == null)
@@ -51,41 +52,46 @@ namespace stellar_dotnetcore_sdk
             Signatures.Add(signer.SignDecorated(txHash));
         }
 
-        /**
-         * Adds a new sha256Hash signature to this transaction by revealing preimage.
-         * @param preimage the sha256 hash of preimage should be equal to signer hash
-         */
+        /// <summary>
+        ///     Adds a new sha256Hash signature to this transaction by revealing preimage.
+        /// </summary>
+        /// <param name="preimage">the sha256 hash of preimage should be equal to signer hash</param>
         public void Sign(byte[] preimage)
         {
-            var signature = new Signature();
-            signature.InnerValue = preimage ?? throw new ArgumentNullException(nameof(preimage), "preimage cannot be null");
+            var signature = new Signature
+            {
+                InnerValue = preimage ?? throw new ArgumentNullException(nameof(preimage), "preimage cannot be null")
+            };
 
             var hash = Util.Hash(preimage);
 
             var length = hash.Length;
             var signatureHintBytes = hash.Skip(length - 4).Take(4).ToArray();
 
-            var signatureHint = new SignatureHint();
-            signatureHint.InnerValue = signatureHintBytes;
+            var signatureHint = new SignatureHint {InnerValue = signatureHintBytes};
 
-            var decoratedSignature = new DecoratedSignature();
-            decoratedSignature.Hint = signatureHint;
-            decoratedSignature.Signature = signature;
+            var decoratedSignature = new DecoratedSignature
+            {
+                Hint = signatureHint,
+                Signature = signature
+            };
 
             Signatures.Add(decoratedSignature);
         }
 
-        /**
-         * Returns transaction hash.
-         */
+        /// <summary>
+        ///     Returns transaction hash.
+        /// </summary>
+        /// <returns></returns>
         public byte[] Hash()
         {
             return Util.Hash(SignatureBase());
         }
 
-        /**
-         * Returns signature base.
-         */
+        /// <summary>
+        ///     Returns signature base.
+        /// </summary>
+        /// <returns></returns>
         public byte[] SignatureBase()
         {
             if (Network.Current == null)
@@ -108,24 +114,21 @@ namespace stellar_dotnetcore_sdk
             return writer.ToArray();
         }
 
-        /**
-         * Generates Transaction XDR object.
-         */
+        /// <summary>
+        ///     Generates Transaction XDR object.
+        /// </summary>
+        /// <returns></returns>
         public xdr.Transaction ToXdr()
         {
             // fee
-            var fee = new Uint32();
-            fee.InnerValue = Fee;
+            var fee = new Uint32 {InnerValue = Fee};
 
             // sequenceNumber
-            var sequenceNumberUint = new Uint64();
-            sequenceNumberUint.InnerValue = SequenceNumber;
-            var sequenceNumber = new SequenceNumber();
-            sequenceNumber.InnerValue = sequenceNumberUint;
+            var sequenceNumberUint = new Uint64 {InnerValue = SequenceNumber};
+            var sequenceNumber = new SequenceNumber {InnerValue = sequenceNumberUint};
 
             // sourceAccount
-            var sourceAccount = new AccountID();
-            sourceAccount.InnerValue = SourceAccount.XdrPublicKey;
+            var sourceAccount = new AccountID {InnerValue = SourceAccount.XdrPublicKey};
 
             // operations
             var operations = new xdr.Operation[Operations.Length];
@@ -134,23 +137,25 @@ namespace stellar_dotnetcore_sdk
                 operations[i] = Operations[i].ToXdr();
 
             // ext
-            var ext = new xdr.Transaction.TransactionExt();
-            ext.Discriminant = 0;
+            var ext = new xdr.Transaction.TransactionExt {Discriminant = 0};
 
-            var transaction = new xdr.Transaction();
-            transaction.Fee = fee;
-            transaction.SeqNum = sequenceNumber;
-            transaction.SourceAccount = sourceAccount;
-            transaction.Operations = operations;
-            transaction.Memo = Memo.ToXdr();
-            transaction.TimeBounds = TimeBounds == null ? null : TimeBounds.ToXdr();
-            transaction.Ext = ext;
+            var transaction = new xdr.Transaction
+            {
+                Fee = fee,
+                SeqNum = sequenceNumber,
+                SourceAccount = sourceAccount,
+                Operations = operations,
+                Memo = Memo.ToXdr(),
+                TimeBounds = TimeBounds?.ToXdr(),
+                Ext = ext
+            };
             return transaction;
         }
 
-        /**
-         * Generates TransactionEnvelope XDR object. Transaction need to have at least one signature.
-         */
+        /// <summary>
+        ///     Generates TransactionEnvelope XDR object. Transaction need to have at least one signature.
+        /// </summary>
+        /// <returns></returns>
         public TransactionEnvelope ToEnvelopeXdr()
         {
             if (Signatures.Count == 0)
@@ -160,15 +165,15 @@ namespace stellar_dotnetcore_sdk
             var transaction = ToXdr();
             thisXdr.Tx = transaction;
 
-            var signatures = new DecoratedSignature[Signatures.Count];
-            signatures = Signatures.ToArray();
+            var signatures = Signatures.ToArray();
             thisXdr.Signatures = signatures;
             return thisXdr;
         }
 
-        /**
-         * Returns base64-encoded TransactionEnvelope XDR object. Transaction need to have at least one signature.
-         */
+        /// <summary>
+        ///     Returns base64-encoded TransactionEnvelope XDR object. Transaction need to have at least one signature.
+        /// </summary>
+        /// <returns></returns>
         public string ToEnvelopeXdrBase64()
         {
             var envelope = ToEnvelopeXdr();
@@ -178,93 +183,89 @@ namespace stellar_dotnetcore_sdk
             return Convert.ToBase64String(writer.ToArray());
         }
 
-        /**
-         * Builds a new Transaction object.
-         */
+        /// <summary>
+        ///     Builds a new Transaction object.
+        /// </summary>
         public class Builder
         {
-            private readonly BlockingCollection<Operation> mOperations;
-            private readonly ITransactionBuilderAccount mSourceAccount;
-            private Memo mMemo;
-            private TimeBounds mTimeBounds;
+            private readonly BlockingCollection<Operation> _operations;
+            private readonly ITransactionBuilderAccount _sourceAccount;
+            private Memo _memo;
+            private TimeBounds _timeBounds;
 
-            /**
-             * Construct a new transaction builder.
-             * @param sourceAccount The source account for this transaction. This account is the account
-             * who will use a sequence number. When build() is called, the account object's sequence number
-             * will be incremented.
-             */
+            /// <summary>
+            ///     Construct a new transaction builder.
+            /// </summary>
+            /// <param name="sourceAccount">
+            ///     The source account for this transaction. This account is the account
+            ///     who will use a sequence number. When build() is called, the account object's sequence number will be incremented.
+            /// </param>
             public Builder(ITransactionBuilderAccount sourceAccount)
             {
-                if (sourceAccount == null)
-                    throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
-
-                mSourceAccount = sourceAccount;
-                mOperations = new BlockingCollection<Operation>();
+                _sourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
+                _operations = new BlockingCollection<Operation>();
             }
 
-            public int getOperationsCount()
-            {
-                return mOperations.Count;
-            }
+            public int OperationsCount => _operations.Count;
 
-            /**
-             * Adds a new <a href="https://www.stellar.org/developers/learn/concepts/list-of-operations.html" target="_blank">operation</a> to this transaction.
-             * @param operation
-             * @return Builder object so you can chain methods.
-             * @see Operation
-             */
+            /// <summary>
+            ///     Adds a new operation to this transaction.
+            ///     See: https://www.stellar.org/developers/learn/concepts/list-of-operations.html
+            /// </summary>
+            /// <param name="operation">operation</param>
+            /// <returns>Builder object so you can chain methods.</returns>
             public Builder AddOperation(Operation operation)
             {
                 if (operation == null)
                     throw new ArgumentNullException(nameof(operation), "operation cannot be null");
 
-                mOperations.Add(operation);
+                _operations.Add(operation);
                 return this;
             }
 
-            /**
-             * Adds a <a href="https://www.stellar.org/developers/learn/concepts/transactions.html" target="_blank">memo</a> to this transaction.
-             * @param memo
-             * @return Builder object so you can chain methods.
-             * @see Memo
-             */
+            /// <summary>
+            ///     Adds a memo to this transaction.
+            ///     See: https://www.stellar.org/developers/learn/concepts/transactions.html
+            /// </summary>
+            /// <param name="memo">Memo</param>
+            /// <returns>Builder object so you can chain methods.</returns>
             public Builder AddMemo(Memo memo)
             {
-                if (mMemo != null)
-                    throw new ArgumentException(nameof(memo), "Memo has been already added.");
+                if (_memo != null)
+                    throw new ArgumentException("Memo has been already added.", nameof(memo));
 
-                mMemo = memo ?? throw new ArgumentNullException(nameof(memo), "memo cannot be null");
+                _memo = memo ?? throw new ArgumentNullException(nameof(memo), "memo cannot be null");
 
                 return this;
             }
 
-            /**
-             * Adds a <a href="https://www.stellar.org/developers/learn/concepts/transactions.html" target="_blank">time-bounds</a> to this transaction.
-             * @param timeBounds
-             * @return Builder object so you can chain methods.
-             * @see TimeBounds
-             */
+            /// <summary>
+            ///     Adds a time-bounds to this transaction.
+            ///     See: https://www.stellar.org/developers/learn/concepts/transactions.html
+            /// </summary>
+            /// <param name="timeBounds">timeBounds</param>
+            /// <returns>Builder object so you can chain methods.</returns>
             public Builder AddTimeBounds(TimeBounds timeBounds)
             {
-                if (mTimeBounds != null)
-                    throw new ArgumentException(nameof(timeBounds), "TimeBounds has been already added.");
+                if (_timeBounds != null)
+                    throw new ArgumentException("TimeBounds has been already added.", nameof(timeBounds));
 
-                mTimeBounds = timeBounds ?? throw new ArgumentNullException(nameof(timeBounds), "timeBounds cannot be null");
+                _timeBounds = timeBounds ?? throw new ArgumentNullException(nameof(timeBounds), "timeBounds cannot be null");
 
                 return this;
             }
 
-            /**
-             * Builds a transaction. It will increment sequence number of the source account.
-             */
+            /// <summary>
+            ///     Builds a transaction. It will increment sequence number of the source account.
+            /// </summary>
+            /// <returns></returns>
             public Transaction Build()
             {
-                var operations = mOperations.ToArray();
+                var operations = _operations.ToArray();
 
-                var transaction = new Transaction(mSourceAccount.KeyPair, mSourceAccount.GetIncrementedSequenceNumber(), operations, mMemo, mTimeBounds);
+                var transaction = new Transaction(_sourceAccount.KeyPair, _sourceAccount.GetIncrementedSequenceNumber(), operations, _memo, _timeBounds);
                 // Increment sequence number when there were no exceptions when creating a transaction
-                mSourceAccount.IncrementSequenceNumber();
+                _sourceAccount.IncrementSequenceNumber();
                 return transaction;
             }
         }
