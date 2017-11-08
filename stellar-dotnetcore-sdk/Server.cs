@@ -31,7 +31,7 @@ namespace stellar_dotnetcore_sdk
 
         public OrderBookRequestBuilder OrderBook => new OrderBookRequestBuilder(_serverUri);
 
-        //TODO: Trades
+        public TradesRequestBuilder Trades => new TradesRequestBuilder(_serverUri);
 
         public PathsRequestBuilder Paths => new PathsRequestBuilder(_serverUri);
 
