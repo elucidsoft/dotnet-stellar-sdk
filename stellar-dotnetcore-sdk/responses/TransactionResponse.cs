@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 
 namespace stellar_dotnetcore_sdk.responses
 {
-    public class TransactionResponse
+    public class TransactionResponse : Response
     {
         [JsonProperty(PropertyName = "hash")]
         public string Hash { get; private set; }
