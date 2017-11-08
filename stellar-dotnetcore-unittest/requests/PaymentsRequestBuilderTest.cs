@@ -13,46 +13,54 @@ namespace stellar_dotnetcore_unittest.requests
         [TestMethod]
         public void TestPayments()
         {
-            Server server = new Server("https://horizon-testnet.stellar.org");
-            Uri uri = server.Payments
+            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            {
+                Uri uri = server.Payments
                     .Limit(200)
                     .Order(OrderDirection.DESC)
                     .BuildUri();
-            Assert.AreEqual("https://horizon-testnet.stellar.org/payments?limit=200&order=desc", uri.ToString());
+                Assert.AreEqual("https://horizon-testnet.stellar.org/payments?limit=200&order=desc", uri.ToString());
+            }
         }
 
         [TestMethod]
         public void TestForAccount()
         {
-            Server server = new Server("https://horizon-testnet.stellar.org");
-            Uri uri = server.Payments
+            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            {
+                Uri uri = server.Payments
                     .ForAccount(KeyPair.FromAccountId("GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H"))
                     .Limit(200)
                     .Order(OrderDirection.DESC)
                     .BuildUri();
-            Assert.AreEqual("https://horizon-testnet.stellar.org/accounts/GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H/payments?limit=200&order=desc", uri.ToString());
+                Assert.AreEqual("https://horizon-testnet.stellar.org/accounts/GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H/payments?limit=200&order=desc", uri.ToString());
+            }
         }
 
         [TestMethod]
         public void TestForLedger()
         {
-            Server server = new Server("https://horizon-testnet.stellar.org");
-            Uri uri = server.Payments
+            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            {
+                Uri uri = server.Payments
                     .ForLedger(200000000000L)
                     .Limit(50)
                     .Order(OrderDirection.ASC)
                     .BuildUri();
-            Assert.AreEqual("https://horizon-testnet.stellar.org/ledgers/200000000000/payments?limit=50&order=asc", uri.ToString());
+                Assert.AreEqual("https://horizon-testnet.stellar.org/ledgers/200000000000/payments?limit=50&order=asc", uri.ToString());
+            }
         }
 
         [TestMethod]
         public void TestForTransaction()
         {
-            Server server = new Server("https://horizon-testnet.stellar.org");
-            Uri uri = server.Payments
+            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            {
+                Uri uri = server.Payments
                     .ForTransaction("991534d902063b7715cd74207bef4e7bd7aa2f108f62d3eba837ce6023b2d4f3")
                     .BuildUri();
-            Assert.AreEqual("https://horizon-testnet.stellar.org/transactions/991534d902063b7715cd74207bef4e7bd7aa2f108f62d3eba837ce6023b2d4f3/payments", uri.ToString());
+                Assert.AreEqual("https://horizon-testnet.stellar.org/transactions/991534d902063b7715cd74207bef4e7bd7aa2f108f62d3eba837ce6023b2d4f3/payments", uri.ToString());
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace stellar_dotnetcore_unittest.federation
 
         private const HttpStatusCode HttpOk = HttpStatusCode.OK;
 
-        private Mock<FakeHttpMessageHandler> _fakeHttpMessageHandler;
+        private Mock<FederationServerTest.FakeHttpMessageHandler> _fakeHttpMessageHandler;
         private HttpClient _httpClient;
         private FederationServer _server;
 
@@ -25,7 +25,7 @@ namespace stellar_dotnetcore_unittest.federation
         {
             _server = new FederationServer("https://api.stellar.org/federation", "stellar.org");
 
-            _fakeHttpMessageHandler = new Mock<FakeHttpMessageHandler> {CallBase = true};
+            _fakeHttpMessageHandler = new Mock<FederationServerTest.FakeHttpMessageHandler> {CallBase = true};
             _httpClient = new HttpClient(_fakeHttpMessageHandler.Object);
             _server.HttpClient = _httpClient;
         }

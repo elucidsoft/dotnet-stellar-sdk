@@ -101,21 +101,21 @@ namespace stellar_dotnetcore_unittest.federation
 
             var response = await _server.ResolveAddress("bob*stellar.org");
         }
-    }
 
-    public class FakeHttpMessageHandler : HttpMessageHandler
-    {
-        public Uri RequestUri { get; private set; }
-
-        public virtual HttpResponseMessage Send(HttpRequestMessage request)
+        public class FakeHttpMessageHandler : HttpMessageHandler
         {
-            throw new NotImplementedException();
-        }
+            public Uri RequestUri { get; private set; }
 
-        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-        {
-            RequestUri = request.RequestUri;
-            return await Task.FromResult(Send(request));
+            public virtual HttpResponseMessage Send(HttpRequestMessage request)
+            {
+                throw new NotImplementedException();
+            }
+
+            protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+            {
+                RequestUri = request.RequestUri;
+                return await Task.FromResult(Send(request));
+            }
         }
     }
 }

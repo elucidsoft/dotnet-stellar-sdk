@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using stellar_dotnetcore_sdk.requests;
 
 namespace stellar_dotnetcore_sdk.responses
 {

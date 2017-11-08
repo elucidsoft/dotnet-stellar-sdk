@@ -30,6 +30,12 @@ namespace stellar_dotnetcore_sdk
             return uri;
         }
 
+        public static UriBuilder SetPath(this UriBuilder uri, string path)
+        {
+            uri.Path = path;
+            return uri;
+        }
+
         /// <summary>
         ///     Gets the query string key-value pairs of the URI.
         ///     Note that the one of the keys may be null ("?123") and

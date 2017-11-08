@@ -12,12 +12,14 @@ namespace stellar_dotnetcore_unittest.requests
         [TestMethod]
         public void TestAccounts()
         {
-            Server server = new Server("https://horizon-testnet.stellar.org");
-            Uri uri = server.Ledgers
+            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            {
+                Uri uri = server.Ledgers
                     .Limit(200)
                     .Order(OrderDirection.ASC)
                     .BuildUri();
-            Assert.AreEqual("https://horizon-testnet.stellar.org/ledgers?limit=200&order=asc", uri.ToString());
+                Assert.AreEqual("https://horizon-testnet.stellar.org/ledgers?limit=200&order=asc", uri.ToString());
+            }
         }
     }
 }
