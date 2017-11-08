@@ -5,7 +5,9 @@ Stellar API SDK for .NET Core 2.x
 
 The .NET Core Stellar Sdk library provides APIs to build transactions and connect to [Horizon](https://github.com/stellar/horizon).
 
-This project is a full port of the official [Java SDK API](https://github.com/stellar/java-stellar-sdk).  It is fully functional and all of the original Java Unit Tests were also ported and are passing.  While the code itself is done we are still actively working on several things.
+This project is a full port of the official [Java SDK API](https://github.com/stellar/java-stellar-sdk).  It is fully functional and all of the original Java Unit Tests were also ported and are passing.  
+
+### Todo:
 - Documentation
 - Nuget Package
 - Sample Application
