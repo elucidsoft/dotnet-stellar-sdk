@@ -34,8 +34,19 @@ namespace stellar_dotnetcore_sdk.responses
                 new TransactionDeserializer()
             };
 
-           if (pageResponseConversions.Contains(typeof(T)))
+            var pageJsonConverters = new JsonConverter[]
+            {
+                new AssetDeserializer(),
+                new KeyPairTypeAdapter(),
+                new OperationDeserializer(),
+                new EffectDeserializer()
+            };
+
+            if (pageResponseConversions.Contains(typeof(T)))
+            {
                 content = PageAccountResponseConverter(content);
+                return JsonConvert.DeserializeObject<T>(content, pageJsonConverters);
+            }
 
             return JsonConvert.DeserializeObject<T>(content, jsonConverters);
         }
