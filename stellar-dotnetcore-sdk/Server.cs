@@ -27,7 +27,7 @@ namespace stellar_dotnetcore_sdk
 
         public OffersRequestBuilder Offers => new OffersRequestBuilder(_serverUri);
 
-        //TODO: Operations
+        public OperationsRequestBuilder Operations => new OperationsRequestBuilder(_serverUri);
 
         public OrderBookRequestBuilder OrderBook => new OrderBookRequestBuilder(_serverUri);
 
