@@ -49,7 +49,7 @@ namespace stellar_dotnetcore_sdk.requests
         public TransactionsRequestBuilder ForAccount(KeyPair account)
         {
             account = account ?? throw new ArgumentNullException(nameof(account), "account cannot be null");
-            this.SetSegments("accounts", account.AccountId, "transaction");
+            this.SetSegments("accounts", account.AccountId, "transactions");
             return this;
         }
 
@@ -60,7 +60,7 @@ namespace stellar_dotnetcore_sdk.requests
         /// <param name="ledgerSeq">Ledger for which to get transactions</param> 
         public TransactionsRequestBuilder ForLedger(long ledgerSeq)
         {
-            SetSegments("ledgers", ledgerSeq.ToString(), "transaction");
+            SetSegments("ledgers", ledgerSeq.ToString(), "transactions");
             return this;
         }
 
