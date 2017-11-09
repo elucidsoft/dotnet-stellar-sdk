@@ -91,9 +91,10 @@ namespace stellar_dotnetcore_sdk.requests
         public EventSource Stream(EventHandler<TransactionResponse> listener)
         {
             var es = new EventSource(BuildUri());
+
             es.Message += (sender, e) =>
             {
-                if (e.Data == "\"hello\"")
+                if (e.Data == "\"hello\"\r\n")
                     return;
 
                 var account = JsonSingleton.GetInstance<TransactionResponse>(e.Data);

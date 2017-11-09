@@ -79,7 +79,7 @@ namespace EventSource4Net
         public EventSource(Uri requestUriString)
         {
             Url = requestUriString;
-            Timeout = 100000; // 100 seconds
+            Timeout = Int32.MaxValue;
             _readyState = EventSourceState.Closed;
         }
 
