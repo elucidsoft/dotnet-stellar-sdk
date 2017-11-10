@@ -1,9 +1,7 @@
 ﻿using stellar_dotnetcore_sdk.responses;
 using stellar_dotnetcore_sdk.responses.page;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace stellar_dotnetcore_sdk.requests
@@ -59,19 +57,19 @@ namespace stellar_dotnetcore_sdk.requests
         }
 
 
-        public override RequestBuilder<OrderBookRequestBuilder> Cursor(string token)
+        public override OrderBookRequestBuilder Cursor(string token)
         {
             throw new NotImplementedException();
         }
 
 
-        public override RequestBuilder<OrderBookRequestBuilder> Limit(int number)
+        public override OrderBookRequestBuilder Limit(int number)
         {
             throw new NotImplementedException();
         }
 
 
-        public override RequestBuilder<OrderBookRequestBuilder> Order(OrderDirection direction)
+        public override OrderBookRequestBuilder Order(OrderDirection direction)
         {
             throw new NotImplementedException();
         }

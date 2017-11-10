@@ -135,19 +135,19 @@ namespace stellar_dotnetcore_sdk.requests
             return await Execute(BuildUri());
         }
 
-        public override RequestBuilder<OperationsRequestBuilder> Cursor(string token)
+        public override OperationsRequestBuilder Cursor(string token)
         {
             base.Cursor(token);
             return this;
         }
 
-        public override RequestBuilder<OperationsRequestBuilder> Limit(int number)
+        public override OperationsRequestBuilder Limit(int number)
         {
             base.Limit(number);
             return this;
         }
 
-        public override RequestBuilder<OperationsRequestBuilder> Order(OrderDirection direction)
+        public override OperationsRequestBuilder Order(OrderDirection direction)
         {
             base.Order(direction);
             return this;

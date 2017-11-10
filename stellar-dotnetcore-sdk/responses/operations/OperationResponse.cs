@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
-using stellar_dotnetcore_sdk;
+﻿using Newtonsoft.Json;
 
 namespace stellar_dotnetcore_sdk.responses.operations
 { 

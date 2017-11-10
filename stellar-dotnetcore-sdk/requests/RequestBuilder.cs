@@ -12,7 +12,7 @@ namespace stellar_dotnetcore_sdk.requests
     /// <summary>
     ///     Abstract class for request builders.
     /// </summary>
-    public class RequestBuilder<T>
+    public class RequestBuilder<T> where T : class
     {
         private readonly List<string> _segments;
         private bool _segmentsAdded;
@@ -55,11 +55,11 @@ namespace stellar_dotnetcore_sdk.requests
         /// </summary>
         /// <param name="cursor"></param>
         /// <returns></returns>
-        public virtual RequestBuilder<T> Cursor(string cursor)
+        public virtual T Cursor(string cursor)
         {
             _uriBuilder.SetQueryParam("cursor", cursor);
 
-            return this;
+            return this as T;
         }
 
         /// <summary>
@@ -69,11 +69,11 @@ namespace stellar_dotnetcore_sdk.requests
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        public virtual RequestBuilder<T> Limit(int number)
+        public virtual T Limit(int number)
         {
             _uriBuilder.SetQueryParam("limit", number.ToString());
 
-            return this;
+            return this as T;
         }
 
         /// <summary>
@@ -81,11 +81,11 @@ namespace stellar_dotnetcore_sdk.requests
         /// </summary>
         /// <param name="direction"></param>
         /// <returns></returns>
-        public virtual RequestBuilder<T> Order(OrderDirection direction)
+        public virtual T Order(OrderDirection direction)
         {
             _uriBuilder.SetQueryParam("order", direction.ToString().ToLower());
 
-            return this;
+            return this as T;
         }
 
         public Uri BuildUri()

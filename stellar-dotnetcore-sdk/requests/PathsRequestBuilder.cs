@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using stellar_dotnetcore_sdk.responses;
 using stellar_dotnetcore_sdk.responses.page;

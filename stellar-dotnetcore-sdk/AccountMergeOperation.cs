@@ -1,5 +1,4 @@
 ﻿using System;
-using stellar_dotnetcore_sdk.responses.operations;
 using stellar_dotnetcore_sdk.xdr;
 
 namespace stellar_dotnetcore_sdk

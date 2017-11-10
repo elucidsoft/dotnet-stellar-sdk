@@ -1,5 +1,4 @@
-﻿using EventSource4Net;
-using stellar_dotnetcore_sdk.responses;
+﻿using stellar_dotnetcore_sdk.responses;
 using stellar_dotnetcore_sdk.responses.page;
 using System;
 using System.Net.Http;
@@ -78,31 +77,31 @@ namespace stellar_dotnetcore_sdk.requests
             }
         }
 
-        ///<Summary>
-        /// Allows to stream SSE events from horizon.
-        /// Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
-        /// This mode will keep the connection to horizon open and horizon will continue to return
-        /// responses as ledgers close.
-        /// <a href="http://www.w3.org/TR/eventsource/" target="_blank">Server-Sent Events</a>
-        /// <a href="https://www.stellar.org/developers/horizon/learn/responses.html" target="_blank">Response Format documentation</a>
-        /// </Summary>
-        /// <param name="listener">EventListener implementation with EffectResponse type</param> 
-        /// <returns>EventSource object, so you can <code>close()</code> connection when not needed anymore</param> 
-        public EventSource Stream(EventHandler<TransactionResponse> listener)
-        {
-            var es = new EventSource(BuildUri());
+        /////<Summary>
+        ///// Allows to stream SSE events from horizon.
+        ///// Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
+        ///// This mode will keep the connection to horizon open and horizon will continue to return
+        ///// responses as ledgers close.
+        ///// <a href="http://www.w3.org/TR/eventsource/" target="_blank">Server-Sent Events</a>
+        ///// <a href="https://www.stellar.org/developers/horizon/learn/responses.html" target="_blank">Response Format documentation</a>
+        ///// </Summary>
+        ///// <param name="listener">EventListener implementation with EffectResponse type</param> 
+        ///// <returns>EventSource object, so you can <code>close()</code> connection when not needed anymore</param> 
+        //public EventSource Stream(EventHandler<TransactionResponse> listener)
+        //{
+        //    var es = new EventSource(BuildUri());
 
-            es.Message += (sender, e) =>
-            {
-                if (e.Data == "\"hello\"\r\n")
-                    return;
+        //    es.Message += (sender, e) =>
+        //    {
+        //        if (e == "\"hello\"")
+        //            return;
 
-                var account = JsonSingleton.GetInstance<TransactionResponse>(e.Data);
-                listener?.Invoke(this, account);
-            };
+        //        var account = JsonSingleton.GetInstance<TransactionResponse>(e);
+        //        listener?.Invoke(this, account);
+        //    };
 
-            return es;
-        }
+        //    return es;
+        //}
 
         ///<Summary>
         /// Build and execute request.
@@ -113,21 +112,21 @@ namespace stellar_dotnetcore_sdk.requests
         }
 
 
-        public override RequestBuilder<TransactionsRequestBuilder> Cursor(string token)
+        public override TransactionsRequestBuilder Cursor(string token)
         {
             base.Cursor(token);
             return this;
         }
 
 
-        public override RequestBuilder<TransactionsRequestBuilder> Limit(int number)
+        public override TransactionsRequestBuilder Limit(int number)
         {
             base.Limit(number);
             return this;
         }
 
 
-        public override RequestBuilder<TransactionsRequestBuilder> Order(OrderDirection direction)
+        public override TransactionsRequestBuilder Order(OrderDirection direction)
         {
             base.Order(direction);
             return this;

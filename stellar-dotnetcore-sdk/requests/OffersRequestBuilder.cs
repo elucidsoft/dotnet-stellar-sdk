@@ -1,9 +1,7 @@
 ﻿using stellar_dotnetcore_sdk.responses;
 using stellar_dotnetcore_sdk.responses.page;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace stellar_dotnetcore_sdk.requests
@@ -49,21 +47,21 @@ namespace stellar_dotnetcore_sdk.requests
         }
 
 
-        public override RequestBuilder<OffersRequestBuilder> Cursor(string token)
+        public override OffersRequestBuilder Cursor(string token)
         {
             base.Cursor(token);
             return this;
         }
 
 
-        public override RequestBuilder<OffersRequestBuilder> Limit(int number)
+        public override OffersRequestBuilder Limit(int number)
         {
             base.Limit(number);
             return this;
         }
 
 
-        public override RequestBuilder<OffersRequestBuilder> Order(OrderDirection direction)
+        public override OffersRequestBuilder Order(OrderDirection direction)
         {
             base.Order(direction);
             return this;

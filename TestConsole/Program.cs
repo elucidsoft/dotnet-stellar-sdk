@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using stellar_dotnetcore_sdk;
+using stellar_dotnetcore_sdk.requests;
 using stellar_dotnetcore_sdk.responses;
-using stellar_dotnetcore_sdk.responses.page;
 
 namespace TestConsole
 {
@@ -21,19 +21,15 @@ namespace TestConsole
             await GetLedgerTransactions(server);
             await ShowAccountTransactions(server);
 
-            server.Transactions
-                .ForAccount(KeyPair.FromAccountId("GAZHWW2NBPDVJ6PEEOZ2X43QV5JUDYS3XN4OWOTBR6WUACTUML2CCJLI"))
-                .Stream(Listener)
-                .Connect();
-                
+            //Streams are temporarily disabled in this API until a resolution is found for the HttpClient issue
+            //var eventSource = await server.Transactions
+            //    .ForAccount(KeyPair.FromAccountId("GAZHWW2NBPDVJ6PEEOZ2X43QV5JUDYS3XN4OWOTBR6WUACTUML2CCJLI"))
+            //    .Limit(50)
+            //    .Stream((sender, response) => { ShowTransactionRecord(response); }).Connect();
 
-            Console.Read();
+            Console.ReadLine();
         }
 
-        private static void Listener(object sender, TransactionResponse transactionResponse)
-        {
-            ShowTransactionRecord(transactionResponse);
-        }
 
         private static async Task ShowAccountTransactions(Server server)
         {
@@ -42,7 +38,7 @@ namespace TestConsole
             var transactions = await server.Transactions
                 .ForAccount(KeyPair.FromAccountId("GAZHWW2NBPDVJ6PEEOZ2X43QV5JUDYS3XN4OWOTBR6WUACTUML2CCJLI"))
                 .Execute();
-            
+
             ShowTransactionRecords(transactions.Records);
             Console.WriteLine();
         }
@@ -62,9 +58,7 @@ namespace TestConsole
         private static void ShowTransactionRecords(List<TransactionResponse> transactions)
         {
             foreach (var tran in transactions)
-            {
                 ShowTransactionRecord(tran);
-            }
         }
 
         private static void ShowTransactionRecord(TransactionResponse tran)
