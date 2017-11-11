@@ -10,8 +10,10 @@ Read more about [Stellar](https://www.stellar.org/)
 This project is a full port of the official [Java SDK API](https://github.com/stellar/java-stellar-sdk).  It is fully functional and all of the original Java Unit Tests were also ported and are passing.  
 
 ### Todo:
-- Nuget Package
 - Sample Application
+
+## Quick Start
+To install using Nuget run 'Install-Package stellar-dotnetcore-sdk -Version 1.0.0' or install the Nuget package from Visual Studio.
 
 ## Documentation
 Read the API [Reference Documentation](https://elucidsoft.github.io/dotnetcore-stellar-sdk/) for more information about the API.  For more guidance Stellar.org has documentation that is specific to their [Javascript API](https://www.stellar.org/developers/js-stellar-sdk/reference/) but usage is very similar.
