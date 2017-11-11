@@ -122,7 +122,7 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestMemoReturnHashSuccess()
         {
-            var memo = Memo.returnHash("4142434445464748494a4b4c");
+            var memo = Memo.ReturnHash("4142434445464748494a4b4c");
             Assert.AreEqual(sdkxdr.MemoType.MemoTypeEnum.MEMO_RETURN, memo.ToXdr().Discriminant.InnerValue);
             Assert.AreEqual("4142434445464748494a4b4c", memo.GetTrimmedHexValue());
         }

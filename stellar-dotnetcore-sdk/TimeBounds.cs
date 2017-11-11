@@ -5,10 +5,10 @@ namespace stellar_dotnetcore_sdk
 {
     public class TimeBounds
     {
-        /**
-         * @param minTime 64bit Unix timestamp
-         * @param maxTime 64bit Unix timestamp
-         */
+        ///<summary>
+        ///Timebounds constructor.
+        ///</summary>
+        ///<param name="minTime"> 64bit Unix timestamp</param>
         public TimeBounds(long minTime, long maxTime)
         {
             if (minTime >= maxTime)

@@ -22,14 +22,14 @@ namespace stellar_dotnetcore_sdk
 
 
             //This bascially takes a decimal value and turns it into a large integer.
-            var amount = decimal.Parse(value) * ONE;
+            var amount = decimal.Parse(value);
 
             //MJM: Added to satify the OperationTest unit test of making sure a failure
             //happens when casting a decimal with fractional places into a long.
             if (amount % 1 > 0)
                 throw new ArithmeticException("Unable to cast decimal with fractional places into long.");
 
-            return (long) amount;
+            return (long)amount;
         }
 
         public static string FromXdrAmount(long value)
@@ -38,9 +38,9 @@ namespace stellar_dotnetcore_sdk
             return amount.ToString();
         }
 
-        /**
-         * Generates Operation XDR object.
-         */
+        ///<summary>
+        /// Generates Operation XDR object.
+        ///</summary>
         public xdr.Operation ToXdr()
         {
             var thisXdr = new xdr.Operation();
@@ -54,9 +54,9 @@ namespace stellar_dotnetcore_sdk
             return thisXdr;
         }
 
-        /**
-         * Returns base64-encoded Operation XDR object.
-         */
+        ///<summary>
+        /// Returns base64-encoded Operation XDR object.
+        ///</summary>
         public string ToXdrBase64()
         {
             var operation = ToXdr();
@@ -65,10 +65,10 @@ namespace stellar_dotnetcore_sdk
             return Convert.ToBase64String(writer.ToArray());
         }
 
-        /**
-         * Returns new Operation object from Operation XDR object.
-         * @param xdr XDR object
-         */
+        ///<summary>
+        ///</summary>
+        /// <returns>new Operation object from Operation XDR object.</returns> 
+        /// <param name="thisXdr">XDR object</param> 
         public static Operation FromXdr(xdr.Operation thisXdr)
         {
             var body = thisXdr.Body;
@@ -114,10 +114,10 @@ namespace stellar_dotnetcore_sdk
         }
 
 
-        /**
-         * Generates OperationBody XDR object
-         * @return OperationBody XDR object
-         */
+        ///<summary>
+        /// Generates OperationBody XDR object
+        ///</summary>
+        ///<returns>OperationBody XDR object</returns>
         public abstract xdr.Operation.OperationBody ToOperationBody();
     }
 }

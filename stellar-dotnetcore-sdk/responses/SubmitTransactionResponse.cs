@@ -10,6 +10,7 @@ namespace stellar_dotnetcore_sdk.responses
         private readonly string _EnvelopeXdr;
         private readonly string _ResultXdr;
 
+
         [JsonProperty(PropertyName = "hash")]
         public string Hash { get; private set; }
 
@@ -65,12 +66,12 @@ namespace stellar_dotnetcore_sdk.responses
             return Ledger != null;
         }
 
-        /**
-         * Helper method that returns Offer ID for ManageOffer from TransactionResult Xdr.
-         * This is helpful when you need ID of an offer to update it later.
-         * @param position Position of ManageOffer operation. If ManageOffer is second operation in this transaction this should be equal <code>1</code>.
-         * @return Offer ID or <code>null</code> when operation at <code>position</code> is not a ManageOffer operation or error has occurred.
-         */
+        ///<summary>
+        /// Helper method that returns Offer ID for ManageOffer from TransactionResult Xdr.
+        /// This is helpful when you need ID of an offer to update it later.
+        /// </summary>
+        /// <param name="position">Position of ManageOffer operation. If ManageOffer is second operation in this transaction this should be equal <code>1</code>.</param> 
+        /// <returns>Offer ID or <code>null</code> when operation at <code>position</code> is not a ManageOffer operation or error has occurred.</returns>
         public long? GetOfferIdFromResult(int position)
         {
             if (!IsSuccess())
@@ -109,9 +110,9 @@ namespace stellar_dotnetcore_sdk.responses
             return result.Result.Results[0].Tr.ManageOfferResult.Success.Offer.Offer.OfferID.InnerValue;
         }
 
-        /**
-         * Additional information returned by a server.
-         */
+        ///<summary>
+        /// Additional information returned by a server.
+        ///</summary>
         public class Extras
         {
             [JsonProperty(PropertyName = "envelope_xdr")]
@@ -130,10 +131,10 @@ namespace stellar_dotnetcore_sdk.responses
                 ExtrasResultCodes = resultCodes;
             }
 
-            /**
-             * Contains result codes for this transaction.
-             * @see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stellar/horizon/codes/main.go" target="_blank">Possible values</a>
-             */
+            ///<summary>
+            /// Contains result codes for this transaction.
+            /// see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stellar/horizon/codes/main.go" target="_blank">Possible values</a>
+            /// </summary>
             public class ResultCodes
             {
                 [JsonProperty(PropertyName = "transaction")]

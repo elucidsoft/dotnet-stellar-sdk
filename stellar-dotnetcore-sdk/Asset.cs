@@ -5,11 +5,12 @@ namespace stellar_dotnetcore_sdk
 {
     public abstract class Asset
     {
-        /**
-   * Creates one of AssetTypeCreditAlphaNum4 or AssetTypeCreditAlphaNum12 object based on a <code>code</code> length
-   * @param code Asset code
-   * @param issuer Asset issuer
-   */
+        ///<summary>
+        /// Creates one of AssetTypeCreditAlphaNum4 or AssetTypeCreditAlphaNum12 object based on a <code>code</code> length
+        /// </summary>
+        /// <param name="code">Asset code</param> 
+        /// <param name="issuer">Asset issuer</param> 
+        ///
         public static Asset CreateNonNativeAsset(string code, KeyPair issuer)
         {
             if (code.Length >= 1 && code.Length <= 4)
@@ -19,10 +20,10 @@ namespace stellar_dotnetcore_sdk
             throw new AssetCodeLengthInvalidException();
         }
 
-        /**
-         * Generates Asset object from a given XDR object
-         * @param xdr XDR object
-         */
+        ///<summary>
+        /// Generates Asset object from a given XDR object
+        /// </summary>
+        /// <param name="xdr">XDR object</param> 
         public static Asset FromXdr(xdr.Asset thisXdr)
         {
             switch (thisXdr.Discriminant.InnerValue)
@@ -42,22 +43,22 @@ namespace stellar_dotnetcore_sdk
             }
         }
 
-        /**
-         * Returns asset type. Possible types:
-         * <ul>
-         *   <li><code>native</code></li>
-         *   <li><code>credit_alphanum4</code></li>
-         *   <li><code>credit_alphanum12</code></li>
-         * </ul>
-         */
+        ///<summary>
+        /// Returns asset type. Possible types:
+        /// <ul>
+        ///   <li><code>native</code></li>
+        ///   <li><code>credit_alphanum4</code></li>
+        ///   <li><code>credit_alphanum12</code></li>
+        /// </ul>
+        ///</summary>
         public new abstract string GetType();
 
 
         public abstract override bool Equals(object obj);
 
-        /**
-         * Generates XDR object from a given Asset object
-         */
+        ///<summary>
+        /// Generates XDR object from a given Asset object
+        ///</summary>
         public abstract xdr.Asset ToXdr();
 
         public override int GetHashCode()

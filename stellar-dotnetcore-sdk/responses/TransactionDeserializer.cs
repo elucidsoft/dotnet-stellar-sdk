@@ -45,7 +45,7 @@ namespace stellar_dotnetcore_sdk.responses
                 }
                 else if (memoType.Equals("return"))
                 {
-                    memo = Memo.returnHash(Convert.FromBase64String(memoValue));
+                    memo = Memo.ReturnHash(Convert.FromBase64String(memoValue));
                 }
                 else
                 {

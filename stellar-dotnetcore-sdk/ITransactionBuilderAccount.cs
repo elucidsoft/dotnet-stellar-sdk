@@ -5,14 +5,14 @@
         KeyPair KeyPair { get; }
         long SequenceNumber { get; }
 
-        /**
-         * Returns sequence number incremented by one, but does not increment internal counter.
-         */
+        ///<summary>
+        /// Returns sequence number incremented by one, but does not increment internal counter.
+        ///</summary>
         long GetIncrementedSequenceNumber();
 
-        /**
-         * Increments sequence number in this object by one.
-         */
+        ///<summary>
+        /// Increments sequence number in this object by one.
+        ///</summary>
         void IncrementSequenceNumber();
     }
 }

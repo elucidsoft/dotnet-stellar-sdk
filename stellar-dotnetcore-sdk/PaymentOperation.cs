@@ -40,10 +40,10 @@ namespace stellar_dotnetcore_sdk
             return body;
         }
 
-        /**
-         * Builds Payment operation.
-         * @see PathPaymentOperation
-         */
+        ///<summary>
+        /// Builds Payment operation.
+        ///</summary>
+        ///<see cref="PathPaymentOperation"/>
         public class Builder
         {
             private readonly string amount;
@@ -52,10 +52,10 @@ namespace stellar_dotnetcore_sdk
 
             private KeyPair mSourceAccount;
 
-            /**
-             * Construct a new PaymentOperation builder from a PaymentOp XDR.
-             * @param op {@link PaymentOp}
-             */
+            ///<summary>
+            /// Construct a new PaymentOperation builder from a PaymentOp XDR.
+            ///</summary>
+            ///<param name="op"><see cref="PaymentOp"/></param> 
             public Builder(PaymentOp op)
             {
                 destination = KeyPair.FromXdrPublicKey(op.Destination.InnerValue);
@@ -63,13 +63,12 @@ namespace stellar_dotnetcore_sdk
                 amount = FromXdrAmount(op.Amount.InnerValue);
             }
 
-            /**
-             * Creates a new PaymentOperation builder.
-             * @param destination The destination keypair (uses only the public key).
-             * @param asset The asset to send.
-             * @param amount The amount to send in lumens.
-             * @throws ArithmeticException when amount has more than 7 decimal places.
-             */
+            ///<summary>
+            /// Creates a new PaymentOperation builder.
+            ///</summary>
+            ///<param name="destination">The destination keypair (uses only the public key).</param> 
+            ///<param name="asset">The asset to send.</param> 
+            ///<param name="amount">The amount to send in lumens.</param> 
             public Builder(KeyPair destination, Asset asset, string amount)
             {
                 this.destination = destination;
@@ -77,20 +76,21 @@ namespace stellar_dotnetcore_sdk
                 this.amount = amount;
             }
 
-            /**
-             * Sets the source account for this operation.
-             * @param account The operation's source account.
-             * @return Builder object so you can chain methods.
-             */
+            ///<summary>
+            /// Sets the source account for this operation.
+            ///</summary>
+            ///<param name="account">The operation's source account.</param> 
+            ///<returns>Builder object so you can chain methods.</returns> 
+            ///
             public Builder SetSourceAccount(KeyPair account)
             {
                 mSourceAccount = account;
                 return this;
             }
 
-            /**
-             * Builds an operation
-             */
+            ///<summary>
+            /// Builds an operation
+            ///</summary>
             public PaymentOperation Build()
             {
                 var operation = new PaymentOperation(destination, asset, amount);
