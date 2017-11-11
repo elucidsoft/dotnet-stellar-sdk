@@ -22,7 +22,7 @@ namespace stellar_dotnetcore_sdk
 
 
             //This bascially takes a decimal value and turns it into a large integer.
-            var amount = decimal.Parse(value);
+            var amount = decimal.Parse(value) * ONE;
 
             //MJM: Added to satify the OperationTest unit test of making sure a failure
             //happens when casting a decimal with fractional places into a long.
