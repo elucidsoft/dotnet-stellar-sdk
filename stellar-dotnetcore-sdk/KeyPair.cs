@@ -6,6 +6,10 @@ using stellar_dotnetcore_sdk.xdr;
 
 namespace stellar_dotnetcore_sdk
 {
+    /// <summary>
+    /// <see cref="KeyPair"/> represents public (and secret) keys of the account.
+    /// Currently <see cref="KeyPair"/> only supports ed25519 but in a future this class can be abstraction layer for other public-key signature systems.
+    /// </summary>
     public class KeyPair
     {
         public KeyPair(byte[] publicKey)

@@ -1,17 +1,18 @@
 ﻿using Newtonsoft.Json;
-using stellar_dotnetcore_sdk.requests;
 
 namespace stellar_dotnetcore_sdk.responses.effects
 {
     /// <summary>
     ///     Represents trade effect response.
     ///     See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
-    ///     <seealso cref="EffectsRequestBuilder" />
+    ///     <seealso cref="requests.EffectsRequestBuilder" />
     ///     <seealso cref="Server" />
     /// </summary>
     public class TradeEffectResponse : EffectResponse
     {
-        public TradeEffectResponse(KeyPair seller, long offerId, string soldAmount, string soldAssetType, string soldAssetCode, string soldAssetIssuer, string boughtAmount, string boughtAssetType, string boughtAssetCode, string boughtAssetIssuer)
+        /// <inheritdoc />
+        public TradeEffectResponse(KeyPair seller, long offerId, string soldAmount, string soldAssetType, string soldAssetCode,
+            string soldAssetIssuer, string boughtAmount, string boughtAssetType, string boughtAssetCode, string boughtAssetIssuer)
         {
             Seller = seller;
             OfferId = offerId;

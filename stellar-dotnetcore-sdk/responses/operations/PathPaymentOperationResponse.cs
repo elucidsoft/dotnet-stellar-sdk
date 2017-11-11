@@ -5,7 +5,7 @@ namespace stellar_dotnetcore_sdk.responses.operations
     /// <summary>
     /// Represents PathPayment operation response.
     /// See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
-    /// <seealso cref="OperationRequestBuilder"/>
+    /// <seealso cref="requests.OperationsRequestBuilder"/>
     /// <seealso cref="Server"/>
     /// </summary>
     public class PathPaymentOperationResponse : OperationResponse

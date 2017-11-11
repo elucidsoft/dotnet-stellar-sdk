@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 
 namespace stellar_dotnetcore_sdk.responses.operations
-{ 
+{
     /// <summary>
     /// Abstract class for operation responses.
     /// See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
-    /// <seealso cref="OperationRequestBuilder"/>
+    /// <seealso cref="requests.OperationsRequestBuilder"/>
     /// <seealso cref="Server"/>
     /// </summary>
     public abstract class OperationResponse

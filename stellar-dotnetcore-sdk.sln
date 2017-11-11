@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "stellar-dotnetcore-unittest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chaos.NaCl", "Chaos.NaCl\Chaos.NaCl.csproj", "{8A5018CD-306F-4EB5-ABB2-490A90B1D49D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{7C04C507-C287-412D-B5DB-2FA802942345}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsole", "TestConsole\TestConsole.csproj", "{7C04C507-C287-412D-B5DB-2FA802942345}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,6 +2,7 @@
 
 namespace stellar_dotnetcore_sdk.responses.effects
 {
+    /// <inheritdoc />
     public class SignerEffectResponse : EffectResponse
     {
         [JsonProperty(PropertyName = "weight")]

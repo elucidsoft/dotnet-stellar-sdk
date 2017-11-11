@@ -2,9 +2,10 @@
 
 namespace stellar_dotnetcore_sdk.responses.effects
 {
-
+    /// <inheritdoc />
     public class TrustlineAuthorizationResponse : EffectResponse
     {
+        /// <inheritdoc />
         public TrustlineAuthorizationResponse(KeyPair trustor, string assetType, string assetCode)
         {
             Trustor = trustor;
