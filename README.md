@@ -1,7 +1,7 @@
 # dotnetcore-stellar-sdk
 Stellar API SDK for .NET Core 2.x
 
-[![Build Status](https://travis-ci.org/elucidsoft/dotnetcore-stellar-sdk.svg?branch=master)](https://travis-ci.org/elucidsoft/dotnetcore-stellar-sdk)
+[![Build Status](https://travis-ci.org/elucidsoft/dotnetcore-stellar-sdk.svg?branch=master)](https://travis-ci.org/elucidsoft/dotnetcore-stellar-sdk)  [![NuGet](https://img.shields.io/nuget/v/1.0.svg)](https://www.nuget.org/packages/stellar-dotnetcore-sdk/1.0.0)
 
 The .NET Core Stellar Sdk library provides APIs to build transactions and connect to [Horizon](https://github.com/stellar/horizon).
 
