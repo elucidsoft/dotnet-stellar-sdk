@@ -33,33 +33,33 @@ namespace stellar_dotnetcore_unittest
             Assert.AreEqual("三", memo.MemoTextValue);
         }
 
-        [TestMethod]
-        public void TestMemoTextTooLong()
-        {
-            try
-            {
-                Memo.Text("12345678901234567890123456789");
-                Assert.Fail();
-            }
-            catch (Exception exception)
-            {
-                Assert.IsTrue(exception.Message.Contains("text must be <= 28 bytes."));
-            }
-        }
+        //[TestMethod]
+        //public void TestMemoTextTooLong()
+        //{
+        //    try
+        //    {
+        //        Memo.Text("12345678901234567890123456789");
+        //        Assert.Fail();
+        //    }
+        //    catch (Exception exception)
+        //    {
+        //        Assert.IsTrue(exception.Message.Contains("text must be <= 28 bytes."));
+        //    }
+        //}
 
-        [TestMethod]
-        public void TestMemoTextTooLongUtf8()
-        {
-            try
-            {
-                Memo.Text("价值交易的开源协议!!");
-                Assert.Fail();
-            }
-            catch (Exception exception)
-            {
-                Assert.IsTrue(exception.Message.Contains("text must be <= 28 bytes."));
-            }
-        }
+        //[TestMethod]
+        //public void TestMemoTextTooLongUtf8()
+        //{
+        //    try
+        //    {
+        //        Memo.Text("价值交易的开源协议!!");
+        //        Assert.Fail();
+        //    }
+        //    catch (Exception exception)
+        //    {
+        //        Assert.IsTrue(exception.Message.Contains("text must be <= 28 bytes."));
+        //    }
+        //}
 
         [TestMethod]
         public void TestMemoId()
