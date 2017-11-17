@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using EventSource4Net;
 using stellar_dotnetcore_sdk.responses;
 using stellar_dotnetcore_sdk.responses.page;
 
@@ -64,31 +65,31 @@ namespace stellar_dotnetcore_sdk.requests
             }
         }
 
-        ///// <summary>
-        /////     llows to stream SSE events from horizon.
-        /////     Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
-        /////     This mode will keep the connection to horizon open and horizon will continue to return
-        /////     http://www.w3.org/TR/eventsource/
-        /////     "https://www.stellar.org/developers/horizon/learn/responses.html
-        /////     responses as ledgers close.
-        ///// </summary>
-        ///// <param name="listener">
-        /////     EventListener implementation with AccountResponse type
-        /////     <returns>EventSource object, so you can close() connection when not needed anymore</returns>
-        //public EventSource Stream(EventHandler<AccountResponse> listener)
-        //{
-        //    var es = new EventSource(BuildUri());
-        //    es.Message += (sender, e) =>
-        //    {
-        //        if (e == "\"hello\"")
-        //            return;
+        /// <summary>
+        ///     llows to stream SSE events from horizon.
+        ///     Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
+        ///     This mode will keep the connection to horizon open and horizon will continue to return
+        ///     http://www.w3.org/TR/eventsource/
+        ///     "https://www.stellar.org/developers/horizon/learn/responses.html
+        ///     responses as ledgers close.
+        /// </summary>
+        /// <param name="listener">
+        ///     EventListener implementation with AccountResponse type
+        ///     <returns>EventSource object, so you can close() connection when not needed anymore</returns>
+        public EventSource Stream(EventHandler<AccountResponse> listener)
+        {
+            var es = new EventSource(BuildUri());
+            es.Message += (sender, e) =>
+            {
+                if (e.Data == "\"hello\"\r\n")
+                    return;
 
-        //        var account = JsonSingleton.GetInstance<AccountResponse>(e);
-        //        listener?.Invoke(this, account);
-        //    };
+                var account = JsonSingleton.GetInstance<AccountResponse>(e.Data);
+                listener?.Invoke(this, account);
+            };
 
-        //    return es;
-        //}
+            return es;
+        }
 
         public async Task<Page<AccountResponse>> Execute()
         {

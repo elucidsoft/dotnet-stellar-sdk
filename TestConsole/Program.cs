@@ -22,10 +22,11 @@ namespace TestConsole
             await ShowAccountTransactions(server);
 
             //Streams are temporarily disabled in this API until a resolution is found for the HttpClient issue
-            //var eventSource = await server.Transactions
-            //    .ForAccount(KeyPair.FromAccountId("GAZHWW2NBPDVJ6PEEOZ2X43QV5JUDYS3XN4OWOTBR6WUACTUML2CCJLI"))
-            //    .Limit(50)
-            //    .Stream((sender, response) => { ShowTransactionRecord(response); }).Connect();
+            server.Transactions
+                .ForAccount(KeyPair.FromAccountId("GAZHWW2NBPDVJ6PEEOZ2X43QV5JUDYS3XN4OWOTBR6WUACTUML2CCJLI"))
+                .Cursor("now")
+                .Stream((sender, response) => { ShowTransactionRecord(response); })
+                .Connect();
 
             Console.ReadLine();
         }
