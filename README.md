@@ -1,7 +1,7 @@
 # dotnetcore-stellar-sdk
 Stellar API SDK for .NET Core 2.x
 
-[![Build Status](https://travis-ci.org/elucidsoft/dotnetcore-stellar-sdk.svg?branch=master)](https://travis-ci.org/elucidsoft/dotnetcore-stellar-sdk)  [![NuGet](https://img.shields.io/nuget/v/1.0.svg)](https://www.nuget.org/packages/stellar-dotnetcore-sdk/1.0.0)
+[![Build Status](https://travis-ci.org/elucidsoft/dotnetcore-stellar-sdk.svg?branch=master)](https://travis-ci.org/elucidsoft/dotnetcore-stellar-sdk)  [![NuGet](https://img.shields.io/nuget/v/1.0.1.svg)](https://www.nuget.org/packages/stellar-dotnetcore-sdk/1.0.1)
 
 The .NET Core Stellar Sdk library provides APIs to build transactions and connect to [Horizon](https://github.com/stellar/horizon).
 
@@ -10,7 +10,7 @@ Read more about [Stellar](https://www.stellar.org/)
 This project is a full port of the official [Java SDK API](https://github.com/stellar/java-stellar-sdk).  It is fully functional and all of the original Java Unit Tests were also ported and are passing.  
 
 ## Quick Start
-To install using Nuget run `Install-Package stellar-dotnetcore-sdk -Version 1.0.0` or install the Nuget package from Visual Studio.
+To install using Nuget run `Install-Package stellar-dotnetcore-sdk -Version 1.0.1` or install the Nuget package from Visual Studio.
 
 ## Capabilities
 - [Accounts](https://www.stellar.org/developers/guides/concepts/accounts.html) - Create, Query, Payment, Path Payment, Manage Offer, Create Passive Offer, Set Options, Change Trust, Allow Trust, Account Merge, Inflation, Manage Data, Paging (Limit, Cursor, Sorting)
