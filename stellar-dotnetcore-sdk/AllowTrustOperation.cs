@@ -4,6 +4,9 @@ using sdkxdr = stellar_dotnetcore_sdk.xdr;
 
 namespace stellar_dotnetcore_sdk
 {
+    /// <summary>
+    ///An XDR AllowTrustOp. An "allow trust" operation authorizes another account to hold your account's credit for a given asset.
+    /// </summary>
     public class AllowTrustOperation : Operation
     {
         private AllowTrustOperation(KeyPair trustor, string assetCode, bool authorize)
@@ -13,12 +16,25 @@ namespace stellar_dotnetcore_sdk
             Authorize = authorize;
         }
 
+        /// <summary>
+        /// The asset code being authorized.
+        /// </summary>
         public string AssetCode { get; }
 
+        /// <summary>
+        /// The trusting account (the one being authorized)
+        /// </summary>
         public KeyPair Trustor { get; }
 
+        /// <summary>
+        /// True to authorize the line, false to deauthorize.
+        /// </summary>
         public bool Authorize { get; }
 
+        /// <summary>
+        /// Returns the Allow Trust XDR Operation Body
+        /// </summary>
+        /// <returns></returns>
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {
             var op = new sdkxdr.AllowTrustOp();
@@ -55,27 +71,34 @@ namespace stellar_dotnetcore_sdk
         /// <see cref="AllowTrustOperation" />
         public class Builder
         {
-            private readonly string _AssetCode;
-            private readonly bool _Authorize;
-            private readonly KeyPair _Trustor;
+            private readonly string _assetCode;
+            private readonly bool _authorize;
+            private readonly KeyPair _trustor;
 
-            private KeyPair mSourceAccount;
+            private KeyPair _sourceAccount;
 
+            /// <summary>
+            /// Builder to build the AllowTrust Operation given an XDR AllowTrustOp
+            /// </summary>
+            /// <param name="op"></param>
+            /// <exception cref="Exception"></exception>
             public Builder(sdkxdr.AllowTrustOp op)
             {
-                _Trustor = KeyPair.FromXdrPublicKey(op.Trustor.InnerValue);
+                _trustor = KeyPair.FromXdrPublicKey(op.Trustor.InnerValue);
                 switch (op.Asset.Discriminant.InnerValue)
                 {
                     case sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4:
-                        _AssetCode = Encoding.UTF8.GetString(op.Asset.AssetCode4);
+                        _assetCode = Encoding.UTF8.GetString(op.Asset.AssetCode4);
                         break;
                     case sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12:
-                        _AssetCode = Encoding.UTF8.GetString(op.Asset.AssetCode12);
+                        _assetCode = Encoding.UTF8.GetString(op.Asset.AssetCode12);
+                        break;
+                    case sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE:
                         break;
                     default:
                         throw new Exception("Unknown asset code");
                 }
-                _Authorize = op.Authorize;
+                _authorize = op.Authorize;
             }
 
             /// <summary>
@@ -89,19 +112,19 @@ namespace stellar_dotnetcore_sdk
             /// <param name="authorize">Flag indicating whether the trustline is authorized.</param>
             public Builder(KeyPair trustor, string assetCode, bool authorize)
             {
-                _Trustor = trustor;
-                _AssetCode = assetCode;
-                _Authorize = authorize;
+                _trustor = trustor;
+                _assetCode = assetCode;
+                _authorize = authorize;
             }
 
             /// <summary>
             ///     Set source account of this operation
             /// </summary>
             /// <param name="sourceAccount">Source account</param>
-            /// <returns>Builder object so you can chain methods.</param>
+            /// <returns>Builder object so you can chain methods.</returns>
             public Builder SetSourceAccount(KeyPair sourceAccount)
             {
-                mSourceAccount = sourceAccount;
+                _sourceAccount = sourceAccount;
                 return this;
             }
 
@@ -110,9 +133,9 @@ namespace stellar_dotnetcore_sdk
             /// </summary>
             public AllowTrustOperation Build()
             {
-                var operation = new AllowTrustOperation(_Trustor, _AssetCode, _Authorize);
-                if (mSourceAccount != null)
-                    operation.SourceAccount = mSourceAccount;
+                var operation = new AllowTrustOperation(_trustor, _assetCode, _authorize);
+                if (_sourceAccount != null)
+                    operation.SourceAccount = _sourceAccount;
                 return operation;
             }
         }

@@ -3,6 +3,10 @@ using stellar_dotnetcore_sdk.xdr;
 
 namespace stellar_dotnetcore_sdk
 {
+    /// <summary>
+    /// Asset class represents an asset, either the native asset (XLM) or a asset code / issuer account ID pair. 
+    /// An asset code describes an asset code and issuer pair. In the case of the native asset XLM, the issuer will be null.
+    /// </summary>
     public abstract class Asset
     {
         ///<summary>
@@ -10,7 +14,6 @@ namespace stellar_dotnetcore_sdk
         /// </summary>
         /// <param name="code">Asset code</param> 
         /// <param name="issuer">Asset issuer</param> 
-        ///
         public static Asset CreateNonNativeAsset(string code, KeyPair issuer)
         {
             if (code.Length >= 1 && code.Length <= 4)
@@ -20,10 +23,10 @@ namespace stellar_dotnetcore_sdk
             throw new AssetCodeLengthInvalidException();
         }
 
-        ///<summary>
-        /// Generates Asset object from a given XDR object
-        /// </summary>
-        /// <param name="xdr">XDR object</param> 
+        /// <summary>
+        ///  Generates Asset object from a given XDR object
+        ///  </summary>
+        /// <param name="thisXdr"></param> 
         public static Asset FromXdr(xdr.Asset thisXdr)
         {
             switch (thisXdr.Discriminant.InnerValue)
@@ -54,6 +57,7 @@ namespace stellar_dotnetcore_sdk
         public new abstract string GetType();
 
 
+        /// <inheritdoc />
         public abstract override bool Equals(object obj);
 
         ///<summary>
@@ -61,17 +65,21 @@ namespace stellar_dotnetcore_sdk
         ///</summary>
         public abstract xdr.Asset ToXdr();
 
+        /// <inheritdoc />
         public override int GetHashCode()
         {
             return base.GetHashCode();
         }
 
+        ///<summary>
+        /// Creates one of AssetTypeCreditAlphaNum4 or AssetTypeCreditAlphaNum12 object based on a <code>code</code> length
+        /// </summary>
         public static Asset CreateNonNativeAsset(string assetType, string accountId, string code)
         {
             if (assetType == "native")
                 return new AssetTypeNative();
 
-            KeyPair issuer = KeyPair.FromAccountId(accountId);
+            var issuer = KeyPair.FromAccountId(accountId);
             return CreateNonNativeAsset(code, issuer);
         }
     }

@@ -3,6 +3,9 @@ using stellar_dotnetcore_sdk.xdr;
 
 namespace stellar_dotnetcore_sdk
 {
+    /// <summary>
+    /// Transfers native balance to destination account.
+    /// </summary>
     public class AccountMergeOperation : Operation
     {
         private AccountMergeOperation(KeyPair destination)
@@ -15,6 +18,10 @@ namespace stellar_dotnetcore_sdk
         /// </summary>
         public KeyPair Destination { get; }
 
+        /// <summary>
+        /// Returns the Account Merge XDR Operation Body
+        /// </summary>
+        /// <returns></returns>
         public override xdr.Operation.OperationBody ToOperationBody()
         {
             var body = new xdr.Operation.OperationBody();
@@ -32,6 +39,10 @@ namespace stellar_dotnetcore_sdk
         {
             private readonly KeyPair _destination;
 
+            /// <summary>
+            /// Builder to build the AccountMerge Operation given an XDR OperationBody
+            /// </summary>
+            /// <param name="op"></param>
             public Builder(xdr.Operation.OperationBody op)
             {
                 _destination = KeyPair.FromXdrPublicKey(op.Destination.InnerValue);

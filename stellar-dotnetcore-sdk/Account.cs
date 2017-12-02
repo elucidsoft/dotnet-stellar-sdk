@@ -2,6 +2,9 @@
 
 namespace stellar_dotnetcore_sdk
 {
+    /// <summary>
+    /// Returns information and links relating to a single account.
+    /// </summary>
     public class Account : ITransactionBuilderAccount
     {
         ///<summary>
@@ -16,11 +19,21 @@ namespace stellar_dotnetcore_sdk
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
         public KeyPair KeyPair { get; }
 
+        /// <summary>
+        /// The sequence number
+        /// </summary>
         public long SequenceNumber { get; private set; }
 
 
+        /// <summary>
+        /// Returns the Sequence number incremented by one.
+        /// </summary>
+        /// <returns>SequenceNumber + 1</returns>
         public long GetIncrementedSequenceNumber()
         {
             return SequenceNumber + 1;

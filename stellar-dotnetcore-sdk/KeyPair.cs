@@ -12,11 +12,21 @@ namespace stellar_dotnetcore_sdk
     /// </summary>
     public class KeyPair
     {
+        /// <summary>
+        /// Creates a new Keypair object from public key.
+        /// </summary>
+        /// <param name="publicKey"></param>
         public KeyPair(byte[] publicKey)
             : this(publicKey, null, null)
         {
         }
 
+        /// <summary>
+        /// Creates a new Keypair instance from secret. This can either be secret key or secret seed depending on underlying public-key signature system. Currently Keypair only supports ed25519.
+        /// </summary>
+        /// <param name="publicKey"></param>
+        /// <param name="privateKey"></param>
+        /// <param name="seed"></param>
         public KeyPair(byte[] publicKey, byte[] privateKey, byte[] seed)
         {
             PublicKey = publicKey ?? throw new ArgumentNullException(nameof(publicKey), "publicKey cannot be null");
@@ -25,16 +35,41 @@ namespace stellar_dotnetcore_sdk
             SeedBytes = seed;
         }
 
+        /// <summary>
+        /// The public key.
+        /// </summary>
         public byte[] PublicKey { get; }
+        
+        /// <summary>
+        /// The private key.
+        /// </summary>
         public byte[] PrivateKey { get; }
+        
+        
+        /// <summary>
+        /// The bytes of the Secret Seed
+        /// </summary>
         public byte[] SeedBytes { get; }
 
+        /// <summary>
+        /// AccountId
+        /// </summary>
         public string AccountId => StrKey.EncodeStellarAccountId(PublicKey);
 
+        
+        /// <summary>
+        /// Address
+        /// </summary>
         public string Address => StrKey.EncodeCheck(StrKey.VersionByte.ACCOUNT_ID, PublicKey);
 
+        /// <summary>
+        /// SecretSeed
+        /// </summary>
         public string SecretSeed => StrKey.EncodeStellarSecretSeed(SeedBytes);
 
+        /// <summary>
+        /// XDR Signature Hint
+        /// </summary>
         public SignatureHint SignatureHint
         {
             get
@@ -51,6 +86,9 @@ namespace stellar_dotnetcore_sdk
             }
         }
 
+        /// <summary>
+        /// XDR Public Key
+        /// </summary>
         public PublicKey XdrPublicKey
         {
             get
@@ -67,6 +105,9 @@ namespace stellar_dotnetcore_sdk
             }
         }
 
+        /// <summary>
+        /// XDR Signer Key
+        /// </summary>
         public SignerKey XdrSignerKey
         {
             get
@@ -83,11 +124,21 @@ namespace stellar_dotnetcore_sdk
             }
         }
 
+        /// <summary>
+        /// Returns a KeyPair from a Public Key
+        /// </summary>
+        /// <param name="publicKey"></param>
+        /// <returns><see cref="KeyPair"/></returns>
         public static KeyPair FromXdrPublicKey(PublicKey publicKey)
         {
             return FromPublicKey(publicKey.Ed25519.InnerValue);
         }
 
+        /// <summary>
+        /// Returns a KeyPair from an XDR SignerKey
+        /// </summary>
+        /// <param name="signerKey"></param>
+        /// <returns><see cref="KeyPair"/></returns>
         public static KeyPair FromXdrSignerKey(SignerKey signerKey)
         {
             return FromPublicKey(signerKey.Ed25519.InnerValue);
@@ -182,6 +233,11 @@ namespace stellar_dotnetcore_sdk
             return Ed25519.Sign(data, PrivateKey);
         }
 
+        /// <summary>
+        /// Sign a message and return an XDR Decorated Signature
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns><see cref="DecoratedSignature"/></returns>
         public DecoratedSignature SignDecorated(byte[] message)
         {
             var rawSig = Sign(message);

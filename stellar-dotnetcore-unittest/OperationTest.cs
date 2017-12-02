@@ -19,7 +19,7 @@ namespace stellar_dotnetcore_unittest
             // GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR
             var destination = KeyPair.FromSecretSeed("SDHZGHURAYXKU2KMVHPOXI6JG2Q4BSQUQCEOY72O3QQTCLR2T455PMII");
 
-            var startingAmount = "1000";
+            const string startingAmount = "1000";
             var operation = new CreateAccountOperation.Builder(destination, startingAmount)
                 .SetSourceAccount(source)
                 .Build();
