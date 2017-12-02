@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\eric\.nuget\packages\mstest.testadapter\1.1.18\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
+    <e p="C:\Users\eric\.nuget\packages\mstest.testadapter\1.1.18\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
+    <e p="C:\Users\eric\.nuget\packages\mstest.testadapter\1.1.18\build\netcoreapp1.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
+    <e p="C:\Users\eric\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_stellar-dotnetcore-sdk.-1926357171.00" t="ExcludeRecursive" />
+    <e p="C:\Users\eric\Documents\GitHub\dotnetcore-stellar-sdk" t="IncludeFlat">
+      <e p="Chaos.NaCl" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Chaos.NaCl.csproj" t="IncludeRecursive" />
+        <e p="CryptoBytes.cs" t="Include" />
+        <e p="Ed25519.cs" t="Include" />
+        <e p="Internal" t="Include">
+          <e p="Array16.cs" t="Include" />
+          <e p="Array8.cs" t="Include" />
+          <e p="ByteIntegerConverter.cs" t="Include" />
+          <e p="Ed25519Ref10" t="Include">
+            <e p="base.cs" t="Include" />
+            <e p="base2.cs" t="Include" />
+            <e p="d.cs" t="Include" />
+            <e p="d2.cs" t="Include" />
+            <e p="fe_0.cs" t="Include" />
+            <e p="fe_1.cs" t="Include" />
+            <e p="fe_add.cs" t="Include" />
+            <e p="fe_cmov.cs" t="Include" />
+            <e p="fe_cswap.cs" t="Include" />
+            <e p="fe_frombytes.cs" t="Include" />
+            <e p="fe_invert.cs" t="Include" />
+            <e p="fe_isnegative.cs" t="Include" />
+            <e p="fe_isnonzero.cs" t="Include" />
+            <e p="fe_mul.cs" t="Include" />
+            <e p="fe_mul121666.cs" t="Include" />
+            <e p="fe_neg.cs" t="Include" />
+            <e p="fe_pow22523.cs" t="Include" />
+            <e p="fe_sq.cs" t="Include" />
+            <e p="fe_sq2.cs" t="Include" />
+            <e p="fe_sub.cs" t="Include" />
+            <e p="fe_tobytes.cs" t="Include" />
+            <e p="FieldElement.cs" t="Include" />
+            <e p="ge_add.cs" t="Include" />
+            <e p="ge_double_scalarmult.cs" t="Include" />
+            <e p="ge_frombytes.cs" t="Include" />
+            <e p="ge_madd.cs" t="Include" />
+            <e p="ge_msub.cs" t="Include" />
+            <e p="ge_p1p1_to_p2.cs" t="Include" />
+            <e p="ge_p1p1_to_p3.cs" t="Include" />
+            <e p="ge_p2_0.cs" t="Include" />
+            <e p="ge_p2_dbl.cs" t="Include" />
+            <e p="ge_p3_0.cs" t="Include" />
+            <e p="ge_p3_dbl.cs" t="Include" />
+            <e p="ge_p3_to_cached.cs" t="Include" />
+            <e p="ge_p3_to_p2.cs" t="Include" />
+            <e p="ge_p3_tobytes.cs" t="Include" />
+            <e p="ge_precomp_0.cs" t="Include" />
+            <e p="ge_scalarmult_base.cs" t="Include" />
+            <e p="ge_sub.cs" t="Include" />
+            <e p="ge_tobytes.cs" t="Include" />
+            <e p="GroupElement.cs" t="Include" />
+            <e p="KeyPair.cs" t="Include" />
+            <e p="open.cs" t="Include" />
+            <e p="sc_clamp.cs" t="Include" />
+            <e p="sc_mul_add.cs" t="Include" />
+            <e p="sc_reduce.cs" t="Include" />
+            <e p="scalarmult.cs" t="Include" />
+            <e p="sign.cs" t="Include" />
+            <e p="sqrtm1.cs" t="Include" />
+          </e>
+          <e p="InternalAssert.cs" t="Include" />
+          <e p="Poly1305Donna.cs" t="Include" />
+          <e p="Salsa" t="Include">
+            <e p="replace regex.txt" t="Include" />
+            <e p="Salsa20.cs" t="Include" />
+            <e p="SalsaCore.cs" t="Include" />
+          </e>
+          <e p="Sha512Internal.cs" t="Include" />
+        </e>
+        <e p="MontgomeryCurve25519.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="Chaos.NaCl.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="OneTimeAuth.cs" t="Include" />
+        <e p="Poly1305.cs" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Sha512.cs" t="Include" />
+        <e p="XSalsa20Poly1305.cs" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="SampleApp" t="IncludeRecursive">
+        <e p=".babelrc" t="Include" />
+        <e p=".editorconfig" t="Include" />
+        <e p=".eslintrc.js" t="Include" />
+        <e p=".gitattributes" t="Include" />
+        <e p=".gitignore" t="Include" />
+        <e p=".npmrc" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ClientApp" t="Include">
+          <e p="app.js" t="Include" />
+          <e p="boot-app.js" t="Include" />
+          <e p="boot-server.js" t="Include" />
+          <e p="components" t="Include">
+            <e p="app-root.vue" t="Include" />
+            <e p="counter-example.vue" t="Include" />
+            <e p="fetch-data.vue" t="Include" />
+            <e p="home-page.vue" t="Include" />
+            <e p="nav-menu.vue" t="Include" />
+          </e>
+          <e p="css" t="Include">
+            <e p="site.css" t="Include" />
+          </e>
+          <e p="router.js" t="Include" />
+          <e p="routes.js" t="Include" />
+          <e p="signalr-client.min.js" t="Include" />
+          <e p="store" t="Include">
+            <e p="api.js" t="Include" />
+            <e p="index.js" t="Include" />
+          </e>
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="HomeController.cs" t="Include" />
+          <e p="SampleDataController.cs" t="Include" />
+        </e>
+        <e p="global.json" t="Include" />
+        <e p="LICENSE.md" t="Include" />
+        <e p="NuGet.config" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="SampleApp.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="package.json" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="README.md" t="Include" />
+        <e p="SampleApp.csproj" t="IncludeRecursive" />
+        <e p="Services" t="Include">
+          <e p="HostedService.cs" t="Include" />
+          <e p="Hubs" t="Include">
+            <e p="CounterHub.cs" t="Include" />
+            <e p="WeatherHub.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="Views" t="Include">
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="_ViewStart.cshtml" t="Include" />
+          <e p="Home" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Shared" t="Include">
+            <e p="_Layout.cshtml" t="Include" />
+            <e p="Error.cshtml" t="Include" />
+          </e>
+        </e>
+        <e p="web.config" t="Include" />
+        <e p="webpack.config.js" t="Include" />
+        <e p="webpack.config.vendor.js" t="Include" />
+        <e p="wwwroot" t="Include">
+          <e p="dist" t="Include">
+            <e p="89889688147bd7575d6327160d64e760.svg" t="Include" />
+            <e p="main.js" t="Include" />
+            <e p="main.js.map" t="Include" />
+            <e p="vendor-manifest.json" t="Include" />
+            <e p="vendor.css" t="Include" />
+            <e p="vendor.js" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="stellar-dotnetcore-sdk" t="IncludeRecursive">
+        <e p="Account.cs" t="Include" />
+        <e p="AccountFlag.cs" t="Include" />
+        <e p="AccountMergeOperation.cs" t="Include" />
+        <e p="AllowTrustOperation.cs" t="Include" />
+        <e p="Asset.cs" t="Include" />
+        <e p="AssetCodeLengthInvalidException.cs" t="Include" />
+        <e p="AssetTypeCreditAlphaNum.cs" t="Include" />
+        <e p="AssetTypeCreditAlphaNum12.cs" t="Include" />
+        <e p="AssetTypeCreditAlphaNum4.cs" t="Include" />
+        <e p="AssetTypeNative.cs" t="Include" />
+        <e p="Base32Encoding.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ChangeTrustOperation.cs" t="Include" />
+        <e p="CreateAccountOperation.cs" t="Include" />
+        <e p="CreatePassiveOfferOperation.cs" t="Include" />
+        <e p="EnumerableExtensions.cs" t="Include" />
+        <e p="EventSource.cs" t="Include" />
+        <e p="federation" t="Include">
+          <e p="ConnectionErrorException.cs" t="Include" />
+          <e p="Federation.cs" t="Include" />
+          <e p="FederationResponse.cs" t="Include" />
+          <e p="FederationServer.cs" t="Include" />
+          <e p="FederationServerInvalidException.cs" t="Include" />
+          <e p="MalformedAddressException.cs" t="Include" />
+          <e p="NoFederationServerException.cs" t="Include" />
+          <e p="NotFoundException.cs" t="Include" />
+          <e p="ServerErrorException.cs" t="Include" />
+          <e p="StellarTomlNotFoundInvalidException.cs" t="Include" />
+        </e>
+        <e p="FormatException.cs" t="Include" />
+        <e p="ITransactionBuilderAccount.cs" t="Include" />
+        <e p="KeyPair.cs" t="Include" />
+        <e p="ManageDataOperation.cs" t="Include" />
+        <e p="ManageOfferOperation.cs" t="Include" />
+        <e p="Memo.cs" t="Include" />
+        <e p="MemoHash.cs" t="Include" />
+        <e p="MemoHashAbstract.cs" t="Include" />
+        <e p="MemoId.cs" t="Include" />
+        <e p="MemoNone.cs" t="Include" />
+        <e p="MemoReturnHash.cs" t="Include" />
+        <e p="MemoText.cs" t="Include" />
+        <e p="MemoTooLongException.cs" t="Include" />
+        <e p="Network.cs" t="Include" />
+        <e p="NoNetworkSelectedException.cs" t="Include" />
+        <e p="NotEnoughSignaturesException.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="stellar-dotnetcore-sdk.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Operation.cs" t="Include" />
+        <e p="PathPaymentOperation.cs" t="Include" />
+        <e p="PaymentOperation.cs" t="Include" />
+        <e p="Price.cs" t="Include" />
+        <e p="requests" t="Include">
+          <e p="AccountsRequestBuilder.cs" t="Include" />
+          <e p="ClientProtocolException.cs" t="Include" />
+          <e p="EffectsRequestBuilder.cs" t="Include" />
+          <e p="HttpResponseException.cs" t="Include" />
+          <e p="LedgersRequestBuilder.cs" t="Include" />
+          <e p="OffersRequestBuilder.cs" t="Include" />
+          <e p="OperationsRequestBuilder.cs" t="Include" />
+          <e p="OrderBookRequestBuilder.cs" t="Include" />
+          <e p="PathsRequestBuilder.cs" t="Include" />
+          <e p="PaymentsRequestBuilder.cs" t="Include" />
+          <e p="RequestBuilder.cs" t="Include" />
+          <e p="ResponseHandler.cs" t="Include" />
+          <e p="TooManyRequestsException.cs" t="Include" />
+          <e p="TradesRequestBuilder.cs" t="Include" />
+          <e p="TransactionsRequestBuilder.cs" t="Include" />
+        </e>
+        <e p="responses" t="Include">
+          <e p="AccountResponse.cs" t="Include" />
+          <e p="AssetDeserializer.cs" t="Include" />
+          <e p="EffectDeserializer.cs" t="Include" />
+          <e p="effects" t="Include">
+            <e p="AccountCreatedEffectResponse.cs" t="Include" />
+            <e p="AccountCreditedEffectResponse.cs" t="Include" />
+            <e p="AccountDebitedEffectResponse.cs" t="Include" />
+            <e p="AccountFlagsUpdatedEffectResponse.cs" t="Include" />
+            <e p="AccountHomeDomainUpdatedEffectResponse.cs" t="Include" />
+            <e p="AccountRemovedEffectResponse.cs" t="Include" />
+            <e p="AccountThresholdsUpdatedEffectResponse.cs" t="Include" />
+            <e p="EffectResponse.cs" t="Include" />
+            <e p="OfferCreatedEffectResponse.cs" t="Include" />
+            <e p="OfferRemovedEffectResponse.cs" t="Include" />
+            <e p="OfferUpdatedEffectResponse.cs" t="Include" />
+            <e p="SignerCreatedEffectResponse.cs" t="Include" />
+            <e p="SignerEffectResponse.cs" t="Include" />
+            <e p="SignerRemovedEffectResponse.cs" t="Include" />
+            <e p="SignerUpdatedEffectResponse.cs" t="Include" />
+            <e p="TradeEffectResponse.cs" t="Include" />
+            <e p="TrustlineAuthorizationResponse.cs" t="Include" />
+            <e p="TrustlineAuthorizedEffectResponse.cs" t="Include" />
+            <e p="TrustlineCreatedEffectResponse.cs" t="Include" />
+            <e p="TrustlineCUDResponse.cs" t="Include" />
+            <e p="TrustlineDeauthorizedEffectResponse.cs" t="Include" />
+            <e p="TrustlineRemovedEffectResponse.cs" t="Include" />
+            <e p="TrustlineUpdatedEffectResponse.cs" t="Include" />
+          </e>
+          <e p="JsonSingleton.cs" t="Include" />
+          <e p="KeyPairTypeAdapter.cs" t="Include" />
+          <e p="LedgerResponse.cs" t="Include" />
+          <e p="Link.cs" t="Include" />
+          <e p="OfferResponse.cs" t="Include" />
+          <e p="OperationDeserializer.cs" t="Include" />
+          <e p="operations" t="Include">
+            <e p="AccountMergeOperationResponse.cs" t="Include" />
+            <e p="AllowTrustOperationResponse.cs" t="Include" />
+            <e p="ChangeTrustOperationResponse.cs" t="Include" />
+            <e p="CreateAccountOperationResponse.cs" t="Include" />
+            <e p="CreatePassiveOfferOperationResponse.cs" t="Include" />
+            <e p="InflationOperationResponse.cs" t="Include" />
+            <e p="ManageDataOperationResponse.cs" t="Include" />
+            <e p="ManageOfferOperationResponse.cs" t="Include" />
+            <e p="OperationResponse.cs" t="Include" />
+            <e p="PathPaymentOperationResponse.cs" t="Include" />
+            <e p="PaymentOperationResponse.cs" t="Include" />
+            <e p="SetOptionsOperationResponse.cs" t="Include" />
+          </e>
+          <e p="OrderBookResponse.cs" t="Include" />
+          <e p="Page.cs" t="Include" />
+          <e p="PathResponse.cs" t="Include" />
+          <e p="Response.cs" t="Include" />
+          <e p="SubmitTransactionResponse.cs" t="Include" />
+          <e p="TradeResponse.cs" t="Include" />
+          <e p="TransactionDeserializer.cs" t="Include" />
+          <e p="TransactionResponse.cs" t="Include" />
+        </e>
+        <e p="Server.cs" t="Include" />
+        <e p="SetOptionsOperation.cs" t="Include" />
+        <e p="Signer.cs" t="Include" />
+        <e p="stellar-dotnetcore-sdk.csproj" t="IncludeRecursive" />
+        <e p="StrKey.cs" t="Include" />
+        <e p="TimeBounds.cs" t="Include" />
+        <e p="Transaction.cs" t="Include" />
+        <e p="UriBuilderExtensions.cs" t="Include" />
+        <e p="Util.cs" t="Include" />
+        <e p="xdr" t="Include">
+          <e p="generate.bat" t="Include" />
+          <e p="generated" t="Include">
+            <e p="AccountEntry.cs" t="Include" />
+            <e p="AccountFlags.cs" t="Include" />
+            <e p="AccountID.cs" t="Include" />
+            <e p="AccountMergeResult.cs" t="Include" />
+            <e p="AccountMergeResultCode.cs" t="Include" />
+            <e p="AllowTrustOp.cs" t="Include" />
+            <e p="AllowTrustResult.cs" t="Include" />
+            <e p="AllowTrustResultCode.cs" t="Include" />
+            <e p="Asset.cs" t="Include" />
+            <e p="AssetType.cs" t="Include" />
+            <e p="Auth.cs" t="Include" />
+            <e p="AuthCert.cs" t="Include" />
+            <e p="AuthenticatedMessage.cs" t="Include" />
+            <e p="BucketEntry.cs" t="Include" />
+            <e p="BucketEntryType.cs" t="Include" />
+            <e p="ChangeTrustOp.cs" t="Include" />
+            <e p="ChangeTrustResult.cs" t="Include" />
+            <e p="ChangeTrustResultCode.cs" t="Include" />
+            <e p="ClaimOfferAtom.cs" t="Include" />
+            <e p="CreateAccountOp.cs" t="Include" />
+            <e p="CreateAccountResult.cs" t="Include" />
+            <e p="CreateAccountResultCode.cs" t="Include" />
+            <e p="CreatePassiveOfferOp.cs" t="Include" />
+            <e p="CryptoKeyType.cs" t="Include" />
+            <e p="Curve25519Public.cs" t="Include" />
+            <e p="Curve25519Secret.cs" t="Include" />
+            <e p="DataEntry.cs" t="Include" />
+            <e p="DataValue.cs" t="Include" />
+            <e p="DecoratedSignature.cs" t="Include" />
+            <e p="DontHave.cs" t="Include" />
+            <e p="EnvelopeType.cs" t="Include" />
+            <e p="Error.cs" t="Include" />
+            <e p="ErrorCode.cs" t="Include" />
+            <e p="Hash.cs" t="Include" />
+            <e p="Hello.cs" t="Include" />
+            <e p="HmacSha256Key.cs" t="Include" />
+            <e p="HmacSha256Mac.cs" t="Include" />
+            <e p="InflationPayout.cs" t="Include" />
+            <e p="InflationResult.cs" t="Include" />
+            <e p="InflationResultCode.cs" t="Include" />
+            <e p="Int32.cs" t="Include" />
+            <e p="Int64.cs" t="Include" />
+            <e p="IPAddrType.cs" t="Include" />
+            <e p="LedgerEntry.cs" t="Include" />
+            <e p="LedgerEntryChange.cs" t="Include" />
+            <e p="LedgerEntryChanges.cs" t="Include" />
+            <e p="LedgerEntryChangeType.cs" t="Include" />
+            <e p="LedgerEntryType.cs" t="Include" />
+            <e p="LedgerHeader.cs" t="Include" />
+            <e p="LedgerHeaderHistoryEntry.cs" t="Include" />
+            <e p="LedgerKey.cs" t="Include" />
+            <e p="LedgerSCPMessages.cs" t="Include" />
+            <e p="LedgerUpgrade.cs" t="Include" />
+            <e p="LedgerUpgradeType.cs" t="Include" />
+            <e p="ManageDataOp.cs" t="Include" />
+            <e p="ManageDataResult.cs" t="Include" />
+            <e p="ManageDataResultCode.cs" t="Include" />
+            <e p="ManageOfferEffect.cs" t="Include" />
+            <e p="ManageOfferOp.cs" t="Include" />
+            <e p="ManageOfferResult.cs" t="Include" />
+            <e p="ManageOfferResultCode.cs" t="Include" />
+            <e p="ManageOfferSuccessResult.cs" t="Include" />
+            <e p="Memo.cs" t="Include" />
+            <e p="MemoType.cs" t="Include" />
+            <e p="MessageType.cs" t="Include" />
+            <e p="NodeID.cs" t="Include" />
+            <e p="OfferEntry.cs" t="Include" />
+            <e p="OfferEntryFlags.cs" t="Include" />
+            <e p="Operation.cs" t="Include" />
+            <e p="OperationMeta.cs" t="Include" />
+            <e p="OperationResult.cs" t="Include" />
+            <e p="OperationResultCode.cs" t="Include" />
+            <e p="OperationType.cs" t="Include" />
+            <e p="PathPaymentOp.cs" t="Include" />
+            <e p="PathPaymentResult.cs" t="Include" />
+            <e p="PathPaymentResultCode.cs" t="Include" />
+            <e p="PaymentOp.cs" t="Include" />
+            <e p="PaymentResult.cs" t="Include" />
+            <e p="PaymentResultCode.cs" t="Include" />
+            <e p="PeerAddress.cs" t="Include" />
+            <e p="Price.cs" t="Include" />
+            <e p="PublicKey.cs" t="Include" />
+            <e p="PublicKeyType.cs" t="Include" />
+            <e p="SCPBallot.cs" t="Include" />
+            <e p="SCPEnvelope.cs" t="Include" />
+            <e p="SCPHistoryEntry.cs" t="Include" />
+            <e p="SCPHistoryEntryV0.cs" t="Include" />
+            <e p="SCPNomination.cs" t="Include" />
+            <e p="SCPQuorumSet.cs" t="Include" />
+            <e p="SCPStatement.cs" t="Include" />
+            <e p="SCPStatementType.cs" t="Include" />
+            <e p="SequenceNumber.cs" t="Include" />
+            <e p="SetOptionsOp.cs" t="Include" />
+            <e p="SetOptionsResult.cs" t="Include" />
+            <e p="SetOptionsResultCode.cs" t="Include" />
+            <e p="Signature.cs" t="Include" />
+            <e p="SignatureHint.cs" t="Include" />
+            <e p="Signer.cs" t="Include" />
+            <e p="SignerKey.cs" t="Include" />
+            <e p="SignerKeyType.cs" t="Include" />
+            <e p="SimplePaymentResult.cs" t="Include" />
+            <e p="StellarMessage.cs" t="Include" />
+            <e p="StellarValue.cs" t="Include" />
+            <e p="String32.cs" t="Include" />
+            <e p="String64.cs" t="Include" />
+            <e p="ThresholdIndexes.cs" t="Include" />
+            <e p="Thresholds.cs" t="Include" />
+            <e p="TimeBounds.cs" t="Include" />
+            <e p="Transaction.cs" t="Include" />
+            <e p="TransactionEnvelope.cs" t="Include" />
+            <e p="TransactionHistoryEntry.cs" t="Include" />
+            <e p="TransactionHistoryResultEntry.cs" t="Include" />
+            <e p="TransactionMeta.cs" t="Include" />
+            <e p="TransactionResult.cs" t="Include" />
+            <e p="TransactionResultCode.cs" t="Include" />
+            <e p="TransactionResultPair.cs" t="Include" />
+            <e p="TransactionResultSet.cs" t="Include" />
+            <e p="TransactionSet.cs" t="Include" />
+            <e p="TransactionSignaturePayload.cs" t="Include" />
+            <e p="TrustLineEntry.cs" t="Include" />
+            <e p="TrustLineFlags.cs" t="Include" />
+            <e p="Uint256.cs" t="Include" />
+            <e p="Uint32.cs" t="Include" />
+            <e p="Uint64.cs" t="Include" />
+            <e p="UpgradeType.cs" t="Include" />
+            <e p="Value.cs" t="Include" />
+          </e>
+          <e p="Stellar-ledger-entries.x" t="Include" />
+          <e p="Stellar-ledger.x" t="Include" />
+          <e p="Stellar-overlay.x" t="Include" />
+          <e p="Stellar-SCP.x" t="Include" />
+          <e p="Stellar-transaction.x" t="Include" />
+          <e p="Stellar-types.x" t="Include" />
+          <e p="XdrDataInputStream.cs" t="Include" />
+          <e p="XdrDataOutputStream.cs" t="Include" />
+        </e>
+      </e>
+      <e p="stellar-dotnetcore-sdk.sln" t="IncludeFlat" />
+      <e p="stellar-dotnetcore-unittest" t="IncludeRecursive">
+        <e p="AccountFlagTest.cs" t="Include" />
+        <e p="AccountTest.cs" t="Include" />
+        <e p="AssetTest.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="federation" t="Include">
+          <e p="FederationServerTest.cs" t="Include" />
+          <e p="FederationTest.cs" t="Include" />
+        </e>
+        <e p="KeyPairTest.cs" t="Include" />
+        <e p="MemoTest.cs" t="Include" />
+        <e p="NetworkTest.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="stellar-dotnetcore-unittest.AssemblyInfo.cs" t="Include" />
+              <e p="stellar-dotnetcore-unittest.Program.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="OperationTest.cs" t="Include" />
+        <e p="PriceTest.cs" t="Include" />
+        <e p="requests" t="Include">
+          <e p="AccountsRequestBuilderTest.cs" t="Include" />
+          <e p="EffectsRequestBuilderTest.cs" t="Include" />
+          <e p="LedgersRequestBuilderTest.cs" t="Include" />
+          <e p="OffersRequestBuilderTest.cs" t="Include" />
+          <e p="OperationsRequestBuilderTest.cs" t="Include" />
+          <e p="OrderBookRequestBuilderTest.cs" t="Include" />
+          <e p="PathsRequestBuilderTest.cs" t="Include" />
+          <e p="PaymentsRequestBuilderTest.cs" t="Include" />
+          <e p="TradesRequestBuilderTest.cs" t="Include" />
+          <e p="TransactionRequestBuilderTest.cs" t="Include" />
+        </e>
+        <e p="responses" t="Include">
+          <e p="AccountDeserializerTest.cs" t="Include" />
+          <e p="AccountPageDeserializerTest.cs" t="Include" />
+          <e p="AssetDeserializerTest.cs" t="Include" />
+          <e p="EffectDeserializerTest.cs" t="Include" />
+          <e p="EffectsPageDeserializeTest.cs" t="Include" />
+          <e p="LedgerDeserializeTest.cs" t="Include" />
+          <e p="LedgerPageDeserializerTest.cs" t="Include" />
+          <e p="OfferPageDeserializerTest.cs" t="Include" />
+          <e p="OperationDeserializerTest.cs" t="Include" />
+          <e p="OperationPageDeserializerTest.cs" t="Include" />
+          <e p="OrderBookDeserializerTest.cs" t="Include" />
+          <e p="PathsPageDeserializerTest.cs" t="Include" />
+          <e p="SubmitTransactionResponseTest.cs" t="Include" />
+          <e p="testdata" t="Include">
+            <e p="account.json" t="Include" />
+            <e p="accountPage.json" t="Include" />
+            <e p="assetAssetTypeCredit.json" t="Include" />
+            <e p="assetAssetTypeNative.json" t="Include" />
+            <e p="effectAccountCreated.json" t="Include" />
+            <e p="effectAccountCredited.json" t="Include" />
+            <e p="effectAccountDebited.json" t="Include" />
+            <e p="effectAccountFlagsUpdated.json" t="Include" />
+            <e p="effectAccountHomeDomainUpdated.json" t="Include" />
+            <e p="effectAccountRemoved.json" t="Include" />
+            <e p="effectAccountThresholdsUpdated.json" t="Include" />
+            <e p="effectPage.json" t="Include" />
+            <e p="effectSignerCreated.json" t="Include" />
+            <e p="effectSignerRemoved.json" t="Include" />
+            <e p="effectSignerUpdated.json" t="Include" />
+            <e p="effectTrade.json" t="Include" />
+            <e p="effectTrustlineAuthorized.json" t="Include" />
+            <e p="effectTrustlineCreated.json" t="Include" />
+            <e p="effectTrustlineDeAuthorized.json" t="Include" />
+            <e p="effectTrustlineRemoved.json" t="Include" />
+            <e p="effectTrustlineUpdated.json" t="Include" />
+            <e p="ledger.json" t="Include" />
+            <e p="ledgerPage.json" t="Include" />
+            <e p="offerPage.json" t="Include" />
+            <e p="operationAccountMerge.json" t="Include" />
+            <e p="operationAllowTrust.json" t="Include" />
+            <e p="operationChangeTrust.json" t="Include" />
+            <e p="operationCreateAccount.json" t="Include" />
+            <e p="operationInflation.json" t="Include" />
+            <e p="operationManageData.json" t="Include" />
+            <e p="operationManageDataValueEmpty.json" t="Include" />
+            <e p="operationManageOffer.json" t="Include" />
+            <e p="operationPage.json" t="Include" />
+            <e p="operationPassiveOffer.json" t="Include" />
+            <e p="operationPathPayment.json" t="Include" />
+            <e p="operationPayment.json" t="Include" />
+            <e p="operationPaymentNonNative.json" t="Include" />
+            <e p="operationSetOptions.json" t="Include" />
+            <e p="orderBook.json" t="Include" />
+            <e p="pathsPage.json" t="Include" />
+            <e p="serverFailure.json" t="Include" />
+            <e p="serverSuccess.json" t="Include" />
+            <e p="submitTransactionNoOfferId.json" t="Include" />
+            <e p="submitTransactionOperationFailure.json" t="Include" />
+            <e p="submitTransactionSuccess.json" t="Include" />
+            <e p="submitTransactionTransactionFailure.json" t="Include" />
+            <e p="tradesPage.json" t="Include" />
+            <e p="transactionPageDeserialize.json" t="Include" />
+            <e p="transactionTransaction.json" t="Include" />
+            <e p="transactionTransactionWithoutMemo.json" t="Include" />
+          </e>
+          <e p="TradesPageDeserializerTest.cs" t="Include" />
+          <e p="TransactionDeserializerTest.cs" t="Include" />
+          <e p="TransactionPageDeserializerTest.cs" t="Include" />
+        </e>
+        <e p="ServerTest.cs" t="Include" />
+        <e p="stellar-dotnetcore-unittest.csproj" t="IncludeRecursive" />
+        <e p="StrKeyTest.cs" t="Include" />
+        <e p="TransactionTest.cs" t="Include" />
+        <e p="UtilTest.cs" t="Include" />
+        <e p="xdr" t="Include">
+          <e p="PaddingTest.cs" t="Include" />
+          <e p="TransactionDecodeTest.cs" t="Include" />
+          <e p="XdrDataStreamTest.cs" t="Include" />
+        </e>
+      </e>
+      <e p="TestConsole" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="TestConsole.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="TestConsole.csproj" t="IncludeRecursive" />
+        <e p="TestConsole.csproj.DotSettings" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>
