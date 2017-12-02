@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnetcore_sdk;
 using stellar_dotnetcore_sdk.responses;
 using stellar_dotnetcore_sdk.responses.effects;
-using stellar_dotnetcore_sdk.responses.operations;
 
 namespace stellar_dotnetcore_unittest.responses
 {

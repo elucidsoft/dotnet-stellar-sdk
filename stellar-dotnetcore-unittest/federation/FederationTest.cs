@@ -69,7 +69,7 @@ namespace stellar_dotnetcore_unittest.federation
         [ExpectedException(typeof(MalformedAddressException))]
         public async Task TestMalformedAddress()
         {
-            var response = await Federation.Resolve("bob*stellar.org*test");
+            var unused = await Federation.Resolve("bob*stellar.org*test");
         }
     }
 }

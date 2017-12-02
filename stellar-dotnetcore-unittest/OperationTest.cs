@@ -122,9 +122,9 @@ namespace stellar_dotnetcore_unittest
             var issuer = KeyPair.FromSecretSeed("SBOBVZUN6WKVMI6KIL2GHBBEETEV6XKQGILITNH6LO6ZA22DBMSDCPAG");
 
             // GAVAQKT2M7B4V3NN7RNNXPU5CWNDKC27MYHKLF5UNYXH4FNLFVDXKRSV
-            var pathIssuer1 = KeyPair.FromSecretSeed("SALDLG5XU5AEJWUOHAJPSC4HJ2IK3Z6BXXP4GWRHFT7P7ILSCFFQ7TC5");
+            var unused1 = KeyPair.FromSecretSeed("SALDLG5XU5AEJWUOHAJPSC4HJ2IK3Z6BXXP4GWRHFT7P7ILSCFFQ7TC5");
             // GBCP5W2VS7AEWV2HFRN7YYC623LTSV7VSTGIHFXDEJU7S5BAGVCSETRR
-            var pathIssuer2 = KeyPair.FromSecretSeed("SA64U7C5C7BS5IHWEPA7YWFN3Z6FE5L6KAMYUIT4AQ7KVTVLD23C6HEZ");
+            var unused = KeyPair.FromSecretSeed("SA64U7C5C7BS5IHWEPA7YWFN3Z6FE5L6KAMYUIT4AQ7KVTVLD23C6HEZ");
 
             Asset sendAsset = new AssetTypeNative();
             var sendMax = "0.0001";
@@ -188,10 +188,10 @@ namespace stellar_dotnetcore_unittest
             // GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR
             var trustor = KeyPair.FromSecretSeed("SDHZGHURAYXKU2KMVHPOXI6JG2Q4BSQUQCEOY72O3QQTCLR2T455PMII");
 
-            var assetCode = "USDA";
-            var authorize = true;
+            const string assetCode = "USDA";
+            const bool authorize = true;
 
-            var operation = new AllowTrustOperation.Builder(trustor, assetCode, authorize)
+            var operation = new AllowTrustOperation.Builder(trustor, assetCode, true)
                 .SetSourceAccount(source)
                 .Build();
 

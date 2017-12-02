@@ -15,7 +15,7 @@ namespace stellar_dotnetcore_unittest.xdr
 
             try
             {
-                var xdrObject = String32.Decode(new XdrDataInputStream(bytes));
+                String32.Decode(new XdrDataInputStream(bytes));
             }
             catch (IOException expectedException)
             {
@@ -31,7 +31,7 @@ namespace stellar_dotnetcore_unittest.xdr
             byte[] bytes = {0, 0, 0, 2, (byte) 'a', (byte) 'b', 1, 0};
             try
             {
-                var xdrObject = DataValue.Decode(new XdrDataInputStream(bytes));
+                DataValue.Decode(new XdrDataInputStream(bytes));
             }
             catch (IOException expectedException)
             {

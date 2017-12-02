@@ -226,6 +226,7 @@
         <e p="SetOptionsOperation.cs" t="Include" />
         <e p="Signer.cs" t="Include" />
         <e p="stellar-dotnetcore-sdk.csproj" t="IncludeRecursive" />
+        <e p="stellar-dotnetcore-sdk.csproj.DotSettings" t="Include" />
         <e p="StrKey.cs" t="Include" />
         <e p="TimeBounds.cs" t="Include" />
         <e p="Transaction.cs" t="Include" />

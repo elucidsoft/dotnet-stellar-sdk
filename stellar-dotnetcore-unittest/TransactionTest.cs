@@ -173,7 +173,7 @@ namespace stellar_dotnetcore_unittest
             var account = new Account(source, 2908908335136768L);
             try
             {
-                var transaction = new Transaction.Builder(account).Build();
+                var unused = new Transaction.Builder(account).Build();
                 Assert.Fail();
             }
             catch (Exception exception)

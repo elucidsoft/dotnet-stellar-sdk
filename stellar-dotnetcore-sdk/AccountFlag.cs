@@ -10,16 +10,16 @@ namespace stellar_dotnetcore_sdk
         /// <summary>
         /// 
         /// </summary>
-        AUTH_REQUIRED_FLAG = AccountFlags.AccountFlagsEnum.AUTH_REQUIRED_FLAG,
+        AuthRequiredFlag = AccountFlags.AccountFlagsEnum.AUTH_REQUIRED_FLAG,
         
         /// <summary>
         /// 
         /// </summary>
-        AUTH_REVOCABLE_FLAG = AccountFlags.AccountFlagsEnum.AUTH_REVOCABLE_FLAG,
+        AuthRevocableFlag = AccountFlags.AccountFlagsEnum.AUTH_REVOCABLE_FLAG,
         
         /// <summary>
         /// 
         /// </summary>
-        AUTH_IMMUTABLE_FLAG = AccountFlags.AccountFlagsEnum.AUTH_IMMUTABLE_FLAG
+        AuthImmutableFlag = AccountFlags.AccountFlagsEnum.AUTH_IMMUTABLE_FLAG
     }
 }

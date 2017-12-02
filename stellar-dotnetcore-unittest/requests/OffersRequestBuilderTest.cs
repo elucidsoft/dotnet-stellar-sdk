@@ -2,8 +2,6 @@
 using stellar_dotnetcore_sdk;
 using stellar_dotnetcore_sdk.requests;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace stellar_dotnetcore_unittest.requests
 {

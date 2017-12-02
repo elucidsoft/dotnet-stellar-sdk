@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using EventSource4Net;
 using stellar_dotnetcore_sdk.responses;
 using stellar_dotnetcore_sdk.responses.page;
 

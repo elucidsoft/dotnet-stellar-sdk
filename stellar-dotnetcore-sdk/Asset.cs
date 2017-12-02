@@ -56,20 +56,10 @@ namespace stellar_dotnetcore_sdk
         ///</summary>
         public new abstract string GetType();
 
-
-        /// <inheritdoc />
-        public abstract override bool Equals(object obj);
-
         ///<summary>
         /// Generates XDR object from a given Asset object
         ///</summary>
         public abstract xdr.Asset ToXdr();
-
-        /// <inheritdoc />
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
 
         ///<summary>
         /// Creates one of AssetTypeCreditAlphaNum4 or AssetTypeCreditAlphaNum12 object based on a <code>code</code> length

@@ -47,7 +47,7 @@ namespace stellar_dotnetcore_unittest.responses
         }
 
         [TestMethod]
-        public void TestDeserializeNoOfferID()
+        public void TestDeserializeNoOfferId()
         {
 
             var json = File.ReadAllText(Path.Combine("responses", "testdata", "submitTransactionNoOfferId.json"));

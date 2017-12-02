@@ -3,7 +3,6 @@ using stellar_dotnetcore_sdk.responses.page;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using EventSource4Net;
 
 namespace stellar_dotnetcore_sdk.requests
 {

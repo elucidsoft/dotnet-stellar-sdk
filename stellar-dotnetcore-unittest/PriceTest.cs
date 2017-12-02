@@ -38,8 +38,8 @@ namespace stellar_dotnetcore_unittest
 
             foreach (var test in tests)
             {
-                var price = Price.FromString(test.input);
-                Assert.AreEqual(test.expectedPrice.Numerator + "/" + test.expectedPrice.Denominator,
+                var price = Price.FromString(test.Input);
+                Assert.AreEqual(test.ExpectedPrice.Numerator + "/" + test.ExpectedPrice.Denominator,
                     price.Numerator + "/" + price.Denominator
                 );
             }
@@ -47,13 +47,13 @@ namespace stellar_dotnetcore_unittest
 
         private class PriceTestCase
         {
-            public readonly Price expectedPrice;
-            public readonly string input;
+            public readonly Price ExpectedPrice;
+            public readonly string Input;
 
             public PriceTestCase(string input, Price expectedPrice)
             {
-                this.input = input;
-                this.expectedPrice = expectedPrice;
+                Input = input;
+                ExpectedPrice = expectedPrice;
             }
         }
     }

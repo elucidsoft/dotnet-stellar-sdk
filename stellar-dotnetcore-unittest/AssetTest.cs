@@ -67,12 +67,12 @@ namespace stellar_dotnetcore_unittest
             var issuer1 = KeyPair.Random();
             var issuer2 = KeyPair.Random();
 
-            Assert.IsTrue(new AssetTypeNative().Equals(new AssetTypeNative()));
-            Assert.IsTrue(new AssetTypeCreditAlphaNum4("USD", issuer1).Equals(new AssetTypeCreditAlphaNum4("USD", issuer1)));
-            Assert.IsTrue(new AssetTypeCreditAlphaNum12("ABCDE", issuer1).Equals(new AssetTypeCreditAlphaNum12("ABCDE", issuer1)));
+            Assert.AreEqual(new AssetTypeNative(), new AssetTypeNative());
+            Assert.AreEqual(new AssetTypeCreditAlphaNum4("USD", issuer1), new AssetTypeCreditAlphaNum4("USD", issuer1));
+            Assert.AreEqual(new AssetTypeCreditAlphaNum12("ABCDE", issuer1), new AssetTypeCreditAlphaNum12("ABCDE", issuer1));
 
-            Assert.IsFalse(new AssetTypeNative().Equals(new AssetTypeCreditAlphaNum4("USD", issuer1)));
-            Assert.IsFalse(new AssetTypeNative().Equals(new AssetTypeCreditAlphaNum12("ABCDE", issuer1)));
+            Assert.AreNotEqual(new AssetTypeNative(), new AssetTypeCreditAlphaNum4("USD", issuer1));
+            Assert.AreNotEqual(new AssetTypeNative(), new AssetTypeCreditAlphaNum12("ABCDE", issuer1));
             Assert.IsFalse(new AssetTypeCreditAlphaNum4("EUR", issuer1).Equals(new AssetTypeCreditAlphaNum4("USD", issuer1)));
             Assert.IsFalse(new AssetTypeCreditAlphaNum4("EUR", issuer1).Equals(new AssetTypeCreditAlphaNum4("EUR", issuer2)));
             Assert.IsFalse(new AssetTypeCreditAlphaNum12("ABCDE", issuer1).Equals(new AssetTypeCreditAlphaNum12("EDCBA", issuer1)));

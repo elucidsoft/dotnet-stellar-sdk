@@ -8,9 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Moq.Language;
 using stellar_dotnetcore_sdk;
-using stellar_dotnetcore_sdk.federation;
 using stellar_dotnetcore_sdk.responses;
-using stellar_dotnetcore_unittest.federation;
 
 namespace stellar_dotnetcore_unittest
 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 namespace Chaos.NaCl
@@ -8,9 +9,9 @@ namespace Chaos.NaCl
         public static bool ConstantTimeEquals(byte[] x, byte[] y)
         {
             if (x == null)
-                throw new ArgumentNullException("x");
+                throw new ArgumentNullException(nameof(x));
             if (y == null)
-                throw new ArgumentNullException("y");
+                throw new ArgumentNullException(nameof(y));
             if (x.Length != y.Length)
                 throw new ArgumentException("x.Length must equal y.Length");
             return InternalConstantTimeEquals(x, 0, y, 0, x.Length) != 0;
@@ -19,9 +20,9 @@ namespace Chaos.NaCl
         public static bool ConstantTimeEquals(ArraySegment<byte> x, ArraySegment<byte> y)
         {
             if (x.Array == null)
-                throw new ArgumentNullException("x.Array");
+                throw new ArgumentNullException(nameof(x));
             if (y.Array == null)
-                throw new ArgumentNullException("y.Array");
+                throw new ArgumentNullException(nameof(x));
             if (x.Count != y.Count)
                 throw new ArgumentException("x.Count must equal y.Count");
 
@@ -31,15 +32,15 @@ namespace Chaos.NaCl
         public static bool ConstantTimeEquals(byte[] x, int xOffset, byte[] y, int yOffset, int length)
         {
             if (x == null)
-                throw new ArgumentNullException("x");
+                throw new ArgumentNullException(nameof(x));
             if (xOffset < 0)
-                throw new ArgumentOutOfRangeException("xOffset", "xOffset < 0");
+                throw new ArgumentOutOfRangeException(nameof(xOffset), "xOffset < 0");
             if (y == null)
-                throw new ArgumentNullException("y");
+                throw new ArgumentNullException(nameof(y));
             if (yOffset < 0)
-                throw new ArgumentOutOfRangeException("yOffset", "yOffset < 0");
+                throw new ArgumentOutOfRangeException(nameof(yOffset), "yOffset < 0");
             if (length < 0)
-                throw new ArgumentOutOfRangeException("length", "length < 0");
+                throw new ArgumentOutOfRangeException(nameof(length), "length < 0");
             if (x.Length - xOffset < length)
                 throw new ArgumentException("xOffset + length > x.Length");
             if (y.Length - yOffset < length)
@@ -48,10 +49,10 @@ namespace Chaos.NaCl
             return InternalConstantTimeEquals(x, xOffset, y, yOffset, length) != 0;
         }
 
-        private static uint InternalConstantTimeEquals(byte[] x, int xOffset, byte[] y, int yOffset, int length)
+        private static uint InternalConstantTimeEquals(IReadOnlyList<byte> x, int xOffset, IReadOnlyList<byte> y, int yOffset, int length)
         {
-            int differentbits = 0;
-            for (int i = 0; i < length; i++)
+            var differentbits = 0;
+            for (var i = 0; i < length; i++)
                 differentbits |= x[xOffset + i] ^ y[yOffset + i];
             return (1 & (unchecked((uint)differentbits - 1) >> 8));
         }
@@ -59,18 +60,18 @@ namespace Chaos.NaCl
         public static void Wipe(byte[] data)
         {
             if (data == null)
-                throw new ArgumentNullException("data");
+                throw new ArgumentNullException(nameof(data));
             InternalWipe(data, 0, data.Length);
         }
 
         public static void Wipe(byte[] data, int offset, int count)
         {
             if (data == null)
-                throw new ArgumentNullException("data");
+                throw new ArgumentNullException(nameof(data));
             if (offset < 0)
-                throw new ArgumentOutOfRangeException("offset");
+                throw new ArgumentOutOfRangeException(nameof(offset));
             if (count < 0)
-                throw new ArgumentOutOfRangeException("count", "Requires count >= 0");
+                throw new ArgumentOutOfRangeException(nameof(count), "Requires count >= 0");
             if ((uint)offset + (uint)count > (uint)data.Length)
                 throw new ArgumentException("Requires offset + count <= data.Length");
             InternalWipe(data, offset, count);
@@ -79,7 +80,7 @@ namespace Chaos.NaCl
         public static void Wipe(ArraySegment<byte> data)
         {
             if (data.Array == null)
-                throw new ArgumentNullException("data.Array");
+                throw new ArgumentNullException(nameof(data));
             InternalWipe(data.Array, data.Offset, data.Count);
         }
 
@@ -97,15 +98,7 @@ namespace Chaos.NaCl
             Array.Clear(data, offset, count);
         }
 
-        // shallow wipe of structs
-        [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void InternalWipe<T>(ref T data)
-            where T : struct
-        {
-            data = default(T);
-        }
-
-        // constant time hex conversion
+       // constant time hex conversion
         // see http://stackoverflow.com/a/14333437/445517
         //
         // An explanation of the weird bit fiddling:

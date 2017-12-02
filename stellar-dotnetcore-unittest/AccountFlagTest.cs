@@ -9,9 +9,9 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestValues()
         {
-            Assert.AreEqual(1, (int) AccountFlag.AUTH_REQUIRED_FLAG);
-            Assert.AreEqual(2, (int) AccountFlag.AUTH_REVOCABLE_FLAG);
-            Assert.AreEqual(4, (int) AccountFlag.AUTH_IMMUTABLE_FLAG);
+            Assert.AreEqual(1, (int) AccountFlag.AuthRequiredFlag);
+            Assert.AreEqual(2, (int) AccountFlag.AuthRevocableFlag);
+            Assert.AreEqual(4, (int) AccountFlag.AuthImmutableFlag);
         }
     }
 }

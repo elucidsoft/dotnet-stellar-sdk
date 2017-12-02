@@ -1,8 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnetcore_sdk;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace stellar_dotnetcore_unittest.requests
 {
@@ -10,7 +8,7 @@ namespace stellar_dotnetcore_unittest.requests
     public class OrderBookRequestBuilderTest
     {
         [TestMethod]
-        public void testOrderBook()
+        public void TestOrderBook()
         {
             using (Server server = new Server("https://horizon-testnet.stellar.org"))
             {

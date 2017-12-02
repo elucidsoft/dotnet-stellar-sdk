@@ -12,7 +12,7 @@ namespace stellar_dotnetcore_unittest
         {
             try
             {
-                new Account(null, 10L);
+                var unused = new Account(null, 10L);
                 Assert.Fail();
             }
             catch (ArgumentNullException)
@@ -21,7 +21,7 @@ namespace stellar_dotnetcore_unittest
 
             try
             {
-                new Account(KeyPair.Random(), null);
+                var unused = new Account(KeyPair.Random(), null);
                 Assert.Fail();
             }
             catch (ArgumentNullException)

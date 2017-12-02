@@ -10,14 +10,14 @@ namespace stellar_dotnetcore_unittest
     [TestClass]
     public class KeyPairTest
     {
-        private const string SEED = "1123740522f11bfef6b3671f51e159ccf589ccf8965262dd5f97d1721d383dd4";
+        private const string Seed = "1123740522f11bfef6b3671f51e159ccf589ccf8965262dd5f97d1721d383dd4";
 
         [TestMethod]
         public void TestSign()
         {
-            var expectedSig = "587d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
-            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
-            var data = "hello world";
+            const string expectedSig = "587d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
+            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(Seed));
+            const string data = "hello world";
 
             var bytes = Encoding.UTF8.GetBytes(data);
             var sig = keyPair.Sign(bytes);
@@ -28,9 +28,9 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestVerifyTrue()
         {
-            var sig = "587d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
-            var data = "hello world";
-            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
+            const string sig = "587d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
+            const string data = "hello world";
+            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(Seed));
 
             var bytes = Encoding.UTF8.GetBytes(data);
             Assert.IsTrue(keyPair.Verify(bytes, Util.HexToBytes(sig)));
@@ -39,10 +39,10 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestVerifyFalse()
         {
-            var badSig = "687d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
+            const string badSig = "687d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
             byte[] corrupt = {0x00};
-            var data = "hello world";
-            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
+            const string data = "hello world";
+            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(Seed));
 
             var bytes = Encoding.UTF8.GetBytes(data);
             Assert.IsFalse(keyPair.Verify(bytes, Util.HexToBytes(badSig)));
@@ -86,11 +86,11 @@ namespace stellar_dotnetcore_unittest
         public void TestSignWithoutSecret()
         {
             var keyPair = KeyPair.FromAccountId("GDEAOZWTVHQZGGJY6KG4NAGJQ6DXATXAJO3AMW7C4IXLKMPWWB4FDNFZ");
-            var data = "hello world";
+            const string data = "hello world";
 
             try
             {
-                var sig = keyPair.Sign(Encoding.UTF8.GetBytes(data));
+                var unused = keyPair.Sign(Encoding.UTF8.GetBytes(data));
             }
             catch (Exception e)
             {

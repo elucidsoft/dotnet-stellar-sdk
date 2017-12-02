@@ -10,7 +10,7 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestBytesToHexAndHexToBytes()
         {
-            var test = "This is a test of this method, 1234567890:;''<>!@#$%^&*()";
+            const string test = "This is a test of this method, 1234567890:;''<>!@#$%^&*()";
             var byteTest = Encoding.Default.GetBytes(test);
 
             var bytesToHex = Util.BytesToHex(byteTest);
@@ -34,7 +34,7 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestPaddedByteArrayWithString()
         {
-            var testString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string testString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var result = Util.PaddedByteArray(testString, 40);
 
             for (var i = 26; i < result.Length; i++)
@@ -44,7 +44,7 @@ namespace stellar_dotnetcore_unittest
         [TestMethod]
         public void TestPaddedByteArrayToString()
         {
-            var testString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string testString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var result = Util.PaddedByteArray(testString, 40);
 
             var stringResult = Util.PaddedByteArrayToString(result);

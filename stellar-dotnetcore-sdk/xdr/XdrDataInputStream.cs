@@ -5,16 +5,27 @@ using System.Text;
 
 namespace stellar_dotnetcore_sdk.xdr
 {
+    /// <summary>
+    /// Stream class for Reading XDR Data
+    /// </summary>
     public class XdrDataInputStream
     {
         private readonly byte[] _bytes;
         private int _pos;
 
+        /// <summary>
+        /// Create the stream from a byte array.
+        /// </summary>
+        /// <param name="bytes"></param>
         public XdrDataInputStream(byte[] bytes)
         {
             _bytes = bytes;
         }
 
+        /// <summary>
+        /// Read single byte from stream.
+        /// </summary>
+        /// <returns></returns>
         public byte Read()
         {
             var res = _bytes[_pos];
@@ -23,6 +34,12 @@ namespace stellar_dotnetcore_sdk.xdr
             return res;
         }
 
+        /// <summary>
+        /// Read from Stream and move position.
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <param name="offset"></param>
+        /// <param name="count"></param>
         public void Read(byte[] buffer, int offset, int count)
         {
             ReadFixOpaque((uint) count);
@@ -30,11 +47,19 @@ namespace stellar_dotnetcore_sdk.xdr
             _pos += count;
         }
 
+        /// <summary>
+        /// Read a string from stream.
+        /// </summary>
+        /// <returns></returns>
         public string ReadString()
         {
             return Encoding.UTF8.GetString(ReadVarOpaque(uint.MaxValue));
         }
 
+        /// <summary>
+        /// Read array of int from stream.
+        /// </summary>
+        /// <returns></returns>
         public int[] ReadIntArray()
         {
             var l = ReadInt();
@@ -62,6 +87,10 @@ namespace stellar_dotnetcore_sdk.xdr
                 _bytes[_pos++];
         }
 
+        /// <summary>
+        /// Read Int32 from Stream
+        /// </summary>
+        /// <returns></returns>
         public int ReadInt()
         {
             return
@@ -71,6 +100,10 @@ namespace stellar_dotnetcore_sdk.xdr
                 _bytes[_pos++];
         }
 
+        /// <summary>
+        /// Read UInt from stream
+        /// </summary>
+        /// <returns></returns>
         public uint ReadUInt()
         {
             return
@@ -86,6 +119,10 @@ namespace stellar_dotnetcore_sdk.xdr
             return *(float*) &num;
         }
 
+        /// <summary>
+        /// Read float from stream.
+        /// </summary>
+        /// <returns></returns>
         public float[] ReadSingleArray()
         {
             var l = ReadInt();
@@ -107,6 +144,10 @@ namespace stellar_dotnetcore_sdk.xdr
             return *(double*) &num;
         }
 
+        /// <summary>
+        /// Read double from stream.
+        /// </summary>
+        /// <returns></returns>
         public double[] ReadDoubleArray()
         {
             var l = ReadInt();
@@ -121,16 +162,31 @@ namespace stellar_dotnetcore_sdk.xdr
             return arr;
         }
 
+        /// <summary>
+        /// Return bytes as an Array
+        /// </summary>
+        /// <returns></returns>
         public byte[] ToArray()
         {
             return _bytes;
         }
 
+        /// <summary>
+        /// Read the array with the proper padding applied and check max length.
+        /// </summary>
+        /// <param name="max"></param>
+        /// <returns></returns>
         public byte[] ReadVarOpaque(uint max)
         {
             return ReadFixOpaque(CheckedReadLength(max));
         }
 
+        /// <summary>
+        /// Read array with proper padding fixed if needed.
+        /// </summary>
+        /// <param name="len"></param>
+        /// <returns></returns>
+        /// <exception cref="IOException"></exception>
         public byte[] ReadFixOpaque(uint len)
         {
             var result = new byte[len];
@@ -167,6 +223,9 @@ namespace stellar_dotnetcore_sdk.xdr
 
             if (len > max)
                 throw new FormatException("unexpected length: " + len);
+                
+            if (max <= 0) 
+                throw new ArgumentOutOfRangeException(nameof(max));
 
             return len;
         }

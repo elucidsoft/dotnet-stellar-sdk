@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using stellar_dotnetcore_sdk;
-using stellar_dotnetcore_sdk.requests;
 using stellar_dotnetcore_sdk.responses;
 
 namespace TestConsole

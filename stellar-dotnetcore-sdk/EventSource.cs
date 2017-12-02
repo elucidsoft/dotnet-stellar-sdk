@@ -14,15 +14,16 @@ using System.Net.Mime;
 using System.Text;
 using System.Threading;
 
-namespace EventSource4Net
+namespace stellar_dotnetcore_sdk
 {
+    /// <inheritdoc />
     /// <summary>
-    ///     An EventSource represents a long-lived HTTP connection through which a Web server can ìpushî textual messages.
-    ///     To use these ìServer Sent Eventsî, pass the server URL to the EventSource() constructor and then register
+    ///     An EventSource represents a long-lived HTTP connection through which a Web server can ‚Äúpush‚Äù textual messages.
+    ///     To use these ‚ÄúServer Sent Events‚Äù, pass the server URL to the EventSource() constructor and then register
     ///     a message event handler on the resulting Event Source object. The EventSource attempts to be resilient to
     ///     transitory network errors and interruptions by automatically retrying connections to maintain persistence.
     /// </summary>
-    public class EventSource : IDisposable
+    public sealed class EventSource : IDisposable
     {
         #region Public Enums
 
@@ -41,8 +42,8 @@ namespace EventSource4Net
 
         #region Protected Fields
 
-        protected static readonly TraceSource Trace = new TraceSource("EventSource");
-        protected const int DefaultRetryInterval = 3000;
+        private static readonly TraceSource Trace = new TraceSource("EventSource");
+        private const int DefaultRetryInterval = 3000;
 
         #endregion Protected Fields
 
@@ -79,6 +80,8 @@ namespace EventSource4Net
         public EventSource(Uri requestUriString)
         {
             Url = requestUriString;
+            Headers = new NameValueCollection();
+            MessageTypes = new string[] { };
             Timeout = 100000; // 100 seconds
             _readyState = EventSourceState.Closed;
         }
@@ -110,13 +113,13 @@ namespace EventSource4Net
         ///     Gets or sets the headers to be sent in the request. For more
         ///     customization override the ConfigureWebRequest method.
         /// </summary>
-        public NameValueCollection Headers { get; set; }
+        public NameValueCollection Headers { get; }
 
         /// <summary>
         ///     Gets or sets an optional message type filter. If set,
         ///     this filter specifies which event types to pass through.
         /// </summary>
-        public string[] MessageTypes { get; set; }
+        public string[] MessageTypes { get; }
 
         /// <summary>
         ///     Gets the last event identifier.
@@ -196,7 +199,7 @@ namespace EventSource4Net
         ///     headers and settings to the request object as required.
         /// </summary>
         /// <param name="request">The HttpWebRequest request.</param>
-        protected virtual void ConfigureWebRequest(HttpWebRequest request)
+        private void ConfigureWebRequest(HttpWebRequest request)
         {
             request.Accept = "text/event-stream";
             request.AllowAutoRedirect = true;
@@ -212,7 +215,7 @@ namespace EventSource4Net
         ///     customize the parsing.
         /// </summary>
         /// <param name="content">The lines received.</param>
-        protected virtual void DispatchEvent(string[] content)
+        private void DispatchEvent(string[] content)
         {
             if (_shutdownToken) return;
             StringBuilder sb = null;
@@ -239,7 +242,7 @@ namespace EventSource4Net
                         break;
 
                     case "data":
-                        if (IsWanted(_eventType, value))
+                        if (IsWanted(_eventType))
                         {
                             if (sb == null) sb = new StringBuilder();
                             sb.AppendLine(value);
@@ -256,8 +259,6 @@ namespace EventSource4Net
 
             OnMessageEvent(new ServerSentEventArgs
             {
-                EventId = LastEventId,
-                EventType = _eventType,
                 Data = sb.ToString()
             });
         }
@@ -267,9 +268,8 @@ namespace EventSource4Net
         ///     the list of MessageTypes (if specified) but can be overriden for additional tests.
         /// </summary>
         /// <param name="eventType">Type of the event.</param>
-        /// <param name="value">The event value string.</param>
         /// <returns>[True] if the message should be processed.</returns>
-        protected virtual bool IsWanted(string eventType, string value)
+        private bool IsWanted(string eventType)
         {
             return MessageTypes == null || MessageTypes.Contains(eventType);
         }
@@ -278,7 +278,7 @@ namespace EventSource4Net
         ///     Raises the <see cref="E:ErrorEvent" /> event.
         /// </summary>
         /// <param name="e">The <see cref="ServerSentErrorEventArgs" /> instance containing the event data.</param>
-        protected virtual void OnErrorEvent(ServerSentErrorEventArgs e)
+        private void OnErrorEvent(ServerSentErrorEventArgs e)
         {
             Trace.TraceInformation("Raising OnErrorEvent ({0})", e.Exception.Message);
             var handler = Error;
@@ -290,7 +290,7 @@ namespace EventSource4Net
         ///     Raises the <see cref="E:MessageEvent" /> event.
         /// </summary>
         /// <param name="e">The <see cref="ServerSentEventArgs" /> instance containing the event data.</param>
-        protected virtual void OnMessageEvent(ServerSentEventArgs e)
+        private void OnMessageEvent(ServerSentEventArgs e)
         {
             Trace.TraceInformation("Raising OnMessageEvent ({0})", _eventType);
             var handler = Message;
@@ -302,7 +302,7 @@ namespace EventSource4Net
         ///     Raises the <see cref="E:StateChange" /> event.
         /// </summary>
         /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
-        protected virtual void OnStateChangeEvent(StateChangeEventArgs e)
+        private void OnStateChangeEvent(StateChangeEventArgs e)
         {
             Trace.TraceInformation("Raising OnStateChangeEvent ({0})", e.NewState);
             var handler = StateChange;
@@ -313,7 +313,7 @@ namespace EventSource4Net
         /// <summary>
         ///     Retries the connection after delay using a simple backoff mechanism.
         /// </summary>
-        protected virtual void RetryAfterDelay(bool backoff = true)
+        private void RetryAfterDelay(bool backoff = true)
         {
             if (_retryInterval <= 0 || _shutdownToken) return;
 
@@ -380,7 +380,7 @@ namespace EventSource4Net
                     (state, timedOut) =>
                     {
                         if (!timedOut || _httpWebRequest == null || _shutdownToken) return;
-                        Trace.TraceInformation("ConnectAsync (Timed Out)", Url);
+                        Trace.TraceInformation("ConnectAsync (Timed Out)");
                         OnErrorEvent(new ServerSentErrorEventArgs { Exception = new TimeoutException() });
                         CloseConnection();
                         RetryAfterDelay();
@@ -511,6 +511,9 @@ namespace EventSource4Net
         {
             #region Public Properties
 
+            /// <summary>
+            /// Internal Exception
+            /// </summary>
             public Exception Exception { get; internal set; }
 
             #endregion Public Properties
@@ -528,16 +531,6 @@ namespace EventSource4Net
             /// </summary>
             public string Data { get; internal set; }
 
-            /// <summary>
-            ///     Gets the event identifier.
-            /// </summary>
-            public string EventId { get; internal set; }
-
-            /// <summary>
-            ///     Gets the type of the event.
-            /// </summary>
-            public string EventType { get; internal set; }
-
             #endregion Public Properties
         }
 
@@ -548,6 +541,9 @@ namespace EventSource4Net
         {
             #region Public Properties
 
+            /// <summary>
+            /// New State changed to
+            /// </summary>
             public EventSourceState NewState { get; internal set; }
 
             #endregion Public Properties

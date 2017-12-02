@@ -5,48 +5,39 @@ namespace Chaos.NaCl
 {
     public static class Ed25519
     {
-        public static readonly int PublicKeySizeInBytes = 32;
-        public static readonly int SignatureSizeInBytes = 64;
-        public static readonly int ExpandedPrivateKeySizeInBytes = 32 * 2;
-        public static readonly int PrivateKeySeedSizeInBytes = 32;
-        public static readonly int SharedKeySizeInBytes = 32;
-
-        public static bool Verify(ArraySegment<byte> signature, ArraySegment<byte> message, ArraySegment<byte> publicKey)
-        {
-            if (signature.Count != SignatureSizeInBytes)
-                throw new ArgumentException(string.Format("Signature size must be {0}", SignatureSizeInBytes), "signature.Count");
-            if (publicKey.Count != PublicKeySizeInBytes)
-                throw new ArgumentException(string.Format("Public key size must be {0}", PublicKeySizeInBytes), "publicKey.Count");
-            return Ed25519Operations.crypto_sign_verify(signature.Array, signature.Offset, message.Array, message.Offset, message.Count, publicKey.Array, publicKey.Offset);
-        }
+        private const int PublicKeySizeInBytes = 32;
+        private const int SignatureSizeInBytes = 64;
+        private const int ExpandedPrivateKeySizeInBytes = 32 * 2;
+        private const int PrivateKeySeedSizeInBytes = 32;
+        private const int SharedKeySizeInBytes = 32;
 
         public static bool Verify(byte[] signature, byte[] message, byte[] publicKey)
         {
             if (signature == null)
-                throw new ArgumentNullException("signature");
+                throw new ArgumentNullException(nameof(signature));
             if (message == null)
-                throw new ArgumentNullException("message");
+                throw new ArgumentNullException(nameof(message));
             if (publicKey == null)
-                throw new ArgumentNullException("publicKey");
+                throw new ArgumentNullException(nameof(publicKey));
             if (signature.Length != SignatureSizeInBytes)
-                throw new ArgumentException(string.Format("Signature size must be {0}", SignatureSizeInBytes), "signature.Length");
+                throw new ArgumentException(string.Format("Signature size must be {0}", SignatureSizeInBytes), nameof(signature));
             if (publicKey.Length != PublicKeySizeInBytes)
-                throw new ArgumentException(string.Format("Public key size must be {0}", PublicKeySizeInBytes), "publicKey.Length");
+                throw new ArgumentException(string.Format("Public key size must be {0}", PublicKeySizeInBytes), nameof(signature));
             return Ed25519Operations.crypto_sign_verify(signature, 0, message, 0, message.Length, publicKey, 0);
         }
 
         public static void Sign(ArraySegment<byte> signature, ArraySegment<byte> message, ArraySegment<byte> expandedPrivateKey)
         {
             if (signature.Array == null)
-                throw new ArgumentNullException("signature.Array");
+                throw new ArgumentNullException(nameof(signature));
             if (signature.Count != SignatureSizeInBytes)
                 throw new ArgumentException("signature.Count");
             if (expandedPrivateKey.Array == null)
-                throw new ArgumentNullException("expandedPrivateKey.Array");
+                throw new ArgumentNullException(nameof(signature));
             if (expandedPrivateKey.Count != ExpandedPrivateKeySizeInBytes)
                 throw new ArgumentException("expandedPrivateKey.Count");
             if (message.Array == null)
-                throw new ArgumentNullException("message.Array");
+                throw new ArgumentNullException(nameof(signature));
             Ed25519Operations.crypto_sign2(signature.Array, signature.Offset, message.Array, message.Offset, message.Count, expandedPrivateKey.Array, expandedPrivateKey.Offset);
         }
 
@@ -59,18 +50,14 @@ namespace Chaos.NaCl
 
         public static byte[] PublicKeyFromSeed(byte[] privateKeySeed)
         {
-            byte[] privateKey;
-            byte[] publicKey;
-            KeyPairFromSeed(out publicKey, out privateKey, privateKeySeed);
+            KeyPairFromSeed(out var publicKey, out var privateKey, privateKeySeed);
             CryptoBytes.Wipe(privateKey);
             return publicKey;
         }
 
         public static byte[] ExpandedPrivateKeyFromSeed(byte[] privateKeySeed)
         {
-            byte[] privateKey;
-            byte[] publicKey;
-            KeyPairFromSeed(out publicKey, out privateKey, privateKeySeed);
+            KeyPairFromSeed(out var publicKey, out var privateKey, privateKeySeed);
             CryptoBytes.Wipe(publicKey);
             return privateKey;
         }
@@ -78,7 +65,7 @@ namespace Chaos.NaCl
         public static void KeyPairFromSeed(out byte[] publicKey, out byte[] expandedPrivateKey, byte[] privateKeySeed)
         {
             if (privateKeySeed == null)
-                throw new ArgumentNullException("privateKeySeed");
+                throw new ArgumentNullException(nameof(privateKeySeed));
             if (privateKeySeed.Length != PrivateKeySeedSizeInBytes)
                 throw new ArgumentException("privateKeySeed");
             var pk = new byte[PublicKeySizeInBytes];
@@ -91,11 +78,11 @@ namespace Chaos.NaCl
         public static void KeyPairFromSeed(ArraySegment<byte> publicKey, ArraySegment<byte> expandedPrivateKey, ArraySegment<byte> privateKeySeed)
         {
             if (publicKey.Array == null)
-                throw new ArgumentNullException("publicKey.Array");
+                throw new ArgumentNullException(nameof(publicKey));
             if (expandedPrivateKey.Array == null)
-                throw new ArgumentNullException("expandedPrivateKey.Array");
+                throw new ArgumentNullException(nameof(publicKey));
             if (privateKeySeed.Array == null)
-                throw new ArgumentNullException("privateKeySeed.Array");
+                throw new ArgumentNullException(nameof(publicKey));
             if (publicKey.Count != PublicKeySizeInBytes)
                 throw new ArgumentException("publicKey.Count");
             if (expandedPrivateKey.Count != ExpandedPrivateKeySizeInBytes)
@@ -120,9 +107,9 @@ namespace Chaos.NaCl
         public static void KeyExchange(ArraySegment<byte> sharedKey, ArraySegment<byte> publicKey, ArraySegment<byte> privateKey)
         {
             if (sharedKey.Array == null)
-                throw new ArgumentNullException("sharedKey.Array");
+                throw new ArgumentNullException(nameof(sharedKey));
             if (publicKey.Array == null)
-                throw new ArgumentNullException("publicKey.Array");
+                throw new ArgumentNullException(nameof(sharedKey));
             if (privateKey.Array == null)
                 throw new ArgumentNullException("privateKey");
             if (sharedKey.Count != 32)

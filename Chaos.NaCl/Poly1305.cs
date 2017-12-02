@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Chaos.NaCl.Internal;
 
 namespace Chaos.NaCl

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnetcore_sdk;
 using stellar_dotnetcore_sdk.requests;

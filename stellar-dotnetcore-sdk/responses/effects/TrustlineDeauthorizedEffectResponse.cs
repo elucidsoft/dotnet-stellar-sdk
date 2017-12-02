@@ -1,6 +1,4 @@
-﻿using stellar_dotnetcore_sdk.requests;
-
-namespace stellar_dotnetcore_sdk.responses.effects
+﻿namespace stellar_dotnetcore_sdk.responses.effects
 {
     /// <summary>
     ///     Represents trustline_deauthorized effect response.

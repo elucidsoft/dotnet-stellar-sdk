@@ -10,20 +10,20 @@ using stellar_dotnetcore_sdk.federation;
 namespace stellar_dotnetcore_unittest.federation
 {
     [TestClass]
-    public class FederationServerTest
+    public abstract class FederationServerTest
     {
-        private static readonly string _successResponse = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\"}";
-        private static readonly string _successResponseWithMemo = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\", \"memo_type\": \"text\", \"memo\": \"test\"}";
-        private static readonly string _notFoundResponse = "{\"code\":\"not_found\",\"message\":\"Account not found\"}";
+        private const string SuccessResponse = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\"}";
+        private const string SuccessResponseWithMemo = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\", \"memo_type\": \"text\", \"memo\": \"test\"}";
+        private const string NotFoundResponse = "{\"code\":\"not_found\",\"message\":\"Account not found\"}";
 
 
-        private static readonly string _stellarToml = "FEDERATION_SERVER = \"https://api.stellar.org/federation\"";
+        private const string StellarToml = "FEDERATION_SERVER = \"https://api.stellar.org/federation\"";
         private Mock<FakeHttpMessageHandler> _fakeHttpMessageHandler;
         private HttpClient _httpClient;
 
-        private readonly HttpStatusCode _httpNotFound = HttpStatusCode.NotFound;
+        private const HttpStatusCode HttpNotFound = HttpStatusCode.NotFound;
 
-        private readonly HttpStatusCode _httpOk = HttpStatusCode.OK;
+        private const HttpStatusCode HttpOk = HttpStatusCode.OK;
         private FederationServer _server;
 
         [TestInitialize]
@@ -55,7 +55,7 @@ namespace stellar_dotnetcore_unittest.federation
         [TestMethod]
         public async Task TestCreateForDomain()
         {
-            When(_httpOk, _stellarToml);
+            When(HttpOk, StellarToml);
 
             using (var server = await FederationServer.CreateForDomain("stellar.org"))
             {
@@ -72,7 +72,7 @@ namespace stellar_dotnetcore_unittest.federation
         [TestMethod]
         public async Task TestNameFederationSuccess()
         {
-            When(_httpOk, _successResponse);
+            When(HttpOk, SuccessResponse);
 
             var response = await _server.ResolveAddress("bob*stellar.org");
             Assert.AreEqual(response.StellarAddress, "bob*stellar.org");
@@ -84,7 +84,7 @@ namespace stellar_dotnetcore_unittest.federation
         [TestMethod]
         public async Task TestNameFederationSuccessWithMemo()
         {
-            When(_httpOk, _successResponseWithMemo);
+            When(HttpOk, SuccessResponseWithMemo);
 
             var response = await _server.ResolveAddress("bob*stellar.org");
             Assert.AreEqual(response.StellarAddress, "bob*stellar.org");
@@ -97,12 +97,12 @@ namespace stellar_dotnetcore_unittest.federation
         [ExpectedException(typeof(NotFoundException))]
         public async Task TestNameFederationNotFound()
         {
-            When(_httpNotFound, _notFoundResponse);
+            When(HttpNotFound, NotFoundResponse);
 
-            var response = await _server.ResolveAddress("bob*stellar.org");
+            var unused = await _server.ResolveAddress("bob*stellar.org");
         }
 
-        public class FakeHttpMessageHandler : HttpMessageHandler
+        public abstract class FakeHttpMessageHandler : HttpMessageHandler
         {
             public Uri RequestUri { get; private set; }
 
