@@ -10,7 +10,7 @@ Read more about [Stellar](https://www.stellar.org/)
 This project is a full port of the official [Java SDK API](https://github.com/stellar/java-stellar-sdk).  It is fully functional and all of the original Java Unit Tests were also ported and are passing.  
 
 ## Quick Start
-To install using Nuget run `Install-Package stellar-dotnetcore-sdk -Version 1.0.2` or install the Nuget package from Visual Studio.
+To install using Nuget run `Install-Package stellar-dotnetcore-sdk -Version 1.0.1` or install the Nuget package from Visual Studio.
 
 ## Capabilities
 - [Accounts](https://www.stellar.org/developers/guides/concepts/accounts.html) - Create, Query, Payment, Path Payment, Manage Offer, Create Passive Offer, Set Options, Change Trust, Allow Trust, Account Merge, Inflation, Manage Data, Paging (Limit, Cursor, Sorting)
