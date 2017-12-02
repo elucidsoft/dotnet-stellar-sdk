@@ -10,7 +10,7 @@ Read more about [Stellar](https://www.stellar.org/)
 This project is a full port of the official [Java SDK API](https://github.com/stellar/java-stellar-sdk).  It is fully functional and all of the original Java Unit Tests were also ported and are passing.  
 
 ## Quick Start
-To install using Nuget run `Install-Package stellar-dotnetcore-sdk -Version 1.0.1` or install the Nuget package from Visual Studio.
+To install using Nuget run `Install-Package stellar-dotnetcore-sdk -Version 1.0.2` or install the Nuget package from Visual Studio.
 
 ## Capabilities
 - [Accounts](https://www.stellar.org/developers/guides/concepts/accounts.html) - Create, Query, Payment, Path Payment, Manage Offer, Create Passive Offer, Set Options, Change Trust, Allow Trust, Account Merge, Inflation, Manage Data, Paging (Limit, Cursor, Sorting)
@@ -49,6 +49,11 @@ For some examples on how to use this library, take a look at the [Get Started do
 
 ## Demo Application
 In the root of the solution there is a console application called TestConsole, it connects to the Horizon TestNet and pulls down some data. The TestNet can be cleared at any moment so the keys it uses may not be valid.  You can use the [Stellar Laboratory](https://www.stellar.org/laboratory/) to setup an account on TestNet and to play around with data between the TestNet and the API.  You can also use the API to create an account, and Laboratory to validate the results, vice versa!  
+
+## XDR Generation
+In order to generate the XDR Files automatically in C# a custom XDR Generator must be used. We created a fork of xdrgen that does this located here: https://github.com/michaeljmonte/xdrgen
+
+You can use that version of xdrgen to regenerate the XDR files from the .x files located from the [source](https://github.com/stellar/stellar-core/tree/master/src/xdr) of the original API SDK for Horizon.
 
 ## License
 dotnetcore-stellar-sdk is licensed under an Apache-2.0 license. See the [LICENSE](https://github.com/elucidsoft/dotnetcore-stellar-sdk/blob/master/LICENSE.txt) file for details.
