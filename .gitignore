@@ -7,6 +7,9 @@ project.lock.json
 # Visual Studio Code
 .vscode
 
+#Rider
+.idea
+
 # User-specific files
 *.suo
 *.user
@@ -30,3 +33,5 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
+*.DotSettings
+.idea/.idea.stellar-dotnetcore-sdk/.idea/workspace.xml
