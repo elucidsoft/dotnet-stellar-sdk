@@ -1,4 +1,6 @@
-﻿namespace stellar_dotnetcore_sdk
+﻿using System;
+
+namespace stellar_dotnetcore_sdk
 {
     public abstract class MemoHashAbstract : Memo
     {
@@ -47,7 +49,7 @@
         ///</summary>
         public string GetTrimmedHexValue()
         {
-            return GetHexValue().Split("00")[0].ToLower();
+            return GetHexValue().Split(new [] {"00"}, StringSplitOptions.None)[0].ToLower();
         }
 
         public abstract override xdr.Memo ToXdr();
