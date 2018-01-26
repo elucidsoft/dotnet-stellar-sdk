@@ -63,5 +63,27 @@ namespace stellar_dotnetcore_sdk
 
             return null;
         }
+
+        public async Task<SubmitTransactionResponse> SubmitTransaction(string transactionEnvelopeBase64)
+        {
+            var transactionUri = new UriBuilder(_serverUri).SetPath("/transactions").Uri;
+
+            var paramsPairs = new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string, string>("tx", transactionEnvelopeBase64)
+                };
+
+            var response = await HttpClient.PostAsync(transactionUri, new FormUrlEncodedContent(paramsPairs.ToArray()));
+            if (response.Content != null)
+            {
+                var responseString = await response.Content.ReadAsStringAsync();
+                var submitTransactionResponse = JsonSingleton.GetInstance<SubmitTransactionResponse>(responseString);
+                return submitTransactionResponse;
+            }
+
+            return null;
+        }
+
+
     }
 }

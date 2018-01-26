@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using stellar_dotnetcore_sdk;
+using stellar_dotnetcore_sdk.requests;
 using stellar_dotnetcore_sdk.responses;
+using stellar_dotnetcore_sdk.responses.operations;
 
 namespace TestConsole
 {
@@ -20,11 +22,13 @@ namespace TestConsole
             await GetLedgerTransactions(server);
             await ShowAccountTransactions(server);
 
-            //Streams are temporarily disabled in this API until a resolution is found for the HttpClient issue
-            server.Transactions
-                .ForAccount(KeyPair.FromAccountId("GAZHWW2NBPDVJ6PEEOZ2X43QV5JUDYS3XN4OWOTBR6WUACTUML2CCJLI"))
+            //Streams are Maybe fixed? in this API until a resolution is found for the HttpClient issue
+            Console.WriteLine("-- Streaming All New Operations On The Network --");
+
+            server.Operations
                 .Cursor("now")
-                .Stream((sender, response) => { ShowTransactionRecord(response); })
+                .Order(OrderDirection.ASC)
+                .Stream((sender, response) => { ShowOperationResponse(response); })
                 .Connect();
 
             Console.ReadLine();
@@ -64,6 +68,11 @@ namespace TestConsole
         private static void ShowTransactionRecord(TransactionResponse tran)
         {
             Console.WriteLine($"Ledger: {tran.Ledger}, Hash: {tran.Hash}, Fee Paid: {tran.FeePaid}");
+        }
+
+        private static void ShowOperationResponse(OperationResponse op)
+        {
+            Console.WriteLine($"Id: {op.Id}, Source: {op.SourceAccount.AccountId}, Type: {op.Type}");
         }
     }
 }
