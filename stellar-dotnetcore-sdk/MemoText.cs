@@ -13,6 +13,7 @@ namespace stellar_dotnetcore_sdk
             var length = Encoding.UTF8.GetBytes(text).Length;
             if (length > 28)
                 throw new MemoTooLongException("text must be <= 28 bytes. length=" + length);
+            
         }
 
         public string MemoTextValue { get; }
@@ -22,7 +23,7 @@ namespace stellar_dotnetcore_sdk
         {
             var memo = new xdr.Memo();
             memo.Discriminant = MemoType.Create(MemoType.MemoTypeEnum.MEMO_TEXT);
-            memo.Text = MemoTextValue;
+            memo.Text = MemoTextValue ?? "none";
             return memo;
         }
     }
