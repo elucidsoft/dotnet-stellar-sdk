@@ -27,7 +27,6 @@ namespace TestConsole
 
             server.Operations
                 .Cursor("now")
-                .Order(OrderDirection.ASC)
                 .Stream((sender, response) => { ShowOperationResponse(response); })
                 .Connect();
 
