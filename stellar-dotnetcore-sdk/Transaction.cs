@@ -171,6 +171,36 @@ namespace stellar_dotnetcore_sdk
         }
 
         /// <summary>
+        ///     Generates TransactionEnvelope XDR object. This transaction MUST be signed before being useful
+        /// </summary>
+        /// <returns></returns>
+        public TransactionEnvelope ToUnsignedEnvelopeXdr()
+        {
+            if (Signatures.Count > 0)
+                throw new TooManySignaturesException("Transaction must not be signed. Use ToEnvelopeXDR.");
+
+            var thisXdr = new TransactionEnvelope();
+            var transaction = ToXdr();
+            thisXdr.Tx = transaction;
+
+            return thisXdr;
+        }
+
+        /// <summary>
+        ///     Generates TransactionEnvelope XDR object. This transaction MUST be signed before being useful
+        /// </summary>
+        /// <returns></returns>
+        public string ToUnsignedEnvelopeXdrBase64()
+        {
+            var envelope = ToUnsignedEnvelopeXdr();
+            var writer = new XdrDataOutputStream();
+            TransactionEnvelope.Encode(writer, envelope);
+
+            return Convert.ToBase64String(writer.ToArray());
+        }
+
+
+        /// <summary>
         ///     Returns base64-encoded TransactionEnvelope XDR object. Transaction need to have at least one signature.
         /// </summary>
         /// <returns></returns>
