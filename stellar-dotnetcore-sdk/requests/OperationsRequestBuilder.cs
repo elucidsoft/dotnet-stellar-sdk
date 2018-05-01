@@ -74,6 +74,7 @@ namespace stellar_dotnetcore_sdk.requests
         /// <exception cref="HttpRequestException"></exception>
         public async Task<OperationResponse> Operation(long operationId)
         {
+            //TODO: Pretty sure there is a bug here. I believe this should be "operations"
             SetSegments("operation", operationId.ToString());
             return await Operation(BuildUri());
         }
