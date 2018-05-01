@@ -59,25 +59,5 @@ namespace stellar_dotnetcore_sdk.requests
         {
             return await Execute(BuildUri());
         }
-
-
-        //Don't think these are needed. Polymorphism and all that via the base class.
-        //public override AssetsRequestBuilder Cursor(string token)
-        //{
-        //    base.Cursor(token);
-        //    return this;
-        //}
-
-        //public override AssetsRequestBuilder Limit(int number)
-        //{
-        //    base.Limit(number);
-        //    return this;
-        //}
-
-        //public override AssetsRequestBuilder Order(OrderDirection direction)
-        //{
-        //    base.Order(direction);
-        //    return this;
-        //}
     }
 }
