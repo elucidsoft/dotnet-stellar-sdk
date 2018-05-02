@@ -9,6 +9,25 @@ namespace stellar_dotnetcore_sdk
     /// </summary>
     public abstract class Asset
     {
+        /// <summary>
+        /// Create an asset base on the parameters.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="code"></param>
+        /// <param name="issuer"></param>
+        /// <returns>Asset</returns>
+        public static Asset Create(String type, String code, String issuer)
+        {
+            if (type == "native")
+            {
+                return new AssetTypeNative();
+            }
+            else
+            {
+                return Asset.CreateNonNativeAsset(code, KeyPair.FromAccountId(issuer));
+            }
+        }
+
         ///<summary>
         /// Creates one of AssetTypeCreditAlphaNum4 or AssetTypeCreditAlphaNum12 object based on a <code>code</code> length
         /// </summary>

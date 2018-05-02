@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace stellar_dotnetcore_sdk.responses
 {
@@ -58,14 +56,27 @@ namespace stellar_dotnetcore_sdk.responses
         [JsonProperty(PropertyName = "flags")]
         public AssetResponseFlags Flags { get; set; }
 
-
         /// <summary>
         /// 
         /// </summary>
-        protected AssetResponse()
+        public Asset Asset
         {
+            get { return Asset.Create(AssetType, AssetCode, AssetIssuer); }
+        }
+
+        public AssetResponse(String assetType, String assetCode, String assetIssuer, String pagingToken, String amount, int numAccounts, AssetResponseFlags flags, AssetResponseLinks links)
+        {
+            AssetType = assetType;
+            AssetCode = assetCode;
+            AssetIssuer = assetIssuer;
+            PagingToken = pagingToken;
+            Amount = amount;
+            NumAccounts = numAccounts;
+            Flags = flags;
+            Links = links;
         }
     }
+
 
     /// <summary>
     /// 
@@ -83,6 +94,12 @@ namespace stellar_dotnetcore_sdk.responses
         /// </summary>
         [JsonProperty(PropertyName = "auth_revocable")]
         public bool AuthRevocable { get; set; }
+
+        public AssetResponseFlags(bool authRequired, bool authRevocable)
+        {
+            AuthRequired = authRequired;
+            AuthRevocable = authRevocable;
+        }
     }
 
     /// <summary>
@@ -95,5 +112,10 @@ namespace stellar_dotnetcore_sdk.responses
         /// </summary>
         [JsonProperty(PropertyName = "toml")]
         public Link Toml { get; set; }
+
+        public AssetResponseLinks(Link toml)
+        {
+            Toml = toml;
+        }
     }
 }
