@@ -94,23 +94,5 @@ namespace stellar_dotnetcore_sdk.requests
         {
             return await Execute(BuildUri());
         }
-
-        public override AccountsRequestBuilder Cursor(string cursor)
-        {
-            base.Cursor(cursor);
-            return this;
-        }
-
-        public override AccountsRequestBuilder Limit(int number)
-        {
-            base.Limit(number);
-            return this;
-        }
-
-        public override AccountsRequestBuilder Order(OrderDirection direction)
-        {
-            base.Order(direction);
-            return this;
-        }
     }
 }

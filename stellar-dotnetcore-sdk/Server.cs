@@ -21,6 +21,8 @@ namespace stellar_dotnetcore_sdk
 
         public AccountsRequestBuilder Accounts => new AccountsRequestBuilder(_serverUri);
 
+        public AssetsRequestBuilder Assets => new AssetsRequestBuilder(_serverUri);
+
         public EffectsRequestBuilder Effects => new EffectsRequestBuilder(_serverUri);
 
         public LedgersRequestBuilder Ledgers => new LedgersRequestBuilder(_serverUri);

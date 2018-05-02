@@ -97,26 +97,5 @@ namespace stellar_dotnetcore_sdk.requests
         {
             return await Execute(BuildUri());
         }
-
-
-        public override PaymentsRequestBuilder Cursor(string token)
-        {
-            base.Cursor(token);
-            return this;
-        }
-
-
-        public override PaymentsRequestBuilder Limit(int number)
-        {
-            base.Limit(number);
-            return this;
-        }
-
-
-        public override PaymentsRequestBuilder Order(OrderDirection direction)
-        {
-            base.Order(direction);
-            return this;
-        }
     }
 }
