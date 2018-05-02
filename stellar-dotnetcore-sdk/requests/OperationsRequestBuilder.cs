@@ -69,14 +69,13 @@ namespace stellar_dotnetcore_sdk.requests
         /// </summary>
         /// <param name="operationId">Operation to fetch</param>
         /// <returns>
-        ///     <see cref="Task{OperationResponse}" />
+        ///     <see cref="OperationsRequestBuilder" />
         /// </returns>
         /// <exception cref="HttpRequestException"></exception>
-        public async Task<OperationResponse> Operation(long operationId)
+        public OperationsRequestBuilder Operation(long operationId)
         {
-            //TODO: Pretty sure there is a bug here. I believe this should be "operations"
-            SetSegments("operation", operationId.ToString());
-            return await Operation(BuildUri());
+            SetSegments("operations", operationId.ToString());
+            return this;
         }
 
         /// <summary>
@@ -162,24 +161,6 @@ namespace stellar_dotnetcore_sdk.requests
         public async Task<Page<OperationResponse>> Execute()
         {
             return await Execute(BuildUri());
-        }
-
-        public override OperationsRequestBuilder Cursor(string token)
-        {
-            base.Cursor(token);
-            return this;
-        }
-
-        public override OperationsRequestBuilder Limit(int number)
-        {
-            base.Limit(number);
-            return this;
-        }
-
-        public override OperationsRequestBuilder Order(OrderDirection direction)
-        {
-            base.Order(direction);
-            return this;
         }
     }
 }

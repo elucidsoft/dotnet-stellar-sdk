@@ -20,6 +20,16 @@ namespace stellar_dotnetcore_unittest.requests
         }
 
         [TestMethod]
+        public void TestOperationDetails()
+        {
+            Server server = new Server("https://horizon-testnet.stellar.org");
+            Uri uri = server.Operations
+                .Operation(77309415424)
+                .BuildUri();
+            Assert.AreEqual("https://horizon-testnet.stellar.org/operations/77309415424", uri.ToString());
+        }
+
+        [TestMethod]
         public void TestForAccount()
         {
             Server server = new Server("https://horizon-testnet.stellar.org");
