@@ -23,6 +23,7 @@ To install using Nuget run `Install-Package stellar-dotnetcore-sdk` or install t
 - [Multisignature](https://www.stellar.org/developers/guides/concepts/multi-sig.html) - Allows multiple signature per transaction, Thresholds, ed25519 signature scheme, Transaction Signing, Allow Trust, Set Options, Hash, Envelopes
 - [Stellar.toml](https://www.stellar.org/developers/guides/concepts/stellar-toml.html) - Supports the Stellar TOML format.
 - [Testnet](https://www.stellar.org/developers/guides/concepts/test-net.html) - Supports Network switching from Public to Testnet
+- [Trade Aggregations](https://www.stellar.org/developers/horizon/reference/endpoints/trade_aggregations.html) - Trade Aggregations are catered specifically for developers of trading clients. They facilitate efficient gathering of historical trade data. This is done by dividing a given time range into segments and aggregate statistics, for a given asset pair (base, counter) over each of these segments.
 - [Transactions](https://www.stellar.org/developers/guides/concepts/transactions.html) - Source Accounmt, Fee, Sequence Number, Supported Operations (see below), Signatures (multiple), Memo (Text, Id, Hash, Return)
 - [XDR](https://www.stellar.org/developers/guides/concepts/xdr.html) - Full XDR Support, Custom XDRGenerator, Supports .x files
 
