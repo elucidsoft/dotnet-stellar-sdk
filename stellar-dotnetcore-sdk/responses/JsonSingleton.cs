@@ -22,6 +22,7 @@ namespace stellar_dotnetcore_sdk.responses
                 typeof(Page<PathResponse>),
                 typeof(Page<TransactionResponse>),
                 typeof(Page<TradeResponse>),
+                typeof(Page<TradeAggregationResponse>),
                 typeof(Page<TransactionResponse>)
             };
 
