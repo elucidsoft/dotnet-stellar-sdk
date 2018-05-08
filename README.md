@@ -44,7 +44,7 @@ To install using Nuget run `Install-Package stellar-dotnetcore-sdk` or install t
 - [Response Format](https://www.stellar.org/developers/horizon/reference/responses.html) (Links, Embedded Resourced, Attributes, Pages, Streaming)
 
 ## Documentation
-Read the API [Reference Documentation](https://elucidsoft.github.io/dotnetcore-stellar-sdk/) for more information about the API.  For more guidance Stellar.org has documentation that is specific to their [Javascript API](https://www.stellar.org/developers/js-stellar-sdk/reference/) but usage is very similar.
+Read the API [Reference Documentation](https://elucidsoft.github.io/dotnet-stellar-sdk/) for more information about the API.  For more guidance Stellar.org has documentation that is specific to their [Javascript API](https://www.stellar.org/developers/js-stellar-sdk/reference/) but usage is very similar.
 
 ## Basic Usage
 For some examples on how to use this library, take a look at the [Get Started docs in the developers site](https://www.stellar.org/developers/guides/get-started/create-account.html).
