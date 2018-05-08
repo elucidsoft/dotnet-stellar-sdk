@@ -33,6 +33,8 @@ namespace stellar_dotnetcore_sdk
 
         public OrderBookRequestBuilder OrderBook => new OrderBookRequestBuilder(_serverUri);
 
+        
+
         public TradesRequestBuilder Trades => new TradesRequestBuilder(_serverUri);
 
         public PathsRequestBuilder Paths => new PathsRequestBuilder(_serverUri);
@@ -44,6 +46,11 @@ namespace stellar_dotnetcore_sdk
         public void Dispose()
         {
             HttpClient?.Dispose();
+        }
+
+        public TradesAggregationRequestBuilder TradeAggregations(Asset baseAsset, Asset counterAsset, long startTime, long endTime, long resolution)
+        {
+            return new TradesAggregationRequestBuilder(_serverUri, baseAsset, counterAsset, startTime, endTime, resolution);
         }
 
         public async Task<SubmitTransactionResponse> SubmitTransaction(Transaction transaction)

@@ -41,11 +41,17 @@ namespace stellar_dotnetcore_sdk.responses
         [JsonProperty(PropertyName = "max_tx_set_size")]
         public int MaxTxSetSize { get; private set; }
 
+        [JsonProperty(PropertyName = "base_fee_in_stroops")]
+        public String BaseFeeInStroops { get; private set; }
+
+        [JsonProperty(PropertyName = "base_reserve_in_stroops")]
+        public String BaseReserveInStroops { get; private set; }
+
         [JsonProperty(PropertyName = "_links")]
         public LedgerResponseLinks Links { get; private set; }
 
 
-        public LedgerResponse(long sequence, string hash, string pagingToken, string prevHash, int transactionCount, int operationCount, string closedAt, string totalCoins, string feePool, long baseFee, String baseReserve, int maxTxSetSize, LedgerResponseLinks links)
+        public LedgerResponse(long sequence, String hash, String pagingToken, String prevHash, int transactionCount, int operationCount, String closedAt, String totalCoins, String feePool, long baseFee, String baseReserve, String baseFeeInStroops, String baseReserveInStroops, int maxTxSetSize, LedgerResponseLinks links)
         {
             Sequence = sequence;
             Hash = hash;
@@ -57,10 +63,12 @@ namespace stellar_dotnetcore_sdk.responses
             TotalCoins = totalCoins;
             FeePool = feePool;
             BaseFee = baseFee;
+            BaseFeeInStroops = baseFeeInStroops;
             BaseReserve = baseReserve;
+            BaseReserveInStroops = baseReserveInStroops;
             MaxTxSetSize = maxTxSetSize;
             Links = links;
-        }     
+        }
 
         ///
         /// Links connected to ledger.

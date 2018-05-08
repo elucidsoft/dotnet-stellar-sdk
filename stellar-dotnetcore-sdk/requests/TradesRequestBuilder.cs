@@ -11,28 +11,34 @@ namespace stellar_dotnetcore_sdk.requests
     public class TradesRequestBuilder : RequestBuilder<TradesRequestBuilder>
     {
         public TradesRequestBuilder(Uri serverUri)
-            : base(serverUri, "order_book/trades")
+            : base(serverUri, "trades")
         {
         }
 
-        public TradesRequestBuilder BuyingAsset(Asset asset)
+        public TradesRequestBuilder BaseAsset(Asset asset)
         {
-            _uriBuilder.SetQueryParam("buying_asset_type", asset.GetType());
+            _uriBuilder.SetQueryParam("base_asset_type", asset.GetType());
             if (asset is AssetTypeCreditAlphaNum creditAlphaNumAsset)
             {
-                _uriBuilder.SetQueryParam("buying_asset_code", creditAlphaNumAsset.Code);
-                _uriBuilder.SetQueryParam("buying_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
+                _uriBuilder.SetQueryParam("base_asset_code", creditAlphaNumAsset.Code);
+                _uriBuilder.SetQueryParam("base_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
             return this;
         }
 
-        public TradesRequestBuilder SellingAsset(Asset asset)
+        public TradesRequestBuilder OfferId(string offerId)
         {
-            _uriBuilder.SetQueryParam("selling_asset_type", asset.GetType());
+            _uriBuilder.SetQueryParam("offer_id", offerId);
+            return this;
+        }
+
+        public TradesRequestBuilder CounterAsset(Asset asset)
+        {
+            _uriBuilder.SetQueryParam("counter_asset_type", asset.GetType());
             if (asset is AssetTypeCreditAlphaNum creditAlphaNumAsset)
             {
-                _uriBuilder.SetQueryParam("selling_asset_code", creditAlphaNumAsset.Code);
-                _uriBuilder.SetQueryParam("selling_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
+                _uriBuilder.SetQueryParam("counter_asset_code", creditAlphaNumAsset.Code);
+                _uriBuilder.SetQueryParam("counter_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
             return this;
         }

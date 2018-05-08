@@ -1,0 +1,68 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "https://horizon.stellar.org/trade_aggregations?base_asset_type=native&counter_asset_code=SLT&counter_asset_issuer=GCKA6K5PCQ6PNF5RQBF7PQDJWRHO6UOGFMRLK3DYHDOI244V47XKQ4GP&counter_asset_type=credit_alphanum4&limit=200&order=asc&resolution=3600000&start_time=1517521726000&end_time=1517532526000"
+    },
+    "next": {
+      "href": "https://horizon.stellar.org/trade_aggregations?base_asset_type=native&counter_asset_code=SLT&counter_asset_issuer=GCKA6K5PCQ6PNF5RQBF7PQDJWRHO6UOGFMRLK3DYHDOI244V47XKQ4GP&counter_asset_type=credit_alphanum4&end_time=1517532526000&limit=200&order=asc&resolution=3600000&start_time=1517529600000"
+    }
+  },
+  "_embedded": {
+    "records": [
+      {
+        "timestamp": 1517522400000,
+        "trade_count": 26,
+        "base_volume": "27575.0201596",
+        "counter_volume": "5085.6410385",
+        "avg": "0.1844293",
+        "high": "0.1915709",
+        "high_r": {
+          "N": 50,
+          "D": 261
+        },
+        "low": "0.1506024",
+        "low_r": {
+          "N": 25,
+          "D": 166
+        },
+        "open": "0.1724138",
+        "open_r": {
+          "N": 5,
+          "D": 29
+        },
+        "close": "0.1506024",
+        "close_r": {
+          "N": 25,
+          "D": 166
+        }
+      },
+      {
+        "timestamp": 1517526000000,
+        "trade_count": 15,
+        "base_volume": "3913.8224543",
+        "counter_volume": "719.4993608",
+        "avg": "0.1838355",
+        "high": "0.1960784",
+        "high_r": {
+          "N": 10,
+          "D": 51
+        },
+        "low": "0.1506024",
+        "low_r": {
+          "N": 25,
+          "D": 166
+        },
+        "open": "0.1869159",
+        "open_r": {
+          "N": 20,
+          "D": 107
+        },
+        "close": "0.1515152",
+        "close_r": {
+          "N": 5,
+          "D": 33
+        }
+      }
+    ]
+  }
+}
