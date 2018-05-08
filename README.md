@@ -15,6 +15,7 @@ To install using Nuget run `Install-Package stellar-dotnetcore-sdk` or install t
 ## Capabilities
 - [Accounts](https://www.stellar.org/developers/guides/concepts/accounts.html) - Create, Query, Payment, Path Payment, Manage Offer, Create Passive Offer, Set Options, Change Trust, Allow Trust, Account Merge, Inflation, Manage Data, Paging (Limit, Cursor, Sorting)
 - [Assets](https://www.stellar.org/developers/guides/concepts/assets.html) - CreateNonNativeAsset types (AlphaNum4, AlphaNum12), XDR Conversion
+- [All Assets](https://www.stellar.org/developers/horizon/reference/endpoints/assets-all.html) - This endpoint represents all assets. It will give you all the assets in the system along with various statistics about each.
 - [Distributed Exchange](https://www.stellar.org/developers/guides/concepts/exchange.html) - Orderbook, Passive Offers
 - [Federation](https://www.stellar.org/developers/learn/concepts/federation.html)
 - [Inflation](https://www.stellar.org/developers/guides/concepts/inflation.html) - Inflation Operation
