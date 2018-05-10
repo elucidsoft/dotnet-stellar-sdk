@@ -105,26 +105,5 @@ namespace stellar_dotnetcore_sdk.requests
         {
             return await Execute(BuildUri());
         }
-
-
-        public override EffectsRequestBuilder Cursor(string token)
-        {
-            base.Cursor(token);
-            return this;
-        }
-
-
-        public override EffectsRequestBuilder Limit(int number)
-        {
-            base.Limit(number);
-            return this;
-        }
-
-
-        public override EffectsRequestBuilder Order(OrderDirection direction)
-        {
-            base.Order(direction);
-            return this;
-        }
     }
 }

@@ -14,6 +14,7 @@ namespace stellar_dotnetcore_sdk.responses
             var pageResponseConversions = new[]
             {
                 typeof(Page<AccountResponse>),
+                typeof(Page<AssetResponse>),
                 typeof(Page<EffectResponse>),
                 typeof(Page<LedgerResponse>),
                 typeof(Page<OfferResponse>),
@@ -21,6 +22,7 @@ namespace stellar_dotnetcore_sdk.responses
                 typeof(Page<PathResponse>),
                 typeof(Page<TransactionResponse>),
                 typeof(Page<TradeResponse>),
+                typeof(Page<TradeAggregationResponse>),
                 typeof(Page<TransactionResponse>)
             };
 

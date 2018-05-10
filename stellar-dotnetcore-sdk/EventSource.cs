@@ -271,7 +271,7 @@ namespace stellar_dotnetcore_sdk
         /// <returns>[True] if the message should be processed.</returns>
         private bool IsWanted(string eventType)
         {
-            return MessageTypes == null || MessageTypes.Contains(eventType);
+            return MessageTypes == null || MessageTypes.Count() == 0|| MessageTypes.Contains(eventType);
         }
 
         /// <summary>
@@ -370,7 +370,7 @@ namespace stellar_dotnetcore_sdk
 
             _httpWebRequest = (HttpWebRequest)WebRequest.Create(Url);
             ConfigureWebRequest(_httpWebRequest);
-
+            
             try
             {
                 var handle = _httpWebRequest.BeginGetResponse(EndGetResponse, null);

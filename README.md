@@ -1,5 +1,5 @@
-# dotnetcore-stellar-sdk
-Stellar API SDK for .NET Core 2.x
+# dotnet-stellar-sdk
+Stellar API SDK for .NET Core 2.x and .NET Standard 2.0
 
 [![Build Status](https://travis-ci.org/elucidsoft/dotnetcore-stellar-sdk.svg?branch=master)](https://travis-ci.org/elucidsoft/dotnetcore-stellar-sdk) [![NuGet Badge](https://buildstats.info/nuget/stellar-dotnetcore-sdk)](https://www.nuget.org/packages/stellar-dotnetcore-sdk)
 
@@ -15,6 +15,7 @@ To install using Nuget run `Install-Package stellar-dotnetcore-sdk` or install t
 ## Capabilities
 - [Accounts](https://www.stellar.org/developers/guides/concepts/accounts.html) - Create, Query, Payment, Path Payment, Manage Offer, Create Passive Offer, Set Options, Change Trust, Allow Trust, Account Merge, Inflation, Manage Data, Paging (Limit, Cursor, Sorting)
 - [Assets](https://www.stellar.org/developers/guides/concepts/assets.html) - CreateNonNativeAsset types (AlphaNum4, AlphaNum12), XDR Conversion
+- [All Assets](https://www.stellar.org/developers/horizon/reference/endpoints/assets-all.html) - This endpoint represents all assets. It will give you all the assets in the system along with various statistics about each.
 - [Distributed Exchange](https://www.stellar.org/developers/guides/concepts/exchange.html) - Orderbook, Passive Offers
 - [Federation](https://www.stellar.org/developers/learn/concepts/federation.html)
 - [Inflation](https://www.stellar.org/developers/guides/concepts/inflation.html) - Inflation Operation
@@ -22,6 +23,7 @@ To install using Nuget run `Install-Package stellar-dotnetcore-sdk` or install t
 - [Multisignature](https://www.stellar.org/developers/guides/concepts/multi-sig.html) - Allows multiple signature per transaction, Thresholds, ed25519 signature scheme, Transaction Signing, Allow Trust, Set Options, Hash, Envelopes
 - [Stellar.toml](https://www.stellar.org/developers/guides/concepts/stellar-toml.html) - Supports the Stellar TOML format.
 - [Testnet](https://www.stellar.org/developers/guides/concepts/test-net.html) - Supports Network switching from Public to Testnet
+- [Trade Aggregations](https://www.stellar.org/developers/horizon/reference/endpoints/trade_aggregations.html) - Trade Aggregations are catered specifically for developers of trading clients. They facilitate efficient gathering of historical trade data. This is done by dividing a given time range into segments and aggregate statistics, for a given asset pair (base, counter) over each of these segments.
 - [Transactions](https://www.stellar.org/developers/guides/concepts/transactions.html) - Source Accounmt, Fee, Sequence Number, Supported Operations (see below), Signatures (multiple), Memo (Text, Id, Hash, Return)
 - [XDR](https://www.stellar.org/developers/guides/concepts/xdr.html) - Full XDR Support, Custom XDRGenerator, Supports .x files
 
@@ -42,7 +44,7 @@ To install using Nuget run `Install-Package stellar-dotnetcore-sdk` or install t
 - [Response Format](https://www.stellar.org/developers/horizon/reference/responses.html) (Links, Embedded Resourced, Attributes, Pages, Streaming)
 
 ## Documentation
-Read the API [Reference Documentation](https://elucidsoft.github.io/dotnetcore-stellar-sdk/) for more information about the API.  For more guidance Stellar.org has documentation that is specific to their [Javascript API](https://www.stellar.org/developers/js-stellar-sdk/reference/) but usage is very similar.
+Read the API [Reference Documentation](https://elucidsoft.github.io/dotnet-stellar-sdk/) for more information about the API.  For more guidance Stellar.org has documentation that is specific to their [Javascript API](https://www.stellar.org/developers/js-stellar-sdk/reference/) but usage is very similar.
 
 ## Basic Usage
 For some examples on how to use this library, take a look at the [Get Started docs in the developers site](https://www.stellar.org/developers/guides/get-started/create-account.html).

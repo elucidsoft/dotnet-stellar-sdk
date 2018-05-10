@@ -21,6 +21,8 @@ namespace stellar_dotnetcore_sdk
 
         public AccountsRequestBuilder Accounts => new AccountsRequestBuilder(_serverUri);
 
+        public AssetsRequestBuilder Assets => new AssetsRequestBuilder(_serverUri);
+
         public EffectsRequestBuilder Effects => new EffectsRequestBuilder(_serverUri);
 
         public LedgersRequestBuilder Ledgers => new LedgersRequestBuilder(_serverUri);
@@ -30,6 +32,8 @@ namespace stellar_dotnetcore_sdk
         public OperationsRequestBuilder Operations => new OperationsRequestBuilder(_serverUri);
 
         public OrderBookRequestBuilder OrderBook => new OrderBookRequestBuilder(_serverUri);
+
+        
 
         public TradesRequestBuilder Trades => new TradesRequestBuilder(_serverUri);
 
@@ -42,6 +46,11 @@ namespace stellar_dotnetcore_sdk
         public void Dispose()
         {
             HttpClient?.Dispose();
+        }
+
+        public TradesAggregationRequestBuilder TradeAggregations(Asset baseAsset, Asset counterAsset, long startTime, long endTime, long resolution)
+        {
+            return new TradesAggregationRequestBuilder(_serverUri, baseAsset, counterAsset, startTime, endTime, resolution);
         }
 
         public async Task<SubmitTransactionResponse> SubmitTransaction(Transaction transaction)
@@ -63,5 +72,27 @@ namespace stellar_dotnetcore_sdk
 
             return null;
         }
+
+        public async Task<SubmitTransactionResponse> SubmitTransaction(string transactionEnvelopeBase64)
+        {
+            var transactionUri = new UriBuilder(_serverUri).SetPath("/transactions").Uri;
+
+            var paramsPairs = new List<KeyValuePair<string, string>>
+                {
+                    new KeyValuePair<string, string>("tx", transactionEnvelopeBase64)
+                };
+
+            var response = await HttpClient.PostAsync(transactionUri, new FormUrlEncodedContent(paramsPairs.ToArray()));
+            if (response.Content != null)
+            {
+                var responseString = await response.Content.ReadAsStringAsync();
+                var submitTransactionResponse = JsonSingleton.GetInstance<SubmitTransactionResponse>(responseString);
+                return submitTransactionResponse;
+            }
+
+            return null;
+        }
+
+
     }
 }

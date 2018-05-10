@@ -28,7 +28,7 @@ namespace stellar_dotnetcore_sdk.responses.operations
         /// </summary>
         [JsonProperty(PropertyName = "paging_token")]
         public string PagingToken { get; private set; }
-        
+
         /// <summary>
         /// Returns operation type. Possible types: 
         /// crete_account
@@ -45,6 +45,18 @@ namespace stellar_dotnetcore_sdk.responses.operations
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string Type { get; private set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty(PropertyName = "created_at")]
+        public string CreatedAt { get; private set; }
+
+        /// <summary>
+        /// Returns transaction hash of transaction this operation belongs to.
+        /// </summary>
+        [JsonProperty(PropertyName = "transaction_hash")]
+        public string TransactionHash { get; private set; }
 
         /// <summary>
         /// Links of Paging

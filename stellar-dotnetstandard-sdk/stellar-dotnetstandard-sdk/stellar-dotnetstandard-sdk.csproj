@@ -1,10 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
@@ -51,6 +55,7 @@
     <Compile Include="..\..\stellar-dotnetcore-sdk\Network.cs" Link="Network.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\NoNetworkSelectedException.cs" Link="NoNetworkSelectedException.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\NotEnoughSignaturesException.cs" Link="NotEnoughSignaturesException.cs" />
+    <Compile Include="..\..\stellar-dotnetcore-sdk\TooManySignaturesException.cs" Link="TooManySignaturesException.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\Operation.cs" Link="Operation.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\PathPaymentOperation.cs" Link="PathPaymentOperation.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\PaymentOperation.cs" Link="PaymentOperation.cs" />
@@ -69,8 +74,10 @@
     <Compile Include="..\..\stellar-dotnetcore-sdk\requests\ResponseHandler.cs" Link="requests\ResponseHandler.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\requests\TooManyRequestsException.cs" Link="requests\TooManyRequestsException.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\requests\TradesRequestBuilder.cs" Link="requests\TradesRequestBuilder.cs" />
+    <Compile Include="..\..\stellar-dotnetcore-sdk\requests\TradesAggregationRequestBuilder.cs" Link="requests\TradesAggregationRequestBuilder.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\requests\TransactionsRequestBuilder.cs" Link="requests\TransactionsRequestBuilder.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\responses\AccountResponse.cs" Link="responses\AccountResponse.cs" />
+    <Compile Include="..\..\stellar-dotnetcore-sdk\requests\AssetsRequestBuilder.cs" Link="requests\AssetsRequestBuilder.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\responses\AssetDeserializer.cs" Link="responses\AssetDeserializer.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\responses\EffectDeserializer.cs" Link="responses\EffectDeserializer.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\responses\effects\AccountCreatedEffectResponse.cs" Link="responses\effects\AccountCreatedEffectResponse.cs" />
@@ -120,6 +127,8 @@
     <Compile Include="..\..\stellar-dotnetcore-sdk\responses\Response.cs" Link="responses\Response.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\responses\SubmitTransactionResponse.cs" Link="responses\SubmitTransactionResponse.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\responses\TradeResponse.cs" Link="responses\TradeResponse.cs" />
+    <Compile Include="..\..\stellar-dotnetcore-sdk\responses\TradeAggregationResponse.cs" Link="responses\TradeAggregationResponse.cs" />
+    <Compile Include="..\..\stellar-dotnetcore-sdk\responses\AssetResponse.cs" Link="responses\AssetResponse.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\responses\TransactionDeserializer.cs" Link="responses\TransactionDeserializer.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\responses\TransactionResponse.cs" Link="responses\TransactionResponse.cs" />
     <Compile Include="..\..\stellar-dotnetcore-sdk\Server.cs" Link="Server.cs" />

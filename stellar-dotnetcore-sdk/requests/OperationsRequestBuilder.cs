@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using stellar_dotnetcore_sdk.responses;
 using stellar_dotnetcore_sdk.responses.operations;
 using stellar_dotnetcore_sdk.responses.page;
 
@@ -35,19 +36,46 @@ namespace stellar_dotnetcore_sdk.requests
             }
         }
 
+
+        ///<Summary>
+        /// Allows to stream SSE events from horizon.
+        /// Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
+        /// This mode will keep the connection to horizon open and horizon will continue to return
+        /// responses as ledgers close.
+        /// <a href="http://www.w3.org/TR/eventsource/" target="_blank">Server-Sent Events</a>
+        /// <a href="https://www.stellar.org/developers/horizon/learn/responses.html" target="_blank">Response Format documentation</a>
+        /// </Summary>
+        /// <param name="listener">EventListener implementation with EffectResponse type</param> 
+        /// <returns>EventSource object, so you can <code>close()</code> connection when not needed anymore</param> 
+        public EventSource Stream(EventHandler<OperationResponse> listener)
+        {
+            var es = new EventSource(BuildUri());
+
+            es.Message += (sender, e) =>
+            {
+                if (e.Data == "\"hello\"\r\n")
+                    return;
+
+                var account = JsonSingleton.GetInstance<OperationResponse>(e.Data);
+                listener?.Invoke(this, account);
+            };
+
+            return es;
+        }
+
         /// <summary>
         ///     Requests GET /operations/{operationId}
         ///     See: https://www.stellar.org/developers/horizon/reference/operations-single.html
         /// </summary>
         /// <param name="operationId">Operation to fetch</param>
         /// <returns>
-        ///     <see cref="Task{OperationResponse}" />
+        ///     <see cref="OperationsRequestBuilder" />
         /// </returns>
         /// <exception cref="HttpRequestException"></exception>
-        public async Task<OperationResponse> Operation(long operationId)
+        public OperationsRequestBuilder Operation(long operationId)
         {
-            SetSegments("operation", operationId.ToString());
-            return await Operation(BuildUri());
+            SetSegments("operations", operationId.ToString());
+            return this;
         }
 
         /// <summary>
@@ -133,24 +161,6 @@ namespace stellar_dotnetcore_sdk.requests
         public async Task<Page<OperationResponse>> Execute()
         {
             return await Execute(BuildUri());
-        }
-
-        public override OperationsRequestBuilder Cursor(string token)
-        {
-            base.Cursor(token);
-            return this;
-        }
-
-        public override OperationsRequestBuilder Limit(int number)
-        {
-            base.Limit(number);
-            return this;
-        }
-
-        public override OperationsRequestBuilder Order(OrderDirection direction)
-        {
-            base.Order(direction);
-            return this;
         }
     }
 }
