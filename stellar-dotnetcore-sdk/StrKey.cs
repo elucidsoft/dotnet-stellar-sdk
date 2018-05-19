@@ -106,5 +106,37 @@ namespace stellar_dotnetcore_sdk
                 (byte) ((uint) crc >> 8)
             };
         }
+
+        public static bool IsValid(VersionByte versionByte, string encoded)
+        {
+            if (encoded?.Length != 56)
+            {
+                return false;
+            }
+
+            try
+            {
+                var decoded = DecodeCheck(versionByte, encoded);
+                if (decoded.Length != 32)
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool IsValidEd25519PublicKey(string publicKey)
+        {
+            return IsValid(VersionByte.ACCOUNT_ID, publicKey);
+        }
+
+        public static bool IsValidEd25519SecretSeed(string seed)
+        {
+            return IsValid(VersionByte.SEED, seed);
+        }
     }
 }
