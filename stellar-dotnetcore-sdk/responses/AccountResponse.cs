@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace stellar_dotnetcore_sdk.responses
@@ -52,6 +53,9 @@ namespace stellar_dotnetcore_sdk.responses
 
         [JsonProperty(PropertyName = "_links")]
         public AccountResponseLinks Links { get; set; }
+
+        [JsonProperty("Data")]
+        public Dictionary<string, string> Data { get; private set; }
 
         public long IncrementedSequenceNumber => SequenceNumber + 1;
 
