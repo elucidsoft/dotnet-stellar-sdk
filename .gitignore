@@ -31,6 +31,9 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 
+package/dotnetcore-stellar-sdk/lib
+
+
 # Visual Studio 2015
 .vs/
 *.DotSettings
