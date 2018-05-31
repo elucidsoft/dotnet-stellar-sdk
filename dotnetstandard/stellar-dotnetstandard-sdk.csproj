@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>The .NET Standard 2.0 Stellar SDK facilitates client integration with the Stellar Horizon API server and submission of Stellar transactions. It has two main uses: querying Horizon and building, signing, and submitting transactions to the Stellar network.</Description>
+    <Version>2.0.0-standard</Version>
+    <RootNamespace>stellar_dotnet_sdk</RootNamespace>
+    <Authors>Eric Malamisura, Michael Monte</Authors>
+    <Company>elucidsoft llc</Company>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <OutputPath>..\package\lib\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\stellar-dotnet-sdk\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nett" Version="0.9.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+</Project>

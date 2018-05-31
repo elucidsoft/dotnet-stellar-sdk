@@ -1,1 +1,0 @@
-xdrgen -o ./generated *.x --language=csharp --namespace=stellar_dotnetcore_sdk.xdr

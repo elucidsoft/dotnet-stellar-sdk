@@ -1,0 +1,51 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": "5914d69fd276bdeaa905cdf2c86baf295cf99be7"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "stellar-dotnetcore-sdk/2.0.0-core": {
+        "dependencies": {
+          "Nett": "0.9.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "stellar-dotnetcore-sdk.dll": {}
+        }
+      },
+      "Nett/0.9.0": {
+        "runtime": {
+          "lib/netstandard2.0/Nett.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "stellar-dotnetcore-sdk/2.0.0-core": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Nett/0.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m+C9E75HVKqd0WGttlgRQBGcP1rc6+Qj+McZFaFafrqMrqjXm3HqFmpip+0cCnvxfm+Nc34fCQuG43snb6gyzg==",
+      "path": "nett/0.9.0",
+      "hashPath": "nett.0.9.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "path": "newtonsoft.json/11.0.2",
+      "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+    }
+  }
+}

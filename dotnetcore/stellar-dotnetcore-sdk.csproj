@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>stellar_dotnet_sdk</RootNamespace>
+    <Version>2.0.0-core</Version>
+    <LangVersion>7.1</LangVersion>
+    <Description>The .NET Core Stellar SDK facilitates client integration with the Stellar Horizon API server and submission of Stellar transactions. It has two main uses: querying Horizon and building, signing, and submitting transactions to the Stellar network.</Description>
+    <PackageReleaseNotes>Fixed Chaos.Nacl dependency issue.</PackageReleaseNotes>
+    <PackageTags>'.NET Core' 'Stellar' 'Horizon' 'Blockchain' 'Crypto' 'Distributed Ledger'</PackageTags>
+    <Copyright>elucidsoft 2017</Copyright>
+    <PackageProjectUrl>https://github.com/elucidsoft/dotnetcore-stellar-sdk</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/elucidsoft/dotnetcore-stellar-sdk</RepositoryUrl>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Eric Malamisura, Michael Monte</Authors>
+    <Product>.NET Core Stellar SDK</Product>
+    <PackageId>stellar-dotnetcore-sdk</PackageId>
+    <Company>elucidsoft llc</Company>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Debug\netcoreapp2.0\stellar-dotnetcore-sdk.xml</DocumentationFile>
+    <OutputPath>..\package\lib\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\stellar-dotnet-sdk\**\*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Nett" Version="0.9.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,2563 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>stellar-dotnetcore-sdk</name>
+    </assembly>
+    <members>
+        <member name="T:stellar_dotnet_sdk.Account">
+            <summary>
+            Returns information and links relating to a single account.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Account.#ctor(stellar_dotnet_sdk.KeyPair,System.Nullable{System.Int64})">
+            <summary>
+             Class constructor.
+             </summary>
+             <param name="keypair">KeyPair associated with this Account</param> 
+             <param name="sequenceNumber">Current sequence number of the account (can be obtained using java-stellar-sdk or horizon server)</param> 
+        </member>
+        <member name="P:stellar_dotnet_sdk.Account.KeyPair">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.Account.SequenceNumber">
+            <summary>
+            The sequence number
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Account.GetIncrementedSequenceNumber">
+            <summary>
+            Returns the Sequence number incremented by one.
+            </summary>
+            <returns>SequenceNumber + 1</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Account.IncrementSequenceNumber">
+            <summary>
+             Increments sequence number in this object by one.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.AccountFlag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:stellar_dotnet_sdk.AccountFlag.AuthRequiredFlag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:stellar_dotnet_sdk.AccountFlag.AuthRevocableFlag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:stellar_dotnet_sdk.AccountFlag.AuthImmutableFlag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.AccountMergeOperation">
+            <summary>
+            Transfers native balance to destination account.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.AccountMergeOperation.Destination">
+            <summary>
+                The account that receives the remaining XLM balance of the source account.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.AccountMergeOperation.ToOperationBody">
+            <summary>
+            Returns the Account Merge XDR Operation Body
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:stellar_dotnet_sdk.AccountMergeOperation.Builder">
+            <summary>
+                Builds AccountMerge operation.
+                <see cref="T:stellar_dotnet_sdk.AccountMergeOperation" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.AccountMergeOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.Operation.OperationBody)">
+            <summary>
+            Builder to build the AccountMerge Operation given an XDR OperationBody
+            </summary>
+            <param name="op"></param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.AccountMergeOperation.Builder.#ctor(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+                Creates a new AccountMerge builder.
+            </summary>
+            <param name="destination">destination The account that receives the remaining XLM balance of the source account.</param>
+        </member>
+        <member name="P:stellar_dotnet_sdk.AccountMergeOperation.Builder.SourceAccount">
+            <summary>
+                Set source account of this operation
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.AccountMergeOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+                Sets the source account for this operation.
+            </summary>
+            <param name="sourceAccount">The operation's source account.</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.AccountMergeOperation.Builder.Build">
+            <summary>
+                Builds an operation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:stellar_dotnet_sdk.AllowTrustOperation">
+             <summary>
+            An XDR AllowTrustOp. An "allow trust" operation authorizes another account to hold your account's credit for a given asset.
+             </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.AllowTrustOperation.AssetCode">
+            <summary>
+            The asset code being authorized.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.AllowTrustOperation.Trustor">
+            <summary>
+            The trusting account (the one being authorized)
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.AllowTrustOperation.Authorize">
+            <summary>
+            True to authorize the line, false to deauthorize.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.AllowTrustOperation.ToOperationBody">
+            <summary>
+            Returns the Allow Trust XDR Operation Body
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:stellar_dotnet_sdk.AllowTrustOperation.Builder">
+            <summary>
+                Builds AllowTrust operation.
+            </summary>
+            <see cref="T:stellar_dotnet_sdk.AllowTrustOperation" />
+        </member>
+        <member name="M:stellar_dotnet_sdk.AllowTrustOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.AllowTrustOp)">
+            <summary>
+            Builder to build the AllowTrust Operation given an XDR AllowTrustOp
+            </summary>
+            <param name="op"></param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:stellar_dotnet_sdk.AllowTrustOperation.Builder.#ctor(stellar_dotnet_sdk.KeyPair,System.String,System.Boolean)">
+            <summary>
+                Creates a new AllowTrust builder.
+            </summary>
+            <param name="trustor">The account of the recipient of the trustline.</param>
+            <param name="assetCode">
+                The asset of the trustline the source account is authorizing. For example, if a gateway wants
+                to allow another account to hold its USD credit, the type is USD.
+            </param>
+            <param name="authorize">Flag indicating whether the trustline is authorized.</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.AllowTrustOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+                Set source account of this operation
+            </summary>
+            <param name="sourceAccount">Source account</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.AllowTrustOperation.Builder.Build">
+            <summary>
+                Builds an operation
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.Asset">
+            <summary>
+            Asset class represents an asset, either the native asset (XLM) or a asset code / issuer account ID pair. 
+            An asset code describes an asset code and issuer pair. In the case of the native asset XLM, the issuer will be null.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Asset.Create(System.String,System.String,System.String)">
+            <summary>
+            Create an asset base on the parameters.
+            </summary>
+            <param name="type"></param>
+            <param name="code"></param>
+            <param name="issuer"></param>
+            <returns>Asset</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,stellar_dotnet_sdk.KeyPair)">
+            <summary>
+             Creates one of AssetTypeCreditAlphaNum4 or AssetTypeCreditAlphaNum12 object based on a <code>code</code> length
+             </summary>
+             <param name="code">Asset code</param> 
+             <param name="issuer">Asset issuer</param> 
+        </member>
+        <member name="M:stellar_dotnet_sdk.Asset.FromXdr(stellar_dotnet_sdk.xdr.Asset)">
+            <summary>
+             Generates Asset object from a given XDR object
+             </summary>
+            <param name="thisXdr"></param> 
+        </member>
+        <member name="M:stellar_dotnet_sdk.Asset.GetType">
+            <summary>
+             Returns asset type. Possible types:
+             <ul>
+               <li><code>native</code></li>
+               <li><code>credit_alphanum4</code></li>
+               <li><code>credit_alphanum12</code></li>
+             </ul>
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Asset.ToXdr">
+            <summary>
+             Generates XDR object from a given Asset object
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,System.String,System.String)">
+            <summary>
+             Creates one of AssetTypeCreditAlphaNum4 or AssetTypeCreditAlphaNum12 object based on a <code>code</code> length
+             </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.AssetTypeCreditAlphaNum">
+            <summary>
+            Assets are uniquely identified by the asset code and the issuer. Ultimately, it’s up to the issuer to set the asset code. By convention, however, currencies should be represented by 
+            the appropriate ISO 4217 code. For stocks and bonds, use the appropriate ISIN number.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.AssetTypeCreditAlphaNum.#ctor(System.String,stellar_dotnet_sdk.KeyPair)">
+            <summary>
+            Creates an AssetTypeCreditAlphaNum based on the code and KeyPair
+            </summary>
+            <param name="code">The asset code.</param>
+            <param name="issuer">The KeyPair of the issuer.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Code">
+            <summary>
+            Return the asset code
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Issuer">
+            <summary>
+            Return the asset issuer
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetType">
+            <inheritdoc />
+        </member>
+        <member name="M:stellar_dotnet_sdk.AssetTypeCreditAlphaNum.ToXdr">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.ChangeTrustOperation.Builder">
+            <summary>
+                Builds ChangeTrust operation.
+            </summary>
+            <see cref="T:stellar_dotnet_sdk.ChangeTrustOperation" />
+        </member>
+        <member name="M:stellar_dotnet_sdk.ChangeTrustOperation.Builder.#ctor(stellar_dotnet_sdk.Asset,System.String)">
+            <summary>
+                Creates a new ChangeTrust builder.
+            </summary>
+            <param name="asset">
+                The asset of the trustline. For example, if a gateway extends a trustline of up to 200 USD to a
+                user, the line is USD.
+            </param>
+            <param name="limit">
+                The limit of the trustline. For example, if a gateway extends a trustline of up to 200 USD to a
+                user, the limit is 200.
+            </param>
+            <exception cref="T:System.ArithmeticException">When limit has more than 7 decimal places.</exception>
+        </member>
+        <member name="M:stellar_dotnet_sdk.ChangeTrustOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+                Set source account of this operation
+            </summary>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.ChangeTrustOperation.Builder.Build">
+            <summary>
+                Builds an operation
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder">
+            <summary>
+                Builds CreatePassiveOffer operation.
+            </summary>
+            <see cref="T:stellar_dotnet_sdk.CreatePassiveOfferOperation" />
+        </member>
+        <member name="M:stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.CreatePassiveOfferOp)">
+            <summary>
+                Construct a new CreatePassiveOffer builder from a CreatePassiveOfferOp XDR.
+            </summary>
+            <param name="op"></param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.#ctor(stellar_dotnet_sdk.Asset,stellar_dotnet_sdk.Asset,System.String,System.String)">
+            <summary>
+                Creates a new CreatePassiveOffer builder.
+            </summary>
+            <param name="selling">The asset being sold in this operation</param>
+            <param name="buying">The asset being bought in this operation</param>
+            <param name="amount">Amount of selling being sold.</param>
+            <param name="price">Price of 1 unit of selling in terms of buying.</param>
+            <exception cref="T:System.ArithmeticException">when amount has more than 7 decimal places.</exception>
+        </member>
+        <member name="M:stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+                Sets the source account for this operation.
+            </summary>
+            <param name="sourceAccount">The operation's source account.</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.Build">
+            <summary>
+                Builds an operation
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})">
+            <summary>
+                Creates a string from the sequence by concatenating the result
+                of the specified string selector function for each element.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.String)">
+            <summary>
+                Creates a string from the sequence by concatenating the result
+                of the specified string selector function for each element.
+            </summary>
+            <param name="separator">The string which separates each concatenated item.</param>
+        </member>
+        <member name="T:stellar_dotnet_sdk.EventSource">
+            <inheritdoc />
+            <summary>
+                An EventSource represents a long-lived HTTP connection through which a Web server can “push” textual messages.
+                To use these “Server Sent Events”, pass the server URL to the EventSource() constructor and then register
+                a message event handler on the resulting Event Source object. The EventSource attempts to be resilient to
+                transitory network errors and interruptions by automatically retrying connections to maintain persistence.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.EventSource.EventSourceState">
+            <summary>
+                The possible values of the readyState property.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:stellar_dotnet_sdk.EventSource" /> class.
+            </summary>
+            <param name="requestUriString">The URL.</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.#ctor(System.Uri)">
+            <summary>
+                Initializes a new instance of the <see cref="T:stellar_dotnet_sdk.EventSource" /> class.
+            </summary>
+            <param name="requestUriString">The URL.</param>
+        </member>
+        <member name="E:stellar_dotnet_sdk.EventSource.Error">
+            <summary>
+                Occurs when an error occurs.
+            </summary>
+        </member>
+        <member name="E:stellar_dotnet_sdk.EventSource.Message">
+            <summary>
+                Occurs when a message is available.
+            </summary>
+        </member>
+        <member name="E:stellar_dotnet_sdk.EventSource.StateChange">
+            <summary>
+                Occurs when the ready state changes.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.EventSource.Headers">
+            <summary>
+                Gets or sets the headers to be sent in the request. For more
+                customization override the ConfigureWebRequest method.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.EventSource.MessageTypes">
+            <summary>
+                Gets or sets an optional message type filter. If set,
+                this filter specifies which event types to pass through.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.EventSource.LastEventId">
+            <summary>
+                Gets the last event identifier.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.EventSource.ReadyState">
+            <summary>
+                Gets the state of the connection.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.EventSource.Timeout">
+            <summary>
+                Gets or sets the initial connection timeout.
+                There is no timeout on the connection once established.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.EventSource.Url">
+            <summary>
+                The absolute URL to which the EventSource is connected.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.Connect">
+            <summary>
+                Begin the process to connect to the the EventSource. The EventSource attempts to be resilient to
+                transitory network errors and interruptions by automatically retrying connections to maintain persistence.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.Dispose">
+            <summary>
+                Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.Shutdown">
+            <summary>
+                This method shutsdown the connection.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.ConfigureWebRequest(System.Net.HttpWebRequest)">
+            <summary>
+                Configures the web request object. Override this method to add custom
+                headers and settings to the request object as required.
+            </summary>
+            <param name="request">The HttpWebRequest request.</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.DispatchEvent(System.String[])">
+            <summary>
+                Called when a complete message is received (indicates by two newlines)
+                to process the line(s) and dispatch the event. Override this method to
+                customize the parsing.
+            </summary>
+            <param name="content">The lines received.</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.IsWanted(System.String)">
+            <summary>
+                Determines whether the specified event type is filtered. By default this checks against
+                the list of MessageTypes (if specified) but can be overriden for additional tests.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <returns>[True] if the message should be processed.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.OnErrorEvent(stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs)">
+            <summary>
+                Raises the <see cref="E:ErrorEvent" /> event.
+            </summary>
+            <param name="e">The <see cref="T:stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.OnMessageEvent(stellar_dotnet_sdk.EventSource.ServerSentEventArgs)">
+            <summary>
+                Raises the <see cref="E:MessageEvent" /> event.
+            </summary>
+            <param name="e">The <see cref="T:stellar_dotnet_sdk.EventSource.ServerSentEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.OnStateChangeEvent(stellar_dotnet_sdk.EventSource.StateChangeEventArgs)">
+            <summary>
+                Raises the <see cref="E:StateChange" /> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.RetryAfterDelay(System.Boolean)">
+            <summary>
+                Retries the connection after delay using a simple backoff mechanism.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.CloseConnection">
+            <summary>
+                Closes the connection.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.ConnectAsync">
+            <summary>
+                Connects to the event source.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.EndGetResponse(System.IAsyncResult)">
+            <summary>
+                Ends the async get response.
+            </summary>
+            <param name="result">The IAsyncResult.</param>
+            <exception cref="T:System.NullReferenceException">GetResponseStream() returned null</exception>
+        </member>
+        <member name="M:stellar_dotnet_sdk.EventSource.EndReadFromStream(System.IAsyncResult)">
+            <summary>
+                Recursive method to read the network stream and process the data.
+            </summary>
+            <param name="result">The IAsyncResult.</param>
+        </member>
+        <member name="T:stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs">
+            <summary>
+                Server Sent Error Event Object
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs.Exception">
+            <summary>
+            Internal Exception
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.EventSource.ServerSentEventArgs">
+            <summary>
+                Server Sent Event Message Object
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.EventSource.ServerSentEventArgs.Data">
+            <summary>
+                Gets the data.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.EventSource.StateChangeEventArgs">
+            <summary>
+                Server Sent Error Event Object
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.EventSource.StateChangeEventArgs.NewState">
+            <summary>
+            New State changed to
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.federation.Federation.Resolve(System.String)">
+            <summary>
+            This method is a helper method for handling user inputs that contain `destination` value.
+            It accepts two types of values:
+            For Stellar address (ex. <code>bob*stellar.org`</code>) it splits Stellar address and then tries to find information about
+            federation server in <code>stellar.toml</code> file for a given domain.
+            
+            For account ID (ex. <code>GB5XVAABEQMY63WTHDQ5RXADGYF345VWMNPTN2GFUDZT57D57ZQTJ7PS</code>) it simply returns the
+            given Account ID.
+            </summary>
+            <param name="value">Stellar address or account id</param>
+            <exception cref="T:stellar_dotnet_sdk.federation.MalformedAddressException"></exception>
+            <exception cref="T:stellar_dotnet_sdk.federation.ConnectionErrorException"></exception>
+            <exception cref="T:stellar_dotnet_sdk.federation.NoFederationServerException"></exception>
+            <exception cref="T:stellar_dotnet_sdk.federation.FederationServerInvalidException"></exception>
+            <exception cref="T:stellar_dotnet_sdk.federation.StellarTomlNotFoundInvalidException"></exception>
+            <exception cref="T:stellar_dotnet_sdk.federation.NotFoundException"></exception>
+            <exception cref="T:stellar_dotnet_sdk.federation.ServerErrorException"></exception>
+            <returns><see cref="T:stellar_dotnet_sdk.federation.FederationResponse"/></returns>
+        </member>
+        <member name="T:stellar_dotnet_sdk.federation.FederationResponse">
+            <summary>
+                Object to hold a response from a federation server.
+                See https://www.stellar.org/developers/learn/concepts/federation.html
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.federation.FederationServer">
+            <summary>
+                FederationServer handles a network connection to a
+                federation server (https://www.stellar.org/developers/learn/concepts/federation.html)
+                instance and exposes an interface for requests to that instance.
+                For resolving a stellar address without knowing which federation server
+                to query use Federation#resolve(String).
+                See Federation docs: https://www.stellar.org/developers/learn/concepts/federation.html
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.federation.FederationServer.CreateForDomain(System.String)">
+            <summary>
+                reates a <see cref="T:stellar_dotnet_sdk.federation.FederationServer" /> instance for a given domain.
+                It tries to find a federation server URL in stellar.toml file.
+                See: https://www.stellar.org/developers/learn/concepts/stellar-toml.html
+            </summary>
+            <param name="domain">Domain to find a federation server for</param>
+            <returns>
+                <see cref="T:stellar_dotnet_sdk.federation.FederationServer" />
+            </returns>
+        </member>
+        <member name="T:stellar_dotnet_sdk.federation.FederationServerInvalidException">
+            <inheritdoc />
+            <summary>
+                Federation server is invalid (malformed URL, not HTTPS, etc.)
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.federation.NoFederationServerException">
+            <summary>
+                Federation server was not found in stellar.toml file.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.ITransactionBuilderAccount.GetIncrementedSequenceNumber">
+            <summary>
+             Returns sequence number incremented by one, but does not increment internal counter.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementSequenceNumber">
+            <summary>
+             Increments sequence number in this object by one.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.KeyPair">
+            <summary>
+            <see cref="T:stellar_dotnet_sdk.KeyPair"/> represents public (and secret) keys of the account.
+            Currently <see cref="T:stellar_dotnet_sdk.KeyPair"/> only supports ed25519 but in a future this class can be abstraction layer for other public-key signature systems.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.KeyPair.#ctor(System.Byte[])">
+            <summary>
+            Creates a new Keypair object from public key.
+            </summary>
+            <param name="publicKey"></param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.KeyPair.#ctor(System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            Creates a new Keypair instance from secret. This can either be secret key or secret seed depending on underlying public-key signature system. Currently Keypair only supports ed25519.
+            </summary>
+            <param name="publicKey"></param>
+            <param name="privateKey"></param>
+            <param name="seed"></param>
+        </member>
+        <member name="P:stellar_dotnet_sdk.KeyPair.PublicKey">
+            <summary>
+            The public key.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.KeyPair.PrivateKey">
+            <summary>
+            The private key.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.KeyPair.SeedBytes">
+            <summary>
+            The bytes of the Secret Seed
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.KeyPair.AccountId">
+            <summary>
+            AccountId
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.KeyPair.Address">
+            <summary>
+            Address
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.KeyPair.SecretSeed">
+            <summary>
+            SecretSeed
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.KeyPair.SignatureHint">
+            <summary>
+            XDR Signature Hint
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.KeyPair.XdrPublicKey">
+            <summary>
+            XDR Public Key
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.KeyPair.XdrSignerKey">
+            <summary>
+            XDR Signer Key
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.KeyPair.FromXdrPublicKey(stellar_dotnet_sdk.xdr.PublicKey)">
+            <summary>
+            Returns a KeyPair from a Public Key
+            </summary>
+            <param name="publicKey"></param>
+            <returns><see cref="T:stellar_dotnet_sdk.KeyPair"/></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.KeyPair.FromXdrSignerKey(stellar_dotnet_sdk.xdr.SignerKey)">
+            <summary>
+            Returns a KeyPair from an XDR SignerKey
+            </summary>
+            <param name="signerKey"></param>
+            <returns><see cref="T:stellar_dotnet_sdk.KeyPair"/></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.KeyPair.CanSign">
+            <summary>
+                Returns true if this Keypair is capable of signing
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.KeyPair.FromSecretSeed(System.String)">
+            <summary>
+                Creates a new Stellar KeyPair from a strkey encoded Stellar secret seed.
+            </summary>
+            <param name="seed">eed Char array containing strkey encoded Stellar secret seed.</param>
+            <returns>
+                <see cref="T:stellar_dotnet_sdk.KeyPair" />
+            </returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.KeyPair.FromSecretSeed(System.Byte[])">
+            <summary>
+                Creates a new Stellar keypair from a raw 32 byte secret seed.
+            </summary>
+            <param name="seed">seed The 32 byte secret seed.</param>
+            <returns>
+                <see cref="T:stellar_dotnet_sdk.KeyPair" />
+            </returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.KeyPair.FromAccountId(System.String)">
+            <summary>
+                Creates a new Stellar KeyPair from a strkey encoded Stellar account ID.
+            </summary>
+            <param name="accountId">accountId The strkey encoded Stellar account ID.</param>
+            <returns>
+                <see cref="T:stellar_dotnet_sdk.KeyPair" />
+            </returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.KeyPair.FromPublicKey(System.Byte[])">
+            <summary>
+                Creates a new Stellar keypair from a 32 byte address.
+            </summary>
+            <param name="publicKey">publicKey The 32 byte public key.</param>
+            <returns>
+                <see cref="T:stellar_dotnet_sdk.KeyPair" />
+            </returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.KeyPair.Random">
+            <summary>
+                Generates a random Stellar keypair.
+            </summary>
+            <returns>a random Stellar keypair</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.KeyPair.Sign(System.Byte[])">
+            <summary>
+                Sign the provided data with the keypair's private key.
+            </summary>
+            <param name="data">The data to sign.</param>
+            <returns>signed bytes, null if the private key for this keypair is null.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.KeyPair.SignDecorated(System.Byte[])">
+            <summary>
+            Sign a message and return an XDR Decorated Signature
+            </summary>
+            <param name="message"></param>
+            <returns><see cref="T:stellar_dotnet_sdk.xdr.DecoratedSignature"/></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.KeyPair.Verify(System.Byte[],System.Byte[])">
+            <summary>
+                Verify the provided data and signature match this keypair's public key.
+            </summary>
+            <param name="data">The data that was signed.</param>
+            <param name="signature">The signature.</param>
+            <returns>True if they match, false otherwise.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.ManageDataOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.ManageDataOp)">
+            <summary>
+                Construct a new ManageOffer builder from a ManageDataOp XDR.
+            </summary>
+            <param name="op">
+                <see cref="T:stellar_dotnet_sdk.xdr.ManageDataOp" />
+            </param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.ManageDataOperation.Builder.#ctor(System.String,System.Byte[])">
+            <summary>
+                Creates a new ManageData builder. If you want to delete data entry pass null as a <code>value</code> param.
+            </summary>
+            <param name="name">The name of data entry</param>
+            <param name="value">The value of data entry. <code>null</code>null will delete data entry.</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.ManageDataOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+                Sets the source account for this operation.
+            </summary>
+            <param name="sourceAccount">The operation's source account.</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.ManageDataOperation.Builder.Build">
+            <summary>
+                Builds an operation
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:stellar_dotnet_sdk.ManageOfferOperation.Builder" -->
+        <member name="M:stellar_dotnet_sdk.ManageOfferOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.ManageOfferOp)">
+            <summary>
+                Construct a new CreateAccount builder from a CreateAccountOp XDR.
+            </summary>
+            <param name="op">
+                <see cref="T:stellar_dotnet_sdk.xdr.ManageOfferOp" />
+            </param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.ManageOfferOperation.Builder.#ctor(stellar_dotnet_sdk.Asset,stellar_dotnet_sdk.Asset,System.String,System.String)">
+            <summary>
+                Creates a new ManageOffer builder. If you want to update existing offer use
+                <see cref="M:stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId(System.Int64)" />.
+            </summary>
+            <param name="selling">The asset being sold in this operation</param>
+            <param name="buying"> The asset being bought in this operation</param>
+            <param name="amount"> Amount of selling being sold.</param>
+            <param name="price"> Price of 1 unit of selling in terms of buying.</param>
+            <exception cref="T:System.ArithmeticException">when amount has more than 7 decimal places.</exception>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId(System.Int64)" -->
+        <member name="M:stellar_dotnet_sdk.ManageOfferOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+                Sets the source account for this operation.
+            </summary>
+            <param name="sourceAccount">The operation's source account.</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.ManageOfferOperation.Builder.Build">
+            <summary>
+                Builds an operation
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.Memo">
+            <summary>
+            Abstract class for creating various Memo Types.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Memo.None">
+            <summary>
+             Creates new MemoNone instance.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Memo.Text(System.String)">
+            <summary>
+             Creates new {@link MemoText} instance.
+             </summary>
+             <param name="text">The text value of a Text Memo.</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Memo.Id(System.Int64)">
+            <summary>
+             Creates new {@link MemoId} instance.
+             </summary>
+             <param name="id">The id value of an Id Memo.</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Memo.Hash(System.Byte[])">
+            <summary>
+             Creates new {@link MemoHash} instance from byte array.
+             </summary>
+             <param name="bytes">The byte array of a Hash Memo.</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Memo.Hash(System.String)">
+            <summary>
+             Creates new {@link MemoHash} instance from hex-encoded string
+             </summary>
+             <param name="hexString">The hex value of a Hash Memo</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Memo.ReturnHash(System.Byte[])">
+            <summary>
+             Creates new {@link MemoReturnHash} instance from byte array.
+             </summary>
+             <param name="bytes">A byte array of a Return Hash Memo.</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Memo.ReturnHash(System.String)">
+            <summary>
+             Creates new {@link MemoReturnHash} instance from hex-encoded string.
+             </summary>
+             <param name="hexString">The hex value of a Return Hash Memo.</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Memo.ToXdr">
+            <summary>
+            Abstract method for ToXdr
+            </summary>
+            <returns>A memo object.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.MemoHashAbstract.GetHexValue">
+            <summary>
+             <p>Returns hex representation of bytes contained in this memo.</p>
+            
+             <p>Example:</p>
+             <code>
+               MemoHash memo = new MemoHash("4142434445");
+               memo.getHexValue(); // 4142434445000000000000000000000000000000000000000000000000000000
+               memo.getTrimmedHexValue(); // 4142434445
+             </code>
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.MemoHashAbstract.GetTrimmedHexValue">
+            <summary>
+             <p>Returns hex representation of bytes contained in this memo until null byte (0x00) is found.</p>
+            
+             <p>Example:</p>
+             <code>
+               MemoHash memo = new MemoHash("4142434445");
+               memo.getHexValue(); // 4142434445000000000000000000000000000000000000000000000000000000
+               memo.getTrimmedHexValue(); // 4142434445
+             </code>
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Operation.ToXdr">
+            <summary>
+             Generates Operation XDR object.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Operation.ToXdrBase64">
+            <summary>
+             Returns base64-encoded Operation XDR object.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)">
+            <summary>
+            </summary>
+             <returns>new Operation object from Operation XDR object.</returns> 
+             <param name="thisXdr">XDR object</param> 
+        </member>
+        <member name="M:stellar_dotnet_sdk.Operation.ToOperationBody">
+            <summary>
+             Generates OperationBody XDR object
+            </summary>
+            <returns>OperationBody XDR object</returns>
+        </member>
+        <member name="T:stellar_dotnet_sdk.PathPaymentOperation.Builder">
+            <summary>
+                Builds PathPayment operation.
+            </summary>
+            <see cref="T:stellar_dotnet_sdk.PathPaymentOperation" />
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:stellar_dotnet_sdk.PathPaymentOperation.Builder.#ctor(stellar_dotnet_sdk.Asset,System.String,stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.Asset,System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:stellar_dotnet_sdk.PathPaymentOperation.Builder.SetPath(stellar_dotnet_sdk.Asset[])" -->
+        <member name="M:stellar_dotnet_sdk.PathPaymentOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+                Sets the source account for this operation.
+            </summary>
+            <param name="sourceAccount"> The operation's source account.</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.PathPaymentOperation.Builder.Build">
+            <summary>
+                Builds an operation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:stellar_dotnet_sdk.PaymentOperation.Builder">
+            <summary>
+             Builds Payment operation.
+            </summary>
+            <see cref="T:stellar_dotnet_sdk.PathPaymentOperation"/>
+        </member>
+        <member name="M:stellar_dotnet_sdk.PaymentOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.PaymentOp)">
+            <summary>
+             Construct a new PaymentOperation builder from a PaymentOp XDR.
+            </summary>
+            <param name="op"><see cref="T:stellar_dotnet_sdk.xdr.PaymentOp"/></param> 
+        </member>
+        <member name="M:stellar_dotnet_sdk.PaymentOperation.Builder.#ctor(stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.Asset,System.String)">
+            <summary>
+             Creates a new PaymentOperation builder.
+            </summary>
+            <param name="destination">The destination keypair (uses only the public key).</param> 
+            <param name="asset">The asset to send.</param> 
+            <param name="amount">The amount to send in lumens.</param> 
+        </member>
+        <member name="M:stellar_dotnet_sdk.PaymentOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+             Sets the source account for this operation.
+            </summary>
+            <param name="account">The operation's source account.</param> 
+            <returns>Builder object so you can chain methods.</returns> 
+            
+        </member>
+        <member name="M:stellar_dotnet_sdk.PaymentOperation.Builder.Build">
+            <summary>
+             Builds an operation
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Price.#ctor(System.Int32,System.Int32)">
+            <summary>
+                Create a new price. Price in Stellar is represented as a fraction.
+            </summary>
+            <param name="n">Numerator</param>
+            <param name="d">Denominator</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Price.FromString(System.String)">
+            <summary>
+                Approximates<code> price</code> to a fraction.
+            </summary>
+            <param name="price">Example 1.25</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Price.ToXdr">
+            <summary>
+                Generates Price XDR object.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.requests.AccountsRequestBuilder">
+            <summary>
+                Builds requests connected to accounts.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.#ctor(System.Uri)">
+            <summary>
+                Builds requests connected to accounts.
+            </summary>
+            <param name="serverUri"></param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.Account(System.Uri)">
+            <summary>
+                Requests specific uri and returns AccountResponse
+                This method is helpful for getting the links.
+            </summary>
+            <param name="uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.Account(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+                Requests GET /accounts/{account}
+                https://www.stellar.org/developers/horizon/reference/accounts-single.html
+            </summary>
+            <param name="account">Account to fetch</param>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.Execute(System.Uri)">
+            <summary>
+                Requests specific uri and returns Page of AccountResponse.
+                This method is helpful for getting the next set of results.
+            </summary>
+            <param name="uri"></param>
+            <returns>Page of AccountResponse</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.AccountResponse})" -->
+        <member name="T:stellar_dotnet_sdk.requests.AssetsRequestBuilder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.AssetsRequestBuilder.#ctor(System.Uri)">
+            <summary>
+            
+            </summary>
+            <param name="serverUri"></param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.AssetsRequestBuilder.AssetCode(System.String)">
+            <summary>
+            Code of the Asset to filter by
+            </summary>
+            <param name="assetCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.AssetsRequestBuilder.AssetIssuer(System.String)">
+            <summary>
+            Issuer of the Asset to filter by
+            </summary>
+            <param name="assetIssuer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.AssetsRequestBuilder.Execute">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForAccount(stellar_dotnet_sdk.KeyPair)">
+            <Summary>
+             Builds request to <code>GET /accounts/{account}/effects</code>
+             <a href="https://www.stellar.org/developers/horizon/reference/effects-for-account.html">Effects for Account</a>
+             </Summary>
+             <param name="account">Account for which to get effects</param> 
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForLedger(System.Int64)">
+            <Summary>
+             Builds request to <code>GET /ledgers/{ledgerSeq}/effects</code>
+             <a href="https://www.stellar.org/developers/horizon/reference/effects-for-ledger.html">Effects for Ledger</a>
+             </Summary>
+             <param name="ledgerSeq">Ledger for which to get effects</param> 
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForTransaction(System.String)">
+            <Summary>
+             Builds request to <code>GET /transactions/{transactionId}/effects</code>
+             <a href="https://www.stellar.org/developers/horizon/reference/effects-for-transaction.html">Effect for Transaction</a>
+             </Summary>
+             <param name="transactionId">Transaction ID for which to get effects</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForOperation(System.Int64)">
+            <Summary>
+             Builds request to <code>GET /operation/{operationId}/effects</code>
+             <a href="https://www.stellar.org/developers/horizon/reference/effects-for-operation.html">Effect for Operation</a>
+             </Summary>
+             <param name="operationId">Operation ID for which to get effects</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.Execute(System.Uri)">
+            <Summary>
+             Requests specific <code>uri</code> and returns {@link Page} of {@link EffectResponse}.
+             This method is helpful for getting the next set of results.
+             </Summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.effects.EffectResponse})" -->
+        <member name="M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.Execute">
+            <Summary>
+             Build and execute request.
+             </Summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(System.Uri)">
+            <summary>
+                Requests specific uri and returns LedgerResponse
+                This method is helpful for getting the links.
+            </summary>
+            <param name="uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(System.Int64)">
+            <summary>
+             Requests <code>GET /ledgers/{ledgerSeq}</code>
+             <a href="https://www.stellar.org/developers/horizon/reference/ledgers-single.html">Ledger Details</a>
+            </summary>
+            <param name="ledgerSeq">Ledger to fetch</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Execute(System.Uri)">
+            <Summary>
+             Requests specific <code>uri</code> and returns {@link Page} of {@link EffectResponse}.
+             This method is helpful for getting the next set of results.
+             </Summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.LedgerResponse})" -->
+        <member name="M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Execute">
+            <Summary>
+             Build and execute request.
+             </Summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.requests.OffersRequestBuilder">
+            <inheritdoc />
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.OffersRequestBuilder.ForAccount(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+            Builds request to GET /accounts/{account}/offers
+            See: https://www.stellar.org/developers/horizon/reference/offers-for-account.html
+            </summary>
+            <param name="account">Account for which to get offers</param>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.OffersRequestBuilder.Execute(System.Uri)">
+            <Summary>
+             Requests specific <code>uri</code> and returns {@link Page} of {@link EffectResponse}.
+             This method is helpful for getting the next set of results.
+             </Summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.OffersRequestBuilder.Execute">
+            <Summary>
+             Build and execute request.
+             </Summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.#ctor(System.Uri)">
+            <summary>
+                Builds requests connected to operations.
+            </summary>
+            <param name="serverUri"></param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.Operation(System.Uri)">
+            <summary>
+                Requests specific uri and returns <see cref="T:stellar_dotnet_sdk.responses.operations.OperationResponse" />.
+                This method is helpful for getting the links.
+            </summary>
+            <param name="uri"></param>
+            <returns>
+                <see cref="T:System.Threading.Tasks.Task`1" />
+            </returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.operations.OperationResponse})" -->
+        <member name="M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.Operation(System.Int64)">
+            <summary>
+                Requests GET /operations/{operationId}
+                See: https://www.stellar.org/developers/horizon/reference/operations-single.html
+            </summary>
+            <param name="operationId">Operation to fetch</param>
+            <returns>
+                <see cref="T:stellar_dotnet_sdk.requests.OperationsRequestBuilder" />
+            </returns>
+            <exception cref="T:System.Net.Http.HttpRequestException"></exception>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.ForAccount(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+                Builds request to GET /accounts/{account}/operations
+                See: https://www.stellar.org/developers/horizon/reference/operations-for-account.html
+            </summary>
+            <param name="account">Account for which to get operations</param>
+            <returns>
+                <see cref="T:stellar_dotnet_sdk.requests.OperationsRequestBuilder" />
+            </returns>
+            <exception cref="T:System.Net.Http.HttpRequestException"></exception>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.ForLedger(System.Int64)">
+            <summary>
+                uilds request to GET /ledgers/{ledgerSeq}/operations
+                See: https://www.stellar.org/developers/horizon/reference/operations-for-ledger.html
+            </summary>
+            <param name="ledgerSeq">Ledger for which to get operations</param>
+            <returns>
+                <see cref="T:stellar_dotnet_sdk.requests.OperationsRequestBuilder" />
+            </returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.ForTransaction(System.String)">
+            <summary>
+                Builds request to GET /transactions/{transactionId}/operations
+                See: https://www.stellar.org/developers/horizon/reference/operations-for-transaction.html
+            </summary>
+            <param name="transactionId">Transaction ID for which to get operations</param>
+            <returns>
+                <see cref="T:stellar_dotnet_sdk.requests.OperationsRequestBuilder" />
+            </returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.Execute(System.Uri)">
+            <summary>
+                Requests specific uri and returns <see cref="T:stellar_dotnet_sdk.responses.page.Page`1" />.
+                This method is helpful for getting the next set of results.
+            </summary>
+            <param name="uri">Uri to execute.</param>
+            <returns>
+                <see cref="T:stellar_dotnet_sdk.responses.page.Page`1" />
+            </returns>
+            <exception cref="T:stellar_dotnet_sdk.requests.TooManyRequestsException"></exception>
+            <exception cref="T:System.Net.Http.HttpRequestException"></exception>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.Execute">
+            <summary>
+                Build and execute request.
+            </summary>
+            <returns>
+                <see cref="!:Task&lt;Page&lt;OperationResponse&gt;&gt;" />
+            </returns>
+            <exception cref="T:stellar_dotnet_sdk.requests.TooManyRequestsException"></exception>
+            <exception cref="T:System.Net.Http.HttpRequestException"></exception>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.OrderBookRequestBuilder.Execute(System.Uri)">
+            <Summary>
+             Requests specific <code>uri</code> and returns {@link Page} of {@link EffectResponse}.
+             This method is helpful for getting the next set of results.
+             </Summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.OrderBookRequestBuilder.Execute">
+            <Summary>
+             Build and execute request.
+             </Summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.requests.PathsRequestBuilder">
+            <summary>
+            Builds requests connected to paths.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.PaymentsRequestBuilder.ForAccount(stellar_dotnet_sdk.KeyPair)">
+            <Summary>
+             Builds request to <code>GET /accounts/{account}/payments</code>
+             <a href="https://www.stellar.org/developers/horizon/reference/payments-for-account.html">Effects for Account</a>
+             </Summary>
+             <param name="account">Account for which to get payments</param> 
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.PaymentsRequestBuilder.ForLedger(System.Int64)">
+            <Summary>
+             Builds request to <code>GET /ledgers/{ledgerSeq}/effects</code>
+             <a href="https://www.stellar.org/developers/horizon/reference/payments-for-ledger.html">Effects for Ledger</a>
+             </Summary>
+             <param name="ledgerSeq">Ledger for which to get effects</param> 
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.PaymentsRequestBuilder.ForTransaction(System.String)">
+            <Summary>
+             Builds request to <code>GET /transactions/{transactionId}/payments</code>
+             <a href="https://www.stellar.org/developers/horizon/reference/payments-for-transaction.html">Effect for Transaction</a>
+             </Summary>
+             <param name="transactionId">Transaction ID for which to get payments</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute(System.Uri)">
+            <Summary>
+             Requests specific <code>uri</code> and returns {@link Page} of {@link EffectResponse}.
+             This method is helpful for getting the next set of results.
+             </Summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.operations.OperationResponse})" -->
+        <member name="M:stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute">
+            <Summary>
+             Build and execute request.
+             </Summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.requests.RequestBuilder`1">
+            <summary>
+                Abstract class for request builders.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)">
+            <summary>
+                Sets <code>cursor</code> parameter on the request.
+                A cursor is a value that points to a specific location in a collection of resources.
+                The cursor attribute itself is an opaque value meaning that users should not try to parse it.
+                Read https://www.stellar.org/developers/horizon/reference/resources/page.html for more information.
+            </summary>
+            <param name="cursor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)">
+            <summary>
+                Sets <code>limit</code> parameter on the request.
+                It defines maximum number of records to return.
+                For range and default values check documentation of the endpoint requested.
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)">
+            <summary>
+                Sets order parameter on request.
+            </summary>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Execute(System.Uri)">
+            <summary>
+            
+            </summary>
+            <param name="uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Execute">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:stellar_dotnet_sdk.requests.TradesRequestBuilder">
+            <summary>
+            Builds requests connected to trades.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(System.Uri)">
+            <summary>
+                Requests specific uri and returns LedgerResponse
+                This method is helpful for getting the links.
+            </summary>
+            <param name="uri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(System.String)">
+            <summary>
+             Requests <code>GET /ledgers/{ledgerSeq}</code>
+             <a href="https://www.stellar.org/developers/horizon/reference/ledgers-single.html">Ledger Details</a>
+            </summary>
+            <param name="ledgerSeq">Ledger to fetch</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForAccount(stellar_dotnet_sdk.KeyPair)">
+            <Summary>
+             Builds request to <code>GET /accounts/{account}/transactions</code>
+             <a href="https://www.stellar.org/developers/horizon/reference/payments-for-account.html">Transactions for Account</a>
+             </Summary>
+             <param name="account">Account for which to get transactions</param> 
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForLedger(System.Int64)">
+            <Summary>
+             Builds request to <code>GET /ledgers/{ledgerSeq}/transactions</code>
+             <a href="https://www.stellar.org/developers/horizon/reference/payments-for-ledger.html">Transactions for Ledger</a>
+             </Summary>
+             <param name="ledgerSeq">Ledger for which to get transactions</param> 
+        </member>
+        <member name="M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Execute(System.Uri)">
+            <Summary>
+             Requests specific <code>uri</code> and returns {@link Page} of {@link EffectResponse}.
+             This method is helpful for getting the next set of results.
+             </Summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.TransactionResponse})" -->
+        <member name="M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Execute">
+            <Summary>
+             Build and execute request.
+             </Summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.Thresholds">
+            <summary>
+                Represents account thresholds.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.Flags">
+            <summary>
+                Represents account flags.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.Balance">
+            <summary>
+                Represents account balance.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.Signer">
+            <summary>
+                Represents account signers.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.AssetResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.AssetResponse.Links">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.AssetResponse.AssetType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.AssetResponse.AssetCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.AssetResponse.AssetIssuer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.AssetResponse.PagingToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.AssetResponse.Amount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.AssetResponse.NumAccounts">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.AssetResponse.Flags">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.AssetResponse.Asset">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.AssetResponseFlags">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.AssetResponseFlags.AuthRequired">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.AssetResponseFlags.AuthRevocable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.AssetResponseLinks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.AssetResponseLinks.Toml">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.AccountCreatedEffectResponse">
+            <summary>
+                Represents account_created effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.AccountCreatedEffectResponse.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse">
+            <summary>
+                Represents account_credited effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.#ctor(System.String,System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.AccountDebitedEffectResponse">
+            <summary>
+                Represents account_debited effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.AccountDebitedEffectResponse.#ctor(System.String,System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.AccountFlagsUpdatedEffectResponse">
+            <summary>
+                Represents account_flags_updated effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.AccountFlagsUpdatedEffectResponse.#ctor(System.Boolean,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.AccountHomeDomainUpdatedEffectResponse">
+            <summary>
+                Represents account_home_domain_updated effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.AccountHomeDomainUpdatedEffectResponse.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.AccountRemovedEffectResponse">
+            <summary>
+                Represents account_removed effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.AccountThresholdsUpdatedEffectResponse">
+            <summary>
+                Represents account_thresholds_updated effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.AccountThresholdsUpdatedEffectResponse.#ctor(System.Int32,System.Int32,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.EffectResponse.EffectsResponseLinks">
+            <summary>
+            Represents effect links.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.OfferCreatedEffectResponse">
+            <summary>
+                Represents offer_created effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.OfferRemovedEffectResponse">
+            <summary>
+                Represents offer_removed effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.OfferUpdatedEffectResponse">
+            <summary>
+                Represents offer_updated effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.SignerCreatedEffectResponse">
+            <summary>
+                Represents signer_created effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.SignerCreatedEffectResponse.#ctor(System.Int32,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.SignerEffectResponse">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.SignerRemovedEffectResponse">
+            <summary>
+                Represents signer_removed effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.SignerRemovedEffectResponse.#ctor(System.Int32,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.SignerUpdatedEffectResponse">
+            <summary>
+                Represents signer_updated effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.SignerUpdatedEffectResponse.#ctor(System.Int32,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.TradeEffectResponse">
+            <summary>
+                Represents trade effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.TradeEffectResponse.#ctor(stellar_dotnet_sdk.KeyPair,System.Int64,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse">
+            <inheritdoc />
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.#ctor(stellar_dotnet_sdk.KeyPair,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizedEffectResponse">
+            <summary>
+                Represents trustline_authorized effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizedEffectResponse.#ctor(stellar_dotnet_sdk.KeyPair,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.TrustlineCreatedEffectResponse">
+            <summary>
+                Represents trustline_created effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.TrustlineCreatedEffectResponse.#ctor(System.String,System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.TrustlineDeauthorizedEffectResponse">
+            <summary>
+                Represents trustline_deauthorized effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.TrustlineDeauthorizedEffectResponse.#ctor(stellar_dotnet_sdk.KeyPair,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.TrustlineRemovedEffectResponse">
+            <summary>
+                Represents trustline_removed effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.TrustlineRemovedEffectResponse.#ctor(System.String,System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.effects.TrustlineUpdatedEffectResponse">
+            <summary>
+                Represents trustline_updated effect response.
+                See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
+                <seealso cref="T:stellar_dotnet_sdk.requests.EffectsRequestBuilder" />
+                <seealso cref="T:stellar_dotnet_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.effects.TrustlineUpdatedEffectResponse.#ctor(System.String,System.String,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks">
+            
+             Links connected to ledger.
+            
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.OfferResponse">
+            <summary>
+            Represents offer response.
+            See: https://www.stellar.org/developers/horizon/reference/resources/offer.html
+            <seealso cref="T:stellar_dotnet_sdk.requests.OffersRequestBuilder"/>
+            <seealso cref="T:stellar_dotnet_sdk.Server"/>
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse">
+            <summary>
+            Represents AccountMerge operation response.
+            See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+            <seealso cref="T:stellar_dotnet_sdk.requests.OperationsRequestBuilder"/>
+            <seealso cref="T:stellar_dotnet_sdk.Server"/>
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse">
+            <inheritdoc />
+            <summary>
+            Represents AllowTrust operation response.
+            See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+            <seealso cref="T:stellar_dotnetcore_sdk.requests.OperationsRequestBuilder" />
+            <seealso cref="T:stellar_dotnetcore_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.#ctor(stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Updates the “authorized” flag of an existing trust line this is called by the issuer of the asset.
+            </summary>
+            <param name="trustor">Trustor account.</param>
+            <param name="trustee">Trustee account.</param>
+            <param name="assetType">Asset type (native / alphanum4 / alphanum12)</param>
+            <param name="assetCode">Asset code.</param>
+            <param name="assetIssuer">Asset issuer.</param>
+            <param name="authorize">true when allowing trust, false when revoking trust</param>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.Trustor">
+            <summary>
+            Trustor account.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.Trustee">
+            <summary>
+            Trustee account.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.AssetType">
+            <summary>
+            Asset type (native / alphanum4 / alphanum12)
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.AssetCode">
+            <summary>
+            Asset code.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.AssetIssuer">
+            <summary>
+            Asset issuer.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.Authorize">
+            <summary>
+            true when allowing trust, false when revoking trust
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.Asset">
+            <summary>
+            The asset to allow trust.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse">
+            <summary>
+            Represents ChangeTrust operation response.
+            See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+            <seealso cref="T:stellar_dotnet_sdk.requests.OperationsRequestBuilder"/>
+            <seealso cref="T:stellar_dotnet_sdk.Server"/>
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse">
+            <summary>
+            Represents CreateAccount operation response.
+            See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+            <seealso cref="T:stellar_dotnet_sdk.requests.OperationsRequestBuilder"/>
+            <seealso cref="T:stellar_dotnet_sdk.Server"/>
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse">
+            <summary>
+            Represents CreatePassiveOffer operation response.
+            See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+            <seealso cref="T:stellar_dotnet_sdk.requests.OperationsRequestBuilder"/>
+            <seealso cref="T:stellar_dotnet_sdk.Server"/>
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.operations.InflationOperationResponse">
+            <summary>
+            Represents Inflation operation response.
+            See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+            <seealso cref="T:stellar_dotnet_sdk.requests.OperationsRequestBuilder"/>
+            <seealso cref="T:stellar_dotnet_sdk.Server"/>
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.operations.ManageDataOperationResponse">
+            <summary>
+            Represents ManageData operation response.
+            See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+            <seealso cref="T:stellar_dotnet_sdk.requests.OperationsRequestBuilder"/>
+            <seealso cref="T:stellar_dotnet_sdk.Server"/>
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse">
+            <summary>
+            Represents ManageOffer operation response.
+            See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+            <seealso cref="T:stellar_dotnet_sdk.requests.OperationsRequestBuilder"/>
+            <seealso cref="T:stellar_dotnet_sdk.Server"/>
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.operations.OperationResponse">
+            <summary>
+            Abstract class for operation responses.
+            See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+            <seealso cref="T:stellar_dotnet_sdk.requests.OperationsRequestBuilder"/>
+            <seealso cref="T:stellar_dotnet_sdk.Server"/>
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.OperationResponse.Id">
+            <summary>
+            Id of the operation
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount">
+            <summary>
+            Source Account of Operation
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken">
+            <summary>
+            Paging Token of Paging
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.OperationResponse.Type">
+            <summary>
+            Returns operation type. Possible types: 
+            crete_account
+            payment
+            allow_trust
+            change_trust
+            set_options
+            account_merge
+            manage_offer
+            path_payments
+            create_passive_offer
+            inflation
+            manage_data
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash">
+            <summary>
+            Returns transaction hash of transaction this operation belongs to.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.OperationResponse.Links">
+            <summary>
+            Links of Paging
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.operations.OperationResponseLinks">
+            <summary>
+            The response is for the genesis ledger of the Stellar network, and the links in the _links attribute provide links to other relavant resources in Horizon.
+            The key of each link specifies that links relation to the current resource, and transactions means  “Transactions that occurred in this operation”. 
+            
+            The transactions link is also templated, which means that the href attribute of the link is actually a URI template, as specified by RFC 6570. We use URI templates 
+            to show you what parameters a give resource can take.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.OperationResponseLinks.Effects">
+            <summary>
+            This endpoint represents effects that occurred as a result of a given operation.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.OperationResponseLinks.Precedes">
+            <summary>
+            This endpoint represents precedes that occurred as a result of a given operation.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.OperationResponseLinks.Self">
+            <summary>
+            This endpoint represents self that occurred as a result of a given operation.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.OperationResponseLinks.Succeeds">
+            <summary>
+            This endpoint represents succeeds that occurred as a result of a given operation.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.OperationResponseLinks.Transaction">
+            <summary>
+            This endpoint represents transaction that occurred as a result of a given operation.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.operations.OperationResponseLinks.#ctor(stellar_dotnet_sdk.responses.Link,stellar_dotnet_sdk.responses.Link,stellar_dotnet_sdk.responses.Link,stellar_dotnet_sdk.responses.Link,stellar_dotnet_sdk.responses.Link)">
+            <summary>
+            Creates an OperationsResponseLinks object type.
+            </summary>
+            <param name="effects">This endpoint represents effects that occurred as a result of a given operation.</param>
+            <param name="precedes">This endpoint represents precedes that occurred as a result of a given operation.</param>
+            <param name="self">This endpoint represents self that occurred as a result of a given operation.</param>
+            <param name="succeeds">This endpoint represents succeeds that occurred as a result of a given operation.</param>
+            <param name="transaction">This endpoint represents transaction that occurred as a result of a given operation.</param>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse">
+            <inheritdoc />
+            <summary>
+            Sends an amount in a specific asset to a destination account through a path of offers. This allows the asset sent (e.g., 450 XLM) to be different from the asset received (e.g, 6 BTC).
+            See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+            <seealso cref="T:stellar_dotnetcore_sdk.requests.OperationsRequestBuilder" />
+            <seealso cref="T:stellar_dotnetcore_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor(System.String,System.String,stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Sends an amount in a specific asset to a destination account through a path of offers. This allows the asset sent (e.g., 450 XLM) to be different from the asset received (e.g, 6 BTC).
+            </summary>
+            <param name="amount">The amount of destination asset the destination account receives.</param>
+            <param name="sourceAmount">The amount of source asset deducted from senders account.</param>
+            <param name="from">Account address that is sending the payment.</param>
+            <param name="to">Account address that receives the payment.</param>
+            <param name="assetType">Account address that receives the payment.</param>
+            <param name="assetCode">The asset code (Alpha4, Alpha12, etc.)</param>
+            <param name="assetIssuer">The account that created the asset</param>
+            <param name="sendAssetType">The asset type (USD, BTC, etc.) to be sent.</param>
+            <param name="sendAssetCode">The asset code (Alpha4, Alpha12, etc.) to be sent</param>
+            <param name="sendAssetIssuer">The account that created the asset to be sent.</param>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Amount">
+            <summary>
+            The amount of destination asset the destination account receives.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceAmount">
+            <summary>
+            The amount of source asset deducted from senders account.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.From">
+            <summary>
+            Account address that is sending the payment.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.To">
+            <summary>
+            Account address that receives the payment.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetType">
+            <summary>
+            Account address that receives the payment.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetCode">
+            <summary>
+            The asset code (Alpha4, Alpha12, etc.)
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetIssuer">
+            <summary>
+            The account that created the asset
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetType">
+            <summary>
+            The asset type (USD, BTC, etc.) to be sent.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetCode">
+            <summary>
+            The asset code (Alpha4, Alpha12, etc.) to be sent
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetIssuer">
+            <summary>
+            The account that created the asset to be sent.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Asset">
+            <summary>
+            Asset from source to send.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAsset">
+            <summary>
+            Asset to destination.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse">
+            <inheritdoc />
+            <summary>
+                Sends an amount in a specific asset to a destination account.
+                See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+                <seealso cref="T:stellar_dotnetcore_sdk.requests.OperationsRequestBuilder" />
+                <seealso cref="T:stellar_dotnetcore_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.#ctor(System.String,System.String,System.String,System.String,stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair)">
+            <summary>
+            Sends an amount in a specific asset to a destination account.
+            </summary>
+            <param name="amount">Amount of the aforementioned asset to send.</param>
+            <param name="assetType">The asset type (USD, BTC, etc.)</param>
+            <param name="assetCode">The asset code (Alpha4, Alpha12, etc.)</param>
+            <param name="assetIssuer">The account that created the asset</param>
+            <param name="from">Account address that is sending the payment.</param>
+            <param name="to">Account address that receives the payment.</param>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.Amount">
+            <summary>
+            Amount of the aforementioned asset to send.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.AssetType">
+            <summary>
+            The asset type (USD, BTC, etc.)
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.AssetCode">
+            <summary>
+            The asset code (Alpha4, Alpha12, etc.)
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.AssetIssuer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.From">
+            <summary>
+            Account address that is sending the payment.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.To">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.Asset">
+            <summary>
+            Account address that receives the payment.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse">
+            <inheritdoc />
+            <summary>
+                This operation sets the options for an account.
+                See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
+                <seealso cref="T:stellar_dotnetcore_sdk.requests.OperationsRequestBuilder" />
+                <seealso cref="T:stellar_dotnetcore_sdk.Server" />
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.#ctor(System.Int32,System.Int32,System.Int32,stellar_dotnet_sdk.KeyPair,System.String,stellar_dotnet_sdk.KeyPair,System.Int32,System.Int32,System.String[],System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="lowThreshold">A number from 0-255 representing the threshold this account sets on all operations it performs that have a low threshold.</param>
+            <param name="medThreshold">A number from 0-255 representing the threshold this account sets on all operations it performs that have a medium threshold.</param>
+            <param name="highThreshold">A number from 0-255 representing the threshold this account sets on all operations it performs that have a high threshold.</param>
+            <param name="inflationDestination">Account of the inflation destination.</param>
+            <param name="homeDomain">Sets the home domain of an account. </param>
+            <param name="signerKey">Add, update, or remove a signer from an account.</param>
+            <param name="signerWeight">Weight of the signer.</param>
+            <param name="masterKeyWeight">Weight of the master key.</param>
+            <param name="clearFlags">Indicates which flags to clear. For details about the flags, please refer to the accounts doc. The bit mask integer subtracts 
+            from the existing flags of the account. This allows for setting specific bits without knowledge of existing flags.</param>
+            <param name="setFlags">Indicates which flags to set. For details about the flags, please refer to the accounts doc. The bit mask integer adds onto the
+            existing flags of the account. This allows for setting specific bits without knowledge of existing flags.</param>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.LowThreshold">
+            <summary>
+            A number from 0-255 representing the threshold this account sets on all operations it performs that have a low threshold.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.MedThreshold">
+            <summary>
+            A number from 0-255 representing the threshold this account sets on all operations it performs that have a medium threshold.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.HighThreshold">
+            <summary>
+            A number from 0-255 representing the threshold this account sets on all operations it performs that have a high threshold.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.InflationDestination">
+            <summary>
+            Account of the inflation destination.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.HomeDomain">
+            <summary>
+            Gets the home domain of an account.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.SignerKey">
+            <summary>
+            A signer from an account.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.SignerWeight">
+            <summary>
+            Weight of the signer.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.MasterKeyWeight">
+            <summary>
+            Weight of the master key.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.ClearFlags">
+            <summary>
+            Indicates which flags to clear. For details about the flags, please refer to the accounts doc. The bit mask integer subtracts 
+            from the existing flags of the account. This allows for setting specific bits without knowledge of existing flags.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.SetFlags">
+            <summary>
+            Indicates which flags to set. For details about the flags, please refer to the accounts doc. The bit mask integer adds onto the
+            existing flags of the account. This allows for setting specific bits without knowledge of existing flags.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.OrderBookResponse.Row">
+            
+             Represents order book row.
+            
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.page.Page`1">
+            <summary>
+                Represents page of objects.
+                https://www.stellar.org/developers/horizon/reference/resources/page.html
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.page.Page`1.NextPage">
+            <summary>
+                The next page of results or null when there is no more results
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.page.PageLinks">
+            <summary>
+                Links connected to page response.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.responses.SubmitTransactionResponse.GetOfferIdFromResult(System.Int32)">
+            <summary>
+             Helper method that returns Offer ID for ManageOffer from TransactionResult Xdr.
+             This is helpful when you need ID of an offer to update it later.
+             </summary>
+             <param name="position">Position of ManageOffer operation. If ManageOffer is second operation in this transaction this should be equal <code>1</code>.</param> 
+             <returns>Offer ID or <code>null</code> when operation at <code>position</code> is not a ManageOffer operation or error has occurred.</returns>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras">
+            <summary>
+             Additional information returned by a server.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes">
+            <summary>
+             Contains result codes for this transaction.
+             see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stellar/horizon/codes/main.go" target="_blank">Possible values</a>
+             </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.TradeResponse">
+            <summary>
+            Represents trades response.
+            See: https://www.stellar.org/developers/horizon/reference/endpoints/trades.html
+            <seealso cref="!:TradesRequestBuilder"/>
+            <seealso cref="T:stellar_dotnet_sdk.Server"/>
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.TradeResponse.BaseAsset">
+            <summary>
+            Creates and returns a base asset.
+            </summary>
+        </member>
+        <member name="P:stellar_dotnet_sdk.responses.TradeResponse.CountAsset">
+            <summary>
+            Creates and returns a counter asset.
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.responses.TransactionResponse.TransactionResponseLinks">
+            
+             Links connected to transaction.
+            
+        </member>
+        <member name="T:stellar_dotnet_sdk.SetOptionsOperation">
+            <summary>
+                Represents
+                <a href="https://www.stellar.org/developers/learn/concepts/list-of-operations.html#set-options">SetOptions</a>
+                operation.
+                See <a href="https://www.stellar.org/developers/learn/concepts/list-of-operations.html">List of Operations</a>
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.SetOptionsOperation.Builder">
+            <summary>
+                Builds SetOptions operation.
+            </summary>
+            <see cref="T:stellar_dotnet_sdk.SetOptionsOperation" />
+        </member>
+        <member name="M:stellar_dotnet_sdk.SetOptionsOperation.Builder.#ctor">
+            <summary>
+                Creates a new SetOptionsOperation builder.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetInflationDestination(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+                Sets the inflation destination for the account.
+            </summary>
+            <param name="inflationDestination">The inflation destination account.</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetClearFlags(System.Int32)">
+            <summary>
+                Clears the given flags from the account.
+            </summary>
+            <param name="clearFlags">
+                For details about the flags, please refer to the
+                <a href="https://www.stellar.org/developers/learn/concepts/accounts.html" target="_blank">accounts doc</a>.
+            </param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSetFlags(System.Int32)">
+            <summary>
+                Sets the given flags on the account.
+            </summary>
+            <param name="setFlags">
+                For details about the flags, please refer to the
+                <a href="https://www.stellar.org/developers/learn/concepts/accounts.html" target="_blank">accounts doc</a>.
+            </param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMasterKeyWeight(System.Int32)">
+            <summary>
+                Weight of the master key.
+            </summary>
+            <param name="masterKeyWeight">Number between 0 and 255</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetLowThreshold(System.Int32)">
+            <summary>
+                A number from 0-255 representing the threshold this account sets on all operations it performs that have a low
+                threshold.
+            </summary>
+            <param name="lowThreshold">Number between 0 and 255</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMediumThreshold(System.Int32)">
+            <summary>
+                A number from 0-255 representing the threshold this account sets on all operations it performs that have a medium
+                threshold.
+            </summary>
+            <param name="mediumThreshold">Number between 0 and 255</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHighThreshold(System.Int32)">
+            <summary>
+                A number from 0-255 representing the threshold this account sets on all operations it performs that have a high
+                threshold.
+            </summary>
+            <param name="highThreshold">Number between 0 and 255</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHomeDomain(System.String)">
+            <summary>
+                Sets the account's home domain address used in
+                <a href="https://www.stellar.org/developers/learn/concepts/federation.html" target="_blank">Federation</a>.
+            </summary>
+            <param name="homeDomain">A string of the address which can be up to 32 characters.</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSigner(stellar_dotnet_sdk.xdr.SignerKey,System.Nullable{System.Int32})">
+            <summary>
+                Add, update, or remove a signer from the account. Signer is deleted if the weight = 0;
+            </summary>
+            <param name="signer">The signer key. Use <see cref="T:stellar_dotnet_sdk.Signer" /> helper to create this object.</param>
+            <param name="weight">The weight to attach to the signer (0-255).</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+                Sets the source account for this operation.
+            </summary>
+            <param name="sourceAccount">The operation's source account.</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.SetOptionsOperation.Builder.Build">
+            <summary>
+                Builds an operation
+            </summary>
+        </member>
+        <member name="T:stellar_dotnet_sdk.Signer">
+            <summary>
+                Signer is a helper class that creates <see cref="T:stellar_dotnet_sdk.xdr.SignerKey" /> objects.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Signer.Ed25519PublicKey(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+                Create <code>ed25519PublicKey</code> <see cref="T:stellar_dotnet_sdk.xdr.SignerKey" /> from
+                a <see cref="!:sdkxdr.KeyPair" />
+            </summary>
+            <param name="keyPair"></param>
+            <returns>sdkxdr.SignerKey</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Signer.Sha256Hash(System.Byte[])">
+            <summary>
+                Create <code>sha256Hash</code> <see cref="T:stellar_dotnet_sdk.xdr.SignerKey" /> from
+                a sha256 hash of a preimage.
+            </summary>
+            <param name="hash"></param>
+            <returns>sdkxdr.SignerKey</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Signer.PreAuthTx(stellar_dotnet_sdk.Transaction)">
+            <summary>
+                Create <code>preAuthTx</code> <see cref="T:stellar_dotnet_sdk.xdr.SignerKey" /> from
+                a <see cref="T:stellar_dotnet_sdk.xdr.Transaction" /> hash.
+            </summary>
+            <param name="tx"></param>
+            <returns>sdkxdr.SignerKey</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Signer.PreAuthTx(System.Byte[])">
+            <summary>
+                Create <code>preAuthTx</code> <see cref="T:stellar_dotnet_sdk.xdr.SignerKey" /> from
+                a transaction hash.
+            </summary>
+            <param name="hash"></param>
+            <returns>sdkxdr.SignerKey</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Signer.CreateUint256(System.Byte[])">
+            <summary>
+                Creates a Uint256 from a byte hash.
+            </summary>
+            <param name="hash"></param>
+            <returns>A Uint256</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.TimeBounds.#ctor(System.Int64,System.Int64)">
+            <summary>
+            Timebounds constructor.
+            </summary>
+            <param name="minTime"> 64bit Unix timestamp</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.Sign(stellar_dotnet_sdk.KeyPair)">
+            <summary>
+            Adds a new signature ed25519PublicKey to this transaction.
+            </summary>
+            <param name="signer"> signer <see cref="T:stellar_dotnet_sdk.KeyPair"/> object representing a signer</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.Sign(System.Byte[])">
+            <summary>
+                Adds a new sha256Hash signature to this transaction by revealing preimage.
+            </summary>
+            <param name="preimage">the sha256 hash of preimage should be equal to signer hash</param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.Hash">
+            <summary>
+                Returns transaction hash.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.SignatureBase">
+            <summary>
+                Returns signature base.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.ToXdr">
+            <summary>
+                Generates Transaction XDR object.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.ToEnvelopeXdr">
+            <summary>
+                Generates TransactionEnvelope XDR object. Transaction need to have at least one signature.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.ToUnsignedEnvelopeXdr">
+            <summary>
+                Generates TransactionEnvelope XDR object. This transaction MUST be signed before being useful
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.ToUnsignedEnvelopeXdrBase64">
+            <summary>
+                Generates TransactionEnvelope XDR object. This transaction MUST be signed before being useful
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.ToEnvelopeXdrBase64">
+            <summary>
+                Returns base64-encoded TransactionEnvelope XDR object. Transaction need to have at least one signature.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:stellar_dotnet_sdk.Transaction.Builder">
+            <summary>
+                Builds a new Transaction object.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.Builder.#ctor(stellar_dotnet_sdk.ITransactionBuilderAccount)">
+            <summary>
+                Construct a new transaction builder.
+            </summary>
+            <param name="sourceAccount">
+                The source account for this transaction. This account is the account
+                who will use a sequence number. When build() is called, the account object's sequence number will be incremented.
+            </param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.Builder.AddOperation(stellar_dotnet_sdk.Operation)">
+            <summary>
+                Adds a new operation to this transaction.
+                See: https://www.stellar.org/developers/learn/concepts/list-of-operations.html
+            </summary>
+            <param name="operation">operation</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.Builder.AddMemo(stellar_dotnet_sdk.Memo)">
+            <summary>
+                Adds a memo to this transaction.
+                See: https://www.stellar.org/developers/learn/concepts/transactions.html
+            </summary>
+            <param name="memo">Memo</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.Builder.AddTimeBounds(stellar_dotnet_sdk.TimeBounds)">
+            <summary>
+                Adds a time-bounds to this transaction.
+                See: https://www.stellar.org/developers/learn/concepts/transactions.html
+            </summary>
+            <param name="timeBounds">timeBounds</param>
+            <returns>Builder object so you can chain methods.</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Transaction.Builder.Build">
+            <summary>
+                Builds a transaction. It will increment sequence number of the source account.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.UriBuilderExtensions.SetQueryParam(System.UriBuilder,System.String,System.String)">
+            <summary>
+                Sets the specified query parameter key-value pair of the URI.
+                If the key already exists, the value is overwritten.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.UriBuilderExtensions.GetQueryParams(System.UriBuilder)">
+            <summary>
+                Gets the query string key-value pairs of the URI.
+                Note that the one of the keys may be null ("?123") and
+                that one of the keys may be an empty string ("?=123").
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.UriBuilderExtensions.AsKeyValuePairs(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+                Converts the legacy NameValueCollection into a strongly-typed KeyValuePair sequence.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.UriBuilderExtensions.ParseQuery(System.UriBuilder)">
+            <summary>
+                Parses the query string of the URI into a NameValueCollection.
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Util.Hash(System.Byte[])">
+            <summary>
+                Returns SHA-256 hash of data.
+            </summary>
+            <param name="data">data</param>
+            <returns>Sha-256 Hash</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Util.PaddedByteArray(System.Byte[],System.Int32)">
+            <summary>
+                Pads byte array to length with zeros.
+            </summary>
+            <param name="bytes">byte array</param>
+            <param name="length">length</param>
+            <returns>zero padded byte array</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Util.PaddedByteArray(System.String,System.Int32)">
+            <summary>
+                Pads string to length with zeros.
+            </summary>
+            <param name="source">string to pad</param>
+            <param name="length">length</param>
+            <returns>zero padded byte array</returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.Util.PaddedByteArrayToString(System.Byte[])">
+            <summary>
+                Remove zeros from the end of byte array.
+            </summary>
+            <param name="bytes">byte array</param>
+            <returns>string with padded zeros removed</returns>
+        </member>
+        <member name="T:stellar_dotnet_sdk.xdr.XdrDataInputStream">
+            <summary>
+            Stream class for Reading XDR Data
+            </summary>
+        </member>
+        <member name="M:stellar_dotnet_sdk.xdr.XdrDataInputStream.#ctor(System.Byte[])">
+            <summary>
+            Create the stream from a byte array.
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.xdr.XdrDataInputStream.Read">
+            <summary>
+            Read single byte from stream.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.xdr.XdrDataInputStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Read from Stream and move position.
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:stellar_dotnet_sdk.xdr.XdrDataInputStream.ReadString">
+            <summary>
+            Read a string from stream.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.xdr.XdrDataInputStream.ReadIntArray">
+            <summary>
+            Read array of int from stream.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.xdr.XdrDataInputStream.ReadInt">
+            <summary>
+            Read Int32 from Stream
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.xdr.XdrDataInputStream.ReadUInt">
+            <summary>
+            Read UInt from stream
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.xdr.XdrDataInputStream.ReadSingleArray">
+            <summary>
+            Read float from stream.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.xdr.XdrDataInputStream.ReadDoubleArray">
+            <summary>
+            Read double from stream.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.xdr.XdrDataInputStream.ToArray">
+            <summary>
+            Return bytes as an Array
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.xdr.XdrDataInputStream.ReadVarOpaque(System.UInt32)">
+            <summary>
+            Read the array with the proper padding applied and check max length.
+            </summary>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:stellar_dotnet_sdk.xdr.XdrDataInputStream.ReadFixOpaque(System.UInt32)">
+            <summary>
+            Read array with proper padding fixed if needed.
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:Chaos.NaCl.XSalsa20Poly1305.TryDecrypt(System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            Decrypts the ciphertext and verifies its authenticity
+            </summary>
+            <returns>Plaintext if MAC validation succeeds, null if the data is invalid.</returns>
+        </member>
+        <member name="M:Chaos.NaCl.XSalsa20Poly1305.TryDecrypt(System.ArraySegment{System.Byte},System.ArraySegment{System.Byte},System.ArraySegment{System.Byte},System.ArraySegment{System.Byte})">
+            <summary>
+            Decrypts the ciphertext and verifies its authenticity
+            </summary>
+            <param name="message">Plaintext if authentication succeeded, all zero if authentication failed, unmodified if argument verification fails</param>
+            <param name="ciphertext"></param>
+            <param name="key">Symmetric key. Must be identical to key specified for encryption.</param>
+            <param name="nonce">Must be identical to nonce specified for encryption.</param>
+            <returns>true if ciphertext is authentic, false otherwise</returns>
+        </member>
+    </members>
+</doc>
