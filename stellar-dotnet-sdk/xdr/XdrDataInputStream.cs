@@ -44,8 +44,7 @@ namespace stellar_dotnet_sdk.xdr
         {
             ReadFixOpaque((uint) count);
             Array.Copy(_bytes, _pos, buffer, offset, count);
-            // This is added in ReadFixOpaque
-            //_pos += count;
+            _pos += count;
         }
 
         /// <summary>
@@ -179,7 +178,11 @@ namespace stellar_dotnet_sdk.xdr
         /// <returns></returns>
         public byte[] ReadVarOpaque(uint max)
         {
-            return ReadFixOpaque(CheckedReadLength(max));
+            uint len = CheckedReadLength(max);
+            byte[] returnValue = ReadFixOpaque(len);
+            var tail = len % 4u;
+            if(tail == 0) _pos += (int) len;
+            return returnValue;
         }
 
         /// <summary>
@@ -205,11 +208,6 @@ namespace stellar_dotnet_sdk.xdr
                     throw new IOException("non-zero padding");
 
                 _pos += (int) len + tailLength;
-            }
-            else
-            {
-                // Need to move position forward lentgh of bytes
-                _pos += (int) len;
             }
 
             return result;
