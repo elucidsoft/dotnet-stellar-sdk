@@ -44,7 +44,8 @@ namespace stellar_dotnet_sdk.xdr
         {
             ReadFixOpaque((uint) count);
             Array.Copy(_bytes, _pos, buffer, offset, count);
-            _pos += count;
+            // This is added in ReadFixOpaque
+            //_pos += count;
         }
 
         /// <summary>
@@ -204,6 +205,11 @@ namespace stellar_dotnet_sdk.xdr
                     throw new IOException("non-zero padding");
 
                 _pos += (int) len + tailLength;
+            }
+            else
+            {
+                // Need to move position forward lentgh of bytes
+                _pos += (int) len;
             }
 
             return result;
