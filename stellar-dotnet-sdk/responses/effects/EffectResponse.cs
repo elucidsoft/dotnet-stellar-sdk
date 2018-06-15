@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace stellar_dotnet_sdk.responses.effects
 {
@@ -20,6 +21,8 @@ namespace stellar_dotnet_sdk.responses.effects
         [JsonProperty(PropertyName = "_links")]
         public EffectsResponseLinks Links { get; protected set; }
 
+        [JsonProperty(PropertyName = "created_at")]
+        public DateTime CreatedAt { get; protected set; }
 
         /// <summary>
         /// Represents effect links.

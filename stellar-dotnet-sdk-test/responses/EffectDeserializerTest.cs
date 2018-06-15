@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.responses;
@@ -315,6 +316,62 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(effect.Links.Operation.Href, "http://horizon-testnet.stellar.org/operations/33788507721730");
             Assert.AreEqual(effect.Links.Succeeds.Href, "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2");
             Assert.AreEqual(effect.Links.Precedes.Href, "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2");
+        }
+
+        [TestMethod]
+        public void TestDeserializeAccountInflationUpdatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectAccountInflationUpdated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is AccountInflationDestinationUpdatedEffectResponse);
+            var effect = (AccountInflationDestinationUpdatedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+        }
+
+        [TestMethod]
+        public void TestDeserializeDataCreatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectDataCreated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is DataCreatedEffectResponse);
+            var effect = (DataCreatedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+        }
+
+        [TestMethod]
+        public void TestDeserializeDataRemovedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectDataRemoved.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is DataRemovedEffectResponse);
+            var effect = (DataRemovedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+        }
+
+        [TestMethod]
+        public void TestDeserializeDataUpdatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectDataUpdated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is DataUpdatedEffectResponse);
+            var effect = (DataUpdatedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
         }
     }
 }
