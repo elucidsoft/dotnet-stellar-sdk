@@ -10,13 +10,6 @@ namespace stellar_dotnet_sdk.responses.effects
     /// </summary>
     public class AccountInflationDestinationUpdatedEffectResponse : EffectResponse
     {
-        [JsonProperty(PropertyName = "home_domain")]
-        public string HomeDomain { get; }
 
-        /// <inheritdoc />
-        public AccountInflationDestinationUpdatedEffectResponse(string homeDomain)
-        {
-            HomeDomain = homeDomain;
-        }
     }
 }
