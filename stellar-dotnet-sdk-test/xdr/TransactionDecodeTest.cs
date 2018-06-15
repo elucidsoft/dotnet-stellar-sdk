@@ -33,9 +33,9 @@ namespace stellar_dotnet_sdk_test.xdr
                     "AAAAAEntn0+aXWXUuLtq9RDTOQHw6FKCz4YULdFpx6KrFLM2AAABLACOUUAAAAAEAAAAAQAAAABbFYjQAAAAAH////8AAAABAAAAFEVDTFlQU0VTQ09JTiBQYXltZW50AAAAAwAAAAAAAAABAAAAANqNgkK/Piz99iwrbp+Lr2LjwDKul8tgETQO2igoZaaNAAAAAkVDTFlQU0VTQ09JTgAAAABwYz2lcMDGOi6MU/sYdRuBye2KWD5aolXM/Yxdr8X9+AAAAAAF9eEAAAAAAAAAAAYAAAACRUNMWVBTRVNDT0lOAAAAAHBjPaVwwMY6LoxT+xh1G4HJ7YpYPlqiVcz9jF2vxf34AAAAAAAAAAAAAAABAAAAAEntn0+aXWXUuLtq9RDTOQHw6FKCz4YULdFpx6KrFLM2AAAACAAAAACxJkMYYoztLLzXom8YBWAqFrREfEt3DvmQepBBLNCzbQAAAAAAAAABLNCzbQAAAEDjlco8Cz8GnuFItJVUUEMPYizwC5LLTxueNI9KEf1fgyPZ0hYC5IQP5Augl/p78z5WpnHfFZXYz3vXMf6buhgN";
 
                 var bytes = noTailTransactionXdr.ToCharArray();
-                var xdrDataInputStream = new stellar_dotnetcore_sdk.xdr.XdrDataInputStream(Convert.FromBase64CharArray(bytes, 0, bytes.Length));
+                var xdrDataInputStream = new XdrDataInputStream(Convert.FromBase64CharArray(bytes, 0, bytes.Length));
 
-                var decodedTransaction = stellar_dotnetcore_sdk.xdr.Transaction.Decode(xdrDataInputStream);
+                var decodedTransaction = Transaction.Decode(xdrDataInputStream);
                 var memo = decodedTransaction.Memo.Text;
                 Assert.AreEqual("ECLYPSESCOIN Payment", memo);
             
