@@ -33,6 +33,8 @@ namespace stellar_dotnet_sdk.responses
                     return JsonSingleton.GetInstance<AccountHomeDomainUpdatedEffectResponse>(jsonObject.Root.ToString());
                 case 6:
                     return JsonSingleton.GetInstance<AccountFlagsUpdatedEffectResponse>(jsonObject.Root.ToString());
+                case 7:
+                    return JsonSingleton.GetInstance<AccountInflationDestinationUpdatedEffectResponse>(jsonObject.Root.ToString());
                 // Signer effects
                 case 10:
                     return JsonSingleton.GetInstance<SignerCreatedEffectResponse>(jsonObject.Root.ToString());
@@ -60,8 +62,15 @@ namespace stellar_dotnet_sdk.responses
                     return JsonSingleton.GetInstance<OfferUpdatedEffectResponse>(jsonObject.Root.ToString());
                 case 33:
                     return JsonSingleton.GetInstance<TradeEffectResponse>(jsonObject.Root.ToString());
-                default:
-                    throw new Exception("Invalid operation type");
+                // Data effects
+                case 40:
+                    return JsonSingleton.GetInstance<DataCreatedEffectResponse>(jsonObject.Root.ToString());
+                case 41:
+                    return JsonSingleton.GetInstance<DataRemovedEffectResponse>(jsonObject.Root.ToString());
+                case 42:
+                    return JsonSingleton.GetInstance<DataUpdatedEffectResponse>(jsonObject.Root.ToString());
+                default: //Don't throw an error...
+                    return JsonSingleton.GetInstance<EffectResponse>(jsonObject.Root.ToString());
             }
 }
 
