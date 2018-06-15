@@ -12,7 +12,7 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dotnetcore\stellar-dotnetcore-sdk.csproj" />
+    <ProjectReference Include="..\stellar-dotnet-sdk\stellar-dotnet-sdk.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="responses\testdata\account.json">

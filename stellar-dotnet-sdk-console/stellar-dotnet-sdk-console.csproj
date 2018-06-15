@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\dotnetcore\stellar-dotnetcore-sdk.csproj" />
+    <ProjectReference Include="..\stellar-dotnet-sdk\stellar-dotnet-sdk.csproj" />
   </ItemGroup>
 
 </Project>
