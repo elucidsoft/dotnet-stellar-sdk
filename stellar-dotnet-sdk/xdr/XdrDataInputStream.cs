@@ -178,7 +178,11 @@ namespace stellar_dotnet_sdk.xdr
         /// <returns></returns>
         public byte[] ReadVarOpaque(uint max)
         {
-            return ReadFixOpaque(CheckedReadLength(max));
+            uint len = CheckedReadLength(max);
+            byte[] returnValue = ReadFixOpaque(len);
+            var tail = len % 4u;
+            if(tail == 0) _pos += (int) len;
+            return returnValue;
         }
 
         /// <summary>
