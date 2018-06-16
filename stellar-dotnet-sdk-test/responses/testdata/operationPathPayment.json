@@ -27,7 +27,7 @@
   "send_asset_code": "USD",
   "send_asset_issuer": "GC23QF2HUE52AMXUFUH3AYJAXXGXXV2VHXYYR6EYXETPKDXZSAW67XO4",
   "send_asset_type": "credit_alphanum4",
-  "source_amount": "100.0",
+  "source_max": "100.0",
   "to": "GA5WBPYA5Y4WAEHXWR2UKO2UO4BUGHUQ74EUPKON2QHV4WRHOIRNKKH2",
   "type_i": 2,
   "type": "path_payment"
