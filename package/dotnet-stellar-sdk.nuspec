@@ -5,7 +5,7 @@
         <id>stellar-dotnet-sdk</id>
 
         <!-- The package version number that is used when resolving dependencies -->
-        <version>2.0.0</version>
+        <version>2.0.1</version>
 
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Eric Malamisura, Michael Monte</authors>
@@ -31,8 +31,9 @@
 
         <!-- Any details about this particular release -->
         <releaseNotes>
-		- Major release to 2.0.0, package has been renamed.
-		- Restructuring of project, now includes .NET Core 2.0 and .NET Standard 2.0 support together in same NuGet package.
+		- Some dependency updates to Nuget file so its more specific for targeting.
+		- Added missing effects.
+		- Changed PathPaymentResponse from SourceAmount to SourceMax as it was incorrect and was returning null.
 		</releaseNotes>
 
         <!-- 
@@ -45,13 +46,25 @@
         <copyright>elucidsoft 2017</copyright>
 
         <!-- Tags appear in the gallery and can be used for tag searches -->
-        <tags>'.NET Core' 'Stellar' 'Horizon' 'Blockchain' 'Crypto' 'Distributed Ledger'</tags>
+        <tags>'.NET Core' .NET Standard' 'Stellar' 'Horizon' 'Blockchain' 'Crypto' 'Distributed Ledger'</tags>
 
+	
         <!-- Dependencies are automatically installed when the package is installed -->
         <dependencies>
-			<dependency id="Nett" version="0.9.0" />
-            <dependency id="Newtonsoft.Json" version="11.0.2" />
+			
+			<group targetFramework="netstandard2.0" >
+				<dependency id="Nett" version="0.9.0" />
+				<dependency id="Newtonsoft.Json" version="11.0.2" />
+				<dependency id="NETStandard.Library" version="2.0.1" exclude="Build,Analyzers" />
+			</group>
+			<group targetFramework="netcoreapp2.0" >
+				<dependency id="Microsoft.NETCore.App" version="2.0.0" exclude="Build,Analyzers"  />
+				<dependency id="Nett" version="0.9.0" />
+				<dependency id="Newtonsoft.Json" version="11.0.2" />
+			</group>
         </dependencies>
     </metadata>
-
+		<files>
+			<file src="lib\**" target="lib" />
+		</files>
 </package>

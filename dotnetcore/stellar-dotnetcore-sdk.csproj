@@ -23,6 +23,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <OutputPath>..\package\lib\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\stellar-dotnet-sdk\**\*.cs" />
