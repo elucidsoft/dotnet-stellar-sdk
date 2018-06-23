@@ -2,12 +2,11 @@ language: csharp
 mono: none
 dotnet: 2.0.0
 dist: trusty
-install:
- - nuget install OpenCover -OutputDirectory opencover
 script:
  - dotnet build ./dotnetcore/
  - dotnet build ./dotnetstandard/
  - dotnet build ./stellar-dotnet-sdk-test/
  - dotnet test ./stellar-dotnet-sdk-test/
+ - dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
  - bash <(curl -s https://codecov.io/bash) -t 3d1827ed-854c-484b-a639-02544eb921b8
  
