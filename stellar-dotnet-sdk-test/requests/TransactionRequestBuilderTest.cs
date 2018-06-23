@@ -6,7 +6,7 @@ using stellar_dotnet_sdk.requests;
 namespace stellar_dotnet_sdk_test.requests
 {
     [TestClass]
-    class TransactionRequestBuilderTest
+    public class TransactionRequestBuilderTest
     {
         [TestMethod]
         public void TestTransactions()
