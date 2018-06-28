@@ -316,11 +316,11 @@ references:
   commentId: T:stellar_dotnet_sdk.Asset
   fullName: stellar_dotnet_sdk.Asset
   nameWithType: Asset
-- uid: stellar_dotnet_sdk.Asset.Create(System.String,System.String,System.String)
+- uid: stellar_dotnet_sdk.Asset.Create(String,String,String)
   name: Create(String, String, String)
-  href: api/stellar_dotnet_sdk.Asset.html#stellar_dotnet_sdk_Asset_Create_System_String_System_String_System_String_
-  commentId: M:stellar_dotnet_sdk.Asset.Create(System.String,System.String,System.String)
-  fullName: stellar_dotnet_sdk.Asset.Create(System.String, System.String, System.String)
+  href: api/stellar_dotnet_sdk.Asset.html#stellar_dotnet_sdk_Asset_Create_String_String_String_
+  commentId: M:stellar_dotnet_sdk.Asset.Create(String,String,String)
+  fullName: stellar_dotnet_sdk.Asset.Create(String, String, String)
   nameWithType: Asset.Create(String, String, String)
 - uid: stellar_dotnet_sdk.Asset.Create*
   name: Create
@@ -1007,22 +1007,22 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString
   nameWithType: EnumerableExtensions.ToConcatenatedString
-- uid: stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})
+- uid: stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString``1(IEnumerable{``0},Func{``0,System.String})
   name: ToConcatenatedString<T>(IEnumerable<T>, Func<T, String>)
-  href: api/stellar_dotnet_sdk.EnumerableExtensions.html#stellar_dotnet_sdk_EnumerableExtensions_ToConcatenatedString__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_String__
-  commentId: M:stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})
+  href: api/stellar_dotnet_sdk.EnumerableExtensions.html#stellar_dotnet_sdk_EnumerableExtensions_ToConcatenatedString__1_IEnumerable___0__Func___0_System_String__
+  commentId: M:stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString``1(IEnumerable{``0},Func{``0,System.String})
   name.vb: ToConcatenatedString(Of T)(IEnumerable(Of T), Func(Of T, String))
-  fullName: stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString<T>(System.Collections.Generic.IEnumerable<T>, System.Func<T, System.String>)
-  fullName.vb: stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, System.String))
+  fullName: stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString<T>(IEnumerable<T>, Func<T, System.String>)
+  fullName.vb: stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString(Of T)(IEnumerable(Of T), Func(Of T, System.String))
   nameWithType: EnumerableExtensions.ToConcatenatedString<T>(IEnumerable<T>, Func<T, String>)
   nameWithType.vb: EnumerableExtensions.ToConcatenatedString(Of T)(IEnumerable(Of T), Func(Of T, String))
-- uid: stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.String)
+- uid: stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString``1(IEnumerable{``0},Func{``0,System.String},System.String)
   name: ToConcatenatedString<T>(IEnumerable<T>, Func<T, String>, String)
-  href: api/stellar_dotnet_sdk.EnumerableExtensions.html#stellar_dotnet_sdk_EnumerableExtensions_ToConcatenatedString__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_String__System_String_
-  commentId: M:stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.String)
+  href: api/stellar_dotnet_sdk.EnumerableExtensions.html#stellar_dotnet_sdk_EnumerableExtensions_ToConcatenatedString__1_IEnumerable___0__Func___0_System_String__System_String_
+  commentId: M:stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString``1(IEnumerable{``0},Func{``0,System.String},System.String)
   name.vb: ToConcatenatedString(Of T)(IEnumerable(Of T), Func(Of T, String), String)
-  fullName: stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString<T>(System.Collections.Generic.IEnumerable<T>, System.Func<T, System.String>, System.String)
-  fullName.vb: stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, System.String), System.String)
+  fullName: stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString<T>(IEnumerable<T>, Func<T, System.String>, System.String)
+  fullName.vb: stellar_dotnet_sdk.EnumerableExtensions.ToConcatenatedString(Of T)(IEnumerable(Of T), Func(Of T, System.String), System.String)
   nameWithType: EnumerableExtensions.ToConcatenatedString<T>(IEnumerable<T>, Func<T, String>, String)
   nameWithType.vb: EnumerableExtensions.ToConcatenatedString(Of T)(IEnumerable(Of T), Func(Of T, String), String)
 - uid: stellar_dotnet_sdk.EventSource
@@ -1037,11 +1037,11 @@ references:
   commentId: M:stellar_dotnet_sdk.EventSource.#ctor(System.String)
   fullName: stellar_dotnet_sdk.EventSource.EventSource(System.String)
   nameWithType: EventSource.EventSource(String)
-- uid: stellar_dotnet_sdk.EventSource.#ctor(System.Uri)
+- uid: stellar_dotnet_sdk.EventSource.#ctor(Uri)
   name: EventSource(Uri)
-  href: api/stellar_dotnet_sdk.EventSource.html#stellar_dotnet_sdk_EventSource__ctor_System_Uri_
-  commentId: M:stellar_dotnet_sdk.EventSource.#ctor(System.Uri)
-  fullName: stellar_dotnet_sdk.EventSource.EventSource(System.Uri)
+  href: api/stellar_dotnet_sdk.EventSource.html#stellar_dotnet_sdk_EventSource__ctor_Uri_
+  commentId: M:stellar_dotnet_sdk.EventSource.#ctor(Uri)
+  fullName: stellar_dotnet_sdk.EventSource.EventSource(Uri)
   nameWithType: EventSource.EventSource(Uri)
 - uid: stellar_dotnet_sdk.EventSource.#ctor*
   name: EventSource
@@ -1405,11 +1405,11 @@ references:
   commentId: M:stellar_dotnet_sdk.federation.FederationServer.#ctor(System.String,System.String)
   fullName: stellar_dotnet_sdk.federation.FederationServer.FederationServer(System.String, System.String)
   nameWithType: FederationServer.FederationServer(String, String)
-- uid: stellar_dotnet_sdk.federation.FederationServer.#ctor(System.Uri,System.String)
+- uid: stellar_dotnet_sdk.federation.FederationServer.#ctor(Uri,System.String)
   name: FederationServer(Uri, String)
-  href: api/stellar_dotnet_sdk.federation.FederationServer.html#stellar_dotnet_sdk_federation_FederationServer__ctor_System_Uri_System_String_
-  commentId: M:stellar_dotnet_sdk.federation.FederationServer.#ctor(System.Uri,System.String)
-  fullName: stellar_dotnet_sdk.federation.FederationServer.FederationServer(System.Uri, System.String)
+  href: api/stellar_dotnet_sdk.federation.FederationServer.html#stellar_dotnet_sdk_federation_FederationServer__ctor_Uri_System_String_
+  commentId: M:stellar_dotnet_sdk.federation.FederationServer.#ctor(Uri,System.String)
+  fullName: stellar_dotnet_sdk.federation.FederationServer.FederationServer(Uri, System.String)
   nameWithType: FederationServer.FederationServer(Uri, String)
 - uid: stellar_dotnet_sdk.federation.FederationServer.#ctor*
   name: FederationServer
@@ -1551,11 +1551,11 @@ references:
   commentId: M:stellar_dotnet_sdk.FormatException.#ctor
   fullName: stellar_dotnet_sdk.FormatException.FormatException()
   nameWithType: FormatException.FormatException()
-- uid: stellar_dotnet_sdk.FormatException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+- uid: stellar_dotnet_sdk.FormatException.#ctor(SerializationInfo,StreamingContext)
   name: FormatException(SerializationInfo, StreamingContext)
-  href: api/stellar_dotnet_sdk.FormatException.html#stellar_dotnet_sdk_FormatException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
-  commentId: M:stellar_dotnet_sdk.FormatException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-  fullName: stellar_dotnet_sdk.FormatException.FormatException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  href: api/stellar_dotnet_sdk.FormatException.html#stellar_dotnet_sdk_FormatException__ctor_SerializationInfo_StreamingContext_
+  commentId: M:stellar_dotnet_sdk.FormatException.#ctor(SerializationInfo,StreamingContext)
+  fullName: stellar_dotnet_sdk.FormatException.FormatException(SerializationInfo, StreamingContext)
   nameWithType: FormatException.FormatException(SerializationInfo, StreamingContext)
 - uid: stellar_dotnet_sdk.FormatException.#ctor(System.String)
   name: FormatException(String)
@@ -1563,11 +1563,11 @@ references:
   commentId: M:stellar_dotnet_sdk.FormatException.#ctor(System.String)
   fullName: stellar_dotnet_sdk.FormatException.FormatException(System.String)
   nameWithType: FormatException.FormatException(String)
-- uid: stellar_dotnet_sdk.FormatException.#ctor(System.String,System.Exception)
+- uid: stellar_dotnet_sdk.FormatException.#ctor(System.String,Exception)
   name: FormatException(String, Exception)
-  href: api/stellar_dotnet_sdk.FormatException.html#stellar_dotnet_sdk_FormatException__ctor_System_String_System_Exception_
-  commentId: M:stellar_dotnet_sdk.FormatException.#ctor(System.String,System.Exception)
-  fullName: stellar_dotnet_sdk.FormatException.FormatException(System.String, System.Exception)
+  href: api/stellar_dotnet_sdk.FormatException.html#stellar_dotnet_sdk_FormatException__ctor_System_String_Exception_
+  commentId: M:stellar_dotnet_sdk.FormatException.#ctor(System.String,Exception)
+  fullName: stellar_dotnet_sdk.FormatException.FormatException(System.String, Exception)
   nameWithType: FormatException.FormatException(String, Exception)
 - uid: stellar_dotnet_sdk.FormatException.#ctor*
   name: FormatException
@@ -2571,11 +2571,11 @@ references:
   commentId: M:stellar_dotnet_sdk.MemoTooLongException.#ctor
   fullName: stellar_dotnet_sdk.MemoTooLongException.MemoTooLongException()
   nameWithType: MemoTooLongException.MemoTooLongException()
-- uid: stellar_dotnet_sdk.MemoTooLongException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+- uid: stellar_dotnet_sdk.MemoTooLongException.#ctor(SerializationInfo,StreamingContext)
   name: MemoTooLongException(SerializationInfo, StreamingContext)
-  href: api/stellar_dotnet_sdk.MemoTooLongException.html#stellar_dotnet_sdk_MemoTooLongException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
-  commentId: M:stellar_dotnet_sdk.MemoTooLongException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-  fullName: stellar_dotnet_sdk.MemoTooLongException.MemoTooLongException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  href: api/stellar_dotnet_sdk.MemoTooLongException.html#stellar_dotnet_sdk_MemoTooLongException__ctor_SerializationInfo_StreamingContext_
+  commentId: M:stellar_dotnet_sdk.MemoTooLongException.#ctor(SerializationInfo,StreamingContext)
+  fullName: stellar_dotnet_sdk.MemoTooLongException.MemoTooLongException(SerializationInfo, StreamingContext)
   nameWithType: MemoTooLongException.MemoTooLongException(SerializationInfo, StreamingContext)
 - uid: stellar_dotnet_sdk.MemoTooLongException.#ctor(System.String)
   name: MemoTooLongException(String)
@@ -2583,11 +2583,11 @@ references:
   commentId: M:stellar_dotnet_sdk.MemoTooLongException.#ctor(System.String)
   fullName: stellar_dotnet_sdk.MemoTooLongException.MemoTooLongException(System.String)
   nameWithType: MemoTooLongException.MemoTooLongException(String)
-- uid: stellar_dotnet_sdk.MemoTooLongException.#ctor(System.String,System.Exception)
+- uid: stellar_dotnet_sdk.MemoTooLongException.#ctor(System.String,Exception)
   name: MemoTooLongException(String, Exception)
-  href: api/stellar_dotnet_sdk.MemoTooLongException.html#stellar_dotnet_sdk_MemoTooLongException__ctor_System_String_System_Exception_
-  commentId: M:stellar_dotnet_sdk.MemoTooLongException.#ctor(System.String,System.Exception)
-  fullName: stellar_dotnet_sdk.MemoTooLongException.MemoTooLongException(System.String, System.Exception)
+  href: api/stellar_dotnet_sdk.MemoTooLongException.html#stellar_dotnet_sdk_MemoTooLongException__ctor_System_String_Exception_
+  commentId: M:stellar_dotnet_sdk.MemoTooLongException.#ctor(System.String,Exception)
+  fullName: stellar_dotnet_sdk.MemoTooLongException.MemoTooLongException(System.String, Exception)
   nameWithType: MemoTooLongException.MemoTooLongException(String, Exception)
 - uid: stellar_dotnet_sdk.MemoTooLongException.#ctor*
   name: MemoTooLongException
@@ -3159,11 +3159,11 @@ references:
   commentId: T:stellar_dotnet_sdk.requests.AccountsRequestBuilder
   fullName: stellar_dotnet_sdk.requests.AccountsRequestBuilder
   nameWithType: AccountsRequestBuilder
-- uid: stellar_dotnet_sdk.requests.AccountsRequestBuilder.#ctor(System.Uri)
+- uid: stellar_dotnet_sdk.requests.AccountsRequestBuilder.#ctor(Uri)
   name: AccountsRequestBuilder(Uri)
-  href: api/stellar_dotnet_sdk.requests.AccountsRequestBuilder.html#stellar_dotnet_sdk_requests_AccountsRequestBuilder__ctor_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.#ctor(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.AccountsRequestBuilder.AccountsRequestBuilder(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.AccountsRequestBuilder.html#stellar_dotnet_sdk_requests_AccountsRequestBuilder__ctor_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.#ctor(Uri)
+  fullName: stellar_dotnet_sdk.requests.AccountsRequestBuilder.AccountsRequestBuilder(Uri)
   nameWithType: AccountsRequestBuilder.AccountsRequestBuilder(Uri)
 - uid: stellar_dotnet_sdk.requests.AccountsRequestBuilder.#ctor*
   name: AccountsRequestBuilder
@@ -3178,11 +3178,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.Account(stellar_dotnet_sdk.KeyPair)
   fullName: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Account(stellar_dotnet_sdk.KeyPair)
   nameWithType: AccountsRequestBuilder.Account(KeyPair)
-- uid: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Account(System.Uri)
+- uid: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Account(Uri)
   name: Account(Uri)
-  href: api/stellar_dotnet_sdk.requests.AccountsRequestBuilder.html#stellar_dotnet_sdk_requests_AccountsRequestBuilder_Account_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.Account(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Account(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.AccountsRequestBuilder.html#stellar_dotnet_sdk_requests_AccountsRequestBuilder_Account_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.Account(Uri)
+  fullName: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Account(Uri)
   nameWithType: AccountsRequestBuilder.Account(Uri)
 - uid: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Account*
   name: Account
@@ -3197,11 +3197,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.Execute
   fullName: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Execute()
   nameWithType: AccountsRequestBuilder.Execute()
-- uid: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Execute(System.Uri)
+- uid: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Execute(Uri)
   name: Execute(Uri)
-  href: api/stellar_dotnet_sdk.requests.AccountsRequestBuilder.html#stellar_dotnet_sdk_requests_AccountsRequestBuilder_Execute_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.Execute(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Execute(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.AccountsRequestBuilder.html#stellar_dotnet_sdk_requests_AccountsRequestBuilder_Execute_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.Execute(Uri)
+  fullName: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Execute(Uri)
   nameWithType: AccountsRequestBuilder.Execute(Uri)
 - uid: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Execute*
   name: Execute
@@ -3210,13 +3210,13 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Execute
   nameWithType: AccountsRequestBuilder.Execute
-- uid: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.AccountResponse})
+- uid: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Stream(EventHandler{stellar_dotnet_sdk.responses.AccountResponse})
   name: Stream(EventHandler<AccountResponse>)
-  href: api/stellar_dotnet_sdk.requests.AccountsRequestBuilder.html#stellar_dotnet_sdk_requests_AccountsRequestBuilder_Stream_System_EventHandler_stellar_dotnet_sdk_responses_AccountResponse__
-  commentId: M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.AccountResponse})
+  href: api/stellar_dotnet_sdk.requests.AccountsRequestBuilder.html#stellar_dotnet_sdk_requests_AccountsRequestBuilder_Stream_EventHandler_stellar_dotnet_sdk_responses_AccountResponse__
+  commentId: M:stellar_dotnet_sdk.requests.AccountsRequestBuilder.Stream(EventHandler{stellar_dotnet_sdk.responses.AccountResponse})
   name.vb: Stream(EventHandler(Of AccountResponse))
-  fullName: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Stream(System.EventHandler<stellar_dotnet_sdk.responses.AccountResponse>)
-  fullName.vb: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Stream(System.EventHandler(Of stellar_dotnet_sdk.responses.AccountResponse))
+  fullName: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Stream(EventHandler<stellar_dotnet_sdk.responses.AccountResponse>)
+  fullName.vb: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Stream(EventHandler(Of stellar_dotnet_sdk.responses.AccountResponse))
   nameWithType: AccountsRequestBuilder.Stream(EventHandler<AccountResponse>)
   nameWithType.vb: AccountsRequestBuilder.Stream(EventHandler(Of AccountResponse))
 - uid: stellar_dotnet_sdk.requests.AccountsRequestBuilder.Stream*
@@ -3232,11 +3232,11 @@ references:
   commentId: T:stellar_dotnet_sdk.requests.AssetsRequestBuilder
   fullName: stellar_dotnet_sdk.requests.AssetsRequestBuilder
   nameWithType: AssetsRequestBuilder
-- uid: stellar_dotnet_sdk.requests.AssetsRequestBuilder.#ctor(System.Uri)
+- uid: stellar_dotnet_sdk.requests.AssetsRequestBuilder.#ctor(Uri)
   name: AssetsRequestBuilder(Uri)
-  href: api/stellar_dotnet_sdk.requests.AssetsRequestBuilder.html#stellar_dotnet_sdk_requests_AssetsRequestBuilder__ctor_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.AssetsRequestBuilder.#ctor(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.AssetsRequestBuilder.AssetsRequestBuilder(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.AssetsRequestBuilder.html#stellar_dotnet_sdk_requests_AssetsRequestBuilder__ctor_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.AssetsRequestBuilder.#ctor(Uri)
+  fullName: stellar_dotnet_sdk.requests.AssetsRequestBuilder.AssetsRequestBuilder(Uri)
   nameWithType: AssetsRequestBuilder.AssetsRequestBuilder(Uri)
 - uid: stellar_dotnet_sdk.requests.AssetsRequestBuilder.#ctor*
   name: AssetsRequestBuilder
@@ -3277,11 +3277,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.AssetsRequestBuilder.Execute
   fullName: stellar_dotnet_sdk.requests.AssetsRequestBuilder.Execute()
   nameWithType: AssetsRequestBuilder.Execute()
-- uid: stellar_dotnet_sdk.requests.AssetsRequestBuilder.Execute(System.Uri)
+- uid: stellar_dotnet_sdk.requests.AssetsRequestBuilder.Execute(Uri)
   name: Execute(Uri)
-  href: api/stellar_dotnet_sdk.requests.AssetsRequestBuilder.html#stellar_dotnet_sdk_requests_AssetsRequestBuilder_Execute_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.AssetsRequestBuilder.Execute(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.AssetsRequestBuilder.Execute(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.AssetsRequestBuilder.html#stellar_dotnet_sdk_requests_AssetsRequestBuilder_Execute_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.AssetsRequestBuilder.Execute(Uri)
+  fullName: stellar_dotnet_sdk.requests.AssetsRequestBuilder.Execute(Uri)
   nameWithType: AssetsRequestBuilder.Execute(Uri)
 - uid: stellar_dotnet_sdk.requests.AssetsRequestBuilder.Execute*
   name: Execute
@@ -3315,11 +3315,11 @@ references:
   commentId: T:stellar_dotnet_sdk.requests.EffectsRequestBuilder
   fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder
   nameWithType: EffectsRequestBuilder
-- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.#ctor(System.Uri)
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.#ctor(Uri)
   name: EffectsRequestBuilder(Uri)
-  href: api/stellar_dotnet_sdk.requests.EffectsRequestBuilder.html#stellar_dotnet_sdk_requests_EffectsRequestBuilder__ctor_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.#ctor(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.EffectsRequestBuilder(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.EffectsRequestBuilder.html#stellar_dotnet_sdk_requests_EffectsRequestBuilder__ctor_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.#ctor(Uri)
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.EffectsRequestBuilder(Uri)
   nameWithType: EffectsRequestBuilder.EffectsRequestBuilder(Uri)
 - uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.#ctor*
   name: EffectsRequestBuilder
@@ -3334,11 +3334,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.Execute
   fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.Execute()
   nameWithType: EffectsRequestBuilder.Execute()
-- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.Execute(System.Uri)
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.Execute(Uri)
   name: Execute(Uri)
-  href: api/stellar_dotnet_sdk.requests.EffectsRequestBuilder.html#stellar_dotnet_sdk_requests_EffectsRequestBuilder_Execute_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.Execute(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.Execute(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.EffectsRequestBuilder.html#stellar_dotnet_sdk_requests_EffectsRequestBuilder_Execute_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.Execute(Uri)
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.Execute(Uri)
   nameWithType: EffectsRequestBuilder.Execute(Uri)
 - uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.Execute*
   name: Execute
@@ -3399,13 +3399,13 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForTransaction
   nameWithType: EffectsRequestBuilder.ForTransaction
-- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.effects.EffectResponse})
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.Stream(EventHandler{stellar_dotnet_sdk.responses.effects.EffectResponse})
   name: Stream(EventHandler<EffectResponse>)
-  href: api/stellar_dotnet_sdk.requests.EffectsRequestBuilder.html#stellar_dotnet_sdk_requests_EffectsRequestBuilder_Stream_System_EventHandler_stellar_dotnet_sdk_responses_effects_EffectResponse__
-  commentId: M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.effects.EffectResponse})
+  href: api/stellar_dotnet_sdk.requests.EffectsRequestBuilder.html#stellar_dotnet_sdk_requests_EffectsRequestBuilder_Stream_EventHandler_stellar_dotnet_sdk_responses_effects_EffectResponse__
+  commentId: M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.Stream(EventHandler{stellar_dotnet_sdk.responses.effects.EffectResponse})
   name.vb: Stream(EventHandler(Of EffectResponse))
-  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.Stream(System.EventHandler<stellar_dotnet_sdk.responses.effects.EffectResponse>)
-  fullName.vb: stellar_dotnet_sdk.requests.EffectsRequestBuilder.Stream(System.EventHandler(Of stellar_dotnet_sdk.responses.effects.EffectResponse))
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.Stream(EventHandler<stellar_dotnet_sdk.responses.effects.EffectResponse>)
+  fullName.vb: stellar_dotnet_sdk.requests.EffectsRequestBuilder.Stream(EventHandler(Of stellar_dotnet_sdk.responses.effects.EffectResponse))
   nameWithType: EffectsRequestBuilder.Stream(EventHandler<EffectResponse>)
   nameWithType.vb: EffectsRequestBuilder.Stream(EventHandler(Of EffectResponse))
 - uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.Stream*
@@ -3453,11 +3453,11 @@ references:
   commentId: T:stellar_dotnet_sdk.requests.LedgersRequestBuilder
   fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder
   nameWithType: LedgersRequestBuilder
-- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.#ctor(System.Uri)
+- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.#ctor(Uri)
   name: LedgersRequestBuilder(Uri)
-  href: api/stellar_dotnet_sdk.requests.LedgersRequestBuilder.html#stellar_dotnet_sdk_requests_LedgersRequestBuilder__ctor_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.#ctor(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.LedgersRequestBuilder(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.LedgersRequestBuilder.html#stellar_dotnet_sdk_requests_LedgersRequestBuilder__ctor_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.#ctor(Uri)
+  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.LedgersRequestBuilder(Uri)
   nameWithType: LedgersRequestBuilder.LedgersRequestBuilder(Uri)
 - uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.#ctor*
   name: LedgersRequestBuilder
@@ -3472,11 +3472,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Execute
   fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Execute()
   nameWithType: LedgersRequestBuilder.Execute()
-- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Execute(System.Uri)
+- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Execute(Uri)
   name: Execute(Uri)
-  href: api/stellar_dotnet_sdk.requests.LedgersRequestBuilder.html#stellar_dotnet_sdk_requests_LedgersRequestBuilder_Execute_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Execute(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Execute(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.LedgersRequestBuilder.html#stellar_dotnet_sdk_requests_LedgersRequestBuilder_Execute_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Execute(Uri)
+  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Execute(Uri)
   nameWithType: LedgersRequestBuilder.Execute(Uri)
 - uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Execute*
   name: Execute
@@ -3491,11 +3491,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(System.Int64)
   fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(System.Int64)
   nameWithType: LedgersRequestBuilder.Ledger(Int64)
-- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(System.Uri)
+- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(Uri)
   name: Ledger(Uri)
-  href: api/stellar_dotnet_sdk.requests.LedgersRequestBuilder.html#stellar_dotnet_sdk_requests_LedgersRequestBuilder_Ledger_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.LedgersRequestBuilder.html#stellar_dotnet_sdk_requests_LedgersRequestBuilder_Ledger_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(Uri)
+  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(Uri)
   nameWithType: LedgersRequestBuilder.Ledger(Uri)
 - uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger*
   name: Ledger
@@ -3504,13 +3504,13 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger
   nameWithType: LedgersRequestBuilder.Ledger
-- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.LedgerResponse})
+- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Stream(EventHandler{stellar_dotnet_sdk.responses.LedgerResponse})
   name: Stream(EventHandler<LedgerResponse>)
-  href: api/stellar_dotnet_sdk.requests.LedgersRequestBuilder.html#stellar_dotnet_sdk_requests_LedgersRequestBuilder_Stream_System_EventHandler_stellar_dotnet_sdk_responses_LedgerResponse__
-  commentId: M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.LedgerResponse})
+  href: api/stellar_dotnet_sdk.requests.LedgersRequestBuilder.html#stellar_dotnet_sdk_requests_LedgersRequestBuilder_Stream_EventHandler_stellar_dotnet_sdk_responses_LedgerResponse__
+  commentId: M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Stream(EventHandler{stellar_dotnet_sdk.responses.LedgerResponse})
   name.vb: Stream(EventHandler(Of LedgerResponse))
-  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Stream(System.EventHandler<stellar_dotnet_sdk.responses.LedgerResponse>)
-  fullName.vb: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Stream(System.EventHandler(Of stellar_dotnet_sdk.responses.LedgerResponse))
+  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Stream(EventHandler<stellar_dotnet_sdk.responses.LedgerResponse>)
+  fullName.vb: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Stream(EventHandler(Of stellar_dotnet_sdk.responses.LedgerResponse))
   nameWithType: LedgersRequestBuilder.Stream(EventHandler<LedgerResponse>)
   nameWithType.vb: LedgersRequestBuilder.Stream(EventHandler(Of LedgerResponse))
 - uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Stream*
@@ -3526,11 +3526,11 @@ references:
   commentId: T:stellar_dotnet_sdk.requests.OffersRequestBuilder
   fullName: stellar_dotnet_sdk.requests.OffersRequestBuilder
   nameWithType: OffersRequestBuilder
-- uid: stellar_dotnet_sdk.requests.OffersRequestBuilder.#ctor(System.Uri)
+- uid: stellar_dotnet_sdk.requests.OffersRequestBuilder.#ctor(Uri)
   name: OffersRequestBuilder(Uri)
-  href: api/stellar_dotnet_sdk.requests.OffersRequestBuilder.html#stellar_dotnet_sdk_requests_OffersRequestBuilder__ctor_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.OffersRequestBuilder.#ctor(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.OffersRequestBuilder.OffersRequestBuilder(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.OffersRequestBuilder.html#stellar_dotnet_sdk_requests_OffersRequestBuilder__ctor_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.OffersRequestBuilder.#ctor(Uri)
+  fullName: stellar_dotnet_sdk.requests.OffersRequestBuilder.OffersRequestBuilder(Uri)
   nameWithType: OffersRequestBuilder.OffersRequestBuilder(Uri)
 - uid: stellar_dotnet_sdk.requests.OffersRequestBuilder.#ctor*
   name: OffersRequestBuilder
@@ -3545,11 +3545,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.OffersRequestBuilder.Execute
   fullName: stellar_dotnet_sdk.requests.OffersRequestBuilder.Execute()
   nameWithType: OffersRequestBuilder.Execute()
-- uid: stellar_dotnet_sdk.requests.OffersRequestBuilder.Execute(System.Uri)
+- uid: stellar_dotnet_sdk.requests.OffersRequestBuilder.Execute(Uri)
   name: Execute(Uri)
-  href: api/stellar_dotnet_sdk.requests.OffersRequestBuilder.html#stellar_dotnet_sdk_requests_OffersRequestBuilder_Execute_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.OffersRequestBuilder.Execute(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.OffersRequestBuilder.Execute(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.OffersRequestBuilder.html#stellar_dotnet_sdk_requests_OffersRequestBuilder_Execute_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.OffersRequestBuilder.Execute(Uri)
+  fullName: stellar_dotnet_sdk.requests.OffersRequestBuilder.Execute(Uri)
   nameWithType: OffersRequestBuilder.Execute(Uri)
 - uid: stellar_dotnet_sdk.requests.OffersRequestBuilder.Execute*
   name: Execute
@@ -3577,11 +3577,11 @@ references:
   commentId: T:stellar_dotnet_sdk.requests.OperationsRequestBuilder
   fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder
   nameWithType: OperationsRequestBuilder
-- uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.#ctor(System.Uri)
+- uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.#ctor(Uri)
   name: OperationsRequestBuilder(Uri)
-  href: api/stellar_dotnet_sdk.requests.OperationsRequestBuilder.html#stellar_dotnet_sdk_requests_OperationsRequestBuilder__ctor_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.#ctor(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.OperationsRequestBuilder(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.OperationsRequestBuilder.html#stellar_dotnet_sdk_requests_OperationsRequestBuilder__ctor_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.#ctor(Uri)
+  fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.OperationsRequestBuilder(Uri)
   nameWithType: OperationsRequestBuilder.OperationsRequestBuilder(Uri)
 - uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.#ctor*
   name: OperationsRequestBuilder
@@ -3596,11 +3596,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.Execute
   fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Execute()
   nameWithType: OperationsRequestBuilder.Execute()
-- uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Execute(System.Uri)
+- uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Execute(Uri)
   name: Execute(Uri)
-  href: api/stellar_dotnet_sdk.requests.OperationsRequestBuilder.html#stellar_dotnet_sdk_requests_OperationsRequestBuilder_Execute_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.Execute(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Execute(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.OperationsRequestBuilder.html#stellar_dotnet_sdk_requests_OperationsRequestBuilder_Execute_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.Execute(Uri)
+  fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Execute(Uri)
   nameWithType: OperationsRequestBuilder.Execute(Uri)
 - uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Execute*
   name: Execute
@@ -3654,11 +3654,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.Operation(System.Int64)
   fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Operation(System.Int64)
   nameWithType: OperationsRequestBuilder.Operation(Int64)
-- uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Operation(System.Uri)
+- uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Operation(Uri)
   name: Operation(Uri)
-  href: api/stellar_dotnet_sdk.requests.OperationsRequestBuilder.html#stellar_dotnet_sdk_requests_OperationsRequestBuilder_Operation_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.Operation(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Operation(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.OperationsRequestBuilder.html#stellar_dotnet_sdk_requests_OperationsRequestBuilder_Operation_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.Operation(Uri)
+  fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Operation(Uri)
   nameWithType: OperationsRequestBuilder.Operation(Uri)
 - uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Operation*
   name: Operation
@@ -3667,13 +3667,13 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Operation
   nameWithType: OperationsRequestBuilder.Operation
-- uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.operations.OperationResponse})
+- uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Stream(EventHandler{stellar_dotnet_sdk.responses.operations.OperationResponse})
   name: Stream(EventHandler<OperationResponse>)
-  href: api/stellar_dotnet_sdk.requests.OperationsRequestBuilder.html#stellar_dotnet_sdk_requests_OperationsRequestBuilder_Stream_System_EventHandler_stellar_dotnet_sdk_responses_operations_OperationResponse__
-  commentId: M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.operations.OperationResponse})
+  href: api/stellar_dotnet_sdk.requests.OperationsRequestBuilder.html#stellar_dotnet_sdk_requests_OperationsRequestBuilder_Stream_EventHandler_stellar_dotnet_sdk_responses_operations_OperationResponse__
+  commentId: M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.Stream(EventHandler{stellar_dotnet_sdk.responses.operations.OperationResponse})
   name.vb: Stream(EventHandler(Of OperationResponse))
-  fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Stream(System.EventHandler<stellar_dotnet_sdk.responses.operations.OperationResponse>)
-  fullName.vb: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Stream(System.EventHandler(Of stellar_dotnet_sdk.responses.operations.OperationResponse))
+  fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Stream(EventHandler<stellar_dotnet_sdk.responses.operations.OperationResponse>)
+  fullName.vb: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Stream(EventHandler(Of stellar_dotnet_sdk.responses.operations.OperationResponse))
   nameWithType: OperationsRequestBuilder.Stream(EventHandler<OperationResponse>)
   nameWithType.vb: OperationsRequestBuilder.Stream(EventHandler(Of OperationResponse))
 - uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.Stream*
@@ -3689,11 +3689,11 @@ references:
   commentId: T:stellar_dotnet_sdk.requests.OrderBookRequestBuilder
   fullName: stellar_dotnet_sdk.requests.OrderBookRequestBuilder
   nameWithType: OrderBookRequestBuilder
-- uid: stellar_dotnet_sdk.requests.OrderBookRequestBuilder.#ctor(System.Uri)
+- uid: stellar_dotnet_sdk.requests.OrderBookRequestBuilder.#ctor(Uri)
   name: OrderBookRequestBuilder(Uri)
-  href: api/stellar_dotnet_sdk.requests.OrderBookRequestBuilder.html#stellar_dotnet_sdk_requests_OrderBookRequestBuilder__ctor_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.OrderBookRequestBuilder.#ctor(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.OrderBookRequestBuilder.OrderBookRequestBuilder(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.OrderBookRequestBuilder.html#stellar_dotnet_sdk_requests_OrderBookRequestBuilder__ctor_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.OrderBookRequestBuilder.#ctor(Uri)
+  fullName: stellar_dotnet_sdk.requests.OrderBookRequestBuilder.OrderBookRequestBuilder(Uri)
   nameWithType: OrderBookRequestBuilder.OrderBookRequestBuilder(Uri)
 - uid: stellar_dotnet_sdk.requests.OrderBookRequestBuilder.#ctor*
   name: OrderBookRequestBuilder
@@ -3734,11 +3734,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.OrderBookRequestBuilder.Execute
   fullName: stellar_dotnet_sdk.requests.OrderBookRequestBuilder.Execute()
   nameWithType: OrderBookRequestBuilder.Execute()
-- uid: stellar_dotnet_sdk.requests.OrderBookRequestBuilder.Execute(System.Uri)
+- uid: stellar_dotnet_sdk.requests.OrderBookRequestBuilder.Execute(Uri)
   name: Execute(Uri)
-  href: api/stellar_dotnet_sdk.requests.OrderBookRequestBuilder.html#stellar_dotnet_sdk_requests_OrderBookRequestBuilder_Execute_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.OrderBookRequestBuilder.Execute(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.OrderBookRequestBuilder.Execute(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.OrderBookRequestBuilder.html#stellar_dotnet_sdk_requests_OrderBookRequestBuilder_Execute_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.OrderBookRequestBuilder.Execute(Uri)
+  fullName: stellar_dotnet_sdk.requests.OrderBookRequestBuilder.Execute(Uri)
   nameWithType: OrderBookRequestBuilder.Execute(Uri)
 - uid: stellar_dotnet_sdk.requests.OrderBookRequestBuilder.Execute*
   name: Execute
@@ -3810,11 +3810,11 @@ references:
   commentId: T:stellar_dotnet_sdk.requests.PathsRequestBuilder
   fullName: stellar_dotnet_sdk.requests.PathsRequestBuilder
   nameWithType: PathsRequestBuilder
-- uid: stellar_dotnet_sdk.requests.PathsRequestBuilder.#ctor(System.Uri)
+- uid: stellar_dotnet_sdk.requests.PathsRequestBuilder.#ctor(Uri)
   name: PathsRequestBuilder(Uri)
-  href: api/stellar_dotnet_sdk.requests.PathsRequestBuilder.html#stellar_dotnet_sdk_requests_PathsRequestBuilder__ctor_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.PathsRequestBuilder.#ctor(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.PathsRequestBuilder.PathsRequestBuilder(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.PathsRequestBuilder.html#stellar_dotnet_sdk_requests_PathsRequestBuilder__ctor_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.PathsRequestBuilder.#ctor(Uri)
+  fullName: stellar_dotnet_sdk.requests.PathsRequestBuilder.PathsRequestBuilder(Uri)
   nameWithType: PathsRequestBuilder.PathsRequestBuilder(Uri)
 - uid: stellar_dotnet_sdk.requests.PathsRequestBuilder.#ctor*
   name: PathsRequestBuilder
@@ -3862,11 +3862,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.requests.PathsRequestBuilder.DestinationAsset
   nameWithType: PathsRequestBuilder.DestinationAsset
-- uid: stellar_dotnet_sdk.requests.PathsRequestBuilder.Execute(System.Uri)
+- uid: stellar_dotnet_sdk.requests.PathsRequestBuilder.Execute(Uri)
   name: Execute(Uri)
-  href: api/stellar_dotnet_sdk.requests.PathsRequestBuilder.html#stellar_dotnet_sdk_requests_PathsRequestBuilder_Execute_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.PathsRequestBuilder.Execute(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.PathsRequestBuilder.Execute(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.PathsRequestBuilder.html#stellar_dotnet_sdk_requests_PathsRequestBuilder_Execute_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.PathsRequestBuilder.Execute(Uri)
+  fullName: stellar_dotnet_sdk.requests.PathsRequestBuilder.Execute(Uri)
   nameWithType: PathsRequestBuilder.Execute(Uri)
 - uid: stellar_dotnet_sdk.requests.PathsRequestBuilder.Execute*
   name: Execute
@@ -3894,11 +3894,11 @@ references:
   commentId: T:stellar_dotnet_sdk.requests.PaymentsRequestBuilder
   fullName: stellar_dotnet_sdk.requests.PaymentsRequestBuilder
   nameWithType: PaymentsRequestBuilder
-- uid: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.#ctor(System.Uri)
+- uid: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.#ctor(Uri)
   name: PaymentsRequestBuilder(Uri)
-  href: api/stellar_dotnet_sdk.requests.PaymentsRequestBuilder.html#stellar_dotnet_sdk_requests_PaymentsRequestBuilder__ctor_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.PaymentsRequestBuilder.#ctor(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.PaymentsRequestBuilder(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.PaymentsRequestBuilder.html#stellar_dotnet_sdk_requests_PaymentsRequestBuilder__ctor_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.PaymentsRequestBuilder.#ctor(Uri)
+  fullName: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.PaymentsRequestBuilder(Uri)
   nameWithType: PaymentsRequestBuilder.PaymentsRequestBuilder(Uri)
 - uid: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.#ctor*
   name: PaymentsRequestBuilder
@@ -3913,11 +3913,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute
   fullName: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute()
   nameWithType: PaymentsRequestBuilder.Execute()
-- uid: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute(System.Uri)
+- uid: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute(Uri)
   name: Execute(Uri)
-  href: api/stellar_dotnet_sdk.requests.PaymentsRequestBuilder.html#stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Execute_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.PaymentsRequestBuilder.html#stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Execute_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute(Uri)
+  fullName: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute(Uri)
   nameWithType: PaymentsRequestBuilder.Execute(Uri)
 - uid: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute*
   name: Execute
@@ -3965,13 +3965,13 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.ForTransaction
   nameWithType: PaymentsRequestBuilder.ForTransaction
-- uid: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.operations.OperationResponse})
+- uid: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Stream(EventHandler{stellar_dotnet_sdk.responses.operations.OperationResponse})
   name: Stream(EventHandler<OperationResponse>)
-  href: api/stellar_dotnet_sdk.requests.PaymentsRequestBuilder.html#stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Stream_System_EventHandler_stellar_dotnet_sdk_responses_operations_OperationResponse__
-  commentId: M:stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.operations.OperationResponse})
+  href: api/stellar_dotnet_sdk.requests.PaymentsRequestBuilder.html#stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Stream_EventHandler_stellar_dotnet_sdk_responses_operations_OperationResponse__
+  commentId: M:stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Stream(EventHandler{stellar_dotnet_sdk.responses.operations.OperationResponse})
   name.vb: Stream(EventHandler(Of OperationResponse))
-  fullName: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Stream(System.EventHandler<stellar_dotnet_sdk.responses.operations.OperationResponse>)
-  fullName.vb: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Stream(System.EventHandler(Of stellar_dotnet_sdk.responses.operations.OperationResponse))
+  fullName: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Stream(EventHandler<stellar_dotnet_sdk.responses.operations.OperationResponse>)
+  fullName.vb: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Stream(EventHandler(Of stellar_dotnet_sdk.responses.operations.OperationResponse))
   nameWithType: PaymentsRequestBuilder.Stream(EventHandler<OperationResponse>)
   nameWithType.vb: PaymentsRequestBuilder.Stream(EventHandler(Of OperationResponse))
 - uid: stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Stream*
@@ -3990,12 +3990,12 @@ references:
   fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T)
   nameWithType: RequestBuilder<T>
   nameWithType.vb: RequestBuilder(Of T)
-- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.#ctor(System.Uri,System.String)
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.#ctor(Uri,System.String)
   name: RequestBuilder(Uri, String)
-  href: api/stellar_dotnet_sdk.requests.RequestBuilder-1.html#stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_System_Uri_System_String_
-  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.#ctor(System.Uri,System.String)
-  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.RequestBuilder(System.Uri, System.String)
-  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).RequestBuilder(System.Uri, System.String)
+  href: api/stellar_dotnet_sdk.requests.RequestBuilder-1.html#stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_Uri_System_String_
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.#ctor(Uri,System.String)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.RequestBuilder(Uri, System.String)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).RequestBuilder(Uri, System.String)
   nameWithType: RequestBuilder<T>.RequestBuilder(Uri, String)
   nameWithType.vb: RequestBuilder(Of T).RequestBuilder(Uri, String)
 - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.#ctor*
@@ -4110,12 +4110,12 @@ references:
   fullName.vb: stellar_dotnet_sdk.requests.ResponseHandler(Of T)
   nameWithType: ResponseHandler<T>
   nameWithType.vb: ResponseHandler(Of T)
-- uid: stellar_dotnet_sdk.requests.ResponseHandler`1.HandleResponse(System.Net.Http.HttpResponseMessage)
+- uid: stellar_dotnet_sdk.requests.ResponseHandler`1.HandleResponse(HttpResponseMessage)
   name: HandleResponse(HttpResponseMessage)
-  href: api/stellar_dotnet_sdk.requests.ResponseHandler-1.html#stellar_dotnet_sdk_requests_ResponseHandler_1_HandleResponse_System_Net_Http_HttpResponseMessage_
-  commentId: M:stellar_dotnet_sdk.requests.ResponseHandler`1.HandleResponse(System.Net.Http.HttpResponseMessage)
-  fullName: stellar_dotnet_sdk.requests.ResponseHandler<T>.HandleResponse(System.Net.Http.HttpResponseMessage)
-  fullName.vb: stellar_dotnet_sdk.requests.ResponseHandler(Of T).HandleResponse(System.Net.Http.HttpResponseMessage)
+  href: api/stellar_dotnet_sdk.requests.ResponseHandler-1.html#stellar_dotnet_sdk_requests_ResponseHandler_1_HandleResponse_HttpResponseMessage_
+  commentId: M:stellar_dotnet_sdk.requests.ResponseHandler`1.HandleResponse(HttpResponseMessage)
+  fullName: stellar_dotnet_sdk.requests.ResponseHandler<T>.HandleResponse(HttpResponseMessage)
+  fullName.vb: stellar_dotnet_sdk.requests.ResponseHandler(Of T).HandleResponse(HttpResponseMessage)
   nameWithType: ResponseHandler<T>.HandleResponse(HttpResponseMessage)
   nameWithType.vb: ResponseHandler(Of T).HandleResponse(HttpResponseMessage)
 - uid: stellar_dotnet_sdk.requests.ResponseHandler`1.HandleResponse*
@@ -4165,11 +4165,11 @@ references:
   commentId: T:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
   fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
   nameWithType: TradesAggregationRequestBuilder
-- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.#ctor(System.Uri,stellar_dotnet_sdk.Asset,stellar_dotnet_sdk.Asset,System.Int64,System.Int64,System.Int64)
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.#ctor(Uri,stellar_dotnet_sdk.Asset,stellar_dotnet_sdk.Asset,System.Int64,System.Int64,System.Int64)
   name: TradesAggregationRequestBuilder(Uri, Asset, Asset, Int64, Int64, Int64)
-  href: api/stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.html#stellar_dotnet_sdk_requests_TradesAggregationRequestBuilder__ctor_System_Uri_stellar_dotnet_sdk_Asset_stellar_dotnet_sdk_Asset_System_Int64_System_Int64_System_Int64_
-  commentId: M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.#ctor(System.Uri,stellar_dotnet_sdk.Asset,stellar_dotnet_sdk.Asset,System.Int64,System.Int64,System.Int64)
-  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.TradesAggregationRequestBuilder(System.Uri, stellar_dotnet_sdk.Asset, stellar_dotnet_sdk.Asset, System.Int64, System.Int64, System.Int64)
+  href: api/stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.html#stellar_dotnet_sdk_requests_TradesAggregationRequestBuilder__ctor_Uri_stellar_dotnet_sdk_Asset_stellar_dotnet_sdk_Asset_System_Int64_System_Int64_System_Int64_
+  commentId: M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.#ctor(Uri,stellar_dotnet_sdk.Asset,stellar_dotnet_sdk.Asset,System.Int64,System.Int64,System.Int64)
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.TradesAggregationRequestBuilder(Uri, stellar_dotnet_sdk.Asset, stellar_dotnet_sdk.Asset, System.Int64, System.Int64, System.Int64)
   nameWithType: TradesAggregationRequestBuilder.TradesAggregationRequestBuilder(Uri, Asset, Asset, Int64, Int64, Int64)
 - uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.#ctor*
   name: TradesAggregationRequestBuilder
@@ -4210,11 +4210,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Execute
   fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Execute()
   nameWithType: TradesAggregationRequestBuilder.Execute()
-- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Execute(System.Uri)
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Execute(Uri)
   name: Execute(Uri)
-  href: api/stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.html#stellar_dotnet_sdk_requests_TradesAggregationRequestBuilder_Execute_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Execute(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Execute(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.html#stellar_dotnet_sdk_requests_TradesAggregationRequestBuilder_Execute_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Execute(Uri)
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Execute(Uri)
   nameWithType: TradesAggregationRequestBuilder.Execute(Uri)
 - uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Execute*
   name: Execute
@@ -4229,11 +4229,11 @@ references:
   commentId: T:stellar_dotnet_sdk.requests.TradesRequestBuilder
   fullName: stellar_dotnet_sdk.requests.TradesRequestBuilder
   nameWithType: TradesRequestBuilder
-- uid: stellar_dotnet_sdk.requests.TradesRequestBuilder.#ctor(System.Uri)
+- uid: stellar_dotnet_sdk.requests.TradesRequestBuilder.#ctor(Uri)
   name: TradesRequestBuilder(Uri)
-  href: api/stellar_dotnet_sdk.requests.TradesRequestBuilder.html#stellar_dotnet_sdk_requests_TradesRequestBuilder__ctor_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.TradesRequestBuilder.#ctor(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.TradesRequestBuilder.TradesRequestBuilder(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.TradesRequestBuilder.html#stellar_dotnet_sdk_requests_TradesRequestBuilder__ctor_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.TradesRequestBuilder.#ctor(Uri)
+  fullName: stellar_dotnet_sdk.requests.TradesRequestBuilder.TradesRequestBuilder(Uri)
   nameWithType: TradesRequestBuilder.TradesRequestBuilder(Uri)
 - uid: stellar_dotnet_sdk.requests.TradesRequestBuilder.#ctor*
   name: TradesRequestBuilder
@@ -4274,11 +4274,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.TradesRequestBuilder.Execute
   fullName: stellar_dotnet_sdk.requests.TradesRequestBuilder.Execute()
   nameWithType: TradesRequestBuilder.Execute()
-- uid: stellar_dotnet_sdk.requests.TradesRequestBuilder.Execute(System.Uri)
+- uid: stellar_dotnet_sdk.requests.TradesRequestBuilder.Execute(Uri)
   name: Execute(Uri)
-  href: api/stellar_dotnet_sdk.requests.TradesRequestBuilder.html#stellar_dotnet_sdk_requests_TradesRequestBuilder_Execute_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.TradesRequestBuilder.Execute(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.TradesRequestBuilder.Execute(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.TradesRequestBuilder.html#stellar_dotnet_sdk_requests_TradesRequestBuilder_Execute_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.TradesRequestBuilder.Execute(Uri)
+  fullName: stellar_dotnet_sdk.requests.TradesRequestBuilder.Execute(Uri)
   nameWithType: TradesRequestBuilder.Execute(Uri)
 - uid: stellar_dotnet_sdk.requests.TradesRequestBuilder.Execute*
   name: Execute
@@ -4306,11 +4306,11 @@ references:
   commentId: T:stellar_dotnet_sdk.requests.TransactionsRequestBuilder
   fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder
   nameWithType: TransactionsRequestBuilder
-- uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.#ctor(System.Uri)
+- uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.#ctor(Uri)
   name: TransactionsRequestBuilder(Uri)
-  href: api/stellar_dotnet_sdk.requests.TransactionsRequestBuilder.html#stellar_dotnet_sdk_requests_TransactionsRequestBuilder__ctor_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.#ctor(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.TransactionsRequestBuilder(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.TransactionsRequestBuilder.html#stellar_dotnet_sdk_requests_TransactionsRequestBuilder__ctor_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.#ctor(Uri)
+  fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.TransactionsRequestBuilder(Uri)
   nameWithType: TransactionsRequestBuilder.TransactionsRequestBuilder(Uri)
 - uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.#ctor*
   name: TransactionsRequestBuilder
@@ -4325,11 +4325,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Execute
   fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Execute()
   nameWithType: TransactionsRequestBuilder.Execute()
-- uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Execute(System.Uri)
+- uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Execute(Uri)
   name: Execute(Uri)
-  href: api/stellar_dotnet_sdk.requests.TransactionsRequestBuilder.html#stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Execute_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Execute(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Execute(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.TransactionsRequestBuilder.html#stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Execute_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Execute(Uri)
+  fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Execute(Uri)
   nameWithType: TransactionsRequestBuilder.Execute(Uri)
 - uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Execute*
   name: Execute
@@ -4364,13 +4364,13 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForLedger
   nameWithType: TransactionsRequestBuilder.ForLedger
-- uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.TransactionResponse})
+- uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Stream(EventHandler{stellar_dotnet_sdk.responses.TransactionResponse})
   name: Stream(EventHandler<TransactionResponse>)
-  href: api/stellar_dotnet_sdk.requests.TransactionsRequestBuilder.html#stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Stream_System_EventHandler_stellar_dotnet_sdk_responses_TransactionResponse__
-  commentId: M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Stream(System.EventHandler{stellar_dotnet_sdk.responses.TransactionResponse})
+  href: api/stellar_dotnet_sdk.requests.TransactionsRequestBuilder.html#stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Stream_EventHandler_stellar_dotnet_sdk_responses_TransactionResponse__
+  commentId: M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Stream(EventHandler{stellar_dotnet_sdk.responses.TransactionResponse})
   name.vb: Stream(EventHandler(Of TransactionResponse))
-  fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Stream(System.EventHandler<stellar_dotnet_sdk.responses.TransactionResponse>)
-  fullName.vb: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Stream(System.EventHandler(Of stellar_dotnet_sdk.responses.TransactionResponse))
+  fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Stream(EventHandler<stellar_dotnet_sdk.responses.TransactionResponse>)
+  fullName.vb: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Stream(EventHandler(Of stellar_dotnet_sdk.responses.TransactionResponse))
   nameWithType: TransactionsRequestBuilder.Stream(EventHandler<TransactionResponse>)
   nameWithType.vb: TransactionsRequestBuilder.Stream(EventHandler(Of TransactionResponse))
 - uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Stream*
@@ -4386,11 +4386,11 @@ references:
   commentId: M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(System.String)
   fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(System.String)
   nameWithType: TransactionsRequestBuilder.Transaction(String)
-- uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(System.Uri)
+- uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(Uri)
   name: Transaction(Uri)
-  href: api/stellar_dotnet_sdk.requests.TransactionsRequestBuilder.html#stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Transaction_System_Uri_
-  commentId: M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(System.Uri)
-  fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(System.Uri)
+  href: api/stellar_dotnet_sdk.requests.TransactionsRequestBuilder.html#stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Transaction_Uri_
+  commentId: M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(Uri)
+  fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(Uri)
   nameWithType: TransactionsRequestBuilder.Transaction(Uri)
 - uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction*
   name: Transaction
@@ -4702,11 +4702,11 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.AssetDeserializer
   fullName: stellar_dotnet_sdk.responses.AssetDeserializer
   nameWithType: AssetDeserializer
-- uid: stellar_dotnet_sdk.responses.AssetDeserializer.CanConvert(System.Type)
+- uid: stellar_dotnet_sdk.responses.AssetDeserializer.CanConvert(Type)
   name: CanConvert(Type)
-  href: api/stellar_dotnet_sdk.responses.AssetDeserializer.html#stellar_dotnet_sdk_responses_AssetDeserializer_CanConvert_System_Type_
-  commentId: M:stellar_dotnet_sdk.responses.AssetDeserializer.CanConvert(System.Type)
-  fullName: stellar_dotnet_sdk.responses.AssetDeserializer.CanConvert(System.Type)
+  href: api/stellar_dotnet_sdk.responses.AssetDeserializer.html#stellar_dotnet_sdk_responses_AssetDeserializer_CanConvert_Type_
+  commentId: M:stellar_dotnet_sdk.responses.AssetDeserializer.CanConvert(Type)
+  fullName: stellar_dotnet_sdk.responses.AssetDeserializer.CanConvert(Type)
   nameWithType: AssetDeserializer.CanConvert(Type)
 - uid: stellar_dotnet_sdk.responses.AssetDeserializer.CanConvert*
   name: CanConvert
@@ -4715,11 +4715,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.AssetDeserializer.CanConvert
   nameWithType: AssetDeserializer.CanConvert
-- uid: stellar_dotnet_sdk.responses.AssetDeserializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+- uid: stellar_dotnet_sdk.responses.AssetDeserializer.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
   name: ReadJson(JsonReader, Type, Object, JsonSerializer)
-  href: api/stellar_dotnet_sdk.responses.AssetDeserializer.html#stellar_dotnet_sdk_responses_AssetDeserializer_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Object_Newtonsoft_Json_JsonSerializer_
-  commentId: M:stellar_dotnet_sdk.responses.AssetDeserializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
-  fullName: stellar_dotnet_sdk.responses.AssetDeserializer.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Object, Newtonsoft.Json.JsonSerializer)
+  href: api/stellar_dotnet_sdk.responses.AssetDeserializer.html#stellar_dotnet_sdk_responses_AssetDeserializer_ReadJson_JsonReader_Type_System_Object_JsonSerializer_
+  commentId: M:stellar_dotnet_sdk.responses.AssetDeserializer.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
+  fullName: stellar_dotnet_sdk.responses.AssetDeserializer.ReadJson(JsonReader, Type, System.Object, JsonSerializer)
   nameWithType: AssetDeserializer.ReadJson(JsonReader, Type, Object, JsonSerializer)
 - uid: stellar_dotnet_sdk.responses.AssetDeserializer.ReadJson*
   name: ReadJson
@@ -4728,11 +4728,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.AssetDeserializer.ReadJson
   nameWithType: AssetDeserializer.ReadJson
-- uid: stellar_dotnet_sdk.responses.AssetDeserializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+- uid: stellar_dotnet_sdk.responses.AssetDeserializer.WriteJson(JsonWriter,System.Object,JsonSerializer)
   name: WriteJson(JsonWriter, Object, JsonSerializer)
-  href: api/stellar_dotnet_sdk.responses.AssetDeserializer.html#stellar_dotnet_sdk_responses_AssetDeserializer_WriteJson_Newtonsoft_Json_JsonWriter_System_Object_Newtonsoft_Json_JsonSerializer_
-  commentId: M:stellar_dotnet_sdk.responses.AssetDeserializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
-  fullName: stellar_dotnet_sdk.responses.AssetDeserializer.WriteJson(Newtonsoft.Json.JsonWriter, System.Object, Newtonsoft.Json.JsonSerializer)
+  href: api/stellar_dotnet_sdk.responses.AssetDeserializer.html#stellar_dotnet_sdk_responses_AssetDeserializer_WriteJson_JsonWriter_System_Object_JsonSerializer_
+  commentId: M:stellar_dotnet_sdk.responses.AssetDeserializer.WriteJson(JsonWriter,System.Object,JsonSerializer)
+  fullName: stellar_dotnet_sdk.responses.AssetDeserializer.WriteJson(JsonWriter, System.Object, JsonSerializer)
   nameWithType: AssetDeserializer.WriteJson(JsonWriter, Object, JsonSerializer)
 - uid: stellar_dotnet_sdk.responses.AssetDeserializer.WriteJson*
   name: WriteJson
@@ -4747,11 +4747,11 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.AssetResponse
   fullName: stellar_dotnet_sdk.responses.AssetResponse
   nameWithType: AssetResponse
-- uid: stellar_dotnet_sdk.responses.AssetResponse.#ctor(System.String,System.String,System.String,System.String,System.String,System.Int32,stellar_dotnet_sdk.responses.AssetResponseFlags,stellar_dotnet_sdk.responses.AssetResponseLinks)
+- uid: stellar_dotnet_sdk.responses.AssetResponse.#ctor(String,String,String,String,String,System.Int32,stellar_dotnet_sdk.responses.AssetResponseFlags,stellar_dotnet_sdk.responses.AssetResponseLinks)
   name: AssetResponse(String, String, String, String, String, Int32, AssetResponseFlags, AssetResponseLinks)
-  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse__ctor_System_String_System_String_System_String_System_String_System_String_System_Int32_stellar_dotnet_sdk_responses_AssetResponseFlags_stellar_dotnet_sdk_responses_AssetResponseLinks_
-  commentId: M:stellar_dotnet_sdk.responses.AssetResponse.#ctor(System.String,System.String,System.String,System.String,System.String,System.Int32,stellar_dotnet_sdk.responses.AssetResponseFlags,stellar_dotnet_sdk.responses.AssetResponseLinks)
-  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetResponse(System.String, System.String, System.String, System.String, System.String, System.Int32, stellar_dotnet_sdk.responses.AssetResponseFlags, stellar_dotnet_sdk.responses.AssetResponseLinks)
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse__ctor_String_String_String_String_String_System_Int32_stellar_dotnet_sdk_responses_AssetResponseFlags_stellar_dotnet_sdk_responses_AssetResponseLinks_
+  commentId: M:stellar_dotnet_sdk.responses.AssetResponse.#ctor(String,String,String,String,String,System.Int32,stellar_dotnet_sdk.responses.AssetResponseFlags,stellar_dotnet_sdk.responses.AssetResponseLinks)
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetResponse(String, String, String, String, String, System.Int32, stellar_dotnet_sdk.responses.AssetResponseFlags, stellar_dotnet_sdk.responses.AssetResponseLinks)
   nameWithType: AssetResponse.AssetResponse(String, String, String, String, String, Int32, AssetResponseFlags, AssetResponseLinks)
 - uid: stellar_dotnet_sdk.responses.AssetResponse.#ctor*
   name: AssetResponse
@@ -5044,11 +5044,11 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.EffectDeserializer
   fullName: stellar_dotnet_sdk.responses.EffectDeserializer
   nameWithType: EffectDeserializer
-- uid: stellar_dotnet_sdk.responses.EffectDeserializer.CanConvert(System.Type)
+- uid: stellar_dotnet_sdk.responses.EffectDeserializer.CanConvert(Type)
   name: CanConvert(Type)
-  href: api/stellar_dotnet_sdk.responses.EffectDeserializer.html#stellar_dotnet_sdk_responses_EffectDeserializer_CanConvert_System_Type_
-  commentId: M:stellar_dotnet_sdk.responses.EffectDeserializer.CanConvert(System.Type)
-  fullName: stellar_dotnet_sdk.responses.EffectDeserializer.CanConvert(System.Type)
+  href: api/stellar_dotnet_sdk.responses.EffectDeserializer.html#stellar_dotnet_sdk_responses_EffectDeserializer_CanConvert_Type_
+  commentId: M:stellar_dotnet_sdk.responses.EffectDeserializer.CanConvert(Type)
+  fullName: stellar_dotnet_sdk.responses.EffectDeserializer.CanConvert(Type)
   nameWithType: EffectDeserializer.CanConvert(Type)
 - uid: stellar_dotnet_sdk.responses.EffectDeserializer.CanConvert*
   name: CanConvert
@@ -5057,11 +5057,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.EffectDeserializer.CanConvert
   nameWithType: EffectDeserializer.CanConvert
-- uid: stellar_dotnet_sdk.responses.EffectDeserializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+- uid: stellar_dotnet_sdk.responses.EffectDeserializer.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
   name: ReadJson(JsonReader, Type, Object, JsonSerializer)
-  href: api/stellar_dotnet_sdk.responses.EffectDeserializer.html#stellar_dotnet_sdk_responses_EffectDeserializer_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Object_Newtonsoft_Json_JsonSerializer_
-  commentId: M:stellar_dotnet_sdk.responses.EffectDeserializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
-  fullName: stellar_dotnet_sdk.responses.EffectDeserializer.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Object, Newtonsoft.Json.JsonSerializer)
+  href: api/stellar_dotnet_sdk.responses.EffectDeserializer.html#stellar_dotnet_sdk_responses_EffectDeserializer_ReadJson_JsonReader_Type_System_Object_JsonSerializer_
+  commentId: M:stellar_dotnet_sdk.responses.EffectDeserializer.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
+  fullName: stellar_dotnet_sdk.responses.EffectDeserializer.ReadJson(JsonReader, Type, System.Object, JsonSerializer)
   nameWithType: EffectDeserializer.ReadJson(JsonReader, Type, Object, JsonSerializer)
 - uid: stellar_dotnet_sdk.responses.EffectDeserializer.ReadJson*
   name: ReadJson
@@ -5070,11 +5070,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.EffectDeserializer.ReadJson
   nameWithType: EffectDeserializer.ReadJson
-- uid: stellar_dotnet_sdk.responses.EffectDeserializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+- uid: stellar_dotnet_sdk.responses.EffectDeserializer.WriteJson(JsonWriter,System.Object,JsonSerializer)
   name: WriteJson(JsonWriter, Object, JsonSerializer)
-  href: api/stellar_dotnet_sdk.responses.EffectDeserializer.html#stellar_dotnet_sdk_responses_EffectDeserializer_WriteJson_Newtonsoft_Json_JsonWriter_System_Object_Newtonsoft_Json_JsonSerializer_
-  commentId: M:stellar_dotnet_sdk.responses.EffectDeserializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
-  fullName: stellar_dotnet_sdk.responses.EffectDeserializer.WriteJson(Newtonsoft.Json.JsonWriter, System.Object, Newtonsoft.Json.JsonSerializer)
+  href: api/stellar_dotnet_sdk.responses.EffectDeserializer.html#stellar_dotnet_sdk_responses_EffectDeserializer_WriteJson_JsonWriter_System_Object_JsonSerializer_
+  commentId: M:stellar_dotnet_sdk.responses.EffectDeserializer.WriteJson(JsonWriter,System.Object,JsonSerializer)
+  fullName: stellar_dotnet_sdk.responses.EffectDeserializer.WriteJson(JsonWriter, System.Object, JsonSerializer)
   nameWithType: EffectDeserializer.WriteJson(JsonWriter, Object, JsonSerializer)
 - uid: stellar_dotnet_sdk.responses.EffectDeserializer.WriteJson*
   name: WriteJson
@@ -6201,11 +6201,11 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.KeyPairTypeAdapter
   fullName: stellar_dotnet_sdk.responses.KeyPairTypeAdapter
   nameWithType: KeyPairTypeAdapter
-- uid: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.CanConvert(System.Type)
+- uid: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.CanConvert(Type)
   name: CanConvert(Type)
-  href: api/stellar_dotnet_sdk.responses.KeyPairTypeAdapter.html#stellar_dotnet_sdk_responses_KeyPairTypeAdapter_CanConvert_System_Type_
-  commentId: M:stellar_dotnet_sdk.responses.KeyPairTypeAdapter.CanConvert(System.Type)
-  fullName: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.CanConvert(System.Type)
+  href: api/stellar_dotnet_sdk.responses.KeyPairTypeAdapter.html#stellar_dotnet_sdk_responses_KeyPairTypeAdapter_CanConvert_Type_
+  commentId: M:stellar_dotnet_sdk.responses.KeyPairTypeAdapter.CanConvert(Type)
+  fullName: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.CanConvert(Type)
   nameWithType: KeyPairTypeAdapter.CanConvert(Type)
 - uid: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.CanConvert*
   name: CanConvert
@@ -6214,11 +6214,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.CanConvert
   nameWithType: KeyPairTypeAdapter.CanConvert
-- uid: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+- uid: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
   name: ReadJson(JsonReader, Type, Object, JsonSerializer)
-  href: api/stellar_dotnet_sdk.responses.KeyPairTypeAdapter.html#stellar_dotnet_sdk_responses_KeyPairTypeAdapter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Object_Newtonsoft_Json_JsonSerializer_
-  commentId: M:stellar_dotnet_sdk.responses.KeyPairTypeAdapter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
-  fullName: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Object, Newtonsoft.Json.JsonSerializer)
+  href: api/stellar_dotnet_sdk.responses.KeyPairTypeAdapter.html#stellar_dotnet_sdk_responses_KeyPairTypeAdapter_ReadJson_JsonReader_Type_System_Object_JsonSerializer_
+  commentId: M:stellar_dotnet_sdk.responses.KeyPairTypeAdapter.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
+  fullName: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.ReadJson(JsonReader, Type, System.Object, JsonSerializer)
   nameWithType: KeyPairTypeAdapter.ReadJson(JsonReader, Type, Object, JsonSerializer)
 - uid: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.ReadJson*
   name: ReadJson
@@ -6227,11 +6227,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.ReadJson
   nameWithType: KeyPairTypeAdapter.ReadJson
-- uid: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+- uid: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.WriteJson(JsonWriter,System.Object,JsonSerializer)
   name: WriteJson(JsonWriter, Object, JsonSerializer)
-  href: api/stellar_dotnet_sdk.responses.KeyPairTypeAdapter.html#stellar_dotnet_sdk_responses_KeyPairTypeAdapter_WriteJson_Newtonsoft_Json_JsonWriter_System_Object_Newtonsoft_Json_JsonSerializer_
-  commentId: M:stellar_dotnet_sdk.responses.KeyPairTypeAdapter.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
-  fullName: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.WriteJson(Newtonsoft.Json.JsonWriter, System.Object, Newtonsoft.Json.JsonSerializer)
+  href: api/stellar_dotnet_sdk.responses.KeyPairTypeAdapter.html#stellar_dotnet_sdk_responses_KeyPairTypeAdapter_WriteJson_JsonWriter_System_Object_JsonSerializer_
+  commentId: M:stellar_dotnet_sdk.responses.KeyPairTypeAdapter.WriteJson(JsonWriter,System.Object,JsonSerializer)
+  fullName: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.WriteJson(JsonWriter, System.Object, JsonSerializer)
   nameWithType: KeyPairTypeAdapter.WriteJson(JsonWriter, Object, JsonSerializer)
 - uid: stellar_dotnet_sdk.responses.KeyPairTypeAdapter.WriteJson*
   name: WriteJson
@@ -6246,11 +6246,11 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.LedgerResponse
   fullName: stellar_dotnet_sdk.responses.LedgerResponse
   nameWithType: LedgerResponse
-- uid: stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.Int64,System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.Int64,System.String,System.String,System.String,System.Int32,stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.Int64,String,String,String,System.Int32,System.Int32,String,String,String,System.Int64,String,String,String,System.Int32,stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
   name: LedgerResponse(Int64, String, String, String, Int32, Int32, String, String, String, Int64, String, String, String, Int32, LedgerResponse.LedgerResponseLinks)
-  href: api/stellar_dotnet_sdk.responses.LedgerResponse.html#stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_Int64_System_String_System_String_System_String_System_Int32_System_Int32_System_String_System_String_System_String_System_Int64_System_String_System_String_System_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_
-  commentId: M:stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.Int64,System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.Int64,System.String,System.String,System.String,System.Int32,stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
-  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponse(System.Int64, System.String, System.String, System.String, System.Int32, System.Int32, System.String, System.String, System.String, System.Int64, System.String, System.String, System.String, System.Int32, stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
+  href: api/stellar_dotnet_sdk.responses.LedgerResponse.html#stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_Int64_String_String_String_System_Int32_System_Int32_String_String_String_System_Int64_String_String_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_
+  commentId: M:stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.Int64,String,String,String,System.Int32,System.Int32,String,String,String,System.Int64,String,String,String,System.Int32,stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponse(System.Int64, String, String, String, System.Int32, System.Int32, String, String, String, System.Int64, String, String, String, System.Int32, stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
   nameWithType: LedgerResponse.LedgerResponse(Int64, String, String, String, Int32, Int32, String, String, String, Int64, String, String, String, Int32, LedgerResponse.LedgerResponseLinks)
 - uid: stellar_dotnet_sdk.responses.LedgerResponse.#ctor*
   name: LedgerResponse
@@ -6770,11 +6770,11 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.OperationDeserializer
   fullName: stellar_dotnet_sdk.responses.OperationDeserializer
   nameWithType: OperationDeserializer
-- uid: stellar_dotnet_sdk.responses.OperationDeserializer.CanConvert(System.Type)
+- uid: stellar_dotnet_sdk.responses.OperationDeserializer.CanConvert(Type)
   name: CanConvert(Type)
-  href: api/stellar_dotnet_sdk.responses.OperationDeserializer.html#stellar_dotnet_sdk_responses_OperationDeserializer_CanConvert_System_Type_
-  commentId: M:stellar_dotnet_sdk.responses.OperationDeserializer.CanConvert(System.Type)
-  fullName: stellar_dotnet_sdk.responses.OperationDeserializer.CanConvert(System.Type)
+  href: api/stellar_dotnet_sdk.responses.OperationDeserializer.html#stellar_dotnet_sdk_responses_OperationDeserializer_CanConvert_Type_
+  commentId: M:stellar_dotnet_sdk.responses.OperationDeserializer.CanConvert(Type)
+  fullName: stellar_dotnet_sdk.responses.OperationDeserializer.CanConvert(Type)
   nameWithType: OperationDeserializer.CanConvert(Type)
 - uid: stellar_dotnet_sdk.responses.OperationDeserializer.CanConvert*
   name: CanConvert
@@ -6783,11 +6783,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.OperationDeserializer.CanConvert
   nameWithType: OperationDeserializer.CanConvert
-- uid: stellar_dotnet_sdk.responses.OperationDeserializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+- uid: stellar_dotnet_sdk.responses.OperationDeserializer.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
   name: ReadJson(JsonReader, Type, Object, JsonSerializer)
-  href: api/stellar_dotnet_sdk.responses.OperationDeserializer.html#stellar_dotnet_sdk_responses_OperationDeserializer_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Object_Newtonsoft_Json_JsonSerializer_
-  commentId: M:stellar_dotnet_sdk.responses.OperationDeserializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
-  fullName: stellar_dotnet_sdk.responses.OperationDeserializer.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Object, Newtonsoft.Json.JsonSerializer)
+  href: api/stellar_dotnet_sdk.responses.OperationDeserializer.html#stellar_dotnet_sdk_responses_OperationDeserializer_ReadJson_JsonReader_Type_System_Object_JsonSerializer_
+  commentId: M:stellar_dotnet_sdk.responses.OperationDeserializer.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
+  fullName: stellar_dotnet_sdk.responses.OperationDeserializer.ReadJson(JsonReader, Type, System.Object, JsonSerializer)
   nameWithType: OperationDeserializer.ReadJson(JsonReader, Type, Object, JsonSerializer)
 - uid: stellar_dotnet_sdk.responses.OperationDeserializer.ReadJson*
   name: ReadJson
@@ -6796,11 +6796,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.OperationDeserializer.ReadJson
   nameWithType: OperationDeserializer.ReadJson
-- uid: stellar_dotnet_sdk.responses.OperationDeserializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+- uid: stellar_dotnet_sdk.responses.OperationDeserializer.WriteJson(JsonWriter,System.Object,JsonSerializer)
   name: WriteJson(JsonWriter, Object, JsonSerializer)
-  href: api/stellar_dotnet_sdk.responses.OperationDeserializer.html#stellar_dotnet_sdk_responses_OperationDeserializer_WriteJson_Newtonsoft_Json_JsonWriter_System_Object_Newtonsoft_Json_JsonSerializer_
-  commentId: M:stellar_dotnet_sdk.responses.OperationDeserializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
-  fullName: stellar_dotnet_sdk.responses.OperationDeserializer.WriteJson(Newtonsoft.Json.JsonWriter, System.Object, Newtonsoft.Json.JsonSerializer)
+  href: api/stellar_dotnet_sdk.responses.OperationDeserializer.html#stellar_dotnet_sdk_responses_OperationDeserializer_WriteJson_JsonWriter_System_Object_JsonSerializer_
+  commentId: M:stellar_dotnet_sdk.responses.OperationDeserializer.WriteJson(JsonWriter,System.Object,JsonSerializer)
+  fullName: stellar_dotnet_sdk.responses.OperationDeserializer.WriteJson(JsonWriter, System.Object, JsonSerializer)
   nameWithType: OperationDeserializer.WriteJson(JsonWriter, Object, JsonSerializer)
 - uid: stellar_dotnet_sdk.responses.OperationDeserializer.WriteJson*
   name: WriteJson
@@ -8393,13 +8393,13 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.PathResponse
   fullName: stellar_dotnet_sdk.responses.PathResponse
   nameWithType: PathResponse
-- uid: stellar_dotnet_sdk.responses.PathResponse.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{stellar_dotnet_sdk.Asset},stellar_dotnet_sdk.responses.PathResponseLinks)
+- uid: stellar_dotnet_sdk.responses.PathResponse.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,List{stellar_dotnet_sdk.Asset},stellar_dotnet_sdk.responses.PathResponseLinks)
   name: PathResponse(String, String, String, String, String, String, String, String, List<Asset>, PathResponseLinks)
-  href: api/stellar_dotnet_sdk.responses.PathResponse.html#stellar_dotnet_sdk_responses_PathResponse__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Collections_Generic_List_stellar_dotnet_sdk_Asset__stellar_dotnet_sdk_responses_PathResponseLinks_
-  commentId: M:stellar_dotnet_sdk.responses.PathResponse.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.List{stellar_dotnet_sdk.Asset},stellar_dotnet_sdk.responses.PathResponseLinks)
+  href: api/stellar_dotnet_sdk.responses.PathResponse.html#stellar_dotnet_sdk_responses_PathResponse__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_List_stellar_dotnet_sdk_Asset__stellar_dotnet_sdk_responses_PathResponseLinks_
+  commentId: M:stellar_dotnet_sdk.responses.PathResponse.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,List{stellar_dotnet_sdk.Asset},stellar_dotnet_sdk.responses.PathResponseLinks)
   name.vb: PathResponse(String, String, String, String, String, String, String, String, List(Of Asset), PathResponseLinks)
-  fullName: stellar_dotnet_sdk.responses.PathResponse.PathResponse(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Collections.Generic.List<stellar_dotnet_sdk.Asset>, stellar_dotnet_sdk.responses.PathResponseLinks)
-  fullName.vb: stellar_dotnet_sdk.responses.PathResponse.PathResponse(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Collections.Generic.List(Of stellar_dotnet_sdk.Asset), stellar_dotnet_sdk.responses.PathResponseLinks)
+  fullName: stellar_dotnet_sdk.responses.PathResponse.PathResponse(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, List<stellar_dotnet_sdk.Asset>, stellar_dotnet_sdk.responses.PathResponseLinks)
+  fullName.vb: stellar_dotnet_sdk.responses.PathResponse.PathResponse(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, List(Of stellar_dotnet_sdk.Asset), stellar_dotnet_sdk.responses.PathResponseLinks)
   nameWithType: PathResponse.PathResponse(String, String, String, String, String, String, String, String, List<Asset>, PathResponseLinks)
   nameWithType.vb: PathResponse.PathResponse(String, String, String, String, String, String, String, String, List(Of Asset), PathResponseLinks)
 - uid: stellar_dotnet_sdk.responses.PathResponse.#ctor*
@@ -8642,11 +8642,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.Response.RateLimitReset
   nameWithType: Response.RateLimitReset
-- uid: stellar_dotnet_sdk.responses.Response.SetHeaders(System.Net.Http.Headers.HttpResponseHeaders)
+- uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
   name: SetHeaders(HttpResponseHeaders)
-  href: api/stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_
-  commentId: M:stellar_dotnet_sdk.responses.Response.SetHeaders(System.Net.Http.Headers.HttpResponseHeaders)
-  fullName: stellar_dotnet_sdk.responses.Response.SetHeaders(System.Net.Http.Headers.HttpResponseHeaders)
+  href: api/stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_
+  commentId: M:stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  fullName: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
   nameWithType: Response.SetHeaders(HttpResponseHeaders)
 - uid: stellar_dotnet_sdk.responses.Response.SetHeaders*
   name: SetHeaders
@@ -8789,13 +8789,13 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes
   fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes
   nameWithType: SubmitTransactionResponse.Extras.ResultCodes
-- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor(System.String,System.Collections.Generic.List{System.String})
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor(System.String,List{System.String})
   name: ResultCodes(String, List<String>)
-  href: api/stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.html#stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_System_Collections_Generic_List_System_String__
-  commentId: M:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor(System.String,System.Collections.Generic.List{System.String})
+  href: api/stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.html#stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_List_System_String__
+  commentId: M:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor(System.String,List{System.String})
   name.vb: ResultCodes(String, List(Of String))
-  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.ResultCodes(System.String, System.Collections.Generic.List<System.String>)
-  fullName.vb: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.ResultCodes(System.String, System.Collections.Generic.List(Of System.String))
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.ResultCodes(System.String, List<System.String>)
+  fullName.vb: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.ResultCodes(System.String, List(Of System.String))
   nameWithType: SubmitTransactionResponse.Extras.ResultCodes.ResultCodes(String, List<String>)
   nameWithType.vb: SubmitTransactionResponse.Extras.ResultCodes.ResultCodes(String, List(Of String))
 - uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor*
@@ -8986,11 +8986,11 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.TradeAggregationResponse
   fullName: stellar_dotnet_sdk.responses.TradeAggregationResponse
   nameWithType: TradeAggregationResponse
-- uid: stellar_dotnet_sdk.responses.TradeAggregationResponse.#ctor(System.Int64,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+- uid: stellar_dotnet_sdk.responses.TradeAggregationResponse.#ctor(System.Int64,System.Int32,String,String,String,String,String,String,String)
   name: TradeAggregationResponse(Int64, Int32, String, String, String, String, String, String, String)
-  href: api/stellar_dotnet_sdk.responses.TradeAggregationResponse.html#stellar_dotnet_sdk_responses_TradeAggregationResponse__ctor_System_Int64_System_Int32_System_String_System_String_System_String_System_String_System_String_System_String_System_String_
-  commentId: M:stellar_dotnet_sdk.responses.TradeAggregationResponse.#ctor(System.Int64,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
-  fullName: stellar_dotnet_sdk.responses.TradeAggregationResponse.TradeAggregationResponse(System.Int64, System.Int32, System.String, System.String, System.String, System.String, System.String, System.String, System.String)
+  href: api/stellar_dotnet_sdk.responses.TradeAggregationResponse.html#stellar_dotnet_sdk_responses_TradeAggregationResponse__ctor_System_Int64_System_Int32_String_String_String_String_String_String_String_
+  commentId: M:stellar_dotnet_sdk.responses.TradeAggregationResponse.#ctor(System.Int64,System.Int32,String,String,String,String,String,String,String)
+  fullName: stellar_dotnet_sdk.responses.TradeAggregationResponse.TradeAggregationResponse(System.Int64, System.Int32, String, String, String, String, String, String, String)
   nameWithType: TradeAggregationResponse.TradeAggregationResponse(Int64, Int32, String, String, String, String, String, String, String)
 - uid: stellar_dotnet_sdk.responses.TradeAggregationResponse.#ctor*
   name: TradeAggregationResponse
@@ -9122,11 +9122,11 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.TradeResponse
   fullName: stellar_dotnet_sdk.responses.TradeResponse
   nameWithType: TradeResponse
-- uid: stellar_dotnet_sdk.responses.TradeResponse.#ctor(System.String,System.String,System.String,System.String,System.Boolean,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.String,System.String,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.String,System.String)
+- uid: stellar_dotnet_sdk.responses.TradeResponse.#ctor(String,String,String,String,System.Boolean,stellar_dotnet_sdk.KeyPair,String,String,String,String,stellar_dotnet_sdk.KeyPair,String,String,String,String)
   name: TradeResponse(String, String, String, String, Boolean, KeyPair, String, String, String, String, KeyPair, String, String, String, String)
-  href: api/stellar_dotnet_sdk.responses.TradeResponse.html#stellar_dotnet_sdk_responses_TradeResponse__ctor_System_String_System_String_System_String_System_String_System_Boolean_stellar_dotnet_sdk_KeyPair_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_KeyPair_System_String_System_String_System_String_System_String_
-  commentId: M:stellar_dotnet_sdk.responses.TradeResponse.#ctor(System.String,System.String,System.String,System.String,System.Boolean,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.String,System.String,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.String,System.String)
-  fullName: stellar_dotnet_sdk.responses.TradeResponse.TradeResponse(System.String, System.String, System.String, System.String, System.Boolean, stellar_dotnet_sdk.KeyPair, System.String, System.String, System.String, System.String, stellar_dotnet_sdk.KeyPair, System.String, System.String, System.String, System.String)
+  href: api/stellar_dotnet_sdk.responses.TradeResponse.html#stellar_dotnet_sdk_responses_TradeResponse__ctor_String_String_String_String_System_Boolean_stellar_dotnet_sdk_KeyPair_String_String_String_String_stellar_dotnet_sdk_KeyPair_String_String_String_String_
+  commentId: M:stellar_dotnet_sdk.responses.TradeResponse.#ctor(String,String,String,String,System.Boolean,stellar_dotnet_sdk.KeyPair,String,String,String,String,stellar_dotnet_sdk.KeyPair,String,String,String,String)
+  fullName: stellar_dotnet_sdk.responses.TradeResponse.TradeResponse(String, String, String, String, System.Boolean, stellar_dotnet_sdk.KeyPair, String, String, String, String, stellar_dotnet_sdk.KeyPair, String, String, String, String)
   nameWithType: TradeResponse.TradeResponse(String, String, String, String, Boolean, KeyPair, String, String, String, String, KeyPair, String, String, String, String)
 - uid: stellar_dotnet_sdk.responses.TradeResponse.#ctor*
   name: TradeResponse
@@ -9412,11 +9412,11 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.TransactionDeserializer
   fullName: stellar_dotnet_sdk.responses.TransactionDeserializer
   nameWithType: TransactionDeserializer
-- uid: stellar_dotnet_sdk.responses.TransactionDeserializer.CanConvert(System.Type)
+- uid: stellar_dotnet_sdk.responses.TransactionDeserializer.CanConvert(Type)
   name: CanConvert(Type)
-  href: api/stellar_dotnet_sdk.responses.TransactionDeserializer.html#stellar_dotnet_sdk_responses_TransactionDeserializer_CanConvert_System_Type_
-  commentId: M:stellar_dotnet_sdk.responses.TransactionDeserializer.CanConvert(System.Type)
-  fullName: stellar_dotnet_sdk.responses.TransactionDeserializer.CanConvert(System.Type)
+  href: api/stellar_dotnet_sdk.responses.TransactionDeserializer.html#stellar_dotnet_sdk_responses_TransactionDeserializer_CanConvert_Type_
+  commentId: M:stellar_dotnet_sdk.responses.TransactionDeserializer.CanConvert(Type)
+  fullName: stellar_dotnet_sdk.responses.TransactionDeserializer.CanConvert(Type)
   nameWithType: TransactionDeserializer.CanConvert(Type)
 - uid: stellar_dotnet_sdk.responses.TransactionDeserializer.CanConvert*
   name: CanConvert
@@ -9425,11 +9425,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.TransactionDeserializer.CanConvert
   nameWithType: TransactionDeserializer.CanConvert
-- uid: stellar_dotnet_sdk.responses.TransactionDeserializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+- uid: stellar_dotnet_sdk.responses.TransactionDeserializer.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
   name: ReadJson(JsonReader, Type, Object, JsonSerializer)
-  href: api/stellar_dotnet_sdk.responses.TransactionDeserializer.html#stellar_dotnet_sdk_responses_TransactionDeserializer_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Object_Newtonsoft_Json_JsonSerializer_
-  commentId: M:stellar_dotnet_sdk.responses.TransactionDeserializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
-  fullName: stellar_dotnet_sdk.responses.TransactionDeserializer.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Object, Newtonsoft.Json.JsonSerializer)
+  href: api/stellar_dotnet_sdk.responses.TransactionDeserializer.html#stellar_dotnet_sdk_responses_TransactionDeserializer_ReadJson_JsonReader_Type_System_Object_JsonSerializer_
+  commentId: M:stellar_dotnet_sdk.responses.TransactionDeserializer.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
+  fullName: stellar_dotnet_sdk.responses.TransactionDeserializer.ReadJson(JsonReader, Type, System.Object, JsonSerializer)
   nameWithType: TransactionDeserializer.ReadJson(JsonReader, Type, Object, JsonSerializer)
 - uid: stellar_dotnet_sdk.responses.TransactionDeserializer.ReadJson*
   name: ReadJson
@@ -9438,11 +9438,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.TransactionDeserializer.ReadJson
   nameWithType: TransactionDeserializer.ReadJson
-- uid: stellar_dotnet_sdk.responses.TransactionDeserializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+- uid: stellar_dotnet_sdk.responses.TransactionDeserializer.WriteJson(JsonWriter,System.Object,JsonSerializer)
   name: WriteJson(JsonWriter, Object, JsonSerializer)
-  href: api/stellar_dotnet_sdk.responses.TransactionDeserializer.html#stellar_dotnet_sdk_responses_TransactionDeserializer_WriteJson_Newtonsoft_Json_JsonWriter_System_Object_Newtonsoft_Json_JsonSerializer_
-  commentId: M:stellar_dotnet_sdk.responses.TransactionDeserializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
-  fullName: stellar_dotnet_sdk.responses.TransactionDeserializer.WriteJson(Newtonsoft.Json.JsonWriter, System.Object, Newtonsoft.Json.JsonSerializer)
+  href: api/stellar_dotnet_sdk.responses.TransactionDeserializer.html#stellar_dotnet_sdk_responses_TransactionDeserializer_WriteJson_JsonWriter_System_Object_JsonSerializer_
+  commentId: M:stellar_dotnet_sdk.responses.TransactionDeserializer.WriteJson(JsonWriter,System.Object,JsonSerializer)
+  fullName: stellar_dotnet_sdk.responses.TransactionDeserializer.WriteJson(JsonWriter, System.Object, JsonSerializer)
   nameWithType: TransactionDeserializer.WriteJson(JsonWriter, Object, JsonSerializer)
 - uid: stellar_dotnet_sdk.responses.TransactionDeserializer.WriteJson*
   name: WriteJson
@@ -10895,11 +10895,11 @@ references:
   commentId: T:stellar_dotnet_sdk.UriBuilderExtensions
   fullName: stellar_dotnet_sdk.UriBuilderExtensions
   nameWithType: UriBuilderExtensions
-- uid: stellar_dotnet_sdk.UriBuilderExtensions.GetQueryParams(System.UriBuilder)
+- uid: stellar_dotnet_sdk.UriBuilderExtensions.GetQueryParams(UriBuilder)
   name: GetQueryParams(UriBuilder)
-  href: api/stellar_dotnet_sdk.UriBuilderExtensions.html#stellar_dotnet_sdk_UriBuilderExtensions_GetQueryParams_System_UriBuilder_
-  commentId: M:stellar_dotnet_sdk.UriBuilderExtensions.GetQueryParams(System.UriBuilder)
-  fullName: stellar_dotnet_sdk.UriBuilderExtensions.GetQueryParams(System.UriBuilder)
+  href: api/stellar_dotnet_sdk.UriBuilderExtensions.html#stellar_dotnet_sdk_UriBuilderExtensions_GetQueryParams_UriBuilder_
+  commentId: M:stellar_dotnet_sdk.UriBuilderExtensions.GetQueryParams(UriBuilder)
+  fullName: stellar_dotnet_sdk.UriBuilderExtensions.GetQueryParams(UriBuilder)
   nameWithType: UriBuilderExtensions.GetQueryParams(UriBuilder)
 - uid: stellar_dotnet_sdk.UriBuilderExtensions.GetQueryParams*
   name: GetQueryParams
@@ -10908,11 +10908,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.UriBuilderExtensions.GetQueryParams
   nameWithType: UriBuilderExtensions.GetQueryParams
-- uid: stellar_dotnet_sdk.UriBuilderExtensions.SetPath(System.UriBuilder,System.String)
+- uid: stellar_dotnet_sdk.UriBuilderExtensions.SetPath(UriBuilder,System.String)
   name: SetPath(UriBuilder, String)
-  href: api/stellar_dotnet_sdk.UriBuilderExtensions.html#stellar_dotnet_sdk_UriBuilderExtensions_SetPath_System_UriBuilder_System_String_
-  commentId: M:stellar_dotnet_sdk.UriBuilderExtensions.SetPath(System.UriBuilder,System.String)
-  fullName: stellar_dotnet_sdk.UriBuilderExtensions.SetPath(System.UriBuilder, System.String)
+  href: api/stellar_dotnet_sdk.UriBuilderExtensions.html#stellar_dotnet_sdk_UriBuilderExtensions_SetPath_UriBuilder_System_String_
+  commentId: M:stellar_dotnet_sdk.UriBuilderExtensions.SetPath(UriBuilder,System.String)
+  fullName: stellar_dotnet_sdk.UriBuilderExtensions.SetPath(UriBuilder, System.String)
   nameWithType: UriBuilderExtensions.SetPath(UriBuilder, String)
 - uid: stellar_dotnet_sdk.UriBuilderExtensions.SetPath*
   name: SetPath
@@ -10921,11 +10921,11 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.UriBuilderExtensions.SetPath
   nameWithType: UriBuilderExtensions.SetPath
-- uid: stellar_dotnet_sdk.UriBuilderExtensions.SetQueryParam(System.UriBuilder,System.String,System.String)
+- uid: stellar_dotnet_sdk.UriBuilderExtensions.SetQueryParam(UriBuilder,System.String,System.String)
   name: SetQueryParam(UriBuilder, String, String)
-  href: api/stellar_dotnet_sdk.UriBuilderExtensions.html#stellar_dotnet_sdk_UriBuilderExtensions_SetQueryParam_System_UriBuilder_System_String_System_String_
-  commentId: M:stellar_dotnet_sdk.UriBuilderExtensions.SetQueryParam(System.UriBuilder,System.String,System.String)
-  fullName: stellar_dotnet_sdk.UriBuilderExtensions.SetQueryParam(System.UriBuilder, System.String, System.String)
+  href: api/stellar_dotnet_sdk.UriBuilderExtensions.html#stellar_dotnet_sdk_UriBuilderExtensions_SetQueryParam_UriBuilder_System_String_System_String_
+  commentId: M:stellar_dotnet_sdk.UriBuilderExtensions.SetQueryParam(UriBuilder,System.String,System.String)
+  fullName: stellar_dotnet_sdk.UriBuilderExtensions.SetQueryParam(UriBuilder, System.String, System.String)
   nameWithType: UriBuilderExtensions.SetQueryParam(UriBuilder, String, String)
 - uid: stellar_dotnet_sdk.UriBuilderExtensions.SetQueryParam*
   name: SetQueryParam
