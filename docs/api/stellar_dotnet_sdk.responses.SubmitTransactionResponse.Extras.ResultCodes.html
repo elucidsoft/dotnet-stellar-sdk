@@ -82,19 +82,19 @@ see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stell
   <h6><strong>Assembly</strong>: stellar-dotnet-sdk.dll</h6>
   <h5 id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ResultCodes</code></pre>
+    <pre><code class="lang-csharp hljs">public class ResultCodes : object</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_System_Collections_Generic_List_System_String__.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.%23ctor(System.String%2CSystem.Collections.Generic.List%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_List_System_String__.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.%23ctor(System.String%2CList%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Kirbyrawr/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L146">View Source</a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L146">View Source</a>
   </span>
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor*"></a>
-  <h4 id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_System_Collections_Generic_List_System_String__" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor(System.String,System.Collections.Generic.List{System.String})">ResultCodes(String, List&lt;String&gt;)</h4>
+  <h4 id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_List_System_String__" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor(System.String,List{System.String})">ResultCodes(String, List&lt;String&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -117,7 +117,7 @@ see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stell
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">operationsResultCodes</span></td>
         <td></td>
       </tr>
@@ -130,7 +130,7 @@ see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stell
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes_OperationsResultCodes.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.OperationsResultCodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Kirbyrawr/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L143">View Source</a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L143">View Source</a>
   </span>
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes_OperationsResultCodes_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.OperationsResultCodes*"></a>
   <h4 id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes_OperationsResultCodes" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.OperationsResultCodes">OperationsResultCodes</h4>
@@ -138,8 +138,7 @@ see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stell
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;operations&quot;)]
-public List&lt;string&gt; OperationsResultCodes { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; OperationsResultCodes { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -151,7 +150,7 @@ public List&lt;string&gt; OperationsResultCodes { get; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -161,7 +160,7 @@ public List&lt;string&gt; OperationsResultCodes { get; }</code></pre>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes_TransactionResultCode.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.TransactionResultCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Kirbyrawr/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L140">View Source</a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L140">View Source</a>
   </span>
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes_TransactionResultCode_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.TransactionResultCode*"></a>
   <h4 id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes_TransactionResultCode" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.TransactionResultCode">TransactionResultCode</h4>
@@ -169,8 +168,7 @@ public List&lt;string&gt; OperationsResultCodes { get; }</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;transaction&quot;)]
-public string TransactionResultCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string TransactionResultCode { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -198,7 +196,7 @@ public string TransactionResultCode { get; }</code></pre>
                     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Kirbyrawr/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L138" class="contribution-link">View Source</a>
+                    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L138" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
