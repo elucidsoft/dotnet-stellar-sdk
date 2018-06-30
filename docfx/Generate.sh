@@ -2,6 +2,7 @@ SOURCE_DIR=$PWD
 TEMP_REPO_DIR=$PWD/../dotnet-stellar-sdk-temp-docs
 
 echo "Generating Documentation"
+docfx metadata docfx.json
 docfx build docfx.json
 
 echo "Removing temporal directory $TEMP_REPO_DIR"
