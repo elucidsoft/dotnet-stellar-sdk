@@ -1,0 +1,64 @@
+{
+	"metadata": [{
+		"src": [{
+			"files": ["**/*.csproj"],
+			"src": "../stellar-dotnet-sdk"
+		}],
+		"dest": "api",
+		"filter": "filterConfig.yml",
+		"disableGitFeatures": false
+	}],
+	"build": {
+		"content": [{
+				"files": [
+					"api/**.yml",
+					"api/index.md"
+				]
+			},
+			{
+				"files": [
+					"articles/**.md",
+					"articles/**/toc.yml",
+					"toc.yml",
+					"*.md"
+				]
+			}
+		],
+		"resource": [{
+			"files": [
+				"images/**"
+			]
+		}],
+		"overwrite": [{
+			"files": [
+				"apidoc/**.md"
+			],
+			"exclude": [
+				"obj/**",
+				"docs/**"
+			]
+		}],
+		"dest": "_site",
+		"filter": "filterConfig.yml",
+		"globalMetadataFiles": [],
+		"fileMetadataFiles": [],
+		"globalMetadata": {
+			"_appLogoPath" : "images/logo.svg",
+			"_appFaviconPath" : "favicon",
+			"_gitContribute": {
+				"repo": "https://github.com/elucidsoft/dotnet-stellar-sdk",
+				"branch": "master"
+			}
+		},
+		"template": [
+			"default",
+			"templates/docfx-tmpl/src"
+		],
+		"postProcessors": [],
+		"markdownEngineName": "markdig",
+		"noLangKeyword": false,
+		"keepFileLink": false,
+		"cleanupCacheHistory": false,
+		"disableGitFeatures": false
+	}
+}
