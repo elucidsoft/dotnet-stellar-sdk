@@ -69,243 +69,270 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="stellar_dotnet_sdk.Signer">
-  
-  
-  <h1 id="stellar_dotnet_sdk_Signer" data-uid="stellar_dotnet_sdk.Signer" class="text-break">Class Signer
+  <h1 id="stellar_dotnet_sdk_Signer" data-uid="stellar_dotnet_sdk.Signer">Class Signer
   </h1>
   <div class="markdown level0 summary"><p>Signer is a helper class that creates <a class="xref" href="stellar_dotnet_sdk.xdr.SignerKey.html">SignerKey</a> objects.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
+  
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">Signer</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="stellar_dotnet_sdk.html">stellar_dotnet_sdk</a></h6>
+  
+  
+  
+  <h6><strong>Namespace</strong>: System.Dynamic.ExpandoObject</h6>
   <h6><strong>Assembly</strong>: stellar-dotnet-sdk.dll</h6>
+  
   <h5 id="stellar_dotnet_sdk_Signer_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class Signer : object</code></pre>
   </div>
+  
+  
+  
+  
+  
   <h3 id="methods">Methods
   </h3>
+  
   <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Signer_Ed25519PublicKey_stellar_dotnet_sdk_KeyPair_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Signer.Ed25519PublicKey(stellar_dotnet_sdk.KeyPair)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Signer_Ed25519PublicKey_stellar_dotnet_sdk_KeyPair_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Signer.Ed25519PublicKey(stellar_dotnet_sdk.KeyPair)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Signer.cs/#L17">View Source</a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Signer.cs/#L17" title="View Source"><i class="fa fa-code"></i></a>
   </span>
+  
   <a id="stellar_dotnet_sdk_Signer_Ed25519PublicKey_" data-uid="stellar_dotnet_sdk.Signer.Ed25519PublicKey*"></a>
-  <h4 id="stellar_dotnet_sdk_Signer_Ed25519PublicKey_stellar_dotnet_sdk_KeyPair_" data-uid="stellar_dotnet_sdk.Signer.Ed25519PublicKey(stellar_dotnet_sdk.KeyPair)">Ed25519PublicKey(KeyPair)</h4>
+  
+  <h4 id="stellar_dotnet_sdk_Signer_Ed25519PublicKey_stellar_dotnet_sdk_KeyPair_" data-uid="stellar_dotnet_sdk.Signer.Ed25519PublicKey(stellar_dotnet_sdk.KeyPair)"><a href="#collapsible-stellar_dotnet_sdk_Signer_Ed25519PublicKey_stellar_dotnet_sdk_KeyPair_" class="expander" data-toggle="collapse">Ed25519PublicKey(KeyPair)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Signer_Ed25519PublicKey_stellar_dotnet_sdk_KeyPair_" class="collapse in">
   <div class="markdown level1 summary"><p>Create <pre><code>ed25519PublicKey</code></pre> <a class="xref" href="stellar_dotnet_sdk.xdr.SignerKey.html">SignerKey</a> from
 a <see cref="!:sdkxdr.KeyPair"></see></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
+  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static SignerKey Ed25519PublicKey(KeyPair keyPair)</code></pre>
   </div>
+  
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
-        <td><span class="parametername">keyPair</span></td>
-        <td></td>
-      </tr>
-    </tbody>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
+        <span class="parametername">keyPair</span>
+        <p>
+      </td>
+    </tr>
   </table>
+  
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.xdr.SignerKey.html">SignerKey</a></td>
-        <td><p>sdkxdr.SignerKey</p>
-</td>
-      </tr>
-    </tbody>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.xdr.SignerKey.html">SignerKey</a>
+        <p><p>sdkxdr.SignerKey</p>
+</p>
+      </td>
+    </tr>
   </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
   <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Signer_PreAuthTx_stellar_dotnet_sdk_Transaction_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Signer.PreAuthTx(stellar_dotnet_sdk.Transaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Signer_PreAuthTx_stellar_dotnet_sdk_Transaction_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Signer.PreAuthTx(stellar_dotnet_sdk.Transaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Signer.cs/#L51">View Source</a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Signer.cs/#L51" title="View Source"><i class="fa fa-code"></i></a>
   </span>
+  
   <a id="stellar_dotnet_sdk_Signer_PreAuthTx_" data-uid="stellar_dotnet_sdk.Signer.PreAuthTx*"></a>
-  <h4 id="stellar_dotnet_sdk_Signer_PreAuthTx_stellar_dotnet_sdk_Transaction_" data-uid="stellar_dotnet_sdk.Signer.PreAuthTx(stellar_dotnet_sdk.Transaction)">PreAuthTx(Transaction)</h4>
+  
+  <h4 id="stellar_dotnet_sdk_Signer_PreAuthTx_stellar_dotnet_sdk_Transaction_" data-uid="stellar_dotnet_sdk.Signer.PreAuthTx(stellar_dotnet_sdk.Transaction)"><a href="#collapsible-stellar_dotnet_sdk_Signer_PreAuthTx_stellar_dotnet_sdk_Transaction_" class="expander" data-toggle="collapse">PreAuthTx(Transaction)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Signer_PreAuthTx_stellar_dotnet_sdk_Transaction_" class="collapse in">
   <div class="markdown level1 summary"><p>Create <pre><code>preAuthTx</code></pre> <a class="xref" href="stellar_dotnet_sdk.xdr.SignerKey.html">SignerKey</a> from
 a <a class="xref" href="stellar_dotnet_sdk.xdr.Transaction.html">Transaction</a> hash.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
+  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static SignerKey PreAuthTx(Transaction tx)</code></pre>
   </div>
+  
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.Transaction.html">Transaction</a></td>
-        <td><span class="parametername">tx</span></td>
-        <td></td>
-      </tr>
-    </tbody>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Transaction.html">Transaction</a></span>
+        <span class="parametername">tx</span>
+        <p>
+      </td>
+    </tr>
   </table>
+  
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.xdr.SignerKey.html">SignerKey</a></td>
-        <td><p>sdkxdr.SignerKey</p>
-</td>
-      </tr>
-    </tbody>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.xdr.SignerKey.html">SignerKey</a>
+        <p><p>sdkxdr.SignerKey</p>
+</p>
+      </td>
+    </tr>
   </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
   <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Signer_PreAuthTx_System_Byte___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Signer.PreAuthTx(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Signer_PreAuthTx_System_Byte___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Signer.PreAuthTx(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Signer.cs/#L71">View Source</a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Signer.cs/#L71" title="View Source"><i class="fa fa-code"></i></a>
   </span>
+  
   <a id="stellar_dotnet_sdk_Signer_PreAuthTx_" data-uid="stellar_dotnet_sdk.Signer.PreAuthTx*"></a>
-  <h4 id="stellar_dotnet_sdk_Signer_PreAuthTx_System_Byte___" data-uid="stellar_dotnet_sdk.Signer.PreAuthTx(System.Byte[])">PreAuthTx(Byte[])</h4>
+  
+  <h4 id="stellar_dotnet_sdk_Signer_PreAuthTx_System_Byte___" data-uid="stellar_dotnet_sdk.Signer.PreAuthTx(System.Byte[])"><a href="#collapsible-stellar_dotnet_sdk_Signer_PreAuthTx_System_Byte___" class="expander" data-toggle="collapse">PreAuthTx(Byte[])</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Signer_PreAuthTx_System_Byte___" class="collapse in">
   <div class="markdown level1 summary"><p>Create <pre><code>preAuthTx</code></pre> <a class="xref" href="stellar_dotnet_sdk.xdr.SignerKey.html">SignerKey</a> from
 a transaction hash.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
+  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static SignerKey PreAuthTx(byte[] hash)</code></pre>
   </div>
+  
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Byte</span>[]</td>
-        <td><span class="parametername">hash</span></td>
-        <td></td>
-      </tr>
-    </tbody>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Byte</span>[]</span>
+        <span class="parametername">hash</span>
+        <p>
+      </td>
+    </tr>
   </table>
+  
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.xdr.SignerKey.html">SignerKey</a></td>
-        <td><p>sdkxdr.SignerKey</p>
-</td>
-      </tr>
-    </tbody>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.xdr.SignerKey.html">SignerKey</a>
+        <p><p>sdkxdr.SignerKey</p>
+</p>
+      </td>
+    </tr>
   </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
   <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Signer_Sha256Hash_System_Byte___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Signer.Sha256Hash(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Signer_Sha256Hash_System_Byte___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Signer.Sha256Hash(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Signer.cs/#L31">View Source</a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Signer.cs/#L31" title="View Source"><i class="fa fa-code"></i></a>
   </span>
+  
   <a id="stellar_dotnet_sdk_Signer_Sha256Hash_" data-uid="stellar_dotnet_sdk.Signer.Sha256Hash*"></a>
-  <h4 id="stellar_dotnet_sdk_Signer_Sha256Hash_System_Byte___" data-uid="stellar_dotnet_sdk.Signer.Sha256Hash(System.Byte[])">Sha256Hash(Byte[])</h4>
+  
+  <h4 id="stellar_dotnet_sdk_Signer_Sha256Hash_System_Byte___" data-uid="stellar_dotnet_sdk.Signer.Sha256Hash(System.Byte[])"><a href="#collapsible-stellar_dotnet_sdk_Signer_Sha256Hash_System_Byte___" class="expander" data-toggle="collapse">Sha256Hash(Byte[])</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Signer_Sha256Hash_System_Byte___" class="collapse in">
   <div class="markdown level1 summary"><p>Create <pre><code>sha256Hash</code></pre> <a class="xref" href="stellar_dotnet_sdk.xdr.SignerKey.html">SignerKey</a> from
 a sha256 hash of a preimage.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
+  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static SignerKey Sha256Hash(byte[] hash)</code></pre>
   </div>
+  
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Byte</span>[]</td>
-        <td><span class="parametername">hash</span></td>
-        <td></td>
-      </tr>
-    </tbody>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Byte</span>[]</span>
+        <span class="parametername">hash</span>
+        <p>
+      </td>
+    </tr>
   </table>
+  
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.xdr.SignerKey.html">SignerKey</a></td>
-        <td><p>sdkxdr.SignerKey</p>
-</td>
-      </tr>
-    </tbody>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.xdr.SignerKey.html">SignerKey</a>
+        <p><p>sdkxdr.SignerKey</p>
+</p>
+      </td>
+    </tr>
   </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
 </article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Signer.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Signer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Signer.cs/#L9" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Signer.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Signer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Signer.cs/#L9" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
               </nav>
             </div>
           </div>
