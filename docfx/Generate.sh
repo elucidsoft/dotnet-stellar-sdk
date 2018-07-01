@@ -2,6 +2,7 @@ SOURCE_DIR=$PWD
 TEMP_REPO_DIR=$PWD/../dotnet-stellar-sdk-temp-docs
 
 echo "Generating Documentation"
+docfx metadata docfx.json
 docfx build docfx.json
 
 echo "Removing temporal directory $TEMP_REPO_DIR"
@@ -16,9 +17,13 @@ cd $TEMP_REPO_DIR
 git rm -r *
 
 echo "Copy documentation into the repository"
-cp -r $SOURCE_DIR/docfx/_site/* .
+cp -r $SOURCE_DIR/_site/* .
 
 echo "Push the new docs to the remote branch"
 git add --all
 git commit -m "Update documentation"
 git push origin gh-pages
+
+echo "Cleaning"
+cd $SOURCE_DIR
+rm -rf $TEMP_REPO_DIR
