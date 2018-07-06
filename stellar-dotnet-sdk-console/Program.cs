@@ -19,6 +19,10 @@ namespace TestConsole
             Network.UseTestNetwork();
             var server = new Server("https://horizon-testnet.stellar.org");
 
+            var friendBot = await server.TestNetFriendBot
+                .FundAccount(KeyPair.Random())
+                .Execute();
+
             await GetLedgerTransactions(server);
             await ShowAccountTransactions(server);
 

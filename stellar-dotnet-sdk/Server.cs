@@ -43,6 +43,8 @@ namespace stellar_dotnet_sdk
 
         public TransactionsRequestBuilder Transactions => new TransactionsRequestBuilder(_serverUri);
 
+        public FriendBotRequestBuilder TestNetFriendBot => new FriendBotRequestBuilder(_serverUri);
+
         public void Dispose()
         {
             HttpClient?.Dispose();
