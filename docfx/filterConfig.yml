@@ -1,0 +1,7 @@
+apiRules:
+- exclude:
+    uidRegex: '^(Chaos.NaCl).*'
+    type: Namespace
+- exclude:
+    uidRegex: ^System\.Object
+    type: Type
