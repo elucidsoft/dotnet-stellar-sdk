@@ -6,5 +6,8 @@
   href: api/
   homepage: api/index.md
 
+- name: Examples
+  href: examples/intro.md
+
 - name: Github
   href: https://github.com/elucidsoft/dotnet-stellar-sdk
