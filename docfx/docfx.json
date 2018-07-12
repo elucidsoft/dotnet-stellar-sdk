@@ -20,7 +20,9 @@
 					"articles/**.md",
 					"articles/**/toc.yml",
 					"toc.yml",
-					"*.md"
+					"*.md",
+					"examples/**.md",
+					"examples/**/toc.yml",
 				]
 			}
 		],
