@@ -165,6 +165,48 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        public void TestToUnsignedEnvelopeXdr()
+        {
+            // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+
+            var account = new Account(source, 2908908335136768L);
+            var transaction = new Transaction.Builder(account)
+                .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                .Build();
+            try
+            {
+                transaction.ToUnsignedEnvelopeXdr();
+            }
+            catch (Exception exception)
+            {
+                Assert.Fail("Expected no exception, but got: " + exception.Message);
+            }
+        }
+
+        [TestMethod]
+        public void TestToUnsignedEnvelopeXdrBase64()
+        {
+            // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+
+            var account = new Account(source, 2908908335136768L);
+            var transaction = new Transaction.Builder(account)
+                .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                .Build();
+            try
+            {
+                transaction.ToUnsignedEnvelopeXdrBase64();
+            }
+            catch (Exception exception)
+            {
+                Assert.Fail("Expected no exception, but got: " + exception.Message);
+            }
+        }
+
+        [TestMethod]
         public void TestNoOperations()
         {
             // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4

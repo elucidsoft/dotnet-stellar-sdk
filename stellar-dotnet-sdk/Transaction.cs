@@ -182,6 +182,7 @@ namespace stellar_dotnet_sdk
             var thisXdr = new TransactionEnvelope();
             var transaction = ToXdr();
             thisXdr.Tx = transaction;
+            thisXdr.Signatures = new DecoratedSignature[0];
 
             return thisXdr;
         }
