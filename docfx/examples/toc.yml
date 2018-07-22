@@ -8,3 +8,5 @@
     name: Get Account Balance
   - href: send_native_assets.md
     name: Send Native Assets
+  - href: export_transaction_to_xdr_base64.md
+    name: Export Transaction to XDR (Base64)
