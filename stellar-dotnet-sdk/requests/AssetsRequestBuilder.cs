@@ -15,18 +15,9 @@ namespace stellar_dotnet_sdk.requests
         /// 
         /// </summary>
         /// <param name="serverUri"></param>
-        public AssetsRequestBuilder(Uri serverUri) : base(serverUri, "assets")
+        public AssetsRequestBuilder(Uri serverUri, HttpClient httpClient)
+            : base(serverUri, "assets", httpClient)
         {
-        }
-
-        public static async Task<Page<AssetResponse>> Execute(Uri uri)
-        {
-            var responseHandler = new ResponseHandler<Page<AssetResponse>>();
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
         }
 
         /// <summary>
@@ -57,7 +48,7 @@ namespace stellar_dotnet_sdk.requests
         /// <returns></returns>
         public async Task<Page<AssetResponse>> Execute()
         {
-            return await Execute(BuildUri());
+            return await Execute<Page<AssetResponse>>(BuildUri());
         }
     }
 }

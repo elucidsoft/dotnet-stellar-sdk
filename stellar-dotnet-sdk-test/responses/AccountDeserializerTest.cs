@@ -10,9 +10,14 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountResponse()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "account.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "account.json"));
             var account = JsonSingleton.GetInstance<AccountResponse>(json);
 
+            AssertTestData(account);
+        }
+
+        public static void AssertTestData(AccountResponse account)
+        {
             Assert.AreEqual(account.KeyPair.AccountId, "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
             Assert.AreEqual(account.PagingToken, "1");
             Assert.AreEqual(account.SequenceNumber, 2319149195853854);

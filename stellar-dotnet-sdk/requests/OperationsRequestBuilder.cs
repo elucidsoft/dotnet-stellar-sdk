@@ -13,8 +13,8 @@ namespace stellar_dotnet_sdk.requests
         ///     Builds requests connected to operations.
         /// </summary>
         /// <param name="serverUri"></param>
-        public OperationsRequestBuilder(Uri serverUri)
-            : base(serverUri, "operations")
+        public OperationsRequestBuilder(Uri serverUri, HttpClient httpClient)
+            : base(serverUri, "operations", httpClient)
         {
         }
 
@@ -29,11 +29,9 @@ namespace stellar_dotnet_sdk.requests
         public async Task<OperationResponse> Operation(Uri uri)
         {
             var responseHandler = new ResponseHandler<OperationResponse>();
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
+
+            var response = await HttpClient.GetAsync(uri);
+            return await responseHandler.HandleResponse(response);
         }
 
 
@@ -131,26 +129,6 @@ namespace stellar_dotnet_sdk.requests
         }
 
         /// <summary>
-        ///     Requests specific uri and returns <see cref="Page{OperationResponse}" />.
-        ///     This method is helpful for getting the next set of results.
-        /// </summary>
-        /// <param name="uri">Uri to execute.</param>
-        /// <returns>
-        ///     <see cref="Page{OperationResponse}" />
-        /// </returns>
-        /// <exception cref="TooManyRequestsException"></exception>
-        /// <exception cref="HttpRequestException"></exception>
-        public async Task<Page<OperationResponse>> Execute(Uri uri)
-        {
-            var responseHandler = new ResponseHandler<Page<OperationResponse>>();
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
-        }
-
-        /// <summary>
         ///     Build and execute request.
         /// </summary>
         /// <returns>
@@ -160,7 +138,7 @@ namespace stellar_dotnet_sdk.requests
         /// <exception cref="HttpRequestException"></exception>
         public async Task<Page<OperationResponse>> Execute()
         {
-            return await Execute(BuildUri());
+            return await Execute<Page<OperationResponse>>(BuildUri());
         }
     }
 }

@@ -9,7 +9,8 @@ namespace stellar_dotnet_sdk.requests
     /// <inheritdoc />
     public class OffersRequestBuilder : RequestBuilder<OffersRequestBuilder>
     {
-        public OffersRequestBuilder(Uri serverURI) : base(serverURI, "offers")
+        public OffersRequestBuilder(Uri serverURI, HttpClient httpClient) :
+            base(serverURI, "offers", httpClient)
         { }
 
         /// <summary>
@@ -25,27 +26,12 @@ namespace stellar_dotnet_sdk.requests
             return this;
         }
 
-
-        ///<Summary>
-        /// Requests specific <code>uri</code> and returns {@link Page} of {@link EffectResponse}.
-        /// This method is helpful for getting the next set of results.
-        /// </Summary>
-        public static async Task<Page<OfferResponse>> Execute(Uri uri)
-        {
-            var responseHandler = new ResponseHandler<Page<OfferResponse>>();
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
-        }
-
         ///<Summary>
         /// Build and execute request.
         /// </Summary>
         public async Task<Page<OfferResponse>> Execute()
         {
-            return await Execute(BuildUri());
+            return await Execute<Page<OfferResponse>>(BuildUri());
         }
     }
 }

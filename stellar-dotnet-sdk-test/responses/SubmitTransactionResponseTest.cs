@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTransactionFailureResponse()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "submitTransactionTransactionFailure.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "submitTransactionTransactionFailure.json"));
             var submitTransactionResponse = JsonSingleton.GetInstance<SubmitTransactionResponse>(json);
 
             Assert.AreEqual(submitTransactionResponse.IsSuccess(), false);
@@ -22,7 +22,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeOperationFailureResponse()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "submitTransactionOperationFailure.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "submitTransactionOperationFailure.json"));
             var submitTransactionResponse = JsonSingleton.GetInstance<SubmitTransactionResponse>(json);
 
             Assert.AreEqual(submitTransactionResponse.IsSuccess(), false);
@@ -35,7 +35,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeSuccessResponse()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "submitTransactionSuccess.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "submitTransactionSuccess.json"));
             var submitTransactionResponse = JsonSingleton.GetInstance<SubmitTransactionResponse>(json);
 
             Assert.AreEqual(submitTransactionResponse.IsSuccess(), true);
@@ -50,7 +50,7 @@ namespace stellar_dotnet_sdk_test.responses
         public void TestDeserializeNoOfferId()
         {
 
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "submitTransactionNoOfferId.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "submitTransactionNoOfferId.json"));
             var submitTransactionResponse = JsonSingleton.GetInstance<SubmitTransactionResponse>(json);
 
             Assert.AreEqual(submitTransactionResponse.IsSuccess(), true);

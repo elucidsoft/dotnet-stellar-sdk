@@ -11,9 +11,15 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserialize()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "tradesPage.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "tradesPage.json"));
             var tradesPage = JsonSingleton.GetInstance<Page<TradeResponse>>(json);
 
+            AssertTestData(tradesPage);
+
+        }
+
+        public static void AssertTestData(Page<TradeResponse> tradesPage)
+        {
             Assert.AreEqual(tradesPage.Links.Next.Href, "https://horizon.stellar.org/trades?base_asset_type=native&counter_asset_code=SLT&counter_asset_issuer=GCKA6K5PCQ6PNF5RQBF7PQDJWRHO6UOGFMRLK3DYHDOI244V47XKQ4GP&counter_asset_type=credit_alphanum4&cursor=68836785177763841-0&limit=2&order=desc");
             Assert.AreEqual(tradesPage.Links.Prev.Href, "https://horizon.stellar.org/trades?base_asset_type=native&counter_asset_code=SLT&counter_asset_issuer=GCKA6K5PCQ6PNF5RQBF7PQDJWRHO6UOGFMRLK3DYHDOI244V47XKQ4GP&counter_asset_type=credit_alphanum4&cursor=68836918321750017-0&limit=2&order=asc");
             Assert.AreEqual(tradesPage.Links.Self.Href, "https://horizon.stellar.org/trades?base_asset_type=native&counter_asset_code=SLT&counter_asset_issuer=GCKA6K5PCQ6PNF5RQBF7PQDJWRHO6UOGFMRLK3DYHDOI244V47XKQ4GP&counter_asset_type=credit_alphanum4&cursor=&limit=2&order=desc");
@@ -32,9 +38,6 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(tradesPage.Records[0].CounterAssetCode, "SLT");
             Assert.AreEqual(tradesPage.Records[0].CounterAssetIssuer, "GCKA6K5PCQ6PNF5RQBF7PQDJWRHO6UOGFMRLK3DYHDOI244V47XKQ4GP");
             Assert.AreEqual(tradesPage.Records[0].BaseIsSeller, true);
-
-
-
         }
     }
 }

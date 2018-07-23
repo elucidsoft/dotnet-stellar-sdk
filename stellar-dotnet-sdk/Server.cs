@@ -11,49 +11,49 @@ namespace stellar_dotnet_sdk
     {
         private readonly Uri _serverUri;
 
-        public Server(string uri)
+        public Server(string uri, HttpClient httpClient)
         {
-            HttpClient = new HttpClient();
+            HttpClient = httpClient;
             _serverUri = new Uri(uri);
+        }
+
+        public Server(string uri)
+            : this(uri, new HttpClient())
+        {
         }
 
         public HttpClient HttpClient { get; set; }
 
-        public AccountsRequestBuilder Accounts => new AccountsRequestBuilder(_serverUri);
+        public AccountsRequestBuilder Accounts => new AccountsRequestBuilder(_serverUri, HttpClient);
 
-        public AssetsRequestBuilder Assets => new AssetsRequestBuilder(_serverUri);
+        public AssetsRequestBuilder Assets => new AssetsRequestBuilder(_serverUri, HttpClient);
 
-        public EffectsRequestBuilder Effects => new EffectsRequestBuilder(_serverUri);
+        public EffectsRequestBuilder Effects => new EffectsRequestBuilder(_serverUri, HttpClient);
 
-        public LedgersRequestBuilder Ledgers => new LedgersRequestBuilder(_serverUri);
+        public LedgersRequestBuilder Ledgers => new LedgersRequestBuilder(_serverUri, HttpClient);
 
-        public OffersRequestBuilder Offers => new OffersRequestBuilder(_serverUri);
+        public OffersRequestBuilder Offers => new OffersRequestBuilder(_serverUri, HttpClient);
 
-        public OperationsRequestBuilder Operations => new OperationsRequestBuilder(_serverUri);
+        public OperationsRequestBuilder Operations => new OperationsRequestBuilder(_serverUri, HttpClient);
 
-        public OrderBookRequestBuilder OrderBook => new OrderBookRequestBuilder(_serverUri);
-
+        public OrderBookRequestBuilder OrderBook => new OrderBookRequestBuilder(_serverUri, HttpClient);
         
+        public TradesRequestBuilder Trades => new TradesRequestBuilder(_serverUri, HttpClient);
 
-        public TradesRequestBuilder Trades => new TradesRequestBuilder(_serverUri);
+        public PathsRequestBuilder Paths => new PathsRequestBuilder(_serverUri, HttpClient);
 
-        public PathsRequestBuilder Paths => new PathsRequestBuilder(_serverUri);
+        public PaymentsRequestBuilder Payments => new PaymentsRequestBuilder(_serverUri, HttpClient);
 
-        public PaymentsRequestBuilder Payments => new PaymentsRequestBuilder(_serverUri);
+        public TransactionsRequestBuilder Transactions => new TransactionsRequestBuilder(_serverUri, HttpClient);
 
-        public TransactionsRequestBuilder Transactions => new TransactionsRequestBuilder(_serverUri);
-
-        public FriendBotRequestBuilder TestNetFriendBot => new FriendBotRequestBuilder(_serverUri);
+        public FriendBotRequestBuilder TestNetFriendBot => new FriendBotRequestBuilder(_serverUri, HttpClient);
 
         public void Dispose()
         {
             HttpClient?.Dispose();
         }
 
-        public TradesAggregationRequestBuilder TradeAggregations(Asset baseAsset, Asset counterAsset, long startTime, long endTime, long resolution)
-        {
-            return new TradesAggregationRequestBuilder(_serverUri, baseAsset, counterAsset, startTime, endTime, resolution);
-        }
+        public TradesAggregationRequestBuilder TradeAggregations => new TradesAggregationRequestBuilder(_serverUri, HttpClient);
 
         public async Task<SubmitTransactionResponse> SubmitTransaction(Transaction transaction)
         {

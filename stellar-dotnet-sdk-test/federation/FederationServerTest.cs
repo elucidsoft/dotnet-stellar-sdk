@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
-using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using stellar_dotnet_sdk.federation;
+using static stellar_dotnet_sdk_test.FederationServerTest;
 
 namespace stellar_dotnet_sdk_test.federation
 {
     [TestClass]
-    public abstract class FederationServerTest
+    public abstract partial class FederationServerTest
     {
         private const string SuccessResponse = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\"}";
         private const string SuccessResponseWithMemo = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\", \"memo_type\": \"text\", \"memo\": \"test\"}";
@@ -100,22 +100,6 @@ namespace stellar_dotnet_sdk_test.federation
             When(HttpNotFound, NotFoundResponse);
 
             var unused = await _server.ResolveAddress("bob*stellar.org");
-        }
-
-        public abstract class FakeHttpMessageHandler : HttpMessageHandler
-        {
-            public Uri RequestUri { get; private set; }
-
-            public virtual HttpResponseMessage Send(HttpRequestMessage request)
-            {
-                throw new NotImplementedException();
-            }
-
-            protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-            {
-                RequestUri = request.RequestUri;
-                return await Task.FromResult(Send(request));
-            }
         }
     }
 }

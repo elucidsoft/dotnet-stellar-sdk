@@ -12,7 +12,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeCreateAccountOperation()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationCreateAccount.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "operationCreateAccount.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -38,13 +38,18 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializePaymentOperation()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationPayment.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "operationPayment.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is PaymentOperationResponse);
             var operation = (PaymentOperationResponse)instance;
 
+            AssertOperationTestData(operation);
+        }
+
+        public static void AssertOperationTestData(PaymentOperationResponse operation)
+        {
             Assert.AreEqual(operation.SourceAccount.AccountId, "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ");
             Assert.AreEqual(operation.Id, 3940808587743233L);
 
@@ -57,7 +62,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeNonNativePaymentOperation()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationPaymentNonNative.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "operationPaymentNonNative.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -73,7 +78,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAllowTrustOperation()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationAllowTrust.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "operationAllowTrust.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -89,7 +94,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeChangeTrustOperation()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationChangeTrust.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "operationChangeTrust.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -105,7 +110,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeSetOptionsOperation()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationSetOptions.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "operationSetOptions.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -128,7 +133,7 @@ namespace stellar_dotnet_sdk_test.responses
         public void TestDeserializeAccountMergeOperation()
         {
 
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationAccountMerge.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "operationAccountMerge.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -142,7 +147,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeManageOfferOperation()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationManageOffer.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "operationManageOffer.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -158,7 +163,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializePathPaymentOperation()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationPathPayment.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "operationPathPayment.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -176,7 +181,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeCreatePassiveOfferOperation()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationPassiveOffer.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "operationPassiveOffer.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -191,7 +196,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeInfationOperation()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationInflation.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "operationInflation.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -204,7 +209,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestManageDataOperation()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationManageData.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "operationManageData.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -219,7 +224,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeManageDataOperationValueEmpty()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "operationManageDataValueEmpty.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "operationManageDataValueEmpty.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...

@@ -12,9 +12,14 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserialize()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "pathsPage.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "pathsPage.json"));
             var pathsPage = JsonSingleton.GetInstance<Page<PathResponse>>(json);
 
+            AssertTestData(pathsPage);
+        }
+
+        public static void AssertTestData(Page<PathResponse> pathsPage)
+        {
             Assert.IsNotNull(pathsPage.NextPage());
 
             Assert.AreEqual(pathsPage.Records[0].DestinationAmount, "20.0000000");
