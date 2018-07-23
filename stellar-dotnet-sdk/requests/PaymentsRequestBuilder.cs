@@ -10,9 +10,10 @@ namespace stellar_dotnet_sdk.requests
     public class PaymentsRequestBuilder : RequestBuilder<PaymentsRequestBuilder>
     {
 
-        public PaymentsRequestBuilder(Uri serverURI):base(serverURI, "payments")
+        public PaymentsRequestBuilder(Uri serverURI, HttpClient httpClient)
+            : base(serverURI, "payments", httpClient)
         {
-            
+
         }
 
 
@@ -52,20 +53,6 @@ namespace stellar_dotnet_sdk.requests
         }
 
         ///<Summary>
-        /// Requests specific <code>uri</code> and returns {@link Page} of {@link EffectResponse}.
-        /// This method is helpful for getting the next set of results.
-        /// </Summary>
-        public static async Task<Page<OperationResponse>> Execute(Uri uri)
-        {
-            var responseHandler = new ResponseHandler<Page<OperationResponse>>();
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
-        }
-
-        ///<Summary>
         /// Allows to stream SSE events from horizon.
         /// Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
         /// This mode will keep the connection to horizon open and horizon will continue to return
@@ -95,7 +82,7 @@ namespace stellar_dotnet_sdk.requests
         /// </Summary>
         public async Task<Page<OperationResponse>> Execute()
         {
-            return await Execute(BuildUri());
+            return await Execute<Page<OperationResponse>>(BuildUri());
         }
     }
 }

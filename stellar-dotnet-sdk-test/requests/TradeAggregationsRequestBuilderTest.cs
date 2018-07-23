@@ -1,7 +1,10 @@
 ﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.requests;
+using stellar_dotnet_sdk_test.responses;
 
 namespace stellar_dotnet_sdk_test.requests
 {
@@ -12,13 +15,15 @@ namespace stellar_dotnet_sdk_test.requests
         public void TestTradeAggregations()
         {
             Server server = new Server("https://horizon-testnet.stellar.org");
-            Uri uri = server.TradeAggregations(
-                    new AssetTypeNative(),
-                    Asset.CreateNonNativeAsset("BTC", KeyPair.FromAccountId("GATEMHCCKCY67ZUCKTROYN24ZYT5GK4EQZ65JJLDHKHRUZI3EUEKMTCH")),
-                    1512689100000L,
-                    1512775500000L,
-                    300000L
-            ).Limit(200).Order(OrderDirection.ASC).BuildUri();
+            Uri uri = server.TradeAggregations
+                .BaseAsset(new AssetTypeNative())
+                .CounterAsset(Asset.CreateNonNativeAsset("BTC", KeyPair.FromAccountId("GATEMHCCKCY67ZUCKTROYN24ZYT5GK4EQZ65JJLDHKHRUZI3EUEKMTCH")))
+                .StartTime(1512689100000L)
+                .EndTime(1512775500000L)
+                .Resolution(300000L)
+                .Limit(200)
+                .Order(OrderDirection.ASC)
+                .BuildUri();
 
             Assert.AreEqual(uri.ToString(), "https://horizon-testnet.stellar.org/trade_aggregations?" +
                     "base_asset_type=native&" +
@@ -32,5 +37,26 @@ namespace stellar_dotnet_sdk_test.requests
                     "order=asc");
 
         }
+
+        [TestMethod]
+        public async Task TestTradeAggregationsExecute()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "tradeAggregationsPage.json"));
+            var fakeHttpClient = RequestBuilderMock.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var account = await server.TradeAggregations
+                    .BaseAsset(new AssetTypeNative())
+                    .CounterAsset(new AssetTypeCreditAlphaNum4("BTC", KeyPair.FromAccountId("GATEMHCCKCY67ZUCKTROYN24ZYT5GK4EQZ65JJLDHKHRUZI3EUEKMTCH")))
+                    .StartTime(1512689100000L)
+                    .EndTime(1512775500000L)
+                    .Resolution(300000L)
+                    .Execute();
+                
+                TradeAggregationsPageDeserializerTest.AssertTestData(account);
+            }
+        }
+
     }
 }

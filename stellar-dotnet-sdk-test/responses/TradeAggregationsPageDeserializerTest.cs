@@ -11,9 +11,14 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod()]
         public void TestDeserialize()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "tradeAggregationsPage.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "tradeAggregationsPage.json"));
             var tradeAggregationsPage = JsonSingleton.GetInstance<Page<TradeAggregationResponse>>(json);
 
+            AssertTestData(tradeAggregationsPage);
+        }
+
+        public static void AssertTestData(Page<TradeAggregationResponse> tradeAggregationsPage)
+        {
             Assert.AreEqual(tradeAggregationsPage.Links.Next.Href, "https://horizon.stellar.org/trade_aggregations?base_asset_type=native&counter_asset_code=SLT&counter_asset_issuer=GCKA6K5PCQ6PNF5RQBF7PQDJWRHO6UOGFMRLK3DYHDOI244V47XKQ4GP&counter_asset_type=credit_alphanum4&end_time=1517532526000&limit=200&order=asc&resolution=3600000&start_time=1517529600000");
             Assert.AreEqual(tradeAggregationsPage.Links.Self.Href, "https://horizon.stellar.org/trade_aggregations?base_asset_type=native&counter_asset_code=SLT&counter_asset_issuer=GCKA6K5PCQ6PNF5RQBF7PQDJWRHO6UOGFMRLK3DYHDOI244V47XKQ4GP&counter_asset_type=credit_alphanum4&limit=200&order=asc&resolution=3600000&start_time=1517521726000&end_time=1517532526000");
 

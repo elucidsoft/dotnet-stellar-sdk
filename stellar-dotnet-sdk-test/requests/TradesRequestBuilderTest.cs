@@ -1,7 +1,10 @@
 ﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.requests;
+using stellar_dotnet_sdk_test.responses;
 
 namespace stellar_dotnet_sdk_test.requests
 {
@@ -31,5 +34,23 @@ namespace stellar_dotnet_sdk_test.requests
                          "limit=200&" +
                          "order=asc", uri.ToString());
         }
+
+        [TestMethod]
+        public async Task TestTradesExecute()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "tradesPage.json"));
+            var fakeHttpClient = RequestBuilderMock.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var trades = await server.Trades
+                    .BaseAsset(new AssetTypeCreditAlphaNum4("EUR", KeyPair.FromAccountId("GAUPA4HERNBDPVO4IUA3MJXBCRRK5W54EVXTDK6IIUTGDQRB6D5W242W")))
+                    .CounterAsset(new AssetTypeCreditAlphaNum4("USD", KeyPair.FromAccountId("GDRRHSJMHXDTQBT4JTCILNGF5AS54FEMTXL7KOLMF6TFTHRK6SSUSUZZ")))
+                    .Execute();
+
+                TradesPageDeserializerTest.AssertTestData(trades);
+            }
+        }
+
     }
 }

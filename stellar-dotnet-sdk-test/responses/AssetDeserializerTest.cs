@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeNative()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "assetAssetTypeNative.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "assetAssetTypeNative.json"));
             var asset = JsonSingleton.GetInstance<Asset>(json);
 
             Assert.AreEqual(asset.GetType(), "native");
@@ -20,7 +20,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeCredit()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "assetAssetTypeCredit.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "assetAssetTypeCredit.json"));
             var asset = JsonSingleton.GetInstance<Asset>(json);
             Assert.AreEqual(asset.GetType(), "credit_alphanum4");
             var creditAsset = (AssetTypeCreditAlphaNum) asset;

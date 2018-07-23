@@ -20,178 +20,178 @@
     <ProjectReference Include="..\stellar-dotnet-sdk\stellar-dotnet-sdk.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="responses\testdata\account.json">
+    <None Update="testdata\account.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\accountPage.json">
+    <None Update="testdata\accountPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\assetAssetTypeCredit.json">
+    <None Update="testdata\assetAssetTypeCredit.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\assetAssetTypeNative.json">
+    <None Update="testdata\assetAssetTypeNative.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\assetPage.json">
+    <None Update="testdata\assetPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectAccountInflationUpdated.json">
+    <None Update="testdata\effectAccountInflationUpdated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectDataCreated.json">
+    <None Update="testdata\effectDataCreated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectDataRemoved.json">
+    <None Update="testdata\effectDataRemoved.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectDataUpdated.json">
+    <None Update="testdata\effectDataUpdated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectPage.json">
+    <None Update="testdata\effectPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectTrade.json">
+    <None Update="testdata\effectTrade.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectTrustlineDeAuthorized.json">
+    <None Update="testdata\effectTrustlineDeAuthorized.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectTrustlineAuthorized.json">
+    <None Update="testdata\effectTrustlineAuthorized.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectTrustlineUpdated.json">
+    <None Update="testdata\effectTrustlineUpdated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectTrustlineRemoved.json">
+    <None Update="testdata\effectTrustlineRemoved.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectTrustlineCreated.json">
+    <None Update="testdata\effectTrustlineCreated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectSignerUpdated.json">
+    <None Update="testdata\effectSignerUpdated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectSignerRemoved.json">
+    <None Update="testdata\effectSignerRemoved.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectSignerCreated.json">
+    <None Update="testdata\effectSignerCreated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectAccountFlagsUpdated.json">
+    <None Update="testdata\effectAccountFlagsUpdated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectAccountHomeDomainUpdated.json">
+    <None Update="testdata\effectAccountHomeDomainUpdated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectAccountThresholdsUpdated.json">
+    <None Update="testdata\effectAccountThresholdsUpdated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectAccountDebited.json">
+    <None Update="testdata\effectAccountDebited.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectAccountCredited.json">
+    <None Update="testdata\effectAccountCredited.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectAccountRemoved.json">
+    <None Update="testdata\effectAccountRemoved.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\effectAccountCreated.json">
+    <None Update="testdata\effectAccountCreated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\friendBotFail.json">
+    <None Update="testdata\friendBotFail.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\friendBotSuccess.json">
+    <None Update="testdata\friendBotSuccess.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\ledger.json">
+    <None Update="testdata\ledger.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\ledgerPage.json">
+    <None Update="testdata\ledgerPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\offerPage.json">
+    <None Update="testdata\offerPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationAccountMerge.json">
+    <None Update="testdata\operationAccountMerge.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationAllowTrust.json">
+    <None Update="testdata\operationAllowTrust.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationChangeTrust.json">
+    <None Update="testdata\operationChangeTrust.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationCreateAccount.json">
+    <None Update="testdata\operationCreateAccount.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationInflation.json">
+    <None Update="testdata\operationInflation.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationManageData.json">
+    <None Update="testdata\operationManageData.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationManageDataValueEmpty.json">
+    <None Update="testdata\operationManageDataValueEmpty.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationManageOffer.json">
+    <None Update="testdata\operationManageOffer.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationPage.json">
+    <None Update="testdata\operationPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationPassiveOffer.json">
+    <None Update="testdata\operationPassiveOffer.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationPathPayment.json">
+    <None Update="testdata\operationPathPayment.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationPayment.json">
+    <None Update="testdata\operationPayment.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationPaymentNonNative.json">
+    <None Update="testdata\operationPaymentNonNative.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\operationSetOptions.json">
+    <None Update="testdata\operationSetOptions.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\orderBook.json">
+    <None Update="testdata\orderBook.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\pathsPage.json">
+    <None Update="testdata\pathsPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\serverFailure.json">
+    <None Update="testdata\serverFailure.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\serverSuccess.json">
+    <None Update="testdata\serverSuccess.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\submitTransactionNoOfferId.json">
+    <None Update="testdata\submitTransactionNoOfferId.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\submitTransactionOperationFailure.json">
+    <None Update="testdata\submitTransactionOperationFailure.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\submitTransactionSuccess.json">
+    <None Update="testdata\submitTransactionSuccess.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\submitTransactionTransactionFailure.json">
+    <None Update="testdata\submitTransactionTransactionFailure.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\tradeAggregationsPage.json">
+    <None Update="testdata\tradeAggregationsPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\tradesPage.json">
+    <None Update="testdata\tradesPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\transactionPageDeserialize.json">
+    <None Update="testdata\transactionPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\transactionTransaction.json">
+    <None Update="testdata\transactionTransaction.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="responses\testdata\transactionTransactionWithoutMemo.json">
+    <None Update="testdata\transactionTransactionWithoutMemo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

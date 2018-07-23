@@ -13,7 +13,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectAccountCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -32,7 +32,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectAccountRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -49,7 +49,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountCreditedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectAccountCredited.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCredited.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -68,7 +68,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountDebitedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectAccountDebited.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountDebited.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -87,7 +87,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountThresholdsUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectAccountThresholdsUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountThresholdsUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -107,7 +107,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountHomeDomainUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectAccountHomeDomainUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountHomeDomainUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -125,7 +125,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountFlagsUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectAccountFlagsUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountFlagsUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -144,7 +144,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeSignerCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectSignerCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectSignerCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -163,7 +163,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeSignerRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectSignerRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectSignerRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -182,7 +182,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeSignerUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectSignerUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectSignerUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -201,7 +201,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectTrustlineCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -220,7 +220,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectTrustlineRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -239,7 +239,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectTrustlineUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -258,7 +258,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineAuthorizedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectTrustlineAuthorized.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineAuthorized.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -278,7 +278,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineDeauthorizedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectTrustlineDeAuthorized.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineDeAuthorized.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -298,7 +298,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTradeEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectTrade.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectTrade.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -321,7 +321,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountInflationUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectAccountInflationUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountInflationUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -335,7 +335,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeDataCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectDataCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectDataCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -349,7 +349,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeDataRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectDataRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectDataRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -363,7 +363,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeDataUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "effectDataUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "effectDataUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...

@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserialize()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "ledger.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "ledger.json"));
             var ledger = JsonSingleton.GetInstance<LedgerResponse>(json);
 
             Assert.AreEqual(ledger.Hash, "686bb246db89b099cd3963a4633eb5e4315d89dfd3c00594c80b41a483847bfa");

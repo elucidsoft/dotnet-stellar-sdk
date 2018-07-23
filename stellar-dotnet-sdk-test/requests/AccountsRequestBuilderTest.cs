@@ -1,6 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.requests;
+using stellar_dotnet_sdk_test.responses;
+using System.IO;
+using System.Threading.Tasks;
+using static stellar_dotnet_sdk_test.FederationServerTest;
 
 namespace stellar_dotnet_sdk_test.requests
 {
@@ -8,7 +13,7 @@ namespace stellar_dotnet_sdk_test.requests
     public class AccountsRequestBuilderTest
     {
         [TestMethod]
-        public void TestAccounts()
+        public void TestAccountsBuildUri()
         {
             using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
@@ -21,5 +26,20 @@ namespace stellar_dotnet_sdk_test.requests
                 Assert.AreEqual("https://horizon-testnet.stellar.org/accounts?cursor=13537736921089&limit=200&order=asc", uri.ToString());
             }
         }
+
+        [TestMethod]
+        public async Task TestAccountsAccount()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "account.json"));
+            var fakeHttpClient = RequestBuilderMock.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var account = await server.Accounts.Account(KeyPair.FromAccountId("GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7"));
+
+                AccountDeserializerTest.AssertTestData(account);
+            }
+        }
+
     }
 }

@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserialize()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "transactionTransaction.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "transactionTransaction.json"));
             var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
 
             Assert.AreEqual("5c2e4dad596941ef944d72741c8f8f1a4282f8f2f141e81d827f44bf365d626b", transaction.Hash);
@@ -42,7 +42,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeWithoutMemo()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "transactionTransactionWithoutMemo.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "transactionTransactionWithoutMemo.json"));
             var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
 
             Assert.IsTrue(transaction.Memo is MemoNone);

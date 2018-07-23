@@ -10,16 +10,31 @@ namespace stellar_dotnet_sdk.requests
 {
     public class TradesAggregationRequestBuilder : RequestBuilder<TradesAggregationRequestBuilder>
     {
-        public TradesAggregationRequestBuilder(Uri serverUri, Asset baseAsset, Asset counterAsset, long startTime, long endTime, long resolution) : base(serverUri, "trade_aggregations")
+        public TradesAggregationRequestBuilder(Uri serverUri, HttpClient httpClient)
+            : base(serverUri, "trade_aggregations", httpClient)
         {
-            BaseAsset(baseAsset);
-            CounterAsset(counterAsset);
-            _uriBuilder.SetQueryParam("start_time", startTime.ToString());
-            _uriBuilder.SetQueryParam("end_time", endTime.ToString());
-            _uriBuilder.SetQueryParam("resolution", resolution.ToString());
+           
         }
 
-        public void BaseAsset(Asset asset)
+        public TradesAggregationRequestBuilder StartTime(long startTime)
+        {
+            _uriBuilder.SetQueryParam("start_time", startTime.ToString());
+            return this;
+        }
+
+        public TradesAggregationRequestBuilder EndTime(long endTime)
+        {
+            _uriBuilder.SetQueryParam("end_time", endTime.ToString());
+            return this;
+        }
+
+        public TradesAggregationRequestBuilder Resolution(long resolution)
+        {
+            _uriBuilder.SetQueryParam("resolution", resolution.ToString());
+            return this;
+        }
+
+        public TradesAggregationRequestBuilder BaseAsset(Asset asset)
         {
             _uriBuilder.SetQueryParam("base_asset_type", asset.GetType());
             if (asset is AssetTypeCreditAlphaNum)
@@ -28,9 +43,11 @@ namespace stellar_dotnet_sdk.requests
                 _uriBuilder.SetQueryParam("base_asset_code", creditAlphaNumAsset.Code);
                 _uriBuilder.SetQueryParam("base_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
+
+            return this;
         }
 
-        public void CounterAsset(Asset asset)
+        public TradesAggregationRequestBuilder CounterAsset(Asset asset)
         {
             _uriBuilder.SetQueryParam("counter_asset_type", asset.GetType());
             if (asset is AssetTypeCreditAlphaNum)
@@ -39,31 +56,17 @@ namespace stellar_dotnet_sdk.requests
                 _uriBuilder.SetQueryParam("counter_asset_code", creditAlphaNumAsset.Code);
                 _uriBuilder.SetQueryParam("counter_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
-        }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="uri"></param>
-        /// <returns></returns>
-        public static async Task<TradeAggregationResponse> Execute(Uri uri)
-        {
-            var responseHandler = new ResponseHandler<TradeAggregationResponse>();
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
-
+            return this;
         }
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public Task<TradeAggregationResponse> Execute()
+        public Task<Page<TradeAggregationResponse>> Execute()
         {
-            return Execute(BuildUri());
+            return Execute<Page<TradeAggregationResponse>>(BuildUri());
         }
     }
 }

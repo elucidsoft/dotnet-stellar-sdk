@@ -8,7 +8,8 @@ namespace stellar_dotnet_sdk.requests
 {
     public class LedgersRequestBuilder : RequestBuilder<LedgersRequestBuilder>
     {
-        public LedgersRequestBuilder(Uri serverUri) : base(serverUri, "ledgers")
+        public LedgersRequestBuilder(Uri serverUri, HttpClient httpClient)
+            : base(serverUri, "ledgers", httpClient)
         {
         }
 
@@ -21,11 +22,9 @@ namespace stellar_dotnet_sdk.requests
         public async Task<LedgerResponse> Ledger(Uri uri)
         {
             var responseHandler = new ResponseHandler<LedgerResponse>();
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
+
+            var response = await HttpClient.GetAsync(uri);
+            return await responseHandler.HandleResponse(response);
         }
 
         ///<summary>
@@ -37,20 +36,6 @@ namespace stellar_dotnet_sdk.requests
         {
             SetSegments("ledgers", ledgerSeq.ToString());
             return Ledger(BuildUri());
-        }
-
-        ///<Summary>
-        /// Requests specific <code>uri</code> and returns {@link Page} of {@link EffectResponse}.
-        /// This method is helpful for getting the next set of results.
-        /// </Summary>
-        public static async Task<Page<LedgerResponse>> Execute(Uri uri)
-        {
-            var responseHandler = new ResponseHandler<Page<LedgerResponse>>();
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
         }
 
         ///<Summary>
@@ -83,7 +68,7 @@ namespace stellar_dotnet_sdk.requests
         /// </Summary>
         public async Task<Page<LedgerResponse>> Execute()
         {
-            return await Execute(BuildUri());
+            return await Execute<Page<LedgerResponse>>(BuildUri());
         }
     }
 }

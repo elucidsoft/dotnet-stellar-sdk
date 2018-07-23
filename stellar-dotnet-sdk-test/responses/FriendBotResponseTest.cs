@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeFriendBotResponseFailureResponse()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "friendBotFail.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "friendBotFail.json"));
             var friendBotResponse = JsonSingleton.GetInstance<FriendBotResponse>(json);
 
             Assert.AreEqual(friendBotResponse.Type, "https://stellar.org/horizon-errors/https://stellar.org/horizon-errors/transaction_failed");
@@ -27,9 +27,14 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeFriendBotResponseSuccessResponse()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "friendBotSuccess.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "friendBotSuccess.json"));
             var friendBotResponse = JsonSingleton.GetInstance<FriendBotResponse>(json);
 
+            AssertSuccessTestData(friendBotResponse);
+        }
+
+        public static void AssertSuccessTestData(FriendBotResponse friendBotResponse)
+        {
             Assert.AreEqual(friendBotResponse.Links.Transaction.Href, "https://horizon-testnet.stellar.org/transactions/fc9a175cc7b21b6c6817b587be61bf0b67a83b800973920855bd9eeb9e77f803");
             Assert.AreEqual(friendBotResponse.Hash, "fc9a175cc7b21b6c6817b587be61bf0b67a83b800973920855bd9eeb9e77f803");
             Assert.AreEqual(friendBotResponse.Ledger, "9866631");
@@ -37,6 +42,5 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(friendBotResponse.ResultXdr, "AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=");
             Assert.AreEqual(friendBotResponse.ResultMetaXdr, "AAAAAAAAAAEAAAADAAAAAACWjYcAAAAAAAAAABTsgnqGKzox8vwKQZJAzOtPQQmz9ZlnD75QBeEFlDBQAAAAF0h26AAAlo2HAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAwCWjYcAAAAAAAAAABB90WssODNIgi6BHveqzxTRmIpvAFRyVNM+Hm2GVuCcAACvJ1PHMhcAYsIXAAKJCQAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAQCWjYcAAAAAAAAAABB90WssODNIgi6BHveqzxTRmIpvAFRyVNM+Hm2GVuCcAACvEAtQShcAYsIXAAKJCQAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA");
         }
-
     }
 }

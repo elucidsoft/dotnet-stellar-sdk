@@ -15,8 +15,8 @@ namespace stellar_dotnet_sdk.requests
         ///     Builds requests connected to accounts.
         /// </summary>
         /// <param name="serverUri"></param>
-        public AccountsRequestBuilder(Uri serverUri)
-            : base(serverUri, "accounts")
+        public AccountsRequestBuilder(Uri serverUri, HttpClient httpClient)
+            : base(serverUri, "accounts", httpClient)
         {
         }
 
@@ -29,11 +29,9 @@ namespace stellar_dotnet_sdk.requests
         public async Task<AccountResponse> Account(Uri uri)
         {
             var responseHandler = new ResponseHandler<AccountResponse>();
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
+
+            var response = await HttpClient.GetAsync(uri);
+            return await responseHandler.HandleResponse(response);
         }
 
         /// <summary>
@@ -46,22 +44,6 @@ namespace stellar_dotnet_sdk.requests
         {
             SetSegments("accounts", account.AccountId);
             return await Account(BuildUri());
-        }
-
-        /// <summary>
-        ///     Requests specific uri and returns Page of AccountResponse.
-        ///     This method is helpful for getting the next set of results.
-        /// </summary>
-        /// <param name="uri"></param>
-        /// <returns>Page of AccountResponse</returns>
-        public static async Task<Page<AccountResponse>> Execute(Uri uri)
-        {
-            var responseHandler = new ResponseHandler<Page<AccountResponse>>();
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
         }
 
         /// <summary>
@@ -92,7 +74,7 @@ namespace stellar_dotnet_sdk.requests
 
         public async Task<Page<AccountResponse>> Execute()
         {
-            return await Execute(BuildUri());
+            return await Execute<Page<AccountResponse>>(BuildUri());
         }
     }
 }

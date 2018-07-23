@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using stellar_dotnet_sdk.responses;
+using stellar_dotnet_sdk.responses.page;
 
 namespace stellar_dotnet_sdk.requests
 {
@@ -10,8 +11,8 @@ namespace stellar_dotnet_sdk.requests
     /// </summary>
     public class TradesRequestBuilder : RequestBuilder<TradesRequestBuilder>
     {
-        public TradesRequestBuilder(Uri serverUri)
-            : base(serverUri, "trades")
+        public TradesRequestBuilder(Uri serverUri, HttpClient httpClient)
+            : base(serverUri, "trades", httpClient)
         {
         }
 
@@ -43,20 +44,9 @@ namespace stellar_dotnet_sdk.requests
             return this;
         }
 
-        public static async Task<TradeResponse> Execute(Uri uri)
+        public Task<Page<TradeResponse>> Execute()
         {
-            var responseHandler = new ResponseHandler<TradeResponse>();
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
-
-        }
-
-        public Task<TradeResponse> Execute()
-        {
-            return Execute(BuildUri());
+            return Execute<Page<TradeResponse>>(BuildUri());
         }
     }
 }
