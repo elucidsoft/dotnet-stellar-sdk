@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Moq.Language;
 using stellar_dotnet_sdk.federation;
+using static stellar_dotnet_sdk_test.FederationServerTest;
 
 namespace stellar_dotnet_sdk_test.federation
 {
@@ -16,7 +17,7 @@ namespace stellar_dotnet_sdk_test.federation
 
         private const HttpStatusCode HttpOk = HttpStatusCode.OK;
 
-        private Mock<FederationServerTest.FakeHttpMessageHandler> _fakeHttpMessageHandler;
+        private Mock<FakeHttpMessageHandler> _fakeHttpMessageHandler;
         private HttpClient _httpClient;
         private FederationServer _server;
 
@@ -25,7 +26,7 @@ namespace stellar_dotnet_sdk_test.federation
         {
             _server = new FederationServer("https://api.stellar.org/federation", "stellar.org");
 
-            _fakeHttpMessageHandler = new Mock<FederationServerTest.FakeHttpMessageHandler> {CallBase = true};
+            _fakeHttpMessageHandler = new Mock<FakeHttpMessageHandler> {CallBase = true};
             _httpClient = new HttpClient(_fakeHttpMessageHandler.Object);
             _server.HttpClient = _httpClient;
         }

@@ -11,8 +11,8 @@ namespace stellar_dotnet_sdk.requests
     /// </summary>
     public class PathsRequestBuilder : RequestBuilder<PathsRequestBuilder>
     {
-        public PathsRequestBuilder(Uri serverUri) 
-            : base(serverUri, "paths")
+        public PathsRequestBuilder(Uri serverUri, HttpClient httpClient)
+            : base(serverUri, "paths", httpClient)
         {
         }
 
@@ -41,7 +41,7 @@ namespace stellar_dotnet_sdk.requests
 
             if (asset is AssetTypeCreditAlphaNum)
             {
-                AssetTypeCreditAlphaNum creditAlphaNumAsset = (AssetTypeCreditAlphaNum) asset;
+                AssetTypeCreditAlphaNum creditAlphaNumAsset = (AssetTypeCreditAlphaNum)asset;
                 _uriBuilder.SetQueryParam("destination_asset_code", creditAlphaNumAsset.Code);
                 _uriBuilder.SetQueryParam("destination_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
@@ -49,15 +49,9 @@ namespace stellar_dotnet_sdk.requests
             return this;
         }
 
-        public static async Task<Page<PathResponse>> Execute(Uri uri)
+        public async Task<Page<PathResponse>> Execute()
         {
-            ResponseHandler<Page<PathResponse>> responseHandler = new ResponseHandler<Page<PathResponse>>();
-
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
+            return await Execute<Page<PathResponse>>(BuildUri());
         }
     }
 }

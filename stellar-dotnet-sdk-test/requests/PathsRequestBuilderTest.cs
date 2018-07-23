@@ -1,7 +1,10 @@
 ﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.requests;
+using stellar_dotnet_sdk_test.responses;
 
 namespace stellar_dotnet_sdk_test.requests
 {
@@ -37,6 +40,25 @@ namespace stellar_dotnet_sdk_test.requests
                                 "order=asc", uri.ToString());
             }
         }
+
+        [TestMethod]
+        public async Task TestPathsExecute()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "pathsPage.json"));
+            var fakeHttpClient = RequestBuilderMock.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var account = await server.Paths
+                    .SourceAccount(KeyPair.FromAccountId("GD4KO3IOYYWIYVI236Y35K2DU6VNYRH3BPNFJSH57J5BLLCQHBIOK3IN"))
+                    .DestinationAccount(KeyPair.FromAccountId("GB24QI3BJNKBY4YNJZ2I37HFIYK56BL2OURFML76X46RQQKDLVT7WKJF"))
+                    .DestinationAmount("20")
+                    .Execute();
+
+                PathsPageDeserializerTest.AssertTestData(account);
+            }
+        }
+
     }
 }
 

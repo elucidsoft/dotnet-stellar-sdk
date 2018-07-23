@@ -1,7 +1,10 @@
 ﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.requests;
+using stellar_dotnet_sdk_test.responses;
 
 namespace stellar_dotnet_sdk_test.requests
 {
@@ -49,5 +52,22 @@ namespace stellar_dotnet_sdk_test.requests
                 Assert.AreEqual("https://horizon-testnet.stellar.org/ledgers/200000000000/transactions?limit=50&order=asc", uri.ToString());
             }
         }
+
+        [TestMethod]
+        public async Task TestTransactionsExecute()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "transactionPage.json"));
+            var fakeHttpClient = RequestBuilderMock.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var account = await server.Transactions
+                    .ForAccount(KeyPair.FromAccountId("GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7"))
+                    .Execute();
+
+                TransactionPageDeserializeTest.AssertTestData(account);
+            }
+        }
+
     }
 }

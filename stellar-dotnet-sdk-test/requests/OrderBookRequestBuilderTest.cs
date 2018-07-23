@@ -1,6 +1,9 @@
 ﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
+using stellar_dotnet_sdk_test.responses;
 
 namespace stellar_dotnet_sdk_test.requests
 {
@@ -28,5 +31,23 @@ namespace stellar_dotnet_sdk_test.requests
                     uri.ToString());
             }
         }
+
+        [TestMethod]
+        public async Task TestOrderBookExecute()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "orderBook.json"));
+            var fakeHttpClient = RequestBuilderMock.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var orderBookPage = await server.OrderBook
+                    .BuyingAsset(new AssetTypeNative())
+                    .SellingAsset(new AssetTypeCreditAlphaNum4("DEMO", KeyPair.FromAccountId("GC3BVJOU7SHHFLZ2LDYW6JU4YW36R2MRF6C37QJWQXZWG3JBYNODGHOB")))
+                    .Execute();
+
+                OrderBookDeserializerTest.AssertTestData(orderBookPage);
+            }
+        }
+
     }
 }

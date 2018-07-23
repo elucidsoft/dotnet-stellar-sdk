@@ -8,13 +8,14 @@ namespace stellar_dotnet_sdk.requests
 {
     public class OrderBookRequestBuilder : RequestBuilder<OrderBookRequestBuilder>
     {
-        public OrderBookRequestBuilder(Uri serverURI) : base(serverURI, "order_book")
+        public OrderBookRequestBuilder(Uri serverURI, HttpClient httpClient)
+            : base(serverURI, "order_book", httpClient)
         {
-           
+
         }
 
         public OrderBookRequestBuilder BuyingAsset(Asset asset)
-        { 
+        {
             _uriBuilder.SetQueryParam("buying_asset_type", asset.GetType());
             if (asset is AssetTypeCreditAlphaNum creditAlphaNumAsset)
             {
@@ -36,24 +37,11 @@ namespace stellar_dotnet_sdk.requests
         }
 
         ///<Summary>
-        /// Requests specific <code>uri</code> and returns {@link Page} of {@link EffectResponse}.
-        /// This method is helpful for getting the next set of results.
-        /// </Summary>
-        public static async Task<Page<OrderBookResponse>> Execute(Uri uri)
-        {
-            var responseHandler = new ResponseHandler<Page<OrderBookResponse>>();
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
-        }
-        ///<Summary>
         /// Build and execute request.
         /// </Summary>
-        public async Task<Page<OrderBookResponse>> Execute()
+        public async Task<OrderBookResponse> Execute()
         {
-            return await Execute(BuildUri());
+            return await Execute<OrderBookResponse>(BuildUri());
         }
 
 

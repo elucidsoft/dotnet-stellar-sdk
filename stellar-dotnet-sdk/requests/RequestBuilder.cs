@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk.requests
 {
@@ -20,7 +22,17 @@ namespace stellar_dotnet_sdk.requests
 
         protected UriBuilder _uriBuilder;
 
-        public RequestBuilder(Uri serverUri, string defaultSegment)
+        public static HttpClient HttpClient { get; set; }
+
+        public async Task<TZ> Execute<TZ>(Uri uri) where TZ : class
+        {
+            var responseHandler = new ResponseHandler<TZ>();
+
+            var response = await HttpClient.GetAsync(uri);
+            return await responseHandler.HandleResponse(response);
+        }
+
+        public RequestBuilder(Uri serverUri, string defaultSegment, HttpClient httpClient)
         {
             _uriBuilder = new UriBuilder(serverUri);
             _segments = new List<string>();
@@ -29,6 +41,7 @@ namespace stellar_dotnet_sdk.requests
                 SetSegments(defaultSegment);
 
             _segmentsAdded = false; //Allow overwriting segments
+            HttpClient = httpClient;
         }
 
         protected RequestBuilder<T> SetSegments(params string[] segments)

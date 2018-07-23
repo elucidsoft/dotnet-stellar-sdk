@@ -11,9 +11,14 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserialize()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "orderBook.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "orderBook.json"));
             var orderBook = JsonSingleton.GetInstance<OrderBookResponse>(json);
 
+            AssertTestData(orderBook);
+        }
+
+        public static void AssertTestData(OrderBookResponse orderBook)
+        {
             Assert.AreEqual(orderBook.OrderBookBase, new AssetTypeNative());
             Assert.AreEqual(orderBook.Counter, Asset.CreateNonNativeAsset("DEMO", KeyPair.FromAccountId("GBAMBOOZDWZPVV52RCLJQYMQNXOBLOXWNQAY2IF2FREV2WL46DBCH3BE")));
 
@@ -31,6 +36,5 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(orderBook.Asks[1].Amount, "121.9999600");
             Assert.AreEqual(orderBook.Asks[1].Price, "0.0025093");
         }
-
     }
 }

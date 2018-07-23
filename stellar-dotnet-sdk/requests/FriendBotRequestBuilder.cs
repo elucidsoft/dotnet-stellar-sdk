@@ -13,7 +13,8 @@ namespace stellar_dotnet_sdk.requests
         /// 
         /// </summary>
         /// <param name="serverUri"></param>
-        public FriendBotRequestBuilder(Uri serverUri) : base(serverUri, "friendbot")
+        public FriendBotRequestBuilder(Uri serverUri, HttpClient httpClient)
+            : base(serverUri, "friendbot", httpClient)
         {
             if (Network.Current == null)
             {
@@ -25,19 +26,10 @@ namespace stellar_dotnet_sdk.requests
                 throw new NotSupportedException("FriendBot is only supported on the TESTNET Network.");
             }
         }
-        public async Task<FriendBotResponse> Execute(Uri uri)
-        {
-            var responseHandler = new ResponseHandler<FriendBotResponse>();
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
-        }
 
         public async Task<FriendBotResponse> Execute()
         {
-            return await Execute(BuildUri());
+            return await Execute<FriendBotResponse>(BuildUri());
         }
 
         public FriendBotRequestBuilder FundAccount(KeyPair account)

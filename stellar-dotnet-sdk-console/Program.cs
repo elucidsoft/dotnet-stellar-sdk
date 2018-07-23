@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using stellar_dotnet_sdk;
-using stellar_dotnet_sdk.requests;
 using stellar_dotnet_sdk.responses;
-using stellar_dotnet_sdk.responses.operations;
 
 namespace TestConsole
 {
@@ -16,29 +14,31 @@ namespace TestConsole
 
         public static async Task Main(string[] args)
         {
-            Network.UseTestNetwork();
-            var server = new Server("https://horizon-testnet.stellar.org");
+            //Network.UseTestNetwork();
+            var server = new Server("https://horizon.stellar.org");
 
-            var friendBot = await server.TestNetFriendBot
-                .FundAccount(KeyPair.Random())
-                .Execute();
+            //var friendBot = await server.TestNetFriendBot
+            //    .FundAccount(KeyPair.Random())
+            //    .Execute();
 
-            await GetLedgerTransactions(server);
-            await ShowAccountTransactions(server);
+            //await GetLedgerTransactions(server);
+            //await ShowAccountTransactions(server);
 
             //Streams are Maybe fixed? in this API until a resolution is found for the HttpClient issue
-            Console.WriteLine("-- Streaming All New Operations On The Network --");
+            //Console.WriteLine("-- Streaming All New Ledgers On The Network --");
 
-            server.Operations
+            server.Ledgers
                 .Cursor("now")
-                .Order(OrderDirection.ASC)
-                .Stream((sender, response) => { ShowOperationResponse(response); })
+                .Stream((sender, response) => { ShowOperationResponse(server, response); })
                 .Connect();
 
+
+
+
             Console.ReadLine();
+
         }
-
-
+        
         private static async Task ShowAccountTransactions(Server server)
         {
             Console.WriteLine("-- Show Account Transactions (ForAccount) --");
@@ -59,6 +59,9 @@ namespace TestConsole
                 .ForLedger(2365)
                 .Execute();
 
+
+
+
             ShowTransactionRecords(transactions.Records);
             Console.WriteLine();
         }
@@ -74,9 +77,40 @@ namespace TestConsole
             Console.WriteLine($"Ledger: {tran.Ledger}, Hash: {tran.Hash}, Fee Paid: {tran.FeePaid}");
         }
 
-        private static void ShowOperationResponse(OperationResponse op)
+        private async static void ShowOperationResponse(Server server, LedgerResponse lr)
         {
-            Console.WriteLine($"Id: {op.Id}, Source: {op.SourceAccount.AccountId}, Type: {op.Type}");
+            var operations = await server.Operations.ForLedger(lr.Sequence).Execute();
+
+            var accts = 0;
+            var payments = 0;
+            var offers = 0;
+            var options = 0;
+
+            foreach (var op in operations.Records)
+            {
+                switch (op.Type)
+                {
+                    case "create_account":
+                        accts++;
+                        break;
+                    case "payment":
+                        payments++;
+                        break;
+                    case "manage_offer":
+                        offers++;
+                        break;
+                    case "set_options":
+                        options++;
+                        break;
+
+                }
+            }
+
+            Console.WriteLine($"id: {lr.Sequence}, tx/ops: { lr.TransactionCount + "/" + lr.OperationCount }, accts: { accts }, payments: { payments }, offers: { offers }, options: { options }");
+
+
+
+
         }
     }
 }

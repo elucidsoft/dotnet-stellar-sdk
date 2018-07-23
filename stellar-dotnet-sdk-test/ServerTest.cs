@@ -79,7 +79,7 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public async Task TestSubmitTransactionSuccess()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "serverSuccess.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "serverSuccess.json"));
             When().Returns(ResponseMessage(HttpOk, json));
 
             SubmitTransactionResponse response = await _server.SubmitTransaction(BuildTransaction());
@@ -92,7 +92,7 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public async Task TestSubmitTransactionFail()
         {
-            var json = File.ReadAllText(Path.Combine("responses", "testdata", "serverFailure.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "serverFailure.json"));
             When().Returns(ResponseMessage(HttpBadRequest, json));
 
             SubmitTransactionResponse response = await _server.SubmitTransaction(BuildTransaction());
