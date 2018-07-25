@@ -48,6 +48,18 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(transaction.SourceAccount, source);
             Assert.AreEqual(transaction.SequenceNumber, sequenceNumber + 1);
             Assert.AreEqual(transaction.Fee, 100);
+
+            Transaction transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
+
+            Assert.AreEqual(transaction.SourceAccount.AccountId, transaction2.SourceAccount.AccountId);
+            Assert.AreEqual(transaction.SequenceNumber, transaction2.SequenceNumber);
+            Assert.AreEqual(transaction.Fee, transaction2.Fee);
+            Assert.AreEqual(
+                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
+            );
+
+            CollectionAssert.AreEqual(transaction.Signatures, transaction2.Signatures);
         }
 
         [TestMethod]
@@ -68,6 +80,17 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(
                 "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAEAAAAMSGVsbG8gd29ybGQhAAAAAQAAAAAAAAAAAAAAAO3gUmG83C+VCqO6FztuMtXJF/l7grZA7MjRzqdZ9W8QAAAABKgXyAAAAAAAAAAAAbaHlWIAAABAxzofBhoayuUnz8t0T1UNWrTgmJ+lCh9KaeOGu2ppNOz9UGw0abGLhv+9oWQsstaHx6YjwWxL+8GBvwBUVWRlBQ==",
                 transaction.ToEnvelopeXdrBase64());
+
+            Transaction transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
+
+            Assert.AreEqual(transaction.SourceAccount.AccountId, transaction2.SourceAccount.AccountId);
+            Assert.AreEqual(transaction.SequenceNumber, transaction2.SequenceNumber);
+            Assert.AreEqual(transaction.Memo, transaction2.Memo);
+            Assert.AreEqual(transaction.Fee, transaction2.Fee);
+            Assert.AreEqual(
+                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
+            );
         }
 
         [TestMethod]
@@ -81,6 +104,7 @@ namespace stellar_dotnet_sdk_test
             var transaction = new Transaction.Builder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .AddTimeBounds(new TimeBounds(42, 1337))
+                .AddMemo(Memo.Hash("abcdef"))
                 .Build();
 
             transaction.Sign(source);
@@ -93,6 +117,18 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual(decodedTransaction.TimeBounds.MinTime.InnerValue, 42);
             Assert.AreEqual(decodedTransaction.TimeBounds.MaxTime.InnerValue, 1337);
+
+            Transaction transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
+            
+            Assert.AreEqual(transaction.SourceAccount.AccountId, transaction2.SourceAccount.AccountId);
+            Assert.AreEqual(transaction.SequenceNumber, transaction2.SequenceNumber);
+            Assert.AreEqual(transaction.Memo, transaction2.Memo);
+            Assert.AreEqual(transaction.TimeBounds, transaction2.TimeBounds);
+            Assert.AreEqual(transaction.Fee, transaction2.Fee);
+            Assert.AreEqual(
+                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
+            );
         }
 
         [TestMethod]

@@ -26,5 +26,13 @@ namespace stellar_dotnet_sdk
             memo.Text = MemoTextValue ?? "none";
             return memo;
         }
+
+        public override bool Equals(Object o)
+        {
+            if (this == o) return true;
+            if (o == null || GetType() != o.GetType()) return false;
+            MemoText memoText = (MemoText)o;
+            return Equals(MemoTextValue, memoText.MemoTextValue);
+        }
     }
 }
