@@ -322,9 +322,10 @@ namespace stellar_dotnet_sdk
             // Attempt reconnection after retry interval
             Trace.TraceInformation("RetryAfterDelay ({0}ms)", _retryInterval);
             _retryTimer = new Timer(
-                delegate
+                async delegate
                 {
-                    if (!_shutdownToken) ConnectAsync();
+                    if (!_shutdownToken)
+                        await ConnectAsync();
                 },
                 null,
                 Math.Max(DefaultRetryInterval, _retryInterval),

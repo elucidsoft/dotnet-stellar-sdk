@@ -23,16 +23,18 @@ namespace TestConsole
 
                 await GetLedgerTransactions(server);
                 await ShowAccountTransactions(server);
+            }
 
+            using (var server = new Server("https://horizon.stellar.org"))
+            {
                 Console.WriteLine("-- Streaming All New Ledgers On The Network --");
                 await server.Ledgers
                     .Cursor("now")
                     .Stream((sender, response) => { ShowOperationResponse(server, response); })
                     .Connect();
-
             }
 
-            Console.ReadLine();
+                Console.ReadLine();
         }
         
         private static async Task ShowAccountTransactions(Server server)
