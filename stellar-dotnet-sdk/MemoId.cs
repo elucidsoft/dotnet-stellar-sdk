@@ -23,5 +23,13 @@ namespace stellar_dotnet_sdk
             memo.Id = idXdr;
             return memo;
         }
+
+        public override bool Equals(Object o)
+        {
+            if (this == o) return true;
+            if (o == null || GetType() != o.GetType()) return false;
+            MemoId memoId = (MemoId)o;
+            return IdValue == memoId.IdValue;
+        }
     }
 }

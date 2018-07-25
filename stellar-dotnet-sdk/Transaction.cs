@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk
     {
         private const int BaseFee = 100;
 
-        private Transaction(KeyPair sourceAccount, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)
+        private Transaction(KeyPair sourceAccount, int fee, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)
         {
             SourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
             SequenceNumber = sequenceNumber;
@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk
             if (operations.Length == 0)
                 throw new ArgumentNullException(nameof(operations), "At least one operation required");
 
-            Fee = operations.Length * BaseFee;
+            Fee = fee;
             Signatures = new List<DecoratedSignature>();
             Memo = memo ?? Memo.None();
             TimeBounds = timeBounds;
@@ -68,7 +68,7 @@ namespace stellar_dotnet_sdk
             var length = hash.Length;
             var signatureHintBytes = hash.Skip(length - 4).Take(4).ToArray();
 
-            var signatureHint = new SignatureHint {InnerValue = signatureHintBytes};
+            var signatureHint = new SignatureHint { InnerValue = signatureHintBytes };
 
             var decoratedSignature = new DecoratedSignature
             {
@@ -121,14 +121,14 @@ namespace stellar_dotnet_sdk
         public xdr.Transaction ToXdr()
         {
             // fee
-            var fee = new Uint32 {InnerValue = Fee};
+            var fee = new Uint32 { InnerValue = Fee };
 
             // sequenceNumber
-            var sequenceNumberUint = new Uint64 {InnerValue = SequenceNumber};
-            var sequenceNumber = new SequenceNumber {InnerValue = sequenceNumberUint};
+            var sequenceNumberUint = new Uint64 { InnerValue = SequenceNumber };
+            var sequenceNumber = new SequenceNumber { InnerValue = sequenceNumberUint };
 
             // sourceAccount
-            var sourceAccount = new AccountID {InnerValue = SourceAccount.XdrPublicKey};
+            var sourceAccount = new AccountID { InnerValue = SourceAccount.XdrPublicKey };
 
             // operations
             var operations = new xdr.Operation[Operations.Length];
@@ -137,7 +137,7 @@ namespace stellar_dotnet_sdk
                 operations[i] = Operations[i].ToXdr();
 
             // ext
-            var ext = new xdr.Transaction.TransactionExt {Discriminant = 0};
+            var ext = new xdr.Transaction.TransactionExt { Discriminant = 0 };
 
             var transaction = new xdr.Transaction
             {
@@ -213,6 +213,40 @@ namespace stellar_dotnet_sdk
 
             return Convert.ToBase64String(writer.ToArray());
         }
+
+        public static Transaction FromEnvelopeXdr(string envelope)
+        {
+            byte[] bytes = Convert.FromBase64String(envelope);
+
+            TransactionEnvelope transactionEnvelope = TransactionEnvelope.Decode(new XdrDataInputStream(bytes));
+            return FromEnvelopeXdr(transactionEnvelope);
+        }
+
+        public static Transaction FromEnvelopeXdr(TransactionEnvelope envelope)
+        {
+            xdr.Transaction transactionXdr = envelope.Tx;
+            int fee = transactionXdr.Fee.InnerValue;
+            KeyPair sourceAccount = KeyPair.FromXdrPublicKey(transactionXdr.SourceAccount.InnerValue);
+            long sequenceNumber = transactionXdr.SeqNum.InnerValue.InnerValue;
+            Memo memo = Memo.FromXdr(transactionXdr.Memo);
+            TimeBounds timeBounds = TimeBounds.FromXdr(transactionXdr.TimeBounds);
+
+            Operation[] operations = new Operation[transactionXdr.Operations.Length];
+            for (int i = 0; i < transactionXdr.Operations.Length; i++)
+            {
+                operations[i] = Operation.FromXdr(transactionXdr.Operations[i]);
+            }
+
+            Transaction transaction = new Transaction(sourceAccount, fee, sequenceNumber, operations, memo, timeBounds);
+
+            foreach (var signature in envelope.Signatures)
+            {
+                transaction.Signatures.Add(signature);
+            }
+
+            return transaction;
+        }
+    
 
         /// <summary>
         ///     Builds a new Transaction object.
@@ -294,7 +328,7 @@ namespace stellar_dotnet_sdk
             {
                 var operations = _operations.ToArray();
 
-                var transaction = new Transaction(_sourceAccount.KeyPair, _sourceAccount.GetIncrementedSequenceNumber(), operations, _memo, _timeBounds);
+                var transaction = new Transaction(_sourceAccount.KeyPair, operations.Length * BaseFee, _sourceAccount.GetIncrementedSequenceNumber(), operations, _memo, _timeBounds);
                 // Increment sequence number when there were no exceptions when creating a transaction
                 _sourceAccount.IncrementSequenceNumber();
                 return transaction;

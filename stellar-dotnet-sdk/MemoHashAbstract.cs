@@ -53,5 +53,13 @@ namespace stellar_dotnet_sdk
         }
 
         public abstract override xdr.Memo ToXdr();
+
+        public override bool Equals(Object o)
+        {
+            if (this == o) return true;
+            if (o == null || GetType() != o.GetType()) return false;
+            MemoHashAbstract that = (MemoHashAbstract)o;
+            return Object.Equals(MemoBytes, that.MemoBytes);
+        }
     }
 }

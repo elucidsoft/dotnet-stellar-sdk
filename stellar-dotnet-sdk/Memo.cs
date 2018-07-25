@@ -67,10 +67,31 @@
             return new MemoReturnHash(hexString);
         }
 
+        public static Memo FromXdr(xdr.Memo memo)
+        {
+            switch (memo.Discriminant.InnerValue)
+            {
+                case xdr.MemoType.MemoTypeEnum.MEMO_NONE:
+                    return None();
+                case xdr.MemoType.MemoTypeEnum.MEMO_ID:
+                    return Id(memo.Id.InnerValue);
+                case xdr.MemoType.MemoTypeEnum.MEMO_TEXT:
+                    return Text(memo.Text);
+                case xdr.MemoType.MemoTypeEnum.MEMO_HASH:
+                    return Hash(memo.Hash.InnerValue);
+                case xdr.MemoType.MemoTypeEnum.MEMO_RETURN:
+                    return ReturnHash(memo.RetHash.InnerValue);
+                default:
+                    throw new System.SystemException("Unknown memo type");
+            }
+        }
+
         /// <summary>
         /// Abstract method for ToXdr
         /// </summary>
         /// <returns>A memo object.</returns>
         public abstract xdr.Memo ToXdr();
+
+        public abstract override bool Equals(System.Object o);
     }
 }
