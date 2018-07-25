@@ -8,7 +8,7 @@ namespace stellar_dotnet_sdk
 {
     public class Transaction
     {
-        private const int BASE_FEE = 100;
+        private const int BaseFee = 100;
 
         private Transaction(KeyPair sourceAccount, int fee, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)
         {
@@ -214,7 +214,7 @@ namespace stellar_dotnet_sdk
             return Convert.ToBase64String(writer.ToArray());
         }
 
-        public Transaction FromEnvelopeXdr(string envelope)
+        public static Transaction FromEnvelopeXdr(string envelope)
         {
             byte[] bytes = Convert.FromBase64String(envelope);
 
@@ -222,7 +222,7 @@ namespace stellar_dotnet_sdk
             return FromEnvelopeXdr(transactionEnvelope);
         }
 
-        public Transaction FromEnvelopeXdr(TransactionEnvelope envelope)
+        public static Transaction FromEnvelopeXdr(TransactionEnvelope envelope)
         {
             xdr.Transaction transactionXdr = envelope.Tx;
             int fee = transactionXdr.Fee.InnerValue;
@@ -328,7 +328,7 @@ namespace stellar_dotnet_sdk
             {
                 var operations = _operations.ToArray();
 
-                var transaction = new Transaction(_sourceAccount.KeyPair, operations.Length * BASE_FEE, _sourceAccount.GetIncrementedSequenceNumber(), operations, _memo, _timeBounds);
+                var transaction = new Transaction(_sourceAccount.KeyPair, operations.Length * BaseFee, _sourceAccount.GetIncrementedSequenceNumber(), operations, _memo, _timeBounds);
                 // Increment sequence number when there were no exceptions when creating a transaction
                 _sourceAccount.IncrementSequenceNumber();
                 return transaction;
