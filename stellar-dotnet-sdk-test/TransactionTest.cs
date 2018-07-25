@@ -52,8 +52,8 @@ namespace stellar_dotnet_sdk_test
                 ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
                 ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
             );
-            
-            Assert.AreEqual(transaction.Signatures, transaction2.Signatures);
+
+            CollectionAssert.AreEqual(transaction.Signatures, transaction2.Signatures);
         }
 
         [TestMethod]
