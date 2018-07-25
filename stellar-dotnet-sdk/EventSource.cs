@@ -13,6 +13,7 @@ using System.Net.Cache;
 using System.Net.Mime;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk
 {
@@ -158,13 +159,14 @@ namespace stellar_dotnet_sdk
         ///     Begin the process to connect to the the EventSource. The EventSource attempts to be resilient to
         ///     transitory network errors and interruptions by automatically retrying connections to maintain persistence.
         /// </summary>
-        public void Connect()
+        public async Task Connect()
         {
             if (ReadyState == EventSourceState.Connecting || ReadyState == EventSourceState.Open)
                 throw new InvalidOperationException("Cannot call connect while connection is " + ReadyState);
 
             _shutdownToken = false;
-            ConnectAsync();
+
+            await ConnectAsync();
         }
 
         /// <summary>
@@ -363,7 +365,7 @@ namespace stellar_dotnet_sdk
         /// <summary>
         ///     Connects to the event source.
         /// </summary>
-        private void ConnectAsync()
+        private async Task<bool> ConnectAsync()
         {
             Trace.TraceInformation("ConnectAsync ({0})", Url);
             ReadyState = EventSourceState.Connecting;
@@ -374,6 +376,7 @@ namespace stellar_dotnet_sdk
             try
             {
                 var handle = _httpWebRequest.BeginGetResponse(EndGetResponse, null);
+                var tcs = new TaskCompletionSource<bool>();
 
                 ThreadPool.RegisterWaitForSingleObject(
                     handle.AsyncWaitHandle,
@@ -388,6 +391,8 @@ namespace stellar_dotnet_sdk
                     _httpWebRequest,
                     Timeout,
                     true);
+
+                return await tcs.Task;
             }
             catch (Exception ex)
             {
@@ -396,7 +401,7 @@ namespace stellar_dotnet_sdk
                     OnErrorEvent(new ServerSentErrorEventArgs { Exception = ex });
                     CloseConnection();
                     RetryAfterDelay();
-                    return;
+                    return true;
                 }
 
                 throw;

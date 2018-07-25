@@ -14,29 +14,25 @@ namespace TestConsole
 
         public static async Task Main(string[] args)
         {
-            //Network.UseTestNetwork();
-            var server = new Server("https://horizon.stellar.org");
+            Network.UseTestNetwork();
+            using (var server = new Server("https://horizon-testnet.stellar.org"))
+            {
+                //var friendBot = await server.TestNetFriendBot
+                //    .FundAccount(KeyPair.Random())
+                //    .Execute();
 
-            //var friendBot = await server.TestNetFriendBot
-            //    .FundAccount(KeyPair.Random())
-            //    .Execute();
+                await GetLedgerTransactions(server);
+                await ShowAccountTransactions(server);
 
-            //await GetLedgerTransactions(server);
-            //await ShowAccountTransactions(server);
+                Console.WriteLine("-- Streaming All New Ledgers On The Network --");
+                await server.Ledgers
+                    .Cursor("now")
+                    .Stream((sender, response) => { ShowOperationResponse(server, response); })
+                    .Connect();
 
-            //Streams are Maybe fixed? in this API until a resolution is found for the HttpClient issue
-            //Console.WriteLine("-- Streaming All New Ledgers On The Network --");
-
-            server.Ledgers
-                .Cursor("now")
-                .Stream((sender, response) => { ShowOperationResponse(server, response); })
-                .Connect();
-
-
-
+            }
 
             Console.ReadLine();
-
         }
         
         private static async Task ShowAccountTransactions(Server server)
