@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace stellar_dotnet_sdk.requests
 {
     /// <inheritdoc />
-    public class OffersRequestBuilder : RequestBuilderExecuteable<OffersRequestBuilder, OfferResponse>
+    public class OffersRequestBuilder : RequestBuilderExecutePageable<OffersRequestBuilder, OfferResponse>
     {
         public OffersRequestBuilder(Uri serverURI, HttpClient httpClient) :
             base(serverURI, "offers", httpClient)

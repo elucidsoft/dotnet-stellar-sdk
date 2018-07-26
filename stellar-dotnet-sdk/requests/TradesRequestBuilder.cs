@@ -9,7 +9,7 @@ namespace stellar_dotnet_sdk.requests
     /// <summary>
     /// Builds requests connected to trades.
     /// </summary>
-    public class TradesRequestBuilder : RequestBuilderExecuteable<TradesRequestBuilder, TradeResponse>
+    public class TradesRequestBuilder : RequestBuilderExecutePageable<TradesRequestBuilder, TradeResponse>
     {
         public TradesRequestBuilder(Uri serverUri, HttpClient httpClient)
             : base(serverUri, "trades", httpClient)

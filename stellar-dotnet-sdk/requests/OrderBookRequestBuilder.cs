@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk.requests
 {
-    public class OrderBookRequestBuilder : RequestBuilderExecuteable<OrderBookRequestBuilder, OrderBookResponse>
+    public class OrderBookRequestBuilder : RequestBuilder<OrderBookRequestBuilder>
     {
         public OrderBookRequestBuilder(Uri serverURI, HttpClient httpClient)
             : base(serverURI, "order_book", httpClient)
@@ -52,6 +52,14 @@ namespace stellar_dotnet_sdk.requests
         public override OrderBookRequestBuilder Order(OrderDirection direction)
         {
             throw new NotImplementedException();
+        }
+
+        ///<Summary>
+        /// Build and execute request.
+        /// </Summary>
+        public async Task<OrderBookResponse> Execute()
+        {
+            return await Execute<OrderBookResponse>(BuildUri());
         }
     }
 }

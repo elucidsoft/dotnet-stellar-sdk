@@ -9,7 +9,7 @@ namespace stellar_dotnet_sdk.requests
     /// <summary>
     /// 
     /// </summary>
-    public class AssetsRequestBuilder : RequestBuilderExecuteable<AssetsRequestBuilder, AssetResponse>
+    public class AssetsRequestBuilder : RequestBuilderExecutePageable<AssetsRequestBuilder, AssetResponse>
     {
         /// <summary>
         /// 
@@ -41,5 +41,6 @@ namespace stellar_dotnet_sdk.requests
             base._uriBuilder.SetQueryParam("asset_issuer", assetIssuer);
             return this;
         }
+
     }
 }

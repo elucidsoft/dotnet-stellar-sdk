@@ -140,13 +140,14 @@ namespace stellar_dotnet_sdk.requests
         }
     }
 
-    public class RequestBuilderExecuteable<T, TResponse> : RequestBuilder<T> where T : class where TResponse : class
+    public class RequestBuilderExecutePageable<T, TResponse> : RequestBuilder<T> where T : class where TResponse : class
     {
-        public RequestBuilderExecuteable(Uri serverUri, string defaultSegment, HttpClient httpClient) : base(serverUri,
+        public RequestBuilderExecutePageable(Uri serverUri, string defaultSegment, HttpClient httpClient) : base(serverUri,
             defaultSegment, httpClient)
         {
 
         }
+
 
         ///<Summary>
         /// Build and execute request.
@@ -157,7 +158,7 @@ namespace stellar_dotnet_sdk.requests
         }
     }
 
-    public class RequestBuilderStreamable<T, TResponse> : RequestBuilderExecuteable<T, TResponse> where T :  class where TResponse : class
+    public class RequestBuilderStreamable<T, TResponse> : RequestBuilderExecutePageable<T, TResponse> where T :  class where TResponse : class
     {
         public RequestBuilderStreamable(Uri serverUri, string defaultSegment, HttpClient httpClient) : base(serverUri,
             defaultSegment, httpClient)

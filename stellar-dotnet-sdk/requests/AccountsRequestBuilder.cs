@@ -9,7 +9,7 @@ namespace stellar_dotnet_sdk.requests
     /// <summary>
     ///     Builds requests connected to accounts.
     /// </summary>
-    public class AccountsRequestBuilder : RequestBuilderExecuteable<AccountsRequestBuilder, AccountResponse>
+    public class AccountsRequestBuilder : RequestBuilderExecutePageable<AccountsRequestBuilder, AccountResponse>
     {
         /// <summary>
         ///     Builds requests connected to accounts.

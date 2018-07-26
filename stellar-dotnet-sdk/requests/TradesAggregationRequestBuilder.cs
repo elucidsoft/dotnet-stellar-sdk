@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk.requests
 {
-    public class TradesAggregationRequestBuilder : RequestBuilderExecuteable<TradesAggregationRequestBuilder, TradeAggregationResponse>
+    public class TradesAggregationRequestBuilder : RequestBuilderExecutePageable<TradesAggregationRequestBuilder, TradeAggregationResponse>
     {
         public TradesAggregationRequestBuilder(Uri serverUri, HttpClient httpClient)
             : base(serverUri, "trade_aggregations", httpClient)

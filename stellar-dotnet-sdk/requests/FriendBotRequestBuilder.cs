@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk.requests
 {
-    public class FriendBotRequestBuilder : RequestBuilderExecuteable<FriendBotRequestBuilder, FriendBotResponse>
+    public class FriendBotRequestBuilder : RequestBuilder<FriendBotRequestBuilder>
     {
         /// <summary>
         /// 
@@ -31,6 +31,14 @@ namespace stellar_dotnet_sdk.requests
         {
             _uriBuilder.SetQueryParam("addr", account.AccountId);
             return this;
+        }
+
+        ///<Summary>
+        /// Build and execute request.
+        /// </Summary>
+        public async Task<FriendBotResponse> Execute()
+        {
+            return await Execute<FriendBotResponse>(BuildUri());
         }
     }
 }
