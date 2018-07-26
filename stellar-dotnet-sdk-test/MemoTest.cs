@@ -144,7 +144,7 @@ namespace stellar_dotnet_sdk_test
             var memo2 = Memo.ReturnHash("4142434445464748494a4b4c");
 
             Assert.AreEqual(memo.GetHashCode(), memo2.GetHashCode());
-            //Assert.AreEqual(memo, memo2);
+            Assert.AreEqual(memo, memo2);
         }
 
         [TestMethod]
