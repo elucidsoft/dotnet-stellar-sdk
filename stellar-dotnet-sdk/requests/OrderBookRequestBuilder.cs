@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk.requests
 {
-    public class OrderBookRequestBuilder : RequestBuilder<OrderBookRequestBuilder>
+    public class OrderBookRequestBuilder : RequestBuilderExecuteable<OrderBookRequestBuilder, OrderBookResponse>
     {
         public OrderBookRequestBuilder(Uri serverURI, HttpClient httpClient)
             : base(serverURI, "order_book", httpClient)
@@ -34,14 +34,6 @@ namespace stellar_dotnet_sdk.requests
                 _uriBuilder.SetQueryParam("selling_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
             return this;
-        }
-
-        ///<Summary>
-        /// Build and execute request.
-        /// </Summary>
-        public async Task<OrderBookResponse> Execute()
-        {
-            return await Execute<OrderBookResponse>(BuildUri());
         }
 
 

@@ -9,7 +9,7 @@ namespace stellar_dotnet_sdk.requests
     /// <summary>
     /// Builds requests connected to trades.
     /// </summary>
-    public class TradesRequestBuilder : RequestBuilder<TradesRequestBuilder>
+    public class TradesRequestBuilder : RequestBuilderExecuteable<TradesRequestBuilder, TradeResponse>
     {
         public TradesRequestBuilder(Uri serverUri, HttpClient httpClient)
             : base(serverUri, "trades", httpClient)
@@ -42,11 +42,6 @@ namespace stellar_dotnet_sdk.requests
                 _uriBuilder.SetQueryParam("counter_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
             return this;
-        }
-
-        public Task<Page<TradeResponse>> Execute()
-        {
-            return Execute<Page<TradeResponse>>(BuildUri());
         }
     }
 }

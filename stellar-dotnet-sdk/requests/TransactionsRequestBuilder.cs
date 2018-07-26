@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk.requests
 {
-    public class TransactionsRequestBuilder : RequestBuilder<TransactionsRequestBuilder>
+    public class TransactionsRequestBuilder : RequestBuilderStreamable<TransactionsRequestBuilder, TransactionResponse>
     {
         public TransactionsRequestBuilder(Uri serverURI, HttpClient httpClient)
             : base(serverURI, "transactions", httpClient)
@@ -60,29 +60,6 @@ namespace stellar_dotnet_sdk.requests
         {
             SetSegments("ledgers", ledgerSeq.ToString(), "transactions");
             return this;
-        }
-
-        ///<Summary>
-        /// Allows to stream SSE events from horizon.
-        /// Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
-        /// This mode will keep the connection to horizon open and horizon will continue to return
-        /// responses as ledgers close.
-        /// <a href="http://www.w3.org/TR/eventsource/" target="_blank">Server-Sent Events</a>
-        /// <a href="https://www.stellar.org/developers/horizon/learn/responses.html" target="_blank">Response Format documentation</a>
-        /// </Summary>
-        /// <param name="listener">EventListener implementation with EffectResponse type</param> 
-        /// <returns>EventSource object, so you can <code>close()</code> connection when not needed anymore</param> 
-        public EventSource Stream(EventHandler<TransactionResponse> listener)
-        {
-            return Stream<TransactionResponse>(listener);
-        }
-
-        ///<Summary>
-        /// Build and execute request.
-        /// </Summary>
-        public async Task<Page<TransactionResponse>> Execute()
-        {
-            return await Execute<Page<TransactionResponse>>(BuildUri());
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk.requests
 {
-    public class FriendBotRequestBuilder : RequestBuilder<FriendBotRequestBuilder>
+    public class FriendBotRequestBuilder : RequestBuilderExecuteable<FriendBotRequestBuilder, FriendBotResponse>
     {
         /// <summary>
         /// 
@@ -25,11 +25,6 @@ namespace stellar_dotnet_sdk.requests
             {
                 throw new NotSupportedException("FriendBot is only supported on the TESTNET Network.");
             }
-        }
-
-        public async Task<FriendBotResponse> Execute()
-        {
-            return await Execute<FriendBotResponse>(BuildUri());
         }
 
         public FriendBotRequestBuilder FundAccount(KeyPair account)

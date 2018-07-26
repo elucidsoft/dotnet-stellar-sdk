@@ -9,7 +9,7 @@ namespace stellar_dotnet_sdk.requests
     /// <summary>
     /// 
     /// </summary>
-    public class AssetsRequestBuilder : RequestBuilder<AssetsRequestBuilder>
+    public class AssetsRequestBuilder : RequestBuilderExecuteable<AssetsRequestBuilder, AssetResponse>
     {
         /// <summary>
         /// 
@@ -40,15 +40,6 @@ namespace stellar_dotnet_sdk.requests
         {
             base._uriBuilder.SetQueryParam("asset_issuer", assetIssuer);
             return this;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public async Task<Page<AssetResponse>> Execute()
-        {
-            return await Execute<Page<AssetResponse>>(BuildUri());
         }
     }
 }
