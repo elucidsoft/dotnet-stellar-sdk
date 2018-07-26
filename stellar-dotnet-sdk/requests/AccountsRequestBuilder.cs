@@ -59,17 +59,7 @@ namespace stellar_dotnet_sdk.requests
         ///     <returns>EventSource object, so you can close() connection when not needed anymore</returns>
         public EventSource Stream(EventHandler<AccountResponse> listener)
         {
-            var es = new EventSource(BuildUri());
-            es.Message += (sender, e) =>
-            {
-                if (e.Data == "\"hello\"\r\n")
-                    return;
-
-                var account = JsonSingleton.GetInstance<AccountResponse>(e.Data);
-                listener?.Invoke(this, account);
-            };
-
-            return es;
+            return Stream<AccountResponse>(listener);
         }
 
         public async Task<Page<AccountResponse>> Execute()
