@@ -207,6 +207,9 @@ namespace stellar_dotnet_sdk
             request.AllowAutoRedirect = true;
             request.KeepAlive = true;
             request.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
+            #if NETSTANDARD2_0
+                request.Proxy = null;
+            #endif
             if (Headers != null) request.Headers.Add(Headers);
             if (!string.IsNullOrEmpty(LastEventId)) request.Headers.Add("Last-Event-Id", LastEventId);
         }

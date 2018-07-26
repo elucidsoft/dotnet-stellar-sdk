@@ -51,7 +51,7 @@ namespace stellar_dotnet_sdk.requests
 
             es.Message += (sender, e) =>
             {
-                if (e.Data == "\"hello\"\r\n")
+                if (e.Data == "\"hello\"\r\n" || e.Data == "\"hello\"\n")
                     return;
 
                 var account = JsonSingleton.GetInstance<OperationResponse>(e.Data);
