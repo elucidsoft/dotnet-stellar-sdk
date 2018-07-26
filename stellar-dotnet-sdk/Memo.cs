@@ -93,5 +93,6 @@
         public abstract xdr.Memo ToXdr();
 
         public abstract override bool Equals(System.Object o);
+        public abstract override int GetHashCode();
     }
 }

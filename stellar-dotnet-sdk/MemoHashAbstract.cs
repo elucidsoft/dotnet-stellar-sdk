@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace stellar_dotnet_sdk
 {
@@ -59,7 +60,17 @@ namespace stellar_dotnet_sdk
             if (this == o) return true;
             if (o == null || GetType() != o.GetType()) return false;
             MemoHashAbstract that = (MemoHashAbstract)o;
-            return Object.Equals(MemoBytes, that.MemoBytes);
+            return MemoBytes.SequenceEqual(that.MemoBytes);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 17;
+                hash = hash * 23 + Util.ComputeByteArrayHash(MemoBytes).GetHashCode();
+                return hash;
+            }
         }
     }
 }

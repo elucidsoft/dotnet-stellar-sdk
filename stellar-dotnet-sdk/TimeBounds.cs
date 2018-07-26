@@ -57,5 +57,16 @@ namespace stellar_dotnet_sdk
             if (MinTime != that.MinTime) return false;
             return MaxTime == that.MaxTime;
         }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 17;
+                hash = hash * 23 + MinTime.GetHashCode();
+                hash = hash * 23 + MaxTime.GetHashCode();
+                return hash;
+            }
+        }
     }
 }
