@@ -20,6 +20,12 @@ namespace stellar_dotnet_sdk_test
             Network.UseTestNetwork();
         }
 
+        [TestCleanup]
+        public void Cleanup()
+        {
+            Network.Use(null);
+        }
+
         [TestMethod]
         public void TestBuilderSuccessTestnet()
         {
