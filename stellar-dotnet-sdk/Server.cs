@@ -22,7 +22,7 @@ namespace stellar_dotnet_sdk
         {
         }
 
-        public HttpClient HttpClient { get; set; }
+        public static HttpClient HttpClient { get; set; }
 
         public AccountsRequestBuilder Accounts => new AccountsRequestBuilder(_serverUri, HttpClient);
 

@@ -36,7 +36,8 @@ namespace stellar_dotnet_sdk_test
 
             _fakeHttpMessageHandler = new Mock<FakeHttpMessageHandler> { CallBase = true };
             _httpClient = new HttpClient(_fakeHttpMessageHandler.Object);
-            _server.HttpClient = _httpClient;
+
+            Server.HttpClient = _httpClient;
         }
 
         [TestCleanup]
