@@ -1,4 +1,5 @@
-﻿using System;
+﻿using stellar_dotnet_sdk.responses;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -30,6 +31,21 @@ namespace stellar_dotnet_sdk.requests
 
             var response = await HttpClient.GetAsync(uri);
             return await responseHandler.HandleResponse(response);
+        }
+
+        public EventSource Stream<TZ>(EventHandler<TZ> listener)
+        {
+            var es = new EventSource(BuildUri());
+            es.Message += (sender, e) =>
+            {
+                if (e.Data == $"\"hello\"{Environment.NewLine}")
+                    return;
+
+                var account = JsonSingleton.GetInstance<TZ>(e.Data);
+                listener?.Invoke(this, account);
+            };
+
+            return es;
         }
 
         public RequestBuilder(Uri serverUri, string defaultSegment, HttpClient httpClient)
