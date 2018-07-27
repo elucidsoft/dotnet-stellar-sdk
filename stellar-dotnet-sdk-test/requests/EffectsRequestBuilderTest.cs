@@ -84,7 +84,7 @@ namespace stellar_dotnet_sdk_test.requests
         {
             var jsonResponse = File.ReadAllText(Path.Combine("testdata", "effectPage.json"));
 
-            var fakeHttpClient = RequestBuilderMock.CreateFakeHttpClient(jsonResponse);
+            var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
 
             using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
             {
@@ -94,6 +94,15 @@ namespace stellar_dotnet_sdk_test.requests
 
                 EffectsPageDeserializeTest.AssertTestData(effectsPage);
             }
+        }
+
+        [TestMethod]
+        public void TestStream()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCreated.json"));
+            var streamableTest = new StreamableTest<EffectResponse>(json, EffectDeserializerTest.AssertAccountCreatedData);
+
+            streamableTest.AssertIsValid();
         }
     }
 }

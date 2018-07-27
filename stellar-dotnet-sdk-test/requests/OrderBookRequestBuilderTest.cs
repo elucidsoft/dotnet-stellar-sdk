@@ -36,7 +36,7 @@ namespace stellar_dotnet_sdk_test.requests
         public async Task TestOrderBookExecute()
         {
             var jsonResponse = File.ReadAllText(Path.Combine("testdata", "orderBook.json"));
-            var fakeHttpClient = RequestBuilderMock.CreateFakeHttpClient(jsonResponse);
+            var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
 
             using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
             {

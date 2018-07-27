@@ -9,13 +9,11 @@ namespace stellar_dotnet_sdk.requests
 {
     public class PaymentsRequestBuilder : RequestBuilderStreamable<PaymentsRequestBuilder, OperationResponse>
     {
-
         public PaymentsRequestBuilder(Uri serverURI, HttpClient httpClient)
             : base(serverURI, "payments", httpClient)
         {
 
         }
-
 
         ///<Summary>
         /// Builds request to <code>GET /accounts/{account}/payments</code>

@@ -14,6 +14,7 @@ namespace stellar_dotnet_sdk.requests
         public TradesRequestBuilder(Uri serverUri, HttpClient httpClient)
             : base(serverUri, "trades", httpClient)
         {
+
         }
 
         public TradesRequestBuilder BaseAsset(Asset asset)

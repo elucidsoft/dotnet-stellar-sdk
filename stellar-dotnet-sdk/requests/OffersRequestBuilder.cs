@@ -11,7 +11,9 @@ namespace stellar_dotnet_sdk.requests
     {
         public OffersRequestBuilder(Uri serverURI, HttpClient httpClient) :
             base(serverURI, "offers", httpClient)
-        { }
+        {
+
+        }
 
         /// <summary>
         /// Builds request to GET /accounts/{account}/offers
