@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace stellar_dotnet_sdk.requests
 {
     /// <inheritdoc />
-    public class OffersRequestBuilder : RequestBuilder<OffersRequestBuilder>
+    public class OffersRequestBuilder : RequestBuilderExecutePageable<OffersRequestBuilder, OfferResponse>
     {
         public OffersRequestBuilder(Uri serverURI, HttpClient httpClient) :
             base(serverURI, "offers", httpClient)
@@ -24,14 +24,6 @@ namespace stellar_dotnet_sdk.requests
             account = account ?? throw new ArgumentNullException(nameof(account), "account cannot be null");
             this.SetSegments("accounts", account.AccountId, "offers");
             return this;
-        }
-
-        ///<Summary>
-        /// Build and execute request.
-        /// </Summary>
-        public async Task<Page<OfferResponse>> Execute()
-        {
-            return await Execute<Page<OfferResponse>>(BuildUri());
         }
     }
 }

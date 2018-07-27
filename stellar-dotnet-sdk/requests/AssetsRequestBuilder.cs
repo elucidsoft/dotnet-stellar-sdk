@@ -9,7 +9,7 @@ namespace stellar_dotnet_sdk.requests
     /// <summary>
     /// 
     /// </summary>
-    public class AssetsRequestBuilder : RequestBuilder<AssetsRequestBuilder>
+    public class AssetsRequestBuilder : RequestBuilderExecutePageable<AssetsRequestBuilder, AssetResponse>
     {
         /// <summary>
         /// 
@@ -42,13 +42,5 @@ namespace stellar_dotnet_sdk.requests
             return this;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public async Task<Page<AssetResponse>> Execute()
-        {
-            return await Execute<Page<AssetResponse>>(BuildUri());
-        }
     }
 }

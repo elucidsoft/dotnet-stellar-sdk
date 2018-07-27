@@ -1,8 +1,10 @@
-﻿using stellar_dotnet_sdk.responses;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using stellar_dotnet_sdk.responses;
+using stellar_dotnet_sdk.responses.operations;
+using stellar_dotnet_sdk.responses.page;
 
 namespace stellar_dotnet_sdk.requests
 {
@@ -31,21 +33,6 @@ namespace stellar_dotnet_sdk.requests
 
             var response = await HttpClient.GetAsync(uri);
             return await responseHandler.HandleResponse(response);
-        }
-
-        public EventSource Stream<TZ>(EventHandler<TZ> listener)
-        {
-            var es = new EventSource(BuildUri());
-            es.Message += (sender, e) =>
-            {
-                if (e.Data == $"\"hello\"{Environment.NewLine}")
-                    return;
-
-                var account = JsonSingleton.GetInstance<TZ>(e.Data);
-                listener?.Invoke(this, account);
-            };
-
-            return es;
         }
 
         public RequestBuilder(Uri serverUri, string defaultSegment, HttpClient httpClient)
@@ -116,6 +103,17 @@ namespace stellar_dotnet_sdk.requests
 
             return this as T;
         }
+        /// <summary>
+        ///     llows to stream SSE events from horizon.
+        ///     Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
+        ///     This mode will keep the connection to horizon open and horizon will continue to return
+        ///     http://www.w3.org/TR/eventsource/
+        ///     "https://www.stellar.org/developers/horizon/learn/responses.html
+        ///     responses as ledgers close.
+        /// </summary>
+        /// <param name="listener">
+        ///     EventListener implementation with AccountResponse type
+        ///     <returns>EventSource object, so you can close() connection when not needed anymore</returns>
 
         public Uri BuildUri()
         {
@@ -139,6 +137,58 @@ namespace stellar_dotnet_sdk.requests
             }
 
             throw new NotSupportedException("No segments defined.");
+        }
+    }
+
+    public class RequestBuilderExecutePageable<T, TResponse> : RequestBuilder<T> where T : class where TResponse : class
+    {
+        public RequestBuilderExecutePageable(Uri serverUri, string defaultSegment, HttpClient httpClient) : base(serverUri,
+            defaultSegment, httpClient)
+        {
+
+        }
+
+
+        ///<Summary>
+        /// Build and execute request.
+        /// </Summary>
+        public async Task<Page<TResponse>> Execute()
+        {
+            return await Execute<Page<TResponse>>(BuildUri());
+        }
+    }
+
+    public class RequestBuilderStreamable<T, TResponse> : RequestBuilderExecutePageable<T, TResponse> where T :  class where TResponse : class
+    {
+        public RequestBuilderStreamable(Uri serverUri, string defaultSegment, HttpClient httpClient) : base(serverUri,
+            defaultSegment, httpClient)
+        {
+
+        }
+
+        ///<Summary>
+        /// Allows to stream SSE events from horizon.
+        /// Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
+        /// This mode will keep the connection to horizon open and horizon will continue to return
+        /// responses as ledgers close.
+        /// <a href="http://www.w3.org/TR/eventsource/" target="_blank">Server-Sent Events</a>
+        /// <a href="https://www.stellar.org/developers/horizon/learn/responses.html" target="_blank">Response Format documentation</a>
+        /// </Summary>
+        /// <param name="listener">EventListener implementation with EffectResponse type</param> 
+        /// <returns>EventSource object, so you can <code>close()</code> connection when not needed anymore</param> 
+        public EventSource Stream(EventHandler<TResponse> listener)
+        {
+            var es = new EventSource(BuildUri());
+            es.Message += (sender, e) =>
+            {
+                if (e.Data == $"\"hello\"{Environment.NewLine}")
+                    return;
+
+                var account = JsonSingleton.GetInstance<TResponse>(e.Data);
+                listener?.Invoke(this, account);
+            };
+
+            return es;
         }
     }
 }

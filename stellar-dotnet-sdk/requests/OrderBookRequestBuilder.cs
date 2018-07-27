@@ -36,14 +36,6 @@ namespace stellar_dotnet_sdk.requests
             return this;
         }
 
-        ///<Summary>
-        /// Build and execute request.
-        /// </Summary>
-        public async Task<OrderBookResponse> Execute()
-        {
-            return await Execute<OrderBookResponse>(BuildUri());
-        }
-
 
         public override OrderBookRequestBuilder Cursor(string token)
         {
@@ -60,6 +52,14 @@ namespace stellar_dotnet_sdk.requests
         public override OrderBookRequestBuilder Order(OrderDirection direction)
         {
             throw new NotImplementedException();
+        }
+
+        ///<Summary>
+        /// Build and execute request.
+        /// </Summary>
+        public async Task<OrderBookResponse> Execute()
+        {
+            return await Execute<OrderBookResponse>(BuildUri());
         }
     }
 }
