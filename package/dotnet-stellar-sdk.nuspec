@@ -5,7 +5,7 @@
         <id>stellar-dotnet-sdk</id>
 
         <!-- The package version number that is used when resolving dependencies -->
-        <version>2.0.2</version>
+        <version>2.0.4</version>
 
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Eric Malamisura, Michael Monte</authors>
@@ -31,9 +31,11 @@
 
         <!-- Any details about this particular release -->
         <releaseNotes>
-		- Major release to 2.0.0, package has been renamed.
-		- Restructuring of project, now includes .NET Core 2.0 and .NET Standard 2.0 support together in same NuGet package.
-		</releaseNotes>
+		- Request Builder optimizations
+		- HttpClient optimizations
+		- Many bug fixes
+		- Friendbot Support for Testnet
+	</releaseNotes>
 
         <!-- 
             The description can be used in package manager UI. Note that the

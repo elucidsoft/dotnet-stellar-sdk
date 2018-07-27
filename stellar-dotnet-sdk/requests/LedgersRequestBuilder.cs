@@ -11,6 +11,7 @@ namespace stellar_dotnet_sdk.requests
         public LedgersRequestBuilder(Uri serverUri, HttpClient httpClient)
             : base(serverUri, "ledgers", httpClient)
         {
+
         }
 
         /// <summary>

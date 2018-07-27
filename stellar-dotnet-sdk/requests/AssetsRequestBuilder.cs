@@ -27,7 +27,7 @@ namespace stellar_dotnet_sdk.requests
         /// <returns></returns>
         public AssetsRequestBuilder AssetCode(string assetCode)
         {
-            base._uriBuilder.SetQueryParam("asset_code", assetCode);
+            _uriBuilder.SetQueryParam("asset_code", assetCode);
             return this;
         }
 
@@ -38,7 +38,7 @@ namespace stellar_dotnet_sdk.requests
         /// <returns></returns>
         public AssetsRequestBuilder AssetIssuer(string assetIssuer)
         {
-            base._uriBuilder.SetQueryParam("asset_issuer", assetIssuer);
+            _uriBuilder.SetQueryParam("asset_issuer", assetIssuer);
             return this;
         }
 

@@ -24,7 +24,7 @@ namespace stellar_dotnet_sdk
     ///     a message event handler on the resulting Event Source object. The EventSource attempts to be resilient to
     ///     transitory network errors and interruptions by automatically retrying connections to maintain persistence.
     /// </summary>
-    public sealed class EventSource : IDisposable
+    public sealed class EventSource : IDisposable, IEventSource
     {
         #region Public Enums
 
@@ -535,7 +535,7 @@ namespace stellar_dotnet_sdk
             /// <summary>
             ///     Gets the data.
             /// </summary>
-            public string Data { get; internal set; }
+            public string Data { get; set; }
 
             #endregion Public Properties
         }

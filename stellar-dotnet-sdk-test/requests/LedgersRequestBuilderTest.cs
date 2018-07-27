@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.requests;
+using stellar_dotnet_sdk.responses;
 using stellar_dotnet_sdk_test.responses;
 
 namespace stellar_dotnet_sdk_test.requests
@@ -28,7 +29,7 @@ namespace stellar_dotnet_sdk_test.requests
         public async Task TestLedgersExecute()
         {
             var jsonResponse = File.ReadAllText(Path.Combine("testdata", "ledgerPage.json"));
-            var fakeHttpClient = RequestBuilderMock.CreateFakeHttpClient(jsonResponse);
+            var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
 
             using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
             {
@@ -37,6 +38,15 @@ namespace stellar_dotnet_sdk_test.requests
 
                 LedgerPageDeserializerTest.AssertTestData(ledgersPage);
             }
+        }
+
+        [TestMethod]
+        public void TestStream()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "ledger.json"));
+            var streamableTest = new StreamableTest<LedgerResponse>(json, LedgerDeserializeTest.AssertTestData);
+
+            streamableTest.AssertIsValid();
         }
     }
 }

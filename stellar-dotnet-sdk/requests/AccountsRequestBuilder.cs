@@ -2,7 +2,6 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using stellar_dotnet_sdk.responses;
-using stellar_dotnet_sdk.responses.page;
 
 namespace stellar_dotnet_sdk.requests
 {

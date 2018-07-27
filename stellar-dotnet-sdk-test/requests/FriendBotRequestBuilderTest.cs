@@ -61,7 +61,7 @@ namespace stellar_dotnet_sdk_test.requests
             Network.UseTestNetwork();
 
             var jsonResponse = File.ReadAllText(Path.Combine("testdata", "friendBotSuccess.json"));
-            var fakeHttpClient = RequestBuilderMock.CreateFakeHttpClient(jsonResponse);
+            var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
 
             using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
             {

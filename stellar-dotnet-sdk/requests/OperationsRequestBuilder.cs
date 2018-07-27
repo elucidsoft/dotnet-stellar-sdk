@@ -16,6 +16,7 @@ namespace stellar_dotnet_sdk.requests
         public OperationsRequestBuilder(Uri serverUri, HttpClient httpClient)
             : base(serverUri, "operations", httpClient)
         {
+
         }
 
         /// <summary>
