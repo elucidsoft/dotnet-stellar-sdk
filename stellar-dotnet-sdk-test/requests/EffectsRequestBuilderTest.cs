@@ -103,6 +103,22 @@ namespace stellar_dotnet_sdk_test.requests
             var streamableTest = new StreamableTest<EffectResponse>(json, EffectDeserializerTest.AssertAccountCreatedData);
 
             streamableTest.AssertIsValid();
+
+        }
+
+        [TestMethod]
+        public void TestStreamCursor()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCreated.json"));
+            var streamableTest = new StreamableTest<EffectResponse>(json, (r) => 
+            {
+                //do nothing
+            });
+
+            streamableTest.AssertIsValid();
+
+            var url = streamableTest.Uri;
+            Assert.AreEqual(streamableTest.Uri, "https://horizon-testnet.stellar.org/test?cursor=65571265847297-1");
         }
     }
 }

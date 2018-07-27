@@ -9,7 +9,7 @@ namespace stellar_dotnet_sdk.responses
     /// <seealso cref="TradesRequestBuilder"/>
     /// <seealso cref="Server"/>
     /// </summary>
-    public class TradeResponse : Response
+    public class TradeResponse : Response, IPagingToken
     {
         public TradeResponse(String id, String pagingToken, String ledgerCloseTime, String offerId, bool baseIsSeller, KeyPair baseAccount, String baseAmount, String baseAssetType, String baseAssetCode, String baseAssetIssuer, KeyPair counterAccount, String counterAmount, String counterAssetType, String counterAssetCode, String counterAssetIssuer)
         {
