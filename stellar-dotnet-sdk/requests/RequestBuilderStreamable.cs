@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using stellar_dotnet_sdk.responses;
+using stellar_dotnet_sdk.responses.page;
 
 namespace stellar_dotnet_sdk.requests
 {
@@ -45,6 +46,13 @@ namespace stellar_dotnet_sdk.requests
                     return;
 
                 var responseObject = JsonSingleton.GetInstance<TResponse>(e.Data) ?? throw new NotSupportedException("Uknown response type");
+
+                var page = responseObject as IPagingToken;
+                if (page != null)
+                {
+                    Cursor(page.PagingToken);
+                }
+
                 listener?.Invoke(this, responseObject);
             };
 

@@ -33,6 +33,8 @@ namespace stellar_dotnet_sdk.requests
             return await responseHandler.HandleResponse(response);
         }
 
+        public string Uri { get => BuildUri().ToString(); }
+
         public RequestBuilder(Uri serverUri, string defaultSegment, HttpClient httpClient)
         {
             _uriBuilder = new UriBuilder(serverUri);

@@ -8,7 +8,7 @@ namespace stellar_dotnet_sdk.responses.operations
     /// <seealso cref="requests.OperationsRequestBuilder"/>
     /// <seealso cref="Server"/>
     /// </summary>
-    public abstract class OperationResponse
+    public abstract class OperationResponse : IPagingToken
     {
 
         /// <summary>
