@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using stellar_dotnet_sdk.responses.operations;
 
 namespace stellar_dotnet_sdk.requests
 {
@@ -31,6 +32,8 @@ namespace stellar_dotnet_sdk.requests
             var response = await HttpClient.GetAsync(uri);
             return await responseHandler.HandleResponse(response);
         }
+
+        public string Uri { get => BuildUri().ToString(); }
 
         public RequestBuilder(Uri serverUri, string defaultSegment, HttpClient httpClient)
         {
@@ -100,7 +103,17 @@ namespace stellar_dotnet_sdk.requests
 
             return this as T;
         }
-
+        /// <summary>
+        ///     llows to stream SSE events from horizon.
+        ///     Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
+        ///     This mode will keep the connection to horizon open and horizon will continue to return
+        ///     http://www.w3.org/TR/eventsource/
+        ///     "https://www.stellar.org/developers/horizon/learn/responses.html
+        ///     responses as ledgers close.
+        /// </summary>
+        /// <param name="listener">
+        ///     EventListener implementation with AccountResponse type
+        ///     <returns>EventSource object, so you can close() connection when not needed anymore</returns>
         public Uri BuildUri()
         {
             if (_segments.Count > 0)

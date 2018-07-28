@@ -27,15 +27,18 @@ namespace stellar_dotnet_sdk.requests
             }
         }
 
-        public async Task<FriendBotResponse> Execute()
-        {
-            return await Execute<FriendBotResponse>(BuildUri());
-        }
-
         public FriendBotRequestBuilder FundAccount(KeyPair account)
         {
             _uriBuilder.SetQueryParam("addr", account.AccountId);
             return this;
+        }
+
+        ///<Summary>
+        /// Build and execute request.
+        /// </Summary>
+        public async Task<FriendBotResponse> Execute()
+        {
+            return await Execute<FriendBotResponse>(BuildUri());
         }
     }
 }

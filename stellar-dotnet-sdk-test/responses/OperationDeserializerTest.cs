@@ -15,6 +15,12 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationCreateAccount.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertCreateAccountOperationData(instance);
+
+        }
+
+        public static void AssertCreateAccountOperationData(OperationResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is CreateAccountOperationResponse);
             var operation = (CreateAccountOperationResponse)instance;
@@ -32,7 +38,6 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(operation.Links.Self.Href, "/operations/3936840037961729");
             Assert.AreEqual(operation.Links.Succeeds.Href, "/operations?cursor=3936840037961729&order=desc");
             Assert.AreEqual(operation.Links.Transaction.Href, "/transactions/75608563ae63757ffc0650d84d1d13c0f3cd4970a294a2a6b43e3f454e0f9e6d");
-
         }
 
         [TestMethod]
@@ -45,10 +50,10 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is PaymentOperationResponse);
             var operation = (PaymentOperationResponse)instance;
 
-            AssertOperationTestData(operation);
+            AssertPaymentOperationTestData(operation);
         }
 
-        public static void AssertOperationTestData(PaymentOperationResponse operation)
+        public static void AssertPaymentOperationTestData(PaymentOperationResponse operation)
         {
             Assert.AreEqual(operation.SourceAccount.AccountId, "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ");
             Assert.AreEqual(operation.Id, 3940808587743233L);

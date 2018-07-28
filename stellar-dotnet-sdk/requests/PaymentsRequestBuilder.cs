@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk.requests
 {
-    public class PaymentsRequestBuilder : RequestBuilder<PaymentsRequestBuilder>
+    public class PaymentsRequestBuilder : RequestBuilderStreamable<PaymentsRequestBuilder, OperationResponse>
     {
-
         public PaymentsRequestBuilder(Uri serverURI, HttpClient httpClient)
             : base(serverURI, "payments", httpClient)
         {
 
         }
-
 
         ///<Summary>
         /// Builds request to <code>GET /accounts/{account}/payments</code>
@@ -50,39 +48,6 @@ namespace stellar_dotnet_sdk.requests
             transactionId = transactionId ?? throw new ArgumentNullException(nameof(transactionId), "transactionId cannot be null");
             SetSegments("transactions", transactionId, "payments");
             return this;
-        }
-
-        ///<Summary>
-        /// Allows to stream SSE events from horizon.
-        /// Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
-        /// This mode will keep the connection to horizon open and horizon will continue to return
-        /// responses as ledgers close.
-        /// <a href="http://www.w3.org/TR/eventsource/" target="_blank">Server-Sent Events</a>
-        /// <a href="https://www.stellar.org/developers/horizon/learn/responses.html" target="_blank">Response Format documentation</a>
-        /// </Summary>
-        /// <param name="listener">EventListener implementation with EffectResponse type</param> 
-        /// <returns>EventSource object, so you can <code>close()</code> connection when not needed anymore</param> 
-        public EventSource Stream(EventHandler<OperationResponse> listener)
-        {
-            var es = new EventSource(BuildUri());
-            es.Message += (sender, e) =>
-            {
-                if (e.Data == "\"hello\"\r\n")
-                    return;
-
-                var account = JsonSingleton.GetInstance<OperationResponse>(e.Data);
-                listener?.Invoke(this, account);
-            };
-
-            return es;
-        }
-
-        ///<Summary>
-        /// Build and execute request.
-        /// </Summary>
-        public async Task<Page<OperationResponse>> Execute()
-        {
-            return await Execute<Page<OperationResponse>>(BuildUri());
         }
     }
 }

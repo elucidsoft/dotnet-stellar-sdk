@@ -16,6 +16,11 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
+            AssertAccountCreatedData(instance);
+        }
+
+        public static void AssertAccountCreatedData(EffectResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountCreatedEffectResponse);
             var effect = (AccountCreatedEffectResponse)instance;

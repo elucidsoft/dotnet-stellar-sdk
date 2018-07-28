@@ -8,7 +8,7 @@ using static stellar_dotnet_sdk_test.FederationServerTest;
 
 namespace stellar_dotnet_sdk_test
 {
-    public static class RequestBuilderMock
+    public static class FakeHttpClient
     {
         public static HttpClient CreateFakeHttpClient(string content)
         {

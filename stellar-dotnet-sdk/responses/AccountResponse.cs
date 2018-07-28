@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace stellar_dotnet_sdk.responses
 {
-    public class AccountResponse : Response
+    public class AccountResponse : Response, IPagingToken
     {
         private AccountResponse()
         {

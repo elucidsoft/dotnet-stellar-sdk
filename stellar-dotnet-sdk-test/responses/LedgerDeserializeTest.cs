@@ -13,6 +13,11 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "ledger.json"));
             var ledger = JsonSingleton.GetInstance<LedgerResponse>(json);
 
+            AssertTestData(ledger);
+        }
+
+        public static void AssertTestData(LedgerResponse ledger)
+        {
             Assert.AreEqual(ledger.Hash, "686bb246db89b099cd3963a4633eb5e4315d89dfd3c00594c80b41a483847bfa");
             Assert.AreEqual(ledger.PagingToken, "3860428274794496");
             Assert.AreEqual(ledger.PrevHash, "50c8695eb32171a19858413e397cc50b504ceacc819010bdf8ff873aff7858d7");

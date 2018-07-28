@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.requests;
+using stellar_dotnet_sdk.responses.operations;
 using stellar_dotnet_sdk_test.responses;
 
 namespace stellar_dotnet_sdk_test.requests
@@ -70,7 +71,7 @@ namespace stellar_dotnet_sdk_test.requests
         public async Task TestOperationsExecute()
         {
             var jsonResponse = File.ReadAllText(Path.Combine("testdata", "operationPage.json"));
-            var fakeHttpClient = RequestBuilderMock.CreateFakeHttpClient(jsonResponse);
+            var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
 
             using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
             {
@@ -79,6 +80,15 @@ namespace stellar_dotnet_sdk_test.requests
 
                 OperationPageDeserializerTest.AssertTestData(account);
             }
+        }
+
+        [TestMethod]
+        public void TestStream()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationCreateAccount.json"));
+            var streamableTest = new StreamableTest<OperationResponse>(json, OperationDeserializerTest.AssertCreateAccountOperationData);
+
+            streamableTest.AssertIsValid();
         }
     }
 }
