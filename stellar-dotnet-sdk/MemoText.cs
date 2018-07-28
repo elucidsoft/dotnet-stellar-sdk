@@ -34,5 +34,11 @@ namespace stellar_dotnet_sdk
             MemoText memoText = (MemoText)o;
             return Equals(MemoTextValue, memoText.MemoTextValue);
         }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Start
+                           .Hash(MemoTextValue);
+        }
     }
 }

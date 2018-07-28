@@ -126,5 +126,55 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(sdkxdr.MemoType.MemoTypeEnum.MEMO_RETURN, memo.ToXdr().Discriminant.InnerValue);
             Assert.AreEqual("4142434445464748494a4b4c", memo.GetTrimmedHexValue());
         }
+
+        [TestMethod]
+        public void TestMemoIDEquality()
+        {
+            var memo = Memo.Id(9223372036854775807L);
+            var memo2 = Memo.Id(9223372036854775807L);
+
+            Assert.AreEqual(memo.GetHashCode(), memo2.GetHashCode());
+            Assert.AreEqual(memo, memo2);
+        }
+
+        [TestMethod]
+        public void TestMemoReturnHashEquality()
+        {
+            var memo = Memo.ReturnHash("4142434445464748494a4b4c");
+            var memo2 = Memo.ReturnHash("4142434445464748494a4b4c");
+
+            Assert.AreEqual(memo.GetHashCode(), memo2.GetHashCode());
+            Assert.AreEqual(memo, memo2);
+        }
+
+        [TestMethod]
+        public void TestMemoHashEquality()
+        {
+            var memo = Memo.Hash("4142434445464748494a4b4c");
+            var memo2 = Memo.Hash("4142434445464748494a4b4c");
+
+            Assert.AreEqual(memo.GetHashCode(), memo2.GetHashCode());
+            Assert.AreEqual(memo, memo2);
+        }
+
+        [TestMethod]
+        public void TestMemoTextEquality()
+        {
+            var memo = Memo.Text("test");
+            var memo2 = Memo.Text("test");
+
+            Assert.AreEqual(memo.GetHashCode(), memo2.GetHashCode());
+            Assert.AreEqual(memo, memo2);
+        }
+
+        [TestMethod]
+        public void TestMemoNoneEquality()
+        {
+            var memo = Memo.None();
+            var memo2 = Memo.None();
+
+            Assert.AreEqual(memo.GetHashCode(), memo2.GetHashCode());
+            Assert.AreEqual(memo, memo2);
+        }
     }
 }

@@ -96,5 +96,35 @@ namespace stellar_dotnet_sdk
             for (var i = 0; i < arr.Length; i++)
                 arr[i] = value;
         }
+
+        public static int ComputeByteArrayHash(params byte[] data)
+        {
+            unchecked
+            {
+                const int p = 16777619;
+                int hash = (int)2166136261;
+
+                for (int i = 0; i < data.Length; i++)
+                    hash = (hash ^ data[i]) * p;
+
+                hash += hash << 13;
+                hash ^= hash >> 7;
+                hash += hash << 3;
+                hash ^= hash >> 17;
+                hash += hash << 5;
+                return hash;
+            }
+        }
+    }
+
+    public static class HashCode
+    {
+        public const int Start = 17;
+
+        public static int Hash<T>(this int hash, T obj)
+        {
+            var h = System.Collections.Generic.EqualityComparer<T>.Default.GetHashCode(obj);
+            return unchecked((hash * 31) + h);
+        }
     }
 }

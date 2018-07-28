@@ -31,5 +31,11 @@ namespace stellar_dotnet_sdk
             MemoId memoId = (MemoId)o;
             return IdValue == memoId.IdValue;
         }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Start
+                           .Hash(IdValue);
+        }
     }
 }

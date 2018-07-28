@@ -48,8 +48,14 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(transaction.SourceAccount, source);
             Assert.AreEqual(transaction.SequenceNumber, sequenceNumber + 1);
             Assert.AreEqual(transaction.Fee, 100);
-
+        }
+        
+        [TestMethod]
+        public void TestFromXdr()
+        {
+            Transaction transaction = Transaction.FromEnvelopeXdr("AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAEqBfIAAAAAAAAAAABtoeVYgAAAEDLki9Oi700N60Lo8gUmEFHbKvYG4QSqXiLIt9T0ru2O5BphVl/jR9tYtHAD+UeDYhgXNgwUxqTEu1WukvEyYcD");
             Transaction transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
+
 
             Assert.AreEqual(transaction.SourceAccount.AccountId, transaction2.SourceAccount.AccountId);
             Assert.AreEqual(transaction.SequenceNumber, transaction2.SequenceNumber);

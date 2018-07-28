@@ -17,5 +17,10 @@ namespace stellar_dotnet_sdk
             if (o == null || GetType() != o.GetType()) return false;
             return true;
         }
+
+        public override int GetHashCode()
+        {
+            return GetType().GetHashCode();
+        }
     }
 }
