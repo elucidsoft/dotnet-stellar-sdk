@@ -65,12 +65,8 @@ namespace stellar_dotnet_sdk
 
         public override int GetHashCode()
         {
-            unchecked
-            {
-                int hash = 17;
-                hash = hash * 23 + Util.ComputeByteArrayHash(MemoBytes).GetHashCode();
-                return hash;
-            }
+            return HashCode.Start
+                           .Hash(Util.ComputeByteArrayHash(MemoBytes));
         }
     }
 }

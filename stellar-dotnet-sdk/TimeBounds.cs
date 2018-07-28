@@ -60,13 +60,9 @@ namespace stellar_dotnet_sdk
 
         public override int GetHashCode()
         {
-            unchecked
-            {
-                int hash = 17;
-                hash = hash * 23 + MinTime.GetHashCode();
-                hash = hash * 23 + MaxTime.GetHashCode();
-                return hash;
-            }
+            return HashCode.Start
+                           .Hash(MinTime)
+                           .Hash(MaxTime);
         }
     }
 }

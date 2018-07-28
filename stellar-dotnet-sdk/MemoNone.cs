@@ -20,12 +20,7 @@ namespace stellar_dotnet_sdk
 
         public override int GetHashCode()
         {
-            unchecked
-            {
-                int hash = 17;
-                hash = hash * 23 + GetHashCode();
-                return hash;
-            }
+            return GetType().GetHashCode();
         }
     }
 }
