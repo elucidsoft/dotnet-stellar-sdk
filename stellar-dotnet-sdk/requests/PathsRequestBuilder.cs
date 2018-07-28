@@ -9,7 +9,7 @@ namespace stellar_dotnet_sdk.requests
     /// <summary>
     /// Builds requests connected to paths.
     /// </summary>
-    public class PathsRequestBuilder : RequestBuilder<PathsRequestBuilder>
+    public class PathsRequestBuilder : RequestBuilderExecutePageable<PathsRequestBuilder, PathResponse>
     {
         public PathsRequestBuilder(Uri serverUri, HttpClient httpClient)
             : base(serverUri, "paths", httpClient)
@@ -47,11 +47,6 @@ namespace stellar_dotnet_sdk.requests
             }
 
             return this;
-        }
-
-        public async Task<Page<PathResponse>> Execute()
-        {
-            return await Execute<Page<PathResponse>>(BuildUri());
         }
     }
 }

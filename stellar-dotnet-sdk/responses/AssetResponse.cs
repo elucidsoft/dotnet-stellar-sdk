@@ -6,7 +6,7 @@ namespace stellar_dotnet_sdk.responses
     /// <summary>
     /// 
     /// </summary>
-    public class AssetResponse : Response
+    public class AssetResponse : Response, IPagingToken
     {
         /// <summary>
         /// 

@@ -7,7 +7,7 @@ using stellar_dotnet_sdk.responses.page;
 
 namespace stellar_dotnet_sdk.requests
 {
-    public class OperationsRequestBuilder : RequestBuilder<OperationsRequestBuilder>
+    public class OperationsRequestBuilder : RequestBuilderStreamable<OperationsRequestBuilder, OperationResponse>
     {
         /// <summary>
         ///     Builds requests connected to operations.
@@ -16,6 +16,7 @@ namespace stellar_dotnet_sdk.requests
         public OperationsRequestBuilder(Uri serverUri, HttpClient httpClient)
             : base(serverUri, "operations", httpClient)
         {
+
         }
 
         /// <summary>
@@ -32,22 +33,6 @@ namespace stellar_dotnet_sdk.requests
 
             var response = await HttpClient.GetAsync(uri);
             return await responseHandler.HandleResponse(response);
-        }
-
-
-        ///<Summary>
-        /// Allows to stream SSE events from horizon.
-        /// Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
-        /// This mode will keep the connection to horizon open and horizon will continue to return
-        /// responses as ledgers close.
-        /// <a href="http://www.w3.org/TR/eventsource/" target="_blank">Server-Sent Events</a>
-        /// <a href="https://www.stellar.org/developers/horizon/learn/responses.html" target="_blank">Response Format documentation</a>
-        /// </Summary>
-        /// <param name="listener">EventListener implementation with EffectResponse type</param> 
-        /// <returns>EventSource object, so you can <code>close()</code> connection when not needed anymore</param> 
-        public EventSource Stream(EventHandler<OperationResponse> listener)
-        {
-            return Stream<OperationResponse>(listener);
         }
 
         /// <summary>
@@ -115,19 +100,6 @@ namespace stellar_dotnet_sdk.requests
             SetSegments("transactions", transactionId, "operations");
 
             return this;
-        }
-
-        /// <summary>
-        ///     Build and execute request.
-        /// </summary>
-        /// <returns>
-        ///     <see cref="Task{Page{OperationResponse}}" />
-        /// </returns>
-        /// <exception cref="TooManyRequestsException"></exception>
-        /// <exception cref="HttpRequestException"></exception>
-        public async Task<Page<OperationResponse>> Execute()
-        {
-            return await Execute<Page<OperationResponse>>(BuildUri());
         }
     }
 }

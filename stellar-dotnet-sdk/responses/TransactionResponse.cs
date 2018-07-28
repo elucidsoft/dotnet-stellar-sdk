@@ -3,7 +3,7 @@ using System;
 
 namespace stellar_dotnet_sdk.responses
 {
-    public class TransactionResponse : Response
+    public class TransactionResponse : Response, IPagingToken
     {
         [JsonProperty(PropertyName = "hash")]
         public string Hash { get; private set; }

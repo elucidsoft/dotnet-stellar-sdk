@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace stellar_dotnet_sdk.responses
 {
-    public class LedgerResponse : Response
+    public class LedgerResponse : Response, IPagingToken
     {
         [JsonProperty(PropertyName = "sequence")]
         public long Sequence { get; private set; }

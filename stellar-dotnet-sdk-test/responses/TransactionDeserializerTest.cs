@@ -14,6 +14,11 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "transactionTransaction.json"));
             var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
 
+            AssertTestData(transaction);
+        }
+
+        public static void AssertTestData(TransactionResponse transaction)
+        {
             Assert.AreEqual("5c2e4dad596941ef944d72741c8f8f1a4282f8f2f141e81d827f44bf365d626b", transaction.Hash);
             Assert.AreEqual(915744L, transaction.Ledger);
             Assert.AreEqual("2015-11-20T17:01:28Z", transaction.CreatedAt);
@@ -36,7 +41,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("/transactions/5c2e4dad596941ef944d72741c8f8f1a4282f8f2f141e81d827f44bf365d626b/operations{?cursor,limit,order}", transaction.Links.Operations.Href);
             Assert.AreEqual("/transactions?cursor=3933090531512320&order=asc", transaction.Links.Precedes.Href);
             Assert.AreEqual("/transactions/5c2e4dad596941ef944d72741c8f8f1a4282f8f2f141e81d827f44bf365d626b", transaction.Links.Self.Href);
-            Assert.AreEqual( "/transactions?cursor=3933090531512320&order=desc", transaction.Links.Succeeds.Href);
+            Assert.AreEqual("/transactions?cursor=3933090531512320&order=desc", transaction.Links.Succeeds.Href);
         }
 
         [TestMethod]

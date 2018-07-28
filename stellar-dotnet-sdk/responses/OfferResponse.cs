@@ -9,7 +9,7 @@ namespace stellar_dotnet_sdk.responses
     /// <seealso cref="OffersRequestBuilder"/>
     /// <seealso cref="Server"/>
     /// </summary>
-    public class OfferResponse : Response
+    public class OfferResponse : Response, IPagingToken
     {
         public OfferResponse(long id, string pagingToken, KeyPair seller, Asset selling, Asset buying, string amount, string price, OfferResponseLinks links)
         {
