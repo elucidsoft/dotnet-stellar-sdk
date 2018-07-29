@@ -94,7 +94,7 @@
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -103,7 +103,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_TransactionResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class TransactionResponse : Response</code></pre>
+    <pre><code class="lang-csharp hljs">public class TransactionResponse : Response, IPagingToken</code></pre>
   </div>
   
   
@@ -261,7 +261,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string CreatedAt { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;created_at&quot;)]
+public string CreatedAt { get; }</code></pre>
   </div>
   
   
@@ -304,7 +305,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string EnvelopeXdr { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;envelope_xdr&quot;)]
+public string EnvelopeXdr { get; }</code></pre>
   </div>
   
   
@@ -347,7 +349,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long FeePaid { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;fee_paid&quot;)]
+public long FeePaid { get; }</code></pre>
   </div>
   
   
@@ -390,7 +393,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Hash { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;hash&quot;)]
+public string Hash { get; }</code></pre>
   </div>
   
   
@@ -433,7 +437,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long Ledger { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;ledger&quot;)]
+public long Ledger { get; }</code></pre>
   </div>
   
   
@@ -476,7 +481,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TransactionResponse.TransactionResponseLinks Links { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;_links&quot;)]
+public TransactionResponse.TransactionResponseLinks Links { get; }</code></pre>
   </div>
   
   
@@ -605,7 +611,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int OperationCount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;operation_count&quot;)]
+public int OperationCount { get; }</code></pre>
   </div>
   
   
@@ -648,7 +655,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string PagingToken { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;paging_token&quot;)]
+public string PagingToken { get; }</code></pre>
   </div>
   
   
@@ -667,6 +675,8 @@
   
   
   
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.responses.IPagingToken.html#stellar_dotnet_sdk_responses_IPagingToken_PagingToken">IPagingToken.PagingToken</a></div>
   
   
   
@@ -691,7 +701,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ResultMetaXdr { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;result_meta_xdr&quot;)]
+public string ResultMetaXdr { get; }</code></pre>
   </div>
   
   
@@ -734,7 +745,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ResultXdr { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;result_xdr&quot;)]
+public string ResultXdr { get; }</code></pre>
   </div>
   
   
@@ -777,7 +789,9 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair SourceAccount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;source_account&quot;)]
+[JsonConverter(typeof(KeyPairTypeAdapter))]
+public KeyPair SourceAccount { get; }</code></pre>
   </div>
   
   
@@ -820,7 +834,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long SourceAccountSequence { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;source_account_sequence&quot;)]
+public long SourceAccountSequence { get; }</code></pre>
   </div>
   
   

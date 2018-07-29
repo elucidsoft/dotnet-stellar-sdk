@@ -116,7 +116,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   
   <h5 id="stellar_dotnet_sdk_responses_operations_AccountMergeOperationResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AccountMergeOperationResponse : OperationResponse</code></pre>
+    <pre><code class="lang-csharp hljs">public class AccountMergeOperationResponse : OperationResponse, IPagingToken</code></pre>
   </div>
   
   
@@ -197,7 +197,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair Account { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;account&quot;)]
+public KeyPair Account { get; }</code></pre>
   </div>
   
   
@@ -240,7 +241,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair Into { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;into&quot;)]
+public KeyPair Into { get; }</code></pre>
   </div>
   
   

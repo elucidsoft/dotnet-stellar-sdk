@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_AssetResponseLinks_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AssetResponseLinks : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class AssetResponseLinks</code></pre>
   </div>
   
   
@@ -161,7 +161,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Toml { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;toml&quot;)]
+public Link Toml { get; set; }</code></pre>
   </div>
   
   

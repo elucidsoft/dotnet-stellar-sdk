@@ -88,7 +88,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Extras : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Extras</code></pre>
   </div>
   
   
@@ -176,7 +176,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string EnvelopeXdr { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;envelope_xdr&quot;)]
+public string EnvelopeXdr { get; }</code></pre>
   </div>
   
   
@@ -219,7 +220,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SubmitTransactionResponse.Extras.ResultCodes ExtrasResultCodes { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;result_codes&quot;)]
+public SubmitTransactionResponse.Extras.ResultCodes ExtrasResultCodes { get; }</code></pre>
   </div>
   
   
@@ -262,7 +264,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ResultXdr { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;result_xdr&quot;)]
+public string ResultXdr { get; }</code></pre>
   </div>
   
   

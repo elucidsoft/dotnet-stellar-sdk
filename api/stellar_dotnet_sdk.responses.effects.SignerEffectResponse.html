@@ -116,7 +116,7 @@
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -125,7 +125,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_effects_SignerEffectResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SignerEffectResponse : EffectResponse</code></pre>
+    <pre><code class="lang-csharp hljs">public class SignerEffectResponse : EffectResponse, IPagingToken</code></pre>
   </div>
   
   
@@ -206,7 +206,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string PublicKey { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;public_key&quot;)]
+public string PublicKey { get; }</code></pre>
   </div>
   
   
@@ -249,7 +250,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Weight { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;weight&quot;)]
+public int Weight { get; }</code></pre>
   </div>
   
   

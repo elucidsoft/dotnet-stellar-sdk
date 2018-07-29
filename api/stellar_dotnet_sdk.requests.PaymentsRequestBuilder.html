@@ -78,14 +78,34 @@
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilder-1.html">RequestBuilder</a>&lt;<a class="xref" href="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.html">PaymentsRequestBuilder</a>&gt;</div>
-    <div class="level2"><span class="xref">PaymentsRequestBuilder</span></div>
+    <div class="level2"><a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilderExecutePageable-2.html">RequestBuilderExecutePageable</a>&lt;<a class="xref" href="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.html">PaymentsRequestBuilder</a>, <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>&gt;</div>
+    <div class="level3"><a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilderStreamable-2.html">RequestBuilderStreamable</a>&lt;<a class="xref" href="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.html">PaymentsRequestBuilder</a>, <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>&gt;</div>
+    <div class="level4"><span class="xref">PaymentsRequestBuilder</span></div>
   </div>
   
   
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
+      <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilderStreamable-2.html#stellar_dotnet_sdk_requests_RequestBuilderStreamable_2_EventSource">RequestBuilderStreamable&lt;PaymentsRequestBuilder, OperationResponse&gt;.EventSource</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilderStreamable-2.html#stellar_dotnet_sdk_requests_RequestBuilderStreamable_2_Stream_System_EventHandler__1__">RequestBuilderStreamable&lt;PaymentsRequestBuilder, OperationResponse&gt;.Stream(EventHandler&lt;OperationResponse&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilderExecutePageable-2.html#stellar_dotnet_sdk_requests_RequestBuilderExecutePageable_2_Execute">RequestBuilderExecutePageable&lt;PaymentsRequestBuilder, OperationResponse&gt;.Execute()</a>
+    </div>
+    <div>
       <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilder-1.html#stellar_dotnet_sdk_requests_RequestBuilder_1__uriBuilder">RequestBuilder&lt;PaymentsRequestBuilder&gt;._uriBuilder</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilder-1.html#stellar_dotnet_sdk_requests_RequestBuilder_1_HttpClient">RequestBuilder&lt;PaymentsRequestBuilder&gt;.HttpClient</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilder-1.html#stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_System_Uri_">RequestBuilder&lt;PaymentsRequestBuilder&gt;.Execute&lt;TZ&gt;(Uri)</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilder-1.html#stellar_dotnet_sdk_requests_RequestBuilder_1_Uri">RequestBuilder&lt;PaymentsRequestBuilder&gt;.Uri</a>
     </div>
     <div>
       <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilder-1.html#stellar_dotnet_sdk_requests_RequestBuilder_1_SetSegments_System_String___">RequestBuilder&lt;PaymentsRequestBuilder&gt;.SetSegments(String[])</a>
@@ -109,7 +129,7 @@
   
   <h5 id="stellar_dotnet_sdk_requests_PaymentsRequestBuilder_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PaymentsRequestBuilder : RequestBuilder&lt;PaymentsRequestBuilder&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class PaymentsRequestBuilder : RequestBuilderStreamable&lt;PaymentsRequestBuilder, OperationResponse&gt;</code></pre>
   </div>
   
   
@@ -121,31 +141,38 @@
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_PaymentsRequestBuilder__ctor_Uri_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.PaymentsRequestBuilder.%23ctor(Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_PaymentsRequestBuilder__ctor_System_Uri_System_Net_Http_HttpClient_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.PaymentsRequestBuilder.%23ctor(System.Uri%2CSystem.Net.Http.HttpClient)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/PaymentsRequestBuilder.cs/#L13" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/PaymentsRequestBuilder.cs/#L12" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_requests_PaymentsRequestBuilder__ctor_" data-uid="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_requests_PaymentsRequestBuilder__ctor_Uri_" data-uid="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.#ctor(Uri)"><a href="#collapsible-stellar_dotnet_sdk_requests_PaymentsRequestBuilder__ctor_Uri_" class="expander" data-toggle="collapse">PaymentsRequestBuilder(Uri)</a></h4>
+  <h4 id="stellar_dotnet_sdk_requests_PaymentsRequestBuilder__ctor_System_Uri_System_Net_Http_HttpClient_" data-uid="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.#ctor(System.Uri,System.Net.Http.HttpClient)"><a href="#collapsible-stellar_dotnet_sdk_requests_PaymentsRequestBuilder__ctor_System_Uri_System_Net_Http_HttpClient_" class="expander" data-toggle="collapse">PaymentsRequestBuilder(Uri, HttpClient)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_requests_PaymentsRequestBuilder__ctor_Uri_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_requests_PaymentsRequestBuilder__ctor_System_Uri_System_Net_Http_HttpClient_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PaymentsRequestBuilder(Uri serverURI)</code></pre>
+    <pre><code class="lang-csharp hljs">public PaymentsRequestBuilder(Uri serverURI, HttpClient httpClient)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
   <table>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">Uri</span></span>
+        <span class="pull-right"><span class="xref">System.Uri</span></span>
         <span class="parametername">serverURI</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Net.Http.HttpClient</span></span>
+        <span class="parametername">httpClient</span>
         <p>
       </td>
     </tr>
@@ -167,106 +194,10 @@
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Execute.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/PaymentsRequestBuilder.cs/#L96" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Execute_" data-uid="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Execute" data-uid="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute"><a href="#collapsible-stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Execute" class="expander" data-toggle="collapse">Execute()</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Execute" class="collapse in">
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;Page&lt;OperationResponse&gt;&gt; Execute()</code></pre>
-  </div>
-  
-  
-  <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">Task</span>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>&gt;&gt;
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Execute_Uri_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute(Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/PaymentsRequestBuilder.cs/#L58" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Execute_" data-uid="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Execute_Uri_" data-uid="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Execute(Uri)"><a href="#collapsible-stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Execute_Uri_" class="expander" data-toggle="collapse">Execute(Uri)</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Execute_Uri_" class="collapse in">
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;Page&lt;OperationResponse&gt;&gt; Execute(Uri uri)</code></pre>
-  </div>
-  
-  <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">Uri</span></span>
-        <span class="parametername">uri</span>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">Task</span>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>&gt;&gt;
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_PaymentsRequestBuilder_ForAccount_stellar_dotnet_sdk_KeyPair_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.PaymentsRequestBuilder.ForAccount(stellar_dotnet_sdk.KeyPair)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/PaymentsRequestBuilder.cs/#L24" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/PaymentsRequestBuilder.cs/#L23" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_requests_PaymentsRequestBuilder_ForAccount_" data-uid="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.ForAccount*"></a>
@@ -320,7 +251,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_PaymentsRequestBuilder_ForLedger_System_Int64_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.PaymentsRequestBuilder.ForLedger(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/PaymentsRequestBuilder.cs/#L36" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/PaymentsRequestBuilder.cs/#L35" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_requests_PaymentsRequestBuilder_ForLedger_" data-uid="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.ForLedger*"></a>
@@ -374,7 +305,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_PaymentsRequestBuilder_ForTransaction_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.PaymentsRequestBuilder.ForTransaction(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/PaymentsRequestBuilder.cs/#L47" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/PaymentsRequestBuilder.cs/#L46" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_requests_PaymentsRequestBuilder_ForTransaction_" data-uid="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.ForTransaction*"></a>
@@ -407,59 +338,6 @@
     <tr>
       <td>
         <a class="xref" href="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.html">PaymentsRequestBuilder</a>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Stream_EventHandler_stellar_dotnet_sdk_responses_operations_OperationResponse__.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Stream(EventHandler%7Bstellar_dotnet_sdk.responses.operations.OperationResponse%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/PaymentsRequestBuilder.cs/#L78" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Stream_" data-uid="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Stream*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Stream_EventHandler_stellar_dotnet_sdk_responses_operations_OperationResponse__" data-uid="stellar_dotnet_sdk.requests.PaymentsRequestBuilder.Stream(EventHandler{stellar_dotnet_sdk.responses.operations.OperationResponse})"><a href="#collapsible-stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Stream_EventHandler_stellar_dotnet_sdk_responses_operations_OperationResponse__" class="expander" data-toggle="collapse">Stream(EventHandler&lt;OperationResponse&gt;)</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_requests_PaymentsRequestBuilder_Stream_EventHandler_stellar_dotnet_sdk_responses_operations_OperationResponse__" class="collapse in">
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EventSource Stream(EventHandler&lt;OperationResponse&gt; listener)</code></pre>
-  </div>
-  
-  <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">EventHandler</span>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>&gt;</span>
-        <span class="parametername">listener</span>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="stellar_dotnet_sdk.EventSource.html">EventSource</a>
         <p>
       </td>
     </tr>

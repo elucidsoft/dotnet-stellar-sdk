@@ -94,7 +94,7 @@
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -103,7 +103,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_LedgerResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class LedgerResponse : Response</code></pre>
+    <pre><code class="lang-csharp hljs">public class LedgerResponse : Response, IPagingToken</code></pre>
   </div>
   
   
@@ -115,7 +115,7 @@
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_Int64_String_String_String_System_Int32_System_Int32_String_String_String_System_Int64_String_String_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.LedgerResponse.%23ctor(System.Int64%2CString%2CString%2CString%2CSystem.Int32%2CSystem.Int32%2CString%2CString%2CString%2CSystem.Int64%2CString%2CString%2CString%2CSystem.Int32%2Cstellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_Int64_System_String_System_String_System_String_System_Int32_System_Int32_System_String_System_String_System_String_System_Int64_System_String_System_String_System_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.LedgerResponse.%23ctor(System.Int64%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Int64%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Int32%2Cstellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/LedgerResponse.cs/#L54" title="View Source"><i class="fa fa-code"></i></a>
@@ -123,15 +123,15 @@
   
   <a id="stellar_dotnet_sdk_responses_LedgerResponse__ctor_" data-uid="stellar_dotnet_sdk.responses.LedgerResponse.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_Int64_String_String_String_System_Int32_System_Int32_String_String_String_System_Int64_String_String_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_" data-uid="stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.Int64,String,String,String,System.Int32,System.Int32,String,String,String,System.Int64,String,String,String,System.Int32,stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)"><a href="#collapsible-stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_Int64_String_String_String_System_Int32_System_Int32_String_String_String_System_Int64_String_String_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_" class="expander" data-toggle="collapse">LedgerResponse(Int64, String, String, String, Int32, Int32, String, String, String, Int64, String, String, String, Int32, LedgerResponse.LedgerResponseLinks)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_Int64_System_String_System_String_System_String_System_Int32_System_Int32_System_String_System_String_System_String_System_Int64_System_String_System_String_System_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_" data-uid="stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.Int64,System.String,System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.Int64,System.String,System.String,System.String,System.Int32,stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)"><a href="#collapsible-stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_Int64_System_String_System_String_System_String_System_Int32_System_Int32_System_String_System_String_System_String_System_Int64_System_String_System_String_System_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_" class="expander" data-toggle="collapse">LedgerResponse(Int64, String, String, String, Int32, Int32, String, String, String, Int64, String, String, String, Int32, LedgerResponse.LedgerResponseLinks)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_Int64_String_String_String_System_Int32_System_Int32_String_String_String_System_Int64_String_String_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_Int64_System_String_System_String_System_String_System_Int32_System_Int32_System_String_System_String_System_String_System_Int64_System_String_System_String_System_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LedgerResponse(long sequence, String hash, String pagingToken, String prevHash, int transactionCount, int operationCount, String closedAt, String totalCoins, String feePool, long baseFee, String baseReserve, String baseFeeInStroops, String baseReserveInStroops, int maxTxSetSize, LedgerResponse.LedgerResponseLinks links)</code></pre>
+    <pre><code class="lang-csharp hljs">public LedgerResponse(long sequence, string hash, string pagingToken, string prevHash, int transactionCount, int operationCount, string closedAt, string totalCoins, string feePool, long baseFee, string baseReserve, string baseFeeInStroops, string baseReserveInStroops, int maxTxSetSize, LedgerResponse.LedgerResponseLinks links)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
@@ -145,21 +145,21 @@
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="pull-right"><span class="xref">System.String</span></span>
         <span class="parametername">hash</span>
         <p>
       </td>
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="pull-right"><span class="xref">System.String</span></span>
         <span class="parametername">pagingToken</span>
         <p>
       </td>
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="pull-right"><span class="xref">System.String</span></span>
         <span class="parametername">prevHash</span>
         <p>
       </td>
@@ -180,21 +180,21 @@
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="pull-right"><span class="xref">System.String</span></span>
         <span class="parametername">closedAt</span>
         <p>
       </td>
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="pull-right"><span class="xref">System.String</span></span>
         <span class="parametername">totalCoins</span>
         <p>
       </td>
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="pull-right"><span class="xref">System.String</span></span>
         <span class="parametername">feePool</span>
         <p>
       </td>
@@ -208,21 +208,21 @@
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="pull-right"><span class="xref">System.String</span></span>
         <span class="parametername">baseReserve</span>
         <p>
       </td>
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="pull-right"><span class="xref">System.String</span></span>
         <span class="parametername">baseFeeInStroops</span>
         <p>
       </td>
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="pull-right"><span class="xref">System.String</span></span>
         <span class="parametername">baseReserveInStroops</span>
         <p>
       </td>
@@ -275,7 +275,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long BaseFee { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;base_fee&quot;)]
+public long BaseFee { get; }</code></pre>
   </div>
   
   
@@ -318,7 +319,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String BaseFeeInStroops { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;base_fee_in_stroops&quot;)]
+public string BaseFeeInStroops { get; }</code></pre>
   </div>
   
   
@@ -329,7 +331,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -361,7 +363,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BaseReserve { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;base_reserve&quot;)]
+public string BaseReserve { get; }</code></pre>
   </div>
   
   
@@ -404,7 +407,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String BaseReserveInStroops { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;base_reserve_in_stroops&quot;)]
+public string BaseReserveInStroops { get; }</code></pre>
   </div>
   
   
@@ -415,7 +419,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -447,7 +451,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ClosedAt { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;closed_at&quot;)]
+public string ClosedAt { get; }</code></pre>
   </div>
   
   
@@ -490,7 +495,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string FeePool { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;fee_pool&quot;)]
+public string FeePool { get; }</code></pre>
   </div>
   
   
@@ -533,7 +539,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Hash { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;hash&quot;)]
+public string Hash { get; }</code></pre>
   </div>
   
   
@@ -576,7 +583,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LedgerResponse.LedgerResponseLinks Links { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;_links&quot;)]
+public LedgerResponse.LedgerResponseLinks Links { get; }</code></pre>
   </div>
   
   
@@ -619,7 +627,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int MaxTxSetSize { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;max_tx_set_size&quot;)]
+public int MaxTxSetSize { get; }</code></pre>
   </div>
   
   
@@ -662,7 +671,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int OperationCount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;operation_count&quot;)]
+public int OperationCount { get; }</code></pre>
   </div>
   
   
@@ -705,7 +715,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string PagingToken { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;paging_token&quot;)]
+public string PagingToken { get; }</code></pre>
   </div>
   
   
@@ -724,6 +735,8 @@
   
   
   
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.responses.IPagingToken.html#stellar_dotnet_sdk_responses_IPagingToken_PagingToken">IPagingToken.PagingToken</a></div>
   
   
   
@@ -748,7 +761,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string PrevHash { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;prev_hash&quot;)]
+public string PrevHash { get; }</code></pre>
   </div>
   
   
@@ -791,7 +805,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long Sequence { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;sequence&quot;)]
+public long Sequence { get; }</code></pre>
   </div>
   
   
@@ -834,7 +849,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string TotalCoins { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;total_coins&quot;)]
+public string TotalCoins { get; }</code></pre>
   </div>
   
   
@@ -877,7 +893,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int TransactionCount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;transaction_count&quot;)]
+public int TransactionCount { get; }</code></pre>
   </div>
   
   

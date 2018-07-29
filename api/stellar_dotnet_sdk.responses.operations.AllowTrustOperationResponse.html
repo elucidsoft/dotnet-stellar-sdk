@@ -116,7 +116,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   
   <h5 id="stellar_dotnet_sdk_responses_operations_AllowTrustOperationResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AllowTrustOperationResponse : OperationResponse</code></pre>
+    <pre><code class="lang-csharp hljs">public class AllowTrustOperationResponse : OperationResponse, IPagingToken</code></pre>
   </div>
   
   
@@ -277,7 +277,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_code&quot;)]
+public string AssetCode { get; }</code></pre>
   </div>
   
   
@@ -321,7 +322,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_issuer&quot;)]
+public string AssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -365,7 +367,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_type&quot;)]
+public string AssetType { get; }</code></pre>
   </div>
   
   
@@ -409,7 +412,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Authorize { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;authorize&quot;)]
+public bool Authorize { get; }</code></pre>
   </div>
   
   
@@ -453,7 +457,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair Trustee { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;trustee&quot;)]
+public KeyPair Trustee { get; }</code></pre>
   </div>
   
   
@@ -497,7 +502,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair Trustor { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;trustor&quot;)]
+public KeyPair Trustor { get; }</code></pre>
   </div>
   
   

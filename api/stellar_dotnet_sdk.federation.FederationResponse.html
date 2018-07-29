@@ -89,7 +89,7 @@ See <a href="https://www.stellar.org/developers/learn/concepts/federation.html">
   
   <h5 id="stellar_dotnet_sdk_federation_FederationResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class FederationResponse : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class FederationResponse</code></pre>
   </div>
   
   
@@ -184,7 +184,8 @@ See <a href="https://www.stellar.org/developers/learn/concepts/federation.html">
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AccountId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;account_id&quot;)]
+public string AccountId { get; }</code></pre>
   </div>
   
   
@@ -227,7 +228,8 @@ See <a href="https://www.stellar.org/developers/learn/concepts/federation.html">
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Memo { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;memo&quot;)]
+public string Memo { get; }</code></pre>
   </div>
   
   
@@ -270,7 +272,8 @@ See <a href="https://www.stellar.org/developers/learn/concepts/federation.html">
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string MemoType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;memo_type&quot;)]
+public string MemoType { get; }</code></pre>
   </div>
   
   
@@ -313,7 +316,8 @@ See <a href="https://www.stellar.org/developers/learn/concepts/federation.html">
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string StellarAddress { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;stellar_address&quot;)]
+public string StellarAddress { get; }</code></pre>
   </div>
   
   

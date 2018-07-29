@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_PathResponseLinks_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PathResponseLinks : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class PathResponseLinks</code></pre>
   </div>
   
   
@@ -161,7 +161,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Self { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;self&quot;)]
+public Link Self { get; }</code></pre>
   </div>
   
   

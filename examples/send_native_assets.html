@@ -71,11 +71,12 @@
 
 <h2 id="description">Description</h2>
 <p>In this example you will learn how to send <strong>native assets</strong> from one account to another.</p>
-<blockquote>
+<div class="IMPORTANT">
+<h5>Important</h5>
 <p>This example uses secret seed and sign an operation, this is usually handled by wallets or in a secure way, be careful where you input your secret seed!</p>
-</blockquote>
+</div>
 <h2 id="code-example">Code Example</h2>
-<pre><code>//Set network and server
+<pre><code class="lang-csharp">//Set network and server
 Network network = new Network(&quot;Test SDF Network ; September 2015&quot;);
 Server server = new Server(&quot;https://horizon-testnet.stellar.org&quot;);
 
@@ -108,14 +109,14 @@ transaction.Sign(sourceKeyPair);
 //Try to send the transaction
 try
 {
-    Console.WriteLine(&quot;Sending Transaction&quot;);
-    await server.SubmitTransaction(transaction);
-    Console.WriteLine(&quot;Success!&quot;);
+	Console.WriteLine(&quot;Sending Transaction&quot;);
+	await server.SubmitTransaction(transaction);
+	Console.WriteLine(&quot;Success!&quot;);
 }
 catch (Exception exception)
 {
-    Console.WriteLine(&quot;Send Transaction Failed&quot;);
-    Console.WriteLine(&quot;Exception: &quot; + exception.Message);
+	Console.WriteLine(&quot;Send Transaction Failed&quot;);
+	Console.WriteLine(&quot;Exception: &quot; + exception.Message);
 }
 </code></pre>
 <h2 id="documentation-references">Documentation References</h2>

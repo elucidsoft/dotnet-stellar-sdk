@@ -116,7 +116,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   
   <h5 id="stellar_dotnet_sdk_responses_operations_CreateAccountOperationResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CreateAccountOperationResponse : OperationResponse</code></pre>
+    <pre><code class="lang-csharp hljs">public class CreateAccountOperationResponse : OperationResponse, IPagingToken</code></pre>
   </div>
   
   
@@ -204,7 +204,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair Account { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;account&quot;)]
+public KeyPair Account { get; }</code></pre>
   </div>
   
   
@@ -247,7 +248,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair Funder { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;funder&quot;)]
+public KeyPair Funder { get; }</code></pre>
   </div>
   
   
@@ -290,7 +292,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string StartingBalance { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;starting_balance&quot;)]
+public string StartingBalance { get; }</code></pre>
   </div>
   
   

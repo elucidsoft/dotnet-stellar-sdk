@@ -71,11 +71,17 @@
 
 <h2 id="description">Description</h2>
 <p>In this example you will learn how to generate an account keypair.</p>
+<div class="NOTE">
+<h5>Note</h5>
 <p>Generating this keypair <strong>won't</strong> create the account.</p>
+</div>
 <h2 id="code-example">Code Example</h2>
-<pre><code>KeyPair keypair = KeyPair.Random();
-Console.WriteLine(&quot;Secret: &quot; + keypair.SecretSeed);
+<pre><code class="lang-csharp">//Generate a random KeyPair
+KeyPair keypair = KeyPair.Random();
+
+//Show the KeyPair public and secret
 Console.WriteLine(&quot;Account ID: &quot; + keypair.AccountId);
+Console.WriteLine(&quot;Secret: &quot; + keypair.SecretSeed);
 </code></pre>
 <h2 id="documentation-references">Documentation References</h2>
 <ul>

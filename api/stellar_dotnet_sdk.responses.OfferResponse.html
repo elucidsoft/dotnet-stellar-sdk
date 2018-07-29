@@ -98,7 +98,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/off
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -107,7 +107,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/off
   
   <h5 id="stellar_dotnet_sdk_responses_OfferResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OfferResponse : Response</code></pre>
+    <pre><code class="lang-csharp hljs">public class OfferResponse : Response, IPagingToken</code></pre>
   </div>
   
   
@@ -230,7 +230,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/off
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Amount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;amount&quot;)]
+public string Amount { get; }</code></pre>
   </div>
   
   
@@ -273,7 +274,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/off
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Asset Buying { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;buying&quot;)]
+public Asset Buying { get; }</code></pre>
   </div>
   
   
@@ -316,7 +318,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/off
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long Id { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;id&quot;)]
+public long Id { get; }</code></pre>
   </div>
   
   
@@ -359,7 +362,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/off
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OfferResponseLinks Links { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;_links&quot;)]
+public OfferResponseLinks Links { get; }</code></pre>
   </div>
   
   
@@ -402,7 +406,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/off
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string PagingToken { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;paging_token&quot;)]
+public string PagingToken { get; }</code></pre>
   </div>
   
   
@@ -421,6 +426,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/off
   
   
   
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.responses.IPagingToken.html#stellar_dotnet_sdk_responses_IPagingToken_PagingToken">IPagingToken.PagingToken</a></div>
   
   
   
@@ -445,7 +452,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/off
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Price { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;price&quot;)]
+public string Price { get; }</code></pre>
   </div>
   
   
@@ -488,7 +496,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/off
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair Seller { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;seller&quot;)]
+public KeyPair Seller { get; }</code></pre>
   </div>
   
   
@@ -531,7 +540,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/off
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Asset Selling { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;selling&quot;)]
+public Asset Selling { get; }</code></pre>
   </div>
   
   
