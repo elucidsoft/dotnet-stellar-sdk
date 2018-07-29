@@ -20,7 +20,7 @@ namespace stellar_dotnet_sdk
             var hash = new Hash();
             hash.InnerValue = MemoBytes;
 
-            memo.Hash = hash;
+            memo.RetHash = hash;
 
             return memo;
         }

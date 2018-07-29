@@ -123,7 +123,10 @@ namespace stellar_dotnet_sdk_test
         public void TestMemoReturnHashSuccess()
         {
             var memo = Memo.ReturnHash("4142434445464748494a4b4c");
-            Assert.AreEqual(sdkxdr.MemoType.MemoTypeEnum.MEMO_RETURN, memo.ToXdr().Discriminant.InnerValue);
+            sdkxdr.Memo memoXdr = memo.ToXdr();
+            Assert.AreEqual(sdkxdr.MemoType.MemoTypeEnum.MEMO_RETURN, memoXdr.Discriminant.InnerValue);
+            Assert.IsNull(memoXdr.Hash);
+            Assert.AreEqual("4142434445464748494a4b4c0000000000000000000000000000000000000000", System.BitConverter.ToString(memoXdr.RetHash.InnerValue).Replace("-", "").ToLower());
             Assert.AreEqual("4142434445464748494a4b4c", memo.GetTrimmedHexValue());
         }
 
