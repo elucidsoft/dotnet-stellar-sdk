@@ -117,7 +117,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -126,7 +126,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   
   <h5 id="stellar_dotnet_sdk_responses_effects_AccountFlagsUpdatedEffectResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AccountFlagsUpdatedEffectResponse : EffectResponse</code></pre>
+    <pre><code class="lang-csharp hljs">public class AccountFlagsUpdatedEffectResponse : EffectResponse, IPagingToken</code></pre>
   </div>
   
   
@@ -207,7 +207,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool AuthRequiredFlag { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;auth_required_flag&quot;)]
+public bool AuthRequiredFlag { get; }</code></pre>
   </div>
   
   
@@ -250,7 +251,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool AuthRevokableFlag { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;auth_revokable_flag&quot;)]
+public bool AuthRevokableFlag { get; }</code></pre>
   </div>
   
   

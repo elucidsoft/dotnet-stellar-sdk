@@ -88,7 +88,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_Balance_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Balance : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Balance</code></pre>
   </div>
   
   
@@ -190,7 +190,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_code&quot;)]
+public string AssetCode { get; }</code></pre>
   </div>
   
   
@@ -276,7 +277,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_type&quot;)]
+public string AssetType { get; }</code></pre>
   </div>
   
   
@@ -319,7 +321,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BalanceString { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;balance&quot;)]
+public string BalanceString { get; }</code></pre>
   </div>
   
   
@@ -362,7 +365,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Limit { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;limit&quot;)]
+public string Limit { get; }</code></pre>
   </div>
   
   

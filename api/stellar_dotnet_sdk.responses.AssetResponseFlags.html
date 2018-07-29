@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_AssetResponseFlags_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AssetResponseFlags : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class AssetResponseFlags</code></pre>
   </div>
   
   
@@ -168,7 +168,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool AuthRequired { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;auth_required&quot;)]
+public bool AuthRequired { get; set; }</code></pre>
   </div>
   
   
@@ -211,7 +212,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool AuthRevocable { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;auth_revocable&quot;)]
+public bool AuthRevocable { get; set; }</code></pre>
   </div>
   
   

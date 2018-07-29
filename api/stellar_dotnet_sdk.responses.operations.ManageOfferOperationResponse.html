@@ -116,7 +116,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   
   <h5 id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ManageOfferOperationResponse : OperationResponse</code></pre>
+    <pre><code class="lang-csharp hljs">public class ManageOfferOperationResponse : OperationResponse, IPagingToken</code></pre>
   </div>
   
   
@@ -246,7 +246,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Amount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;amount&quot;)]
+public string Amount { get; }</code></pre>
   </div>
   
   
@@ -332,7 +333,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BuyingAssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;buying_asset_code&quot;)]
+public string BuyingAssetCode { get; }</code></pre>
   </div>
   
   
@@ -375,7 +377,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BuyingAssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;buying_asset_issuer&quot;)]
+public string BuyingAssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -418,7 +421,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BuyingAssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;buying_asset_type&quot;)]
+public string BuyingAssetType { get; }</code></pre>
   </div>
   
   
@@ -461,7 +465,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int OfferId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;offer_id&quot;)]
+public int OfferId { get; }</code></pre>
   </div>
   
   
@@ -504,7 +509,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Price { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;price&quot;)]
+public string Price { get; }</code></pre>
   </div>
   
   
@@ -590,7 +596,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SellingAssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;selling_asset_code&quot;)]
+public string SellingAssetCode { get; }</code></pre>
   </div>
   
   
@@ -633,7 +640,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SellingAssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;selling_asset_issuer&quot;)]
+public string SellingAssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -676,7 +684,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SellingAssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;selling_asset_type&quot;)]
+public string SellingAssetType { get; }</code></pre>
   </div>
   
   

@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_OfferResponseLinks_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OfferResponseLinks : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class OfferResponseLinks</code></pre>
   </div>
   
   
@@ -168,7 +168,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link OfferMager { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;offer_maker&quot;)]
+public Link OfferMager { get; }</code></pre>
   </div>
   
   
@@ -211,7 +212,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Self { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;self&quot;)]
+public Link Self { get; }</code></pre>
   </div>
   
   

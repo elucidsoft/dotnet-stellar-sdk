@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_Link_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Link : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Link</code></pre>
   </div>
   
   
@@ -168,7 +168,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Href { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;href&quot;)]
+public string Href { get; set; }</code></pre>
   </div>
   
   
@@ -211,7 +212,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Templated { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;templated&quot;)]
+public bool Templated { get; set; }</code></pre>
   </div>
   
   
@@ -265,7 +267,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">Uri</span>
+        <span class="xref">System.Uri</span>
         <p>
       </td>
     </tr>

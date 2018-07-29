@@ -96,7 +96,7 @@
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -142,7 +142,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PageLinks Links { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;links&quot;)]
+public PageLinks Links { get; }</code></pre>
   </div>
   
   
@@ -185,7 +186,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;T&gt; Records { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;records&quot;)]
+public List&lt;T&gt; Records { get; }</code></pre>
   </div>
   
   
@@ -196,7 +198,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">List</span>&lt;T&gt;
+        <span class="xref">System.Collections.Generic.List</span>&lt;T&gt;
         <p>
       </td>
     </tr>
@@ -239,7 +241,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">Task</span>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;T&gt;&gt;
+        <span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;T&gt;&gt;
         <p>
       </td>
     </tr>

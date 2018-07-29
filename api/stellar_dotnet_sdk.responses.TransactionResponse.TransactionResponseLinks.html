@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_TransactionResponse_TransactionResponseLinks_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class TransactionResponseLinks : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class TransactionResponseLinks</code></pre>
   </div>
   
   
@@ -203,7 +203,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Account { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;account&quot;)]
+public Link Account { get; }</code></pre>
   </div>
   
   
@@ -246,7 +247,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Effects { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;effects&quot;)]
+public Link Effects { get; }</code></pre>
   </div>
   
   
@@ -289,7 +291,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Ledger { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;ledger&quot;)]
+public Link Ledger { get; }</code></pre>
   </div>
   
   
@@ -332,7 +335,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Operations { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;operations&quot;)]
+public Link Operations { get; }</code></pre>
   </div>
   
   
@@ -375,7 +379,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Precedes { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;precedes&quot;)]
+public Link Precedes { get; }</code></pre>
   </div>
   
   
@@ -418,7 +423,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Self { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;self&quot;)]
+public Link Self { get; }</code></pre>
   </div>
   
   
@@ -461,7 +467,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Succeeds { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;succeeds&quot;)]
+public Link Succeeds { get; }</code></pre>
   </div>
   
   

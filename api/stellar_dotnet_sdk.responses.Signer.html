@@ -88,7 +88,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_Signer_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Signer : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Signer</code></pre>
   </div>
   
   
@@ -169,7 +169,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AccountId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;public_key&quot;)]
+public string AccountId { get; }</code></pre>
   </div>
   
   
@@ -212,7 +213,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Weight { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;weight&quot;)]
+public int Weight { get; }</code></pre>
   </div>
   
   

@@ -117,7 +117,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -126,7 +126,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   
   <h5 id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class TradeEffectResponse : EffectResponse</code></pre>
+    <pre><code class="lang-csharp hljs">public class TradeEffectResponse : EffectResponse, IPagingToken</code></pre>
   </div>
   
   
@@ -263,7 +263,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BoughtAmount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;bought_amount&quot;)]
+public string BoughtAmount { get; }</code></pre>
   </div>
   
   
@@ -349,7 +350,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BoughtAssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;bought_asset_code&quot;)]
+public string BoughtAssetCode { get; }</code></pre>
   </div>
   
   
@@ -392,7 +394,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BoughtAssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;bought_asset_issuer&quot;)]
+public string BoughtAssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -435,7 +438,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BoughtAssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;bought_asset_type&quot;)]
+public string BoughtAssetType { get; }</code></pre>
   </div>
   
   
@@ -478,7 +482,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long OfferId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;offer_id&quot;)]
+public long OfferId { get; }</code></pre>
   </div>
   
   
@@ -521,7 +526,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair Seller { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;seller&quot;)]
+public KeyPair Seller { get; }</code></pre>
   </div>
   
   
@@ -564,7 +570,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SoldAmount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;sold_amount&quot;)]
+public string SoldAmount { get; }</code></pre>
   </div>
   
   
@@ -650,7 +657,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SoldAssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;sold_asset_code&quot;)]
+public string SoldAssetCode { get; }</code></pre>
   </div>
   
   
@@ -693,7 +701,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SoldAssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;sold_asset_issuer&quot;)]
+public string SoldAssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -736,7 +745,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SoldAssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;sold_asset_type&quot;)]
+public string SoldAssetType { get; }</code></pre>
   </div>
   
   

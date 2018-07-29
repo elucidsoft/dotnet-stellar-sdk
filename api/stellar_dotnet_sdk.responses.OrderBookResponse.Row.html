@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_OrderBookResponse_Row_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Row : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Row</code></pre>
   </div>
   
   
@@ -175,7 +175,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Amount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;amount&quot;)]
+public string Amount { get; }</code></pre>
   </div>
   
   
@@ -218,7 +219,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Price { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;price&quot;)]
+public string Price { get; }</code></pre>
   </div>
   
   
@@ -261,7 +263,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Price PriceR { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;price_r&quot;)]
+public Price PriceR { get; }</code></pre>
   </div>
   
   

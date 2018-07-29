@@ -91,7 +91,7 @@ to show you what parameters a give resource can take.</p>
   
   <h5 id="stellar_dotnet_sdk_responses_operations_OperationResponseLinks_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OperationResponseLinks : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class OperationResponseLinks</code></pre>
   </div>
   
   
@@ -200,7 +200,8 @@ to show you what parameters a give resource can take.</p>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Effects { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;effects&quot;)]
+public Link Effects { get; }</code></pre>
   </div>
   
   
@@ -244,7 +245,8 @@ to show you what parameters a give resource can take.</p>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Precedes { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;precedes&quot;)]
+public Link Precedes { get; }</code></pre>
   </div>
   
   
@@ -288,7 +290,8 @@ to show you what parameters a give resource can take.</p>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Self { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;self&quot;)]
+public Link Self { get; }</code></pre>
   </div>
   
   
@@ -332,7 +335,8 @@ to show you what parameters a give resource can take.</p>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Succeeds { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;succeeds&quot;)]
+public Link Succeeds { get; }</code></pre>
   </div>
   
   
@@ -376,7 +380,8 @@ to show you what parameters a give resource can take.</p>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link Transaction { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;transaction&quot;)]
+public Link Transaction { get; }</code></pre>
   </div>
   
   

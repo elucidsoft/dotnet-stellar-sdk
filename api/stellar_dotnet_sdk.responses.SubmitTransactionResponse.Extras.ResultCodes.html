@@ -89,7 +89,7 @@ see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stell
   
   <h5 id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ResultCodes : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class ResultCodes</code></pre>
   </div>
   
   
@@ -101,7 +101,7 @@ see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stell
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_List_System_String__.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.%23ctor(System.String%2CList%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_System_Collections_Generic_List_System_String__.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.%23ctor(System.String%2CSystem.Collections.Generic.List%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L146" title="View Source"><i class="fa fa-code"></i></a>
@@ -109,9 +109,9 @@ see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stell
   
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_List_System_String__" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor(System.String,List{System.String})"><a href="#collapsible-stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_List_System_String__" class="expander" data-toggle="collapse">ResultCodes(String, List&lt;String&gt;)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_System_Collections_Generic_List_System_String__" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor(System.String,System.Collections.Generic.List{System.String})"><a href="#collapsible-stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_System_Collections_Generic_List_System_String__" class="expander" data-toggle="collapse">ResultCodes(String, List&lt;String&gt;)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_List_System_String__" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes__ctor_System_String_System_Collections_Generic_List_System_String__" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -131,7 +131,7 @@ see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stell
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</span>
+        <span class="pull-right"><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</span>
         <span class="parametername">operationsResultCodes</span>
         <p>
       </td>
@@ -170,7 +170,8 @@ see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stell
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;string&gt; OperationsResultCodes { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;operations&quot;)]
+public List&lt;string&gt; OperationsResultCodes { get; }</code></pre>
   </div>
   
   
@@ -181,7 +182,7 @@ see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stell
   <table>
     <tr>
       <td>
-        <span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;
+        <span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;
         <p>
       </td>
     </tr>
@@ -213,7 +214,8 @@ see <a href="https://github.com/stellar/horizon/blob/master/src/github.com/stell
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string TransactionResultCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;transaction&quot;)]
+public string TransactionResultCode { get; }</code></pre>
   </div>
   
   
