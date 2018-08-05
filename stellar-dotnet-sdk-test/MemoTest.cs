@@ -149,8 +149,8 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(memo.GetHashCode(), memo2.GetHashCode());
             Assert.AreEqual(memo, memo2);
 
-            memo = Memo.ReturnHash(System.Text.Encoding.ASCII.GetBytes("4142434445464748494a4b4c"));
-            memo2 = Memo.ReturnHash(System.Text.Encoding.ASCII.GetBytes("4142434445464748494a4b4c"));
+            memo = Memo.ReturnHash(System.Text.Encoding.UTF8.GetBytes("4142434445464748494a4b4c"));
+            memo2 = Memo.ReturnHash(System.Text.Encoding.UTF8.GetBytes("4142434445464748494a4b4c"));
 
             Assert.AreEqual(memo.GetHashCode(), memo2.GetHashCode());
             Assert.AreEqual(memo, memo2);
