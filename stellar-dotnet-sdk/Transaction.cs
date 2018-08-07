@@ -124,7 +124,7 @@ namespace stellar_dotnet_sdk
             var fee = new Uint32 { InnerValue = Fee };
 
             // sequenceNumber
-            var sequenceNumberUint = new Uint64 { InnerValue = SequenceNumber };
+            var sequenceNumberUint = new xdr.Int64(SequenceNumber);
             var sequenceNumber = new SequenceNumber { InnerValue = sequenceNumberUint };
 
             // sourceAccount
