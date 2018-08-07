@@ -29,7 +29,7 @@ namespace stellar_dotnet_sdk
         }
 
         ///<summary>
-        /// Creates one of AssetTypeCreditAlphaNum4 or AssetTypeCreditAlphaNum12 object based on a <code>code</code> length
+        /// Creates one of <seealso cref="AssetTypeCreditAlphaNum4"/> or <seealso cref="AssetTypeCreditAlphaNum12"/> object based on a code length
         /// </summary>
         /// <param name="code">Asset code</param> 
         /// <param name="issuer">Asset issuer</param> 
@@ -68,9 +68,9 @@ namespace stellar_dotnet_sdk
         ///<summary>
         /// Returns asset type. Possible types:
         /// <ul>
-        ///   <li><code>native</code></li>
-        ///   <li><code>credit_alphanum4</code></li>
-        ///   <li><code>credit_alphanum12</code></li>
+        ///   <li>native See <see cref="AssetTypeNative"/> for more information.</li>
+        ///   <li>credit_alphanum4 See <see cref="AssetTypeCreditAlphaNum4"/> for more information.</li>
+        ///   <li>credit_alphanum12 See <see cref="AssetTypeCreditAlphaNum12"/> for more information.</li>
         /// </ul>
         ///</summary>
         public new abstract string GetType();
@@ -81,7 +81,7 @@ namespace stellar_dotnet_sdk
         public abstract xdr.Asset ToXdr();
 
         ///<summary>
-        /// Creates one of AssetTypeCreditAlphaNum4 or AssetTypeCreditAlphaNum12 object based on a <code>code</code> length
+        /// Creates one of AssetTypeCreditAlphaNum4 or AssetTypeCreditAlphaNum12 object based on a code length
         /// </summary>
         public static Asset CreateNonNativeAsset(string assetType, string accountId, string code)
         {

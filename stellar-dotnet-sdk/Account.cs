@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk
         /// Class constructor.
         /// </summary>
         /// <param name="keypair">KeyPair associated with this Account</param> 
-        /// <param name="sequenceNumber">Current sequence number of the account (can be obtained using java-stellar-sdk or horizon server)</param> 
+        /// <param name="sequenceNumber">Current sequence number of the account (can be obtained using dotnet-stellar-sdk or horizon server)</param> 
         public Account(KeyPair keypair, long? sequenceNumber)
         {
             KeyPair = keypair ?? throw new ArgumentNullException(nameof(keypair), "keypair cannot be null");
