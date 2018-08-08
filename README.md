@@ -47,6 +47,7 @@ To install using Nuget run `Install-Package stellar-dotnet-sdk` or install the N
 - [Paging](https://www.stellar.org/developers/horizon/reference/paging.html) (Limit, Cursor, Sorting)
 - [Rate Limiting](https://www.stellar.org/developers/horizon/reference/rate-limiting.html) (Limit, Remaining, Reset)
 - [Response Format](https://www.stellar.org/developers/horizon/reference/responses.html) (Links, Embedded Resourced, Attributes, Pages, Streaming)
+- [Bump Sequence](https://www.stellar.org/developers/guides/concepts/list-of-operations.html#bump-sequence)
 
 ## Documentation
 Read the API [Reference Documentation](https://elucidsoft.github.io/dotnet-stellar-sdk/) for more information about the API.  For more guidance Stellar.org has documentation that is specific to their [Javascript API](https://www.stellar.org/developers/js-stellar-sdk/reference/) but usage is very similar.

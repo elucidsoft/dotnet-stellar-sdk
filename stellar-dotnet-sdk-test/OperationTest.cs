@@ -554,6 +554,24 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        public void TestBumpSequence()
+        {
+            // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
+            KeyPair source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
+
+            BumpSequenceOperation operation = new BumpSequenceOperation.Builder(156L)
+                                                                       .SetSourceAccount(source)
+                                                                       .Build();
+
+            var xdr = operation.ToXdr();
+
+            BumpSequenceOperation parsedOperation = (BumpSequenceOperation)Operation.FromXdr(xdr);
+
+            Assert.AreEqual(156L, parsedOperation.BumpTo);
+            Assert.AreEqual("AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAsAAAAAAAAAnA==", operation.ToXdrBase64());
+        }
+
+        [TestMethod]
         public void TestFromXdrAmount()
         {
             Assert.AreEqual("0", Operation.FromXdrAmount(0L));
