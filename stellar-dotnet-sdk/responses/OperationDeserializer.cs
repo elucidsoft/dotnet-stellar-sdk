@@ -46,7 +46,7 @@ namespace stellar_dotnet_sdk.responses
                 default:
                     throw new Exception("Invalid operation type");
             }
-}
+        }
 
         public override bool CanConvert(Type objectType)
         {

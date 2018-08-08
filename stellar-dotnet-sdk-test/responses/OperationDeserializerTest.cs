@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.responses;
@@ -237,6 +238,21 @@ namespace stellar_dotnet_sdk_test.responses
             var operation = (ManageDataOperationResponse)instance;
 
             Assert.AreEqual(operation.Value, null);
+        }
+
+        [TestMethod]
+        public void TestDeserializeUnknownOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationUnknown.json"));
+            try
+            {
+                var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+                Assert.Fail();
+            }
+            catch
+            {
+                //We want the exception to pass the test, that is what it should be doing.
+            }
         }
 
         [TestMethod]

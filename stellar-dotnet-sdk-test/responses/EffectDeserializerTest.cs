@@ -380,6 +380,20 @@ namespace stellar_dotnet_sdk_test.responses
         }
 
         [TestMethod]
+        public void TestUnknownEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectUnknown.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is EffectResponse);
+            var effect = (EffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+        }
+
+        [TestMethod]
         public void TestDeserializeSequenceBumpedEffect()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "sequenceBumped.json"));

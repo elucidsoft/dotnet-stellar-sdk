@@ -74,7 +74,7 @@ namespace stellar_dotnet_sdk.responses
                 default: //Don't throw an error...
                     return JsonSingleton.GetInstance<EffectResponse>(jsonObject.Root.ToString());
             }
-}
+        }
 
         public override bool CanConvert(Type objectType)
         {
