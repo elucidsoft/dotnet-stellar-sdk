@@ -238,5 +238,18 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(operation.Value, null);
         }
+
+        [TestMethod]
+        public void TestDeserializeBumpSequenceOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationBumpSequence.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            Assert.IsTrue(instance is BumpSequenceOperationResponse);
+            var operation = (BumpSequenceOperationResponse)instance;
+
+            Assert.AreEqual(12884914177L, operation.Id);
+            Assert.AreEqual(79473726952833048L, operation.BumpTo);
+        }
     }
 }

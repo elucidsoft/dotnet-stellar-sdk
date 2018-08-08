@@ -378,5 +378,19 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
         }
+
+        [TestMethod]
+        public void TestDeserializeSequenceBumpedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "sequenceBumped.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            Assert.IsTrue(instance is SequenceBumpedEffectResponse);
+            var effect = (SequenceBumpedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+            Assert.AreEqual(79473726952833048L, effect.NewSequence);
+        }
     }
 }

@@ -41,6 +41,8 @@ namespace stellar_dotnet_sdk.responses
                     return JsonSingleton.GetInstance<InflationOperationResponse>(jsonObject.Root.ToString());
                 case 10:
                     return JsonSingleton.GetInstance<ManageDataOperationResponse>(jsonObject.Root.ToString());
+                case 11:
+                    return JsonSingleton.GetInstance<BumpSequenceOperationResponse>(jsonObject.Root.ToString());
                 default:
                     throw new Exception("Invalid operation type");
             }

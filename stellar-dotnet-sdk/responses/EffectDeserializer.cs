@@ -69,6 +69,8 @@ namespace stellar_dotnet_sdk.responses
                     return JsonSingleton.GetInstance<DataRemovedEffectResponse>(jsonObject.Root.ToString());
                 case 42:
                     return JsonSingleton.GetInstance<DataUpdatedEffectResponse>(jsonObject.Root.ToString());
+                case 43:
+                    return JsonSingleton.GetInstance<SequenceBumpedEffectResponse>(jsonObject.Root.ToString());
                 default: //Don't throw an error...
                     return JsonSingleton.GetInstance<EffectResponse>(jsonObject.Root.ToString());
             }
