@@ -452,7 +452,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestWriteJson()
         {
-            //An experiment to see if we can get full coverage of the EffectDesrializer.
+            //An experiment to see if we can get full coverage of the EffectDeserializer.
             try
             {
                 var json = File.ReadAllText(Path.Combine("testdata", "effectOfferUpdated.json"));

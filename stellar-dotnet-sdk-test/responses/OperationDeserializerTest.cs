@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.responses;
 using stellar_dotnet_sdk.responses.operations;
@@ -266,6 +268,36 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(12884914177L, operation.Id);
             Assert.AreEqual(79473726952833048L, operation.BumpTo);
+        }
+
+        [TestMethod]
+        public void TestWriteJson()
+        {
+            //An experiment to see if we can get full coverage of the OperationDeserializer.
+            try
+            {
+                var json = File.ReadAllText(Path.Combine("testdata", "operationBumpSequence.json"));
+                var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+                var opD = new OperationDeserializer();
+                StringBuilder sb = new StringBuilder();
+                StringWriter sw = new StringWriter(sb);
+
+                using (JsonWriter writer = new JsonTextWriter(sw))
+                {
+                    opD.WriteJson(writer, instance, new JsonSerializer());
+                }
+
+                Assert.Fail();
+            }
+            catch (NotImplementedException)
+            {
+                //We want this test to pass if the NotImplementedException is thrown.
+            }
+            catch (Exception)
+            {
+                Assert.Fail();
+            }
         }
     }
 }
