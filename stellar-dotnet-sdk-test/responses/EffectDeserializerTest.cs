@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.responses;
 using stellar_dotnet_sdk.responses.effects;
@@ -445,6 +447,36 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+        }
+
+        [TestMethod]
+        public void TestWriteJson()
+        {
+            //An experiment to see if we can get full coverage of the EffectDesrializer.
+            try
+            {
+                var json = File.ReadAllText(Path.Combine("testdata", "effectOfferUpdated.json"));
+                var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+                var efD = new EffectDeserializer();
+                StringBuilder sb = new StringBuilder();
+                StringWriter sw = new StringWriter(sb);
+
+                using (JsonWriter writer = new JsonTextWriter(sw))
+                {
+                    efD.WriteJson(writer, instance, new JsonSerializer());
+                }
+
+                Assert.Fail();
+            }
+            catch(NotImplementedException e)
+            {
+                //We want this test to pass if the NotImplementedException is thrown.
+            }
+            catch(Exception e)
+            {
+                Assert.Fail();
+            }
         }
     }
 }
