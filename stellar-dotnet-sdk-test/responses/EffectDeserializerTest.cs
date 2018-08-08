@@ -407,5 +407,44 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
             Assert.AreEqual(79473726952833048L, effect.NewSequence);
         }
+
+        [TestMethod]
+        public void TestDeserializeOfferCreatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectOfferCreated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            Assert.IsTrue(instance is OfferCreatedEffectResponse);
+            var effect = (OfferCreatedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+        }
+
+        [TestMethod]
+        public void TestDeserializeOfferRemovedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectOfferRemoved.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            Assert.IsTrue(instance is OfferRemovedEffectResponse);
+            var effect = (OfferRemovedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+        }
+
+        [TestMethod]
+        public void TestDeserializeOfferUpdatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectOfferUpdated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            Assert.IsTrue(instance is OfferUpdatedEffectResponse);
+            var effect = (OfferUpdatedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+        }
     }
 }
