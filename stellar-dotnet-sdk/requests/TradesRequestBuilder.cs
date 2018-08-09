@@ -14,7 +14,6 @@ namespace stellar_dotnet_sdk.requests
         public TradesRequestBuilder(Uri serverUri, HttpClient httpClient)
             : base(serverUri, "trades", httpClient)
         {
-
         }
 
         public TradesRequestBuilder BaseAsset(Asset asset)
@@ -25,6 +24,7 @@ namespace stellar_dotnet_sdk.requests
                 _uriBuilder.SetQueryParam("base_asset_code", creditAlphaNumAsset.Code);
                 _uriBuilder.SetQueryParam("base_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
+
             return this;
         }
 
@@ -42,6 +42,7 @@ namespace stellar_dotnet_sdk.requests
                 _uriBuilder.SetQueryParam("counter_asset_code", creditAlphaNumAsset.Code);
                 _uriBuilder.SetQueryParam("counter_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
+
             return this;
         }
     }

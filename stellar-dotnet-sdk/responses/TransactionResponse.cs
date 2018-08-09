@@ -5,8 +5,7 @@ namespace stellar_dotnet_sdk.responses
 {
     public class TransactionResponse : Response, IPagingToken
     {
-        [JsonProperty(PropertyName = "hash")]
-        public string Hash { get; private set; }
+        [JsonProperty(PropertyName = "hash")] public string Hash { get; private set; }
 
         [JsonProperty(PropertyName = "ledger")]
         public long Ledger { get; private set; }
@@ -52,7 +51,7 @@ namespace stellar_dotnet_sdk.responses
                     throw new Exception("Memo has been already set.");
                 }
 
-                _Memo = value ?? throw new ArgumentNullException(nameof(value), "memo cannot be null");             
+                _Memo = value ?? throw new ArgumentNullException(nameof(value), "memo cannot be null");
                 _Memo = value;
             }
         }
@@ -78,9 +77,9 @@ namespace stellar_dotnet_sdk.responses
             Links = links;
         }
 
-       ///
-       /// Links connected to transaction.
-       ///
+        ///
+        /// Links connected to transaction.
+        ///
         public class TransactionResponseLinks
         {
             [JsonProperty(PropertyName = "account")]
@@ -98,8 +97,7 @@ namespace stellar_dotnet_sdk.responses
             [JsonProperty(PropertyName = "precedes")]
             public Link Precedes { get; private set; }
 
-            [JsonProperty(PropertyName = "self")]
-            public Link Self { get; private set; }
+            [JsonProperty(PropertyName = "self")] public Link Self { get; private set; }
 
             [JsonProperty(PropertyName = "succeeds")]
             public Link Succeeds { get; private set; }
@@ -114,7 +112,6 @@ namespace stellar_dotnet_sdk.responses
                 Precedes = precedes;
                 Succeeds = succeeds;
             }
-
         }
     }
 }

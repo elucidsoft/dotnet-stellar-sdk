@@ -60,6 +60,7 @@ namespace stellar_dotnet_sdk
                 number = decimal.Divide(1m, f);
                 i = i + 1;
             }
+
             var n = fractions[fractions.Count - 1][0];
             var d = fractions[fractions.Count - 1][1];
             return new Price(Convert.ToInt32(n), Convert.ToInt32(d));

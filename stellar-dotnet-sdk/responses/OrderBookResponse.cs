@@ -5,17 +5,14 @@ namespace stellar_dotnet_sdk.responses
 {
     public class OrderBookResponse
     {
-        [JsonProperty(PropertyName = "base")]
-        public Asset OrderBookBase { get; private set; }
+        [JsonProperty(PropertyName = "base")] public Asset OrderBookBase { get; private set; }
 
         [JsonProperty(PropertyName = "counter")]
         public Asset Counter { get; private set; }
 
-        [JsonProperty(PropertyName = "asks")]
-        public Row[] Asks { get; private set; }
+        [JsonProperty(PropertyName = "asks")] public Row[] Asks { get; private set; }
 
-        [JsonProperty(PropertyName = "bids")]
-        public Row[] Bids { get; private set; }
+        [JsonProperty(PropertyName = "bids")] public Row[] Bids { get; private set; }
 
 
         public OrderBookResponse(Asset orderBookBase, Asset counter, Row[] asks, Row[] bids)
@@ -35,8 +32,7 @@ namespace stellar_dotnet_sdk.responses
             [JsonProperty(PropertyName = "amount")]
             public string Amount { get; private set; }
 
-            [JsonProperty(PropertyName = "price")]
-            public string Price { get; private set; }
+            [JsonProperty(PropertyName = "price")] public string Price { get; private set; }
 
             [JsonProperty(PropertyName = "price_r")]
             public Price PriceR { get; private set; }

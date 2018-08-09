@@ -126,6 +126,7 @@ namespace stellar_dotnet_sdk
             {
                 return false;
             }
+
             return true;
         }
 

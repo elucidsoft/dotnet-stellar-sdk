@@ -9,7 +9,7 @@
     public class SignerCreatedEffectResponse : SignerEffectResponse
     {
         /// <inheritdoc />
-        public SignerCreatedEffectResponse(int weight, string publicKey) 
+        public SignerCreatedEffectResponse(int weight, string publicKey)
             : base(weight, publicKey)
         {
         }

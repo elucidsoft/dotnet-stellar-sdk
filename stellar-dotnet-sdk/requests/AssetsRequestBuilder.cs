@@ -41,6 +41,5 @@ namespace stellar_dotnet_sdk.requests
             _uriBuilder.SetQueryParam("asset_issuer", assetIssuer);
             return this;
         }
-
     }
 }

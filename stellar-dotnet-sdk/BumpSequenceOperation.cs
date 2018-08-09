@@ -53,7 +53,7 @@ namespace stellar_dotnet_sdk
             public BumpSequenceOperation Build()
             {
                 BumpSequenceOperation operation = new BumpSequenceOperation(BumpTo);
-                if(mSourceAccount != null)
+                if (mSourceAccount != null)
                 {
                     operation.SourceAccount = mSourceAccount;
                 }

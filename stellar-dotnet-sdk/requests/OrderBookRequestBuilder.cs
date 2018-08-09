@@ -11,7 +11,6 @@ namespace stellar_dotnet_sdk.requests
         public OrderBookRequestBuilder(Uri serverURI, HttpClient httpClient)
             : base(serverURI, "order_book", httpClient)
         {
-
         }
 
         public OrderBookRequestBuilder BuyingAsset(Asset asset)
@@ -22,6 +21,7 @@ namespace stellar_dotnet_sdk.requests
                 _uriBuilder.SetQueryParam("buying_asset_code", creditAlphaNumAsset.Code);
                 _uriBuilder.SetQueryParam("buying_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
+
             return this;
         }
 
@@ -33,6 +33,7 @@ namespace stellar_dotnet_sdk.requests
                 _uriBuilder.SetQueryParam("selling_asset_code", creditAlphaNumAsset.Code);
                 _uriBuilder.SetQueryParam("selling_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
+
             return this;
         }
 

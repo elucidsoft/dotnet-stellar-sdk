@@ -71,7 +71,7 @@ namespace stellar_dotnet_sdk.responses
                     return JsonSingleton.GetInstance<DataUpdatedEffectResponse>(jsonObject.Root.ToString());
                 case 43:
                     return JsonSingleton.GetInstance<SequenceBumpedEffectResponse>(jsonObject.Root.ToString());
-                default: 
+                default:
                     throw new Exception("Unknown Effect Response Type");
             }
         }

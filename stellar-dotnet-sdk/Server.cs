@@ -37,7 +37,7 @@ namespace stellar_dotnet_sdk
         public OperationsRequestBuilder Operations => new OperationsRequestBuilder(_serverUri, HttpClient);
 
         public OrderBookRequestBuilder OrderBook => new OrderBookRequestBuilder(_serverUri, HttpClient);
-        
+
         public TradesRequestBuilder Trades => new TradesRequestBuilder(_serverUri, HttpClient);
 
         public PathsRequestBuilder Paths => new PathsRequestBuilder(_serverUri, HttpClient);
@@ -60,9 +60,9 @@ namespace stellar_dotnet_sdk
             var transactionUri = new UriBuilder(_serverUri).SetPath("/transactions").Uri;
 
             var paramsPairs = new List<KeyValuePair<string, string>>
-                {
-                    new KeyValuePair<string, string>("tx", transaction.ToEnvelopeXdrBase64())
-                };
+            {
+                new KeyValuePair<string, string>("tx", transaction.ToEnvelopeXdrBase64())
+            };
 
             var response = await HttpClient.PostAsync(transactionUri, new FormUrlEncodedContent(paramsPairs.ToArray()));
             if (response.Content != null)
@@ -80,9 +80,9 @@ namespace stellar_dotnet_sdk
             var transactionUri = new UriBuilder(_serverUri).SetPath("/transactions").Uri;
 
             var paramsPairs = new List<KeyValuePair<string, string>>
-                {
-                    new KeyValuePair<string, string>("tx", transactionEnvelopeBase64)
-                };
+            {
+                new KeyValuePair<string, string>("tx", transactionEnvelopeBase64)
+            };
 
             var response = await HttpClient.PostAsync(transactionUri, new FormUrlEncodedContent(paramsPairs.ToArray()));
             if (response.Content != null)
@@ -94,7 +94,5 @@ namespace stellar_dotnet_sdk
 
             return null;
         }
-
-
     }
 }

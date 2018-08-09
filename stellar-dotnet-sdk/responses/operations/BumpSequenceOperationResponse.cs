@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk.responses.operations
     /// <seealso cref="requests.OperationsRequestBuilder"/>
     /// <seealso cref="Server"/>
     /// </summary>
-    public class BumpSequenceOperationResponse: OperationResponse
+    public class BumpSequenceOperationResponse : OperationResponse
     {
         [JsonProperty(PropertyName = "bump_to")]
         public long BumpTo { get; }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Security.Cryptography;
-using Chaos.NaCl;
+using stellar_dotnet_sdk.chaos.nacl;
 using stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
@@ -39,13 +39,13 @@ namespace stellar_dotnet_sdk
         /// The public key.
         /// </summary>
         public byte[] PublicKey { get; }
-        
+
         /// <summary>
         /// The private key.
         /// </summary>
         public byte[] PrivateKey { get; }
-        
-        
+
+
         /// <summary>
         /// The bytes of the Secret Seed
         /// </summary>
@@ -56,7 +56,7 @@ namespace stellar_dotnet_sdk
         /// </summary>
         public string AccountId => StrKey.EncodeStellarAccountId(PublicKey);
 
-        
+
         /// <summary>
         /// Address
         /// </summary>
@@ -217,6 +217,7 @@ namespace stellar_dotnet_sdk
             {
                 rngCrypto.GetBytes(b);
             }
+
             return FromSecretSeed(b);
         }
 

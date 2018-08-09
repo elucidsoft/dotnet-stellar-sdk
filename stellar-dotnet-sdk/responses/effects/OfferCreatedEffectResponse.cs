@@ -8,6 +8,5 @@
     /// </summary>
     public class OfferCreatedEffectResponse : EffectResponse
     {
-        
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Chaos.NaCl.Internal.Ed25519Ref10
+﻿namespace stellar_dotnet_sdk.chaos.nacl.Internal.Ed25519Ref10
 {
     internal struct FieldElement
     {

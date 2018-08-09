@@ -1,8 +1,8 @@
-﻿namespace Chaos.NaCl.Internal.Ed25519Ref10
+﻿namespace stellar_dotnet_sdk.chaos.nacl.Internal.Ed25519Ref10
 {
     internal static partial class ScalarOperations
     {
-        public static void sc_clamp(byte[] s, int offset)
+        public static void ScClamp(byte[] s, int offset)
         {
             s[offset + 0] &= 248;
             s[offset + 31] &= 127;

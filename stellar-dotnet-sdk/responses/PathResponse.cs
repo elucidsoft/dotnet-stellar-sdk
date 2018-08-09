@@ -29,16 +29,15 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "source_asset_issuer")]
         public string SourceAssetIssuer { get; }
 
-        [JsonProperty(PropertyName = "path")]
-        public List<Asset> Path { get; }
+        [JsonProperty(PropertyName = "path")] public List<Asset> Path { get; }
 
         [JsonProperty(PropertyName = "_links")]
         public PathResponseLinks Links { get; }
 
         public Asset DestinationAsset => Asset.CreateNonNativeAsset(DestinationAssetType, DestinationAssetIssuer, DestinationAssetCode);
         public Asset SourceAsset => Asset.CreateNonNativeAsset(SourceAssetType, SourceAssetIssuer, SourceAssetCode);
-        
-        public PathResponse(string destinationAmount, string destinationAssetType, string destinationAssetCode, string destinationAssetIssuer, string sourceAmount, 
+
+        public PathResponse(string destinationAmount, string destinationAssetType, string destinationAssetCode, string destinationAssetIssuer, string sourceAmount,
             string sourceAssetType, string sourceAssetCode, string sourceAssetIssuer, List<Asset> path, PathResponseLinks links)
         {
             DestinationAmount = destinationAmount;
@@ -56,8 +55,7 @@ namespace stellar_dotnet_sdk.responses
 
     public class PathResponseLinks
     {
-        [JsonProperty(PropertyName = "self")]
-        public Link Self { get; }
+        [JsonProperty(PropertyName = "self")] public Link Self { get; }
 
         public PathResponseLinks(Link self)
         {

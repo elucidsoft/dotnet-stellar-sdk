@@ -42,8 +42,7 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "thresholds")]
         public Thresholds Thresholds { get; set; }
 
-        [JsonProperty(PropertyName = "flags")]
-        public Flags Flags { get; set; }
+        [JsonProperty(PropertyName = "flags")] public Flags Flags { get; set; }
 
         [JsonProperty(PropertyName = "balances")]
         public Balance[] Balances { get; set; }
@@ -54,8 +53,7 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "_links")]
         public AccountResponseLinks Links { get; set; }
 
-        [JsonProperty("Data")]
-        public Dictionary<string, string> Data { get; private set; }
+        [JsonProperty("Data")] public Dictionary<string, string> Data { get; private set; }
 
         public long IncrementedSequenceNumber => SequenceNumber + 1;
 
@@ -110,7 +108,8 @@ namespace stellar_dotnet_sdk.responses
     /// </summary>
     public class Balance
     {
-        [JsonProperty(PropertyName = "asset_issuer")] private string _assetIssuer;
+        [JsonProperty(PropertyName = "asset_issuer")]
+        private string _assetIssuer;
 
         public Balance(string assetType, string assetCode, string assetIssuer, string balance, string limit, string buyingLiabilities, string sellingLiabilities)
         {
@@ -132,8 +131,7 @@ namespace stellar_dotnet_sdk.responses
         //This prop is dynamic based on private field serialized above.
         public KeyPair AssetIssuer => KeyPair.FromAccountId(_assetIssuer);
 
-        [JsonProperty(PropertyName = "limit")]
-        public string Limit { get; private set; }
+        [JsonProperty(PropertyName = "limit")] public string Limit { get; private set; }
 
         [JsonProperty(PropertyName = "balance")]
         public string BalanceString { get; private set; }
@@ -183,8 +181,7 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "operations")]
         public Link Operations { get; private set; }
 
-        [JsonProperty(PropertyName = "self")]
-        public Link Self { get; private set; }
+        [JsonProperty(PropertyName = "self")] public Link Self { get; private set; }
 
         [JsonProperty(PropertyName = "transactions")]
         public Link Transactions { get; private set; }

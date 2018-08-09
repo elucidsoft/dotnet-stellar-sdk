@@ -136,7 +136,7 @@ namespace stellar_dotnet_sdk
             private set
             {
                 _readyState = value;
-                OnStateChangeEvent(new StateChangeEventArgs { NewState = value });
+                OnStateChangeEvent(new StateChangeEventArgs {NewState = value});
             }
         }
 
@@ -249,6 +249,7 @@ namespace stellar_dotnet_sdk
                             if (sb == null) sb = new StringBuilder();
                             sb.AppendLine(value);
                         }
+
                         break;
 
                     case "retry":
@@ -273,7 +274,7 @@ namespace stellar_dotnet_sdk
         /// <returns>[True] if the message should be processed.</returns>
         private bool IsWanted(string eventType)
         {
-            return MessageTypes == null || MessageTypes.Count() == 0|| MessageTypes.Contains(eventType);
+            return MessageTypes == null || MessageTypes.Count() == 0 || MessageTypes.Contains(eventType);
         }
 
         /// <summary>
@@ -332,7 +333,7 @@ namespace stellar_dotnet_sdk
                 System.Threading.Timeout.Infinite); // Single shot timer
 
             // Increase backoff timer up to a minute each retry
-            if (backoff) _retryInterval = (int)Math.Min(_retryInterval * 1.5, 60000);
+            if (backoff) _retryInterval = (int) Math.Min(_retryInterval * 1.5, 60000);
         }
 
         #endregion Protected Methods
@@ -371,9 +372,9 @@ namespace stellar_dotnet_sdk
             Trace.TraceInformation("ConnectAsync ({0})", Url);
             ReadyState = EventSourceState.Connecting;
 
-            _httpWebRequest = (HttpWebRequest)WebRequest.Create(Url);
+            _httpWebRequest = (HttpWebRequest) WebRequest.Create(Url);
             ConfigureWebRequest(_httpWebRequest);
-            
+
             try
             {
                 var handle = _httpWebRequest.BeginGetResponse(EndGetResponse, null);
@@ -385,7 +386,7 @@ namespace stellar_dotnet_sdk
                     {
                         if (!timedOut || _httpWebRequest == null || _shutdownToken) return;
                         Trace.TraceInformation("ConnectAsync (Timed Out)");
-                        OnErrorEvent(new ServerSentErrorEventArgs { Exception = new TimeoutException() });
+                        OnErrorEvent(new ServerSentErrorEventArgs {Exception = new TimeoutException()});
                         CloseConnection();
                         RetryAfterDelay();
                     },
@@ -399,7 +400,7 @@ namespace stellar_dotnet_sdk
             {
                 if (ex is WebException || ex is IOException)
                 {
-                    OnErrorEvent(new ServerSentErrorEventArgs { Exception = ex });
+                    OnErrorEvent(new ServerSentErrorEventArgs {Exception = ex});
                     CloseConnection();
                     RetryAfterDelay();
                     return true;
@@ -420,13 +421,13 @@ namespace stellar_dotnet_sdk
 
             try
             {
-                _httpWebResponse = (HttpWebResponse)_httpWebRequest.EndGetResponse(result);
+                _httpWebResponse = (HttpWebResponse) _httpWebRequest.EndGetResponse(result);
                 _httpStream = _httpWebResponse.GetResponseStream();
                 if (_shutdownToken) return;
             }
             catch (WebException ex)
             {
-                OnErrorEvent(new ServerSentErrorEventArgs { Exception = ex });
+                OnErrorEvent(new ServerSentErrorEventArgs {Exception = ex});
                 CloseConnection();
                 RetryAfterDelay();
 
@@ -490,10 +491,10 @@ namespace stellar_dotnet_sdk
                     }
                     else
                     {
-                        _eventStream.Append((char)_buffer[i]);
+                        _eventStream.Append((char) _buffer[i]);
                     }
             }
-            catch 
+            catch
             {
                 //OnErrorEvent(new ServerSentErrorEventArgs { Exception = ex });
                 CloseConnection();

@@ -57,48 +57,56 @@ namespace stellar_dotnet_sdk
                 inflationDestination.InnerValue = InflationDestination.XdrPublicKey;
                 op.InflationDest = inflationDestination;
             }
+
             if (ClearFlags != null)
             {
                 var clearFlags = new sdkxdr.Uint32();
                 clearFlags.InnerValue = ClearFlags.Value;
                 op.ClearFlags = clearFlags;
             }
+
             if (SetFlags != null)
             {
                 var setFlags = new sdkxdr.Uint32();
                 setFlags.InnerValue = SetFlags.Value;
                 op.SetFlags = setFlags;
             }
+
             if (MasterKeyWeight != null)
             {
                 var uint32 = new sdkxdr.Uint32();
                 uint32.InnerValue = MasterKeyWeight.Value;
                 op.MasterWeight = uint32;
             }
+
             if (LowThreshold != null)
             {
                 var uint32 = new sdkxdr.Uint32();
                 uint32.InnerValue = LowThreshold.Value;
                 op.LowThreshold = uint32;
             }
+
             if (MediumThreshold != null)
             {
                 var uint32 = new sdkxdr.Uint32();
                 uint32.InnerValue = MediumThreshold.Value;
                 op.MedThreshold = uint32;
             }
+
             if (HighThreshold != null)
             {
                 var uint32 = new sdkxdr.Uint32();
                 uint32.InnerValue = HighThreshold.Value;
                 op.HighThreshold = uint32;
             }
+
             if (HomeDomain != null)
             {
                 var homeDomain = new sdkxdr.String32();
                 homeDomain.InnerValue = HomeDomain;
                 op.HomeDomain = homeDomain;
             }
+
             if (Signer != null)
             {
                 var signer = new sdkxdr.Signer();
