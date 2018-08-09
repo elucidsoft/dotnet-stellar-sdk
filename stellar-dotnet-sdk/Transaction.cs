@@ -68,7 +68,7 @@ namespace stellar_dotnet_sdk
             var length = hash.Length;
             var signatureHintBytes = hash.Skip(length - 4).Take(4).ToArray();
 
-            var signatureHint = new SignatureHint { InnerValue = signatureHintBytes };
+            var signatureHint = new SignatureHint {InnerValue = signatureHintBytes};
 
             var decoratedSignature = new DecoratedSignature
             {
@@ -121,14 +121,14 @@ namespace stellar_dotnet_sdk
         public xdr.Transaction ToXdr()
         {
             // fee
-            var fee = new Uint32 { InnerValue = Fee };
+            var fee = new Uint32 {InnerValue = Fee};
 
             // sequenceNumber
             var sequenceNumberUint = new xdr.Int64(SequenceNumber);
-            var sequenceNumber = new SequenceNumber { InnerValue = sequenceNumberUint };
+            var sequenceNumber = new SequenceNumber {InnerValue = sequenceNumberUint};
 
             // sourceAccount
-            var sourceAccount = new AccountID { InnerValue = SourceAccount.XdrPublicKey };
+            var sourceAccount = new AccountID {InnerValue = SourceAccount.XdrPublicKey};
 
             // operations
             var operations = new xdr.Operation[Operations.Length];
@@ -137,7 +137,7 @@ namespace stellar_dotnet_sdk
                 operations[i] = Operations[i].ToXdr();
 
             // ext
-            var ext = new xdr.Transaction.TransactionExt { Discriminant = 0 };
+            var ext = new xdr.Transaction.TransactionExt {Discriminant = 0};
 
             var transaction = new xdr.Transaction
             {
@@ -246,7 +246,7 @@ namespace stellar_dotnet_sdk
 
             return transaction;
         }
-    
+
 
         /// <summary>
         ///     Builds a new Transaction object.

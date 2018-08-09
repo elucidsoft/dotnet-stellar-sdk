@@ -30,8 +30,8 @@ namespace stellar_dotnet_sdk
             }
 
             return new TimeBounds(
-             timeBounds.MinTime.InnerValue,
-             timeBounds.MaxTime.InnerValue
+                timeBounds.MinTime.InnerValue,
+                timeBounds.MaxTime.InnerValue
             );
         }
 
@@ -52,7 +52,7 @@ namespace stellar_dotnet_sdk
             if (this == o) return true;
             if (o == null || GetType() != o.GetType()) return false;
 
-            TimeBounds that = (TimeBounds)o;
+            TimeBounds that = (TimeBounds) o;
 
             if (MinTime != that.MinTime) return false;
             return MaxTime == that.MaxTime;
@@ -61,8 +61,8 @@ namespace stellar_dotnet_sdk
         public override int GetHashCode()
         {
             return HashCode.Start
-                           .Hash(MinTime)
-                           .Hash(MaxTime);
+                .Hash(MinTime)
+                .Hash(MaxTime);
         }
     }
 }

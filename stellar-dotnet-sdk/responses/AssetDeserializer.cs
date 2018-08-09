@@ -21,6 +21,7 @@ namespace stellar_dotnet_sdk.responses
             {
                 return new AssetTypeNative();
             }
+
             var code = jsonObject.GetValue("asset_code").ToObject<string>();
             var issuer = jsonObject.GetValue("asset_issuer").ToObject<string>();
             return Asset.CreateNonNativeAsset(code, KeyPair.FromAccountId(issuer));

@@ -29,7 +29,7 @@ namespace stellar_dotnet_sdk
             if (amount % 1 > 0)
                 throw new ArithmeticException("Unable to cast decimal with fractional places into long.");
 
-            return (long)amount;
+            return (long) amount;
         }
 
         public static string FromXdrAmount(long value)
@@ -50,6 +50,7 @@ namespace stellar_dotnet_sdk
                 sourceAccount.InnerValue = SourceAccount.XdrPublicKey;
                 thisXdr.SourceAccount = sourceAccount;
             }
+
             thisXdr.Body = ToOperationBody();
             return thisXdr;
         }
@@ -111,6 +112,7 @@ namespace stellar_dotnet_sdk
                 default:
                     throw new Exception("Unknown operation body " + body.Discriminant.InnerValue);
             }
+
             if (thisXdr.SourceAccount != null)
                 operation.SourceAccount = KeyPair.FromXdrPublicKey(thisXdr.SourceAccount.InnerValue);
             return operation;

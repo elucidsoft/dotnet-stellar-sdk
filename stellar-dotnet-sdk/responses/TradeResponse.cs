@@ -30,8 +30,7 @@ namespace stellar_dotnet_sdk.responses
             CounterAssetIssuer = counterAssetIssuer;
         }
 
-        [JsonProperty(PropertyName = "id")]
-        public String Id { get; }
+        [JsonProperty(PropertyName = "id")] public String Id { get; }
 
         [JsonProperty(PropertyName = "paging_token")]
         public String PagingToken { get; }
@@ -94,7 +93,6 @@ namespace stellar_dotnet_sdk.responses
         {
             get { return Asset.Create(CounterAssetType, CounterAssetCode, CounterAssetIssuer); }
         }
-
     }
 
     public class TradeResponseLinks
@@ -106,8 +104,7 @@ namespace stellar_dotnet_sdk.responses
             Operation = operationLink;
         }
 
-        [JsonProperty(PropertyName = "base")]
-        public Link Base;
+        [JsonProperty(PropertyName = "base")] public Link Base;
 
         [JsonProperty(PropertyName = "counter")]
         public Link Counter;

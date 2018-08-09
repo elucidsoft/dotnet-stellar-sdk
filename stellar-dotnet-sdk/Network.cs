@@ -17,11 +17,7 @@ namespace stellar_dotnet_sdk
 
         public byte[] NetworkId => Util.Hash(Encoding.UTF8.GetBytes(Current.NetworkPassphrase));
 
-        public static Network Current
-        {
-            get;
-            private set;
-        }
+        public static Network Current { get; private set; }
 
         public static void Use(Network network)
         {

@@ -10,7 +10,6 @@ namespace stellar_dotnet_sdk.requests
         public RequestBuilderStreamable(Uri serverUri, string defaultSegment, HttpClient httpClient)
             : base(serverUri, defaultSegment, httpClient)
         {
-
         }
 
         public RequestBuilderStreamable(Uri serverUri, string defaultSegment, HttpClient httpClient, IEventSource eventSource)
@@ -19,11 +18,7 @@ namespace stellar_dotnet_sdk.requests
             EventSource = eventSource;
         }
 
-        public IEventSource EventSource
-        {
-            get;
-            set;
-        }
+        public IEventSource EventSource { get; set; }
 
         ///<Summary>
         /// Allows to stream SSE events from horizon.

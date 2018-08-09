@@ -9,7 +9,7 @@
     public class TrustlineRemovedEffectResponse : TrustlineCUDResponse
     {
         /// <inheritdoc />
-        public TrustlineRemovedEffectResponse(string limit, string assetType, string assetCode, string assetIssuer) 
+        public TrustlineRemovedEffectResponse(string limit, string assetType, string assetCode, string assetIssuer)
             : base(limit, assetType, assetCode, assetIssuer)
         {
         }

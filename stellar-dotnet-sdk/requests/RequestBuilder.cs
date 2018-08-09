@@ -33,7 +33,10 @@ namespace stellar_dotnet_sdk.requests
             return await responseHandler.HandleResponse(response);
         }
 
-        public string Uri { get => BuildUri().ToString(); }
+        public string Uri
+        {
+            get => BuildUri().ToString();
+        }
 
         public RequestBuilder(Uri serverUri, string defaultSegment, HttpClient httpClient)
         {
@@ -103,6 +106,7 @@ namespace stellar_dotnet_sdk.requests
 
             return this as T;
         }
+
         /// <summary>
         ///     llows to stream SSE events from horizon.
         ///     Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.

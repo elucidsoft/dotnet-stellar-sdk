@@ -12,8 +12,7 @@ namespace stellar_dotnet_sdk.responses.effects
             AssetIssuer = assetIssuer;
         }
 
-        [JsonProperty(PropertyName = "limit")]
-        public string Limit { get; }
+        [JsonProperty(PropertyName = "limit")] public string Limit { get; }
 
         [JsonProperty(PropertyName = "asset_type")]
         public string AssetType { get; }

@@ -10,7 +10,6 @@ namespace stellar_dotnet_sdk.requests
         public RequestBuilderExecutePageable(Uri serverUri, string defaultSegment, HttpClient httpClient)
             : base(serverUri, defaultSegment, httpClient)
         {
-
         }
 
 

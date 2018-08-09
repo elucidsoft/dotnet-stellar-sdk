@@ -29,8 +29,7 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "asset_type")]
         public string AssetType { get; }
 
-        [JsonProperty(PropertyName = "limit")]
-        public string Limit { get; }
+        [JsonProperty(PropertyName = "limit")] public string Limit { get; }
 
         [JsonProperty(PropertyName = "trustee")]
         public KeyPair Trustee { get; }

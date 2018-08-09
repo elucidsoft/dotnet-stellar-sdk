@@ -8,8 +8,7 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "sequence")]
         public long Sequence { get; private set; }
 
-        [JsonProperty(PropertyName = "hash")]
-        public string Hash { get; private set; }
+        [JsonProperty(PropertyName = "hash")] public string Hash { get; private set; }
 
         [JsonProperty(PropertyName = "paging_token")]
         public string PagingToken { get; private set; }
@@ -81,8 +80,7 @@ namespace stellar_dotnet_sdk.responses
             [JsonProperty(PropertyName = "operations")]
             public Link Operations { get; private set; }
 
-            [JsonProperty(PropertyName = "self")]
-            public Link Self { get; private set; }
+            [JsonProperty(PropertyName = "self")] public Link Self { get; private set; }
 
             [JsonProperty(PropertyName = "transactions")]
             public Link Transactions { get; private set; }
@@ -94,7 +92,6 @@ namespace stellar_dotnet_sdk.responses
                 Self = self;
                 Transactions = transactions;
             }
-
         }
     }
 }

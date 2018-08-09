@@ -17,6 +17,7 @@ namespace stellar_dotnet_sdk
                 hexChars[j * 2] = HEX_ARRAY[(uint) v >> 4];
                 hexChars[j * 2 + 1] = HEX_ARRAY[v & 0x0F];
             }
+
             return new string(hexChars);
         }
 
@@ -102,7 +103,7 @@ namespace stellar_dotnet_sdk
             unchecked
             {
                 const int p = 16777619;
-                int hash = (int)2166136261;
+                int hash = (int) 2166136261;
 
                 for (int i = 0; i < data.Length; i++)
                     hash = (hash ^ data[i]) * p;

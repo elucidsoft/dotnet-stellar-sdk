@@ -17,8 +17,7 @@ namespace stellar_dotnet_sdk.responses.page
         [JsonProperty(PropertyName = "records")]
         public List<T> Records { get; private set; }
 
-        [JsonProperty(PropertyName = "links")]
-        public PageLinks Links { get; private set; }
+        [JsonProperty(PropertyName = "links")] public PageLinks Links { get; private set; }
 
         /// <summary>
         ///     The next page of results or null when there is no more results

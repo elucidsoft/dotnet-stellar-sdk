@@ -10,7 +10,6 @@ namespace stellar_dotnet_sdk.responses.operations
     /// </summary>
     public abstract class OperationResponse : IPagingToken
     {
-
         /// <summary>
         /// Id of the operation
         /// </summary>
@@ -63,7 +62,6 @@ namespace stellar_dotnet_sdk.responses.operations
         /// </summary>
         [JsonProperty(PropertyName = "_links")]
         public OperationResponseLinks Links { get; private set; }
-
     }
 
     /// <summary>

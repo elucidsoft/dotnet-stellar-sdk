@@ -55,6 +55,5 @@ namespace stellar_dotnet_sdk.chaos.nacl
         {
             Array.Clear(data, offset, count);
         }
-
     }
 }

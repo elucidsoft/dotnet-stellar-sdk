@@ -10,6 +10,5 @@ namespace stellar_dotnet_sdk.responses.effects
     /// </summary>
     public class DataUpdatedEffectResponse : EffectResponse
     {
-
     }
 }

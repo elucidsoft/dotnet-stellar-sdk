@@ -24,7 +24,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// <param name="sendAssetType">The asset type (USD, BTC, etc.) to be sent.</param>
         /// <param name="sendAssetCode">The asset code (Alpha4, Alpha12, etc.) to be sent</param>
         /// <param name="sendAssetIssuer">The account that created the asset to be sent.</param>
-        public PathPaymentOperationResponse(string amount, string sourceMax, KeyPair from, KeyPair to, string assetType, string assetCode, 
+        public PathPaymentOperationResponse(string amount, string sourceMax, KeyPair from, KeyPair to, string assetType, string assetCode,
             string assetIssuer, string sendAssetType, string sendAssetCode, string sendAssetIssuer)
         {
             Amount = amount;

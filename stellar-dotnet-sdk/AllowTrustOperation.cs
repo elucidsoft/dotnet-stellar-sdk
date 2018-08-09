@@ -55,6 +55,7 @@ namespace stellar_dotnet_sdk
                 asset.Discriminant = sdkxdr.AssetType.Create(sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12);
                 asset.AssetCode12 = Util.PaddedByteArray(AssetCode, 12);
             }
+
             op.Asset = asset;
             // authorize
             op.Authorize = Authorize;
@@ -98,6 +99,7 @@ namespace stellar_dotnet_sdk
                     default:
                         throw new Exception("Unknown asset code");
                 }
+
                 _authorize = op.Authorize;
             }
 

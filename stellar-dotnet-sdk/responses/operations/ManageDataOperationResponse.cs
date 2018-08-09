@@ -8,9 +8,9 @@
     /// </summary>
     public class ManageDataOperationResponse : OperationResponse
     {
-        public string Name { get;  }
+        public string Name { get; }
 
-        public string Value { get;  }
+        public string Value { get; }
 
         public ManageDataOperationResponse(string name, string value)
         {

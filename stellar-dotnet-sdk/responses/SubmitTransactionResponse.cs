@@ -11,8 +11,7 @@ namespace stellar_dotnet_sdk.responses
         private readonly string _ResultXdr;
 
 
-        [JsonProperty(PropertyName = "hash")]
-        public string Hash { get; private set; }
+        [JsonProperty(PropertyName = "hash")] public string Hash { get; private set; }
 
         [JsonProperty(PropertyName = "ledger")]
         public long? Ledger { get; private set; }

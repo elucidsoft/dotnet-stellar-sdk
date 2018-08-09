@@ -20,6 +20,5 @@ namespace stellar_dotnet_sdk.responses.effects
         {
             this.NewSequence = newSequence;
         }
-
     }
 }
