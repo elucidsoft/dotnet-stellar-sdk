@@ -39,6 +39,8 @@
   "balances": [
     {
       "balance": "1001.0000000",
+	  "buying_liabilities": "100.1234567",
+      "selling_liabilities": "100.7654321",
       "limit": "12000.4775807",
       "asset_type": "credit_alphanum4",
       "asset_code": "ABC",
@@ -46,7 +48,9 @@
     },
     {
       "asset_type": "native",
-      "balance": "20.0000300"
+      "balance": "20.0000300",
+	  "buying_liabilities": "5.1234567",
+      "selling_liabilities": "1.7654321"
     }
   ],
   "signers": [
