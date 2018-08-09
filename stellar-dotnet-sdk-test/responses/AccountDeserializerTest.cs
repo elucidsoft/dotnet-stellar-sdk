@@ -37,9 +37,13 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(account.Balances[0].AssetIssuer.AccountId, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
             Assert.AreEqual(account.Balances[0].BalanceString, "1001.0000000");
             Assert.AreEqual(account.Balances[0].Limit, "12000.4775807");
+            Assert.AreEqual(account.Balances[0].BuyingLiabilities, "100.1234567");
+            Assert.AreEqual(account.Balances[0].SellingLiabilities, "100.7654321");
 
             Assert.AreEqual(account.Balances[1].AssetType, "native");
             Assert.AreEqual(account.Balances[1].BalanceString, "20.0000300");
+            Assert.AreEqual(account.Balances[1].BuyingLiabilities, "5.1234567");
+            Assert.AreEqual(account.Balances[1].SellingLiabilities, "1.7654321");
             Assert.AreEqual(account.Balances[1].Limit, null);
 
             Assert.AreEqual(account.Signers[0].AccountId, "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
