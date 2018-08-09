@@ -17,8 +17,7 @@ namespace stellar_dotnet_sdk
             KeyPair = keypair ?? throw new ArgumentNullException(nameof(keypair), "keypair cannot be null");
             SequenceNumber = sequenceNumber ?? throw new ArgumentNullException(nameof(sequenceNumber), "sequenceNumber cannot be null");
         }
-
-
+        
         /// <summary>
         /// 
         /// </summary>
@@ -28,7 +27,6 @@ namespace stellar_dotnet_sdk
         /// The sequence number
         /// </summary>
         public long SequenceNumber { get; private set; }
-
 
         /// <summary>
         /// Returns the Sequence number incremented by one.

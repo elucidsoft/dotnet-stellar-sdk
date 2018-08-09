@@ -25,7 +25,6 @@ namespace stellar_dotnet_sdk_test.requests
                     .Order(OrderDirection.ASC)
                     .BuildUri();
 
-
                 Assert.AreEqual("https://horizon-testnet.stellar.org/paths?" +
                                 "destination_account=GB24QI3BJNKBY4YNJZ2I37HFIYK56BL2OURFML76X46RQQKDLVT7WKJF&" +
                                 "source_account=GD4KO3IOYYWIYVI236Y35K2DU6VNYRH3BPNFJSH57J5BLLCQHBIOK3IN&" +

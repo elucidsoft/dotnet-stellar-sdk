@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -6,7 +7,7 @@ namespace stellar_dotnet_sdk
 {
     public static class Util
     {
-        public static char[] HEX_ARRAY = "0123456789ABCDEF".ToCharArray();
+        public static char[] HexArray = "0123456789ABCDEF".ToCharArray();
 
         public static string BytesToHex(byte[] bytes)
         {
@@ -14,8 +15,8 @@ namespace stellar_dotnet_sdk
             for (var j = 0; j < bytes.Length; j++)
             {
                 var v = bytes[j] & 0xFF;
-                hexChars[j * 2] = HEX_ARRAY[(uint) v >> 4];
-                hexChars[j * 2 + 1] = HEX_ARRAY[v & 0x0F];
+                hexChars[j * 2] = HexArray[(uint) v >> 4];
+                hexChars[(j * 2) + 1] = HexArray[v & 0x0F];
             }
 
             return new string(hexChars);
@@ -79,16 +80,12 @@ namespace stellar_dotnet_sdk
             return Encoding.Default.GetString(bytes).Split('\0')[0];
         }
 
-
         public static bool IsIdentical(this byte[] a1, byte[] a2)
         {
             if (a1.Length != a2.Length)
                 return false;
 
-            for (var i = 0; i < a1.Length; i++)
-                if (a1[i] != a2[i])
-                    return false;
-            return true;
+            return !a1.Where((t, i) => t != a2[i]).Any();
         }
 
 
@@ -103,10 +100,7 @@ namespace stellar_dotnet_sdk
             unchecked
             {
                 const int p = 16777619;
-                int hash = (int) 2166136261;
-
-                for (int i = 0; i < data.Length; i++)
-                    hash = (hash ^ data[i]) * p;
+                var hash = data.Aggregate((int) 2166136261, (current, t) => (current ^ t) * p);
 
                 hash += hash << 13;
                 hash ^= hash >> 7;
@@ -115,17 +109,6 @@ namespace stellar_dotnet_sdk
                 hash += hash << 5;
                 return hash;
             }
-        }
-    }
-
-    public static class HashCode
-    {
-        public const int Start = 17;
-
-        public static int Hash<T>(this int hash, T obj)
-        {
-            var h = System.Collections.Generic.EqualityComparer<T>.Default.GetHashCode(obj);
-            return unchecked((hash * 31) + h);
         }
     }
 }

@@ -25,7 +25,6 @@ namespace stellar_dotnet_sdk
 
         public int Denominator { get; }
 
-
         /// <summary>
         ///     Approximates<code> price</code> to a fraction.
         /// </summary>
@@ -80,7 +79,6 @@ namespace stellar_dotnet_sdk
             xdr.D = d;
             return xdr;
         }
-
 
         public new bool Equals(object obj)
         {

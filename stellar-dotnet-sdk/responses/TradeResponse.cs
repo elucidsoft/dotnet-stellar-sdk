@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using stellar_dotnet_sdk.requests;
 
 namespace stellar_dotnet_sdk.responses
 {
@@ -77,39 +78,14 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "_links")]
         public TradeResponseLinks Links { get; }
 
-
         /// <summary>
         /// Creates and returns a base asset.
         /// </summary>
-        public Asset BaseAsset
-        {
-            get { return Asset.Create(BaseAssetType, BaseAssetCode, BaseAssetIssuer); }
-        }
+        public Asset BaseAsset => Asset.Create(BaseAssetType, BaseAssetCode, BaseAssetIssuer);
 
         /// <summary>
         /// Creates and returns a counter asset.
         /// </summary>
-        public Asset CountAsset
-        {
-            get { return Asset.Create(CounterAssetType, CounterAssetCode, CounterAssetIssuer); }
-        }
-    }
-
-    public class TradeResponseLinks
-    {
-        public TradeResponseLinks(Link baseLink, Link counterLink, Link operationLink)
-        {
-            Base = baseLink;
-            Counter = counterLink;
-            Operation = operationLink;
-        }
-
-        [JsonProperty(PropertyName = "base")] public Link Base;
-
-        [JsonProperty(PropertyName = "counter")]
-        public Link Counter;
-
-        [JsonProperty(PropertyName = "operation")]
-        public Link Operation;
+        public Asset CountAsset => Asset.Create(CounterAssetType, CounterAssetCode, CounterAssetIssuer);
     }
 }

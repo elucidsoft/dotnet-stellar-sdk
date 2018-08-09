@@ -53,7 +53,6 @@ namespace stellar_dotnet_sdk
             }
         }
 
-
         /// <inheritdoc />
         public override bool Equals(object obj)
         {

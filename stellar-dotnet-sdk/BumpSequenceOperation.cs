@@ -10,29 +10,30 @@ namespace stellar_dotnet_sdk
 
         public BumpSequenceOperation(long bumpTo)
         {
-            this.BumpTo = bumpTo;
+            BumpTo = bumpTo;
         }
 
         public override OperationBody ToOperationBody()
         {
-            BumpSequenceOp op = new BumpSequenceOp();
-            xdr.Int64 bumpTo = new xdr.Int64();
-            bumpTo.InnerValue = BumpTo;
-            SequenceNumber sequenceNumber = new SequenceNumber();
-            sequenceNumber.InnerValue = bumpTo;
+            var op = new BumpSequenceOp();
+            var bumpTo = new xdr.Int64 { InnerValue = BumpTo };
+            var sequenceNumber = new SequenceNumber { InnerValue = bumpTo };
 
             op.BumpTo = sequenceNumber;
-            OperationBody body = new OperationBody();
-            body.Discriminant = OperationType.Create(OperationType.OperationTypeEnum.BUMP_SEQUENCE);
-            body.BumpSequenceOp = op;
+
+            var body = new OperationBody
+            {
+                Discriminant = OperationType.Create(OperationType.OperationTypeEnum.BUMP_SEQUENCE),
+                BumpSequenceOp = op
+            };
+
             return body;
         }
 
         public class Builder
         {
             public long BumpTo { get; }
-            private KeyPair mSourceAccount;
-
+            private KeyPair _sourceAccount;
 
             public Builder(BumpSequenceOp op)
             {
@@ -44,18 +45,18 @@ namespace stellar_dotnet_sdk
                 BumpTo = bumpTo;
             }
 
-            public BumpSequenceOperation.Builder SetSourceAccount(KeyPair sourceAccount)
+            public Builder SetSourceAccount(KeyPair sourceAccount)
             {
-                mSourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
+                _sourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
                 return this;
             }
 
             public BumpSequenceOperation Build()
             {
-                BumpSequenceOperation operation = new BumpSequenceOperation(BumpTo);
-                if (mSourceAccount != null)
+                var operation = new BumpSequenceOperation(BumpTo);
+                if (_sourceAccount != null)
                 {
-                    operation.SourceAccount = mSourceAccount;
+                    operation.SourceAccount = _sourceAccount;
                 }
 
                 return operation;

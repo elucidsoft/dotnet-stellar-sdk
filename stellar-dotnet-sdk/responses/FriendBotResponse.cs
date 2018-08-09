@@ -38,10 +38,4 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "result_meta_xdr")]
         public string ResultMetaXdr { get; private set; }
     }
-
-    public class FriendBotResponseLinks
-    {
-        [JsonProperty(PropertyName = "transaction")]
-        public Link Transaction { get; private set; }
-    }
 }

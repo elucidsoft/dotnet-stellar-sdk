@@ -25,7 +25,6 @@ namespace stellar_dotnet_sdk
 
         public long OfferId { get; }
 
-
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {
             var op = new sdkxdr.ManageOfferOp();

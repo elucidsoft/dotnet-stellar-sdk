@@ -9,14 +9,12 @@ namespace stellar_dotnet_sdk
             if (code.Length < 1 || code.Length > 4)
                 throw new AssetCodeLengthInvalidException();
         }
-
-
+        
         public override string GetType()
         {
             return "credit_alphanum4";
         }
-
-
+        
         public override xdr.Asset ToXdr()
         {
             var thisXdr = new xdr.Asset();

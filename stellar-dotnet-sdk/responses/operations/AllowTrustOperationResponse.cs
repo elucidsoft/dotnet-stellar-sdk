@@ -66,7 +66,6 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "authorize")]
         public bool Authorize { get; }
 
-
         /// <summary>
         /// The asset to allow trust.
         /// </summary>

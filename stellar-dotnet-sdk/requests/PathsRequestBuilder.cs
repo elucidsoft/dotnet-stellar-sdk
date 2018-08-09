@@ -38,7 +38,6 @@ namespace stellar_dotnet_sdk.requests
         {
             UriBuilder.SetQueryParam("destination_asset_type", asset.GetType());
 
-
             if (asset is AssetTypeCreditAlphaNum)
             {
                 AssetTypeCreditAlphaNum creditAlphaNumAsset = (AssetTypeCreditAlphaNum) asset;
