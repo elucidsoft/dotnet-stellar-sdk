@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Chaos.NaCl.Internal.Ed25519Ref10
+﻿namespace stellar_dotnet_sdk.chaos.nacl.Internal.Ed25519Ref10
 {
     internal static partial class FieldOperations
     {
@@ -12,37 +10,37 @@ namespace Chaos.NaCl.Internal.Ed25519Ref10
         */
         public static void fe_cswap(ref FieldElement f, ref FieldElement g, uint b)
         {
-            Int32 f0 = f.x0;
-            Int32 f1 = f.x1;
-            Int32 f2 = f.x2;
-            Int32 f3 = f.x3;
-            Int32 f4 = f.x4;
-            Int32 f5 = f.x5;
-            Int32 f6 = f.x6;
-            Int32 f7 = f.x7;
-            Int32 f8 = f.x8;
-            Int32 f9 = f.x9;
-            Int32 g0 = g.x0;
-            Int32 g1 = g.x1;
-            Int32 g2 = g.x2;
-            Int32 g3 = g.x3;
-            Int32 g4 = g.x4;
-            Int32 g5 = g.x5;
-            Int32 g6 = g.x6;
-            Int32 g7 = g.x7;
-            Int32 g8 = g.x8;
-            Int32 g9 = g.x9;
-            Int32 x0 = f0 ^ g0;
-            Int32 x1 = f1 ^ g1;
-            Int32 x2 = f2 ^ g2;
-            Int32 x3 = f3 ^ g3;
-            Int32 x4 = f4 ^ g4;
-            Int32 x5 = f5 ^ g5;
-            Int32 x6 = f6 ^ g6;
-            Int32 x7 = f7 ^ g7;
-            Int32 x8 = f8 ^ g8;
-            Int32 x9 = f9 ^ g9;
-            int negb = unchecked((int)-b);
+            var f0 = f.x0;
+            var f1 = f.x1;
+            var f2 = f.x2;
+            var f3 = f.x3;
+            var f4 = f.x4;
+            var f5 = f.x5;
+            var f6 = f.x6;
+            var f7 = f.x7;
+            var f8 = f.x8;
+            var f9 = f.x9;
+            var g0 = g.x0;
+            var g1 = g.x1;
+            var g2 = g.x2;
+            var g3 = g.x3;
+            var g4 = g.x4;
+            var g5 = g.x5;
+            var g6 = g.x6;
+            var g7 = g.x7;
+            var g8 = g.x8;
+            var g9 = g.x9;
+            var x0 = f0 ^ g0;
+            var x1 = f1 ^ g1;
+            var x2 = f2 ^ g2;
+            var x3 = f3 ^ g3;
+            var x4 = f4 ^ g4;
+            var x5 = f5 ^ g5;
+            var x6 = f6 ^ g6;
+            var x7 = f7 ^ g7;
+            var x8 = f8 ^ g8;
+            var x9 = f9 ^ g9;
+            var negb = unchecked((int) -b);
             x0 &= negb;
             x1 &= negb;
             x2 &= negb;

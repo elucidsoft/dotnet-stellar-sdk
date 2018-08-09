@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Chaos.NaCl.Internal
+namespace stellar_dotnet_sdk.chaos.nacl.Internal
 {
     internal static class InternalAssert
     {

@@ -1,4 +1,4 @@
-﻿namespace Chaos.NaCl.Internal.Ed25519Ref10
+﻿namespace stellar_dotnet_sdk.chaos.nacl.Internal.Ed25519Ref10
 {
     internal static partial class FieldOperations
     {
@@ -12,8 +12,7 @@
         //int fe_isnegative(const fe f)
         public static int fe_isnegative(ref FieldElement f)
         {
-            FieldElement fr;
-            fe_reduce(out fr, ref f);
+            FieldOperations.fe_reduce(out var fr, ref f);
             return fr.x0 & 1;
         }
     }

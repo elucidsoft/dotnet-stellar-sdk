@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Security.Cryptography;
-using Chaos.NaCl;
+using stellar_dotnet_sdk.chaos.nacl;
 using stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk

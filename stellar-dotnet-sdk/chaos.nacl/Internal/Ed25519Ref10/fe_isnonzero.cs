@@ -1,4 +1,4 @@
-﻿namespace Chaos.NaCl.Internal.Ed25519Ref10
+﻿namespace stellar_dotnet_sdk.chaos.nacl.Internal.Ed25519Ref10
 {
     internal static partial class FieldOperations
     {
@@ -16,9 +16,8 @@
         // This code actually returns 0 if f==0 and 1 if f != 0
         internal static int fe_isnonzero(ref FieldElement f)
         {
-            FieldElement fr;
-            fe_reduce(out fr, ref f);
-            int differentBits = 0;
+            FieldOperations.fe_reduce(out var fr, ref f);
+            var differentBits = 0;
             differentBits |= fr.x0;
             differentBits |= fr.x1;
             differentBits |= fr.x2;
@@ -29,7 +28,7 @@
             differentBits |= fr.x7;
             differentBits |= fr.x8;
             differentBits |= fr.x9;
-            return (int)((unchecked((uint)differentBits - 1) >> 31) ^ 1);
+            return (int) ((unchecked((uint) differentBits - 1) >> 31) ^ 1);
         }
     }
 }

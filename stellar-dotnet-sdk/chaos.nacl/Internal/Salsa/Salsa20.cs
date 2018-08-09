@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Chaos.NaCl.Internal.Salsa
+﻿namespace stellar_dotnet_sdk.chaos.nacl.Internal.Salsa
 {
     internal class Salsa20
     {
@@ -9,9 +7,10 @@ namespace Chaos.NaCl.Internal.Salsa
         public const uint SalsaConst2 = 0x79622d32;
         public const uint SalsaConst3 = 0x6b206574;
 
-        public static void HSalsa20(byte[] output, int outputOffset, byte[] key, int keyOffset, byte[] nonce, int nonceOffset)
+        public static void HSalsa20(byte[] output, int outputOffset, byte[] key, int keyOffset, byte[] nonce,
+            int nonceOffset)
         {
-            Array16<UInt32> state;
+            Array16<uint> state;
             state.x0 = SalsaConst0;
             state.x1 = ByteIntegerConverter.LoadLittleEndian32(key, keyOffset + 0);
             state.x2 = ByteIntegerConverter.LoadLittleEndian32(key, keyOffset + 4);

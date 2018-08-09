@@ -1,16 +1,16 @@
-﻿namespace Chaos.NaCl.Internal.Ed25519Ref10
+﻿namespace stellar_dotnet_sdk.chaos.nacl.Internal.Ed25519Ref10
 {
-	internal static partial class GroupOperations
-	{
-		/*
-		r = p
-		*/
-		public static void ge_p3_to_cached(out GroupElementCached r, ref GroupElementP3 p)
-		{
-			FieldOperations.fe_add(out r.YplusX, ref p.Y, ref p.X);
-			FieldOperations.fe_sub(out r.YminusX, ref p.Y, ref p.X);
-			r.Z = p.Z;
-			FieldOperations.fe_mul(out r.T2d, ref p.T, ref LookupTables.d2);
-		}
-	}
+    internal static partial class GroupOperations
+    {
+        /*
+        r = p
+        */
+        public static void ge_p3_to_cached(out GroupElementCached r, ref GroupElementP3 p)
+        {
+            stellar_dotnet_sdk.chaos.nacl.Internal.Ed25519Ref10.FieldOperations.fe_add(out r.YplusX, ref p.Y, ref p.X);
+            stellar_dotnet_sdk.chaos.nacl.Internal.Ed25519Ref10.FieldOperations.fe_sub(out r.YminusX, ref p.Y, ref p.X);
+            r.Z = p.Z;
+            stellar_dotnet_sdk.chaos.nacl.Internal.Ed25519Ref10.FieldOperations.fe_mul(out r.T2d, ref p.T, ref stellar_dotnet_sdk.chaos.nacl.Internal.Ed25519Ref10.LookupTables.d2);
+        }
+    }
 }

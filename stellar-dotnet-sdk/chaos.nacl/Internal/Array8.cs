@@ -1,4 +1,4 @@
-﻿namespace Chaos.NaCl.Internal
+﻿namespace stellar_dotnet_sdk.chaos.nacl.Internal
 {
     // Array8<UInt32> Poly1305 key
     // Array8<UInt64> SHA-512 state/output
