@@ -10,13 +10,11 @@ namespace stellar_dotnet_sdk
                 throw new AssetCodeLengthInvalidException();
         }
 
-
         public override string GetType()
         {
             return "credit_alphanum12";
         }
-
-
+        
         public override xdr.Asset ToXdr()
         {
             var thisXdr = new xdr.Asset();

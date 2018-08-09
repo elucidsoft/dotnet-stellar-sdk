@@ -29,7 +29,6 @@ namespace stellar_dotnet_sdk.responses.effects
             [JsonProperty(PropertyName = "operation")]
             public Link Operation { get; }
 
-
             [JsonProperty(PropertyName = "precedes")]
             public Link Precedes { get; }
 

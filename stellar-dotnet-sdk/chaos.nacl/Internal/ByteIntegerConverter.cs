@@ -41,7 +41,6 @@
             output.x15 = LoadBigEndian64(input, inputOffset + 120);
         }
 
-
         public static void Array16StoreLittleEndian32(byte[] output, int outputOffset, ref Array16<uint> input)
         {
             StoreLittleEndian32(output, outputOffset + 0, input.x0);

@@ -17,7 +17,6 @@ namespace stellar_dotnet_sdk
 
         public string MemoTextValue { get; }
 
-
         public override xdr.Memo ToXdr()
         {
             var memo = new xdr.Memo();

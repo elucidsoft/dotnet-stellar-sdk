@@ -14,7 +14,6 @@ namespace stellar_dotnet_sdk.responses
 
         [JsonProperty(PropertyName = "bids")] public Row[] Bids { get; private set; }
 
-
         public OrderBookResponse(Asset orderBookBase, Asset counter, Row[] asks, Row[] bids)
         {
             OrderBookBase = orderBookBase;
@@ -22,7 +21,6 @@ namespace stellar_dotnet_sdk.responses
             Asks = asks;
             Bids = bids;
         }
-
 
         ///
         /// Represents order book row.
@@ -36,7 +34,6 @@ namespace stellar_dotnet_sdk.responses
 
             [JsonProperty(PropertyName = "price_r")]
             public Price PriceR { get; private set; }
-
 
             public Row(string amount, string price, Price priceR)
             {

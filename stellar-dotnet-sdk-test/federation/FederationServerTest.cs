@@ -15,8 +15,7 @@ namespace stellar_dotnet_sdk_test.federation
         private const string SuccessResponse = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\"}";
         private const string SuccessResponseWithMemo = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\", \"memo_type\": \"text\", \"memo\": \"test\"}";
         private const string NotFoundResponse = "{\"code\":\"not_found\",\"message\":\"Account not found\"}";
-
-
+        
         private const string StellarToml = "FEDERATION_SERVER = \"https://api.stellar.org/federation\"";
 
         private const HttpStatusCode HttpNotFound = HttpStatusCode.NotFound;

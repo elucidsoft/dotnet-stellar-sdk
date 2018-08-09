@@ -15,7 +15,6 @@ namespace stellar_dotnet_sdk
 
         public byte[] Value { get; }
 
-
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {
             var op = new sdkxdr.ManageDataOp();

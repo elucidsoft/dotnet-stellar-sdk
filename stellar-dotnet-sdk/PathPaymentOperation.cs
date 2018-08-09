@@ -26,7 +26,6 @@ namespace stellar_dotnet_sdk
             }
         }
 
-
         public Asset SendAsset { get; }
 
         public string SendMax { get; }
@@ -145,7 +144,6 @@ namespace stellar_dotnet_sdk
                 _SourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
                 return this;
             }
-
 
             /// <summary>
             ///     Builds an operation

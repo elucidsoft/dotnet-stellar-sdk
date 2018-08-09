@@ -15,7 +15,6 @@ namespace stellar_dotnet_sdk
 
         public string Limit { get; }
 
-
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {
             var op = new sdkxdr.ChangeTrustOp();

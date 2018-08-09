@@ -23,7 +23,6 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(friendBotResponse.Extras.ResultXdr, "AAAAAAAAAGT/////AAAAAQAAAAAAAAAA/////AAAAAA=");
         }
 
-
         [TestMethod]
         public void TestDeserializeFriendBotResponseSuccessResponse()
         {

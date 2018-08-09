@@ -20,7 +20,6 @@ namespace stellar_dotnet_sdk
             if (string.IsNullOrEmpty(value))
                 throw new ArgumentNullException(nameof(value), "value cannot be null");
 
-
             //This bascially takes a decimal value and turns it into a large integer.
             var amount = decimal.Parse(value) * ONE;
 
@@ -117,7 +116,6 @@ namespace stellar_dotnet_sdk
                 operation.SourceAccount = KeyPair.FromXdrPublicKey(thisXdr.SourceAccount.InnerValue);
             return operation;
         }
-
 
         ///<summary>
         /// Generates OperationBody XDR object
