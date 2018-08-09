@@ -19,14 +19,13 @@ namespace stellar_dotnet_sdk_test.responses
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertCreateAccountOperationData(instance);
-
         }
 
         public static void AssertCreateAccountOperationData(OperationResponse instance)
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is CreateAccountOperationResponse);
-            var operation = (CreateAccountOperationResponse)instance;
+            var operation = (CreateAccountOperationResponse) instance;
 
             Assert.AreEqual(operation.SourceAccount.AccountId, "GD6WU64OEP5C4LRBH6NK3MHYIA2ADN6K6II6EXPNVUR3ERBXT4AN4ACD");
             Assert.AreEqual(operation.PagingToken, "3936840037961729");
@@ -51,7 +50,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is PaymentOperationResponse);
-            var operation = (PaymentOperationResponse)instance;
+            var operation = (PaymentOperationResponse) instance;
 
             AssertPaymentOperationTestData(operation);
         }
@@ -75,7 +74,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is PaymentOperationResponse);
-            var operation = (PaymentOperationResponse)instance;
+            var operation = (PaymentOperationResponse) instance;
 
             Assert.AreEqual(operation.From.AccountId, "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA");
             Assert.AreEqual(operation.To.AccountId, "GBHUSIZZ7FS2OMLZVZ4HLWJMXQ336NFSXHYERD7GG54NRITDTEWWBBI6");
@@ -91,7 +90,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AllowTrustOperationResponse);
-            var operation = (AllowTrustOperationResponse)instance;
+            var operation = (AllowTrustOperationResponse) instance;
 
             Assert.AreEqual(operation.Trustee.AccountId, "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
             Assert.AreEqual(operation.Trustor.AccountId, "GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F");
@@ -107,7 +106,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is ChangeTrustOperationResponse);
-            var operation = (ChangeTrustOperationResponse)instance;
+            var operation = (ChangeTrustOperationResponse) instance;
 
             Assert.AreEqual(operation.Trustee.AccountId, "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
             Assert.AreEqual(operation.Trustor.AccountId, "GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F");
@@ -123,7 +122,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is SetOptionsOperationResponse);
-            var operation = (SetOptionsOperationResponse)instance;
+            var operation = (SetOptionsOperationResponse) instance;
 
             Assert.AreEqual(operation.SignerKey.AccountId, "GD3ZYXVC7C3ECD5I4E5NGPBFJJSULJ6HJI2FBHGKYFV34DSIWB4YEKJZ");
             Assert.AreEqual(operation.SignerWeight, 1);
@@ -140,13 +139,12 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountMergeOperation()
         {
-
             var json = File.ReadAllText(Path.Combine("testdata", "operationAccountMerge.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountMergeOperationResponse);
-            var operation = (AccountMergeOperationResponse)instance;
+            var operation = (AccountMergeOperationResponse) instance;
 
             Assert.AreEqual(operation.Account.AccountId, "GD6GKRABNDVYDETEZJQEPS7IBQMERCN44R5RCI4LJNX6BMYQM2KPGGZ2");
             Assert.AreEqual(operation.Into.AccountId, "GAZWSWPDQTBHFIPBY4FEDFW2J6E2LE7SZHJWGDZO6Q63W7DBSRICO2KN");
@@ -160,7 +158,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is ManageOfferOperationResponse);
-            var operation = (ManageOfferOperationResponse)instance;
+            var operation = (ManageOfferOperationResponse) instance;
 
             Assert.AreEqual(operation.OfferId, 0);
             Assert.AreEqual(operation.Amount, "100.0");
@@ -176,7 +174,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is PathPaymentOperationResponse);
-            var operation = (PathPaymentOperationResponse)instance;
+            var operation = (PathPaymentOperationResponse) instance;
 
             Assert.AreEqual(operation.From.AccountId, "GCXKG6RN4ONIEPCMNFB732A436Z5PNDSRLGWK7GBLCMQLIFO4S7EYWVU");
             Assert.AreEqual(operation.To.AccountId, "GA5WBPYA5Y4WAEHXWR2UKO2UO4BUGHUQ74EUPKON2QHV4WRHOIRNKKH2");
@@ -194,7 +192,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is CreatePassiveOfferOperationResponse);
-            var operation = (CreatePassiveOfferOperationResponse)instance;
+            var operation = (CreatePassiveOfferOperationResponse) instance;
 
             Assert.AreEqual(operation.Amount, "11.27827");
             Assert.AreEqual(operation.BuyingAsset, Asset.CreateNonNativeAsset("USD", KeyPair.FromAccountId("GDS5JW5E6DRSSN5XK4LW7E6VUMFKKE2HU5WCOVFTO7P2RP7OXVCBLJ3Y")));
@@ -209,7 +207,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is InflationOperationResponse);
-            var operation = (InflationOperationResponse)instance;
+            var operation = (InflationOperationResponse) instance;
 
             Assert.AreEqual(operation.Id, 12884914177L);
         }
@@ -222,7 +220,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is ManageDataOperationResponse);
-            var operation = (ManageDataOperationResponse)instance;
+            var operation = (ManageDataOperationResponse) instance;
 
             Assert.AreEqual(operation.Id, 14336188517191688L);
             Assert.AreEqual(operation.Name, "CollateralValue");
@@ -237,7 +235,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is ManageDataOperationResponse);
-            var operation = (ManageDataOperationResponse)instance;
+            var operation = (ManageDataOperationResponse) instance;
 
             Assert.AreEqual(operation.Value, null);
         }
@@ -264,7 +262,7 @@ namespace stellar_dotnet_sdk_test.responses
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             Assert.IsTrue(instance is BumpSequenceOperationResponse);
-            var operation = (BumpSequenceOperationResponse)instance;
+            var operation = (BumpSequenceOperationResponse) instance;
 
             Assert.AreEqual(12884914177L, operation.Id);
             Assert.AreEqual(79473726952833048L, operation.BumpTo);
@@ -280,8 +278,8 @@ namespace stellar_dotnet_sdk_test.responses
                 var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
                 var opD = new OperationDeserializer();
-                StringBuilder sb = new StringBuilder();
-                StringWriter sw = new StringWriter(sb);
+                var sb = new StringBuilder();
+                var sw = new StringWriter(sb);
 
                 using (JsonWriter writer = new JsonTextWriter(sw))
                 {

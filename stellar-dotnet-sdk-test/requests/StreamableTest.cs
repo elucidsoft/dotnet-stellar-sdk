@@ -1,18 +1,18 @@
-﻿using Moq;
+﻿using System;
+using System.Net.Http;
+using Moq;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.requests;
-using System;
-using System.Net.Http;
 
 namespace stellar_dotnet_sdk_test.requests
 {
     public class StreamableTest<T> where T : class
     {
-        private string _json;
-        private Action<T> _testAction;
+        private readonly string _json;
+        private readonly Action<T> _testAction;
+        private readonly Mock<IEventSource> eventSource = new Mock<IEventSource>();
 
-        FakeStreamableRequestBuilder fakeStreamableRequestBuilder;
-        Mock<IEventSource> eventSource = new Mock<IEventSource>();
+        private readonly FakeStreamableRequestBuilder fakeStreamableRequestBuilder;
 
         public StreamableTest(string json, Action<T> testAction)
         {
@@ -22,17 +22,14 @@ namespace stellar_dotnet_sdk_test.requests
             fakeStreamableRequestBuilder = new FakeStreamableRequestBuilder(new Uri("https://horizon-testnet.stellar.org"), "test", null, eventSource.Object);
         }
 
-        public string Uri { get => fakeStreamableRequestBuilder.BuildUri().ToString(); }
+        public string Uri => fakeStreamableRequestBuilder.BuildUri().ToString();
 
         public void AssertIsValid()
         {
-            var handler = new EventHandler<T>((o, e) =>
-            {
-                _testAction(e);
-            });
+            var handler = new EventHandler<T>((o, e) => { _testAction(e); });
 
             fakeStreamableRequestBuilder.Stream(handler);
-            eventSource.Raise(a => a.Message += null, new EventSource.ServerSentEventArgs() { Data = _json });
+            eventSource.Raise(a => a.Message += null, new EventSource.ServerSentEventArgs {Data = _json});
         }
 
         public class FakeStreamableRequestBuilder : RequestBuilderStreamable<FakeStreamableRequestBuilder, T>
@@ -42,6 +39,5 @@ namespace stellar_dotnet_sdk_test.requests
             {
             }
         }
-
     }
 }

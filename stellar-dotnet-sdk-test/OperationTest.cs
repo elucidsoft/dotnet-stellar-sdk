@@ -3,12 +3,6 @@ using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
-using Asset = stellar_dotnet_sdk.Asset;
-using Operation = stellar_dotnet_sdk.Operation;
-using Price = stellar_dotnet_sdk.Price;
-using Signer = stellar_dotnet_sdk.Signer;
-using Transaction = stellar_dotnet_sdk.Transaction;
-
 
 namespace stellar_dotnet_sdk_test
 {
@@ -557,15 +551,15 @@ namespace stellar_dotnet_sdk_test
         public void TestBumpSequence()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
-            KeyPair source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
+            var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
 
-            BumpSequenceOperation operation = new BumpSequenceOperation.Builder(156L)
-                                                                       .SetSourceAccount(source)
-                                                                       .Build();
+            var operation = new BumpSequenceOperation.Builder(156L)
+                .SetSourceAccount(source)
+                .Build();
 
             var xdr = operation.ToXdr();
 
-            BumpSequenceOperation parsedOperation = (BumpSequenceOperation)Operation.FromXdr(xdr);
+            var parsedOperation = (BumpSequenceOperation) Operation.FromXdr(xdr);
 
             Assert.AreEqual(156L, parsedOperation.BumpTo);
             Assert.AreEqual("AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAsAAAAAAAAAnA==", operation.ToXdrBase64());

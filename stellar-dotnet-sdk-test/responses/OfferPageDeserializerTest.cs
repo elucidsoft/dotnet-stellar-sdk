@@ -32,6 +32,5 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(offerResponsePage.Links.Prev.Href, "https://horizon-testnet.stellar.org/accounts/GA2IYMIZSAMDD6QQTTSIEL73H2BKDJQTA7ENDEEAHJ3LMVF7OYIZPXQD/offers?order=desc&limit=10&cursor=241");
             Assert.AreEqual(offerResponsePage.Links.Self.Href, "https://horizon-testnet.stellar.org/accounts/GA2IYMIZSAMDD6QQTTSIEL73H2BKDJQTA7ENDEEAHJ3LMVF7OYIZPXQD/offers?order=asc&limit=10&cursor=");
         }
-
     }
 }

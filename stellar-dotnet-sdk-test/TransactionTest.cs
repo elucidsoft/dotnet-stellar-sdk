@@ -49,20 +49,20 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(transaction.SequenceNumber, sequenceNumber + 1);
             Assert.AreEqual(transaction.Fee, 100);
         }
-        
+
         [TestMethod]
         public void TestFromXdr()
         {
-            Transaction transaction = Transaction.FromEnvelopeXdr("AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAEqBfIAAAAAAAAAAABtoeVYgAAAEDLki9Oi700N60Lo8gUmEFHbKvYG4QSqXiLIt9T0ru2O5BphVl/jR9tYtHAD+UeDYhgXNgwUxqTEu1WukvEyYcD");
-            Transaction transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
+            var transaction = Transaction.FromEnvelopeXdr("AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAEqBfIAAAAAAAAAAABtoeVYgAAAEDLki9Oi700N60Lo8gUmEFHbKvYG4QSqXiLIt9T0ru2O5BphVl/jR9tYtHAD+UeDYhgXNgwUxqTEu1WukvEyYcD");
+            var transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
 
 
             Assert.AreEqual(transaction.SourceAccount.AccountId, transaction2.SourceAccount.AccountId);
             Assert.AreEqual(transaction.SequenceNumber, transaction2.SequenceNumber);
             Assert.AreEqual(transaction.Fee, transaction2.Fee);
             Assert.AreEqual(
-                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
-                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
+                ((CreateAccountOperation) transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation) transaction2.Operations[0]).StartingBalance
             );
 
             CollectionAssert.AreEqual(transaction.Signatures, transaction2.Signatures);
@@ -87,15 +87,15 @@ namespace stellar_dotnet_sdk_test
                 "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAEAAAAMSGVsbG8gd29ybGQhAAAAAQAAAAAAAAAAAAAAAO3gUmG83C+VCqO6FztuMtXJF/l7grZA7MjRzqdZ9W8QAAAABKgXyAAAAAAAAAAAAbaHlWIAAABAxzofBhoayuUnz8t0T1UNWrTgmJ+lCh9KaeOGu2ppNOz9UGw0abGLhv+9oWQsstaHx6YjwWxL+8GBvwBUVWRlBQ==",
                 transaction.ToEnvelopeXdrBase64());
 
-            Transaction transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
+            var transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
 
             Assert.AreEqual(transaction.SourceAccount.AccountId, transaction2.SourceAccount.AccountId);
             Assert.AreEqual(transaction.SequenceNumber, transaction2.SequenceNumber);
             Assert.AreEqual(transaction.Memo, transaction2.Memo);
             Assert.AreEqual(transaction.Fee, transaction2.Fee);
             Assert.AreEqual(
-                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
-                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
+                ((CreateAccountOperation) transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation) transaction2.Operations[0]).StartingBalance
             );
         }
 
@@ -124,16 +124,16 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(decodedTransaction.TimeBounds.MinTime.InnerValue, 42);
             Assert.AreEqual(decodedTransaction.TimeBounds.MaxTime.InnerValue, 1337);
 
-            Transaction transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
-            
+            var transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
+
             Assert.AreEqual(transaction.SourceAccount.AccountId, transaction2.SourceAccount.AccountId);
             Assert.AreEqual(transaction.SequenceNumber, transaction2.SequenceNumber);
             Assert.AreEqual(transaction.Memo, transaction2.Memo);
             Assert.AreEqual(transaction.TimeBounds, transaction2.TimeBounds);
             Assert.AreEqual(transaction.Fee, transaction2.Fee);
             Assert.AreEqual(
-                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
-                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
+                ((CreateAccountOperation) transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation) transaction2.Operations[0]).StartingBalance
             );
         }
 

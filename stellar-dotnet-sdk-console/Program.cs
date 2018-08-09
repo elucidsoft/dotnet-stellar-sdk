@@ -31,13 +31,13 @@ namespace TestConsole
                 Console.WriteLine("-- Streaming All New Ledgers On The Network --");
                 await server.Ledgers
                     .Cursor("now")
-                    .Stream((sender, response) => { ShowOperationResponse(server, sender, response);  })
+                    .Stream((sender, response) => { ShowOperationResponse(server, sender, response); })
                     .Connect();
             }
 
-                Console.ReadLine();
+            Console.ReadLine();
         }
-        
+
         private static async Task ShowAccountTransactions(Server server)
         {
             Console.WriteLine("-- Show Account Transactions (ForAccount) --");
@@ -59,8 +59,6 @@ namespace TestConsole
                 .Execute();
 
 
-
-
             ShowTransactionRecords(transactions.Records);
             Console.WriteLine();
         }
@@ -76,12 +74,11 @@ namespace TestConsole
             Console.WriteLine($"Ledger: {tran.Ledger}, Hash: {tran.Hash}, Fee Paid: {tran.FeePaid}");
         }
 
-        private async static void ShowOperationResponse(Server server, object sender, LedgerResponse lr)
+        private static async void ShowOperationResponse(Server server, object sender, LedgerResponse lr)
         {
             var operationRequestBuilder = server.Operations.ForLedger(lr.Sequence);
             var operations = await operationRequestBuilder.Execute();
 
-            
 
             var accts = 0;
             var payments = 0;
@@ -89,7 +86,6 @@ namespace TestConsole
             var options = 0;
 
             foreach (var op in operations.Records)
-            {
                 switch (op.Type)
                 {
                     case "create_account":
@@ -104,15 +100,10 @@ namespace TestConsole
                     case "set_options":
                         options++;
                         break;
-
                 }
-            }
 
-            Console.WriteLine($"id: {lr.Sequence}, tx/ops: { lr.TransactionCount + "/" + lr.OperationCount }, accts: { accts }, payments: { payments }, offers: { offers }, options: { options }");
-            Console.WriteLine($"Uri: {((LedgersRequestBuilder)sender).Uri}");
-
-
-
+            Console.WriteLine($"id: {lr.Sequence}, tx/ops: {lr.TransactionCount + "/" + lr.OperationCount}, accts: {accts}, payments: {payments}, offers: {offers}, options: {options}");
+            Console.WriteLine($"Uri: {((LedgersRequestBuilder) sender).Uri}");
         }
     }
 }

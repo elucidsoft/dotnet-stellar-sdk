@@ -10,7 +10,7 @@ using static stellar_dotnet_sdk_test.FederationServerTest;
 namespace stellar_dotnet_sdk_test.federation
 {
     [TestClass]
-    public abstract partial class FederationServerTest
+    public abstract class FederationServerTest
     {
         private const string SuccessResponse = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\"}";
         private const string SuccessResponseWithMemo = "{\"stellar_address\":\"bob*stellar.org\",\"account_id\":\"GCW667JUHCOP5Y7KY6KGDHNPHFM4CS3FCBQ7QWDUALXTX3PGXLSOEALY\", \"memo_type\": \"text\", \"memo\": \"test\"}";
@@ -18,12 +18,12 @@ namespace stellar_dotnet_sdk_test.federation
 
 
         private const string StellarToml = "FEDERATION_SERVER = \"https://api.stellar.org/federation\"";
-        private Mock<FakeHttpMessageHandler> _fakeHttpMessageHandler;
-        private HttpClient _httpClient;
 
         private const HttpStatusCode HttpNotFound = HttpStatusCode.NotFound;
 
         private const HttpStatusCode HttpOk = HttpStatusCode.OK;
+        private Mock<FakeHttpMessageHandler> _fakeHttpMessageHandler;
+        private HttpClient _httpClient;
         private FederationServer _server;
 
         [TestInitialize]
@@ -59,7 +59,6 @@ namespace stellar_dotnet_sdk_test.federation
 
             using (var server = await FederationServer.CreateForDomain("stellar.org"))
             {
-
                 Assert.AreEqual(server.ServerUri, "https://api.stellar.org/federation");
                 Assert.AreEqual(server.Domain, "stellar.org");
             }

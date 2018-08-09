@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TimeBounds = stellar_dotnet_sdk.TimeBounds;
+using stellar_dotnet_sdk;
 
 namespace stellar_dotnet_sdk_test
 {

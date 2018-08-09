@@ -1,9 +1,6 @@
-﻿using Moq;
-using System;
-using System.Collections.Generic;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
-using System.Text;
+using Moq;
 using static stellar_dotnet_sdk_test.FederationServerTest;
 
 namespace stellar_dotnet_sdk_test
@@ -12,13 +9,13 @@ namespace stellar_dotnet_sdk_test
     {
         public static HttpClient CreateFakeHttpClient(string content)
         {
-            var mockFakeHttpMesssageHandler = new Mock<FakeHttpMessageHandler>() { CallBase = true };
-            HttpClient httpClient = new HttpClient(mockFakeHttpMesssageHandler.Object);
+            var mockFakeHttpMesssageHandler = new Mock<FakeHttpMessageHandler> {CallBase = true};
+            var httpClient = new HttpClient(mockFakeHttpMesssageHandler.Object);
 
-            HttpResponseMessage httpResponseMessage = new HttpResponseMessage
+            var httpResponseMessage = new HttpResponseMessage
             {
                 StatusCode = HttpStatusCode.OK,
-                Content = new StringContent(content),
+                Content = new StringContent(content)
             };
 
             httpResponseMessage.Headers.Add("X-Ratelimit-Limit", "-1");

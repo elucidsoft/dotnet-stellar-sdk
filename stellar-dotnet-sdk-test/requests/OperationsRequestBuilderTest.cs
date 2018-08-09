@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
@@ -15,8 +14,8 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public void TestOperations()
         {
-            Server server = new Server("https://horizon-testnet.stellar.org");
-            Uri uri = server.Operations
+            var server = new Server("https://horizon-testnet.stellar.org");
+            var uri = server.Operations
                 .Limit(200)
                 .Order(OrderDirection.DESC)
                 .BuildUri();
@@ -26,8 +25,8 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public void TestOperationDetails()
         {
-            Server server = new Server("https://horizon-testnet.stellar.org");
-            Uri uri = server.Operations
+            var server = new Server("https://horizon-testnet.stellar.org");
+            var uri = server.Operations
                 .Operation(77309415424)
                 .BuildUri();
             Assert.AreEqual("https://horizon-testnet.stellar.org/operations/77309415424", uri.ToString());
@@ -36,8 +35,8 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public void TestForAccount()
         {
-            Server server = new Server("https://horizon-testnet.stellar.org");
-            Uri uri = server.Operations
+            var server = new Server("https://horizon-testnet.stellar.org");
+            var uri = server.Operations
                 .ForAccount(KeyPair.FromAccountId("GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H"))
                 .Limit(200)
                 .Order(OrderDirection.DESC)
@@ -48,8 +47,8 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public void TestLedger()
         {
-            Server server = new Server("https://horizon-testnet.stellar.org");
-            Uri uri = server.Operations
+            var server = new Server("https://horizon-testnet.stellar.org");
+            var uri = server.Operations
                 .ForLedger(200000000000L)
                 .Limit(50)
                 .Order(OrderDirection.ASC)
@@ -60,8 +59,8 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public void TestTransaction()
         {
-            Server server = new Server("https://horizon-testnet.stellar.org");
-            Uri uri = server.Operations
+            var server = new Server("https://horizon-testnet.stellar.org");
+            var uri = server.Operations
                 .ForTransaction("991534d902063b7715cd74207bef4e7bd7aa2f108f62d3eba837ce6023b2d4f3")
                 .BuildUri();
             Assert.AreEqual("https://horizon-testnet.stellar.org/transactions/991534d902063b7715cd74207bef4e7bd7aa2f108f62d3eba837ce6023b2d4f3/operations", uri.ToString());

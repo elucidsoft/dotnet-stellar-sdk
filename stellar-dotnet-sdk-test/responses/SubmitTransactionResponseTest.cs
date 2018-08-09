@@ -49,13 +49,11 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeNoOfferId()
         {
-
             var json = File.ReadAllText(Path.Combine("testdata", "submitTransactionNoOfferId.json"));
             var submitTransactionResponse = JsonSingleton.GetInstance<SubmitTransactionResponse>(json);
 
             Assert.AreEqual(submitTransactionResponse.IsSuccess(), true);
             Assert.IsNull(submitTransactionResponse.GetOfferIdFromResult(0));
         }
-
     }
 }

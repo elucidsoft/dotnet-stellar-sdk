@@ -8,7 +8,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Moq.Language;
 using stellar_dotnet_sdk;
-using stellar_dotnet_sdk.responses;
 
 namespace stellar_dotnet_sdk_test
 {
@@ -34,7 +33,7 @@ namespace stellar_dotnet_sdk_test
 
             _server = new Server("https://horizon.stellar.org");
 
-            _fakeHttpMessageHandler = new Mock<FakeHttpMessageHandler> { CallBase = true };
+            _fakeHttpMessageHandler = new Mock<FakeHttpMessageHandler> {CallBase = true};
             _httpClient = new HttpClient(_fakeHttpMessageHandler.Object);
 
             Server.HttpClient = _httpClient;
@@ -57,19 +56,19 @@ namespace stellar_dotnet_sdk_test
             };
         }
 
-       
+
         public Transaction BuildTransaction()
         {
-            KeyPair source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
-            KeyPair destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
-            Account account = new Account(source, 2908908335136768L);
-            Transaction.Builder builder = new Transaction.Builder(account)
+            var account = new Account(source, 2908908335136768L);
+            var builder = new Transaction.Builder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .AddMemo(Memo.Text("Hello world!"));
 
             Assert.AreEqual(1, builder.OperationsCount);
-            Transaction transaction = builder.Build();
+            var transaction = builder.Build();
             Assert.AreEqual(2908908335136769L, transaction.SequenceNumber);
             Assert.AreEqual(2908908335136769L, account.SequenceNumber);
             transaction.Sign(source);
@@ -83,7 +82,7 @@ namespace stellar_dotnet_sdk_test
             var json = File.ReadAllText(Path.Combine("testdata", "serverSuccess.json"));
             When().Returns(ResponseMessage(HttpOk, json));
 
-            SubmitTransactionResponse response = await _server.SubmitTransaction(BuildTransaction());
+            var response = await _server.SubmitTransaction(BuildTransaction());
             Assert.IsTrue(response.IsSuccess());
             Assert.AreEqual(response.Ledger, 826150L);
             Assert.AreEqual(response.Hash, "2634d2cf5adcbd3487d1df042166eef53830115844fdde1588828667bf93ff42");
@@ -96,7 +95,7 @@ namespace stellar_dotnet_sdk_test
             var json = File.ReadAllText(Path.Combine("testdata", "serverFailure.json"));
             When().Returns(ResponseMessage(HttpBadRequest, json));
 
-            SubmitTransactionResponse response = await _server.SubmitTransaction(BuildTransaction());
+            var response = await _server.SubmitTransaction(BuildTransaction());
             Assert.IsFalse(response.IsSuccess());
             Assert.IsNull(response.Ledger);
             Assert.IsNull(response.Hash);
@@ -122,6 +121,5 @@ namespace stellar_dotnet_sdk_test
                 return await Task.FromResult(Send(request));
             }
         }
-
     }
 }

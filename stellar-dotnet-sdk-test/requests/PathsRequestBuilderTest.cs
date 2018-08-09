@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
@@ -11,13 +10,12 @@ namespace stellar_dotnet_sdk_test.requests
     [TestClass]
     public class PathsRequestBuilderTest
     {
-
         [TestMethod]
         public void TestAccounts()
         {
-            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
-                Uri uri = server.Paths
+                var uri = server.Paths
                     .DestinationAccount(KeyPair.FromAccountId("GB24QI3BJNKBY4YNJZ2I37HFIYK56BL2OURFML76X46RQQKDLVT7WKJF"))
                     .SourceAccount(KeyPair.FromAccountId("GD4KO3IOYYWIYVI236Y35K2DU6VNYRH3BPNFJSH57J5BLLCQHBIOK3IN"))
                     .DestinationAmount("20.50")
@@ -58,9 +56,5 @@ namespace stellar_dotnet_sdk_test.requests
                 PathsPageDeserializerTest.AssertTestData(account);
             }
         }
-
     }
 }
-
-
-

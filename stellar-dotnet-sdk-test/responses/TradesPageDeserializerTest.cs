@@ -15,7 +15,6 @@ namespace stellar_dotnet_sdk_test.responses
             var tradesPage = JsonSingleton.GetInstance<Page<TradeResponse>>(json);
 
             AssertTestData(tradesPage);
-
         }
 
         public static void AssertTestData(Page<TradeResponse> tradesPage)

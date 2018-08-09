@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
@@ -8,14 +7,14 @@ using stellar_dotnet_sdk_test.responses;
 
 namespace stellar_dotnet_sdk_test.requests
 {
-    [TestClass()]
+    [TestClass]
     public class TradeAggregationsRequestBuilderTest
     {
-        [TestMethod()]
+        [TestMethod]
         public void TestTradeAggregations()
         {
-            Server server = new Server("https://horizon-testnet.stellar.org");
-            Uri uri = server.TradeAggregations
+            var server = new Server("https://horizon-testnet.stellar.org");
+            var uri = server.TradeAggregations
                 .BaseAsset(new AssetTypeNative())
                 .CounterAsset(Asset.CreateNonNativeAsset("BTC", KeyPair.FromAccountId("GATEMHCCKCY67ZUCKTROYN24ZYT5GK4EQZ65JJLDHKHRUZI3EUEKMTCH")))
                 .StartTime(1512689100000L)
@@ -26,16 +25,15 @@ namespace stellar_dotnet_sdk_test.requests
                 .BuildUri();
 
             Assert.AreEqual(uri.ToString(), "https://horizon-testnet.stellar.org/trade_aggregations?" +
-                    "base_asset_type=native&" +
-                    "counter_asset_type=credit_alphanum4&" +
-                    "counter_asset_code=BTC&" +
-                    "counter_asset_issuer=GATEMHCCKCY67ZUCKTROYN24ZYT5GK4EQZ65JJLDHKHRUZI3EUEKMTCH&" +
-                    "start_time=1512689100000&" +
-                    "end_time=1512775500000&" +
-                    "resolution=300000&" +
-                    "limit=200&" +
-                    "order=asc");
-
+                                            "base_asset_type=native&" +
+                                            "counter_asset_type=credit_alphanum4&" +
+                                            "counter_asset_code=BTC&" +
+                                            "counter_asset_issuer=GATEMHCCKCY67ZUCKTROYN24ZYT5GK4EQZ65JJLDHKHRUZI3EUEKMTCH&" +
+                                            "start_time=1512689100000&" +
+                                            "end_time=1512775500000&" +
+                                            "resolution=300000&" +
+                                            "limit=200&" +
+                                            "order=asc");
         }
 
         [TestMethod]
@@ -53,10 +51,9 @@ namespace stellar_dotnet_sdk_test.requests
                     .EndTime(1512775500000L)
                     .Resolution(300000L)
                     .Execute();
-                
+
                 TradeAggregationsPageDeserializerTest.AssertTestData(account);
             }
         }
-
     }
 }
