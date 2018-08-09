@@ -88,7 +88,6 @@ namespace stellar_dotnet_sdk
             return !a1.Where((t, i) => t != a2[i]).Any();
         }
 
-
         public static void Fill<T>(this T[] arr, T value)
         {
             for (var i = 0; i < arr.Length; i++)

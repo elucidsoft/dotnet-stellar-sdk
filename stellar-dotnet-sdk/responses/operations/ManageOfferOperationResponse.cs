@@ -33,7 +33,6 @@ namespace stellar_dotnet_sdk.responses.operations
 
         [JsonProperty(PropertyName = "price")] public string Price { get; }
 
-
         [JsonProperty(PropertyName = "buying_asset_type")]
         public string BuyingAssetType { get; }
 
