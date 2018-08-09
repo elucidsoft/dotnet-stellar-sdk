@@ -80,7 +80,6 @@ namespace stellar_dotnet_sdk_test.requests
             }
         }
 
-
         [TestMethod]
         public void TestStream()
         {

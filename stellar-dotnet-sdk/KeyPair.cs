@@ -44,7 +44,6 @@ namespace stellar_dotnet_sdk
         /// </summary>
         public byte[] PrivateKey { get; }
 
-
         /// <summary>
         /// The bytes of the Secret Seed
         /// </summary>
@@ -54,7 +53,6 @@ namespace stellar_dotnet_sdk
         /// AccountId
         /// </summary>
         public string AccountId => StrKey.EncodeStellarAccountId(PublicKey);
-
 
         /// <summary>
         /// Address
@@ -178,7 +176,6 @@ namespace stellar_dotnet_sdk
 
             return new KeyPair(publicKey, privateKey, seed);
         }
-
 
         /// <summary>
         ///     Creates a new Stellar KeyPair from a strkey encoded Stellar account ID.
