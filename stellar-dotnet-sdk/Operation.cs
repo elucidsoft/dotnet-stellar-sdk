@@ -105,6 +105,9 @@ namespace stellar_dotnet_sdk
                 case OperationType.OperationTypeEnum.MANAGE_DATA:
                     operation = new ManageDataOperation.Builder(body.ManageDataOp).Build();
                     break;
+                case OperationType.OperationTypeEnum.BUMP_SEQUENCE:
+                    operation = new BumpSequenceOperation.Builder(body.BumpSequenceOp).Build();
+                    break;
                 default:
                     throw new Exception("Unknown operation body " + body.Discriminant.InnerValue);
             }
