@@ -56,7 +56,6 @@ namespace stellar_dotnet_sdk_test
             var transaction = Transaction.FromEnvelopeXdr("AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAEqBfIAAAAAAAAAAABtoeVYgAAAEDLki9Oi700N60Lo8gUmEFHbKvYG4QSqXiLIt9T0ru2O5BphVl/jR9tYtHAD+UeDYhgXNgwUxqTEu1WukvEyYcD");
             var transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
 
-
             Assert.AreEqual(transaction.SourceAccount.AccountId, transaction2.SourceAccount.AccountId);
             Assert.AreEqual(transaction.SequenceNumber, transaction2.SequenceNumber);
             Assert.AreEqual(transaction.Fee, transaction2.Fee);
@@ -181,7 +180,6 @@ namespace stellar_dotnet_sdk_test
             transaction.Sign(preimage);
 
             Assert.IsTrue(transaction.Signatures[0].Signature.InnerValue.Equals(preimage));
-
 
             var length = hash.Length;
             var rangeHashCopy = hash.Skip(length - 4).Take(4).ToArray();
