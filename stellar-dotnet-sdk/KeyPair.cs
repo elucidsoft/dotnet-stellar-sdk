@@ -30,7 +30,6 @@ namespace stellar_dotnet_sdk
         public KeyPair(byte[] publicKey, byte[] privateKey, byte[] seed)
         {
             PublicKey = publicKey ?? throw new ArgumentNullException(nameof(publicKey), "publicKey cannot be null");
-            ;
             PrivateKey = privateKey;
             SeedBytes = seed;
         }

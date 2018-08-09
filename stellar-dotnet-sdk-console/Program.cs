@@ -58,7 +58,6 @@ namespace TestConsole
                 .ForLedger(2365)
                 .Execute();
 
-
             ShowTransactionRecords(transactions.Records);
             Console.WriteLine();
         }
@@ -78,7 +77,6 @@ namespace TestConsole
         {
             var operationRequestBuilder = server.Operations.ForLedger(lr.Sequence);
             var operations = await operationRequestBuilder.Execute();
-
 
             var accts = 0;
             var payments = 0;

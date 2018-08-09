@@ -200,7 +200,6 @@ namespace stellar_dotnet_sdk
             return Convert.ToBase64String(writer.ToArray());
         }
 
-
         /// <summary>
         ///     Returns base64-encoded TransactionEnvelope XDR object. Transaction need to have at least one signature.
         /// </summary>
@@ -246,7 +245,6 @@ namespace stellar_dotnet_sdk
 
             return transaction;
         }
-
 
         /// <summary>
         ///     Builds a new Transaction object.
