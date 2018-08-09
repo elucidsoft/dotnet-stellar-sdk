@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.responses;
 using stellar_dotnet_sdk.responses.effects;
@@ -377,6 +379,104 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+        }
+
+        [TestMethod]
+        public void TestUnknownEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectUnknown.json"));
+            try
+            {
+                var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+                Assert.Fail();
+            }
+            catch
+            {
+                //We want the exception to pass the test, that is what it should be doing.
+            }
+        }
+
+        [TestMethod]
+        public void TestDeserializeSequenceBumpedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "sequenceBumped.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            Assert.IsTrue(instance is SequenceBumpedEffectResponse);
+            var effect = (SequenceBumpedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+            Assert.AreEqual(79473726952833048L, effect.NewSequence);
+        }
+
+        [TestMethod]
+        public void TestDeserializeOfferCreatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectOfferCreated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            Assert.IsTrue(instance is OfferCreatedEffectResponse);
+            var effect = (OfferCreatedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+        }
+
+        [TestMethod]
+        public void TestDeserializeOfferRemovedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectOfferRemoved.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            Assert.IsTrue(instance is OfferRemovedEffectResponse);
+            var effect = (OfferRemovedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+        }
+
+        [TestMethod]
+        public void TestDeserializeOfferUpdatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectOfferUpdated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            Assert.IsTrue(instance is OfferUpdatedEffectResponse);
+            var effect = (OfferUpdatedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+        }
+
+        [TestMethod]
+        public void TestWriteJson()
+        {
+            //An experiment to see if we can get full coverage of the EffectDeserializer.
+            try
+            {
+                var json = File.ReadAllText(Path.Combine("testdata", "effectOfferUpdated.json"));
+                var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+                var efD = new EffectDeserializer();
+                StringBuilder sb = new StringBuilder();
+                StringWriter sw = new StringWriter(sb);
+
+                using (JsonWriter writer = new JsonTextWriter(sw))
+                {
+                    efD.WriteJson(writer, instance, new JsonSerializer());
+                }
+
+                Assert.Fail();
+            }
+            catch(NotImplementedException e)
+            {
+                //We want this test to pass if the NotImplementedException is thrown.
+            }
+            catch(Exception e)
+            {
+                Assert.Fail();
+            }
         }
     }
 }
