@@ -51,5 +51,14 @@ namespace stellar_dotnet_sdk_test
 
             Assert.IsTrue(!stringResult.Contains("0"));
         }
+
+        [TestMethod]
+        public void TestIsIdentical()
+        {
+            byte[] bytes = System.Text.Encoding.UTF8.GetBytes("Something cool");
+            byte[] bytes2 = System.Text.Encoding.UTF8.GetBytes("Something cool");
+
+            Assert.IsTrue(Util.IsIdentical(bytes, bytes2));
+        }
     }
 }

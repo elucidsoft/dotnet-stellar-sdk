@@ -45,6 +45,15 @@ namespace stellar_dotnet_sdk_test
             }
         }
 
+        [TestMethod]
+        public void TestPriceEquals()
+        {
+            Price price1 = Price.FromString("1.25");
+            Price price2 = Price.FromString("1.25");
+
+            Assert.IsTrue(price1.Equals(price2));
+        }
+
         private class PriceTestCase
         {
             public readonly Price ExpectedPrice;

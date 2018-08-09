@@ -16,6 +16,16 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        public void TestAssetCreation()
+        {
+            var nativeAsset = Asset.Create("native", null, null);
+            Assert.IsTrue(nativeAsset is AssetTypeNative);
+
+            var nonNativeAsset = Asset.Create(null, "XLMTEST", "GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+            Assert.IsTrue(nonNativeAsset is AssetTypeCreditAlphaNum);
+        }
+
+        [TestMethod]
         public void TestAssetTypeCreditAlphaNum4()
         {
             var code = "USDA";
@@ -37,6 +47,7 @@ namespace stellar_dotnet_sdk_test
             var parsedAsset = (AssetTypeCreditAlphaNum12) Asset.FromXdr(thisXdr);
             Assert.AreEqual(code, asset.Code);
             Assert.AreEqual(issuer.AccountId, parsedAsset.Issuer.AccountId);
+            Assert.AreEqual(asset.GetType(), "credit_alphanum12");
         }
 
         [TestMethod]
