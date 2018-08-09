@@ -47,7 +47,6 @@ namespace stellar_dotnet_sdk
 
         public int? SignerWeight { get; }
 
-
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {
             var op = new sdkxdr.SetOptionsOp();

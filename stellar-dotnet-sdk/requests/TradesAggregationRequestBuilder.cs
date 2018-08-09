@@ -17,30 +17,30 @@ namespace stellar_dotnet_sdk.requests
 
         public TradesAggregationRequestBuilder StartTime(long startTime)
         {
-            _uriBuilder.SetQueryParam("start_time", startTime.ToString());
+            UriBuilder.SetQueryParam("start_time", startTime.ToString());
             return this;
         }
 
         public TradesAggregationRequestBuilder EndTime(long endTime)
         {
-            _uriBuilder.SetQueryParam("end_time", endTime.ToString());
+            UriBuilder.SetQueryParam("end_time", endTime.ToString());
             return this;
         }
 
         public TradesAggregationRequestBuilder Resolution(long resolution)
         {
-            _uriBuilder.SetQueryParam("resolution", resolution.ToString());
+            UriBuilder.SetQueryParam("resolution", resolution.ToString());
             return this;
         }
 
         public TradesAggregationRequestBuilder BaseAsset(Asset asset)
         {
-            _uriBuilder.SetQueryParam("base_asset_type", asset.GetType());
+            UriBuilder.SetQueryParam("base_asset_type", asset.GetType());
             if (asset is AssetTypeCreditAlphaNum)
             {
                 AssetTypeCreditAlphaNum creditAlphaNumAsset = (AssetTypeCreditAlphaNum) asset;
-                _uriBuilder.SetQueryParam("base_asset_code", creditAlphaNumAsset.Code);
-                _uriBuilder.SetQueryParam("base_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
+                UriBuilder.SetQueryParam("base_asset_code", creditAlphaNumAsset.Code);
+                UriBuilder.SetQueryParam("base_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
 
             return this;
@@ -48,12 +48,12 @@ namespace stellar_dotnet_sdk.requests
 
         public TradesAggregationRequestBuilder CounterAsset(Asset asset)
         {
-            _uriBuilder.SetQueryParam("counter_asset_type", asset.GetType());
+            UriBuilder.SetQueryParam("counter_asset_type", asset.GetType());
             if (asset is AssetTypeCreditAlphaNum)
             {
                 AssetTypeCreditAlphaNum creditAlphaNumAsset = (AssetTypeCreditAlphaNum) asset;
-                _uriBuilder.SetQueryParam("counter_asset_code", creditAlphaNumAsset.Code);
-                _uriBuilder.SetQueryParam("counter_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
+                UriBuilder.SetQueryParam("counter_asset_code", creditAlphaNumAsset.Code);
+                UriBuilder.SetQueryParam("counter_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
 
             return this;

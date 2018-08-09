@@ -18,32 +18,32 @@ namespace stellar_dotnet_sdk.requests
 
         public PathsRequestBuilder DestinationAccount(KeyPair account)
         {
-            _uriBuilder.SetQueryParam("destination_account", account.AccountId);
+            UriBuilder.SetQueryParam("destination_account", account.AccountId);
             return this;
         }
 
         public PathsRequestBuilder SourceAccount(KeyPair account)
         {
-            _uriBuilder.SetQueryParam("source_account", account.AccountId);
+            UriBuilder.SetQueryParam("source_account", account.AccountId);
             return this;
         }
 
         public PathsRequestBuilder DestinationAmount(string amount)
         {
-            _uriBuilder.SetQueryParam("destination_amount", amount);
+            UriBuilder.SetQueryParam("destination_amount", amount);
             return this;
         }
 
         public PathsRequestBuilder DestinationAsset(Asset asset)
         {
-            _uriBuilder.SetQueryParam("destination_asset_type", asset.GetType());
+            UriBuilder.SetQueryParam("destination_asset_type", asset.GetType());
 
 
             if (asset is AssetTypeCreditAlphaNum)
             {
                 AssetTypeCreditAlphaNum creditAlphaNumAsset = (AssetTypeCreditAlphaNum) asset;
-                _uriBuilder.SetQueryParam("destination_asset_code", creditAlphaNumAsset.Code);
-                _uriBuilder.SetQueryParam("destination_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
+                UriBuilder.SetQueryParam("destination_asset_code", creditAlphaNumAsset.Code);
+                UriBuilder.SetQueryParam("destination_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
 
             return this;

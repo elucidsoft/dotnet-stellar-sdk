@@ -19,9 +19,7 @@ namespace stellar_dotnet_sdk.requests
     {
         private readonly List<string> _segments;
         private bool _segmentsAdded;
-
-
-        protected UriBuilder _uriBuilder;
+        protected UriBuilder UriBuilder;
 
         public static HttpClient HttpClient { get; set; }
 
@@ -40,7 +38,7 @@ namespace stellar_dotnet_sdk.requests
 
         public RequestBuilder(Uri serverUri, string defaultSegment, HttpClient httpClient)
         {
-            _uriBuilder = new UriBuilder(serverUri);
+            UriBuilder = new UriBuilder(serverUri);
             _segments = new List<string>();
 
             if (!string.IsNullOrEmpty(defaultSegment))
@@ -76,7 +74,7 @@ namespace stellar_dotnet_sdk.requests
         /// <returns></returns>
         public virtual T Cursor(string cursor)
         {
-            _uriBuilder.SetQueryParam("cursor", cursor);
+            UriBuilder.SetQueryParam("cursor", cursor);
 
             return this as T;
         }
@@ -90,7 +88,7 @@ namespace stellar_dotnet_sdk.requests
         /// <returns></returns>
         public virtual T Limit(int number)
         {
-            _uriBuilder.SetQueryParam("limit", number.ToString());
+            UriBuilder.SetQueryParam("limit", number.ToString());
 
             return this as T;
         }
@@ -102,7 +100,7 @@ namespace stellar_dotnet_sdk.requests
         /// <returns></returns>
         public virtual T Order(OrderDirection direction)
         {
-            _uriBuilder.SetQueryParam("order", direction.ToString().ToLower());
+            UriBuilder.SetQueryParam("order", direction.ToString().ToLower());
 
             return this as T;
         }
@@ -127,11 +125,11 @@ namespace stellar_dotnet_sdk.requests
                 foreach (var segment in _segments)
                     path += "/" + segment;
 
-                _uriBuilder.Path = path;
+                UriBuilder.Path = path;
 
                 try
                 {
-                    return _uriBuilder.Uri;
+                    return UriBuilder.Uri;
                 }
                 catch (UriFormatException)
                 {

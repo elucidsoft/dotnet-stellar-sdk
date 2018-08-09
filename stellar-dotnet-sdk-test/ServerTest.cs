@@ -56,7 +56,6 @@ namespace stellar_dotnet_sdk_test
             };
         }
 
-
         public Transaction BuildTransaction()
         {
             var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");

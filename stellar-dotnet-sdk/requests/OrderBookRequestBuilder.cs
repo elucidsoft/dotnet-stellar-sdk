@@ -15,11 +15,11 @@ namespace stellar_dotnet_sdk.requests
 
         public OrderBookRequestBuilder BuyingAsset(Asset asset)
         {
-            _uriBuilder.SetQueryParam("buying_asset_type", asset.GetType());
+            UriBuilder.SetQueryParam("buying_asset_type", asset.GetType());
             if (asset is AssetTypeCreditAlphaNum creditAlphaNumAsset)
             {
-                _uriBuilder.SetQueryParam("buying_asset_code", creditAlphaNumAsset.Code);
-                _uriBuilder.SetQueryParam("buying_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
+                UriBuilder.SetQueryParam("buying_asset_code", creditAlphaNumAsset.Code);
+                UriBuilder.SetQueryParam("buying_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
 
             return this;
@@ -27,11 +27,11 @@ namespace stellar_dotnet_sdk.requests
 
         public OrderBookRequestBuilder SellingAsset(Asset asset)
         {
-            _uriBuilder.SetQueryParam("selling_asset_type", asset.GetType());
+            UriBuilder.SetQueryParam("selling_asset_type", asset.GetType());
             if (asset is AssetTypeCreditAlphaNum creditAlphaNumAsset)
             {
-                _uriBuilder.SetQueryParam("selling_asset_code", creditAlphaNumAsset.Code);
-                _uriBuilder.SetQueryParam("selling_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
+                UriBuilder.SetQueryParam("selling_asset_code", creditAlphaNumAsset.Code);
+                UriBuilder.SetQueryParam("selling_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
             }
 
             return this;
