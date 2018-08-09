@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
@@ -13,9 +12,9 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public void TestOrderBook()
         {
-            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
-                Uri uri = server.OrderBook
+                var uri = server.OrderBook
                     .BuyingAsset(Asset.CreateNonNativeAsset("EUR", KeyPair.FromAccountId("GAUPA4HERNBDPVO4IUA3MJXBCRRK5W54EVXTDK6IIUTGDQRB6D5W242W")))
                     .SellingAsset(Asset.CreateNonNativeAsset("USD", KeyPair.FromAccountId("GDRRHSJMHXDTQBT4JTCILNGF5AS54FEMTXL7KOLMF6TFTHRK6SSUSUZZ")))
                     .BuildUri();
@@ -48,6 +47,5 @@ namespace stellar_dotnet_sdk_test.requests
                 OrderBookDeserializerTest.AssertTestData(orderBookPage);
             }
         }
-
     }
 }

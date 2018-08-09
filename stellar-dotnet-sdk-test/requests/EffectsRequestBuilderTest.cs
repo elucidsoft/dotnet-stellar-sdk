@@ -1,10 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.requests;
-using stellar_dotnet_sdk.responses;
 using stellar_dotnet_sdk.responses.effects;
 using stellar_dotnet_sdk_test.responses;
 
@@ -16,9 +14,9 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public void TestEffects()
         {
-            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
-                Uri uri = server.Effects
+                var uri = server.Effects
                     .Limit(200)
                     .Order(OrderDirection.DESC)
                     .BuildUri();
@@ -29,9 +27,9 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public void TestForAccount()
         {
-            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
-                Uri uri = server.Effects
+                var uri = server.Effects
                     .ForAccount(KeyPair.FromAccountId("GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H"))
                     .Limit(200)
                     .Order(OrderDirection.DESC)
@@ -43,9 +41,9 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public void TestForLedger()
         {
-            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
-                Uri uri = server.Effects
+                var uri = server.Effects
                     .ForLedger(200000000000L)
                     .Limit(50)
                     .Order(OrderDirection.ASC)
@@ -57,9 +55,9 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public void TestForTransaction()
         {
-            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
-                Uri uri = server.Effects
+                var uri = server.Effects
                     .ForTransaction("991534d902063b7715cd74207bef4e7bd7aa2f108f62d3eba837ce6023b2d4f3")
                     .BuildUri();
                 Assert.AreEqual("https://horizon-testnet.stellar.org/transactions/991534d902063b7715cd74207bef4e7bd7aa2f108f62d3eba837ce6023b2d4f3/effects", uri.ToString());
@@ -69,9 +67,9 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public void TestForOperation()
         {
-            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
-                Uri uri = server.Effects
+                var uri = server.Effects
                     .ForOperation(28798257847L)
                     .Cursor("85794837")
                     .BuildUri();
@@ -103,14 +101,13 @@ namespace stellar_dotnet_sdk_test.requests
             var streamableTest = new StreamableTest<EffectResponse>(json, EffectDeserializerTest.AssertAccountCreatedData);
 
             streamableTest.AssertIsValid();
-
         }
 
         [TestMethod]
         public void TestStreamCursor()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCreated.json"));
-            var streamableTest = new StreamableTest<EffectResponse>(json, (r) => 
+            var streamableTest = new StreamableTest<EffectResponse>(json, r =>
             {
                 //do nothing
             });

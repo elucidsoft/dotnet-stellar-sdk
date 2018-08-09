@@ -1,8 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using FormatException = System.FormatException;
-using Memo = stellar_dotnet_sdk.Memo;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk_test
@@ -123,10 +124,10 @@ namespace stellar_dotnet_sdk_test
         public void TestMemoReturnHashSuccess()
         {
             var memo = Memo.ReturnHash("4142434445464748494a4b4c");
-            sdkxdr.Memo memoXdr = memo.ToXdr();
+            var memoXdr = memo.ToXdr();
             Assert.AreEqual(sdkxdr.MemoType.MemoTypeEnum.MEMO_RETURN, memoXdr.Discriminant.InnerValue);
             Assert.IsNull(memoXdr.Hash);
-            Assert.AreEqual("4142434445464748494a4b4c0000000000000000000000000000000000000000", System.BitConverter.ToString(memoXdr.RetHash.InnerValue).Replace("-", "").ToLower());
+            Assert.AreEqual("4142434445464748494a4b4c0000000000000000000000000000000000000000", BitConverter.ToString(memoXdr.RetHash.InnerValue).Replace("-", "").ToLower());
             Assert.AreEqual("4142434445464748494a4b4c", memo.GetTrimmedHexValue());
         }
 
@@ -149,8 +150,8 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(memo.GetHashCode(), memo2.GetHashCode());
             Assert.AreEqual(memo, memo2);
 
-            memo = Memo.ReturnHash(System.Text.Encoding.UTF8.GetBytes("4142434445464748494a4b4c"));
-            memo2 = Memo.ReturnHash(System.Text.Encoding.UTF8.GetBytes("4142434445464748494a4b4c"));
+            memo = Memo.ReturnHash(Encoding.UTF8.GetBytes("4142434445464748494a4b4c"));
+            memo2 = Memo.ReturnHash(Encoding.UTF8.GetBytes("4142434445464748494a4b4c"));
 
             Assert.AreEqual(memo.GetHashCode(), memo2.GetHashCode());
             Assert.AreEqual(memo, memo2);

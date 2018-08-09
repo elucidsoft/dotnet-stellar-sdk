@@ -1,11 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using System.IO;
+using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk_test.responses;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk_test.requests
 {
@@ -24,7 +22,7 @@ namespace stellar_dotnet_sdk_test.requests
         {
             Network.UsePublicNetwork();
 
-            using (Server server = new Server("https://horizon.stellar.org"))
+            using (var server = new Server("https://horizon.stellar.org"))
             {
                 var unused = server.TestNetFriendBot;
             }
@@ -35,7 +33,7 @@ namespace stellar_dotnet_sdk_test.requests
         {
             Network.UseTestNetwork();
 
-            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
                 var unused = server.TestNetFriendBot;
             }
@@ -45,9 +43,9 @@ namespace stellar_dotnet_sdk_test.requests
         public void TestFund()
         {
             Network.UseTestNetwork();
-            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
-                Uri uri = server.TestNetFriendBot
+                var uri = server.TestNetFriendBot
                     .FundAccount(KeyPair.FromAccountId("GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H"))
                     .BuildUri();
 

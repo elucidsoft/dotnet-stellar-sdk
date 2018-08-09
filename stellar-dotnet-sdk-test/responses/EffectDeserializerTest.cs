@@ -25,7 +25,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountCreatedEffectResponse);
-            var effect = (AccountCreatedEffectResponse)instance;
+            var effect = (AccountCreatedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ");
             Assert.AreEqual(effect.StartingBalance, "30.0");
@@ -44,7 +44,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountRemovedEffectResponse);
-            var effect = (AccountRemovedEffectResponse)instance;
+            var effect = (AccountRemovedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ");
 
@@ -61,7 +61,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountCreditedEffectResponse);
-            var effect = (AccountCreditedEffectResponse)instance;
+            var effect = (AccountCreditedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GDLGTRIBFH24364GPWPUS45GUFC2GU4ARPGWTXVCPLGTUHX3IOS3ON47");
             Assert.AreEqual(effect.Asset, new AssetTypeNative());
@@ -80,7 +80,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountDebitedEffectResponse);
-            var effect = (AccountDebitedEffectResponse)instance;
+            var effect = (AccountDebitedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H");
             Assert.AreEqual(effect.Asset, new AssetTypeNative());
@@ -99,7 +99,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountThresholdsUpdatedEffectResponse);
-            var effect = (AccountThresholdsUpdatedEffectResponse)instance;
+            var effect = (AccountThresholdsUpdatedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.LowThreshold, 2);
@@ -119,7 +119,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountHomeDomainUpdatedEffectResponse);
-            var effect = (AccountHomeDomainUpdatedEffectResponse)instance;
+            var effect = (AccountHomeDomainUpdatedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.HomeDomain, "stellar.org");
@@ -137,7 +137,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountFlagsUpdatedEffectResponse);
-            var effect = (AccountFlagsUpdatedEffectResponse)instance;
+            var effect = (AccountFlagsUpdatedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.AuthRequiredFlag, false);
@@ -156,7 +156,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is SignerCreatedEffectResponse);
-            var effect = (SignerCreatedEffectResponse)instance;
+            var effect = (SignerCreatedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GB24LPGAHYTWRYOXIDKXLI55SBRWW42T3TZKDAAW3BOJX4ADVIATFTLU");
             Assert.AreEqual(effect.Weight, 1);
@@ -175,7 +175,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is SignerRemovedEffectResponse);
-            var effect = (SignerRemovedEffectResponse)instance;
+            var effect = (SignerRemovedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GCFKT6BN2FEASCEVDNHEC4LLFT2KLUUPEMKM4OJPEJ65H2AEZ7IH4RV6");
             Assert.AreEqual(effect.Weight, 0);
@@ -194,7 +194,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is SignerUpdatedEffectResponse);
-            var effect = (SignerUpdatedEffectResponse)instance;
+            var effect = (SignerUpdatedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.Weight, 2);
@@ -213,7 +213,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is TrustlineCreatedEffectResponse);
-            var effect = (TrustlineCreatedEffectResponse)instance;
+            var effect = (TrustlineCreatedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.Asset, Asset.CreateNonNativeAsset("EUR", KeyPair.FromAccountId("GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA")));
@@ -232,7 +232,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is TrustlineRemovedEffectResponse);
-            var effect = (TrustlineRemovedEffectResponse)instance;
+            var effect = (TrustlineRemovedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.Asset, Asset.CreateNonNativeAsset("EUR", KeyPair.FromAccountId("GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA")));
@@ -251,7 +251,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is TrustlineUpdatedEffectResponse);
-            var effect = (TrustlineUpdatedEffectResponse)instance;
+            var effect = (TrustlineUpdatedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.Asset, Asset.CreateNonNativeAsset("TESTTEST", KeyPair.FromAccountId("GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA")));
@@ -270,7 +270,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is TrustlineAuthorizedEffectResponse);
-            var effect = (TrustlineAuthorizedEffectResponse)instance;
+            var effect = (TrustlineAuthorizedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.AssetType, "credit_alphanum12");
@@ -290,7 +290,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is TrustlineDeauthorizedEffectResponse);
-            var effect = (TrustlineDeauthorizedEffectResponse)instance;
+            var effect = (TrustlineDeauthorizedEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.AssetType, "credit_alphanum4");
@@ -310,7 +310,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is TradeEffectResponse);
-            var effect = (TradeEffectResponse)instance;
+            var effect = (TradeEffectResponse) instance;
 
             Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.Seller.AccountId, "GCVHDLN6EHZBYW2M3BQIY32C23E4GPIRZZDBNF2Q73DAZ5VJDRGSMYRB");
@@ -333,7 +333,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountInflationDestinationUpdatedEffectResponse);
-            var effect = (AccountInflationDestinationUpdatedEffectResponse)instance;
+            var effect = (AccountInflationDestinationUpdatedEffectResponse) instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -347,7 +347,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is DataCreatedEffectResponse);
-            var effect = (DataCreatedEffectResponse)instance;
+            var effect = (DataCreatedEffectResponse) instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -361,7 +361,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is DataRemovedEffectResponse);
-            var effect = (DataRemovedEffectResponse)instance;
+            var effect = (DataRemovedEffectResponse) instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -375,7 +375,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is DataUpdatedEffectResponse);
-            var effect = (DataUpdatedEffectResponse)instance;
+            var effect = (DataUpdatedEffectResponse) instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -403,7 +403,7 @@ namespace stellar_dotnet_sdk_test.responses
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             Assert.IsTrue(instance is SequenceBumpedEffectResponse);
-            var effect = (SequenceBumpedEffectResponse)instance;
+            var effect = (SequenceBumpedEffectResponse) instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -417,7 +417,7 @@ namespace stellar_dotnet_sdk_test.responses
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             Assert.IsTrue(instance is OfferCreatedEffectResponse);
-            var effect = (OfferCreatedEffectResponse)instance;
+            var effect = (OfferCreatedEffectResponse) instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -430,7 +430,7 @@ namespace stellar_dotnet_sdk_test.responses
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             Assert.IsTrue(instance is OfferRemovedEffectResponse);
-            var effect = (OfferRemovedEffectResponse)instance;
+            var effect = (OfferRemovedEffectResponse) instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -443,7 +443,7 @@ namespace stellar_dotnet_sdk_test.responses
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             Assert.IsTrue(instance is OfferUpdatedEffectResponse);
-            var effect = (OfferUpdatedEffectResponse)instance;
+            var effect = (OfferUpdatedEffectResponse) instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -459,8 +459,8 @@ namespace stellar_dotnet_sdk_test.responses
                 var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
                 var efD = new EffectDeserializer();
-                StringBuilder sb = new StringBuilder();
-                StringWriter sw = new StringWriter(sb);
+                var sb = new StringBuilder();
+                var sw = new StringWriter(sb);
 
                 using (JsonWriter writer = new JsonTextWriter(sw))
                 {
@@ -469,11 +469,11 @@ namespace stellar_dotnet_sdk_test.responses
 
                 Assert.Fail();
             }
-            catch(NotImplementedException e)
+            catch (NotImplementedException e)
             {
                 //We want this test to pass if the NotImplementedException is thrown.
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Assert.Fail();
             }

@@ -5,10 +5,10 @@ using stellar_dotnet_sdk.responses.page;
 
 namespace stellar_dotnet_sdk_test.responses
 {
-    [TestClass()]
+    [TestClass]
     public class TradeAggregationsPageDeserializerTest
     {
-        [TestMethod()]
+        [TestMethod]
         public void TestDeserialize()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "tradeAggregationsPage.json"));

@@ -6,7 +6,6 @@ namespace stellar_dotnet_sdk_test.requests
     [TestClass]
     public class TooManyRequestsExceptionTest
     {
-
         [TestMethod]
         public void TestCreation()
         {
@@ -21,5 +20,4 @@ namespace stellar_dotnet_sdk_test.requests
             throw new TooManyRequestsException(4);
         }
     }
-
 }

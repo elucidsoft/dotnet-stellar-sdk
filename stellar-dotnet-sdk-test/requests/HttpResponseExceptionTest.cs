@@ -6,7 +6,6 @@ namespace stellar_dotnet_sdk_test.requests
     [TestClass]
     public class HttpResponseExceptionTest
     {
-
         [TestMethod]
         public void TestCreation()
         {
@@ -22,5 +21,4 @@ namespace stellar_dotnet_sdk_test.requests
             throw new HttpResponseException(200, "Test");
         }
     }
-
 }

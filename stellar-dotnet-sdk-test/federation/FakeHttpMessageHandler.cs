@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk_test
 {
-    public abstract partial class FederationServerTest
+    public abstract class FederationServerTest
     {
         public abstract class FakeHttpMessageHandler : HttpMessageHandler
         {

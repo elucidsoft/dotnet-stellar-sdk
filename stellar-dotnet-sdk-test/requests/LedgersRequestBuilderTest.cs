@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
@@ -15,9 +14,9 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public void TestAccounts()
         {
-            using (Server server = new Server("https://horizon-testnet.stellar.org"))
+            using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
-                Uri uri = server.Ledgers
+                var uri = server.Ledgers
                     .Limit(200)
                     .Order(OrderDirection.ASC)
                     .BuildUri();

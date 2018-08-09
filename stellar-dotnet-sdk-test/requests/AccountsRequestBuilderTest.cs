@@ -1,11 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+﻿using System.IO;
+using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.requests;
 using stellar_dotnet_sdk_test.responses;
-using System.IO;
-using System.Threading.Tasks;
-using static stellar_dotnet_sdk_test.FederationServerTest;
 
 namespace stellar_dotnet_sdk_test.requests
 {
@@ -40,6 +38,5 @@ namespace stellar_dotnet_sdk_test.requests
                 AccountDeserializerTest.AssertTestData(account);
             }
         }
-
     }
 }
