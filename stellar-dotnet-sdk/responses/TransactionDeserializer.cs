@@ -19,7 +19,6 @@ namespace stellar_dotnet_sdk.responses
 
             TransactionResponse transaction = jsonObject.ToObject<TransactionResponse>();
 
-
             var memoType = jsonObject.GetValue("memo_type").ToObject<string>();
 
             Memo memo;
