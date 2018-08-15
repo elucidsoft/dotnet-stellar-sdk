@@ -124,7 +124,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is SetOptionsOperationResponse);
             var operation = (SetOptionsOperationResponse) instance;
 
-            Assert.AreEqual(operation.SignerKey.AccountId, "GD3ZYXVC7C3ECD5I4E5NGPBFJJSULJ6HJI2FBHGKYFV34DSIWB4YEKJZ");
+            Assert.AreEqual(operation.SignerKey, "GD3ZYXVC7C3ECD5I4E5NGPBFJJSULJ6HJI2FBHGKYFV34DSIWB4YEKJZ");
             Assert.AreEqual(operation.SignerWeight, 1);
             Assert.AreEqual(operation.HomeDomain, "stellar.org");
             Assert.AreEqual(operation.InflationDestination.AccountId, "GBYWSY4NPLLPTP22QYANGTT7PEHND64P4D4B6LFEUHGUZRVYJK2H4TBE");
@@ -134,6 +134,18 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(operation.MasterKeyWeight, 4);
             Assert.AreEqual(operation.SetFlags[0], "auth_required_flag");
             Assert.AreEqual(operation.ClearFlags[0], "auth_revocable_flag");
+        }
+
+        [TestMethod]
+        public void TestDeserializeSetOptionsOperationWithNonEd25519Key()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationSetOptionsNonEd25519Key.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            Assert.IsTrue(instance is SetOptionsOperationResponse);
+            var operation = (SetOptionsOperationResponse)instance;
+
+            Assert.AreEqual(operation.SignerKey, "TBGFYVCU76LJ7GZOCGR4X7DG2NV42JPG5CKRL42LA5FZOFI3U2WU7ZAL");
         }
 
         [TestMethod]

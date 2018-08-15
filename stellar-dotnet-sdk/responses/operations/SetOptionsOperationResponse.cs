@@ -27,7 +27,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// <param name="setFlags">Indicates which flags to set. For details about the flags, please refer to the accounts doc. The bit mask integer adds onto the
         /// existing flags of the account. This allows for setting specific bits without knowledge of existing flags.</param>
         public SetOptionsOperationResponse(int lowThreshold, int medThreshold, int highThreshold, KeyPair inflationDestination,
-            string homeDomain, KeyPair signerKey, int signerWeight, int masterKeyWeight, string[] clearFlags, string[] setFlags)
+            string homeDomain, string signerKey, int signerWeight, int masterKeyWeight, string[] clearFlags, string[] setFlags)
         {
             LowThreshold = lowThreshold;
             MedThreshold = medThreshold;
@@ -75,7 +75,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// A signer from an account.
         /// </summary>
         [JsonProperty(PropertyName = "signer_key")]
-        public KeyPair SignerKey { get; }
+        public string SignerKey { get; }
 
         /// <summary>
         /// Weight of the signer.
