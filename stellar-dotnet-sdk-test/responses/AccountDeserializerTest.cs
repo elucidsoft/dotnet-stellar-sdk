@@ -48,8 +48,10 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(account.Signers[0].AccountId, "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
             Assert.AreEqual(account.Signers[0].Weight, 0);
-            Assert.AreEqual(account.Signers[1].AccountId, "GCR2KBCIU6KQXSQY5F5GZYC4WLNHCHCKW4NEGXNEZRYWLTNZIRJJY7D2");
+            Assert.AreEqual(account.Signers[0].Type, "ed25519_public_key");
+            Assert.AreEqual(account.Signers[1].Key, "GCR2KBCIU6KQXSQY5F5GZYC4WLNHCHCKW4NEGXNEZRYWLTNZIRJJY7D2");
             Assert.AreEqual(account.Signers[1].Weight, 1);
+            Assert.AreEqual(account.Signers[1].Type, "ed25519_public_key");
 
             Assert.AreEqual(account.Data["TestKey"], "VGVzdFZhbHVl");
 

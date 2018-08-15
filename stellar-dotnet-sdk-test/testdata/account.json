@@ -56,11 +56,15 @@
   "signers": [
     {
       "public_key": "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7",
-      "weight": 0
+      "key": "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7",
+      "weight": 0,
+      "type": "ed25519_public_key"
     },
     {
       "public_key": "GCR2KBCIU6KQXSQY5F5GZYC4WLNHCHCKW4NEGXNEZRYWLTNZIRJJY7D2",
-      "weight": 1
+      "key": "GCR2KBCIU6KQXSQY5F5GZYC4WLNHCHCKW4NEGXNEZRYWLTNZIRJJY7D2",
+      "weight": 1,
+      "type": "ed25519_public_key"
     }
   ],
   "data": {
