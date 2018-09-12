@@ -42,9 +42,8 @@ namespace stellar_dotnet_sdk.xdr
         /// <param name="count"></param>
         public void Read(byte[] buffer, int offset, int count)
         {
-            ReadFixOpaque((uint) count);
-            Array.Copy(_bytes, _pos, buffer, offset, count);
-            _pos += count;
+            var result = ReadFixOpaque((uint) count);
+            Array.Copy(result, 0, buffer, offset, count);
         }
 
         /// <summary>
@@ -180,8 +179,6 @@ namespace stellar_dotnet_sdk.xdr
         {
             uint len = CheckedReadLength(max);
             byte[] returnValue = ReadFixOpaque(len);
-            var tail = len % 4u;
-            if(tail == 0) _pos += (int) len;
             return returnValue;
         }
 
@@ -197,18 +194,20 @@ namespace stellar_dotnet_sdk.xdr
             Array.Copy(_bytes, _pos, result, 0, (int) len);
 
             var tail = len % 4u;
-            if (tail != 0)
+            if (tail == 0)
             {
-                var tailLength = (int) (4u - tail);
-                var tailBytes = new byte[tailLength];
-
-                Array.Copy(_bytes, _pos + len, tailBytes, 0, tailLength);
-
-                if (tailBytes.Any(a => a != 0))
-                    throw new IOException("non-zero padding");
-
-                _pos += (int) len + tailLength;
+                _pos += (int) len;
+                return result;
             }
+            var tailLength = (int) (4u - tail);
+            var tailBytes = new byte[tailLength];
+
+            Array.Copy(_bytes, _pos + len, tailBytes, 0, tailLength);
+
+            if (tailBytes.Any(a => a != 0))
+                throw new IOException("non-zero padding");
+
+            _pos += (int) len + tailLength;
 
             return result;
         }
@@ -227,8 +226,8 @@ namespace stellar_dotnet_sdk.xdr
 
             if (len > max)
                 throw new FormatException("unexpected length: " + len);
-                
-            if (max <= 0) 
+
+            if (max <= 0)
                 throw new ArgumentOutOfRangeException(nameof(max));
 
             return len;
