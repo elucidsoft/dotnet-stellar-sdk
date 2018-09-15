@@ -6,7 +6,7 @@ namespace stellar_dotnet_sdk.responses.effects
     public class TrustlineAuthorizationResponse : EffectResponse
     {
         /// <inheritdoc />
-        public TrustlineAuthorizationResponse(KeyPair trustor, string assetType, string assetCode)
+        public TrustlineAuthorizationResponse(string trustor, string assetType, string assetCode)
         {
             Trustor = trustor;
             AssetType = assetType;
@@ -14,7 +14,7 @@ namespace stellar_dotnet_sdk.responses.effects
         }
 
         [JsonProperty(PropertyName = "trustor")]
-        public KeyPair Trustor { get; }
+        public string Trustor { get; }
 
         [JsonProperty(PropertyName = "asset_type")]
         public string AssetType { get; }

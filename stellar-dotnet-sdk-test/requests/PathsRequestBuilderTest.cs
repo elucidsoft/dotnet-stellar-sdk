@@ -16,10 +16,10 @@ namespace stellar_dotnet_sdk_test.requests
             using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
                 var uri = server.Paths
-                    .DestinationAccount(KeyPair.FromAccountId("GB24QI3BJNKBY4YNJZ2I37HFIYK56BL2OURFML76X46RQQKDLVT7WKJF"))
-                    .SourceAccount(KeyPair.FromAccountId("GD4KO3IOYYWIYVI236Y35K2DU6VNYRH3BPNFJSH57J5BLLCQHBIOK3IN"))
+                    .DestinationAccount("GB24QI3BJNKBY4YNJZ2I37HFIYK56BL2OURFML76X46RQQKDLVT7WKJF")
+                    .SourceAccount("GD4KO3IOYYWIYVI236Y35K2DU6VNYRH3BPNFJSH57J5BLLCQHBIOK3IN")
                     .DestinationAmount("20.50")
-                    .DestinationAsset(Asset.CreateNonNativeAsset("USD", KeyPair.FromAccountId("GAYSHLG75RPSMXWJ5KX7O7STE6RSZTD6NE4CTWAXFZYYVYIFRUVJIBJH")))
+                    .DestinationAsset(Asset.CreateNonNativeAsset("USD", "GAYSHLG75RPSMXWJ5KX7O7STE6RSZTD6NE4CTWAXFZYYVYIFRUVJIBJH"))
                     .Cursor("13537736921089")
                     .Limit(200)
                     .Order(OrderDirection.ASC)
@@ -47,8 +47,8 @@ namespace stellar_dotnet_sdk_test.requests
             using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
             {
                 var account = await server.Paths
-                    .SourceAccount(KeyPair.FromAccountId("GD4KO3IOYYWIYVI236Y35K2DU6VNYRH3BPNFJSH57J5BLLCQHBIOK3IN"))
-                    .DestinationAccount(KeyPair.FromAccountId("GB24QI3BJNKBY4YNJZ2I37HFIYK56BL2OURFML76X46RQQKDLVT7WKJF"))
+                    .SourceAccount("GD4KO3IOYYWIYVI236Y35K2DU6VNYRH3BPNFJSH57J5BLLCQHBIOK3IN")
+                    .DestinationAccount("GB24QI3BJNKBY4YNJZ2I37HFIYK56BL2OURFML76X46RQQKDLVT7WKJF")
                     .DestinationAmount("20")
                     .Execute();
 

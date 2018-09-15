@@ -9,7 +9,7 @@
     public class TrustlineAuthorizedEffectResponse : TrustlineAuthorizationResponse
     {
         /// <inheritdoc />
-        public TrustlineAuthorizedEffectResponse(KeyPair trustor, string assetType, string assetCode)
+        public TrustlineAuthorizedEffectResponse(string trustor, string assetType, string assetCode)
             : base(trustor, assetType, assetCode)
         {
         }

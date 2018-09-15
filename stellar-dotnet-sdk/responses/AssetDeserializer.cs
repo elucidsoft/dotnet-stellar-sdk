@@ -24,7 +24,7 @@ namespace stellar_dotnet_sdk.responses
 
             var code = jsonObject.GetValue("asset_code").ToObject<string>();
             var issuer = jsonObject.GetValue("asset_issuer").ToObject<string>();
-            return Asset.CreateNonNativeAsset(code, KeyPair.FromAccountId(issuer));
+            return Asset.CreateNonNativeAsset(code, issuer);
         }
 
         public override bool CanConvert(Type objectType)

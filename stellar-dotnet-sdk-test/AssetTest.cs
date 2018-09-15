@@ -30,11 +30,11 @@ namespace stellar_dotnet_sdk_test
         {
             var code = "USDA";
             var issuer = KeyPair.Random();
-            var asset = new AssetTypeCreditAlphaNum4(code, issuer);
+            var asset = new AssetTypeCreditAlphaNum4(code, issuer.AccountId);
             var thisXdr = asset.ToXdr();
             var parsedAsset = (AssetTypeCreditAlphaNum4) Asset.FromXdr(thisXdr);
             Assert.AreEqual(code, asset.Code);
-            Assert.AreEqual(issuer.AccountId, parsedAsset.Issuer.AccountId);
+            Assert.AreEqual(issuer.AccountId, parsedAsset.Issuer);
         }
 
         [TestMethod]
@@ -42,19 +42,19 @@ namespace stellar_dotnet_sdk_test
         {
             var code = "TESTTEST";
             var issuer = KeyPair.Random();
-            var asset = new AssetTypeCreditAlphaNum12(code, issuer);
+            var asset = new AssetTypeCreditAlphaNum12(code, issuer.AccountId);
             var thisXdr = asset.ToXdr();
             var parsedAsset = (AssetTypeCreditAlphaNum12) Asset.FromXdr(thisXdr);
             Assert.AreEqual(code, asset.Code);
-            Assert.AreEqual(issuer.AccountId, parsedAsset.Issuer.AccountId);
+            Assert.AreEqual(issuer.AccountId, parsedAsset.Issuer);
             Assert.AreEqual(asset.GetType(), "credit_alphanum12");
         }
 
         [TestMethod]
         public void TestHashCode()
         {
-            var issuer1 = KeyPair.Random();
-            var issuer2 = KeyPair.Random();
+            var issuer1 = KeyPair.Random().AccountId;
+            var issuer2 = KeyPair.Random().AccountId;
 
             // Equal
             Assert.AreEqual(new AssetTypeNative().GetHashCode(), new AssetTypeNative().GetHashCode());
@@ -75,8 +75,8 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public void TestAssetEquals()
         {
-            var issuer1 = KeyPair.Random();
-            var issuer2 = KeyPair.Random();
+            var issuer1 = KeyPair.Random().AccountId;
+            var issuer2 = KeyPair.Random().AccountId;
 
             Assert.AreEqual(new AssetTypeNative(), new AssetTypeNative());
             Assert.AreEqual(new AssetTypeCreditAlphaNum4("USD", issuer1), new AssetTypeCreditAlphaNum4("USD", issuer1));

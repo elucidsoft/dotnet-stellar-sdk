@@ -16,7 +16,7 @@ namespace stellar_dotnet_sdk_test.requests
             var server = new Server("https://horizon-testnet.stellar.org");
             var uri = server.TradeAggregations
                 .BaseAsset(new AssetTypeNative())
-                .CounterAsset(Asset.CreateNonNativeAsset("BTC", KeyPair.FromAccountId("GATEMHCCKCY67ZUCKTROYN24ZYT5GK4EQZ65JJLDHKHRUZI3EUEKMTCH")))
+                .CounterAsset(Asset.CreateNonNativeAsset("BTC", "GATEMHCCKCY67ZUCKTROYN24ZYT5GK4EQZ65JJLDHKHRUZI3EUEKMTCH"))
                 .StartTime(1512689100000L)
                 .EndTime(1512775500000L)
                 .Resolution(300000L)
@@ -46,7 +46,7 @@ namespace stellar_dotnet_sdk_test.requests
             {
                 var account = await server.TradeAggregations
                     .BaseAsset(new AssetTypeNative())
-                    .CounterAsset(new AssetTypeCreditAlphaNum4("BTC", KeyPair.FromAccountId("GATEMHCCKCY67ZUCKTROYN24ZYT5GK4EQZ65JJLDHKHRUZI3EUEKMTCH")))
+                    .CounterAsset(new AssetTypeCreditAlphaNum4("BTC", "GATEMHCCKCY67ZUCKTROYN24ZYT5GK4EQZ65JJLDHKHRUZI3EUEKMTCH"))
                     .StartTime(1512689100000L)
                     .EndTime(1512775500000L)
                     .Resolution(300000L)

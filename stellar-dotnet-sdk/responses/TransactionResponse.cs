@@ -14,8 +14,7 @@ namespace stellar_dotnet_sdk.responses
         public string CreatedAt { get; private set; }
 
         [JsonProperty(PropertyName = "source_account")]
-        [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair SourceAccount { get; private set; }
+        public string SourceAccount { get; private set; }
 
         [JsonProperty(PropertyName = "paging_token")]
         public string PagingToken { get; private set; }
@@ -60,7 +59,7 @@ namespace stellar_dotnet_sdk.responses
 
         public string MemoStr { get; }
 
-        public TransactionResponse(string hash, long ledger, string createdAt, KeyPair sourceAccount, string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr, string resultXdr, string resultMetaXdr, string memo, TransactionResponseLinks links)
+        public TransactionResponse(string hash, long ledger, string createdAt, string sourceAccount, string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr, string resultXdr, string resultMetaXdr, string memo, TransactionResponseLinks links)
         {
             Hash = hash;
             Ledger = ledger;

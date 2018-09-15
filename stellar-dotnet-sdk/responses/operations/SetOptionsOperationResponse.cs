@@ -26,7 +26,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// from the existing flags of the account. This allows for setting specific bits without knowledge of existing flags.</param>
         /// <param name="setFlags">Indicates which flags to set. For details about the flags, please refer to the accounts doc. The bit mask integer adds onto the
         /// existing flags of the account. This allows for setting specific bits without knowledge of existing flags.</param>
-        public SetOptionsOperationResponse(int lowThreshold, int medThreshold, int highThreshold, KeyPair inflationDestination,
+        public SetOptionsOperationResponse(int lowThreshold, int medThreshold, int highThreshold, string inflationDestination,
             string homeDomain, string signerKey, int signerWeight, int masterKeyWeight, string[] clearFlags, string[] setFlags)
         {
             LowThreshold = lowThreshold;
@@ -63,7 +63,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// Account of the inflation destination.
         /// </summary>
         [JsonProperty(PropertyName = "inflation_dest")]
-        public KeyPair InflationDestination { get; }
+        public string InflationDestination { get; }
 
         /// <summary>
         /// Gets the home domain of an account.

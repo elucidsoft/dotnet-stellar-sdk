@@ -20,7 +20,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// <param name="assetIssuer">The account that created the asset</param>
         /// <param name="from">Account address that is sending the payment.</param>
         /// <param name="to">Account address that receives the payment.</param>
-        public PaymentOperationResponse(string amount, string assetType, string assetCode, string assetIssuer, KeyPair from, KeyPair to)
+        public PaymentOperationResponse(string amount, string assetType, string assetCode, string assetIssuer, string from, string to)
         {
             Amount = amount;
             AssetType = assetType;
@@ -58,13 +58,13 @@ namespace stellar_dotnet_sdk.responses.operations
         /// Account address that is sending the payment.
         /// </summary>
         [JsonProperty(PropertyName = "from")]
-        public KeyPair From { get; }
+        public string From { get; }
 
         /// <summary>
         /// 
         /// </summary>
         [JsonProperty(PropertyName = "to")]
-        public KeyPair To { get; }
+        public string To { get; }
 
         /// <summary>
         /// Account address that receives the payment.

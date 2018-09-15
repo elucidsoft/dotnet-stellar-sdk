@@ -4,7 +4,7 @@ namespace stellar_dotnet_sdk
 {
     public class AssetTypeCreditAlphaNum4 : AssetTypeCreditAlphaNum
     {
-        public AssetTypeCreditAlphaNum4(string code, KeyPair issuer) : base(code, issuer)
+        public AssetTypeCreditAlphaNum4(string code, string issuer) : base(code, issuer)
         {
             if (code.Length < 1 || code.Length > 4)
                 throw new AssetCodeLengthInvalidException();
@@ -22,7 +22,7 @@ namespace stellar_dotnet_sdk
             var credit = new xdr.Asset.AssetAlphaNum4();
             credit.AssetCode = Util.PaddedByteArray(Code, 4);
             var accountID = new AccountID();
-            accountID.InnerValue = Issuer.XdrPublicKey;
+            accountID.InnerValue = KeyPair.FromAccountId(Issuer).XdrPublicKey;
             credit.Issuer = accountID;
             thisXdr.AlphaNum4 = credit;
             return thisXdr;

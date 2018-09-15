@@ -15,8 +15,8 @@ namespace stellar_dotnet_sdk_test.requests
             using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
                 var uri = server.OrderBook
-                    .BuyingAsset(Asset.CreateNonNativeAsset("EUR", KeyPair.FromAccountId("GAUPA4HERNBDPVO4IUA3MJXBCRRK5W54EVXTDK6IIUTGDQRB6D5W242W")))
-                    .SellingAsset(Asset.CreateNonNativeAsset("USD", KeyPair.FromAccountId("GDRRHSJMHXDTQBT4JTCILNGF5AS54FEMTXL7KOLMF6TFTHRK6SSUSUZZ")))
+                    .BuyingAsset(Asset.CreateNonNativeAsset("EUR", "GAUPA4HERNBDPVO4IUA3MJXBCRRK5W54EVXTDK6IIUTGDQRB6D5W242W"))
+                    .SellingAsset(Asset.CreateNonNativeAsset("USD", "GDRRHSJMHXDTQBT4JTCILNGF5AS54FEMTXL7KOLMF6TFTHRK6SSUSUZZ"))
                     .BuildUri();
 
                 Assert.AreEqual(
@@ -41,7 +41,7 @@ namespace stellar_dotnet_sdk_test.requests
             {
                 var orderBookPage = await server.OrderBook
                     .BuyingAsset(new AssetTypeNative())
-                    .SellingAsset(new AssetTypeCreditAlphaNum4("DEMO", KeyPair.FromAccountId("GC3BVJOU7SHHFLZ2LDYW6JU4YW36R2MRF6C37QJWQXZWG3JBYNODGHOB")))
+                    .SellingAsset(new AssetTypeCreditAlphaNum4("DEMO", "GC3BVJOU7SHHFLZ2LDYW6JU4YW36R2MRF6C37QJWQXZWG3JBYNODGHOB"))
                     .Execute();
 
                 OrderBookDeserializerTest.AssertTestData(orderBookPage);

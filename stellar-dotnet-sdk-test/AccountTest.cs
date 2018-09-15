@@ -21,7 +21,8 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var unused = new Account(KeyPair.Random(), null);
+                KeyPair random = KeyPair.Random();
+                var unused = new Account(random.AccountId, null);
                 Assert.Fail();
             }
             catch (ArgumentNullException)
@@ -32,7 +33,8 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public void TestGetIncrementedSequenceNumber()
         {
-            var account = new Account(KeyPair.Random(), 100L);
+            KeyPair random = KeyPair.Random();
+            var account = new Account(random.AccountId, 100L);
             long incremented;
             incremented = account.GetIncrementedSequenceNumber();
             Assert.AreEqual(100L, account.SequenceNumber);
@@ -45,7 +47,8 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public void TestIncrementSequenceNumber()
         {
-            var account = new Account(KeyPair.Random(), 100L);
+            KeyPair random = KeyPair.Random();
+            var account = new Account(random.AccountId, 100L);
             account.IncrementSequenceNumber();
             Assert.AreEqual(account.SequenceNumber, 101L);
         }
@@ -54,8 +57,9 @@ namespace stellar_dotnet_sdk_test
         public void TestGetters()
         {
             var keypair = KeyPair.Random();
-            var account = new Account(keypair, 100L);
+            var account = new Account(keypair.AccountId, 100L);
             Assert.AreEqual(account.KeyPair.AccountId, keypair.AccountId);
+            Assert.AreEqual(account.AccountId, keypair.AccountId);
             Assert.AreEqual(account.SequenceNumber, 100L);
         }
     }

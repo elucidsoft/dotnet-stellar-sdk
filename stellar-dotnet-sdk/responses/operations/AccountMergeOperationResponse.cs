@@ -11,11 +11,12 @@ namespace stellar_dotnet_sdk.responses.operations
     public class AccountMergeOperationResponse : OperationResponse
     {
         [JsonProperty(PropertyName = "account")]
-        public KeyPair Account { get; }
+        public string Account { get; }
 
-        [JsonProperty(PropertyName = "into")] public KeyPair Into { get; }
+        [JsonProperty(PropertyName = "into")]
+        public string Into { get; }
 
-        public AccountMergeOperationResponse(KeyPair account, KeyPair into)
+        public AccountMergeOperationResponse(string account, string into)
         {
             Account = account;
             Into = into;

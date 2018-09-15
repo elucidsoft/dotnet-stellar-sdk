@@ -2,6 +2,8 @@
 {
     public interface ITransactionBuilderAccount
     {
+        string AccountId { get; }
+
         KeyPair KeyPair { get; }
         long SequenceNumber { get; }
 

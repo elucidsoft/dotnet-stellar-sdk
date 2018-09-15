@@ -9,19 +9,19 @@ namespace stellar_dotnet_sdk.responses
         {
         }
 
-        public AccountResponse(KeyPair keyPair)
+        public AccountResponse(string accountId)
         {
-            KeyPair = keyPair;
+            AccountId = accountId;
         }
 
-        public AccountResponse(KeyPair keyPair, long sequenceNumber)
-            : this(keyPair)
+        public AccountResponse(string accountId, long sequenceNumber)
+            : this(accountId)
         {
             SequenceNumber = sequenceNumber;
         }
 
         [JsonProperty(PropertyName = "account_id")]
-        public KeyPair KeyPair { get; set; }
+        public string AccountId { get; set; }
 
         [JsonProperty(PropertyName = "sequence")]
         public long SequenceNumber { get; set; }
@@ -59,6 +59,11 @@ namespace stellar_dotnet_sdk.responses
         public void IncrementSequenceNumber()
         {
             SequenceNumber++;
+        }
+
+        public KeyPair GetKeyPair(string accountId)
+        {
+            return KeyPair.FromAccountId(accountId);
         }
     }
 }
