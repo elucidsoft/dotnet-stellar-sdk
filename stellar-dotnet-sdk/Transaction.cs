@@ -45,10 +45,20 @@ namespace stellar_dotnet_sdk
         /// <param name="signer"> signer <see cref="KeyPair"/> object representing a signer</param>
         public void Sign(KeyPair signer)
         {
+            Sign(signer, Network.Current);
+        }
+
+        /// <summary>
+        /// Adds a new signature ed25519PublicKey to this transaction.
+        /// </summary>
+        /// <param name="signer"> signer <see cref="KeyPair"/> object representing a signer</param>
+        /// <param name="network">The network <see cref="Network"/> the transaction will be sent to.</param>
+        public void Sign(KeyPair signer, Network network)
+        {
             if (signer == null)
                 throw new ArgumentNullException(nameof(signer), "signer cannot be null");
 
-            var txHash = Hash();
+            var txHash = Hash(network);
             Signatures.Add(signer.SignDecorated(txHash));
         }
 
@@ -85,7 +95,17 @@ namespace stellar_dotnet_sdk
         /// <returns></returns>
         public byte[] Hash()
         {
-            return Util.Hash(SignatureBase());
+            return Hash(Network.Current);
+        }
+
+        /// <summary>
+        ///     Returns transaction hash for the given network.
+        /// </summary>
+        /// <param name="network">The network <see cref="Network"/> the transaction will be sent to.</param>
+        /// <returns></returns>
+        public byte[] Hash(Network network)
+        {
+            return Util.Hash(SignatureBase(network));
         }
 
         /// <summary>
@@ -94,13 +114,23 @@ namespace stellar_dotnet_sdk
         /// <returns></returns>
         public byte[] SignatureBase()
         {
-            if (Network.Current == null)
+            return SignatureBase(Network.Current);
+        }
+
+        /// <summary>
+        ///     Returns signature base for the given network.
+        /// </summary>
+        /// <param name="network">The network <see cref="Network"/> the transaction will be sent to.</param>
+        /// <returns></returns>
+        public byte[] SignatureBase(Network network)
+        {
+            if (network == null)
                 throw new NoNetworkSelectedException();
 
             var writer = new XdrDataOutputStream();
 
             // Hashed NetworkID
-            writer.Write(Network.Current.NetworkId);
+            writer.Write(network.NetworkId);
 
             // Envelope Type - 4 bytes
             EnvelopeType.Encode(writer, EnvelopeType.Create(EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX));
