@@ -15,22 +15,27 @@ namespace stellar_dotnet_sdk.requests
         /// <param name="serverUri"></param>
         public FriendBotRequestBuilder(Uri serverUri, HttpClient httpClient)
             : base(serverUri, "friendbot", httpClient)
+        {            
+        }
+        
+        public FriendBotRequestBuilder FundAccount(KeyPair account, Network network)
         {
-            if (Network.Current == null)
+            if (network == null)
             {
                 throw new NotSupportedException("FriendBot requires the TESTNET Network to be set explicitly.");
             }
 
-            if (Network.IsPublicNetwork(Network.Current))
+            if (Network.IsPublicNetwork(network))
             {
                 throw new NotSupportedException("FriendBot is only supported on the TESTNET Network.");
             }
-        }
-
-        public FriendBotRequestBuilder FundAccount(KeyPair account)
-        {
             UriBuilder.SetQueryParam("addr", account.AccountId);
             return this;
+        }
+        
+        public FriendBotRequestBuilder FundAccount(KeyPair account)
+        {
+            return FundAccount(account, Network.Current);
         }
 
         ///<Summary>
