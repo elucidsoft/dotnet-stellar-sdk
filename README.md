@@ -18,6 +18,8 @@ This project is a full port of the official [Java SDK API](https://github.com/st
 ## Quick Start
 To install using Nuget run `Install-Package stellar-dotnet-sdk` or install the Nuget package from Visual Studio.
 
+If you have questions or need help on how to do something please use the [Stellar Stack Exchange](https://stellar.stackexchange.com/).
+
 ## Capabilities
 - [Accounts](https://www.stellar.org/developers/guides/concepts/accounts.html) - Create, Query, Payment, Path Payment, Manage Offer, Create Passive Offer, Set Options, Change Trust, Allow Trust, Account Merge, Inflation, Manage Data, Paging (Limit, Cursor, Sorting)
 - [Assets](https://www.stellar.org/developers/guides/concepts/assets.html) - CreateNonNativeAsset types (AlphaNum4, AlphaNum12), XDR Conversion
