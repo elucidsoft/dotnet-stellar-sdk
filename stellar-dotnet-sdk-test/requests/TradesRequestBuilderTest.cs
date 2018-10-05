@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk_test.requests
     public class TradesRequestBuilderTest
     {
         [TestMethod]
-        public void TestOrderBook()
+        public void TestTrades()
         {
             var server = new Server("https://horizon-testnet.stellar.org");
             var uri = server.Trades
@@ -50,5 +50,23 @@ namespace stellar_dotnet_sdk_test.requests
                 TradesPageDeserializerTest.AssertTestData(trades);
             }
         }
+
+        [TestMethod]
+        public void TestTradesForAccount()
+        {
+            var server = new Server("https://horizon-testnet.stellar.org");
+            var uri = server.Trades
+                    .ForAccount(KeyPair.FromAccountId("GDRRHSJMHXDTQBT4JTCILNGF5AS54FEMTXL7KOLMF6TFTHRK6SSUSUZZ"))
+                    .Cursor("13537736921089")
+                    .Limit(200)
+                    .Order(OrderDirection.ASC)
+                    .BuildUri();
+
+            Assert.AreEqual("https://horizon-testnet.stellar.org/accounts/GDRRHSJMHXDTQBT4JTCILNGF5AS54FEMTXL7KOLMF6TFTHRK6SSUSUZZ/trades?" +
+                    "cursor=13537736921089&" +
+                    "limit=200&" +
+                    "order=asc", uri.ToString());
+        }
+
     }
 }
