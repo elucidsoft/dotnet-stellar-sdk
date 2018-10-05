@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using stellar_dotnet_sdk.requests;
 
 namespace stellar_dotnet_sdk.responses
 {
@@ -12,7 +11,7 @@ namespace stellar_dotnet_sdk.responses
     /// </summary>
     public class TradeResponse : Response, IPagingToken
     {
-        public TradeResponse(String id, String pagingToken, String ledgerCloseTime, String offerId, bool baseIsSeller, KeyPair baseAccount, String baseAmount, String baseAssetType, String baseAssetCode, String baseAssetIssuer, KeyPair counterAccount, String counterAmount, String counterAssetType, String counterAssetCode, String counterAssetIssuer)
+        public TradeResponse(String id, String pagingToken, String ledgerCloseTime, String offerId, bool baseIsSeller, KeyPair baseAccount, String baseAmount, String baseAssetType, String baseAssetCode, String baseAssetIssuer, KeyPair counterAccount, String counterAmount, String counterAssetType, String counterAssetCode, String counterAssetIssuer, Price price)
         {
             Id = id;
             PagingToken = pagingToken;
@@ -29,6 +28,7 @@ namespace stellar_dotnet_sdk.responses
             CounterAssetType = counterAssetType;
             CounterAssetCode = counterAssetCode;
             CounterAssetIssuer = counterAssetIssuer;
+            Price = price;
         }
 
         [JsonProperty(PropertyName = "id")] public String Id { get; }
@@ -74,6 +74,9 @@ namespace stellar_dotnet_sdk.responses
 
         [JsonProperty(PropertyName = "counter_asset_issuer")]
         public String CounterAssetIssuer { get; }
+
+        [JsonProperty(PropertyName = "price")]
+        public Price Price { get; }
 
         [JsonProperty(PropertyName = "_links")]
         public TradeResponseLinks Links { get; }
