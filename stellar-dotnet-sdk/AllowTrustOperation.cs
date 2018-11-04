@@ -31,6 +31,11 @@ namespace stellar_dotnet_sdk
         /// </summary>
         public bool Authorize { get; }
 
+        public override OperationThreshold Threshold
+        {
+            get => OperationThreshold.Low;
+        }
+
         /// <summary>
         /// Returns the Allow Trust XDR Operation Body
         /// </summary>

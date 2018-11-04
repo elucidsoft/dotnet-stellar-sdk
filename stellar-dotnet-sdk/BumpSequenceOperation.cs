@@ -8,6 +8,11 @@ namespace stellar_dotnet_sdk
     {
         public long BumpTo { get; }
 
+        public override OperationThreshold Threshold
+        {
+            get => OperationThreshold.Low;
+        }
+
         public BumpSequenceOperation(long bumpTo)
         {
             BumpTo = bumpTo;
