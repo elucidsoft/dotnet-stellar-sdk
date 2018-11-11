@@ -38,5 +38,20 @@ namespace stellar_dotnet_sdk_test.requests
                 AccountDeserializerTest.AssertTestData(account);
             }
         }
+
+        [TestMethod]
+        public async Task TestAccountsData()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "accountData.json"));
+            var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var accountData = await server.Accounts.AccountData(KeyPair.FromAccountId("GAKLBGHNHFQ3BMUYG5KU4BEWO6EYQHZHAXEWC33W34PH2RBHZDSQBD75"), "TestValue");
+            
+                Assert.AreEqual("VGVzdFZhbHVl", accountData.Value);
+                Assert.AreEqual("TestValue", accountData.ValueDecoded);
+            }
+        }
     }
 }
