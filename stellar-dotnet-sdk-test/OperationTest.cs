@@ -579,6 +579,24 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        public void TestInflationOperation()
+        {
+            // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
+            var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
+
+            var operation = new InflationOperation.Builder()
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+
+            var parsedOperation = (InflationOperation) Operation.FromXdr(xdr);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+
+            Assert.AreEqual("AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAk=", operation.ToXdrBase64());
+        }
+
+        [TestMethod]
         public void TestFromXdrAmount()
         {
             Assert.AreEqual("0", Operation.FromXdrAmount(0L));
