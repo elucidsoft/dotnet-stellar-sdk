@@ -32,10 +32,7 @@ namespace stellar_dotnet_sdk
         /// Returns the Sequence number incremented by one.
         /// </summary>
         /// <returns>SequenceNumber + 1</returns>
-        public long GetIncrementedSequenceNumber()
-        {
-            return SequenceNumber + 1;
-        }
+        public long IncrementedSequenceNumber => SequenceNumber + 1;
 
         ///<summary>
         /// Increments sequence number in this object by one.

@@ -34,10 +34,10 @@ namespace stellar_dotnet_sdk_test
         {
             var account = new Account(KeyPair.Random(), 100L);
             long incremented;
-            incremented = account.GetIncrementedSequenceNumber();
+            incremented = account.IncrementedSequenceNumber;
             Assert.AreEqual(100L, account.SequenceNumber);
             Assert.AreEqual(101L, incremented);
-            incremented = account.GetIncrementedSequenceNumber();
+            incremented = account.IncrementedSequenceNumber;
             Assert.AreEqual(100L, account.SequenceNumber);
             Assert.AreEqual(101L, incremented);
         }
