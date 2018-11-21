@@ -356,7 +356,7 @@ namespace stellar_dotnet_sdk
             {
                 var operations = _operations.ToArray();
 
-                var transaction = new Transaction(_sourceAccount.KeyPair, operations.Length * BaseFee, _sourceAccount.GetIncrementedSequenceNumber(), operations, _memo, _timeBounds);
+                var transaction = new Transaction(_sourceAccount.KeyPair, operations.Length * BaseFee, _sourceAccount.IncrementedSequenceNumber, operations, _memo, _timeBounds);
                 // Increment sequence number when there were no exceptions when creating a transaction
                 _sourceAccount.IncrementSequenceNumber();
                 return transaction;
