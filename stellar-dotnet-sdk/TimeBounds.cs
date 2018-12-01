@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk
         ///<param name="minTime"> 64bit Unix timestamp</param>
         public TimeBounds(long minTime, long maxTime)
         {
-            if (minTime >= maxTime)
+            if (maxTime != 0 && minTime >= maxTime)
                 throw new ArgumentException("minTime must be >= maxTime");
 
             MinTime = minTime;
