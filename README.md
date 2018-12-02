@@ -66,5 +66,10 @@ In order to generate the XDR Files automatically in C# a custom XDR Generator mu
 
 You can use that version of xdrgen to regenerate the XDR files from the .x files located from the [source](https://github.com/stellar/stellar-core/tree/master/src/xdr) of the original API SDK for Horizon.
 
+## Contributors
+Eric Malamisura, Twitter: @emalamisura, Keybase: elucidsoft
+Kirbyrawr
+Michael Monte
+
 ## License
 dotnetcore-stellar-sdk is licensed under an Apache-2.0 license. See the [LICENSE](https://github.com/elucidsoft/dotnetcore-stellar-sdk/blob/master/LICENSE.txt) file for details.
