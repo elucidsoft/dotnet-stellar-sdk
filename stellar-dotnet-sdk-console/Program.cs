@@ -27,14 +27,14 @@ namespace TestConsole
                 ShowTestKeyValue(server);
             }
 
-            //using (var server = new Server("https://horizon.stellar.org"))
-            //{
-            //    Console.WriteLine("-- Streaming All New Ledgers On The Network --");
-            //    await server.Ledgers
-            //        .Cursor("now")
-            //        .Stream((sender, response) => { ShowOperationResponse(server, sender, response); })
-            //        .Connect();
-            //}
+            using (var server = new Server("https://horizon.stellar.org"))
+            {
+                Console.WriteLine("-- Streaming All New Ledgers On The Network --");
+                await server.Transactions
+                    .Cursor("now")
+                    .Stream((sender, response) => { ShowTransactionRecord(response); })
+                    .Connect();
+            }
 
             Console.ReadLine();
         }
@@ -71,7 +71,7 @@ namespace TestConsole
 
         private static void ShowTransactionRecord(TransactionResponse tran)
         {
-            Console.WriteLine($"Ledger: {tran.Ledger}, Hash: {tran.Hash}, Fee Paid: {tran.FeePaid}");
+            Console.WriteLine($"Ledger: {tran.Ledger}, Hash: {tran.Hash}, Fee Paid: {tran.FeePaid}, Pt:{tran.PagingToken}");
         }
 
         private static async void ShowOperationResponse(Server server, object sender, LedgerResponse lr)
