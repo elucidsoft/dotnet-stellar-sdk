@@ -5,18 +5,18 @@
         <id>stellar-dotnet-sdk</id>
 
         <!-- The package version number that is used when resolving dependencies -->
-        <version>2.0.6</version>
+        <version>2.1.0-beta2</version>
 
         <!-- Authors contain text that appears directly on the gallery -->
-        <authors>Eric Malamisura, Michael Monte</authors>
+        <authors>Eric Malamisura, Michael Monte, Kirbyrawr</authors>
 
         <!-- 
             Owners are typically nuget.org identities that allow gallery
             users to easily find other packages by the same owners.  
         -->
-        <owners>elucidsoft, michaeljmonte</owners>
+        <owners>elucidsoft, michaeljmonte, kirbyrawr</owners>
 
-         <!-- License and project URLs provide links for the gallery -->
+        <!-- License and project URLs provide links for the gallery -->
         <licenseUrl>https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/LICENSE.txt</licenseUrl>
         <projectUrl>https://github.com/elucidsoft/dotnet-stellar-sdk</projectUrl>
 
@@ -31,11 +31,15 @@
 
         <!-- Any details about this particular release -->
         <releaseNotes>
-		- Request Builder optimizations
-		- HttpClient optimizations
-		- Many bug fixes
-		- Friendbot Support for Testnet
-	</releaseNotes>
+            - .NET Core 2.1
+            - Horizon Release 12.3 Compatability
+            - Nett version 0.10.0 upgrade
+            - Newtonsoft.Json 12.0.1 upgrade
+            - Fixed: AccountResponse missing ITransactionBuilderAccount interface.
+            - Fixed: Server.SubmitTransaction for an unfunded account fails.
+            - Feature: Support Non-ED25519 Keys in Response
+            - Feature: Added support for Visual Studio SourceLink (https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink)
+        </releaseNotes>
 
         <!-- 
             The description can be used in package manager UI. Note that the
@@ -44,17 +48,17 @@
         <description>The .NET Stellar SDK facilitates client integration with the Stellar Horizon API server and submission of Stellar transactions. It has two main uses: querying Horizon and building, signing, and submitting transactions to the Stellar network.</description>
 
         <!-- Copyright information -->
-        <copyright>elucidsoft 2017</copyright>
+        <copyright>elucidsoft 2018</copyright>
 
         <!-- Tags appear in the gallery and can be used for tag searches -->
         <tags>'.NET Core' 'Stellar' 'Horizon' 'Blockchain' 'Crypto' 'Distributed Ledger'</tags>
 
         <!-- Dependencies are automatically installed when the package is installed -->
         <dependencies>
-			<dependency id="Nett" version="0.9.0" />
-            <dependency id="Newtonsoft.Json" version="11.0.2" />
+            <dependency id="Nett" version="0.10.0" />
+            <dependency id="Newtonsoft.Json" version="12.0.1" />
         </dependencies>
-	
+
 
     </metadata>
 
