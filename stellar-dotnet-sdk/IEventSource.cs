@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk
         string[] MessageTypes { get; }
         EventSource.EventSourceState ReadyState { get; }
         int Timeout { get; set; }
-        Uri Url { get; }
+        Uri Url { get; set; }
 
         event EventHandler<EventSource.ServerSentErrorEventArgs> Error;
         event EventHandler<EventSource.ServerSentEventArgs> Message;

@@ -149,7 +149,7 @@ namespace stellar_dotnet_sdk
         /// <summary>
         ///     The absolute URL to which the EventSource is connected.
         /// </summary>
-        public Uri Url { get; }
+        public Uri Url { get; set; }
 
         #endregion Public Properties
 
@@ -494,7 +494,7 @@ namespace stellar_dotnet_sdk
                         _eventStream.Append((char) _buffer[i]);
                     }
             }
-            catch
+            catch(Exception ex)
             {
                 //OnErrorEvent(new ServerSentErrorEventArgs { Exception = ex });
                 CloseConnection();

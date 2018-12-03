@@ -40,12 +40,12 @@ namespace stellar_dotnet_sdk.requests
                 if (e.Data == $"\"hello\"{Environment.NewLine}")
                     return;
 
-                var responseObject = JsonSingleton.GetInstance<TResponse>(e.Data) ?? throw new NotSupportedException("Uknown response type");
+                var responseObject = JsonSingleton.GetInstance<TResponse>(e.Data) ?? throw new NotSupportedException("Unknown response type");
 
-                var page = responseObject as IPagingToken;
-                if (page != null)
+                if (responseObject is IPagingToken page)
                 {
                     Cursor(page.PagingToken);
+                    EventSource.Url = BuildUri();
                 }
 
                 listener?.Invoke(this, responseObject);
