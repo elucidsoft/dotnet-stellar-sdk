@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Security.Cryptography;
+using dotnetstandard_bip32;
 using stellar_dotnet_sdk.chaos.nacl;
 using stellar_dotnet_sdk.xdr;
 
@@ -188,6 +189,14 @@ namespace stellar_dotnet_sdk
         {
             var decoded = StrKey.DecodeStellarAccountId(accountId);
             return FromPublicKey(decoded);
+        }
+
+        public static KeyPair FromBIP39Seed(string seed, int accountIndex)
+        {
+            BIP32 bip32 = new BIP32();
+
+            string path = $"m/44'/148'/{accountIndex}'";
+            return FromSecretSeed(bip32.DerivePath(path, seed).Key);
         }
 
         /// <summary>
