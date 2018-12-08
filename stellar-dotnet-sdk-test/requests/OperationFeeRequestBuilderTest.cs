@@ -16,5 +16,13 @@ namespace stellar_dotnet_sdk_test.requests
             Uri uri = server.OperationFeeStats.BuildUri();
             Assert.AreEqual("https://horizon-testnet.stellar.org/operation_fee_stats", uri.ToString());
         }
+
+        [TestMethod]
+        public async void TestExecute()
+        {
+            Server server = new Server("https://horizon-testnet.stellar.org");
+            var task = await server.OperationFeeStats.Execute();
+            Assert.AreEqual("https://horizon-testnet.stellar.org/operation_fee_stats", task.Uri.ToString());
+        }
     }
 }
