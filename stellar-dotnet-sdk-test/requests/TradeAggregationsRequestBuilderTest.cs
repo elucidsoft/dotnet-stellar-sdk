@@ -20,6 +20,7 @@ namespace stellar_dotnet_sdk_test.requests
                 .StartTime(1512689100000L)
                 .EndTime(1512775500000L)
                 .Resolution(300000L)
+                .Offset(3600L)
                 .Limit(200)
                 .Order(OrderDirection.ASC)
                 .BuildUri();
@@ -32,6 +33,7 @@ namespace stellar_dotnet_sdk_test.requests
                                             "start_time=1512689100000&" +
                                             "end_time=1512775500000&" +
                                             "resolution=300000&" +
+                                            "offset=3600&" +
                                             "limit=200&" +
                                             "order=asc");
         }

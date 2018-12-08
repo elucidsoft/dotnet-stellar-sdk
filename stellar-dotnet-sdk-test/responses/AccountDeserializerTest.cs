@@ -31,6 +31,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(account.Flags.AuthRequired, false);
             Assert.AreEqual(account.Flags.AuthRevocable, true);
+            Assert.AreEqual(account.Flags.AuthImmutable, true);
 
             Assert.AreEqual(account.Balances[0].AssetType, "credit_alphanum4");
             Assert.AreEqual(account.Balances[0].AssetCode, "ABC");

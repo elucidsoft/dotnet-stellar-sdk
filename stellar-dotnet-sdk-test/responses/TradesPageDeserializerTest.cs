@@ -28,6 +28,8 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(tradesPage.Records[0].LedgerCloseTime, "2018-02-02T00:20:10Z");
             Assert.AreEqual(tradesPage.Records[0].OfferId, "695254");
+            Assert.AreEqual(tradesPage.Records[0].BaseOfferId, "10");
+            Assert.AreEqual(tradesPage.Records[0].CounterOfferId, "11");
             Assert.AreEqual(tradesPage.Records[0].BaseAccount.AccountId, "GBZXCJIUEPDXGHMS64UBJHUVKV6ETWYOVHADLTBXJNJFUC7A7RU5B3GN");
             Assert.AreEqual(tradesPage.Records[0].BaseAmount, "0.1217566");
             Assert.AreEqual(tradesPage.Records[0].BaseAssetType, "native");

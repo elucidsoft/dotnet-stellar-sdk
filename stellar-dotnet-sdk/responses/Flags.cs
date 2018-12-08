@@ -7,10 +7,11 @@ namespace stellar_dotnet_sdk.responses
     /// </summary>
     public class Flags
     {
-        public Flags(bool authRequired, bool authRevocable)
+        public Flags(bool authRequired, bool authRevocable, bool authImmutable)
         {
             AuthRequired = authRequired;
             AuthRevocable = authRevocable;
+            AuthImmutable = authImmutable;
         }
 
         [JsonProperty(PropertyName = "auth_required")]
@@ -18,5 +19,8 @@ namespace stellar_dotnet_sdk.responses
 
         [JsonProperty(PropertyName = "auth_revocable")]
         public bool AuthRevocable { get; private set; }
+
+        [JsonProperty(PropertyName = "auth_immutable")]
+        public bool AuthImmutable { get; private set; }
     }
 }

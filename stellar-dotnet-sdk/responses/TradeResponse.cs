@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk.responses
     /// </summary>
     public class TradeResponse : Response, IPagingToken
     {
-        public TradeResponse(String id, String pagingToken, String ledgerCloseTime, String offerId, bool baseIsSeller, KeyPair baseAccount, String baseAmount, String baseAssetType, String baseAssetCode, String baseAssetIssuer, KeyPair counterAccount, String counterAmount, String counterAssetType, String counterAssetCode, String counterAssetIssuer, Price price)
+        public TradeResponse(String id, String pagingToken, String ledgerCloseTime, String offerId, bool baseIsSeller, KeyPair baseAccount, String baseOfferId, String baseAmount, String baseAssetType, String baseAssetCode, String baseAssetIssuer, KeyPair counterAccount, String counterOfferId, String counterAmount, String counterAssetType, String counterAssetCode, String counterAssetIssuer, Price price)
         {
             Id = id;
             PagingToken = pagingToken;
@@ -19,11 +19,13 @@ namespace stellar_dotnet_sdk.responses
             OfferId = offerId;
             BaseIsSeller = baseIsSeller;
             BaseAccount = baseAccount;
+            BaseOfferId = baseOfferId;
             BaseAmount = baseAmount;
             BaseAssetType = baseAssetType;
             BaseAssetCode = baseAssetCode;
             BaseAssetIssuer = baseAssetIssuer;
             CounterAccount = counterAccount;
+            CounterOfferId = counterOfferId;
             CounterAmount = counterAmount;
             CounterAssetType = counterAssetType;
             CounterAssetCode = counterAssetCode;
@@ -48,6 +50,9 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "base_account")]
         public KeyPair BaseAccount { get; }
 
+        [JsonProperty(PropertyName = "base_offer_id")]
+        public String BaseOfferId { get; }
+
         [JsonProperty(PropertyName = "base_amount")]
         public String BaseAmount { get; }
 
@@ -62,6 +67,9 @@ namespace stellar_dotnet_sdk.responses
 
         [JsonProperty(PropertyName = "counter_account")]
         public KeyPair CounterAccount { get; }
+
+        [JsonProperty(PropertyName = "counter_offer_id")]
+        public String CounterOfferId { get; }
 
         [JsonProperty(PropertyName = "counter_amount")]
         public String CounterAmount { get; }
