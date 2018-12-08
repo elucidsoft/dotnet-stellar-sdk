@@ -24,7 +24,7 @@ namespace stellar_dotnet_sdk
         ///</summary>
         ///<param name="minTime"> earliest time the transaction is valid from</param>
         ///<param name="maxTime"> latest time the transaction is valid to</param>
-        public TimeBounds(DateTimeOffset? minTime, DateTimeOffset? maxTime)
+        public TimeBounds(DateTimeOffset? minTime = null, DateTimeOffset? maxTime = null)
         {
             if (maxTime != null && minTime >= maxTime)
                 throw new ArgumentException("minTime must be >= maxTime");

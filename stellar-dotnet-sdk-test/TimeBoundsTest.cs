@@ -51,10 +51,20 @@ namespace stellar_dotnet_sdk_test
         public void TestTimeBoundsWithDateTime()
         {
             var now = new DateTime(2018, 12, 01, 17, 30, 30);
-            var timeBounds = new TimeBounds(now, null);
+            var timeBounds = new TimeBounds(now);
 
             Assert.AreEqual(1543685430, timeBounds.MinTime);
             Assert.AreEqual(0, timeBounds.MaxTime);
+        }
+
+        [TestMethod]
+        public void TestTimeBoundsWithDateTimeWithoutMinTime()
+        {
+            var now = new DateTime(2018, 12, 01, 17, 30, 30);
+            var timeBounds = new TimeBounds(maxTime: now);
+
+            Assert.AreEqual(0, timeBounds.MinTime);
+            Assert.AreEqual(1543685430, timeBounds.MaxTime);
         }
 
         [TestMethod]
