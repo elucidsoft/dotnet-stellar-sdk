@@ -6,8 +6,10 @@ using System.Text;
 
 namespace stellar_dotnet_sdk_test.requests
 {
+    [TestClass]
     public class OperationFeeRequestBuilderTest
     {
+        [TestMethod]
         public void TestBuilder()
         {
             Server server = new Server("https://horizon-testnet.stellar.org");
