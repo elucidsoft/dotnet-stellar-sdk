@@ -55,12 +55,14 @@ namespace stellar_dotnet_sdk.responses.operations
         /// Account address that is sending the payment.
         /// </summary>
         [JsonProperty(PropertyName = "from")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair From { get; }
 
         /// <summary>
         /// Account address that receives the payment.
         /// </summary>
         [JsonProperty(PropertyName = "to")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair To { get; }
 
         /// <summary>

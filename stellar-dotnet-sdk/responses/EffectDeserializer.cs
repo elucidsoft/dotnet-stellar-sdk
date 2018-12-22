@@ -8,65 +8,83 @@ using stellar_dotnet_sdk.responses.effects;
 
 namespace stellar_dotnet_sdk.responses
 {
-    public class EffectDeserializer : JsonConverter
+    public class EffectDeserializer : JsonConverter<EffectResponse>
     {
-        private static readonly IDictionary<int, Func<string, EffectResponse>> Effects = new ConcurrentDictionary<int, Func<string, EffectResponse>>();
-
-        static EffectDeserializer()
-        {
-            if (Effects.Count > 0)
-                return;
-
-            Effects.Add(0, JsonSingleton.GetInstance<AccountCreatedEffectResponse>);
-            Effects.Add(1, JsonSingleton.GetInstance<AccountRemovedEffectResponse>);
-            Effects.Add(2, JsonSingleton.GetInstance<AccountCreditedEffectResponse>);
-            Effects.Add(3, JsonSingleton.GetInstance<AccountDebitedEffectResponse>);
-            Effects.Add(4, JsonSingleton.GetInstance<AccountThresholdsUpdatedEffectResponse>);
-            Effects.Add(5, JsonSingleton.GetInstance<AccountHomeDomainUpdatedEffectResponse>);
-            Effects.Add(6, JsonSingleton.GetInstance<AccountFlagsUpdatedEffectResponse>);
-            Effects.Add(7, JsonSingleton.GetInstance<AccountInflationDestinationUpdatedEffectResponse>);
-
-            // Signer effects
-            Effects.Add(10, JsonSingleton.GetInstance<SignerCreatedEffectResponse>);
-            Effects.Add(11, JsonSingleton.GetInstance<SignerRemovedEffectResponse>);
-            Effects.Add(12, JsonSingleton.GetInstance<SignerUpdatedEffectResponse>);
-
-            // Trustline effects
-            Effects.Add(20, JsonSingleton.GetInstance<TrustlineCreatedEffectResponse>);
-            Effects.Add(21, JsonSingleton.GetInstance<TrustlineRemovedEffectResponse>);
-            Effects.Add(22, JsonSingleton.GetInstance<TrustlineUpdatedEffectResponse>);
-            Effects.Add(23, JsonSingleton.GetInstance<TrustlineAuthorizedEffectResponse>);
-            Effects.Add(24, JsonSingleton.GetInstance<TrustlineDeauthorizedEffectResponse>);
-
-            // Trading effects
-            Effects.Add(30, JsonSingleton.GetInstance<OfferCreatedEffectResponse>);
-            Effects.Add(31, JsonSingleton.GetInstance<OfferRemovedEffectResponse>);
-            Effects.Add(32, JsonSingleton.GetInstance<OfferUpdatedEffectResponse>);
-            Effects.Add(33, JsonSingleton.GetInstance<TradeEffectResponse>);
-
-            // Data effects
-            Effects.Add(40, JsonSingleton.GetInstance<DataCreatedEffectResponse>);
-            Effects.Add(41, JsonSingleton.GetInstance<DataRemovedEffectResponse>);
-            Effects.Add(42, JsonSingleton.GetInstance<DataUpdatedEffectResponse>);
-            Effects.Add(43, JsonSingleton.GetInstance<SequenceBumpedEffectResponse>);
-        }
-
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, EffectResponse value, JsonSerializer serializer)
         {
             throw new NotImplementedException();
         }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override EffectResponse ReadJson(JsonReader reader, Type objectType, EffectResponse existingValue,
+            bool hasExistingValue,
+            JsonSerializer serializer)
         {
             var jsonObject = JObject.Load(reader);
             var type = jsonObject.GetValue("type_i").ToObject<int>();
+            var root = jsonObject.Root.ToString();
+            switch (type)
+            {
+                // account effects
+                case 0:
+                    return JsonConvert.DeserializeObject<AccountCreatedEffectResponse>(root);
+                case 1:
+                    return JsonConvert.DeserializeObject<AccountRemovedEffectResponse>(root);
+                case 2:
+                    return JsonConvert.DeserializeObject<AccountCreditedEffectResponse>(root);
+                case 3:
+                    return JsonConvert.DeserializeObject<AccountDebitedEffectResponse>(root);
+                case 4:
+                    return JsonConvert.DeserializeObject<AccountThresholdsUpdatedEffectResponse>(root);
+                case 5:
+                    return JsonConvert.DeserializeObject<AccountHomeDomainUpdatedEffectResponse>(root);
+                case 6:
+                    return JsonConvert.DeserializeObject<AccountFlagsUpdatedEffectResponse>(root);
+                case 7:
+                    return JsonConvert.DeserializeObject<AccountInflationDestinationUpdatedEffectResponse>(root);
 
-            return Effects[type].Invoke(jsonObject.Root.ToString());
-        }
+                // signer effects
+                case 10:
+                    return JsonConvert.DeserializeObject<SignerCreatedEffectResponse>(root);
+                case 11:
+                    return JsonConvert.DeserializeObject<SignerRemovedEffectResponse>(root);
+                case 12:
+                    return JsonConvert.DeserializeObject<SignerUpdatedEffectResponse>(root);
 
-        public override bool CanConvert(Type objectType)
-        {
-            return objectType == typeof(EffectResponse);
+                // trustline effects
+                case 20:
+                    return JsonConvert.DeserializeObject<TrustlineCreatedEffectResponse>(root);
+                case 21:
+                    return JsonConvert.DeserializeObject<TrustlineRemovedEffectResponse>(root);
+                case 22:
+                    return JsonConvert.DeserializeObject<TrustlineUpdatedEffectResponse>(root);
+                case 23:
+                    return JsonConvert.DeserializeObject<TrustlineAuthorizedEffectResponse>(root);
+                case 24:
+                    return JsonConvert.DeserializeObject<TrustlineDeauthorizedEffectResponse>(root);
+
+                 // trading effects
+                case 30:
+                    return JsonConvert.DeserializeObject<OfferCreatedEffectResponse>(root);
+                case 31:
+                    return JsonConvert.DeserializeObject<OfferRemovedEffectResponse>(root);
+                case 32:
+                    return JsonConvert.DeserializeObject<OfferUpdatedEffectResponse>(root);
+                case 33:
+                    return JsonConvert.DeserializeObject<TradeEffectResponse>(root);
+
+                 // data effects
+                case 40:
+                    return JsonConvert.DeserializeObject<DataCreatedEffectResponse>(root);
+                case 41:
+                    return JsonConvert.DeserializeObject<DataRemovedEffectResponse>(root);
+                case 42:
+                    return JsonConvert.DeserializeObject<DataUpdatedEffectResponse>(root);
+                case 43:
+                    return JsonConvert.DeserializeObject<SequenceBumpedEffectResponse>(root);
+
+                default:
+                    throw new JsonSerializationException($"Unknown 'type_i'='{type}'");
+            }
         }
     }
 }

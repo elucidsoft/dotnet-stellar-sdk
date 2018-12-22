@@ -34,12 +34,14 @@ namespace stellar_dotnet_sdk.responses.operations
         /// Trustor account.
         /// </summary>
         [JsonProperty(PropertyName = "trustor")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair Trustor { get; }
 
         /// <summary>
         /// Trustee account.
         /// </summary>
         [JsonProperty(PropertyName = "trustee")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair Trustee { get; }
 
         /// <summary>

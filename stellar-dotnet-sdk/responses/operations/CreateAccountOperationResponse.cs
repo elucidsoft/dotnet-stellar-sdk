@@ -11,9 +11,11 @@ namespace stellar_dotnet_sdk.responses.operations
     public class CreateAccountOperationResponse : OperationResponse
     {
         [JsonProperty(PropertyName = "account")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair Account { get; private set; }
 
         [JsonProperty(PropertyName = "funder")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair Funder { get; private set; }
 
         [JsonProperty(PropertyName = "starting_balance")]

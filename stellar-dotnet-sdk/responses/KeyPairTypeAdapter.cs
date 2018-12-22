@@ -3,21 +3,17 @@ using Newtonsoft.Json;
 
 namespace stellar_dotnet_sdk.responses
 {
-    public class KeyPairTypeAdapter : JsonConverter
+    public class KeyPairTypeAdapter : JsonConverter<KeyPair>
     {
-        public override bool CanConvert(Type objectType)
+        public override void WriteJson(JsonWriter writer, KeyPair value, JsonSerializer serializer)
         {
-            return objectType == typeof(KeyPair);
+            writer.WriteValue(value.AccountId);
         }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override KeyPair ReadJson(JsonReader reader, Type objectType, KeyPair existingValue,
+            bool hasExistingValue, JsonSerializer serializer)
         {
             return KeyPair.FromAccountId(reader.Value.ToString());
-        }
-
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {
-            // Don't need this.
         }
     }
 }

@@ -32,9 +32,11 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "limit")] public string Limit { get; }
 
         [JsonProperty(PropertyName = "trustee")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair Trustee { get; }
 
         [JsonProperty(PropertyName = "trustor")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair Trustor { get; }
 
         public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);

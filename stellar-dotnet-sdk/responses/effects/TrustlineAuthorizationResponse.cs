@@ -14,6 +14,7 @@ namespace stellar_dotnet_sdk.responses.effects
         }
 
         [JsonProperty(PropertyName = "trustor")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair Trustor { get; }
 
         [JsonProperty(PropertyName = "asset_type")]

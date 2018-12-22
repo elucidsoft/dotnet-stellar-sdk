@@ -12,7 +12,7 @@ namespace stellar_dotnet_sdk.responses.operations
     public class SetOptionsOperationResponse : OperationResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="lowThreshold">A number from 0-255 representing the threshold this account sets on all operations it performs that have a low threshold.</param>
         /// <param name="medThreshold">A number from 0-255 representing the threshold this account sets on all operations it performs that have a medium threshold.</param>
@@ -22,7 +22,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// <param name="signerKey">Add, update, or remove a signer from an account.</param>
         /// <param name="signerWeight">Weight of the signer.</param>
         /// <param name="masterKeyWeight">Weight of the master key.</param>
-        /// <param name="clearFlags">Indicates which flags to clear. For details about the flags, please refer to the accounts doc. The bit mask integer subtracts 
+        /// <param name="clearFlags">Indicates which flags to clear. For details about the flags, please refer to the accounts doc. The bit mask integer subtracts
         /// from the existing flags of the account. This allows for setting specific bits without knowledge of existing flags.</param>
         /// <param name="setFlags">Indicates which flags to set. For details about the flags, please refer to the accounts doc. The bit mask integer adds onto the
         /// existing flags of the account. This allows for setting specific bits without knowledge of existing flags.</param>
@@ -63,6 +63,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// Account of the inflation destination.
         /// </summary>
         [JsonProperty(PropertyName = "inflation_dest")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair InflationDestination { get; }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace stellar_dotnet_sdk.responses.operations
         public int MasterKeyWeight { get; }
 
         /// <summary>
-        /// Indicates which flags to clear. For details about the flags, please refer to the accounts doc. The bit mask integer subtracts 
+        /// Indicates which flags to clear. For details about the flags, please refer to the accounts doc. The bit mask integer subtracts
         /// from the existing flags of the account. This allows for setting specific bits without knowledge of existing flags.
         /// </summary>
         [JsonProperty(PropertyName = "clear_flags_s")]

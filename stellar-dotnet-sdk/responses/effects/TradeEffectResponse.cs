@@ -27,6 +27,7 @@ namespace stellar_dotnet_sdk.responses.effects
         }
 
         [JsonProperty(PropertyName = "seller")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair Seller { get; }
 
         [JsonProperty(PropertyName = "offer_id")]

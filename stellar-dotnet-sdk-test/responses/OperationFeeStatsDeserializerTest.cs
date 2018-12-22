@@ -18,7 +18,7 @@ namespace stellar_dotnet_sdk_test.responses
             AssertTestData(stats);
         }
 
-        public void AssertTestData(OperationFeeStatsResponse stats)
+        private void AssertTestData(OperationFeeStatsResponse stats)
         {
             Assert.AreEqual(20882791L, stats.LastLedger);
             Assert.AreEqual(100L, stats.LastLedgerBaseFee);

@@ -4,14 +4,15 @@ using System;
 
 namespace stellar_dotnet_sdk.responses
 {
-    public class TransactionDeserializer : JsonConverter
+    public class TransactionDeserializer : JsonConverter<TransactionResponse>
     {
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, TransactionResponse value, JsonSerializer serializer)
         {
             throw new NotImplementedException();
         }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override TransactionResponse ReadJson(JsonReader reader, Type objectType, TransactionResponse existingValue,
+            bool hasExistingValue, JsonSerializer serializer)
         {
             reader.DateParseHandling = DateParseHandling.None;
 
@@ -54,11 +55,6 @@ namespace stellar_dotnet_sdk.responses
 
             transaction.Memo = memo;
             return transaction;
-        }
-
-        public override bool CanConvert(Type objectType)
-        {
-            return objectType == typeof(TransactionResponse);
         }
     }
 }
