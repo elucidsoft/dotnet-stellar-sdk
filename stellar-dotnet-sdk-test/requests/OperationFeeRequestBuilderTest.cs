@@ -3,6 +3,7 @@ using stellar_dotnet_sdk;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk_test.requests
 {
@@ -18,7 +19,7 @@ namespace stellar_dotnet_sdk_test.requests
         }
 
         [TestMethod]
-        public async void TestExecute()
+        public async Task TestExecute()
         {
             Server server = new Server("https://horizon-testnet.stellar.org");
             var task = await server.OperationFeeStats.Execute();
