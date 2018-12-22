@@ -48,7 +48,7 @@ namespace stellar_dotnet_sdk.responses
                 case 11:
                     return JsonConvert.DeserializeObject<BumpSequenceOperationResponse>(root);
                 default:
-                    throw new Exception($"Invalid operation 'type_i'='{type}'");
+                    throw new JsonSerializationException($"Invalid operation 'type_i'='{type}'");
             }
         }
     }
