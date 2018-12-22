@@ -13,7 +13,8 @@ namespace stellar_dotnet_sdk.responses
         public override KeyPair ReadJson(JsonReader reader, Type objectType, KeyPair existingValue,
             bool hasExistingValue, JsonSerializer serializer)
         {
-            return KeyPair.FromAccountId(reader.Value.ToString());
+            var accountId = reader.Value?.ToString();
+            return accountId is null ? null : KeyPair.FromAccountId(accountId);
         }
     }
 }

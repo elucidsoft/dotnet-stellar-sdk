@@ -41,6 +41,8 @@ namespace stellar_dotnet_sdk.responses.operations
             SetFlags = setFlags;
         }
 
+        public override int TypeId => 5;
+
         /// <summary>
         /// A number from 0-255 representing the threshold this account sets on all operations it performs that have a low threshold.
         /// </summary>

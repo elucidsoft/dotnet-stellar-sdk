@@ -7,6 +7,8 @@ namespace stellar_dotnet_sdk.responses
 {
     public class OperationDeserializer : JsonConverter<OperationResponse>
     {
+        public override bool CanWrite => false;
+
         public override void WriteJson(JsonWriter writer, OperationResponse value, JsonSerializer serializer)
         {
             throw new NotImplementedException();

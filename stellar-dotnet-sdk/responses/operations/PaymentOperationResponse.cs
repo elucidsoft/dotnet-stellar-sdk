@@ -30,6 +30,8 @@ namespace stellar_dotnet_sdk.responses.operations
             To = to;
         }
 
+        public override int TypeId => 1;
+
         /// <summary>
         /// Amount of the aforementioned asset to send.
         /// </summary>

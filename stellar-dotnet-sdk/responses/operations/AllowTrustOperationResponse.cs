@@ -30,6 +30,8 @@ namespace stellar_dotnet_sdk.responses.operations
             Authorize = authorize;
         }
 
+        public override int TypeId => 7;
+
         /// <summary>
         /// Trustor account.
         /// </summary>

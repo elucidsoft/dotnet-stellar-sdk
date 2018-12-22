@@ -39,6 +39,8 @@ namespace stellar_dotnet_sdk.responses.operations
             SendAssetIssuer = sendAssetIssuer;
         }
 
+        public override int TypeId => 2;
+
         /// <summary>
         /// The amount of destination asset the destination account receives.
         /// </summary>

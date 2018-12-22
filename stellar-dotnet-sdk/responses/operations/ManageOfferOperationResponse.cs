@@ -23,6 +23,8 @@ namespace stellar_dotnet_sdk.responses.operations
             SellingAssetIssuer = sellingAssetIssuer;
         }
 
+        public override int TypeId => 3;
+
         [JsonProperty(PropertyName = "offer_id")]
         public int OfferId { get; }
 

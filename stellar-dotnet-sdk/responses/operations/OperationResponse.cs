@@ -8,7 +8,7 @@ namespace stellar_dotnet_sdk.responses.operations
     /// <seealso cref="requests.OperationsRequestBuilder"/>
     /// <seealso cref="Server"/>
     /// </summary>
-    public abstract class OperationResponse : IPagingToken
+    public abstract class OperationResponse : Response, IPagingToken
     {
         /// <summary>
         /// Id of the operation
@@ -45,6 +45,9 @@ namespace stellar_dotnet_sdk.responses.operations
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string Type { get; private set; }
+
+        [JsonProperty(PropertyName = "type_i")]
+        public virtual int TypeId { get; }
 
         /// <summary>
         ///

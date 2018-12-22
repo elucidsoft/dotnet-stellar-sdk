@@ -8,5 +8,6 @@
     /// </summary>
     public class InflationOperationResponse : OperationResponse
     {
+        public override int TypeId => 9;
     }
 }

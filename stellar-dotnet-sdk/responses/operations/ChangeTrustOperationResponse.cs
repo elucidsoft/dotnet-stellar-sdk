@@ -20,6 +20,8 @@ namespace stellar_dotnet_sdk.responses.operations
             Trustor = trustor;
         }
 
+        public override int TypeId => 6;
+
         [JsonProperty(PropertyName = "asset_code")]
         public string AssetCode { get; }
 
