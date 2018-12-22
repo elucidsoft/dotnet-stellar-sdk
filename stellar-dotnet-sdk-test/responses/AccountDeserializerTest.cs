@@ -79,14 +79,5 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(account.Links.Self.Href, "/accounts/GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
             Assert.AreEqual(account.Links.Transactions.Href, "/accounts/GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7/transactions{?cursor,limit,order}");
         }
-
-        [TestMethod]
-        public void TestSerializeAccountResponse()
-        {
-            var json = File.ReadAllText(Path.Combine("testdata", "account.json"));
-            var account = JsonSingleton.GetInstance<AccountResponse>(json);
-            //var serializedAccount = JsonConvert.SerializeObject(account);
-            //Assert.IsTrue(serializedAccount.Length > 0);
-        }
     }
 }

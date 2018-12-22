@@ -758,15 +758,7 @@ namespace stellar_dotnet_sdk_test.responses
         public void TestUnknownEffect()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectUnknown.json"));
-            try
-            {
-                var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-                Assert.Fail();
-            }
-            catch
-            {
-                //We want the exception to pass the test, that is what it should be doing.
-            }
+            Assert.ThrowsException<JsonSerializationException>(() => JsonSingleton.GetInstance<EffectResponse>(json));
         }
 
         [TestMethod]
