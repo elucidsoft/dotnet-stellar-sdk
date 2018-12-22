@@ -9,15 +9,17 @@ namespace stellar_dotnet_sdk.responses
     {
         public override void WriteJson(JsonWriter writer, Asset value, JsonSerializer serializer)
         {
+            var jsonObject = new JObject();
             var assetType = new JProperty("asset_type", value.GetType());
-            assetType.WriteTo(writer);
+            jsonObject.Add(assetType);
             if (value is AssetTypeCreditAlphaNum credit)
             {
                 var code = new JProperty("asset_code", credit.Code);
-                code.WriteTo(writer);
+                jsonObject.Add(code);
                 var issuer = new JProperty("asset_issuer", credit.Issuer.AccountId);
-                issuer.WriteTo(writer);
+                jsonObject.Add(issuer);
             }
+            jsonObject.WriteTo(writer);
         }
 
         public override Asset ReadJson(JsonReader reader, Type objectType, Asset existingValue, bool hasExistingValue,

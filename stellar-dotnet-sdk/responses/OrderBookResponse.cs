@@ -5,9 +5,12 @@ namespace stellar_dotnet_sdk.responses
 {
     public class OrderBookResponse
     {
-        [JsonProperty(PropertyName = "base")] public Asset OrderBookBase { get; private set; }
+        [JsonProperty(PropertyName = "base")]
+        [JsonConverter(typeof(AssetDeserializer))]
+        public Asset OrderBookBase { get; private set; }
 
         [JsonProperty(PropertyName = "counter")]
+        [JsonConverter(typeof(AssetDeserializer))]
         public Asset Counter { get; private set; }
 
         [JsonProperty(PropertyName = "asks")] public Row[] Asks { get; private set; }

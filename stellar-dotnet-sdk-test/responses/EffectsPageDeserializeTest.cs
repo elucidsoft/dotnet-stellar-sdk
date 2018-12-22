@@ -18,6 +18,16 @@ namespace stellar_dotnet_sdk_test.responses
 
             AssertTestData(effectsPage);
         }
+       [TestMethod]
+        public void TestSerializeDeserialize()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectPage.json"));
+            var effectsPage = JsonSingleton.GetInstance<Page<EffectResponse>>(json);
+            var serialized = JsonConvert.SerializeObject(effectsPage, new EffectDeserializer());
+            var back = JsonConvert.DeserializeObject<Page<EffectResponse>>(serialized, new EffectDeserializer());
+
+            AssertTestData(back);
+        }
 
         public static void AssertTestData(Page<EffectResponse> effectsPage)
         {
