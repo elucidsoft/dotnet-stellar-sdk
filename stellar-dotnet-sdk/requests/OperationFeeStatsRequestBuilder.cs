@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using stellar_dotnet_sdk.responses.operations;
 
 namespace stellar_dotnet_sdk.requests
 {
@@ -14,9 +15,9 @@ namespace stellar_dotnet_sdk.requests
         {
         }
 
-        public async Task<OperationFeeStatsRequestBuilder> Execute()
+        public async Task<OperationFeeStatsResponse> Execute()
         {
-            return await Execute<OperationFeeStatsRequestBuilder>(BuildUri());
+            return await Execute<OperationFeeStatsResponse>(BuildUri());
         }
     }
 }
