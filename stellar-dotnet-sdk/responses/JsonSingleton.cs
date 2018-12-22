@@ -31,8 +31,7 @@ namespace stellar_dotnet_sdk.responses
                 new AssetDeserializer(),
                 new KeyPairTypeAdapter(),
                 new OperationDeserializer(),
-                new EffectDeserializer(),
-                new TransactionDeserializer()
+                new EffectDeserializer()
             };
 
             var pageJsonConverters = new JsonConverter[]
