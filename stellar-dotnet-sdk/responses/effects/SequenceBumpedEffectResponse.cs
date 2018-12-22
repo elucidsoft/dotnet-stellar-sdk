@@ -13,6 +13,8 @@ namespace stellar_dotnet_sdk.responses.effects
     /// </summary>
     public class SequenceBumpedEffectResponse : EffectResponse
     {
+        public override int TypeId => 43;
+
         [JsonProperty(PropertyName = "new_seq")]
         public long NewSequence { get; }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 
 namespace stellar_dotnet_sdk.responses
 {
@@ -8,7 +9,15 @@ namespace stellar_dotnet_sdk.responses
     {
         public override void WriteJson(JsonWriter writer, Asset value, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            var assetType = new JProperty("asset_type", value.GetType());
+            assetType.WriteTo(writer);
+            if (value is AssetTypeCreditAlphaNum credit)
+            {
+                var code = new JProperty("asset_code", credit.Code);
+                code.WriteTo(writer);
+                var issuer = new JProperty("asset_issuer", credit.Issuer.AccountId);
+                issuer.WriteTo(writer);
+            }
         }
 
         public override Asset ReadJson(JsonReader reader, Type objectType, Asset existingValue, bool hasExistingValue,

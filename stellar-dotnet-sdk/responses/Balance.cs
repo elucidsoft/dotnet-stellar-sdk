@@ -28,9 +28,11 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "asset_code")]
         public string AssetCode { get; private set; }
 
+        [JsonIgnore]
         //This prop is dynamic based on private field serialized above.
         public KeyPair AssetIssuer => KeyPair.FromAccountId(_assetIssuer);
 
+        [JsonIgnore]
         public Asset Asset => Asset.Create(AssetType, AssetCode, _assetIssuer);
 
         [JsonProperty(PropertyName = "limit")]

@@ -10,6 +10,8 @@ namespace stellar_dotnet_sdk.responses
 {
     public class EffectDeserializer : JsonConverter<EffectResponse>
     {
+        public override bool CanWrite => false;
+
         public override void WriteJson(JsonWriter writer, EffectResponse value, JsonSerializer serializer)
         {
             throw new NotImplementedException();

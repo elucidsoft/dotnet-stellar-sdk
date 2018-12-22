@@ -19,6 +19,8 @@ namespace stellar_dotnet_sdk.responses.effects
             AssetIssuer = assetIssuer;
         }
 
+        public override int TypeId => 2;
+
         [JsonProperty(PropertyName = "amount")]
         public string Amount { get; }
 

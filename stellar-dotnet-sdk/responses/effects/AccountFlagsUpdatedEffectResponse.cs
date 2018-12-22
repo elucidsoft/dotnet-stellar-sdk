@@ -17,6 +17,8 @@ namespace stellar_dotnet_sdk.responses.effects
             AuthRevokableFlag = authRevokableFlag;
         }
 
+        public override int TypeId => 6;
+
         [JsonProperty(PropertyName = "auth_required_flag")]
         public bool AuthRequiredFlag { get; }
 

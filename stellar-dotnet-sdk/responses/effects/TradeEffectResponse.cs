@@ -26,6 +26,8 @@ namespace stellar_dotnet_sdk.responses.effects
             BoughtAssetIssuer = boughtAssetIssuer;
         }
 
+        public override int TypeId => 33;
+
         [JsonProperty(PropertyName = "seller")]
         [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair Seller { get; }

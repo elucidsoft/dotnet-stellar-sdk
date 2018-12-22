@@ -13,6 +13,8 @@ namespace stellar_dotnet_sdk.responses.effects
         [JsonProperty(PropertyName = "starting_balance")]
         public string StartingBalance { get; }
 
+        public override int TypeId => 0;
+
         /// <inheritdoc />
         public AccountCreatedEffectResponse(string startingBalance)
         {

@@ -10,5 +10,6 @@ namespace stellar_dotnet_sdk.responses.effects
     /// </summary>
     public class DataCreatedEffectResponse : EffectResponse
     {
+        public override int TypeId => 40;
     }
 }

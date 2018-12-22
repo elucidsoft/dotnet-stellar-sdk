@@ -45,21 +45,10 @@ namespace stellar_dotnet_sdk.responses
 
             if (pageResponseConversions.Contains(typeof(T)))
             {
-                content = PageAccountResponseConverter(content);
                 return JsonConvert.DeserializeObject<T>(content, pageJsonConverters);
             }
 
             return JsonConvert.DeserializeObject<T>(content, jsonConverters);
-        }
-
-        private static string PageAccountResponseConverter(string content)
-        {
-            var json = JObject.Parse(content);
-            var newJson = new JObject();
-            newJson.Add("records", json.SelectToken("$._embedded.records"));
-            newJson.Add("links", json.SelectToken("$._links"));
-
-            return newJson.Root.ToString();
         }
     }
 }

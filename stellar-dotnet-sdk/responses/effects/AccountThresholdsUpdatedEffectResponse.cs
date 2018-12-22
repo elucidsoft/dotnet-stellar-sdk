@@ -18,6 +18,8 @@ namespace stellar_dotnet_sdk.responses.effects
             HighThreshold = highThreshold;
         }
 
+        public override int TypeId => 4;
+
         [JsonProperty(PropertyName = "low_threshold")]
         public int LowThreshold { get; }
 

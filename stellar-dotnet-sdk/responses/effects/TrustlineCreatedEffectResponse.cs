@@ -8,6 +8,8 @@
     /// </summary>
     public class TrustlineCreatedEffectResponse : TrustlineCUDResponse
     {
+        public override int TypeId => 20;
+
         /// <inheritdoc />
         public TrustlineCreatedEffectResponse(string limit, string assetType, string assetCode, string assetIssuer)
             : base(limit, assetType, assetCode, assetIssuer)

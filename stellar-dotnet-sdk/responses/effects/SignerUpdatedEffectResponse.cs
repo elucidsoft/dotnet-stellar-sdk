@@ -8,6 +8,8 @@
     /// </summary>
     public class SignerUpdatedEffectResponse : SignerEffectResponse
     {
+        public override int TypeId => 12;
+
         /// <inheritdoc />
         public SignerUpdatedEffectResponse(int weight, string publicKey)
             : base(weight, publicKey)

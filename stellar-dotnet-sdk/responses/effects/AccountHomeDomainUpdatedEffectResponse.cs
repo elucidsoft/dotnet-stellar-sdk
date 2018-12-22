@@ -13,6 +13,8 @@ namespace stellar_dotnet_sdk.responses.effects
         [JsonProperty(PropertyName = "home_domain")]
         public string HomeDomain { get; }
 
+        public override int TypeId => 5;
+
         /// <inheritdoc />
         public AccountHomeDomainUpdatedEffectResponse(string homeDomain)
         {

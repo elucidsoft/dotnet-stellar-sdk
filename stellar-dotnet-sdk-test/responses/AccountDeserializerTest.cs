@@ -18,6 +18,16 @@ namespace stellar_dotnet_sdk_test.responses
             AssertTestData(account);
         }
 
+        [TestMethod]
+        public void TestSerializeDeserializeAccountResponse()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "account.json"));
+            var account = JsonConvert.DeserializeObject<AccountResponse>(json);
+            var serialized = JsonConvert.SerializeObject(account);
+            var back = JsonConvert.DeserializeObject<AccountResponse>(serialized);
+            AssertTestData(back);
+        }
+
         public static void AssertTestData(AccountResponse account)
         {
             Assert.AreEqual(account.KeyPair.AccountId, "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
