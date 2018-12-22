@@ -13,10 +13,15 @@ namespace stellar_dotnet_sdk.responses.operations
         public override int TypeId => 10;
 
         [JsonProperty]
-        public string Name { get; }
+        public string Name { get; private set; }
 
         [JsonProperty]
-        public string Value { get; }
+        public string Value { get; private set; }
+
+        public ManageDataOperationResponse()
+        {
+
+        }
 
         public ManageDataOperationResponse(string name, string value)
         {

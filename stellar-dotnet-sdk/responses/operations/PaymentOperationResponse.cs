@@ -11,6 +11,11 @@ namespace stellar_dotnet_sdk.responses.operations
     /// </summary>
     public class PaymentOperationResponse : OperationResponse
     {
+        public PaymentOperationResponse()
+        {
+
+        }
+
         /// <summary>
         /// Sends an amount in a specific asset to a destination account.
         /// </summary>
@@ -36,39 +41,39 @@ namespace stellar_dotnet_sdk.responses.operations
         /// Amount of the aforementioned asset to send.
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
-        public string Amount { get; }
+        public string Amount { get; private set; }
 
         /// <summary>
         /// The asset type (USD, BTC, etc.)
         /// </summary>
         [JsonProperty(PropertyName = "asset_type")]
-        public string AssetType { get; }
+        public string AssetType { get; private set; }
 
         /// <summary>
         /// The asset code (Alpha4, Alpha12, etc.)
         /// </summary>
         [JsonProperty(PropertyName = "asset_code")]
-        public string AssetCode { get; }
+        public string AssetCode { get; private set; }
 
         /// <summary>
         ///
         /// </summary>
         [JsonProperty(PropertyName = "asset_issuer")]
-        public string AssetIssuer { get; }
+        public string AssetIssuer { get; private set; }
 
         /// <summary>
         /// Account address that is sending the payment.
         /// </summary>
         [JsonProperty(PropertyName = "from")]
         [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair From { get; }
+        public KeyPair From { get; private set; }
 
         /// <summary>
         ///
         /// </summary>
         [JsonProperty(PropertyName = "to")]
         [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair To { get; }
+        public KeyPair To { get; private set; }
 
         /// <summary>
         /// Account address that receives the payment.

@@ -14,39 +14,45 @@ namespace stellar_dotnet_sdk.responses
             throw new NotImplementedException();
         }
 
-        public override OperationResponse ReadJson(JsonReader reader, Type objectType, OperationResponse existingValue, bool hasExistingValue,
+        public override OperationResponse ReadJson(JsonReader reader, Type objectType, OperationResponse existingValue,
+            bool hasExistingValue,
             JsonSerializer serializer)
         {
             var jsonObject = JObject.Load(reader);
             var type = jsonObject.GetValue("type_i").ToObject<int>();
-            var root = jsonObject.Root.ToString();
+            var response = CreateResponse(type);
+            serializer.Populate(jsonObject.CreateReader(), response);
+            return response;
+        }
 
+        private static OperationResponse CreateResponse(int type)
+        {
             switch (type)
             {
                 case 0:
-                    return JsonConvert.DeserializeObject<CreateAccountOperationResponse>(root);
+                    return new CreateAccountOperationResponse();
                 case 1:
-                    return JsonConvert.DeserializeObject<PaymentOperationResponse>(root);
+                    return new PaymentOperationResponse();
                 case 2:
-                    return JsonConvert.DeserializeObject<PathPaymentOperationResponse>(root);
+                    return new PathPaymentOperationResponse();
                 case 3:
-                    return JsonConvert.DeserializeObject<ManageOfferOperationResponse>(root);
+                    return new ManageOfferOperationResponse();
                 case 4:
-                    return JsonConvert.DeserializeObject<CreatePassiveOfferOperationResponse>(root);
+                    return new CreatePassiveOfferOperationResponse();
                 case 5:
-                    return JsonConvert.DeserializeObject<SetOptionsOperationResponse>(root);
+                    return new SetOptionsOperationResponse();
                 case 6:
-                    return JsonConvert.DeserializeObject<ChangeTrustOperationResponse>(root);
+                    return new ChangeTrustOperationResponse();
                 case 7:
-                    return JsonConvert.DeserializeObject<AllowTrustOperationResponse>(root);
+                    return new AllowTrustOperationResponse();
                 case 8:
-                    return JsonConvert.DeserializeObject<AccountMergeOperationResponse>(root);
+                    return new AccountMergeOperationResponse();
                 case 9:
-                    return JsonConvert.DeserializeObject<InflationOperationResponse>(root);
+                    return new InflationOperationResponse();
                 case 10:
-                    return JsonConvert.DeserializeObject<ManageDataOperationResponse>(root);
+                    return new ManageDataOperationResponse();
                 case 11:
-                    return JsonConvert.DeserializeObject<BumpSequenceOperationResponse>(root);
+                    return new BumpSequenceOperationResponse();
                 default:
                     throw new JsonSerializationException($"Invalid operation 'type_i'='{type}'");
             }

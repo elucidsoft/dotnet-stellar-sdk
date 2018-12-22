@@ -14,11 +14,16 @@ namespace stellar_dotnet_sdk.responses.operations
 
         [JsonProperty(PropertyName = "account")]
         [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair Account { get; }
+        public KeyPair Account { get; private set; }
 
         [JsonProperty(PropertyName = "into")]
         [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair Into { get; }
+        public KeyPair Into { get; private set; }
+
+        public AccountMergeOperationResponse()
+        {
+
+        }
 
         public AccountMergeOperationResponse(KeyPair account, KeyPair into)
         {

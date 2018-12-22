@@ -26,8 +26,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertAccountCreatedData(back);
         }
@@ -64,8 +64,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectAccountRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertAccountRemovedData(back);
         }
@@ -100,8 +100,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCredited.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertAccountCreditedData(back);
         }
@@ -138,8 +138,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectAccountDebited.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertAccountDebitedData(back);
         }
@@ -176,8 +176,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectAccountThresholdsUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertAccountThresholdsUpdatedData(back);
         }
@@ -215,8 +215,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectAccountHomeDomainUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertAccountHomeDomainUpdatedData(back);
         }
@@ -252,8 +252,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectAccountFlagsUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertAccountFlagsUpdatedData(back);
         }
@@ -290,8 +290,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectSignerCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertSignerCreatedData(back);
         }
@@ -328,8 +328,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectSignerRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertSignerRemoveData(back);
         }
@@ -366,8 +366,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectSignerUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertSignerUpdatedData(back);
         }
@@ -404,8 +404,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertTrustlineCreatedData(back);
         }
@@ -444,8 +444,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertTrustlineRemovedData(back);
         }
@@ -484,8 +484,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertTrustlineUpdatedData(back);
         }
@@ -524,8 +524,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineAuthorized.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertTrustlineAuthorizedData(back);
         }
@@ -563,8 +563,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineDeAuthorized.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertTrustlineDeauthorizedData(back);
         }
@@ -602,8 +602,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectTrade.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertTradeData(back);
         }
@@ -648,8 +648,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectAccountInflationUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertAccountInflationUpdated(back);
         }
@@ -678,8 +678,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectDataCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertDataCreatedData(back);
         }
@@ -708,8 +708,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectDataRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertDataRemovedData(back);
         }
@@ -738,8 +738,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectDataUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertDataUpdatedData(back);
         }
@@ -775,8 +775,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "sequenceBumped.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertSequenceBumpedData(back);
         }
@@ -805,8 +805,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectOfferCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertOfferCreatedData(back);
         }
@@ -834,8 +834,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectOfferRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertOfferRemovedData(back);
         }
@@ -863,8 +863,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectOfferUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new EffectDeserializer());
-            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized, new EffectDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
             AssertOfferUpdatedData(back);
         }

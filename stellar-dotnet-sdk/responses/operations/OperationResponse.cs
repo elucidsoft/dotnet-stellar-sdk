@@ -8,6 +8,7 @@ namespace stellar_dotnet_sdk.responses.operations
     /// <seealso cref="requests.OperationsRequestBuilder"/>
     /// <seealso cref="Server"/>
     /// </summary>
+    [JsonConverter(typeof(OperationDeserializer))]
     public abstract class OperationResponse : Response, IPagingToken
     {
         /// <summary>

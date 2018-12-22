@@ -3,6 +3,7 @@ using System;
 
 namespace stellar_dotnet_sdk.responses.effects
 {
+    [JsonConverter(typeof(EffectDeserializer))]
     public abstract class EffectResponse : Response, IPagingToken
     {
         [JsonProperty(PropertyName = "id")] public string Id { get; protected set; }

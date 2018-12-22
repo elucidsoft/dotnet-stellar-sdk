@@ -16,11 +16,15 @@ namespace stellar_dotnet_sdk.responses.operations
         public override int TypeId => 11;
 
         [JsonProperty(PropertyName = "bump_to")]
-        public long BumpTo { get; }
+        public long BumpTo { get; private set; }
 
+        public BumpSequenceOperationResponse()
+        {
+
+        }
         public BumpSequenceOperationResponse(long bumpTo)
         {
-            this.BumpTo = bumpTo;
+            BumpTo = bumpTo;
         }
     }
 }

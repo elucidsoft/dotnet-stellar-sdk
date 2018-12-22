@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using stellar_dotnet_sdk.responses.effects;
@@ -23,70 +24,76 @@ namespace stellar_dotnet_sdk.responses
         {
             var jsonObject = JObject.Load(reader);
             var type = jsonObject.GetValue("type_i").ToObject<int>();
-            var root = jsonObject.Root.ToString();
-            switch (type)
+            var response = CreateResponse(type);
+            serializer.Populate(jsonObject.CreateReader(), response);
+            return response;
+        }
+
+        private static EffectResponse CreateResponse(int type)
             {
-                // account effects
-                case 0:
-                    return JsonConvert.DeserializeObject<AccountCreatedEffectResponse>(root);
-                case 1:
-                    return JsonConvert.DeserializeObject<AccountRemovedEffectResponse>(root);
-                case 2:
-                    return JsonConvert.DeserializeObject<AccountCreditedEffectResponse>(root);
-                case 3:
-                    return JsonConvert.DeserializeObject<AccountDebitedEffectResponse>(root);
-                case 4:
-                    return JsonConvert.DeserializeObject<AccountThresholdsUpdatedEffectResponse>(root);
-                case 5:
-                    return JsonConvert.DeserializeObject<AccountHomeDomainUpdatedEffectResponse>(root);
-                case 6:
-                    return JsonConvert.DeserializeObject<AccountFlagsUpdatedEffectResponse>(root);
-                case 7:
-                    return JsonConvert.DeserializeObject<AccountInflationDestinationUpdatedEffectResponse>(root);
+                switch (type)
+                {
+                    // account effects
+                    case 0:
+                        return new AccountCreatedEffectResponse();
+                    case 1:
+                        return new AccountRemovedEffectResponse();
+                    case 2:
+                        return new AccountCreditedEffectResponse();
+                    case 3:
+                        return new AccountDebitedEffectResponse();
+                    case 4:
+                        return new AccountThresholdsUpdatedEffectResponse();
+                    case 5:
+                        return new AccountHomeDomainUpdatedEffectResponse();
+                    case 6:
+                        return new AccountFlagsUpdatedEffectResponse();
+                    case 7:
+                        return new AccountInflationDestinationUpdatedEffectResponse();
 
-                // signer effects
-                case 10:
-                    return JsonConvert.DeserializeObject<SignerCreatedEffectResponse>(root);
-                case 11:
-                    return JsonConvert.DeserializeObject<SignerRemovedEffectResponse>(root);
-                case 12:
-                    return JsonConvert.DeserializeObject<SignerUpdatedEffectResponse>(root);
+                    // signer effects
+                    case 10:
+                        return new SignerCreatedEffectResponse();
+                    case 11:
+                        return new SignerRemovedEffectResponse();
+                    case 12:
+                        return new SignerUpdatedEffectResponse();
 
-                // trustline effects
-                case 20:
-                    return JsonConvert.DeserializeObject<TrustlineCreatedEffectResponse>(root);
-                case 21:
-                    return JsonConvert.DeserializeObject<TrustlineRemovedEffectResponse>(root);
-                case 22:
-                    return JsonConvert.DeserializeObject<TrustlineUpdatedEffectResponse>(root);
-                case 23:
-                    return JsonConvert.DeserializeObject<TrustlineAuthorizedEffectResponse>(root);
-                case 24:
-                    return JsonConvert.DeserializeObject<TrustlineDeauthorizedEffectResponse>(root);
+                    // trustline effects
+                    case 20:
+                        return new TrustlineCreatedEffectResponse();
+                    case 21:
+                        return new TrustlineRemovedEffectResponse();
+                    case 22:
+                        return new TrustlineUpdatedEffectResponse();
+                    case 23:
+                        return new TrustlineAuthorizedEffectResponse();
+                    case 24:
+                        return new TrustlineDeauthorizedEffectResponse();
 
-                 // trading effects
-                case 30:
-                    return JsonConvert.DeserializeObject<OfferCreatedEffectResponse>(root);
-                case 31:
-                    return JsonConvert.DeserializeObject<OfferRemovedEffectResponse>(root);
-                case 32:
-                    return JsonConvert.DeserializeObject<OfferUpdatedEffectResponse>(root);
-                case 33:
-                    return JsonConvert.DeserializeObject<TradeEffectResponse>(root);
+                    // trading effects
+                    case 30:
+                        return new OfferCreatedEffectResponse();
+                    case 31:
+                        return new OfferRemovedEffectResponse();
+                    case 32:
+                        return new OfferUpdatedEffectResponse();
+                    case 33:
+                        return new TradeEffectResponse();
 
-                 // data effects
-                case 40:
-                    return JsonConvert.DeserializeObject<DataCreatedEffectResponse>(root);
-                case 41:
-                    return JsonConvert.DeserializeObject<DataRemovedEffectResponse>(root);
-                case 42:
-                    return JsonConvert.DeserializeObject<DataUpdatedEffectResponse>(root);
-                case 43:
-                    return JsonConvert.DeserializeObject<SequenceBumpedEffectResponse>(root);
+                    // data effects
+                    case 40:
+                        return new DataCreatedEffectResponse();
+                    case 41:
+                        return new DataRemovedEffectResponse();
+                    case 42:
+                        return new DataUpdatedEffectResponse();
+                    case 43:
+                        return new SequenceBumpedEffectResponse();
 
-                default:
-                    throw new JsonSerializationException($"Unknown 'type_i'='{type}'");
+                    default:
+                        throw new JsonSerializationException($"Unknown 'type_i'='{type}'");
+                }
             }
         }
     }
-}

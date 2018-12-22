@@ -30,6 +30,11 @@ namespace stellar_dotnet_sdk.responses.operations
             Authorize = authorize;
         }
 
+        public AllowTrustOperationResponse()
+        {
+
+        }
+
         public override int TypeId => 7;
 
         /// <summary>
@@ -37,38 +42,38 @@ namespace stellar_dotnet_sdk.responses.operations
         /// </summary>
         [JsonProperty(PropertyName = "trustor")]
         [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair Trustor { get; }
+        public KeyPair Trustor { get; private set; }
 
         /// <summary>
         /// Trustee account.
         /// </summary>
         [JsonProperty(PropertyName = "trustee")]
         [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair Trustee { get; }
+        public KeyPair Trustee { get; private set; }
 
         /// <summary>
         /// Asset type (native / alphanum4 / alphanum12)
         /// </summary>
         [JsonProperty(PropertyName = "asset_type")]
-        public string AssetType { get; }
+        public string AssetType { get; private set; }
 
         /// <summary>
         /// Asset code.
         /// </summary>
         [JsonProperty(PropertyName = "asset_code")]
-        public string AssetCode { get; }
+        public string AssetCode { get; private set; }
 
         /// <summary>
         /// Asset issuer.
         /// </summary>
         [JsonProperty(PropertyName = "asset_issuer")]
-        public string AssetIssuer { get; }
+        public string AssetIssuer { get; private set; }
 
         /// <summary>
         /// true when allowing trust, false when revoking trust
         /// </summary>
         [JsonProperty(PropertyName = "authorize")]
-        public bool Authorize { get; }
+        public bool Authorize { get; private set; }
 
         /// <summary>
         /// The asset to allow trust.

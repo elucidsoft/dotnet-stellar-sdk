@@ -10,6 +10,11 @@
     {
         public override int TypeId => 10;
 
+        public SignerCreatedEffectResponse()
+        {
+
+        }
+
         /// <inheritdoc />
         public SignerCreatedEffectResponse(int weight, string publicKey)
             : base(weight, publicKey)

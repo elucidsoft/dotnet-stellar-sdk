@@ -11,6 +11,11 @@ namespace stellar_dotnet_sdk.responses.operations
     /// </summary>
     public class SetOptionsOperationResponse : OperationResponse
     {
+        public SetOptionsOperationResponse()
+        {
+
+        }
+
         /// <summary>
         ///
         /// </summary>
@@ -47,63 +52,63 @@ namespace stellar_dotnet_sdk.responses.operations
         /// A number from 0-255 representing the threshold this account sets on all operations it performs that have a low threshold.
         /// </summary>
         [JsonProperty(PropertyName = "low_threshold")]
-        public int LowThreshold { get; }
+        public int LowThreshold { get; private set; }
 
         /// <summary>
         /// A number from 0-255 representing the threshold this account sets on all operations it performs that have a medium threshold.
         /// </summary>
         [JsonProperty(PropertyName = "med_threshold")]
-        public int MedThreshold { get; }
+        public int MedThreshold { get; private set; }
 
         /// <summary>
         /// A number from 0-255 representing the threshold this account sets on all operations it performs that have a high threshold.
         /// </summary>
         [JsonProperty(PropertyName = "high_threshold")]
-        public int HighThreshold { get; }
+        public int HighThreshold { get; private set; }
 
         /// <summary>
         /// Account of the inflation destination.
         /// </summary>
         [JsonProperty(PropertyName = "inflation_dest")]
         [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair InflationDestination { get; }
+        public KeyPair InflationDestination { get; private set; }
 
         /// <summary>
         /// Gets the home domain of an account.
         /// </summary>
         [JsonProperty(PropertyName = "home_domain")]
-        public string HomeDomain { get; }
+        public string HomeDomain { get; private set; }
 
         /// <summary>
         /// A signer from an account.
         /// </summary>
         [JsonProperty(PropertyName = "signer_key")]
-        public string SignerKey { get; }
+        public string SignerKey { get; private set; }
 
         /// <summary>
         /// Weight of the signer.
         /// </summary>
         [JsonProperty(PropertyName = "signer_weight")]
-        public int SignerWeight { get; }
+        public int SignerWeight { get; private set; }
 
         /// <summary>
         /// Weight of the master key.
         /// </summary>
         [JsonProperty(PropertyName = "master_key_weight")]
-        public int MasterKeyWeight { get; }
+        public int MasterKeyWeight { get; private set; }
 
         /// <summary>
         /// Indicates which flags to clear. For details about the flags, please refer to the accounts doc. The bit mask integer subtracts
         /// from the existing flags of the account. This allows for setting specific bits without knowledge of existing flags.
         /// </summary>
         [JsonProperty(PropertyName = "clear_flags_s")]
-        public string[] ClearFlags { get; }
+        public string[] ClearFlags { get; private set; }
 
         /// <summary>
         /// Indicates which flags to set. For details about the flags, please refer to the accounts doc. The bit mask integer adds onto the
         /// existing flags of the account. This allows for setting specific bits without knowledge of existing flags.
         /// </summary>
         [JsonProperty(PropertyName = "set_flags_s")]
-        public string[] SetFlags { get; }
+        public string[] SetFlags { get; private set; }
     }
 }

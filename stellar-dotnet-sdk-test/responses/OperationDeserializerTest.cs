@@ -26,8 +26,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationCreateAccount.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertCreateAccountOperationData(back);
         }
@@ -69,8 +69,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationPayment.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertPaymentData(back);
         }
@@ -110,8 +110,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationPaymentNonNative.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertNonNativePaymentData(back);
         }
@@ -144,8 +144,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationAllowTrust.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertAllowTrustData(back);
         }
@@ -178,8 +178,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationChangeTrust.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertChangeTrustData(back);
         }
@@ -212,8 +212,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationSetOptions.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertSetOptionsData(back);
         }
@@ -251,8 +251,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationSetOptionsNonEd25519Key.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertSetOptionsOperationWithNonEd25519KeyData(back);
         }
@@ -279,8 +279,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationAccountMerge.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertAccountMergeData(back);
         }
@@ -309,8 +309,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationManageOffer.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertManageOfferData(back);
         }
@@ -343,8 +343,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationPathPayment.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertPathPaymentData(back);
         }
@@ -381,8 +381,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationPassiveOffer.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertCreatePassiveOfferData(back);
         }
@@ -414,8 +414,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationInflation.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertInflationData(back);
         }
@@ -443,8 +443,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationManageData.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertManageDataData(back);
         }
@@ -474,8 +474,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationManageDataValueEmpty.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertManageDataValueEmptyData(back);
         }
@@ -511,8 +511,8 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationBumpSequence.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-            var serialized = JsonConvert.SerializeObject(instance, new OperationDeserializer());
-            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized, new OperationDeserializer());
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
             AssertBumpSequenceData(back);
         }
