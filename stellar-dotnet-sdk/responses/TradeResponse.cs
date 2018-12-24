@@ -48,6 +48,7 @@ namespace stellar_dotnet_sdk.responses
         public bool BaseIsSeller { get; }
 
         [JsonProperty(PropertyName = "base_account")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair BaseAccount { get; }
 
         [JsonProperty(PropertyName = "base_offer_id")]
@@ -66,6 +67,7 @@ namespace stellar_dotnet_sdk.responses
         public String BaseAssetIssuer { get; }
 
         [JsonProperty(PropertyName = "counter_account")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair CounterAccount { get; }
 
         [JsonProperty(PropertyName = "counter_offer_id")]

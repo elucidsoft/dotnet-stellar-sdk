@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
@@ -21,8 +23,10 @@ namespace stellar_dotnet_sdk
             Denominator = d;
         }
 
+        [JsonProperty(PropertyName = "n")]
         public int Numerator { get; }
 
+        [JsonProperty(PropertyName = "d")]
         public int Denominator { get; }
 
         /// <summary>

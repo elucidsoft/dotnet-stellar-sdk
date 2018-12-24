@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.responses;
 
@@ -15,6 +16,16 @@ namespace stellar_dotnet_sdk_test.responses
             var account = JsonSingleton.GetInstance<AccountResponse>(json);
 
             AssertTestData(account);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeAccountResponse()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "account.json"));
+            var account = JsonConvert.DeserializeObject<AccountResponse>(json);
+            var serialized = JsonConvert.SerializeObject(account);
+            var back = JsonConvert.DeserializeObject<AccountResponse>(serialized);
+            AssertTestData(back);
         }
 
         public static void AssertTestData(AccountResponse account)

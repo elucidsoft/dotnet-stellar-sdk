@@ -41,26 +41,62 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "_links")]
         public TransactionResponseLinks Links { get; private set; }
 
+        [JsonProperty(PropertyName = "memo_type")]
+        public string MemoType { get; private set; }
+
+        [JsonProperty(PropertyName = "memo")]
+        public string MemoValue { get; private set; }
+
         public Memo Memo
         {
-            get => _Memo;
-            set
+            get
             {
-                if (_Memo != null)
+                switch (MemoType)
                 {
-                    throw new Exception("Memo has been already set.");
+                    case "none":
+                        return Memo.None();
+                    case "id":
+                        return Memo.Id(long.Parse(MemoValue));
+                    case "hash":
+                        return Memo.Hash(Convert.FromBase64String(MemoValue));
+                    case "return":
+                        return Memo.ReturnHash(Convert.FromBase64String(MemoValue));
+                    default:
+                        throw new ArgumentException(nameof(MemoType));
                 }
-
-                _Memo = value ?? throw new ArgumentNullException(nameof(value), "memo cannot be null");
-                _Memo = value;
+            }
+            private set
+            {
+                switch (value)
+                {
+                    case MemoNone _:
+                        MemoType = "none";
+                        MemoValue = null;
+                        return;
+                    case MemoId id:
+                        MemoType = "id";
+                        MemoValue = id.IdValue.ToString();
+                        return;
+                    case MemoHash h:
+                        MemoType = "hash";
+                        MemoValue = Convert.ToBase64String(h.MemoBytes);
+                        return;
+                    case MemoReturnHash r:
+                        MemoType = "return";
+                        MemoValue = Convert.ToBase64String(r.MemoBytes);
+                        return;
+                    default:
+                        throw new ArgumentException(nameof(value));
+                }
             }
         }
 
-        private Memo _Memo;
+        public TransactionResponse()
+        {
+            // Used by deserializer
+        }
 
-        public string MemoStr { get; }
-
-        public TransactionResponse(string hash, long ledger, string createdAt, KeyPair sourceAccount, string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr, string resultXdr, string resultMetaXdr, string memo, TransactionResponseLinks links)
+        public TransactionResponse(string hash, long ledger, string createdAt, KeyPair sourceAccount, string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr, string resultXdr, string resultMetaXdr, Memo memo, TransactionResponseLinks links)
         {
             Hash = hash;
             Ledger = ledger;
@@ -73,7 +109,7 @@ namespace stellar_dotnet_sdk.responses
             EnvelopeXdr = envelopeXdr;
             ResultXdr = resultXdr;
             ResultMetaXdr = resultMetaXdr;
-            MemoStr = memo;
+            Memo = memo;
             Links = links;
         }
 

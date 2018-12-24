@@ -1,11 +1,8 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace stellar_dotnet_sdk.responses.operations
+namespace stellar_dotnet_sdk.responses
 {
-    public class OperationFeeStatsResponse : OperationResponse
+    public class OperationFeeStatsResponse : Response
     {
         [JsonProperty(PropertyName = "min_accepted_fee")]
         public long Min { get; }

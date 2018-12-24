@@ -10,10 +10,20 @@ namespace stellar_dotnet_sdk.responses.operations
     /// </summary>
     public class AccountMergeOperationResponse : OperationResponse
     {
-        [JsonProperty(PropertyName = "account")]
-        public KeyPair Account { get; }
+        public override int TypeId => 8;
 
-        [JsonProperty(PropertyName = "into")] public KeyPair Into { get; }
+        [JsonProperty(PropertyName = "account")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
+        public KeyPair Account { get; private set; }
+
+        [JsonProperty(PropertyName = "into")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
+        public KeyPair Into { get; private set; }
+
+        public AccountMergeOperationResponse()
+        {
+
+        }
 
         public AccountMergeOperationResponse(KeyPair account, KeyPair into)
         {

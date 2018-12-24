@@ -16,6 +16,7 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "templated")]
         public bool Templated { get; set; }
 
+        [JsonIgnore]
         public Uri Uri
         {
             get

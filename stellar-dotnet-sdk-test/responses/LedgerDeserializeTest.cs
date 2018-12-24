@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using stellar_dotnet_sdk.responses;
 
 namespace stellar_dotnet_sdk_test.responses
@@ -14,6 +15,17 @@ namespace stellar_dotnet_sdk_test.responses
             var ledger = JsonSingleton.GetInstance<LedgerResponse>(json);
 
             AssertTestData(ledger);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserialize()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "ledger.json"));
+            var ledger = JsonSingleton.GetInstance<LedgerResponse>(json);
+            var serialized = JsonConvert.SerializeObject(ledger);
+            var back = JsonConvert.DeserializeObject<LedgerResponse>(serialized);
+
+            AssertTestData(back);
         }
 
         public static void AssertTestData(LedgerResponse ledger)
