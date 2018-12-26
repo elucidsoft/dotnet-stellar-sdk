@@ -195,7 +195,6 @@ namespace stellar_dotnet_sdk
         public static KeyPair FromBIP39Seed(string seed, uint accountIndex)
         {
             BIP32 bip32 = new BIP32();
-            Xdr
 
             string path = $"m/44'/148'/{accountIndex}'";
             return FromSecretSeed(bip32.DerivePath(path, seed).Key);
