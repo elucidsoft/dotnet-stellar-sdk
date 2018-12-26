@@ -4,9 +4,9 @@ namespace stellar_dotnet_sdk.responses.operations
 {
     /// <summary>
     /// The response is for the genesis ledger of the Stellar network, and the links in the _links attribute provide links to other relavant resources in Horizon.
-    /// The key of each link specifies that links relation to the current resource, and transactions means  “Transactions that occurred in this operation”. 
-    /// 
-    /// The transactions link is also templated, which means that the href attribute of the link is actually a URI template, as specified by RFC 6570. We use URI templates 
+    /// The key of each link specifies that links relation to the current resource, and transactions means  “Transactions that occurred in this operation”.
+    ///
+    /// The transactions link is also templated, which means that the href attribute of the link is actually a URI template, as specified by RFC 6570. We use URI templates
     /// to show you what parameters a give resource can take.
     /// </summary>
     public class OperationResponseLinks
@@ -40,6 +40,11 @@ namespace stellar_dotnet_sdk.responses.operations
         /// </summary>
         [JsonProperty(PropertyName = "transaction")]
         public Link Transaction { get; private set; }
+
+        public OperationResponseLinks()
+        {
+
+        }
 
         /// <summary>
         /// Creates an OperationsResponseLinks object type.

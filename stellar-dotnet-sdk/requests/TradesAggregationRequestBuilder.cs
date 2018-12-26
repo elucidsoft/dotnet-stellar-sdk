@@ -33,6 +33,12 @@ namespace stellar_dotnet_sdk.requests
             return this;
         }
 
+        public TradesAggregationRequestBuilder Offset(long offset)
+        {
+            UriBuilder.SetQueryParam("offset", offset.ToString());
+            return this;
+        }
+
         public TradesAggregationRequestBuilder BaseAsset(Asset asset)
         {
             UriBuilder.SetQueryParam("base_asset_type", asset.GetType());

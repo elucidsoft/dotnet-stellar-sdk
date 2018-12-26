@@ -10,6 +10,11 @@ namespace stellar_dotnet_sdk.responses.operations
     /// </summary>
     public class ChangeTrustOperationResponse : OperationResponse
     {
+        public ChangeTrustOperationResponse()
+        {
+
+        }
+
         public ChangeTrustOperationResponse(string assetCode, string assetIssuer, string assetType, string limit, KeyPair trustee, KeyPair trustor)
         {
             AssetCode = assetCode;
@@ -20,22 +25,27 @@ namespace stellar_dotnet_sdk.responses.operations
             Trustor = trustor;
         }
 
+        public override int TypeId => 6;
+
         [JsonProperty(PropertyName = "asset_code")]
-        public string AssetCode { get; }
+        public string AssetCode { get; private set; }
 
         [JsonProperty(PropertyName = "asset_issuer")]
-        public string AssetIssuer { get; }
+        public string AssetIssuer { get; private set; }
 
         [JsonProperty(PropertyName = "asset_type")]
-        public string AssetType { get; }
+        public string AssetType { get; private set; }
 
-        [JsonProperty(PropertyName = "limit")] public string Limit { get; }
+        [JsonProperty(PropertyName = "limit")]
+        public string Limit { get; private set; }
 
         [JsonProperty(PropertyName = "trustee")]
-        public KeyPair Trustee { get; }
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
+        public KeyPair Trustee { get; private set; }
 
         [JsonProperty(PropertyName = "trustor")]
-        public KeyPair Trustor { get; }
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
+        public KeyPair Trustor { get; private set; }
 
         public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);
     }

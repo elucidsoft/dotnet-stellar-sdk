@@ -1,4 +1,6 @@
-﻿namespace stellar_dotnet_sdk.responses.operations
+﻿using Newtonsoft.Json;
+
+namespace stellar_dotnet_sdk.responses.operations
 {
     /// <summary>
     /// Represents ManageData operation response.
@@ -8,9 +10,18 @@
     /// </summary>
     public class ManageDataOperationResponse : OperationResponse
     {
-        public string Name { get; }
+        public override int TypeId => 10;
 
-        public string Value { get; }
+        [JsonProperty]
+        public string Name { get; private set; }
+
+        [JsonProperty]
+        public string Value { get; private set; }
+
+        public ManageDataOperationResponse()
+        {
+
+        }
 
         public ManageDataOperationResponse(string name, string value)
         {

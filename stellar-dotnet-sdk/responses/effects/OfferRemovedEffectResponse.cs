@@ -8,5 +8,6 @@
     /// </summary>
     public class OfferRemovedEffectResponse : EffectResponse
     {
+        public override int TypeId => 31;
     }
 }

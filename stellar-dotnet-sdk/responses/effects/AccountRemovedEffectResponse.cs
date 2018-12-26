@@ -8,5 +8,6 @@
     /// </summary>
     public class AccountRemovedEffectResponse : EffectResponse
     {
+        public override int TypeId => 1;
     }
 }

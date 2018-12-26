@@ -1,8 +1,10 @@
 ﻿using System.Linq;
 using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace stellar_dotnet_sdk.responses
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public abstract class Response
     {
         protected int RateLimitLimit { get; private set; }

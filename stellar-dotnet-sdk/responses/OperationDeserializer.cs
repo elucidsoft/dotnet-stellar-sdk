@@ -5,52 +5,57 @@ using stellar_dotnet_sdk.responses.operations;
 
 namespace stellar_dotnet_sdk.responses
 {
-    public class OperationDeserializer : JsonConverter
+    public class OperationDeserializer : JsonConverter<OperationResponse>
     {
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override bool CanWrite => false;
+
+        public override void WriteJson(JsonWriter writer, OperationResponse value, JsonSerializer serializer)
         {
             throw new NotImplementedException();
         }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override OperationResponse ReadJson(JsonReader reader, Type objectType, OperationResponse existingValue,
+            bool hasExistingValue,
+            JsonSerializer serializer)
         {
             var jsonObject = JObject.Load(reader);
             var type = jsonObject.GetValue("type_i").ToObject<int>();
+            var response = CreateResponse(type);
+            serializer.Populate(jsonObject.CreateReader(), response);
+            return response;
+        }
 
+        private static OperationResponse CreateResponse(int type)
+        {
             switch (type)
             {
                 case 0:
-                    return JsonSingleton.GetInstance<CreateAccountOperationResponse>(jsonObject.Root.ToString());
+                    return new CreateAccountOperationResponse();
                 case 1:
-                    return JsonSingleton.GetInstance<PaymentOperationResponse>(jsonObject.Root.ToString());
+                    return new PaymentOperationResponse();
                 case 2:
-                    return JsonSingleton.GetInstance<PathPaymentOperationResponse>(jsonObject.Root.ToString());
+                    return new PathPaymentOperationResponse();
                 case 3:
-                    return JsonSingleton.GetInstance<ManageOfferOperationResponse>(jsonObject.Root.ToString());
+                    return new ManageOfferOperationResponse();
                 case 4:
-                    return JsonSingleton.GetInstance<CreatePassiveOfferOperationResponse>(jsonObject.Root.ToString());
+                    return new CreatePassiveOfferOperationResponse();
                 case 5:
-                    return JsonSingleton.GetInstance<SetOptionsOperationResponse>(jsonObject.Root.ToString());
+                    return new SetOptionsOperationResponse();
                 case 6:
-                    return JsonSingleton.GetInstance<ChangeTrustOperationResponse>(jsonObject.Root.ToString());
+                    return new ChangeTrustOperationResponse();
                 case 7:
-                    return JsonSingleton.GetInstance<AllowTrustOperationResponse>(jsonObject.Root.ToString());
+                    return new AllowTrustOperationResponse();
                 case 8:
-                    return JsonSingleton.GetInstance<AccountMergeOperationResponse>(jsonObject.Root.ToString());
+                    return new AccountMergeOperationResponse();
                 case 9:
-                    return JsonSingleton.GetInstance<InflationOperationResponse>(jsonObject.Root.ToString());
+                    return new InflationOperationResponse();
                 case 10:
-                    return JsonSingleton.GetInstance<ManageDataOperationResponse>(jsonObject.Root.ToString());
+                    return new ManageDataOperationResponse();
                 case 11:
-                    return JsonSingleton.GetInstance<BumpSequenceOperationResponse>(jsonObject.Root.ToString());
+                    return new BumpSequenceOperationResponse();
                 default:
-                    throw new Exception("Invalid operation type");
+                    throw new JsonSerializationException($"Invalid operation 'type_i'='{type}'");
             }
-        }
-
-        public override bool CanConvert(Type objectType)
-        {
-            return objectType == typeof(OperationResponse);
         }
     }
 }
