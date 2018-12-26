@@ -10,6 +10,11 @@ namespace stellar_dotnet_sdk.responses.effects
     /// </summary>
     public class AccountCreditedEffectResponse : EffectResponse
     {
+        public AccountCreditedEffectResponse()
+        {
+
+        }
+
         /// <inheritdoc />
         public AccountCreditedEffectResponse(string amount, string assetType, string assetCode, string assetIssuer)
         {
@@ -19,17 +24,19 @@ namespace stellar_dotnet_sdk.responses.effects
             AssetIssuer = assetIssuer;
         }
 
+        public override int TypeId => 2;
+
         [JsonProperty(PropertyName = "amount")]
-        public string Amount { get; }
+        public string Amount { get; private set; }
 
         [JsonProperty(PropertyName = "asset_type")]
-        public string AssetType { get; }
+        public string AssetType { get; private set; }
 
         [JsonProperty(PropertyName = "asset_code")]
-        public string AssetCode { get; }
+        public string AssetCode { get; private set; }
 
         [JsonProperty(PropertyName = "asset_issuer")]
-        public string AssetIssuer { get; }
+        public string AssetIssuer { get; private set; }
 
         public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);
     }

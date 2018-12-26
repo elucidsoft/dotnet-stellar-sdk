@@ -10,5 +10,6 @@ namespace stellar_dotnet_sdk.responses.effects
     /// </summary>
     public class AccountInflationDestinationUpdatedEffectResponse : EffectResponse
     {
+        public override int TypeId => 7;
     }
 }

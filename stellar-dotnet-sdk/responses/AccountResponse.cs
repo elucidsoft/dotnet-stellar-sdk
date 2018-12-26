@@ -21,6 +21,7 @@ namespace stellar_dotnet_sdk.responses
         }
 
         [JsonProperty(PropertyName = "account_id")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair KeyPair { get; set; }
 
         [JsonProperty(PropertyName = "sequence")]

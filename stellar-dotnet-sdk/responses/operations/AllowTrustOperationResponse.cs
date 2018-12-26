@@ -30,41 +30,50 @@ namespace stellar_dotnet_sdk.responses.operations
             Authorize = authorize;
         }
 
+        public AllowTrustOperationResponse()
+        {
+
+        }
+
+        public override int TypeId => 7;
+
         /// <summary>
         /// Trustor account.
         /// </summary>
         [JsonProperty(PropertyName = "trustor")]
-        public KeyPair Trustor { get; }
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
+        public KeyPair Trustor { get; private set; }
 
         /// <summary>
         /// Trustee account.
         /// </summary>
         [JsonProperty(PropertyName = "trustee")]
-        public KeyPair Trustee { get; }
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
+        public KeyPair Trustee { get; private set; }
 
         /// <summary>
         /// Asset type (native / alphanum4 / alphanum12)
         /// </summary>
         [JsonProperty(PropertyName = "asset_type")]
-        public string AssetType { get; }
+        public string AssetType { get; private set; }
 
         /// <summary>
         /// Asset code.
         /// </summary>
         [JsonProperty(PropertyName = "asset_code")]
-        public string AssetCode { get; }
+        public string AssetCode { get; private set; }
 
         /// <summary>
         /// Asset issuer.
         /// </summary>
         [JsonProperty(PropertyName = "asset_issuer")]
-        public string AssetIssuer { get; }
+        public string AssetIssuer { get; private set; }
 
         /// <summary>
         /// true when allowing trust, false when revoking trust
         /// </summary>
         [JsonProperty(PropertyName = "authorize")]
-        public bool Authorize { get; }
+        public bool Authorize { get; private set; }
 
         /// <summary>
         /// The asset to allow trust.

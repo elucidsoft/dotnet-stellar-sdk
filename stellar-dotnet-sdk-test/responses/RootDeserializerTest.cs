@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk.responses;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace stellar_dotnet_sdk_test.responses
 {
@@ -13,6 +14,23 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "root.json"));
             var root = JsonSingleton.GetInstance<RootResponse>(json);
 
+            AssertTestData(root);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserialize()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "root.json"));
+            var root = JsonSingleton.GetInstance<RootResponse>(json);
+            var serialized = JsonConvert.SerializeObject(root);
+            var back = JsonConvert.DeserializeObject<RootResponse>(serialized);
+
+            AssertTestData(back);
+        }
+
+
+        private static void AssertTestData(RootResponse root)
+        {
             Assert.AreEqual(root.HorizonVersion, "snapshot-c5fe0ff");
             Assert.AreEqual(root.StellarCoreVersion, "stellar-core 9.2.0 (7561c1d53366ec79b908de533726269e08474f77)");
             Assert.AreEqual(root.HistoryLatestLedger, 18369116);

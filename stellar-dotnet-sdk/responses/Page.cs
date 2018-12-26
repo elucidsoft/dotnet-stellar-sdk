@@ -14,10 +14,19 @@ namespace stellar_dotnet_sdk.responses.page
     /// <typeparam name="T"></typeparam>
     public class Page<T> : Response
     {
-        [JsonProperty(PropertyName = "records")]
-        public List<T> Records { get; private set; }
+        public class EmbeddedRecords
+        {
+            [JsonProperty(PropertyName = "records")]
+            public List<T> Records { get; private set; }
+        }
 
-        [JsonProperty(PropertyName = "links")] public PageLinks Links { get; private set; }
+        [JsonProperty(PropertyName = "_embedded")]
+        public EmbeddedRecords Embedded { get; set; }
+
+        public List<T> Records => Embedded.Records;
+
+        [JsonProperty(PropertyName = "_links")]
+        public PageLinks Links { get; private set; }
 
         /// <summary>
         ///     The next page of results or null when there is no more results

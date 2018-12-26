@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.responses;
 
@@ -17,10 +18,23 @@ namespace stellar_dotnet_sdk_test.responses
             AssertTestData(orderBook);
         }
 
+        [TestMethod]
+        public void TestSerializeDeserialize()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "orderBook.json"));
+            var orderBook = JsonSingleton.GetInstance<OrderBookResponse>(json);
+            var serialized = JsonConvert.SerializeObject(orderBook);
+            var back = JsonConvert.DeserializeObject<OrderBookResponse>(serialized);
+
+            AssertTestData(back);
+        }
+
         public static void AssertTestData(OrderBookResponse orderBook)
         {
             Assert.AreEqual(orderBook.OrderBookBase, new AssetTypeNative());
-            Assert.AreEqual(orderBook.Counter, Asset.CreateNonNativeAsset("DEMO", KeyPair.FromAccountId("GBAMBOOZDWZPVV52RCLJQYMQNXOBLOXWNQAY2IF2FREV2WL46DBCH3BE")));
+            Assert.AreEqual(orderBook.Counter,
+                Asset.CreateNonNativeAsset("DEMO",
+                    KeyPair.FromAccountId("GBAMBOOZDWZPVV52RCLJQYMQNXOBLOXWNQAY2IF2FREV2WL46DBCH3BE")));
 
             Assert.AreEqual(orderBook.Bids[0].Amount, "31.4007644");
             Assert.AreEqual(orderBook.Bids[0].Price, "0.0024224");

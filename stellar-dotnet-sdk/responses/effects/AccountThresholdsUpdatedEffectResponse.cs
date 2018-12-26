@@ -10,6 +10,11 @@ namespace stellar_dotnet_sdk.responses.effects
     /// </summary>
     public class AccountThresholdsUpdatedEffectResponse : EffectResponse
     {
+        public AccountThresholdsUpdatedEffectResponse()
+        {
+
+        }
+
         /// <inheritdoc />
         public AccountThresholdsUpdatedEffectResponse(int lowThreshold, int medThreshold, int highThreshold)
         {
@@ -18,13 +23,15 @@ namespace stellar_dotnet_sdk.responses.effects
             HighThreshold = highThreshold;
         }
 
+        public override int TypeId => 4;
+
         [JsonProperty(PropertyName = "low_threshold")]
-        public int LowThreshold { get; }
+        public int LowThreshold { get; private set; }
 
         [JsonProperty(PropertyName = "med_threshold")]
-        public int MedThreshold { get; }
+        public int MedThreshold { get; private set; }
 
         [JsonProperty(PropertyName = "high_threshold")]
-        public int HighThreshold { get; }
+        public int HighThreshold { get; private set; }
     }
 }

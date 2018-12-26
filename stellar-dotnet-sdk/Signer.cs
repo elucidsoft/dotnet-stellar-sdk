@@ -50,16 +50,22 @@ namespace stellar_dotnet_sdk
         /// <returns>sdkxdr.SignerKey</returns>
         public static sdkxdr.SignerKey PreAuthTx(Transaction tx)
         {
+            return PreAuthTx(tx, Network.Current);
+        }
+
+        /// <summary>
+        ///     Create <code>preAuthTx</code> <see cref="sdkxdr.SignerKey" /> from
+        ///     a <see cref="sdkxdr.Transaction" /> hash.
+        /// </summary>
+        /// <param name="tx"></param>
+        /// <param name="network"></param>
+        /// <returns>sdkxdr.SignerKey</returns>
+        public static sdkxdr.SignerKey PreAuthTx(Transaction tx, Network network)
+        {
             if (tx == null)
                 throw new ArgumentNullException(nameof(tx), "tx cannot be null");
 
-            var signerKey = new sdkxdr.SignerKey();
-            var value = CreateUint256(tx.Hash());
-
-            signerKey.Discriminant = sdkxdr.SignerKeyType.Create(sdkxdr.SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_PRE_AUTH_TX);
-            signerKey.PreAuthTx = value;
-
-            return signerKey;
+            return PreAuthTx(tx.Hash(network));
         }
 
         /// <summary>

@@ -29,12 +29,15 @@ namespace stellar_dotnet_sdk.responses
         public string PagingToken { get; private set; }
 
         [JsonProperty(PropertyName = "seller")]
+        [JsonConverter(typeof(KeyPairTypeAdapter))]
         public KeyPair Seller { get; private set; }
 
         [JsonProperty(PropertyName = "selling")]
+        [JsonConverter(typeof(AssetDeserializer))]
         public Asset Selling { get; private set; }
 
         [JsonProperty(PropertyName = "buying")]
+        [JsonConverter(typeof(AssetDeserializer))]
         public Asset Buying { get; private set; }
 
         [JsonProperty(PropertyName = "amount")]
