@@ -1,5 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
+using stellar_dotnet_sdk.responses.effects;
+using stellar_dotnet_sdk.responses.operations;
+using stellar_dotnet_sdk.responses.page;
 
 namespace stellar_dotnet_sdk.responses
 {
@@ -119,26 +122,29 @@ namespace stellar_dotnet_sdk.responses
         public class TransactionResponseLinks
         {
             [JsonProperty(PropertyName = "account")]
-            public Link Account { get; private set; }
+            public Link<AccountResponse> Account { get; private set; }
 
             [JsonProperty(PropertyName = "effects")]
-            public Link Effects { get; private set; }
+            public Link<Page<EffectResponse>> Effects { get; private set; }
 
             [JsonProperty(PropertyName = "ledger")]
-            public Link Ledger { get; private set; }
+            public Link<LedgerResponse> Ledger { get; private set; }
 
             [JsonProperty(PropertyName = "operations")]
-            public Link Operations { get; private set; }
+            public Link<Page<OperationResponse>> Operations { get; private set; }
 
             [JsonProperty(PropertyName = "precedes")]
-            public Link Precedes { get; private set; }
+            public Link<TransactionResponse> Precedes { get; private set; }
 
-            [JsonProperty(PropertyName = "self")] public Link Self { get; private set; }
+            [JsonProperty(PropertyName = "self")]
+            public Link<TransactionResponse> Self { get; private set; }
 
             [JsonProperty(PropertyName = "succeeds")]
-            public Link Succeeds { get; private set; }
+            public Link<TransactionResponse> Succeeds { get; private set; }
 
-            public TransactionResponseLinks(Link account, Link effects, Link ledger, Link operations, Link self, Link precedes, Link succeeds)
+            public TransactionResponseLinks(Link<AccountResponse> account, Link<Page<EffectResponse>> effects,
+                Link<LedgerResponse> ledger, Link<Page<OperationResponse>> operations, Link<TransactionResponse> self,
+                Link<TransactionResponse> precedes, Link<TransactionResponse> succeeds)
             {
                 Account = account;
                 Effects = effects;

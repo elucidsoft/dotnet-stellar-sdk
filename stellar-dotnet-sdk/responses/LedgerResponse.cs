@@ -1,5 +1,8 @@
 ﻿using System;
 using Newtonsoft.Json;
+using stellar_dotnet_sdk.responses.effects;
+using stellar_dotnet_sdk.responses.operations;
+using stellar_dotnet_sdk.responses.page;
 
 namespace stellar_dotnet_sdk.responses
 {
@@ -74,17 +77,19 @@ namespace stellar_dotnet_sdk.responses
         public class LedgerResponseLinks
         {
             [JsonProperty(PropertyName = "effects")]
-            public Link Effects { get; private set; }
+            public Link<Page<EffectResponse>> Effects { get; private set; }
 
             [JsonProperty(PropertyName = "operations")]
-            public Link Operations { get; private set; }
+            public Link<Page<OperationResponse>> Operations { get; private set; }
 
-            [JsonProperty(PropertyName = "self")] public Link Self { get; private set; }
+            [JsonProperty(PropertyName = "self")]
+            public Link<LedgerResponse> Self { get; private set; }
 
             [JsonProperty(PropertyName = "transactions")]
-            public Link Transactions { get; private set; }
+            public Link<Page<TransactionResponse>> Transactions { get; private set; }
 
-            public LedgerResponseLinks(Link effects, Link operations, Link self, Link transactions)
+            public LedgerResponseLinks(Link<Page<EffectResponse>> effects, Link<Page<OperationResponse>> operations,
+                Link<LedgerResponse> self, Link<Page<TransactionResponse>> transactions)
             {
                 Effects = effects;
                 Operations = operations;
