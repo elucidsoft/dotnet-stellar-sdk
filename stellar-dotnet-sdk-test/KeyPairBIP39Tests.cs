@@ -116,9 +116,13 @@ namespace stellar_dotnet_sdk_test
             public static void AssertDerivedAccount(string bip39Seed, uint accountIndex, string expectedAccountId, string expectedSecret)
             {
 
-                KeyPair pair = KeyPair.FromBIP39Seed(bip39Seed, accountIndex);
-                Assert.AreEqual(expectedAccountId, pair.AccountId);
-                Assert.AreEqual(expectedSecret, pair.SecretSeed);
+                KeyPair pair1 = KeyPair.FromBIP39Seed(bip39Seed, accountIndex);
+                Assert.AreEqual(expectedAccountId, pair1.AccountId);
+                Assert.AreEqual(expectedSecret, pair1.SecretSeed);
+
+                KeyPair pair2 = KeyPair.FromBIP39Seed(bip39Seed.HexToByteArray(), accountIndex);
+                Assert.AreEqual(expectedAccountId, pair2.AccountId);
+                Assert.AreEqual(expectedSecret, pair2.SecretSeed);
             }
         }
 
