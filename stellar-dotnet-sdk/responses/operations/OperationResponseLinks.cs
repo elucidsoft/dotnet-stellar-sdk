@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using stellar_dotnet_sdk.responses.effects;
+using stellar_dotnet_sdk.responses.page;
 
 namespace stellar_dotnet_sdk.responses.operations
 {
@@ -15,31 +17,31 @@ namespace stellar_dotnet_sdk.responses.operations
         /// This endpoint represents effects that occurred as a result of a given operation.
         /// </summary>
         [JsonProperty(PropertyName = "effects")]
-        public Link Effects { get; private set; }
+        public Link<Page<EffectResponse>> Effects { get; private set; }
 
         /// <summary>
         /// This endpoint represents precedes that occurred as a result of a given operation.
         /// </summary>
         [JsonProperty(PropertyName = "precedes")]
-        public Link Precedes { get; private set; }
+        public Link<OperationResponse> Precedes { get; private set; }
 
         /// <summary>
         /// This endpoint represents self that occurred as a result of a given operation.
         /// </summary>
         [JsonProperty(PropertyName = "self")]
-        public Link Self { get; private set; }
+        public Link<OperationResponse> Self { get; private set; }
 
         /// <summary>
         /// This endpoint represents succeeds that occurred as a result of a given operation.
         /// </summary>
         [JsonProperty(PropertyName = "succeeds")]
-        public Link Succeeds { get; private set; }
+        public Link<OperationResponse> Succeeds { get; private set; }
 
         /// <summary>
         /// This endpoint represents transaction that occurred as a result of a given operation.
         /// </summary>
         [JsonProperty(PropertyName = "transaction")]
-        public Link Transaction { get; private set; }
+        public Link<TransactionResponse> Transaction { get; private set; }
 
         public OperationResponseLinks()
         {
@@ -54,7 +56,8 @@ namespace stellar_dotnet_sdk.responses.operations
         /// <param name="self">This endpoint represents self that occurred as a result of a given operation.</param>
         /// <param name="succeeds">This endpoint represents succeeds that occurred as a result of a given operation.</param>
         /// <param name="transaction">This endpoint represents transaction that occurred as a result of a given operation.</param>
-        public OperationResponseLinks(Link effects, Link precedes, Link self, Link succeeds, Link transaction)
+        public OperationResponseLinks(Link<Page<EffectResponse>> effects, Link<OperationResponse> precedes,
+            Link<OperationResponse> self, Link<OperationResponse> succeeds, Link<TransactionResponse> transaction)
         {
             Effects = effects;
             Precedes = precedes;
