@@ -5,7 +5,7 @@ using System.Text;
 
 namespace stellar_dotnet_sdk.responses
 {
-    public class AccountDataResponse
+    public class AccountDataResponse : Response
     {
 
         [JsonProperty(PropertyName = "value")]

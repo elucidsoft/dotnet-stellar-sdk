@@ -32,7 +32,8 @@ namespace stellar_dotnet_sdk_test.responses
 
         public static void AssertTestData(Page<PathResponse> pathsPage)
         {
-            Assert.IsNotNull(pathsPage.NextPage());
+            Assert.IsNull(pathsPage.NextPage());
+            Assert.IsNull(pathsPage.PreviousPage());
 
             Assert.AreEqual(pathsPage.Records[0].DestinationAmount, "20.0000000");
             Assert.AreEqual(pathsPage.Records[0].DestinationAsset,

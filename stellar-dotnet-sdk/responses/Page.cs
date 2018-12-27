@@ -26,25 +26,18 @@ namespace stellar_dotnet_sdk.responses.page
         public List<T> Records => Embedded.Records;
 
         [JsonProperty(PropertyName = "_links")]
-        public PageLinks Links { get; private set; }
+        public PageLinks<T> Links { get; private set; }
+
+        /// <summary>
+        ///     The previous page of results or null when there is no more results
+        /// </summary>
+        /// <returns></returns>
+        public Task<Page<T>> PreviousPage() => Links.Prev?.Follow();
 
         /// <summary>
         ///     The next page of results or null when there is no more results
         /// </summary>
         /// <returns></returns>
-        public async Task<Page<T>> NextPage()
-        {
-            if (Links.Next == null)
-                return null;
-
-            var responseHandler = new ResponseHandler<Page<T>>();
-            var uri = new Uri(Links.Next.Href);
-
-            using (var httpClient = new HttpClient())
-            {
-                var response = await httpClient.GetAsync(uri);
-                return await responseHandler.HandleResponse(response);
-            }
-        }
+        public Task<Page<T>> NextPage() => Links.Next?.Follow();
     }
 }
