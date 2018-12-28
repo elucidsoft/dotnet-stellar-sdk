@@ -2,7 +2,7 @@
 language: csharp
 mono: none
 dotnet: 2.1.300
-dist: trusty
+dist: windows
 script:
  - dotnet restore ./stellar-dotnet-sdk.sln
  - dotnet build ./dotnetcore/
