@@ -12,5 +12,5 @@ script:
  - dotnet test ./stellar-dotnet-sdk-test/
  - dotnet test ./stellar-dotnet-sdk-test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:ExcludeByFile=\"../stellar-dotnet-sdk/chaos.nacl/**/*.cs\" -p:ExcludeByFile=\"../stellar-dotnet-sdk/xdr/generated/*.cs\"
  - bash <(curl -s https://codecov.io/bash) -t 3d1827ed-854c-484b-a639-02544eb921b8
- - docfx metadata ./stellar-dotnet-docfx/stelldocfx.json
- - docfx build ./stellar-dotnet-docfx/stelldocfx.json
+ - docfx metadata ./stellar-dotnet-docfx/docfx.json
+ - docfx build ./stellar-dotnet-docfx/docfx.json
