@@ -1,7 +1,6 @@
 
 language: csharp
 mono: none
-dotnet: latest
 os: 
  - windows
 install: true
