@@ -2,9 +2,9 @@
 <CoverageSession>
   <Summary numSequencePoints="9622" visitedSequencePoints="8110" numBranchPoints="9622" visitedBranchPoints="8110" sequenceCoverage="0.843" branchCoverage="0.843" maxCyclomaticComplexity="2041" minCyclomaticComplexity="2041" visitedClasses="235" numClasses="260" visitedMethods="971" numMethods="1133" />
   <Modules>
-    <Module hash="DBCF28B9-4B93-4F74-907F-0F6E8CD3BF8B">
+    <Module hash="7A4CF559-31E7-44F3-917E-026A7EE4C5B6">
       <ModulePath>stellar-dotnet-sdk.dll</ModulePath>
-      <ModuleTime>2018-12-28T05:31:03</ModuleTime>
+      <ModuleTime>2018-12-28T05:43:01</ModuleTime>
       <ModuleName>stellar-dotnet-sdk</ModuleName>
       <Files>
         <File uid="1" fullPath="C:\Users\ericm\Documents\GitHub\dotnet-stellar-sdk\stellar-dotnet-sdk\Account.cs" />
@@ -1183,9 +1183,9 @@
                 <SequencePoint vc="60198" upsid="84" ordinal="0" sl="84" sc="1" el="84" ec="2" bec="0" bev="0" fileid="10" />
                 <SequencePoint vc="60198" upsid="85" ordinal="1" sl="85" sc="1" el="85" ec="2" bec="0" bev="0" fileid="10" />
                 <SequencePoint vc="60198" upsid="88" ordinal="2" sl="88" sc="1" el="88" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="49352" upsid="89" ordinal="3" sl="89" sc="1" el="89" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="10846" upsid="91" ordinal="4" sl="91" sc="1" el="91" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="10846" upsid="92" ordinal="5" sl="92" sc="1" el="92" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="49362" upsid="89" ordinal="3" sl="89" sc="1" el="89" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="10836" upsid="91" ordinal="4" sl="91" sc="1" el="91" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="10836" upsid="92" ordinal="5" sl="92" sc="1" el="92" ec="2" bec="0" bev="0" fileid="10" />
                 <SequencePoint vc="0" upsid="94" ordinal="6" sl="94" sc="1" el="94" ec="2" bec="0" bev="0" fileid="10" />
                 <SequencePoint vc="0" upsid="95" ordinal="7" sl="95" sc="1" el="95" ec="2" bec="0" bev="0" fileid="10" />
                 <SequencePoint vc="0" upsid="97" ordinal="8" sl="97" sc="1" el="97" ec="2" bec="0" bev="0" fileid="10" />
@@ -1194,11 +1194,11 @@
               <BranchPoints>
                 <BranchPoint vc="60198" upsid="88" ordinal="0" path="0" offset="6" offsetend="8" sl="88" fileid="10" />
                 <BranchPoint vc="0" upsid="88" ordinal="1" path="1" offset="6" offsetend="15" sl="88" fileid="10" />
-                <BranchPoint vc="49352" upsid="88" ordinal="2" path="0" offset="18" offsetend="20" sl="88" fileid="10" />
-                <BranchPoint vc="10846" upsid="88" ordinal="3" path="1" offset="18" offsetend="27" sl="88" fileid="10" />
-                <BranchPoint vc="10846" upsid="91" ordinal="4" path="0" offset="30" offsetend="32" sl="91" fileid="10" />
+                <BranchPoint vc="49362" upsid="88" ordinal="2" path="0" offset="18" offsetend="20" sl="88" fileid="10" />
+                <BranchPoint vc="10836" upsid="88" ordinal="3" path="1" offset="18" offsetend="27" sl="88" fileid="10" />
+                <BranchPoint vc="10836" upsid="91" ordinal="4" path="0" offset="30" offsetend="32" sl="91" fileid="10" />
                 <BranchPoint vc="0" upsid="91" ordinal="5" path="1" offset="30" offsetend="39" sl="91" fileid="10" />
-                <BranchPoint vc="10846" upsid="91" ordinal="6" path="0" offset="42" offsetend="44" sl="91" fileid="10" />
+                <BranchPoint vc="10836" upsid="91" ordinal="6" path="0" offset="42" offsetend="44" sl="91" fileid="10" />
                 <BranchPoint vc="0" upsid="91" ordinal="7" path="1" offset="42" offsetend="51" sl="91" fileid="10" />
                 <BranchPoint vc="0" upsid="94" ordinal="8" path="0" offset="54" offsetend="56" sl="94" fileid="10" />
                 <BranchPoint vc="0" upsid="94" ordinal="9" path="1" offset="54" offsetend="63" sl="94" fileid="10" />
@@ -1215,16 +1215,16 @@
               <SequencePoints>
                 <SequencePoint vc="63280" upsid="101" ordinal="0" sl="101" sc="1" el="101" ec="2" bec="0" bev="0" fileid="10" />
                 <SequencePoint vc="63280" upsid="102" ordinal="1" sl="102" sc="1" el="102" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="52022" upsid="103" ordinal="2" sl="103" sc="1" el="103" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="11258" upsid="105" ordinal="3" sl="105" sc="1" el="105" ec="2" bec="0" bev="0" fileid="10" />
-                <SequencePoint vc="11258" upsid="106" ordinal="4" sl="106" sc="1" el="106" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="52048" upsid="103" ordinal="2" sl="103" sc="1" el="103" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="11232" upsid="105" ordinal="3" sl="105" sc="1" el="105" ec="2" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="11232" upsid="106" ordinal="4" sl="106" sc="1" el="106" ec="2" bec="0" bev="0" fileid="10" />
                 <SequencePoint vc="0" upsid="108" ordinal="5" sl="108" sc="1" el="108" ec="2" bec="0" bev="0" fileid="10" />
                 <SequencePoint vc="63280" upsid="109" ordinal="6" sl="109" sc="1" el="109" ec="2" bec="0" bev="0" fileid="10" />
               </SequencePoints>
               <BranchPoints>
-                <BranchPoint vc="52022" upsid="102" ordinal="0" path="0" offset="8" offsetend="10" sl="102" fileid="10" />
-                <BranchPoint vc="11258" upsid="102" ordinal="1" path="1" offset="8" offsetend="18" sl="102" fileid="10" />
-                <BranchPoint vc="11258" upsid="105" ordinal="2" path="0" offset="25" offsetend="27" sl="105" fileid="10" />
+                <BranchPoint vc="52048" upsid="102" ordinal="0" path="0" offset="8" offsetend="10" sl="102" fileid="10" />
+                <BranchPoint vc="11232" upsid="102" ordinal="1" path="1" offset="8" offsetend="18" sl="102" fileid="10" />
+                <BranchPoint vc="11232" upsid="105" ordinal="2" path="0" offset="25" offsetend="27" sl="105" fileid="10" />
                 <BranchPoint vc="0" upsid="105" ordinal="3" path="1" offset="25" offsetend="35" sl="105" fileid="10" />
               </BranchPoints>
               <MethodPoint vc="6" upsid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="101" ec="1" el="109" bec="0" bev="0" fileid="10" xmlns:p8="xsi" />
