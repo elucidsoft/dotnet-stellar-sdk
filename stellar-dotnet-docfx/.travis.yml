@@ -1,0 +1,18 @@
+language: csharp
+mono:none
+dotnet: 2.1.300
+dist: windows
+script:
+ - dotnet restore ./stellar-dotnet-sdk.sln
+ - dotnet build ./dotnetcore/
+ - choco install docfx
+ - docfx metadata docfx.json
+ - docfx build docfx.json
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  local-dir: ./stellar-dotnet-docfx/_site/
+  on:
+    branch: master
