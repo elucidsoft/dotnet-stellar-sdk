@@ -24,5 +24,3 @@ Console.WriteLine("Secret: " + keypair.SecretSeed);
 ## Other References
 
 - [Account Concept](https://www.stellar.org/developers/guides/concepts/accounts.html)
-
-Test
