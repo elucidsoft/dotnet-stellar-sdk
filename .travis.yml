@@ -14,7 +14,7 @@ script:
  - bash <(curl -s https://codecov.io/bash) -t 3d1827ed-854c-484b-a639-02544eb921b8
  - docfx metadata ./stellar-dotnet-docfx/docfx.json
  - docfx build ./stellar-dotnet-docfx/docfx.json
- deploy:
+deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
