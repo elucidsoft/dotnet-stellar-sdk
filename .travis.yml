@@ -1,5 +1,6 @@
 language: csharp
-mono: none
+mono:
+ - latest
 dotnet: 2.1.300
 dist: trusty
 script:
@@ -10,7 +11,8 @@ script:
  - dotnet test ./stellar-dotnet-sdk-test/
  - dotnet test stellar-dotnet-sdk-test/ /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:ExcludeByFile=\"../stellar-dotnet-sdk/chaos.nacl/**/*.cs,../stellar-dotnet-sdk/xdr/generated/*.cs,\"
  - bash <(curl -s https://codecov.io/bash) -t 3d1827ed-854c-484b-a639-02544eb921b8
- - dotnet build ./stellar-dotnet-docfx/
+ - mono nuget.exe install docfx.console
+ - mono docfx.console/tools/dofx.exe ./stellar-dotnet-docfx/docfx.json
 deploy:
   provider: pages
   skip-cleanup: true
