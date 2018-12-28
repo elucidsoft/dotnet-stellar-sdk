@@ -5,6 +5,7 @@ os:
  - windows
 install: true
 script:
+ - echo "Continue"
  - dotnet build ./dotnetcore/
  - dotnet build ./dotnetstandard/
  - dotnet build ./stellar-dotnet-sdk-test/
