@@ -4,6 +4,7 @@ mono: none
 dotnet: 2.1.300
 dist: windows
 script:
+ - choco install docfx
  - dotnet restore ./stellar-dotnet-sdk.sln
  - dotnet build ./dotnetcore/
  - dotnet build ./dotnetstandard/
