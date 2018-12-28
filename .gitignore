@@ -33,6 +33,9 @@ msbuild.wrn
 
 package/lib/
 
+# Generated documentation site
+stellar-dotnet-docfx/_site/
+
 
 # Visual Studio 2015
 .vs/
