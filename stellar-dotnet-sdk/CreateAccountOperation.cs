@@ -4,8 +4,23 @@ using Int64 = stellar_dotnet_sdk.xdr.Int64;
 
 namespace stellar_dotnet_sdk
 {
+    /// <summary>
+    /// Represents a <see cref="CreateAccountOp"/>.
+    /// Use <see cref="Builder"/> to create a new CreateAccountOperation.
+    /// 
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#create-account">Create Account</see>
+    /// </summary>
     public class CreateAccountOperation : Operation
     {
+        /// <summary>
+        /// This operation creates and funds a new account with the specified starting balance.
+        /// </summary>
+        /// <remarks>
+        /// Threshold: Medium
+        /// Result: <see cref="CreateAccountResult"/>
+        /// </remarks>
+        /// <param name="destination">Destination account ID to create an account for.</param>
+        /// <param name="startingBalance">Amount in XLM the account should be funded for. Must be greater than the <see href="https://www.stellar.org/developers/guides/concepts/fees.html">reserve balance amount.</see></param>
         public CreateAccountOperation(KeyPair destination, string startingBalance)
         {
             Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
@@ -32,6 +47,9 @@ namespace stellar_dotnet_sdk
             return body;
         }
 
+        /// <summary>
+        ///     Builds a <see cref="CreateAccountOperation"/>.
+        /// </summary>
         public class Builder
         {
             private readonly KeyPair destination;

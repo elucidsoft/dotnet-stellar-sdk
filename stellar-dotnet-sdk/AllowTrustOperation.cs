@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Text;
+using stellar_dotnet_sdk.xdr;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
     /// <summary>
-    ///An XDR AllowTrustOp. An "allow trust" operation authorizes another account to hold your account's credit for a given asset.
+    /// Represents a <see cref="AllowTrustOp"/>.
+    /// Use <see cref="Builder"/> to create a new AllowTrustOperation.
+    /// 
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#allow-trust">Allow Trust</see>
     /// </summary>
     public class AllowTrustOperation : Operation
     {

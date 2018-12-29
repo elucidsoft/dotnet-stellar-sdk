@@ -3,6 +3,11 @@ using stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
+    /// <summary>
+    /// Use <see cref="Builder"/> to create a new InflationOperation.
+    /// 
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#inflation">Inflation</see>
+    /// </summary>
     public class InflationOperation : Operation
     {
         public override xdr.Operation.OperationBody ToOperationBody()

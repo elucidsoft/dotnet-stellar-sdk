@@ -4,7 +4,10 @@ using stellar_dotnet_sdk.xdr;
 namespace stellar_dotnet_sdk
 {
     /// <summary>
-    /// Transfers native balance to destination account.
+    /// Represents an <see cref="AccountID"/> Encode operation.
+    /// Use <see cref="Builder"/> to create a new AccountMergeOperation.
+    /// 
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#account-merge">Account Merge</see>
     /// </summary>
     public class AccountMergeOperation : Operation
     {

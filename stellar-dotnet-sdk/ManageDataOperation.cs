@@ -1,8 +1,15 @@
 ﻿using System;
+using stellar_dotnet_sdk.xdr;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
+    /// <summary>
+    /// Represents a <see cref="ManageDataOp"/>.
+    /// Use <see cref="Builder"/> to create a new ManageDataOperation.
+    /// 
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#manage-data">Manage Data</see>
+    /// </summary>
     public class ManageDataOperation : Operation
     {
         private ManageDataOperation(string name, byte[] value)

@@ -1,8 +1,15 @@
 ﻿using System;
+using stellar_dotnet_sdk.xdr;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
+    /// <summary>
+    /// Represents a <see cref="ManageOfferOp"/>.
+    /// Use <see cref="Builder"/> to create a new ManageOfferOperation.
+    /// 
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#manage-offer">Manage Offer</see>
+    /// </summary>
     public class ManageOfferOperation : Operation
     {
         private ManageOfferOperation(Asset selling, Asset buying, string amount, string price, long offerId)
