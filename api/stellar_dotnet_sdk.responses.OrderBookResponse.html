@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class OrderBookResponse
    ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.40.6.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_OrderBookResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OrderBookResponse</code></pre>
+    <pre><code class="lang-csharp hljs">public class OrderBookResponse : object</code></pre>
   </div>
   
   
@@ -102,7 +102,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_OrderBookResponse__ctor_stellar_dotnet_sdk_Asset_stellar_dotnet_sdk_Asset_stellar_dotnet_sdk_responses_OrderBookResponse_Row___stellar_dotnet_sdk_responses_OrderBookResponse_Row___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.OrderBookResponse.%23ctor(stellar_dotnet_sdk.Asset%2Cstellar_dotnet_sdk.Asset%2Cstellar_dotnet_sdk.responses.OrderBookResponse.Row%5B%5D%2Cstellar_dotnet_sdk.responses.OrderBookResponse.Row%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OrderBookResponse.cs/#L21" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OrderBookResponse.cs/#L20" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_OrderBookResponse__ctor_" data-uid="stellar_dotnet_sdk.responses.OrderBookResponse.#ctor*"></a>
@@ -169,7 +169,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_OrderBookResponse_Asks.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.OrderBookResponse.Asks%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OrderBookResponse.cs/#L14" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OrderBookResponse.cs/#L16" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_OrderBookResponse_Asks_" data-uid="stellar_dotnet_sdk.responses.OrderBookResponse.Asks*"></a>
@@ -182,8 +182,7 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asks&quot;)]
-public OrderBookResponse.Row[] Asks { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public OrderBookResponse.Row[] Asks { get; }</code></pre>
   </div>
   
   
@@ -213,7 +212,7 @@ public OrderBookResponse.Row[] Asks { get; }</code></pre>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_OrderBookResponse_Bids.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.OrderBookResponse.Bids%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OrderBookResponse.cs/#L17" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OrderBookResponse.cs/#L18" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_OrderBookResponse_Bids_" data-uid="stellar_dotnet_sdk.responses.OrderBookResponse.Bids*"></a>
@@ -226,8 +225,7 @@ public OrderBookResponse.Row[] Asks { get; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;bids&quot;)]
-public OrderBookResponse.Row[] Bids { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public OrderBookResponse.Row[] Bids { get; }</code></pre>
   </div>
   
   
@@ -257,7 +255,7 @@ public OrderBookResponse.Row[] Bids { get; }</code></pre>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_OrderBookResponse_Counter.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.OrderBookResponse.Counter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OrderBookResponse.cs/#L11" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OrderBookResponse.cs/#L12" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_OrderBookResponse_Counter_" data-uid="stellar_dotnet_sdk.responses.OrderBookResponse.Counter*"></a>
@@ -270,8 +268,7 @@ public OrderBookResponse.Row[] Bids { get; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;counter&quot;)]
-public Asset Counter { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Asset Counter { get; }</code></pre>
   </div>
   
   
@@ -314,8 +311,7 @@ public Asset Counter { get; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;base&quot;)]
-public Asset OrderBookBase { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Asset OrderBookBase { get; }</code></pre>
   </div>
   
   

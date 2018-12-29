@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class AccountResponse
    ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.40.6.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -94,7 +94,7 @@
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -103,7 +103,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_AccountResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AccountResponse : Response, IPagingToken</code></pre>
+    <pre><code class="lang-csharp hljs">public class AccountResponse : Response, ITransactionBuilderAccount, IPagingToken</code></pre>
   </div>
   
   
@@ -118,7 +118,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponse__ctor_stellar_dotnet_sdk_KeyPair_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponse.%23ctor(stellar_dotnet_sdk.KeyPair)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L13" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L12" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponse__ctor_" data-uid="stellar_dotnet_sdk.responses.AccountResponse.#ctor*"></a>
@@ -162,7 +162,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponse__ctor_stellar_dotnet_sdk_KeyPair_System_Int64_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponse.%23ctor(stellar_dotnet_sdk.KeyPair%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L18" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L17" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponse__ctor_" data-uid="stellar_dotnet_sdk.responses.AccountResponse.#ctor*"></a>
@@ -215,7 +215,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponse_Balances.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponse.Balances%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L48" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L47" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponse_Balances_" data-uid="stellar_dotnet_sdk.responses.AccountResponse.Balances*"></a>
@@ -228,8 +228,7 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;balances&quot;)]
-public Balance[] Balances { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Balance[] Balances { get; set; }</code></pre>
   </div>
   
   
@@ -259,7 +258,7 @@ public Balance[] Balances { get; set; }</code></pre>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponse_Data.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponse.Data%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L57" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L56" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponse_Data_" data-uid="stellar_dotnet_sdk.responses.AccountResponse.Data*"></a>
@@ -272,8 +271,7 @@ public Balance[] Balances { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;Data&quot;)]
-public Dictionary&lt;string, string&gt; Data { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, string&gt; Data { get; }</code></pre>
   </div>
   
   
@@ -284,7 +282,7 @@ public Dictionary&lt;string, string&gt; Data { get; }</code></pre>
   <table>
     <tr>
       <td>
-        <span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;
+        <span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;
         <p>
       </td>
     </tr>
@@ -316,8 +314,7 @@ public Dictionary&lt;string, string&gt; Data { get; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;flags&quot;)]
-public Flags Flags { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Flags Flags { get; set; }</code></pre>
   </div>
   
   
@@ -360,8 +357,7 @@ public Flags Flags { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;home_domain&quot;)]
-public string HomeDomain { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string HomeDomain { get; set; }</code></pre>
   </div>
   
   
@@ -391,7 +387,7 @@ public string HomeDomain { get; set; }</code></pre>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponse_IncrementedSequenceNumber.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponse.IncrementedSequenceNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L60" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L58" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponse_IncrementedSequenceNumber_" data-uid="stellar_dotnet_sdk.responses.AccountResponse.IncrementedSequenceNumber*"></a>
@@ -423,6 +419,8 @@ public string HomeDomain { get; set; }</code></pre>
   
   
   
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.ITransactionBuilderAccount.html#stellar_dotnet_sdk_ITransactionBuilderAccount_IncrementedSequenceNumber">ITransactionBuilderAccount.IncrementedSequenceNumber</a></div>
   
   
   
@@ -447,8 +445,7 @@ public string HomeDomain { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;inflation_destination&quot;)]
-public string InflationDestination { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string InflationDestination { get; set; }</code></pre>
   </div>
   
   
@@ -478,7 +475,7 @@ public string InflationDestination { get; set; }</code></pre>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponse_KeyPair.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponse.KeyPair%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L24" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L23" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponse_KeyPair_" data-uid="stellar_dotnet_sdk.responses.AccountResponse.KeyPair*"></a>
@@ -491,8 +488,7 @@ public string InflationDestination { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;account_id&quot;)]
-public KeyPair KeyPair { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public KeyPair KeyPair { get; set; }</code></pre>
   </div>
   
   
@@ -511,6 +507,8 @@ public KeyPair KeyPair { get; set; }</code></pre>
   
   
   
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.ITransactionBuilderAccount.html#stellar_dotnet_sdk_ITransactionBuilderAccount_KeyPair">ITransactionBuilderAccount.KeyPair</a></div>
   
   
   
@@ -522,7 +520,7 @@ public KeyPair KeyPair { get; set; }</code></pre>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponse_Links.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponse.Links%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L54" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L53" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponse_Links_" data-uid="stellar_dotnet_sdk.responses.AccountResponse.Links*"></a>
@@ -535,8 +533,7 @@ public KeyPair KeyPair { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;_links&quot;)]
-public AccountResponseLinks Links { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public AccountResponseLinks Links { get; set; }</code></pre>
   </div>
   
   
@@ -579,8 +576,7 @@ public AccountResponseLinks Links { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;paging_token&quot;)]
-public string PagingToken { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string PagingToken { get; set; }</code></pre>
   </div>
   
   
@@ -625,8 +621,7 @@ public string PagingToken { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;sequence&quot;)]
-public long SequenceNumber { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public long SequenceNumber { get; set; }</code></pre>
   </div>
   
   
@@ -645,6 +640,8 @@ public long SequenceNumber { get; set; }</code></pre>
   
   
   
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.ITransactionBuilderAccount.html#stellar_dotnet_sdk_ITransactionBuilderAccount_SequenceNumber">ITransactionBuilderAccount.SequenceNumber</a></div>
   
   
   
@@ -656,7 +653,7 @@ public long SequenceNumber { get; set; }</code></pre>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponse_Signers.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponse.Signers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L51" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L50" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponse_Signers_" data-uid="stellar_dotnet_sdk.responses.AccountResponse.Signers*"></a>
@@ -669,8 +666,7 @@ public long SequenceNumber { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;signers&quot;)]
-public Signer[] Signers { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Signer[] Signers { get; set; }</code></pre>
   </div>
   
   
@@ -713,8 +709,7 @@ public Signer[] Signers { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;subentry_count&quot;)]
-public int SubentryCount { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int SubentryCount { get; set; }</code></pre>
   </div>
   
   
@@ -757,8 +752,7 @@ public int SubentryCount { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;thresholds&quot;)]
-public Thresholds Thresholds { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Thresholds Thresholds { get; set; }</code></pre>
   </div>
   
   
@@ -790,7 +784,7 @@ public Thresholds Thresholds { get; set; }</code></pre>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponse_IncrementSequenceNumber.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponse.IncrementSequenceNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L62" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L60" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponse_IncrementSequenceNumber_" data-uid="stellar_dotnet_sdk.responses.AccountResponse.IncrementSequenceNumber*"></a>
@@ -813,6 +807,8 @@ public Thresholds Thresholds { get; set; }</code></pre>
   
   
   
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.ITransactionBuilderAccount.html#stellar_dotnet_sdk_ITransactionBuilderAccount_IncrementSequenceNumber">ITransactionBuilderAccount.IncrementSequenceNumber()</a></div>
   
   
   
@@ -824,7 +820,7 @@ public Thresholds Thresholds { get; set; }</code></pre>
           </div>
           <div class="contribution-panel mobile-hide">
               <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponse.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L7" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponse.cs/#L6" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

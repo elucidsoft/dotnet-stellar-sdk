@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class EventSource
    ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.40.6.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -149,7 +149,7 @@ transitory network errors and interruptions by automatically retrying connection
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_EventSource__ctor_System_Uri_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.EventSource.%23ctor(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_EventSource__ctor_Uri_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.EventSource.%23ctor(Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/EventSource.cs/#L81" title="View Source"><i class="fa fa-code"></i></a>
@@ -157,9 +157,9 @@ transitory network errors and interruptions by automatically retrying connection
   
   <a id="stellar_dotnet_sdk_EventSource__ctor_" data-uid="stellar_dotnet_sdk.EventSource.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_EventSource__ctor_System_Uri_" data-uid="stellar_dotnet_sdk.EventSource.#ctor(System.Uri)"><a href="#collapsible-stellar_dotnet_sdk_EventSource__ctor_System_Uri_" class="expander" data-toggle="collapse">EventSource(Uri)</a></h4>
+  <h4 id="stellar_dotnet_sdk_EventSource__ctor_Uri_" data-uid="stellar_dotnet_sdk.EventSource.#ctor(Uri)"><a href="#collapsible-stellar_dotnet_sdk_EventSource__ctor_Uri_" class="expander" data-toggle="collapse">EventSource(Uri)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_EventSource__ctor_System_Uri_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_EventSource__ctor_Uri_" class="collapse in">
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="stellar_dotnet_sdk.EventSource.html">EventSource</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -173,7 +173,7 @@ transitory network errors and interruptions by automatically retrying connection
   <table>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">System.Uri</span></span>
+        <span class="pull-right"><span class="xref">Uri</span></span>
         <span class="parametername">requestUriString</span>
         <p><p>The URL.</p>
 </p>
@@ -226,7 +226,7 @@ customization override the ConfigureWebRequest method.</p>
   <table>
     <tr>
       <td>
-        <span class="xref">System.Collections.Specialized.NameValueCollection</span>
+        <span class="xref">NameValueCollection</span>
         <p>
       </td>
     </tr>
@@ -447,7 +447,7 @@ There is no timeout on the connection once established.</p>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Uri Url { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Uri Url { get; set; }</code></pre>
   </div>
   
   
@@ -458,7 +458,7 @@ There is no timeout on the connection once established.</p>
   <table>
     <tr>
       <td>
-        <span class="xref">System.Uri</span>
+        <span class="xref">Uri</span>
         <p>
       </td>
     </tr>
@@ -504,7 +504,7 @@ transitory network errors and interruptions by automatically retrying connection
   <table>
     <tr>
       <td>
-        <span class="xref">System.Threading.Tasks.Task</span>
+        <span class="xref">Task</span>
         <p>
       </td>
     </tr>
@@ -553,7 +553,6 @@ transitory network errors and interruptions by automatically retrying connection
   
   
   <h5 class="implements">Implements</h5>
-      <div><span class="xref">System.IDisposable.Dispose()</span></div>
       <div><a class="xref" href="stellar_dotnet_sdk.IEventSource.html#stellar_dotnet_sdk_IEventSource_Dispose">IEventSource.Dispose()</a></div>
   
   
@@ -630,7 +629,7 @@ transitory network errors and interruptions by automatically retrying connection
   <table>
     <tr>
       <td>
-        <span class="xref">System.EventHandler</span>&lt;<a class="xref" href="stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs.html">EventSource.ServerSentErrorEventArgs</a>&gt;
+        <span class="xref">EventHandler</span>&lt;<a class="xref" href="stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs.html">EventSource.ServerSentErrorEventArgs</a>&gt;
         <p>
       </td>
     </tr>
@@ -675,7 +674,7 @@ transitory network errors and interruptions by automatically retrying connection
   <table>
     <tr>
       <td>
-        <span class="xref">System.EventHandler</span>&lt;<a class="xref" href="stellar_dotnet_sdk.EventSource.ServerSentEventArgs.html">EventSource.ServerSentEventArgs</a>&gt;
+        <span class="xref">EventHandler</span>&lt;<a class="xref" href="stellar_dotnet_sdk.EventSource.ServerSentEventArgs.html">EventSource.ServerSentEventArgs</a>&gt;
         <p>
       </td>
     </tr>
@@ -720,7 +719,7 @@ transitory network errors and interruptions by automatically retrying connection
   <table>
     <tr>
       <td>
-        <span class="xref">System.EventHandler</span>&lt;<a class="xref" href="stellar_dotnet_sdk.EventSource.StateChangeEventArgs.html">EventSource.StateChangeEventArgs</a>&gt;
+        <span class="xref">EventHandler</span>&lt;<a class="xref" href="stellar_dotnet_sdk.EventSource.StateChangeEventArgs.html">EventSource.StateChangeEventArgs</a>&gt;
         <p>
       </td>
     </tr>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class OperationDeserializer
    ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.40.6.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -77,69 +77,52 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">Newtonsoft.Json.JsonConverter</span></div>
-    <div class="level2"><span class="xref">OperationDeserializer</span></div>
+    <div class="level1"><span class="xref">OperationDeserializer</span></div>
   </div>
   
   
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">Newtonsoft.Json.JsonConverter.CanRead</span>
-    </div>
-    <div>
-      <span class="xref">Newtonsoft.Json.JsonConverter.CanWrite</span>
-    </div>
-  </div>
   
   <h6><strong>Namespace</strong>: System.Dynamic.ExpandoObject</h6>
   <h6><strong>Assembly</strong>: stellar-dotnet-sdk.dll</h6>
   
   <h5 id="stellar_dotnet_sdk_responses_OperationDeserializer_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OperationDeserializer : JsonConverter</code></pre>
+    <pre><code class="lang-csharp hljs">public class OperationDeserializer : JsonConverter&lt;OperationResponse&gt;</code></pre>
   </div>
   
   
   
   
   
-  <h3 id="methods">Methods
+  <h3 id="properties">Properties
   </h3>
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_OperationDeserializer_CanConvert_System_Type_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.OperationDeserializer.CanConvert(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_OperationDeserializer_CanWrite.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.OperationDeserializer.CanWrite%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OperationDeserializer.cs/#L49" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OperationDeserializer.cs/#L10" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
-  <a id="stellar_dotnet_sdk_responses_OperationDeserializer_CanConvert_" data-uid="stellar_dotnet_sdk.responses.OperationDeserializer.CanConvert*"></a>
+  <a id="stellar_dotnet_sdk_responses_OperationDeserializer_CanWrite_" data-uid="stellar_dotnet_sdk.responses.OperationDeserializer.CanWrite*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_OperationDeserializer_CanConvert_System_Type_" data-uid="stellar_dotnet_sdk.responses.OperationDeserializer.CanConvert(System.Type)"><a href="#collapsible-stellar_dotnet_sdk_responses_OperationDeserializer_CanConvert_System_Type_" class="expander" data-toggle="collapse">CanConvert(Type)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_OperationDeserializer_CanWrite" data-uid="stellar_dotnet_sdk.responses.OperationDeserializer.CanWrite"><a href="#collapsible-stellar_dotnet_sdk_responses_OperationDeserializer_CanWrite" class="expander" data-toggle="collapse">CanWrite</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_OperationDeserializer_CanConvert_System_Type_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_OperationDeserializer_CanWrite" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool CanConvert(Type objectType)</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool CanWrite { get; }</code></pre>
   </div>
   
-  <h5 class="parameters">Parameters</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Type</span></span>
-        <span class="parametername">objectType</span>
-        <p>
-      </td>
-    </tr>
-  </table>
   
-  <h5 class="returns">Returns</h5>
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
   <table>
     <tr>
       <td>
@@ -153,62 +136,66 @@
   
   
   
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Newtonsoft.Json.JsonConverter.CanConvert(System.Type)</span></div>
-  
-  
-  
   
   
   </div>
+  <h3 id="methods">Methods
+  </h3>
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_OperationDeserializer_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Object_Newtonsoft_Json_JsonSerializer_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.OperationDeserializer.ReadJson(Newtonsoft.Json.JsonReader%2CSystem.Type%2CSystem.Object%2CNewtonsoft.Json.JsonSerializer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_OperationDeserializer_ReadJson_JsonReader_Type_stellar_dotnet_sdk_responses_operations_OperationResponse_System_Boolean_JsonSerializer_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.OperationDeserializer.ReadJson(JsonReader%2CType%2Cstellar_dotnet_sdk.responses.operations.OperationResponse%2CSystem.Boolean%2CJsonSerializer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OperationDeserializer.cs/#L15" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OperationDeserializer.cs/#L17" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_OperationDeserializer_ReadJson_" data-uid="stellar_dotnet_sdk.responses.OperationDeserializer.ReadJson*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_OperationDeserializer_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Object_Newtonsoft_Json_JsonSerializer_" data-uid="stellar_dotnet_sdk.responses.OperationDeserializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)"><a href="#collapsible-stellar_dotnet_sdk_responses_OperationDeserializer_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Object_Newtonsoft_Json_JsonSerializer_" class="expander" data-toggle="collapse">ReadJson(JsonReader, Type, Object, JsonSerializer)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_OperationDeserializer_ReadJson_JsonReader_Type_stellar_dotnet_sdk_responses_operations_OperationResponse_System_Boolean_JsonSerializer_" data-uid="stellar_dotnet_sdk.responses.OperationDeserializer.ReadJson(JsonReader,Type,stellar_dotnet_sdk.responses.operations.OperationResponse,System.Boolean,JsonSerializer)"><a href="#collapsible-stellar_dotnet_sdk_responses_OperationDeserializer_ReadJson_JsonReader_Type_stellar_dotnet_sdk_responses_operations_OperationResponse_System_Boolean_JsonSerializer_" class="expander" data-toggle="collapse">ReadJson(JsonReader, Type, OperationResponse, Boolean, JsonSerializer)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_OperationDeserializer_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Object_Newtonsoft_Json_JsonSerializer_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_OperationDeserializer_ReadJson_JsonReader_Type_stellar_dotnet_sdk_responses_operations_OperationResponse_System_Boolean_JsonSerializer_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)</code></pre>
+    <pre><code class="lang-csharp hljs">public override OperationResponse ReadJson(JsonReader reader, Type objectType, OperationResponse existingValue, bool hasExistingValue, JsonSerializer serializer)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
   <table>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">Newtonsoft.Json.JsonReader</span></span>
+        <span class="pull-right"><span class="xref">JsonReader</span></span>
         <span class="parametername">reader</span>
         <p>
       </td>
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">System.Type</span></span>
+        <span class="pull-right"><span class="xref">Type</span></span>
         <span class="parametername">objectType</span>
         <p>
       </td>
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">System.Object</span></span>
+        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a></span>
         <span class="parametername">existingValue</span>
         <p>
       </td>
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">Newtonsoft.Json.JsonSerializer</span></span>
+        <span class="pull-right"><span class="xref">System.Boolean</span></span>
+        <span class="parametername">hasExistingValue</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">JsonSerializer</span></span>
         <span class="parametername">serializer</span>
         <p>
       </td>
@@ -219,7 +206,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">System.Object</span>
+        <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>
         <p>
       </td>
     </tr>
@@ -229,8 +216,6 @@
   
   
   
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Newtonsoft.Json.JsonConverter.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Object, Newtonsoft.Json.JsonSerializer)</span></div>
   
   
   
@@ -240,44 +225,44 @@
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_OperationDeserializer_WriteJson_Newtonsoft_Json_JsonWriter_System_Object_Newtonsoft_Json_JsonSerializer_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.OperationDeserializer.WriteJson(Newtonsoft.Json.JsonWriter%2CSystem.Object%2CNewtonsoft.Json.JsonSerializer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_OperationDeserializer_WriteJson_JsonWriter_stellar_dotnet_sdk_responses_operations_OperationResponse_JsonSerializer_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.OperationDeserializer.WriteJson(JsonWriter%2Cstellar_dotnet_sdk.responses.operations.OperationResponse%2CJsonSerializer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OperationDeserializer.cs/#L10" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/OperationDeserializer.cs/#L12" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_OperationDeserializer_WriteJson_" data-uid="stellar_dotnet_sdk.responses.OperationDeserializer.WriteJson*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_OperationDeserializer_WriteJson_Newtonsoft_Json_JsonWriter_System_Object_Newtonsoft_Json_JsonSerializer_" data-uid="stellar_dotnet_sdk.responses.OperationDeserializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)"><a href="#collapsible-stellar_dotnet_sdk_responses_OperationDeserializer_WriteJson_Newtonsoft_Json_JsonWriter_System_Object_Newtonsoft_Json_JsonSerializer_" class="expander" data-toggle="collapse">WriteJson(JsonWriter, Object, JsonSerializer)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_OperationDeserializer_WriteJson_JsonWriter_stellar_dotnet_sdk_responses_operations_OperationResponse_JsonSerializer_" data-uid="stellar_dotnet_sdk.responses.OperationDeserializer.WriteJson(JsonWriter,stellar_dotnet_sdk.responses.operations.OperationResponse,JsonSerializer)"><a href="#collapsible-stellar_dotnet_sdk_responses_OperationDeserializer_WriteJson_JsonWriter_stellar_dotnet_sdk_responses_operations_OperationResponse_JsonSerializer_" class="expander" data-toggle="collapse">WriteJson(JsonWriter, OperationResponse, JsonSerializer)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_OperationDeserializer_WriteJson_Newtonsoft_Json_JsonWriter_System_Object_Newtonsoft_Json_JsonSerializer_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_OperationDeserializer_WriteJson_JsonWriter_stellar_dotnet_sdk_responses_operations_OperationResponse_JsonSerializer_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void WriteJson(JsonWriter writer, OperationResponse value, JsonSerializer serializer)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
   <table>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">Newtonsoft.Json.JsonWriter</span></span>
+        <span class="pull-right"><span class="xref">JsonWriter</span></span>
         <span class="parametername">writer</span>
         <p>
       </td>
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">System.Object</span></span>
+        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a></span>
         <span class="parametername">value</span>
         <p>
       </td>
     </tr>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">Newtonsoft.Json.JsonSerializer</span></span>
+        <span class="pull-right"><span class="xref">JsonSerializer</span></span>
         <span class="parametername">serializer</span>
         <p>
       </td>
@@ -289,8 +274,6 @@
   
   
   
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Newtonsoft.Json.JsonConverter.WriteJson(Newtonsoft.Json.JsonWriter, System.Object, Newtonsoft.Json.JsonSerializer)</span></div>
   
   
   

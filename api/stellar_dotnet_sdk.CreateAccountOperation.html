@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class CreateAccountOperation
    ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.40.6.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -71,7 +71,10 @@
             <article class="content wrap" id="_content" data-uid="stellar_dotnet_sdk.CreateAccountOperation">
   <h1 id="stellar_dotnet_sdk_CreateAccountOperation" data-uid="stellar_dotnet_sdk.CreateAccountOperation">Class CreateAccountOperation
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Represents a <a class="xref" href="stellar_dotnet_sdk.xdr.CreateAccountOp.html">CreateAccountOp</a>.
+Use <a class="xref" href="stellar_dotnet_sdk.CreateAccountOperation.Builder.html">CreateAccountOperation.Builder</a> to create a new CreateAccountOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#create-account">Create Account</a></p>
+</div>
   <div class="markdown level0 conceptual"></div>
   
   <div class="inheritance">
@@ -86,6 +89,9 @@
     <h5>Inherited Members</h5>
     <div>
       <a class="xref" href="stellar_dotnet_sdk.Operation.html#stellar_dotnet_sdk_Operation_SourceAccount">Operation.SourceAccount</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.Operation.html#stellar_dotnet_sdk_Operation_Threshold">Operation.Threshold</a>
     </div>
     <div>
       <a class="xref" href="stellar_dotnet_sdk.Operation.html#stellar_dotnet_sdk_Operation_ToXdrAmount_System_String_">Operation.ToXdrAmount(String)</a>
@@ -124,7 +130,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_CreateAccountOperation__ctor_stellar_dotnet_sdk_KeyPair_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.CreateAccountOperation.%23ctor(stellar_dotnet_sdk.KeyPair%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/CreateAccountOperation.cs/#L9" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/CreateAccountOperation.cs/#L24" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_CreateAccountOperation__ctor_" data-uid="stellar_dotnet_sdk.CreateAccountOperation.#ctor*"></a>
@@ -132,7 +138,8 @@
   <h4 id="stellar_dotnet_sdk_CreateAccountOperation__ctor_stellar_dotnet_sdk_KeyPair_System_String_" data-uid="stellar_dotnet_sdk.CreateAccountOperation.#ctor(stellar_dotnet_sdk.KeyPair,System.String)"><a href="#collapsible-stellar_dotnet_sdk_CreateAccountOperation__ctor_stellar_dotnet_sdk_KeyPair_System_String_" class="expander" data-toggle="collapse">CreateAccountOperation(KeyPair, String)</a></h4>
   
   <div id="collapsible-stellar_dotnet_sdk_CreateAccountOperation__ctor_stellar_dotnet_sdk_KeyPair_System_String_" class="collapse in">
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This operation creates and funds a new account with the specified starting balance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
@@ -146,14 +153,16 @@
       <td>
         <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
         <span class="parametername">destination</span>
-        <p>
+        <p><p>Destination account ID to create an account for.</p>
+</p>
       </td>
     </tr>
     <tr>
       <td>
         <span class="pull-right"><span class="xref">System.String</span></span>
         <span class="parametername">startingBalance</span>
-        <p>
+        <p><p>Amount in XLM the account should be funded for. Must be greater than the <a href="https://www.stellar.org/developers/guides/concepts/fees.html">reserve balance amount.</a></p>
+</p>
       </td>
     </tr>
   </table>
@@ -165,6 +174,10 @@
   
   
   
+  <h5 id="stellar_dotnet_sdk_CreateAccountOperation__ctor_stellar_dotnet_sdk_KeyPair_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Threshold: Medium
+Result: <a class="xref" href="stellar_dotnet_sdk.xdr.CreateAccountResult.html">CreateAccountResult</a></p>
+</div>
   
   
   
@@ -177,7 +190,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_CreateAccountOperation_Destination.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.CreateAccountOperation.Destination%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/CreateAccountOperation.cs/#L15" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/CreateAccountOperation.cs/#L30" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_CreateAccountOperation_Destination_" data-uid="stellar_dotnet_sdk.CreateAccountOperation.Destination*"></a>
@@ -220,7 +233,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_CreateAccountOperation_StartingBalance.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.CreateAccountOperation.StartingBalance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/CreateAccountOperation.cs/#L17" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/CreateAccountOperation.cs/#L32" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_CreateAccountOperation_StartingBalance_" data-uid="stellar_dotnet_sdk.CreateAccountOperation.StartingBalance*"></a>
@@ -265,7 +278,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_CreateAccountOperation_ToOperationBody.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.CreateAccountOperation.ToOperationBody%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/CreateAccountOperation.cs/#L19" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/CreateAccountOperation.cs/#L34" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_CreateAccountOperation_ToOperationBody_" data-uid="stellar_dotnet_sdk.CreateAccountOperation.ToOperationBody*"></a>
@@ -310,7 +323,7 @@
           </div>
           <div class="contribution-panel mobile-hide">
               <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_CreateAccountOperation.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.CreateAccountOperation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/CreateAccountOperation.cs/#L7" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/CreateAccountOperation.cs/#L13" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class PaymentOperation
    ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.40.6.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -71,7 +71,10 @@
             <article class="content wrap" id="_content" data-uid="stellar_dotnet_sdk.PaymentOperation">
   <h1 id="stellar_dotnet_sdk_PaymentOperation" data-uid="stellar_dotnet_sdk.PaymentOperation">Class PaymentOperation
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Represents a <a class="xref" href="stellar_dotnet_sdk.xdr.PaymentOp.html">PaymentOp</a> operation.
+Use <a class="xref" href="stellar_dotnet_sdk.PaymentOperation.Builder.html">PaymentOperation.Builder</a> to create a new PaymentOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#payment">Payment</a></p>
+</div>
   <div class="markdown level0 conceptual"></div>
   
   <div class="inheritance">
@@ -86,6 +89,9 @@
     <h5>Inherited Members</h5>
     <div>
       <a class="xref" href="stellar_dotnet_sdk.Operation.html#stellar_dotnet_sdk_Operation_SourceAccount">Operation.SourceAccount</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.Operation.html#stellar_dotnet_sdk_Operation_Threshold">Operation.Threshold</a>
     </div>
     <div>
       <a class="xref" href="stellar_dotnet_sdk.Operation.html#stellar_dotnet_sdk_Operation_ToXdrAmount_System_String_">Operation.ToXdrAmount(String)</a>
@@ -124,7 +130,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_PaymentOperation_Amount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.PaymentOperation.Amount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L20" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L35" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_PaymentOperation_Amount_" data-uid="stellar_dotnet_sdk.PaymentOperation.Amount*"></a>
@@ -132,7 +138,8 @@
   <h4 id="stellar_dotnet_sdk_PaymentOperation_Amount" data-uid="stellar_dotnet_sdk.PaymentOperation.Amount"><a href="#collapsible-stellar_dotnet_sdk_PaymentOperation_Amount" class="expander" data-toggle="collapse">Amount</a></h4>
   
   <div id="collapsible-stellar_dotnet_sdk_PaymentOperation_Amount" class="collapse in">
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Amount of the aforementioned asset to send.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
@@ -167,7 +174,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_PaymentOperation_Asset.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.PaymentOperation.Asset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L18" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L30" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_PaymentOperation_Asset_" data-uid="stellar_dotnet_sdk.PaymentOperation.Asset*"></a>
@@ -175,7 +182,8 @@
   <h4 id="stellar_dotnet_sdk_PaymentOperation_Asset" data-uid="stellar_dotnet_sdk.PaymentOperation.Asset"><a href="#collapsible-stellar_dotnet_sdk_PaymentOperation_Asset" class="expander" data-toggle="collapse">Asset</a></h4>
   
   <div id="collapsible-stellar_dotnet_sdk_PaymentOperation_Asset" class="collapse in">
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Asset to send to the destination account.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
@@ -210,7 +218,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_PaymentOperation_Destination.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.PaymentOperation.Destination%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L16" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L25" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_PaymentOperation_Destination_" data-uid="stellar_dotnet_sdk.PaymentOperation.Destination*"></a>
@@ -218,7 +226,8 @@
   <h4 id="stellar_dotnet_sdk_PaymentOperation_Destination" data-uid="stellar_dotnet_sdk.PaymentOperation.Destination"><a href="#collapsible-stellar_dotnet_sdk_PaymentOperation_Destination" class="expander" data-toggle="collapse">Destination</a></h4>
   
   <div id="collapsible-stellar_dotnet_sdk_PaymentOperation_Destination" class="collapse in">
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Account address that receives the payment.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
@@ -255,7 +264,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_PaymentOperation_ToOperationBody.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.PaymentOperation.ToOperationBody%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L22" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L37" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_PaymentOperation_ToOperationBody_" data-uid="stellar_dotnet_sdk.PaymentOperation.ToOperationBody*"></a>
@@ -300,7 +309,7 @@
           </div>
           <div class="contribution-panel mobile-hide">
               <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_PaymentOperation.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.PaymentOperation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L7" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L13" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

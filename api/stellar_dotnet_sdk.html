@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace stellar_dotnet_sdk
    ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.40.6.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -87,7 +87,9 @@
       <tr>
         <td>
           <p><a class="xref" href="stellar_dotnet_sdk.AccountMergeOperation.html">AccountMergeOperation</a></p>
-          <p><p>Transfers native balance to destination account.</p>
+          <p><p>Represents an <a class="xref" href="stellar_dotnet_sdk.xdr.AccountID.html">AccountID</a> Encode operation.
+Use <a class="xref" href="stellar_dotnet_sdk.AccountMergeOperation.Builder.html">AccountMergeOperation.Builder</a> to create a new AccountMergeOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#account-merge">Account Merge</a></p>
 </p>
         </td>
       </tr>
@@ -102,7 +104,9 @@
       <tr>
         <td>
           <p><a class="xref" href="stellar_dotnet_sdk.AllowTrustOperation.html">AllowTrustOperation</a></p>
-          <p><p>An XDR AllowTrustOp. An &quot;allow trust&quot; operation authorizes another account to hold your account's credit for a given asset.</p>
+          <p><p>Represents a <a class="xref" href="stellar_dotnet_sdk.xdr.AllowTrustOp.html">AllowTrustOp</a>.
+Use <a class="xref" href="stellar_dotnet_sdk.AllowTrustOperation.Builder.html">AllowTrustOperation.Builder</a> to create a new AllowTrustOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#allow-trust">Allow Trust</a></p>
 </p>
         </td>
       </tr>
@@ -155,8 +159,26 @@ the appropriate ISO 4217 code. For stocks and bonds, use the appropriate ISIN nu
       </tr>
       <tr>
         <td>
-          <p><a class="xref" href="stellar_dotnet_sdk.ChangeTrustOperation.html">ChangeTrustOperation</a></p>
+          <p><a class="xref" href="stellar_dotnet_sdk.BumpSequenceOperation.html">BumpSequenceOperation</a></p>
+          <p><p>Represents a <a class="xref" href="stellar_dotnet_sdk.xdr.BumpSequenceOp.html">BumpSequenceOp</a>.
+Use <a class="xref" href="stellar_dotnet_sdk.BumpSequenceOperation.Builder.html">BumpSequenceOperation.Builder</a> to create a new BumpSequenceOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#bump-sequence">Bump Sequence</a></p>
+</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p><a class="xref" href="stellar_dotnet_sdk.BumpSequenceOperation.Builder.html">BumpSequenceOperation.Builder</a></p>
           <p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p><a class="xref" href="stellar_dotnet_sdk.ChangeTrustOperation.html">ChangeTrustOperation</a></p>
+          <p><p>Represents a <a class="xref" href="stellar_dotnet_sdk.xdr.ChangeTrustOp.html">ChangeTrustOp</a>.
+Use <a class="xref" href="stellar_dotnet_sdk.ChangeTrustOperation.Builder.html">ChangeTrustOperation.Builder</a> to create a new ChangeTrustOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#change-trust">Change Trust</a></p>
+</p>
         </td>
       </tr>
       <tr>
@@ -169,19 +191,26 @@ the appropriate ISO 4217 code. For stocks and bonds, use the appropriate ISIN nu
       <tr>
         <td>
           <p><a class="xref" href="stellar_dotnet_sdk.CreateAccountOperation.html">CreateAccountOperation</a></p>
-          <p>
+          <p><p>Represents a <a class="xref" href="stellar_dotnet_sdk.xdr.CreateAccountOp.html">CreateAccountOp</a>.
+Use <a class="xref" href="stellar_dotnet_sdk.CreateAccountOperation.Builder.html">CreateAccountOperation.Builder</a> to create a new CreateAccountOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#create-account">Create Account</a></p>
+</p>
         </td>
       </tr>
       <tr>
         <td>
           <p><a class="xref" href="stellar_dotnet_sdk.CreateAccountOperation.Builder.html">CreateAccountOperation.Builder</a></p>
-          <p>
+          <p><p>Builds a <a class="xref" href="stellar_dotnet_sdk.CreateAccountOperation.html">CreateAccountOperation</a>.</p>
+</p>
         </td>
       </tr>
       <tr>
         <td>
           <p><a class="xref" href="stellar_dotnet_sdk.CreatePassiveOfferOperation.html">CreatePassiveOfferOperation</a></p>
-          <p>
+          <p><p>Represents a <a class="xref" href="stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.html">CreatePassiveOfferOp</a>.
+Use <a class="xref" href="stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.html">CreatePassiveOfferOperation.Builder</a> to create a new CreatePassiveOfferOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#create-passive-offer">Manage Offer</a></p>
+</p>
         </td>
       </tr>
       <tr>
@@ -242,6 +271,20 @@ transitory network errors and interruptions by automatically retrying connection
       </tr>
       <tr>
         <td>
+          <p><a class="xref" href="stellar_dotnet_sdk.InflationOperation.html">InflationOperation</a></p>
+          <p><p>Use <a class="xref" href="stellar_dotnet_sdk.InflationOperation.Builder.html">InflationOperation.Builder</a> to create a new InflationOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#inflation">Inflation</a></p>
+</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p><a class="xref" href="stellar_dotnet_sdk.InflationOperation.Builder.html">InflationOperation.Builder</a></p>
+          <p>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <p><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></p>
           <p><p><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> represents public (and secret) keys of the account.
 Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> only supports ed25519 but in a future this class can be abstraction layer for other public-key signature systems.</p>
@@ -251,7 +294,10 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
       <tr>
         <td>
           <p><a class="xref" href="stellar_dotnet_sdk.ManageDataOperation.html">ManageDataOperation</a></p>
-          <p>
+          <p><p>Represents a <a class="xref" href="stellar_dotnet_sdk.xdr.ManageDataOp.html">ManageDataOp</a>.
+Use <a class="xref" href="stellar_dotnet_sdk.ManageDataOperation.Builder.html">ManageDataOperation.Builder</a> to create a new ManageDataOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#manage-data">Manage Data</a></p>
+</p>
         </td>
       </tr>
       <tr>
@@ -263,7 +309,10 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
       <tr>
         <td>
           <p><a class="xref" href="stellar_dotnet_sdk.ManageOfferOperation.html">ManageOfferOperation</a></p>
-          <p>
+          <p><p>Represents a <a class="xref" href="stellar_dotnet_sdk.xdr.ManageOfferOp.html">ManageOfferOp</a>.
+Use <a class="xref" href="stellar_dotnet_sdk.ManageOfferOperation.Builder.html">ManageOfferOperation.Builder</a> to create a new ManageOfferOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#manage-offer">Manage Offer</a></p>
+</p>
         </td>
       </tr>
       <tr>
@@ -336,20 +385,26 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
       <tr>
         <td>
           <p><a class="xref" href="stellar_dotnet_sdk.PathPaymentOperation.html">PathPaymentOperation</a></p>
-          <p>
+          <p><p>Represents a <a class="xref" href="stellar_dotnet_sdk.xdr.PathPaymentOp.html">PathPaymentOp</a>.
+Use <a class="xref" href="stellar_dotnet_sdk.PathPaymentOperation.Builder.html">PathPaymentOperation.Builder</a> to create a new PathPaymentOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#path-payment">Path Payment</a></p>
+</p>
         </td>
       </tr>
       <tr>
         <td>
           <p><a class="xref" href="stellar_dotnet_sdk.PathPaymentOperation.Builder.html">PathPaymentOperation.Builder</a></p>
-          <p><p>Builds PathPayment operation.</p>
+          <p><p>Builds a <a class="xref" href="stellar_dotnet_sdk.PathPaymentOperation.html">PathPaymentOperation</a>.</p>
 </p>
         </td>
       </tr>
       <tr>
         <td>
           <p><a class="xref" href="stellar_dotnet_sdk.PaymentOperation.html">PaymentOperation</a></p>
-          <p>
+          <p><p>Represents a <a class="xref" href="stellar_dotnet_sdk.xdr.PaymentOp.html">PaymentOp</a> operation.
+Use <a class="xref" href="stellar_dotnet_sdk.PaymentOperation.Builder.html">PaymentOperation.Builder</a> to create a new PaymentOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#payment">Payment</a></p>
+</p>
         </td>
       </tr>
       <tr>
@@ -374,10 +429,9 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
       <tr>
         <td>
           <p><a class="xref" href="stellar_dotnet_sdk.SetOptionsOperation.html">SetOptionsOperation</a></p>
-          <p><p>Represents
-<a href="https://www.stellar.org/developers/learn/concepts/list-of-operations.html#set-options">SetOptions</a>
-operation.
-See <a href="https://www.stellar.org/developers/learn/concepts/list-of-operations.html">List of Operations</a></p>
+          <p><p>Represents a <a class="xref" href="stellar_dotnet_sdk.xdr.SetOptionsOp.html">SetOptionsOp</a>.
+Use <a class="xref" href="stellar_dotnet_sdk.SetOptionsOperation.Builder.html">SetOptionsOperation.Builder</a> to create a new SetOptionsOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#set-options">Set Options</a></p>
 </p>
         </td>
       </tr>
@@ -462,6 +516,13 @@ See <a href="https://www.stellar.org/developers/learn/concepts/list-of-operation
         <td>
           <p><a class="xref" href="stellar_dotnet_sdk.EventSource.EventSourceState.html">EventSource.EventSourceState</a></p>
           <p><p>The possible values of the readyState property.</p>
+</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p><a class="xref" href="stellar_dotnet_sdk.OperationThreshold.html">OperationThreshold</a></p>
+          <p><p>Operation threshold level.</p>
 </p>
         </td>
       </tr>

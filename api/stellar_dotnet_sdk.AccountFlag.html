@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Enum AccountFlag
    ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.40.6.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -82,7 +82,7 @@
   
   <h5 id="stellar_dotnet_sdk_AccountFlag_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum AccountFlag</code></pre>
+    <pre><code class="lang-csharp hljs">public enum AccountFlag : int</code></pre>
   </div>
   
   
@@ -92,17 +92,20 @@
       <h4 id="stellar_dotnet_sdk_AccountFlag_AuthImmutableFlag"><a href="#collapsible-stellar_dotnet_sdk_AccountFlag_AuthImmutableFlag" class="expander" data-toggle="collapse">AuthImmutableFlag</a></h4>
   
       <div id="collapsible-stellar_dotnet_sdk_AccountFlag_AuthImmutableFlag" class="collapse in">
-        <p>
+        <p><p>With this setting, none of the following authorization flags can be changed.</p>
+</p>
       </div>
       <h4 id="stellar_dotnet_sdk_AccountFlag_AuthRequiredFlag"><a href="#collapsible-stellar_dotnet_sdk_AccountFlag_AuthRequiredFlag" class="expander" data-toggle="collapse">AuthRequiredFlag</a></h4>
   
       <div id="collapsible-stellar_dotnet_sdk_AccountFlag_AuthRequiredFlag" class="collapse in">
-        <p>
+        <p><p>With this setting, an anchor must approve anyone who wants to hold its asset.</p>
+</p>
       </div>
       <h4 id="stellar_dotnet_sdk_AccountFlag_AuthRevocableFlag"><a href="#collapsible-stellar_dotnet_sdk_AccountFlag_AuthRevocableFlag" class="expander" data-toggle="collapse">AuthRevocableFlag</a></h4>
   
       <div id="collapsible-stellar_dotnet_sdk_AccountFlag_AuthRevocableFlag" class="collapse in">
-        <p>
+        <p><p>With this setting, an anchor can set the authorize flag of an existing trustline to freeze the assets held by an asset holder.</p>
+</p>
       </div>
   
 </article>

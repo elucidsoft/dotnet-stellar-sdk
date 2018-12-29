@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class TimeBounds
    ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.40.6.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_TimeBounds_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class TimeBounds</code></pre>
+    <pre><code class="lang-csharp hljs">public class TimeBounds : object</code></pre>
   </div>
   
   
@@ -102,7 +102,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_TimeBounds__ctor_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.TimeBounds.%23ctor(System.Int64%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L12" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L13" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_TimeBounds__ctor_" data-uid="stellar_dotnet_sdk.TimeBounds.#ctor*"></a>
@@ -125,7 +125,7 @@
       <td>
         <span class="pull-right"><span class="xref">System.Int64</span></span>
         <span class="parametername">minTime</span>
-        <p><p>64bit Unix timestamp</p>
+        <p><p>64bit Unix timestamp, 0 if unset</p>
 </p>
       </td>
     </tr>
@@ -133,7 +133,62 @@
       <td>
         <span class="pull-right"><span class="xref">System.Int64</span></span>
         <span class="parametername">maxTime</span>
-        <p>
+        <p><p>64bit Unix timestamp, 0 if unset</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_TimeBounds__ctor_System_Nullable_DateTimeOffset__System_Nullable_DateTimeOffset__.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.TimeBounds.%23ctor(System.Nullable%7BDateTimeOffset%7D%2CSystem.Nullable%7BDateTimeOffset%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L27" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_TimeBounds__ctor_" data-uid="stellar_dotnet_sdk.TimeBounds.#ctor*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_TimeBounds__ctor_System_Nullable_DateTimeOffset__System_Nullable_DateTimeOffset__" data-uid="stellar_dotnet_sdk.TimeBounds.#ctor(System.Nullable{DateTimeOffset},System.Nullable{DateTimeOffset})"><a href="#collapsible-stellar_dotnet_sdk_TimeBounds__ctor_System_Nullable_DateTimeOffset__System_Nullable_DateTimeOffset__" class="expander" data-toggle="collapse">TimeBounds(Nullable&lt;DateTimeOffset&gt;, Nullable&lt;DateTimeOffset&gt;)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_TimeBounds__ctor_System_Nullable_DateTimeOffset__System_Nullable_DateTimeOffset__" class="collapse in">
+  <div class="markdown level1 summary"><p>Timebounds constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeBounds(DateTimeOffset? minTime = null, DateTimeOffset? maxTime = null)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Nullable</span>&lt;<span class="xref">DateTimeOffset</span>&gt;</span>
+        <span class="parametername">minTime</span>
+        <p><p>earliest time the transaction is valid from</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Nullable</span>&lt;<span class="xref">DateTimeOffset</span>&gt;</span>
+        <span class="parametername">maxTime</span>
+        <p><p>latest time the transaction is valid to</p>
+</p>
       </td>
     </tr>
   </table>
@@ -157,7 +212,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_TimeBounds_MaxTime.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.TimeBounds.MaxTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L23" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L41" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_TimeBounds_MaxTime_" data-uid="stellar_dotnet_sdk.TimeBounds.MaxTime*"></a>
@@ -200,7 +255,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_TimeBounds_MinTime.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.TimeBounds.MinTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L21" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L39" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_TimeBounds_MinTime_" data-uid="stellar_dotnet_sdk.TimeBounds.MinTime*"></a>
@@ -242,30 +297,30 @@
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_TimeBounds_Equals_System_Object_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.TimeBounds.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_TimeBounds_Equals_Object_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.TimeBounds.Equals(Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L50" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L68" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_TimeBounds_Equals_" data-uid="stellar_dotnet_sdk.TimeBounds.Equals*"></a>
   
-  <h4 id="stellar_dotnet_sdk_TimeBounds_Equals_System_Object_" data-uid="stellar_dotnet_sdk.TimeBounds.Equals(System.Object)"><a href="#collapsible-stellar_dotnet_sdk_TimeBounds_Equals_System_Object_" class="expander" data-toggle="collapse">Equals(Object)</a></h4>
+  <h4 id="stellar_dotnet_sdk_TimeBounds_Equals_Object_" data-uid="stellar_dotnet_sdk.TimeBounds.Equals(Object)"><a href="#collapsible-stellar_dotnet_sdk_TimeBounds_Equals_Object_" class="expander" data-toggle="collapse">Equals(Object)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_TimeBounds_Equals_System_Object_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_TimeBounds_Equals_Object_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool Equals(object o)</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool Equals(Object o)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
   <table>
     <tr>
       <td>
-        <span class="pull-right"><span class="xref">System.Object</span></span>
+        <span class="pull-right"><span class="xref">Object</span></span>
         <span class="parametername">o</span>
         <p>
       </td>
@@ -286,8 +341,6 @@
   
   
   
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">System.Object.Equals(System.Object)</span></div>
   
   
   
@@ -300,7 +353,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_TimeBounds_FromXdr_stellar_dotnet_sdk_xdr_TimeBounds_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.TimeBounds.FromXdr(stellar_dotnet_sdk.xdr.TimeBounds)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L25" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L43" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_TimeBounds_FromXdr_" data-uid="stellar_dotnet_sdk.TimeBounds.FromXdr*"></a>
@@ -353,7 +406,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_TimeBounds_GetHashCode.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.TimeBounds.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L61" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L79" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_TimeBounds_GetHashCode_" data-uid="stellar_dotnet_sdk.TimeBounds.GetHashCode*"></a>
@@ -384,8 +437,6 @@
   
   
   
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">System.Object.GetHashCode()</span></div>
   
   
   
@@ -398,7 +449,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_TimeBounds_ToXdr.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.TimeBounds.ToXdr%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L38" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/TimeBounds.cs/#L56" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_TimeBounds_ToXdr_" data-uid="stellar_dotnet_sdk.TimeBounds.ToXdr*"></a>

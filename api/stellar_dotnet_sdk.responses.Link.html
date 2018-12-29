@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Link
    ">
-    <meta name="generator" content="docfx 2.36.2.0">
+    <meta name="generator" content="docfx 2.40.6.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -80,6 +80,7 @@
     <div class="level1"><span class="xref">Link</span></div>
   </div>
   
+      <div class="level2"><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link&lt;TResponse&gt;</a></div>
   
   
   <h6><strong>Namespace</strong>: System.Dynamic.ExpandoObject</h6>
@@ -87,7 +88,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_Link_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Link</code></pre>
+    <pre><code class="lang-csharp hljs">public class Link : object</code></pre>
   </div>
   
   
@@ -99,23 +100,23 @@
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Link__ctor_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Link.%23ctor(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Link__ctor_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Link.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Link.cs/#L8" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Link.cs/#L12" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_Link__ctor_" data-uid="stellar_dotnet_sdk.responses.Link.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_Link__ctor_System_String_System_Boolean_" data-uid="stellar_dotnet_sdk.responses.Link.#ctor(System.String,System.Boolean)"><a href="#collapsible-stellar_dotnet_sdk_responses_Link__ctor_System_String_System_Boolean_" class="expander" data-toggle="collapse">Link(String, Boolean)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_Link__ctor_System_String_" data-uid="stellar_dotnet_sdk.responses.Link.#ctor(System.String)"><a href="#collapsible-stellar_dotnet_sdk_responses_Link__ctor_System_String_" class="expander" data-toggle="collapse">Link(String)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_Link__ctor_System_String_System_Boolean_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_Link__ctor_System_String_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link(string href, bool templated)</code></pre>
+    <pre><code class="lang-csharp hljs">public Link(string href)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
@@ -124,13 +125,6 @@
       <td>
         <span class="pull-right"><span class="xref">System.String</span></span>
         <span class="parametername">href</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">templated</span>
         <p>
       </td>
     </tr>
@@ -155,7 +149,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Link_Href.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Link.Href%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Link.cs/#L14" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Link.cs/#L17" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_Link_Href_" data-uid="stellar_dotnet_sdk.responses.Link.Href*"></a>
@@ -168,8 +162,7 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;href&quot;)]
-public string Href { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Href { get; set; }</code></pre>
   </div>
   
   
@@ -199,7 +192,7 @@ public string Href { get; set; }</code></pre>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Link_Templated.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Link.Templated%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Link.cs/#L17" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Link.cs/#L23" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_Link_Templated_" data-uid="stellar_dotnet_sdk.responses.Link.Templated*"></a>
@@ -212,8 +205,7 @@ public string Href { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;templated&quot;)]
-public bool Templated { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool Templated { get; }</code></pre>
   </div>
   
   
@@ -256,7 +248,7 @@ public bool Templated { get; set; }</code></pre>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Uri Uri { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Uri Uri { get; }</code></pre>
   </div>
   
   
@@ -267,56 +259,11 @@ public bool Templated { get; set; }</code></pre>
   <table>
     <tr>
       <td>
-        <span class="xref">System.Uri</span>
+        <span class="xref">Uri</span>
         <p>
       </td>
     </tr>
   </table>
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  <h3 id="methods">Methods
-  </h3>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Link_IsTemplated.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Link.IsTemplated%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Link.cs/#L35" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="stellar_dotnet_sdk_responses_Link_IsTemplated_" data-uid="stellar_dotnet_sdk.responses.Link.IsTemplated*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_responses_Link_IsTemplated" data-uid="stellar_dotnet_sdk.responses.Link.IsTemplated"><a href="#collapsible-stellar_dotnet_sdk_responses_Link_IsTemplated" class="expander" data-toggle="collapse">IsTemplated()</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_responses_Link_IsTemplated" class="collapse in">
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsTemplated()</code></pre>
-  </div>
-  
-  
-  <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Boolean</span>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
   
   
   
@@ -331,7 +278,7 @@ public bool Templated { get; set; }</code></pre>
           </div>
           <div class="contribution-panel mobile-hide">
               <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Link.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Link%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Link.cs/#L6" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Link.cs/#L10" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
