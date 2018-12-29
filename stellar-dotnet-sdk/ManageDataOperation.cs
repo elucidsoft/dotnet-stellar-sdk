@@ -10,7 +10,6 @@ namespace stellar_dotnet_sdk
     /// 
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#manage-data">Manage Data</see>
     /// </summary>
-
     public class ManageDataOperation : Operation
     {
         private ManageDataOperation(string name, byte[] value)

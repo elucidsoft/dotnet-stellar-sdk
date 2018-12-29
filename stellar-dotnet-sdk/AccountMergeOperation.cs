@@ -9,7 +9,6 @@ namespace stellar_dotnet_sdk
     /// 
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#account-merge">Account Merge</see>
     /// </summary>
-
     public class AccountMergeOperation : Operation
     {
         private AccountMergeOperation(KeyPair destination)

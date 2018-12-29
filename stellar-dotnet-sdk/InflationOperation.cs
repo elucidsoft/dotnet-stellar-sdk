@@ -8,7 +8,6 @@ namespace stellar_dotnet_sdk
     /// 
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#inflation">Inflation</see>
     /// </summary>
-
     public class InflationOperation : Operation
     {
         public override xdr.Operation.OperationBody ToOperationBody()
