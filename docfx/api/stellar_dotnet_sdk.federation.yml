@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.federation
+  commentId: N:stellar_dotnet_sdk.federation
+  id: stellar_dotnet_sdk.federation
+  children:
+  - stellar_dotnet_sdk.federation.ConnectionErrorException
+  - stellar_dotnet_sdk.federation.Federation
+  - stellar_dotnet_sdk.federation.FederationResponse
+  - stellar_dotnet_sdk.federation.FederationServer
+  - stellar_dotnet_sdk.federation.FederationServerInvalidException
+  - stellar_dotnet_sdk.federation.MalformedAddressException
+  - stellar_dotnet_sdk.federation.NotFoundException
+  - stellar_dotnet_sdk.federation.ServerErrorException
+  - stellar_dotnet_sdk.federation.StellarTomlNotFoundInvalidException
+  langs:
+  - csharp
+  - vb
+  name: stellar_dotnet_sdk.federation
+  nameWithType: stellar_dotnet_sdk.federation
+  fullName: stellar_dotnet_sdk.federation
+  type: Namespace
+  assemblies:
+  - stellar-dotnet-sdk
+references:
+- uid: stellar_dotnet_sdk.federation.ConnectionErrorException
+  commentId: T:stellar_dotnet_sdk.federation.ConnectionErrorException
+  name: ConnectionErrorException
+  nameWithType: ConnectionErrorException
+  fullName: stellar_dotnet_sdk.federation.ConnectionErrorException
+- uid: stellar_dotnet_sdk.federation.Federation
+  commentId: T:stellar_dotnet_sdk.federation.Federation
+  name: Federation
+  nameWithType: Federation
+  fullName: stellar_dotnet_sdk.federation.Federation
+- uid: stellar_dotnet_sdk.federation.FederationResponse
+  commentId: T:stellar_dotnet_sdk.federation.FederationResponse
+  name: FederationResponse
+  nameWithType: FederationResponse
+  fullName: stellar_dotnet_sdk.federation.FederationResponse
+- uid: stellar_dotnet_sdk.federation.FederationServer
+  commentId: T:stellar_dotnet_sdk.federation.FederationServer
+  name: FederationServer
+  nameWithType: FederationServer
+  fullName: stellar_dotnet_sdk.federation.FederationServer
+- uid: stellar_dotnet_sdk.federation.FederationServerInvalidException
+  commentId: T:stellar_dotnet_sdk.federation.FederationServerInvalidException
+  name: FederationServerInvalidException
+  nameWithType: FederationServerInvalidException
+  fullName: stellar_dotnet_sdk.federation.FederationServerInvalidException
+- uid: stellar_dotnet_sdk.federation.MalformedAddressException
+  commentId: T:stellar_dotnet_sdk.federation.MalformedAddressException
+  name: MalformedAddressException
+  nameWithType: MalformedAddressException
+  fullName: stellar_dotnet_sdk.federation.MalformedAddressException
+- uid: stellar_dotnet_sdk.federation.NotFoundException
+  commentId: T:stellar_dotnet_sdk.federation.NotFoundException
+  name: NotFoundException
+  nameWithType: NotFoundException
+  fullName: stellar_dotnet_sdk.federation.NotFoundException
+- uid: stellar_dotnet_sdk.federation.ServerErrorException
+  commentId: T:stellar_dotnet_sdk.federation.ServerErrorException
+  name: ServerErrorException
+  nameWithType: ServerErrorException
+  fullName: stellar_dotnet_sdk.federation.ServerErrorException
+- uid: stellar_dotnet_sdk.federation.StellarTomlNotFoundInvalidException
+  commentId: T:stellar_dotnet_sdk.federation.StellarTomlNotFoundInvalidException
+  name: StellarTomlNotFoundInvalidException
+  nameWithType: StellarTomlNotFoundInvalidException
+  fullName: stellar_dotnet_sdk.federation.StellarTomlNotFoundInvalidException

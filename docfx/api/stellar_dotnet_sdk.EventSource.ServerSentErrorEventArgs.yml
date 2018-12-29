@@ -1,0 +1,101 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs
+  commentId: T:stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs
+  id: EventSource.ServerSentErrorEventArgs
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs.Exception
+  langs:
+  - csharp
+  - vb
+  name: EventSource.ServerSentErrorEventArgs
+  nameWithType: EventSource.ServerSentErrorEventArgs
+  fullName: stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ServerSentErrorEventArgs
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 516
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nServer Sent Error Event Object\n"
+  example: []
+  syntax:
+    content: 'public sealed class ServerSentErrorEventArgs : EventArgs'
+    content.vb: >-
+      Public NotInheritable Class ServerSentErrorEventArgs
+          Inherits EventArgs
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs.Exception
+  commentId: P:stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs.Exception
+  id: Exception
+  parent: stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs
+  langs:
+  - csharp
+  - vb
+  name: Exception
+  nameWithType: EventSource.ServerSentErrorEventArgs.Exception
+  fullName: stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs.Exception
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Exception
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 523
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nInternal Exception\n"
+  example: []
+  syntax:
+    content: public Exception Exception { get; }
+    parameters: []
+    return:
+      type: Exception
+    content.vb: Public ReadOnly Property Exception As Exception
+  overload: stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs.Exception*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs.Exception*
+  commentId: Overload:stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs.Exception
+  name: Exception
+  nameWithType: EventSource.ServerSentErrorEventArgs.Exception
+  fullName: stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs.Exception
+- uid: Exception
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: Exception

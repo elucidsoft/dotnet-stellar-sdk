@@ -1,0 +1,412 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  commentId: T:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  id: SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.#ctor
+  - stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Ballot
+  - stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm)
+  - stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NCommit
+  - stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NH
+  - stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NPrepared
+  - stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.QuorumSetHash
+  langs:
+  - csharp
+  - vb
+  name: SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SCPStatementConfirm
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 179
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class SCPStatementConfirm : object'
+    content.vb: >-
+      Public Class SCPStatementConfirm
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  langs:
+  - csharp
+  - vb
+  name: SCPStatementConfirm()
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.SCPStatementConfirm()
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.SCPStatementConfirm()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 181
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public SCPStatementConfirm()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Ballot
+  commentId: P:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Ballot
+  id: Ballot
+  parent: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  langs:
+  - csharp
+  - vb
+  name: Ballot
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.Ballot
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Ballot
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Ballot
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 182
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public SCPBallot Ballot { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.SCPBallot
+    content.vb: Public Property Ballot As SCPBallot
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Ballot*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NPrepared
+  commentId: P:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NPrepared
+  id: NPrepared
+  parent: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  langs:
+  - csharp
+  - vb
+  name: NPrepared
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.NPrepared
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NPrepared
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NPrepared
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 183
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint32 NPrepared { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint32
+    content.vb: Public Property NPrepared As Uint32
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NPrepared*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NCommit
+  commentId: P:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NCommit
+  id: NCommit
+  parent: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  langs:
+  - csharp
+  - vb
+  name: NCommit
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.NCommit
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NCommit
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NCommit
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 184
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint32 NCommit { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint32
+    content.vb: Public Property NCommit As Uint32
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NCommit*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NH
+  commentId: P:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NH
+  id: NH
+  parent: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  langs:
+  - csharp
+  - vb
+  name: NH
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.NH
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NH
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NH
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 185
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint32 NH { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint32
+    content.vb: Public Property NH As Uint32
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NH*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.QuorumSetHash
+  commentId: P:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.QuorumSetHash
+  id: QuorumSetHash
+  parent: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  langs:
+  - csharp
+  - vb
+  name: QuorumSetHash
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.QuorumSetHash
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.QuorumSetHash
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: QuorumSetHash
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 186
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Hash QuorumSetHash { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Hash
+    content.vb: Public Property QuorumSetHash As Hash
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.QuorumSetHash*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm)
+  commentId: M:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm)
+  parent: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, SCPStatement.SCPStatementPledges.SCPStatementConfirm)
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.Encode(XdrDataOutputStream, SCPStatement.SCPStatementPledges.SCPStatementConfirm)
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 188
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, SCPStatement.SCPStatementPledges.SCPStatementConfirm encodedSCPStatementConfirm)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedSCPStatementConfirm
+      type: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedSCPStatementConfirm As SCPStatement.SCPStatementPledges.SCPStatementConfirm)
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 196
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static SCPStatement.SCPStatementPledges.SCPStatementConfirm Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.#ctor
+  name: SCPStatementConfirm
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.SCPStatementConfirm
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.SCPStatementConfirm
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Ballot*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Ballot
+  name: Ballot
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.Ballot
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Ballot
+- uid: stellar_dotnet_sdk.xdr.SCPBallot
+  commentId: T:stellar_dotnet_sdk.xdr.SCPBallot
+  parent: stellar_dotnet_sdk.xdr
+  name: SCPBallot
+  nameWithType: SCPBallot
+  fullName: stellar_dotnet_sdk.xdr.SCPBallot
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NPrepared*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NPrepared
+  name: NPrepared
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.NPrepared
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NPrepared
+- uid: stellar_dotnet_sdk.xdr.Uint32
+  commentId: T:stellar_dotnet_sdk.xdr.Uint32
+  parent: stellar_dotnet_sdk.xdr
+  name: Uint32
+  nameWithType: Uint32
+  fullName: stellar_dotnet_sdk.xdr.Uint32
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NCommit*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NCommit
+  name: NCommit
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.NCommit
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NCommit
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NH*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NH
+  name: NH
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.NH
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.NH
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.QuorumSetHash*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.QuorumSetHash
+  name: QuorumSetHash
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.QuorumSetHash
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.QuorumSetHash
+- uid: stellar_dotnet_sdk.xdr.Hash
+  commentId: T:stellar_dotnet_sdk.xdr.Hash
+  parent: stellar_dotnet_sdk.xdr
+  name: Hash
+  nameWithType: Hash
+  fullName: stellar_dotnet_sdk.xdr.Hash
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Encode
+  name: Encode
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.Encode
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  commentId: T:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  parent: stellar_dotnet_sdk.xdr
+  name: SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Decode
+  name: Decode
+  nameWithType: SCPStatement.SCPStatementPledges.SCPStatementConfirm.Decode
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges.SCPStatementConfirm.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

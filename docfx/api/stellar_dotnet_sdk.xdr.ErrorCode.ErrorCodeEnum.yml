@@ -1,0 +1,216 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+  id: ErrorCode.ErrorCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_AUTH
+  - stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_CONF
+  - stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_DATA
+  - stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_LOAD
+  - stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_MISC
+  langs:
+  - csharp
+  - vb
+  name: ErrorCode.ErrorCodeEnum
+  nameWithType: ErrorCode.ErrorCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ErrorCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ErrorCodeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/ErrorCode.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum ErrorCodeEnum : int'
+    content.vb: Public Enum ErrorCodeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_MISC
+  commentId: F:stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_MISC
+  id: ERR_MISC
+  parent: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: ERR_MISC
+  nameWithType: ErrorCode.ErrorCodeEnum.ERR_MISC
+  fullName: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_MISC
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ErrorCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ERR_MISC
+    path: ../stellar-dotnet-sdk/xdr/generated/ErrorCode.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ERR_MISC = null
+    return:
+      type: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+    content.vb: ERR_MISC = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_DATA
+  commentId: F:stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_DATA
+  id: ERR_DATA
+  parent: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: ERR_DATA
+  nameWithType: ErrorCode.ErrorCodeEnum.ERR_DATA
+  fullName: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_DATA
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ErrorCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ERR_DATA
+    path: ../stellar-dotnet-sdk/xdr/generated/ErrorCode.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ERR_DATA = null
+    return:
+      type: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+    content.vb: ERR_DATA = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_CONF
+  commentId: F:stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_CONF
+  id: ERR_CONF
+  parent: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: ERR_CONF
+  nameWithType: ErrorCode.ErrorCodeEnum.ERR_CONF
+  fullName: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_CONF
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ErrorCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ERR_CONF
+    path: ../stellar-dotnet-sdk/xdr/generated/ErrorCode.cs
+    startLine: 25
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ERR_CONF = null
+    return:
+      type: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+    content.vb: ERR_CONF = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_AUTH
+  commentId: F:stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_AUTH
+  id: ERR_AUTH
+  parent: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: ERR_AUTH
+  nameWithType: ErrorCode.ErrorCodeEnum.ERR_AUTH
+  fullName: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_AUTH
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ErrorCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ERR_AUTH
+    path: ../stellar-dotnet-sdk/xdr/generated/ErrorCode.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ERR_AUTH = null
+    return:
+      type: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+    content.vb: ERR_AUTH = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_LOAD
+  commentId: F:stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_LOAD
+  id: ERR_LOAD
+  parent: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: ERR_LOAD
+  nameWithType: ErrorCode.ErrorCodeEnum.ERR_LOAD
+  fullName: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum.ERR_LOAD
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ErrorCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ERR_LOAD
+    path: ../stellar-dotnet-sdk/xdr/generated/ErrorCode.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ERR_LOAD = null
+    return:
+      type: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+    content.vb: ERR_LOAD = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: ErrorCode.ErrorCodeEnum
+  nameWithType: ErrorCode.ErrorCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.ErrorCode.ErrorCodeEnum

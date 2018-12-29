@@ -1,0 +1,311 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Builder
+  commentId: T:stellar_dotnet_sdk.ManageOfferOperation.Builder
+  id: ManageOfferOperation.Builder
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.ManageOfferOperation.Builder.#ctor(stellar_dotnet_sdk.Asset,stellar_dotnet_sdk.Asset,System.String,System.String)
+  - stellar_dotnet_sdk.ManageOfferOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.ManageOfferOp)
+  - stellar_dotnet_sdk.ManageOfferOperation.Builder.Build
+  - stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId(System.Int64)
+  - stellar_dotnet_sdk.ManageOfferOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  langs:
+  - csharp
+  - vb
+  name: ManageOfferOperation.Builder
+  nameWithType: ManageOfferOperation.Builder
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Builder
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageOfferOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Builder
+    path: ../stellar-dotnet-sdk/ManageOfferOperation.cs
+    startLine: 60
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: 'public class Builder : object'
+    content.vb: >-
+      Public Class Builder
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.ManageOfferOp)
+  commentId: M:stellar_dotnet_sdk.ManageOfferOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.ManageOfferOp)
+  id: '#ctor(stellar_dotnet_sdk.xdr.ManageOfferOp)'
+  parent: stellar_dotnet_sdk.ManageOfferOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder(ManageOfferOp)
+  nameWithType: ManageOfferOperation.Builder.Builder(ManageOfferOp)
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Builder.Builder(stellar_dotnet_sdk.xdr.ManageOfferOp)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageOfferOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/ManageOfferOperation.cs
+    startLine: 77
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nConstruct a new CreateAccount builder from a CreateAccountOp XDR.\n"
+  example: []
+  syntax:
+    content: public Builder(ManageOfferOp op)
+    parameters:
+    - id: op
+      type: stellar_dotnet_sdk.xdr.ManageOfferOp
+      description: "\n<xref href=\"stellar_dotnet_sdk.xdr.ManageOfferOp\" data-throw-if-not-resolved=\"false\"></xref>\n"
+    content.vb: Public Sub New(op As ManageOfferOp)
+  overload: stellar_dotnet_sdk.ManageOfferOperation.Builder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Builder.#ctor(stellar_dotnet_sdk.Asset,stellar_dotnet_sdk.Asset,System.String,System.String)
+  commentId: M:stellar_dotnet_sdk.ManageOfferOperation.Builder.#ctor(stellar_dotnet_sdk.Asset,stellar_dotnet_sdk.Asset,System.String,System.String)
+  id: '#ctor(stellar_dotnet_sdk.Asset,stellar_dotnet_sdk.Asset,System.String,System.String)'
+  parent: stellar_dotnet_sdk.ManageOfferOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder(Asset, Asset, String, String)
+  nameWithType: ManageOfferOperation.Builder.Builder(Asset, Asset, String, String)
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Builder.Builder(stellar_dotnet_sdk.Asset, stellar_dotnet_sdk.Asset, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageOfferOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/ManageOfferOperation.cs
+    startLine: 97
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates a new ManageOffer builder. If you want to update existing offer use\n<xref href=\"stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId(System.Int64)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public Builder(Asset selling, Asset buying, string amount, string price)
+    parameters:
+    - id: selling
+      type: stellar_dotnet_sdk.Asset
+      description: The asset being sold in this operation
+    - id: buying
+      type: stellar_dotnet_sdk.Asset
+      description: The asset being bought in this operation
+    - id: amount
+      type: System.String
+      description: Amount of selling being sold.
+    - id: price
+      type: System.String
+      description: Price of 1 unit of selling in terms of buying.
+    content.vb: Public Sub New(selling As Asset, buying As Asset, amount As String, price As String)
+  overload: stellar_dotnet_sdk.ManageOfferOperation.Builder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId(System.Int64)
+  commentId: M:stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId(System.Int64)
+  id: SetOfferId(System.Int64)
+  parent: stellar_dotnet_sdk.ManageOfferOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetOfferId(Int64)
+  nameWithType: ManageOfferOperation.Builder.SetOfferId(Int64)
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageOfferOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetOfferId
+    path: ../stellar-dotnet-sdk/ManageOfferOperation.cs
+    startLine: 109
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public ManageOfferOperation.Builder SetOfferId(long offerId)
+    parameters:
+    - id: offerId
+      type: System.Int64
+    return:
+      type: stellar_dotnet_sdk.ManageOfferOperation.Builder
+    content.vb: Public Function SetOfferId(offerId As Long) As ManageOfferOperation.Builder
+  overload: stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.ManageOfferOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  id: SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  parent: stellar_dotnet_sdk.ManageOfferOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetSourceAccount(KeyPair)
+  nameWithType: ManageOfferOperation.Builder.SetSourceAccount(KeyPair)
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageOfferOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetSourceAccount
+    path: ../stellar-dotnet-sdk/ManageOfferOperation.cs
+    startLine: 120
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSets the source account for this operation.\n"
+  example: []
+  syntax:
+    content: public ManageOfferOperation.Builder SetSourceAccount(KeyPair sourceAccount)
+    parameters:
+    - id: sourceAccount
+      type: stellar_dotnet_sdk.KeyPair
+      description: The operation&apos;s source account.
+    return:
+      type: stellar_dotnet_sdk.ManageOfferOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetSourceAccount(sourceAccount As KeyPair) As ManageOfferOperation.Builder
+  overload: stellar_dotnet_sdk.ManageOfferOperation.Builder.SetSourceAccount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Builder.Build
+  commentId: M:stellar_dotnet_sdk.ManageOfferOperation.Builder.Build
+  id: Build
+  parent: stellar_dotnet_sdk.ManageOfferOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Build()
+  nameWithType: ManageOfferOperation.Builder.Build()
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Builder.Build()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageOfferOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Build
+    path: ../stellar-dotnet-sdk/ManageOfferOperation.cs
+    startLine: 129
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBuilds an operation\n"
+  example: []
+  syntax:
+    content: public ManageOfferOperation Build()
+    return:
+      type: stellar_dotnet_sdk.ManageOfferOperation
+    content.vb: Public Function Build As ManageOfferOperation
+  overload: stellar_dotnet_sdk.ManageOfferOperation.Builder.Build*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.ManageOfferOp
+  commentId: T:stellar_dotnet_sdk.xdr.ManageOfferOp
+  parent: stellar_dotnet_sdk.xdr
+  name: ManageOfferOp
+  nameWithType: ManageOfferOp
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferOp
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Builder.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.ManageOfferOperation.Builder.#ctor
+  name: Builder
+  nameWithType: ManageOfferOperation.Builder.Builder
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Builder.Builder
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId(System.Int64)
+  commentId: M:stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId(System.Int64)
+  isExternal: true
+- uid: stellar_dotnet_sdk.Asset
+  commentId: T:stellar_dotnet_sdk.Asset
+  parent: stellar_dotnet_sdk
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.Asset
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId*
+  commentId: Overload:stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId
+  name: SetOfferId
+  nameWithType: ManageOfferOperation.Builder.SetOfferId
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Builder
+  commentId: T:stellar_dotnet_sdk.ManageOfferOperation.Builder
+  parent: stellar_dotnet_sdk
+  name: ManageOfferOperation.Builder
+  nameWithType: ManageOfferOperation.Builder
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Builder
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Builder.SetSourceAccount*
+  commentId: Overload:stellar_dotnet_sdk.ManageOfferOperation.Builder.SetSourceAccount
+  name: SetSourceAccount
+  nameWithType: ManageOfferOperation.Builder.SetSourceAccount
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Builder.SetSourceAccount
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Builder.Build*
+  commentId: Overload:stellar_dotnet_sdk.ManageOfferOperation.Builder.Build
+  name: Build
+  nameWithType: ManageOfferOperation.Builder.Build
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Builder.Build
+- uid: stellar_dotnet_sdk.ManageOfferOperation
+  commentId: T:stellar_dotnet_sdk.ManageOfferOperation
+  parent: stellar_dotnet_sdk
+  name: ManageOfferOperation
+  nameWithType: ManageOfferOperation
+  fullName: stellar_dotnet_sdk.ManageOfferOperation

@@ -1,0 +1,330 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+  id: LedgerHeaderHistoryEntry
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.#ctor
+  - stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry)
+  - stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Ext
+  - stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Hash
+  - stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Header
+  langs:
+  - csharp
+  - vb
+  name: LedgerHeaderHistoryEntry
+  nameWithType: LedgerHeaderHistoryEntry
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: LedgerHeaderHistoryEntry
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class LedgerHeaderHistoryEntry : object'
+    content.vb: >-
+      Public Class LedgerHeaderHistoryEntry
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+  langs:
+  - csharp
+  - vb
+  name: LedgerHeaderHistoryEntry()
+  nameWithType: LedgerHeaderHistoryEntry.LedgerHeaderHistoryEntry()
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.LedgerHeaderHistoryEntry()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public LedgerHeaderHistoryEntry()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Hash
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Hash
+  id: Hash
+  parent: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+  langs:
+  - csharp
+  - vb
+  name: Hash
+  nameWithType: LedgerHeaderHistoryEntry.Hash
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Hash
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Hash
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Hash Hash { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Hash
+    content.vb: Public Property Hash As Hash
+  overload: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Hash*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Header
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Header
+  id: Header
+  parent: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+  langs:
+  - csharp
+  - vb
+  name: Header
+  nameWithType: LedgerHeaderHistoryEntry.Header
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Header
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Header
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public LedgerHeader Header { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.LedgerHeader
+    content.vb: Public Property Header As LedgerHeader
+  overload: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Header*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Ext
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Ext
+  id: Ext
+  parent: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+  langs:
+  - csharp
+  - vb
+  name: Ext
+  nameWithType: LedgerHeaderHistoryEntry.Ext
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Ext
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Ext
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public LedgerHeaderHistoryEntry.LedgerHeaderHistoryEntryExt Ext { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.LedgerHeaderHistoryEntryExt
+    content.vb: Public Property Ext As LedgerHeaderHistoryEntry.LedgerHeaderHistoryEntryExt
+  overload: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Ext*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry)
+  commentId: M:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry)
+  parent: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, LedgerHeaderHistoryEntry)
+  nameWithType: LedgerHeaderHistoryEntry.Encode(XdrDataOutputStream, LedgerHeaderHistoryEntry)
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, LedgerHeaderHistoryEntry encodedLedgerHeaderHistoryEntry)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedLedgerHeaderHistoryEntry
+      type: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedLedgerHeaderHistoryEntry As LedgerHeaderHistoryEntry)
+  overload: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: LedgerHeaderHistoryEntry.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerHeaderHistoryEntry.cs
+    startLine: 37
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static LedgerHeaderHistoryEntry Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As LedgerHeaderHistoryEntry
+  overload: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.#ctor
+  name: LedgerHeaderHistoryEntry
+  nameWithType: LedgerHeaderHistoryEntry.LedgerHeaderHistoryEntry
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.LedgerHeaderHistoryEntry
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Hash*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Hash
+  name: Hash
+  nameWithType: LedgerHeaderHistoryEntry.Hash
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Hash
+- uid: stellar_dotnet_sdk.xdr.Hash
+  commentId: T:stellar_dotnet_sdk.xdr.Hash
+  parent: stellar_dotnet_sdk.xdr
+  name: Hash
+  nameWithType: Hash
+  fullName: stellar_dotnet_sdk.xdr.Hash
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Header*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Header
+  name: Header
+  nameWithType: LedgerHeaderHistoryEntry.Header
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Header
+- uid: stellar_dotnet_sdk.xdr.LedgerHeader
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerHeader
+  parent: stellar_dotnet_sdk.xdr
+  name: LedgerHeader
+  nameWithType: LedgerHeader
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeader
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Ext*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Ext
+  name: Ext
+  nameWithType: LedgerHeaderHistoryEntry.Ext
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Ext
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.LedgerHeaderHistoryEntryExt
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.LedgerHeaderHistoryEntryExt
+  parent: stellar_dotnet_sdk.xdr
+  name: LedgerHeaderHistoryEntry.LedgerHeaderHistoryEntryExt
+  nameWithType: LedgerHeaderHistoryEntry.LedgerHeaderHistoryEntryExt
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.LedgerHeaderHistoryEntryExt
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Encode
+  name: Encode
+  nameWithType: LedgerHeaderHistoryEntry.Encode
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+  parent: stellar_dotnet_sdk.xdr
+  name: LedgerHeaderHistoryEntry
+  nameWithType: LedgerHeaderHistoryEntry
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry
+- uid: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Decode
+  name: Decode
+  nameWithType: LedgerHeaderHistoryEntry.Decode
+  fullName: stellar_dotnet_sdk.xdr.LedgerHeaderHistoryEntry.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

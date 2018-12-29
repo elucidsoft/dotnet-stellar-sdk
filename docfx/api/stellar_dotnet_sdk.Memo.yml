@@ -1,0 +1,638 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.Memo
+  commentId: T:stellar_dotnet_sdk.Memo
+  id: Memo
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.Memo.Equals(System.Object)
+  - stellar_dotnet_sdk.Memo.FromXdr(stellar_dotnet_sdk.xdr.Memo)
+  - stellar_dotnet_sdk.Memo.GetHashCode
+  - stellar_dotnet_sdk.Memo.Hash(System.Byte[])
+  - stellar_dotnet_sdk.Memo.Hash(System.String)
+  - stellar_dotnet_sdk.Memo.Id(System.Int64)
+  - stellar_dotnet_sdk.Memo.None
+  - stellar_dotnet_sdk.Memo.ReturnHash(System.Byte[])
+  - stellar_dotnet_sdk.Memo.ReturnHash(System.String)
+  - stellar_dotnet_sdk.Memo.Text(System.String)
+  - stellar_dotnet_sdk.Memo.ToXdr
+  langs:
+  - csharp
+  - vb
+  name: Memo
+  nameWithType: Memo
+  fullName: stellar_dotnet_sdk.Memo
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Memo
+    path: ../stellar-dotnet-sdk/Memo.cs
+    startLine: 5
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nAbstract class for creating various Memo Types.\n"
+  example: []
+  syntax:
+    content: 'public abstract class Memo : object'
+    content.vb: >-
+      Public MustInherit Class Memo
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - stellar_dotnet_sdk.MemoHashAbstract
+  - stellar_dotnet_sdk.MemoId
+  - stellar_dotnet_sdk.MemoNone
+  - stellar_dotnet_sdk.MemoText
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: stellar_dotnet_sdk.Memo.None
+  commentId: M:stellar_dotnet_sdk.Memo.None
+  id: None
+  parent: stellar_dotnet_sdk.Memo
+  langs:
+  - csharp
+  - vb
+  name: None()
+  nameWithType: Memo.None()
+  fullName: stellar_dotnet_sdk.Memo.None()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: None
+    path: ../stellar-dotnet-sdk/Memo.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates new MemoNone instance.\n"
+  example: []
+  syntax:
+    content: public static MemoNone None()
+    return:
+      type: stellar_dotnet_sdk.MemoNone
+    content.vb: Public Shared Function None As MemoNone
+  overload: stellar_dotnet_sdk.Memo.None*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Memo.Text(System.String)
+  commentId: M:stellar_dotnet_sdk.Memo.Text(System.String)
+  id: Text(System.String)
+  parent: stellar_dotnet_sdk.Memo
+  langs:
+  - csharp
+  - vb
+  name: Text(String)
+  nameWithType: Memo.Text(String)
+  fullName: stellar_dotnet_sdk.Memo.Text(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Text
+    path: ../stellar-dotnet-sdk/Memo.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates new {@link MemoText} instance.\n"
+  example: []
+  syntax:
+    content: public static MemoText Text(string text)
+    parameters:
+    - id: text
+      type: System.String
+      description: The text value of a Text Memo.
+    return:
+      type: stellar_dotnet_sdk.MemoText
+    content.vb: Public Shared Function Text(text As String) As MemoText
+  overload: stellar_dotnet_sdk.Memo.Text*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Memo.Id(System.Int64)
+  commentId: M:stellar_dotnet_sdk.Memo.Id(System.Int64)
+  id: Id(System.Int64)
+  parent: stellar_dotnet_sdk.Memo
+  langs:
+  - csharp
+  - vb
+  name: Id(Int64)
+  nameWithType: Memo.Id(Int64)
+  fullName: stellar_dotnet_sdk.Memo.Id(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Id
+    path: ../stellar-dotnet-sdk/Memo.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates new {@link MemoId} instance.\n"
+  example: []
+  syntax:
+    content: public static MemoId Id(long id)
+    parameters:
+    - id: id
+      type: System.Int64
+      description: The id value of an Id Memo.
+    return:
+      type: stellar_dotnet_sdk.MemoId
+    content.vb: Public Shared Function Id(id As Long) As MemoId
+  overload: stellar_dotnet_sdk.Memo.Id*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Memo.Hash(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.Memo.Hash(System.Byte[])
+  id: Hash(System.Byte[])
+  parent: stellar_dotnet_sdk.Memo
+  langs:
+  - csharp
+  - vb
+  name: Hash(Byte[])
+  nameWithType: Memo.Hash(Byte[])
+  fullName: stellar_dotnet_sdk.Memo.Hash(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Hash
+    path: ../stellar-dotnet-sdk/Memo.cs
+    startLine: 37
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates new {@link MemoHash} instance from byte array.\n"
+  example: []
+  syntax:
+    content: public static MemoHash Hash(byte[] bytes)
+    parameters:
+    - id: bytes
+      type: System.Byte[]
+      description: The byte array of a Hash Memo.
+    return:
+      type: stellar_dotnet_sdk.MemoHash
+    content.vb: Public Shared Function Hash(bytes As Byte()) As MemoHash
+  overload: stellar_dotnet_sdk.Memo.Hash*
+  nameWithType.vb: Memo.Hash(Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.Memo.Hash(System.Byte())
+  name.vb: Hash(Byte())
+- uid: stellar_dotnet_sdk.Memo.Hash(System.String)
+  commentId: M:stellar_dotnet_sdk.Memo.Hash(System.String)
+  id: Hash(System.String)
+  parent: stellar_dotnet_sdk.Memo
+  langs:
+  - csharp
+  - vb
+  name: Hash(String)
+  nameWithType: Memo.Hash(String)
+  fullName: stellar_dotnet_sdk.Memo.Hash(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Hash
+    path: ../stellar-dotnet-sdk/Memo.cs
+    startLine: 46
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates new {@link MemoHash} instance from hex-encoded string\n"
+  example: []
+  syntax:
+    content: public static MemoHash Hash(string hexString)
+    parameters:
+    - id: hexString
+      type: System.String
+      description: The hex value of a Hash Memo
+    return:
+      type: stellar_dotnet_sdk.MemoHash
+    content.vb: Public Shared Function Hash(hexString As String) As MemoHash
+  overload: stellar_dotnet_sdk.Memo.Hash*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Memo.ReturnHash(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.Memo.ReturnHash(System.Byte[])
+  id: ReturnHash(System.Byte[])
+  parent: stellar_dotnet_sdk.Memo
+  langs:
+  - csharp
+  - vb
+  name: ReturnHash(Byte[])
+  nameWithType: Memo.ReturnHash(Byte[])
+  fullName: stellar_dotnet_sdk.Memo.ReturnHash(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ReturnHash
+    path: ../stellar-dotnet-sdk/Memo.cs
+    startLine: 55
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates new {@link MemoReturnHash} instance from byte array.\n"
+  example: []
+  syntax:
+    content: public static MemoReturnHash ReturnHash(byte[] bytes)
+    parameters:
+    - id: bytes
+      type: System.Byte[]
+      description: A byte array of a Return Hash Memo.
+    return:
+      type: stellar_dotnet_sdk.MemoReturnHash
+    content.vb: Public Shared Function ReturnHash(bytes As Byte()) As MemoReturnHash
+  overload: stellar_dotnet_sdk.Memo.ReturnHash*
+  nameWithType.vb: Memo.ReturnHash(Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.Memo.ReturnHash(System.Byte())
+  name.vb: ReturnHash(Byte())
+- uid: stellar_dotnet_sdk.Memo.ReturnHash(System.String)
+  commentId: M:stellar_dotnet_sdk.Memo.ReturnHash(System.String)
+  id: ReturnHash(System.String)
+  parent: stellar_dotnet_sdk.Memo
+  langs:
+  - csharp
+  - vb
+  name: ReturnHash(String)
+  nameWithType: Memo.ReturnHash(String)
+  fullName: stellar_dotnet_sdk.Memo.ReturnHash(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ReturnHash
+    path: ../stellar-dotnet-sdk/Memo.cs
+    startLine: 64
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates new {@link MemoReturnHash} instance from hex-encoded string.\n"
+  example: []
+  syntax:
+    content: public static MemoReturnHash ReturnHash(string hexString)
+    parameters:
+    - id: hexString
+      type: System.String
+      description: The hex value of a Return Hash Memo.
+    return:
+      type: stellar_dotnet_sdk.MemoReturnHash
+    content.vb: Public Shared Function ReturnHash(hexString As String) As MemoReturnHash
+  overload: stellar_dotnet_sdk.Memo.ReturnHash*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Memo.FromXdr(stellar_dotnet_sdk.xdr.Memo)
+  commentId: M:stellar_dotnet_sdk.Memo.FromXdr(stellar_dotnet_sdk.xdr.Memo)
+  id: FromXdr(stellar_dotnet_sdk.xdr.Memo)
+  parent: stellar_dotnet_sdk.Memo
+  langs:
+  - csharp
+  - vb
+  name: FromXdr(Memo)
+  nameWithType: Memo.FromXdr(Memo)
+  fullName: stellar_dotnet_sdk.Memo.FromXdr(stellar_dotnet_sdk.xdr.Memo)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FromXdr
+    path: ../stellar-dotnet-sdk/Memo.cs
+    startLine: 69
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static Memo FromXdr(Memo memo)
+    parameters:
+    - id: memo
+      type: stellar_dotnet_sdk.xdr.Memo
+    return:
+      type: stellar_dotnet_sdk.Memo
+    content.vb: Public Shared Function FromXdr(memo As Memo) As Memo
+  overload: stellar_dotnet_sdk.Memo.FromXdr*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Memo.ToXdr
+  commentId: M:stellar_dotnet_sdk.Memo.ToXdr
+  id: ToXdr
+  parent: stellar_dotnet_sdk.Memo
+  langs:
+  - csharp
+  - vb
+  name: ToXdr()
+  nameWithType: Memo.ToXdr()
+  fullName: stellar_dotnet_sdk.Memo.ToXdr()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ToXdr
+    path: ../stellar-dotnet-sdk/Memo.cs
+    startLine: 92
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nAbstract method for ToXdr\n"
+  example: []
+  syntax:
+    content: public abstract Memo ToXdr()
+    return:
+      type: stellar_dotnet_sdk.xdr.Memo
+      description: A memo object.
+    content.vb: Public MustOverride Function ToXdr As Memo
+  overload: stellar_dotnet_sdk.Memo.ToXdr*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: stellar_dotnet_sdk.Memo.Equals(System.Object)
+  commentId: M:stellar_dotnet_sdk.Memo.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: stellar_dotnet_sdk.Memo
+  langs:
+  - csharp
+  - vb
+  name: Equals(System.Object)
+  nameWithType: Memo.Equals(System.Object)
+  fullName: stellar_dotnet_sdk.Memo.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Equals
+    path: ../stellar-dotnet-sdk/Memo.cs
+    startLine: 94
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public abstract override bool Equals(System.Object o)
+    parameters:
+    - id: o
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Overrides Function Equals(o As System.Object) As Boolean
+  overload: stellar_dotnet_sdk.Memo.Equals*
+  modifiers.csharp:
+  - public
+  - abstract
+  - override
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - Overrides
+- uid: stellar_dotnet_sdk.Memo.GetHashCode
+  commentId: M:stellar_dotnet_sdk.Memo.GetHashCode
+  id: GetHashCode
+  parent: stellar_dotnet_sdk.Memo
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Memo.GetHashCode()
+  fullName: stellar_dotnet_sdk.Memo.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: GetHashCode
+    path: ../stellar-dotnet-sdk/Memo.cs
+    startLine: 95
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public abstract override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public MustOverride Overrides Function GetHashCode As Integer
+  overload: stellar_dotnet_sdk.Memo.GetHashCode*
+  modifiers.csharp:
+  - public
+  - abstract
+  - override
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - Overrides
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.Memo.None*
+  commentId: Overload:stellar_dotnet_sdk.Memo.None
+  name: None
+  nameWithType: Memo.None
+  fullName: stellar_dotnet_sdk.Memo.None
+- uid: stellar_dotnet_sdk.MemoNone
+  commentId: T:stellar_dotnet_sdk.MemoNone
+  parent: stellar_dotnet_sdk
+  name: MemoNone
+  nameWithType: MemoNone
+  fullName: stellar_dotnet_sdk.MemoNone
+- uid: stellar_dotnet_sdk.Memo.Text*
+  commentId: Overload:stellar_dotnet_sdk.Memo.Text
+  name: Text
+  nameWithType: Memo.Text
+  fullName: stellar_dotnet_sdk.Memo.Text
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.MemoText
+  commentId: T:stellar_dotnet_sdk.MemoText
+  parent: stellar_dotnet_sdk
+  name: MemoText
+  nameWithType: MemoText
+  fullName: stellar_dotnet_sdk.MemoText
+- uid: stellar_dotnet_sdk.Memo.Id*
+  commentId: Overload:stellar_dotnet_sdk.Memo.Id
+  name: Id
+  nameWithType: Memo.Id
+  fullName: stellar_dotnet_sdk.Memo.Id
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: stellar_dotnet_sdk.MemoId
+  commentId: T:stellar_dotnet_sdk.MemoId
+  parent: stellar_dotnet_sdk
+  name: MemoId
+  nameWithType: MemoId
+  fullName: stellar_dotnet_sdk.MemoId
+- uid: stellar_dotnet_sdk.Memo.Hash*
+  commentId: Overload:stellar_dotnet_sdk.Memo.Hash
+  name: Hash
+  nameWithType: Memo.Hash
+  fullName: stellar_dotnet_sdk.Memo.Hash
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: stellar_dotnet_sdk.MemoHash
+  commentId: T:stellar_dotnet_sdk.MemoHash
+  parent: stellar_dotnet_sdk
+  name: MemoHash
+  nameWithType: MemoHash
+  fullName: stellar_dotnet_sdk.MemoHash
+- uid: stellar_dotnet_sdk.Memo.ReturnHash*
+  commentId: Overload:stellar_dotnet_sdk.Memo.ReturnHash
+  name: ReturnHash
+  nameWithType: Memo.ReturnHash
+  fullName: stellar_dotnet_sdk.Memo.ReturnHash
+- uid: stellar_dotnet_sdk.MemoReturnHash
+  commentId: T:stellar_dotnet_sdk.MemoReturnHash
+  parent: stellar_dotnet_sdk
+  name: MemoReturnHash
+  nameWithType: MemoReturnHash
+  fullName: stellar_dotnet_sdk.MemoReturnHash
+- uid: stellar_dotnet_sdk.Memo.FromXdr*
+  commentId: Overload:stellar_dotnet_sdk.Memo.FromXdr
+  name: FromXdr
+  nameWithType: Memo.FromXdr
+  fullName: stellar_dotnet_sdk.Memo.FromXdr
+- uid: stellar_dotnet_sdk.xdr.Memo
+  commentId: T:stellar_dotnet_sdk.xdr.Memo
+  parent: stellar_dotnet_sdk.xdr
+  name: Memo
+  nameWithType: Memo
+  fullName: stellar_dotnet_sdk.xdr.Memo
+- uid: stellar_dotnet_sdk.Memo
+  commentId: T:stellar_dotnet_sdk.Memo
+  parent: stellar_dotnet_sdk
+  name: Memo
+  nameWithType: Memo
+  fullName: stellar_dotnet_sdk.Memo
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.Memo.ToXdr*
+  commentId: Overload:stellar_dotnet_sdk.Memo.ToXdr
+  name: ToXdr
+  nameWithType: Memo.ToXdr
+  fullName: stellar_dotnet_sdk.Memo.ToXdr
+- uid: stellar_dotnet_sdk.Memo.Equals*
+  commentId: Overload:stellar_dotnet_sdk.Memo.Equals
+  name: Equals
+  nameWithType: Memo.Equals
+  fullName: stellar_dotnet_sdk.Memo.Equals
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: stellar_dotnet_sdk.Memo.GetHashCode*
+  commentId: Overload:stellar_dotnet_sdk.Memo.GetHashCode
+  name: GetHashCode
+  nameWithType: Memo.GetHashCode
+  fullName: stellar_dotnet_sdk.Memo.GetHashCode
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

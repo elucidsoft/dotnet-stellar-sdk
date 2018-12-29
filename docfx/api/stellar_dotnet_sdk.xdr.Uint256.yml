@@ -1,0 +1,293 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.Uint256
+  commentId: T:stellar_dotnet_sdk.xdr.Uint256
+  id: Uint256
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.Uint256.#ctor
+  - stellar_dotnet_sdk.xdr.Uint256.#ctor(System.Byte[])
+  - stellar_dotnet_sdk.xdr.Uint256.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.Uint256.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Uint256)
+  - stellar_dotnet_sdk.xdr.Uint256.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: Uint256
+  nameWithType: Uint256
+  fullName: stellar_dotnet_sdk.xdr.Uint256
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Uint256.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Uint256
+    path: ../stellar-dotnet-sdk/xdr/generated/Uint256.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class Uint256 : object'
+    content.vb: >-
+      Public Class Uint256
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.Uint256.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.Uint256.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.Uint256
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: Uint256.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.Uint256.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Uint256.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/Uint256.cs
+    startLine: 14
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public byte[] InnerValue { get; set; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public Property InnerValue As Byte()
+  overload: stellar_dotnet_sdk.xdr.Uint256.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Uint256.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.Uint256.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.Uint256
+  langs:
+  - csharp
+  - vb
+  name: Uint256()
+  nameWithType: Uint256.Uint256()
+  fullName: stellar_dotnet_sdk.xdr.Uint256.Uint256()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Uint256.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/Uint256.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint256()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.Uint256.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Uint256.#ctor(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.xdr.Uint256.#ctor(System.Byte[])
+  id: '#ctor(System.Byte[])'
+  parent: stellar_dotnet_sdk.xdr.Uint256
+  langs:
+  - csharp
+  - vb
+  name: Uint256(Byte[])
+  nameWithType: Uint256.Uint256(Byte[])
+  fullName: stellar_dotnet_sdk.xdr.Uint256.Uint256(System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Uint256.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/Uint256.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint256(byte[] value)
+    parameters:
+    - id: value
+      type: System.Byte[]
+    content.vb: Public Sub New(value As Byte())
+  overload: stellar_dotnet_sdk.xdr.Uint256.#ctor*
+  nameWithType.vb: Uint256.Uint256(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.xdr.Uint256.Uint256(System.Byte())
+  name.vb: Uint256(Byte())
+- uid: stellar_dotnet_sdk.xdr.Uint256.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Uint256)
+  commentId: M:stellar_dotnet_sdk.xdr.Uint256.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Uint256)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Uint256)
+  parent: stellar_dotnet_sdk.xdr.Uint256
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, Uint256)
+  nameWithType: Uint256.Encode(XdrDataOutputStream, Uint256)
+  fullName: stellar_dotnet_sdk.xdr.Uint256.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.Uint256)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Uint256.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/Uint256.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, Uint256 encodedUint256)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedUint256
+      type: stellar_dotnet_sdk.xdr.Uint256
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedUint256 As Uint256)
+  overload: stellar_dotnet_sdk.xdr.Uint256.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.Uint256.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.Uint256.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.Uint256
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: Uint256.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.Uint256.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Uint256.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/Uint256.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static Uint256 Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint256
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As Uint256
+  overload: stellar_dotnet_sdk.xdr.Uint256.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.Uint256.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Uint256.InnerValue
+  name: InnerValue
+  nameWithType: Uint256.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.Uint256.InnerValue
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: stellar_dotnet_sdk.xdr.Uint256.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Uint256.#ctor
+  name: Uint256
+  nameWithType: Uint256.Uint256
+  fullName: stellar_dotnet_sdk.xdr.Uint256.Uint256
+- uid: stellar_dotnet_sdk.xdr.Uint256.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Uint256.Encode
+  name: Encode
+  nameWithType: Uint256.Encode
+  fullName: stellar_dotnet_sdk.xdr.Uint256.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.Uint256
+  commentId: T:stellar_dotnet_sdk.xdr.Uint256
+  parent: stellar_dotnet_sdk.xdr
+  name: Uint256
+  nameWithType: Uint256
+  fullName: stellar_dotnet_sdk.xdr.Uint256
+- uid: stellar_dotnet_sdk.xdr.Uint256.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Uint256.Decode
+  name: Decode
+  nameWithType: Uint256.Decode
+  fullName: stellar_dotnet_sdk.xdr.Uint256.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

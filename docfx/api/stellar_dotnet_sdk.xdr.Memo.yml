@@ -1,0 +1,417 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.Memo
+  commentId: T:stellar_dotnet_sdk.xdr.Memo
+  id: Memo
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.Memo.#ctor
+  - stellar_dotnet_sdk.xdr.Memo.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.Memo.Discriminant
+  - stellar_dotnet_sdk.xdr.Memo.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Memo)
+  - stellar_dotnet_sdk.xdr.Memo.Hash
+  - stellar_dotnet_sdk.xdr.Memo.Id
+  - stellar_dotnet_sdk.xdr.Memo.RetHash
+  - stellar_dotnet_sdk.xdr.Memo.Text
+  langs:
+  - csharp
+  - vb
+  name: Memo
+  nameWithType: Memo
+  fullName: stellar_dotnet_sdk.xdr.Memo
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Memo
+    path: ../stellar-dotnet-sdk/xdr/generated/Memo.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class Memo : object'
+    content.vb: >-
+      Public Class Memo
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.Memo.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.Memo.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.Memo
+  langs:
+  - csharp
+  - vb
+  name: Memo()
+  nameWithType: Memo.Memo()
+  fullName: stellar_dotnet_sdk.xdr.Memo.Memo()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/Memo.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Memo()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.Memo.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Memo.Discriminant
+  commentId: P:stellar_dotnet_sdk.xdr.Memo.Discriminant
+  id: Discriminant
+  parent: stellar_dotnet_sdk.xdr.Memo
+  langs:
+  - csharp
+  - vb
+  name: Discriminant
+  nameWithType: Memo.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.Memo.Discriminant
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Discriminant
+    path: ../stellar-dotnet-sdk/xdr/generated/Memo.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public MemoType Discriminant { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.MemoType
+    content.vb: Public Property Discriminant As MemoType
+  overload: stellar_dotnet_sdk.xdr.Memo.Discriminant*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Memo.Text
+  commentId: P:stellar_dotnet_sdk.xdr.Memo.Text
+  id: Text
+  parent: stellar_dotnet_sdk.xdr.Memo
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: Memo.Text
+  fullName: stellar_dotnet_sdk.xdr.Memo.Text
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Text
+    path: ../stellar-dotnet-sdk/xdr/generated/Memo.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public String Text { get; set; }
+    parameters: []
+    return:
+      type: String
+    content.vb: Public Property Text As String
+  overload: stellar_dotnet_sdk.xdr.Memo.Text*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Memo.Id
+  commentId: P:stellar_dotnet_sdk.xdr.Memo.Id
+  id: Id
+  parent: stellar_dotnet_sdk.xdr.Memo
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: Memo.Id
+  fullName: stellar_dotnet_sdk.xdr.Memo.Id
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Id
+    path: ../stellar-dotnet-sdk/xdr/generated/Memo.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint64 Id { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint64
+    content.vb: Public Property Id As Uint64
+  overload: stellar_dotnet_sdk.xdr.Memo.Id*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Memo.Hash
+  commentId: P:stellar_dotnet_sdk.xdr.Memo.Hash
+  id: Hash
+  parent: stellar_dotnet_sdk.xdr.Memo
+  langs:
+  - csharp
+  - vb
+  name: Hash
+  nameWithType: Memo.Hash
+  fullName: stellar_dotnet_sdk.xdr.Memo.Hash
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Hash
+    path: ../stellar-dotnet-sdk/xdr/generated/Memo.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Hash Hash { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Hash
+    content.vb: Public Property Hash As Hash
+  overload: stellar_dotnet_sdk.xdr.Memo.Hash*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Memo.RetHash
+  commentId: P:stellar_dotnet_sdk.xdr.Memo.RetHash
+  id: RetHash
+  parent: stellar_dotnet_sdk.xdr.Memo
+  langs:
+  - csharp
+  - vb
+  name: RetHash
+  nameWithType: Memo.RetHash
+  fullName: stellar_dotnet_sdk.xdr.Memo.RetHash
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: RetHash
+    path: ../stellar-dotnet-sdk/xdr/generated/Memo.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Hash RetHash { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Hash
+    content.vb: Public Property RetHash As Hash
+  overload: stellar_dotnet_sdk.xdr.Memo.RetHash*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Memo.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Memo)
+  commentId: M:stellar_dotnet_sdk.xdr.Memo.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Memo)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Memo)
+  parent: stellar_dotnet_sdk.xdr.Memo
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, Memo)
+  nameWithType: Memo.Encode(XdrDataOutputStream, Memo)
+  fullName: stellar_dotnet_sdk.xdr.Memo.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.Memo)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/Memo.cs
+    startLine: 34
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, Memo encodedMemo)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedMemo
+      type: stellar_dotnet_sdk.xdr.Memo
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedMemo As Memo)
+  overload: stellar_dotnet_sdk.xdr.Memo.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.Memo.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.Memo.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.Memo
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: Memo.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.Memo.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Memo.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/Memo.cs
+    startLine: 55
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static Memo Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.Memo
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As Memo
+  overload: stellar_dotnet_sdk.xdr.Memo.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.Memo.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Memo.#ctor
+  name: Memo
+  nameWithType: Memo.Memo
+  fullName: stellar_dotnet_sdk.xdr.Memo.Memo
+- uid: stellar_dotnet_sdk.xdr.Memo.Discriminant*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Memo.Discriminant
+  name: Discriminant
+  nameWithType: Memo.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.Memo.Discriminant
+- uid: stellar_dotnet_sdk.xdr.MemoType
+  commentId: T:stellar_dotnet_sdk.xdr.MemoType
+  parent: stellar_dotnet_sdk.xdr
+  name: MemoType
+  nameWithType: MemoType
+  fullName: stellar_dotnet_sdk.xdr.MemoType
+- uid: stellar_dotnet_sdk.xdr.Memo.Text*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Memo.Text
+  name: Text
+  nameWithType: Memo.Text
+  fullName: stellar_dotnet_sdk.xdr.Memo.Text
+- uid: String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: String
+- uid: stellar_dotnet_sdk.xdr.Memo.Id*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Memo.Id
+  name: Id
+  nameWithType: Memo.Id
+  fullName: stellar_dotnet_sdk.xdr.Memo.Id
+- uid: stellar_dotnet_sdk.xdr.Uint64
+  commentId: T:stellar_dotnet_sdk.xdr.Uint64
+  parent: stellar_dotnet_sdk.xdr
+  name: Uint64
+  nameWithType: Uint64
+  fullName: stellar_dotnet_sdk.xdr.Uint64
+- uid: stellar_dotnet_sdk.xdr.Memo.Hash*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Memo.Hash
+  name: Hash
+  nameWithType: Memo.Hash
+  fullName: stellar_dotnet_sdk.xdr.Memo.Hash
+- uid: stellar_dotnet_sdk.xdr.Hash
+  commentId: T:stellar_dotnet_sdk.xdr.Hash
+  parent: stellar_dotnet_sdk.xdr
+  name: Hash
+  nameWithType: Hash
+  fullName: stellar_dotnet_sdk.xdr.Hash
+- uid: stellar_dotnet_sdk.xdr.Memo.RetHash*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Memo.RetHash
+  name: RetHash
+  nameWithType: Memo.RetHash
+  fullName: stellar_dotnet_sdk.xdr.Memo.RetHash
+- uid: stellar_dotnet_sdk.xdr.Memo.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Memo.Encode
+  name: Encode
+  nameWithType: Memo.Encode
+  fullName: stellar_dotnet_sdk.xdr.Memo.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.Memo
+  commentId: T:stellar_dotnet_sdk.xdr.Memo
+  parent: stellar_dotnet_sdk.xdr
+  name: Memo
+  nameWithType: Memo
+  fullName: stellar_dotnet_sdk.xdr.Memo
+- uid: stellar_dotnet_sdk.xdr.Memo.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Memo.Decode
+  name: Decode
+  nameWithType: Memo.Decode
+  fullName: stellar_dotnet_sdk.xdr.Memo.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

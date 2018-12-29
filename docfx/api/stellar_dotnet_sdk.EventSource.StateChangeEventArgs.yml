@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.EventSource.StateChangeEventArgs
+  commentId: T:stellar_dotnet_sdk.EventSource.StateChangeEventArgs
+  id: EventSource.StateChangeEventArgs
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.EventSource.StateChangeEventArgs.NewState
+  langs:
+  - csharp
+  - vb
+  name: EventSource.StateChangeEventArgs
+  nameWithType: EventSource.StateChangeEventArgs
+  fullName: stellar_dotnet_sdk.EventSource.StateChangeEventArgs
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: StateChangeEventArgs
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 546
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nServer Sent Error Event Object\n"
+  example: []
+  syntax:
+    content: 'public sealed class StateChangeEventArgs : EventArgs'
+    content.vb: >-
+      Public NotInheritable Class StateChangeEventArgs
+          Inherits EventArgs
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: stellar_dotnet_sdk.EventSource.StateChangeEventArgs.NewState
+  commentId: P:stellar_dotnet_sdk.EventSource.StateChangeEventArgs.NewState
+  id: NewState
+  parent: stellar_dotnet_sdk.EventSource.StateChangeEventArgs
+  langs:
+  - csharp
+  - vb
+  name: NewState
+  nameWithType: EventSource.StateChangeEventArgs.NewState
+  fullName: stellar_dotnet_sdk.EventSource.StateChangeEventArgs.NewState
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NewState
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 553
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nNew State changed to\n"
+  example: []
+  syntax:
+    content: public EventSource.EventSourceState NewState { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.EventSource.EventSourceState
+    content.vb: Public ReadOnly Property NewState As EventSource.EventSourceState
+  overload: stellar_dotnet_sdk.EventSource.StateChangeEventArgs.NewState*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.EventSource.StateChangeEventArgs.NewState*
+  commentId: Overload:stellar_dotnet_sdk.EventSource.StateChangeEventArgs.NewState
+  name: NewState
+  nameWithType: EventSource.StateChangeEventArgs.NewState
+  fullName: stellar_dotnet_sdk.EventSource.StateChangeEventArgs.NewState
+- uid: stellar_dotnet_sdk.EventSource.EventSourceState
+  commentId: T:stellar_dotnet_sdk.EventSource.EventSourceState
+  parent: stellar_dotnet_sdk
+  name: EventSource.EventSourceState
+  nameWithType: EventSource.EventSourceState
+  fullName: stellar_dotnet_sdk.EventSource.EventSourceState

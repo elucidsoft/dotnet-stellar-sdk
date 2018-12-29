@@ -1,0 +1,114 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum
+  id: BumpSequenceResultCode.BumpSequenceResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_BAD_SEQ
+  - stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_SUCCESS
+  langs:
+  - csharp
+  - vb
+  name: BumpSequenceResultCode.BumpSequenceResultCodeEnum
+  nameWithType: BumpSequenceResultCode.BumpSequenceResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/BumpSequenceResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BumpSequenceResultCodeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/BumpSequenceResultCode.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum BumpSequenceResultCodeEnum : int'
+    content.vb: Public Enum BumpSequenceResultCodeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_SUCCESS
+  commentId: F:stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_SUCCESS
+  id: BUMP_SEQUENCE_SUCCESS
+  parent: stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: BUMP_SEQUENCE_SUCCESS
+  nameWithType: BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_SUCCESS
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_SUCCESS
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/BumpSequenceResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BUMP_SEQUENCE_SUCCESS
+    path: ../stellar-dotnet-sdk/xdr/generated/BumpSequenceResultCode.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: BUMP_SEQUENCE_SUCCESS = null
+    return:
+      type: stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum
+    content.vb: BUMP_SEQUENCE_SUCCESS = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_BAD_SEQ
+  commentId: F:stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_BAD_SEQ
+  id: BUMP_SEQUENCE_BAD_SEQ
+  parent: stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: BUMP_SEQUENCE_BAD_SEQ
+  nameWithType: BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_BAD_SEQ
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_BAD_SEQ
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/BumpSequenceResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BUMP_SEQUENCE_BAD_SEQ
+    path: ../stellar-dotnet-sdk/xdr/generated/BumpSequenceResultCode.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: BUMP_SEQUENCE_BAD_SEQ = null
+    return:
+      type: stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum
+    content.vb: BUMP_SEQUENCE_BAD_SEQ = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: BumpSequenceResultCode.BumpSequenceResultCodeEnum
+  nameWithType: BumpSequenceResultCode.BumpSequenceResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceResultCode.BumpSequenceResultCodeEnum

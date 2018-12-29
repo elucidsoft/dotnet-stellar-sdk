@@ -1,0 +1,891 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+  commentId: T:stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+  id: FriendBotRequestBuilder
+  parent: stellar_dotnet_sdk.requests
+  children:
+  - stellar_dotnet_sdk.requests.FriendBotRequestBuilder.#ctor(Uri,HttpClient)
+  - stellar_dotnet_sdk.requests.FriendBotRequestBuilder.Execute
+  - stellar_dotnet_sdk.requests.FriendBotRequestBuilder.FundAccount(stellar_dotnet_sdk.KeyPair)
+  langs:
+  - csharp
+  - vb
+  name: FriendBotRequestBuilder
+  nameWithType: FriendBotRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/FriendBotRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FriendBotRequestBuilder
+    path: ../stellar-dotnet-sdk/requests/FriendBotRequestBuilder.cs
+    startLine: 9
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: 'public class FriendBotRequestBuilder : RequestBuilder<FriendBotRequestBuilder>'
+    content.vb: >-
+      Public Class FriendBotRequestBuilder
+          Inherits RequestBuilder(Of FriendBotRequestBuilder)
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}
+  inheritedMembers:
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.UriBuilder
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.HttpClient
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Execute``1(Uri)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Uri
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.SetSegments(System.String[])
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Cursor(System.String)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Limit(System.Int32)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.BuildUri
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.#ctor(Uri,HttpClient)
+  commentId: M:stellar_dotnet_sdk.requests.FriendBotRequestBuilder.#ctor(Uri,HttpClient)
+  id: '#ctor(Uri,HttpClient)'
+  parent: stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: FriendBotRequestBuilder(Uri, HttpClient)
+  nameWithType: FriendBotRequestBuilder.FriendBotRequestBuilder(Uri, HttpClient)
+  fullName: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.FriendBotRequestBuilder(Uri, HttpClient)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/FriendBotRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/requests/FriendBotRequestBuilder.cs
+    startLine: 15
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public FriendBotRequestBuilder(Uri serverUri, HttpClient httpClient)
+    parameters:
+    - id: serverUri
+      type: Uri
+      description: ''
+    - id: httpClient
+      type: HttpClient
+    content.vb: Public Sub New(serverUri As Uri, httpClient As HttpClient)
+  overload: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.FundAccount(stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.requests.FriendBotRequestBuilder.FundAccount(stellar_dotnet_sdk.KeyPair)
+  id: FundAccount(stellar_dotnet_sdk.KeyPair)
+  parent: stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: FundAccount(KeyPair)
+  nameWithType: FriendBotRequestBuilder.FundAccount(KeyPair)
+  fullName: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.FundAccount(stellar_dotnet_sdk.KeyPair)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/FriendBotRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FundAccount
+    path: ../stellar-dotnet-sdk/requests/FriendBotRequestBuilder.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: public FriendBotRequestBuilder FundAccount(KeyPair account)
+    parameters:
+    - id: account
+      type: stellar_dotnet_sdk.KeyPair
+    return:
+      type: stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+    content.vb: Public Function FundAccount(account As KeyPair) As FriendBotRequestBuilder
+  overload: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.FundAccount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.Execute
+  commentId: M:stellar_dotnet_sdk.requests.FriendBotRequestBuilder.Execute
+  id: Execute
+  parent: stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Execute()
+  nameWithType: FriendBotRequestBuilder.Execute()
+  fullName: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.Execute()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/FriendBotRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Execute
+    path: ../stellar-dotnet-sdk/requests/FriendBotRequestBuilder.cs
+    startLine: 38
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  example: []
+  syntax:
+    content: public Task<FriendBotResponse> Execute()
+    return:
+      type: Task{stellar_dotnet_sdk.responses.FriendBotResponse}
+    content.vb: Public Function Execute As Task(Of FriendBotResponse)
+  overload: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.Execute*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.requests
+  commentId: N:stellar_dotnet_sdk.requests
+  name: stellar_dotnet_sdk.requests
+  nameWithType: stellar_dotnet_sdk.requests
+  fullName: stellar_dotnet_sdk.requests
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}
+  parent: stellar_dotnet_sdk.requests
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1
+  name: RequestBuilder<FriendBotRequestBuilder>
+  nameWithType: RequestBuilder<FriendBotRequestBuilder>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>
+  nameWithType.vb: RequestBuilder(Of FriendBotRequestBuilder)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder)
+  name.vb: RequestBuilder(Of FriendBotRequestBuilder)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+    name: FriendBotRequestBuilder
+    nameWithType: FriendBotRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+    name: FriendBotRequestBuilder
+    nameWithType: FriendBotRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.UriBuilder
+  commentId: F:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.UriBuilder
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.UriBuilder
+  name: UriBuilder
+  nameWithType: RequestBuilder<FriendBotRequestBuilder>.UriBuilder
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.UriBuilder
+  nameWithType.vb: RequestBuilder(Of FriendBotRequestBuilder).UriBuilder
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).UriBuilder
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.HttpClient
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.HttpClient
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient
+  name: HttpClient
+  nameWithType: RequestBuilder<FriendBotRequestBuilder>.HttpClient
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.HttpClient
+  nameWithType.vb: RequestBuilder(Of FriendBotRequestBuilder).HttpClient
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).HttpClient
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Execute``1(Uri)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Execute``1(Uri)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+  name: Execute<TZ>(Uri)
+  nameWithType: RequestBuilder<FriendBotRequestBuilder>.Execute<TZ>(Uri)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.Execute<TZ>(Uri)
+  nameWithType.vb: RequestBuilder(Of FriendBotRequestBuilder).Execute(Of TZ)(Uri)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).Execute(Of TZ)(Uri)
+  name.vb: Execute(Of TZ)(Uri)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute<TZ>
+    nameWithType: RequestBuilder<FriendBotRequestBuilder>.Execute<TZ>
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.Execute<TZ>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute(Of TZ)
+    nameWithType: RequestBuilder(Of FriendBotRequestBuilder).Execute(Of TZ)
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).Execute(Of TZ)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Uri
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Uri
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Uri
+  name: Uri
+  nameWithType: RequestBuilder<FriendBotRequestBuilder>.Uri
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.Uri
+  nameWithType.vb: RequestBuilder(Of FriendBotRequestBuilder).Uri
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).Uri
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.SetSegments(System.String[])
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.SetSegments(System.String[])
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+  name: SetSegments(String[])
+  nameWithType: RequestBuilder<FriendBotRequestBuilder>.SetSegments(String[])
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.SetSegments(System.String[])
+  nameWithType.vb: RequestBuilder(Of FriendBotRequestBuilder).SetSegments(String())
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).SetSegments(System.String())
+  name.vb: SetSegments(String())
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder<FriendBotRequestBuilder>.SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder(Of FriendBotRequestBuilder).SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Cursor(System.String)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Cursor(System.String)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+  name: Cursor(String)
+  nameWithType: RequestBuilder<FriendBotRequestBuilder>.Cursor(String)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.Cursor(System.String)
+  nameWithType.vb: RequestBuilder(Of FriendBotRequestBuilder).Cursor(String)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).Cursor(System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder<FriendBotRequestBuilder>.Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder(Of FriendBotRequestBuilder).Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Limit(System.Int32)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Limit(System.Int32)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+  name: Limit(Int32)
+  nameWithType: RequestBuilder<FriendBotRequestBuilder>.Limit(Int32)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.Limit(System.Int32)
+  nameWithType.vb: RequestBuilder(Of FriendBotRequestBuilder).Limit(Int32)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).Limit(System.Int32)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder<FriendBotRequestBuilder>.Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder(Of FriendBotRequestBuilder).Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  name: Order(OrderDirection)
+  nameWithType: RequestBuilder<FriendBotRequestBuilder>.Order(OrderDirection)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  nameWithType.vb: RequestBuilder(Of FriendBotRequestBuilder).Order(OrderDirection)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).Order(stellar_dotnet_sdk.requests.OrderDirection)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder<FriendBotRequestBuilder>.Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder(Of FriendBotRequestBuilder).Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.BuildUri
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}.BuildUri
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.FriendBotRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+  name: BuildUri()
+  nameWithType: RequestBuilder<FriendBotRequestBuilder>.BuildUri()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.BuildUri()
+  nameWithType.vb: RequestBuilder(Of FriendBotRequestBuilder).BuildUri()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).BuildUri()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder<FriendBotRequestBuilder>.BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.FriendBotRequestBuilder>.BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder(Of FriendBotRequestBuilder).BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.FriendBotRequestBuilder).BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilder`1
+  parent: stellar_dotnet_sdk.requests
+  name: RequestBuilder<T>
+  nameWithType: RequestBuilder<T>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>
+  nameWithType.vb: RequestBuilder(Of T)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T)
+  name.vb: RequestBuilder(Of T)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.UriBuilder
+  commentId: F:stellar_dotnet_sdk.requests.RequestBuilder`1.UriBuilder
+  name: UriBuilder
+  nameWithType: RequestBuilder<T>.UriBuilder
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.UriBuilder
+  nameWithType.vb: RequestBuilder(Of T).UriBuilder
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).UriBuilder
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient
+  name: HttpClient
+  nameWithType: RequestBuilder<T>.HttpClient
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.HttpClient
+  nameWithType.vb: RequestBuilder(Of T).HttpClient
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).HttpClient
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+  isExternal: true
+  name: Execute<TZ>(Uri)
+  nameWithType: RequestBuilder<T>.Execute<TZ>(Uri)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Execute<TZ>(Uri)
+  nameWithType.vb: RequestBuilder(Of T).Execute(Of TZ)(Uri)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Execute(Of TZ)(Uri)
+  name.vb: Execute(Of TZ)(Uri)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute<TZ>
+    nameWithType: RequestBuilder<T>.Execute<TZ>
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Execute<TZ>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute(Of TZ)
+    nameWithType: RequestBuilder(Of T).Execute(Of TZ)
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Execute(Of TZ)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Uri
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder`1.Uri
+  name: Uri
+  nameWithType: RequestBuilder<T>.Uri
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Uri
+  nameWithType.vb: RequestBuilder(Of T).Uri
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Uri
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+  isExternal: true
+  name: SetSegments(String[])
+  nameWithType: RequestBuilder<T>.SetSegments(String[])
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.SetSegments(System.String[])
+  nameWithType.vb: RequestBuilder(Of T).SetSegments(String())
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).SetSegments(System.String())
+  name.vb: SetSegments(String())
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder<T>.SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder(Of T).SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+  isExternal: true
+  name: Cursor(String)
+  nameWithType: RequestBuilder<T>.Cursor(String)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Cursor(System.String)
+  nameWithType.vb: RequestBuilder(Of T).Cursor(String)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Cursor(System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder<T>.Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder(Of T).Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+  isExternal: true
+  name: Limit(Int32)
+  nameWithType: RequestBuilder<T>.Limit(Int32)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Limit(System.Int32)
+  nameWithType.vb: RequestBuilder(Of T).Limit(Int32)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Limit(System.Int32)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder<T>.Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder(Of T).Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  name: Order(OrderDirection)
+  nameWithType: RequestBuilder<T>.Order(OrderDirection)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  nameWithType.vb: RequestBuilder(Of T).Order(OrderDirection)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Order(stellar_dotnet_sdk.requests.OrderDirection)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder<T>.Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder(Of T).Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+  name: BuildUri()
+  nameWithType: RequestBuilder<T>.BuildUri()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.BuildUri()
+  nameWithType.vb: RequestBuilder(Of T).BuildUri()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).BuildUri()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder<T>.BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder(Of T).BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.requests.FriendBotRequestBuilder.#ctor
+  name: FriendBotRequestBuilder
+  nameWithType: FriendBotRequestBuilder.FriendBotRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.FriendBotRequestBuilder
+- uid: Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: Uri
+- uid: HttpClient
+  isExternal: true
+  name: HttpClient
+  nameWithType: HttpClient
+  fullName: HttpClient
+- uid: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.FundAccount*
+  commentId: Overload:stellar_dotnet_sdk.requests.FriendBotRequestBuilder.FundAccount
+  name: FundAccount
+  nameWithType: FriendBotRequestBuilder.FundAccount
+  fullName: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.FundAccount
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+  commentId: T:stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+  parent: stellar_dotnet_sdk.requests
+  name: FriendBotRequestBuilder
+  nameWithType: FriendBotRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.FriendBotRequestBuilder
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.Execute*
+  commentId: Overload:stellar_dotnet_sdk.requests.FriendBotRequestBuilder.Execute
+  name: Execute
+  nameWithType: FriendBotRequestBuilder.Execute
+  fullName: stellar_dotnet_sdk.requests.FriendBotRequestBuilder.Execute
+- uid: Task{stellar_dotnet_sdk.responses.FriendBotResponse}
+  commentId: '!:Task{stellar_dotnet_sdk.responses.FriendBotResponse}'
+  definition: Task`1
+  name: Task<FriendBotResponse>
+  nameWithType: Task<FriendBotResponse>
+  fullName: Task<stellar_dotnet_sdk.responses.FriendBotResponse>
+  nameWithType.vb: Task(Of FriendBotResponse)
+  fullName.vb: Task(Of stellar_dotnet_sdk.responses.FriendBotResponse)
+  name.vb: Task(Of FriendBotResponse)
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.responses.FriendBotResponse
+    name: FriendBotResponse
+    nameWithType: FriendBotResponse
+    fullName: stellar_dotnet_sdk.responses.FriendBotResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.responses.FriendBotResponse
+    name: FriendBotResponse
+    nameWithType: FriendBotResponse
+    fullName: stellar_dotnet_sdk.responses.FriendBotResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Task`1
+  isExternal: true
+  name: Task<>
+  nameWithType: Task<>
+  fullName: Task<>
+  nameWithType.vb: Task(Of )
+  fullName.vb: Task(Of )
+  name.vb: Task(Of )
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

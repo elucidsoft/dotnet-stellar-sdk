@@ -1,0 +1,182 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.StrKey.VersionByte
+  commentId: T:stellar_dotnet_sdk.StrKey.VersionByte
+  id: StrKey.VersionByte
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.StrKey.VersionByte.ACCOUNT_ID
+  - stellar_dotnet_sdk.StrKey.VersionByte.PRE_AUTH_TX
+  - stellar_dotnet_sdk.StrKey.VersionByte.SEED
+  - stellar_dotnet_sdk.StrKey.VersionByte.SHA256_HASH
+  langs:
+  - csharp
+  - vb
+  name: StrKey.VersionByte
+  nameWithType: StrKey.VersionByte
+  fullName: stellar_dotnet_sdk.StrKey.VersionByte
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: VersionByte
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: 'public enum VersionByte : byte'
+    content.vb: Public Enum VersionByte As Byte
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.StrKey.VersionByte.ACCOUNT_ID
+  commentId: F:stellar_dotnet_sdk.StrKey.VersionByte.ACCOUNT_ID
+  id: ACCOUNT_ID
+  parent: stellar_dotnet_sdk.StrKey.VersionByte
+  langs:
+  - csharp
+  - vb
+  name: ACCOUNT_ID
+  nameWithType: StrKey.VersionByte.ACCOUNT_ID
+  fullName: stellar_dotnet_sdk.StrKey.VersionByte.ACCOUNT_ID
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ACCOUNT_ID
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: ACCOUNT_ID = null
+    return:
+      type: stellar_dotnet_sdk.StrKey.VersionByte
+    content.vb: ACCOUNT_ID = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.StrKey.VersionByte.SEED
+  commentId: F:stellar_dotnet_sdk.StrKey.VersionByte.SEED
+  id: SEED
+  parent: stellar_dotnet_sdk.StrKey.VersionByte
+  langs:
+  - csharp
+  - vb
+  name: SEED
+  nameWithType: StrKey.VersionByte.SEED
+  fullName: stellar_dotnet_sdk.StrKey.VersionByte.SEED
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SEED
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 11
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: SEED = null
+    return:
+      type: stellar_dotnet_sdk.StrKey.VersionByte
+    content.vb: SEED = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.StrKey.VersionByte.PRE_AUTH_TX
+  commentId: F:stellar_dotnet_sdk.StrKey.VersionByte.PRE_AUTH_TX
+  id: PRE_AUTH_TX
+  parent: stellar_dotnet_sdk.StrKey.VersionByte
+  langs:
+  - csharp
+  - vb
+  name: PRE_AUTH_TX
+  nameWithType: StrKey.VersionByte.PRE_AUTH_TX
+  fullName: stellar_dotnet_sdk.StrKey.VersionByte.PRE_AUTH_TX
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PRE_AUTH_TX
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: PRE_AUTH_TX = null
+    return:
+      type: stellar_dotnet_sdk.StrKey.VersionByte
+    content.vb: PRE_AUTH_TX = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.StrKey.VersionByte.SHA256_HASH
+  commentId: F:stellar_dotnet_sdk.StrKey.VersionByte.SHA256_HASH
+  id: SHA256_HASH
+  parent: stellar_dotnet_sdk.StrKey.VersionByte
+  langs:
+  - csharp
+  - vb
+  name: SHA256_HASH
+  nameWithType: StrKey.VersionByte.SHA256_HASH
+  fullName: stellar_dotnet_sdk.StrKey.VersionByte.SHA256_HASH
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SHA256_HASH
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 13
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: SHA256_HASH = null
+    return:
+      type: stellar_dotnet_sdk.StrKey.VersionByte
+    content.vb: SHA256_HASH = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: stellar_dotnet_sdk.StrKey.VersionByte
+  commentId: T:stellar_dotnet_sdk.StrKey.VersionByte
+  parent: stellar_dotnet_sdk
+  name: StrKey.VersionByte
+  nameWithType: StrKey.VersionByte
+  fullName: stellar_dotnet_sdk.StrKey.VersionByte

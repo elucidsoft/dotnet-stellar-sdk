@@ -1,0 +1,211 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.MemoTooLongException
+  commentId: T:stellar_dotnet_sdk.MemoTooLongException
+  id: MemoTooLongException
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.MemoTooLongException.#ctor
+  - stellar_dotnet_sdk.MemoTooLongException.#ctor(SerializationInfo,StreamingContext)
+  - stellar_dotnet_sdk.MemoTooLongException.#ctor(System.String)
+  - stellar_dotnet_sdk.MemoTooLongException.#ctor(System.String,Exception)
+  langs:
+  - csharp
+  - vb
+  name: MemoTooLongException
+  nameWithType: MemoTooLongException
+  fullName: stellar_dotnet_sdk.MemoTooLongException
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/MemoTooLongException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: MemoTooLongException
+    path: ../stellar-dotnet-sdk/MemoTooLongException.cs
+    startLine: 5
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: 'public class MemoTooLongException : Exception'
+    content.vb: >-
+      Public Class MemoTooLongException
+          Inherits Exception
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.MemoTooLongException.#ctor
+  commentId: M:stellar_dotnet_sdk.MemoTooLongException.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.MemoTooLongException
+  langs:
+  - csharp
+  - vb
+  name: MemoTooLongException()
+  nameWithType: MemoTooLongException.MemoTooLongException()
+  fullName: stellar_dotnet_sdk.MemoTooLongException.MemoTooLongException()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/MemoTooLongException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/MemoTooLongException.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public MemoTooLongException()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.MemoTooLongException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.MemoTooLongException.#ctor(System.String)
+  commentId: M:stellar_dotnet_sdk.MemoTooLongException.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: stellar_dotnet_sdk.MemoTooLongException
+  langs:
+  - csharp
+  - vb
+  name: MemoTooLongException(String)
+  nameWithType: MemoTooLongException.MemoTooLongException(String)
+  fullName: stellar_dotnet_sdk.MemoTooLongException.MemoTooLongException(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/MemoTooLongException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/MemoTooLongException.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public MemoTooLongException(string message)
+    parameters:
+    - id: message
+      type: System.String
+    content.vb: Public Sub New(message As String)
+  overload: stellar_dotnet_sdk.MemoTooLongException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.MemoTooLongException.#ctor(System.String,Exception)
+  commentId: M:stellar_dotnet_sdk.MemoTooLongException.#ctor(System.String,Exception)
+  id: '#ctor(System.String,Exception)'
+  parent: stellar_dotnet_sdk.MemoTooLongException
+  langs:
+  - csharp
+  - vb
+  name: MemoTooLongException(String, Exception)
+  nameWithType: MemoTooLongException.MemoTooLongException(String, Exception)
+  fullName: stellar_dotnet_sdk.MemoTooLongException.MemoTooLongException(System.String, Exception)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/MemoTooLongException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/MemoTooLongException.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public MemoTooLongException(string message, Exception innerException)
+    parameters:
+    - id: message
+      type: System.String
+    - id: innerException
+      type: Exception
+    content.vb: Public Sub New(message As String, innerException As Exception)
+  overload: stellar_dotnet_sdk.MemoTooLongException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.MemoTooLongException.#ctor(SerializationInfo,StreamingContext)
+  commentId: M:stellar_dotnet_sdk.MemoTooLongException.#ctor(SerializationInfo,StreamingContext)
+  id: '#ctor(SerializationInfo,StreamingContext)'
+  parent: stellar_dotnet_sdk.MemoTooLongException
+  langs:
+  - csharp
+  - vb
+  name: MemoTooLongException(SerializationInfo, StreamingContext)
+  nameWithType: MemoTooLongException.MemoTooLongException(SerializationInfo, StreamingContext)
+  fullName: stellar_dotnet_sdk.MemoTooLongException.MemoTooLongException(SerializationInfo, StreamingContext)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/MemoTooLongException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/MemoTooLongException.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: protected MemoTooLongException(SerializationInfo info, StreamingContext context)
+    parameters:
+    - id: info
+      type: SerializationInfo
+    - id: context
+      type: StreamingContext
+    content.vb: Protected Sub New(info As SerializationInfo, context As StreamingContext)
+  overload: stellar_dotnet_sdk.MemoTooLongException.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.MemoTooLongException.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.MemoTooLongException.#ctor
+  name: MemoTooLongException
+  nameWithType: MemoTooLongException.MemoTooLongException
+  fullName: stellar_dotnet_sdk.MemoTooLongException.MemoTooLongException
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Exception
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: Exception
+- uid: SerializationInfo
+  isExternal: true
+  name: SerializationInfo
+  nameWithType: SerializationInfo
+  fullName: SerializationInfo
+- uid: StreamingContext
+  isExternal: true
+  name: StreamingContext
+  nameWithType: StreamingContext
+  fullName: StreamingContext

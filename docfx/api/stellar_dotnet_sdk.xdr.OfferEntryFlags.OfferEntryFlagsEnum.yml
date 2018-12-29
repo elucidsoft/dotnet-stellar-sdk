@@ -1,0 +1,80 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum
+  commentId: T:stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum
+  id: OfferEntryFlags.OfferEntryFlagsEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum.PASSIVE_FLAG
+  langs:
+  - csharp
+  - vb
+  name: OfferEntryFlags.OfferEntryFlagsEnum
+  nameWithType: OfferEntryFlags.OfferEntryFlagsEnum
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: OfferEntryFlagsEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum OfferEntryFlagsEnum : int'
+    content.vb: Public Enum OfferEntryFlagsEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum.PASSIVE_FLAG
+  commentId: F:stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum.PASSIVE_FLAG
+  id: PASSIVE_FLAG
+  parent: stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum
+  langs:
+  - csharp
+  - vb
+  name: PASSIVE_FLAG
+  nameWithType: OfferEntryFlags.OfferEntryFlagsEnum.PASSIVE_FLAG
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum.PASSIVE_FLAG
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PASSIVE_FLAG
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PASSIVE_FLAG = null
+    return:
+      type: stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum
+    content.vb: PASSIVE_FLAG = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum
+  commentId: T:stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: OfferEntryFlags.OfferEntryFlagsEnum
+  nameWithType: OfferEntryFlags.OfferEntryFlagsEnum
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum

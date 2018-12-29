@@ -1,0 +1,283 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp
+  commentId: T:stellar_dotnet_sdk.xdr.ChangeTrustOp
+  id: ChangeTrustOp
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.ChangeTrustOp.#ctor
+  - stellar_dotnet_sdk.xdr.ChangeTrustOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.ChangeTrustOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ChangeTrustOp)
+  - stellar_dotnet_sdk.xdr.ChangeTrustOp.Limit
+  - stellar_dotnet_sdk.xdr.ChangeTrustOp.Line
+  langs:
+  - csharp
+  - vb
+  name: ChangeTrustOp
+  nameWithType: ChangeTrustOp
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ChangeTrustOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ChangeTrustOp
+    path: ../stellar-dotnet-sdk/xdr/generated/ChangeTrustOp.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class ChangeTrustOp : object'
+    content.vb: >-
+      Public Class ChangeTrustOp
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.ChangeTrustOp.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.ChangeTrustOp
+  langs:
+  - csharp
+  - vb
+  name: ChangeTrustOp()
+  nameWithType: ChangeTrustOp.ChangeTrustOp()
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp.ChangeTrustOp()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ChangeTrustOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/ChangeTrustOp.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public ChangeTrustOp()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.ChangeTrustOp.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp.Line
+  commentId: P:stellar_dotnet_sdk.xdr.ChangeTrustOp.Line
+  id: Line
+  parent: stellar_dotnet_sdk.xdr.ChangeTrustOp
+  langs:
+  - csharp
+  - vb
+  name: Line
+  nameWithType: ChangeTrustOp.Line
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp.Line
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ChangeTrustOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Line
+    path: ../stellar-dotnet-sdk/xdr/generated/ChangeTrustOp.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Asset Line { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Asset
+    content.vb: Public Property Line As Asset
+  overload: stellar_dotnet_sdk.xdr.ChangeTrustOp.Line*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp.Limit
+  commentId: P:stellar_dotnet_sdk.xdr.ChangeTrustOp.Limit
+  id: Limit
+  parent: stellar_dotnet_sdk.xdr.ChangeTrustOp
+  langs:
+  - csharp
+  - vb
+  name: Limit
+  nameWithType: ChangeTrustOp.Limit
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp.Limit
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ChangeTrustOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Limit
+    path: ../stellar-dotnet-sdk/xdr/generated/ChangeTrustOp.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Int64 Limit { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Int64
+    content.vb: Public Property Limit As Int64
+  overload: stellar_dotnet_sdk.xdr.ChangeTrustOp.Limit*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ChangeTrustOp)
+  commentId: M:stellar_dotnet_sdk.xdr.ChangeTrustOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ChangeTrustOp)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ChangeTrustOp)
+  parent: stellar_dotnet_sdk.xdr.ChangeTrustOp
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, ChangeTrustOp)
+  nameWithType: ChangeTrustOp.Encode(XdrDataOutputStream, ChangeTrustOp)
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.ChangeTrustOp)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ChangeTrustOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/ChangeTrustOp.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, ChangeTrustOp encodedChangeTrustOp)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedChangeTrustOp
+      type: stellar_dotnet_sdk.xdr.ChangeTrustOp
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedChangeTrustOp As ChangeTrustOp)
+  overload: stellar_dotnet_sdk.xdr.ChangeTrustOp.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.ChangeTrustOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.ChangeTrustOp
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: ChangeTrustOp.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ChangeTrustOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/ChangeTrustOp.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static ChangeTrustOp Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.ChangeTrustOp
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As ChangeTrustOp
+  overload: stellar_dotnet_sdk.xdr.ChangeTrustOp.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ChangeTrustOp.#ctor
+  name: ChangeTrustOp
+  nameWithType: ChangeTrustOp.ChangeTrustOp
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp.ChangeTrustOp
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp.Line*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ChangeTrustOp.Line
+  name: Line
+  nameWithType: ChangeTrustOp.Line
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp.Line
+- uid: stellar_dotnet_sdk.xdr.Asset
+  commentId: T:stellar_dotnet_sdk.xdr.Asset
+  parent: stellar_dotnet_sdk.xdr
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.xdr.Asset
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp.Limit*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ChangeTrustOp.Limit
+  name: Limit
+  nameWithType: ChangeTrustOp.Limit
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp.Limit
+- uid: stellar_dotnet_sdk.xdr.Int64
+  commentId: T:stellar_dotnet_sdk.xdr.Int64
+  parent: stellar_dotnet_sdk.xdr
+  name: Int64
+  nameWithType: Int64
+  fullName: stellar_dotnet_sdk.xdr.Int64
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ChangeTrustOp.Encode
+  name: Encode
+  nameWithType: ChangeTrustOp.Encode
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp
+  commentId: T:stellar_dotnet_sdk.xdr.ChangeTrustOp
+  parent: stellar_dotnet_sdk.xdr
+  name: ChangeTrustOp
+  nameWithType: ChangeTrustOp
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ChangeTrustOp.Decode
+  name: Decode
+  nameWithType: ChangeTrustOp.Decode
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

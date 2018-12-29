@@ -1,0 +1,1144 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  commentId: T:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  id: TradesAggregationRequestBuilder
+  parent: stellar_dotnet_sdk.requests
+  children:
+  - stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.#ctor(Uri,HttpClient)
+  - stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.BaseAsset(stellar_dotnet_sdk.Asset)
+  - stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.CounterAsset(stellar_dotnet_sdk.Asset)
+  - stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.EndTime(System.Int64)
+  - stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Offset(System.Int64)
+  - stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Resolution(System.Int64)
+  - stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.StartTime(System.Int64)
+  langs:
+  - csharp
+  - vb
+  name: TradesAggregationRequestBuilder
+  nameWithType: TradesAggregationRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TradesAggregationRequestBuilder
+    path: ../stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: 'public class TradesAggregationRequestBuilder : RequestBuilderExecutePageable<TradesAggregationRequestBuilder, TradeAggregationResponse>'
+    content.vb: >-
+      Public Class TradesAggregationRequestBuilder
+          Inherits RequestBuilderExecutePageable(Of TradesAggregationRequestBuilder, TradeAggregationResponse)
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}
+  - stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder,stellar_dotnet_sdk.responses.TradeAggregationResponse}
+  inheritedMembers:
+  - stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder,stellar_dotnet_sdk.responses.TradeAggregationResponse}.Execute
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.UriBuilder
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.HttpClient
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Execute``1(Uri)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Uri
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.SetSegments(System.String[])
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Cursor(System.String)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Limit(System.Int32)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.BuildUri
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.#ctor(Uri,HttpClient)
+  commentId: M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.#ctor(Uri,HttpClient)
+  id: '#ctor(Uri,HttpClient)'
+  parent: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: TradesAggregationRequestBuilder(Uri, HttpClient)
+  nameWithType: TradesAggregationRequestBuilder.TradesAggregationRequestBuilder(Uri, HttpClient)
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.TradesAggregationRequestBuilder(Uri, HttpClient)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: public TradesAggregationRequestBuilder(Uri serverUri, HttpClient httpClient)
+    parameters:
+    - id: serverUri
+      type: Uri
+    - id: httpClient
+      type: HttpClient
+    content.vb: Public Sub New(serverUri As Uri, httpClient As HttpClient)
+  overload: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.StartTime(System.Int64)
+  commentId: M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.StartTime(System.Int64)
+  id: StartTime(System.Int64)
+  parent: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: StartTime(Int64)
+  nameWithType: TradesAggregationRequestBuilder.StartTime(Int64)
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.StartTime(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: StartTime
+    path: ../stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: public TradesAggregationRequestBuilder StartTime(long startTime)
+    parameters:
+    - id: startTime
+      type: System.Int64
+    return:
+      type: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+    content.vb: Public Function StartTime(startTime As Long) As TradesAggregationRequestBuilder
+  overload: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.StartTime*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.EndTime(System.Int64)
+  commentId: M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.EndTime(System.Int64)
+  id: EndTime(System.Int64)
+  parent: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: EndTime(Int64)
+  nameWithType: TradesAggregationRequestBuilder.EndTime(Int64)
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.EndTime(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: EndTime
+    path: ../stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: public TradesAggregationRequestBuilder EndTime(long endTime)
+    parameters:
+    - id: endTime
+      type: System.Int64
+    return:
+      type: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+    content.vb: Public Function EndTime(endTime As Long) As TradesAggregationRequestBuilder
+  overload: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.EndTime*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Resolution(System.Int64)
+  commentId: M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Resolution(System.Int64)
+  id: Resolution(System.Int64)
+  parent: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Resolution(Int64)
+  nameWithType: TradesAggregationRequestBuilder.Resolution(Int64)
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Resolution(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Resolution
+    path: ../stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: public TradesAggregationRequestBuilder Resolution(long resolution)
+    parameters:
+    - id: resolution
+      type: System.Int64
+    return:
+      type: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+    content.vb: Public Function Resolution(resolution As Long) As TradesAggregationRequestBuilder
+  overload: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Resolution*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Offset(System.Int64)
+  commentId: M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Offset(System.Int64)
+  id: Offset(System.Int64)
+  parent: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Offset(Int64)
+  nameWithType: TradesAggregationRequestBuilder.Offset(Int64)
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Offset(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Offset
+    path: ../stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: public TradesAggregationRequestBuilder Offset(long offset)
+    parameters:
+    - id: offset
+      type: System.Int64
+    return:
+      type: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+    content.vb: Public Function Offset(offset As Long) As TradesAggregationRequestBuilder
+  overload: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Offset*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.BaseAsset(stellar_dotnet_sdk.Asset)
+  commentId: M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.BaseAsset(stellar_dotnet_sdk.Asset)
+  id: BaseAsset(stellar_dotnet_sdk.Asset)
+  parent: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: BaseAsset(Asset)
+  nameWithType: TradesAggregationRequestBuilder.BaseAsset(Asset)
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.BaseAsset(stellar_dotnet_sdk.Asset)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BaseAsset
+    path: ../stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+    startLine: 41
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: public TradesAggregationRequestBuilder BaseAsset(Asset asset)
+    parameters:
+    - id: asset
+      type: stellar_dotnet_sdk.Asset
+    return:
+      type: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+    content.vb: Public Function BaseAsset(asset As Asset) As TradesAggregationRequestBuilder
+  overload: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.BaseAsset*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.CounterAsset(stellar_dotnet_sdk.Asset)
+  commentId: M:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.CounterAsset(stellar_dotnet_sdk.Asset)
+  id: CounterAsset(stellar_dotnet_sdk.Asset)
+  parent: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: CounterAsset(Asset)
+  nameWithType: TradesAggregationRequestBuilder.CounterAsset(Asset)
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.CounterAsset(stellar_dotnet_sdk.Asset)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CounterAsset
+    path: ../stellar-dotnet-sdk/requests/TradesAggregationRequestBuilder.cs
+    startLine: 54
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: public TradesAggregationRequestBuilder CounterAsset(Asset asset)
+    parameters:
+    - id: asset
+      type: stellar_dotnet_sdk.Asset
+    return:
+      type: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+    content.vb: Public Function CounterAsset(asset As Asset) As TradesAggregationRequestBuilder
+  overload: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.CounterAsset*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.requests
+  commentId: N:stellar_dotnet_sdk.requests
+  name: stellar_dotnet_sdk.requests
+  nameWithType: stellar_dotnet_sdk.requests
+  fullName: stellar_dotnet_sdk.requests
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}
+  parent: stellar_dotnet_sdk.requests
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1
+  name: RequestBuilder<TradesAggregationRequestBuilder>
+  nameWithType: RequestBuilder<TradesAggregationRequestBuilder>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>
+  nameWithType.vb: RequestBuilder(Of TradesAggregationRequestBuilder)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder)
+  name.vb: RequestBuilder(Of TradesAggregationRequestBuilder)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+    name: TradesAggregationRequestBuilder
+    nameWithType: TradesAggregationRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+    name: TradesAggregationRequestBuilder
+    nameWithType: TradesAggregationRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder,stellar_dotnet_sdk.responses.TradeAggregationResponse}
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder,stellar_dotnet_sdk.responses.TradeAggregationResponse}
+  parent: stellar_dotnet_sdk.requests
+  definition: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+  name: RequestBuilderExecutePageable<TradesAggregationRequestBuilder, TradeAggregationResponse>
+  nameWithType: RequestBuilderExecutePageable<TradesAggregationRequestBuilder, TradeAggregationResponse>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder, stellar_dotnet_sdk.responses.TradeAggregationResponse>
+  nameWithType.vb: RequestBuilderExecutePageable(Of TradesAggregationRequestBuilder, TradeAggregationResponse)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder, stellar_dotnet_sdk.responses.TradeAggregationResponse)
+  name.vb: RequestBuilderExecutePageable(Of TradesAggregationRequestBuilder, TradeAggregationResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+    name: RequestBuilderExecutePageable
+    nameWithType: RequestBuilderExecutePageable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+    name: TradesAggregationRequestBuilder
+    nameWithType: TradesAggregationRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: stellar_dotnet_sdk.responses.TradeAggregationResponse
+    name: TradeAggregationResponse
+    nameWithType: TradeAggregationResponse
+    fullName: stellar_dotnet_sdk.responses.TradeAggregationResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+    name: RequestBuilderExecutePageable
+    nameWithType: RequestBuilderExecutePageable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+    name: TradesAggregationRequestBuilder
+    nameWithType: TradesAggregationRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: stellar_dotnet_sdk.responses.TradeAggregationResponse
+    name: TradeAggregationResponse
+    nameWithType: TradeAggregationResponse
+    fullName: stellar_dotnet_sdk.responses.TradeAggregationResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder,stellar_dotnet_sdk.responses.TradeAggregationResponse}.Execute
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder,stellar_dotnet_sdk.responses.TradeAggregationResponse}.Execute
+  parent: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder,stellar_dotnet_sdk.responses.TradeAggregationResponse}
+  definition: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+  name: Execute()
+  nameWithType: RequestBuilderExecutePageable<TradesAggregationRequestBuilder, TradeAggregationResponse>.Execute()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder, stellar_dotnet_sdk.responses.TradeAggregationResponse>.Execute()
+  nameWithType.vb: RequestBuilderExecutePageable(Of TradesAggregationRequestBuilder, TradeAggregationResponse).Execute()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder, stellar_dotnet_sdk.responses.TradeAggregationResponse).Execute()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+    name: Execute
+    nameWithType: RequestBuilderExecutePageable<TradesAggregationRequestBuilder, TradeAggregationResponse>.Execute
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder, stellar_dotnet_sdk.responses.TradeAggregationResponse>.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+    name: Execute
+    nameWithType: RequestBuilderExecutePageable(Of TradesAggregationRequestBuilder, TradeAggregationResponse).Execute
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder, stellar_dotnet_sdk.responses.TradeAggregationResponse).Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.UriBuilder
+  commentId: F:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.UriBuilder
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.UriBuilder
+  name: UriBuilder
+  nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.UriBuilder
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.UriBuilder
+  nameWithType.vb: RequestBuilder(Of TradesAggregationRequestBuilder).UriBuilder
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).UriBuilder
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.HttpClient
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.HttpClient
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient
+  name: HttpClient
+  nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.HttpClient
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.HttpClient
+  nameWithType.vb: RequestBuilder(Of TradesAggregationRequestBuilder).HttpClient
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).HttpClient
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Execute``1(Uri)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Execute``1(Uri)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+  name: Execute<TZ>(Uri)
+  nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.Execute<TZ>(Uri)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.Execute<TZ>(Uri)
+  nameWithType.vb: RequestBuilder(Of TradesAggregationRequestBuilder).Execute(Of TZ)(Uri)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).Execute(Of TZ)(Uri)
+  name.vb: Execute(Of TZ)(Uri)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute<TZ>
+    nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.Execute<TZ>
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.Execute<TZ>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute(Of TZ)
+    nameWithType: RequestBuilder(Of TradesAggregationRequestBuilder).Execute(Of TZ)
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).Execute(Of TZ)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Uri
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Uri
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Uri
+  name: Uri
+  nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.Uri
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.Uri
+  nameWithType.vb: RequestBuilder(Of TradesAggregationRequestBuilder).Uri
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).Uri
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.SetSegments(System.String[])
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.SetSegments(System.String[])
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+  name: SetSegments(String[])
+  nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.SetSegments(String[])
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.SetSegments(System.String[])
+  nameWithType.vb: RequestBuilder(Of TradesAggregationRequestBuilder).SetSegments(String())
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).SetSegments(System.String())
+  name.vb: SetSegments(String())
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder(Of TradesAggregationRequestBuilder).SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Cursor(System.String)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Cursor(System.String)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+  name: Cursor(String)
+  nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.Cursor(String)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.Cursor(System.String)
+  nameWithType.vb: RequestBuilder(Of TradesAggregationRequestBuilder).Cursor(String)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).Cursor(System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder(Of TradesAggregationRequestBuilder).Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Limit(System.Int32)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Limit(System.Int32)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+  name: Limit(Int32)
+  nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.Limit(Int32)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.Limit(System.Int32)
+  nameWithType.vb: RequestBuilder(Of TradesAggregationRequestBuilder).Limit(Int32)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).Limit(System.Int32)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder(Of TradesAggregationRequestBuilder).Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  name: Order(OrderDirection)
+  nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.Order(OrderDirection)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  nameWithType.vb: RequestBuilder(Of TradesAggregationRequestBuilder).Order(OrderDirection)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).Order(stellar_dotnet_sdk.requests.OrderDirection)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder(Of TradesAggregationRequestBuilder).Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.BuildUri
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}.BuildUri
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+  name: BuildUri()
+  nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.BuildUri()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.BuildUri()
+  nameWithType.vb: RequestBuilder(Of TradesAggregationRequestBuilder).BuildUri()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).BuildUri()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder<TradesAggregationRequestBuilder>.BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder>.BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder(Of TradesAggregationRequestBuilder).BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder).BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilder`1
+  parent: stellar_dotnet_sdk.requests
+  name: RequestBuilder<T>
+  nameWithType: RequestBuilder<T>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>
+  nameWithType.vb: RequestBuilder(Of T)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T)
+  name.vb: RequestBuilder(Of T)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+  name: RequestBuilderExecutePageable<T, TResponse>
+  nameWithType: RequestBuilderExecutePageable<T, TResponse>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<T, TResponse>
+  nameWithType.vb: RequestBuilderExecutePageable(Of T, TResponse)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of T, TResponse)
+  name.vb: RequestBuilderExecutePageable(Of T, TResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+    name: RequestBuilderExecutePageable
+    nameWithType: RequestBuilderExecutePageable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+    name: RequestBuilderExecutePageable
+    nameWithType: RequestBuilderExecutePageable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+  name: Execute()
+  nameWithType: RequestBuilderExecutePageable<T, TResponse>.Execute()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<T, TResponse>.Execute()
+  nameWithType.vb: RequestBuilderExecutePageable(Of T, TResponse).Execute()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of T, TResponse).Execute()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+    name: Execute
+    nameWithType: RequestBuilderExecutePageable<T, TResponse>.Execute
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<T, TResponse>.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+    name: Execute
+    nameWithType: RequestBuilderExecutePageable(Of T, TResponse).Execute
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of T, TResponse).Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.UriBuilder
+  commentId: F:stellar_dotnet_sdk.requests.RequestBuilder`1.UriBuilder
+  name: UriBuilder
+  nameWithType: RequestBuilder<T>.UriBuilder
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.UriBuilder
+  nameWithType.vb: RequestBuilder(Of T).UriBuilder
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).UriBuilder
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient
+  name: HttpClient
+  nameWithType: RequestBuilder<T>.HttpClient
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.HttpClient
+  nameWithType.vb: RequestBuilder(Of T).HttpClient
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).HttpClient
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+  isExternal: true
+  name: Execute<TZ>(Uri)
+  nameWithType: RequestBuilder<T>.Execute<TZ>(Uri)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Execute<TZ>(Uri)
+  nameWithType.vb: RequestBuilder(Of T).Execute(Of TZ)(Uri)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Execute(Of TZ)(Uri)
+  name.vb: Execute(Of TZ)(Uri)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute<TZ>
+    nameWithType: RequestBuilder<T>.Execute<TZ>
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Execute<TZ>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute(Of TZ)
+    nameWithType: RequestBuilder(Of T).Execute(Of TZ)
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Execute(Of TZ)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Uri
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder`1.Uri
+  name: Uri
+  nameWithType: RequestBuilder<T>.Uri
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Uri
+  nameWithType.vb: RequestBuilder(Of T).Uri
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Uri
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+  isExternal: true
+  name: SetSegments(String[])
+  nameWithType: RequestBuilder<T>.SetSegments(String[])
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.SetSegments(System.String[])
+  nameWithType.vb: RequestBuilder(Of T).SetSegments(String())
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).SetSegments(System.String())
+  name.vb: SetSegments(String())
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder<T>.SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder(Of T).SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+  isExternal: true
+  name: Cursor(String)
+  nameWithType: RequestBuilder<T>.Cursor(String)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Cursor(System.String)
+  nameWithType.vb: RequestBuilder(Of T).Cursor(String)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Cursor(System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder<T>.Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder(Of T).Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+  isExternal: true
+  name: Limit(Int32)
+  nameWithType: RequestBuilder<T>.Limit(Int32)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Limit(System.Int32)
+  nameWithType.vb: RequestBuilder(Of T).Limit(Int32)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Limit(System.Int32)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder<T>.Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder(Of T).Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  name: Order(OrderDirection)
+  nameWithType: RequestBuilder<T>.Order(OrderDirection)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  nameWithType.vb: RequestBuilder(Of T).Order(OrderDirection)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Order(stellar_dotnet_sdk.requests.OrderDirection)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder<T>.Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder(Of T).Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+  name: BuildUri()
+  nameWithType: RequestBuilder<T>.BuildUri()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.BuildUri()
+  nameWithType.vb: RequestBuilder(Of T).BuildUri()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).BuildUri()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder<T>.BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder(Of T).BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.#ctor
+  name: TradesAggregationRequestBuilder
+  nameWithType: TradesAggregationRequestBuilder.TradesAggregationRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.TradesAggregationRequestBuilder
+- uid: Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: Uri
+- uid: HttpClient
+  isExternal: true
+  name: HttpClient
+  nameWithType: HttpClient
+  fullName: HttpClient
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.StartTime*
+  commentId: Overload:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.StartTime
+  name: StartTime
+  nameWithType: TradesAggregationRequestBuilder.StartTime
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.StartTime
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  commentId: T:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+  parent: stellar_dotnet_sdk.requests
+  name: TradesAggregationRequestBuilder
+  nameWithType: TradesAggregationRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.EndTime*
+  commentId: Overload:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.EndTime
+  name: EndTime
+  nameWithType: TradesAggregationRequestBuilder.EndTime
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.EndTime
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Resolution*
+  commentId: Overload:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Resolution
+  name: Resolution
+  nameWithType: TradesAggregationRequestBuilder.Resolution
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Resolution
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Offset*
+  commentId: Overload:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Offset
+  name: Offset
+  nameWithType: TradesAggregationRequestBuilder.Offset
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.Offset
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.BaseAsset*
+  commentId: Overload:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.BaseAsset
+  name: BaseAsset
+  nameWithType: TradesAggregationRequestBuilder.BaseAsset
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.BaseAsset
+- uid: stellar_dotnet_sdk.Asset
+  commentId: T:stellar_dotnet_sdk.Asset
+  parent: stellar_dotnet_sdk
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.Asset
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.CounterAsset*
+  commentId: Overload:stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.CounterAsset
+  name: CounterAsset
+  nameWithType: TradesAggregationRequestBuilder.CounterAsset
+  fullName: stellar_dotnet_sdk.requests.TradesAggregationRequestBuilder.CounterAsset

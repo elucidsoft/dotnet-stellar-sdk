@@ -1,0 +1,232 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.OrderBookResponse.Row
+  commentId: T:stellar_dotnet_sdk.responses.OrderBookResponse.Row
+  id: OrderBookResponse.Row
+  parent: stellar_dotnet_sdk.responses
+  children:
+  - stellar_dotnet_sdk.responses.OrderBookResponse.Row.#ctor(System.String,System.String,stellar_dotnet_sdk.Price)
+  - stellar_dotnet_sdk.responses.OrderBookResponse.Row.Amount
+  - stellar_dotnet_sdk.responses.OrderBookResponse.Row.Price
+  - stellar_dotnet_sdk.responses.OrderBookResponse.Row.PriceR
+  langs:
+  - csharp
+  - vb
+  name: OrderBookResponse.Row
+  nameWithType: OrderBookResponse.Row
+  fullName: stellar_dotnet_sdk.responses.OrderBookResponse.Row
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/OrderBookResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Row
+    path: ../stellar-dotnet-sdk/responses/OrderBookResponse.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  example: []
+  syntax:
+    content: 'public class Row : object'
+    content.vb: >-
+      Public Class Row
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.OrderBookResponse.Row.Amount
+  commentId: P:stellar_dotnet_sdk.responses.OrderBookResponse.Row.Amount
+  id: Amount
+  parent: stellar_dotnet_sdk.responses.OrderBookResponse.Row
+  langs:
+  - csharp
+  - vb
+  name: Amount
+  nameWithType: OrderBookResponse.Row.Amount
+  fullName: stellar_dotnet_sdk.responses.OrderBookResponse.Row.Amount
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/OrderBookResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Amount
+    path: ../stellar-dotnet-sdk/responses/OrderBookResponse.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string Amount { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Amount As String
+  overload: stellar_dotnet_sdk.responses.OrderBookResponse.Row.Amount*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.OrderBookResponse.Row.Price
+  commentId: P:stellar_dotnet_sdk.responses.OrderBookResponse.Row.Price
+  id: Price
+  parent: stellar_dotnet_sdk.responses.OrderBookResponse.Row
+  langs:
+  - csharp
+  - vb
+  name: Price
+  nameWithType: OrderBookResponse.Row.Price
+  fullName: stellar_dotnet_sdk.responses.OrderBookResponse.Row.Price
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/OrderBookResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Price
+    path: ../stellar-dotnet-sdk/responses/OrderBookResponse.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string Price { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Price As String
+  overload: stellar_dotnet_sdk.responses.OrderBookResponse.Row.Price*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.OrderBookResponse.Row.PriceR
+  commentId: P:stellar_dotnet_sdk.responses.OrderBookResponse.Row.PriceR
+  id: PriceR
+  parent: stellar_dotnet_sdk.responses.OrderBookResponse.Row
+  langs:
+  - csharp
+  - vb
+  name: PriceR
+  nameWithType: OrderBookResponse.Row.PriceR
+  fullName: stellar_dotnet_sdk.responses.OrderBookResponse.Row.PriceR
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/OrderBookResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PriceR
+    path: ../stellar-dotnet-sdk/responses/OrderBookResponse.cs
+    startLine: 37
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public Price PriceR { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.Price
+    content.vb: Public ReadOnly Property PriceR As Price
+  overload: stellar_dotnet_sdk.responses.OrderBookResponse.Row.PriceR*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.OrderBookResponse.Row.#ctor(System.String,System.String,stellar_dotnet_sdk.Price)
+  commentId: M:stellar_dotnet_sdk.responses.OrderBookResponse.Row.#ctor(System.String,System.String,stellar_dotnet_sdk.Price)
+  id: '#ctor(System.String,System.String,stellar_dotnet_sdk.Price)'
+  parent: stellar_dotnet_sdk.responses.OrderBookResponse.Row
+  langs:
+  - csharp
+  - vb
+  name: Row(String, String, Price)
+  nameWithType: OrderBookResponse.Row.Row(String, String, Price)
+  fullName: stellar_dotnet_sdk.responses.OrderBookResponse.Row.Row(System.String, System.String, stellar_dotnet_sdk.Price)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/OrderBookResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/OrderBookResponse.cs
+    startLine: 40
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public Row(string amount, string price, Price priceR)
+    parameters:
+    - id: amount
+      type: System.String
+    - id: price
+      type: System.String
+    - id: priceR
+      type: stellar_dotnet_sdk.Price
+    content.vb: Public Sub New(amount As String, price As String, priceR As Price)
+  overload: stellar_dotnet_sdk.responses.OrderBookResponse.Row.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.OrderBookResponse.Row.Amount*
+  commentId: Overload:stellar_dotnet_sdk.responses.OrderBookResponse.Row.Amount
+  name: Amount
+  nameWithType: OrderBookResponse.Row.Amount
+  fullName: stellar_dotnet_sdk.responses.OrderBookResponse.Row.Amount
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.responses.OrderBookResponse.Row.Price*
+  commentId: Overload:stellar_dotnet_sdk.responses.OrderBookResponse.Row.Price
+  name: Price
+  nameWithType: OrderBookResponse.Row.Price
+  fullName: stellar_dotnet_sdk.responses.OrderBookResponse.Row.Price
+- uid: stellar_dotnet_sdk.responses.OrderBookResponse.Row.PriceR*
+  commentId: Overload:stellar_dotnet_sdk.responses.OrderBookResponse.Row.PriceR
+  name: PriceR
+  nameWithType: OrderBookResponse.Row.PriceR
+  fullName: stellar_dotnet_sdk.responses.OrderBookResponse.Row.PriceR
+- uid: stellar_dotnet_sdk.Price
+  commentId: T:stellar_dotnet_sdk.Price
+  parent: stellar_dotnet_sdk
+  name: Price
+  nameWithType: Price
+  fullName: stellar_dotnet_sdk.Price
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: stellar_dotnet_sdk.responses.OrderBookResponse.Row.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.OrderBookResponse.Row.#ctor
+  name: Row
+  nameWithType: OrderBookResponse.Row.Row
+  fullName: stellar_dotnet_sdk.responses.OrderBookResponse.Row.Row

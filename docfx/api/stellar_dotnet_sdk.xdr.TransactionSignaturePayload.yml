@@ -1,0 +1,283 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.TransactionSignaturePayload
+  commentId: T:stellar_dotnet_sdk.xdr.TransactionSignaturePayload
+  id: TransactionSignaturePayload
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.TransactionSignaturePayload.#ctor
+  - stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TransactionSignaturePayload)
+  - stellar_dotnet_sdk.xdr.TransactionSignaturePayload.NetworkId
+  - stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TaggedTransaction
+  langs:
+  - csharp
+  - vb
+  name: TransactionSignaturePayload
+  nameWithType: TransactionSignaturePayload
+  fullName: stellar_dotnet_sdk.xdr.TransactionSignaturePayload
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionSignaturePayload.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TransactionSignaturePayload
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionSignaturePayload.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class TransactionSignaturePayload : object'
+    content.vb: >-
+      Public Class TransactionSignaturePayload
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.TransactionSignaturePayload.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.TransactionSignaturePayload
+  langs:
+  - csharp
+  - vb
+  name: TransactionSignaturePayload()
+  nameWithType: TransactionSignaturePayload.TransactionSignaturePayload()
+  fullName: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TransactionSignaturePayload()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionSignaturePayload.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionSignaturePayload.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public TransactionSignaturePayload()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.NetworkId
+  commentId: P:stellar_dotnet_sdk.xdr.TransactionSignaturePayload.NetworkId
+  id: NetworkId
+  parent: stellar_dotnet_sdk.xdr.TransactionSignaturePayload
+  langs:
+  - csharp
+  - vb
+  name: NetworkId
+  nameWithType: TransactionSignaturePayload.NetworkId
+  fullName: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.NetworkId
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionSignaturePayload.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NetworkId
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionSignaturePayload.cs
+    startLine: 25
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Hash NetworkId { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Hash
+    content.vb: Public Property NetworkId As Hash
+  overload: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.NetworkId*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TaggedTransaction
+  commentId: P:stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TaggedTransaction
+  id: TaggedTransaction
+  parent: stellar_dotnet_sdk.xdr.TransactionSignaturePayload
+  langs:
+  - csharp
+  - vb
+  name: TaggedTransaction
+  nameWithType: TransactionSignaturePayload.TaggedTransaction
+  fullName: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TaggedTransaction
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionSignaturePayload.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TaggedTransaction
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionSignaturePayload.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public TransactionSignaturePayload.TransactionSignaturePayloadTaggedTransaction TaggedTransaction { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TransactionSignaturePayloadTaggedTransaction
+    content.vb: Public Property TaggedTransaction As TransactionSignaturePayload.TransactionSignaturePayloadTaggedTransaction
+  overload: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TaggedTransaction*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TransactionSignaturePayload)
+  commentId: M:stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TransactionSignaturePayload)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TransactionSignaturePayload)
+  parent: stellar_dotnet_sdk.xdr.TransactionSignaturePayload
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, TransactionSignaturePayload)
+  nameWithType: TransactionSignaturePayload.Encode(XdrDataOutputStream, TransactionSignaturePayload)
+  fullName: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.TransactionSignaturePayload)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionSignaturePayload.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionSignaturePayload.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, TransactionSignaturePayload encodedTransactionSignaturePayload)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedTransactionSignaturePayload
+      type: stellar_dotnet_sdk.xdr.TransactionSignaturePayload
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedTransactionSignaturePayload As TransactionSignaturePayload)
+  overload: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.TransactionSignaturePayload
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: TransactionSignaturePayload.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionSignaturePayload.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionSignaturePayload.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static TransactionSignaturePayload Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionSignaturePayload
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As TransactionSignaturePayload
+  overload: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TransactionSignaturePayload.#ctor
+  name: TransactionSignaturePayload
+  nameWithType: TransactionSignaturePayload.TransactionSignaturePayload
+  fullName: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TransactionSignaturePayload
+- uid: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.NetworkId*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TransactionSignaturePayload.NetworkId
+  name: NetworkId
+  nameWithType: TransactionSignaturePayload.NetworkId
+  fullName: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.NetworkId
+- uid: stellar_dotnet_sdk.xdr.Hash
+  commentId: T:stellar_dotnet_sdk.xdr.Hash
+  parent: stellar_dotnet_sdk.xdr
+  name: Hash
+  nameWithType: Hash
+  fullName: stellar_dotnet_sdk.xdr.Hash
+- uid: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TaggedTransaction*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TaggedTransaction
+  name: TaggedTransaction
+  nameWithType: TransactionSignaturePayload.TaggedTransaction
+  fullName: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TaggedTransaction
+- uid: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TransactionSignaturePayloadTaggedTransaction
+  commentId: T:stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TransactionSignaturePayloadTaggedTransaction
+  parent: stellar_dotnet_sdk.xdr
+  name: TransactionSignaturePayload.TransactionSignaturePayloadTaggedTransaction
+  nameWithType: TransactionSignaturePayload.TransactionSignaturePayloadTaggedTransaction
+  fullName: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.TransactionSignaturePayloadTaggedTransaction
+- uid: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Encode
+  name: Encode
+  nameWithType: TransactionSignaturePayload.Encode
+  fullName: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.TransactionSignaturePayload
+  commentId: T:stellar_dotnet_sdk.xdr.TransactionSignaturePayload
+  parent: stellar_dotnet_sdk.xdr
+  name: TransactionSignaturePayload
+  nameWithType: TransactionSignaturePayload
+  fullName: stellar_dotnet_sdk.xdr.TransactionSignaturePayload
+- uid: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Decode
+  name: Decode
+  nameWithType: TransactionSignaturePayload.Decode
+  fullName: stellar_dotnet_sdk.xdr.TransactionSignaturePayload.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

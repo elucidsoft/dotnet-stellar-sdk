@@ -1,0 +1,335 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.Price
+  commentId: T:stellar_dotnet_sdk.Price
+  id: Price
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.Price.#ctor(System.Int32,System.Int32)
+  - stellar_dotnet_sdk.Price.Denominator
+  - stellar_dotnet_sdk.Price.Equals(System.Object)
+  - stellar_dotnet_sdk.Price.FromString(System.String)
+  - stellar_dotnet_sdk.Price.Numerator
+  - stellar_dotnet_sdk.Price.ToXdr
+  langs:
+  - csharp
+  - vb
+  name: Price
+  nameWithType: Price
+  fullName: stellar_dotnet_sdk.Price
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Price.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Price
+    path: ../stellar-dotnet-sdk/Price.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: 'public class Price : object'
+    content.vb: >-
+      Public Class Price
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.Price.#ctor(System.Int32,System.Int32)
+  commentId: M:stellar_dotnet_sdk.Price.#ctor(System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32)'
+  parent: stellar_dotnet_sdk.Price
+  langs:
+  - csharp
+  - vb
+  name: Price(Int32, Int32)
+  nameWithType: Price.Price(Int32, Int32)
+  fullName: stellar_dotnet_sdk.Price.Price(System.Int32, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Price.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/Price.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreate a new price. Price in Stellar is represented as a fraction.\n"
+  example: []
+  syntax:
+    content: public Price(int n, int d)
+    parameters:
+    - id: n
+      type: System.Int32
+      description: Numerator
+    - id: d
+      type: System.Int32
+      description: Denominator
+    content.vb: Public Sub New(n As Integer, d As Integer)
+  overload: stellar_dotnet_sdk.Price.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.Price.Numerator
+  commentId: P:stellar_dotnet_sdk.Price.Numerator
+  id: Numerator
+  parent: stellar_dotnet_sdk.Price
+  langs:
+  - csharp
+  - vb
+  name: Numerator
+  nameWithType: Price.Numerator
+  fullName: stellar_dotnet_sdk.Price.Numerator
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Price.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Numerator
+    path: ../stellar-dotnet-sdk/Price.cs
+    startLine: 25
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public int Numerator { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Numerator As Integer
+  overload: stellar_dotnet_sdk.Price.Numerator*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.Price.Denominator
+  commentId: P:stellar_dotnet_sdk.Price.Denominator
+  id: Denominator
+  parent: stellar_dotnet_sdk.Price
+  langs:
+  - csharp
+  - vb
+  name: Denominator
+  nameWithType: Price.Denominator
+  fullName: stellar_dotnet_sdk.Price.Denominator
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Price.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Denominator
+    path: ../stellar-dotnet-sdk/Price.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public int Denominator { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Denominator As Integer
+  overload: stellar_dotnet_sdk.Price.Denominator*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.Price.FromString(System.String)
+  commentId: M:stellar_dotnet_sdk.Price.FromString(System.String)
+  id: FromString(System.String)
+  parent: stellar_dotnet_sdk.Price
+  langs:
+  - csharp
+  - vb
+  name: FromString(String)
+  nameWithType: Price.FromString(String)
+  fullName: stellar_dotnet_sdk.Price.FromString(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Price.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FromString
+    path: ../stellar-dotnet-sdk/Price.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nApproximates<pre><code> price</code></pre> to a fraction.\n"
+  example: []
+  syntax:
+    content: public static Price FromString(string price)
+    parameters:
+    - id: price
+      type: System.String
+      description: Example 1.25
+    return:
+      type: stellar_dotnet_sdk.Price
+    content.vb: Public Shared Function FromString(price As String) As Price
+  overload: stellar_dotnet_sdk.Price.FromString*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Price.ToXdr
+  commentId: M:stellar_dotnet_sdk.Price.ToXdr
+  id: ToXdr
+  parent: stellar_dotnet_sdk.Price
+  langs:
+  - csharp
+  - vb
+  name: ToXdr()
+  nameWithType: Price.ToXdr()
+  fullName: stellar_dotnet_sdk.Price.ToXdr()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Price.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ToXdr
+    path: ../stellar-dotnet-sdk/Price.cs
+    startLine: 74
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nGenerates Price XDR object.\n"
+  example: []
+  syntax:
+    content: public Price ToXdr()
+    return:
+      type: stellar_dotnet_sdk.xdr.Price
+    content.vb: Public Function ToXdr As Price
+  overload: stellar_dotnet_sdk.Price.ToXdr*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.Price.Equals(System.Object)
+  commentId: M:stellar_dotnet_sdk.Price.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: stellar_dotnet_sdk.Price
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Price.Equals(Object)
+  fullName: stellar_dotnet_sdk.Price.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Price.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Equals
+    path: ../stellar-dotnet-sdk/Price.cs
+    startLine: 86
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(obj As Object) As Boolean
+  overload: stellar_dotnet_sdk.Price.Equals*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.Price.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.Price.#ctor
+  name: Price
+  nameWithType: Price.Price
+  fullName: stellar_dotnet_sdk.Price.Price
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: stellar_dotnet_sdk.Price.Numerator*
+  commentId: Overload:stellar_dotnet_sdk.Price.Numerator
+  name: Numerator
+  nameWithType: Price.Numerator
+  fullName: stellar_dotnet_sdk.Price.Numerator
+- uid: stellar_dotnet_sdk.Price.Denominator*
+  commentId: Overload:stellar_dotnet_sdk.Price.Denominator
+  name: Denominator
+  nameWithType: Price.Denominator
+  fullName: stellar_dotnet_sdk.Price.Denominator
+- uid: stellar_dotnet_sdk.Price.FromString*
+  commentId: Overload:stellar_dotnet_sdk.Price.FromString
+  name: FromString
+  nameWithType: Price.FromString
+  fullName: stellar_dotnet_sdk.Price.FromString
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.Price
+  commentId: T:stellar_dotnet_sdk.Price
+  parent: stellar_dotnet_sdk
+  name: Price
+  nameWithType: Price
+  fullName: stellar_dotnet_sdk.Price
+- uid: stellar_dotnet_sdk.Price.ToXdr*
+  commentId: Overload:stellar_dotnet_sdk.Price.ToXdr
+  name: ToXdr
+  nameWithType: Price.ToXdr
+  fullName: stellar_dotnet_sdk.Price.ToXdr
+- uid: stellar_dotnet_sdk.xdr.Price
+  commentId: T:stellar_dotnet_sdk.xdr.Price
+  parent: stellar_dotnet_sdk.xdr
+  name: Price
+  nameWithType: Price
+  fullName: stellar_dotnet_sdk.xdr.Price
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.Price.Equals*
+  commentId: Overload:stellar_dotnet_sdk.Price.Equals
+  name: Equals
+  nameWithType: Price.Equals
+  fullName: stellar_dotnet_sdk.Price.Equals
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

@@ -1,0 +1,283 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.DecoratedSignature
+  commentId: T:stellar_dotnet_sdk.xdr.DecoratedSignature
+  id: DecoratedSignature
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.DecoratedSignature.#ctor
+  - stellar_dotnet_sdk.xdr.DecoratedSignature.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.DecoratedSignature.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.DecoratedSignature)
+  - stellar_dotnet_sdk.xdr.DecoratedSignature.Hint
+  - stellar_dotnet_sdk.xdr.DecoratedSignature.Signature
+  langs:
+  - csharp
+  - vb
+  name: DecoratedSignature
+  nameWithType: DecoratedSignature
+  fullName: stellar_dotnet_sdk.xdr.DecoratedSignature
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DecoratedSignature.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: DecoratedSignature
+    path: ../stellar-dotnet-sdk/xdr/generated/DecoratedSignature.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class DecoratedSignature : object'
+    content.vb: >-
+      Public Class DecoratedSignature
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.DecoratedSignature.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.DecoratedSignature.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.DecoratedSignature
+  langs:
+  - csharp
+  - vb
+  name: DecoratedSignature()
+  nameWithType: DecoratedSignature.DecoratedSignature()
+  fullName: stellar_dotnet_sdk.xdr.DecoratedSignature.DecoratedSignature()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DecoratedSignature.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/DecoratedSignature.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public DecoratedSignature()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.DecoratedSignature.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.DecoratedSignature.Hint
+  commentId: P:stellar_dotnet_sdk.xdr.DecoratedSignature.Hint
+  id: Hint
+  parent: stellar_dotnet_sdk.xdr.DecoratedSignature
+  langs:
+  - csharp
+  - vb
+  name: Hint
+  nameWithType: DecoratedSignature.Hint
+  fullName: stellar_dotnet_sdk.xdr.DecoratedSignature.Hint
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DecoratedSignature.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Hint
+    path: ../stellar-dotnet-sdk/xdr/generated/DecoratedSignature.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public SignatureHint Hint { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.SignatureHint
+    content.vb: Public Property Hint As SignatureHint
+  overload: stellar_dotnet_sdk.xdr.DecoratedSignature.Hint*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.DecoratedSignature.Signature
+  commentId: P:stellar_dotnet_sdk.xdr.DecoratedSignature.Signature
+  id: Signature
+  parent: stellar_dotnet_sdk.xdr.DecoratedSignature
+  langs:
+  - csharp
+  - vb
+  name: Signature
+  nameWithType: DecoratedSignature.Signature
+  fullName: stellar_dotnet_sdk.xdr.DecoratedSignature.Signature
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DecoratedSignature.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Signature
+    path: ../stellar-dotnet-sdk/xdr/generated/DecoratedSignature.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Signature Signature { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Signature
+    content.vb: Public Property Signature As Signature
+  overload: stellar_dotnet_sdk.xdr.DecoratedSignature.Signature*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.DecoratedSignature.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.DecoratedSignature)
+  commentId: M:stellar_dotnet_sdk.xdr.DecoratedSignature.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.DecoratedSignature)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.DecoratedSignature)
+  parent: stellar_dotnet_sdk.xdr.DecoratedSignature
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, DecoratedSignature)
+  nameWithType: DecoratedSignature.Encode(XdrDataOutputStream, DecoratedSignature)
+  fullName: stellar_dotnet_sdk.xdr.DecoratedSignature.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.DecoratedSignature)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DecoratedSignature.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/DecoratedSignature.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, DecoratedSignature encodedDecoratedSignature)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedDecoratedSignature
+      type: stellar_dotnet_sdk.xdr.DecoratedSignature
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedDecoratedSignature As DecoratedSignature)
+  overload: stellar_dotnet_sdk.xdr.DecoratedSignature.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.DecoratedSignature.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.DecoratedSignature.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.DecoratedSignature
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: DecoratedSignature.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.DecoratedSignature.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DecoratedSignature.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/DecoratedSignature.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static DecoratedSignature Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.DecoratedSignature
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As DecoratedSignature
+  overload: stellar_dotnet_sdk.xdr.DecoratedSignature.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.DecoratedSignature.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.DecoratedSignature.#ctor
+  name: DecoratedSignature
+  nameWithType: DecoratedSignature.DecoratedSignature
+  fullName: stellar_dotnet_sdk.xdr.DecoratedSignature.DecoratedSignature
+- uid: stellar_dotnet_sdk.xdr.DecoratedSignature.Hint*
+  commentId: Overload:stellar_dotnet_sdk.xdr.DecoratedSignature.Hint
+  name: Hint
+  nameWithType: DecoratedSignature.Hint
+  fullName: stellar_dotnet_sdk.xdr.DecoratedSignature.Hint
+- uid: stellar_dotnet_sdk.xdr.SignatureHint
+  commentId: T:stellar_dotnet_sdk.xdr.SignatureHint
+  parent: stellar_dotnet_sdk.xdr
+  name: SignatureHint
+  nameWithType: SignatureHint
+  fullName: stellar_dotnet_sdk.xdr.SignatureHint
+- uid: stellar_dotnet_sdk.xdr.DecoratedSignature.Signature*
+  commentId: Overload:stellar_dotnet_sdk.xdr.DecoratedSignature.Signature
+  name: Signature
+  nameWithType: DecoratedSignature.Signature
+  fullName: stellar_dotnet_sdk.xdr.DecoratedSignature.Signature
+- uid: stellar_dotnet_sdk.xdr.Signature
+  commentId: T:stellar_dotnet_sdk.xdr.Signature
+  parent: stellar_dotnet_sdk.xdr
+  name: Signature
+  nameWithType: Signature
+  fullName: stellar_dotnet_sdk.xdr.Signature
+- uid: stellar_dotnet_sdk.xdr.DecoratedSignature.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.DecoratedSignature.Encode
+  name: Encode
+  nameWithType: DecoratedSignature.Encode
+  fullName: stellar_dotnet_sdk.xdr.DecoratedSignature.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.DecoratedSignature
+  commentId: T:stellar_dotnet_sdk.xdr.DecoratedSignature
+  parent: stellar_dotnet_sdk.xdr
+  name: DecoratedSignature
+  nameWithType: DecoratedSignature
+  fullName: stellar_dotnet_sdk.xdr.DecoratedSignature
+- uid: stellar_dotnet_sdk.xdr.DecoratedSignature.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.DecoratedSignature.Decode
+  name: Decode
+  nameWithType: DecoratedSignature.Decode
+  fullName: stellar_dotnet_sdk.xdr.DecoratedSignature.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

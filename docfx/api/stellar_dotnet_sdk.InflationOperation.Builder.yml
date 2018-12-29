@@ -1,0 +1,152 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.InflationOperation.Builder
+  commentId: T:stellar_dotnet_sdk.InflationOperation.Builder
+  id: InflationOperation.Builder
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.InflationOperation.Builder.Build
+  - stellar_dotnet_sdk.InflationOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  langs:
+  - csharp
+  - vb
+  name: InflationOperation.Builder
+  nameWithType: InflationOperation.Builder
+  fullName: stellar_dotnet_sdk.InflationOperation.Builder
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/InflationOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Builder
+    path: ../stellar-dotnet-sdk/InflationOperation.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: 'public class Builder : object'
+    content.vb: >-
+      Public Class Builder
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.InflationOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.InflationOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  id: SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  parent: stellar_dotnet_sdk.InflationOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetSourceAccount(KeyPair)
+  nameWithType: InflationOperation.Builder.SetSourceAccount(KeyPair)
+  fullName: stellar_dotnet_sdk.InflationOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/InflationOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetSourceAccount
+    path: ../stellar-dotnet-sdk/InflationOperation.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSets the source account for this operation.\n"
+  example: []
+  syntax:
+    content: public InflationOperation.Builder SetSourceAccount(KeyPair sourceAccount)
+    parameters:
+    - id: sourceAccount
+      type: stellar_dotnet_sdk.KeyPair
+      description: The operation&apos;s source account.
+    return:
+      type: stellar_dotnet_sdk.InflationOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetSourceAccount(sourceAccount As KeyPair) As InflationOperation.Builder
+  overload: stellar_dotnet_sdk.InflationOperation.Builder.SetSourceAccount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.InflationOperation.Builder.Build
+  commentId: M:stellar_dotnet_sdk.InflationOperation.Builder.Build
+  id: Build
+  parent: stellar_dotnet_sdk.InflationOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Build()
+  nameWithType: InflationOperation.Builder.Build()
+  fullName: stellar_dotnet_sdk.InflationOperation.Builder.Build()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/InflationOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Build
+    path: ../stellar-dotnet-sdk/InflationOperation.cs
+    startLine: 40
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBuilds an operation\n"
+  example: []
+  syntax:
+    content: public InflationOperation Build()
+    return:
+      type: stellar_dotnet_sdk.InflationOperation
+    content.vb: Public Function Build As InflationOperation
+  overload: stellar_dotnet_sdk.InflationOperation.Builder.Build*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.InflationOperation.Builder.SetSourceAccount*
+  commentId: Overload:stellar_dotnet_sdk.InflationOperation.Builder.SetSourceAccount
+  name: SetSourceAccount
+  nameWithType: InflationOperation.Builder.SetSourceAccount
+  fullName: stellar_dotnet_sdk.InflationOperation.Builder.SetSourceAccount
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk.InflationOperation.Builder
+  commentId: T:stellar_dotnet_sdk.InflationOperation.Builder
+  parent: stellar_dotnet_sdk
+  name: InflationOperation.Builder
+  nameWithType: InflationOperation.Builder
+  fullName: stellar_dotnet_sdk.InflationOperation.Builder
+- uid: stellar_dotnet_sdk.InflationOperation.Builder.Build*
+  commentId: Overload:stellar_dotnet_sdk.InflationOperation.Builder.Build
+  name: Build
+  nameWithType: InflationOperation.Builder.Build
+  fullName: stellar_dotnet_sdk.InflationOperation.Builder.Build
+- uid: stellar_dotnet_sdk.InflationOperation
+  commentId: T:stellar_dotnet_sdk.InflationOperation
+  parent: stellar_dotnet_sdk
+  name: InflationOperation
+  nameWithType: InflationOperation
+  fullName: stellar_dotnet_sdk.InflationOperation

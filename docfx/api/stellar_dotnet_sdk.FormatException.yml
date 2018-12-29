@@ -1,0 +1,211 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.FormatException
+  commentId: T:stellar_dotnet_sdk.FormatException
+  id: FormatException
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.FormatException.#ctor
+  - stellar_dotnet_sdk.FormatException.#ctor(SerializationInfo,StreamingContext)
+  - stellar_dotnet_sdk.FormatException.#ctor(System.String)
+  - stellar_dotnet_sdk.FormatException.#ctor(System.String,Exception)
+  langs:
+  - csharp
+  - vb
+  name: FormatException
+  nameWithType: FormatException
+  fullName: stellar_dotnet_sdk.FormatException
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/FormatException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FormatException
+    path: ../stellar-dotnet-sdk/FormatException.cs
+    startLine: 5
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: 'public class FormatException : Exception'
+    content.vb: >-
+      Public Class FormatException
+          Inherits Exception
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.FormatException.#ctor
+  commentId: M:stellar_dotnet_sdk.FormatException.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.FormatException
+  langs:
+  - csharp
+  - vb
+  name: FormatException()
+  nameWithType: FormatException.FormatException()
+  fullName: stellar_dotnet_sdk.FormatException.FormatException()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/FormatException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/FormatException.cs
+    startLine: 7
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public FormatException()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.FormatException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.FormatException.#ctor(System.String)
+  commentId: M:stellar_dotnet_sdk.FormatException.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: stellar_dotnet_sdk.FormatException
+  langs:
+  - csharp
+  - vb
+  name: FormatException(String)
+  nameWithType: FormatException.FormatException(String)
+  fullName: stellar_dotnet_sdk.FormatException.FormatException(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/FormatException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/FormatException.cs
+    startLine: 11
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public FormatException(string message)
+    parameters:
+    - id: message
+      type: System.String
+    content.vb: Public Sub New(message As String)
+  overload: stellar_dotnet_sdk.FormatException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.FormatException.#ctor(System.String,Exception)
+  commentId: M:stellar_dotnet_sdk.FormatException.#ctor(System.String,Exception)
+  id: '#ctor(System.String,Exception)'
+  parent: stellar_dotnet_sdk.FormatException
+  langs:
+  - csharp
+  - vb
+  name: FormatException(String, Exception)
+  nameWithType: FormatException.FormatException(String, Exception)
+  fullName: stellar_dotnet_sdk.FormatException.FormatException(System.String, Exception)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/FormatException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/FormatException.cs
+    startLine: 15
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public FormatException(string message, Exception innerException)
+    parameters:
+    - id: message
+      type: System.String
+    - id: innerException
+      type: Exception
+    content.vb: Public Sub New(message As String, innerException As Exception)
+  overload: stellar_dotnet_sdk.FormatException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.FormatException.#ctor(SerializationInfo,StreamingContext)
+  commentId: M:stellar_dotnet_sdk.FormatException.#ctor(SerializationInfo,StreamingContext)
+  id: '#ctor(SerializationInfo,StreamingContext)'
+  parent: stellar_dotnet_sdk.FormatException
+  langs:
+  - csharp
+  - vb
+  name: FormatException(SerializationInfo, StreamingContext)
+  nameWithType: FormatException.FormatException(SerializationInfo, StreamingContext)
+  fullName: stellar_dotnet_sdk.FormatException.FormatException(SerializationInfo, StreamingContext)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/FormatException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/FormatException.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: protected FormatException(SerializationInfo info, StreamingContext context)
+    parameters:
+    - id: info
+      type: SerializationInfo
+    - id: context
+      type: StreamingContext
+    content.vb: Protected Sub New(info As SerializationInfo, context As StreamingContext)
+  overload: stellar_dotnet_sdk.FormatException.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.FormatException.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.FormatException.#ctor
+  name: FormatException
+  nameWithType: FormatException.FormatException
+  fullName: stellar_dotnet_sdk.FormatException.FormatException
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Exception
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: Exception
+- uid: SerializationInfo
+  isExternal: true
+  name: SerializationInfo
+  nameWithType: SerializationInfo
+  fullName: SerializationInfo
+- uid: StreamingContext
+  isExternal: true
+  name: StreamingContext
+  nameWithType: StreamingContext
+  fullName: StreamingContext

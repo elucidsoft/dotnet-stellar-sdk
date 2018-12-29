@@ -1,0 +1,219 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.AssetResponseLinks
+  commentId: T:stellar_dotnet_sdk.responses.AssetResponseLinks
+  id: AssetResponseLinks
+  parent: stellar_dotnet_sdk.responses
+  children:
+  - stellar_dotnet_sdk.responses.AssetResponseLinks.#ctor(stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.AssetResponse})
+  - stellar_dotnet_sdk.responses.AssetResponseLinks.Toml
+  langs:
+  - csharp
+  - vb
+  name: AssetResponseLinks
+  nameWithType: AssetResponseLinks
+  fullName: stellar_dotnet_sdk.responses.AssetResponseLinks
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/AssetResponseLinks.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetResponseLinks
+    path: ../stellar-dotnet-sdk/responses/AssetResponseLinks.cs
+    startLine: 7
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: 'public class AssetResponseLinks : object'
+    content.vb: >-
+      Public Class AssetResponseLinks
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.AssetResponseLinks.Toml
+  commentId: P:stellar_dotnet_sdk.responses.AssetResponseLinks.Toml
+  id: Toml
+  parent: stellar_dotnet_sdk.responses.AssetResponseLinks
+  langs:
+  - csharp
+  - vb
+  name: Toml
+  nameWithType: AssetResponseLinks.Toml
+  fullName: stellar_dotnet_sdk.responses.AssetResponseLinks.Toml
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/AssetResponseLinks.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Toml
+    path: ../stellar-dotnet-sdk/responses/AssetResponseLinks.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public Link Toml { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.responses.Link
+    content.vb: Public Property Toml As Link
+  overload: stellar_dotnet_sdk.responses.AssetResponseLinks.Toml*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.AssetResponseLinks.#ctor(stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.AssetResponse})
+  commentId: M:stellar_dotnet_sdk.responses.AssetResponseLinks.#ctor(stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.AssetResponse})
+  id: '#ctor(stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.AssetResponse})'
+  parent: stellar_dotnet_sdk.responses.AssetResponseLinks
+  langs:
+  - csharp
+  - vb
+  name: AssetResponseLinks(Link<AssetResponse>)
+  nameWithType: AssetResponseLinks.AssetResponseLinks(Link<AssetResponse>)
+  fullName: stellar_dotnet_sdk.responses.AssetResponseLinks.AssetResponseLinks(stellar_dotnet_sdk.responses.Link<stellar_dotnet_sdk.responses.AssetResponse>)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/AssetResponseLinks.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/AssetResponseLinks.cs
+    startLine: 15
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public AssetResponseLinks(Link<AssetResponse> toml)
+    parameters:
+    - id: toml
+      type: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.AssetResponse}
+    content.vb: Public Sub New(toml As Link(Of AssetResponse))
+  overload: stellar_dotnet_sdk.responses.AssetResponseLinks.#ctor*
+  nameWithType.vb: AssetResponseLinks.AssetResponseLinks(Link(Of AssetResponse))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.responses.AssetResponseLinks.AssetResponseLinks(stellar_dotnet_sdk.responses.Link(Of stellar_dotnet_sdk.responses.AssetResponse))
+  name.vb: AssetResponseLinks(Link(Of AssetResponse))
+references:
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.AssetResponseLinks.Toml*
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponseLinks.Toml
+  name: Toml
+  nameWithType: AssetResponseLinks.Toml
+  fullName: stellar_dotnet_sdk.responses.AssetResponseLinks.Toml
+- uid: stellar_dotnet_sdk.responses.Link
+  commentId: T:stellar_dotnet_sdk.responses.Link
+  parent: stellar_dotnet_sdk.responses
+  name: Link
+  nameWithType: Link
+  fullName: stellar_dotnet_sdk.responses.Link
+- uid: stellar_dotnet_sdk.responses.AssetResponseLinks.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponseLinks.#ctor
+  name: AssetResponseLinks
+  nameWithType: AssetResponseLinks.AssetResponseLinks
+  fullName: stellar_dotnet_sdk.responses.AssetResponseLinks.AssetResponseLinks
+- uid: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.AssetResponse}
+  commentId: T:stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.AssetResponse}
+  parent: stellar_dotnet_sdk.responses
+  definition: stellar_dotnet_sdk.responses.Link`1
+  name: Link<AssetResponse>
+  nameWithType: Link<AssetResponse>
+  fullName: stellar_dotnet_sdk.responses.Link<stellar_dotnet_sdk.responses.AssetResponse>
+  nameWithType.vb: Link(Of AssetResponse)
+  fullName.vb: stellar_dotnet_sdk.responses.Link(Of stellar_dotnet_sdk.responses.AssetResponse)
+  name.vb: Link(Of AssetResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.responses.AssetResponse
+    name: AssetResponse
+    nameWithType: AssetResponse
+    fullName: stellar_dotnet_sdk.responses.AssetResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.responses.AssetResponse
+    name: AssetResponse
+    nameWithType: AssetResponse
+    fullName: stellar_dotnet_sdk.responses.AssetResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.Link`1
+  commentId: T:stellar_dotnet_sdk.responses.Link`1
+  parent: stellar_dotnet_sdk.responses
+  name: Link<TResponse>
+  nameWithType: Link<TResponse>
+  fullName: stellar_dotnet_sdk.responses.Link<TResponse>
+  nameWithType.vb: Link(Of TResponse)
+  fullName.vb: stellar_dotnet_sdk.responses.Link(Of TResponse)
+  name.vb: Link(Of TResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )

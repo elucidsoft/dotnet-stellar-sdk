@@ -1,0 +1,283 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp
+  commentId: T:stellar_dotnet_sdk.xdr.ManageDataOp
+  id: ManageDataOp
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.ManageDataOp.#ctor
+  - stellar_dotnet_sdk.xdr.ManageDataOp.DataName
+  - stellar_dotnet_sdk.xdr.ManageDataOp.DataValue
+  - stellar_dotnet_sdk.xdr.ManageDataOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.ManageDataOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageDataOp)
+  langs:
+  - csharp
+  - vb
+  name: ManageDataOp
+  nameWithType: ManageDataOp
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageDataOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ManageDataOp
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageDataOp.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class ManageDataOp : object'
+    content.vb: >-
+      Public Class ManageDataOp
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.ManageDataOp.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.ManageDataOp
+  langs:
+  - csharp
+  - vb
+  name: ManageDataOp()
+  nameWithType: ManageDataOp.ManageDataOp()
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp.ManageDataOp()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageDataOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageDataOp.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public ManageDataOp()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.ManageDataOp.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp.DataName
+  commentId: P:stellar_dotnet_sdk.xdr.ManageDataOp.DataName
+  id: DataName
+  parent: stellar_dotnet_sdk.xdr.ManageDataOp
+  langs:
+  - csharp
+  - vb
+  name: DataName
+  nameWithType: ManageDataOp.DataName
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp.DataName
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageDataOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: DataName
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageDataOp.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public String64 DataName { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.String64
+    content.vb: Public Property DataName As String64
+  overload: stellar_dotnet_sdk.xdr.ManageDataOp.DataName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp.DataValue
+  commentId: P:stellar_dotnet_sdk.xdr.ManageDataOp.DataValue
+  id: DataValue
+  parent: stellar_dotnet_sdk.xdr.ManageDataOp
+  langs:
+  - csharp
+  - vb
+  name: DataValue
+  nameWithType: ManageDataOp.DataValue
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp.DataValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageDataOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: DataValue
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageDataOp.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public DataValue DataValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.DataValue
+    content.vb: Public Property DataValue As DataValue
+  overload: stellar_dotnet_sdk.xdr.ManageDataOp.DataValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageDataOp)
+  commentId: M:stellar_dotnet_sdk.xdr.ManageDataOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageDataOp)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageDataOp)
+  parent: stellar_dotnet_sdk.xdr.ManageDataOp
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, ManageDataOp)
+  nameWithType: ManageDataOp.Encode(XdrDataOutputStream, ManageDataOp)
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.ManageDataOp)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageDataOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageDataOp.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, ManageDataOp encodedManageDataOp)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedManageDataOp
+      type: stellar_dotnet_sdk.xdr.ManageDataOp
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedManageDataOp As ManageDataOp)
+  overload: stellar_dotnet_sdk.xdr.ManageDataOp.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.ManageDataOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.ManageDataOp
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: ManageDataOp.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageDataOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageDataOp.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static ManageDataOp Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.ManageDataOp
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As ManageDataOp
+  overload: stellar_dotnet_sdk.xdr.ManageDataOp.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageDataOp.#ctor
+  name: ManageDataOp
+  nameWithType: ManageDataOp.ManageDataOp
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp.ManageDataOp
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp.DataName*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageDataOp.DataName
+  name: DataName
+  nameWithType: ManageDataOp.DataName
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp.DataName
+- uid: stellar_dotnet_sdk.xdr.String64
+  commentId: T:stellar_dotnet_sdk.xdr.String64
+  parent: stellar_dotnet_sdk.xdr
+  name: String64
+  nameWithType: String64
+  fullName: stellar_dotnet_sdk.xdr.String64
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp.DataValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageDataOp.DataValue
+  name: DataValue
+  nameWithType: ManageDataOp.DataValue
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp.DataValue
+- uid: stellar_dotnet_sdk.xdr.DataValue
+  commentId: T:stellar_dotnet_sdk.xdr.DataValue
+  parent: stellar_dotnet_sdk.xdr
+  name: DataValue
+  nameWithType: DataValue
+  fullName: stellar_dotnet_sdk.xdr.DataValue
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageDataOp.Encode
+  name: Encode
+  nameWithType: ManageDataOp.Encode
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp
+  commentId: T:stellar_dotnet_sdk.xdr.ManageDataOp
+  parent: stellar_dotnet_sdk.xdr
+  name: ManageDataOp
+  nameWithType: ManageDataOp
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageDataOp.Decode
+  name: Decode
+  nameWithType: ManageDataOp.Decode
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

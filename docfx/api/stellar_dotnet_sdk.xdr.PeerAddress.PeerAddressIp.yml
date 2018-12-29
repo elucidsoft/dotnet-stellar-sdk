@@ -1,0 +1,344 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+  commentId: T:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+  id: PeerAddress.PeerAddressIp
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.#ctor
+  - stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Discriminant
+  - stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp)
+  - stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv4
+  - stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv6
+  langs:
+  - csharp
+  - vb
+  name: PeerAddress.PeerAddressIp
+  nameWithType: PeerAddress.PeerAddressIp
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PeerAddressIp
+    path: ../stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+    startLine: 46
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class PeerAddressIp : object'
+    content.vb: >-
+      Public Class PeerAddressIp
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+  langs:
+  - csharp
+  - vb
+  name: PeerAddressIp()
+  nameWithType: PeerAddress.PeerAddressIp.PeerAddressIp()
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.PeerAddressIp()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+    startLine: 48
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public PeerAddressIp()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Discriminant
+  commentId: P:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Discriminant
+  id: Discriminant
+  parent: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+  langs:
+  - csharp
+  - vb
+  name: Discriminant
+  nameWithType: PeerAddress.PeerAddressIp.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Discriminant
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Discriminant
+    path: ../stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+    startLine: 50
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public IPAddrType Discriminant { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.IPAddrType
+    content.vb: Public Property Discriminant As IPAddrType
+  overload: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Discriminant*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv4
+  commentId: P:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv4
+  id: Ipv4
+  parent: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+  langs:
+  - csharp
+  - vb
+  name: Ipv4
+  nameWithType: PeerAddress.PeerAddressIp.Ipv4
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv4
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Ipv4
+    path: ../stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+    startLine: 52
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public byte[] Ipv4 { get; set; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public Property Ipv4 As Byte()
+  overload: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv4*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv6
+  commentId: P:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv6
+  id: Ipv6
+  parent: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+  langs:
+  - csharp
+  - vb
+  name: Ipv6
+  nameWithType: PeerAddress.PeerAddressIp.Ipv6
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv6
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Ipv6
+    path: ../stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+    startLine: 53
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public byte[] Ipv6 { get; set; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public Property Ipv6 As Byte()
+  overload: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv6*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp)
+  commentId: M:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp)
+  parent: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, PeerAddress.PeerAddressIp)
+  nameWithType: PeerAddress.PeerAddressIp.Encode(XdrDataOutputStream, PeerAddress.PeerAddressIp)
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+    startLine: 54
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, PeerAddress.PeerAddressIp encodedPeerAddressIp)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedPeerAddressIp
+      type: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedPeerAddressIp As PeerAddress.PeerAddressIp)
+  overload: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: PeerAddress.PeerAddressIp.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/PeerAddress.cs
+    startLine: 69
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static PeerAddress.PeerAddressIp Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As PeerAddress.PeerAddressIp
+  overload: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.#ctor
+  name: PeerAddressIp
+  nameWithType: PeerAddress.PeerAddressIp.PeerAddressIp
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.PeerAddressIp
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Discriminant*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Discriminant
+  name: Discriminant
+  nameWithType: PeerAddress.PeerAddressIp.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Discriminant
+- uid: stellar_dotnet_sdk.xdr.IPAddrType
+  commentId: T:stellar_dotnet_sdk.xdr.IPAddrType
+  parent: stellar_dotnet_sdk.xdr
+  name: IPAddrType
+  nameWithType: IPAddrType
+  fullName: stellar_dotnet_sdk.xdr.IPAddrType
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv4*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv4
+  name: Ipv4
+  nameWithType: PeerAddress.PeerAddressIp.Ipv4
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv4
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv6*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv6
+  name: Ipv6
+  nameWithType: PeerAddress.PeerAddressIp.Ipv6
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Ipv6
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Encode
+  name: Encode
+  nameWithType: PeerAddress.PeerAddressIp.Encode
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+  commentId: T:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+  parent: stellar_dotnet_sdk.xdr
+  name: PeerAddress.PeerAddressIp
+  nameWithType: PeerAddress.PeerAddressIp
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp
+- uid: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Decode
+  name: Decode
+  nameWithType: PeerAddress.PeerAddressIp.Decode
+  fullName: stellar_dotnet_sdk.xdr.PeerAddress.PeerAddressIp.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

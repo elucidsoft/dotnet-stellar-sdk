@@ -1,0 +1,558 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  commentId: T:stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  id: SubmitTransactionResponse
+  parent: stellar_dotnet_sdk.responses
+  children:
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse.#ctor(stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras,System.Nullable{System.Int64},System.String,System.String,System.String)
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse.EnvelopeXdr
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse.GetOfferIdFromResult(System.Int32)
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse.Hash
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse.IsSuccess
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse.Ledger
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse.ResultXdr
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse.SubmitTransactionResponseExtras
+  langs:
+  - csharp
+  - vb
+  name: SubmitTransactionResponse
+  nameWithType: SubmitTransactionResponse
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SubmitTransactionResponse
+    path: ../stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+    startLine: 7
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: 'public class SubmitTransactionResponse : Response'
+    content.vb: >-
+      Public Class SubmitTransactionResponse
+          Inherits Response
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.responses.Response
+  inheritedMembers:
+  - stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  - stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  - stellar_dotnet_sdk.responses.Response.RateLimitReset
+  - stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Hash
+  commentId: P:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Hash
+  id: Hash
+  parent: stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  langs:
+  - csharp
+  - vb
+  name: Hash
+  nameWithType: SubmitTransactionResponse.Hash
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Hash
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Hash
+    path: ../stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string Hash { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Hash As String
+  overload: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Hash*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Ledger
+  commentId: P:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Ledger
+  id: Ledger
+  parent: stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  langs:
+  - csharp
+  - vb
+  name: Ledger
+  nameWithType: SubmitTransactionResponse.Ledger
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Ledger
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Ledger
+    path: ../stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+    startLine: 14
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public long? Ledger { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public ReadOnly Property Ledger As Long?
+  overload: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Ledger*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.EnvelopeXdr
+  commentId: P:stellar_dotnet_sdk.responses.SubmitTransactionResponse.EnvelopeXdr
+  id: EnvelopeXdr
+  parent: stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  langs:
+  - csharp
+  - vb
+  name: EnvelopeXdr
+  nameWithType: SubmitTransactionResponse.EnvelopeXdr
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.EnvelopeXdr
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: EnvelopeXdr
+    path: ../stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string EnvelopeXdr { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property EnvelopeXdr As String
+  overload: stellar_dotnet_sdk.responses.SubmitTransactionResponse.EnvelopeXdr*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.ResultXdr
+  commentId: P:stellar_dotnet_sdk.responses.SubmitTransactionResponse.ResultXdr
+  id: ResultXdr
+  parent: stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  langs:
+  - csharp
+  - vb
+  name: ResultXdr
+  nameWithType: SubmitTransactionResponse.ResultXdr
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.ResultXdr
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ResultXdr
+    path: ../stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string ResultXdr { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ResultXdr As String
+  overload: stellar_dotnet_sdk.responses.SubmitTransactionResponse.ResultXdr*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.SubmitTransactionResponseExtras
+  commentId: P:stellar_dotnet_sdk.responses.SubmitTransactionResponse.SubmitTransactionResponseExtras
+  id: SubmitTransactionResponseExtras
+  parent: stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  langs:
+  - csharp
+  - vb
+  name: SubmitTransactionResponseExtras
+  nameWithType: SubmitTransactionResponse.SubmitTransactionResponseExtras
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.SubmitTransactionResponseExtras
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SubmitTransactionResponseExtras
+    path: ../stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+    startLine: 49
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public SubmitTransactionResponse.Extras SubmitTransactionResponseExtras { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras
+    content.vb: Public ReadOnly Property SubmitTransactionResponseExtras As SubmitTransactionResponse.Extras
+  overload: stellar_dotnet_sdk.responses.SubmitTransactionResponse.SubmitTransactionResponseExtras*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.#ctor(stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras,System.Nullable{System.Int64},System.String,System.String,System.String)
+  commentId: M:stellar_dotnet_sdk.responses.SubmitTransactionResponse.#ctor(stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras,System.Nullable{System.Int64},System.String,System.String,System.String)
+  id: '#ctor(stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras,System.Nullable{System.Int64},System.String,System.String,System.String)'
+  parent: stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  langs:
+  - csharp
+  - vb
+  name: SubmitTransactionResponse(SubmitTransactionResponse.Extras, Nullable<Int64>, String, String, String)
+  nameWithType: SubmitTransactionResponse.SubmitTransactionResponse(SubmitTransactionResponse.Extras, Nullable<Int64>, String, String, String)
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.SubmitTransactionResponse(stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras, System.Nullable<System.Int64>, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+    startLine: 52
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public SubmitTransactionResponse(SubmitTransactionResponse.Extras extras, long? ledger, string hash, string envelopeXdr, string resultXdr)
+    parameters:
+    - id: extras
+      type: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras
+    - id: ledger
+      type: System.Nullable{System.Int64}
+    - id: hash
+      type: System.String
+    - id: envelopeXdr
+      type: System.String
+    - id: resultXdr
+      type: System.String
+    content.vb: Public Sub New(extras As SubmitTransactionResponse.Extras, ledger As Long?, hash As String, envelopeXdr As String, resultXdr As String)
+  overload: stellar_dotnet_sdk.responses.SubmitTransactionResponse.#ctor*
+  nameWithType.vb: SubmitTransactionResponse.SubmitTransactionResponse(SubmitTransactionResponse.Extras, Nullable(Of Int64), String, String, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.responses.SubmitTransactionResponse.SubmitTransactionResponse(stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras, System.Nullable(Of System.Int64), System.String, System.String, System.String)
+  name.vb: SubmitTransactionResponse(SubmitTransactionResponse.Extras, Nullable(Of Int64), String, String, String)
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.IsSuccess
+  commentId: M:stellar_dotnet_sdk.responses.SubmitTransactionResponse.IsSuccess
+  id: IsSuccess
+  parent: stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  langs:
+  - csharp
+  - vb
+  name: IsSuccess()
+  nameWithType: SubmitTransactionResponse.IsSuccess()
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.IsSuccess()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: IsSuccess
+    path: ../stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+    startLine: 61
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public bool IsSuccess()
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsSuccess As Boolean
+  overload: stellar_dotnet_sdk.responses.SubmitTransactionResponse.IsSuccess*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.GetOfferIdFromResult(System.Int32)
+  commentId: M:stellar_dotnet_sdk.responses.SubmitTransactionResponse.GetOfferIdFromResult(System.Int32)
+  id: GetOfferIdFromResult(System.Int32)
+  parent: stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  langs:
+  - csharp
+  - vb
+  name: GetOfferIdFromResult(Int32)
+  nameWithType: SubmitTransactionResponse.GetOfferIdFromResult(Int32)
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.GetOfferIdFromResult(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: GetOfferIdFromResult
+    path: ../stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+    startLine: 72
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  summary: "\nHelper method that returns Offer ID for ManageOffer from TransactionResult Xdr.\nThis is helpful when you need ID of an offer to update it later.\n"
+  example: []
+  syntax:
+    content: public long? GetOfferIdFromResult(int position)
+    parameters:
+    - id: position
+      type: System.Int32
+      description: Position of ManageOffer operation. If ManageOffer is second operation in this transaction this should be equal <pre><code>1</code></pre>.
+    return:
+      type: System.Nullable{System.Int64}
+      description: Offer ID or <pre><code>null</code></pre> when operation at <pre><code>position</code></pre> is not a ManageOffer operation or error has occurred.
+    content.vb: Public Function GetOfferIdFromResult(position As Integer) As Long?
+  overload: stellar_dotnet_sdk.responses.SubmitTransactionResponse.GetOfferIdFromResult*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.Response
+  commentId: T:stellar_dotnet_sdk.responses.Response
+  parent: stellar_dotnet_sdk.responses
+  name: Response
+  nameWithType: Response
+  fullName: stellar_dotnet_sdk.responses.Response
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitLimit
+  nameWithType: Response.RateLimitLimit
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitRemaining
+  nameWithType: Response.RateLimitRemaining
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitReset
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitReset
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitReset
+  nameWithType: Response.RateLimitReset
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitReset
+- uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  commentId: M:stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  parent: stellar_dotnet_sdk.responses.Response
+  isExternal: true
+  name: SetHeaders(HttpResponseHeaders)
+  nameWithType: Response.SetHeaders(HttpResponseHeaders)
+  fullName: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Hash*
+  commentId: Overload:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Hash
+  name: Hash
+  nameWithType: SubmitTransactionResponse.Hash
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Hash
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Ledger*
+  commentId: Overload:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Ledger
+  name: Ledger
+  nameWithType: SubmitTransactionResponse.Ledger
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Ledger
+- uid: System.Nullable{System.Int64}
+  commentId: '!:System.Nullable{System.Int64}'
+  definition: System.Nullable`1
+  name: Nullable<Int64>
+  nameWithType: Nullable<Int64>
+  fullName: System.Nullable<System.Int64>
+  nameWithType.vb: Nullable(Of Int64)
+  fullName.vb: System.Nullable(Of System.Int64)
+  name.vb: Nullable(Of Int64)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.EnvelopeXdr*
+  commentId: Overload:stellar_dotnet_sdk.responses.SubmitTransactionResponse.EnvelopeXdr
+  name: EnvelopeXdr
+  nameWithType: SubmitTransactionResponse.EnvelopeXdr
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.EnvelopeXdr
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.ResultXdr*
+  commentId: Overload:stellar_dotnet_sdk.responses.SubmitTransactionResponse.ResultXdr
+  name: ResultXdr
+  nameWithType: SubmitTransactionResponse.ResultXdr
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.ResultXdr
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.SubmitTransactionResponseExtras*
+  commentId: Overload:stellar_dotnet_sdk.responses.SubmitTransactionResponse.SubmitTransactionResponseExtras
+  name: SubmitTransactionResponseExtras
+  nameWithType: SubmitTransactionResponse.SubmitTransactionResponseExtras
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.SubmitTransactionResponseExtras
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras
+  commentId: T:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras
+  parent: stellar_dotnet_sdk.responses
+  name: SubmitTransactionResponse.Extras
+  nameWithType: SubmitTransactionResponse.Extras
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.SubmitTransactionResponse.#ctor
+  name: SubmitTransactionResponse
+  nameWithType: SubmitTransactionResponse.SubmitTransactionResponse
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.SubmitTransactionResponse
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.IsSuccess*
+  commentId: Overload:stellar_dotnet_sdk.responses.SubmitTransactionResponse.IsSuccess
+  name: IsSuccess
+  nameWithType: SubmitTransactionResponse.IsSuccess
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.IsSuccess
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.GetOfferIdFromResult*
+  commentId: Overload:stellar_dotnet_sdk.responses.SubmitTransactionResponse.GetOfferIdFromResult
+  name: GetOfferIdFromResult
+  nameWithType: SubmitTransactionResponse.GetOfferIdFromResult
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.GetOfferIdFromResult
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

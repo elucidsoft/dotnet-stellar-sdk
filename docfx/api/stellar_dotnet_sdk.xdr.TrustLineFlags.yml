@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags
+  commentId: T:stellar_dotnet_sdk.xdr.TrustLineFlags
+  id: TrustLineFlags
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.TrustLineFlags.Create(stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum)
+  - stellar_dotnet_sdk.xdr.TrustLineFlags.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.TrustLineFlags.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TrustLineFlags)
+  - stellar_dotnet_sdk.xdr.TrustLineFlags.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: TrustLineFlags
+  nameWithType: TrustLineFlags
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TrustLineFlags
+    path: ../stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class TrustLineFlags : object'
+    content.vb: >-
+      Public Class TrustLineFlags
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.TrustLineFlags.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.TrustLineFlags
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: TrustLineFlags.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public TrustLineFlags.TrustLineFlagsEnum InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum
+    content.vb: Public Property InnerValue As TrustLineFlags.TrustLineFlagsEnum
+  overload: stellar_dotnet_sdk.xdr.TrustLineFlags.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags.Create(stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum)
+  commentId: M:stellar_dotnet_sdk.xdr.TrustLineFlags.Create(stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum)
+  id: Create(stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum)
+  parent: stellar_dotnet_sdk.xdr.TrustLineFlags
+  langs:
+  - csharp
+  - vb
+  name: Create(TrustLineFlags.TrustLineFlagsEnum)
+  nameWithType: TrustLineFlags.Create(TrustLineFlags.TrustLineFlagsEnum)
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags.Create(stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Create
+    path: ../stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static TrustLineFlags Create(TrustLineFlags.TrustLineFlagsEnum v)
+    parameters:
+    - id: v
+      type: stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum
+    return:
+      type: stellar_dotnet_sdk.xdr.TrustLineFlags
+    content.vb: Public Shared Function Create(v As TrustLineFlags.TrustLineFlagsEnum) As TrustLineFlags
+  overload: stellar_dotnet_sdk.xdr.TrustLineFlags.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.TrustLineFlags.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.TrustLineFlags
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: TrustLineFlags.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static TrustLineFlags Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.TrustLineFlags
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As TrustLineFlags
+  overload: stellar_dotnet_sdk.xdr.TrustLineFlags.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TrustLineFlags)
+  commentId: M:stellar_dotnet_sdk.xdr.TrustLineFlags.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TrustLineFlags)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TrustLineFlags)
+  parent: stellar_dotnet_sdk.xdr.TrustLineFlags
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, TrustLineFlags)
+  nameWithType: TrustLineFlags.Encode(XdrDataOutputStream, TrustLineFlags)
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.TrustLineFlags)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+    startLine: 43
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, TrustLineFlags value)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: value
+      type: stellar_dotnet_sdk.xdr.TrustLineFlags
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, value As TrustLineFlags)
+  overload: stellar_dotnet_sdk.xdr.TrustLineFlags.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TrustLineFlags.InnerValue
+  name: InnerValue
+  nameWithType: TrustLineFlags.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags.InnerValue
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum
+  commentId: T:stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: TrustLineFlags.TrustLineFlagsEnum
+  nameWithType: TrustLineFlags.TrustLineFlagsEnum
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags.Create*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TrustLineFlags.Create
+  name: Create
+  nameWithType: TrustLineFlags.Create
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags.Create
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags
+  commentId: T:stellar_dotnet_sdk.xdr.TrustLineFlags
+  parent: stellar_dotnet_sdk.xdr
+  name: TrustLineFlags
+  nameWithType: TrustLineFlags
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TrustLineFlags.Decode
+  name: Decode
+  nameWithType: TrustLineFlags.Decode
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TrustLineFlags.Encode
+  name: Encode
+  nameWithType: TrustLineFlags.Encode
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream

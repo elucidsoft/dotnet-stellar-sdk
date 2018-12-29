@@ -1,0 +1,377 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.DataEntry
+  commentId: T:stellar_dotnet_sdk.xdr.DataEntry
+  id: DataEntry
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.DataEntry.#ctor
+  - stellar_dotnet_sdk.xdr.DataEntry.AccountID
+  - stellar_dotnet_sdk.xdr.DataEntry.DataName
+  - stellar_dotnet_sdk.xdr.DataEntry.DataValue
+  - stellar_dotnet_sdk.xdr.DataEntry.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.DataEntry.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.DataEntry)
+  - stellar_dotnet_sdk.xdr.DataEntry.Ext
+  langs:
+  - csharp
+  - vb
+  name: DataEntry
+  nameWithType: DataEntry
+  fullName: stellar_dotnet_sdk.xdr.DataEntry
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: DataEntry
+    path: ../stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+    startLine: 25
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class DataEntry : object'
+    content.vb: >-
+      Public Class DataEntry
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.DataEntry.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.DataEntry.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.DataEntry
+  langs:
+  - csharp
+  - vb
+  name: DataEntry()
+  nameWithType: DataEntry.DataEntry()
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.DataEntry()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public DataEntry()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.DataEntry.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.DataEntry.AccountID
+  commentId: P:stellar_dotnet_sdk.xdr.DataEntry.AccountID
+  id: AccountID
+  parent: stellar_dotnet_sdk.xdr.DataEntry
+  langs:
+  - csharp
+  - vb
+  name: AccountID
+  nameWithType: DataEntry.AccountID
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.AccountID
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AccountID
+    path: ../stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AccountID AccountID { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountID
+    content.vb: Public Property AccountID As AccountID
+  overload: stellar_dotnet_sdk.xdr.DataEntry.AccountID*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.DataEntry.DataName
+  commentId: P:stellar_dotnet_sdk.xdr.DataEntry.DataName
+  id: DataName
+  parent: stellar_dotnet_sdk.xdr.DataEntry
+  langs:
+  - csharp
+  - vb
+  name: DataName
+  nameWithType: DataEntry.DataName
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.DataName
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: DataName
+    path: ../stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public String64 DataName { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.String64
+    content.vb: Public Property DataName As String64
+  overload: stellar_dotnet_sdk.xdr.DataEntry.DataName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.DataEntry.DataValue
+  commentId: P:stellar_dotnet_sdk.xdr.DataEntry.DataValue
+  id: DataValue
+  parent: stellar_dotnet_sdk.xdr.DataEntry
+  langs:
+  - csharp
+  - vb
+  name: DataValue
+  nameWithType: DataEntry.DataValue
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.DataValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: DataValue
+    path: ../stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public DataValue DataValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.DataValue
+    content.vb: Public Property DataValue As DataValue
+  overload: stellar_dotnet_sdk.xdr.DataEntry.DataValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.DataEntry.Ext
+  commentId: P:stellar_dotnet_sdk.xdr.DataEntry.Ext
+  id: Ext
+  parent: stellar_dotnet_sdk.xdr.DataEntry
+  langs:
+  - csharp
+  - vb
+  name: Ext
+  nameWithType: DataEntry.Ext
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.Ext
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Ext
+    path: ../stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public DataEntry.DataEntryExt Ext { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.DataEntry.DataEntryExt
+    content.vb: Public Property Ext As DataEntry.DataEntryExt
+  overload: stellar_dotnet_sdk.xdr.DataEntry.Ext*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.DataEntry.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.DataEntry)
+  commentId: M:stellar_dotnet_sdk.xdr.DataEntry.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.DataEntry)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.DataEntry)
+  parent: stellar_dotnet_sdk.xdr.DataEntry
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, DataEntry)
+  nameWithType: DataEntry.Encode(XdrDataOutputStream, DataEntry)
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.DataEntry)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, DataEntry encodedDataEntry)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedDataEntry
+      type: stellar_dotnet_sdk.xdr.DataEntry
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedDataEntry As DataEntry)
+  overload: stellar_dotnet_sdk.xdr.DataEntry.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.DataEntry.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.DataEntry.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.DataEntry
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: DataEntry.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/DataEntry.cs
+    startLine: 40
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static DataEntry Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.DataEntry
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As DataEntry
+  overload: stellar_dotnet_sdk.xdr.DataEntry.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.DataEntry.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.DataEntry.#ctor
+  name: DataEntry
+  nameWithType: DataEntry.DataEntry
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.DataEntry
+- uid: stellar_dotnet_sdk.xdr.DataEntry.AccountID*
+  commentId: Overload:stellar_dotnet_sdk.xdr.DataEntry.AccountID
+  name: AccountID
+  nameWithType: DataEntry.AccountID
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.AccountID
+- uid: stellar_dotnet_sdk.xdr.AccountID
+  commentId: T:stellar_dotnet_sdk.xdr.AccountID
+  parent: stellar_dotnet_sdk.xdr
+  name: AccountID
+  nameWithType: AccountID
+  fullName: stellar_dotnet_sdk.xdr.AccountID
+- uid: stellar_dotnet_sdk.xdr.DataEntry.DataName*
+  commentId: Overload:stellar_dotnet_sdk.xdr.DataEntry.DataName
+  name: DataName
+  nameWithType: DataEntry.DataName
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.DataName
+- uid: stellar_dotnet_sdk.xdr.String64
+  commentId: T:stellar_dotnet_sdk.xdr.String64
+  parent: stellar_dotnet_sdk.xdr
+  name: String64
+  nameWithType: String64
+  fullName: stellar_dotnet_sdk.xdr.String64
+- uid: stellar_dotnet_sdk.xdr.DataEntry.DataValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.DataEntry.DataValue
+  name: DataValue
+  nameWithType: DataEntry.DataValue
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.DataValue
+- uid: stellar_dotnet_sdk.xdr.DataValue
+  commentId: T:stellar_dotnet_sdk.xdr.DataValue
+  parent: stellar_dotnet_sdk.xdr
+  name: DataValue
+  nameWithType: DataValue
+  fullName: stellar_dotnet_sdk.xdr.DataValue
+- uid: stellar_dotnet_sdk.xdr.DataEntry.Ext*
+  commentId: Overload:stellar_dotnet_sdk.xdr.DataEntry.Ext
+  name: Ext
+  nameWithType: DataEntry.Ext
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.Ext
+- uid: stellar_dotnet_sdk.xdr.DataEntry.DataEntryExt
+  commentId: T:stellar_dotnet_sdk.xdr.DataEntry.DataEntryExt
+  parent: stellar_dotnet_sdk.xdr
+  name: DataEntry.DataEntryExt
+  nameWithType: DataEntry.DataEntryExt
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.DataEntryExt
+- uid: stellar_dotnet_sdk.xdr.DataEntry.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.DataEntry.Encode
+  name: Encode
+  nameWithType: DataEntry.Encode
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.DataEntry
+  commentId: T:stellar_dotnet_sdk.xdr.DataEntry
+  parent: stellar_dotnet_sdk.xdr
+  name: DataEntry
+  nameWithType: DataEntry
+  fullName: stellar_dotnet_sdk.xdr.DataEntry
+- uid: stellar_dotnet_sdk.xdr.DataEntry.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.DataEntry.Decode
+  name: Decode
+  nameWithType: DataEntry.Decode
+  fullName: stellar_dotnet_sdk.xdr.DataEntry.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

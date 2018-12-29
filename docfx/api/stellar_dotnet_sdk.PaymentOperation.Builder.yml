@@ -1,0 +1,270 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.PaymentOperation.Builder
+  commentId: T:stellar_dotnet_sdk.PaymentOperation.Builder
+  id: PaymentOperation.Builder
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.PaymentOperation.Builder.#ctor(stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.Asset,System.String)
+  - stellar_dotnet_sdk.PaymentOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.PaymentOp)
+  - stellar_dotnet_sdk.PaymentOperation.Builder.Build
+  - stellar_dotnet_sdk.PaymentOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  langs:
+  - csharp
+  - vb
+  name: PaymentOperation.Builder
+  nameWithType: PaymentOperation.Builder
+  fullName: stellar_dotnet_sdk.PaymentOperation.Builder
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/PaymentOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Builder
+    path: ../stellar-dotnet-sdk/PaymentOperation.cs
+    startLine: 61
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBuilds Payment operation.\n"
+  example: []
+  syntax:
+    content: 'public class Builder : object'
+    content.vb: >-
+      Public Class Builder
+          Inherits Object
+  see:
+  - linkId: stellar_dotnet_sdk.PathPaymentOperation
+    commentId: T:stellar_dotnet_sdk.PathPaymentOperation
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.PaymentOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.PaymentOp)
+  commentId: M:stellar_dotnet_sdk.PaymentOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.PaymentOp)
+  id: '#ctor(stellar_dotnet_sdk.xdr.PaymentOp)'
+  parent: stellar_dotnet_sdk.PaymentOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder(PaymentOp)
+  nameWithType: PaymentOperation.Builder.Builder(PaymentOp)
+  fullName: stellar_dotnet_sdk.PaymentOperation.Builder.Builder(stellar_dotnet_sdk.xdr.PaymentOp)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/PaymentOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/PaymentOperation.cs
+    startLine: 73
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nConstruct a new PaymentOperation builder from a PaymentOp XDR.\n"
+  example: []
+  syntax:
+    content: public Builder(PaymentOp op)
+    parameters:
+    - id: op
+      type: stellar_dotnet_sdk.xdr.PaymentOp
+      description: <xref href="stellar_dotnet_sdk.xdr.PaymentOp" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Sub New(op As PaymentOp)
+  overload: stellar_dotnet_sdk.PaymentOperation.Builder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.PaymentOperation.Builder.#ctor(stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.Asset,System.String)
+  commentId: M:stellar_dotnet_sdk.PaymentOperation.Builder.#ctor(stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.Asset,System.String)
+  id: '#ctor(stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.Asset,System.String)'
+  parent: stellar_dotnet_sdk.PaymentOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder(KeyPair, Asset, String)
+  nameWithType: PaymentOperation.Builder.Builder(KeyPair, Asset, String)
+  fullName: stellar_dotnet_sdk.PaymentOperation.Builder.Builder(stellar_dotnet_sdk.KeyPair, stellar_dotnet_sdk.Asset, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/PaymentOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/PaymentOperation.cs
+    startLine: 86
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates a new PaymentOperation builder.\n"
+  example: []
+  syntax:
+    content: public Builder(KeyPair destination, Asset asset, string amount)
+    parameters:
+    - id: destination
+      type: stellar_dotnet_sdk.KeyPair
+      description: The destination keypair (uses only the public key).
+    - id: asset
+      type: stellar_dotnet_sdk.Asset
+      description: The asset to send.
+    - id: amount
+      type: System.String
+      description: The amount to send in lumens.
+    content.vb: Public Sub New(destination As KeyPair, asset As Asset, amount As String)
+  overload: stellar_dotnet_sdk.PaymentOperation.Builder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.PaymentOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.PaymentOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  id: SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  parent: stellar_dotnet_sdk.PaymentOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetSourceAccount(KeyPair)
+  nameWithType: PaymentOperation.Builder.SetSourceAccount(KeyPair)
+  fullName: stellar_dotnet_sdk.PaymentOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/PaymentOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetSourceAccount
+    path: ../stellar-dotnet-sdk/PaymentOperation.cs
+    startLine: 99
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSets the source account for this operation.\n"
+  example: []
+  syntax:
+    content: public PaymentOperation.Builder SetSourceAccount(KeyPair account)
+    parameters:
+    - id: account
+      type: stellar_dotnet_sdk.KeyPair
+      description: The operation&apos;s source account.
+    return:
+      type: stellar_dotnet_sdk.PaymentOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetSourceAccount(account As KeyPair) As PaymentOperation.Builder
+  overload: stellar_dotnet_sdk.PaymentOperation.Builder.SetSourceAccount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.PaymentOperation.Builder.Build
+  commentId: M:stellar_dotnet_sdk.PaymentOperation.Builder.Build
+  id: Build
+  parent: stellar_dotnet_sdk.PaymentOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Build()
+  nameWithType: PaymentOperation.Builder.Build()
+  fullName: stellar_dotnet_sdk.PaymentOperation.Builder.Build()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/PaymentOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Build
+    path: ../stellar-dotnet-sdk/PaymentOperation.cs
+    startLine: 108
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBuilds an operation\n"
+  example: []
+  syntax:
+    content: public PaymentOperation Build()
+    return:
+      type: stellar_dotnet_sdk.PaymentOperation
+    content.vb: Public Function Build As PaymentOperation
+  overload: stellar_dotnet_sdk.PaymentOperation.Builder.Build*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.PathPaymentOperation
+  commentId: T:stellar_dotnet_sdk.PathPaymentOperation
+  parent: stellar_dotnet_sdk
+  name: PathPaymentOperation
+  nameWithType: PathPaymentOperation
+  fullName: stellar_dotnet_sdk.PathPaymentOperation
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.PaymentOp
+  commentId: T:stellar_dotnet_sdk.xdr.PaymentOp
+  parent: stellar_dotnet_sdk.xdr
+  name: PaymentOp
+  nameWithType: PaymentOp
+  fullName: stellar_dotnet_sdk.xdr.PaymentOp
+- uid: stellar_dotnet_sdk.PaymentOperation.Builder.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.PaymentOperation.Builder.#ctor
+  name: Builder
+  nameWithType: PaymentOperation.Builder.Builder
+  fullName: stellar_dotnet_sdk.PaymentOperation.Builder.Builder
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk.Asset
+  commentId: T:stellar_dotnet_sdk.Asset
+  parent: stellar_dotnet_sdk
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.Asset
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.PaymentOperation.Builder.SetSourceAccount*
+  commentId: Overload:stellar_dotnet_sdk.PaymentOperation.Builder.SetSourceAccount
+  name: SetSourceAccount
+  nameWithType: PaymentOperation.Builder.SetSourceAccount
+  fullName: stellar_dotnet_sdk.PaymentOperation.Builder.SetSourceAccount
+- uid: stellar_dotnet_sdk.PaymentOperation.Builder
+  commentId: T:stellar_dotnet_sdk.PaymentOperation.Builder
+  parent: stellar_dotnet_sdk
+  name: PaymentOperation.Builder
+  nameWithType: PaymentOperation.Builder
+  fullName: stellar_dotnet_sdk.PaymentOperation.Builder
+- uid: stellar_dotnet_sdk.PaymentOperation.Builder.Build*
+  commentId: Overload:stellar_dotnet_sdk.PaymentOperation.Builder.Build
+  name: Build
+  nameWithType: PaymentOperation.Builder.Build
+  fullName: stellar_dotnet_sdk.PaymentOperation.Builder.Build
+- uid: stellar_dotnet_sdk.PaymentOperation
+  commentId: T:stellar_dotnet_sdk.PaymentOperation
+  parent: stellar_dotnet_sdk
+  name: PaymentOperation
+  nameWithType: PaymentOperation
+  fullName: stellar_dotnet_sdk.PaymentOperation

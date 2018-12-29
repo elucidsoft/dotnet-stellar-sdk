@@ -1,0 +1,583 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12
+  commentId: T:stellar_dotnet_sdk.AssetTypeCreditAlphaNum12
+  id: AssetTypeCreditAlphaNum12
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.#ctor(System.String,stellar_dotnet_sdk.KeyPair)
+  - stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.GetType
+  - stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.ToXdr
+  langs:
+  - csharp
+  - vb
+  name: AssetTypeCreditAlphaNum12
+  nameWithType: AssetTypeCreditAlphaNum12
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/AssetTypeCreditAlphaNum12.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetTypeCreditAlphaNum12
+    path: ../stellar-dotnet-sdk/AssetTypeCreditAlphaNum12.cs
+    startLine: 4
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: 'public class AssetTypeCreditAlphaNum12 : AssetTypeCreditAlphaNum'
+    content.vb: >-
+      Public Class AssetTypeCreditAlphaNum12
+          Inherits AssetTypeCreditAlphaNum
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.Asset
+  - stellar_dotnet_sdk.AssetTypeCreditAlphaNum
+  inheritedMembers:
+  - stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Code
+  - stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Issuer
+  - stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetHashCode
+  - stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Equals(System.Object)
+  - stellar_dotnet_sdk.Asset.Create(String,String,String)
+  - stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,stellar_dotnet_sdk.KeyPair)
+  - stellar_dotnet_sdk.Asset.FromXdr(stellar_dotnet_sdk.xdr.Asset)
+  - stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,System.String,System.String)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.#ctor(System.String,stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.#ctor(System.String,stellar_dotnet_sdk.KeyPair)
+  id: '#ctor(System.String,stellar_dotnet_sdk.KeyPair)'
+  parent: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12
+  langs:
+  - csharp
+  - vb
+  name: AssetTypeCreditAlphaNum12(String, KeyPair)
+  nameWithType: AssetTypeCreditAlphaNum12.AssetTypeCreditAlphaNum12(String, KeyPair)
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.AssetTypeCreditAlphaNum12(System.String, stellar_dotnet_sdk.KeyPair)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/AssetTypeCreditAlphaNum12.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/AssetTypeCreditAlphaNum12.cs
+    startLine: 6
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public AssetTypeCreditAlphaNum12(string code, KeyPair issuer)
+    parameters:
+    - id: code
+      type: System.String
+    - id: issuer
+      type: stellar_dotnet_sdk.KeyPair
+    content.vb: Public Sub New(code As String, issuer As KeyPair)
+  overload: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.GetType
+  commentId: M:stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.GetType
+  id: GetType
+  parent: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12
+  langs:
+  - csharp
+  - vb
+  name: GetType()
+  nameWithType: AssetTypeCreditAlphaNum12.GetType()
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.GetType()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/AssetTypeCreditAlphaNum12.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: GetType
+    path: ../stellar-dotnet-sdk/AssetTypeCreditAlphaNum12.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public override string GetType()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function GetType As String
+  overridden: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetType
+  overload: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.GetType*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.ToXdr
+  commentId: M:stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.ToXdr
+  id: ToXdr
+  parent: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12
+  langs:
+  - csharp
+  - vb
+  name: ToXdr()
+  nameWithType: AssetTypeCreditAlphaNum12.ToXdr()
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.ToXdr()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/AssetTypeCreditAlphaNum12.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ToXdr
+    path: ../stellar-dotnet-sdk/AssetTypeCreditAlphaNum12.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public override Asset ToXdr()
+    return:
+      type: stellar_dotnet_sdk.xdr.Asset
+    content.vb: Public Overrides Function ToXdr As Asset
+  overridden: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.ToXdr
+  overload: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.ToXdr*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.Asset
+  commentId: T:stellar_dotnet_sdk.Asset
+  parent: stellar_dotnet_sdk
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.Asset
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum
+  commentId: T:stellar_dotnet_sdk.AssetTypeCreditAlphaNum
+  parent: stellar_dotnet_sdk
+  name: AssetTypeCreditAlphaNum
+  nameWithType: AssetTypeCreditAlphaNum
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Code
+  commentId: P:stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Code
+  parent: stellar_dotnet_sdk.AssetTypeCreditAlphaNum
+  name: Code
+  nameWithType: AssetTypeCreditAlphaNum.Code
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Code
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Issuer
+  commentId: P:stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Issuer
+  parent: stellar_dotnet_sdk.AssetTypeCreditAlphaNum
+  name: Issuer
+  nameWithType: AssetTypeCreditAlphaNum.Issuer
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Issuer
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetHashCode
+  commentId: M:stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetHashCode
+  parent: stellar_dotnet_sdk.AssetTypeCreditAlphaNum
+  name: GetHashCode()
+  nameWithType: AssetTypeCreditAlphaNum.GetHashCode()
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetHashCode()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetHashCode
+    name: GetHashCode
+    nameWithType: AssetTypeCreditAlphaNum.GetHashCode
+    fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetHashCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetHashCode
+    name: GetHashCode
+    nameWithType: AssetTypeCreditAlphaNum.GetHashCode
+    fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetHashCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Equals(System.Object)
+  commentId: M:stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Equals(System.Object)
+  parent: stellar_dotnet_sdk.AssetTypeCreditAlphaNum
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: AssetTypeCreditAlphaNum.Equals(Object)
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Equals(System.Object)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Equals(System.Object)
+    name: Equals
+    nameWithType: AssetTypeCreditAlphaNum.Equals
+    fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Equals
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Equals(System.Object)
+    name: Equals
+    nameWithType: AssetTypeCreditAlphaNum.Equals
+    fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.Equals
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Asset.Create(String,String,String)
+  commentId: M:stellar_dotnet_sdk.Asset.Create(String,String,String)
+  parent: stellar_dotnet_sdk.Asset
+  isExternal: true
+  name: Create(String, String, String)
+  nameWithType: Asset.Create(String, String, String)
+  fullName: stellar_dotnet_sdk.Asset.Create(String, String, String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Asset.Create(String,String,String)
+    name: Create
+    nameWithType: Asset.Create
+    fullName: stellar_dotnet_sdk.Asset.Create
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: String
+    name: String
+    nameWithType: String
+    fullName: String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: String
+    name: String
+    nameWithType: String
+    fullName: String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: String
+    name: String
+    nameWithType: String
+    fullName: String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Asset.Create(String,String,String)
+    name: Create
+    nameWithType: Asset.Create
+    fullName: stellar_dotnet_sdk.Asset.Create
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: String
+    name: String
+    nameWithType: String
+    fullName: String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: String
+    name: String
+    nameWithType: String
+    fullName: String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: String
+    name: String
+    nameWithType: String
+    fullName: String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,stellar_dotnet_sdk.KeyPair)
+  parent: stellar_dotnet_sdk.Asset
+  isExternal: true
+  name: CreateNonNativeAsset(String, KeyPair)
+  nameWithType: Asset.CreateNonNativeAsset(String, KeyPair)
+  fullName: stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String, stellar_dotnet_sdk.KeyPair)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,stellar_dotnet_sdk.KeyPair)
+    name: CreateNonNativeAsset
+    nameWithType: Asset.CreateNonNativeAsset
+    fullName: stellar_dotnet_sdk.Asset.CreateNonNativeAsset
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: stellar_dotnet_sdk.KeyPair
+    name: KeyPair
+    nameWithType: KeyPair
+    fullName: stellar_dotnet_sdk.KeyPair
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,stellar_dotnet_sdk.KeyPair)
+    name: CreateNonNativeAsset
+    nameWithType: Asset.CreateNonNativeAsset
+    fullName: stellar_dotnet_sdk.Asset.CreateNonNativeAsset
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: stellar_dotnet_sdk.KeyPair
+    name: KeyPair
+    nameWithType: KeyPair
+    fullName: stellar_dotnet_sdk.KeyPair
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Asset.FromXdr(stellar_dotnet_sdk.xdr.Asset)
+  commentId: M:stellar_dotnet_sdk.Asset.FromXdr(stellar_dotnet_sdk.xdr.Asset)
+  parent: stellar_dotnet_sdk.Asset
+  name: FromXdr(Asset)
+  nameWithType: Asset.FromXdr(Asset)
+  fullName: stellar_dotnet_sdk.Asset.FromXdr(stellar_dotnet_sdk.xdr.Asset)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Asset.FromXdr(stellar_dotnet_sdk.xdr.Asset)
+    name: FromXdr
+    nameWithType: Asset.FromXdr
+    fullName: stellar_dotnet_sdk.Asset.FromXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.xdr.Asset
+    name: Asset
+    nameWithType: Asset
+    fullName: stellar_dotnet_sdk.xdr.Asset
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Asset.FromXdr(stellar_dotnet_sdk.xdr.Asset)
+    name: FromXdr
+    nameWithType: Asset.FromXdr
+    fullName: stellar_dotnet_sdk.Asset.FromXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.xdr.Asset
+    name: Asset
+    nameWithType: Asset
+    fullName: stellar_dotnet_sdk.xdr.Asset
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,System.String,System.String)
+  commentId: M:stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,System.String,System.String)
+  parent: stellar_dotnet_sdk.Asset
+  isExternal: true
+  name: CreateNonNativeAsset(String, String, String)
+  nameWithType: Asset.CreateNonNativeAsset(String, String, String)
+  fullName: stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String, System.String, System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,System.String,System.String)
+    name: CreateNonNativeAsset
+    nameWithType: Asset.CreateNonNativeAsset
+    fullName: stellar_dotnet_sdk.Asset.CreateNonNativeAsset
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,System.String,System.String)
+    name: CreateNonNativeAsset
+    nameWithType: Asset.CreateNonNativeAsset
+    fullName: stellar_dotnet_sdk.Asset.CreateNonNativeAsset
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.#ctor
+  name: AssetTypeCreditAlphaNum12
+  nameWithType: AssetTypeCreditAlphaNum12.AssetTypeCreditAlphaNum12
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.AssetTypeCreditAlphaNum12
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetType
+  commentId: M:stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetType
+  parent: stellar_dotnet_sdk.AssetTypeCreditAlphaNum
+  name: GetType()
+  nameWithType: AssetTypeCreditAlphaNum.GetType()
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetType()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetType
+    name: GetType
+    nameWithType: AssetTypeCreditAlphaNum.GetType
+    fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetType
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetType
+    name: GetType
+    nameWithType: AssetTypeCreditAlphaNum.GetType
+    fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.GetType
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.GetType*
+  commentId: Overload:stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.GetType
+  name: GetType
+  nameWithType: AssetTypeCreditAlphaNum12.GetType
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.GetType
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.ToXdr
+  commentId: M:stellar_dotnet_sdk.AssetTypeCreditAlphaNum.ToXdr
+  parent: stellar_dotnet_sdk.AssetTypeCreditAlphaNum
+  name: ToXdr()
+  nameWithType: AssetTypeCreditAlphaNum.ToXdr()
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.ToXdr()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.ToXdr
+    name: ToXdr
+    nameWithType: AssetTypeCreditAlphaNum.ToXdr
+    fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.ToXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.ToXdr
+    name: ToXdr
+    nameWithType: AssetTypeCreditAlphaNum.ToXdr
+    fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum.ToXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.ToXdr*
+  commentId: Overload:stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.ToXdr
+  name: ToXdr
+  nameWithType: AssetTypeCreditAlphaNum12.ToXdr
+  fullName: stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.ToXdr
+- uid: stellar_dotnet_sdk.xdr.Asset
+  commentId: T:stellar_dotnet_sdk.xdr.Asset
+  parent: stellar_dotnet_sdk.xdr
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.xdr.Asset
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr

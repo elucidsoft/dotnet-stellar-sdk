@@ -1,0 +1,330 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult
+  commentId: T:stellar_dotnet_sdk.xdr.PathPaymentResult
+  id: PathPaymentResult
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.PathPaymentResult.#ctor
+  - stellar_dotnet_sdk.xdr.PathPaymentResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.PathPaymentResult.Discriminant
+  - stellar_dotnet_sdk.xdr.PathPaymentResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.PathPaymentResult)
+  - stellar_dotnet_sdk.xdr.PathPaymentResult.NoIssuer
+  - stellar_dotnet_sdk.xdr.PathPaymentResult.Success
+  langs:
+  - csharp
+  - vb
+  name: PathPaymentResult
+  nameWithType: PathPaymentResult
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PathPaymentResult
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class PathPaymentResult : object'
+    content.vb: >-
+      Public Class PathPaymentResult
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.PathPaymentResult.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResult
+  langs:
+  - csharp
+  - vb
+  name: PathPaymentResult()
+  nameWithType: PathPaymentResult.PathPaymentResult()
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult.PathPaymentResult()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public PathPaymentResult()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.PathPaymentResult.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult.Discriminant
+  commentId: P:stellar_dotnet_sdk.xdr.PathPaymentResult.Discriminant
+  id: Discriminant
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResult
+  langs:
+  - csharp
+  - vb
+  name: Discriminant
+  nameWithType: PathPaymentResult.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult.Discriminant
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Discriminant
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public PathPaymentResultCode Discriminant { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode
+    content.vb: Public Property Discriminant As PathPaymentResultCode
+  overload: stellar_dotnet_sdk.xdr.PathPaymentResult.Discriminant*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult.Success
+  commentId: P:stellar_dotnet_sdk.xdr.PathPaymentResult.Success
+  id: Success
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResult
+  langs:
+  - csharp
+  - vb
+  name: Success
+  nameWithType: PathPaymentResult.Success
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult.Success
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Success
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public PathPaymentResult.PathPaymentResultSuccess Success { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResult.PathPaymentResultSuccess
+    content.vb: Public Property Success As PathPaymentResult.PathPaymentResultSuccess
+  overload: stellar_dotnet_sdk.xdr.PathPaymentResult.Success*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult.NoIssuer
+  commentId: P:stellar_dotnet_sdk.xdr.PathPaymentResult.NoIssuer
+  id: NoIssuer
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResult
+  langs:
+  - csharp
+  - vb
+  name: NoIssuer
+  nameWithType: PathPaymentResult.NoIssuer
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult.NoIssuer
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NoIssuer
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Asset NoIssuer { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Asset
+    content.vb: Public Property NoIssuer As Asset
+  overload: stellar_dotnet_sdk.xdr.PathPaymentResult.NoIssuer*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.PathPaymentResult)
+  commentId: M:stellar_dotnet_sdk.xdr.PathPaymentResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.PathPaymentResult)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.PathPaymentResult)
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResult
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, PathPaymentResult)
+  nameWithType: PathPaymentResult.Encode(XdrDataOutputStream, PathPaymentResult)
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.PathPaymentResult)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, PathPaymentResult encodedPathPaymentResult)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedPathPaymentResult
+      type: stellar_dotnet_sdk.xdr.PathPaymentResult
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedPathPaymentResult As PathPaymentResult)
+  overload: stellar_dotnet_sdk.xdr.PathPaymentResult.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.PathPaymentResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResult
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: PathPaymentResult.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResult.cs
+    startLine: 47
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static PathPaymentResult Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResult
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As PathPaymentResult
+  overload: stellar_dotnet_sdk.xdr.PathPaymentResult.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PathPaymentResult.#ctor
+  name: PathPaymentResult
+  nameWithType: PathPaymentResult.PathPaymentResult
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult.PathPaymentResult
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult.Discriminant*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PathPaymentResult.Discriminant
+  name: Discriminant
+  nameWithType: PathPaymentResult.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult.Discriminant
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode
+  commentId: T:stellar_dotnet_sdk.xdr.PathPaymentResultCode
+  parent: stellar_dotnet_sdk.xdr
+  name: PathPaymentResultCode
+  nameWithType: PathPaymentResultCode
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult.Success*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PathPaymentResult.Success
+  name: Success
+  nameWithType: PathPaymentResult.Success
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult.Success
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult.PathPaymentResultSuccess
+  commentId: T:stellar_dotnet_sdk.xdr.PathPaymentResult.PathPaymentResultSuccess
+  parent: stellar_dotnet_sdk.xdr
+  name: PathPaymentResult.PathPaymentResultSuccess
+  nameWithType: PathPaymentResult.PathPaymentResultSuccess
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult.PathPaymentResultSuccess
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult.NoIssuer*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PathPaymentResult.NoIssuer
+  name: NoIssuer
+  nameWithType: PathPaymentResult.NoIssuer
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult.NoIssuer
+- uid: stellar_dotnet_sdk.xdr.Asset
+  commentId: T:stellar_dotnet_sdk.xdr.Asset
+  parent: stellar_dotnet_sdk.xdr
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.xdr.Asset
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PathPaymentResult.Encode
+  name: Encode
+  nameWithType: PathPaymentResult.Encode
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult
+  commentId: T:stellar_dotnet_sdk.xdr.PathPaymentResult
+  parent: stellar_dotnet_sdk.xdr
+  name: PathPaymentResult
+  nameWithType: PathPaymentResult
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResult.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PathPaymentResult.Decode
+  name: Decode
+  nameWithType: PathPaymentResult.Decode
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResult.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

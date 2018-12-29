@@ -1,0 +1,454 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  id: TransactionResultCode.TransactionResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txBAD_AUTH
+  - stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txBAD_AUTH_EXTRA
+  - stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txBAD_SEQ
+  - stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txFAILED
+  - stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txINSUFFICIENT_BALANCE
+  - stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txINSUFFICIENT_FEE
+  - stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txINTERNAL_ERROR
+  - stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txMISSING_OPERATION
+  - stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txNO_ACCOUNT
+  - stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txSUCCESS
+  - stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txTOO_EARLY
+  - stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txTOO_LATE
+  langs:
+  - csharp
+  - vb
+  name: TransactionResultCode.TransactionResultCodeEnum
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TransactionResultCodeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum TransactionResultCodeEnum : int'
+    content.vb: Public Enum TransactionResultCodeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txSUCCESS
+  commentId: F:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txSUCCESS
+  id: txSUCCESS
+  parent: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: txSUCCESS
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum.txSUCCESS
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txSUCCESS
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: txSUCCESS
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: txSUCCESS = null
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+    content.vb: txSUCCESS = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txFAILED
+  commentId: F:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txFAILED
+  id: txFAILED
+  parent: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: txFAILED
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum.txFAILED
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txFAILED
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: txFAILED
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+    startLine: 34
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: txFAILED = null
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+    content.vb: txFAILED = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txTOO_EARLY
+  commentId: F:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txTOO_EARLY
+  id: txTOO_EARLY
+  parent: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: txTOO_EARLY
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum.txTOO_EARLY
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txTOO_EARLY
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: txTOO_EARLY
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: txTOO_EARLY = null
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+    content.vb: txTOO_EARLY = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txTOO_LATE
+  commentId: F:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txTOO_LATE
+  id: txTOO_LATE
+  parent: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: txTOO_LATE
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum.txTOO_LATE
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txTOO_LATE
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: txTOO_LATE
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+    startLine: 36
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: txTOO_LATE = null
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+    content.vb: txTOO_LATE = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txMISSING_OPERATION
+  commentId: F:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txMISSING_OPERATION
+  id: txMISSING_OPERATION
+  parent: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: txMISSING_OPERATION
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum.txMISSING_OPERATION
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txMISSING_OPERATION
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: txMISSING_OPERATION
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+    startLine: 37
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: txMISSING_OPERATION = null
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+    content.vb: txMISSING_OPERATION = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txBAD_SEQ
+  commentId: F:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txBAD_SEQ
+  id: txBAD_SEQ
+  parent: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: txBAD_SEQ
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum.txBAD_SEQ
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txBAD_SEQ
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: txBAD_SEQ
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+    startLine: 38
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: txBAD_SEQ = null
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+    content.vb: txBAD_SEQ = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txBAD_AUTH
+  commentId: F:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txBAD_AUTH
+  id: txBAD_AUTH
+  parent: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: txBAD_AUTH
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum.txBAD_AUTH
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txBAD_AUTH
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: txBAD_AUTH
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+    startLine: 39
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: txBAD_AUTH = null
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+    content.vb: txBAD_AUTH = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txINSUFFICIENT_BALANCE
+  commentId: F:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txINSUFFICIENT_BALANCE
+  id: txINSUFFICIENT_BALANCE
+  parent: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: txINSUFFICIENT_BALANCE
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum.txINSUFFICIENT_BALANCE
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txINSUFFICIENT_BALANCE
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: txINSUFFICIENT_BALANCE
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+    startLine: 40
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: txINSUFFICIENT_BALANCE = null
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+    content.vb: txINSUFFICIENT_BALANCE = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txNO_ACCOUNT
+  commentId: F:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txNO_ACCOUNT
+  id: txNO_ACCOUNT
+  parent: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: txNO_ACCOUNT
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum.txNO_ACCOUNT
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txNO_ACCOUNT
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: txNO_ACCOUNT
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+    startLine: 41
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: txNO_ACCOUNT = null
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+    content.vb: txNO_ACCOUNT = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txINSUFFICIENT_FEE
+  commentId: F:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txINSUFFICIENT_FEE
+  id: txINSUFFICIENT_FEE
+  parent: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: txINSUFFICIENT_FEE
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum.txINSUFFICIENT_FEE
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txINSUFFICIENT_FEE
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: txINSUFFICIENT_FEE
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+    startLine: 42
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: txINSUFFICIENT_FEE = null
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+    content.vb: txINSUFFICIENT_FEE = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txBAD_AUTH_EXTRA
+  commentId: F:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txBAD_AUTH_EXTRA
+  id: txBAD_AUTH_EXTRA
+  parent: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: txBAD_AUTH_EXTRA
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum.txBAD_AUTH_EXTRA
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txBAD_AUTH_EXTRA
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: txBAD_AUTH_EXTRA
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+    startLine: 43
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: txBAD_AUTH_EXTRA = null
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+    content.vb: txBAD_AUTH_EXTRA = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txINTERNAL_ERROR
+  commentId: F:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txINTERNAL_ERROR
+  id: txINTERNAL_ERROR
+  parent: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: txINTERNAL_ERROR
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum.txINTERNAL_ERROR
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum.txINTERNAL_ERROR
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: txINTERNAL_ERROR
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultCode.cs
+    startLine: 44
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: txINTERNAL_ERROR = null
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+    content.vb: txINTERNAL_ERROR = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: TransactionResultCode.TransactionResultCodeEnum
+  nameWithType: TransactionResultCode.TransactionResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultCode.TransactionResultCodeEnum

@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.MessageType
+  commentId: T:stellar_dotnet_sdk.xdr.MessageType
+  id: MessageType
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.MessageType.Create(stellar_dotnet_sdk.xdr.MessageType.MessageTypeEnum)
+  - stellar_dotnet_sdk.xdr.MessageType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.MessageType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.MessageType)
+  - stellar_dotnet_sdk.xdr.MessageType.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: MessageType
+  nameWithType: MessageType
+  fullName: stellar_dotnet_sdk.xdr.MessageType
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/MessageType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: MessageType
+    path: ../stellar-dotnet-sdk/xdr/generated/MessageType.cs
+    startLine: 34
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class MessageType : object'
+    content.vb: >-
+      Public Class MessageType
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.MessageType.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.MessageType.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.MessageType
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: MessageType.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.MessageType.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/MessageType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/MessageType.cs
+    startLine: 52
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public MessageType.MessageTypeEnum InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.MessageType.MessageTypeEnum
+    content.vb: Public Property InnerValue As MessageType.MessageTypeEnum
+  overload: stellar_dotnet_sdk.xdr.MessageType.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.MessageType.Create(stellar_dotnet_sdk.xdr.MessageType.MessageTypeEnum)
+  commentId: M:stellar_dotnet_sdk.xdr.MessageType.Create(stellar_dotnet_sdk.xdr.MessageType.MessageTypeEnum)
+  id: Create(stellar_dotnet_sdk.xdr.MessageType.MessageTypeEnum)
+  parent: stellar_dotnet_sdk.xdr.MessageType
+  langs:
+  - csharp
+  - vb
+  name: Create(MessageType.MessageTypeEnum)
+  nameWithType: MessageType.Create(MessageType.MessageTypeEnum)
+  fullName: stellar_dotnet_sdk.xdr.MessageType.Create(stellar_dotnet_sdk.xdr.MessageType.MessageTypeEnum)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/MessageType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Create
+    path: ../stellar-dotnet-sdk/xdr/generated/MessageType.cs
+    startLine: 54
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static MessageType Create(MessageType.MessageTypeEnum v)
+    parameters:
+    - id: v
+      type: stellar_dotnet_sdk.xdr.MessageType.MessageTypeEnum
+    return:
+      type: stellar_dotnet_sdk.xdr.MessageType
+    content.vb: Public Shared Function Create(v As MessageType.MessageTypeEnum) As MessageType
+  overload: stellar_dotnet_sdk.xdr.MessageType.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.MessageType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.MessageType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.MessageType
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: MessageType.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.MessageType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/MessageType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/MessageType.cs
+    startLine: 62
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static MessageType Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.MessageType
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As MessageType
+  overload: stellar_dotnet_sdk.xdr.MessageType.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.MessageType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.MessageType)
+  commentId: M:stellar_dotnet_sdk.xdr.MessageType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.MessageType)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.MessageType)
+  parent: stellar_dotnet_sdk.xdr.MessageType
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, MessageType)
+  nameWithType: MessageType.Encode(XdrDataOutputStream, MessageType)
+  fullName: stellar_dotnet_sdk.xdr.MessageType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.MessageType)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/MessageType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/MessageType.cs
+    startLine: 85
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, MessageType value)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: value
+      type: stellar_dotnet_sdk.xdr.MessageType
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, value As MessageType)
+  overload: stellar_dotnet_sdk.xdr.MessageType.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.MessageType.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.MessageType.InnerValue
+  name: InnerValue
+  nameWithType: MessageType.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.MessageType.InnerValue
+- uid: stellar_dotnet_sdk.xdr.MessageType.MessageTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.MessageType.MessageTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: MessageType.MessageTypeEnum
+  nameWithType: MessageType.MessageTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.MessageType.MessageTypeEnum
+- uid: stellar_dotnet_sdk.xdr.MessageType.Create*
+  commentId: Overload:stellar_dotnet_sdk.xdr.MessageType.Create
+  name: Create
+  nameWithType: MessageType.Create
+  fullName: stellar_dotnet_sdk.xdr.MessageType.Create
+- uid: stellar_dotnet_sdk.xdr.MessageType
+  commentId: T:stellar_dotnet_sdk.xdr.MessageType
+  parent: stellar_dotnet_sdk.xdr
+  name: MessageType
+  nameWithType: MessageType
+  fullName: stellar_dotnet_sdk.xdr.MessageType
+- uid: stellar_dotnet_sdk.xdr.MessageType.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.MessageType.Decode
+  name: Decode
+  nameWithType: MessageType.Decode
+  fullName: stellar_dotnet_sdk.xdr.MessageType.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream
+- uid: stellar_dotnet_sdk.xdr.MessageType.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.MessageType.Encode
+  name: Encode
+  nameWithType: MessageType.Encode
+  fullName: stellar_dotnet_sdk.xdr.MessageType.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream

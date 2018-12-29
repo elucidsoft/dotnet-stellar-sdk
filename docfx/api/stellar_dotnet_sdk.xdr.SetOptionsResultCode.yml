@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode
+  commentId: T:stellar_dotnet_sdk.xdr.SetOptionsResultCode
+  id: SetOptionsResultCode
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.Create(stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum)
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SetOptionsResultCode)
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: SetOptionsResultCode
+  nameWithType: SetOptionsResultCode
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetOptionsResultCode
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class SetOptionsResultCode : object'
+    content.vb: >-
+      Public Class SetOptionsResultCode
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.SetOptionsResultCode.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: SetOptionsResultCode.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 41
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public SetOptionsResultCode.SetOptionsResultCodeEnum InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+    content.vb: Public Property InnerValue As SetOptionsResultCode.SetOptionsResultCodeEnum
+  overload: stellar_dotnet_sdk.xdr.SetOptionsResultCode.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Create(stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum)
+  commentId: M:stellar_dotnet_sdk.xdr.SetOptionsResultCode.Create(stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum)
+  id: Create(stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum)
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode
+  langs:
+  - csharp
+  - vb
+  name: Create(SetOptionsResultCode.SetOptionsResultCodeEnum)
+  nameWithType: SetOptionsResultCode.Create(SetOptionsResultCode.SetOptionsResultCodeEnum)
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Create(stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Create
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 43
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static SetOptionsResultCode Create(SetOptionsResultCode.SetOptionsResultCodeEnum v)
+    parameters:
+    - id: v
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode
+    content.vb: Public Shared Function Create(v As SetOptionsResultCode.SetOptionsResultCodeEnum) As SetOptionsResultCode
+  overload: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.SetOptionsResultCode.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: SetOptionsResultCode.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 51
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static SetOptionsResultCode Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As SetOptionsResultCode
+  overload: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SetOptionsResultCode)
+  commentId: M:stellar_dotnet_sdk.xdr.SetOptionsResultCode.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SetOptionsResultCode)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SetOptionsResultCode)
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, SetOptionsResultCode)
+  nameWithType: SetOptionsResultCode.Encode(XdrDataOutputStream, SetOptionsResultCode)
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.SetOptionsResultCode)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 71
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, SetOptionsResultCode value)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: value
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, value As SetOptionsResultCode)
+  overload: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SetOptionsResultCode.InnerValue
+  name: InnerValue
+  nameWithType: SetOptionsResultCode.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.InnerValue
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: SetOptionsResultCode.SetOptionsResultCodeEnum
+  nameWithType: SetOptionsResultCode.SetOptionsResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Create*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SetOptionsResultCode.Create
+  name: Create
+  nameWithType: SetOptionsResultCode.Create
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Create
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode
+  commentId: T:stellar_dotnet_sdk.xdr.SetOptionsResultCode
+  parent: stellar_dotnet_sdk.xdr
+  name: SetOptionsResultCode
+  nameWithType: SetOptionsResultCode
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SetOptionsResultCode.Decode
+  name: Decode
+  nameWithType: SetOptionsResultCode.Decode
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SetOptionsResultCode.Encode
+  name: Encode
+  nameWithType: SetOptionsResultCode.Encode
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream

@@ -1,0 +1,334 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.InflationOperation
+  commentId: T:stellar_dotnet_sdk.InflationOperation
+  id: InflationOperation
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.InflationOperation.ToOperationBody
+  langs:
+  - csharp
+  - vb
+  name: InflationOperation
+  nameWithType: InflationOperation
+  fullName: stellar_dotnet_sdk.InflationOperation
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/InflationOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InflationOperation
+    path: ../stellar-dotnet-sdk/InflationOperation.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nUse <xref href=\"stellar_dotnet_sdk.InflationOperation.Builder\" data-throw-if-not-resolved=\"false\"></xref> to create a new InflationOperation.\n\nSee also: <a href=\"https://www.stellar.org/developers/guides/concepts/list-of-operations.html#inflation\">Inflation</a>\n"
+  example: []
+  syntax:
+    content: 'public class InflationOperation : Operation'
+    content.vb: >-
+      Public Class InflationOperation
+          Inherits Operation
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.Operation
+  inheritedMembers:
+  - stellar_dotnet_sdk.Operation.SourceAccount
+  - stellar_dotnet_sdk.Operation.Threshold
+  - stellar_dotnet_sdk.Operation.ToXdrAmount(System.String)
+  - stellar_dotnet_sdk.Operation.FromXdrAmount(System.Int64)
+  - stellar_dotnet_sdk.Operation.ToXdr
+  - stellar_dotnet_sdk.Operation.ToXdrBase64
+  - stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.InflationOperation.ToOperationBody
+  commentId: M:stellar_dotnet_sdk.InflationOperation.ToOperationBody
+  id: ToOperationBody
+  parent: stellar_dotnet_sdk.InflationOperation
+  langs:
+  - csharp
+  - vb
+  name: ToOperationBody()
+  nameWithType: InflationOperation.ToOperationBody()
+  fullName: stellar_dotnet_sdk.InflationOperation.ToOperationBody()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/InflationOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ToOperationBody
+    path: ../stellar-dotnet-sdk/InflationOperation.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public override Operation.OperationBody ToOperationBody()
+    return:
+      type: stellar_dotnet_sdk.xdr.Operation.OperationBody
+    content.vb: Public Overrides Function ToOperationBody As Operation.OperationBody
+  overridden: stellar_dotnet_sdk.Operation.ToOperationBody
+  overload: stellar_dotnet_sdk.InflationOperation.ToOperationBody*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: stellar_dotnet_sdk.InflationOperation.Builder
+  commentId: T:stellar_dotnet_sdk.InflationOperation.Builder
+  parent: stellar_dotnet_sdk
+  name: InflationOperation.Builder
+  nameWithType: InflationOperation.Builder
+  fullName: stellar_dotnet_sdk.InflationOperation.Builder
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.Operation
+  commentId: T:stellar_dotnet_sdk.Operation
+  parent: stellar_dotnet_sdk
+  name: Operation
+  nameWithType: Operation
+  fullName: stellar_dotnet_sdk.Operation
+- uid: stellar_dotnet_sdk.Operation.SourceAccount
+  commentId: P:stellar_dotnet_sdk.Operation.SourceAccount
+  parent: stellar_dotnet_sdk.Operation
+  name: SourceAccount
+  nameWithType: Operation.SourceAccount
+  fullName: stellar_dotnet_sdk.Operation.SourceAccount
+- uid: stellar_dotnet_sdk.Operation.Threshold
+  commentId: P:stellar_dotnet_sdk.Operation.Threshold
+  parent: stellar_dotnet_sdk.Operation
+  name: Threshold
+  nameWithType: Operation.Threshold
+  fullName: stellar_dotnet_sdk.Operation.Threshold
+- uid: stellar_dotnet_sdk.Operation.ToXdrAmount(System.String)
+  commentId: M:stellar_dotnet_sdk.Operation.ToXdrAmount(System.String)
+  parent: stellar_dotnet_sdk.Operation
+  isExternal: true
+  name: ToXdrAmount(String)
+  nameWithType: Operation.ToXdrAmount(String)
+  fullName: stellar_dotnet_sdk.Operation.ToXdrAmount(System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Operation.ToXdrAmount(System.String)
+    name: ToXdrAmount
+    nameWithType: Operation.ToXdrAmount
+    fullName: stellar_dotnet_sdk.Operation.ToXdrAmount
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Operation.ToXdrAmount(System.String)
+    name: ToXdrAmount
+    nameWithType: Operation.ToXdrAmount
+    fullName: stellar_dotnet_sdk.Operation.ToXdrAmount
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Operation.FromXdrAmount(System.Int64)
+  commentId: M:stellar_dotnet_sdk.Operation.FromXdrAmount(System.Int64)
+  parent: stellar_dotnet_sdk.Operation
+  isExternal: true
+  name: FromXdrAmount(Int64)
+  nameWithType: Operation.FromXdrAmount(Int64)
+  fullName: stellar_dotnet_sdk.Operation.FromXdrAmount(System.Int64)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Operation.FromXdrAmount(System.Int64)
+    name: FromXdrAmount
+    nameWithType: Operation.FromXdrAmount
+    fullName: stellar_dotnet_sdk.Operation.FromXdrAmount
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Operation.FromXdrAmount(System.Int64)
+    name: FromXdrAmount
+    nameWithType: Operation.FromXdrAmount
+    fullName: stellar_dotnet_sdk.Operation.FromXdrAmount
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Operation.ToXdr
+  commentId: M:stellar_dotnet_sdk.Operation.ToXdr
+  parent: stellar_dotnet_sdk.Operation
+  name: ToXdr()
+  nameWithType: Operation.ToXdr()
+  fullName: stellar_dotnet_sdk.Operation.ToXdr()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Operation.ToXdr
+    name: ToXdr
+    nameWithType: Operation.ToXdr
+    fullName: stellar_dotnet_sdk.Operation.ToXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Operation.ToXdr
+    name: ToXdr
+    nameWithType: Operation.ToXdr
+    fullName: stellar_dotnet_sdk.Operation.ToXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Operation.ToXdrBase64
+  commentId: M:stellar_dotnet_sdk.Operation.ToXdrBase64
+  parent: stellar_dotnet_sdk.Operation
+  name: ToXdrBase64()
+  nameWithType: Operation.ToXdrBase64()
+  fullName: stellar_dotnet_sdk.Operation.ToXdrBase64()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Operation.ToXdrBase64
+    name: ToXdrBase64
+    nameWithType: Operation.ToXdrBase64
+    fullName: stellar_dotnet_sdk.Operation.ToXdrBase64
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Operation.ToXdrBase64
+    name: ToXdrBase64
+    nameWithType: Operation.ToXdrBase64
+    fullName: stellar_dotnet_sdk.Operation.ToXdrBase64
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)
+  commentId: M:stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)
+  parent: stellar_dotnet_sdk.Operation
+  name: FromXdr(Operation)
+  nameWithType: Operation.FromXdr(Operation)
+  fullName: stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)
+    name: FromXdr
+    nameWithType: Operation.FromXdr
+    fullName: stellar_dotnet_sdk.Operation.FromXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.xdr.Operation
+    name: Operation
+    nameWithType: Operation
+    fullName: stellar_dotnet_sdk.xdr.Operation
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)
+    name: FromXdr
+    nameWithType: Operation.FromXdr
+    fullName: stellar_dotnet_sdk.Operation.FromXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.xdr.Operation
+    name: Operation
+    nameWithType: Operation
+    fullName: stellar_dotnet_sdk.xdr.Operation
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Operation.ToOperationBody
+  commentId: M:stellar_dotnet_sdk.Operation.ToOperationBody
+  parent: stellar_dotnet_sdk.Operation
+  name: ToOperationBody()
+  nameWithType: Operation.ToOperationBody()
+  fullName: stellar_dotnet_sdk.Operation.ToOperationBody()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Operation.ToOperationBody
+    name: ToOperationBody
+    nameWithType: Operation.ToOperationBody
+    fullName: stellar_dotnet_sdk.Operation.ToOperationBody
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Operation.ToOperationBody
+    name: ToOperationBody
+    nameWithType: Operation.ToOperationBody
+    fullName: stellar_dotnet_sdk.Operation.ToOperationBody
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.InflationOperation.ToOperationBody*
+  commentId: Overload:stellar_dotnet_sdk.InflationOperation.ToOperationBody
+  name: ToOperationBody
+  nameWithType: InflationOperation.ToOperationBody
+  fullName: stellar_dotnet_sdk.InflationOperation.ToOperationBody
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  commentId: T:stellar_dotnet_sdk.xdr.Operation.OperationBody
+  parent: stellar_dotnet_sdk.xdr
+  name: Operation.OperationBody
+  nameWithType: Operation.OperationBody
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr

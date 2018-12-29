@@ -1,0 +1,284 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+  id: AccountMergeResultCode.AccountMergeResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_DEST_FULL
+  - stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_HAS_SUB_ENTRIES
+  - stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_IMMUTABLE_SET
+  - stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_MALFORMED
+  - stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_NO_ACCOUNT
+  - stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SEQNUM_TOO_FAR
+  - stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SUCCESS
+  langs:
+  - csharp
+  - vb
+  name: AccountMergeResultCode.AccountMergeResultCodeEnum
+  nameWithType: AccountMergeResultCode.AccountMergeResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AccountMergeResultCodeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum AccountMergeResultCodeEnum : int'
+    content.vb: Public Enum AccountMergeResultCodeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SUCCESS
+  commentId: F:stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SUCCESS
+  id: ACCOUNT_MERGE_SUCCESS
+  parent: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: ACCOUNT_MERGE_SUCCESS
+  nameWithType: AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SUCCESS
+  fullName: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SUCCESS
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ACCOUNT_MERGE_SUCCESS
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ACCOUNT_MERGE_SUCCESS = null
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+    content.vb: ACCOUNT_MERGE_SUCCESS = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_MALFORMED
+  commentId: F:stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_MALFORMED
+  id: ACCOUNT_MERGE_MALFORMED
+  parent: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: ACCOUNT_MERGE_MALFORMED
+  nameWithType: AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_MALFORMED
+  fullName: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_MALFORMED
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ACCOUNT_MERGE_MALFORMED
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ACCOUNT_MERGE_MALFORMED = null
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+    content.vb: ACCOUNT_MERGE_MALFORMED = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_NO_ACCOUNT
+  commentId: F:stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_NO_ACCOUNT
+  id: ACCOUNT_MERGE_NO_ACCOUNT
+  parent: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: ACCOUNT_MERGE_NO_ACCOUNT
+  nameWithType: AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_NO_ACCOUNT
+  fullName: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_NO_ACCOUNT
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ACCOUNT_MERGE_NO_ACCOUNT
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ACCOUNT_MERGE_NO_ACCOUNT = null
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+    content.vb: ACCOUNT_MERGE_NO_ACCOUNT = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_IMMUTABLE_SET
+  commentId: F:stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_IMMUTABLE_SET
+  id: ACCOUNT_MERGE_IMMUTABLE_SET
+  parent: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: ACCOUNT_MERGE_IMMUTABLE_SET
+  nameWithType: AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_IMMUTABLE_SET
+  fullName: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_IMMUTABLE_SET
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ACCOUNT_MERGE_IMMUTABLE_SET
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ACCOUNT_MERGE_IMMUTABLE_SET = null
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+    content.vb: ACCOUNT_MERGE_IMMUTABLE_SET = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_HAS_SUB_ENTRIES
+  commentId: F:stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_HAS_SUB_ENTRIES
+  id: ACCOUNT_MERGE_HAS_SUB_ENTRIES
+  parent: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: ACCOUNT_MERGE_HAS_SUB_ENTRIES
+  nameWithType: AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_HAS_SUB_ENTRIES
+  fullName: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_HAS_SUB_ENTRIES
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ACCOUNT_MERGE_HAS_SUB_ENTRIES
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ACCOUNT_MERGE_HAS_SUB_ENTRIES = null
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+    content.vb: ACCOUNT_MERGE_HAS_SUB_ENTRIES = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SEQNUM_TOO_FAR
+  commentId: F:stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SEQNUM_TOO_FAR
+  id: ACCOUNT_MERGE_SEQNUM_TOO_FAR
+  parent: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: ACCOUNT_MERGE_SEQNUM_TOO_FAR
+  nameWithType: AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SEQNUM_TOO_FAR
+  fullName: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SEQNUM_TOO_FAR
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ACCOUNT_MERGE_SEQNUM_TOO_FAR
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ACCOUNT_MERGE_SEQNUM_TOO_FAR = null
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+    content.vb: ACCOUNT_MERGE_SEQNUM_TOO_FAR = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_DEST_FULL
+  commentId: F:stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_DEST_FULL
+  id: ACCOUNT_MERGE_DEST_FULL
+  parent: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: ACCOUNT_MERGE_DEST_FULL
+  nameWithType: AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_DEST_FULL
+  fullName: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_DEST_FULL
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ACCOUNT_MERGE_DEST_FULL
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountMergeResultCode.cs
+    startLine: 34
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ACCOUNT_MERGE_DEST_FULL = null
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+    content.vb: ACCOUNT_MERGE_DEST_FULL = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: AccountMergeResultCode.AccountMergeResultCodeEnum
+  nameWithType: AccountMergeResultCode.AccountMergeResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.AccountMergeResultCode.AccountMergeResultCodeEnum

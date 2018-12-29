@@ -1,0 +1,283 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.OperationResult
+  commentId: T:stellar_dotnet_sdk.xdr.OperationResult
+  id: OperationResult
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.OperationResult.#ctor
+  - stellar_dotnet_sdk.xdr.OperationResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.OperationResult.Discriminant
+  - stellar_dotnet_sdk.xdr.OperationResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OperationResult)
+  - stellar_dotnet_sdk.xdr.OperationResult.Tr
+  langs:
+  - csharp
+  - vb
+  name: OperationResult
+  nameWithType: OperationResult
+  fullName: stellar_dotnet_sdk.xdr.OperationResult
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OperationResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: OperationResult
+    path: ../stellar-dotnet-sdk/xdr/generated/OperationResult.cs
+    startLine: 45
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class OperationResult : object'
+    content.vb: >-
+      Public Class OperationResult
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.OperationResult.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.OperationResult.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.OperationResult
+  langs:
+  - csharp
+  - vb
+  name: OperationResult()
+  nameWithType: OperationResult.OperationResult()
+  fullName: stellar_dotnet_sdk.xdr.OperationResult.OperationResult()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OperationResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/OperationResult.cs
+    startLine: 47
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public OperationResult()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.OperationResult.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OperationResult.Discriminant
+  commentId: P:stellar_dotnet_sdk.xdr.OperationResult.Discriminant
+  id: Discriminant
+  parent: stellar_dotnet_sdk.xdr.OperationResult
+  langs:
+  - csharp
+  - vb
+  name: Discriminant
+  nameWithType: OperationResult.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.OperationResult.Discriminant
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OperationResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Discriminant
+    path: ../stellar-dotnet-sdk/xdr/generated/OperationResult.cs
+    startLine: 49
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public OperationResultCode Discriminant { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.OperationResultCode
+    content.vb: Public Property Discriminant As OperationResultCode
+  overload: stellar_dotnet_sdk.xdr.OperationResult.Discriminant*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OperationResult.Tr
+  commentId: P:stellar_dotnet_sdk.xdr.OperationResult.Tr
+  id: Tr
+  parent: stellar_dotnet_sdk.xdr.OperationResult
+  langs:
+  - csharp
+  - vb
+  name: Tr
+  nameWithType: OperationResult.Tr
+  fullName: stellar_dotnet_sdk.xdr.OperationResult.Tr
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OperationResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Tr
+    path: ../stellar-dotnet-sdk/xdr/generated/OperationResult.cs
+    startLine: 51
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public OperationResult.OperationResultTr Tr { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.OperationResult.OperationResultTr
+    content.vb: Public Property Tr As OperationResult.OperationResultTr
+  overload: stellar_dotnet_sdk.xdr.OperationResult.Tr*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OperationResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OperationResult)
+  commentId: M:stellar_dotnet_sdk.xdr.OperationResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OperationResult)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OperationResult)
+  parent: stellar_dotnet_sdk.xdr.OperationResult
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, OperationResult)
+  nameWithType: OperationResult.Encode(XdrDataOutputStream, OperationResult)
+  fullName: stellar_dotnet_sdk.xdr.OperationResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.OperationResult)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OperationResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/OperationResult.cs
+    startLine: 52
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, OperationResult encodedOperationResult)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedOperationResult
+      type: stellar_dotnet_sdk.xdr.OperationResult
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedOperationResult As OperationResult)
+  overload: stellar_dotnet_sdk.xdr.OperationResult.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.OperationResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.OperationResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.OperationResult
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: OperationResult.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.OperationResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OperationResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/OperationResult.cs
+    startLine: 64
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static OperationResult Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.OperationResult
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As OperationResult
+  overload: stellar_dotnet_sdk.xdr.OperationResult.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.OperationResult.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OperationResult.#ctor
+  name: OperationResult
+  nameWithType: OperationResult.OperationResult
+  fullName: stellar_dotnet_sdk.xdr.OperationResult.OperationResult
+- uid: stellar_dotnet_sdk.xdr.OperationResult.Discriminant*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OperationResult.Discriminant
+  name: Discriminant
+  nameWithType: OperationResult.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.OperationResult.Discriminant
+- uid: stellar_dotnet_sdk.xdr.OperationResultCode
+  commentId: T:stellar_dotnet_sdk.xdr.OperationResultCode
+  parent: stellar_dotnet_sdk.xdr
+  name: OperationResultCode
+  nameWithType: OperationResultCode
+  fullName: stellar_dotnet_sdk.xdr.OperationResultCode
+- uid: stellar_dotnet_sdk.xdr.OperationResult.Tr*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OperationResult.Tr
+  name: Tr
+  nameWithType: OperationResult.Tr
+  fullName: stellar_dotnet_sdk.xdr.OperationResult.Tr
+- uid: stellar_dotnet_sdk.xdr.OperationResult.OperationResultTr
+  commentId: T:stellar_dotnet_sdk.xdr.OperationResult.OperationResultTr
+  parent: stellar_dotnet_sdk.xdr
+  name: OperationResult.OperationResultTr
+  nameWithType: OperationResult.OperationResultTr
+  fullName: stellar_dotnet_sdk.xdr.OperationResult.OperationResultTr
+- uid: stellar_dotnet_sdk.xdr.OperationResult.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OperationResult.Encode
+  name: Encode
+  nameWithType: OperationResult.Encode
+  fullName: stellar_dotnet_sdk.xdr.OperationResult.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.OperationResult
+  commentId: T:stellar_dotnet_sdk.xdr.OperationResult
+  parent: stellar_dotnet_sdk.xdr
+  name: OperationResult
+  nameWithType: OperationResult
+  fullName: stellar_dotnet_sdk.xdr.OperationResult
+- uid: stellar_dotnet_sdk.xdr.OperationResult.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OperationResult.Decode
+  name: Decode
+  nameWithType: OperationResult.Decode
+  fullName: stellar_dotnet_sdk.xdr.OperationResult.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

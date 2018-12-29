@@ -1,0 +1,412 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerEntryChange
+  id: LedgerEntryChange
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.LedgerEntryChange.#ctor
+  - stellar_dotnet_sdk.xdr.LedgerEntryChange.Created
+  - stellar_dotnet_sdk.xdr.LedgerEntryChange.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.LedgerEntryChange.Discriminant
+  - stellar_dotnet_sdk.xdr.LedgerEntryChange.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerEntryChange)
+  - stellar_dotnet_sdk.xdr.LedgerEntryChange.Removed
+  - stellar_dotnet_sdk.xdr.LedgerEntryChange.State
+  - stellar_dotnet_sdk.xdr.LedgerEntryChange.Updated
+  langs:
+  - csharp
+  - vb
+  name: LedgerEntryChange
+  nameWithType: LedgerEntryChange
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: LedgerEntryChange
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class LedgerEntryChange : object'
+    content.vb: >-
+      Public Class LedgerEntryChange
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.LedgerEntryChange.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.LedgerEntryChange
+  langs:
+  - csharp
+  - vb
+  name: LedgerEntryChange()
+  nameWithType: LedgerEntryChange.LedgerEntryChange()
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.LedgerEntryChange()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public LedgerEntryChange()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.LedgerEntryChange.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.Discriminant
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerEntryChange.Discriminant
+  id: Discriminant
+  parent: stellar_dotnet_sdk.xdr.LedgerEntryChange
+  langs:
+  - csharp
+  - vb
+  name: Discriminant
+  nameWithType: LedgerEntryChange.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.Discriminant
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Discriminant
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public LedgerEntryChangeType Discriminant { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.LedgerEntryChangeType
+    content.vb: Public Property Discriminant As LedgerEntryChangeType
+  overload: stellar_dotnet_sdk.xdr.LedgerEntryChange.Discriminant*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.Created
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerEntryChange.Created
+  id: Created
+  parent: stellar_dotnet_sdk.xdr.LedgerEntryChange
+  langs:
+  - csharp
+  - vb
+  name: Created
+  nameWithType: LedgerEntryChange.Created
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.Created
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Created
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public LedgerEntry Created { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.LedgerEntry
+    content.vb: Public Property Created As LedgerEntry
+  overload: stellar_dotnet_sdk.xdr.LedgerEntryChange.Created*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.Updated
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerEntryChange.Updated
+  id: Updated
+  parent: stellar_dotnet_sdk.xdr.LedgerEntryChange
+  langs:
+  - csharp
+  - vb
+  name: Updated
+  nameWithType: LedgerEntryChange.Updated
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.Updated
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Updated
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public LedgerEntry Updated { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.LedgerEntry
+    content.vb: Public Property Updated As LedgerEntry
+  overload: stellar_dotnet_sdk.xdr.LedgerEntryChange.Updated*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.Removed
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerEntryChange.Removed
+  id: Removed
+  parent: stellar_dotnet_sdk.xdr.LedgerEntryChange
+  langs:
+  - csharp
+  - vb
+  name: Removed
+  nameWithType: LedgerEntryChange.Removed
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.Removed
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Removed
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public LedgerKey Removed { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.LedgerKey
+    content.vb: Public Property Removed As LedgerKey
+  overload: stellar_dotnet_sdk.xdr.LedgerEntryChange.Removed*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.State
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerEntryChange.State
+  id: State
+  parent: stellar_dotnet_sdk.xdr.LedgerEntryChange
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: LedgerEntryChange.State
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.State
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: State
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public LedgerEntry State { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.LedgerEntry
+    content.vb: Public Property State As LedgerEntry
+  overload: stellar_dotnet_sdk.xdr.LedgerEntryChange.State*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerEntryChange)
+  commentId: M:stellar_dotnet_sdk.xdr.LedgerEntryChange.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerEntryChange)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerEntryChange)
+  parent: stellar_dotnet_sdk.xdr.LedgerEntryChange
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, LedgerEntryChange)
+  nameWithType: LedgerEntryChange.Encode(XdrDataOutputStream, LedgerEntryChange)
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.LedgerEntryChange)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, LedgerEntryChange encodedLedgerEntryChange)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedLedgerEntryChange
+      type: stellar_dotnet_sdk.xdr.LedgerEntryChange
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedLedgerEntryChange As LedgerEntryChange)
+  overload: stellar_dotnet_sdk.xdr.LedgerEntryChange.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.LedgerEntryChange.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.LedgerEntryChange
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: LedgerEntryChange.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerEntryChange.cs
+    startLine: 51
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static LedgerEntryChange Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.LedgerEntryChange
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As LedgerEntryChange
+  overload: stellar_dotnet_sdk.xdr.LedgerEntryChange.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerEntryChange.#ctor
+  name: LedgerEntryChange
+  nameWithType: LedgerEntryChange.LedgerEntryChange
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.LedgerEntryChange
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.Discriminant*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerEntryChange.Discriminant
+  name: Discriminant
+  nameWithType: LedgerEntryChange.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.Discriminant
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChangeType
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerEntryChangeType
+  parent: stellar_dotnet_sdk.xdr
+  name: LedgerEntryChangeType
+  nameWithType: LedgerEntryChangeType
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChangeType
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.Created*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerEntryChange.Created
+  name: Created
+  nameWithType: LedgerEntryChange.Created
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.Created
+- uid: stellar_dotnet_sdk.xdr.LedgerEntry
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerEntry
+  parent: stellar_dotnet_sdk.xdr
+  name: LedgerEntry
+  nameWithType: LedgerEntry
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntry
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.Updated*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerEntryChange.Updated
+  name: Updated
+  nameWithType: LedgerEntryChange.Updated
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.Updated
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.Removed*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerEntryChange.Removed
+  name: Removed
+  nameWithType: LedgerEntryChange.Removed
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.Removed
+- uid: stellar_dotnet_sdk.xdr.LedgerKey
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerKey
+  parent: stellar_dotnet_sdk.xdr
+  name: LedgerKey
+  nameWithType: LedgerKey
+  fullName: stellar_dotnet_sdk.xdr.LedgerKey
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.State*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerEntryChange.State
+  name: State
+  nameWithType: LedgerEntryChange.State
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.State
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerEntryChange.Encode
+  name: Encode
+  nameWithType: LedgerEntryChange.Encode
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerEntryChange
+  parent: stellar_dotnet_sdk.xdr
+  name: LedgerEntryChange
+  nameWithType: LedgerEntryChange
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChange.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerEntryChange.Decode
+  name: Decode
+  nameWithType: LedgerEntryChange.Decode
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChange.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

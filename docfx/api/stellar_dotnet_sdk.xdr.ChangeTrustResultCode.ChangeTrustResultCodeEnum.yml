@@ -1,0 +1,250 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  id: ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_INVALID_LIMIT
+  - stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_LOW_RESERVE
+  - stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_MALFORMED
+  - stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_NO_ISSUER
+  - stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SELF_NOT_ALLOWED
+  - stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SUCCESS
+  langs:
+  - csharp
+  - vb
+  name: ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  nameWithType: ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ChangeTrustResultCodeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum ChangeTrustResultCodeEnum : int'
+    content.vb: Public Enum ChangeTrustResultCodeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SUCCESS
+  commentId: F:stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SUCCESS
+  id: CHANGE_TRUST_SUCCESS
+  parent: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: CHANGE_TRUST_SUCCESS
+  nameWithType: ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SUCCESS
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SUCCESS
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CHANGE_TRUST_SUCCESS
+    path: ../stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: CHANGE_TRUST_SUCCESS = null
+    return:
+      type: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+    content.vb: CHANGE_TRUST_SUCCESS = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_MALFORMED
+  commentId: F:stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_MALFORMED
+  id: CHANGE_TRUST_MALFORMED
+  parent: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: CHANGE_TRUST_MALFORMED
+  nameWithType: ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_MALFORMED
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_MALFORMED
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CHANGE_TRUST_MALFORMED
+    path: ../stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: CHANGE_TRUST_MALFORMED = null
+    return:
+      type: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+    content.vb: CHANGE_TRUST_MALFORMED = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_NO_ISSUER
+  commentId: F:stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_NO_ISSUER
+  id: CHANGE_TRUST_NO_ISSUER
+  parent: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: CHANGE_TRUST_NO_ISSUER
+  nameWithType: ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_NO_ISSUER
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_NO_ISSUER
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CHANGE_TRUST_NO_ISSUER
+    path: ../stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: CHANGE_TRUST_NO_ISSUER = null
+    return:
+      type: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+    content.vb: CHANGE_TRUST_NO_ISSUER = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_INVALID_LIMIT
+  commentId: F:stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_INVALID_LIMIT
+  id: CHANGE_TRUST_INVALID_LIMIT
+  parent: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: CHANGE_TRUST_INVALID_LIMIT
+  nameWithType: ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_INVALID_LIMIT
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_INVALID_LIMIT
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CHANGE_TRUST_INVALID_LIMIT
+    path: ../stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: CHANGE_TRUST_INVALID_LIMIT = null
+    return:
+      type: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+    content.vb: CHANGE_TRUST_INVALID_LIMIT = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_LOW_RESERVE
+  commentId: F:stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_LOW_RESERVE
+  id: CHANGE_TRUST_LOW_RESERVE
+  parent: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: CHANGE_TRUST_LOW_RESERVE
+  nameWithType: ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_LOW_RESERVE
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_LOW_RESERVE
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CHANGE_TRUST_LOW_RESERVE
+    path: ../stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: CHANGE_TRUST_LOW_RESERVE = null
+    return:
+      type: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+    content.vb: CHANGE_TRUST_LOW_RESERVE = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SELF_NOT_ALLOWED
+  commentId: F:stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SELF_NOT_ALLOWED
+  id: CHANGE_TRUST_SELF_NOT_ALLOWED
+  parent: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: CHANGE_TRUST_SELF_NOT_ALLOWED
+  nameWithType: ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SELF_NOT_ALLOWED
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SELF_NOT_ALLOWED
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CHANGE_TRUST_SELF_NOT_ALLOWED
+    path: ../stellar-dotnet-sdk/xdr/generated/ChangeTrustResultCode.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: CHANGE_TRUST_SELF_NOT_ALLOWED = null
+    return:
+      type: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+    content.vb: CHANGE_TRUST_SELF_NOT_ALLOWED = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  nameWithType: ChangeTrustResultCode.ChangeTrustResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustResultCode.ChangeTrustResultCodeEnum

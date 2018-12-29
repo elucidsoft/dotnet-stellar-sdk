@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags
+  commentId: T:stellar_dotnet_sdk.xdr.OfferEntryFlags
+  id: OfferEntryFlags
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.OfferEntryFlags.Create(stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum)
+  - stellar_dotnet_sdk.xdr.OfferEntryFlags.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.OfferEntryFlags.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OfferEntryFlags)
+  - stellar_dotnet_sdk.xdr.OfferEntryFlags.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: OfferEntryFlags
+  nameWithType: OfferEntryFlags
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: OfferEntryFlags
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class OfferEntryFlags : object'
+    content.vb: >-
+      Public Class OfferEntryFlags
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.OfferEntryFlags.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.OfferEntryFlags
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: OfferEntryFlags.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public OfferEntryFlags.OfferEntryFlagsEnum InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum
+    content.vb: Public Property InnerValue As OfferEntryFlags.OfferEntryFlagsEnum
+  overload: stellar_dotnet_sdk.xdr.OfferEntryFlags.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags.Create(stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum)
+  commentId: M:stellar_dotnet_sdk.xdr.OfferEntryFlags.Create(stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum)
+  id: Create(stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum)
+  parent: stellar_dotnet_sdk.xdr.OfferEntryFlags
+  langs:
+  - csharp
+  - vb
+  name: Create(OfferEntryFlags.OfferEntryFlagsEnum)
+  nameWithType: OfferEntryFlags.Create(OfferEntryFlags.OfferEntryFlagsEnum)
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags.Create(stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Create
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static OfferEntryFlags Create(OfferEntryFlags.OfferEntryFlagsEnum v)
+    parameters:
+    - id: v
+      type: stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum
+    return:
+      type: stellar_dotnet_sdk.xdr.OfferEntryFlags
+    content.vb: Public Shared Function Create(v As OfferEntryFlags.OfferEntryFlagsEnum) As OfferEntryFlags
+  overload: stellar_dotnet_sdk.xdr.OfferEntryFlags.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.OfferEntryFlags.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.OfferEntryFlags
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: OfferEntryFlags.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static OfferEntryFlags Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.OfferEntryFlags
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As OfferEntryFlags
+  overload: stellar_dotnet_sdk.xdr.OfferEntryFlags.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OfferEntryFlags)
+  commentId: M:stellar_dotnet_sdk.xdr.OfferEntryFlags.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OfferEntryFlags)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OfferEntryFlags)
+  parent: stellar_dotnet_sdk.xdr.OfferEntryFlags
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, OfferEntryFlags)
+  nameWithType: OfferEntryFlags.Encode(XdrDataOutputStream, OfferEntryFlags)
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.OfferEntryFlags)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntryFlags.cs
+    startLine: 43
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, OfferEntryFlags value)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: value
+      type: stellar_dotnet_sdk.xdr.OfferEntryFlags
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, value As OfferEntryFlags)
+  overload: stellar_dotnet_sdk.xdr.OfferEntryFlags.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntryFlags.InnerValue
+  name: InnerValue
+  nameWithType: OfferEntryFlags.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags.InnerValue
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum
+  commentId: T:stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: OfferEntryFlags.OfferEntryFlagsEnum
+  nameWithType: OfferEntryFlags.OfferEntryFlagsEnum
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags.OfferEntryFlagsEnum
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags.Create*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntryFlags.Create
+  name: Create
+  nameWithType: OfferEntryFlags.Create
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags.Create
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags
+  commentId: T:stellar_dotnet_sdk.xdr.OfferEntryFlags
+  parent: stellar_dotnet_sdk.xdr
+  name: OfferEntryFlags
+  nameWithType: OfferEntryFlags
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntryFlags.Decode
+  name: Decode
+  nameWithType: OfferEntryFlags.Decode
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream
+- uid: stellar_dotnet_sdk.xdr.OfferEntryFlags.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntryFlags.Encode
+  name: Encode
+  nameWithType: OfferEntryFlags.Encode
+  fullName: stellar_dotnet_sdk.xdr.OfferEntryFlags.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream

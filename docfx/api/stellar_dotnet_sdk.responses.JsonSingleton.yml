@@ -1,0 +1,113 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.JsonSingleton
+  commentId: T:stellar_dotnet_sdk.responses.JsonSingleton
+  id: JsonSingleton
+  parent: stellar_dotnet_sdk.responses
+  children:
+  - stellar_dotnet_sdk.responses.JsonSingleton.GetInstance``1(System.String)
+  langs:
+  - csharp
+  - vb
+  name: JsonSingleton
+  nameWithType: JsonSingleton
+  fullName: stellar_dotnet_sdk.responses.JsonSingleton
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/JsonSingleton.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: JsonSingleton
+    path: ../stellar-dotnet-sdk/responses/JsonSingleton.cs
+    startLine: 9
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: 'public static class JsonSingleton : object'
+    content.vb: >-
+      Public Module JsonSingleton
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: stellar_dotnet_sdk.responses.JsonSingleton.GetInstance``1(System.String)
+  commentId: M:stellar_dotnet_sdk.responses.JsonSingleton.GetInstance``1(System.String)
+  id: GetInstance``1(System.String)
+  parent: stellar_dotnet_sdk.responses.JsonSingleton
+  langs:
+  - csharp
+  - vb
+  name: GetInstance<T>(String)
+  nameWithType: JsonSingleton.GetInstance<T>(String)
+  fullName: stellar_dotnet_sdk.responses.JsonSingleton.GetInstance<T>(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/JsonSingleton.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: GetInstance
+    path: ../stellar-dotnet-sdk/responses/JsonSingleton.cs
+    startLine: 11
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public static T GetInstance<T>(string content)
+    parameters:
+    - id: content
+      type: System.String
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Shared Function GetInstance(Of T)(content As String) As T
+  overload: stellar_dotnet_sdk.responses.JsonSingleton.GetInstance*
+  nameWithType.vb: JsonSingleton.GetInstance(Of T)(String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.responses.JsonSingleton.GetInstance(Of T)(System.String)
+  name.vb: GetInstance(Of T)(String)
+references:
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.JsonSingleton.GetInstance*
+  commentId: Overload:stellar_dotnet_sdk.responses.JsonSingleton.GetInstance
+  name: GetInstance
+  nameWithType: JsonSingleton.GetInstance
+  fullName: stellar_dotnet_sdk.responses.JsonSingleton.GetInstance
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T

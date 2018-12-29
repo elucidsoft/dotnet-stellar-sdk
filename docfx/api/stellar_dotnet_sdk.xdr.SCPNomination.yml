@@ -1,0 +1,342 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.SCPNomination
+  commentId: T:stellar_dotnet_sdk.xdr.SCPNomination
+  id: SCPNomination
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.SCPNomination.#ctor
+  - stellar_dotnet_sdk.xdr.SCPNomination.Accepted
+  - stellar_dotnet_sdk.xdr.SCPNomination.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.SCPNomination.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SCPNomination)
+  - stellar_dotnet_sdk.xdr.SCPNomination.QuorumSetHash
+  - stellar_dotnet_sdk.xdr.SCPNomination.Votes
+  langs:
+  - csharp
+  - vb
+  name: SCPNomination
+  nameWithType: SCPNomination
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SCPNomination
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class SCPNomination : object'
+    content.vb: >-
+      Public Class SCPNomination
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.SCPNomination.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.SCPNomination.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.SCPNomination
+  langs:
+  - csharp
+  - vb
+  name: SCPNomination()
+  nameWithType: SCPNomination.SCPNomination()
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination.SCPNomination()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public SCPNomination()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.SCPNomination.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPNomination.QuorumSetHash
+  commentId: P:stellar_dotnet_sdk.xdr.SCPNomination.QuorumSetHash
+  id: QuorumSetHash
+  parent: stellar_dotnet_sdk.xdr.SCPNomination
+  langs:
+  - csharp
+  - vb
+  name: QuorumSetHash
+  nameWithType: SCPNomination.QuorumSetHash
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination.QuorumSetHash
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: QuorumSetHash
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Hash QuorumSetHash { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Hash
+    content.vb: Public Property QuorumSetHash As Hash
+  overload: stellar_dotnet_sdk.xdr.SCPNomination.QuorumSetHash*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPNomination.Votes
+  commentId: P:stellar_dotnet_sdk.xdr.SCPNomination.Votes
+  id: Votes
+  parent: stellar_dotnet_sdk.xdr.SCPNomination
+  langs:
+  - csharp
+  - vb
+  name: Votes
+  nameWithType: SCPNomination.Votes
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination.Votes
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Votes
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Value[] Votes { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Value[]
+    content.vb: Public Property Votes As Value()
+  overload: stellar_dotnet_sdk.xdr.SCPNomination.Votes*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPNomination.Accepted
+  commentId: P:stellar_dotnet_sdk.xdr.SCPNomination.Accepted
+  id: Accepted
+  parent: stellar_dotnet_sdk.xdr.SCPNomination
+  langs:
+  - csharp
+  - vb
+  name: Accepted
+  nameWithType: SCPNomination.Accepted
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination.Accepted
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Accepted
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Value[] Accepted { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Value[]
+    content.vb: Public Property Accepted As Value()
+  overload: stellar_dotnet_sdk.xdr.SCPNomination.Accepted*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPNomination.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SCPNomination)
+  commentId: M:stellar_dotnet_sdk.xdr.SCPNomination.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SCPNomination)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SCPNomination)
+  parent: stellar_dotnet_sdk.xdr.SCPNomination
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, SCPNomination)
+  nameWithType: SCPNomination.Encode(XdrDataOutputStream, SCPNomination)
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.SCPNomination)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, SCPNomination encodedSCPNomination)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedSCPNomination
+      type: stellar_dotnet_sdk.xdr.SCPNomination
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedSCPNomination As SCPNomination)
+  overload: stellar_dotnet_sdk.xdr.SCPNomination.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.SCPNomination.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.SCPNomination.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.SCPNomination
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: SCPNomination.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPNomination.cs
+    startLine: 40
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static SCPNomination Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.SCPNomination
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As SCPNomination
+  overload: stellar_dotnet_sdk.xdr.SCPNomination.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.SCPNomination.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPNomination.#ctor
+  name: SCPNomination
+  nameWithType: SCPNomination.SCPNomination
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination.SCPNomination
+- uid: stellar_dotnet_sdk.xdr.SCPNomination.QuorumSetHash*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPNomination.QuorumSetHash
+  name: QuorumSetHash
+  nameWithType: SCPNomination.QuorumSetHash
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination.QuorumSetHash
+- uid: stellar_dotnet_sdk.xdr.Hash
+  commentId: T:stellar_dotnet_sdk.xdr.Hash
+  parent: stellar_dotnet_sdk.xdr
+  name: Hash
+  nameWithType: Hash
+  fullName: stellar_dotnet_sdk.xdr.Hash
+- uid: stellar_dotnet_sdk.xdr.SCPNomination.Votes*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPNomination.Votes
+  name: Votes
+  nameWithType: SCPNomination.Votes
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination.Votes
+- uid: stellar_dotnet_sdk.xdr.Value[]
+  isExternal: true
+  name: Value[]
+  nameWithType: Value[]
+  fullName: stellar_dotnet_sdk.xdr.Value[]
+  nameWithType.vb: Value()
+  fullName.vb: stellar_dotnet_sdk.xdr.Value()
+  name.vb: Value()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.xdr.Value
+    name: Value
+    nameWithType: Value
+    fullName: stellar_dotnet_sdk.xdr.Value
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.xdr.Value
+    name: Value
+    nameWithType: Value
+    fullName: stellar_dotnet_sdk.xdr.Value
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: stellar_dotnet_sdk.xdr.SCPNomination.Accepted*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPNomination.Accepted
+  name: Accepted
+  nameWithType: SCPNomination.Accepted
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination.Accepted
+- uid: stellar_dotnet_sdk.xdr.SCPNomination.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPNomination.Encode
+  name: Encode
+  nameWithType: SCPNomination.Encode
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.SCPNomination
+  commentId: T:stellar_dotnet_sdk.xdr.SCPNomination
+  parent: stellar_dotnet_sdk.xdr
+  name: SCPNomination
+  nameWithType: SCPNomination
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination
+- uid: stellar_dotnet_sdk.xdr.SCPNomination.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPNomination.Decode
+  name: Decode
+  nameWithType: SCPNomination.Decode
+  fullName: stellar_dotnet_sdk.xdr.SCPNomination.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

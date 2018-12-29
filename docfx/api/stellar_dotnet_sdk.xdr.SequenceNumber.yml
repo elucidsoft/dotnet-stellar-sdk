@@ -1,0 +1,270 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.SequenceNumber
+  commentId: T:stellar_dotnet_sdk.xdr.SequenceNumber
+  id: SequenceNumber
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.SequenceNumber.#ctor
+  - stellar_dotnet_sdk.xdr.SequenceNumber.#ctor(stellar_dotnet_sdk.xdr.Int64)
+  - stellar_dotnet_sdk.xdr.SequenceNumber.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.SequenceNumber.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SequenceNumber)
+  - stellar_dotnet_sdk.xdr.SequenceNumber.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: SequenceNumber
+  nameWithType: SequenceNumber
+  fullName: stellar_dotnet_sdk.xdr.SequenceNumber
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SequenceNumber.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SequenceNumber
+    path: ../stellar-dotnet-sdk/xdr/generated/SequenceNumber.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class SequenceNumber : object'
+    content.vb: >-
+      Public Class SequenceNumber
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.SequenceNumber.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.SequenceNumber.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.SequenceNumber
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: SequenceNumber.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.SequenceNumber.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SequenceNumber.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/SequenceNumber.cs
+    startLine: 14
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Int64 InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Int64
+    content.vb: Public Property InnerValue As Int64
+  overload: stellar_dotnet_sdk.xdr.SequenceNumber.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SequenceNumber.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.SequenceNumber.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.SequenceNumber
+  langs:
+  - csharp
+  - vb
+  name: SequenceNumber()
+  nameWithType: SequenceNumber.SequenceNumber()
+  fullName: stellar_dotnet_sdk.xdr.SequenceNumber.SequenceNumber()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SequenceNumber.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/SequenceNumber.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public SequenceNumber()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.SequenceNumber.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SequenceNumber.#ctor(stellar_dotnet_sdk.xdr.Int64)
+  commentId: M:stellar_dotnet_sdk.xdr.SequenceNumber.#ctor(stellar_dotnet_sdk.xdr.Int64)
+  id: '#ctor(stellar_dotnet_sdk.xdr.Int64)'
+  parent: stellar_dotnet_sdk.xdr.SequenceNumber
+  langs:
+  - csharp
+  - vb
+  name: SequenceNumber(Int64)
+  nameWithType: SequenceNumber.SequenceNumber(Int64)
+  fullName: stellar_dotnet_sdk.xdr.SequenceNumber.SequenceNumber(stellar_dotnet_sdk.xdr.Int64)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SequenceNumber.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/SequenceNumber.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public SequenceNumber(Int64 value)
+    parameters:
+    - id: value
+      type: stellar_dotnet_sdk.xdr.Int64
+    content.vb: Public Sub New(value As Int64)
+  overload: stellar_dotnet_sdk.xdr.SequenceNumber.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SequenceNumber.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SequenceNumber)
+  commentId: M:stellar_dotnet_sdk.xdr.SequenceNumber.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SequenceNumber)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SequenceNumber)
+  parent: stellar_dotnet_sdk.xdr.SequenceNumber
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, SequenceNumber)
+  nameWithType: SequenceNumber.Encode(XdrDataOutputStream, SequenceNumber)
+  fullName: stellar_dotnet_sdk.xdr.SequenceNumber.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.SequenceNumber)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SequenceNumber.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/SequenceNumber.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, SequenceNumber encodedSequenceNumber)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedSequenceNumber
+      type: stellar_dotnet_sdk.xdr.SequenceNumber
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedSequenceNumber As SequenceNumber)
+  overload: stellar_dotnet_sdk.xdr.SequenceNumber.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.SequenceNumber.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.SequenceNumber.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.SequenceNumber
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: SequenceNumber.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.SequenceNumber.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SequenceNumber.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/SequenceNumber.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static SequenceNumber Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.SequenceNumber
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As SequenceNumber
+  overload: stellar_dotnet_sdk.xdr.SequenceNumber.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.SequenceNumber.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SequenceNumber.InnerValue
+  name: InnerValue
+  nameWithType: SequenceNumber.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.SequenceNumber.InnerValue
+- uid: stellar_dotnet_sdk.xdr.Int64
+  commentId: T:stellar_dotnet_sdk.xdr.Int64
+  parent: stellar_dotnet_sdk.xdr
+  name: Int64
+  nameWithType: Int64
+  fullName: stellar_dotnet_sdk.xdr.Int64
+- uid: stellar_dotnet_sdk.xdr.SequenceNumber.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SequenceNumber.#ctor
+  name: SequenceNumber
+  nameWithType: SequenceNumber.SequenceNumber
+  fullName: stellar_dotnet_sdk.xdr.SequenceNumber.SequenceNumber
+- uid: stellar_dotnet_sdk.xdr.SequenceNumber.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SequenceNumber.Encode
+  name: Encode
+  nameWithType: SequenceNumber.Encode
+  fullName: stellar_dotnet_sdk.xdr.SequenceNumber.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.SequenceNumber
+  commentId: T:stellar_dotnet_sdk.xdr.SequenceNumber
+  parent: stellar_dotnet_sdk.xdr
+  name: SequenceNumber
+  nameWithType: SequenceNumber
+  fullName: stellar_dotnet_sdk.xdr.SequenceNumber
+- uid: stellar_dotnet_sdk.xdr.SequenceNumber.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SequenceNumber.Decode
+  name: Decode
+  nameWithType: SequenceNumber.Decode
+  fullName: stellar_dotnet_sdk.xdr.SequenceNumber.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

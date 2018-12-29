@@ -1,0 +1,184 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.chaos.nacl.CryptoBytes
+  commentId: T:stellar_dotnet_sdk.chaos.nacl.CryptoBytes
+  id: CryptoBytes
+  parent: stellar_dotnet_sdk.chaos.nacl
+  children:
+  - stellar_dotnet_sdk.chaos.nacl.CryptoBytes.ConstantTimeEquals(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)
+  - stellar_dotnet_sdk.chaos.nacl.CryptoBytes.Wipe(System.Byte[])
+  langs:
+  - csharp
+  - vb
+  name: CryptoBytes
+  nameWithType: CryptoBytes
+  fullName: stellar_dotnet_sdk.chaos.nacl.CryptoBytes
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/chaos.nacl/CryptoBytes.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CryptoBytes
+    path: ../stellar-dotnet-sdk/chaos.nacl/CryptoBytes.cs
+    startLine: 6
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.chaos.nacl
+  syntax:
+    content: 'public static class CryptoBytes : object'
+    content.vb: >-
+      Public Module CryptoBytes
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: stellar_dotnet_sdk.chaos.nacl.CryptoBytes.ConstantTimeEquals(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)
+  commentId: M:stellar_dotnet_sdk.chaos.nacl.CryptoBytes.ConstantTimeEquals(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)
+  id: ConstantTimeEquals(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)
+  parent: stellar_dotnet_sdk.chaos.nacl.CryptoBytes
+  langs:
+  - csharp
+  - vb
+  name: ConstantTimeEquals(Byte[], Int32, Byte[], Int32, Int32)
+  nameWithType: CryptoBytes.ConstantTimeEquals(Byte[], Int32, Byte[], Int32, Int32)
+  fullName: stellar_dotnet_sdk.chaos.nacl.CryptoBytes.ConstantTimeEquals(System.Byte[], System.Int32, System.Byte[], System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/chaos.nacl/CryptoBytes.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ConstantTimeEquals
+    path: ../stellar-dotnet-sdk/chaos.nacl/CryptoBytes.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.chaos.nacl
+  syntax:
+    content: public static bool ConstantTimeEquals(byte[] x, int xOffset, byte[] y, int yOffset, int length)
+    parameters:
+    - id: x
+      type: System.Byte[]
+    - id: xOffset
+      type: System.Int32
+    - id: y
+      type: System.Byte[]
+    - id: yOffset
+      type: System.Int32
+    - id: length
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function ConstantTimeEquals(x As Byte(), xOffset As Integer, y As Byte(), yOffset As Integer, length As Integer) As Boolean
+  overload: stellar_dotnet_sdk.chaos.nacl.CryptoBytes.ConstantTimeEquals*
+  nameWithType.vb: CryptoBytes.ConstantTimeEquals(Byte(), Int32, Byte(), Int32, Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.chaos.nacl.CryptoBytes.ConstantTimeEquals(System.Byte(), System.Int32, System.Byte(), System.Int32, System.Int32)
+  name.vb: ConstantTimeEquals(Byte(), Int32, Byte(), Int32, Int32)
+- uid: stellar_dotnet_sdk.chaos.nacl.CryptoBytes.Wipe(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.chaos.nacl.CryptoBytes.Wipe(System.Byte[])
+  id: Wipe(System.Byte[])
+  parent: stellar_dotnet_sdk.chaos.nacl.CryptoBytes
+  langs:
+  - csharp
+  - vb
+  name: Wipe(Byte[])
+  nameWithType: CryptoBytes.Wipe(Byte[])
+  fullName: stellar_dotnet_sdk.chaos.nacl.CryptoBytes.Wipe(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/chaos.nacl/CryptoBytes.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Wipe
+    path: ../stellar-dotnet-sdk/chaos.nacl/CryptoBytes.cs
+    startLine: 37
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.chaos.nacl
+  syntax:
+    content: public static void Wipe(byte[] data)
+    parameters:
+    - id: data
+      type: System.Byte[]
+    content.vb: Public Shared Sub Wipe(data As Byte())
+  overload: stellar_dotnet_sdk.chaos.nacl.CryptoBytes.Wipe*
+  nameWithType.vb: CryptoBytes.Wipe(Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.chaos.nacl.CryptoBytes.Wipe(System.Byte())
+  name.vb: Wipe(Byte())
+references:
+- uid: stellar_dotnet_sdk.chaos.nacl
+  commentId: N:stellar_dotnet_sdk.chaos.nacl
+  name: stellar_dotnet_sdk.chaos.nacl
+  nameWithType: stellar_dotnet_sdk.chaos.nacl
+  fullName: stellar_dotnet_sdk.chaos.nacl
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.chaos.nacl.CryptoBytes.ConstantTimeEquals*
+  commentId: Overload:stellar_dotnet_sdk.chaos.nacl.CryptoBytes.ConstantTimeEquals
+  name: ConstantTimeEquals
+  nameWithType: CryptoBytes.ConstantTimeEquals
+  fullName: stellar_dotnet_sdk.chaos.nacl.CryptoBytes.ConstantTimeEquals
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: stellar_dotnet_sdk.chaos.nacl.CryptoBytes.Wipe*
+  commentId: Overload:stellar_dotnet_sdk.chaos.nacl.CryptoBytes.Wipe
+  name: Wipe
+  nameWithType: CryptoBytes.Wipe
+  fullName: stellar_dotnet_sdk.chaos.nacl.CryptoBytes.Wipe

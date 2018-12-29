@@ -1,0 +1,561 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.ManageOfferOperation
+  commentId: T:stellar_dotnet_sdk.ManageOfferOperation
+  id: ManageOfferOperation
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.ManageOfferOperation.Amount
+  - stellar_dotnet_sdk.ManageOfferOperation.Buying
+  - stellar_dotnet_sdk.ManageOfferOperation.OfferId
+  - stellar_dotnet_sdk.ManageOfferOperation.Price
+  - stellar_dotnet_sdk.ManageOfferOperation.Selling
+  - stellar_dotnet_sdk.ManageOfferOperation.ToOperationBody
+  langs:
+  - csharp
+  - vb
+  name: ManageOfferOperation
+  nameWithType: ManageOfferOperation
+  fullName: stellar_dotnet_sdk.ManageOfferOperation
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageOfferOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ManageOfferOperation
+    path: ../stellar-dotnet-sdk/ManageOfferOperation.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nRepresents a <xref href=\"stellar_dotnet_sdk.xdr.ManageOfferOp\" data-throw-if-not-resolved=\"false\"></xref>.\nUse <xref href=\"stellar_dotnet_sdk.ManageOfferOperation.Builder\" data-throw-if-not-resolved=\"false\"></xref> to create a new ManageOfferOperation.\n\nSee also: <a href=\"https://www.stellar.org/developers/guides/concepts/list-of-operations.html#manage-offer\">Manage Offer</a>\n"
+  example: []
+  syntax:
+    content: 'public class ManageOfferOperation : Operation'
+    content.vb: >-
+      Public Class ManageOfferOperation
+          Inherits Operation
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.Operation
+  inheritedMembers:
+  - stellar_dotnet_sdk.Operation.SourceAccount
+  - stellar_dotnet_sdk.Operation.Threshold
+  - stellar_dotnet_sdk.Operation.ToXdrAmount(System.String)
+  - stellar_dotnet_sdk.Operation.FromXdrAmount(System.Int64)
+  - stellar_dotnet_sdk.Operation.ToXdr
+  - stellar_dotnet_sdk.Operation.ToXdrBase64
+  - stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Selling
+  commentId: P:stellar_dotnet_sdk.ManageOfferOperation.Selling
+  id: Selling
+  parent: stellar_dotnet_sdk.ManageOfferOperation
+  langs:
+  - csharp
+  - vb
+  name: Selling
+  nameWithType: ManageOfferOperation.Selling
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Selling
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageOfferOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Selling
+    path: ../stellar-dotnet-sdk/ManageOfferOperation.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public Asset Selling { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.Asset
+    content.vb: Public ReadOnly Property Selling As Asset
+  overload: stellar_dotnet_sdk.ManageOfferOperation.Selling*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Buying
+  commentId: P:stellar_dotnet_sdk.ManageOfferOperation.Buying
+  id: Buying
+  parent: stellar_dotnet_sdk.ManageOfferOperation
+  langs:
+  - csharp
+  - vb
+  name: Buying
+  nameWithType: ManageOfferOperation.Buying
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Buying
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageOfferOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Buying
+    path: ../stellar-dotnet-sdk/ManageOfferOperation.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public Asset Buying { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.Asset
+    content.vb: Public ReadOnly Property Buying As Asset
+  overload: stellar_dotnet_sdk.ManageOfferOperation.Buying*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Amount
+  commentId: P:stellar_dotnet_sdk.ManageOfferOperation.Amount
+  id: Amount
+  parent: stellar_dotnet_sdk.ManageOfferOperation
+  langs:
+  - csharp
+  - vb
+  name: Amount
+  nameWithType: ManageOfferOperation.Amount
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Amount
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageOfferOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Amount
+    path: ../stellar-dotnet-sdk/ManageOfferOperation.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public string Amount { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Amount As String
+  overload: stellar_dotnet_sdk.ManageOfferOperation.Amount*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Price
+  commentId: P:stellar_dotnet_sdk.ManageOfferOperation.Price
+  id: Price
+  parent: stellar_dotnet_sdk.ManageOfferOperation
+  langs:
+  - csharp
+  - vb
+  name: Price
+  nameWithType: ManageOfferOperation.Price
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Price
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageOfferOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Price
+    path: ../stellar-dotnet-sdk/ManageOfferOperation.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public string Price { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Price As String
+  overload: stellar_dotnet_sdk.ManageOfferOperation.Price*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.ManageOfferOperation.OfferId
+  commentId: P:stellar_dotnet_sdk.ManageOfferOperation.OfferId
+  id: OfferId
+  parent: stellar_dotnet_sdk.ManageOfferOperation
+  langs:
+  - csharp
+  - vb
+  name: OfferId
+  nameWithType: ManageOfferOperation.OfferId
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.OfferId
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageOfferOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: OfferId
+    path: ../stellar-dotnet-sdk/ManageOfferOperation.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public long OfferId { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property OfferId As Long
+  overload: stellar_dotnet_sdk.ManageOfferOperation.OfferId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.ManageOfferOperation.ToOperationBody
+  commentId: M:stellar_dotnet_sdk.ManageOfferOperation.ToOperationBody
+  id: ToOperationBody
+  parent: stellar_dotnet_sdk.ManageOfferOperation
+  langs:
+  - csharp
+  - vb
+  name: ToOperationBody()
+  nameWithType: ManageOfferOperation.ToOperationBody()
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.ToOperationBody()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageOfferOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ToOperationBody
+    path: ../stellar-dotnet-sdk/ManageOfferOperation.cs
+    startLine: 34
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public override Operation.OperationBody ToOperationBody()
+    return:
+      type: stellar_dotnet_sdk.xdr.Operation.OperationBody
+    content.vb: Public Overrides Function ToOperationBody As Operation.OperationBody
+  overridden: stellar_dotnet_sdk.Operation.ToOperationBody
+  overload: stellar_dotnet_sdk.ManageOfferOperation.ToOperationBody*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: stellar_dotnet_sdk.xdr.ManageOfferOp
+  commentId: T:stellar_dotnet_sdk.xdr.ManageOfferOp
+  parent: stellar_dotnet_sdk.xdr
+  name: ManageOfferOp
+  nameWithType: ManageOfferOp
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferOp
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Builder
+  commentId: T:stellar_dotnet_sdk.ManageOfferOperation.Builder
+  parent: stellar_dotnet_sdk
+  name: ManageOfferOperation.Builder
+  nameWithType: ManageOfferOperation.Builder
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Builder
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.Operation
+  commentId: T:stellar_dotnet_sdk.Operation
+  parent: stellar_dotnet_sdk
+  name: Operation
+  nameWithType: Operation
+  fullName: stellar_dotnet_sdk.Operation
+- uid: stellar_dotnet_sdk.Operation.SourceAccount
+  commentId: P:stellar_dotnet_sdk.Operation.SourceAccount
+  parent: stellar_dotnet_sdk.Operation
+  name: SourceAccount
+  nameWithType: Operation.SourceAccount
+  fullName: stellar_dotnet_sdk.Operation.SourceAccount
+- uid: stellar_dotnet_sdk.Operation.Threshold
+  commentId: P:stellar_dotnet_sdk.Operation.Threshold
+  parent: stellar_dotnet_sdk.Operation
+  name: Threshold
+  nameWithType: Operation.Threshold
+  fullName: stellar_dotnet_sdk.Operation.Threshold
+- uid: stellar_dotnet_sdk.Operation.ToXdrAmount(System.String)
+  commentId: M:stellar_dotnet_sdk.Operation.ToXdrAmount(System.String)
+  parent: stellar_dotnet_sdk.Operation
+  isExternal: true
+  name: ToXdrAmount(String)
+  nameWithType: Operation.ToXdrAmount(String)
+  fullName: stellar_dotnet_sdk.Operation.ToXdrAmount(System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Operation.ToXdrAmount(System.String)
+    name: ToXdrAmount
+    nameWithType: Operation.ToXdrAmount
+    fullName: stellar_dotnet_sdk.Operation.ToXdrAmount
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Operation.ToXdrAmount(System.String)
+    name: ToXdrAmount
+    nameWithType: Operation.ToXdrAmount
+    fullName: stellar_dotnet_sdk.Operation.ToXdrAmount
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Operation.FromXdrAmount(System.Int64)
+  commentId: M:stellar_dotnet_sdk.Operation.FromXdrAmount(System.Int64)
+  parent: stellar_dotnet_sdk.Operation
+  isExternal: true
+  name: FromXdrAmount(Int64)
+  nameWithType: Operation.FromXdrAmount(Int64)
+  fullName: stellar_dotnet_sdk.Operation.FromXdrAmount(System.Int64)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Operation.FromXdrAmount(System.Int64)
+    name: FromXdrAmount
+    nameWithType: Operation.FromXdrAmount
+    fullName: stellar_dotnet_sdk.Operation.FromXdrAmount
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Operation.FromXdrAmount(System.Int64)
+    name: FromXdrAmount
+    nameWithType: Operation.FromXdrAmount
+    fullName: stellar_dotnet_sdk.Operation.FromXdrAmount
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Operation.ToXdr
+  commentId: M:stellar_dotnet_sdk.Operation.ToXdr
+  parent: stellar_dotnet_sdk.Operation
+  name: ToXdr()
+  nameWithType: Operation.ToXdr()
+  fullName: stellar_dotnet_sdk.Operation.ToXdr()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Operation.ToXdr
+    name: ToXdr
+    nameWithType: Operation.ToXdr
+    fullName: stellar_dotnet_sdk.Operation.ToXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Operation.ToXdr
+    name: ToXdr
+    nameWithType: Operation.ToXdr
+    fullName: stellar_dotnet_sdk.Operation.ToXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Operation.ToXdrBase64
+  commentId: M:stellar_dotnet_sdk.Operation.ToXdrBase64
+  parent: stellar_dotnet_sdk.Operation
+  name: ToXdrBase64()
+  nameWithType: Operation.ToXdrBase64()
+  fullName: stellar_dotnet_sdk.Operation.ToXdrBase64()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Operation.ToXdrBase64
+    name: ToXdrBase64
+    nameWithType: Operation.ToXdrBase64
+    fullName: stellar_dotnet_sdk.Operation.ToXdrBase64
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Operation.ToXdrBase64
+    name: ToXdrBase64
+    nameWithType: Operation.ToXdrBase64
+    fullName: stellar_dotnet_sdk.Operation.ToXdrBase64
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)
+  commentId: M:stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)
+  parent: stellar_dotnet_sdk.Operation
+  name: FromXdr(Operation)
+  nameWithType: Operation.FromXdr(Operation)
+  fullName: stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)
+    name: FromXdr
+    nameWithType: Operation.FromXdr
+    fullName: stellar_dotnet_sdk.Operation.FromXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.xdr.Operation
+    name: Operation
+    nameWithType: Operation
+    fullName: stellar_dotnet_sdk.xdr.Operation
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)
+    name: FromXdr
+    nameWithType: Operation.FromXdr
+    fullName: stellar_dotnet_sdk.Operation.FromXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.xdr.Operation
+    name: Operation
+    nameWithType: Operation
+    fullName: stellar_dotnet_sdk.xdr.Operation
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Selling*
+  commentId: Overload:stellar_dotnet_sdk.ManageOfferOperation.Selling
+  name: Selling
+  nameWithType: ManageOfferOperation.Selling
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Selling
+- uid: stellar_dotnet_sdk.Asset
+  commentId: T:stellar_dotnet_sdk.Asset
+  parent: stellar_dotnet_sdk
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.Asset
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Buying*
+  commentId: Overload:stellar_dotnet_sdk.ManageOfferOperation.Buying
+  name: Buying
+  nameWithType: ManageOfferOperation.Buying
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Buying
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Amount*
+  commentId: Overload:stellar_dotnet_sdk.ManageOfferOperation.Amount
+  name: Amount
+  nameWithType: ManageOfferOperation.Amount
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Amount
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.ManageOfferOperation.Price*
+  commentId: Overload:stellar_dotnet_sdk.ManageOfferOperation.Price
+  name: Price
+  nameWithType: ManageOfferOperation.Price
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.Price
+- uid: stellar_dotnet_sdk.ManageOfferOperation.OfferId*
+  commentId: Overload:stellar_dotnet_sdk.ManageOfferOperation.OfferId
+  name: OfferId
+  nameWithType: ManageOfferOperation.OfferId
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.OfferId
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: stellar_dotnet_sdk.Operation.ToOperationBody
+  commentId: M:stellar_dotnet_sdk.Operation.ToOperationBody
+  parent: stellar_dotnet_sdk.Operation
+  name: ToOperationBody()
+  nameWithType: Operation.ToOperationBody()
+  fullName: stellar_dotnet_sdk.Operation.ToOperationBody()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Operation.ToOperationBody
+    name: ToOperationBody
+    nameWithType: Operation.ToOperationBody
+    fullName: stellar_dotnet_sdk.Operation.ToOperationBody
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Operation.ToOperationBody
+    name: ToOperationBody
+    nameWithType: Operation.ToOperationBody
+    fullName: stellar_dotnet_sdk.Operation.ToOperationBody
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.ManageOfferOperation.ToOperationBody*
+  commentId: Overload:stellar_dotnet_sdk.ManageOfferOperation.ToOperationBody
+  name: ToOperationBody
+  nameWithType: ManageOfferOperation.ToOperationBody
+  fullName: stellar_dotnet_sdk.ManageOfferOperation.ToOperationBody
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  commentId: T:stellar_dotnet_sdk.xdr.Operation.OperationBody
+  parent: stellar_dotnet_sdk.xdr
+  name: Operation.OperationBody
+  nameWithType: Operation.OperationBody
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody

@@ -1,0 +1,283 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.InflationPayout
+  commentId: T:stellar_dotnet_sdk.xdr.InflationPayout
+  id: InflationPayout
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.InflationPayout.#ctor
+  - stellar_dotnet_sdk.xdr.InflationPayout.Amount
+  - stellar_dotnet_sdk.xdr.InflationPayout.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.InflationPayout.Destination
+  - stellar_dotnet_sdk.xdr.InflationPayout.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.InflationPayout)
+  langs:
+  - csharp
+  - vb
+  name: InflationPayout
+  nameWithType: InflationPayout
+  fullName: stellar_dotnet_sdk.xdr.InflationPayout
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/InflationPayout.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InflationPayout
+    path: ../stellar-dotnet-sdk/xdr/generated/InflationPayout.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class InflationPayout : object'
+    content.vb: >-
+      Public Class InflationPayout
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.InflationPayout.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.InflationPayout.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.InflationPayout
+  langs:
+  - csharp
+  - vb
+  name: InflationPayout()
+  nameWithType: InflationPayout.InflationPayout()
+  fullName: stellar_dotnet_sdk.xdr.InflationPayout.InflationPayout()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/InflationPayout.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/InflationPayout.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public InflationPayout()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.InflationPayout.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.InflationPayout.Destination
+  commentId: P:stellar_dotnet_sdk.xdr.InflationPayout.Destination
+  id: Destination
+  parent: stellar_dotnet_sdk.xdr.InflationPayout
+  langs:
+  - csharp
+  - vb
+  name: Destination
+  nameWithType: InflationPayout.Destination
+  fullName: stellar_dotnet_sdk.xdr.InflationPayout.Destination
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/InflationPayout.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Destination
+    path: ../stellar-dotnet-sdk/xdr/generated/InflationPayout.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AccountID Destination { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountID
+    content.vb: Public Property Destination As AccountID
+  overload: stellar_dotnet_sdk.xdr.InflationPayout.Destination*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.InflationPayout.Amount
+  commentId: P:stellar_dotnet_sdk.xdr.InflationPayout.Amount
+  id: Amount
+  parent: stellar_dotnet_sdk.xdr.InflationPayout
+  langs:
+  - csharp
+  - vb
+  name: Amount
+  nameWithType: InflationPayout.Amount
+  fullName: stellar_dotnet_sdk.xdr.InflationPayout.Amount
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/InflationPayout.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Amount
+    path: ../stellar-dotnet-sdk/xdr/generated/InflationPayout.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Int64 Amount { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Int64
+    content.vb: Public Property Amount As Int64
+  overload: stellar_dotnet_sdk.xdr.InflationPayout.Amount*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.InflationPayout.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.InflationPayout)
+  commentId: M:stellar_dotnet_sdk.xdr.InflationPayout.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.InflationPayout)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.InflationPayout)
+  parent: stellar_dotnet_sdk.xdr.InflationPayout
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, InflationPayout)
+  nameWithType: InflationPayout.Encode(XdrDataOutputStream, InflationPayout)
+  fullName: stellar_dotnet_sdk.xdr.InflationPayout.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.InflationPayout)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/InflationPayout.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/InflationPayout.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, InflationPayout encodedInflationPayout)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedInflationPayout
+      type: stellar_dotnet_sdk.xdr.InflationPayout
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedInflationPayout As InflationPayout)
+  overload: stellar_dotnet_sdk.xdr.InflationPayout.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.InflationPayout.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.InflationPayout.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.InflationPayout
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: InflationPayout.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.InflationPayout.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/InflationPayout.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/InflationPayout.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static InflationPayout Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.InflationPayout
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As InflationPayout
+  overload: stellar_dotnet_sdk.xdr.InflationPayout.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.InflationPayout.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.InflationPayout.#ctor
+  name: InflationPayout
+  nameWithType: InflationPayout.InflationPayout
+  fullName: stellar_dotnet_sdk.xdr.InflationPayout.InflationPayout
+- uid: stellar_dotnet_sdk.xdr.InflationPayout.Destination*
+  commentId: Overload:stellar_dotnet_sdk.xdr.InflationPayout.Destination
+  name: Destination
+  nameWithType: InflationPayout.Destination
+  fullName: stellar_dotnet_sdk.xdr.InflationPayout.Destination
+- uid: stellar_dotnet_sdk.xdr.AccountID
+  commentId: T:stellar_dotnet_sdk.xdr.AccountID
+  parent: stellar_dotnet_sdk.xdr
+  name: AccountID
+  nameWithType: AccountID
+  fullName: stellar_dotnet_sdk.xdr.AccountID
+- uid: stellar_dotnet_sdk.xdr.InflationPayout.Amount*
+  commentId: Overload:stellar_dotnet_sdk.xdr.InflationPayout.Amount
+  name: Amount
+  nameWithType: InflationPayout.Amount
+  fullName: stellar_dotnet_sdk.xdr.InflationPayout.Amount
+- uid: stellar_dotnet_sdk.xdr.Int64
+  commentId: T:stellar_dotnet_sdk.xdr.Int64
+  parent: stellar_dotnet_sdk.xdr
+  name: Int64
+  nameWithType: Int64
+  fullName: stellar_dotnet_sdk.xdr.Int64
+- uid: stellar_dotnet_sdk.xdr.InflationPayout.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.InflationPayout.Encode
+  name: Encode
+  nameWithType: InflationPayout.Encode
+  fullName: stellar_dotnet_sdk.xdr.InflationPayout.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.InflationPayout
+  commentId: T:stellar_dotnet_sdk.xdr.InflationPayout
+  parent: stellar_dotnet_sdk.xdr
+  name: InflationPayout
+  nameWithType: InflationPayout
+  fullName: stellar_dotnet_sdk.xdr.InflationPayout
+- uid: stellar_dotnet_sdk.xdr.InflationPayout.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.InflationPayout.Decode
+  name: Decode
+  nameWithType: InflationPayout.Decode
+  fullName: stellar_dotnet_sdk.xdr.InflationPayout.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

@@ -1,0 +1,1207 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  id: KeyPair
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.KeyPair.#ctor(System.Byte[])
+  - stellar_dotnet_sdk.KeyPair.#ctor(System.Byte[],System.Byte[],System.Byte[])
+  - stellar_dotnet_sdk.KeyPair.AccountId
+  - stellar_dotnet_sdk.KeyPair.Address
+  - stellar_dotnet_sdk.KeyPair.CanSign
+  - stellar_dotnet_sdk.KeyPair.FromAccountId(System.String)
+  - stellar_dotnet_sdk.KeyPair.FromBIP39Seed(System.Byte[],System.UInt32)
+  - stellar_dotnet_sdk.KeyPair.FromBIP39Seed(System.String,System.UInt32)
+  - stellar_dotnet_sdk.KeyPair.FromPublicKey(System.Byte[])
+  - stellar_dotnet_sdk.KeyPair.FromSecretSeed(System.Byte[])
+  - stellar_dotnet_sdk.KeyPair.FromSecretSeed(System.String)
+  - stellar_dotnet_sdk.KeyPair.FromXdrPublicKey(stellar_dotnet_sdk.xdr.PublicKey)
+  - stellar_dotnet_sdk.KeyPair.FromXdrSignerKey(stellar_dotnet_sdk.xdr.SignerKey)
+  - stellar_dotnet_sdk.KeyPair.PrivateKey
+  - stellar_dotnet_sdk.KeyPair.PublicKey
+  - stellar_dotnet_sdk.KeyPair.Random
+  - stellar_dotnet_sdk.KeyPair.SecretSeed
+  - stellar_dotnet_sdk.KeyPair.SeedBytes
+  - stellar_dotnet_sdk.KeyPair.Sign(System.Byte[])
+  - stellar_dotnet_sdk.KeyPair.SignatureHint
+  - stellar_dotnet_sdk.KeyPair.SignDecorated(System.Byte[])
+  - stellar_dotnet_sdk.KeyPair.Verify(System.Byte[],System.Byte[])
+  - stellar_dotnet_sdk.KeyPair.XdrPublicKey
+  - stellar_dotnet_sdk.KeyPair.XdrSignerKey
+  langs:
+  - csharp
+  - vb
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: KeyPair
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 13
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\n<xref href=\"stellar_dotnet_sdk.KeyPair\" data-throw-if-not-resolved=\"false\"></xref> represents public (and secret) keys of the account.\nCurrently <xref href=\"stellar_dotnet_sdk.KeyPair\" data-throw-if-not-resolved=\"false\"></xref> only supports ed25519 but in a future this class can be abstraction layer for other public-key signature systems.\n"
+  example: []
+  syntax:
+    content: 'public class KeyPair : object'
+    content.vb: >-
+      Public Class KeyPair
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.KeyPair.#ctor(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.KeyPair.#ctor(System.Byte[])
+  id: '#ctor(System.Byte[])'
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: KeyPair(Byte[])
+  nameWithType: KeyPair.KeyPair(Byte[])
+  fullName: stellar_dotnet_sdk.KeyPair.KeyPair(System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates a new Keypair object from public key.\n"
+  example: []
+  syntax:
+    content: public KeyPair(byte[] publicKey)
+    parameters:
+    - id: publicKey
+      type: System.Byte[]
+      description: ''
+    content.vb: Public Sub New(publicKey As Byte())
+  overload: stellar_dotnet_sdk.KeyPair.#ctor*
+  nameWithType.vb: KeyPair.KeyPair(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.KeyPair.KeyPair(System.Byte())
+  name.vb: KeyPair(Byte())
+- uid: stellar_dotnet_sdk.KeyPair.#ctor(System.Byte[],System.Byte[],System.Byte[])
+  commentId: M:stellar_dotnet_sdk.KeyPair.#ctor(System.Byte[],System.Byte[],System.Byte[])
+  id: '#ctor(System.Byte[],System.Byte[],System.Byte[])'
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: KeyPair(Byte[], Byte[], Byte[])
+  nameWithType: KeyPair.KeyPair(Byte[], Byte[], Byte[])
+  fullName: stellar_dotnet_sdk.KeyPair.KeyPair(System.Byte[], System.Byte[], System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates a new Keypair instance from secret. This can either be secret key or secret seed depending on underlying public-key signature system. Currently Keypair only supports ed25519.\n"
+  example: []
+  syntax:
+    content: public KeyPair(byte[] publicKey, byte[] privateKey, byte[] seed)
+    parameters:
+    - id: publicKey
+      type: System.Byte[]
+      description: ''
+    - id: privateKey
+      type: System.Byte[]
+      description: ''
+    - id: seed
+      type: System.Byte[]
+      description: ''
+    content.vb: Public Sub New(publicKey As Byte(), privateKey As Byte(), seed As Byte())
+  overload: stellar_dotnet_sdk.KeyPair.#ctor*
+  nameWithType.vb: KeyPair.KeyPair(Byte(), Byte(), Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.KeyPair.KeyPair(System.Byte(), System.Byte(), System.Byte())
+  name.vb: KeyPair(Byte(), Byte(), Byte())
+- uid: stellar_dotnet_sdk.KeyPair.PublicKey
+  commentId: P:stellar_dotnet_sdk.KeyPair.PublicKey
+  id: PublicKey
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: PublicKey
+  nameWithType: KeyPair.PublicKey
+  fullName: stellar_dotnet_sdk.KeyPair.PublicKey
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PublicKey
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 40
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nThe public key.\n"
+  example: []
+  syntax:
+    content: public byte[] PublicKey { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property PublicKey As Byte()
+  overload: stellar_dotnet_sdk.KeyPair.PublicKey*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.KeyPair.PrivateKey
+  commentId: P:stellar_dotnet_sdk.KeyPair.PrivateKey
+  id: PrivateKey
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: PrivateKey
+  nameWithType: KeyPair.PrivateKey
+  fullName: stellar_dotnet_sdk.KeyPair.PrivateKey
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PrivateKey
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 45
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nThe private key.\n"
+  example: []
+  syntax:
+    content: public byte[] PrivateKey { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property PrivateKey As Byte()
+  overload: stellar_dotnet_sdk.KeyPair.PrivateKey*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.KeyPair.SeedBytes
+  commentId: P:stellar_dotnet_sdk.KeyPair.SeedBytes
+  id: SeedBytes
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: SeedBytes
+  nameWithType: KeyPair.SeedBytes
+  fullName: stellar_dotnet_sdk.KeyPair.SeedBytes
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SeedBytes
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 50
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nThe bytes of the Secret Seed\n"
+  example: []
+  syntax:
+    content: public byte[] SeedBytes { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property SeedBytes As Byte()
+  overload: stellar_dotnet_sdk.KeyPair.SeedBytes*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.KeyPair.AccountId
+  commentId: P:stellar_dotnet_sdk.KeyPair.AccountId
+  id: AccountId
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: AccountId
+  nameWithType: KeyPair.AccountId
+  fullName: stellar_dotnet_sdk.KeyPair.AccountId
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AccountId
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 55
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nAccountId\n"
+  example: []
+  syntax:
+    content: public string AccountId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AccountId As String
+  overload: stellar_dotnet_sdk.KeyPair.AccountId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.KeyPair.Address
+  commentId: P:stellar_dotnet_sdk.KeyPair.Address
+  id: Address
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: Address
+  nameWithType: KeyPair.Address
+  fullName: stellar_dotnet_sdk.KeyPair.Address
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Address
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 60
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nAddress\n"
+  example: []
+  syntax:
+    content: public string Address { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Address As String
+  overload: stellar_dotnet_sdk.KeyPair.Address*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.KeyPair.SecretSeed
+  commentId: P:stellar_dotnet_sdk.KeyPair.SecretSeed
+  id: SecretSeed
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: SecretSeed
+  nameWithType: KeyPair.SecretSeed
+  fullName: stellar_dotnet_sdk.KeyPair.SecretSeed
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SecretSeed
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 65
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSecretSeed\n"
+  example: []
+  syntax:
+    content: public string SecretSeed { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property SecretSeed As String
+  overload: stellar_dotnet_sdk.KeyPair.SecretSeed*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.KeyPair.SignatureHint
+  commentId: P:stellar_dotnet_sdk.KeyPair.SignatureHint
+  id: SignatureHint
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: SignatureHint
+  nameWithType: KeyPair.SignatureHint
+  fullName: stellar_dotnet_sdk.KeyPair.SignatureHint
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SignatureHint
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 70
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nXDR Signature Hint\n"
+  example: []
+  syntax:
+    content: public SignatureHint SignatureHint { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.SignatureHint
+    content.vb: Public ReadOnly Property SignatureHint As SignatureHint
+  overload: stellar_dotnet_sdk.KeyPair.SignatureHint*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.KeyPair.XdrPublicKey
+  commentId: P:stellar_dotnet_sdk.KeyPair.XdrPublicKey
+  id: XdrPublicKey
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: XdrPublicKey
+  nameWithType: KeyPair.XdrPublicKey
+  fullName: stellar_dotnet_sdk.KeyPair.XdrPublicKey
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: XdrPublicKey
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 89
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nXDR Public Key\n"
+  example: []
+  syntax:
+    content: public PublicKey XdrPublicKey { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.PublicKey
+    content.vb: Public ReadOnly Property XdrPublicKey As PublicKey
+  overload: stellar_dotnet_sdk.KeyPair.XdrPublicKey*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.KeyPair.XdrSignerKey
+  commentId: P:stellar_dotnet_sdk.KeyPair.XdrSignerKey
+  id: XdrSignerKey
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: XdrSignerKey
+  nameWithType: KeyPair.XdrSignerKey
+  fullName: stellar_dotnet_sdk.KeyPair.XdrSignerKey
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: XdrSignerKey
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 108
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nXDR Signer Key\n"
+  example: []
+  syntax:
+    content: public SignerKey XdrSignerKey { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.SignerKey
+    content.vb: Public ReadOnly Property XdrSignerKey As SignerKey
+  overload: stellar_dotnet_sdk.KeyPair.XdrSignerKey*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.KeyPair.FromXdrPublicKey(stellar_dotnet_sdk.xdr.PublicKey)
+  commentId: M:stellar_dotnet_sdk.KeyPair.FromXdrPublicKey(stellar_dotnet_sdk.xdr.PublicKey)
+  id: FromXdrPublicKey(stellar_dotnet_sdk.xdr.PublicKey)
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: FromXdrPublicKey(PublicKey)
+  nameWithType: KeyPair.FromXdrPublicKey(PublicKey)
+  fullName: stellar_dotnet_sdk.KeyPair.FromXdrPublicKey(stellar_dotnet_sdk.xdr.PublicKey)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FromXdrPublicKey
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 129
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nReturns a KeyPair from a Public Key\n"
+  example: []
+  syntax:
+    content: public static KeyPair FromXdrPublicKey(PublicKey publicKey)
+    parameters:
+    - id: publicKey
+      type: stellar_dotnet_sdk.xdr.PublicKey
+      description: ''
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+      description: <xref href="stellar_dotnet_sdk.KeyPair" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Shared Function FromXdrPublicKey(publicKey As PublicKey) As KeyPair
+  overload: stellar_dotnet_sdk.KeyPair.FromXdrPublicKey*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.KeyPair.FromXdrSignerKey(stellar_dotnet_sdk.xdr.SignerKey)
+  commentId: M:stellar_dotnet_sdk.KeyPair.FromXdrSignerKey(stellar_dotnet_sdk.xdr.SignerKey)
+  id: FromXdrSignerKey(stellar_dotnet_sdk.xdr.SignerKey)
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: FromXdrSignerKey(SignerKey)
+  nameWithType: KeyPair.FromXdrSignerKey(SignerKey)
+  fullName: stellar_dotnet_sdk.KeyPair.FromXdrSignerKey(stellar_dotnet_sdk.xdr.SignerKey)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FromXdrSignerKey
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 139
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nReturns a KeyPair from an XDR SignerKey\n"
+  example: []
+  syntax:
+    content: public static KeyPair FromXdrSignerKey(SignerKey signerKey)
+    parameters:
+    - id: signerKey
+      type: stellar_dotnet_sdk.xdr.SignerKey
+      description: ''
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+      description: <xref href="stellar_dotnet_sdk.KeyPair" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Shared Function FromXdrSignerKey(signerKey As SignerKey) As KeyPair
+  overload: stellar_dotnet_sdk.KeyPair.FromXdrSignerKey*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.KeyPair.CanSign
+  commentId: M:stellar_dotnet_sdk.KeyPair.CanSign
+  id: CanSign
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: CanSign()
+  nameWithType: KeyPair.CanSign()
+  fullName: stellar_dotnet_sdk.KeyPair.CanSign()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CanSign
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 148
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nReturns true if this Keypair is capable of signing\n"
+  example: []
+  syntax:
+    content: public bool CanSign()
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Function CanSign As Boolean
+  overload: stellar_dotnet_sdk.KeyPair.CanSign*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.KeyPair.FromSecretSeed(System.String)
+  commentId: M:stellar_dotnet_sdk.KeyPair.FromSecretSeed(System.String)
+  id: FromSecretSeed(System.String)
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: FromSecretSeed(String)
+  nameWithType: KeyPair.FromSecretSeed(String)
+  fullName: stellar_dotnet_sdk.KeyPair.FromSecretSeed(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FromSecretSeed
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 160
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates a new Stellar KeyPair from a strkey encoded Stellar secret seed.\n"
+  example: []
+  syntax:
+    content: public static KeyPair FromSecretSeed(string seed)
+    parameters:
+    - id: seed
+      type: System.String
+      description: eed Char array containing strkey encoded Stellar secret seed.
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+      description: "\n<xref href=\"stellar_dotnet_sdk.KeyPair\" data-throw-if-not-resolved=\"false\"></xref>\n"
+    content.vb: Public Shared Function FromSecretSeed(seed As String) As KeyPair
+  overload: stellar_dotnet_sdk.KeyPair.FromSecretSeed*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.KeyPair.FromSecretSeed(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.KeyPair.FromSecretSeed(System.Byte[])
+  id: FromSecretSeed(System.Byte[])
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: FromSecretSeed(Byte[])
+  nameWithType: KeyPair.FromSecretSeed(Byte[])
+  fullName: stellar_dotnet_sdk.KeyPair.FromSecretSeed(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FromSecretSeed
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 173
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates a new Stellar keypair from a raw 32 byte secret seed.\n"
+  example: []
+  syntax:
+    content: public static KeyPair FromSecretSeed(byte[] seed)
+    parameters:
+    - id: seed
+      type: System.Byte[]
+      description: seed The 32 byte secret seed.
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+      description: "\n<xref href=\"stellar_dotnet_sdk.KeyPair\" data-throw-if-not-resolved=\"false\"></xref>\n"
+    content.vb: Public Shared Function FromSecretSeed(seed As Byte()) As KeyPair
+  overload: stellar_dotnet_sdk.KeyPair.FromSecretSeed*
+  nameWithType.vb: KeyPair.FromSecretSeed(Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.KeyPair.FromSecretSeed(System.Byte())
+  name.vb: FromSecretSeed(Byte())
+- uid: stellar_dotnet_sdk.KeyPair.FromAccountId(System.String)
+  commentId: M:stellar_dotnet_sdk.KeyPair.FromAccountId(System.String)
+  id: FromAccountId(System.String)
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: FromAccountId(String)
+  nameWithType: KeyPair.FromAccountId(String)
+  fullName: stellar_dotnet_sdk.KeyPair.FromAccountId(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FromAccountId
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 187
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates a new Stellar KeyPair from a strkey encoded Stellar account ID.\n"
+  example: []
+  syntax:
+    content: public static KeyPair FromAccountId(string accountId)
+    parameters:
+    - id: accountId
+      type: System.String
+      description: accountId The strkey encoded Stellar account ID.
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+      description: "\n<xref href=\"stellar_dotnet_sdk.KeyPair\" data-throw-if-not-resolved=\"false\"></xref>\n"
+    content.vb: Public Shared Function FromAccountId(accountId As String) As KeyPair
+  overload: stellar_dotnet_sdk.KeyPair.FromAccountId*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.KeyPair.FromBIP39Seed(System.String,System.UInt32)
+  commentId: M:stellar_dotnet_sdk.KeyPair.FromBIP39Seed(System.String,System.UInt32)
+  id: FromBIP39Seed(System.String,System.UInt32)
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: FromBIP39Seed(String, UInt32)
+  nameWithType: KeyPair.FromBIP39Seed(String, UInt32)
+  fullName: stellar_dotnet_sdk.KeyPair.FromBIP39Seed(System.String, System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FromBIP39Seed
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 193
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static KeyPair FromBIP39Seed(string seed, uint accountIndex)
+    parameters:
+    - id: seed
+      type: System.String
+    - id: accountIndex
+      type: System.UInt32
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+    content.vb: Public Shared Function FromBIP39Seed(seed As String, accountIndex As UInteger) As KeyPair
+  overload: stellar_dotnet_sdk.KeyPair.FromBIP39Seed*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.KeyPair.FromBIP39Seed(System.Byte[],System.UInt32)
+  commentId: M:stellar_dotnet_sdk.KeyPair.FromBIP39Seed(System.Byte[],System.UInt32)
+  id: FromBIP39Seed(System.Byte[],System.UInt32)
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: FromBIP39Seed(Byte[], UInt32)
+  nameWithType: KeyPair.FromBIP39Seed(Byte[], UInt32)
+  fullName: stellar_dotnet_sdk.KeyPair.FromBIP39Seed(System.Byte[], System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FromBIP39Seed
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 201
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static KeyPair FromBIP39Seed(byte[] seedBytes, uint accountIndex)
+    parameters:
+    - id: seedBytes
+      type: System.Byte[]
+    - id: accountIndex
+      type: System.UInt32
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+    content.vb: Public Shared Function FromBIP39Seed(seedBytes As Byte(), accountIndex As UInteger) As KeyPair
+  overload: stellar_dotnet_sdk.KeyPair.FromBIP39Seed*
+  nameWithType.vb: KeyPair.FromBIP39Seed(Byte(), UInt32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.KeyPair.FromBIP39Seed(System.Byte(), System.UInt32)
+  name.vb: FromBIP39Seed(Byte(), UInt32)
+- uid: stellar_dotnet_sdk.KeyPair.FromPublicKey(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.KeyPair.FromPublicKey(System.Byte[])
+  id: FromPublicKey(System.Byte[])
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: FromPublicKey(Byte[])
+  nameWithType: KeyPair.FromPublicKey(Byte[])
+  fullName: stellar_dotnet_sdk.KeyPair.FromPublicKey(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FromPublicKey
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 214
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates a new Stellar keypair from a 32 byte address.\n"
+  example: []
+  syntax:
+    content: public static KeyPair FromPublicKey(byte[] publicKey)
+    parameters:
+    - id: publicKey
+      type: System.Byte[]
+      description: publicKey The 32 byte public key.
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+      description: "\n<xref href=\"stellar_dotnet_sdk.KeyPair\" data-throw-if-not-resolved=\"false\"></xref>\n"
+    content.vb: Public Shared Function FromPublicKey(publicKey As Byte()) As KeyPair
+  overload: stellar_dotnet_sdk.KeyPair.FromPublicKey*
+  nameWithType.vb: KeyPair.FromPublicKey(Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.KeyPair.FromPublicKey(System.Byte())
+  name.vb: FromPublicKey(Byte())
+- uid: stellar_dotnet_sdk.KeyPair.Random
+  commentId: M:stellar_dotnet_sdk.KeyPair.Random
+  id: Random
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: Random()
+  nameWithType: KeyPair.Random()
+  fullName: stellar_dotnet_sdk.KeyPair.Random()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Random
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 223
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nGenerates a random Stellar keypair.\n"
+  example: []
+  syntax:
+    content: public static KeyPair Random()
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+      description: a random Stellar keypair
+    content.vb: Public Shared Function Random As KeyPair
+  overload: stellar_dotnet_sdk.KeyPair.Random*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.KeyPair.Sign(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.KeyPair.Sign(System.Byte[])
+  id: Sign(System.Byte[])
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: Sign(Byte[])
+  nameWithType: KeyPair.Sign(Byte[])
+  fullName: stellar_dotnet_sdk.KeyPair.Sign(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Sign
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 239
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSign the provided data with the keypair&apos;s private key.\n"
+  example: []
+  syntax:
+    content: public byte[] Sign(byte[] data)
+    parameters:
+    - id: data
+      type: System.Byte[]
+      description: The data to sign.
+    return:
+      type: System.Byte[]
+      description: signed bytes, null if the private key for this keypair is null.
+    content.vb: Public Function Sign(data As Byte()) As Byte()
+  overload: stellar_dotnet_sdk.KeyPair.Sign*
+  nameWithType.vb: KeyPair.Sign(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.KeyPair.Sign(System.Byte())
+  name.vb: Sign(Byte())
+- uid: stellar_dotnet_sdk.KeyPair.SignDecorated(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.KeyPair.SignDecorated(System.Byte[])
+  id: SignDecorated(System.Byte[])
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: SignDecorated(Byte[])
+  nameWithType: KeyPair.SignDecorated(Byte[])
+  fullName: stellar_dotnet_sdk.KeyPair.SignDecorated(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SignDecorated
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 254
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSign a message and return an XDR Decorated Signature\n"
+  example: []
+  syntax:
+    content: public DecoratedSignature SignDecorated(byte[] message)
+    parameters:
+    - id: message
+      type: System.Byte[]
+      description: ''
+    return:
+      type: stellar_dotnet_sdk.xdr.DecoratedSignature
+      description: <xref href="stellar_dotnet_sdk.xdr.DecoratedSignature" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function SignDecorated(message As Byte()) As DecoratedSignature
+  overload: stellar_dotnet_sdk.KeyPair.SignDecorated*
+  nameWithType.vb: KeyPair.SignDecorated(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.KeyPair.SignDecorated(System.Byte())
+  name.vb: SignDecorated(Byte())
+- uid: stellar_dotnet_sdk.KeyPair.Verify(System.Byte[],System.Byte[])
+  commentId: M:stellar_dotnet_sdk.KeyPair.Verify(System.Byte[],System.Byte[])
+  id: Verify(System.Byte[],System.Byte[])
+  parent: stellar_dotnet_sdk.KeyPair
+  langs:
+  - csharp
+  - vb
+  name: Verify(Byte[], Byte[])
+  nameWithType: KeyPair.Verify(Byte[], Byte[])
+  fullName: stellar_dotnet_sdk.KeyPair.Verify(System.Byte[], System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/KeyPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Verify
+    path: ../stellar-dotnet-sdk/KeyPair.cs
+    startLine: 271
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nVerify the provided data and signature match this keypair&apos;s public key.\n"
+  example: []
+  syntax:
+    content: public bool Verify(byte[] data, byte[] signature)
+    parameters:
+    - id: data
+      type: System.Byte[]
+      description: The data that was signed.
+    - id: signature
+      type: System.Byte[]
+      description: The signature.
+    return:
+      type: System.Boolean
+      description: True if they match, false otherwise.
+    content.vb: Public Function Verify(data As Byte(), signature As Byte()) As Boolean
+  overload: stellar_dotnet_sdk.KeyPair.Verify*
+  nameWithType.vb: KeyPair.Verify(Byte(), Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.KeyPair.Verify(System.Byte(), System.Byte())
+  name.vb: Verify(Byte(), Byte())
+references:
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.KeyPair.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.#ctor
+  name: KeyPair
+  nameWithType: KeyPair.KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair.KeyPair
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: stellar_dotnet_sdk.KeyPair.PublicKey*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.PublicKey
+  name: PublicKey
+  nameWithType: KeyPair.PublicKey
+  fullName: stellar_dotnet_sdk.KeyPair.PublicKey
+- uid: stellar_dotnet_sdk.KeyPair.PrivateKey*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.PrivateKey
+  name: PrivateKey
+  nameWithType: KeyPair.PrivateKey
+  fullName: stellar_dotnet_sdk.KeyPair.PrivateKey
+- uid: stellar_dotnet_sdk.KeyPair.SeedBytes*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.SeedBytes
+  name: SeedBytes
+  nameWithType: KeyPair.SeedBytes
+  fullName: stellar_dotnet_sdk.KeyPair.SeedBytes
+- uid: stellar_dotnet_sdk.KeyPair.AccountId*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.AccountId
+  name: AccountId
+  nameWithType: KeyPair.AccountId
+  fullName: stellar_dotnet_sdk.KeyPair.AccountId
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.KeyPair.Address*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.Address
+  name: Address
+  nameWithType: KeyPair.Address
+  fullName: stellar_dotnet_sdk.KeyPair.Address
+- uid: stellar_dotnet_sdk.KeyPair.SecretSeed*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.SecretSeed
+  name: SecretSeed
+  nameWithType: KeyPair.SecretSeed
+  fullName: stellar_dotnet_sdk.KeyPair.SecretSeed
+- uid: stellar_dotnet_sdk.KeyPair.SignatureHint*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.SignatureHint
+  name: SignatureHint
+  nameWithType: KeyPair.SignatureHint
+  fullName: stellar_dotnet_sdk.KeyPair.SignatureHint
+- uid: stellar_dotnet_sdk.xdr.SignatureHint
+  commentId: T:stellar_dotnet_sdk.xdr.SignatureHint
+  parent: stellar_dotnet_sdk.xdr
+  name: SignatureHint
+  nameWithType: SignatureHint
+  fullName: stellar_dotnet_sdk.xdr.SignatureHint
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.KeyPair.XdrPublicKey*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.XdrPublicKey
+  name: XdrPublicKey
+  nameWithType: KeyPair.XdrPublicKey
+  fullName: stellar_dotnet_sdk.KeyPair.XdrPublicKey
+- uid: stellar_dotnet_sdk.xdr.PublicKey
+  commentId: T:stellar_dotnet_sdk.xdr.PublicKey
+  parent: stellar_dotnet_sdk.xdr
+  name: PublicKey
+  nameWithType: PublicKey
+  fullName: stellar_dotnet_sdk.xdr.PublicKey
+- uid: stellar_dotnet_sdk.KeyPair.XdrSignerKey*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.XdrSignerKey
+  name: XdrSignerKey
+  nameWithType: KeyPair.XdrSignerKey
+  fullName: stellar_dotnet_sdk.KeyPair.XdrSignerKey
+- uid: stellar_dotnet_sdk.xdr.SignerKey
+  commentId: T:stellar_dotnet_sdk.xdr.SignerKey
+  parent: stellar_dotnet_sdk.xdr
+  name: SignerKey
+  nameWithType: SignerKey
+  fullName: stellar_dotnet_sdk.xdr.SignerKey
+- uid: stellar_dotnet_sdk.KeyPair.FromXdrPublicKey*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.FromXdrPublicKey
+  name: FromXdrPublicKey
+  nameWithType: KeyPair.FromXdrPublicKey
+  fullName: stellar_dotnet_sdk.KeyPair.FromXdrPublicKey
+- uid: stellar_dotnet_sdk.KeyPair.FromXdrSignerKey*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.FromXdrSignerKey
+  name: FromXdrSignerKey
+  nameWithType: KeyPair.FromXdrSignerKey
+  fullName: stellar_dotnet_sdk.KeyPair.FromXdrSignerKey
+- uid: stellar_dotnet_sdk.KeyPair.CanSign*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.CanSign
+  name: CanSign
+  nameWithType: KeyPair.CanSign
+  fullName: stellar_dotnet_sdk.KeyPair.CanSign
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: stellar_dotnet_sdk.KeyPair.FromSecretSeed*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.FromSecretSeed
+  name: FromSecretSeed
+  nameWithType: KeyPair.FromSecretSeed
+  fullName: stellar_dotnet_sdk.KeyPair.FromSecretSeed
+- uid: stellar_dotnet_sdk.KeyPair.FromAccountId*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.FromAccountId
+  name: FromAccountId
+  nameWithType: KeyPair.FromAccountId
+  fullName: stellar_dotnet_sdk.KeyPair.FromAccountId
+- uid: stellar_dotnet_sdk.KeyPair.FromBIP39Seed*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.FromBIP39Seed
+  name: FromBIP39Seed
+  nameWithType: KeyPair.FromBIP39Seed
+  fullName: stellar_dotnet_sdk.KeyPair.FromBIP39Seed
+- uid: System.UInt32
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: stellar_dotnet_sdk.KeyPair.FromPublicKey*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.FromPublicKey
+  name: FromPublicKey
+  nameWithType: KeyPair.FromPublicKey
+  fullName: stellar_dotnet_sdk.KeyPair.FromPublicKey
+- uid: stellar_dotnet_sdk.KeyPair.Random*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.Random
+  name: Random
+  nameWithType: KeyPair.Random
+  fullName: stellar_dotnet_sdk.KeyPair.Random
+- uid: stellar_dotnet_sdk.KeyPair.Sign*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.Sign
+  name: Sign
+  nameWithType: KeyPair.Sign
+  fullName: stellar_dotnet_sdk.KeyPair.Sign
+- uid: stellar_dotnet_sdk.xdr.DecoratedSignature
+  commentId: T:stellar_dotnet_sdk.xdr.DecoratedSignature
+  parent: stellar_dotnet_sdk.xdr
+  name: DecoratedSignature
+  nameWithType: DecoratedSignature
+  fullName: stellar_dotnet_sdk.xdr.DecoratedSignature
+- uid: stellar_dotnet_sdk.KeyPair.SignDecorated*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.SignDecorated
+  name: SignDecorated
+  nameWithType: KeyPair.SignDecorated
+  fullName: stellar_dotnet_sdk.KeyPair.SignDecorated
+- uid: stellar_dotnet_sdk.KeyPair.Verify*
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.Verify
+  name: Verify
+  nameWithType: KeyPair.Verify
+  fullName: stellar_dotnet_sdk.KeyPair.Verify

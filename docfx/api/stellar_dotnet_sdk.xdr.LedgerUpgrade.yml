@@ -1,0 +1,406 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerUpgrade
+  id: LedgerUpgrade
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.LedgerUpgrade.#ctor
+  - stellar_dotnet_sdk.xdr.LedgerUpgrade.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.LedgerUpgrade.Discriminant
+  - stellar_dotnet_sdk.xdr.LedgerUpgrade.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerUpgrade)
+  - stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseFee
+  - stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseReserve
+  - stellar_dotnet_sdk.xdr.LedgerUpgrade.NewLedgerVersion
+  - stellar_dotnet_sdk.xdr.LedgerUpgrade.NewMaxTxSetSize
+  langs:
+  - csharp
+  - vb
+  name: LedgerUpgrade
+  nameWithType: LedgerUpgrade
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: LedgerUpgrade
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class LedgerUpgrade : object'
+    content.vb: >-
+      Public Class LedgerUpgrade
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.LedgerUpgrade.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.LedgerUpgrade
+  langs:
+  - csharp
+  - vb
+  name: LedgerUpgrade()
+  nameWithType: LedgerUpgrade.LedgerUpgrade()
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.LedgerUpgrade()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public LedgerUpgrade()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.LedgerUpgrade.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.Discriminant
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerUpgrade.Discriminant
+  id: Discriminant
+  parent: stellar_dotnet_sdk.xdr.LedgerUpgrade
+  langs:
+  - csharp
+  - vb
+  name: Discriminant
+  nameWithType: LedgerUpgrade.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.Discriminant
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Discriminant
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public LedgerUpgradeType Discriminant { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.LedgerUpgradeType
+    content.vb: Public Property Discriminant As LedgerUpgradeType
+  overload: stellar_dotnet_sdk.xdr.LedgerUpgrade.Discriminant*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewLedgerVersion
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerUpgrade.NewLedgerVersion
+  id: NewLedgerVersion
+  parent: stellar_dotnet_sdk.xdr.LedgerUpgrade
+  langs:
+  - csharp
+  - vb
+  name: NewLedgerVersion
+  nameWithType: LedgerUpgrade.NewLedgerVersion
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewLedgerVersion
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NewLedgerVersion
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint32 NewLedgerVersion { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint32
+    content.vb: Public Property NewLedgerVersion As Uint32
+  overload: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewLedgerVersion*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseFee
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseFee
+  id: NewBaseFee
+  parent: stellar_dotnet_sdk.xdr.LedgerUpgrade
+  langs:
+  - csharp
+  - vb
+  name: NewBaseFee
+  nameWithType: LedgerUpgrade.NewBaseFee
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseFee
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NewBaseFee
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint32 NewBaseFee { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint32
+    content.vb: Public Property NewBaseFee As Uint32
+  overload: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseFee*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewMaxTxSetSize
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerUpgrade.NewMaxTxSetSize
+  id: NewMaxTxSetSize
+  parent: stellar_dotnet_sdk.xdr.LedgerUpgrade
+  langs:
+  - csharp
+  - vb
+  name: NewMaxTxSetSize
+  nameWithType: LedgerUpgrade.NewMaxTxSetSize
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewMaxTxSetSize
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NewMaxTxSetSize
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint32 NewMaxTxSetSize { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint32
+    content.vb: Public Property NewMaxTxSetSize As Uint32
+  overload: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewMaxTxSetSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseReserve
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseReserve
+  id: NewBaseReserve
+  parent: stellar_dotnet_sdk.xdr.LedgerUpgrade
+  langs:
+  - csharp
+  - vb
+  name: NewBaseReserve
+  nameWithType: LedgerUpgrade.NewBaseReserve
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseReserve
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NewBaseReserve
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint32 NewBaseReserve { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint32
+    content.vb: Public Property NewBaseReserve As Uint32
+  overload: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseReserve*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerUpgrade)
+  commentId: M:stellar_dotnet_sdk.xdr.LedgerUpgrade.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerUpgrade)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerUpgrade)
+  parent: stellar_dotnet_sdk.xdr.LedgerUpgrade
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, LedgerUpgrade)
+  nameWithType: LedgerUpgrade.Encode(XdrDataOutputStream, LedgerUpgrade)
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.LedgerUpgrade)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, LedgerUpgrade encodedLedgerUpgrade)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedLedgerUpgrade
+      type: stellar_dotnet_sdk.xdr.LedgerUpgrade
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedLedgerUpgrade As LedgerUpgrade)
+  overload: stellar_dotnet_sdk.xdr.LedgerUpgrade.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.LedgerUpgrade.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.LedgerUpgrade
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: LedgerUpgrade.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerUpgrade.cs
+    startLine: 51
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static LedgerUpgrade Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.LedgerUpgrade
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As LedgerUpgrade
+  overload: stellar_dotnet_sdk.xdr.LedgerUpgrade.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerUpgrade.#ctor
+  name: LedgerUpgrade
+  nameWithType: LedgerUpgrade.LedgerUpgrade
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.LedgerUpgrade
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.Discriminant*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerUpgrade.Discriminant
+  name: Discriminant
+  nameWithType: LedgerUpgrade.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.Discriminant
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgradeType
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerUpgradeType
+  parent: stellar_dotnet_sdk.xdr
+  name: LedgerUpgradeType
+  nameWithType: LedgerUpgradeType
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgradeType
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewLedgerVersion*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerUpgrade.NewLedgerVersion
+  name: NewLedgerVersion
+  nameWithType: LedgerUpgrade.NewLedgerVersion
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewLedgerVersion
+- uid: stellar_dotnet_sdk.xdr.Uint32
+  commentId: T:stellar_dotnet_sdk.xdr.Uint32
+  parent: stellar_dotnet_sdk.xdr
+  name: Uint32
+  nameWithType: Uint32
+  fullName: stellar_dotnet_sdk.xdr.Uint32
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseFee*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseFee
+  name: NewBaseFee
+  nameWithType: LedgerUpgrade.NewBaseFee
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseFee
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewMaxTxSetSize*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerUpgrade.NewMaxTxSetSize
+  name: NewMaxTxSetSize
+  nameWithType: LedgerUpgrade.NewMaxTxSetSize
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewMaxTxSetSize
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseReserve*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseReserve
+  name: NewBaseReserve
+  nameWithType: LedgerUpgrade.NewBaseReserve
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.NewBaseReserve
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerUpgrade.Encode
+  name: Encode
+  nameWithType: LedgerUpgrade.Encode
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerUpgrade
+  parent: stellar_dotnet_sdk.xdr
+  name: LedgerUpgrade
+  nameWithType: LedgerUpgrade
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade
+- uid: stellar_dotnet_sdk.xdr.LedgerUpgrade.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerUpgrade.Decode
+  name: Decode
+  nameWithType: LedgerUpgrade.Decode
+  fullName: stellar_dotnet_sdk.xdr.LedgerUpgrade.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

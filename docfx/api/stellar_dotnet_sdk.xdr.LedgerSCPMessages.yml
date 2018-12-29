@@ -1,0 +1,301 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.LedgerSCPMessages
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerSCPMessages
+  id: LedgerSCPMessages
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.LedgerSCPMessages.#ctor
+  - stellar_dotnet_sdk.xdr.LedgerSCPMessages.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.LedgerSCPMessages.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerSCPMessages)
+  - stellar_dotnet_sdk.xdr.LedgerSCPMessages.LedgerSeq
+  - stellar_dotnet_sdk.xdr.LedgerSCPMessages.Messages
+  langs:
+  - csharp
+  - vb
+  name: LedgerSCPMessages
+  nameWithType: LedgerSCPMessages
+  fullName: stellar_dotnet_sdk.xdr.LedgerSCPMessages
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerSCPMessages.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: LedgerSCPMessages
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerSCPMessages.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class LedgerSCPMessages : object'
+    content.vb: >-
+      Public Class LedgerSCPMessages
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.LedgerSCPMessages.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.LedgerSCPMessages.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.LedgerSCPMessages
+  langs:
+  - csharp
+  - vb
+  name: LedgerSCPMessages()
+  nameWithType: LedgerSCPMessages.LedgerSCPMessages()
+  fullName: stellar_dotnet_sdk.xdr.LedgerSCPMessages.LedgerSCPMessages()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerSCPMessages.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerSCPMessages.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public LedgerSCPMessages()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.LedgerSCPMessages.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerSCPMessages.LedgerSeq
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerSCPMessages.LedgerSeq
+  id: LedgerSeq
+  parent: stellar_dotnet_sdk.xdr.LedgerSCPMessages
+  langs:
+  - csharp
+  - vb
+  name: LedgerSeq
+  nameWithType: LedgerSCPMessages.LedgerSeq
+  fullName: stellar_dotnet_sdk.xdr.LedgerSCPMessages.LedgerSeq
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerSCPMessages.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: LedgerSeq
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerSCPMessages.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint32 LedgerSeq { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint32
+    content.vb: Public Property LedgerSeq As Uint32
+  overload: stellar_dotnet_sdk.xdr.LedgerSCPMessages.LedgerSeq*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Messages
+  commentId: P:stellar_dotnet_sdk.xdr.LedgerSCPMessages.Messages
+  id: Messages
+  parent: stellar_dotnet_sdk.xdr.LedgerSCPMessages
+  langs:
+  - csharp
+  - vb
+  name: Messages
+  nameWithType: LedgerSCPMessages.Messages
+  fullName: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Messages
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerSCPMessages.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Messages
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerSCPMessages.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public SCPEnvelope[] Messages { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.SCPEnvelope[]
+    content.vb: Public Property Messages As SCPEnvelope()
+  overload: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Messages*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerSCPMessages)
+  commentId: M:stellar_dotnet_sdk.xdr.LedgerSCPMessages.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerSCPMessages)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.LedgerSCPMessages)
+  parent: stellar_dotnet_sdk.xdr.LedgerSCPMessages
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, LedgerSCPMessages)
+  nameWithType: LedgerSCPMessages.Encode(XdrDataOutputStream, LedgerSCPMessages)
+  fullName: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.LedgerSCPMessages)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerSCPMessages.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerSCPMessages.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, LedgerSCPMessages encodedLedgerSCPMessages)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedLedgerSCPMessages
+      type: stellar_dotnet_sdk.xdr.LedgerSCPMessages
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedLedgerSCPMessages As LedgerSCPMessages)
+  overload: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.LedgerSCPMessages.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.LedgerSCPMessages
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: LedgerSCPMessages.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/LedgerSCPMessages.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/LedgerSCPMessages.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static LedgerSCPMessages Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.LedgerSCPMessages
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As LedgerSCPMessages
+  overload: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.LedgerSCPMessages.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerSCPMessages.#ctor
+  name: LedgerSCPMessages
+  nameWithType: LedgerSCPMessages.LedgerSCPMessages
+  fullName: stellar_dotnet_sdk.xdr.LedgerSCPMessages.LedgerSCPMessages
+- uid: stellar_dotnet_sdk.xdr.LedgerSCPMessages.LedgerSeq*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerSCPMessages.LedgerSeq
+  name: LedgerSeq
+  nameWithType: LedgerSCPMessages.LedgerSeq
+  fullName: stellar_dotnet_sdk.xdr.LedgerSCPMessages.LedgerSeq
+- uid: stellar_dotnet_sdk.xdr.Uint32
+  commentId: T:stellar_dotnet_sdk.xdr.Uint32
+  parent: stellar_dotnet_sdk.xdr
+  name: Uint32
+  nameWithType: Uint32
+  fullName: stellar_dotnet_sdk.xdr.Uint32
+- uid: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Messages*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerSCPMessages.Messages
+  name: Messages
+  nameWithType: LedgerSCPMessages.Messages
+  fullName: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Messages
+- uid: stellar_dotnet_sdk.xdr.SCPEnvelope[]
+  isExternal: true
+  name: SCPEnvelope[]
+  nameWithType: SCPEnvelope[]
+  fullName: stellar_dotnet_sdk.xdr.SCPEnvelope[]
+  nameWithType.vb: SCPEnvelope()
+  fullName.vb: stellar_dotnet_sdk.xdr.SCPEnvelope()
+  name.vb: SCPEnvelope()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.xdr.SCPEnvelope
+    name: SCPEnvelope
+    nameWithType: SCPEnvelope
+    fullName: stellar_dotnet_sdk.xdr.SCPEnvelope
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.xdr.SCPEnvelope
+    name: SCPEnvelope
+    nameWithType: SCPEnvelope
+    fullName: stellar_dotnet_sdk.xdr.SCPEnvelope
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerSCPMessages.Encode
+  name: Encode
+  nameWithType: LedgerSCPMessages.Encode
+  fullName: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.LedgerSCPMessages
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerSCPMessages
+  parent: stellar_dotnet_sdk.xdr
+  name: LedgerSCPMessages
+  nameWithType: LedgerSCPMessages
+  fullName: stellar_dotnet_sdk.xdr.LedgerSCPMessages
+- uid: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.LedgerSCPMessages.Decode
+  name: Decode
+  nameWithType: LedgerSCPMessages.Decode
+  fullName: stellar_dotnet_sdk.xdr.LedgerSCPMessages.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

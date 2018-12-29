@@ -1,0 +1,270 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.AccountID
+  commentId: T:stellar_dotnet_sdk.xdr.AccountID
+  id: AccountID
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.AccountID.#ctor
+  - stellar_dotnet_sdk.xdr.AccountID.#ctor(stellar_dotnet_sdk.xdr.PublicKey)
+  - stellar_dotnet_sdk.xdr.AccountID.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.AccountID.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AccountID)
+  - stellar_dotnet_sdk.xdr.AccountID.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: AccountID
+  nameWithType: AccountID
+  fullName: stellar_dotnet_sdk.xdr.AccountID
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountID.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AccountID
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountID.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class AccountID : object'
+    content.vb: >-
+      Public Class AccountID
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.AccountID.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.AccountID.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.AccountID
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: AccountID.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.AccountID.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountID.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountID.cs
+    startLine: 14
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public PublicKey InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.PublicKey
+    content.vb: Public Property InnerValue As PublicKey
+  overload: stellar_dotnet_sdk.xdr.AccountID.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.AccountID.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.AccountID.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.AccountID
+  langs:
+  - csharp
+  - vb
+  name: AccountID()
+  nameWithType: AccountID.AccountID()
+  fullName: stellar_dotnet_sdk.xdr.AccountID.AccountID()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountID.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountID.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AccountID()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.AccountID.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.AccountID.#ctor(stellar_dotnet_sdk.xdr.PublicKey)
+  commentId: M:stellar_dotnet_sdk.xdr.AccountID.#ctor(stellar_dotnet_sdk.xdr.PublicKey)
+  id: '#ctor(stellar_dotnet_sdk.xdr.PublicKey)'
+  parent: stellar_dotnet_sdk.xdr.AccountID
+  langs:
+  - csharp
+  - vb
+  name: AccountID(PublicKey)
+  nameWithType: AccountID.AccountID(PublicKey)
+  fullName: stellar_dotnet_sdk.xdr.AccountID.AccountID(stellar_dotnet_sdk.xdr.PublicKey)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountID.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountID.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AccountID(PublicKey value)
+    parameters:
+    - id: value
+      type: stellar_dotnet_sdk.xdr.PublicKey
+    content.vb: Public Sub New(value As PublicKey)
+  overload: stellar_dotnet_sdk.xdr.AccountID.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.AccountID.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AccountID)
+  commentId: M:stellar_dotnet_sdk.xdr.AccountID.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AccountID)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AccountID)
+  parent: stellar_dotnet_sdk.xdr.AccountID
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, AccountID)
+  nameWithType: AccountID.Encode(XdrDataOutputStream, AccountID)
+  fullName: stellar_dotnet_sdk.xdr.AccountID.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.AccountID)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountID.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountID.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, AccountID encodedAccountID)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedAccountID
+      type: stellar_dotnet_sdk.xdr.AccountID
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedAccountID As AccountID)
+  overload: stellar_dotnet_sdk.xdr.AccountID.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.AccountID.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.AccountID.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.AccountID
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: AccountID.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.AccountID.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountID.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountID.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static AccountID Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountID
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As AccountID
+  overload: stellar_dotnet_sdk.xdr.AccountID.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.AccountID.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AccountID.InnerValue
+  name: InnerValue
+  nameWithType: AccountID.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.AccountID.InnerValue
+- uid: stellar_dotnet_sdk.xdr.PublicKey
+  commentId: T:stellar_dotnet_sdk.xdr.PublicKey
+  parent: stellar_dotnet_sdk.xdr
+  name: PublicKey
+  nameWithType: PublicKey
+  fullName: stellar_dotnet_sdk.xdr.PublicKey
+- uid: stellar_dotnet_sdk.xdr.AccountID.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AccountID.#ctor
+  name: AccountID
+  nameWithType: AccountID.AccountID
+  fullName: stellar_dotnet_sdk.xdr.AccountID.AccountID
+- uid: stellar_dotnet_sdk.xdr.AccountID.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AccountID.Encode
+  name: Encode
+  nameWithType: AccountID.Encode
+  fullName: stellar_dotnet_sdk.xdr.AccountID.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.AccountID
+  commentId: T:stellar_dotnet_sdk.xdr.AccountID
+  parent: stellar_dotnet_sdk.xdr
+  name: AccountID
+  nameWithType: AccountID
+  fullName: stellar_dotnet_sdk.xdr.AccountID
+- uid: stellar_dotnet_sdk.xdr.AccountID.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AccountID.Decode
+  name: Decode
+  nameWithType: AccountID.Decode
+  fullName: stellar_dotnet_sdk.xdr.AccountID.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

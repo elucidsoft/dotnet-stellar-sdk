@@ -1,0 +1,222 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.OperationThreshold
+  commentId: T:stellar_dotnet_sdk.OperationThreshold
+  id: OperationThreshold
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.OperationThreshold.High
+  - stellar_dotnet_sdk.OperationThreshold.Low
+  - stellar_dotnet_sdk.OperationThreshold.Medium
+  langs:
+  - csharp
+  - vb
+  name: OperationThreshold
+  nameWithType: OperationThreshold
+  fullName: stellar_dotnet_sdk.OperationThreshold
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/OperationThreshold.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: OperationThreshold
+    path: ../stellar-dotnet-sdk/OperationThreshold.cs
+    startLine: 5
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nOperation threshold level.\n"
+  example: []
+  syntax:
+    content: 'public enum OperationThreshold : int'
+    content.vb: Public Enum OperationThreshold As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.OperationThreshold.Low
+  commentId: F:stellar_dotnet_sdk.OperationThreshold.Low
+  id: Low
+  parent: stellar_dotnet_sdk.OperationThreshold
+  langs:
+  - csharp
+  - vb
+  name: Low
+  nameWithType: OperationThreshold.Low
+  fullName: stellar_dotnet_sdk.OperationThreshold.Low
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/OperationThreshold.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Low
+    path: ../stellar-dotnet-sdk/OperationThreshold.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nLow security level.\n<xref href=\"stellar_dotnet_sdk.AllowTrustOperation\" data-throw-if-not-resolved=\"false\"></xref>\n<xref href=\"stellar_dotnet_sdk.BumpSequenceOperation\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: Low = null
+    return:
+      type: stellar_dotnet_sdk.OperationThreshold
+    content.vb: Low = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.OperationThreshold.Medium
+  commentId: F:stellar_dotnet_sdk.OperationThreshold.Medium
+  id: Medium
+  parent: stellar_dotnet_sdk.OperationThreshold
+  langs:
+  - csharp
+  - vb
+  name: Medium
+  nameWithType: OperationThreshold.Medium
+  fullName: stellar_dotnet_sdk.OperationThreshold.Medium
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/OperationThreshold.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Medium
+    path: ../stellar-dotnet-sdk/OperationThreshold.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nMedium security level.\n<xref href=\"stellar_dotnet_sdk.ChangeTrustOperation\" data-throw-if-not-resolved=\"false\"></xref>\n<xref href=\"stellar_dotnet_sdk.CreateAccountOperation\" data-throw-if-not-resolved=\"false\"></xref>\n<xref href=\"stellar_dotnet_sdk.CreatePassiveOfferOperation\" data-throw-if-not-resolved=\"false\"></xref>\n<xref href=\"stellar_dotnet_sdk.ManageDataOperation\" data-throw-if-not-resolved=\"false\"></xref>\n<xref href=\"stellar_dotnet_sdk.ManageOfferOperation\" data-throw-if-not-resolved=\"false\"></xref>\n<xref href=\"stellar_dotnet_sdk.PathPaymentOperation\" data-throw-if-not-resolved=\"false\"></xref>\n<xref href=\"stellar_dotnet_sdk.PaymentOperation\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: Medium = null
+    return:
+      type: stellar_dotnet_sdk.OperationThreshold
+    content.vb: Medium = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.OperationThreshold.High
+  commentId: F:stellar_dotnet_sdk.OperationThreshold.High
+  id: High
+  parent: stellar_dotnet_sdk.OperationThreshold
+  langs:
+  - csharp
+  - vb
+  name: High
+  nameWithType: OperationThreshold.High
+  fullName: stellar_dotnet_sdk.OperationThreshold.High
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/OperationThreshold.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: High
+    path: ../stellar-dotnet-sdk/OperationThreshold.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nHigh security level.\n<xref href=\"stellar_dotnet_sdk.SetOptionsOperation\" data-throw-if-not-resolved=\"false\"></xref>\n<xref href=\"stellar_dotnet_sdk.AccountMergeOperation\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: High = null
+    return:
+      type: stellar_dotnet_sdk.OperationThreshold
+    content.vb: High = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: stellar_dotnet_sdk.AllowTrustOperation
+  commentId: T:stellar_dotnet_sdk.AllowTrustOperation
+  parent: stellar_dotnet_sdk
+  name: AllowTrustOperation
+  nameWithType: AllowTrustOperation
+  fullName: stellar_dotnet_sdk.AllowTrustOperation
+- uid: stellar_dotnet_sdk.BumpSequenceOperation
+  commentId: T:stellar_dotnet_sdk.BumpSequenceOperation
+  parent: stellar_dotnet_sdk
+  name: BumpSequenceOperation
+  nameWithType: BumpSequenceOperation
+  fullName: stellar_dotnet_sdk.BumpSequenceOperation
+- uid: stellar_dotnet_sdk.OperationThreshold
+  commentId: T:stellar_dotnet_sdk.OperationThreshold
+  parent: stellar_dotnet_sdk
+  name: OperationThreshold
+  nameWithType: OperationThreshold
+  fullName: stellar_dotnet_sdk.OperationThreshold
+- uid: stellar_dotnet_sdk.ChangeTrustOperation
+  commentId: T:stellar_dotnet_sdk.ChangeTrustOperation
+  parent: stellar_dotnet_sdk
+  name: ChangeTrustOperation
+  nameWithType: ChangeTrustOperation
+  fullName: stellar_dotnet_sdk.ChangeTrustOperation
+- uid: stellar_dotnet_sdk.CreateAccountOperation
+  commentId: T:stellar_dotnet_sdk.CreateAccountOperation
+  parent: stellar_dotnet_sdk
+  name: CreateAccountOperation
+  nameWithType: CreateAccountOperation
+  fullName: stellar_dotnet_sdk.CreateAccountOperation
+- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation
+  commentId: T:stellar_dotnet_sdk.CreatePassiveOfferOperation
+  parent: stellar_dotnet_sdk
+  name: CreatePassiveOfferOperation
+  nameWithType: CreatePassiveOfferOperation
+  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation
+- uid: stellar_dotnet_sdk.ManageDataOperation
+  commentId: T:stellar_dotnet_sdk.ManageDataOperation
+  parent: stellar_dotnet_sdk
+  name: ManageDataOperation
+  nameWithType: ManageDataOperation
+  fullName: stellar_dotnet_sdk.ManageDataOperation
+- uid: stellar_dotnet_sdk.ManageOfferOperation
+  commentId: T:stellar_dotnet_sdk.ManageOfferOperation
+  parent: stellar_dotnet_sdk
+  name: ManageOfferOperation
+  nameWithType: ManageOfferOperation
+  fullName: stellar_dotnet_sdk.ManageOfferOperation
+- uid: stellar_dotnet_sdk.PathPaymentOperation
+  commentId: T:stellar_dotnet_sdk.PathPaymentOperation
+  parent: stellar_dotnet_sdk
+  name: PathPaymentOperation
+  nameWithType: PathPaymentOperation
+  fullName: stellar_dotnet_sdk.PathPaymentOperation
+- uid: stellar_dotnet_sdk.PaymentOperation
+  commentId: T:stellar_dotnet_sdk.PaymentOperation
+  parent: stellar_dotnet_sdk
+  name: PaymentOperation
+  nameWithType: PaymentOperation
+  fullName: stellar_dotnet_sdk.PaymentOperation
+- uid: stellar_dotnet_sdk.SetOptionsOperation
+  commentId: T:stellar_dotnet_sdk.SetOptionsOperation
+  parent: stellar_dotnet_sdk
+  name: SetOptionsOperation
+  nameWithType: SetOptionsOperation
+  fullName: stellar_dotnet_sdk.SetOptionsOperation
+- uid: stellar_dotnet_sdk.AccountMergeOperation
+  commentId: T:stellar_dotnet_sdk.AccountMergeOperation
+  parent: stellar_dotnet_sdk
+  name: AccountMergeOperation
+  nameWithType: AccountMergeOperation
+  fullName: stellar_dotnet_sdk.AccountMergeOperation

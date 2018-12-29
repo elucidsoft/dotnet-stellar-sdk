@@ -1,0 +1,265 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.federation.FederationResponse
+  commentId: T:stellar_dotnet_sdk.federation.FederationResponse
+  id: FederationResponse
+  parent: stellar_dotnet_sdk.federation
+  children:
+  - stellar_dotnet_sdk.federation.FederationResponse.#ctor(System.String,System.String,System.String,System.String)
+  - stellar_dotnet_sdk.federation.FederationResponse.AccountId
+  - stellar_dotnet_sdk.federation.FederationResponse.Memo
+  - stellar_dotnet_sdk.federation.FederationResponse.MemoType
+  - stellar_dotnet_sdk.federation.FederationResponse.StellarAddress
+  langs:
+  - csharp
+  - vb
+  name: FederationResponse
+  nameWithType: FederationResponse
+  fullName: stellar_dotnet_sdk.federation.FederationResponse
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FederationResponse
+    path: ../stellar-dotnet-sdk/federation/FederationResponse.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  summary: "\nObject to hold a response from a federation server.\nSee https://www.stellar.org/developers/learn/concepts/federation.html\n"
+  example: []
+  syntax:
+    content: 'public class FederationResponse : object'
+    content.vb: >-
+      Public Class FederationResponse
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.federation.FederationResponse.#ctor(System.String,System.String,System.String,System.String)
+  commentId: M:stellar_dotnet_sdk.federation.FederationResponse.#ctor(System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String,System.String)'
+  parent: stellar_dotnet_sdk.federation.FederationResponse
+  langs:
+  - csharp
+  - vb
+  name: FederationResponse(String, String, String, String)
+  nameWithType: FederationResponse.FederationResponse(String, String, String, String)
+  fullName: stellar_dotnet_sdk.federation.FederationResponse.FederationResponse(System.String, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/federation/FederationResponse.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  syntax:
+    content: public FederationResponse(string stellarAddress, string accountId, string memoType, string memo)
+    parameters:
+    - id: stellarAddress
+      type: System.String
+    - id: accountId
+      type: System.String
+    - id: memoType
+      type: System.String
+    - id: memo
+      type: System.String
+    content.vb: Public Sub New(stellarAddress As String, accountId As String, memoType As String, memo As String)
+  overload: stellar_dotnet_sdk.federation.FederationResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.federation.FederationResponse.StellarAddress
+  commentId: P:stellar_dotnet_sdk.federation.FederationResponse.StellarAddress
+  id: StellarAddress
+  parent: stellar_dotnet_sdk.federation.FederationResponse
+  langs:
+  - csharp
+  - vb
+  name: StellarAddress
+  nameWithType: FederationResponse.StellarAddress
+  fullName: stellar_dotnet_sdk.federation.FederationResponse.StellarAddress
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: StellarAddress
+    path: ../stellar-dotnet-sdk/federation/FederationResponse.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  syntax:
+    content: public string StellarAddress { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property StellarAddress As String
+  overload: stellar_dotnet_sdk.federation.FederationResponse.StellarAddress*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.federation.FederationResponse.AccountId
+  commentId: P:stellar_dotnet_sdk.federation.FederationResponse.AccountId
+  id: AccountId
+  parent: stellar_dotnet_sdk.federation.FederationResponse
+  langs:
+  - csharp
+  - vb
+  name: AccountId
+  nameWithType: FederationResponse.AccountId
+  fullName: stellar_dotnet_sdk.federation.FederationResponse.AccountId
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AccountId
+    path: ../stellar-dotnet-sdk/federation/FederationResponse.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  syntax:
+    content: public string AccountId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AccountId As String
+  overload: stellar_dotnet_sdk.federation.FederationResponse.AccountId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.federation.FederationResponse.MemoType
+  commentId: P:stellar_dotnet_sdk.federation.FederationResponse.MemoType
+  id: MemoType
+  parent: stellar_dotnet_sdk.federation.FederationResponse
+  langs:
+  - csharp
+  - vb
+  name: MemoType
+  nameWithType: FederationResponse.MemoType
+  fullName: stellar_dotnet_sdk.federation.FederationResponse.MemoType
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: MemoType
+    path: ../stellar-dotnet-sdk/federation/FederationResponse.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  syntax:
+    content: public string MemoType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property MemoType As String
+  overload: stellar_dotnet_sdk.federation.FederationResponse.MemoType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.federation.FederationResponse.Memo
+  commentId: P:stellar_dotnet_sdk.federation.FederationResponse.Memo
+  id: Memo
+  parent: stellar_dotnet_sdk.federation.FederationResponse
+  langs:
+  - csharp
+  - vb
+  name: Memo
+  nameWithType: FederationResponse.Memo
+  fullName: stellar_dotnet_sdk.federation.FederationResponse.Memo
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Memo
+    path: ../stellar-dotnet-sdk/federation/FederationResponse.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  syntax:
+    content: public string Memo { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Memo As String
+  overload: stellar_dotnet_sdk.federation.FederationResponse.Memo*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: stellar_dotnet_sdk.federation
+  commentId: N:stellar_dotnet_sdk.federation
+  name: stellar_dotnet_sdk.federation
+  nameWithType: stellar_dotnet_sdk.federation
+  fullName: stellar_dotnet_sdk.federation
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.federation.FederationResponse.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.federation.FederationResponse.#ctor
+  name: FederationResponse
+  nameWithType: FederationResponse.FederationResponse
+  fullName: stellar_dotnet_sdk.federation.FederationResponse.FederationResponse
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.federation.FederationResponse.StellarAddress*
+  commentId: Overload:stellar_dotnet_sdk.federation.FederationResponse.StellarAddress
+  name: StellarAddress
+  nameWithType: FederationResponse.StellarAddress
+  fullName: stellar_dotnet_sdk.federation.FederationResponse.StellarAddress
+- uid: stellar_dotnet_sdk.federation.FederationResponse.AccountId*
+  commentId: Overload:stellar_dotnet_sdk.federation.FederationResponse.AccountId
+  name: AccountId
+  nameWithType: FederationResponse.AccountId
+  fullName: stellar_dotnet_sdk.federation.FederationResponse.AccountId
+- uid: stellar_dotnet_sdk.federation.FederationResponse.MemoType*
+  commentId: Overload:stellar_dotnet_sdk.federation.FederationResponse.MemoType
+  name: MemoType
+  nameWithType: FederationResponse.MemoType
+  fullName: stellar_dotnet_sdk.federation.FederationResponse.MemoType
+- uid: stellar_dotnet_sdk.federation.FederationResponse.Memo*
+  commentId: Overload:stellar_dotnet_sdk.federation.FederationResponse.Memo
+  name: Memo
+  nameWithType: FederationResponse.Memo
+  fullName: stellar_dotnet_sdk.federation.FederationResponse.Memo

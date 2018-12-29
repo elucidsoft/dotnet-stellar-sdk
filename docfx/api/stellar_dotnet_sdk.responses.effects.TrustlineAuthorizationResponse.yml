@@ -1,0 +1,406 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse
+  commentId: T:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse
+  id: TrustlineAuthorizationResponse
+  parent: stellar_dotnet_sdk.responses.effects
+  children:
+  - stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.#ctor
+  - stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.#ctor(stellar_dotnet_sdk.KeyPair,System.String,System.String)
+  - stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetCode
+  - stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetType
+  - stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.Trustor
+  langs:
+  - csharp
+  - vb
+  name: TrustlineAuthorizationResponse
+  nameWithType: TrustlineAuthorizationResponse
+  fullName: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/TrustlineAuthorizationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TrustlineAuthorizationResponse
+    path: ../stellar-dotnet-sdk/responses/effects/TrustlineAuthorizationResponse.cs
+    startLine: 5
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  example: []
+  syntax:
+    content: 'public class TrustlineAuthorizationResponse : EffectResponse, IPagingToken'
+    content.vb: >-
+      Public Class TrustlineAuthorizationResponse
+          Inherits EffectResponse
+          Implements IPagingToken
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.responses.Response
+  - stellar_dotnet_sdk.responses.effects.EffectResponse
+  derivedClasses:
+  - stellar_dotnet_sdk.responses.effects.TrustlineAuthorizedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.TrustlineDeauthorizedEffectResponse
+  implements:
+  - stellar_dotnet_sdk.responses.IPagingToken
+  inheritedMembers:
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+  - stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  - stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  - stellar_dotnet_sdk.responses.Response.RateLimitReset
+  - stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.#ctor
+  commentId: M:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse
+  langs:
+  - csharp
+  - vb
+  name: TrustlineAuthorizationResponse()
+  nameWithType: TrustlineAuthorizationResponse.TrustlineAuthorizationResponse()
+  fullName: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.TrustlineAuthorizationResponse()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/TrustlineAuthorizationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/effects/TrustlineAuthorizationResponse.cs
+    startLine: 7
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public TrustlineAuthorizationResponse()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.#ctor(stellar_dotnet_sdk.KeyPair,System.String,System.String)
+  commentId: M:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.#ctor(stellar_dotnet_sdk.KeyPair,System.String,System.String)
+  id: '#ctor(stellar_dotnet_sdk.KeyPair,System.String,System.String)'
+  parent: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse
+  langs:
+  - csharp
+  - vb
+  name: TrustlineAuthorizationResponse(KeyPair, String, String)
+  nameWithType: TrustlineAuthorizationResponse.TrustlineAuthorizationResponse(KeyPair, String, String)
+  fullName: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.TrustlineAuthorizationResponse(stellar_dotnet_sdk.KeyPair, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/TrustlineAuthorizationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/effects/TrustlineAuthorizationResponse.cs
+    startLine: 13
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  example: []
+  syntax:
+    content: public TrustlineAuthorizationResponse(KeyPair trustor, string assetType, string assetCode)
+    parameters:
+    - id: trustor
+      type: stellar_dotnet_sdk.KeyPair
+    - id: assetType
+      type: System.String
+    - id: assetCode
+      type: System.String
+    content.vb: Public Sub New(trustor As KeyPair, assetType As String, assetCode As String)
+  overload: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.Trustor
+  commentId: P:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.Trustor
+  id: Trustor
+  parent: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse
+  langs:
+  - csharp
+  - vb
+  name: Trustor
+  nameWithType: TrustlineAuthorizationResponse.Trustor
+  fullName: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.Trustor
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/TrustlineAuthorizationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Trustor
+    path: ../stellar-dotnet-sdk/responses/effects/TrustlineAuthorizationResponse.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public KeyPair Trustor { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+    content.vb: Public ReadOnly Property Trustor As KeyPair
+  overload: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.Trustor*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetType
+  commentId: P:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetType
+  id: AssetType
+  parent: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse
+  langs:
+  - csharp
+  - vb
+  name: AssetType
+  nameWithType: TrustlineAuthorizationResponse.AssetType
+  fullName: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetType
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/TrustlineAuthorizationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetType
+    path: ../stellar-dotnet-sdk/responses/effects/TrustlineAuthorizationResponse.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public string AssetType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssetType As String
+  overload: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetCode
+  commentId: P:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetCode
+  id: AssetCode
+  parent: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse
+  langs:
+  - csharp
+  - vb
+  name: AssetCode
+  nameWithType: TrustlineAuthorizationResponse.AssetCode
+  fullName: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetCode
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/TrustlineAuthorizationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetCode
+    path: ../stellar-dotnet-sdk/responses/effects/TrustlineAuthorizationResponse.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public string AssetCode { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssetCode As String
+  overload: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetCode*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: stellar_dotnet_sdk.responses.effects
+  commentId: N:stellar_dotnet_sdk.responses.effects
+  name: stellar_dotnet_sdk.responses.effects
+  nameWithType: stellar_dotnet_sdk.responses.effects
+  fullName: stellar_dotnet_sdk.responses.effects
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.Response
+  commentId: T:stellar_dotnet_sdk.responses.Response
+  parent: stellar_dotnet_sdk.responses
+  name: Response
+  nameWithType: Response
+  fullName: stellar_dotnet_sdk.responses.Response
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse
+  commentId: T:stellar_dotnet_sdk.responses.effects.EffectResponse
+  parent: stellar_dotnet_sdk.responses.effects
+  name: EffectResponse
+  nameWithType: EffectResponse
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse
+- uid: stellar_dotnet_sdk.responses.IPagingToken
+  commentId: T:stellar_dotnet_sdk.responses.IPagingToken
+  parent: stellar_dotnet_sdk.responses
+  name: IPagingToken
+  nameWithType: IPagingToken
+  fullName: stellar_dotnet_sdk.responses.IPagingToken
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: Id
+  nameWithType: EffectResponse.Id
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: Account
+  nameWithType: EffectResponse.Account
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: Type
+  nameWithType: EffectResponse.Type
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: TypeId
+  nameWithType: EffectResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: PagingToken
+  nameWithType: EffectResponse.PagingToken
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: Links
+  nameWithType: EffectResponse.Links
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: CreatedAt
+  nameWithType: EffectResponse.CreatedAt
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitLimit
+  nameWithType: Response.RateLimitLimit
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitRemaining
+  nameWithType: Response.RateLimitRemaining
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitReset
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitReset
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitReset
+  nameWithType: Response.RateLimitReset
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitReset
+- uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  commentId: M:stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  parent: stellar_dotnet_sdk.responses.Response
+  isExternal: true
+  name: SetHeaders(HttpResponseHeaders)
+  nameWithType: Response.SetHeaders(HttpResponseHeaders)
+  fullName: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.#ctor
+  name: TrustlineAuthorizationResponse
+  nameWithType: TrustlineAuthorizationResponse.TrustlineAuthorizationResponse
+  fullName: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.TrustlineAuthorizationResponse
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.Trustor*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.Trustor
+  name: Trustor
+  nameWithType: TrustlineAuthorizationResponse.Trustor
+  fullName: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.Trustor
+- uid: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetType*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetType
+  name: AssetType
+  nameWithType: TrustlineAuthorizationResponse.AssetType
+  fullName: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetType
+- uid: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetCode*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetCode
+  name: AssetCode
+  nameWithType: TrustlineAuthorizationResponse.AssetCode
+  fullName: stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse.AssetCode

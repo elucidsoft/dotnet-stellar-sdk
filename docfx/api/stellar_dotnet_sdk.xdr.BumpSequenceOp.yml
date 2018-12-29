@@ -1,0 +1,236 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceOp
+  commentId: T:stellar_dotnet_sdk.xdr.BumpSequenceOp
+  id: BumpSequenceOp
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.BumpSequenceOp.#ctor
+  - stellar_dotnet_sdk.xdr.BumpSequenceOp.BumpTo
+  - stellar_dotnet_sdk.xdr.BumpSequenceOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.BumpSequenceOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.BumpSequenceOp)
+  langs:
+  - csharp
+  - vb
+  name: BumpSequenceOp
+  nameWithType: BumpSequenceOp
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceOp
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/BumpSequenceOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BumpSequenceOp
+    path: ../stellar-dotnet-sdk/xdr/generated/BumpSequenceOp.cs
+    startLine: 15
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class BumpSequenceOp : object'
+    content.vb: >-
+      Public Class BumpSequenceOp
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceOp.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.BumpSequenceOp.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.BumpSequenceOp
+  langs:
+  - csharp
+  - vb
+  name: BumpSequenceOp()
+  nameWithType: BumpSequenceOp.BumpSequenceOp()
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceOp.BumpSequenceOp()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/BumpSequenceOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/BumpSequenceOp.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public BumpSequenceOp()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.BumpSequenceOp.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceOp.BumpTo
+  commentId: P:stellar_dotnet_sdk.xdr.BumpSequenceOp.BumpTo
+  id: BumpTo
+  parent: stellar_dotnet_sdk.xdr.BumpSequenceOp
+  langs:
+  - csharp
+  - vb
+  name: BumpTo
+  nameWithType: BumpSequenceOp.BumpTo
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceOp.BumpTo
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/BumpSequenceOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BumpTo
+    path: ../stellar-dotnet-sdk/xdr/generated/BumpSequenceOp.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public SequenceNumber BumpTo { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.SequenceNumber
+    content.vb: Public Property BumpTo As SequenceNumber
+  overload: stellar_dotnet_sdk.xdr.BumpSequenceOp.BumpTo*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.BumpSequenceOp)
+  commentId: M:stellar_dotnet_sdk.xdr.BumpSequenceOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.BumpSequenceOp)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.BumpSequenceOp)
+  parent: stellar_dotnet_sdk.xdr.BumpSequenceOp
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, BumpSequenceOp)
+  nameWithType: BumpSequenceOp.Encode(XdrDataOutputStream, BumpSequenceOp)
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.BumpSequenceOp)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/BumpSequenceOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/BumpSequenceOp.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, BumpSequenceOp encodedBumpSequenceOp)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedBumpSequenceOp
+      type: stellar_dotnet_sdk.xdr.BumpSequenceOp
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedBumpSequenceOp As BumpSequenceOp)
+  overload: stellar_dotnet_sdk.xdr.BumpSequenceOp.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.BumpSequenceOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.BumpSequenceOp
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: BumpSequenceOp.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/BumpSequenceOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/BumpSequenceOp.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static BumpSequenceOp Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.BumpSequenceOp
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As BumpSequenceOp
+  overload: stellar_dotnet_sdk.xdr.BumpSequenceOp.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceOp.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.BumpSequenceOp.#ctor
+  name: BumpSequenceOp
+  nameWithType: BumpSequenceOp.BumpSequenceOp
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceOp.BumpSequenceOp
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceOp.BumpTo*
+  commentId: Overload:stellar_dotnet_sdk.xdr.BumpSequenceOp.BumpTo
+  name: BumpTo
+  nameWithType: BumpSequenceOp.BumpTo
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceOp.BumpTo
+- uid: stellar_dotnet_sdk.xdr.SequenceNumber
+  commentId: T:stellar_dotnet_sdk.xdr.SequenceNumber
+  parent: stellar_dotnet_sdk.xdr
+  name: SequenceNumber
+  nameWithType: SequenceNumber
+  fullName: stellar_dotnet_sdk.xdr.SequenceNumber
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceOp.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.BumpSequenceOp.Encode
+  name: Encode
+  nameWithType: BumpSequenceOp.Encode
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceOp.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceOp
+  commentId: T:stellar_dotnet_sdk.xdr.BumpSequenceOp
+  parent: stellar_dotnet_sdk.xdr
+  name: BumpSequenceOp
+  nameWithType: BumpSequenceOp
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceOp
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceOp.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.BumpSequenceOp.Decode
+  name: Decode
+  nameWithType: BumpSequenceOp.Decode
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceOp.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

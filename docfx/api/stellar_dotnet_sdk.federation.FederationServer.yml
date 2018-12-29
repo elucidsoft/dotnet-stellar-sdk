@@ -1,0 +1,515 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.federation.FederationServer
+  commentId: T:stellar_dotnet_sdk.federation.FederationServer
+  id: FederationServer
+  parent: stellar_dotnet_sdk.federation
+  children:
+  - stellar_dotnet_sdk.federation.FederationServer.#ctor(System.String,System.String)
+  - stellar_dotnet_sdk.federation.FederationServer.#ctor(Uri,System.String)
+  - stellar_dotnet_sdk.federation.FederationServer.CreateForDomain(System.String)
+  - stellar_dotnet_sdk.federation.FederationServer.Dispose
+  - stellar_dotnet_sdk.federation.FederationServer.Domain
+  - stellar_dotnet_sdk.federation.FederationServer.HttpClient
+  - stellar_dotnet_sdk.federation.FederationServer.ResolveAddress(System.String)
+  - stellar_dotnet_sdk.federation.FederationServer.ServerUri
+  langs:
+  - csharp
+  - vb
+  name: FederationServer
+  nameWithType: FederationServer
+  fullName: stellar_dotnet_sdk.federation.FederationServer
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationServer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FederationServer
+    path: ../stellar-dotnet-sdk/federation/FederationServer.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  summary: "\nFederationServer handles a network connection to a\nfederation server (https://www.stellar.org/developers/learn/concepts/federation.html)\ninstance and exposes an interface for requests to that instance.\nFor resolving a stellar address without knowing which federation server\nto query use Federation#resolve(String).\nSee Federation docs: https://www.stellar.org/developers/learn/concepts/federation.html\n"
+  example: []
+  syntax:
+    content: 'public class FederationServer : IDisposable'
+    content.vb: >-
+      Public Class FederationServer
+          Inherits IDisposable
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.federation.FederationServer.#ctor(Uri,System.String)
+  commentId: M:stellar_dotnet_sdk.federation.FederationServer.#ctor(Uri,System.String)
+  id: '#ctor(Uri,System.String)'
+  parent: stellar_dotnet_sdk.federation.FederationServer
+  langs:
+  - csharp
+  - vb
+  name: FederationServer(Uri, String)
+  nameWithType: FederationServer.FederationServer(Uri, String)
+  fullName: stellar_dotnet_sdk.federation.FederationServer.FederationServer(Uri, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationServer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/federation/FederationServer.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  syntax:
+    content: public FederationServer(Uri serverUri, string domain)
+    parameters:
+    - id: serverUri
+      type: Uri
+    - id: domain
+      type: System.String
+    content.vb: Public Sub New(serverUri As Uri, domain As String)
+  overload: stellar_dotnet_sdk.federation.FederationServer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.federation.FederationServer.#ctor(System.String,System.String)
+  commentId: M:stellar_dotnet_sdk.federation.FederationServer.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: stellar_dotnet_sdk.federation.FederationServer
+  langs:
+  - csharp
+  - vb
+  name: FederationServer(String, String)
+  nameWithType: FederationServer.FederationServer(String, String)
+  fullName: stellar_dotnet_sdk.federation.FederationServer.FederationServer(System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationServer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/federation/FederationServer.cs
+    startLine: 36
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  syntax:
+    content: public FederationServer(string serverUri, string domain)
+    parameters:
+    - id: serverUri
+      type: System.String
+    - id: domain
+      type: System.String
+    content.vb: Public Sub New(serverUri As String, domain As String)
+  overload: stellar_dotnet_sdk.federation.FederationServer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.federation.FederationServer.ServerUri
+  commentId: P:stellar_dotnet_sdk.federation.FederationServer.ServerUri
+  id: ServerUri
+  parent: stellar_dotnet_sdk.federation.FederationServer
+  langs:
+  - csharp
+  - vb
+  name: ServerUri
+  nameWithType: FederationServer.ServerUri
+  fullName: stellar_dotnet_sdk.federation.FederationServer.ServerUri
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationServer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ServerUri
+    path: ../stellar-dotnet-sdk/federation/FederationServer.cs
+    startLine: 41
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  syntax:
+    content: public Uri ServerUri { get; }
+    parameters: []
+    return:
+      type: Uri
+    content.vb: Public ReadOnly Property ServerUri As Uri
+  overload: stellar_dotnet_sdk.federation.FederationServer.ServerUri*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.federation.FederationServer.Domain
+  commentId: P:stellar_dotnet_sdk.federation.FederationServer.Domain
+  id: Domain
+  parent: stellar_dotnet_sdk.federation.FederationServer
+  langs:
+  - csharp
+  - vb
+  name: Domain
+  nameWithType: FederationServer.Domain
+  fullName: stellar_dotnet_sdk.federation.FederationServer.Domain
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationServer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Domain
+    path: ../stellar-dotnet-sdk/federation/FederationServer.cs
+    startLine: 43
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  syntax:
+    content: public string Domain { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Domain As String
+  overload: stellar_dotnet_sdk.federation.FederationServer.Domain*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.federation.FederationServer.HttpClient
+  commentId: P:stellar_dotnet_sdk.federation.FederationServer.HttpClient
+  id: HttpClient
+  parent: stellar_dotnet_sdk.federation.FederationServer
+  langs:
+  - csharp
+  - vb
+  name: HttpClient
+  nameWithType: FederationServer.HttpClient
+  fullName: stellar_dotnet_sdk.federation.FederationServer.HttpClient
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationServer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: HttpClient
+    path: ../stellar-dotnet-sdk/federation/FederationServer.cs
+    startLine: 45
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  syntax:
+    content: public HttpClient HttpClient { set; }
+    parameters: []
+    return:
+      type: HttpClient
+    content.vb: Public WriteOnly Property HttpClient As HttpClient
+  overload: stellar_dotnet_sdk.federation.FederationServer.HttpClient*
+  modifiers.csharp:
+  - public
+  - set
+  modifiers.vb:
+  - Public
+  - WriteOnly
+- uid: stellar_dotnet_sdk.federation.FederationServer.CreateForDomain(System.String)
+  commentId: M:stellar_dotnet_sdk.federation.FederationServer.CreateForDomain(System.String)
+  id: CreateForDomain(System.String)
+  parent: stellar_dotnet_sdk.federation.FederationServer
+  langs:
+  - csharp
+  - vb
+  name: CreateForDomain(String)
+  nameWithType: FederationServer.CreateForDomain(String)
+  fullName: stellar_dotnet_sdk.federation.FederationServer.CreateForDomain(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationServer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CreateForDomain
+    path: ../stellar-dotnet-sdk/federation/FederationServer.cs
+    startLine: 59
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  summary: "\nreates a <xref href=\"stellar_dotnet_sdk.federation.FederationServer\" data-throw-if-not-resolved=\"false\"></xref> instance for a given domain.\nIt tries to find a federation server URL in stellar.toml file.\nSee: https://www.stellar.org/developers/learn/concepts/stellar-toml.html\n"
+  example: []
+  syntax:
+    content: public static Task<FederationServer> CreateForDomain(string domain)
+    parameters:
+    - id: domain
+      type: System.String
+      description: Domain to find a federation server for
+    return:
+      type: Task{stellar_dotnet_sdk.federation.FederationServer}
+      description: "\n<xref href=\"stellar_dotnet_sdk.federation.FederationServer\" data-throw-if-not-resolved=\"false\"></xref>\n"
+    content.vb: Public Shared Function CreateForDomain(domain As String) As Task(Of FederationServer)
+  overload: stellar_dotnet_sdk.federation.FederationServer.CreateForDomain*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.federation.FederationServer.ResolveAddress(System.String)
+  commentId: M:stellar_dotnet_sdk.federation.FederationServer.ResolveAddress(System.String)
+  id: ResolveAddress(System.String)
+  parent: stellar_dotnet_sdk.federation.FederationServer
+  langs:
+  - csharp
+  - vb
+  name: ResolveAddress(String)
+  nameWithType: FederationServer.ResolveAddress(String)
+  fullName: stellar_dotnet_sdk.federation.FederationServer.ResolveAddress(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationServer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ResolveAddress
+    path: ../stellar-dotnet-sdk/federation/FederationServer.cs
+    startLine: 90
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  syntax:
+    content: public Task<FederationResponse> ResolveAddress(string address)
+    parameters:
+    - id: address
+      type: System.String
+    return:
+      type: Task{stellar_dotnet_sdk.federation.FederationResponse}
+    content.vb: Public Function ResolveAddress(address As String) As Task(Of FederationResponse)
+  overload: stellar_dotnet_sdk.federation.FederationServer.ResolveAddress*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.federation.FederationServer.Dispose
+  commentId: M:stellar_dotnet_sdk.federation.FederationServer.Dispose
+  id: Dispose
+  parent: stellar_dotnet_sdk.federation.FederationServer
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: FederationServer.Dispose()
+  fullName: stellar_dotnet_sdk.federation.FederationServer.Dispose()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationServer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Dispose
+    path: ../stellar-dotnet-sdk/federation/FederationServer.cs
+    startLine: 121
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: stellar_dotnet_sdk.federation.FederationServer.Dispose*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.federation
+  commentId: N:stellar_dotnet_sdk.federation
+  name: stellar_dotnet_sdk.federation
+  nameWithType: stellar_dotnet_sdk.federation
+  fullName: stellar_dotnet_sdk.federation
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.federation.FederationServer.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.federation.FederationServer.#ctor
+  name: FederationServer
+  nameWithType: FederationServer.FederationServer
+  fullName: stellar_dotnet_sdk.federation.FederationServer.FederationServer
+- uid: Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: Uri
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.federation.FederationServer.ServerUri*
+  commentId: Overload:stellar_dotnet_sdk.federation.FederationServer.ServerUri
+  name: ServerUri
+  nameWithType: FederationServer.ServerUri
+  fullName: stellar_dotnet_sdk.federation.FederationServer.ServerUri
+- uid: stellar_dotnet_sdk.federation.FederationServer.Domain*
+  commentId: Overload:stellar_dotnet_sdk.federation.FederationServer.Domain
+  name: Domain
+  nameWithType: FederationServer.Domain
+  fullName: stellar_dotnet_sdk.federation.FederationServer.Domain
+- uid: stellar_dotnet_sdk.federation.FederationServer.HttpClient*
+  commentId: Overload:stellar_dotnet_sdk.federation.FederationServer.HttpClient
+  name: HttpClient
+  nameWithType: FederationServer.HttpClient
+  fullName: stellar_dotnet_sdk.federation.FederationServer.HttpClient
+- uid: HttpClient
+  isExternal: true
+  name: HttpClient
+  nameWithType: HttpClient
+  fullName: HttpClient
+- uid: stellar_dotnet_sdk.federation.FederationServer
+  commentId: T:stellar_dotnet_sdk.federation.FederationServer
+  name: FederationServer
+  nameWithType: FederationServer
+  fullName: stellar_dotnet_sdk.federation.FederationServer
+- uid: stellar_dotnet_sdk.federation.FederationServer.CreateForDomain*
+  commentId: Overload:stellar_dotnet_sdk.federation.FederationServer.CreateForDomain
+  name: CreateForDomain
+  nameWithType: FederationServer.CreateForDomain
+  fullName: stellar_dotnet_sdk.federation.FederationServer.CreateForDomain
+- uid: Task{stellar_dotnet_sdk.federation.FederationServer}
+  commentId: '!:Task{stellar_dotnet_sdk.federation.FederationServer}'
+  definition: Task`1
+  name: Task<FederationServer>
+  nameWithType: Task<FederationServer>
+  fullName: Task<stellar_dotnet_sdk.federation.FederationServer>
+  nameWithType.vb: Task(Of FederationServer)
+  fullName.vb: Task(Of stellar_dotnet_sdk.federation.FederationServer)
+  name.vb: Task(Of FederationServer)
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.federation.FederationServer
+    name: FederationServer
+    nameWithType: FederationServer
+    fullName: stellar_dotnet_sdk.federation.FederationServer
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.federation.FederationServer
+    name: FederationServer
+    nameWithType: FederationServer
+    fullName: stellar_dotnet_sdk.federation.FederationServer
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Task`1
+  isExternal: true
+  name: Task<>
+  nameWithType: Task<>
+  fullName: Task<>
+  nameWithType.vb: Task(Of )
+  fullName.vb: Task(Of )
+  name.vb: Task(Of )
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.federation.FederationServer.ResolveAddress*
+  commentId: Overload:stellar_dotnet_sdk.federation.FederationServer.ResolveAddress
+  name: ResolveAddress
+  nameWithType: FederationServer.ResolveAddress
+  fullName: stellar_dotnet_sdk.federation.FederationServer.ResolveAddress
+- uid: Task{stellar_dotnet_sdk.federation.FederationResponse}
+  commentId: '!:Task{stellar_dotnet_sdk.federation.FederationResponse}'
+  definition: Task`1
+  name: Task<FederationResponse>
+  nameWithType: Task<FederationResponse>
+  fullName: Task<stellar_dotnet_sdk.federation.FederationResponse>
+  nameWithType.vb: Task(Of FederationResponse)
+  fullName.vb: Task(Of stellar_dotnet_sdk.federation.FederationResponse)
+  name.vb: Task(Of FederationResponse)
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.federation.FederationResponse
+    name: FederationResponse
+    nameWithType: FederationResponse
+    fullName: stellar_dotnet_sdk.federation.FederationResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.federation.FederationResponse
+    name: FederationResponse
+    nameWithType: FederationResponse
+    fullName: stellar_dotnet_sdk.federation.FederationResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.federation.FederationServer.Dispose*
+  commentId: Overload:stellar_dotnet_sdk.federation.FederationServer.Dispose
+  name: Dispose
+  nameWithType: FederationServer.Dispose
+  fullName: stellar_dotnet_sdk.federation.FederationServer.Dispose

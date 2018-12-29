@@ -1,0 +1,236 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.AllowTrustResult
+  commentId: T:stellar_dotnet_sdk.xdr.AllowTrustResult
+  id: AllowTrustResult
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.AllowTrustResult.#ctor
+  - stellar_dotnet_sdk.xdr.AllowTrustResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.AllowTrustResult.Discriminant
+  - stellar_dotnet_sdk.xdr.AllowTrustResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AllowTrustResult)
+  langs:
+  - csharp
+  - vb
+  name: AllowTrustResult
+  nameWithType: AllowTrustResult
+  fullName: stellar_dotnet_sdk.xdr.AllowTrustResult
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AllowTrustResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AllowTrustResult
+    path: ../stellar-dotnet-sdk/xdr/generated/AllowTrustResult.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class AllowTrustResult : object'
+    content.vb: >-
+      Public Class AllowTrustResult
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.AllowTrustResult.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.AllowTrustResult.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.AllowTrustResult
+  langs:
+  - csharp
+  - vb
+  name: AllowTrustResult()
+  nameWithType: AllowTrustResult.AllowTrustResult()
+  fullName: stellar_dotnet_sdk.xdr.AllowTrustResult.AllowTrustResult()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AllowTrustResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/AllowTrustResult.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AllowTrustResult()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.AllowTrustResult.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.AllowTrustResult.Discriminant
+  commentId: P:stellar_dotnet_sdk.xdr.AllowTrustResult.Discriminant
+  id: Discriminant
+  parent: stellar_dotnet_sdk.xdr.AllowTrustResult
+  langs:
+  - csharp
+  - vb
+  name: Discriminant
+  nameWithType: AllowTrustResult.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.AllowTrustResult.Discriminant
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AllowTrustResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Discriminant
+    path: ../stellar-dotnet-sdk/xdr/generated/AllowTrustResult.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AllowTrustResultCode Discriminant { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.AllowTrustResultCode
+    content.vb: Public Property Discriminant As AllowTrustResultCode
+  overload: stellar_dotnet_sdk.xdr.AllowTrustResult.Discriminant*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.AllowTrustResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AllowTrustResult)
+  commentId: M:stellar_dotnet_sdk.xdr.AllowTrustResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AllowTrustResult)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AllowTrustResult)
+  parent: stellar_dotnet_sdk.xdr.AllowTrustResult
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, AllowTrustResult)
+  nameWithType: AllowTrustResult.Encode(XdrDataOutputStream, AllowTrustResult)
+  fullName: stellar_dotnet_sdk.xdr.AllowTrustResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.AllowTrustResult)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AllowTrustResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/AllowTrustResult.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, AllowTrustResult encodedAllowTrustResult)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedAllowTrustResult
+      type: stellar_dotnet_sdk.xdr.AllowTrustResult
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedAllowTrustResult As AllowTrustResult)
+  overload: stellar_dotnet_sdk.xdr.AllowTrustResult.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.AllowTrustResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.AllowTrustResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.AllowTrustResult
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: AllowTrustResult.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.AllowTrustResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AllowTrustResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/AllowTrustResult.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static AllowTrustResult Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.AllowTrustResult
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As AllowTrustResult
+  overload: stellar_dotnet_sdk.xdr.AllowTrustResult.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.AllowTrustResult.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AllowTrustResult.#ctor
+  name: AllowTrustResult
+  nameWithType: AllowTrustResult.AllowTrustResult
+  fullName: stellar_dotnet_sdk.xdr.AllowTrustResult.AllowTrustResult
+- uid: stellar_dotnet_sdk.xdr.AllowTrustResult.Discriminant*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AllowTrustResult.Discriminant
+  name: Discriminant
+  nameWithType: AllowTrustResult.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.AllowTrustResult.Discriminant
+- uid: stellar_dotnet_sdk.xdr.AllowTrustResultCode
+  commentId: T:stellar_dotnet_sdk.xdr.AllowTrustResultCode
+  parent: stellar_dotnet_sdk.xdr
+  name: AllowTrustResultCode
+  nameWithType: AllowTrustResultCode
+  fullName: stellar_dotnet_sdk.xdr.AllowTrustResultCode
+- uid: stellar_dotnet_sdk.xdr.AllowTrustResult.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AllowTrustResult.Encode
+  name: Encode
+  nameWithType: AllowTrustResult.Encode
+  fullName: stellar_dotnet_sdk.xdr.AllowTrustResult.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.AllowTrustResult
+  commentId: T:stellar_dotnet_sdk.xdr.AllowTrustResult
+  parent: stellar_dotnet_sdk.xdr
+  name: AllowTrustResult
+  nameWithType: AllowTrustResult
+  fullName: stellar_dotnet_sdk.xdr.AllowTrustResult
+- uid: stellar_dotnet_sdk.xdr.AllowTrustResult.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AllowTrustResult.Decode
+  name: Decode
+  nameWithType: AllowTrustResult.Decode
+  fullName: stellar_dotnet_sdk.xdr.AllowTrustResult.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

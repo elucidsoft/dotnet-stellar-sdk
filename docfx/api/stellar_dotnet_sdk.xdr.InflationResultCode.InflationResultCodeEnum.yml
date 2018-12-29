@@ -1,0 +1,114 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum
+  id: InflationResultCode.InflationResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum.INFLATION_NOT_TIME
+  - stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum.INFLATION_SUCCESS
+  langs:
+  - csharp
+  - vb
+  name: InflationResultCode.InflationResultCodeEnum
+  nameWithType: InflationResultCode.InflationResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/InflationResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InflationResultCodeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/InflationResultCode.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum InflationResultCodeEnum : int'
+    content.vb: Public Enum InflationResultCodeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum.INFLATION_SUCCESS
+  commentId: F:stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum.INFLATION_SUCCESS
+  id: INFLATION_SUCCESS
+  parent: stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: INFLATION_SUCCESS
+  nameWithType: InflationResultCode.InflationResultCodeEnum.INFLATION_SUCCESS
+  fullName: stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum.INFLATION_SUCCESS
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/InflationResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: INFLATION_SUCCESS
+    path: ../stellar-dotnet-sdk/xdr/generated/InflationResultCode.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: INFLATION_SUCCESS = null
+    return:
+      type: stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum
+    content.vb: INFLATION_SUCCESS = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum.INFLATION_NOT_TIME
+  commentId: F:stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum.INFLATION_NOT_TIME
+  id: INFLATION_NOT_TIME
+  parent: stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: INFLATION_NOT_TIME
+  nameWithType: InflationResultCode.InflationResultCodeEnum.INFLATION_NOT_TIME
+  fullName: stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum.INFLATION_NOT_TIME
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/InflationResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: INFLATION_NOT_TIME
+    path: ../stellar-dotnet-sdk/xdr/generated/InflationResultCode.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: INFLATION_NOT_TIME = null
+    return:
+      type: stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum
+    content.vb: INFLATION_NOT_TIME = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: InflationResultCode.InflationResultCodeEnum
+  nameWithType: InflationResultCode.InflationResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.InflationResultCode.InflationResultCodeEnum

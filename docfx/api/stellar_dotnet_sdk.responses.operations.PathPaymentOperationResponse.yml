@@ -1,0 +1,889 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  commentId: T:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  id: PathPaymentOperationResponse
+  parent: stellar_dotnet_sdk.responses.operations
+  children:
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor(System.String,System.String,stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.String,System.String,System.String,System.String)
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Amount
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Asset
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetCode
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetIssuer
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetType
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.From
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAsset
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetCode
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetIssuer
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetType
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceMax
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.To
+  - stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.TypeId
+  langs:
+  - csharp
+  - vb
+  name: PathPaymentOperationResponse
+  nameWithType: PathPaymentOperationResponse
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PathPaymentOperationResponse
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 11
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nSends an amount in a specific asset to a destination account through a path of offers. This allows the asset sent (e.g., 450 XLM) to be different from the asset received (e.g, 6 BTC).\nSee: https://www.stellar.org/developers/horizon/reference/resources/operation.html\n<xref href=\"stellar_dotnetcore_sdk.requests.OperationsRequestBuilder\" data-throw-if-not-resolved=\"false\"></xref>\n<xref href=\"stellar_dotnetcore_sdk.Server\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: 'public class PathPaymentOperationResponse : OperationResponse, IPagingToken'
+    content.vb: >-
+      Public Class PathPaymentOperationResponse
+          Inherits OperationResponse
+          Implements IPagingToken
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.responses.Response
+  - stellar_dotnet_sdk.responses.operations.OperationResponse
+  implements:
+  - stellar_dotnet_sdk.responses.IPagingToken
+  inheritedMembers:
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.Id
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.Type
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.Links
+  - stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  - stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  - stellar_dotnet_sdk.responses.Response.RateLimitReset
+  - stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor
+  commentId: M:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: PathPaymentOperationResponse()
+  nameWithType: PathPaymentOperationResponse.PathPaymentOperationResponse()
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.PathPaymentOperationResponse()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 13
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public PathPaymentOperationResponse()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor(System.String,System.String,stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.String,System.String,System.String,System.String)
+  commentId: M:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor(System.String,System.String,stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.String,System.String,System.String,System.String)'
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: PathPaymentOperationResponse(String, String, KeyPair, KeyPair, String, String, String, String, String, String)
+  nameWithType: PathPaymentOperationResponse.PathPaymentOperationResponse(String, String, KeyPair, KeyPair, String, String, String, String, String, String)
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.PathPaymentOperationResponse(System.String, System.String, stellar_dotnet_sdk.KeyPair, stellar_dotnet_sdk.KeyPair, System.String, System.String, System.String, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nSends an amount in a specific asset to a destination account through a path of offers. This allows the asset sent (e.g., 450 XLM) to be different from the asset received (e.g, 6 BTC).\n"
+  example: []
+  syntax:
+    content: public PathPaymentOperationResponse(string amount, string sourceMax, KeyPair from, KeyPair to, string assetType, string assetCode, string assetIssuer, string sendAssetType, string sendAssetCode, string sendAssetIssuer)
+    parameters:
+    - id: amount
+      type: System.String
+      description: The amount of destination asset the destination account receives.
+    - id: sourceMax
+      type: System.String
+      description: The amount of source asset deducted from senders account.
+    - id: from
+      type: stellar_dotnet_sdk.KeyPair
+      description: Account address that is sending the payment.
+    - id: to
+      type: stellar_dotnet_sdk.KeyPair
+      description: Account address that receives the payment.
+    - id: assetType
+      type: System.String
+      description: Account address that receives the payment.
+    - id: assetCode
+      type: System.String
+      description: The asset code (Alpha4, Alpha12, etc.)
+    - id: assetIssuer
+      type: System.String
+      description: The account that created the asset
+    - id: sendAssetType
+      type: System.String
+      description: The asset type (USD, BTC, etc.) to be sent.
+    - id: sendAssetCode
+      type: System.String
+      description: The asset code (Alpha4, Alpha12, etc.) to be sent
+    - id: sendAssetIssuer
+      type: System.String
+      description: The account that created the asset to be sent.
+    content.vb: Public Sub New(amount As String, sourceMax As String, from As KeyPair, to As KeyPair, assetType As String, assetCode As String, assetIssuer As String, sendAssetType As String, sendAssetCode As String, sendAssetIssuer As String)
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.TypeId
+  commentId: P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.TypeId
+  id: TypeId
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: TypeId
+  nameWithType: PathPaymentOperationResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.TypeId
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TypeId
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 46
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public override int TypeId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Overrides ReadOnly Property TypeId As Integer
+  overridden: stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.TypeId*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Amount
+  commentId: P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Amount
+  id: Amount
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: Amount
+  nameWithType: PathPaymentOperationResponse.Amount
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Amount
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Amount
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 51
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nThe amount of destination asset the destination account receives.\n"
+  example: []
+  syntax:
+    content: public string Amount { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Amount As String
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Amount*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceMax
+  commentId: P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceMax
+  id: SourceMax
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: SourceMax
+  nameWithType: PathPaymentOperationResponse.SourceMax
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceMax
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SourceMax
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 57
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nThe amount of source asset deducted from senders account.\n"
+  example: []
+  syntax:
+    content: public string SourceMax { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property SourceMax As String
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceMax*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.From
+  commentId: P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.From
+  id: From
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: From
+  nameWithType: PathPaymentOperationResponse.From
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.From
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: From
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 63
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nAccount address that is sending the payment.\n"
+  example: []
+  syntax:
+    content: public KeyPair From { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+    content.vb: Public ReadOnly Property From As KeyPair
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.From*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.To
+  commentId: P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.To
+  id: To
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: To
+  nameWithType: PathPaymentOperationResponse.To
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.To
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: To
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 70
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nAccount address that receives the payment.\n"
+  example: []
+  syntax:
+    content: public KeyPair To { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+    content.vb: Public ReadOnly Property To As KeyPair
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.To*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetType
+  commentId: P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetType
+  id: AssetType
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: AssetType
+  nameWithType: PathPaymentOperationResponse.AssetType
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetType
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetType
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 77
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nAccount address that receives the payment.\n"
+  example: []
+  syntax:
+    content: public string AssetType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssetType As String
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetCode
+  commentId: P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetCode
+  id: AssetCode
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: AssetCode
+  nameWithType: PathPaymentOperationResponse.AssetCode
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetCode
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetCode
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 83
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nThe asset code (Alpha4, Alpha12, etc.)\n"
+  example: []
+  syntax:
+    content: public string AssetCode { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssetCode As String
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetCode*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetIssuer
+  commentId: P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetIssuer
+  id: AssetIssuer
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: AssetIssuer
+  nameWithType: PathPaymentOperationResponse.AssetIssuer
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetIssuer
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetIssuer
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 89
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nThe account that created the asset\n"
+  example: []
+  syntax:
+    content: public string AssetIssuer { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssetIssuer As String
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetIssuer*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetType
+  commentId: P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetType
+  id: SendAssetType
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: SendAssetType
+  nameWithType: PathPaymentOperationResponse.SendAssetType
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetType
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SendAssetType
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 95
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nThe asset type (USD, BTC, etc.) to be sent.\n"
+  example: []
+  syntax:
+    content: public string SendAssetType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property SendAssetType As String
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetCode
+  commentId: P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetCode
+  id: SendAssetCode
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: SendAssetCode
+  nameWithType: PathPaymentOperationResponse.SendAssetCode
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetCode
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SendAssetCode
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 101
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nThe asset code (Alpha4, Alpha12, etc.) to be sent\n"
+  example: []
+  syntax:
+    content: public string SendAssetCode { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property SendAssetCode As String
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetCode*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetIssuer
+  commentId: P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetIssuer
+  id: SendAssetIssuer
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: SendAssetIssuer
+  nameWithType: PathPaymentOperationResponse.SendAssetIssuer
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetIssuer
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SendAssetIssuer
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 107
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nThe account that created the asset to be sent.\n"
+  example: []
+  syntax:
+    content: public string SendAssetIssuer { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property SendAssetIssuer As String
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetIssuer*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Asset
+  commentId: P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Asset
+  id: Asset
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: Asset
+  nameWithType: PathPaymentOperationResponse.Asset
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Asset
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Asset
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 113
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nAsset from source to send.\n"
+  example: []
+  syntax:
+    content: public Asset Asset { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.Asset
+    content.vb: Public ReadOnly Property Asset As Asset
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Asset*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAsset
+  commentId: P:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAsset
+  id: SendAsset
+  parent: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: SendAsset
+  nameWithType: PathPaymentOperationResponse.SendAsset
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAsset
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SendAsset
+    path: ../stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs
+    startLine: 118
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nAsset to destination.\n"
+  example: []
+  syntax:
+    content: public Asset SendAsset { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.Asset
+    content.vb: Public ReadOnly Property SendAsset As Asset
+  overload: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAsset*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: stellar_dotnetcore_sdk.requests.OperationsRequestBuilder
+  commentId: T:stellar_dotnetcore_sdk.requests.OperationsRequestBuilder
+  isExternal: true
+- uid: stellar_dotnetcore_sdk.Server
+  commentId: T:stellar_dotnetcore_sdk.Server
+  isExternal: true
+- uid: stellar_dotnet_sdk.responses.operations
+  commentId: N:stellar_dotnet_sdk.responses.operations
+  name: stellar_dotnet_sdk.responses.operations
+  nameWithType: stellar_dotnet_sdk.responses.operations
+  fullName: stellar_dotnet_sdk.responses.operations
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.Response
+  commentId: T:stellar_dotnet_sdk.responses.Response
+  parent: stellar_dotnet_sdk.responses
+  name: Response
+  nameWithType: Response
+  fullName: stellar_dotnet_sdk.responses.Response
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse
+  commentId: T:stellar_dotnet_sdk.responses.operations.OperationResponse
+  parent: stellar_dotnet_sdk.responses.operations
+  name: OperationResponse
+  nameWithType: OperationResponse
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse
+- uid: stellar_dotnet_sdk.responses.IPagingToken
+  commentId: T:stellar_dotnet_sdk.responses.IPagingToken
+  parent: stellar_dotnet_sdk.responses
+  name: IPagingToken
+  nameWithType: IPagingToken
+  fullName: stellar_dotnet_sdk.responses.IPagingToken
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.Id
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.Id
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: Id
+  nameWithType: OperationResponse.Id
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.Id
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: SourceAccount
+  nameWithType: OperationResponse.SourceAccount
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: PagingToken
+  nameWithType: OperationResponse.PagingToken
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.Type
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.Type
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: Type
+  nameWithType: OperationResponse.Type
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.Type
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: CreatedAt
+  nameWithType: OperationResponse.CreatedAt
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: TransactionHash
+  nameWithType: OperationResponse.TransactionHash
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.Links
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.Links
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: Links
+  nameWithType: OperationResponse.Links
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.Links
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitLimit
+  nameWithType: Response.RateLimitLimit
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitRemaining
+  nameWithType: Response.RateLimitRemaining
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitReset
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitReset
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitReset
+  nameWithType: Response.RateLimitReset
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitReset
+- uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  commentId: M:stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  parent: stellar_dotnet_sdk.responses.Response
+  isExternal: true
+  name: SetHeaders(HttpResponseHeaders)
+  nameWithType: Response.SetHeaders(HttpResponseHeaders)
+  fullName: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor
+  name: PathPaymentOperationResponse
+  nameWithType: PathPaymentOperationResponse.PathPaymentOperationResponse
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.PathPaymentOperationResponse
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: TypeId
+  nameWithType: OperationResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.TypeId*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.TypeId
+  name: TypeId
+  nameWithType: PathPaymentOperationResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.TypeId
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Amount*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Amount
+  name: Amount
+  nameWithType: PathPaymentOperationResponse.Amount
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Amount
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceMax*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceMax
+  name: SourceMax
+  nameWithType: PathPaymentOperationResponse.SourceMax
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceMax
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.From*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.From
+  name: From
+  nameWithType: PathPaymentOperationResponse.From
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.From
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.To*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.To
+  name: To
+  nameWithType: PathPaymentOperationResponse.To
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.To
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetType*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetType
+  name: AssetType
+  nameWithType: PathPaymentOperationResponse.AssetType
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetType
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetCode*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetCode
+  name: AssetCode
+  nameWithType: PathPaymentOperationResponse.AssetCode
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetCode
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetIssuer*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetIssuer
+  name: AssetIssuer
+  nameWithType: PathPaymentOperationResponse.AssetIssuer
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetIssuer
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetType*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetType
+  name: SendAssetType
+  nameWithType: PathPaymentOperationResponse.SendAssetType
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetType
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetCode*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetCode
+  name: SendAssetCode
+  nameWithType: PathPaymentOperationResponse.SendAssetCode
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetCode
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetIssuer*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetIssuer
+  name: SendAssetIssuer
+  nameWithType: PathPaymentOperationResponse.SendAssetIssuer
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetIssuer
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Asset*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Asset
+  name: Asset
+  nameWithType: PathPaymentOperationResponse.Asset
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Asset
+- uid: stellar_dotnet_sdk.Asset
+  commentId: T:stellar_dotnet_sdk.Asset
+  parent: stellar_dotnet_sdk
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.Asset
+- uid: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAsset*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAsset
+  name: SendAsset
+  nameWithType: PathPaymentOperationResponse.SendAsset
+  fullName: stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAsset

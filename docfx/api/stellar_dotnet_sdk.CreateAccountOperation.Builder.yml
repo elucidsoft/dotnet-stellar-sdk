@@ -1,0 +1,239 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.CreateAccountOperation.Builder
+  commentId: T:stellar_dotnet_sdk.CreateAccountOperation.Builder
+  id: CreateAccountOperation.Builder
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.CreateAccountOperation.Builder.#ctor(stellar_dotnet_sdk.KeyPair,System.String)
+  - stellar_dotnet_sdk.CreateAccountOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.CreateAccountOp)
+  - stellar_dotnet_sdk.CreateAccountOperation.Builder.Build
+  - stellar_dotnet_sdk.CreateAccountOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  langs:
+  - csharp
+  - vb
+  name: CreateAccountOperation.Builder
+  nameWithType: CreateAccountOperation.Builder
+  fullName: stellar_dotnet_sdk.CreateAccountOperation.Builder
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/CreateAccountOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Builder
+    path: ../stellar-dotnet-sdk/CreateAccountOperation.cs
+    startLine: 52
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBuilds a <xref href=\"stellar_dotnet_sdk.CreateAccountOperation\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public class Builder : object'
+    content.vb: >-
+      Public Class Builder
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.CreateAccountOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.CreateAccountOp)
+  commentId: M:stellar_dotnet_sdk.CreateAccountOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.CreateAccountOp)
+  id: '#ctor(stellar_dotnet_sdk.xdr.CreateAccountOp)'
+  parent: stellar_dotnet_sdk.CreateAccountOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder(CreateAccountOp)
+  nameWithType: CreateAccountOperation.Builder.Builder(CreateAccountOp)
+  fullName: stellar_dotnet_sdk.CreateAccountOperation.Builder.Builder(stellar_dotnet_sdk.xdr.CreateAccountOp)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/CreateAccountOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/CreateAccountOperation.cs
+    startLine: 59
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public Builder(CreateAccountOp createAccountOp)
+    parameters:
+    - id: createAccountOp
+      type: stellar_dotnet_sdk.xdr.CreateAccountOp
+    content.vb: Public Sub New(createAccountOp As CreateAccountOp)
+  overload: stellar_dotnet_sdk.CreateAccountOperation.Builder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.CreateAccountOperation.Builder.#ctor(stellar_dotnet_sdk.KeyPair,System.String)
+  commentId: M:stellar_dotnet_sdk.CreateAccountOperation.Builder.#ctor(stellar_dotnet_sdk.KeyPair,System.String)
+  id: '#ctor(stellar_dotnet_sdk.KeyPair,System.String)'
+  parent: stellar_dotnet_sdk.CreateAccountOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder(KeyPair, String)
+  nameWithType: CreateAccountOperation.Builder.Builder(KeyPair, String)
+  fullName: stellar_dotnet_sdk.CreateAccountOperation.Builder.Builder(stellar_dotnet_sdk.KeyPair, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/CreateAccountOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/CreateAccountOperation.cs
+    startLine: 65
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public Builder(KeyPair destination, string startingBalance)
+    parameters:
+    - id: destination
+      type: stellar_dotnet_sdk.KeyPair
+    - id: startingBalance
+      type: System.String
+    content.vb: Public Sub New(destination As KeyPair, startingBalance As String)
+  overload: stellar_dotnet_sdk.CreateAccountOperation.Builder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.CreateAccountOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.CreateAccountOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  id: SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  parent: stellar_dotnet_sdk.CreateAccountOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetSourceAccount(KeyPair)
+  nameWithType: CreateAccountOperation.Builder.SetSourceAccount(KeyPair)
+  fullName: stellar_dotnet_sdk.CreateAccountOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/CreateAccountOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetSourceAccount
+    path: ../stellar-dotnet-sdk/CreateAccountOperation.cs
+    startLine: 71
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public CreateAccountOperation.Builder SetSourceAccount(KeyPair account)
+    parameters:
+    - id: account
+      type: stellar_dotnet_sdk.KeyPair
+    return:
+      type: stellar_dotnet_sdk.CreateAccountOperation.Builder
+    content.vb: Public Function SetSourceAccount(account As KeyPair) As CreateAccountOperation.Builder
+  overload: stellar_dotnet_sdk.CreateAccountOperation.Builder.SetSourceAccount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.CreateAccountOperation.Builder.Build
+  commentId: M:stellar_dotnet_sdk.CreateAccountOperation.Builder.Build
+  id: Build
+  parent: stellar_dotnet_sdk.CreateAccountOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Build()
+  nameWithType: CreateAccountOperation.Builder.Build()
+  fullName: stellar_dotnet_sdk.CreateAccountOperation.Builder.Build()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/CreateAccountOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Build
+    path: ../stellar-dotnet-sdk/CreateAccountOperation.cs
+    startLine: 77
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public CreateAccountOperation Build()
+    return:
+      type: stellar_dotnet_sdk.CreateAccountOperation
+    content.vb: Public Function Build As CreateAccountOperation
+  overload: stellar_dotnet_sdk.CreateAccountOperation.Builder.Build*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.CreateAccountOperation
+  commentId: T:stellar_dotnet_sdk.CreateAccountOperation
+  parent: stellar_dotnet_sdk
+  name: CreateAccountOperation
+  nameWithType: CreateAccountOperation
+  fullName: stellar_dotnet_sdk.CreateAccountOperation
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.CreateAccountOperation.Builder.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.CreateAccountOperation.Builder.#ctor
+  name: Builder
+  nameWithType: CreateAccountOperation.Builder.Builder
+  fullName: stellar_dotnet_sdk.CreateAccountOperation.Builder.Builder
+- uid: stellar_dotnet_sdk.xdr.CreateAccountOp
+  commentId: T:stellar_dotnet_sdk.xdr.CreateAccountOp
+  parent: stellar_dotnet_sdk.xdr
+  name: CreateAccountOp
+  nameWithType: CreateAccountOp
+  fullName: stellar_dotnet_sdk.xdr.CreateAccountOp
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.CreateAccountOperation.Builder.SetSourceAccount*
+  commentId: Overload:stellar_dotnet_sdk.CreateAccountOperation.Builder.SetSourceAccount
+  name: SetSourceAccount
+  nameWithType: CreateAccountOperation.Builder.SetSourceAccount
+  fullName: stellar_dotnet_sdk.CreateAccountOperation.Builder.SetSourceAccount
+- uid: stellar_dotnet_sdk.CreateAccountOperation.Builder
+  commentId: T:stellar_dotnet_sdk.CreateAccountOperation.Builder
+  parent: stellar_dotnet_sdk
+  name: CreateAccountOperation.Builder
+  nameWithType: CreateAccountOperation.Builder
+  fullName: stellar_dotnet_sdk.CreateAccountOperation.Builder
+- uid: stellar_dotnet_sdk.CreateAccountOperation.Builder.Build*
+  commentId: Overload:stellar_dotnet_sdk.CreateAccountOperation.Builder.Build
+  name: Build
+  nameWithType: CreateAccountOperation.Builder.Build
+  fullName: stellar_dotnet_sdk.CreateAccountOperation.Builder.Build

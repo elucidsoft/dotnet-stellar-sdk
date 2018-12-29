@@ -1,0 +1,80 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum
+  commentId: T:stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum
+  id: TrustLineFlags.TrustLineFlagsEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_FLAG
+  langs:
+  - csharp
+  - vb
+  name: TrustLineFlags.TrustLineFlagsEnum
+  nameWithType: TrustLineFlags.TrustLineFlagsEnum
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TrustLineFlagsEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum TrustLineFlagsEnum : int'
+    content.vb: Public Enum TrustLineFlagsEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_FLAG
+  commentId: F:stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_FLAG
+  id: AUTHORIZED_FLAG
+  parent: stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum
+  langs:
+  - csharp
+  - vb
+  name: AUTHORIZED_FLAG
+  nameWithType: TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_FLAG
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_FLAG
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AUTHORIZED_FLAG
+    path: ../stellar-dotnet-sdk/xdr/generated/TrustLineFlags.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: AUTHORIZED_FLAG = null
+    return:
+      type: stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum
+    content.vb: AUTHORIZED_FLAG = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum
+  commentId: T:stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: TrustLineFlags.TrustLineFlagsEnum
+  nameWithType: TrustLineFlags.TrustLineFlagsEnum
+  fullName: stellar_dotnet_sdk.xdr.TrustLineFlags.TrustLineFlagsEnum

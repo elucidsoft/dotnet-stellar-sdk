@@ -1,0 +1,753 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  commentId: T:stellar_dotnet_sdk.SetOptionsOperation.Builder
+  id: SetOptionsOperation.Builder
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.SetOptionsOperation.Builder.#ctor
+  - stellar_dotnet_sdk.SetOptionsOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.SetOptionsOp)
+  - stellar_dotnet_sdk.SetOptionsOperation.Builder.Build
+  - stellar_dotnet_sdk.SetOptionsOperation.Builder.SetClearFlags(System.Int32)
+  - stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHighThreshold(System.Int32)
+  - stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHomeDomain(System.String)
+  - stellar_dotnet_sdk.SetOptionsOperation.Builder.SetInflationDestination(stellar_dotnet_sdk.KeyPair)
+  - stellar_dotnet_sdk.SetOptionsOperation.Builder.SetLowThreshold(System.Int32)
+  - stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMasterKeyWeight(System.Int32)
+  - stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMediumThreshold(System.Int32)
+  - stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSetFlags(System.Int32)
+  - stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSigner(stellar_dotnet_sdk.xdr.SignerKey,System.Nullable{System.Int32})
+  - stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  langs:
+  - csharp
+  - vb
+  name: SetOptionsOperation.Builder
+  nameWithType: SetOptionsOperation.Builder
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Builder
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 134
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBuilds SetOptions operation.\n"
+  example: []
+  syntax:
+    content: 'public class Builder : object'
+    content.vb: >-
+      Public Class Builder
+          Inherits Object
+  see:
+  - linkId: stellar_dotnet_sdk.SetOptionsOperation
+    commentId: T:stellar_dotnet_sdk.SetOptionsOperation
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.SetOptionsOp)
+  commentId: M:stellar_dotnet_sdk.SetOptionsOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.SetOptionsOp)
+  id: '#ctor(stellar_dotnet_sdk.xdr.SetOptionsOp)'
+  parent: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder(SetOptionsOp)
+  nameWithType: SetOptionsOperation.Builder.Builder(SetOptionsOp)
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.Builder(stellar_dotnet_sdk.xdr.SetOptionsOp)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 148
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public Builder(SetOptionsOp op)
+    parameters:
+    - id: op
+      type: stellar_dotnet_sdk.xdr.SetOptionsOp
+    content.vb: Public Sub New(op As SetOptionsOp)
+  overload: stellar_dotnet_sdk.SetOptionsOperation.Builder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.#ctor
+  commentId: M:stellar_dotnet_sdk.SetOptionsOperation.Builder.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder()
+  nameWithType: SetOptionsOperation.Builder.Builder()
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.Builder()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 177
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates a new SetOptionsOperation builder.\n"
+  example: []
+  syntax:
+    content: public Builder()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.SetOptionsOperation.Builder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetInflationDestination(stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetInflationDestination(stellar_dotnet_sdk.KeyPair)
+  id: SetInflationDestination(stellar_dotnet_sdk.KeyPair)
+  parent: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetInflationDestination(KeyPair)
+  nameWithType: SetOptionsOperation.Builder.SetInflationDestination(KeyPair)
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetInflationDestination(stellar_dotnet_sdk.KeyPair)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetInflationDestination
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 186
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSets the inflation destination for the account.\n"
+  example: []
+  syntax:
+    content: public SetOptionsOperation.Builder SetInflationDestination(KeyPair inflationDestination)
+    parameters:
+    - id: inflationDestination
+      type: stellar_dotnet_sdk.KeyPair
+      description: The inflation destination account.
+    return:
+      type: stellar_dotnet_sdk.SetOptionsOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetInflationDestination(inflationDestination As KeyPair) As SetOptionsOperation.Builder
+  overload: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetInflationDestination*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetClearFlags(System.Int32)
+  commentId: M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetClearFlags(System.Int32)
+  id: SetClearFlags(System.Int32)
+  parent: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetClearFlags(Int32)
+  nameWithType: SetOptionsOperation.Builder.SetClearFlags(Int32)
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetClearFlags(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetClearFlags
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 200
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nClears the given flags from the account.\n"
+  example: []
+  syntax:
+    content: public SetOptionsOperation.Builder SetClearFlags(int clearFlags)
+    parameters:
+    - id: clearFlags
+      type: System.Int32
+      description: "\nFor details about the flags, please refer to the\n<a href=\"https://www.stellar.org/developers/learn/concepts/accounts.html\" target=\"_blank\">accounts doc</a>.\n"
+    return:
+      type: stellar_dotnet_sdk.SetOptionsOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetClearFlags(clearFlags As Integer) As SetOptionsOperation.Builder
+  overload: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetClearFlags*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSetFlags(System.Int32)
+  commentId: M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSetFlags(System.Int32)
+  id: SetSetFlags(System.Int32)
+  parent: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetSetFlags(Int32)
+  nameWithType: SetOptionsOperation.Builder.SetSetFlags(Int32)
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSetFlags(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetSetFlags
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 214
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSets the given flags on the account.\n"
+  example: []
+  syntax:
+    content: public SetOptionsOperation.Builder SetSetFlags(int setFlags)
+    parameters:
+    - id: setFlags
+      type: System.Int32
+      description: "\nFor details about the flags, please refer to the\n<a href=\"https://www.stellar.org/developers/learn/concepts/accounts.html\" target=\"_blank\">accounts doc</a>.\n"
+    return:
+      type: stellar_dotnet_sdk.SetOptionsOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetSetFlags(setFlags As Integer) As SetOptionsOperation.Builder
+  overload: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSetFlags*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMasterKeyWeight(System.Int32)
+  commentId: M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMasterKeyWeight(System.Int32)
+  id: SetMasterKeyWeight(System.Int32)
+  parent: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetMasterKeyWeight(Int32)
+  nameWithType: SetOptionsOperation.Builder.SetMasterKeyWeight(Int32)
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMasterKeyWeight(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetMasterKeyWeight
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 225
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nWeight of the master key.\n"
+  example: []
+  syntax:
+    content: public SetOptionsOperation.Builder SetMasterKeyWeight(int masterKeyWeight)
+    parameters:
+    - id: masterKeyWeight
+      type: System.Int32
+      description: Number between 0 and 255
+    return:
+      type: stellar_dotnet_sdk.SetOptionsOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetMasterKeyWeight(masterKeyWeight As Integer) As SetOptionsOperation.Builder
+  overload: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMasterKeyWeight*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetLowThreshold(System.Int32)
+  commentId: M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetLowThreshold(System.Int32)
+  id: SetLowThreshold(System.Int32)
+  parent: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetLowThreshold(Int32)
+  nameWithType: SetOptionsOperation.Builder.SetLowThreshold(Int32)
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetLowThreshold(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetLowThreshold
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 237
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nA number from 0-255 representing the threshold this account sets on all operations it performs that have a low\nthreshold.\n"
+  example: []
+  syntax:
+    content: public SetOptionsOperation.Builder SetLowThreshold(int lowThreshold)
+    parameters:
+    - id: lowThreshold
+      type: System.Int32
+      description: Number between 0 and 255
+    return:
+      type: stellar_dotnet_sdk.SetOptionsOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetLowThreshold(lowThreshold As Integer) As SetOptionsOperation.Builder
+  overload: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetLowThreshold*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMediumThreshold(System.Int32)
+  commentId: M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMediumThreshold(System.Int32)
+  id: SetMediumThreshold(System.Int32)
+  parent: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetMediumThreshold(Int32)
+  nameWithType: SetOptionsOperation.Builder.SetMediumThreshold(Int32)
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMediumThreshold(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetMediumThreshold
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 249
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nA number from 0-255 representing the threshold this account sets on all operations it performs that have a medium\nthreshold.\n"
+  example: []
+  syntax:
+    content: public SetOptionsOperation.Builder SetMediumThreshold(int mediumThreshold)
+    parameters:
+    - id: mediumThreshold
+      type: System.Int32
+      description: Number between 0 and 255
+    return:
+      type: stellar_dotnet_sdk.SetOptionsOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetMediumThreshold(mediumThreshold As Integer) As SetOptionsOperation.Builder
+  overload: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMediumThreshold*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHighThreshold(System.Int32)
+  commentId: M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHighThreshold(System.Int32)
+  id: SetHighThreshold(System.Int32)
+  parent: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetHighThreshold(Int32)
+  nameWithType: SetOptionsOperation.Builder.SetHighThreshold(Int32)
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHighThreshold(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetHighThreshold
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 261
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nA number from 0-255 representing the threshold this account sets on all operations it performs that have a high\nthreshold.\n"
+  example: []
+  syntax:
+    content: public SetOptionsOperation.Builder SetHighThreshold(int highThreshold)
+    parameters:
+    - id: highThreshold
+      type: System.Int32
+      description: Number between 0 and 255
+    return:
+      type: stellar_dotnet_sdk.SetOptionsOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetHighThreshold(highThreshold As Integer) As SetOptionsOperation.Builder
+  overload: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHighThreshold*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHomeDomain(System.String)
+  commentId: M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHomeDomain(System.String)
+  id: SetHomeDomain(System.String)
+  parent: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetHomeDomain(String)
+  nameWithType: SetOptionsOperation.Builder.SetHomeDomain(String)
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHomeDomain(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetHomeDomain
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 273
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSets the account&apos;s home domain address used in\n<a href=\"https://www.stellar.org/developers/learn/concepts/federation.html\" target=\"_blank\">Federation</a>.\n"
+  example: []
+  syntax:
+    content: public SetOptionsOperation.Builder SetHomeDomain(string homeDomain)
+    parameters:
+    - id: homeDomain
+      type: System.String
+      description: A string of the address which can be up to 32 characters.
+    return:
+      type: stellar_dotnet_sdk.SetOptionsOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetHomeDomain(homeDomain As String) As SetOptionsOperation.Builder
+  overload: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHomeDomain*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSigner(stellar_dotnet_sdk.xdr.SignerKey,System.Nullable{System.Int32})
+  commentId: M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSigner(stellar_dotnet_sdk.xdr.SignerKey,System.Nullable{System.Int32})
+  id: SetSigner(stellar_dotnet_sdk.xdr.SignerKey,System.Nullable{System.Int32})
+  parent: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetSigner(SignerKey, Nullable<Int32>)
+  nameWithType: SetOptionsOperation.Builder.SetSigner(SignerKey, Nullable<Int32>)
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSigner(stellar_dotnet_sdk.xdr.SignerKey, System.Nullable<System.Int32>)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetSigner
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 287
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nAdd, update, or remove a signer from the account. Signer is deleted if the weight = 0;\n"
+  example: []
+  syntax:
+    content: public SetOptionsOperation.Builder SetSigner(SignerKey signer, int? weight)
+    parameters:
+    - id: signer
+      type: stellar_dotnet_sdk.xdr.SignerKey
+      description: The signer key. Use <xref href="stellar_dotnet_sdk.Signer" data-throw-if-not-resolved="false"></xref> helper to create this object.
+    - id: weight
+      type: System.Nullable{System.Int32}
+      description: The weight to attach to the signer (0-255).
+    return:
+      type: stellar_dotnet_sdk.SetOptionsOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetSigner(signer As SignerKey, weight As Integer?) As SetOptionsOperation.Builder
+  overload: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSigner*
+  nameWithType.vb: SetOptionsOperation.Builder.SetSigner(SignerKey, Nullable(Of Int32))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSigner(stellar_dotnet_sdk.xdr.SignerKey, System.Nullable(Of System.Int32))
+  name.vb: SetSigner(SignerKey, Nullable(Of Int32))
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  id: SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  parent: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetSourceAccount(KeyPair)
+  nameWithType: SetOptionsOperation.Builder.SetSourceAccount(KeyPair)
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetSourceAccount
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 303
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSets the source account for this operation.\n"
+  example: []
+  syntax:
+    content: public SetOptionsOperation.Builder SetSourceAccount(KeyPair sourceAccount)
+    parameters:
+    - id: sourceAccount
+      type: stellar_dotnet_sdk.KeyPair
+      description: The operation&apos;s source account.
+    return:
+      type: stellar_dotnet_sdk.SetOptionsOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetSourceAccount(sourceAccount As KeyPair) As SetOptionsOperation.Builder
+  overload: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSourceAccount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.Build
+  commentId: M:stellar_dotnet_sdk.SetOptionsOperation.Builder.Build
+  id: Build
+  parent: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Build()
+  nameWithType: SetOptionsOperation.Builder.Build()
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.Build()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/SetOptionsOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Build
+    path: ../stellar-dotnet-sdk/SetOptionsOperation.cs
+    startLine: 312
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBuilds an operation\n"
+  example: []
+  syntax:
+    content: public SetOptionsOperation Build()
+    return:
+      type: stellar_dotnet_sdk.SetOptionsOperation
+    content.vb: Public Function Build As SetOptionsOperation
+  overload: stellar_dotnet_sdk.SetOptionsOperation.Builder.Build*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.SetOptionsOperation
+  commentId: T:stellar_dotnet_sdk.SetOptionsOperation
+  parent: stellar_dotnet_sdk
+  name: SetOptionsOperation
+  nameWithType: SetOptionsOperation
+  fullName: stellar_dotnet_sdk.SetOptionsOperation
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.SetOptionsOperation.Builder.#ctor
+  name: Builder
+  nameWithType: SetOptionsOperation.Builder.Builder
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.Builder
+- uid: stellar_dotnet_sdk.xdr.SetOptionsOp
+  commentId: T:stellar_dotnet_sdk.xdr.SetOptionsOp
+  parent: stellar_dotnet_sdk.xdr
+  name: SetOptionsOp
+  nameWithType: SetOptionsOp
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsOp
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetInflationDestination*
+  commentId: Overload:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetInflationDestination
+  name: SetInflationDestination
+  nameWithType: SetOptionsOperation.Builder.SetInflationDestination
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetInflationDestination
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder
+  commentId: T:stellar_dotnet_sdk.SetOptionsOperation.Builder
+  parent: stellar_dotnet_sdk
+  name: SetOptionsOperation.Builder
+  nameWithType: SetOptionsOperation.Builder
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetClearFlags*
+  commentId: Overload:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetClearFlags
+  name: SetClearFlags
+  nameWithType: SetOptionsOperation.Builder.SetClearFlags
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetClearFlags
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSetFlags*
+  commentId: Overload:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSetFlags
+  name: SetSetFlags
+  nameWithType: SetOptionsOperation.Builder.SetSetFlags
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSetFlags
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMasterKeyWeight*
+  commentId: Overload:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMasterKeyWeight
+  name: SetMasterKeyWeight
+  nameWithType: SetOptionsOperation.Builder.SetMasterKeyWeight
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMasterKeyWeight
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetLowThreshold*
+  commentId: Overload:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetLowThreshold
+  name: SetLowThreshold
+  nameWithType: SetOptionsOperation.Builder.SetLowThreshold
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetLowThreshold
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMediumThreshold*
+  commentId: Overload:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMediumThreshold
+  name: SetMediumThreshold
+  nameWithType: SetOptionsOperation.Builder.SetMediumThreshold
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetMediumThreshold
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHighThreshold*
+  commentId: Overload:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHighThreshold
+  name: SetHighThreshold
+  nameWithType: SetOptionsOperation.Builder.SetHighThreshold
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHighThreshold
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHomeDomain*
+  commentId: Overload:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHomeDomain
+  name: SetHomeDomain
+  nameWithType: SetOptionsOperation.Builder.SetHomeDomain
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetHomeDomain
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.Signer
+  commentId: T:stellar_dotnet_sdk.Signer
+  name: Signer
+  nameWithType: Signer
+  fullName: stellar_dotnet_sdk.Signer
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSigner*
+  commentId: Overload:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSigner
+  name: SetSigner
+  nameWithType: SetOptionsOperation.Builder.SetSigner
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSigner
+- uid: stellar_dotnet_sdk.xdr.SignerKey
+  commentId: T:stellar_dotnet_sdk.xdr.SignerKey
+  parent: stellar_dotnet_sdk.xdr
+  name: SignerKey
+  nameWithType: SignerKey
+  fullName: stellar_dotnet_sdk.xdr.SignerKey
+- uid: System.Nullable{System.Int32}
+  commentId: '!:System.Nullable{System.Int32}'
+  definition: System.Nullable`1
+  name: Nullable<Int32>
+  nameWithType: Nullable<Int32>
+  fullName: System.Nullable<System.Int32>
+  nameWithType.vb: Nullable(Of Int32)
+  fullName.vb: System.Nullable(Of System.Int32)
+  name.vb: Nullable(Of Int32)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSourceAccount*
+  commentId: Overload:stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSourceAccount
+  name: SetSourceAccount
+  nameWithType: SetOptionsOperation.Builder.SetSourceAccount
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.SetSourceAccount
+- uid: stellar_dotnet_sdk.SetOptionsOperation.Builder.Build*
+  commentId: Overload:stellar_dotnet_sdk.SetOptionsOperation.Builder.Build
+  name: Build
+  nameWithType: SetOptionsOperation.Builder.Build
+  fullName: stellar_dotnet_sdk.SetOptionsOperation.Builder.Build

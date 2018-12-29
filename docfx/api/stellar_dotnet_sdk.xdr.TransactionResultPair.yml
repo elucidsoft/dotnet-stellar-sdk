@@ -1,0 +1,283 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.TransactionResultPair
+  commentId: T:stellar_dotnet_sdk.xdr.TransactionResultPair
+  id: TransactionResultPair
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.TransactionResultPair.#ctor
+  - stellar_dotnet_sdk.xdr.TransactionResultPair.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.TransactionResultPair.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TransactionResultPair)
+  - stellar_dotnet_sdk.xdr.TransactionResultPair.Result
+  - stellar_dotnet_sdk.xdr.TransactionResultPair.TransactionHash
+  langs:
+  - csharp
+  - vb
+  name: TransactionResultPair
+  nameWithType: TransactionResultPair
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultPair
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TransactionResultPair
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultPair.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class TransactionResultPair : object'
+    content.vb: >-
+      Public Class TransactionResultPair
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.TransactionResultPair.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.TransactionResultPair.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.TransactionResultPair
+  langs:
+  - csharp
+  - vb
+  name: TransactionResultPair()
+  nameWithType: TransactionResultPair.TransactionResultPair()
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultPair.TransactionResultPair()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultPair.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public TransactionResultPair()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.TransactionResultPair.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.TransactionResultPair.TransactionHash
+  commentId: P:stellar_dotnet_sdk.xdr.TransactionResultPair.TransactionHash
+  id: TransactionHash
+  parent: stellar_dotnet_sdk.xdr.TransactionResultPair
+  langs:
+  - csharp
+  - vb
+  name: TransactionHash
+  nameWithType: TransactionResultPair.TransactionHash
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultPair.TransactionHash
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TransactionHash
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultPair.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Hash TransactionHash { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Hash
+    content.vb: Public Property TransactionHash As Hash
+  overload: stellar_dotnet_sdk.xdr.TransactionResultPair.TransactionHash*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.TransactionResultPair.Result
+  commentId: P:stellar_dotnet_sdk.xdr.TransactionResultPair.Result
+  id: Result
+  parent: stellar_dotnet_sdk.xdr.TransactionResultPair
+  langs:
+  - csharp
+  - vb
+  name: Result
+  nameWithType: TransactionResultPair.Result
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultPair.Result
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Result
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultPair.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public TransactionResult Result { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResult
+    content.vb: Public Property Result As TransactionResult
+  overload: stellar_dotnet_sdk.xdr.TransactionResultPair.Result*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.TransactionResultPair.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TransactionResultPair)
+  commentId: M:stellar_dotnet_sdk.xdr.TransactionResultPair.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TransactionResultPair)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TransactionResultPair)
+  parent: stellar_dotnet_sdk.xdr.TransactionResultPair
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, TransactionResultPair)
+  nameWithType: TransactionResultPair.Encode(XdrDataOutputStream, TransactionResultPair)
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultPair.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.TransactionResultPair)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultPair.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, TransactionResultPair encodedTransactionResultPair)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedTransactionResultPair
+      type: stellar_dotnet_sdk.xdr.TransactionResultPair
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedTransactionResultPair As TransactionResultPair)
+  overload: stellar_dotnet_sdk.xdr.TransactionResultPair.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.TransactionResultPair.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.TransactionResultPair.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.TransactionResultPair
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: TransactionResultPair.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultPair.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TransactionResultPair.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/TransactionResultPair.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static TransactionResultPair Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.TransactionResultPair
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As TransactionResultPair
+  overload: stellar_dotnet_sdk.xdr.TransactionResultPair.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.TransactionResultPair.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TransactionResultPair.#ctor
+  name: TransactionResultPair
+  nameWithType: TransactionResultPair.TransactionResultPair
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultPair.TransactionResultPair
+- uid: stellar_dotnet_sdk.xdr.TransactionResultPair.TransactionHash*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TransactionResultPair.TransactionHash
+  name: TransactionHash
+  nameWithType: TransactionResultPair.TransactionHash
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultPair.TransactionHash
+- uid: stellar_dotnet_sdk.xdr.Hash
+  commentId: T:stellar_dotnet_sdk.xdr.Hash
+  parent: stellar_dotnet_sdk.xdr
+  name: Hash
+  nameWithType: Hash
+  fullName: stellar_dotnet_sdk.xdr.Hash
+- uid: stellar_dotnet_sdk.xdr.TransactionResultPair.Result*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TransactionResultPair.Result
+  name: Result
+  nameWithType: TransactionResultPair.Result
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultPair.Result
+- uid: stellar_dotnet_sdk.xdr.TransactionResult
+  commentId: T:stellar_dotnet_sdk.xdr.TransactionResult
+  parent: stellar_dotnet_sdk.xdr
+  name: TransactionResult
+  nameWithType: TransactionResult
+  fullName: stellar_dotnet_sdk.xdr.TransactionResult
+- uid: stellar_dotnet_sdk.xdr.TransactionResultPair.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TransactionResultPair.Encode
+  name: Encode
+  nameWithType: TransactionResultPair.Encode
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultPair.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.TransactionResultPair
+  commentId: T:stellar_dotnet_sdk.xdr.TransactionResultPair
+  parent: stellar_dotnet_sdk.xdr
+  name: TransactionResultPair
+  nameWithType: TransactionResultPair
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultPair
+- uid: stellar_dotnet_sdk.xdr.TransactionResultPair.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TransactionResultPair.Decode
+  name: Decode
+  nameWithType: TransactionResultPair.Decode
+  fullName: stellar_dotnet_sdk.xdr.TransactionResultPair.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

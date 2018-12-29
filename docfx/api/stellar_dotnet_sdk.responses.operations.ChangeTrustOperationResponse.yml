@@ -1,0 +1,650 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse
+  commentId: T:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse
+  id: ChangeTrustOperationResponse
+  parent: stellar_dotnet_sdk.responses.operations
+  children:
+  - stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.#ctor
+  - stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.#ctor(System.String,System.String,System.String,System.String,stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair)
+  - stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Asset
+  - stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetCode
+  - stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetIssuer
+  - stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetType
+  - stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Limit
+  - stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustee
+  - stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustor
+  - stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TypeId
+  langs:
+  - csharp
+  - vb
+  name: ChangeTrustOperationResponse
+  nameWithType: ChangeTrustOperationResponse
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ChangeTrustOperationResponse
+    path: ../stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nRepresents ChangeTrust operation response.\nSee: https://www.stellar.org/developers/horizon/reference/resources/operation.html\n<xref href=\"stellar_dotnet_sdk.requests.OperationsRequestBuilder\" data-throw-if-not-resolved=\"false\"></xref>\n<xref href=\"stellar_dotnet_sdk.Server\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: 'public class ChangeTrustOperationResponse : OperationResponse, IPagingToken'
+    content.vb: >-
+      Public Class ChangeTrustOperationResponse
+          Inherits OperationResponse
+          Implements IPagingToken
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.responses.Response
+  - stellar_dotnet_sdk.responses.operations.OperationResponse
+  implements:
+  - stellar_dotnet_sdk.responses.IPagingToken
+  inheritedMembers:
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.Id
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.Type
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.Links
+  - stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  - stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  - stellar_dotnet_sdk.responses.Response.RateLimitReset
+  - stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.#ctor
+  commentId: M:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: ChangeTrustOperationResponse()
+  nameWithType: ChangeTrustOperationResponse.ChangeTrustOperationResponse()
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.ChangeTrustOperationResponse()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public ChangeTrustOperationResponse()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.#ctor(System.String,System.String,System.String,System.String,stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.#ctor(System.String,System.String,System.String,System.String,stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair)
+  id: '#ctor(System.String,System.String,System.String,System.String,stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair)'
+  parent: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: ChangeTrustOperationResponse(String, String, String, String, KeyPair, KeyPair)
+  nameWithType: ChangeTrustOperationResponse.ChangeTrustOperationResponse(String, String, String, String, KeyPair, KeyPair)
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.ChangeTrustOperationResponse(System.String, System.String, System.String, System.String, stellar_dotnet_sdk.KeyPair, stellar_dotnet_sdk.KeyPair)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public ChangeTrustOperationResponse(string assetCode, string assetIssuer, string assetType, string limit, KeyPair trustee, KeyPair trustor)
+    parameters:
+    - id: assetCode
+      type: System.String
+    - id: assetIssuer
+      type: System.String
+    - id: assetType
+      type: System.String
+    - id: limit
+      type: System.String
+    - id: trustee
+      type: stellar_dotnet_sdk.KeyPair
+    - id: trustor
+      type: stellar_dotnet_sdk.KeyPair
+    content.vb: Public Sub New(assetCode As String, assetIssuer As String, assetType As String, limit As String, trustee As KeyPair, trustor As KeyPair)
+  overload: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TypeId
+  commentId: P:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TypeId
+  id: TypeId
+  parent: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: TypeId
+  nameWithType: ChangeTrustOperationResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TypeId
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TypeId
+    path: ../stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public override int TypeId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Overrides ReadOnly Property TypeId As Integer
+  overridden: stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId
+  overload: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TypeId*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetCode
+  commentId: P:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetCode
+  id: AssetCode
+  parent: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: AssetCode
+  nameWithType: ChangeTrustOperationResponse.AssetCode
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetCode
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetCode
+    path: ../stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public string AssetCode { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssetCode As String
+  overload: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetCode*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetIssuer
+  commentId: P:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetIssuer
+  id: AssetIssuer
+  parent: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: AssetIssuer
+  nameWithType: ChangeTrustOperationResponse.AssetIssuer
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetIssuer
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetIssuer
+    path: ../stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public string AssetIssuer { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssetIssuer As String
+  overload: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetIssuer*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetType
+  commentId: P:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetType
+  id: AssetType
+  parent: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: AssetType
+  nameWithType: ChangeTrustOperationResponse.AssetType
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetType
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetType
+    path: ../stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public string AssetType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssetType As String
+  overload: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Limit
+  commentId: P:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Limit
+  id: Limit
+  parent: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: Limit
+  nameWithType: ChangeTrustOperationResponse.Limit
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Limit
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Limit
+    path: ../stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+    startLine: 38
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public string Limit { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Limit As String
+  overload: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Limit*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustee
+  commentId: P:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustee
+  id: Trustee
+  parent: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: Trustee
+  nameWithType: ChangeTrustOperationResponse.Trustee
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustee
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Trustee
+    path: ../stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+    startLine: 41
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public KeyPair Trustee { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+    content.vb: Public ReadOnly Property Trustee As KeyPair
+  overload: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustee*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustor
+  commentId: P:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustor
+  id: Trustor
+  parent: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: Trustor
+  nameWithType: ChangeTrustOperationResponse.Trustor
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustor
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Trustor
+    path: ../stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+    startLine: 45
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public KeyPair Trustor { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+    content.vb: Public ReadOnly Property Trustor As KeyPair
+  overload: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustor*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Asset
+  commentId: P:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Asset
+  id: Asset
+  parent: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: Asset
+  nameWithType: ChangeTrustOperationResponse.Asset
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Asset
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Asset
+    path: ../stellar-dotnet-sdk/responses/operations/ChangeTrustOperationResponse.cs
+    startLine: 49
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public Asset Asset { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.Asset
+    content.vb: Public ReadOnly Property Asset As Asset
+  overload: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Asset*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder
+  commentId: T:stellar_dotnet_sdk.requests.OperationsRequestBuilder
+  parent: stellar_dotnet_sdk.requests
+  name: OperationsRequestBuilder
+  nameWithType: OperationsRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder
+- uid: stellar_dotnet_sdk.Server
+  commentId: T:stellar_dotnet_sdk.Server
+  name: Server
+  nameWithType: Server
+  fullName: stellar_dotnet_sdk.Server
+- uid: stellar_dotnet_sdk.responses.operations
+  commentId: N:stellar_dotnet_sdk.responses.operations
+  name: stellar_dotnet_sdk.responses.operations
+  nameWithType: stellar_dotnet_sdk.responses.operations
+  fullName: stellar_dotnet_sdk.responses.operations
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.Response
+  commentId: T:stellar_dotnet_sdk.responses.Response
+  parent: stellar_dotnet_sdk.responses
+  name: Response
+  nameWithType: Response
+  fullName: stellar_dotnet_sdk.responses.Response
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse
+  commentId: T:stellar_dotnet_sdk.responses.operations.OperationResponse
+  parent: stellar_dotnet_sdk.responses.operations
+  name: OperationResponse
+  nameWithType: OperationResponse
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse
+- uid: stellar_dotnet_sdk.responses.IPagingToken
+  commentId: T:stellar_dotnet_sdk.responses.IPagingToken
+  parent: stellar_dotnet_sdk.responses
+  name: IPagingToken
+  nameWithType: IPagingToken
+  fullName: stellar_dotnet_sdk.responses.IPagingToken
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.Id
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.Id
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: Id
+  nameWithType: OperationResponse.Id
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.Id
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: SourceAccount
+  nameWithType: OperationResponse.SourceAccount
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: PagingToken
+  nameWithType: OperationResponse.PagingToken
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.Type
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.Type
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: Type
+  nameWithType: OperationResponse.Type
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.Type
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: CreatedAt
+  nameWithType: OperationResponse.CreatedAt
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: TransactionHash
+  nameWithType: OperationResponse.TransactionHash
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.Links
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.Links
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: Links
+  nameWithType: OperationResponse.Links
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.Links
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitLimit
+  nameWithType: Response.RateLimitLimit
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitRemaining
+  nameWithType: Response.RateLimitRemaining
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitReset
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitReset
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitReset
+  nameWithType: Response.RateLimitReset
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitReset
+- uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  commentId: M:stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  parent: stellar_dotnet_sdk.responses.Response
+  isExternal: true
+  name: SetHeaders(HttpResponseHeaders)
+  nameWithType: Response.SetHeaders(HttpResponseHeaders)
+  fullName: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests
+  commentId: N:stellar_dotnet_sdk.requests
+  name: stellar_dotnet_sdk.requests
+  nameWithType: stellar_dotnet_sdk.requests
+  fullName: stellar_dotnet_sdk.requests
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.#ctor
+  name: ChangeTrustOperationResponse
+  nameWithType: ChangeTrustOperationResponse.ChangeTrustOperationResponse
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.ChangeTrustOperationResponse
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: TypeId
+  nameWithType: OperationResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TypeId*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TypeId
+  name: TypeId
+  nameWithType: ChangeTrustOperationResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TypeId
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetCode*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetCode
+  name: AssetCode
+  nameWithType: ChangeTrustOperationResponse.AssetCode
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetCode
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetIssuer*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetIssuer
+  name: AssetIssuer
+  nameWithType: ChangeTrustOperationResponse.AssetIssuer
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetIssuer
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetType*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetType
+  name: AssetType
+  nameWithType: ChangeTrustOperationResponse.AssetType
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.AssetType
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Limit*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Limit
+  name: Limit
+  nameWithType: ChangeTrustOperationResponse.Limit
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Limit
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustee*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustee
+  name: Trustee
+  nameWithType: ChangeTrustOperationResponse.Trustee
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustee
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustor*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustor
+  name: Trustor
+  nameWithType: ChangeTrustOperationResponse.Trustor
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustor
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Asset*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Asset
+  name: Asset
+  nameWithType: ChangeTrustOperationResponse.Asset
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Asset
+- uid: stellar_dotnet_sdk.Asset
+  commentId: T:stellar_dotnet_sdk.Asset
+  parent: stellar_dotnet_sdk
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.Asset

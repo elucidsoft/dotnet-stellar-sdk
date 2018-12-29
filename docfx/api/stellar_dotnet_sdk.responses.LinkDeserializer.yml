@@ -1,0 +1,211 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.LinkDeserializer
+  commentId: T:stellar_dotnet_sdk.responses.LinkDeserializer
+  id: LinkDeserializer
+  parent: stellar_dotnet_sdk.responses
+  children:
+  - stellar_dotnet_sdk.responses.LinkDeserializer.CanConvert(Type)
+  - stellar_dotnet_sdk.responses.LinkDeserializer.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
+  - stellar_dotnet_sdk.responses.LinkDeserializer.WriteJson(JsonWriter,System.Object,JsonSerializer)
+  langs:
+  - csharp
+  - vb
+  name: LinkDeserializer
+  nameWithType: LinkDeserializer
+  fullName: stellar_dotnet_sdk.responses.LinkDeserializer
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LinkDeserializer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: LinkDeserializer
+    path: ../stellar-dotnet-sdk/responses/LinkDeserializer.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: 'public class LinkDeserializer : JsonConverter'
+    content.vb: >-
+      Public Class LinkDeserializer
+          Inherits JsonConverter
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.LinkDeserializer.WriteJson(JsonWriter,System.Object,JsonSerializer)
+  commentId: M:stellar_dotnet_sdk.responses.LinkDeserializer.WriteJson(JsonWriter,System.Object,JsonSerializer)
+  id: WriteJson(JsonWriter,System.Object,JsonSerializer)
+  parent: stellar_dotnet_sdk.responses.LinkDeserializer
+  langs:
+  - csharp
+  - vb
+  name: WriteJson(JsonWriter, Object, JsonSerializer)
+  nameWithType: LinkDeserializer.WriteJson(JsonWriter, Object, JsonSerializer)
+  fullName: stellar_dotnet_sdk.responses.LinkDeserializer.WriteJson(JsonWriter, System.Object, JsonSerializer)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LinkDeserializer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: WriteJson
+    path: ../stellar-dotnet-sdk/responses/LinkDeserializer.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    parameters:
+    - id: writer
+      type: JsonWriter
+    - id: value
+      type: System.Object
+    - id: serializer
+      type: JsonSerializer
+    content.vb: Public Overrides Sub WriteJson(writer As JsonWriter, value As Object, serializer As JsonSerializer)
+  overload: stellar_dotnet_sdk.responses.LinkDeserializer.WriteJson*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: stellar_dotnet_sdk.responses.LinkDeserializer.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
+  commentId: M:stellar_dotnet_sdk.responses.LinkDeserializer.ReadJson(JsonReader,Type,System.Object,JsonSerializer)
+  id: ReadJson(JsonReader,Type,System.Object,JsonSerializer)
+  parent: stellar_dotnet_sdk.responses.LinkDeserializer
+  langs:
+  - csharp
+  - vb
+  name: ReadJson(JsonReader, Type, Object, JsonSerializer)
+  nameWithType: LinkDeserializer.ReadJson(JsonReader, Type, Object, JsonSerializer)
+  fullName: stellar_dotnet_sdk.responses.LinkDeserializer.ReadJson(JsonReader, Type, System.Object, JsonSerializer)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LinkDeserializer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ReadJson
+    path: ../stellar-dotnet-sdk/responses/LinkDeserializer.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    parameters:
+    - id: reader
+      type: JsonReader
+    - id: objectType
+      type: Type
+    - id: existingValue
+      type: System.Object
+    - id: serializer
+      type: JsonSerializer
+    return:
+      type: System.Object
+    content.vb: Public Overrides Function ReadJson(reader As JsonReader, objectType As Type, existingValue As Object, serializer As JsonSerializer) As Object
+  overload: stellar_dotnet_sdk.responses.LinkDeserializer.ReadJson*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: stellar_dotnet_sdk.responses.LinkDeserializer.CanConvert(Type)
+  commentId: M:stellar_dotnet_sdk.responses.LinkDeserializer.CanConvert(Type)
+  id: CanConvert(Type)
+  parent: stellar_dotnet_sdk.responses.LinkDeserializer
+  langs:
+  - csharp
+  - vb
+  name: CanConvert(Type)
+  nameWithType: LinkDeserializer.CanConvert(Type)
+  fullName: stellar_dotnet_sdk.responses.LinkDeserializer.CanConvert(Type)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LinkDeserializer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CanConvert
+    path: ../stellar-dotnet-sdk/responses/LinkDeserializer.cs
+    startLine: 43
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public override bool CanConvert(Type objectType)
+    parameters:
+    - id: objectType
+      type: Type
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function CanConvert(objectType As Type) As Boolean
+  overload: stellar_dotnet_sdk.responses.LinkDeserializer.CanConvert*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.LinkDeserializer.WriteJson*
+  commentId: Overload:stellar_dotnet_sdk.responses.LinkDeserializer.WriteJson
+  name: WriteJson
+  nameWithType: LinkDeserializer.WriteJson
+  fullName: stellar_dotnet_sdk.responses.LinkDeserializer.WriteJson
+- uid: JsonWriter
+  isExternal: true
+  name: JsonWriter
+  nameWithType: JsonWriter
+  fullName: JsonWriter
+- uid: JsonSerializer
+  isExternal: true
+  name: JsonSerializer
+  nameWithType: JsonSerializer
+  fullName: JsonSerializer
+- uid: stellar_dotnet_sdk.responses.LinkDeserializer.ReadJson*
+  commentId: Overload:stellar_dotnet_sdk.responses.LinkDeserializer.ReadJson
+  name: ReadJson
+  nameWithType: LinkDeserializer.ReadJson
+  fullName: stellar_dotnet_sdk.responses.LinkDeserializer.ReadJson
+- uid: JsonReader
+  isExternal: true
+  name: JsonReader
+  nameWithType: JsonReader
+  fullName: JsonReader
+- uid: Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: Type
+- uid: stellar_dotnet_sdk.responses.LinkDeserializer.CanConvert*
+  commentId: Overload:stellar_dotnet_sdk.responses.LinkDeserializer.CanConvert
+  name: CanConvert
+  nameWithType: LinkDeserializer.CanConvert
+  fullName: stellar_dotnet_sdk.responses.LinkDeserializer.CanConvert
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

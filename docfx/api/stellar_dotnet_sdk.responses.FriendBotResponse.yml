@@ -1,0 +1,517 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse
+  commentId: T:stellar_dotnet_sdk.responses.FriendBotResponse
+  id: FriendBotResponse
+  parent: stellar_dotnet_sdk.responses
+  children:
+  - stellar_dotnet_sdk.responses.FriendBotResponse.Detail
+  - stellar_dotnet_sdk.responses.FriendBotResponse.EnvelopeXdr
+  - stellar_dotnet_sdk.responses.FriendBotResponse.Extras
+  - stellar_dotnet_sdk.responses.FriendBotResponse.Hash
+  - stellar_dotnet_sdk.responses.FriendBotResponse.Ledger
+  - stellar_dotnet_sdk.responses.FriendBotResponse.Links
+  - stellar_dotnet_sdk.responses.FriendBotResponse.ResultMetaXdr
+  - stellar_dotnet_sdk.responses.FriendBotResponse.ResultXdr
+  - stellar_dotnet_sdk.responses.FriendBotResponse.Status
+  - stellar_dotnet_sdk.responses.FriendBotResponse.Title
+  - stellar_dotnet_sdk.responses.FriendBotResponse.Type
+  langs:
+  - csharp
+  - vb
+  name: FriendBotResponse
+  nameWithType: FriendBotResponse
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/FriendBotResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FriendBotResponse
+    path: ../stellar-dotnet-sdk/responses/FriendBotResponse.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: 'public class FriendBotResponse : object'
+    content.vb: >-
+      Public Class FriendBotResponse
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Links
+  commentId: P:stellar_dotnet_sdk.responses.FriendBotResponse.Links
+  id: Links
+  parent: stellar_dotnet_sdk.responses.FriendBotResponse
+  langs:
+  - csharp
+  - vb
+  name: Links
+  nameWithType: FriendBotResponse.Links
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Links
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/FriendBotResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Links
+    path: ../stellar-dotnet-sdk/responses/FriendBotResponse.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public FriendBotResponseLinks Links { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.responses.FriendBotResponseLinks
+    content.vb: Public Property Links As FriendBotResponseLinks
+  overload: stellar_dotnet_sdk.responses.FriendBotResponse.Links*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Type
+  commentId: P:stellar_dotnet_sdk.responses.FriendBotResponse.Type
+  id: Type
+  parent: stellar_dotnet_sdk.responses.FriendBotResponse
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: FriendBotResponse.Type
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Type
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/FriendBotResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Type
+    path: ../stellar-dotnet-sdk/responses/FriendBotResponse.cs
+    startLine: 13
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string Type { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Type As String
+  overload: stellar_dotnet_sdk.responses.FriendBotResponse.Type*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Title
+  commentId: P:stellar_dotnet_sdk.responses.FriendBotResponse.Title
+  id: Title
+  parent: stellar_dotnet_sdk.responses.FriendBotResponse
+  langs:
+  - csharp
+  - vb
+  name: Title
+  nameWithType: FriendBotResponse.Title
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Title
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/FriendBotResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Title
+    path: ../stellar-dotnet-sdk/responses/FriendBotResponse.cs
+    startLine: 15
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string Title { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Title As String
+  overload: stellar_dotnet_sdk.responses.FriendBotResponse.Title*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Status
+  commentId: P:stellar_dotnet_sdk.responses.FriendBotResponse.Status
+  id: Status
+  parent: stellar_dotnet_sdk.responses.FriendBotResponse
+  langs:
+  - csharp
+  - vb
+  name: Status
+  nameWithType: FriendBotResponse.Status
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Status
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/FriendBotResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Status
+    path: ../stellar-dotnet-sdk/responses/FriendBotResponse.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string Status { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Status As String
+  overload: stellar_dotnet_sdk.responses.FriendBotResponse.Status*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Extras
+  commentId: P:stellar_dotnet_sdk.responses.FriendBotResponse.Extras
+  id: Extras
+  parent: stellar_dotnet_sdk.responses.FriendBotResponse
+  langs:
+  - csharp
+  - vb
+  name: Extras
+  nameWithType: FriendBotResponse.Extras
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Extras
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/FriendBotResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Extras
+    path: ../stellar-dotnet-sdk/responses/FriendBotResponse.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public SubmitTransactionResponse.Extras Extras { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras
+    content.vb: Public Property Extras As SubmitTransactionResponse.Extras
+  overload: stellar_dotnet_sdk.responses.FriendBotResponse.Extras*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Detail
+  commentId: P:stellar_dotnet_sdk.responses.FriendBotResponse.Detail
+  id: Detail
+  parent: stellar_dotnet_sdk.responses.FriendBotResponse
+  langs:
+  - csharp
+  - vb
+  name: Detail
+  nameWithType: FriendBotResponse.Detail
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Detail
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/FriendBotResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Detail
+    path: ../stellar-dotnet-sdk/responses/FriendBotResponse.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string Detail { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Detail As String
+  overload: stellar_dotnet_sdk.responses.FriendBotResponse.Detail*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Hash
+  commentId: P:stellar_dotnet_sdk.responses.FriendBotResponse.Hash
+  id: Hash
+  parent: stellar_dotnet_sdk.responses.FriendBotResponse
+  langs:
+  - csharp
+  - vb
+  name: Hash
+  nameWithType: FriendBotResponse.Hash
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Hash
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/FriendBotResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Hash
+    path: ../stellar-dotnet-sdk/responses/FriendBotResponse.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string Hash { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Hash As String
+  overload: stellar_dotnet_sdk.responses.FriendBotResponse.Hash*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Ledger
+  commentId: P:stellar_dotnet_sdk.responses.FriendBotResponse.Ledger
+  id: Ledger
+  parent: stellar_dotnet_sdk.responses.FriendBotResponse
+  langs:
+  - csharp
+  - vb
+  name: Ledger
+  nameWithType: FriendBotResponse.Ledger
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Ledger
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/FriendBotResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Ledger
+    path: ../stellar-dotnet-sdk/responses/FriendBotResponse.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string Ledger { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Ledger As String
+  overload: stellar_dotnet_sdk.responses.FriendBotResponse.Ledger*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.EnvelopeXdr
+  commentId: P:stellar_dotnet_sdk.responses.FriendBotResponse.EnvelopeXdr
+  id: EnvelopeXdr
+  parent: stellar_dotnet_sdk.responses.FriendBotResponse
+  langs:
+  - csharp
+  - vb
+  name: EnvelopeXdr
+  nameWithType: FriendBotResponse.EnvelopeXdr
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.EnvelopeXdr
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/FriendBotResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: EnvelopeXdr
+    path: ../stellar-dotnet-sdk/responses/FriendBotResponse.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string EnvelopeXdr { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property EnvelopeXdr As String
+  overload: stellar_dotnet_sdk.responses.FriendBotResponse.EnvelopeXdr*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.ResultXdr
+  commentId: P:stellar_dotnet_sdk.responses.FriendBotResponse.ResultXdr
+  id: ResultXdr
+  parent: stellar_dotnet_sdk.responses.FriendBotResponse
+  langs:
+  - csharp
+  - vb
+  name: ResultXdr
+  nameWithType: FriendBotResponse.ResultXdr
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.ResultXdr
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/FriendBotResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ResultXdr
+    path: ../stellar-dotnet-sdk/responses/FriendBotResponse.cs
+    startLine: 34
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string ResultXdr { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ResultXdr As String
+  overload: stellar_dotnet_sdk.responses.FriendBotResponse.ResultXdr*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.ResultMetaXdr
+  commentId: P:stellar_dotnet_sdk.responses.FriendBotResponse.ResultMetaXdr
+  id: ResultMetaXdr
+  parent: stellar_dotnet_sdk.responses.FriendBotResponse
+  langs:
+  - csharp
+  - vb
+  name: ResultMetaXdr
+  nameWithType: FriendBotResponse.ResultMetaXdr
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.ResultMetaXdr
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/FriendBotResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ResultMetaXdr
+    path: ../stellar-dotnet-sdk/responses/FriendBotResponse.cs
+    startLine: 37
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string ResultMetaXdr { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ResultMetaXdr As String
+  overload: stellar_dotnet_sdk.responses.FriendBotResponse.ResultMetaXdr*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Links*
+  commentId: Overload:stellar_dotnet_sdk.responses.FriendBotResponse.Links
+  name: Links
+  nameWithType: FriendBotResponse.Links
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Links
+- uid: stellar_dotnet_sdk.responses.FriendBotResponseLinks
+  commentId: T:stellar_dotnet_sdk.responses.FriendBotResponseLinks
+  parent: stellar_dotnet_sdk.responses
+  name: FriendBotResponseLinks
+  nameWithType: FriendBotResponseLinks
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponseLinks
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Type*
+  commentId: Overload:stellar_dotnet_sdk.responses.FriendBotResponse.Type
+  name: Type
+  nameWithType: FriendBotResponse.Type
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Type
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Title*
+  commentId: Overload:stellar_dotnet_sdk.responses.FriendBotResponse.Title
+  name: Title
+  nameWithType: FriendBotResponse.Title
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Title
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Status*
+  commentId: Overload:stellar_dotnet_sdk.responses.FriendBotResponse.Status
+  name: Status
+  nameWithType: FriendBotResponse.Status
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Status
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Extras*
+  commentId: Overload:stellar_dotnet_sdk.responses.FriendBotResponse.Extras
+  name: Extras
+  nameWithType: FriendBotResponse.Extras
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Extras
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras
+  commentId: T:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras
+  parent: stellar_dotnet_sdk.responses
+  name: SubmitTransactionResponse.Extras
+  nameWithType: SubmitTransactionResponse.Extras
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Detail*
+  commentId: Overload:stellar_dotnet_sdk.responses.FriendBotResponse.Detail
+  name: Detail
+  nameWithType: FriendBotResponse.Detail
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Detail
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Hash*
+  commentId: Overload:stellar_dotnet_sdk.responses.FriendBotResponse.Hash
+  name: Hash
+  nameWithType: FriendBotResponse.Hash
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Hash
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.Ledger*
+  commentId: Overload:stellar_dotnet_sdk.responses.FriendBotResponse.Ledger
+  name: Ledger
+  nameWithType: FriendBotResponse.Ledger
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.Ledger
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.EnvelopeXdr*
+  commentId: Overload:stellar_dotnet_sdk.responses.FriendBotResponse.EnvelopeXdr
+  name: EnvelopeXdr
+  nameWithType: FriendBotResponse.EnvelopeXdr
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.EnvelopeXdr
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.ResultXdr*
+  commentId: Overload:stellar_dotnet_sdk.responses.FriendBotResponse.ResultXdr
+  name: ResultXdr
+  nameWithType: FriendBotResponse.ResultXdr
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.ResultXdr
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse.ResultMetaXdr*
+  commentId: Overload:stellar_dotnet_sdk.responses.FriendBotResponse.ResultMetaXdr
+  name: ResultMetaXdr
+  nameWithType: FriendBotResponse.ResultMetaXdr
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse.ResultMetaXdr

@@ -1,0 +1,753 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  commentId: T:stellar_dotnet_sdk.xdr.Operation.OperationBody
+  id: Operation.OperationBody
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.#ctor
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.AllowTrustOp
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.BumpSequenceOp
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.ChangeTrustOp
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.CreateAccountOp
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.CreatePassiveOfferOp
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.Destination
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.Discriminant
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Operation.OperationBody)
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageDataOp
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageOfferOp
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.PathPaymentOp
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.PaymentOp
+  - stellar_dotnet_sdk.xdr.Operation.OperationBody.SetOptionsOp
+  langs:
+  - csharp
+  - vb
+  name: Operation.OperationBody
+  nameWithType: Operation.OperationBody
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: OperationBody
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 78
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class OperationBody : object'
+    content.vb: >-
+      Public Class OperationBody
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.Operation.OperationBody.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: OperationBody()
+  nameWithType: Operation.OperationBody.OperationBody()
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.OperationBody()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 80
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public OperationBody()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.Discriminant
+  commentId: P:stellar_dotnet_sdk.xdr.Operation.OperationBody.Discriminant
+  id: Discriminant
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: Discriminant
+  nameWithType: Operation.OperationBody.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.Discriminant
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Discriminant
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 82
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public OperationType Discriminant { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.OperationType
+    content.vb: Public Property Discriminant As OperationType
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.Discriminant*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.CreateAccountOp
+  commentId: P:stellar_dotnet_sdk.xdr.Operation.OperationBody.CreateAccountOp
+  id: CreateAccountOp
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: CreateAccountOp
+  nameWithType: Operation.OperationBody.CreateAccountOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.CreateAccountOp
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CreateAccountOp
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 84
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public CreateAccountOp CreateAccountOp { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.CreateAccountOp
+    content.vb: Public Property CreateAccountOp As CreateAccountOp
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.CreateAccountOp*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.PaymentOp
+  commentId: P:stellar_dotnet_sdk.xdr.Operation.OperationBody.PaymentOp
+  id: PaymentOp
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: PaymentOp
+  nameWithType: Operation.OperationBody.PaymentOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.PaymentOp
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PaymentOp
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 85
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public PaymentOp PaymentOp { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentOp
+    content.vb: Public Property PaymentOp As PaymentOp
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.PaymentOp*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.PathPaymentOp
+  commentId: P:stellar_dotnet_sdk.xdr.Operation.OperationBody.PathPaymentOp
+  id: PathPaymentOp
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: PathPaymentOp
+  nameWithType: Operation.OperationBody.PathPaymentOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.PathPaymentOp
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PathPaymentOp
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 86
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public PathPaymentOp PathPaymentOp { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentOp
+    content.vb: Public Property PathPaymentOp As PathPaymentOp
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.PathPaymentOp*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageOfferOp
+  commentId: P:stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageOfferOp
+  id: ManageOfferOp
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: ManageOfferOp
+  nameWithType: Operation.OperationBody.ManageOfferOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageOfferOp
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ManageOfferOp
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 87
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public ManageOfferOp ManageOfferOp { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.ManageOfferOp
+    content.vb: Public Property ManageOfferOp As ManageOfferOp
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageOfferOp*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.CreatePassiveOfferOp
+  commentId: P:stellar_dotnet_sdk.xdr.Operation.OperationBody.CreatePassiveOfferOp
+  id: CreatePassiveOfferOp
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: CreatePassiveOfferOp
+  nameWithType: Operation.OperationBody.CreatePassiveOfferOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.CreatePassiveOfferOp
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CreatePassiveOfferOp
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 88
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public CreatePassiveOfferOp CreatePassiveOfferOp { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+    content.vb: Public Property CreatePassiveOfferOp As CreatePassiveOfferOp
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.CreatePassiveOfferOp*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.SetOptionsOp
+  commentId: P:stellar_dotnet_sdk.xdr.Operation.OperationBody.SetOptionsOp
+  id: SetOptionsOp
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: SetOptionsOp
+  nameWithType: Operation.OperationBody.SetOptionsOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.SetOptionsOp
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetOptionsOp
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 89
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public SetOptionsOp SetOptionsOp { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsOp
+    content.vb: Public Property SetOptionsOp As SetOptionsOp
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.SetOptionsOp*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.ChangeTrustOp
+  commentId: P:stellar_dotnet_sdk.xdr.Operation.OperationBody.ChangeTrustOp
+  id: ChangeTrustOp
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: ChangeTrustOp
+  nameWithType: Operation.OperationBody.ChangeTrustOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.ChangeTrustOp
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ChangeTrustOp
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 90
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public ChangeTrustOp ChangeTrustOp { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.ChangeTrustOp
+    content.vb: Public Property ChangeTrustOp As ChangeTrustOp
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.ChangeTrustOp*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.AllowTrustOp
+  commentId: P:stellar_dotnet_sdk.xdr.Operation.OperationBody.AllowTrustOp
+  id: AllowTrustOp
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: AllowTrustOp
+  nameWithType: Operation.OperationBody.AllowTrustOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.AllowTrustOp
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AllowTrustOp
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 91
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AllowTrustOp AllowTrustOp { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.AllowTrustOp
+    content.vb: Public Property AllowTrustOp As AllowTrustOp
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.AllowTrustOp*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.Destination
+  commentId: P:stellar_dotnet_sdk.xdr.Operation.OperationBody.Destination
+  id: Destination
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: Destination
+  nameWithType: Operation.OperationBody.Destination
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.Destination
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Destination
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 92
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AccountID Destination { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountID
+    content.vb: Public Property Destination As AccountID
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.Destination*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageDataOp
+  commentId: P:stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageDataOp
+  id: ManageDataOp
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: ManageDataOp
+  nameWithType: Operation.OperationBody.ManageDataOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageDataOp
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ManageDataOp
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 93
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public ManageDataOp ManageDataOp { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.ManageDataOp
+    content.vb: Public Property ManageDataOp As ManageDataOp
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageDataOp*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.BumpSequenceOp
+  commentId: P:stellar_dotnet_sdk.xdr.Operation.OperationBody.BumpSequenceOp
+  id: BumpSequenceOp
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: BumpSequenceOp
+  nameWithType: Operation.OperationBody.BumpSequenceOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.BumpSequenceOp
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BumpSequenceOp
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 94
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public BumpSequenceOp BumpSequenceOp { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.BumpSequenceOp
+    content.vb: Public Property BumpSequenceOp As BumpSequenceOp
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.BumpSequenceOp*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Operation.OperationBody)
+  commentId: M:stellar_dotnet_sdk.xdr.Operation.OperationBody.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Operation.OperationBody)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Operation.OperationBody)
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, Operation.OperationBody)
+  nameWithType: Operation.OperationBody.Encode(XdrDataOutputStream, Operation.OperationBody)
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.Operation.OperationBody)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 95
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, Operation.OperationBody encodedOperationBody)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedOperationBody
+      type: stellar_dotnet_sdk.xdr.Operation.OperationBody
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedOperationBody As Operation.OperationBody)
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.Operation.OperationBody.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: Operation.OperationBody.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Operation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/Operation.cs
+    startLine: 137
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static Operation.OperationBody Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.Operation.OperationBody
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As Operation.OperationBody
+  overload: stellar_dotnet_sdk.xdr.Operation.OperationBody.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.#ctor
+  name: OperationBody
+  nameWithType: Operation.OperationBody.OperationBody
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.OperationBody
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.Discriminant*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.Discriminant
+  name: Discriminant
+  nameWithType: Operation.OperationBody.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.Discriminant
+- uid: stellar_dotnet_sdk.xdr.OperationType
+  commentId: T:stellar_dotnet_sdk.xdr.OperationType
+  parent: stellar_dotnet_sdk.xdr
+  name: OperationType
+  nameWithType: OperationType
+  fullName: stellar_dotnet_sdk.xdr.OperationType
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.CreateAccountOp*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.CreateAccountOp
+  name: CreateAccountOp
+  nameWithType: Operation.OperationBody.CreateAccountOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.CreateAccountOp
+- uid: stellar_dotnet_sdk.xdr.CreateAccountOp
+  commentId: T:stellar_dotnet_sdk.xdr.CreateAccountOp
+  parent: stellar_dotnet_sdk.xdr
+  name: CreateAccountOp
+  nameWithType: CreateAccountOp
+  fullName: stellar_dotnet_sdk.xdr.CreateAccountOp
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.PaymentOp*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.PaymentOp
+  name: PaymentOp
+  nameWithType: Operation.OperationBody.PaymentOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.PaymentOp
+- uid: stellar_dotnet_sdk.xdr.PaymentOp
+  commentId: T:stellar_dotnet_sdk.xdr.PaymentOp
+  parent: stellar_dotnet_sdk.xdr
+  name: PaymentOp
+  nameWithType: PaymentOp
+  fullName: stellar_dotnet_sdk.xdr.PaymentOp
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.PathPaymentOp*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.PathPaymentOp
+  name: PathPaymentOp
+  nameWithType: Operation.OperationBody.PathPaymentOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.PathPaymentOp
+- uid: stellar_dotnet_sdk.xdr.PathPaymentOp
+  commentId: T:stellar_dotnet_sdk.xdr.PathPaymentOp
+  parent: stellar_dotnet_sdk.xdr
+  name: PathPaymentOp
+  nameWithType: PathPaymentOp
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentOp
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageOfferOp*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageOfferOp
+  name: ManageOfferOp
+  nameWithType: Operation.OperationBody.ManageOfferOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageOfferOp
+- uid: stellar_dotnet_sdk.xdr.ManageOfferOp
+  commentId: T:stellar_dotnet_sdk.xdr.ManageOfferOp
+  parent: stellar_dotnet_sdk.xdr
+  name: ManageOfferOp
+  nameWithType: ManageOfferOp
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferOp
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.CreatePassiveOfferOp*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.CreatePassiveOfferOp
+  name: CreatePassiveOfferOp
+  nameWithType: Operation.OperationBody.CreatePassiveOfferOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.CreatePassiveOfferOp
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  commentId: T:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  parent: stellar_dotnet_sdk.xdr
+  name: CreatePassiveOfferOp
+  nameWithType: CreatePassiveOfferOp
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.SetOptionsOp*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.SetOptionsOp
+  name: SetOptionsOp
+  nameWithType: Operation.OperationBody.SetOptionsOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.SetOptionsOp
+- uid: stellar_dotnet_sdk.xdr.SetOptionsOp
+  commentId: T:stellar_dotnet_sdk.xdr.SetOptionsOp
+  parent: stellar_dotnet_sdk.xdr
+  name: SetOptionsOp
+  nameWithType: SetOptionsOp
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsOp
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.ChangeTrustOp*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.ChangeTrustOp
+  name: ChangeTrustOp
+  nameWithType: Operation.OperationBody.ChangeTrustOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.ChangeTrustOp
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp
+  commentId: T:stellar_dotnet_sdk.xdr.ChangeTrustOp
+  parent: stellar_dotnet_sdk.xdr
+  name: ChangeTrustOp
+  nameWithType: ChangeTrustOp
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.AllowTrustOp*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.AllowTrustOp
+  name: AllowTrustOp
+  nameWithType: Operation.OperationBody.AllowTrustOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.AllowTrustOp
+- uid: stellar_dotnet_sdk.xdr.AllowTrustOp
+  commentId: T:stellar_dotnet_sdk.xdr.AllowTrustOp
+  parent: stellar_dotnet_sdk.xdr
+  name: AllowTrustOp
+  nameWithType: AllowTrustOp
+  fullName: stellar_dotnet_sdk.xdr.AllowTrustOp
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.Destination*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.Destination
+  name: Destination
+  nameWithType: Operation.OperationBody.Destination
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.Destination
+- uid: stellar_dotnet_sdk.xdr.AccountID
+  commentId: T:stellar_dotnet_sdk.xdr.AccountID
+  parent: stellar_dotnet_sdk.xdr
+  name: AccountID
+  nameWithType: AccountID
+  fullName: stellar_dotnet_sdk.xdr.AccountID
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageDataOp*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageDataOp
+  name: ManageDataOp
+  nameWithType: Operation.OperationBody.ManageDataOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.ManageDataOp
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp
+  commentId: T:stellar_dotnet_sdk.xdr.ManageDataOp
+  parent: stellar_dotnet_sdk.xdr
+  name: ManageDataOp
+  nameWithType: ManageDataOp
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.BumpSequenceOp*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.BumpSequenceOp
+  name: BumpSequenceOp
+  nameWithType: Operation.OperationBody.BumpSequenceOp
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.BumpSequenceOp
+- uid: stellar_dotnet_sdk.xdr.BumpSequenceOp
+  commentId: T:stellar_dotnet_sdk.xdr.BumpSequenceOp
+  parent: stellar_dotnet_sdk.xdr
+  name: BumpSequenceOp
+  nameWithType: BumpSequenceOp
+  fullName: stellar_dotnet_sdk.xdr.BumpSequenceOp
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.Encode
+  name: Encode
+  nameWithType: Operation.OperationBody.Encode
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody
+  commentId: T:stellar_dotnet_sdk.xdr.Operation.OperationBody
+  parent: stellar_dotnet_sdk.xdr
+  name: Operation.OperationBody
+  nameWithType: Operation.OperationBody
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody
+- uid: stellar_dotnet_sdk.xdr.Operation.OperationBody.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Operation.OperationBody.Decode
+  name: Decode
+  nameWithType: Operation.OperationBody.Decode
+  fullName: stellar_dotnet_sdk.xdr.Operation.OperationBody.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

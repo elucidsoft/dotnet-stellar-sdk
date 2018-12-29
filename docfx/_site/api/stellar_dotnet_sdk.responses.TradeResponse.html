@@ -1,0 +1,1225 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TradeResponse
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TradeResponse
+   ">
+    <meta name="generator" content="docfx 2.40.6.0">
+    
+    <link rel="shortcut icon" href="../favicon">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="stellar_dotnet_sdk.responses.TradeResponse">
+  <h1 id="stellar_dotnet_sdk_responses_TradeResponse" data-uid="stellar_dotnet_sdk.responses.TradeResponse">Class TradeResponse
+  </h1>
+  <div class="markdown level0 summary"><p>Represents trades response.
+See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/trades.html">https://www.stellar.org/developers/horizon/reference/endpoints/trades.html</a>
+<seealso cref="!:TradesRequestBuilder"></seealso>
+<a class="xref" href="stellar_dotnet_sdk.Server.html">Server</a></p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="stellar_dotnet_sdk.responses.Response.html">Response</a></div>
+    <div class="level2"><span class="xref">TradeResponse</span></div>
+  </div>
+  
+  
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitLimit">Response.RateLimitLimit</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitRemaining">Response.RateLimitRemaining</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+    </div>
+  </div>
+  
+  <h6><strong>Namespace</strong>: System.Dynamic.ExpandoObject</h6>
+  <h6><strong>Assembly</strong>: stellar-dotnet-sdk.dll</h6>
+  
+  <h5 id="stellar_dotnet_sdk_responses_TradeResponse_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TradeResponse : Response, IPagingToken</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse__ctor_String_String_String_String_System_Boolean_stellar_dotnet_sdk_KeyPair_String_String_String_String_String_stellar_dotnet_sdk_KeyPair_String_String_String_String_String_stellar_dotnet_sdk_Price_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.%23ctor(String%2CString%2CString%2CString%2CSystem.Boolean%2Cstellar_dotnet_sdk.KeyPair%2CString%2CString%2CString%2CString%2CString%2Cstellar_dotnet_sdk.KeyPair%2CString%2CString%2CString%2CString%2CString%2Cstellar_dotnet_sdk.Price)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L14" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse__ctor_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.#ctor*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse__ctor_String_String_String_String_System_Boolean_stellar_dotnet_sdk_KeyPair_String_String_String_String_String_stellar_dotnet_sdk_KeyPair_String_String_String_String_String_stellar_dotnet_sdk_Price_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.#ctor(String,String,String,String,System.Boolean,stellar_dotnet_sdk.KeyPair,String,String,String,String,String,stellar_dotnet_sdk.KeyPair,String,String,String,String,String,stellar_dotnet_sdk.Price)"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse__ctor_String_String_String_String_System_Boolean_stellar_dotnet_sdk_KeyPair_String_String_String_String_String_stellar_dotnet_sdk_KeyPair_String_String_String_String_String_stellar_dotnet_sdk_Price_" class="expander" data-toggle="collapse">TradeResponse(String, String, String, String, Boolean, KeyPair, String, String, String, String, String, KeyPair, String, String, String, String, String, Price)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse__ctor_String_String_String_String_System_Boolean_stellar_dotnet_sdk_KeyPair_String_String_String_String_String_stellar_dotnet_sdk_KeyPair_String_String_String_String_String_stellar_dotnet_sdk_Price_" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TradeResponse(String id, String pagingToken, String ledgerCloseTime, String offerId, bool baseIsSeller, KeyPair baseAccount, String baseOfferId, String baseAmount, String baseAssetType, String baseAssetCode, String baseAssetIssuer, KeyPair counterAccount, String counterOfferId, String counterAmount, String counterAssetType, String counterAssetCode, String counterAssetIssuer, Price price)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">id</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">pagingToken</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">ledgerCloseTime</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">offerId</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Boolean</span></span>
+        <span class="parametername">baseIsSeller</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
+        <span class="parametername">baseAccount</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">baseOfferId</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">baseAmount</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">baseAssetType</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">baseAssetCode</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">baseAssetIssuer</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
+        <span class="parametername">counterAccount</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">counterOfferId</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">counterAmount</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">counterAssetType</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">counterAssetCode</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">counterAssetIssuer</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Price.html">Price</a></span>
+        <span class="parametername">price</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_BaseAccount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.BaseAccount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L50" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_BaseAccount_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseAccount*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_BaseAccount" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseAccount"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseAccount" class="expander" data-toggle="collapse">BaseAccount</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseAccount" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyPair BaseAccount { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_BaseAmount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.BaseAmount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L57" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_BaseAmount_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseAmount*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_BaseAmount" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseAmount"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseAmount" class="expander" data-toggle="collapse">BaseAmount</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseAmount" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String BaseAmount { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_BaseAsset.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.BaseAsset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L97" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_BaseAsset_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseAsset*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_BaseAsset" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseAsset"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseAsset" class="expander" data-toggle="collapse">BaseAsset</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseAsset" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates and returns a base asset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Asset BaseAsset { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_BaseAssetCode.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.BaseAssetCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L63" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_BaseAssetCode_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseAssetCode*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_BaseAssetCode" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseAssetCode"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseAssetCode" class="expander" data-toggle="collapse">BaseAssetCode</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseAssetCode" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String BaseAssetCode { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_BaseAssetIssuer.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.BaseAssetIssuer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L66" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_BaseAssetIssuer_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseAssetIssuer*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_BaseAssetIssuer" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseAssetIssuer"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseAssetIssuer" class="expander" data-toggle="collapse">BaseAssetIssuer</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseAssetIssuer" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String BaseAssetIssuer { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_BaseAssetType.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.BaseAssetType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L60" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_BaseAssetType_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseAssetType*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_BaseAssetType" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseAssetType"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseAssetType" class="expander" data-toggle="collapse">BaseAssetType</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseAssetType" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String BaseAssetType { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_BaseIsSeller.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.BaseIsSeller%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L47" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_BaseIsSeller_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseIsSeller*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_BaseIsSeller" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseIsSeller"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseIsSeller" class="expander" data-toggle="collapse">BaseIsSeller</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseIsSeller" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BaseIsSeller { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_BaseOfferId.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.BaseOfferId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L54" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_BaseOfferId_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseOfferId*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_BaseOfferId" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseOfferId"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseOfferId" class="expander" data-toggle="collapse">BaseOfferId</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseOfferId" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String BaseOfferId { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_CountAsset.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.CountAsset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L102" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_CountAsset_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CountAsset*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_CountAsset" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CountAsset"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_CountAsset" class="expander" data-toggle="collapse">CountAsset</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_CountAsset" class="collapse in">
+  <div class="markdown level1 summary"><p>Creates and returns a counter asset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Asset CountAsset { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_CounterAccount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.CounterAccount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L69" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_CounterAccount_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterAccount*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_CounterAccount" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterAccount"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterAccount" class="expander" data-toggle="collapse">CounterAccount</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterAccount" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyPair CounterAccount { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_CounterAmount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.CounterAmount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L76" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_CounterAmount_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterAmount*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_CounterAmount" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterAmount"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterAmount" class="expander" data-toggle="collapse">CounterAmount</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterAmount" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String CounterAmount { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_CounterAssetCode.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.CounterAssetCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L82" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_CounterAssetCode_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterAssetCode*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_CounterAssetCode" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterAssetCode"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterAssetCode" class="expander" data-toggle="collapse">CounterAssetCode</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterAssetCode" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String CounterAssetCode { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_CounterAssetIssuer.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.CounterAssetIssuer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L85" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_CounterAssetIssuer_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterAssetIssuer*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_CounterAssetIssuer" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterAssetIssuer"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterAssetIssuer" class="expander" data-toggle="collapse">CounterAssetIssuer</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterAssetIssuer" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String CounterAssetIssuer { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_CounterAssetType.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.CounterAssetType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L79" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_CounterAssetType_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterAssetType*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_CounterAssetType" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterAssetType"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterAssetType" class="expander" data-toggle="collapse">CounterAssetType</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterAssetType" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String CounterAssetType { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_CounterOfferId.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.CounterOfferId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L73" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_CounterOfferId_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterOfferId*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_CounterOfferId" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterOfferId"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterOfferId" class="expander" data-toggle="collapse">CounterOfferId</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterOfferId" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String CounterOfferId { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_Id.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L36" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_Id_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.Id*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_Id" data-uid="stellar_dotnet_sdk.responses.TradeResponse.Id"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_Id" class="expander" data-toggle="collapse">Id</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_Id" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String Id { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_LedgerCloseTime.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.LedgerCloseTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L41" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_LedgerCloseTime_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.LedgerCloseTime*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_LedgerCloseTime" data-uid="stellar_dotnet_sdk.responses.TradeResponse.LedgerCloseTime"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_LedgerCloseTime" class="expander" data-toggle="collapse">LedgerCloseTime</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_LedgerCloseTime" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String LedgerCloseTime { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_Links.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.Links%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L91" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_Links_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.Links*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_Links" data-uid="stellar_dotnet_sdk.responses.TradeResponse.Links"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_Links" class="expander" data-toggle="collapse">Links</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_Links" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TradeResponseLinks Links { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.responses.TradeResponseLinks.html">TradeResponseLinks</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_OfferId.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.OfferId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L44" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_OfferId_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.OfferId*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_OfferId" data-uid="stellar_dotnet_sdk.responses.TradeResponse.OfferId"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_OfferId" class="expander" data-toggle="collapse">OfferId</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_OfferId" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String OfferId { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_PagingToken.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.PagingToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L38" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_PagingToken_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.PagingToken*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_PagingToken" data-uid="stellar_dotnet_sdk.responses.TradeResponse.PagingToken"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_PagingToken" class="expander" data-toggle="collapse">PagingToken</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_PagingToken" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public String PagingToken { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse_Price.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse.Price%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L88" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_Price_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.Price*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_Price" data-uid="stellar_dotnet_sdk.responses.TradeResponse.Price"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_Price" class="expander" data-toggle="collapse">Price</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_Price" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Price Price { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Price.html">Price</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_TradeResponse.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.TradeResponse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/TradeResponse.cs/#L12" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

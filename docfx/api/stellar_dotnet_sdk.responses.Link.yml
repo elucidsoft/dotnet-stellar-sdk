@@ -1,0 +1,232 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.Link
+  commentId: T:stellar_dotnet_sdk.responses.Link
+  id: Link
+  parent: stellar_dotnet_sdk.responses
+  children:
+  - stellar_dotnet_sdk.responses.Link.#ctor(System.String)
+  - stellar_dotnet_sdk.responses.Link.Href
+  - stellar_dotnet_sdk.responses.Link.Templated
+  - stellar_dotnet_sdk.responses.Link.Uri
+  langs:
+  - csharp
+  - vb
+  name: Link
+  nameWithType: Link
+  fullName: stellar_dotnet_sdk.responses.Link
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Link.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Link
+    path: ../stellar-dotnet-sdk/responses/Link.cs
+    startLine: 9
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: 'public class Link : object'
+    content.vb: >-
+      Public Class Link
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - stellar_dotnet_sdk.responses.Link`1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.Link.#ctor(System.String)
+  commentId: M:stellar_dotnet_sdk.responses.Link.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: stellar_dotnet_sdk.responses.Link
+  langs:
+  - csharp
+  - vb
+  name: Link(String)
+  nameWithType: Link.Link(String)
+  fullName: stellar_dotnet_sdk.responses.Link.Link(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Link.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/Link.cs
+    startLine: 11
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public Link(string href)
+    parameters:
+    - id: href
+      type: System.String
+    content.vb: Public Sub New(href As String)
+  overload: stellar_dotnet_sdk.responses.Link.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.Link.Href
+  commentId: P:stellar_dotnet_sdk.responses.Link.Href
+  id: Href
+  parent: stellar_dotnet_sdk.responses.Link
+  langs:
+  - csharp
+  - vb
+  name: Href
+  nameWithType: Link.Href
+  fullName: stellar_dotnet_sdk.responses.Link.Href
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Link.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Href
+    path: ../stellar-dotnet-sdk/responses/Link.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string Href { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Href As String
+  overload: stellar_dotnet_sdk.responses.Link.Href*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.Link.Uri
+  commentId: P:stellar_dotnet_sdk.responses.Link.Uri
+  id: Uri
+  parent: stellar_dotnet_sdk.responses.Link
+  langs:
+  - csharp
+  - vb
+  name: Uri
+  nameWithType: Link.Uri
+  fullName: stellar_dotnet_sdk.responses.Link.Uri
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Link.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Uri
+    path: ../stellar-dotnet-sdk/responses/Link.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public virtual Uri Uri { get; }
+    parameters: []
+    return:
+      type: Uri
+    content.vb: Public Overridable ReadOnly Property Uri As Uri
+  overload: stellar_dotnet_sdk.responses.Link.Uri*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.Link.Templated
+  commentId: P:stellar_dotnet_sdk.responses.Link.Templated
+  id: Templated
+  parent: stellar_dotnet_sdk.responses.Link
+  langs:
+  - csharp
+  - vb
+  name: Templated
+  nameWithType: Link.Templated
+  fullName: stellar_dotnet_sdk.responses.Link.Templated
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Link.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Templated
+    path: ../stellar-dotnet-sdk/responses/Link.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public virtual bool Templated { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable ReadOnly Property Templated As Boolean
+  overload: stellar_dotnet_sdk.responses.Link.Templated*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+references:
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.Link.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.Link.#ctor
+  name: Link
+  nameWithType: Link.Link
+  fullName: stellar_dotnet_sdk.responses.Link.Link
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.responses.Link.Href*
+  commentId: Overload:stellar_dotnet_sdk.responses.Link.Href
+  name: Href
+  nameWithType: Link.Href
+  fullName: stellar_dotnet_sdk.responses.Link.Href
+- uid: stellar_dotnet_sdk.responses.Link.Uri*
+  commentId: Overload:stellar_dotnet_sdk.responses.Link.Uri
+  name: Uri
+  nameWithType: Link.Uri
+  fullName: stellar_dotnet_sdk.responses.Link.Uri
+- uid: Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: Uri
+- uid: stellar_dotnet_sdk.responses.Link.Templated*
+  commentId: Overload:stellar_dotnet_sdk.responses.Link.Templated
+  name: Templated
+  nameWithType: Link.Templated
+  fullName: stellar_dotnet_sdk.responses.Link.Templated
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

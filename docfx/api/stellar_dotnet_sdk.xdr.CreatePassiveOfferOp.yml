@@ -1,0 +1,371 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  commentId: T:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  id: CreatePassiveOfferOp
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.#ctor
+  - stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Amount
+  - stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Buying
+  - stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.CreatePassiveOfferOp)
+  - stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Price
+  - stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Selling
+  langs:
+  - csharp
+  - vb
+  name: CreatePassiveOfferOp
+  nameWithType: CreatePassiveOfferOp
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CreatePassiveOfferOp
+    path: ../stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class CreatePassiveOfferOp : object'
+    content.vb: >-
+      Public Class CreatePassiveOfferOp
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  langs:
+  - csharp
+  - vb
+  name: CreatePassiveOfferOp()
+  nameWithType: CreatePassiveOfferOp.CreatePassiveOfferOp()
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.CreatePassiveOfferOp()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public CreatePassiveOfferOp()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Selling
+  commentId: P:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Selling
+  id: Selling
+  parent: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  langs:
+  - csharp
+  - vb
+  name: Selling
+  nameWithType: CreatePassiveOfferOp.Selling
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Selling
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Selling
+    path: ../stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Asset Selling { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Asset
+    content.vb: Public Property Selling As Asset
+  overload: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Selling*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Buying
+  commentId: P:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Buying
+  id: Buying
+  parent: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  langs:
+  - csharp
+  - vb
+  name: Buying
+  nameWithType: CreatePassiveOfferOp.Buying
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Buying
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Buying
+    path: ../stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Asset Buying { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Asset
+    content.vb: Public Property Buying As Asset
+  overload: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Buying*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Amount
+  commentId: P:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Amount
+  id: Amount
+  parent: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  langs:
+  - csharp
+  - vb
+  name: Amount
+  nameWithType: CreatePassiveOfferOp.Amount
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Amount
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Amount
+    path: ../stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Int64 Amount { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Int64
+    content.vb: Public Property Amount As Int64
+  overload: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Amount*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Price
+  commentId: P:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Price
+  id: Price
+  parent: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  langs:
+  - csharp
+  - vb
+  name: Price
+  nameWithType: CreatePassiveOfferOp.Price
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Price
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Price
+    path: ../stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Price Price { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Price
+    content.vb: Public Property Price As Price
+  overload: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Price*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.CreatePassiveOfferOp)
+  commentId: M:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.CreatePassiveOfferOp)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.CreatePassiveOfferOp)
+  parent: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, CreatePassiveOfferOp)
+  nameWithType: CreatePassiveOfferOp.Encode(XdrDataOutputStream, CreatePassiveOfferOp)
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.CreatePassiveOfferOp)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, CreatePassiveOfferOp encodedCreatePassiveOfferOp)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedCreatePassiveOfferOp
+      type: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedCreatePassiveOfferOp As CreatePassiveOfferOp)
+  overload: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: CreatePassiveOfferOp.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/CreatePassiveOfferOp.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static CreatePassiveOfferOp Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As CreatePassiveOfferOp
+  overload: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.#ctor
+  name: CreatePassiveOfferOp
+  nameWithType: CreatePassiveOfferOp.CreatePassiveOfferOp
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.CreatePassiveOfferOp
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Selling*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Selling
+  name: Selling
+  nameWithType: CreatePassiveOfferOp.Selling
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Selling
+- uid: stellar_dotnet_sdk.xdr.Asset
+  commentId: T:stellar_dotnet_sdk.xdr.Asset
+  parent: stellar_dotnet_sdk.xdr
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.xdr.Asset
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Buying*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Buying
+  name: Buying
+  nameWithType: CreatePassiveOfferOp.Buying
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Buying
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Amount*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Amount
+  name: Amount
+  nameWithType: CreatePassiveOfferOp.Amount
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Amount
+- uid: stellar_dotnet_sdk.xdr.Int64
+  commentId: T:stellar_dotnet_sdk.xdr.Int64
+  parent: stellar_dotnet_sdk.xdr
+  name: Int64
+  nameWithType: Int64
+  fullName: stellar_dotnet_sdk.xdr.Int64
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Price*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Price
+  name: Price
+  nameWithType: CreatePassiveOfferOp.Price
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Price
+- uid: stellar_dotnet_sdk.xdr.Price
+  commentId: T:stellar_dotnet_sdk.xdr.Price
+  parent: stellar_dotnet_sdk.xdr
+  name: Price
+  nameWithType: Price
+  fullName: stellar_dotnet_sdk.xdr.Price
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Encode
+  name: Encode
+  nameWithType: CreatePassiveOfferOp.Encode
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  commentId: T:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+  parent: stellar_dotnet_sdk.xdr
+  name: CreatePassiveOfferOp
+  nameWithType: CreatePassiveOfferOp
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp
+- uid: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Decode
+  name: Decode
+  nameWithType: CreatePassiveOfferOp.Decode
+  fullName: stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

@@ -1,0 +1,1002 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.EventSource
+  commentId: T:stellar_dotnet_sdk.EventSource
+  id: EventSource
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.EventSource.#ctor(System.String)
+  - stellar_dotnet_sdk.EventSource.#ctor(Uri)
+  - stellar_dotnet_sdk.EventSource.Connect
+  - stellar_dotnet_sdk.EventSource.Dispose
+  - stellar_dotnet_sdk.EventSource.Error
+  - stellar_dotnet_sdk.EventSource.Headers
+  - stellar_dotnet_sdk.EventSource.LastEventId
+  - stellar_dotnet_sdk.EventSource.Message
+  - stellar_dotnet_sdk.EventSource.MessageTypes
+  - stellar_dotnet_sdk.EventSource.ReadyState
+  - stellar_dotnet_sdk.EventSource.Shutdown
+  - stellar_dotnet_sdk.EventSource.StateChange
+  - stellar_dotnet_sdk.EventSource.Timeout
+  - stellar_dotnet_sdk.EventSource.Url
+  langs:
+  - csharp
+  - vb
+  name: EventSource
+  nameWithType: EventSource
+  fullName: stellar_dotnet_sdk.EventSource
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: EventSource
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nAn EventSource represents a long-lived HTTP connection through which a Web server can “push” textual messages.\nTo use these “Server Sent Events”, pass the server URL to the EventSource() constructor and then register\na message event handler on the resulting Event Source object. The EventSource attempts to be resilient to\ntransitory network errors and interruptions by automatically retrying connections to maintain persistence.\n"
+  example: []
+  syntax:
+    content: 'public sealed class EventSource : IDisposable, IEventSource'
+    content.vb: >-
+      Public NotInheritable Class EventSource
+          Inherits IDisposable
+          Implements IEventSource
+  inheritance:
+  - System.Object
+  implements:
+  - stellar_dotnet_sdk.IEventSource
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: stellar_dotnet_sdk.EventSource.#ctor(System.String)
+  commentId: M:stellar_dotnet_sdk.EventSource.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: EventSource(String)
+  nameWithType: EventSource.EventSource(String)
+  fullName: stellar_dotnet_sdk.EventSource.EventSource(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 71
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nInitializes a new instance of the <xref href=\"stellar_dotnet_sdk.EventSource\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public EventSource(string requestUriString)
+    parameters:
+    - id: requestUriString
+      type: System.String
+      description: The URL.
+    content.vb: Public Sub New(requestUriString As String)
+  overload: stellar_dotnet_sdk.EventSource.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.EventSource.#ctor(Uri)
+  commentId: M:stellar_dotnet_sdk.EventSource.#ctor(Uri)
+  id: '#ctor(Uri)'
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: EventSource(Uri)
+  nameWithType: EventSource.EventSource(Uri)
+  fullName: stellar_dotnet_sdk.EventSource.EventSource(Uri)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 80
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nInitializes a new instance of the <xref href=\"stellar_dotnet_sdk.EventSource\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public EventSource(Uri requestUriString)
+    parameters:
+    - id: requestUriString
+      type: Uri
+      description: The URL.
+    content.vb: Public Sub New(requestUriString As Uri)
+  overload: stellar_dotnet_sdk.EventSource.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.EventSource.Error
+  commentId: E:stellar_dotnet_sdk.EventSource.Error
+  id: Error
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: Error
+  nameWithType: EventSource.Error
+  fullName: stellar_dotnet_sdk.EventSource.Error
+  type: Event
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Error
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 96
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nOccurs when an error occurs.\n"
+  example: []
+  syntax:
+    content: public event EventHandler<EventSource.ServerSentErrorEventArgs> Error
+    return:
+      type: EventHandler{stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs}
+    content.vb: Public Event Error As EventHandler(Of EventSource.ServerSentErrorEventArgs)
+  implements:
+  - stellar_dotnet_sdk.IEventSource.Error
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.EventSource.Message
+  commentId: E:stellar_dotnet_sdk.EventSource.Message
+  id: Message
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: Message
+  nameWithType: EventSource.Message
+  fullName: stellar_dotnet_sdk.EventSource.Message
+  type: Event
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Message
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 101
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nOccurs when a message is available.\n"
+  example: []
+  syntax:
+    content: public event EventHandler<EventSource.ServerSentEventArgs> Message
+    return:
+      type: EventHandler{stellar_dotnet_sdk.EventSource.ServerSentEventArgs}
+    content.vb: Public Event Message As EventHandler(Of EventSource.ServerSentEventArgs)
+  implements:
+  - stellar_dotnet_sdk.IEventSource.Message
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.EventSource.StateChange
+  commentId: E:stellar_dotnet_sdk.EventSource.StateChange
+  id: StateChange
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: StateChange
+  nameWithType: EventSource.StateChange
+  fullName: stellar_dotnet_sdk.EventSource.StateChange
+  type: Event
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: StateChange
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 106
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nOccurs when the ready state changes.\n"
+  example: []
+  syntax:
+    content: public event EventHandler<EventSource.StateChangeEventArgs> StateChange
+    return:
+      type: EventHandler{stellar_dotnet_sdk.EventSource.StateChangeEventArgs}
+    content.vb: Public Event StateChange As EventHandler(Of EventSource.StateChangeEventArgs)
+  implements:
+  - stellar_dotnet_sdk.IEventSource.StateChange
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.EventSource.Headers
+  commentId: P:stellar_dotnet_sdk.EventSource.Headers
+  id: Headers
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: Headers
+  nameWithType: EventSource.Headers
+  fullName: stellar_dotnet_sdk.EventSource.Headers
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Headers
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 116
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nGets or sets the headers to be sent in the request. For more\ncustomization override the ConfigureWebRequest method.\n"
+  example: []
+  syntax:
+    content: public NameValueCollection Headers { get; }
+    parameters: []
+    return:
+      type: NameValueCollection
+    content.vb: Public ReadOnly Property Headers As NameValueCollection
+  overload: stellar_dotnet_sdk.EventSource.Headers*
+  implements:
+  - stellar_dotnet_sdk.IEventSource.Headers
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.EventSource.MessageTypes
+  commentId: P:stellar_dotnet_sdk.EventSource.MessageTypes
+  id: MessageTypes
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: MessageTypes
+  nameWithType: EventSource.MessageTypes
+  fullName: stellar_dotnet_sdk.EventSource.MessageTypes
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: MessageTypes
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 122
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nGets or sets an optional message type filter. If set,\nthis filter specifies which event types to pass through.\n"
+  example: []
+  syntax:
+    content: public string[] MessageTypes { get; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: Public ReadOnly Property MessageTypes As String()
+  overload: stellar_dotnet_sdk.EventSource.MessageTypes*
+  implements:
+  - stellar_dotnet_sdk.IEventSource.MessageTypes
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.EventSource.LastEventId
+  commentId: P:stellar_dotnet_sdk.EventSource.LastEventId
+  id: LastEventId
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: LastEventId
+  nameWithType: EventSource.LastEventId
+  fullName: stellar_dotnet_sdk.EventSource.LastEventId
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: LastEventId
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 127
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nGets the last event identifier.\n"
+  example: []
+  syntax:
+    content: public string LastEventId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property LastEventId As String
+  overload: stellar_dotnet_sdk.EventSource.LastEventId*
+  implements:
+  - stellar_dotnet_sdk.IEventSource.LastEventId
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.EventSource.ReadyState
+  commentId: P:stellar_dotnet_sdk.EventSource.ReadyState
+  id: ReadyState
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: ReadyState
+  nameWithType: EventSource.ReadyState
+  fullName: stellar_dotnet_sdk.EventSource.ReadyState
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ReadyState
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 132
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nGets the state of the connection.\n"
+  example: []
+  syntax:
+    content: public EventSource.EventSourceState ReadyState { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.EventSource.EventSourceState
+    content.vb: Public ReadOnly Property ReadyState As EventSource.EventSourceState
+  overload: stellar_dotnet_sdk.EventSource.ReadyState*
+  implements:
+  - stellar_dotnet_sdk.IEventSource.ReadyState
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.EventSource.Timeout
+  commentId: P:stellar_dotnet_sdk.EventSource.Timeout
+  id: Timeout
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: Timeout
+  nameWithType: EventSource.Timeout
+  fullName: stellar_dotnet_sdk.EventSource.Timeout
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Timeout
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 146
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nGets or sets the initial connection timeout.\nThere is no timeout on the connection once established.\n"
+  example: []
+  syntax:
+    content: public int Timeout { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Timeout As Integer
+  overload: stellar_dotnet_sdk.EventSource.Timeout*
+  implements:
+  - stellar_dotnet_sdk.IEventSource.Timeout
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.EventSource.Url
+  commentId: P:stellar_dotnet_sdk.EventSource.Url
+  id: Url
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: Url
+  nameWithType: EventSource.Url
+  fullName: stellar_dotnet_sdk.EventSource.Url
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Url
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 151
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nThe absolute URL to which the EventSource is connected.\n"
+  example: []
+  syntax:
+    content: public Uri Url { get; set; }
+    parameters: []
+    return:
+      type: Uri
+    content.vb: Public Property Url As Uri
+  overload: stellar_dotnet_sdk.EventSource.Url*
+  implements:
+  - stellar_dotnet_sdk.IEventSource.Url
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.EventSource.Connect
+  commentId: M:stellar_dotnet_sdk.EventSource.Connect
+  id: Connect
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: Connect()
+  nameWithType: EventSource.Connect()
+  fullName: stellar_dotnet_sdk.EventSource.Connect()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Connect
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 161
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBegin the process to connect to the the EventSource. The EventSource attempts to be resilient to\ntransitory network errors and interruptions by automatically retrying connections to maintain persistence.\n"
+  example: []
+  syntax:
+    content: public Task Connect()
+    return:
+      type: Task
+    content.vb: Public Function Connect As Task
+  overload: stellar_dotnet_sdk.EventSource.Connect*
+  implements:
+  - stellar_dotnet_sdk.IEventSource.Connect
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.EventSource.Dispose
+  commentId: M:stellar_dotnet_sdk.EventSource.Dispose
+  id: Dispose
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: EventSource.Dispose()
+  fullName: stellar_dotnet_sdk.EventSource.Dispose()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Dispose
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 174
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nPerforms application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: stellar_dotnet_sdk.EventSource.Dispose*
+  implements:
+  - stellar_dotnet_sdk.IEventSource.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.EventSource.Shutdown
+  commentId: M:stellar_dotnet_sdk.EventSource.Shutdown
+  id: Shutdown
+  parent: stellar_dotnet_sdk.EventSource
+  langs:
+  - csharp
+  - vb
+  name: Shutdown()
+  nameWithType: EventSource.Shutdown()
+  fullName: stellar_dotnet_sdk.EventSource.Shutdown()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Shutdown
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 185
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nThis method shutsdown the connection.\n"
+  example: []
+  syntax:
+    content: public void Shutdown()
+    content.vb: Public Sub Shutdown
+  overload: stellar_dotnet_sdk.EventSource.Shutdown*
+  implements:
+  - stellar_dotnet_sdk.IEventSource.Shutdown
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.IEventSource
+  commentId: T:stellar_dotnet_sdk.IEventSource
+  parent: stellar_dotnet_sdk
+  name: IEventSource
+  nameWithType: IEventSource
+  fullName: stellar_dotnet_sdk.IEventSource
+- uid: stellar_dotnet_sdk.EventSource
+  commentId: T:stellar_dotnet_sdk.EventSource
+  name: EventSource
+  nameWithType: EventSource
+  fullName: stellar_dotnet_sdk.EventSource
+- uid: stellar_dotnet_sdk.EventSource.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.EventSource.#ctor
+  name: EventSource
+  nameWithType: EventSource.EventSource
+  fullName: stellar_dotnet_sdk.EventSource.EventSource
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: Uri
+- uid: stellar_dotnet_sdk.IEventSource.Error
+  commentId: E:stellar_dotnet_sdk.IEventSource.Error
+  parent: stellar_dotnet_sdk.IEventSource
+  name: Error
+  nameWithType: IEventSource.Error
+  fullName: stellar_dotnet_sdk.IEventSource.Error
+- uid: EventHandler{stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs}
+  commentId: '!:EventHandler{stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs}'
+  definition: EventHandler`1
+  name: EventHandler<EventSource.ServerSentErrorEventArgs>
+  nameWithType: EventHandler<EventSource.ServerSentErrorEventArgs>
+  fullName: EventHandler<stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs>
+  nameWithType.vb: EventHandler(Of EventSource.ServerSentErrorEventArgs)
+  fullName.vb: EventHandler(Of stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs)
+  name.vb: EventHandler(Of EventSource.ServerSentErrorEventArgs)
+  spec.csharp:
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs
+    name: EventSource.ServerSentErrorEventArgs
+    nameWithType: EventSource.ServerSentErrorEventArgs
+    fullName: stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs
+    name: EventSource.ServerSentErrorEventArgs
+    nameWithType: EventSource.ServerSentErrorEventArgs
+    fullName: stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: EventHandler`1
+  isExternal: true
+  name: EventHandler<>
+  nameWithType: EventHandler<>
+  fullName: EventHandler<>
+  nameWithType.vb: EventHandler(Of )
+  fullName.vb: EventHandler(Of )
+  name.vb: EventHandler(Of )
+  spec.csharp:
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.IEventSource.Message
+  commentId: E:stellar_dotnet_sdk.IEventSource.Message
+  parent: stellar_dotnet_sdk.IEventSource
+  name: Message
+  nameWithType: IEventSource.Message
+  fullName: stellar_dotnet_sdk.IEventSource.Message
+- uid: EventHandler{stellar_dotnet_sdk.EventSource.ServerSentEventArgs}
+  commentId: '!:EventHandler{stellar_dotnet_sdk.EventSource.ServerSentEventArgs}'
+  definition: EventHandler`1
+  name: EventHandler<EventSource.ServerSentEventArgs>
+  nameWithType: EventHandler<EventSource.ServerSentEventArgs>
+  fullName: EventHandler<stellar_dotnet_sdk.EventSource.ServerSentEventArgs>
+  nameWithType.vb: EventHandler(Of EventSource.ServerSentEventArgs)
+  fullName.vb: EventHandler(Of stellar_dotnet_sdk.EventSource.ServerSentEventArgs)
+  name.vb: EventHandler(Of EventSource.ServerSentEventArgs)
+  spec.csharp:
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.EventSource.ServerSentEventArgs
+    name: EventSource.ServerSentEventArgs
+    nameWithType: EventSource.ServerSentEventArgs
+    fullName: stellar_dotnet_sdk.EventSource.ServerSentEventArgs
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.EventSource.ServerSentEventArgs
+    name: EventSource.ServerSentEventArgs
+    nameWithType: EventSource.ServerSentEventArgs
+    fullName: stellar_dotnet_sdk.EventSource.ServerSentEventArgs
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.IEventSource.StateChange
+  commentId: E:stellar_dotnet_sdk.IEventSource.StateChange
+  parent: stellar_dotnet_sdk.IEventSource
+  name: StateChange
+  nameWithType: IEventSource.StateChange
+  fullName: stellar_dotnet_sdk.IEventSource.StateChange
+- uid: EventHandler{stellar_dotnet_sdk.EventSource.StateChangeEventArgs}
+  commentId: '!:EventHandler{stellar_dotnet_sdk.EventSource.StateChangeEventArgs}'
+  definition: EventHandler`1
+  name: EventHandler<EventSource.StateChangeEventArgs>
+  nameWithType: EventHandler<EventSource.StateChangeEventArgs>
+  fullName: EventHandler<stellar_dotnet_sdk.EventSource.StateChangeEventArgs>
+  nameWithType.vb: EventHandler(Of EventSource.StateChangeEventArgs)
+  fullName.vb: EventHandler(Of stellar_dotnet_sdk.EventSource.StateChangeEventArgs)
+  name.vb: EventHandler(Of EventSource.StateChangeEventArgs)
+  spec.csharp:
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.EventSource.StateChangeEventArgs
+    name: EventSource.StateChangeEventArgs
+    nameWithType: EventSource.StateChangeEventArgs
+    fullName: stellar_dotnet_sdk.EventSource.StateChangeEventArgs
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.EventSource.StateChangeEventArgs
+    name: EventSource.StateChangeEventArgs
+    nameWithType: EventSource.StateChangeEventArgs
+    fullName: stellar_dotnet_sdk.EventSource.StateChangeEventArgs
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.EventSource.Headers*
+  commentId: Overload:stellar_dotnet_sdk.EventSource.Headers
+  name: Headers
+  nameWithType: EventSource.Headers
+  fullName: stellar_dotnet_sdk.EventSource.Headers
+- uid: stellar_dotnet_sdk.IEventSource.Headers
+  commentId: P:stellar_dotnet_sdk.IEventSource.Headers
+  parent: stellar_dotnet_sdk.IEventSource
+  name: Headers
+  nameWithType: IEventSource.Headers
+  fullName: stellar_dotnet_sdk.IEventSource.Headers
+- uid: NameValueCollection
+  isExternal: true
+  name: NameValueCollection
+  nameWithType: NameValueCollection
+  fullName: NameValueCollection
+- uid: stellar_dotnet_sdk.EventSource.MessageTypes*
+  commentId: Overload:stellar_dotnet_sdk.EventSource.MessageTypes
+  name: MessageTypes
+  nameWithType: EventSource.MessageTypes
+  fullName: stellar_dotnet_sdk.EventSource.MessageTypes
+- uid: stellar_dotnet_sdk.IEventSource.MessageTypes
+  commentId: P:stellar_dotnet_sdk.IEventSource.MessageTypes
+  parent: stellar_dotnet_sdk.IEventSource
+  name: MessageTypes
+  nameWithType: IEventSource.MessageTypes
+  fullName: stellar_dotnet_sdk.IEventSource.MessageTypes
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: stellar_dotnet_sdk.EventSource.LastEventId*
+  commentId: Overload:stellar_dotnet_sdk.EventSource.LastEventId
+  name: LastEventId
+  nameWithType: EventSource.LastEventId
+  fullName: stellar_dotnet_sdk.EventSource.LastEventId
+- uid: stellar_dotnet_sdk.IEventSource.LastEventId
+  commentId: P:stellar_dotnet_sdk.IEventSource.LastEventId
+  parent: stellar_dotnet_sdk.IEventSource
+  name: LastEventId
+  nameWithType: IEventSource.LastEventId
+  fullName: stellar_dotnet_sdk.IEventSource.LastEventId
+- uid: stellar_dotnet_sdk.EventSource.ReadyState*
+  commentId: Overload:stellar_dotnet_sdk.EventSource.ReadyState
+  name: ReadyState
+  nameWithType: EventSource.ReadyState
+  fullName: stellar_dotnet_sdk.EventSource.ReadyState
+- uid: stellar_dotnet_sdk.IEventSource.ReadyState
+  commentId: P:stellar_dotnet_sdk.IEventSource.ReadyState
+  parent: stellar_dotnet_sdk.IEventSource
+  name: ReadyState
+  nameWithType: IEventSource.ReadyState
+  fullName: stellar_dotnet_sdk.IEventSource.ReadyState
+- uid: stellar_dotnet_sdk.EventSource.EventSourceState
+  commentId: T:stellar_dotnet_sdk.EventSource.EventSourceState
+  parent: stellar_dotnet_sdk
+  name: EventSource.EventSourceState
+  nameWithType: EventSource.EventSourceState
+  fullName: stellar_dotnet_sdk.EventSource.EventSourceState
+- uid: stellar_dotnet_sdk.EventSource.Timeout*
+  commentId: Overload:stellar_dotnet_sdk.EventSource.Timeout
+  name: Timeout
+  nameWithType: EventSource.Timeout
+  fullName: stellar_dotnet_sdk.EventSource.Timeout
+- uid: stellar_dotnet_sdk.IEventSource.Timeout
+  commentId: P:stellar_dotnet_sdk.IEventSource.Timeout
+  parent: stellar_dotnet_sdk.IEventSource
+  name: Timeout
+  nameWithType: IEventSource.Timeout
+  fullName: stellar_dotnet_sdk.IEventSource.Timeout
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: stellar_dotnet_sdk.EventSource.Url*
+  commentId: Overload:stellar_dotnet_sdk.EventSource.Url
+  name: Url
+  nameWithType: EventSource.Url
+  fullName: stellar_dotnet_sdk.EventSource.Url
+- uid: stellar_dotnet_sdk.IEventSource.Url
+  commentId: P:stellar_dotnet_sdk.IEventSource.Url
+  parent: stellar_dotnet_sdk.IEventSource
+  name: Url
+  nameWithType: IEventSource.Url
+  fullName: stellar_dotnet_sdk.IEventSource.Url
+- uid: stellar_dotnet_sdk.EventSource.Connect*
+  commentId: Overload:stellar_dotnet_sdk.EventSource.Connect
+  name: Connect
+  nameWithType: EventSource.Connect
+  fullName: stellar_dotnet_sdk.EventSource.Connect
+- uid: stellar_dotnet_sdk.IEventSource.Connect
+  commentId: M:stellar_dotnet_sdk.IEventSource.Connect
+  parent: stellar_dotnet_sdk.IEventSource
+  name: Connect()
+  nameWithType: IEventSource.Connect()
+  fullName: stellar_dotnet_sdk.IEventSource.Connect()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.IEventSource.Connect
+    name: Connect
+    nameWithType: IEventSource.Connect
+    fullName: stellar_dotnet_sdk.IEventSource.Connect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.IEventSource.Connect
+    name: Connect
+    nameWithType: IEventSource.Connect
+    fullName: stellar_dotnet_sdk.IEventSource.Connect
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: Task
+- uid: stellar_dotnet_sdk.EventSource.Dispose*
+  commentId: Overload:stellar_dotnet_sdk.EventSource.Dispose
+  name: Dispose
+  nameWithType: EventSource.Dispose
+  fullName: stellar_dotnet_sdk.EventSource.Dispose
+- uid: stellar_dotnet_sdk.IEventSource.Dispose
+  commentId: M:stellar_dotnet_sdk.IEventSource.Dispose
+  parent: stellar_dotnet_sdk.IEventSource
+  name: Dispose()
+  nameWithType: IEventSource.Dispose()
+  fullName: stellar_dotnet_sdk.IEventSource.Dispose()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.IEventSource.Dispose
+    name: Dispose
+    nameWithType: IEventSource.Dispose
+    fullName: stellar_dotnet_sdk.IEventSource.Dispose
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.IEventSource.Dispose
+    name: Dispose
+    nameWithType: IEventSource.Dispose
+    fullName: stellar_dotnet_sdk.IEventSource.Dispose
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.EventSource.Shutdown*
+  commentId: Overload:stellar_dotnet_sdk.EventSource.Shutdown
+  name: Shutdown
+  nameWithType: EventSource.Shutdown
+  fullName: stellar_dotnet_sdk.EventSource.Shutdown
+- uid: stellar_dotnet_sdk.IEventSource.Shutdown
+  commentId: M:stellar_dotnet_sdk.IEventSource.Shutdown
+  parent: stellar_dotnet_sdk.IEventSource
+  name: Shutdown()
+  nameWithType: IEventSource.Shutdown()
+  fullName: stellar_dotnet_sdk.IEventSource.Shutdown()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.IEventSource.Shutdown
+    name: Shutdown
+    nameWithType: IEventSource.Shutdown
+    fullName: stellar_dotnet_sdk.IEventSource.Shutdown
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.IEventSource.Shutdown
+    name: Shutdown
+    nameWithType: IEventSource.Shutdown
+    fullName: stellar_dotnet_sdk.IEventSource.Shutdown
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

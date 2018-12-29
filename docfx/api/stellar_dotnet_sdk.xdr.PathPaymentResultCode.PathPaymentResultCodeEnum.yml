@@ -1,0 +1,488 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  id: PathPaymentResultCode.PathPaymentResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_LINE_FULL
+  - stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_MALFORMED
+  - stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_DESTINATION
+  - stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_ISSUER
+  - stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_TRUST
+  - stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NOT_AUTHORIZED
+  - stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_OFFER_CROSS_SELF
+  - stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_OVER_SENDMAX
+  - stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SRC_NO_TRUST
+  - stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SRC_NOT_AUTHORIZED
+  - stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SUCCESS
+  - stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_TOO_FEW_OFFERS
+  - stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_UNDERFUNDED
+  langs:
+  - csharp
+  - vb
+  name: PathPaymentResultCode.PathPaymentResultCodeEnum
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PathPaymentResultCodeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum PathPaymentResultCodeEnum : int'
+    content.vb: Public Enum PathPaymentResultCodeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SUCCESS
+  commentId: F:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SUCCESS
+  id: PATH_PAYMENT_SUCCESS
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PATH_PAYMENT_SUCCESS
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SUCCESS
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SUCCESS
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PATH_PAYMENT_SUCCESS
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 34
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PATH_PAYMENT_SUCCESS = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+    content.vb: PATH_PAYMENT_SUCCESS = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_MALFORMED
+  commentId: F:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_MALFORMED
+  id: PATH_PAYMENT_MALFORMED
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PATH_PAYMENT_MALFORMED
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_MALFORMED
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_MALFORMED
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PATH_PAYMENT_MALFORMED
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PATH_PAYMENT_MALFORMED = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+    content.vb: PATH_PAYMENT_MALFORMED = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_UNDERFUNDED
+  commentId: F:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_UNDERFUNDED
+  id: PATH_PAYMENT_UNDERFUNDED
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PATH_PAYMENT_UNDERFUNDED
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_UNDERFUNDED
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_UNDERFUNDED
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PATH_PAYMENT_UNDERFUNDED
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 36
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PATH_PAYMENT_UNDERFUNDED = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+    content.vb: PATH_PAYMENT_UNDERFUNDED = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SRC_NO_TRUST
+  commentId: F:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SRC_NO_TRUST
+  id: PATH_PAYMENT_SRC_NO_TRUST
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PATH_PAYMENT_SRC_NO_TRUST
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SRC_NO_TRUST
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SRC_NO_TRUST
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PATH_PAYMENT_SRC_NO_TRUST
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 37
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PATH_PAYMENT_SRC_NO_TRUST = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+    content.vb: PATH_PAYMENT_SRC_NO_TRUST = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SRC_NOT_AUTHORIZED
+  commentId: F:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SRC_NOT_AUTHORIZED
+  id: PATH_PAYMENT_SRC_NOT_AUTHORIZED
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PATH_PAYMENT_SRC_NOT_AUTHORIZED
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SRC_NOT_AUTHORIZED
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_SRC_NOT_AUTHORIZED
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PATH_PAYMENT_SRC_NOT_AUTHORIZED
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 38
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PATH_PAYMENT_SRC_NOT_AUTHORIZED = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+    content.vb: PATH_PAYMENT_SRC_NOT_AUTHORIZED = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_DESTINATION
+  commentId: F:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_DESTINATION
+  id: PATH_PAYMENT_NO_DESTINATION
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PATH_PAYMENT_NO_DESTINATION
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_DESTINATION
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_DESTINATION
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PATH_PAYMENT_NO_DESTINATION
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 39
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PATH_PAYMENT_NO_DESTINATION = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+    content.vb: PATH_PAYMENT_NO_DESTINATION = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_TRUST
+  commentId: F:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_TRUST
+  id: PATH_PAYMENT_NO_TRUST
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PATH_PAYMENT_NO_TRUST
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_TRUST
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_TRUST
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PATH_PAYMENT_NO_TRUST
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 40
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PATH_PAYMENT_NO_TRUST = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+    content.vb: PATH_PAYMENT_NO_TRUST = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NOT_AUTHORIZED
+  commentId: F:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NOT_AUTHORIZED
+  id: PATH_PAYMENT_NOT_AUTHORIZED
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PATH_PAYMENT_NOT_AUTHORIZED
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NOT_AUTHORIZED
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NOT_AUTHORIZED
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PATH_PAYMENT_NOT_AUTHORIZED
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 41
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PATH_PAYMENT_NOT_AUTHORIZED = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+    content.vb: PATH_PAYMENT_NOT_AUTHORIZED = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_LINE_FULL
+  commentId: F:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_LINE_FULL
+  id: PATH_PAYMENT_LINE_FULL
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PATH_PAYMENT_LINE_FULL
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_LINE_FULL
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_LINE_FULL
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PATH_PAYMENT_LINE_FULL
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 42
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PATH_PAYMENT_LINE_FULL = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+    content.vb: PATH_PAYMENT_LINE_FULL = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_ISSUER
+  commentId: F:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_ISSUER
+  id: PATH_PAYMENT_NO_ISSUER
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PATH_PAYMENT_NO_ISSUER
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_ISSUER
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_NO_ISSUER
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PATH_PAYMENT_NO_ISSUER
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 43
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PATH_PAYMENT_NO_ISSUER = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+    content.vb: PATH_PAYMENT_NO_ISSUER = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_TOO_FEW_OFFERS
+  commentId: F:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_TOO_FEW_OFFERS
+  id: PATH_PAYMENT_TOO_FEW_OFFERS
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PATH_PAYMENT_TOO_FEW_OFFERS
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_TOO_FEW_OFFERS
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_TOO_FEW_OFFERS
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PATH_PAYMENT_TOO_FEW_OFFERS
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 44
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PATH_PAYMENT_TOO_FEW_OFFERS = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+    content.vb: PATH_PAYMENT_TOO_FEW_OFFERS = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_OFFER_CROSS_SELF
+  commentId: F:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_OFFER_CROSS_SELF
+  id: PATH_PAYMENT_OFFER_CROSS_SELF
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PATH_PAYMENT_OFFER_CROSS_SELF
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_OFFER_CROSS_SELF
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_OFFER_CROSS_SELF
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PATH_PAYMENT_OFFER_CROSS_SELF
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 45
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PATH_PAYMENT_OFFER_CROSS_SELF = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+    content.vb: PATH_PAYMENT_OFFER_CROSS_SELF = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_OVER_SENDMAX
+  commentId: F:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_OVER_SENDMAX
+  id: PATH_PAYMENT_OVER_SENDMAX
+  parent: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PATH_PAYMENT_OVER_SENDMAX
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_OVER_SENDMAX
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum.PATH_PAYMENT_OVER_SENDMAX
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PATH_PAYMENT_OVER_SENDMAX
+    path: ../stellar-dotnet-sdk/xdr/generated/PathPaymentResultCode.cs
+    startLine: 46
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PATH_PAYMENT_OVER_SENDMAX = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+    content.vb: PATH_PAYMENT_OVER_SENDMAX = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: PathPaymentResultCode.PathPaymentResultCodeEnum
+  nameWithType: PathPaymentResultCode.PathPaymentResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.PathPaymentResultCode.PathPaymentResultCodeEnum

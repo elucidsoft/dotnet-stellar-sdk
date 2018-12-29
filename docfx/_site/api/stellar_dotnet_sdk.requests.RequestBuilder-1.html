@@ -1,0 +1,667 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class RequestBuilder&lt;T&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class RequestBuilder&lt;T&gt;
+   ">
+    <meta name="generator" content="docfx 2.40.6.0">
+    
+    <link rel="shortcut icon" href="../favicon">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1">
+  <h1 id="stellar_dotnet_sdk_requests_RequestBuilder_1" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1">Class RequestBuilder&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Abstract class for request builders.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">RequestBuilder&lt;T&gt;</span></div>
+  </div>
+  
+      <div class="level2"><a class="xref" href="stellar_dotnet_sdk.requests.FriendBotRequestBuilder.html">FriendBotRequestBuilder</a></div>
+      <div class="level2"><a class="xref" href="stellar_dotnet_sdk.requests.OperationFeeStatsRequestBuilder.html">OperationFeeStatsRequestBuilder</a></div>
+      <div class="level2"><a class="xref" href="stellar_dotnet_sdk.requests.OrderBookRequestBuilder.html">OrderBookRequestBuilder</a></div>
+      <div class="level2"><a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilderExecutePageable-2.html">RequestBuilderExecutePageable&lt;T, TResponse&gt;</a></div>
+  
+  
+  <h6><strong>Namespace</strong>: System.Dynamic.ExpandoObject</h6>
+  <h6><strong>Assembly</strong>: stellar-dotnet-sdk.dll</h6>
+  
+  <h5 id="stellar_dotnet_sdk_requests_RequestBuilder_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class RequestBuilder&lt;T&gt; : object where T : class</code></pre>
+  </div>
+  
+  
+  
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="parametername">T</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_Uri_System_String_HttpClient_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.%23ctor(Uri%2CSystem.String%2CHttpClient)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L39" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.#ctor*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_Uri_System_String_HttpClient_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.#ctor(Uri,System.String,HttpClient)"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_Uri_System_String_HttpClient_" class="expander" data-toggle="collapse">RequestBuilder(Uri, String, HttpClient)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_Uri_System_String_HttpClient_" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RequestBuilder(Uri serverUri, string defaultSegment, HttpClient httpClient)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">Uri</span></span>
+        <span class="parametername">serverUri</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">defaultSegment</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">HttpClient</span></span>
+        <span class="parametername">httpClient</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1_UriBuilder.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.UriBuilder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L22" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  
+  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1_UriBuilder" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.UriBuilder"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_UriBuilder" class="expander" data-toggle="collapse">UriBuilder</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_UriBuilder" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected UriBuilder UriBuilder</code></pre>
+  </div>
+  
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">UriBuilder</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1_HttpClient.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.HttpClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L24" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_requests_RequestBuilder_1_HttpClient_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1_HttpClient" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_HttpClient" class="expander" data-toggle="collapse">HttpClient</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_HttpClient" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HttpClient HttpClient { get; set; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">HttpClient</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1_Uri.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.Uri%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L34" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_requests_RequestBuilder_1_Uri_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.Uri*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1_Uri" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.Uri"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Uri" class="expander" data-toggle="collapse">Uri</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Uri" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Uri { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1_BuildUri.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.BuildUri%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L119" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_requests_RequestBuilder_1_BuildUri_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1_BuildUri" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_BuildUri" class="expander" data-toggle="collapse">BuildUri()</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_BuildUri" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Uri BuildUri()</code></pre>
+  </div>
+  
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">Uri</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1_Cursor_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.Cursor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L75" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_requests_RequestBuilder_1_Cursor_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1_Cursor_System_String_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Cursor_System_String_" class="expander" data-toggle="collapse">Cursor(String)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Cursor_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Sets <pre><code>cursor</code></pre> parameter on the request.
+A cursor is a value that points to a specific location in a collection of resources.
+The cursor attribute itself is an opaque value meaning that users should not try to parse it.
+Read <a href="https://www.stellar.org/developers/horizon/reference/resources/page.html">https://www.stellar.org/developers/horizon/reference/resources/page.html</a> for more information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual T Cursor(string cursor)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">cursor</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">T</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_Uri_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.Execute%60%601(Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L26" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_requests_RequestBuilder_1_Execute_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.Execute*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_Uri_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_Uri_" class="expander" data-toggle="collapse">Execute&lt;TZ&gt;(Uri)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_Uri_" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TZ&gt; Execute&lt;TZ&gt;(Uri uri)
+    where TZ : class</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">Uri</span></span>
+        <span class="parametername">uri</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">Task</span>&lt;TZ&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="parametername">TZ</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1_Limit_System_Int32_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.Limit(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L89" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_requests_RequestBuilder_1_Limit_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.Limit*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1_Limit_System_Int32_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Limit_System_Int32_" class="expander" data-toggle="collapse">Limit(Int32)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Limit_System_Int32_" class="collapse in">
+  <div class="markdown level1 summary"><p>Sets <pre><code>limit</code></pre> parameter on the request.
+It defines maximum number of records to return.
+For range and default values check documentation of the endpoint requested.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual T Limit(int number)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.Int32</span></span>
+        <span class="parametername">number</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">T</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1_Order_stellar_dotnet_sdk_requests_OrderDirection_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.Order(stellar_dotnet_sdk.requests.OrderDirection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L101" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_requests_RequestBuilder_1_Order_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.Order*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1_Order_stellar_dotnet_sdk_requests_OrderDirection_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Order_stellar_dotnet_sdk_requests_OrderDirection_" class="expander" data-toggle="collapse">Order(OrderDirection)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Order_stellar_dotnet_sdk_requests_OrderDirection_" class="collapse in">
+  <div class="markdown level1 summary"><p>Sets order parameter on request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual T Order(OrderDirection direction)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.requests.OrderDirection.html">OrderDirection</a></span>
+        <span class="parametername">direction</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">T</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1_SetSegments_System_String___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.SetSegments(System.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L51" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_requests_RequestBuilder_1_SetSegments_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1_SetSegments_System_String___" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_SetSegments_System_String___" class="expander" data-toggle="collapse">SetSegments(String[])</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_SetSegments_System_String___" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected RequestBuilder&lt;T&gt; SetSegments(params string[] segments)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span>[]</span>
+        <span class="parametername">segments</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilder-1.html">RequestBuilder</a>&lt;T&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L18" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

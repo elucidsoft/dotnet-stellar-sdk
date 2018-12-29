@@ -1,0 +1,114 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum
+  id: BucketEntryType.BucketEntryTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum.DEADENTRY
+  - stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum.LIVEENTRY
+  langs:
+  - csharp
+  - vb
+  name: BucketEntryType.BucketEntryTypeEnum
+  nameWithType: BucketEntryType.BucketEntryTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/BucketEntryType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BucketEntryTypeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/BucketEntryType.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum BucketEntryTypeEnum : int'
+    content.vb: Public Enum BucketEntryTypeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum.LIVEENTRY
+  commentId: F:stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum.LIVEENTRY
+  id: LIVEENTRY
+  parent: stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: LIVEENTRY
+  nameWithType: BucketEntryType.BucketEntryTypeEnum.LIVEENTRY
+  fullName: stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum.LIVEENTRY
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/BucketEntryType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: LIVEENTRY
+    path: ../stellar-dotnet-sdk/xdr/generated/BucketEntryType.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: LIVEENTRY = null
+    return:
+      type: stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum
+    content.vb: LIVEENTRY = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum.DEADENTRY
+  commentId: F:stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum.DEADENTRY
+  id: DEADENTRY
+  parent: stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: DEADENTRY
+  nameWithType: BucketEntryType.BucketEntryTypeEnum.DEADENTRY
+  fullName: stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum.DEADENTRY
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/BucketEntryType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: DEADENTRY
+    path: ../stellar-dotnet-sdk/xdr/generated/BucketEntryType.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: DEADENTRY = null
+    return:
+      type: stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum
+    content.vb: DEADENTRY = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: BucketEntryType.BucketEntryTypeEnum
+  nameWithType: BucketEntryType.BucketEntryTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.BucketEntryType.BucketEntryTypeEnum

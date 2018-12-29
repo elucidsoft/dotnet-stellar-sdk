@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.MemoType
+  commentId: T:stellar_dotnet_sdk.xdr.MemoType
+  id: MemoType
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.MemoType.Create(stellar_dotnet_sdk.xdr.MemoType.MemoTypeEnum)
+  - stellar_dotnet_sdk.xdr.MemoType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.MemoType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.MemoType)
+  - stellar_dotnet_sdk.xdr.MemoType.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: MemoType
+  nameWithType: MemoType
+  fullName: stellar_dotnet_sdk.xdr.MemoType
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/MemoType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: MemoType
+    path: ../stellar-dotnet-sdk/xdr/generated/MemoType.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class MemoType : object'
+    content.vb: >-
+      Public Class MemoType
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.MemoType.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.MemoType.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.MemoType
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: MemoType.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.MemoType.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/MemoType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/MemoType.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public MemoType.MemoTypeEnum InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.MemoType.MemoTypeEnum
+    content.vb: Public Property InnerValue As MemoType.MemoTypeEnum
+  overload: stellar_dotnet_sdk.xdr.MemoType.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.MemoType.Create(stellar_dotnet_sdk.xdr.MemoType.MemoTypeEnum)
+  commentId: M:stellar_dotnet_sdk.xdr.MemoType.Create(stellar_dotnet_sdk.xdr.MemoType.MemoTypeEnum)
+  id: Create(stellar_dotnet_sdk.xdr.MemoType.MemoTypeEnum)
+  parent: stellar_dotnet_sdk.xdr.MemoType
+  langs:
+  - csharp
+  - vb
+  name: Create(MemoType.MemoTypeEnum)
+  nameWithType: MemoType.Create(MemoType.MemoTypeEnum)
+  fullName: stellar_dotnet_sdk.xdr.MemoType.Create(stellar_dotnet_sdk.xdr.MemoType.MemoTypeEnum)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/MemoType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Create
+    path: ../stellar-dotnet-sdk/xdr/generated/MemoType.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static MemoType Create(MemoType.MemoTypeEnum v)
+    parameters:
+    - id: v
+      type: stellar_dotnet_sdk.xdr.MemoType.MemoTypeEnum
+    return:
+      type: stellar_dotnet_sdk.xdr.MemoType
+    content.vb: Public Shared Function Create(v As MemoType.MemoTypeEnum) As MemoType
+  overload: stellar_dotnet_sdk.xdr.MemoType.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.MemoType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.MemoType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.MemoType
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: MemoType.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.MemoType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/MemoType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/MemoType.cs
+    startLine: 39
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static MemoType Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.MemoType
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As MemoType
+  overload: stellar_dotnet_sdk.xdr.MemoType.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.MemoType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.MemoType)
+  commentId: M:stellar_dotnet_sdk.xdr.MemoType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.MemoType)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.MemoType)
+  parent: stellar_dotnet_sdk.xdr.MemoType
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, MemoType)
+  nameWithType: MemoType.Encode(XdrDataOutputStream, MemoType)
+  fullName: stellar_dotnet_sdk.xdr.MemoType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.MemoType)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/MemoType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/MemoType.cs
+    startLine: 54
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, MemoType value)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: value
+      type: stellar_dotnet_sdk.xdr.MemoType
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, value As MemoType)
+  overload: stellar_dotnet_sdk.xdr.MemoType.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.MemoType.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.MemoType.InnerValue
+  name: InnerValue
+  nameWithType: MemoType.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.MemoType.InnerValue
+- uid: stellar_dotnet_sdk.xdr.MemoType.MemoTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.MemoType.MemoTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: MemoType.MemoTypeEnum
+  nameWithType: MemoType.MemoTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.MemoType.MemoTypeEnum
+- uid: stellar_dotnet_sdk.xdr.MemoType.Create*
+  commentId: Overload:stellar_dotnet_sdk.xdr.MemoType.Create
+  name: Create
+  nameWithType: MemoType.Create
+  fullName: stellar_dotnet_sdk.xdr.MemoType.Create
+- uid: stellar_dotnet_sdk.xdr.MemoType
+  commentId: T:stellar_dotnet_sdk.xdr.MemoType
+  parent: stellar_dotnet_sdk.xdr
+  name: MemoType
+  nameWithType: MemoType
+  fullName: stellar_dotnet_sdk.xdr.MemoType
+- uid: stellar_dotnet_sdk.xdr.MemoType.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.MemoType.Decode
+  name: Decode
+  nameWithType: MemoType.Decode
+  fullName: stellar_dotnet_sdk.xdr.MemoType.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream
+- uid: stellar_dotnet_sdk.xdr.MemoType.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.MemoType.Encode
+  name: Encode
+  nameWithType: MemoType.Encode
+  fullName: stellar_dotnet_sdk.xdr.MemoType.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream

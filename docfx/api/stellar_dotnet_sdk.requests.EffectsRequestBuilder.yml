@@ -1,0 +1,1317 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  commentId: T:stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  id: EffectsRequestBuilder
+  parent: stellar_dotnet_sdk.requests
+  children:
+  - stellar_dotnet_sdk.requests.EffectsRequestBuilder.#ctor(Uri,HttpClient)
+  - stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForAccount(stellar_dotnet_sdk.KeyPair)
+  - stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForLedger(System.Int64)
+  - stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForOperation(System.Int64)
+  - stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForTransaction(System.String)
+  langs:
+  - csharp
+  - vb
+  name: EffectsRequestBuilder
+  nameWithType: EffectsRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/EffectsRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: EffectsRequestBuilder
+    path: ../stellar-dotnet-sdk/requests/EffectsRequestBuilder.cs
+    startLine: 9
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: 'public class EffectsRequestBuilder : RequestBuilderStreamable<EffectsRequestBuilder, EffectResponse>'
+    content.vb: >-
+      Public Class EffectsRequestBuilder
+          Inherits RequestBuilderStreamable(Of EffectsRequestBuilder, EffectResponse)
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}
+  - stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}
+  - stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}
+  inheritedMembers:
+  - stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}.EventSource
+  - stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}.Stream(EventHandler{stellar_dotnet_sdk.responses.effects.EffectResponse})
+  - stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}.Execute
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.UriBuilder
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.HttpClient
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Execute``1(Uri)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Uri
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.SetSegments(System.String[])
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Cursor(System.String)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Limit(System.Int32)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.BuildUri
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.#ctor(Uri,HttpClient)
+  commentId: M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.#ctor(Uri,HttpClient)
+  id: '#ctor(Uri,HttpClient)'
+  parent: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: EffectsRequestBuilder(Uri, HttpClient)
+  nameWithType: EffectsRequestBuilder.EffectsRequestBuilder(Uri, HttpClient)
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.EffectsRequestBuilder(Uri, HttpClient)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/EffectsRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/requests/EffectsRequestBuilder.cs
+    startLine: 11
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: public EffectsRequestBuilder(Uri serverURI, HttpClient httpClient)
+    parameters:
+    - id: serverURI
+      type: Uri
+    - id: httpClient
+      type: HttpClient
+    content.vb: Public Sub New(serverURI As Uri, httpClient As HttpClient)
+  overload: stellar_dotnet_sdk.requests.EffectsRequestBuilder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForAccount(stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForAccount(stellar_dotnet_sdk.KeyPair)
+  id: ForAccount(stellar_dotnet_sdk.KeyPair)
+  parent: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: ForAccount(KeyPair)
+  nameWithType: EffectsRequestBuilder.ForAccount(KeyPair)
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForAccount(stellar_dotnet_sdk.KeyPair)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/EffectsRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ForAccount
+    path: ../stellar-dotnet-sdk/requests/EffectsRequestBuilder.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  example: []
+  syntax:
+    content: public EffectsRequestBuilder ForAccount(KeyPair account)
+    parameters:
+    - id: account
+      type: stellar_dotnet_sdk.KeyPair
+      description: Account for which to get effects
+    return:
+      type: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+    content.vb: Public Function ForAccount(account As KeyPair) As EffectsRequestBuilder
+  overload: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForAccount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForLedger(System.Int64)
+  commentId: M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForLedger(System.Int64)
+  id: ForLedger(System.Int64)
+  parent: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: ForLedger(Int64)
+  nameWithType: EffectsRequestBuilder.ForLedger(Int64)
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForLedger(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/EffectsRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ForLedger
+    path: ../stellar-dotnet-sdk/requests/EffectsRequestBuilder.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  example: []
+  syntax:
+    content: public EffectsRequestBuilder ForLedger(long ledgerSeq)
+    parameters:
+    - id: ledgerSeq
+      type: System.Int64
+      description: Ledger for which to get effects
+    return:
+      type: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+    content.vb: Public Function ForLedger(ledgerSeq As Long) As EffectsRequestBuilder
+  overload: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForLedger*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForTransaction(System.String)
+  commentId: M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForTransaction(System.String)
+  id: ForTransaction(System.String)
+  parent: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: ForTransaction(String)
+  nameWithType: EffectsRequestBuilder.ForTransaction(String)
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForTransaction(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/EffectsRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ForTransaction
+    path: ../stellar-dotnet-sdk/requests/EffectsRequestBuilder.cs
+    startLine: 44
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  example: []
+  syntax:
+    content: public EffectsRequestBuilder ForTransaction(string transactionId)
+    parameters:
+    - id: transactionId
+      type: System.String
+      description: Transaction ID for which to get effects
+    return:
+      type: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+    content.vb: Public Function ForTransaction(transactionId As String) As EffectsRequestBuilder
+  overload: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForTransaction*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForOperation(System.Int64)
+  commentId: M:stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForOperation(System.Int64)
+  id: ForOperation(System.Int64)
+  parent: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: ForOperation(Int64)
+  nameWithType: EffectsRequestBuilder.ForOperation(Int64)
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForOperation(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/EffectsRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ForOperation
+    path: ../stellar-dotnet-sdk/requests/EffectsRequestBuilder.cs
+    startLine: 56
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  example: []
+  syntax:
+    content: public EffectsRequestBuilder ForOperation(long operationId)
+    parameters:
+    - id: operationId
+      type: System.Int64
+      description: Operation ID for which to get effects
+    return:
+      type: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+    content.vb: Public Function ForOperation(operationId As Long) As EffectsRequestBuilder
+  overload: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForOperation*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.requests
+  commentId: N:stellar_dotnet_sdk.requests
+  name: stellar_dotnet_sdk.requests
+  nameWithType: stellar_dotnet_sdk.requests
+  fullName: stellar_dotnet_sdk.requests
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}
+  parent: stellar_dotnet_sdk.requests
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1
+  name: RequestBuilder<EffectsRequestBuilder>
+  nameWithType: RequestBuilder<EffectsRequestBuilder>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>
+  nameWithType.vb: RequestBuilder(Of EffectsRequestBuilder)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder)
+  name.vb: RequestBuilder(Of EffectsRequestBuilder)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+    name: EffectsRequestBuilder
+    nameWithType: EffectsRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+    name: EffectsRequestBuilder
+    nameWithType: EffectsRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}
+  parent: stellar_dotnet_sdk.requests
+  definition: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+  name: RequestBuilderExecutePageable<EffectsRequestBuilder, EffectResponse>
+  nameWithType: RequestBuilderExecutePageable<EffectsRequestBuilder, EffectResponse>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse>
+  nameWithType.vb: RequestBuilderExecutePageable(Of EffectsRequestBuilder, EffectResponse)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse)
+  name.vb: RequestBuilderExecutePageable(Of EffectsRequestBuilder, EffectResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+    name: RequestBuilderExecutePageable
+    nameWithType: RequestBuilderExecutePageable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+    name: EffectsRequestBuilder
+    nameWithType: EffectsRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: stellar_dotnet_sdk.responses.effects.EffectResponse
+    name: EffectResponse
+    nameWithType: EffectResponse
+    fullName: stellar_dotnet_sdk.responses.effects.EffectResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+    name: RequestBuilderExecutePageable
+    nameWithType: RequestBuilderExecutePageable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+    name: EffectsRequestBuilder
+    nameWithType: EffectsRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: stellar_dotnet_sdk.responses.effects.EffectResponse
+    name: EffectResponse
+    nameWithType: EffectResponse
+    fullName: stellar_dotnet_sdk.responses.effects.EffectResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}
+  parent: stellar_dotnet_sdk.requests
+  definition: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+  name: RequestBuilderStreamable<EffectsRequestBuilder, EffectResponse>
+  nameWithType: RequestBuilderStreamable<EffectsRequestBuilder, EffectResponse>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse>
+  nameWithType.vb: RequestBuilderStreamable(Of EffectsRequestBuilder, EffectResponse)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse)
+  name.vb: RequestBuilderStreamable(Of EffectsRequestBuilder, EffectResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+    name: RequestBuilderStreamable
+    nameWithType: RequestBuilderStreamable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+    name: EffectsRequestBuilder
+    nameWithType: EffectsRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: stellar_dotnet_sdk.responses.effects.EffectResponse
+    name: EffectResponse
+    nameWithType: EffectResponse
+    fullName: stellar_dotnet_sdk.responses.effects.EffectResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+    name: RequestBuilderStreamable
+    nameWithType: RequestBuilderStreamable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+    name: EffectsRequestBuilder
+    nameWithType: EffectsRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: stellar_dotnet_sdk.responses.effects.EffectResponse
+    name: EffectResponse
+    nameWithType: EffectResponse
+    fullName: stellar_dotnet_sdk.responses.effects.EffectResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}.EventSource
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}.EventSource
+  parent: stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}
+  definition: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.EventSource
+  name: EventSource
+  nameWithType: RequestBuilderStreamable<EffectsRequestBuilder, EffectResponse>.EventSource
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse>.EventSource
+  nameWithType.vb: RequestBuilderStreamable(Of EffectsRequestBuilder, EffectResponse).EventSource
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse).EventSource
+- uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}.Stream(EventHandler{stellar_dotnet_sdk.responses.effects.EffectResponse})
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}.Stream(EventHandler{stellar_dotnet_sdk.responses.effects.EffectResponse})
+  parent: stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}
+  definition: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+  name: Stream(EventHandler<EffectResponse>)
+  nameWithType: RequestBuilderStreamable<EffectsRequestBuilder, EffectResponse>.Stream(EventHandler<EffectResponse>)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse>.Stream(EventHandler<stellar_dotnet_sdk.responses.effects.EffectResponse>)
+  nameWithType.vb: RequestBuilderStreamable(Of EffectsRequestBuilder, EffectResponse).Stream(EventHandler(Of EffectResponse))
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse).Stream(EventHandler(Of stellar_dotnet_sdk.responses.effects.EffectResponse))
+  name.vb: Stream(EventHandler(Of EffectResponse))
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+    name: Stream
+    nameWithType: RequestBuilderStreamable<EffectsRequestBuilder, EffectResponse>.Stream
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse>.Stream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.responses.effects.EffectResponse
+    name: EffectResponse
+    nameWithType: EffectResponse
+    fullName: stellar_dotnet_sdk.responses.effects.EffectResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+    name: Stream
+    nameWithType: RequestBuilderStreamable(Of EffectsRequestBuilder, EffectResponse).Stream
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse).Stream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.responses.effects.EffectResponse
+    name: EffectResponse
+    nameWithType: EffectResponse
+    fullName: stellar_dotnet_sdk.responses.effects.EffectResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}.Execute
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}.Execute
+  parent: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.EffectsRequestBuilder,stellar_dotnet_sdk.responses.effects.EffectResponse}
+  definition: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+  name: Execute()
+  nameWithType: RequestBuilderExecutePageable<EffectsRequestBuilder, EffectResponse>.Execute()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse>.Execute()
+  nameWithType.vb: RequestBuilderExecutePageable(Of EffectsRequestBuilder, EffectResponse).Execute()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse).Execute()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+    name: Execute
+    nameWithType: RequestBuilderExecutePageable<EffectsRequestBuilder, EffectResponse>.Execute
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse>.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+    name: Execute
+    nameWithType: RequestBuilderExecutePageable(Of EffectsRequestBuilder, EffectResponse).Execute
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder, stellar_dotnet_sdk.responses.effects.EffectResponse).Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.UriBuilder
+  commentId: F:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.UriBuilder
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.UriBuilder
+  name: UriBuilder
+  nameWithType: RequestBuilder<EffectsRequestBuilder>.UriBuilder
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.UriBuilder
+  nameWithType.vb: RequestBuilder(Of EffectsRequestBuilder).UriBuilder
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).UriBuilder
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.HttpClient
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.HttpClient
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient
+  name: HttpClient
+  nameWithType: RequestBuilder<EffectsRequestBuilder>.HttpClient
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.HttpClient
+  nameWithType.vb: RequestBuilder(Of EffectsRequestBuilder).HttpClient
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).HttpClient
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Execute``1(Uri)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Execute``1(Uri)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+  name: Execute<TZ>(Uri)
+  nameWithType: RequestBuilder<EffectsRequestBuilder>.Execute<TZ>(Uri)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.Execute<TZ>(Uri)
+  nameWithType.vb: RequestBuilder(Of EffectsRequestBuilder).Execute(Of TZ)(Uri)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).Execute(Of TZ)(Uri)
+  name.vb: Execute(Of TZ)(Uri)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute<TZ>
+    nameWithType: RequestBuilder<EffectsRequestBuilder>.Execute<TZ>
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.Execute<TZ>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute(Of TZ)
+    nameWithType: RequestBuilder(Of EffectsRequestBuilder).Execute(Of TZ)
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).Execute(Of TZ)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Uri
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Uri
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Uri
+  name: Uri
+  nameWithType: RequestBuilder<EffectsRequestBuilder>.Uri
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.Uri
+  nameWithType.vb: RequestBuilder(Of EffectsRequestBuilder).Uri
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).Uri
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.SetSegments(System.String[])
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.SetSegments(System.String[])
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+  name: SetSegments(String[])
+  nameWithType: RequestBuilder<EffectsRequestBuilder>.SetSegments(String[])
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.SetSegments(System.String[])
+  nameWithType.vb: RequestBuilder(Of EffectsRequestBuilder).SetSegments(String())
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).SetSegments(System.String())
+  name.vb: SetSegments(String())
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder<EffectsRequestBuilder>.SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder(Of EffectsRequestBuilder).SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Cursor(System.String)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Cursor(System.String)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+  name: Cursor(String)
+  nameWithType: RequestBuilder<EffectsRequestBuilder>.Cursor(String)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.Cursor(System.String)
+  nameWithType.vb: RequestBuilder(Of EffectsRequestBuilder).Cursor(String)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).Cursor(System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder<EffectsRequestBuilder>.Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder(Of EffectsRequestBuilder).Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Limit(System.Int32)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Limit(System.Int32)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+  name: Limit(Int32)
+  nameWithType: RequestBuilder<EffectsRequestBuilder>.Limit(Int32)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.Limit(System.Int32)
+  nameWithType.vb: RequestBuilder(Of EffectsRequestBuilder).Limit(Int32)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).Limit(System.Int32)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder<EffectsRequestBuilder>.Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder(Of EffectsRequestBuilder).Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  name: Order(OrderDirection)
+  nameWithType: RequestBuilder<EffectsRequestBuilder>.Order(OrderDirection)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  nameWithType.vb: RequestBuilder(Of EffectsRequestBuilder).Order(OrderDirection)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).Order(stellar_dotnet_sdk.requests.OrderDirection)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder<EffectsRequestBuilder>.Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder(Of EffectsRequestBuilder).Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.BuildUri
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}.BuildUri
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.EffectsRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+  name: BuildUri()
+  nameWithType: RequestBuilder<EffectsRequestBuilder>.BuildUri()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.BuildUri()
+  nameWithType.vb: RequestBuilder(Of EffectsRequestBuilder).BuildUri()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).BuildUri()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder<EffectsRequestBuilder>.BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.EffectsRequestBuilder>.BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder(Of EffectsRequestBuilder).BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.EffectsRequestBuilder).BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilder`1
+  parent: stellar_dotnet_sdk.requests
+  name: RequestBuilder<T>
+  nameWithType: RequestBuilder<T>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>
+  nameWithType.vb: RequestBuilder(Of T)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T)
+  name.vb: RequestBuilder(Of T)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+  name: RequestBuilderExecutePageable<T, TResponse>
+  nameWithType: RequestBuilderExecutePageable<T, TResponse>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<T, TResponse>
+  nameWithType.vb: RequestBuilderExecutePageable(Of T, TResponse)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of T, TResponse)
+  name.vb: RequestBuilderExecutePageable(Of T, TResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+    name: RequestBuilderExecutePageable
+    nameWithType: RequestBuilderExecutePageable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+    name: RequestBuilderExecutePageable
+    nameWithType: RequestBuilderExecutePageable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+  name: RequestBuilderStreamable<T, TResponse>
+  nameWithType: RequestBuilderStreamable<T, TResponse>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<T, TResponse>
+  nameWithType.vb: RequestBuilderStreamable(Of T, TResponse)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of T, TResponse)
+  name.vb: RequestBuilderStreamable(Of T, TResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+    name: RequestBuilderStreamable
+    nameWithType: RequestBuilderStreamable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+    name: RequestBuilderStreamable
+    nameWithType: RequestBuilderStreamable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.EventSource
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.EventSource
+  name: EventSource
+  nameWithType: RequestBuilderStreamable<T, TResponse>.EventSource
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<T, TResponse>.EventSource
+  nameWithType.vb: RequestBuilderStreamable(Of T, TResponse).EventSource
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of T, TResponse).EventSource
+- uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+  isExternal: true
+  name: Stream(EventHandler<TResponse>)
+  nameWithType: RequestBuilderStreamable<T, TResponse>.Stream(EventHandler<TResponse>)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<T, TResponse>.Stream(EventHandler<TResponse>)
+  nameWithType.vb: RequestBuilderStreamable(Of T, TResponse).Stream(EventHandler(Of TResponse))
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of T, TResponse).Stream(EventHandler(Of TResponse))
+  name.vb: Stream(EventHandler(Of TResponse))
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+    name: Stream
+    nameWithType: RequestBuilderStreamable<T, TResponse>.Stream
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<T, TResponse>.Stream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+    name: Stream
+    nameWithType: RequestBuilderStreamable(Of T, TResponse).Stream
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of T, TResponse).Stream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+  name: Execute()
+  nameWithType: RequestBuilderExecutePageable<T, TResponse>.Execute()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<T, TResponse>.Execute()
+  nameWithType.vb: RequestBuilderExecutePageable(Of T, TResponse).Execute()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of T, TResponse).Execute()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+    name: Execute
+    nameWithType: RequestBuilderExecutePageable<T, TResponse>.Execute
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<T, TResponse>.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+    name: Execute
+    nameWithType: RequestBuilderExecutePageable(Of T, TResponse).Execute
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of T, TResponse).Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.UriBuilder
+  commentId: F:stellar_dotnet_sdk.requests.RequestBuilder`1.UriBuilder
+  name: UriBuilder
+  nameWithType: RequestBuilder<T>.UriBuilder
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.UriBuilder
+  nameWithType.vb: RequestBuilder(Of T).UriBuilder
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).UriBuilder
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient
+  name: HttpClient
+  nameWithType: RequestBuilder<T>.HttpClient
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.HttpClient
+  nameWithType.vb: RequestBuilder(Of T).HttpClient
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).HttpClient
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+  isExternal: true
+  name: Execute<TZ>(Uri)
+  nameWithType: RequestBuilder<T>.Execute<TZ>(Uri)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Execute<TZ>(Uri)
+  nameWithType.vb: RequestBuilder(Of T).Execute(Of TZ)(Uri)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Execute(Of TZ)(Uri)
+  name.vb: Execute(Of TZ)(Uri)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute<TZ>
+    nameWithType: RequestBuilder<T>.Execute<TZ>
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Execute<TZ>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute(Of TZ)
+    nameWithType: RequestBuilder(Of T).Execute(Of TZ)
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Execute(Of TZ)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Uri
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder`1.Uri
+  name: Uri
+  nameWithType: RequestBuilder<T>.Uri
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Uri
+  nameWithType.vb: RequestBuilder(Of T).Uri
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Uri
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+  isExternal: true
+  name: SetSegments(String[])
+  nameWithType: RequestBuilder<T>.SetSegments(String[])
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.SetSegments(System.String[])
+  nameWithType.vb: RequestBuilder(Of T).SetSegments(String())
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).SetSegments(System.String())
+  name.vb: SetSegments(String())
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder<T>.SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder(Of T).SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+  isExternal: true
+  name: Cursor(String)
+  nameWithType: RequestBuilder<T>.Cursor(String)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Cursor(System.String)
+  nameWithType.vb: RequestBuilder(Of T).Cursor(String)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Cursor(System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder<T>.Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder(Of T).Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+  isExternal: true
+  name: Limit(Int32)
+  nameWithType: RequestBuilder<T>.Limit(Int32)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Limit(System.Int32)
+  nameWithType.vb: RequestBuilder(Of T).Limit(Int32)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Limit(System.Int32)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder<T>.Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder(Of T).Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  name: Order(OrderDirection)
+  nameWithType: RequestBuilder<T>.Order(OrderDirection)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  nameWithType.vb: RequestBuilder(Of T).Order(OrderDirection)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Order(stellar_dotnet_sdk.requests.OrderDirection)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder<T>.Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder(Of T).Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+  name: BuildUri()
+  nameWithType: RequestBuilder<T>.BuildUri()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.BuildUri()
+  nameWithType.vb: RequestBuilder(Of T).BuildUri()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).BuildUri()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder<T>.BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder(Of T).BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.requests.EffectsRequestBuilder.#ctor
+  name: EffectsRequestBuilder
+  nameWithType: EffectsRequestBuilder.EffectsRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.EffectsRequestBuilder
+- uid: Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: Uri
+- uid: HttpClient
+  isExternal: true
+  name: HttpClient
+  nameWithType: HttpClient
+  fullName: HttpClient
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForAccount*
+  commentId: Overload:stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForAccount
+  name: ForAccount
+  nameWithType: EffectsRequestBuilder.ForAccount
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForAccount
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  commentId: T:stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  parent: stellar_dotnet_sdk.requests
+  name: EffectsRequestBuilder
+  nameWithType: EffectsRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForLedger*
+  commentId: Overload:stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForLedger
+  name: ForLedger
+  nameWithType: EffectsRequestBuilder.ForLedger
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForLedger
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForTransaction*
+  commentId: Overload:stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForTransaction
+  name: ForTransaction
+  nameWithType: EffectsRequestBuilder.ForTransaction
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForTransaction
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForOperation*
+  commentId: Overload:stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForOperation
+  name: ForOperation
+  nameWithType: EffectsRequestBuilder.ForOperation
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder.ForOperation

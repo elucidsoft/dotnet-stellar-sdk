@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.ManageDataResultCode
+  commentId: T:stellar_dotnet_sdk.xdr.ManageDataResultCode
+  id: ManageDataResultCode
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.ManageDataResultCode.Create(stellar_dotnet_sdk.xdr.ManageDataResultCode.ManageDataResultCodeEnum)
+  - stellar_dotnet_sdk.xdr.ManageDataResultCode.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.ManageDataResultCode.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageDataResultCode)
+  - stellar_dotnet_sdk.xdr.ManageDataResultCode.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: ManageDataResultCode
+  nameWithType: ManageDataResultCode
+  fullName: stellar_dotnet_sdk.xdr.ManageDataResultCode
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageDataResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ManageDataResultCode
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageDataResultCode.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class ManageDataResultCode : object'
+    content.vb: >-
+      Public Class ManageDataResultCode
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.ManageDataResultCode.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.ManageDataResultCode.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.ManageDataResultCode
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: ManageDataResultCode.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.ManageDataResultCode.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageDataResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageDataResultCode.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public ManageDataResultCode.ManageDataResultCodeEnum InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.ManageDataResultCode.ManageDataResultCodeEnum
+    content.vb: Public Property InnerValue As ManageDataResultCode.ManageDataResultCodeEnum
+  overload: stellar_dotnet_sdk.xdr.ManageDataResultCode.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.ManageDataResultCode.Create(stellar_dotnet_sdk.xdr.ManageDataResultCode.ManageDataResultCodeEnum)
+  commentId: M:stellar_dotnet_sdk.xdr.ManageDataResultCode.Create(stellar_dotnet_sdk.xdr.ManageDataResultCode.ManageDataResultCodeEnum)
+  id: Create(stellar_dotnet_sdk.xdr.ManageDataResultCode.ManageDataResultCodeEnum)
+  parent: stellar_dotnet_sdk.xdr.ManageDataResultCode
+  langs:
+  - csharp
+  - vb
+  name: Create(ManageDataResultCode.ManageDataResultCodeEnum)
+  nameWithType: ManageDataResultCode.Create(ManageDataResultCode.ManageDataResultCodeEnum)
+  fullName: stellar_dotnet_sdk.xdr.ManageDataResultCode.Create(stellar_dotnet_sdk.xdr.ManageDataResultCode.ManageDataResultCodeEnum)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageDataResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Create
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageDataResultCode.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static ManageDataResultCode Create(ManageDataResultCode.ManageDataResultCodeEnum v)
+    parameters:
+    - id: v
+      type: stellar_dotnet_sdk.xdr.ManageDataResultCode.ManageDataResultCodeEnum
+    return:
+      type: stellar_dotnet_sdk.xdr.ManageDataResultCode
+    content.vb: Public Shared Function Create(v As ManageDataResultCode.ManageDataResultCodeEnum) As ManageDataResultCode
+  overload: stellar_dotnet_sdk.xdr.ManageDataResultCode.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.ManageDataResultCode.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.ManageDataResultCode.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.ManageDataResultCode
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: ManageDataResultCode.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.ManageDataResultCode.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageDataResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageDataResultCode.cs
+    startLine: 43
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static ManageDataResultCode Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.ManageDataResultCode
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As ManageDataResultCode
+  overload: stellar_dotnet_sdk.xdr.ManageDataResultCode.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.ManageDataResultCode.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageDataResultCode)
+  commentId: M:stellar_dotnet_sdk.xdr.ManageDataResultCode.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageDataResultCode)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageDataResultCode)
+  parent: stellar_dotnet_sdk.xdr.ManageDataResultCode
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, ManageDataResultCode)
+  nameWithType: ManageDataResultCode.Encode(XdrDataOutputStream, ManageDataResultCode)
+  fullName: stellar_dotnet_sdk.xdr.ManageDataResultCode.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.ManageDataResultCode)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageDataResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageDataResultCode.cs
+    startLine: 58
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, ManageDataResultCode value)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: value
+      type: stellar_dotnet_sdk.xdr.ManageDataResultCode
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, value As ManageDataResultCode)
+  overload: stellar_dotnet_sdk.xdr.ManageDataResultCode.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.ManageDataResultCode.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageDataResultCode.InnerValue
+  name: InnerValue
+  nameWithType: ManageDataResultCode.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.ManageDataResultCode.InnerValue
+- uid: stellar_dotnet_sdk.xdr.ManageDataResultCode.ManageDataResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.ManageDataResultCode.ManageDataResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: ManageDataResultCode.ManageDataResultCodeEnum
+  nameWithType: ManageDataResultCode.ManageDataResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.ManageDataResultCode.ManageDataResultCodeEnum
+- uid: stellar_dotnet_sdk.xdr.ManageDataResultCode.Create*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageDataResultCode.Create
+  name: Create
+  nameWithType: ManageDataResultCode.Create
+  fullName: stellar_dotnet_sdk.xdr.ManageDataResultCode.Create
+- uid: stellar_dotnet_sdk.xdr.ManageDataResultCode
+  commentId: T:stellar_dotnet_sdk.xdr.ManageDataResultCode
+  parent: stellar_dotnet_sdk.xdr
+  name: ManageDataResultCode
+  nameWithType: ManageDataResultCode
+  fullName: stellar_dotnet_sdk.xdr.ManageDataResultCode
+- uid: stellar_dotnet_sdk.xdr.ManageDataResultCode.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageDataResultCode.Decode
+  name: Decode
+  nameWithType: ManageDataResultCode.Decode
+  fullName: stellar_dotnet_sdk.xdr.ManageDataResultCode.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream
+- uid: stellar_dotnet_sdk.xdr.ManageDataResultCode.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageDataResultCode.Encode
+  name: Encode
+  nameWithType: ManageDataResultCode.Encode
+  fullName: stellar_dotnet_sdk.xdr.ManageDataResultCode.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream

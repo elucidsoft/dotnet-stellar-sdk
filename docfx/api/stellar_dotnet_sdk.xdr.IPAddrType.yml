@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.IPAddrType
+  commentId: T:stellar_dotnet_sdk.xdr.IPAddrType
+  id: IPAddrType
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.IPAddrType.Create(stellar_dotnet_sdk.xdr.IPAddrType.IPAddrTypeEnum)
+  - stellar_dotnet_sdk.xdr.IPAddrType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.IPAddrType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.IPAddrType)
+  - stellar_dotnet_sdk.xdr.IPAddrType.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: IPAddrType
+  nameWithType: IPAddrType
+  fullName: stellar_dotnet_sdk.xdr.IPAddrType
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/IPAddrType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: IPAddrType
+    path: ../stellar-dotnet-sdk/xdr/generated/IPAddrType.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class IPAddrType : object'
+    content.vb: >-
+      Public Class IPAddrType
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.IPAddrType.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.IPAddrType.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.IPAddrType
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: IPAddrType.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.IPAddrType.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/IPAddrType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/IPAddrType.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public IPAddrType.IPAddrTypeEnum InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.IPAddrType.IPAddrTypeEnum
+    content.vb: Public Property InnerValue As IPAddrType.IPAddrTypeEnum
+  overload: stellar_dotnet_sdk.xdr.IPAddrType.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.IPAddrType.Create(stellar_dotnet_sdk.xdr.IPAddrType.IPAddrTypeEnum)
+  commentId: M:stellar_dotnet_sdk.xdr.IPAddrType.Create(stellar_dotnet_sdk.xdr.IPAddrType.IPAddrTypeEnum)
+  id: Create(stellar_dotnet_sdk.xdr.IPAddrType.IPAddrTypeEnum)
+  parent: stellar_dotnet_sdk.xdr.IPAddrType
+  langs:
+  - csharp
+  - vb
+  name: Create(IPAddrType.IPAddrTypeEnum)
+  nameWithType: IPAddrType.Create(IPAddrType.IPAddrTypeEnum)
+  fullName: stellar_dotnet_sdk.xdr.IPAddrType.Create(stellar_dotnet_sdk.xdr.IPAddrType.IPAddrTypeEnum)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/IPAddrType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Create
+    path: ../stellar-dotnet-sdk/xdr/generated/IPAddrType.cs
+    startLine: 25
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static IPAddrType Create(IPAddrType.IPAddrTypeEnum v)
+    parameters:
+    - id: v
+      type: stellar_dotnet_sdk.xdr.IPAddrType.IPAddrTypeEnum
+    return:
+      type: stellar_dotnet_sdk.xdr.IPAddrType
+    content.vb: Public Shared Function Create(v As IPAddrType.IPAddrTypeEnum) As IPAddrType
+  overload: stellar_dotnet_sdk.xdr.IPAddrType.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.IPAddrType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.IPAddrType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.IPAddrType
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: IPAddrType.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.IPAddrType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/IPAddrType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/IPAddrType.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static IPAddrType Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.IPAddrType
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As IPAddrType
+  overload: stellar_dotnet_sdk.xdr.IPAddrType.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.IPAddrType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.IPAddrType)
+  commentId: M:stellar_dotnet_sdk.xdr.IPAddrType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.IPAddrType)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.IPAddrType)
+  parent: stellar_dotnet_sdk.xdr.IPAddrType
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, IPAddrType)
+  nameWithType: IPAddrType.Encode(XdrDataOutputStream, IPAddrType)
+  fullName: stellar_dotnet_sdk.xdr.IPAddrType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.IPAddrType)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/IPAddrType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/IPAddrType.cs
+    startLine: 45
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, IPAddrType value)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: value
+      type: stellar_dotnet_sdk.xdr.IPAddrType
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, value As IPAddrType)
+  overload: stellar_dotnet_sdk.xdr.IPAddrType.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.IPAddrType.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.IPAddrType.InnerValue
+  name: InnerValue
+  nameWithType: IPAddrType.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.IPAddrType.InnerValue
+- uid: stellar_dotnet_sdk.xdr.IPAddrType.IPAddrTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.IPAddrType.IPAddrTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: IPAddrType.IPAddrTypeEnum
+  nameWithType: IPAddrType.IPAddrTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.IPAddrType.IPAddrTypeEnum
+- uid: stellar_dotnet_sdk.xdr.IPAddrType.Create*
+  commentId: Overload:stellar_dotnet_sdk.xdr.IPAddrType.Create
+  name: Create
+  nameWithType: IPAddrType.Create
+  fullName: stellar_dotnet_sdk.xdr.IPAddrType.Create
+- uid: stellar_dotnet_sdk.xdr.IPAddrType
+  commentId: T:stellar_dotnet_sdk.xdr.IPAddrType
+  parent: stellar_dotnet_sdk.xdr
+  name: IPAddrType
+  nameWithType: IPAddrType
+  fullName: stellar_dotnet_sdk.xdr.IPAddrType
+- uid: stellar_dotnet_sdk.xdr.IPAddrType.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.IPAddrType.Decode
+  name: Decode
+  nameWithType: IPAddrType.Decode
+  fullName: stellar_dotnet_sdk.xdr.IPAddrType.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream
+- uid: stellar_dotnet_sdk.xdr.IPAddrType.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.IPAddrType.Encode
+  name: Encode
+  nameWithType: IPAddrType.Encode
+  fullName: stellar_dotnet_sdk.xdr.IPAddrType.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream

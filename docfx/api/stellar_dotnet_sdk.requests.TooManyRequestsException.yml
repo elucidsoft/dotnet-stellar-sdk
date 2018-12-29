@@ -1,0 +1,134 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.requests.TooManyRequestsException
+  commentId: T:stellar_dotnet_sdk.requests.TooManyRequestsException
+  id: TooManyRequestsException
+  parent: stellar_dotnet_sdk.requests
+  children:
+  - stellar_dotnet_sdk.requests.TooManyRequestsException.#ctor(System.Int32)
+  - stellar_dotnet_sdk.requests.TooManyRequestsException.RetryAfter
+  langs:
+  - csharp
+  - vb
+  name: TooManyRequestsException
+  nameWithType: TooManyRequestsException
+  fullName: stellar_dotnet_sdk.requests.TooManyRequestsException
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/TooManyRequestsException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TooManyRequestsException
+    path: ../stellar-dotnet-sdk/requests/TooManyRequestsException.cs
+    startLine: 4
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: 'public class TooManyRequestsException : Exception'
+    content.vb: >-
+      Public Class TooManyRequestsException
+          Inherits Exception
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.requests.TooManyRequestsException.#ctor(System.Int32)
+  commentId: M:stellar_dotnet_sdk.requests.TooManyRequestsException.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: stellar_dotnet_sdk.requests.TooManyRequestsException
+  langs:
+  - csharp
+  - vb
+  name: TooManyRequestsException(Int32)
+  nameWithType: TooManyRequestsException.TooManyRequestsException(Int32)
+  fullName: stellar_dotnet_sdk.requests.TooManyRequestsException.TooManyRequestsException(System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/TooManyRequestsException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/requests/TooManyRequestsException.cs
+    startLine: 6
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: public TooManyRequestsException(int retryAfter)
+    parameters:
+    - id: retryAfter
+      type: System.Int32
+    content.vb: Public Sub New(retryAfter As Integer)
+  overload: stellar_dotnet_sdk.requests.TooManyRequestsException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.TooManyRequestsException.RetryAfter
+  commentId: P:stellar_dotnet_sdk.requests.TooManyRequestsException.RetryAfter
+  id: RetryAfter
+  parent: stellar_dotnet_sdk.requests.TooManyRequestsException
+  langs:
+  - csharp
+  - vb
+  name: RetryAfter
+  nameWithType: TooManyRequestsException.RetryAfter
+  fullName: stellar_dotnet_sdk.requests.TooManyRequestsException.RetryAfter
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/TooManyRequestsException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: RetryAfter
+    path: ../stellar-dotnet-sdk/requests/TooManyRequestsException.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: public int RetryAfter { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property RetryAfter As Integer
+  overload: stellar_dotnet_sdk.requests.TooManyRequestsException.RetryAfter*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.requests
+  commentId: N:stellar_dotnet_sdk.requests
+  name: stellar_dotnet_sdk.requests
+  nameWithType: stellar_dotnet_sdk.requests
+  fullName: stellar_dotnet_sdk.requests
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.requests.TooManyRequestsException.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.requests.TooManyRequestsException.#ctor
+  name: TooManyRequestsException
+  nameWithType: TooManyRequestsException.TooManyRequestsException
+  fullName: stellar_dotnet_sdk.requests.TooManyRequestsException.TooManyRequestsException
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: stellar_dotnet_sdk.requests.TooManyRequestsException.RetryAfter*
+  commentId: Overload:stellar_dotnet_sdk.requests.TooManyRequestsException.RetryAfter
+  name: RetryAfter
+  nameWithType: TooManyRequestsException.RetryAfter
+  fullName: stellar_dotnet_sdk.requests.TooManyRequestsException.RetryAfter

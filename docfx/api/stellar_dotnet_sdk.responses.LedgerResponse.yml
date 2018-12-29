@@ -1,0 +1,843 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.LedgerResponse
+  commentId: T:stellar_dotnet_sdk.responses.LedgerResponse
+  id: LedgerResponse
+  parent: stellar_dotnet_sdk.responses
+  children:
+  - stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.Int64,String,String,String,System.Int32,System.Int32,String,String,String,System.Int64,String,String,String,System.Int32,stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
+  - stellar_dotnet_sdk.responses.LedgerResponse.BaseFee
+  - stellar_dotnet_sdk.responses.LedgerResponse.BaseFeeInStroops
+  - stellar_dotnet_sdk.responses.LedgerResponse.BaseReserve
+  - stellar_dotnet_sdk.responses.LedgerResponse.BaseReserveInStroops
+  - stellar_dotnet_sdk.responses.LedgerResponse.ClosedAt
+  - stellar_dotnet_sdk.responses.LedgerResponse.FeePool
+  - stellar_dotnet_sdk.responses.LedgerResponse.Hash
+  - stellar_dotnet_sdk.responses.LedgerResponse.Links
+  - stellar_dotnet_sdk.responses.LedgerResponse.MaxTxSetSize
+  - stellar_dotnet_sdk.responses.LedgerResponse.OperationCount
+  - stellar_dotnet_sdk.responses.LedgerResponse.PagingToken
+  - stellar_dotnet_sdk.responses.LedgerResponse.PrevHash
+  - stellar_dotnet_sdk.responses.LedgerResponse.Sequence
+  - stellar_dotnet_sdk.responses.LedgerResponse.TotalCoins
+  - stellar_dotnet_sdk.responses.LedgerResponse.TransactionCount
+  langs:
+  - csharp
+  - vb
+  name: LedgerResponse
+  nameWithType: LedgerResponse
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: LedgerResponse
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: 'public class LedgerResponse : Response, IPagingToken'
+    content.vb: >-
+      Public Class LedgerResponse
+          Inherits Response
+          Implements IPagingToken
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.responses.Response
+  implements:
+  - stellar_dotnet_sdk.responses.IPagingToken
+  inheritedMembers:
+  - stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  - stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  - stellar_dotnet_sdk.responses.Response.RateLimitReset
+  - stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.Sequence
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.Sequence
+  id: Sequence
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: Sequence
+  nameWithType: LedgerResponse.Sequence
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.Sequence
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Sequence
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public long Sequence { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property Sequence As Long
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.Sequence*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.Hash
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.Hash
+  id: Hash
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: Hash
+  nameWithType: LedgerResponse.Hash
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.Hash
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Hash
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 13
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string Hash { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Hash As String
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.Hash*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.PagingToken
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.PagingToken
+  id: PagingToken
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: PagingToken
+  nameWithType: LedgerResponse.PagingToken
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.PagingToken
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PagingToken
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 15
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string PagingToken { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property PagingToken As String
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.PagingToken*
+  implements:
+  - stellar_dotnet_sdk.responses.IPagingToken.PagingToken
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.PrevHash
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.PrevHash
+  id: PrevHash
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: PrevHash
+  nameWithType: LedgerResponse.PrevHash
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.PrevHash
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PrevHash
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string PrevHash { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property PrevHash As String
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.PrevHash*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.TransactionCount
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.TransactionCount
+  id: TransactionCount
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: TransactionCount
+  nameWithType: LedgerResponse.TransactionCount
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.TransactionCount
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TransactionCount
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public int TransactionCount { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property TransactionCount As Integer
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.TransactionCount*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.OperationCount
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.OperationCount
+  id: OperationCount
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: OperationCount
+  nameWithType: LedgerResponse.OperationCount
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.OperationCount
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: OperationCount
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public int OperationCount { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property OperationCount As Integer
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.OperationCount*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.ClosedAt
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.ClosedAt
+  id: ClosedAt
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: ClosedAt
+  nameWithType: LedgerResponse.ClosedAt
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.ClosedAt
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ClosedAt
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string ClosedAt { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ClosedAt As String
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.ClosedAt*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.TotalCoins
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.TotalCoins
+  id: TotalCoins
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: TotalCoins
+  nameWithType: LedgerResponse.TotalCoins
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.TotalCoins
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TotalCoins
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string TotalCoins { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property TotalCoins As String
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.TotalCoins*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.FeePool
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.FeePool
+  id: FeePool
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: FeePool
+  nameWithType: LedgerResponse.FeePool
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.FeePool
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FeePool
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string FeePool { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property FeePool As String
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.FeePool*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.BaseFee
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.BaseFee
+  id: BaseFee
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: BaseFee
+  nameWithType: LedgerResponse.BaseFee
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.BaseFee
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BaseFee
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 36
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public long BaseFee { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property BaseFee As Long
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.BaseFee*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.BaseReserve
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.BaseReserve
+  id: BaseReserve
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: BaseReserve
+  nameWithType: LedgerResponse.BaseReserve
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.BaseReserve
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BaseReserve
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 39
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string BaseReserve { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property BaseReserve As String
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.BaseReserve*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.MaxTxSetSize
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.MaxTxSetSize
+  id: MaxTxSetSize
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: MaxTxSetSize
+  nameWithType: LedgerResponse.MaxTxSetSize
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.MaxTxSetSize
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: MaxTxSetSize
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 42
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public int MaxTxSetSize { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property MaxTxSetSize As Integer
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.MaxTxSetSize*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.BaseFeeInStroops
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.BaseFeeInStroops
+  id: BaseFeeInStroops
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: BaseFeeInStroops
+  nameWithType: LedgerResponse.BaseFeeInStroops
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.BaseFeeInStroops
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BaseFeeInStroops
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 45
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public String BaseFeeInStroops { get; }
+    parameters: []
+    return:
+      type: String
+    content.vb: Public ReadOnly Property BaseFeeInStroops As String
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.BaseFeeInStroops*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.BaseReserveInStroops
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.BaseReserveInStroops
+  id: BaseReserveInStroops
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: BaseReserveInStroops
+  nameWithType: LedgerResponse.BaseReserveInStroops
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.BaseReserveInStroops
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BaseReserveInStroops
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 48
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public String BaseReserveInStroops { get; }
+    parameters: []
+    return:
+      type: String
+    content.vb: Public ReadOnly Property BaseReserveInStroops As String
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.BaseReserveInStroops*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.Links
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.Links
+  id: Links
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: Links
+  nameWithType: LedgerResponse.Links
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.Links
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Links
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 51
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public LedgerResponse.LedgerResponseLinks Links { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+    content.vb: Public ReadOnly Property Links As LedgerResponse.LedgerResponseLinks
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.Links*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.Int64,String,String,String,System.Int32,System.Int32,String,String,String,System.Int64,String,String,String,System.Int32,stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
+  commentId: M:stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.Int64,String,String,String,System.Int32,System.Int32,String,String,String,System.Int64,String,String,String,System.Int32,stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
+  id: '#ctor(System.Int64,String,String,String,System.Int32,System.Int32,String,String,String,System.Int64,String,String,String,System.Int32,stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)'
+  parent: stellar_dotnet_sdk.responses.LedgerResponse
+  langs:
+  - csharp
+  - vb
+  name: LedgerResponse(Int64, String, String, String, Int32, Int32, String, String, String, Int64, String, String, String, Int32, LedgerResponse.LedgerResponseLinks)
+  nameWithType: LedgerResponse.LedgerResponse(Int64, String, String, String, Int32, Int32, String, String, String, Int64, String, String, String, Int32, LedgerResponse.LedgerResponseLinks)
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponse(System.Int64, String, String, String, System.Int32, System.Int32, String, String, String, System.Int64, String, String, String, System.Int32, stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 54
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public LedgerResponse(long sequence, String hash, String pagingToken, String prevHash, int transactionCount, int operationCount, String closedAt, String totalCoins, String feePool, long baseFee, String baseReserve, String baseFeeInStroops, String baseReserveInStroops, int maxTxSetSize, LedgerResponse.LedgerResponseLinks links)
+    parameters:
+    - id: sequence
+      type: System.Int64
+    - id: hash
+      type: String
+    - id: pagingToken
+      type: String
+    - id: prevHash
+      type: String
+    - id: transactionCount
+      type: System.Int32
+    - id: operationCount
+      type: System.Int32
+    - id: closedAt
+      type: String
+    - id: totalCoins
+      type: String
+    - id: feePool
+      type: String
+    - id: baseFee
+      type: System.Int64
+    - id: baseReserve
+      type: String
+    - id: baseFeeInStroops
+      type: String
+    - id: baseReserveInStroops
+      type: String
+    - id: maxTxSetSize
+      type: System.Int32
+    - id: links
+      type: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+    content.vb: Public Sub New(sequence As Long, hash As String, pagingToken As String, prevHash As String, transactionCount As Integer, operationCount As Integer, closedAt As String, totalCoins As String, feePool As String, baseFee As Long, baseReserve As String, baseFeeInStroops As String, baseReserveInStroops As String, maxTxSetSize As Integer, links As LedgerResponse.LedgerResponseLinks)
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.Response
+  commentId: T:stellar_dotnet_sdk.responses.Response
+  parent: stellar_dotnet_sdk.responses
+  name: Response
+  nameWithType: Response
+  fullName: stellar_dotnet_sdk.responses.Response
+- uid: stellar_dotnet_sdk.responses.IPagingToken
+  commentId: T:stellar_dotnet_sdk.responses.IPagingToken
+  parent: stellar_dotnet_sdk.responses
+  name: IPagingToken
+  nameWithType: IPagingToken
+  fullName: stellar_dotnet_sdk.responses.IPagingToken
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitLimit
+  nameWithType: Response.RateLimitLimit
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitRemaining
+  nameWithType: Response.RateLimitRemaining
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitReset
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitReset
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitReset
+  nameWithType: Response.RateLimitReset
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitReset
+- uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  commentId: M:stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  parent: stellar_dotnet_sdk.responses.Response
+  isExternal: true
+  name: SetHeaders(HttpResponseHeaders)
+  nameWithType: Response.SetHeaders(HttpResponseHeaders)
+  fullName: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.Sequence*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.Sequence
+  name: Sequence
+  nameWithType: LedgerResponse.Sequence
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.Sequence
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.Hash*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.Hash
+  name: Hash
+  nameWithType: LedgerResponse.Hash
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.Hash
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.PagingToken*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.PagingToken
+  name: PagingToken
+  nameWithType: LedgerResponse.PagingToken
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.PagingToken
+- uid: stellar_dotnet_sdk.responses.IPagingToken.PagingToken
+  commentId: P:stellar_dotnet_sdk.responses.IPagingToken.PagingToken
+  parent: stellar_dotnet_sdk.responses.IPagingToken
+  name: PagingToken
+  nameWithType: IPagingToken.PagingToken
+  fullName: stellar_dotnet_sdk.responses.IPagingToken.PagingToken
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.PrevHash*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.PrevHash
+  name: PrevHash
+  nameWithType: LedgerResponse.PrevHash
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.PrevHash
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.TransactionCount*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.TransactionCount
+  name: TransactionCount
+  nameWithType: LedgerResponse.TransactionCount
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.TransactionCount
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.OperationCount*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.OperationCount
+  name: OperationCount
+  nameWithType: LedgerResponse.OperationCount
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.OperationCount
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.ClosedAt*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.ClosedAt
+  name: ClosedAt
+  nameWithType: LedgerResponse.ClosedAt
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.ClosedAt
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.TotalCoins*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.TotalCoins
+  name: TotalCoins
+  nameWithType: LedgerResponse.TotalCoins
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.TotalCoins
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.FeePool*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.FeePool
+  name: FeePool
+  nameWithType: LedgerResponse.FeePool
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.FeePool
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.BaseFee*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.BaseFee
+  name: BaseFee
+  nameWithType: LedgerResponse.BaseFee
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.BaseFee
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.BaseReserve*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.BaseReserve
+  name: BaseReserve
+  nameWithType: LedgerResponse.BaseReserve
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.BaseReserve
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.MaxTxSetSize*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.MaxTxSetSize
+  name: MaxTxSetSize
+  nameWithType: LedgerResponse.MaxTxSetSize
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.MaxTxSetSize
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.BaseFeeInStroops*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.BaseFeeInStroops
+  name: BaseFeeInStroops
+  nameWithType: LedgerResponse.BaseFeeInStroops
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.BaseFeeInStroops
+- uid: String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: String
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.BaseReserveInStroops*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.BaseReserveInStroops
+  name: BaseReserveInStroops
+  nameWithType: LedgerResponse.BaseReserveInStroops
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.BaseReserveInStroops
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.Links*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.Links
+  name: Links
+  nameWithType: LedgerResponse.Links
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.Links
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+  commentId: T:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+  parent: stellar_dotnet_sdk.responses
+  name: LedgerResponse.LedgerResponseLinks
+  nameWithType: LedgerResponse.LedgerResponseLinks
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.#ctor
+  name: LedgerResponse
+  nameWithType: LedgerResponse.LedgerResponse
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponse

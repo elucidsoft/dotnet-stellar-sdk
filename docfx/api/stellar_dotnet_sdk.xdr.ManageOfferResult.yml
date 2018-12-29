@@ -1,0 +1,283 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.ManageOfferResult
+  commentId: T:stellar_dotnet_sdk.xdr.ManageOfferResult
+  id: ManageOfferResult
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.ManageOfferResult.#ctor
+  - stellar_dotnet_sdk.xdr.ManageOfferResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.ManageOfferResult.Discriminant
+  - stellar_dotnet_sdk.xdr.ManageOfferResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageOfferResult)
+  - stellar_dotnet_sdk.xdr.ManageOfferResult.Success
+  langs:
+  - csharp
+  - vb
+  name: ManageOfferResult
+  nameWithType: ManageOfferResult
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferResult
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageOfferResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ManageOfferResult
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageOfferResult.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class ManageOfferResult : object'
+    content.vb: >-
+      Public Class ManageOfferResult
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.ManageOfferResult.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.ManageOfferResult.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.ManageOfferResult
+  langs:
+  - csharp
+  - vb
+  name: ManageOfferResult()
+  nameWithType: ManageOfferResult.ManageOfferResult()
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferResult.ManageOfferResult()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageOfferResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageOfferResult.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public ManageOfferResult()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.ManageOfferResult.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.ManageOfferResult.Discriminant
+  commentId: P:stellar_dotnet_sdk.xdr.ManageOfferResult.Discriminant
+  id: Discriminant
+  parent: stellar_dotnet_sdk.xdr.ManageOfferResult
+  langs:
+  - csharp
+  - vb
+  name: Discriminant
+  nameWithType: ManageOfferResult.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferResult.Discriminant
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageOfferResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Discriminant
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageOfferResult.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public ManageOfferResultCode Discriminant { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.ManageOfferResultCode
+    content.vb: Public Property Discriminant As ManageOfferResultCode
+  overload: stellar_dotnet_sdk.xdr.ManageOfferResult.Discriminant*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.ManageOfferResult.Success
+  commentId: P:stellar_dotnet_sdk.xdr.ManageOfferResult.Success
+  id: Success
+  parent: stellar_dotnet_sdk.xdr.ManageOfferResult
+  langs:
+  - csharp
+  - vb
+  name: Success
+  nameWithType: ManageOfferResult.Success
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferResult.Success
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageOfferResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Success
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageOfferResult.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public ManageOfferSuccessResult Success { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.ManageOfferSuccessResult
+    content.vb: Public Property Success As ManageOfferSuccessResult
+  overload: stellar_dotnet_sdk.xdr.ManageOfferResult.Success*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.ManageOfferResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageOfferResult)
+  commentId: M:stellar_dotnet_sdk.xdr.ManageOfferResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageOfferResult)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageOfferResult)
+  parent: stellar_dotnet_sdk.xdr.ManageOfferResult
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, ManageOfferResult)
+  nameWithType: ManageOfferResult.Encode(XdrDataOutputStream, ManageOfferResult)
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.ManageOfferResult)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageOfferResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageOfferResult.cs
+    startLine: 25
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, ManageOfferResult encodedManageOfferResult)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedManageOfferResult
+      type: stellar_dotnet_sdk.xdr.ManageOfferResult
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedManageOfferResult As ManageOfferResult)
+  overload: stellar_dotnet_sdk.xdr.ManageOfferResult.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.ManageOfferResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.ManageOfferResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.ManageOfferResult
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: ManageOfferResult.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageOfferResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageOfferResult.cs
+    startLine: 37
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static ManageOfferResult Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.ManageOfferResult
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As ManageOfferResult
+  overload: stellar_dotnet_sdk.xdr.ManageOfferResult.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.ManageOfferResult.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageOfferResult.#ctor
+  name: ManageOfferResult
+  nameWithType: ManageOfferResult.ManageOfferResult
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferResult.ManageOfferResult
+- uid: stellar_dotnet_sdk.xdr.ManageOfferResult.Discriminant*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageOfferResult.Discriminant
+  name: Discriminant
+  nameWithType: ManageOfferResult.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferResult.Discriminant
+- uid: stellar_dotnet_sdk.xdr.ManageOfferResultCode
+  commentId: T:stellar_dotnet_sdk.xdr.ManageOfferResultCode
+  parent: stellar_dotnet_sdk.xdr
+  name: ManageOfferResultCode
+  nameWithType: ManageOfferResultCode
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferResultCode
+- uid: stellar_dotnet_sdk.xdr.ManageOfferResult.Success*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageOfferResult.Success
+  name: Success
+  nameWithType: ManageOfferResult.Success
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferResult.Success
+- uid: stellar_dotnet_sdk.xdr.ManageOfferSuccessResult
+  commentId: T:stellar_dotnet_sdk.xdr.ManageOfferSuccessResult
+  parent: stellar_dotnet_sdk.xdr
+  name: ManageOfferSuccessResult
+  nameWithType: ManageOfferSuccessResult
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferSuccessResult
+- uid: stellar_dotnet_sdk.xdr.ManageOfferResult.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageOfferResult.Encode
+  name: Encode
+  nameWithType: ManageOfferResult.Encode
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferResult.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.ManageOfferResult
+  commentId: T:stellar_dotnet_sdk.xdr.ManageOfferResult
+  parent: stellar_dotnet_sdk.xdr
+  name: ManageOfferResult
+  nameWithType: ManageOfferResult
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferResult
+- uid: stellar_dotnet_sdk.xdr.ManageOfferResult.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageOfferResult.Decode
+  name: Decode
+  nameWithType: ManageOfferResult.Decode
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferResult.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

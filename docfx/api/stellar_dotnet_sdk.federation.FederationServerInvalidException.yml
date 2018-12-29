@@ -1,0 +1,99 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.federation.FederationServerInvalidException
+  commentId: T:stellar_dotnet_sdk.federation.FederationServerInvalidException
+  id: FederationServerInvalidException
+  parent: stellar_dotnet_sdk.federation
+  children:
+  - stellar_dotnet_sdk.federation.FederationServerInvalidException.Message
+  langs:
+  - csharp
+  - vb
+  name: FederationServerInvalidException
+  nameWithType: FederationServerInvalidException
+  fullName: stellar_dotnet_sdk.federation.FederationServerInvalidException
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationServerInvalidException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: FederationServerInvalidException
+    path: ../stellar-dotnet-sdk/federation/FederationServerInvalidException.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  summary: "\nFederation server is invalid (malformed URL, not HTTPS, etc.)\n"
+  example: []
+  syntax:
+    content: 'public class FederationServerInvalidException : Exception'
+    content.vb: >-
+      Public Class FederationServerInvalidException
+          Inherits Exception
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.federation.FederationServerInvalidException.Message
+  commentId: P:stellar_dotnet_sdk.federation.FederationServerInvalidException.Message
+  id: Message
+  parent: stellar_dotnet_sdk.federation.FederationServerInvalidException
+  langs:
+  - csharp
+  - vb
+  name: Message
+  nameWithType: FederationServerInvalidException.Message
+  fullName: stellar_dotnet_sdk.federation.FederationServerInvalidException.Message
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/federation/FederationServerInvalidException.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Message
+    path: ../stellar-dotnet-sdk/federation/FederationServerInvalidException.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.federation
+  syntax:
+    content: public override string Message { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property Message As String
+  overload: stellar_dotnet_sdk.federation.FederationServerInvalidException.Message*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+references:
+- uid: stellar_dotnet_sdk.federation
+  commentId: N:stellar_dotnet_sdk.federation
+  name: stellar_dotnet_sdk.federation
+  nameWithType: stellar_dotnet_sdk.federation
+  fullName: stellar_dotnet_sdk.federation
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.federation.FederationServerInvalidException.Message*
+  commentId: Overload:stellar_dotnet_sdk.federation.FederationServerInvalidException.Message
+  name: Message
+  nameWithType: FederationServerInvalidException.Message
+  fullName: stellar_dotnet_sdk.federation.FederationServerInvalidException.Message
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

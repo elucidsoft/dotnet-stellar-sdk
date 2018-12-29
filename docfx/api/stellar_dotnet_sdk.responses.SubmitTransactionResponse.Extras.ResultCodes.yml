@@ -1,0 +1,263 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes
+  commentId: T:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes
+  id: SubmitTransactionResponse.Extras.ResultCodes
+  parent: stellar_dotnet_sdk.responses
+  children:
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor(System.String,List{System.String})
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.OperationsResultCodes
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.TransactionResultCode
+  langs:
+  - csharp
+  - vb
+  name: SubmitTransactionResponse.Extras.ResultCodes
+  nameWithType: SubmitTransactionResponse.Extras.ResultCodes
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ResultCodes
+    path: ../stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+    startLine: 135
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  summary: "\nContains result codes for this transaction.\nsee <a href=\"https://github.com/stellar/horizon/blob/master/src/github.com/stellar/horizon/codes/main.go\" target=\"_blank\">Possible values</a>\n"
+  example: []
+  syntax:
+    content: 'public class ResultCodes : object'
+    content.vb: >-
+      Public Class ResultCodes
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.TransactionResultCode
+  commentId: P:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.TransactionResultCode
+  id: TransactionResultCode
+  parent: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes
+  langs:
+  - csharp
+  - vb
+  name: TransactionResultCode
+  nameWithType: SubmitTransactionResponse.Extras.ResultCodes.TransactionResultCode
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.TransactionResultCode
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TransactionResultCode
+    path: ../stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+    startLine: 137
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string TransactionResultCode { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property TransactionResultCode As String
+  overload: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.TransactionResultCode*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.OperationsResultCodes
+  commentId: P:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.OperationsResultCodes
+  id: OperationsResultCodes
+  parent: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes
+  langs:
+  - csharp
+  - vb
+  name: OperationsResultCodes
+  nameWithType: SubmitTransactionResponse.Extras.ResultCodes.OperationsResultCodes
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.OperationsResultCodes
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: OperationsResultCodes
+    path: ../stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+    startLine: 140
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public List<string> OperationsResultCodes { get; }
+    parameters: []
+    return:
+      type: List{System.String}
+    content.vb: Public ReadOnly Property OperationsResultCodes As List(Of String)
+  overload: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.OperationsResultCodes*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor(System.String,List{System.String})
+  commentId: M:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor(System.String,List{System.String})
+  id: '#ctor(System.String,List{System.String})'
+  parent: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes
+  langs:
+  - csharp
+  - vb
+  name: ResultCodes(String, List<String>)
+  nameWithType: SubmitTransactionResponse.Extras.ResultCodes.ResultCodes(String, List<String>)
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.ResultCodes(System.String, List<System.String>)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs
+    startLine: 143
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public ResultCodes(string transactionResultCode, List<string> operationsResultCodes)
+    parameters:
+    - id: transactionResultCode
+      type: System.String
+    - id: operationsResultCodes
+      type: List{System.String}
+    content.vb: Public Sub New(transactionResultCode As String, operationsResultCodes As List(Of String))
+  overload: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor*
+  nameWithType.vb: SubmitTransactionResponse.Extras.ResultCodes.ResultCodes(String, List(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.ResultCodes(System.String, List(Of System.String))
+  name.vb: ResultCodes(String, List(Of String))
+references:
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.TransactionResultCode*
+  commentId: Overload:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.TransactionResultCode
+  name: TransactionResultCode
+  nameWithType: SubmitTransactionResponse.Extras.ResultCodes.TransactionResultCode
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.TransactionResultCode
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.OperationsResultCodes*
+  commentId: Overload:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.OperationsResultCodes
+  name: OperationsResultCodes
+  nameWithType: SubmitTransactionResponse.Extras.ResultCodes.OperationsResultCodes
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.OperationsResultCodes
+- uid: List{System.String}
+  commentId: '!:List{System.String}'
+  definition: List`1
+  name: List<String>
+  nameWithType: List<String>
+  fullName: List<System.String>
+  nameWithType.vb: List(Of String)
+  fullName.vb: List(Of System.String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: List`1
+  isExternal: true
+  name: List<>
+  nameWithType: List<>
+  fullName: List<>
+  nameWithType.vb: List(Of )
+  fullName.vb: List(Of )
+  name.vb: List(Of )
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.#ctor
+  name: ResultCodes
+  nameWithType: SubmitTransactionResponse.Extras.ResultCodes.ResultCodes
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.ResultCodes

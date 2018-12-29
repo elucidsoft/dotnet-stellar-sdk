@@ -1,0 +1,519 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+  commentId: T:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+  id: LedgerResponse.LedgerResponseLinks
+  parent: stellar_dotnet_sdk.responses
+  children:
+  - stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.#ctor(stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.effects.EffectResponse}},stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.operations.OperationResponse}},stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.LedgerResponse},stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.TransactionResponse}})
+  - stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Effects
+  - stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Operations
+  - stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Self
+  - stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Transactions
+  langs:
+  - csharp
+  - vb
+  name: LedgerResponse.LedgerResponseLinks
+  nameWithType: LedgerResponse.LedgerResponseLinks
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: LedgerResponseLinks
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 76
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  example: []
+  syntax:
+    content: 'public class LedgerResponseLinks : object'
+    content.vb: >-
+      Public Class LedgerResponseLinks
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Effects
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Effects
+  id: Effects
+  parent: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+  langs:
+  - csharp
+  - vb
+  name: Effects
+  nameWithType: LedgerResponse.LedgerResponseLinks.Effects
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Effects
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Effects
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 78
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public Link<Page<EffectResponse>> Effects { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.effects.EffectResponse}}
+    content.vb: Public ReadOnly Property Effects As Link(Of Page(Of EffectResponse))
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Effects*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Operations
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Operations
+  id: Operations
+  parent: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+  langs:
+  - csharp
+  - vb
+  name: Operations
+  nameWithType: LedgerResponse.LedgerResponseLinks.Operations
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Operations
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Operations
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 81
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public Link<Page<OperationResponse>> Operations { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.operations.OperationResponse}}
+    content.vb: Public ReadOnly Property Operations As Link(Of Page(Of OperationResponse))
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Operations*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Self
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Self
+  id: Self
+  parent: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+  langs:
+  - csharp
+  - vb
+  name: Self
+  nameWithType: LedgerResponse.LedgerResponseLinks.Self
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Self
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Self
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 84
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public Link<LedgerResponse> Self { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.LedgerResponse}
+    content.vb: Public ReadOnly Property Self As Link(Of LedgerResponse)
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Self*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Transactions
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Transactions
+  id: Transactions
+  parent: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+  langs:
+  - csharp
+  - vb
+  name: Transactions
+  nameWithType: LedgerResponse.LedgerResponseLinks.Transactions
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Transactions
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Transactions
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 87
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public Link<Page<TransactionResponse>> Transactions { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.TransactionResponse}}
+    content.vb: Public ReadOnly Property Transactions As Link(Of Page(Of TransactionResponse))
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Transactions*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.#ctor(stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.effects.EffectResponse}},stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.operations.OperationResponse}},stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.LedgerResponse},stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.TransactionResponse}})
+  commentId: M:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.#ctor(stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.effects.EffectResponse}},stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.operations.OperationResponse}},stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.LedgerResponse},stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.TransactionResponse}})
+  id: '#ctor(stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.effects.EffectResponse}},stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.operations.OperationResponse}},stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.LedgerResponse},stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.TransactionResponse}})'
+  parent: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+  langs:
+  - csharp
+  - vb
+  name: LedgerResponseLinks(Link<Page<EffectResponse>>, Link<Page<OperationResponse>>, Link<LedgerResponse>, Link<Page<TransactionResponse>>)
+  nameWithType: LedgerResponse.LedgerResponseLinks.LedgerResponseLinks(Link<Page<EffectResponse>>, Link<Page<OperationResponse>>, Link<LedgerResponse>, Link<Page<TransactionResponse>>)
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.LedgerResponseLinks(stellar_dotnet_sdk.responses.Link<stellar_dotnet_sdk.responses.page.Page<stellar_dotnet_sdk.responses.effects.EffectResponse>>, stellar_dotnet_sdk.responses.Link<stellar_dotnet_sdk.responses.page.Page<stellar_dotnet_sdk.responses.operations.OperationResponse>>, stellar_dotnet_sdk.responses.Link<stellar_dotnet_sdk.responses.LedgerResponse>, stellar_dotnet_sdk.responses.Link<stellar_dotnet_sdk.responses.page.Page<stellar_dotnet_sdk.responses.TransactionResponse>>)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/LedgerResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/LedgerResponse.cs
+    startLine: 90
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public LedgerResponseLinks(Link<Page<EffectResponse>> effects, Link<Page<OperationResponse>> operations, Link<LedgerResponse> self, Link<Page<TransactionResponse>> transactions)
+    parameters:
+    - id: effects
+      type: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.effects.EffectResponse}}
+    - id: operations
+      type: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.operations.OperationResponse}}
+    - id: self
+      type: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.LedgerResponse}
+    - id: transactions
+      type: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.TransactionResponse}}
+    content.vb: Public Sub New(effects As Link(Of Page(Of EffectResponse)), operations As Link(Of Page(Of OperationResponse)), self As Link(Of LedgerResponse), transactions As Link(Of Page(Of TransactionResponse)))
+  overload: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.#ctor*
+  nameWithType.vb: LedgerResponse.LedgerResponseLinks.LedgerResponseLinks(Link(Of Page(Of EffectResponse)), Link(Of Page(Of OperationResponse)), Link(Of LedgerResponse), Link(Of Page(Of TransactionResponse)))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.LedgerResponseLinks(stellar_dotnet_sdk.responses.Link(Of stellar_dotnet_sdk.responses.page.Page(Of stellar_dotnet_sdk.responses.effects.EffectResponse)), stellar_dotnet_sdk.responses.Link(Of stellar_dotnet_sdk.responses.page.Page(Of stellar_dotnet_sdk.responses.operations.OperationResponse)), stellar_dotnet_sdk.responses.Link(Of stellar_dotnet_sdk.responses.LedgerResponse), stellar_dotnet_sdk.responses.Link(Of stellar_dotnet_sdk.responses.page.Page(Of stellar_dotnet_sdk.responses.TransactionResponse)))
+  name.vb: LedgerResponseLinks(Link(Of Page(Of EffectResponse)), Link(Of Page(Of OperationResponse)), Link(Of LedgerResponse), Link(Of Page(Of TransactionResponse)))
+references:
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Effects*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Effects
+  name: Effects
+  nameWithType: LedgerResponse.LedgerResponseLinks.Effects
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Effects
+- uid: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.effects.EffectResponse}}
+  commentId: T:stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.effects.EffectResponse}}
+  parent: stellar_dotnet_sdk.responses
+  definition: stellar_dotnet_sdk.responses.Link`1
+  name: Link<Page<EffectResponse>>
+  nameWithType: Link<Page<EffectResponse>>
+  fullName: stellar_dotnet_sdk.responses.Link<stellar_dotnet_sdk.responses.page.Page<stellar_dotnet_sdk.responses.effects.EffectResponse>>
+  nameWithType.vb: Link(Of Page(Of EffectResponse))
+  fullName.vb: stellar_dotnet_sdk.responses.Link(Of stellar_dotnet_sdk.responses.page.Page(Of stellar_dotnet_sdk.responses.effects.EffectResponse))
+  name.vb: Link(Of Page(Of EffectResponse))
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.responses.page.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: stellar_dotnet_sdk.responses.page.Page
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.responses.effects.EffectResponse
+    name: EffectResponse
+    nameWithType: EffectResponse
+    fullName: stellar_dotnet_sdk.responses.effects.EffectResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.responses.page.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: stellar_dotnet_sdk.responses.page.Page
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.responses.effects.EffectResponse
+    name: EffectResponse
+    nameWithType: EffectResponse
+    fullName: stellar_dotnet_sdk.responses.effects.EffectResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.Link`1
+  commentId: T:stellar_dotnet_sdk.responses.Link`1
+  parent: stellar_dotnet_sdk.responses
+  name: Link<TResponse>
+  nameWithType: Link<TResponse>
+  fullName: stellar_dotnet_sdk.responses.Link<TResponse>
+  nameWithType.vb: Link(Of TResponse)
+  fullName.vb: stellar_dotnet_sdk.responses.Link(Of TResponse)
+  name.vb: Link(Of TResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Operations*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Operations
+  name: Operations
+  nameWithType: LedgerResponse.LedgerResponseLinks.Operations
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Operations
+- uid: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.operations.OperationResponse}}
+  commentId: T:stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.operations.OperationResponse}}
+  parent: stellar_dotnet_sdk.responses
+  definition: stellar_dotnet_sdk.responses.Link`1
+  name: Link<Page<OperationResponse>>
+  nameWithType: Link<Page<OperationResponse>>
+  fullName: stellar_dotnet_sdk.responses.Link<stellar_dotnet_sdk.responses.page.Page<stellar_dotnet_sdk.responses.operations.OperationResponse>>
+  nameWithType.vb: Link(Of Page(Of OperationResponse))
+  fullName.vb: stellar_dotnet_sdk.responses.Link(Of stellar_dotnet_sdk.responses.page.Page(Of stellar_dotnet_sdk.responses.operations.OperationResponse))
+  name.vb: Link(Of Page(Of OperationResponse))
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.responses.page.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: stellar_dotnet_sdk.responses.page.Page
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.responses.operations.OperationResponse
+    name: OperationResponse
+    nameWithType: OperationResponse
+    fullName: stellar_dotnet_sdk.responses.operations.OperationResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.responses.page.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: stellar_dotnet_sdk.responses.page.Page
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.responses.operations.OperationResponse
+    name: OperationResponse
+    nameWithType: OperationResponse
+    fullName: stellar_dotnet_sdk.responses.operations.OperationResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Self*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Self
+  name: Self
+  nameWithType: LedgerResponse.LedgerResponseLinks.Self
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Self
+- uid: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.LedgerResponse}
+  commentId: T:stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.LedgerResponse}
+  parent: stellar_dotnet_sdk.responses
+  definition: stellar_dotnet_sdk.responses.Link`1
+  name: Link<LedgerResponse>
+  nameWithType: Link<LedgerResponse>
+  fullName: stellar_dotnet_sdk.responses.Link<stellar_dotnet_sdk.responses.LedgerResponse>
+  nameWithType.vb: Link(Of LedgerResponse)
+  fullName.vb: stellar_dotnet_sdk.responses.Link(Of stellar_dotnet_sdk.responses.LedgerResponse)
+  name.vb: Link(Of LedgerResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.responses.LedgerResponse
+    name: LedgerResponse
+    nameWithType: LedgerResponse
+    fullName: stellar_dotnet_sdk.responses.LedgerResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.responses.LedgerResponse
+    name: LedgerResponse
+    nameWithType: LedgerResponse
+    fullName: stellar_dotnet_sdk.responses.LedgerResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Transactions*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Transactions
+  name: Transactions
+  nameWithType: LedgerResponse.LedgerResponseLinks.Transactions
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.Transactions
+- uid: stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.TransactionResponse}}
+  commentId: T:stellar_dotnet_sdk.responses.Link{stellar_dotnet_sdk.responses.page.Page{stellar_dotnet_sdk.responses.TransactionResponse}}
+  parent: stellar_dotnet_sdk.responses
+  definition: stellar_dotnet_sdk.responses.Link`1
+  name: Link<Page<TransactionResponse>>
+  nameWithType: Link<Page<TransactionResponse>>
+  fullName: stellar_dotnet_sdk.responses.Link<stellar_dotnet_sdk.responses.page.Page<stellar_dotnet_sdk.responses.TransactionResponse>>
+  nameWithType.vb: Link(Of Page(Of TransactionResponse))
+  fullName.vb: stellar_dotnet_sdk.responses.Link(Of stellar_dotnet_sdk.responses.page.Page(Of stellar_dotnet_sdk.responses.TransactionResponse))
+  name.vb: Link(Of Page(Of TransactionResponse))
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.responses.page.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: stellar_dotnet_sdk.responses.page.Page
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.responses.TransactionResponse
+    name: TransactionResponse
+    nameWithType: TransactionResponse
+    fullName: stellar_dotnet_sdk.responses.TransactionResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.responses.page.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: stellar_dotnet_sdk.responses.page.Page
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.responses.TransactionResponse
+    name: TransactionResponse
+    nameWithType: TransactionResponse
+    fullName: stellar_dotnet_sdk.responses.TransactionResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.#ctor
+  name: LedgerResponseLinks
+  nameWithType: LedgerResponse.LedgerResponseLinks.LedgerResponseLinks
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks.LedgerResponseLinks

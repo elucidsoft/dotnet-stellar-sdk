@@ -1,0 +1,386 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  id: SetOptionsResultCode.SetOptionsResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_BAD_FLAGS
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_BAD_SIGNER
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_CANT_CHANGE
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_INVALID_HOME_DOMAIN
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_INVALID_INFLATION
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_LOW_RESERVE
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_SUCCESS
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_THRESHOLD_OUT_OF_RANGE
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_TOO_MANY_SIGNERS
+  - stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_UNKNOWN_FLAG
+  langs:
+  - csharp
+  - vb
+  name: SetOptionsResultCode.SetOptionsResultCodeEnum
+  nameWithType: SetOptionsResultCode.SetOptionsResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetOptionsResultCodeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum SetOptionsResultCodeEnum : int'
+    content.vb: Public Enum SetOptionsResultCodeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_SUCCESS
+  commentId: F:stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_SUCCESS
+  id: SET_OPTIONS_SUCCESS
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: SET_OPTIONS_SUCCESS
+  nameWithType: SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_SUCCESS
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_SUCCESS
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SET_OPTIONS_SUCCESS
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SET_OPTIONS_SUCCESS = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+    content.vb: SET_OPTIONS_SUCCESS = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_LOW_RESERVE
+  commentId: F:stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_LOW_RESERVE
+  id: SET_OPTIONS_LOW_RESERVE
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: SET_OPTIONS_LOW_RESERVE
+  nameWithType: SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_LOW_RESERVE
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_LOW_RESERVE
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SET_OPTIONS_LOW_RESERVE
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SET_OPTIONS_LOW_RESERVE = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+    content.vb: SET_OPTIONS_LOW_RESERVE = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_TOO_MANY_SIGNERS
+  commentId: F:stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_TOO_MANY_SIGNERS
+  id: SET_OPTIONS_TOO_MANY_SIGNERS
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: SET_OPTIONS_TOO_MANY_SIGNERS
+  nameWithType: SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_TOO_MANY_SIGNERS
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_TOO_MANY_SIGNERS
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SET_OPTIONS_TOO_MANY_SIGNERS
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SET_OPTIONS_TOO_MANY_SIGNERS = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+    content.vb: SET_OPTIONS_TOO_MANY_SIGNERS = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_BAD_FLAGS
+  commentId: F:stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_BAD_FLAGS
+  id: SET_OPTIONS_BAD_FLAGS
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: SET_OPTIONS_BAD_FLAGS
+  nameWithType: SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_BAD_FLAGS
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_BAD_FLAGS
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SET_OPTIONS_BAD_FLAGS
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SET_OPTIONS_BAD_FLAGS = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+    content.vb: SET_OPTIONS_BAD_FLAGS = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_INVALID_INFLATION
+  commentId: F:stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_INVALID_INFLATION
+  id: SET_OPTIONS_INVALID_INFLATION
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: SET_OPTIONS_INVALID_INFLATION
+  nameWithType: SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_INVALID_INFLATION
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_INVALID_INFLATION
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SET_OPTIONS_INVALID_INFLATION
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 34
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SET_OPTIONS_INVALID_INFLATION = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+    content.vb: SET_OPTIONS_INVALID_INFLATION = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_CANT_CHANGE
+  commentId: F:stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_CANT_CHANGE
+  id: SET_OPTIONS_CANT_CHANGE
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: SET_OPTIONS_CANT_CHANGE
+  nameWithType: SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_CANT_CHANGE
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_CANT_CHANGE
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SET_OPTIONS_CANT_CHANGE
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SET_OPTIONS_CANT_CHANGE = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+    content.vb: SET_OPTIONS_CANT_CHANGE = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_UNKNOWN_FLAG
+  commentId: F:stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_UNKNOWN_FLAG
+  id: SET_OPTIONS_UNKNOWN_FLAG
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: SET_OPTIONS_UNKNOWN_FLAG
+  nameWithType: SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_UNKNOWN_FLAG
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_UNKNOWN_FLAG
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SET_OPTIONS_UNKNOWN_FLAG
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 36
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SET_OPTIONS_UNKNOWN_FLAG = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+    content.vb: SET_OPTIONS_UNKNOWN_FLAG = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_THRESHOLD_OUT_OF_RANGE
+  commentId: F:stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_THRESHOLD_OUT_OF_RANGE
+  id: SET_OPTIONS_THRESHOLD_OUT_OF_RANGE
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: SET_OPTIONS_THRESHOLD_OUT_OF_RANGE
+  nameWithType: SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_THRESHOLD_OUT_OF_RANGE
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_THRESHOLD_OUT_OF_RANGE
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SET_OPTIONS_THRESHOLD_OUT_OF_RANGE
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 37
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SET_OPTIONS_THRESHOLD_OUT_OF_RANGE = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+    content.vb: SET_OPTIONS_THRESHOLD_OUT_OF_RANGE = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_BAD_SIGNER
+  commentId: F:stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_BAD_SIGNER
+  id: SET_OPTIONS_BAD_SIGNER
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: SET_OPTIONS_BAD_SIGNER
+  nameWithType: SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_BAD_SIGNER
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_BAD_SIGNER
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SET_OPTIONS_BAD_SIGNER
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 38
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SET_OPTIONS_BAD_SIGNER = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+    content.vb: SET_OPTIONS_BAD_SIGNER = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_INVALID_HOME_DOMAIN
+  commentId: F:stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_INVALID_HOME_DOMAIN
+  id: SET_OPTIONS_INVALID_HOME_DOMAIN
+  parent: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: SET_OPTIONS_INVALID_HOME_DOMAIN
+  nameWithType: SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_INVALID_HOME_DOMAIN
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum.SET_OPTIONS_INVALID_HOME_DOMAIN
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SET_OPTIONS_INVALID_HOME_DOMAIN
+    path: ../stellar-dotnet-sdk/xdr/generated/SetOptionsResultCode.cs
+    startLine: 39
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SET_OPTIONS_INVALID_HOME_DOMAIN = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+    content.vb: SET_OPTIONS_INVALID_HOME_DOMAIN = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: SetOptionsResultCode.SetOptionsResultCodeEnum
+  nameWithType: SetOptionsResultCode.SetOptionsResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.SetOptionsResultCode.SetOptionsResultCodeEnum

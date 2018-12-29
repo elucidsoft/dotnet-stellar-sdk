@@ -1,0 +1,297 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.operations.InflationOperationResponse
+  commentId: T:stellar_dotnet_sdk.responses.operations.InflationOperationResponse
+  id: InflationOperationResponse
+  parent: stellar_dotnet_sdk.responses.operations
+  children:
+  - stellar_dotnet_sdk.responses.operations.InflationOperationResponse.#ctor
+  - stellar_dotnet_sdk.responses.operations.InflationOperationResponse.TypeId
+  langs:
+  - csharp
+  - vb
+  name: InflationOperationResponse
+  nameWithType: InflationOperationResponse
+  fullName: stellar_dotnet_sdk.responses.operations.InflationOperationResponse
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/InflationOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InflationOperationResponse
+    path: ../stellar-dotnet-sdk/responses/operations/InflationOperationResponse.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  summary: "\nRepresents Inflation operation response.\nSee: https://www.stellar.org/developers/horizon/reference/resources/operation.html\n<xref href=\"stellar_dotnet_sdk.requests.OperationsRequestBuilder\" data-throw-if-not-resolved=\"false\"></xref>\n<xref href=\"stellar_dotnet_sdk.Server\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: 'public class InflationOperationResponse : OperationResponse, IPagingToken'
+    content.vb: >-
+      Public Class InflationOperationResponse
+          Inherits OperationResponse
+          Implements IPagingToken
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.responses.Response
+  - stellar_dotnet_sdk.responses.operations.OperationResponse
+  implements:
+  - stellar_dotnet_sdk.responses.IPagingToken
+  inheritedMembers:
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.Id
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.Type
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash
+  - stellar_dotnet_sdk.responses.operations.OperationResponse.Links
+  - stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  - stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  - stellar_dotnet_sdk.responses.Response.RateLimitReset
+  - stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.operations.InflationOperationResponse.TypeId
+  commentId: P:stellar_dotnet_sdk.responses.operations.InflationOperationResponse.TypeId
+  id: TypeId
+  parent: stellar_dotnet_sdk.responses.operations.InflationOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: TypeId
+  nameWithType: InflationOperationResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.operations.InflationOperationResponse.TypeId
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/InflationOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TypeId
+    path: ../stellar-dotnet-sdk/responses/operations/InflationOperationResponse.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public override int TypeId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Overrides ReadOnly Property TypeId As Integer
+  overridden: stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId
+  overload: stellar_dotnet_sdk.responses.operations.InflationOperationResponse.TypeId*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.operations.InflationOperationResponse.#ctor
+  commentId: M:stellar_dotnet_sdk.responses.operations.InflationOperationResponse.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.responses.operations.InflationOperationResponse
+  langs:
+  - csharp
+  - vb
+  name: InflationOperationResponse()
+  nameWithType: InflationOperationResponse.InflationOperationResponse()
+  fullName: stellar_dotnet_sdk.responses.operations.InflationOperationResponse.InflationOperationResponse()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/operations/InflationOperationResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/operations/InflationOperationResponse.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.operations
+  syntax:
+    content: public InflationOperationResponse()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.responses.operations.InflationOperationResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder
+  commentId: T:stellar_dotnet_sdk.requests.OperationsRequestBuilder
+  parent: stellar_dotnet_sdk.requests
+  name: OperationsRequestBuilder
+  nameWithType: OperationsRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder
+- uid: stellar_dotnet_sdk.Server
+  commentId: T:stellar_dotnet_sdk.Server
+  name: Server
+  nameWithType: Server
+  fullName: stellar_dotnet_sdk.Server
+- uid: stellar_dotnet_sdk.responses.operations
+  commentId: N:stellar_dotnet_sdk.responses.operations
+  name: stellar_dotnet_sdk.responses.operations
+  nameWithType: stellar_dotnet_sdk.responses.operations
+  fullName: stellar_dotnet_sdk.responses.operations
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.Response
+  commentId: T:stellar_dotnet_sdk.responses.Response
+  parent: stellar_dotnet_sdk.responses
+  name: Response
+  nameWithType: Response
+  fullName: stellar_dotnet_sdk.responses.Response
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse
+  commentId: T:stellar_dotnet_sdk.responses.operations.OperationResponse
+  parent: stellar_dotnet_sdk.responses.operations
+  name: OperationResponse
+  nameWithType: OperationResponse
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse
+- uid: stellar_dotnet_sdk.responses.IPagingToken
+  commentId: T:stellar_dotnet_sdk.responses.IPagingToken
+  parent: stellar_dotnet_sdk.responses
+  name: IPagingToken
+  nameWithType: IPagingToken
+  fullName: stellar_dotnet_sdk.responses.IPagingToken
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.Id
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.Id
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: Id
+  nameWithType: OperationResponse.Id
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.Id
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: SourceAccount
+  nameWithType: OperationResponse.SourceAccount
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: PagingToken
+  nameWithType: OperationResponse.PagingToken
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.Type
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.Type
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: Type
+  nameWithType: OperationResponse.Type
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.Type
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: CreatedAt
+  nameWithType: OperationResponse.CreatedAt
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: TransactionHash
+  nameWithType: OperationResponse.TransactionHash
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.Links
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.Links
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: Links
+  nameWithType: OperationResponse.Links
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.Links
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitLimit
+  nameWithType: Response.RateLimitLimit
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitRemaining
+  nameWithType: Response.RateLimitRemaining
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitReset
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitReset
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitReset
+  nameWithType: Response.RateLimitReset
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitReset
+- uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  commentId: M:stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  parent: stellar_dotnet_sdk.responses.Response
+  isExternal: true
+  name: SetHeaders(HttpResponseHeaders)
+  nameWithType: Response.SetHeaders(HttpResponseHeaders)
+  fullName: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests
+  commentId: N:stellar_dotnet_sdk.requests
+  name: stellar_dotnet_sdk.requests
+  nameWithType: stellar_dotnet_sdk.requests
+  fullName: stellar_dotnet_sdk.requests
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId
+  parent: stellar_dotnet_sdk.responses.operations.OperationResponse
+  name: TypeId
+  nameWithType: OperationResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId
+- uid: stellar_dotnet_sdk.responses.operations.InflationOperationResponse.TypeId*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.InflationOperationResponse.TypeId
+  name: TypeId
+  nameWithType: InflationOperationResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.operations.InflationOperationResponse.TypeId
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: stellar_dotnet_sdk.responses.operations.InflationOperationResponse.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.InflationOperationResponse.#ctor
+  name: InflationOperationResponse
+  nameWithType: InflationOperationResponse.InflationOperationResponse
+  fullName: stellar_dotnet_sdk.responses.operations.InflationOperationResponse.InflationOperationResponse

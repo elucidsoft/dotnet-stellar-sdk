@@ -1,0 +1,127 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.page
+  commentId: N:stellar_dotnet_sdk.responses.page
+  id: stellar_dotnet_sdk.responses.page
+  children:
+  - stellar_dotnet_sdk.responses.page.Page`1
+  - stellar_dotnet_sdk.responses.page.Page`1.EmbeddedRecords
+  - stellar_dotnet_sdk.responses.page.PageLinks`1
+  langs:
+  - csharp
+  - vb
+  name: stellar_dotnet_sdk.responses.page
+  nameWithType: stellar_dotnet_sdk.responses.page
+  fullName: stellar_dotnet_sdk.responses.page
+  type: Namespace
+  assemblies:
+  - stellar-dotnet-sdk
+references:
+- uid: stellar_dotnet_sdk.responses.page.Page`1
+  commentId: T:stellar_dotnet_sdk.responses.page.Page`1
+  name: Page<T>
+  nameWithType: Page<T>
+  fullName: stellar_dotnet_sdk.responses.page.Page<T>
+  nameWithType.vb: Page(Of T)
+  fullName.vb: stellar_dotnet_sdk.responses.page.Page(Of T)
+  name.vb: Page(Of T)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.page.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: stellar_dotnet_sdk.responses.page.Page
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.page.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: stellar_dotnet_sdk.responses.page.Page
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.page.Page`1.EmbeddedRecords
+  commentId: T:stellar_dotnet_sdk.responses.page.Page`1.EmbeddedRecords
+  parent: stellar_dotnet_sdk.responses.page
+  name: Page.EmbeddedRecords<>
+  nameWithType: Page.EmbeddedRecords<>
+  fullName: stellar_dotnet_sdk.responses.page.Page.EmbeddedRecords<>
+  nameWithType.vb: Page.EmbeddedRecords(Of )
+  fullName.vb: stellar_dotnet_sdk.responses.page.Page.EmbeddedRecords(Of )
+  name.vb: Page.EmbeddedRecords(Of )
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.page.Page`1.EmbeddedRecords
+    name: Page.EmbeddedRecords
+    nameWithType: Page.EmbeddedRecords
+    fullName: stellar_dotnet_sdk.responses.page.Page.EmbeddedRecords
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.page.Page`1.EmbeddedRecords
+    name: Page.EmbeddedRecords
+    nameWithType: Page.EmbeddedRecords
+    fullName: stellar_dotnet_sdk.responses.page.Page.EmbeddedRecords
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.page.PageLinks`1
+  commentId: T:stellar_dotnet_sdk.responses.page.PageLinks`1
+  name: PageLinks<T>
+  nameWithType: PageLinks<T>
+  fullName: stellar_dotnet_sdk.responses.page.PageLinks<T>
+  nameWithType.vb: PageLinks(Of T)
+  fullName.vb: stellar_dotnet_sdk.responses.page.PageLinks(Of T)
+  name.vb: PageLinks(Of T)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.page.PageLinks`1
+    name: PageLinks
+    nameWithType: PageLinks
+    fullName: stellar_dotnet_sdk.responses.page.PageLinks
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.page.PageLinks`1
+    name: PageLinks
+    nameWithType: PageLinks
+    fullName: stellar_dotnet_sdk.responses.page.PageLinks
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.page
+  commentId: N:stellar_dotnet_sdk.responses.page
+  name: stellar_dotnet_sdk.responses.page
+  nameWithType: stellar_dotnet_sdk.responses.page
+  fullName: stellar_dotnet_sdk.responses.page

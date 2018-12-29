@@ -1,0 +1,257 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.ChangeTrustOperation.Builder
+  commentId: T:stellar_dotnet_sdk.ChangeTrustOperation.Builder
+  id: ChangeTrustOperation.Builder
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.ChangeTrustOperation.Builder.#ctor(stellar_dotnet_sdk.Asset,System.String)
+  - stellar_dotnet_sdk.ChangeTrustOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.ChangeTrustOp)
+  - stellar_dotnet_sdk.ChangeTrustOperation.Builder.Build
+  - stellar_dotnet_sdk.ChangeTrustOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  langs:
+  - csharp
+  - vb
+  name: ChangeTrustOperation.Builder
+  nameWithType: ChangeTrustOperation.Builder
+  fullName: stellar_dotnet_sdk.ChangeTrustOperation.Builder
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ChangeTrustOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Builder
+    path: ../stellar-dotnet-sdk/ChangeTrustOperation.cs
+    startLine: 42
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBuilds ChangeTrust operation.\n"
+  example: []
+  syntax:
+    content: 'public class Builder : object'
+    content.vb: >-
+      Public Class Builder
+          Inherits Object
+  see:
+  - linkId: stellar_dotnet_sdk.ChangeTrustOperation
+    commentId: T:stellar_dotnet_sdk.ChangeTrustOperation
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.ChangeTrustOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.ChangeTrustOp)
+  commentId: M:stellar_dotnet_sdk.ChangeTrustOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.ChangeTrustOp)
+  id: '#ctor(stellar_dotnet_sdk.xdr.ChangeTrustOp)'
+  parent: stellar_dotnet_sdk.ChangeTrustOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder(ChangeTrustOp)
+  nameWithType: ChangeTrustOperation.Builder.Builder(ChangeTrustOp)
+  fullName: stellar_dotnet_sdk.ChangeTrustOperation.Builder.Builder(stellar_dotnet_sdk.xdr.ChangeTrustOp)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ChangeTrustOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/ChangeTrustOperation.cs
+    startLine: 49
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public Builder(ChangeTrustOp op)
+    parameters:
+    - id: op
+      type: stellar_dotnet_sdk.xdr.ChangeTrustOp
+    content.vb: Public Sub New(op As ChangeTrustOp)
+  overload: stellar_dotnet_sdk.ChangeTrustOperation.Builder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.ChangeTrustOperation.Builder.#ctor(stellar_dotnet_sdk.Asset,System.String)
+  commentId: M:stellar_dotnet_sdk.ChangeTrustOperation.Builder.#ctor(stellar_dotnet_sdk.Asset,System.String)
+  id: '#ctor(stellar_dotnet_sdk.Asset,System.String)'
+  parent: stellar_dotnet_sdk.ChangeTrustOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder(Asset, String)
+  nameWithType: ChangeTrustOperation.Builder.Builder(Asset, String)
+  fullName: stellar_dotnet_sdk.ChangeTrustOperation.Builder.Builder(stellar_dotnet_sdk.Asset, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ChangeTrustOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/ChangeTrustOperation.cs
+    startLine: 67
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates a new ChangeTrust builder.\n"
+  example: []
+  syntax:
+    content: public Builder(Asset asset, string limit)
+    parameters:
+    - id: asset
+      type: stellar_dotnet_sdk.Asset
+      description: "\nThe asset of the trustline. For example, if a gateway extends a trustline of up to 200 USD to a\nuser, the line is USD.\n"
+    - id: limit
+      type: System.String
+      description: "\nThe limit of the trustline. For example, if a gateway extends a trustline of up to 200 USD to a\nuser, the limit is 200.\n"
+    content.vb: Public Sub New(asset As Asset, limit As String)
+  overload: stellar_dotnet_sdk.ChangeTrustOperation.Builder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.ChangeTrustOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.ChangeTrustOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  id: SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  parent: stellar_dotnet_sdk.ChangeTrustOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetSourceAccount(KeyPair)
+  nameWithType: ChangeTrustOperation.Builder.SetSourceAccount(KeyPair)
+  fullName: stellar_dotnet_sdk.ChangeTrustOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ChangeTrustOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetSourceAccount
+    path: ../stellar-dotnet-sdk/ChangeTrustOperation.cs
+    startLine: 77
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSet source account of this operation\n"
+  example: []
+  syntax:
+    content: public ChangeTrustOperation.Builder SetSourceAccount(KeyPair sourceAccount)
+    parameters:
+    - id: sourceAccount
+      type: stellar_dotnet_sdk.KeyPair
+    return:
+      type: stellar_dotnet_sdk.ChangeTrustOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetSourceAccount(sourceAccount As KeyPair) As ChangeTrustOperation.Builder
+  overload: stellar_dotnet_sdk.ChangeTrustOperation.Builder.SetSourceAccount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.ChangeTrustOperation.Builder.Build
+  commentId: M:stellar_dotnet_sdk.ChangeTrustOperation.Builder.Build
+  id: Build
+  parent: stellar_dotnet_sdk.ChangeTrustOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Build()
+  nameWithType: ChangeTrustOperation.Builder.Build()
+  fullName: stellar_dotnet_sdk.ChangeTrustOperation.Builder.Build()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ChangeTrustOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Build
+    path: ../stellar-dotnet-sdk/ChangeTrustOperation.cs
+    startLine: 86
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBuilds an operation\n"
+  example: []
+  syntax:
+    content: public ChangeTrustOperation Build()
+    return:
+      type: stellar_dotnet_sdk.ChangeTrustOperation
+    content.vb: Public Function Build As ChangeTrustOperation
+  overload: stellar_dotnet_sdk.ChangeTrustOperation.Builder.Build*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.ChangeTrustOperation
+  commentId: T:stellar_dotnet_sdk.ChangeTrustOperation
+  parent: stellar_dotnet_sdk
+  name: ChangeTrustOperation
+  nameWithType: ChangeTrustOperation
+  fullName: stellar_dotnet_sdk.ChangeTrustOperation
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.ChangeTrustOperation.Builder.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.ChangeTrustOperation.Builder.#ctor
+  name: Builder
+  nameWithType: ChangeTrustOperation.Builder.Builder
+  fullName: stellar_dotnet_sdk.ChangeTrustOperation.Builder.Builder
+- uid: stellar_dotnet_sdk.xdr.ChangeTrustOp
+  commentId: T:stellar_dotnet_sdk.xdr.ChangeTrustOp
+  parent: stellar_dotnet_sdk.xdr
+  name: ChangeTrustOp
+  nameWithType: ChangeTrustOp
+  fullName: stellar_dotnet_sdk.xdr.ChangeTrustOp
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.Asset
+  commentId: T:stellar_dotnet_sdk.Asset
+  parent: stellar_dotnet_sdk
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.Asset
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.ChangeTrustOperation.Builder.SetSourceAccount*
+  commentId: Overload:stellar_dotnet_sdk.ChangeTrustOperation.Builder.SetSourceAccount
+  name: SetSourceAccount
+  nameWithType: ChangeTrustOperation.Builder.SetSourceAccount
+  fullName: stellar_dotnet_sdk.ChangeTrustOperation.Builder.SetSourceAccount
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk.ChangeTrustOperation.Builder
+  commentId: T:stellar_dotnet_sdk.ChangeTrustOperation.Builder
+  parent: stellar_dotnet_sdk
+  name: ChangeTrustOperation.Builder
+  nameWithType: ChangeTrustOperation.Builder
+  fullName: stellar_dotnet_sdk.ChangeTrustOperation.Builder
+- uid: stellar_dotnet_sdk.ChangeTrustOperation.Builder.Build*
+  commentId: Overload:stellar_dotnet_sdk.ChangeTrustOperation.Builder.Build
+  name: Build
+  nameWithType: ChangeTrustOperation.Builder.Build
+  fullName: stellar_dotnet_sdk.ChangeTrustOperation.Builder.Build

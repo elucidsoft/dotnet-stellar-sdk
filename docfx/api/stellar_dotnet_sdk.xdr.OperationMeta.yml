@@ -1,0 +1,236 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.OperationMeta
+  commentId: T:stellar_dotnet_sdk.xdr.OperationMeta
+  id: OperationMeta
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.OperationMeta.#ctor
+  - stellar_dotnet_sdk.xdr.OperationMeta.Changes
+  - stellar_dotnet_sdk.xdr.OperationMeta.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.OperationMeta.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OperationMeta)
+  langs:
+  - csharp
+  - vb
+  name: OperationMeta
+  nameWithType: OperationMeta
+  fullName: stellar_dotnet_sdk.xdr.OperationMeta
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OperationMeta.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: OperationMeta
+    path: ../stellar-dotnet-sdk/xdr/generated/OperationMeta.cs
+    startLine: 15
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class OperationMeta : object'
+    content.vb: >-
+      Public Class OperationMeta
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.OperationMeta.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.OperationMeta.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.OperationMeta
+  langs:
+  - csharp
+  - vb
+  name: OperationMeta()
+  nameWithType: OperationMeta.OperationMeta()
+  fullName: stellar_dotnet_sdk.xdr.OperationMeta.OperationMeta()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OperationMeta.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/OperationMeta.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public OperationMeta()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.OperationMeta.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OperationMeta.Changes
+  commentId: P:stellar_dotnet_sdk.xdr.OperationMeta.Changes
+  id: Changes
+  parent: stellar_dotnet_sdk.xdr.OperationMeta
+  langs:
+  - csharp
+  - vb
+  name: Changes
+  nameWithType: OperationMeta.Changes
+  fullName: stellar_dotnet_sdk.xdr.OperationMeta.Changes
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OperationMeta.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Changes
+    path: ../stellar-dotnet-sdk/xdr/generated/OperationMeta.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public LedgerEntryChanges Changes { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.LedgerEntryChanges
+    content.vb: Public Property Changes As LedgerEntryChanges
+  overload: stellar_dotnet_sdk.xdr.OperationMeta.Changes*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OperationMeta.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OperationMeta)
+  commentId: M:stellar_dotnet_sdk.xdr.OperationMeta.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OperationMeta)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OperationMeta)
+  parent: stellar_dotnet_sdk.xdr.OperationMeta
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, OperationMeta)
+  nameWithType: OperationMeta.Encode(XdrDataOutputStream, OperationMeta)
+  fullName: stellar_dotnet_sdk.xdr.OperationMeta.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.OperationMeta)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OperationMeta.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/OperationMeta.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, OperationMeta encodedOperationMeta)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedOperationMeta
+      type: stellar_dotnet_sdk.xdr.OperationMeta
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedOperationMeta As OperationMeta)
+  overload: stellar_dotnet_sdk.xdr.OperationMeta.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.OperationMeta.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.OperationMeta.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.OperationMeta
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: OperationMeta.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.OperationMeta.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OperationMeta.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/OperationMeta.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static OperationMeta Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.OperationMeta
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As OperationMeta
+  overload: stellar_dotnet_sdk.xdr.OperationMeta.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.OperationMeta.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OperationMeta.#ctor
+  name: OperationMeta
+  nameWithType: OperationMeta.OperationMeta
+  fullName: stellar_dotnet_sdk.xdr.OperationMeta.OperationMeta
+- uid: stellar_dotnet_sdk.xdr.OperationMeta.Changes*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OperationMeta.Changes
+  name: Changes
+  nameWithType: OperationMeta.Changes
+  fullName: stellar_dotnet_sdk.xdr.OperationMeta.Changes
+- uid: stellar_dotnet_sdk.xdr.LedgerEntryChanges
+  commentId: T:stellar_dotnet_sdk.xdr.LedgerEntryChanges
+  parent: stellar_dotnet_sdk.xdr
+  name: LedgerEntryChanges
+  nameWithType: LedgerEntryChanges
+  fullName: stellar_dotnet_sdk.xdr.LedgerEntryChanges
+- uid: stellar_dotnet_sdk.xdr.OperationMeta.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OperationMeta.Encode
+  name: Encode
+  nameWithType: OperationMeta.Encode
+  fullName: stellar_dotnet_sdk.xdr.OperationMeta.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.OperationMeta
+  commentId: T:stellar_dotnet_sdk.xdr.OperationMeta
+  parent: stellar_dotnet_sdk.xdr
+  name: OperationMeta
+  nameWithType: OperationMeta
+  fullName: stellar_dotnet_sdk.xdr.OperationMeta
+- uid: stellar_dotnet_sdk.xdr.OperationMeta.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OperationMeta.Decode
+  name: Decode
+  nameWithType: OperationMeta.Decode
+  fullName: stellar_dotnet_sdk.xdr.OperationMeta.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

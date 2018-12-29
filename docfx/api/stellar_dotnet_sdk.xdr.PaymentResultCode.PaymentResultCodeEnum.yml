@@ -1,0 +1,386 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  id: PaymentResultCode.PaymentResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_LINE_FULL
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_MALFORMED
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_DESTINATION
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_ISSUER
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_TRUST
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NOT_AUTHORIZED
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NO_TRUST
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NOT_AUTHORIZED
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SUCCESS
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_UNDERFUNDED
+  langs:
+  - csharp
+  - vb
+  name: PaymentResultCode.PaymentResultCodeEnum
+  nameWithType: PaymentResultCode.PaymentResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PaymentResultCodeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum PaymentResultCodeEnum : int'
+    content.vb: Public Enum PaymentResultCodeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SUCCESS
+  commentId: F:stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SUCCESS
+  id: PAYMENT_SUCCESS
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PAYMENT_SUCCESS
+  nameWithType: PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SUCCESS
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SUCCESS
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PAYMENT_SUCCESS
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PAYMENT_SUCCESS = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+    content.vb: PAYMENT_SUCCESS = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_MALFORMED
+  commentId: F:stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_MALFORMED
+  id: PAYMENT_MALFORMED
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PAYMENT_MALFORMED
+  nameWithType: PaymentResultCode.PaymentResultCodeEnum.PAYMENT_MALFORMED
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_MALFORMED
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PAYMENT_MALFORMED
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 32
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PAYMENT_MALFORMED = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+    content.vb: PAYMENT_MALFORMED = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_UNDERFUNDED
+  commentId: F:stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_UNDERFUNDED
+  id: PAYMENT_UNDERFUNDED
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PAYMENT_UNDERFUNDED
+  nameWithType: PaymentResultCode.PaymentResultCodeEnum.PAYMENT_UNDERFUNDED
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_UNDERFUNDED
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PAYMENT_UNDERFUNDED
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 33
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PAYMENT_UNDERFUNDED = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+    content.vb: PAYMENT_UNDERFUNDED = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NO_TRUST
+  commentId: F:stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NO_TRUST
+  id: PAYMENT_SRC_NO_TRUST
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PAYMENT_SRC_NO_TRUST
+  nameWithType: PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NO_TRUST
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NO_TRUST
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PAYMENT_SRC_NO_TRUST
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 34
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PAYMENT_SRC_NO_TRUST = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+    content.vb: PAYMENT_SRC_NO_TRUST = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NOT_AUTHORIZED
+  commentId: F:stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NOT_AUTHORIZED
+  id: PAYMENT_SRC_NOT_AUTHORIZED
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PAYMENT_SRC_NOT_AUTHORIZED
+  nameWithType: PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NOT_AUTHORIZED
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NOT_AUTHORIZED
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PAYMENT_SRC_NOT_AUTHORIZED
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PAYMENT_SRC_NOT_AUTHORIZED = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+    content.vb: PAYMENT_SRC_NOT_AUTHORIZED = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_DESTINATION
+  commentId: F:stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_DESTINATION
+  id: PAYMENT_NO_DESTINATION
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PAYMENT_NO_DESTINATION
+  nameWithType: PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_DESTINATION
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_DESTINATION
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PAYMENT_NO_DESTINATION
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 36
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PAYMENT_NO_DESTINATION = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+    content.vb: PAYMENT_NO_DESTINATION = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_TRUST
+  commentId: F:stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_TRUST
+  id: PAYMENT_NO_TRUST
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PAYMENT_NO_TRUST
+  nameWithType: PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_TRUST
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_TRUST
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PAYMENT_NO_TRUST
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 37
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PAYMENT_NO_TRUST = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+    content.vb: PAYMENT_NO_TRUST = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NOT_AUTHORIZED
+  commentId: F:stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NOT_AUTHORIZED
+  id: PAYMENT_NOT_AUTHORIZED
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PAYMENT_NOT_AUTHORIZED
+  nameWithType: PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NOT_AUTHORIZED
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NOT_AUTHORIZED
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PAYMENT_NOT_AUTHORIZED
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 38
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PAYMENT_NOT_AUTHORIZED = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+    content.vb: PAYMENT_NOT_AUTHORIZED = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_LINE_FULL
+  commentId: F:stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_LINE_FULL
+  id: PAYMENT_LINE_FULL
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PAYMENT_LINE_FULL
+  nameWithType: PaymentResultCode.PaymentResultCodeEnum.PAYMENT_LINE_FULL
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_LINE_FULL
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PAYMENT_LINE_FULL
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 39
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PAYMENT_LINE_FULL = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+    content.vb: PAYMENT_LINE_FULL = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_ISSUER
+  commentId: F:stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_ISSUER
+  id: PAYMENT_NO_ISSUER
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  langs:
+  - csharp
+  - vb
+  name: PAYMENT_NO_ISSUER
+  nameWithType: PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_ISSUER
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_ISSUER
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PAYMENT_NO_ISSUER
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 40
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: PAYMENT_NO_ISSUER = null
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+    content.vb: PAYMENT_NO_ISSUER = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: PaymentResultCode.PaymentResultCodeEnum
+  nameWithType: PaymentResultCode.PaymentResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum

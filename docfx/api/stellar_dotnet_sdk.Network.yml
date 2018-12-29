@@ -1,0 +1,495 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.Network
+  commentId: T:stellar_dotnet_sdk.Network
+  id: Network
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.Network.#ctor(System.String)
+  - stellar_dotnet_sdk.Network.Current
+  - stellar_dotnet_sdk.Network.IsPublicNetwork(stellar_dotnet_sdk.Network)
+  - stellar_dotnet_sdk.Network.NetworkId
+  - stellar_dotnet_sdk.Network.NetworkPassphrase
+  - stellar_dotnet_sdk.Network.Public
+  - stellar_dotnet_sdk.Network.Test
+  - stellar_dotnet_sdk.Network.Use(stellar_dotnet_sdk.Network)
+  - stellar_dotnet_sdk.Network.UsePublicNetwork
+  - stellar_dotnet_sdk.Network.UseTestNetwork
+  langs:
+  - csharp
+  - vb
+  name: Network
+  nameWithType: Network
+  fullName: stellar_dotnet_sdk.Network
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Network.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Network
+    path: ../stellar-dotnet-sdk/Network.cs
+    startLine: 5
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: 'public class Network : object'
+    content.vb: >-
+      Public Class Network
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.Network.#ctor(System.String)
+  commentId: M:stellar_dotnet_sdk.Network.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: stellar_dotnet_sdk.Network
+  langs:
+  - csharp
+  - vb
+  name: Network(String)
+  nameWithType: Network.Network(String)
+  fullName: stellar_dotnet_sdk.Network.Network(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Network.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/Network.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public Network(string networkPassphrase)
+    parameters:
+    - id: networkPassphrase
+      type: System.String
+    content.vb: Public Sub New(networkPassphrase As String)
+  overload: stellar_dotnet_sdk.Network.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.Network.NetworkPassphrase
+  commentId: P:stellar_dotnet_sdk.Network.NetworkPassphrase
+  id: NetworkPassphrase
+  parent: stellar_dotnet_sdk.Network
+  langs:
+  - csharp
+  - vb
+  name: NetworkPassphrase
+  nameWithType: Network.NetworkPassphrase
+  fullName: stellar_dotnet_sdk.Network.NetworkPassphrase
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Network.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NetworkPassphrase
+    path: ../stellar-dotnet-sdk/Network.cs
+    startLine: 15
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public string NetworkPassphrase { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property NetworkPassphrase As String
+  overload: stellar_dotnet_sdk.Network.NetworkPassphrase*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.Network.NetworkId
+  commentId: P:stellar_dotnet_sdk.Network.NetworkId
+  id: NetworkId
+  parent: stellar_dotnet_sdk.Network
+  langs:
+  - csharp
+  - vb
+  name: NetworkId
+  nameWithType: Network.NetworkId
+  fullName: stellar_dotnet_sdk.Network.NetworkId
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Network.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NetworkId
+    path: ../stellar-dotnet-sdk/Network.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public byte[] NetworkId { get; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public ReadOnly Property NetworkId As Byte()
+  overload: stellar_dotnet_sdk.Network.NetworkId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.Network.Current
+  commentId: P:stellar_dotnet_sdk.Network.Current
+  id: Current
+  parent: stellar_dotnet_sdk.Network
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: Network.Current
+  fullName: stellar_dotnet_sdk.Network.Current
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Network.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Current
+    path: ../stellar-dotnet-sdk/Network.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static Network Current { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.Network
+    content.vb: Public Shared ReadOnly Property Current As Network
+  overload: stellar_dotnet_sdk.Network.Current*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: stellar_dotnet_sdk.Network.Public
+  commentId: M:stellar_dotnet_sdk.Network.Public
+  id: Public
+  parent: stellar_dotnet_sdk.Network
+  langs:
+  - csharp
+  - vb
+  name: Public()
+  nameWithType: Network.Public()
+  fullName: stellar_dotnet_sdk.Network.Public()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Network.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Public
+    path: ../stellar-dotnet-sdk/Network.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static Network Public()
+    return:
+      type: stellar_dotnet_sdk.Network
+    content.vb: Public Shared Function Public As Network
+  overload: stellar_dotnet_sdk.Network.Public*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Network.Test
+  commentId: M:stellar_dotnet_sdk.Network.Test
+  id: Test
+  parent: stellar_dotnet_sdk.Network
+  langs:
+  - csharp
+  - vb
+  name: Test()
+  nameWithType: Network.Test()
+  fullName: stellar_dotnet_sdk.Network.Test()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Network.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Test
+    path: ../stellar-dotnet-sdk/Network.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static Network Test()
+    return:
+      type: stellar_dotnet_sdk.Network
+    content.vb: Public Shared Function Test As Network
+  overload: stellar_dotnet_sdk.Network.Test*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Network.Use(stellar_dotnet_sdk.Network)
+  commentId: M:stellar_dotnet_sdk.Network.Use(stellar_dotnet_sdk.Network)
+  id: Use(stellar_dotnet_sdk.Network)
+  parent: stellar_dotnet_sdk.Network
+  langs:
+  - csharp
+  - vb
+  name: Use(Network)
+  nameWithType: Network.Use(Network)
+  fullName: stellar_dotnet_sdk.Network.Use(stellar_dotnet_sdk.Network)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Network.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Use
+    path: ../stellar-dotnet-sdk/Network.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static void Use(Network network)
+    parameters:
+    - id: network
+      type: stellar_dotnet_sdk.Network
+    content.vb: Public Shared Sub Use(network As Network)
+  overload: stellar_dotnet_sdk.Network.Use*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Network.IsPublicNetwork(stellar_dotnet_sdk.Network)
+  commentId: M:stellar_dotnet_sdk.Network.IsPublicNetwork(stellar_dotnet_sdk.Network)
+  id: IsPublicNetwork(stellar_dotnet_sdk.Network)
+  parent: stellar_dotnet_sdk.Network
+  langs:
+  - csharp
+  - vb
+  name: IsPublicNetwork(Network)
+  nameWithType: Network.IsPublicNetwork(Network)
+  fullName: stellar_dotnet_sdk.Network.IsPublicNetwork(stellar_dotnet_sdk.Network)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Network.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: IsPublicNetwork
+    path: ../stellar-dotnet-sdk/Network.cs
+    startLine: 36
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static bool IsPublicNetwork(Network network)
+    parameters:
+    - id: network
+      type: stellar_dotnet_sdk.Network
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsPublicNetwork(network As Network) As Boolean
+  overload: stellar_dotnet_sdk.Network.IsPublicNetwork*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Network.UsePublicNetwork
+  commentId: M:stellar_dotnet_sdk.Network.UsePublicNetwork
+  id: UsePublicNetwork
+  parent: stellar_dotnet_sdk.Network
+  langs:
+  - csharp
+  - vb
+  name: UsePublicNetwork()
+  nameWithType: Network.UsePublicNetwork()
+  fullName: stellar_dotnet_sdk.Network.UsePublicNetwork()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Network.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: UsePublicNetwork
+    path: ../stellar-dotnet-sdk/Network.cs
+    startLine: 41
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static void UsePublicNetwork()
+    content.vb: Public Shared Sub UsePublicNetwork
+  overload: stellar_dotnet_sdk.Network.UsePublicNetwork*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Network.UseTestNetwork
+  commentId: M:stellar_dotnet_sdk.Network.UseTestNetwork
+  id: UseTestNetwork
+  parent: stellar_dotnet_sdk.Network
+  langs:
+  - csharp
+  - vb
+  name: UseTestNetwork()
+  nameWithType: Network.UseTestNetwork()
+  fullName: stellar_dotnet_sdk.Network.UseTestNetwork()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Network.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: UseTestNetwork
+    path: ../stellar-dotnet-sdk/Network.cs
+    startLine: 46
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static void UseTestNetwork()
+    content.vb: Public Shared Sub UseTestNetwork
+  overload: stellar_dotnet_sdk.Network.UseTestNetwork*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.Network.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.Network.#ctor
+  name: Network
+  nameWithType: Network.Network
+  fullName: stellar_dotnet_sdk.Network.Network
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.Network.NetworkPassphrase*
+  commentId: Overload:stellar_dotnet_sdk.Network.NetworkPassphrase
+  name: NetworkPassphrase
+  nameWithType: Network.NetworkPassphrase
+  fullName: stellar_dotnet_sdk.Network.NetworkPassphrase
+- uid: stellar_dotnet_sdk.Network.NetworkId*
+  commentId: Overload:stellar_dotnet_sdk.Network.NetworkId
+  name: NetworkId
+  nameWithType: Network.NetworkId
+  fullName: stellar_dotnet_sdk.Network.NetworkId
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: stellar_dotnet_sdk.Network.Current*
+  commentId: Overload:stellar_dotnet_sdk.Network.Current
+  name: Current
+  nameWithType: Network.Current
+  fullName: stellar_dotnet_sdk.Network.Current
+- uid: stellar_dotnet_sdk.Network
+  commentId: T:stellar_dotnet_sdk.Network
+  parent: stellar_dotnet_sdk
+  name: Network
+  nameWithType: Network
+  fullName: stellar_dotnet_sdk.Network
+- uid: stellar_dotnet_sdk.Network.Public*
+  commentId: Overload:stellar_dotnet_sdk.Network.Public
+  name: Public
+  nameWithType: Network.Public
+  fullName: stellar_dotnet_sdk.Network.Public
+- uid: stellar_dotnet_sdk.Network.Test*
+  commentId: Overload:stellar_dotnet_sdk.Network.Test
+  name: Test
+  nameWithType: Network.Test
+  fullName: stellar_dotnet_sdk.Network.Test
+- uid: stellar_dotnet_sdk.Network.Use*
+  commentId: Overload:stellar_dotnet_sdk.Network.Use
+  name: Use
+  nameWithType: Network.Use
+  fullName: stellar_dotnet_sdk.Network.Use
+- uid: stellar_dotnet_sdk.Network.IsPublicNetwork*
+  commentId: Overload:stellar_dotnet_sdk.Network.IsPublicNetwork
+  name: IsPublicNetwork
+  nameWithType: Network.IsPublicNetwork
+  fullName: stellar_dotnet_sdk.Network.IsPublicNetwork
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: stellar_dotnet_sdk.Network.UsePublicNetwork*
+  commentId: Overload:stellar_dotnet_sdk.Network.UsePublicNetwork
+  name: UsePublicNetwork
+  nameWithType: Network.UsePublicNetwork
+  fullName: stellar_dotnet_sdk.Network.UsePublicNetwork
+- uid: stellar_dotnet_sdk.Network.UseTestNetwork*
+  commentId: Overload:stellar_dotnet_sdk.Network.UseTestNetwork
+  name: UseTestNetwork
+  nameWithType: Network.UseTestNetwork
+  fullName: stellar_dotnet_sdk.Network.UseTestNetwork

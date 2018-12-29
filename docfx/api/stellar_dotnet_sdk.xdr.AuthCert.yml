@@ -1,0 +1,330 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.AuthCert
+  commentId: T:stellar_dotnet_sdk.xdr.AuthCert
+  id: AuthCert
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.AuthCert.#ctor
+  - stellar_dotnet_sdk.xdr.AuthCert.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.AuthCert.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AuthCert)
+  - stellar_dotnet_sdk.xdr.AuthCert.Expiration
+  - stellar_dotnet_sdk.xdr.AuthCert.Pubkey
+  - stellar_dotnet_sdk.xdr.AuthCert.Sig
+  langs:
+  - csharp
+  - vb
+  name: AuthCert
+  nameWithType: AuthCert
+  fullName: stellar_dotnet_sdk.xdr.AuthCert
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AuthCert
+    path: ../stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class AuthCert : object'
+    content.vb: >-
+      Public Class AuthCert
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.AuthCert.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.AuthCert.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.AuthCert
+  langs:
+  - csharp
+  - vb
+  name: AuthCert()
+  nameWithType: AuthCert.AuthCert()
+  fullName: stellar_dotnet_sdk.xdr.AuthCert.AuthCert()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AuthCert()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.AuthCert.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.AuthCert.Pubkey
+  commentId: P:stellar_dotnet_sdk.xdr.AuthCert.Pubkey
+  id: Pubkey
+  parent: stellar_dotnet_sdk.xdr.AuthCert
+  langs:
+  - csharp
+  - vb
+  name: Pubkey
+  nameWithType: AuthCert.Pubkey
+  fullName: stellar_dotnet_sdk.xdr.AuthCert.Pubkey
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Pubkey
+    path: ../stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Curve25519Public Pubkey { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Curve25519Public
+    content.vb: Public Property Pubkey As Curve25519Public
+  overload: stellar_dotnet_sdk.xdr.AuthCert.Pubkey*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.AuthCert.Expiration
+  commentId: P:stellar_dotnet_sdk.xdr.AuthCert.Expiration
+  id: Expiration
+  parent: stellar_dotnet_sdk.xdr.AuthCert
+  langs:
+  - csharp
+  - vb
+  name: Expiration
+  nameWithType: AuthCert.Expiration
+  fullName: stellar_dotnet_sdk.xdr.AuthCert.Expiration
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Expiration
+    path: ../stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint64 Expiration { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint64
+    content.vb: Public Property Expiration As Uint64
+  overload: stellar_dotnet_sdk.xdr.AuthCert.Expiration*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.AuthCert.Sig
+  commentId: P:stellar_dotnet_sdk.xdr.AuthCert.Sig
+  id: Sig
+  parent: stellar_dotnet_sdk.xdr.AuthCert
+  langs:
+  - csharp
+  - vb
+  name: Sig
+  nameWithType: AuthCert.Sig
+  fullName: stellar_dotnet_sdk.xdr.AuthCert.Sig
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Sig
+    path: ../stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Signature Sig { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Signature
+    content.vb: Public Property Sig As Signature
+  overload: stellar_dotnet_sdk.xdr.AuthCert.Sig*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.AuthCert.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AuthCert)
+  commentId: M:stellar_dotnet_sdk.xdr.AuthCert.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AuthCert)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AuthCert)
+  parent: stellar_dotnet_sdk.xdr.AuthCert
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, AuthCert)
+  nameWithType: AuthCert.Encode(XdrDataOutputStream, AuthCert)
+  fullName: stellar_dotnet_sdk.xdr.AuthCert.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.AuthCert)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, AuthCert encodedAuthCert)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedAuthCert
+      type: stellar_dotnet_sdk.xdr.AuthCert
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedAuthCert As AuthCert)
+  overload: stellar_dotnet_sdk.xdr.AuthCert.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.AuthCert.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.AuthCert.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.AuthCert
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: AuthCert.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.AuthCert.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/AuthCert.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static AuthCert Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.AuthCert
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As AuthCert
+  overload: stellar_dotnet_sdk.xdr.AuthCert.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.AuthCert.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AuthCert.#ctor
+  name: AuthCert
+  nameWithType: AuthCert.AuthCert
+  fullName: stellar_dotnet_sdk.xdr.AuthCert.AuthCert
+- uid: stellar_dotnet_sdk.xdr.AuthCert.Pubkey*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AuthCert.Pubkey
+  name: Pubkey
+  nameWithType: AuthCert.Pubkey
+  fullName: stellar_dotnet_sdk.xdr.AuthCert.Pubkey
+- uid: stellar_dotnet_sdk.xdr.Curve25519Public
+  commentId: T:stellar_dotnet_sdk.xdr.Curve25519Public
+  parent: stellar_dotnet_sdk.xdr
+  name: Curve25519Public
+  nameWithType: Curve25519Public
+  fullName: stellar_dotnet_sdk.xdr.Curve25519Public
+- uid: stellar_dotnet_sdk.xdr.AuthCert.Expiration*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AuthCert.Expiration
+  name: Expiration
+  nameWithType: AuthCert.Expiration
+  fullName: stellar_dotnet_sdk.xdr.AuthCert.Expiration
+- uid: stellar_dotnet_sdk.xdr.Uint64
+  commentId: T:stellar_dotnet_sdk.xdr.Uint64
+  parent: stellar_dotnet_sdk.xdr
+  name: Uint64
+  nameWithType: Uint64
+  fullName: stellar_dotnet_sdk.xdr.Uint64
+- uid: stellar_dotnet_sdk.xdr.AuthCert.Sig*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AuthCert.Sig
+  name: Sig
+  nameWithType: AuthCert.Sig
+  fullName: stellar_dotnet_sdk.xdr.AuthCert.Sig
+- uid: stellar_dotnet_sdk.xdr.Signature
+  commentId: T:stellar_dotnet_sdk.xdr.Signature
+  parent: stellar_dotnet_sdk.xdr
+  name: Signature
+  nameWithType: Signature
+  fullName: stellar_dotnet_sdk.xdr.Signature
+- uid: stellar_dotnet_sdk.xdr.AuthCert.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AuthCert.Encode
+  name: Encode
+  nameWithType: AuthCert.Encode
+  fullName: stellar_dotnet_sdk.xdr.AuthCert.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.AuthCert
+  commentId: T:stellar_dotnet_sdk.xdr.AuthCert
+  parent: stellar_dotnet_sdk.xdr
+  name: AuthCert
+  nameWithType: AuthCert
+  fullName: stellar_dotnet_sdk.xdr.AuthCert
+- uid: stellar_dotnet_sdk.xdr.AuthCert.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AuthCert.Decode
+  name: Decode
+  nameWithType: AuthCert.Decode
+  fullName: stellar_dotnet_sdk.xdr.AuthCert.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

@@ -1,0 +1,148 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum
+  id: AssetType.AssetTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12
+  - stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4
+  - stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE
+  langs:
+  - csharp
+  - vb
+  name: AssetType.AssetTypeEnum
+  nameWithType: AssetType.AssetTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AssetType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetTypeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/AssetType.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum AssetTypeEnum : int'
+    content.vb: Public Enum AssetTypeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE
+  commentId: F:stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE
+  id: ASSET_TYPE_NATIVE
+  parent: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: ASSET_TYPE_NATIVE
+  nameWithType: AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE
+  fullName: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AssetType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ASSET_TYPE_NATIVE
+    path: ../stellar-dotnet-sdk/xdr/generated/AssetType.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ASSET_TYPE_NATIVE = null
+    return:
+      type: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum
+    content.vb: ASSET_TYPE_NATIVE = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4
+  commentId: F:stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4
+  id: ASSET_TYPE_CREDIT_ALPHANUM4
+  parent: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: ASSET_TYPE_CREDIT_ALPHANUM4
+  nameWithType: AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4
+  fullName: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AssetType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ASSET_TYPE_CREDIT_ALPHANUM4
+    path: ../stellar-dotnet-sdk/xdr/generated/AssetType.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ASSET_TYPE_CREDIT_ALPHANUM4 = null
+    return:
+      type: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum
+    content.vb: ASSET_TYPE_CREDIT_ALPHANUM4 = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12
+  commentId: F:stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12
+  id: ASSET_TYPE_CREDIT_ALPHANUM12
+  parent: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: ASSET_TYPE_CREDIT_ALPHANUM12
+  nameWithType: AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12
+  fullName: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AssetType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ASSET_TYPE_CREDIT_ALPHANUM12
+    path: ../stellar-dotnet-sdk/xdr/generated/AssetType.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ASSET_TYPE_CREDIT_ALPHANUM12 = null
+    return:
+      type: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum
+    content.vb: ASSET_TYPE_CREDIT_ALPHANUM12 = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: AssetType.AssetTypeEnum
+  nameWithType: AssetType.AssetTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.AssetType.AssetTypeEnum

@@ -1,0 +1,283 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.AuthenticatedMessage
+  commentId: T:stellar_dotnet_sdk.xdr.AuthenticatedMessage
+  id: AuthenticatedMessage
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.AuthenticatedMessage.#ctor
+  - stellar_dotnet_sdk.xdr.AuthenticatedMessage.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.AuthenticatedMessage.Discriminant
+  - stellar_dotnet_sdk.xdr.AuthenticatedMessage.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AuthenticatedMessage)
+  - stellar_dotnet_sdk.xdr.AuthenticatedMessage.V0
+  langs:
+  - csharp
+  - vb
+  name: AuthenticatedMessage
+  nameWithType: AuthenticatedMessage
+  fullName: stellar_dotnet_sdk.xdr.AuthenticatedMessage
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AuthenticatedMessage.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AuthenticatedMessage
+    path: ../stellar-dotnet-sdk/xdr/generated/AuthenticatedMessage.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class AuthenticatedMessage : object'
+    content.vb: >-
+      Public Class AuthenticatedMessage
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.AuthenticatedMessage.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.AuthenticatedMessage.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.AuthenticatedMessage
+  langs:
+  - csharp
+  - vb
+  name: AuthenticatedMessage()
+  nameWithType: AuthenticatedMessage.AuthenticatedMessage()
+  fullName: stellar_dotnet_sdk.xdr.AuthenticatedMessage.AuthenticatedMessage()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AuthenticatedMessage.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/AuthenticatedMessage.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AuthenticatedMessage()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.AuthenticatedMessage.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Discriminant
+  commentId: P:stellar_dotnet_sdk.xdr.AuthenticatedMessage.Discriminant
+  id: Discriminant
+  parent: stellar_dotnet_sdk.xdr.AuthenticatedMessage
+  langs:
+  - csharp
+  - vb
+  name: Discriminant
+  nameWithType: AuthenticatedMessage.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Discriminant
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AuthenticatedMessage.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Discriminant
+    path: ../stellar-dotnet-sdk/xdr/generated/AuthenticatedMessage.cs
+    startLine: 25
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint32 Discriminant { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint32
+    content.vb: Public Property Discriminant As Uint32
+  overload: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Discriminant*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.AuthenticatedMessage.V0
+  commentId: P:stellar_dotnet_sdk.xdr.AuthenticatedMessage.V0
+  id: V0
+  parent: stellar_dotnet_sdk.xdr.AuthenticatedMessage
+  langs:
+  - csharp
+  - vb
+  name: V0
+  nameWithType: AuthenticatedMessage.V0
+  fullName: stellar_dotnet_sdk.xdr.AuthenticatedMessage.V0
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AuthenticatedMessage.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: V0
+    path: ../stellar-dotnet-sdk/xdr/generated/AuthenticatedMessage.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AuthenticatedMessage.AuthenticatedMessageV0 V0 { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.AuthenticatedMessage.AuthenticatedMessageV0
+    content.vb: Public Property V0 As AuthenticatedMessage.AuthenticatedMessageV0
+  overload: stellar_dotnet_sdk.xdr.AuthenticatedMessage.V0*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AuthenticatedMessage)
+  commentId: M:stellar_dotnet_sdk.xdr.AuthenticatedMessage.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AuthenticatedMessage)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.AuthenticatedMessage)
+  parent: stellar_dotnet_sdk.xdr.AuthenticatedMessage
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, AuthenticatedMessage)
+  nameWithType: AuthenticatedMessage.Encode(XdrDataOutputStream, AuthenticatedMessage)
+  fullName: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.AuthenticatedMessage)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AuthenticatedMessage.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/AuthenticatedMessage.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, AuthenticatedMessage encodedAuthenticatedMessage)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedAuthenticatedMessage
+      type: stellar_dotnet_sdk.xdr.AuthenticatedMessage
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedAuthenticatedMessage As AuthenticatedMessage)
+  overload: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.AuthenticatedMessage.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.AuthenticatedMessage
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: AuthenticatedMessage.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AuthenticatedMessage.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/AuthenticatedMessage.cs
+    startLine: 38
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static AuthenticatedMessage Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.AuthenticatedMessage
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As AuthenticatedMessage
+  overload: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.AuthenticatedMessage.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AuthenticatedMessage.#ctor
+  name: AuthenticatedMessage
+  nameWithType: AuthenticatedMessage.AuthenticatedMessage
+  fullName: stellar_dotnet_sdk.xdr.AuthenticatedMessage.AuthenticatedMessage
+- uid: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Discriminant*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AuthenticatedMessage.Discriminant
+  name: Discriminant
+  nameWithType: AuthenticatedMessage.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Discriminant
+- uid: stellar_dotnet_sdk.xdr.Uint32
+  commentId: T:stellar_dotnet_sdk.xdr.Uint32
+  parent: stellar_dotnet_sdk.xdr
+  name: Uint32
+  nameWithType: Uint32
+  fullName: stellar_dotnet_sdk.xdr.Uint32
+- uid: stellar_dotnet_sdk.xdr.AuthenticatedMessage.V0*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AuthenticatedMessage.V0
+  name: V0
+  nameWithType: AuthenticatedMessage.V0
+  fullName: stellar_dotnet_sdk.xdr.AuthenticatedMessage.V0
+- uid: stellar_dotnet_sdk.xdr.AuthenticatedMessage.AuthenticatedMessageV0
+  commentId: T:stellar_dotnet_sdk.xdr.AuthenticatedMessage.AuthenticatedMessageV0
+  parent: stellar_dotnet_sdk.xdr
+  name: AuthenticatedMessage.AuthenticatedMessageV0
+  nameWithType: AuthenticatedMessage.AuthenticatedMessageV0
+  fullName: stellar_dotnet_sdk.xdr.AuthenticatedMessage.AuthenticatedMessageV0
+- uid: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AuthenticatedMessage.Encode
+  name: Encode
+  nameWithType: AuthenticatedMessage.Encode
+  fullName: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.AuthenticatedMessage
+  commentId: T:stellar_dotnet_sdk.xdr.AuthenticatedMessage
+  parent: stellar_dotnet_sdk.xdr
+  name: AuthenticatedMessage
+  nameWithType: AuthenticatedMessage
+  fullName: stellar_dotnet_sdk.xdr.AuthenticatedMessage
+- uid: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.AuthenticatedMessage.Decode
+  name: Decode
+  nameWithType: AuthenticatedMessage.Decode
+  fullName: stellar_dotnet_sdk.xdr.AuthenticatedMessage.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

@@ -1,0 +1,244 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.AccountDataResponse
+  commentId: T:stellar_dotnet_sdk.responses.AccountDataResponse
+  id: AccountDataResponse
+  parent: stellar_dotnet_sdk.responses
+  children:
+  - stellar_dotnet_sdk.responses.AccountDataResponse.#ctor(System.String)
+  - stellar_dotnet_sdk.responses.AccountDataResponse.Value
+  - stellar_dotnet_sdk.responses.AccountDataResponse.ValueDecoded
+  langs:
+  - csharp
+  - vb
+  name: AccountDataResponse
+  nameWithType: AccountDataResponse
+  fullName: stellar_dotnet_sdk.responses.AccountDataResponse
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/AccountDataResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AccountDataResponse
+    path: ../stellar-dotnet-sdk/responses/AccountDataResponse.cs
+    startLine: 7
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: 'public class AccountDataResponse : Response'
+    content.vb: >-
+      Public Class AccountDataResponse
+          Inherits Response
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.responses.Response
+  inheritedMembers:
+  - stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  - stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  - stellar_dotnet_sdk.responses.Response.RateLimitReset
+  - stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.AccountDataResponse.Value
+  commentId: P:stellar_dotnet_sdk.responses.AccountDataResponse.Value
+  id: Value
+  parent: stellar_dotnet_sdk.responses.AccountDataResponse
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: AccountDataResponse.Value
+  fullName: stellar_dotnet_sdk.responses.AccountDataResponse.Value
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/AccountDataResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Value
+    path: ../stellar-dotnet-sdk/responses/AccountDataResponse.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string Value { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Value As String
+  overload: stellar_dotnet_sdk.responses.AccountDataResponse.Value*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.AccountDataResponse.ValueDecoded
+  commentId: P:stellar_dotnet_sdk.responses.AccountDataResponse.ValueDecoded
+  id: ValueDecoded
+  parent: stellar_dotnet_sdk.responses.AccountDataResponse
+  langs:
+  - csharp
+  - vb
+  name: ValueDecoded
+  nameWithType: AccountDataResponse.ValueDecoded
+  fullName: stellar_dotnet_sdk.responses.AccountDataResponse.ValueDecoded
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/AccountDataResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ValueDecoded
+    path: ../stellar-dotnet-sdk/responses/AccountDataResponse.cs
+    startLine: 13
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string ValueDecoded { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ValueDecoded As String
+  overload: stellar_dotnet_sdk.responses.AccountDataResponse.ValueDecoded*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.AccountDataResponse.#ctor(System.String)
+  commentId: M:stellar_dotnet_sdk.responses.AccountDataResponse.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: stellar_dotnet_sdk.responses.AccountDataResponse
+  langs:
+  - csharp
+  - vb
+  name: AccountDataResponse(String)
+  nameWithType: AccountDataResponse.AccountDataResponse(String)
+  fullName: stellar_dotnet_sdk.responses.AccountDataResponse.AccountDataResponse(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/AccountDataResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/AccountDataResponse.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public AccountDataResponse(string value)
+    parameters:
+    - id: value
+      type: System.String
+    content.vb: Public Sub New(value As String)
+  overload: stellar_dotnet_sdk.responses.AccountDataResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.Response
+  commentId: T:stellar_dotnet_sdk.responses.Response
+  parent: stellar_dotnet_sdk.responses
+  name: Response
+  nameWithType: Response
+  fullName: stellar_dotnet_sdk.responses.Response
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitLimit
+  nameWithType: Response.RateLimitLimit
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitRemaining
+  nameWithType: Response.RateLimitRemaining
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitReset
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitReset
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitReset
+  nameWithType: Response.RateLimitReset
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitReset
+- uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  commentId: M:stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  parent: stellar_dotnet_sdk.responses.Response
+  isExternal: true
+  name: SetHeaders(HttpResponseHeaders)
+  nameWithType: Response.SetHeaders(HttpResponseHeaders)
+  fullName: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.AccountDataResponse.Value*
+  commentId: Overload:stellar_dotnet_sdk.responses.AccountDataResponse.Value
+  name: Value
+  nameWithType: AccountDataResponse.Value
+  fullName: stellar_dotnet_sdk.responses.AccountDataResponse.Value
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.responses.AccountDataResponse.ValueDecoded*
+  commentId: Overload:stellar_dotnet_sdk.responses.AccountDataResponse.ValueDecoded
+  name: ValueDecoded
+  nameWithType: AccountDataResponse.ValueDecoded
+  fullName: stellar_dotnet_sdk.responses.AccountDataResponse.ValueDecoded
+- uid: stellar_dotnet_sdk.responses.AccountDataResponse.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.AccountDataResponse.#ctor
+  name: AccountDataResponse
+  nameWithType: AccountDataResponse.AccountDataResponse
+  fullName: stellar_dotnet_sdk.responses.AccountDataResponse.AccountDataResponse

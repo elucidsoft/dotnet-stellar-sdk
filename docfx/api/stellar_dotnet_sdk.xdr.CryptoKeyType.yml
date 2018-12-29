@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType
+  commentId: T:stellar_dotnet_sdk.xdr.CryptoKeyType
+  id: CryptoKeyType
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.CryptoKeyType.Create(stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum)
+  - stellar_dotnet_sdk.xdr.CryptoKeyType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.CryptoKeyType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.CryptoKeyType)
+  - stellar_dotnet_sdk.xdr.CryptoKeyType.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: CryptoKeyType
+  nameWithType: CryptoKeyType
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CryptoKeyType
+    path: ../stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class CryptoKeyType : object'
+    content.vb: >-
+      Public Class CryptoKeyType
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.CryptoKeyType.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.CryptoKeyType
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: CryptoKeyType.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+    startLine: 25
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public CryptoKeyType.CryptoKeyTypeEnum InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+    content.vb: Public Property InnerValue As CryptoKeyType.CryptoKeyTypeEnum
+  overload: stellar_dotnet_sdk.xdr.CryptoKeyType.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.Create(stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum)
+  commentId: M:stellar_dotnet_sdk.xdr.CryptoKeyType.Create(stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum)
+  id: Create(stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum)
+  parent: stellar_dotnet_sdk.xdr.CryptoKeyType
+  langs:
+  - csharp
+  - vb
+  name: Create(CryptoKeyType.CryptoKeyTypeEnum)
+  nameWithType: CryptoKeyType.Create(CryptoKeyType.CryptoKeyTypeEnum)
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.Create(stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Create
+    path: ../stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static CryptoKeyType Create(CryptoKeyType.CryptoKeyTypeEnum v)
+    parameters:
+    - id: v
+      type: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+    return:
+      type: stellar_dotnet_sdk.xdr.CryptoKeyType
+    content.vb: Public Shared Function Create(v As CryptoKeyType.CryptoKeyTypeEnum) As CryptoKeyType
+  overload: stellar_dotnet_sdk.xdr.CryptoKeyType.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.CryptoKeyType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.CryptoKeyType
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: CryptoKeyType.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static CryptoKeyType Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.CryptoKeyType
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As CryptoKeyType
+  overload: stellar_dotnet_sdk.xdr.CryptoKeyType.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.CryptoKeyType)
+  commentId: M:stellar_dotnet_sdk.xdr.CryptoKeyType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.CryptoKeyType)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.CryptoKeyType)
+  parent: stellar_dotnet_sdk.xdr.CryptoKeyType
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, CryptoKeyType)
+  nameWithType: CryptoKeyType.Encode(XdrDataOutputStream, CryptoKeyType)
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.CryptoKeyType)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+    startLine: 48
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, CryptoKeyType value)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: value
+      type: stellar_dotnet_sdk.xdr.CryptoKeyType
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, value As CryptoKeyType)
+  overload: stellar_dotnet_sdk.xdr.CryptoKeyType.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CryptoKeyType.InnerValue
+  name: InnerValue
+  nameWithType: CryptoKeyType.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.InnerValue
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: CryptoKeyType.CryptoKeyTypeEnum
+  nameWithType: CryptoKeyType.CryptoKeyTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.Create*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CryptoKeyType.Create
+  name: Create
+  nameWithType: CryptoKeyType.Create
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.Create
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType
+  commentId: T:stellar_dotnet_sdk.xdr.CryptoKeyType
+  parent: stellar_dotnet_sdk.xdr
+  name: CryptoKeyType
+  nameWithType: CryptoKeyType
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CryptoKeyType.Decode
+  name: Decode
+  nameWithType: CryptoKeyType.Decode
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CryptoKeyType.Encode
+  name: Encode
+  nameWithType: CryptoKeyType.Encode
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream

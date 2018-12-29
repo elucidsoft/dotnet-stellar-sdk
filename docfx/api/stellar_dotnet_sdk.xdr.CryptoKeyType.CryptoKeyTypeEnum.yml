@@ -1,0 +1,148 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+  id: CryptoKeyType.CryptoKeyTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_ED25519
+  - stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_HASH_X
+  - stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_PRE_AUTH_TX
+  langs:
+  - csharp
+  - vb
+  name: CryptoKeyType.CryptoKeyTypeEnum
+  nameWithType: CryptoKeyType.CryptoKeyTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CryptoKeyTypeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum CryptoKeyTypeEnum : int'
+    content.vb: Public Enum CryptoKeyTypeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_ED25519
+  commentId: F:stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_ED25519
+  id: KEY_TYPE_ED25519
+  parent: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: KEY_TYPE_ED25519
+  nameWithType: CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_ED25519
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_ED25519
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: KEY_TYPE_ED25519
+    path: ../stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: KEY_TYPE_ED25519 = null
+    return:
+      type: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+    content.vb: KEY_TYPE_ED25519 = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_PRE_AUTH_TX
+  commentId: F:stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_PRE_AUTH_TX
+  id: KEY_TYPE_PRE_AUTH_TX
+  parent: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: KEY_TYPE_PRE_AUTH_TX
+  nameWithType: CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_PRE_AUTH_TX
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_PRE_AUTH_TX
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: KEY_TYPE_PRE_AUTH_TX
+    path: ../stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: KEY_TYPE_PRE_AUTH_TX = null
+    return:
+      type: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+    content.vb: KEY_TYPE_PRE_AUTH_TX = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_HASH_X
+  commentId: F:stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_HASH_X
+  id: KEY_TYPE_HASH_X
+  parent: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: KEY_TYPE_HASH_X
+  nameWithType: CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_HASH_X
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_HASH_X
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: KEY_TYPE_HASH_X
+    path: ../stellar-dotnet-sdk/xdr/generated/CryptoKeyType.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: KEY_TYPE_HASH_X = null
+    return:
+      type: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+    content.vb: KEY_TYPE_HASH_X = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: CryptoKeyType.CryptoKeyTypeEnum
+  nameWithType: CryptoKeyType.CryptoKeyTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.CryptoKeyType.CryptoKeyTypeEnum

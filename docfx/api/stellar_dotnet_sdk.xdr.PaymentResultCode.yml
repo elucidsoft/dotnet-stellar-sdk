@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode
+  commentId: T:stellar_dotnet_sdk.xdr.PaymentResultCode
+  id: PaymentResultCode
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.Create(stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum)
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.PaymentResultCode)
+  - stellar_dotnet_sdk.xdr.PaymentResultCode.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: PaymentResultCode
+  nameWithType: PaymentResultCode
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PaymentResultCode
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class PaymentResultCode : object'
+    content.vb: >-
+      Public Class PaymentResultCode
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.PaymentResultCode.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: PaymentResultCode.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 42
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public PaymentResultCode.PaymentResultCodeEnum InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+    content.vb: Public Property InnerValue As PaymentResultCode.PaymentResultCodeEnum
+  overload: stellar_dotnet_sdk.xdr.PaymentResultCode.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.Create(stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum)
+  commentId: M:stellar_dotnet_sdk.xdr.PaymentResultCode.Create(stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum)
+  id: Create(stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum)
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode
+  langs:
+  - csharp
+  - vb
+  name: Create(PaymentResultCode.PaymentResultCodeEnum)
+  nameWithType: PaymentResultCode.Create(PaymentResultCode.PaymentResultCodeEnum)
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.Create(stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Create
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 44
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static PaymentResultCode Create(PaymentResultCode.PaymentResultCodeEnum v)
+    parameters:
+    - id: v
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode
+    content.vb: Public Shared Function Create(v As PaymentResultCode.PaymentResultCodeEnum) As PaymentResultCode
+  overload: stellar_dotnet_sdk.xdr.PaymentResultCode.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.PaymentResultCode.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: PaymentResultCode.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 52
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static PaymentResultCode Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As PaymentResultCode
+  overload: stellar_dotnet_sdk.xdr.PaymentResultCode.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.PaymentResultCode)
+  commentId: M:stellar_dotnet_sdk.xdr.PaymentResultCode.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.PaymentResultCode)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.PaymentResultCode)
+  parent: stellar_dotnet_sdk.xdr.PaymentResultCode
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, PaymentResultCode)
+  nameWithType: PaymentResultCode.Encode(XdrDataOutputStream, PaymentResultCode)
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.PaymentResultCode)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/PaymentResultCode.cs
+    startLine: 72
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, PaymentResultCode value)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: value
+      type: stellar_dotnet_sdk.xdr.PaymentResultCode
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, value As PaymentResultCode)
+  overload: stellar_dotnet_sdk.xdr.PaymentResultCode.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PaymentResultCode.InnerValue
+  name: InnerValue
+  nameWithType: PaymentResultCode.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.InnerValue
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: PaymentResultCode.PaymentResultCodeEnum
+  nameWithType: PaymentResultCode.PaymentResultCodeEnum
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.PaymentResultCodeEnum
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.Create*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PaymentResultCode.Create
+  name: Create
+  nameWithType: PaymentResultCode.Create
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.Create
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode
+  commentId: T:stellar_dotnet_sdk.xdr.PaymentResultCode
+  parent: stellar_dotnet_sdk.xdr
+  name: PaymentResultCode
+  nameWithType: PaymentResultCode
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PaymentResultCode.Decode
+  name: Decode
+  nameWithType: PaymentResultCode.Decode
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream
+- uid: stellar_dotnet_sdk.xdr.PaymentResultCode.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.PaymentResultCode.Encode
+  name: Encode
+  nameWithType: PaymentResultCode.Encode
+  fullName: stellar_dotnet_sdk.xdr.PaymentResultCode.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream

@@ -1,0 +1,1286 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+  commentId: T:stellar_dotnet_sdk.requests.LedgersRequestBuilder
+  id: LedgersRequestBuilder
+  parent: stellar_dotnet_sdk.requests
+  children:
+  - stellar_dotnet_sdk.requests.LedgersRequestBuilder.#ctor(Uri,HttpClient)
+  - stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(System.Int64)
+  - stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(Uri)
+  langs:
+  - csharp
+  - vb
+  name: LedgersRequestBuilder
+  nameWithType: LedgersRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/LedgersRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: LedgersRequestBuilder
+    path: ../stellar-dotnet-sdk/requests/LedgersRequestBuilder.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: 'public class LedgersRequestBuilder : RequestBuilderStreamable<LedgersRequestBuilder, LedgerResponse>'
+    content.vb: >-
+      Public Class LedgersRequestBuilder
+          Inherits RequestBuilderStreamable(Of LedgersRequestBuilder, LedgerResponse)
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}
+  - stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}
+  - stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}
+  inheritedMembers:
+  - stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}.EventSource
+  - stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}.Stream(EventHandler{stellar_dotnet_sdk.responses.LedgerResponse})
+  - stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}.Execute
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.UriBuilder
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.HttpClient
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Execute``1(Uri)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Uri
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.SetSegments(System.String[])
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Cursor(System.String)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Limit(System.Int32)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  - stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.BuildUri
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.#ctor(Uri,HttpClient)
+  commentId: M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.#ctor(Uri,HttpClient)
+  id: '#ctor(Uri,HttpClient)'
+  parent: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: LedgersRequestBuilder(Uri, HttpClient)
+  nameWithType: LedgersRequestBuilder.LedgersRequestBuilder(Uri, HttpClient)
+  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.LedgersRequestBuilder(Uri, HttpClient)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/LedgersRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/requests/LedgersRequestBuilder.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: public LedgersRequestBuilder(Uri serverUri, HttpClient httpClient)
+    parameters:
+    - id: serverUri
+      type: Uri
+    - id: httpClient
+      type: HttpClient
+    content.vb: Public Sub New(serverUri As Uri, httpClient As HttpClient)
+  overload: stellar_dotnet_sdk.requests.LedgersRequestBuilder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(Uri)
+  commentId: M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(Uri)
+  id: Ledger(Uri)
+  parent: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Ledger(Uri)
+  nameWithType: LedgersRequestBuilder.Ledger(Uri)
+  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(Uri)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/LedgersRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Ledger
+    path: ../stellar-dotnet-sdk/requests/LedgersRequestBuilder.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  summary: "\nRequests specific uri and returns LedgerResponse\nThis method is helpful for getting the links.\n"
+  example: []
+  syntax:
+    content: public Task<LedgerResponse> Ledger(Uri uri)
+    parameters:
+    - id: uri
+      type: Uri
+      description: ''
+    return:
+      type: Task{stellar_dotnet_sdk.responses.LedgerResponse}
+      description: ''
+    content.vb: Public Function Ledger(uri As Uri) As Task(Of LedgerResponse)
+  overload: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(System.Int64)
+  commentId: M:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(System.Int64)
+  id: Ledger(System.Int64)
+  parent: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Ledger(Int64)
+  nameWithType: LedgersRequestBuilder.Ledger(Int64)
+  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/LedgersRequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Ledger
+    path: ../stellar-dotnet-sdk/requests/LedgersRequestBuilder.cs
+    startLine: 34
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  summary: "\nRequests <pre><code>GET /ledgers/{ledgerSeq}</code></pre>\n<a href=\"https://www.stellar.org/developers/horizon/reference/ledgers-single.html\">Ledger Details</a>\n"
+  example: []
+  syntax:
+    content: public Task<LedgerResponse> Ledger(long ledgerSeq)
+    parameters:
+    - id: ledgerSeq
+      type: System.Int64
+      description: Ledger to fetch
+    return:
+      type: Task{stellar_dotnet_sdk.responses.LedgerResponse}
+    content.vb: Public Function Ledger(ledgerSeq As Long) As Task(Of LedgerResponse)
+  overload: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.requests
+  commentId: N:stellar_dotnet_sdk.requests
+  name: stellar_dotnet_sdk.requests
+  nameWithType: stellar_dotnet_sdk.requests
+  fullName: stellar_dotnet_sdk.requests
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}
+  parent: stellar_dotnet_sdk.requests
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1
+  name: RequestBuilder<LedgersRequestBuilder>
+  nameWithType: RequestBuilder<LedgersRequestBuilder>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>
+  nameWithType.vb: RequestBuilder(Of LedgersRequestBuilder)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder)
+  name.vb: RequestBuilder(Of LedgersRequestBuilder)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+    name: LedgersRequestBuilder
+    nameWithType: LedgersRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+    name: LedgersRequestBuilder
+    nameWithType: LedgersRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}
+  parent: stellar_dotnet_sdk.requests
+  definition: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+  name: RequestBuilderExecutePageable<LedgersRequestBuilder, LedgerResponse>
+  nameWithType: RequestBuilderExecutePageable<LedgersRequestBuilder, LedgerResponse>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse>
+  nameWithType.vb: RequestBuilderExecutePageable(Of LedgersRequestBuilder, LedgerResponse)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse)
+  name.vb: RequestBuilderExecutePageable(Of LedgersRequestBuilder, LedgerResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+    name: RequestBuilderExecutePageable
+    nameWithType: RequestBuilderExecutePageable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+    name: LedgersRequestBuilder
+    nameWithType: LedgersRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: stellar_dotnet_sdk.responses.LedgerResponse
+    name: LedgerResponse
+    nameWithType: LedgerResponse
+    fullName: stellar_dotnet_sdk.responses.LedgerResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+    name: RequestBuilderExecutePageable
+    nameWithType: RequestBuilderExecutePageable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+    name: LedgersRequestBuilder
+    nameWithType: LedgersRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: stellar_dotnet_sdk.responses.LedgerResponse
+    name: LedgerResponse
+    nameWithType: LedgerResponse
+    fullName: stellar_dotnet_sdk.responses.LedgerResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}
+  parent: stellar_dotnet_sdk.requests
+  definition: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+  name: RequestBuilderStreamable<LedgersRequestBuilder, LedgerResponse>
+  nameWithType: RequestBuilderStreamable<LedgersRequestBuilder, LedgerResponse>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse>
+  nameWithType.vb: RequestBuilderStreamable(Of LedgersRequestBuilder, LedgerResponse)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse)
+  name.vb: RequestBuilderStreamable(Of LedgersRequestBuilder, LedgerResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+    name: RequestBuilderStreamable
+    nameWithType: RequestBuilderStreamable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+    name: LedgersRequestBuilder
+    nameWithType: LedgersRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: stellar_dotnet_sdk.responses.LedgerResponse
+    name: LedgerResponse
+    nameWithType: LedgerResponse
+    fullName: stellar_dotnet_sdk.responses.LedgerResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+    name: RequestBuilderStreamable
+    nameWithType: RequestBuilderStreamable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+    name: LedgersRequestBuilder
+    nameWithType: LedgersRequestBuilder
+    fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: stellar_dotnet_sdk.responses.LedgerResponse
+    name: LedgerResponse
+    nameWithType: LedgerResponse
+    fullName: stellar_dotnet_sdk.responses.LedgerResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}.EventSource
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}.EventSource
+  parent: stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}
+  definition: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.EventSource
+  name: EventSource
+  nameWithType: RequestBuilderStreamable<LedgersRequestBuilder, LedgerResponse>.EventSource
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse>.EventSource
+  nameWithType.vb: RequestBuilderStreamable(Of LedgersRequestBuilder, LedgerResponse).EventSource
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse).EventSource
+- uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}.Stream(EventHandler{stellar_dotnet_sdk.responses.LedgerResponse})
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}.Stream(EventHandler{stellar_dotnet_sdk.responses.LedgerResponse})
+  parent: stellar_dotnet_sdk.requests.RequestBuilderStreamable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}
+  definition: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+  name: Stream(EventHandler<LedgerResponse>)
+  nameWithType: RequestBuilderStreamable<LedgersRequestBuilder, LedgerResponse>.Stream(EventHandler<LedgerResponse>)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse>.Stream(EventHandler<stellar_dotnet_sdk.responses.LedgerResponse>)
+  nameWithType.vb: RequestBuilderStreamable(Of LedgersRequestBuilder, LedgerResponse).Stream(EventHandler(Of LedgerResponse))
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse).Stream(EventHandler(Of stellar_dotnet_sdk.responses.LedgerResponse))
+  name.vb: Stream(EventHandler(Of LedgerResponse))
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+    name: Stream
+    nameWithType: RequestBuilderStreamable<LedgersRequestBuilder, LedgerResponse>.Stream
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse>.Stream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.responses.LedgerResponse
+    name: LedgerResponse
+    nameWithType: LedgerResponse
+    fullName: stellar_dotnet_sdk.responses.LedgerResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+    name: Stream
+    nameWithType: RequestBuilderStreamable(Of LedgersRequestBuilder, LedgerResponse).Stream
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse).Stream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.responses.LedgerResponse
+    name: LedgerResponse
+    nameWithType: LedgerResponse
+    fullName: stellar_dotnet_sdk.responses.LedgerResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}.Execute
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}.Execute
+  parent: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable{stellar_dotnet_sdk.requests.LedgersRequestBuilder,stellar_dotnet_sdk.responses.LedgerResponse}
+  definition: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+  name: Execute()
+  nameWithType: RequestBuilderExecutePageable<LedgersRequestBuilder, LedgerResponse>.Execute()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse>.Execute()
+  nameWithType.vb: RequestBuilderExecutePageable(Of LedgersRequestBuilder, LedgerResponse).Execute()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse).Execute()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+    name: Execute
+    nameWithType: RequestBuilderExecutePageable<LedgersRequestBuilder, LedgerResponse>.Execute
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse>.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+    name: Execute
+    nameWithType: RequestBuilderExecutePageable(Of LedgersRequestBuilder, LedgerResponse).Execute
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder, stellar_dotnet_sdk.responses.LedgerResponse).Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.UriBuilder
+  commentId: F:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.UriBuilder
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.UriBuilder
+  name: UriBuilder
+  nameWithType: RequestBuilder<LedgersRequestBuilder>.UriBuilder
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.UriBuilder
+  nameWithType.vb: RequestBuilder(Of LedgersRequestBuilder).UriBuilder
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).UriBuilder
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.HttpClient
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.HttpClient
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient
+  name: HttpClient
+  nameWithType: RequestBuilder<LedgersRequestBuilder>.HttpClient
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.HttpClient
+  nameWithType.vb: RequestBuilder(Of LedgersRequestBuilder).HttpClient
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).HttpClient
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Execute``1(Uri)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Execute``1(Uri)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+  name: Execute<TZ>(Uri)
+  nameWithType: RequestBuilder<LedgersRequestBuilder>.Execute<TZ>(Uri)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.Execute<TZ>(Uri)
+  nameWithType.vb: RequestBuilder(Of LedgersRequestBuilder).Execute(Of TZ)(Uri)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).Execute(Of TZ)(Uri)
+  name.vb: Execute(Of TZ)(Uri)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute<TZ>
+    nameWithType: RequestBuilder<LedgersRequestBuilder>.Execute<TZ>
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.Execute<TZ>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute(Of TZ)
+    nameWithType: RequestBuilder(Of LedgersRequestBuilder).Execute(Of TZ)
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).Execute(Of TZ)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Uri
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Uri
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Uri
+  name: Uri
+  nameWithType: RequestBuilder<LedgersRequestBuilder>.Uri
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.Uri
+  nameWithType.vb: RequestBuilder(Of LedgersRequestBuilder).Uri
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).Uri
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.SetSegments(System.String[])
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.SetSegments(System.String[])
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+  name: SetSegments(String[])
+  nameWithType: RequestBuilder<LedgersRequestBuilder>.SetSegments(String[])
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.SetSegments(System.String[])
+  nameWithType.vb: RequestBuilder(Of LedgersRequestBuilder).SetSegments(String())
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).SetSegments(System.String())
+  name.vb: SetSegments(String())
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder<LedgersRequestBuilder>.SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder(Of LedgersRequestBuilder).SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Cursor(System.String)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Cursor(System.String)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+  name: Cursor(String)
+  nameWithType: RequestBuilder<LedgersRequestBuilder>.Cursor(String)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.Cursor(System.String)
+  nameWithType.vb: RequestBuilder(Of LedgersRequestBuilder).Cursor(String)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).Cursor(System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder<LedgersRequestBuilder>.Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder(Of LedgersRequestBuilder).Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Limit(System.Int32)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Limit(System.Int32)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+  name: Limit(Int32)
+  nameWithType: RequestBuilder<LedgersRequestBuilder>.Limit(Int32)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.Limit(System.Int32)
+  nameWithType.vb: RequestBuilder(Of LedgersRequestBuilder).Limit(Int32)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).Limit(System.Int32)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder<LedgersRequestBuilder>.Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder(Of LedgersRequestBuilder).Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  name: Order(OrderDirection)
+  nameWithType: RequestBuilder<LedgersRequestBuilder>.Order(OrderDirection)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  nameWithType.vb: RequestBuilder(Of LedgersRequestBuilder).Order(OrderDirection)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).Order(stellar_dotnet_sdk.requests.OrderDirection)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder<LedgersRequestBuilder>.Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder(Of LedgersRequestBuilder).Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.BuildUri
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}.BuildUri
+  parent: stellar_dotnet_sdk.requests.RequestBuilder{stellar_dotnet_sdk.requests.LedgersRequestBuilder}
+  definition: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+  name: BuildUri()
+  nameWithType: RequestBuilder<LedgersRequestBuilder>.BuildUri()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.BuildUri()
+  nameWithType.vb: RequestBuilder(Of LedgersRequestBuilder).BuildUri()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).BuildUri()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder<LedgersRequestBuilder>.BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<stellar_dotnet_sdk.requests.LedgersRequestBuilder>.BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder(Of LedgersRequestBuilder).BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of stellar_dotnet_sdk.requests.LedgersRequestBuilder).BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilder`1
+  parent: stellar_dotnet_sdk.requests
+  name: RequestBuilder<T>
+  nameWithType: RequestBuilder<T>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>
+  nameWithType.vb: RequestBuilder(Of T)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T)
+  name.vb: RequestBuilder(Of T)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1
+    name: RequestBuilder
+    nameWithType: RequestBuilder
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+  name: RequestBuilderExecutePageable<T, TResponse>
+  nameWithType: RequestBuilderExecutePageable<T, TResponse>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<T, TResponse>
+  nameWithType.vb: RequestBuilderExecutePageable(Of T, TResponse)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of T, TResponse)
+  name.vb: RequestBuilderExecutePageable(Of T, TResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+    name: RequestBuilderExecutePageable
+    nameWithType: RequestBuilderExecutePageable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2
+    name: RequestBuilderExecutePageable
+    nameWithType: RequestBuilderExecutePageable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+  commentId: T:stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+  name: RequestBuilderStreamable<T, TResponse>
+  nameWithType: RequestBuilderStreamable<T, TResponse>
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<T, TResponse>
+  nameWithType.vb: RequestBuilderStreamable(Of T, TResponse)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of T, TResponse)
+  name.vb: RequestBuilderStreamable(Of T, TResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+    name: RequestBuilderStreamable
+    nameWithType: RequestBuilderStreamable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2
+    name: RequestBuilderStreamable
+    nameWithType: RequestBuilderStreamable
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.EventSource
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.EventSource
+  name: EventSource
+  nameWithType: RequestBuilderStreamable<T, TResponse>.EventSource
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<T, TResponse>.EventSource
+  nameWithType.vb: RequestBuilderStreamable(Of T, TResponse).EventSource
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of T, TResponse).EventSource
+- uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+  isExternal: true
+  name: Stream(EventHandler<TResponse>)
+  nameWithType: RequestBuilderStreamable<T, TResponse>.Stream(EventHandler<TResponse>)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<T, TResponse>.Stream(EventHandler<TResponse>)
+  nameWithType.vb: RequestBuilderStreamable(Of T, TResponse).Stream(EventHandler(Of TResponse))
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of T, TResponse).Stream(EventHandler(Of TResponse))
+  name.vb: Stream(EventHandler(Of TResponse))
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+    name: Stream
+    nameWithType: RequestBuilderStreamable<T, TResponse>.Stream
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable<T, TResponse>.Stream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderStreamable`2.Stream(EventHandler{`1})
+    name: Stream
+    nameWithType: RequestBuilderStreamable(Of T, TResponse).Stream
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderStreamable(Of T, TResponse).Stream
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: EventHandler
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+  name: Execute()
+  nameWithType: RequestBuilderExecutePageable<T, TResponse>.Execute()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<T, TResponse>.Execute()
+  nameWithType.vb: RequestBuilderExecutePageable(Of T, TResponse).Execute()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of T, TResponse).Execute()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+    name: Execute
+    nameWithType: RequestBuilderExecutePageable<T, TResponse>.Execute
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable<T, TResponse>.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable`2.Execute
+    name: Execute
+    nameWithType: RequestBuilderExecutePageable(Of T, TResponse).Execute
+    fullName: stellar_dotnet_sdk.requests.RequestBuilderExecutePageable(Of T, TResponse).Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.UriBuilder
+  commentId: F:stellar_dotnet_sdk.requests.RequestBuilder`1.UriBuilder
+  name: UriBuilder
+  nameWithType: RequestBuilder<T>.UriBuilder
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.UriBuilder
+  nameWithType.vb: RequestBuilder(Of T).UriBuilder
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).UriBuilder
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder`1.HttpClient
+  name: HttpClient
+  nameWithType: RequestBuilder<T>.HttpClient
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.HttpClient
+  nameWithType.vb: RequestBuilder(Of T).HttpClient
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).HttpClient
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+  isExternal: true
+  name: Execute<TZ>(Uri)
+  nameWithType: RequestBuilder<T>.Execute<TZ>(Uri)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Execute<TZ>(Uri)
+  nameWithType.vb: RequestBuilder(Of T).Execute(Of TZ)(Uri)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Execute(Of TZ)(Uri)
+  name.vb: Execute(Of TZ)(Uri)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute<TZ>
+    nameWithType: RequestBuilder<T>.Execute<TZ>
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Execute<TZ>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)
+    name: Execute(Of TZ)
+    nameWithType: RequestBuilder(Of T).Execute(Of TZ)
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Execute(Of TZ)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: Uri
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Uri
+  commentId: P:stellar_dotnet_sdk.requests.RequestBuilder`1.Uri
+  name: Uri
+  nameWithType: RequestBuilder<T>.Uri
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Uri
+  nameWithType.vb: RequestBuilder(Of T).Uri
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Uri
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+  isExternal: true
+  name: SetSegments(String[])
+  nameWithType: RequestBuilder<T>.SetSegments(String[])
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.SetSegments(System.String[])
+  nameWithType.vb: RequestBuilder(Of T).SetSegments(String())
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).SetSegments(System.String())
+  name.vb: SetSegments(String())
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder<T>.SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.SetSegments(System.String[])
+    name: SetSegments
+    nameWithType: RequestBuilder(Of T).SetSegments
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).SetSegments
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+  isExternal: true
+  name: Cursor(String)
+  nameWithType: RequestBuilder<T>.Cursor(String)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Cursor(System.String)
+  nameWithType.vb: RequestBuilder(Of T).Cursor(String)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Cursor(System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder<T>.Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Cursor(System.String)
+    name: Cursor
+    nameWithType: RequestBuilder(Of T).Cursor
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Cursor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+  isExternal: true
+  name: Limit(Int32)
+  nameWithType: RequestBuilder<T>.Limit(Int32)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Limit(System.Int32)
+  nameWithType.vb: RequestBuilder(Of T).Limit(Int32)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Limit(System.Int32)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder<T>.Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Limit(System.Int32)
+    name: Limit
+    nameWithType: RequestBuilder(Of T).Limit
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Limit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  name: Order(OrderDirection)
+  nameWithType: RequestBuilder<T>.Order(OrderDirection)
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Order(stellar_dotnet_sdk.requests.OrderDirection)
+  nameWithType.vb: RequestBuilder(Of T).Order(OrderDirection)
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Order(stellar_dotnet_sdk.requests.OrderDirection)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder<T>.Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.Order(stellar_dotnet_sdk.requests.OrderDirection)
+    name: Order
+    nameWithType: RequestBuilder(Of T).Order
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).Order
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.requests.OrderDirection
+    name: OrderDirection
+    nameWithType: OrderDirection
+    fullName: stellar_dotnet_sdk.requests.OrderDirection
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+  commentId: M:stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+  name: BuildUri()
+  nameWithType: RequestBuilder<T>.BuildUri()
+  fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.BuildUri()
+  nameWithType.vb: RequestBuilder(Of T).BuildUri()
+  fullName.vb: stellar_dotnet_sdk.requests.RequestBuilder(Of T).BuildUri()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder<T>.BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder<T>.BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.requests.RequestBuilder`1.BuildUri
+    name: BuildUri
+    nameWithType: RequestBuilder(Of T).BuildUri
+    fullName: stellar_dotnet_sdk.requests.RequestBuilder(Of T).BuildUri
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.requests.LedgersRequestBuilder.#ctor
+  name: LedgersRequestBuilder
+  nameWithType: LedgersRequestBuilder.LedgersRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.LedgersRequestBuilder
+- uid: Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: Uri
+- uid: HttpClient
+  isExternal: true
+  name: HttpClient
+  nameWithType: HttpClient
+  fullName: HttpClient
+- uid: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger*
+  commentId: Overload:stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger
+  name: Ledger
+  nameWithType: LedgersRequestBuilder.Ledger
+  fullName: stellar_dotnet_sdk.requests.LedgersRequestBuilder.Ledger
+- uid: Task{stellar_dotnet_sdk.responses.LedgerResponse}
+  commentId: '!:Task{stellar_dotnet_sdk.responses.LedgerResponse}'
+  definition: Task`1
+  name: Task<LedgerResponse>
+  nameWithType: Task<LedgerResponse>
+  fullName: Task<stellar_dotnet_sdk.responses.LedgerResponse>
+  nameWithType.vb: Task(Of LedgerResponse)
+  fullName.vb: Task(Of stellar_dotnet_sdk.responses.LedgerResponse)
+  name.vb: Task(Of LedgerResponse)
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: stellar_dotnet_sdk.responses.LedgerResponse
+    name: LedgerResponse
+    nameWithType: LedgerResponse
+    fullName: stellar_dotnet_sdk.responses.LedgerResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: stellar_dotnet_sdk.responses.LedgerResponse
+    name: LedgerResponse
+    nameWithType: LedgerResponse
+    fullName: stellar_dotnet_sdk.responses.LedgerResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Task`1
+  isExternal: true
+  name: Task<>
+  nameWithType: Task<>
+  fullName: Task<>
+  nameWithType.vb: Task(Of )
+  fullName.vb: Task(Of )
+  name.vb: Task(Of )
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64

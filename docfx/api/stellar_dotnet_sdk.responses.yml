@@ -1,0 +1,347 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  id: stellar_dotnet_sdk.responses
+  children:
+  - stellar_dotnet_sdk.responses.AccountDataResponse
+  - stellar_dotnet_sdk.responses.AccountResponse
+  - stellar_dotnet_sdk.responses.AccountResponseLinks
+  - stellar_dotnet_sdk.responses.AssetDeserializer
+  - stellar_dotnet_sdk.responses.AssetResponse
+  - stellar_dotnet_sdk.responses.AssetResponseFlags
+  - stellar_dotnet_sdk.responses.AssetResponseLinks
+  - stellar_dotnet_sdk.responses.Balance
+  - stellar_dotnet_sdk.responses.EffectDeserializer
+  - stellar_dotnet_sdk.responses.Flags
+  - stellar_dotnet_sdk.responses.FriendBotResponse
+  - stellar_dotnet_sdk.responses.FriendBotResponseLinks
+  - stellar_dotnet_sdk.responses.IPagingToken
+  - stellar_dotnet_sdk.responses.JsonSingleton
+  - stellar_dotnet_sdk.responses.KeyPairTypeAdapter
+  - stellar_dotnet_sdk.responses.LedgerResponse
+  - stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+  - stellar_dotnet_sdk.responses.Link
+  - stellar_dotnet_sdk.responses.Link`1
+  - stellar_dotnet_sdk.responses.LinkDeserializer
+  - stellar_dotnet_sdk.responses.OfferResponse
+  - stellar_dotnet_sdk.responses.OfferResponseLinks
+  - stellar_dotnet_sdk.responses.OperationDeserializer
+  - stellar_dotnet_sdk.responses.OperationFeeStatsResponse
+  - stellar_dotnet_sdk.responses.OrderBookResponse
+  - stellar_dotnet_sdk.responses.OrderBookResponse.Row
+  - stellar_dotnet_sdk.responses.PathResponse
+  - stellar_dotnet_sdk.responses.PathResponseLinks
+  - stellar_dotnet_sdk.responses.Response
+  - stellar_dotnet_sdk.responses.RootResponse
+  - stellar_dotnet_sdk.responses.Signer
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras
+  - stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes
+  - stellar_dotnet_sdk.responses.TemplatedLink`1
+  - stellar_dotnet_sdk.responses.Thresholds
+  - stellar_dotnet_sdk.responses.TradeAggregationResponse
+  - stellar_dotnet_sdk.responses.TradeResponse
+  - stellar_dotnet_sdk.responses.TradeResponseLinks
+  - stellar_dotnet_sdk.responses.TransactionResponse
+  - stellar_dotnet_sdk.responses.TransactionResponse.TransactionResponseLinks
+  langs:
+  - csharp
+  - vb
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+  type: Namespace
+  assemblies:
+  - stellar-dotnet-sdk
+references:
+- uid: stellar_dotnet_sdk.responses.AccountDataResponse
+  commentId: T:stellar_dotnet_sdk.responses.AccountDataResponse
+  name: AccountDataResponse
+  nameWithType: AccountDataResponse
+  fullName: stellar_dotnet_sdk.responses.AccountDataResponse
+- uid: stellar_dotnet_sdk.responses.AccountResponse
+  commentId: T:stellar_dotnet_sdk.responses.AccountResponse
+  name: AccountResponse
+  nameWithType: AccountResponse
+  fullName: stellar_dotnet_sdk.responses.AccountResponse
+- uid: stellar_dotnet_sdk.responses.AccountResponseLinks
+  commentId: T:stellar_dotnet_sdk.responses.AccountResponseLinks
+  parent: stellar_dotnet_sdk.responses
+  name: AccountResponseLinks
+  nameWithType: AccountResponseLinks
+  fullName: stellar_dotnet_sdk.responses.AccountResponseLinks
+- uid: stellar_dotnet_sdk.responses.AssetDeserializer
+  commentId: T:stellar_dotnet_sdk.responses.AssetDeserializer
+  name: AssetDeserializer
+  nameWithType: AssetDeserializer
+  fullName: stellar_dotnet_sdk.responses.AssetDeserializer
+- uid: stellar_dotnet_sdk.responses.AssetResponse
+  commentId: T:stellar_dotnet_sdk.responses.AssetResponse
+  name: AssetResponse
+  nameWithType: AssetResponse
+  fullName: stellar_dotnet_sdk.responses.AssetResponse
+- uid: stellar_dotnet_sdk.responses.AssetResponseFlags
+  commentId: T:stellar_dotnet_sdk.responses.AssetResponseFlags
+  parent: stellar_dotnet_sdk.responses
+  name: AssetResponseFlags
+  nameWithType: AssetResponseFlags
+  fullName: stellar_dotnet_sdk.responses.AssetResponseFlags
+- uid: stellar_dotnet_sdk.responses.AssetResponseLinks
+  commentId: T:stellar_dotnet_sdk.responses.AssetResponseLinks
+  parent: stellar_dotnet_sdk.responses
+  name: AssetResponseLinks
+  nameWithType: AssetResponseLinks
+  fullName: stellar_dotnet_sdk.responses.AssetResponseLinks
+- uid: stellar_dotnet_sdk.responses.Balance
+  commentId: T:stellar_dotnet_sdk.responses.Balance
+  name: Balance
+  nameWithType: Balance
+  fullName: stellar_dotnet_sdk.responses.Balance
+- uid: stellar_dotnet_sdk.responses.EffectDeserializer
+  commentId: T:stellar_dotnet_sdk.responses.EffectDeserializer
+  name: EffectDeserializer
+  nameWithType: EffectDeserializer
+  fullName: stellar_dotnet_sdk.responses.EffectDeserializer
+- uid: stellar_dotnet_sdk.responses.Flags
+  commentId: T:stellar_dotnet_sdk.responses.Flags
+  parent: stellar_dotnet_sdk.responses
+  name: Flags
+  nameWithType: Flags
+  fullName: stellar_dotnet_sdk.responses.Flags
+- uid: stellar_dotnet_sdk.responses.FriendBotResponse
+  commentId: T:stellar_dotnet_sdk.responses.FriendBotResponse
+  name: FriendBotResponse
+  nameWithType: FriendBotResponse
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponse
+- uid: stellar_dotnet_sdk.responses.FriendBotResponseLinks
+  commentId: T:stellar_dotnet_sdk.responses.FriendBotResponseLinks
+  parent: stellar_dotnet_sdk.responses
+  name: FriendBotResponseLinks
+  nameWithType: FriendBotResponseLinks
+  fullName: stellar_dotnet_sdk.responses.FriendBotResponseLinks
+- uid: stellar_dotnet_sdk.responses.IPagingToken
+  commentId: T:stellar_dotnet_sdk.responses.IPagingToken
+  parent: stellar_dotnet_sdk.responses
+  name: IPagingToken
+  nameWithType: IPagingToken
+  fullName: stellar_dotnet_sdk.responses.IPagingToken
+- uid: stellar_dotnet_sdk.responses.JsonSingleton
+  commentId: T:stellar_dotnet_sdk.responses.JsonSingleton
+  name: JsonSingleton
+  nameWithType: JsonSingleton
+  fullName: stellar_dotnet_sdk.responses.JsonSingleton
+- uid: stellar_dotnet_sdk.responses.KeyPairTypeAdapter
+  commentId: T:stellar_dotnet_sdk.responses.KeyPairTypeAdapter
+  name: KeyPairTypeAdapter
+  nameWithType: KeyPairTypeAdapter
+  fullName: stellar_dotnet_sdk.responses.KeyPairTypeAdapter
+- uid: stellar_dotnet_sdk.responses.LedgerResponse
+  commentId: T:stellar_dotnet_sdk.responses.LedgerResponse
+  name: LedgerResponse
+  nameWithType: LedgerResponse
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+  commentId: T:stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+  parent: stellar_dotnet_sdk.responses
+  name: LedgerResponse.LedgerResponseLinks
+  nameWithType: LedgerResponse.LedgerResponseLinks
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks
+- uid: stellar_dotnet_sdk.responses.Link
+  commentId: T:stellar_dotnet_sdk.responses.Link
+  parent: stellar_dotnet_sdk.responses
+  name: Link
+  nameWithType: Link
+  fullName: stellar_dotnet_sdk.responses.Link
+- uid: stellar_dotnet_sdk.responses.Link`1
+  commentId: T:stellar_dotnet_sdk.responses.Link`1
+  parent: stellar_dotnet_sdk.responses
+  name: Link<TResponse>
+  nameWithType: Link<TResponse>
+  fullName: stellar_dotnet_sdk.responses.Link<TResponse>
+  nameWithType.vb: Link(Of TResponse)
+  fullName.vb: stellar_dotnet_sdk.responses.Link(Of TResponse)
+  name.vb: Link(Of TResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Link`1
+    name: Link
+    nameWithType: Link
+    fullName: stellar_dotnet_sdk.responses.Link
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.TemplatedLink`1
+  commentId: T:stellar_dotnet_sdk.responses.TemplatedLink`1
+  name: TemplatedLink<TResponse>
+  nameWithType: TemplatedLink<TResponse>
+  fullName: stellar_dotnet_sdk.responses.TemplatedLink<TResponse>
+  nameWithType.vb: TemplatedLink(Of TResponse)
+  fullName.vb: stellar_dotnet_sdk.responses.TemplatedLink(Of TResponse)
+  name.vb: TemplatedLink(Of TResponse)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.TemplatedLink`1
+    name: TemplatedLink
+    nameWithType: TemplatedLink
+    fullName: stellar_dotnet_sdk.responses.TemplatedLink
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.TemplatedLink`1
+    name: TemplatedLink
+    nameWithType: TemplatedLink
+    fullName: stellar_dotnet_sdk.responses.TemplatedLink
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses.LinkDeserializer
+  commentId: T:stellar_dotnet_sdk.responses.LinkDeserializer
+  name: LinkDeserializer
+  nameWithType: LinkDeserializer
+  fullName: stellar_dotnet_sdk.responses.LinkDeserializer
+- uid: stellar_dotnet_sdk.responses.OfferResponse
+  commentId: T:stellar_dotnet_sdk.responses.OfferResponse
+  name: OfferResponse
+  nameWithType: OfferResponse
+  fullName: stellar_dotnet_sdk.responses.OfferResponse
+- uid: stellar_dotnet_sdk.responses.OfferResponseLinks
+  commentId: T:stellar_dotnet_sdk.responses.OfferResponseLinks
+  parent: stellar_dotnet_sdk.responses
+  name: OfferResponseLinks
+  nameWithType: OfferResponseLinks
+  fullName: stellar_dotnet_sdk.responses.OfferResponseLinks
+- uid: stellar_dotnet_sdk.responses.OperationDeserializer
+  commentId: T:stellar_dotnet_sdk.responses.OperationDeserializer
+  name: OperationDeserializer
+  nameWithType: OperationDeserializer
+  fullName: stellar_dotnet_sdk.responses.OperationDeserializer
+- uid: stellar_dotnet_sdk.responses.OperationFeeStatsResponse
+  commentId: T:stellar_dotnet_sdk.responses.OperationFeeStatsResponse
+  name: OperationFeeStatsResponse
+  nameWithType: OperationFeeStatsResponse
+  fullName: stellar_dotnet_sdk.responses.OperationFeeStatsResponse
+- uid: stellar_dotnet_sdk.responses.OrderBookResponse
+  commentId: T:stellar_dotnet_sdk.responses.OrderBookResponse
+  name: OrderBookResponse
+  nameWithType: OrderBookResponse
+  fullName: stellar_dotnet_sdk.responses.OrderBookResponse
+- uid: stellar_dotnet_sdk.responses.OrderBookResponse.Row
+  commentId: T:stellar_dotnet_sdk.responses.OrderBookResponse.Row
+  name: OrderBookResponse.Row
+  nameWithType: OrderBookResponse.Row
+  fullName: stellar_dotnet_sdk.responses.OrderBookResponse.Row
+- uid: stellar_dotnet_sdk.responses.PathResponse
+  commentId: T:stellar_dotnet_sdk.responses.PathResponse
+  name: PathResponse
+  nameWithType: PathResponse
+  fullName: stellar_dotnet_sdk.responses.PathResponse
+- uid: stellar_dotnet_sdk.responses.PathResponseLinks
+  commentId: T:stellar_dotnet_sdk.responses.PathResponseLinks
+  parent: stellar_dotnet_sdk.responses
+  name: PathResponseLinks
+  nameWithType: PathResponseLinks
+  fullName: stellar_dotnet_sdk.responses.PathResponseLinks
+- uid: stellar_dotnet_sdk.responses.Response
+  commentId: T:stellar_dotnet_sdk.responses.Response
+  parent: stellar_dotnet_sdk.responses
+  name: Response
+  nameWithType: Response
+  fullName: stellar_dotnet_sdk.responses.Response
+- uid: stellar_dotnet_sdk.responses.RootResponse
+  commentId: T:stellar_dotnet_sdk.responses.RootResponse
+  parent: stellar_dotnet_sdk.responses
+  name: RootResponse
+  nameWithType: RootResponse
+  fullName: stellar_dotnet_sdk.responses.RootResponse
+- uid: stellar_dotnet_sdk.responses.Signer
+  commentId: T:stellar_dotnet_sdk.responses.Signer
+  name: Signer
+  nameWithType: Signer
+  fullName: stellar_dotnet_sdk.responses.Signer
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  commentId: T:stellar_dotnet_sdk.responses.SubmitTransactionResponse
+  name: SubmitTransactionResponse
+  nameWithType: SubmitTransactionResponse
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras
+  commentId: T:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras
+  parent: stellar_dotnet_sdk.responses
+  name: SubmitTransactionResponse.Extras
+  nameWithType: SubmitTransactionResponse.Extras
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras
+- uid: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes
+  commentId: T:stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes
+  parent: stellar_dotnet_sdk.responses
+  name: SubmitTransactionResponse.Extras.ResultCodes
+  nameWithType: SubmitTransactionResponse.Extras.ResultCodes
+  fullName: stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes
+- uid: stellar_dotnet_sdk.responses.Thresholds
+  commentId: T:stellar_dotnet_sdk.responses.Thresholds
+  parent: stellar_dotnet_sdk.responses
+  name: Thresholds
+  nameWithType: Thresholds
+  fullName: stellar_dotnet_sdk.responses.Thresholds
+- uid: stellar_dotnet_sdk.responses.TradeAggregationResponse
+  commentId: T:stellar_dotnet_sdk.responses.TradeAggregationResponse
+  name: TradeAggregationResponse
+  nameWithType: TradeAggregationResponse
+  fullName: stellar_dotnet_sdk.responses.TradeAggregationResponse
+- uid: stellar_dotnet_sdk.responses.TradeResponse
+  commentId: T:stellar_dotnet_sdk.responses.TradeResponse
+  name: TradeResponse
+  nameWithType: TradeResponse
+  fullName: stellar_dotnet_sdk.responses.TradeResponse
+- uid: stellar_dotnet_sdk.responses.TradeResponseLinks
+  commentId: T:stellar_dotnet_sdk.responses.TradeResponseLinks
+  parent: stellar_dotnet_sdk.responses
+  name: TradeResponseLinks
+  nameWithType: TradeResponseLinks
+  fullName: stellar_dotnet_sdk.responses.TradeResponseLinks
+- uid: stellar_dotnet_sdk.responses.TransactionResponse
+  commentId: T:stellar_dotnet_sdk.responses.TransactionResponse
+  name: TransactionResponse
+  nameWithType: TransactionResponse
+  fullName: stellar_dotnet_sdk.responses.TransactionResponse
+- uid: stellar_dotnet_sdk.responses.TransactionResponse.TransactionResponseLinks
+  commentId: T:stellar_dotnet_sdk.responses.TransactionResponse.TransactionResponseLinks
+  parent: stellar_dotnet_sdk.responses
+  name: TransactionResponse.TransactionResponseLinks
+  nameWithType: TransactionResponse.TransactionResponseLinks
+  fullName: stellar_dotnet_sdk.responses.TransactionResponse.TransactionResponseLinks
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses

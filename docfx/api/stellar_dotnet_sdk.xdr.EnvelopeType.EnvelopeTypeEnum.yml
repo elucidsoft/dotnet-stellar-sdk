@@ -1,0 +1,148 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+  id: EnvelopeType.EnvelopeTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_AUTH
+  - stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_SCP
+  - stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX
+  langs:
+  - csharp
+  - vb
+  name: EnvelopeType.EnvelopeTypeEnum
+  nameWithType: EnvelopeType.EnvelopeTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: EnvelopeTypeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum EnvelopeTypeEnum : int'
+    content.vb: Public Enum EnvelopeTypeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_SCP
+  commentId: F:stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_SCP
+  id: ENVELOPE_TYPE_SCP
+  parent: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: ENVELOPE_TYPE_SCP
+  nameWithType: EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_SCP
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_SCP
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ENVELOPE_TYPE_SCP
+    path: ../stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ENVELOPE_TYPE_SCP = null
+    return:
+      type: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+    content.vb: ENVELOPE_TYPE_SCP = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX
+  commentId: F:stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX
+  id: ENVELOPE_TYPE_TX
+  parent: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: ENVELOPE_TYPE_TX
+  nameWithType: EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ENVELOPE_TYPE_TX
+    path: ../stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ENVELOPE_TYPE_TX = null
+    return:
+      type: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+    content.vb: ENVELOPE_TYPE_TX = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_AUTH
+  commentId: F:stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_AUTH
+  id: ENVELOPE_TYPE_AUTH
+  parent: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: ENVELOPE_TYPE_AUTH
+  nameWithType: EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_AUTH
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_AUTH
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ENVELOPE_TYPE_AUTH
+    path: ../stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: ENVELOPE_TYPE_AUTH = null
+    return:
+      type: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+    content.vb: ENVELOPE_TYPE_AUTH = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: EnvelopeType.EnvelopeTypeEnum
+  nameWithType: EnvelopeType.EnvelopeTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum

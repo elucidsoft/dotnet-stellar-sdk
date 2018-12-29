@@ -1,0 +1,539 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.StrKey
+  commentId: T:stellar_dotnet_sdk.StrKey
+  id: StrKey
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.StrKey.CalculateChecksum(System.Byte[])
+  - stellar_dotnet_sdk.StrKey.DecodeCheck(stellar_dotnet_sdk.StrKey.VersionByte,System.String)
+  - stellar_dotnet_sdk.StrKey.DecodeStellarAccountId(System.String)
+  - stellar_dotnet_sdk.StrKey.DecodeStellarSecretSeed(System.String)
+  - stellar_dotnet_sdk.StrKey.EncodeCheck(stellar_dotnet_sdk.StrKey.VersionByte,System.Byte[])
+  - stellar_dotnet_sdk.StrKey.EncodeStellarAccountId(System.Byte[])
+  - stellar_dotnet_sdk.StrKey.EncodeStellarSecretSeed(System.Byte[])
+  - stellar_dotnet_sdk.StrKey.IsValid(stellar_dotnet_sdk.StrKey.VersionByte,System.String)
+  - stellar_dotnet_sdk.StrKey.IsValidEd25519PublicKey(System.String)
+  - stellar_dotnet_sdk.StrKey.IsValidEd25519SecretSeed(System.String)
+  langs:
+  - csharp
+  - vb
+  name: StrKey
+  nameWithType: StrKey
+  fullName: stellar_dotnet_sdk.StrKey
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: StrKey
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 6
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: 'public class StrKey : object'
+    content.vb: >-
+      Public Class StrKey
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.StrKey.EncodeStellarAccountId(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.StrKey.EncodeStellarAccountId(System.Byte[])
+  id: EncodeStellarAccountId(System.Byte[])
+  parent: stellar_dotnet_sdk.StrKey
+  langs:
+  - csharp
+  - vb
+  name: EncodeStellarAccountId(Byte[])
+  nameWithType: StrKey.EncodeStellarAccountId(Byte[])
+  fullName: stellar_dotnet_sdk.StrKey.EncodeStellarAccountId(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: EncodeStellarAccountId
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static string EncodeStellarAccountId(byte[] data)
+    parameters:
+    - id: data
+      type: System.Byte[]
+    return:
+      type: System.String
+    content.vb: Public Shared Function EncodeStellarAccountId(data As Byte()) As String
+  overload: stellar_dotnet_sdk.StrKey.EncodeStellarAccountId*
+  nameWithType.vb: StrKey.EncodeStellarAccountId(Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.StrKey.EncodeStellarAccountId(System.Byte())
+  name.vb: EncodeStellarAccountId(Byte())
+- uid: stellar_dotnet_sdk.StrKey.EncodeStellarSecretSeed(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.StrKey.EncodeStellarSecretSeed(System.Byte[])
+  id: EncodeStellarSecretSeed(System.Byte[])
+  parent: stellar_dotnet_sdk.StrKey
+  langs:
+  - csharp
+  - vb
+  name: EncodeStellarSecretSeed(Byte[])
+  nameWithType: StrKey.EncodeStellarSecretSeed(Byte[])
+  fullName: stellar_dotnet_sdk.StrKey.EncodeStellarSecretSeed(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: EncodeStellarSecretSeed
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static string EncodeStellarSecretSeed(byte[] data)
+    parameters:
+    - id: data
+      type: System.Byte[]
+    return:
+      type: System.String
+    content.vb: Public Shared Function EncodeStellarSecretSeed(data As Byte()) As String
+  overload: stellar_dotnet_sdk.StrKey.EncodeStellarSecretSeed*
+  nameWithType.vb: StrKey.EncodeStellarSecretSeed(Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.StrKey.EncodeStellarSecretSeed(System.Byte())
+  name.vb: EncodeStellarSecretSeed(Byte())
+- uid: stellar_dotnet_sdk.StrKey.DecodeStellarAccountId(System.String)
+  commentId: M:stellar_dotnet_sdk.StrKey.DecodeStellarAccountId(System.String)
+  id: DecodeStellarAccountId(System.String)
+  parent: stellar_dotnet_sdk.StrKey
+  langs:
+  - csharp
+  - vb
+  name: DecodeStellarAccountId(String)
+  nameWithType: StrKey.DecodeStellarAccountId(String)
+  fullName: stellar_dotnet_sdk.StrKey.DecodeStellarAccountId(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: DecodeStellarAccountId
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static byte[] DecodeStellarAccountId(string data)
+    parameters:
+    - id: data
+      type: System.String
+    return:
+      type: System.Byte[]
+    content.vb: Public Shared Function DecodeStellarAccountId(data As String) As Byte()
+  overload: stellar_dotnet_sdk.StrKey.DecodeStellarAccountId*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.StrKey.DecodeStellarSecretSeed(System.String)
+  commentId: M:stellar_dotnet_sdk.StrKey.DecodeStellarSecretSeed(System.String)
+  id: DecodeStellarSecretSeed(System.String)
+  parent: stellar_dotnet_sdk.StrKey
+  langs:
+  - csharp
+  - vb
+  name: DecodeStellarSecretSeed(String)
+  nameWithType: StrKey.DecodeStellarSecretSeed(String)
+  fullName: stellar_dotnet_sdk.StrKey.DecodeStellarSecretSeed(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: DecodeStellarSecretSeed
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static byte[] DecodeStellarSecretSeed(string data)
+    parameters:
+    - id: data
+      type: System.String
+    return:
+      type: System.Byte[]
+    content.vb: Public Shared Function DecodeStellarSecretSeed(data As String) As Byte()
+  overload: stellar_dotnet_sdk.StrKey.DecodeStellarSecretSeed*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.StrKey.EncodeCheck(stellar_dotnet_sdk.StrKey.VersionByte,System.Byte[])
+  commentId: M:stellar_dotnet_sdk.StrKey.EncodeCheck(stellar_dotnet_sdk.StrKey.VersionByte,System.Byte[])
+  id: EncodeCheck(stellar_dotnet_sdk.StrKey.VersionByte,System.Byte[])
+  parent: stellar_dotnet_sdk.StrKey
+  langs:
+  - csharp
+  - vb
+  name: EncodeCheck(StrKey.VersionByte, Byte[])
+  nameWithType: StrKey.EncodeCheck(StrKey.VersionByte, Byte[])
+  fullName: stellar_dotnet_sdk.StrKey.EncodeCheck(stellar_dotnet_sdk.StrKey.VersionByte, System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: EncodeCheck
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 36
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static string EncodeCheck(StrKey.VersionByte versionByte, byte[] data)
+    parameters:
+    - id: versionByte
+      type: stellar_dotnet_sdk.StrKey.VersionByte
+    - id: data
+      type: System.Byte[]
+    return:
+      type: System.String
+    content.vb: Public Shared Function EncodeCheck(versionByte As StrKey.VersionByte, data As Byte()) As String
+  overload: stellar_dotnet_sdk.StrKey.EncodeCheck*
+  nameWithType.vb: StrKey.EncodeCheck(StrKey.VersionByte, Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.StrKey.EncodeCheck(stellar_dotnet_sdk.StrKey.VersionByte, System.Byte())
+  name.vb: EncodeCheck(StrKey.VersionByte, Byte())
+- uid: stellar_dotnet_sdk.StrKey.DecodeCheck(stellar_dotnet_sdk.StrKey.VersionByte,System.String)
+  commentId: M:stellar_dotnet_sdk.StrKey.DecodeCheck(stellar_dotnet_sdk.StrKey.VersionByte,System.String)
+  id: DecodeCheck(stellar_dotnet_sdk.StrKey.VersionByte,System.String)
+  parent: stellar_dotnet_sdk.StrKey
+  langs:
+  - csharp
+  - vb
+  name: DecodeCheck(StrKey.VersionByte, String)
+  nameWithType: StrKey.DecodeCheck(StrKey.VersionByte, String)
+  fullName: stellar_dotnet_sdk.StrKey.DecodeCheck(stellar_dotnet_sdk.StrKey.VersionByte, System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: DecodeCheck
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 49
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static byte[] DecodeCheck(StrKey.VersionByte versionByte, string encoded)
+    parameters:
+    - id: versionByte
+      type: stellar_dotnet_sdk.StrKey.VersionByte
+    - id: encoded
+      type: System.String
+    return:
+      type: System.Byte[]
+    content.vb: Public Shared Function DecodeCheck(versionByte As StrKey.VersionByte, encoded As String) As Byte()
+  overload: stellar_dotnet_sdk.StrKey.DecodeCheck*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.StrKey.CalculateChecksum(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.StrKey.CalculateChecksum(System.Byte[])
+  id: CalculateChecksum(System.Byte[])
+  parent: stellar_dotnet_sdk.StrKey
+  langs:
+  - csharp
+  - vb
+  name: CalculateChecksum(Byte[])
+  nameWithType: StrKey.CalculateChecksum(Byte[])
+  fullName: stellar_dotnet_sdk.StrKey.CalculateChecksum(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CalculateChecksum
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 78
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: protected static byte[] CalculateChecksum(byte[] bytes)
+    parameters:
+    - id: bytes
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Protected Shared Function CalculateChecksum(bytes As Byte()) As Byte()
+  overload: stellar_dotnet_sdk.StrKey.CalculateChecksum*
+  nameWithType.vb: StrKey.CalculateChecksum(Byte())
+  modifiers.csharp:
+  - protected
+  - static
+  modifiers.vb:
+  - Protected
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.StrKey.CalculateChecksum(System.Byte())
+  name.vb: CalculateChecksum(Byte())
+- uid: stellar_dotnet_sdk.StrKey.IsValid(stellar_dotnet_sdk.StrKey.VersionByte,System.String)
+  commentId: M:stellar_dotnet_sdk.StrKey.IsValid(stellar_dotnet_sdk.StrKey.VersionByte,System.String)
+  id: IsValid(stellar_dotnet_sdk.StrKey.VersionByte,System.String)
+  parent: stellar_dotnet_sdk.StrKey
+  langs:
+  - csharp
+  - vb
+  name: IsValid(StrKey.VersionByte, String)
+  nameWithType: StrKey.IsValid(StrKey.VersionByte, String)
+  fullName: stellar_dotnet_sdk.StrKey.IsValid(stellar_dotnet_sdk.StrKey.VersionByte, System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: IsValid
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 109
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static bool IsValid(StrKey.VersionByte versionByte, string encoded)
+    parameters:
+    - id: versionByte
+      type: stellar_dotnet_sdk.StrKey.VersionByte
+    - id: encoded
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsValid(versionByte As StrKey.VersionByte, encoded As String) As Boolean
+  overload: stellar_dotnet_sdk.StrKey.IsValid*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.StrKey.IsValidEd25519PublicKey(System.String)
+  commentId: M:stellar_dotnet_sdk.StrKey.IsValidEd25519PublicKey(System.String)
+  id: IsValidEd25519PublicKey(System.String)
+  parent: stellar_dotnet_sdk.StrKey
+  langs:
+  - csharp
+  - vb
+  name: IsValidEd25519PublicKey(String)
+  nameWithType: StrKey.IsValidEd25519PublicKey(String)
+  fullName: stellar_dotnet_sdk.StrKey.IsValidEd25519PublicKey(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: IsValidEd25519PublicKey
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 132
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static bool IsValidEd25519PublicKey(string publicKey)
+    parameters:
+    - id: publicKey
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsValidEd25519PublicKey(publicKey As String) As Boolean
+  overload: stellar_dotnet_sdk.StrKey.IsValidEd25519PublicKey*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.StrKey.IsValidEd25519SecretSeed(System.String)
+  commentId: M:stellar_dotnet_sdk.StrKey.IsValidEd25519SecretSeed(System.String)
+  id: IsValidEd25519SecretSeed(System.String)
+  parent: stellar_dotnet_sdk.StrKey
+  langs:
+  - csharp
+  - vb
+  name: IsValidEd25519SecretSeed(String)
+  nameWithType: StrKey.IsValidEd25519SecretSeed(String)
+  fullName: stellar_dotnet_sdk.StrKey.IsValidEd25519SecretSeed(System.String)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/StrKey.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: IsValidEd25519SecretSeed
+    path: ../stellar-dotnet-sdk/StrKey.cs
+    startLine: 137
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public static bool IsValidEd25519SecretSeed(string seed)
+    parameters:
+    - id: seed
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsValidEd25519SecretSeed(seed As String) As Boolean
+  overload: stellar_dotnet_sdk.StrKey.IsValidEd25519SecretSeed*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.StrKey.EncodeStellarAccountId*
+  commentId: Overload:stellar_dotnet_sdk.StrKey.EncodeStellarAccountId
+  name: EncodeStellarAccountId
+  nameWithType: StrKey.EncodeStellarAccountId
+  fullName: stellar_dotnet_sdk.StrKey.EncodeStellarAccountId
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.StrKey.EncodeStellarSecretSeed*
+  commentId: Overload:stellar_dotnet_sdk.StrKey.EncodeStellarSecretSeed
+  name: EncodeStellarSecretSeed
+  nameWithType: StrKey.EncodeStellarSecretSeed
+  fullName: stellar_dotnet_sdk.StrKey.EncodeStellarSecretSeed
+- uid: stellar_dotnet_sdk.StrKey.DecodeStellarAccountId*
+  commentId: Overload:stellar_dotnet_sdk.StrKey.DecodeStellarAccountId
+  name: DecodeStellarAccountId
+  nameWithType: StrKey.DecodeStellarAccountId
+  fullName: stellar_dotnet_sdk.StrKey.DecodeStellarAccountId
+- uid: stellar_dotnet_sdk.StrKey.DecodeStellarSecretSeed*
+  commentId: Overload:stellar_dotnet_sdk.StrKey.DecodeStellarSecretSeed
+  name: DecodeStellarSecretSeed
+  nameWithType: StrKey.DecodeStellarSecretSeed
+  fullName: stellar_dotnet_sdk.StrKey.DecodeStellarSecretSeed
+- uid: stellar_dotnet_sdk.StrKey.EncodeCheck*
+  commentId: Overload:stellar_dotnet_sdk.StrKey.EncodeCheck
+  name: EncodeCheck
+  nameWithType: StrKey.EncodeCheck
+  fullName: stellar_dotnet_sdk.StrKey.EncodeCheck
+- uid: stellar_dotnet_sdk.StrKey.VersionByte
+  commentId: T:stellar_dotnet_sdk.StrKey.VersionByte
+  parent: stellar_dotnet_sdk
+  name: StrKey.VersionByte
+  nameWithType: StrKey.VersionByte
+  fullName: stellar_dotnet_sdk.StrKey.VersionByte
+- uid: stellar_dotnet_sdk.StrKey.DecodeCheck*
+  commentId: Overload:stellar_dotnet_sdk.StrKey.DecodeCheck
+  name: DecodeCheck
+  nameWithType: StrKey.DecodeCheck
+  fullName: stellar_dotnet_sdk.StrKey.DecodeCheck
+- uid: stellar_dotnet_sdk.StrKey.CalculateChecksum*
+  commentId: Overload:stellar_dotnet_sdk.StrKey.CalculateChecksum
+  name: CalculateChecksum
+  nameWithType: StrKey.CalculateChecksum
+  fullName: stellar_dotnet_sdk.StrKey.CalculateChecksum
+- uid: stellar_dotnet_sdk.StrKey.IsValid*
+  commentId: Overload:stellar_dotnet_sdk.StrKey.IsValid
+  name: IsValid
+  nameWithType: StrKey.IsValid
+  fullName: stellar_dotnet_sdk.StrKey.IsValid
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: stellar_dotnet_sdk.StrKey.IsValidEd25519PublicKey*
+  commentId: Overload:stellar_dotnet_sdk.StrKey.IsValidEd25519PublicKey
+  name: IsValidEd25519PublicKey
+  nameWithType: StrKey.IsValidEd25519PublicKey
+  fullName: stellar_dotnet_sdk.StrKey.IsValidEd25519PublicKey
+- uid: stellar_dotnet_sdk.StrKey.IsValidEd25519SecretSeed*
+  commentId: Overload:stellar_dotnet_sdk.StrKey.IsValidEd25519SecretSeed
+  name: IsValidEd25519SecretSeed
+  nameWithType: StrKey.IsValidEd25519SecretSeed
+  fullName: stellar_dotnet_sdk.StrKey.IsValidEd25519SecretSeed

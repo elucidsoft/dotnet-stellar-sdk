@@ -1,0 +1,756 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.MemoReturnHash
+  commentId: T:stellar_dotnet_sdk.MemoReturnHash
+  id: MemoReturnHash
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.MemoReturnHash.#ctor(System.Byte[])
+  - stellar_dotnet_sdk.MemoReturnHash.#ctor(System.String)
+  - stellar_dotnet_sdk.MemoReturnHash.ToXdr
+  langs:
+  - csharp
+  - vb
+  name: MemoReturnHash
+  nameWithType: MemoReturnHash
+  fullName: stellar_dotnet_sdk.MemoReturnHash
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/MemoReturnHash.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: MemoReturnHash
+    path: ../stellar-dotnet-sdk/MemoReturnHash.cs
+    startLine: 4
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: 'public class MemoReturnHash : MemoHashAbstract'
+    content.vb: >-
+      Public Class MemoReturnHash
+          Inherits MemoHashAbstract
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.Memo
+  - stellar_dotnet_sdk.MemoHashAbstract
+  inheritedMembers:
+  - stellar_dotnet_sdk.MemoHashAbstract._MemoBytes
+  - stellar_dotnet_sdk.MemoHashAbstract.MemoBytes
+  - stellar_dotnet_sdk.MemoHashAbstract.GetHexValue
+  - stellar_dotnet_sdk.MemoHashAbstract.GetTrimmedHexValue
+  - stellar_dotnet_sdk.MemoHashAbstract.Equals(Object)
+  - stellar_dotnet_sdk.MemoHashAbstract.GetHashCode
+  - stellar_dotnet_sdk.Memo.None
+  - stellar_dotnet_sdk.Memo.Text(System.String)
+  - stellar_dotnet_sdk.Memo.Id(System.Int64)
+  - stellar_dotnet_sdk.Memo.Hash(System.Byte[])
+  - stellar_dotnet_sdk.Memo.Hash(System.String)
+  - stellar_dotnet_sdk.Memo.ReturnHash(System.Byte[])
+  - stellar_dotnet_sdk.Memo.ReturnHash(System.String)
+  - stellar_dotnet_sdk.Memo.FromXdr(stellar_dotnet_sdk.xdr.Memo)
+  - stellar_dotnet_sdk.Memo.Equals(System.Object)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.MemoReturnHash.#ctor(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.MemoReturnHash.#ctor(System.Byte[])
+  id: '#ctor(System.Byte[])'
+  parent: stellar_dotnet_sdk.MemoReturnHash
+  langs:
+  - csharp
+  - vb
+  name: MemoReturnHash(Byte[])
+  nameWithType: MemoReturnHash.MemoReturnHash(Byte[])
+  fullName: stellar_dotnet_sdk.MemoReturnHash.MemoReturnHash(System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/MemoReturnHash.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/MemoReturnHash.cs
+    startLine: 6
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public MemoReturnHash(byte[] bytes)
+    parameters:
+    - id: bytes
+      type: System.Byte[]
+    content.vb: Public Sub New(bytes As Byte())
+  overload: stellar_dotnet_sdk.MemoReturnHash.#ctor*
+  nameWithType.vb: MemoReturnHash.MemoReturnHash(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.MemoReturnHash.MemoReturnHash(System.Byte())
+  name.vb: MemoReturnHash(Byte())
+- uid: stellar_dotnet_sdk.MemoReturnHash.#ctor(System.String)
+  commentId: M:stellar_dotnet_sdk.MemoReturnHash.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: stellar_dotnet_sdk.MemoReturnHash
+  langs:
+  - csharp
+  - vb
+  name: MemoReturnHash(String)
+  nameWithType: MemoReturnHash.MemoReturnHash(String)
+  fullName: stellar_dotnet_sdk.MemoReturnHash.MemoReturnHash(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/MemoReturnHash.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/MemoReturnHash.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public MemoReturnHash(string hexString)
+    parameters:
+    - id: hexString
+      type: System.String
+    content.vb: Public Sub New(hexString As String)
+  overload: stellar_dotnet_sdk.MemoReturnHash.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.MemoReturnHash.ToXdr
+  commentId: M:stellar_dotnet_sdk.MemoReturnHash.ToXdr
+  id: ToXdr
+  parent: stellar_dotnet_sdk.MemoReturnHash
+  langs:
+  - csharp
+  - vb
+  name: ToXdr()
+  nameWithType: MemoReturnHash.ToXdr()
+  fullName: stellar_dotnet_sdk.MemoReturnHash.ToXdr()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/MemoReturnHash.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ToXdr
+    path: ../stellar-dotnet-sdk/MemoReturnHash.cs
+    startLine: 14
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public override Memo ToXdr()
+    return:
+      type: stellar_dotnet_sdk.xdr.Memo
+    content.vb: Public Overrides Function ToXdr As Memo
+  overridden: stellar_dotnet_sdk.MemoHashAbstract.ToXdr
+  overload: stellar_dotnet_sdk.MemoReturnHash.ToXdr*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.Memo
+  commentId: T:stellar_dotnet_sdk.Memo
+  parent: stellar_dotnet_sdk
+  name: Memo
+  nameWithType: Memo
+  fullName: stellar_dotnet_sdk.Memo
+- uid: stellar_dotnet_sdk.MemoHashAbstract
+  commentId: T:stellar_dotnet_sdk.MemoHashAbstract
+  parent: stellar_dotnet_sdk
+  name: MemoHashAbstract
+  nameWithType: MemoHashAbstract
+  fullName: stellar_dotnet_sdk.MemoHashAbstract
+- uid: stellar_dotnet_sdk.MemoHashAbstract._MemoBytes
+  commentId: F:stellar_dotnet_sdk.MemoHashAbstract._MemoBytes
+  parent: stellar_dotnet_sdk.MemoHashAbstract
+  name: _MemoBytes
+  nameWithType: MemoHashAbstract._MemoBytes
+  fullName: stellar_dotnet_sdk.MemoHashAbstract._MemoBytes
+- uid: stellar_dotnet_sdk.MemoHashAbstract.MemoBytes
+  commentId: P:stellar_dotnet_sdk.MemoHashAbstract.MemoBytes
+  parent: stellar_dotnet_sdk.MemoHashAbstract
+  name: MemoBytes
+  nameWithType: MemoHashAbstract.MemoBytes
+  fullName: stellar_dotnet_sdk.MemoHashAbstract.MemoBytes
+- uid: stellar_dotnet_sdk.MemoHashAbstract.GetHexValue
+  commentId: M:stellar_dotnet_sdk.MemoHashAbstract.GetHexValue
+  parent: stellar_dotnet_sdk.MemoHashAbstract
+  name: GetHexValue()
+  nameWithType: MemoHashAbstract.GetHexValue()
+  fullName: stellar_dotnet_sdk.MemoHashAbstract.GetHexValue()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.MemoHashAbstract.GetHexValue
+    name: GetHexValue
+    nameWithType: MemoHashAbstract.GetHexValue
+    fullName: stellar_dotnet_sdk.MemoHashAbstract.GetHexValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.MemoHashAbstract.GetHexValue
+    name: GetHexValue
+    nameWithType: MemoHashAbstract.GetHexValue
+    fullName: stellar_dotnet_sdk.MemoHashAbstract.GetHexValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.MemoHashAbstract.GetTrimmedHexValue
+  commentId: M:stellar_dotnet_sdk.MemoHashAbstract.GetTrimmedHexValue
+  parent: stellar_dotnet_sdk.MemoHashAbstract
+  name: GetTrimmedHexValue()
+  nameWithType: MemoHashAbstract.GetTrimmedHexValue()
+  fullName: stellar_dotnet_sdk.MemoHashAbstract.GetTrimmedHexValue()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.MemoHashAbstract.GetTrimmedHexValue
+    name: GetTrimmedHexValue
+    nameWithType: MemoHashAbstract.GetTrimmedHexValue
+    fullName: stellar_dotnet_sdk.MemoHashAbstract.GetTrimmedHexValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.MemoHashAbstract.GetTrimmedHexValue
+    name: GetTrimmedHexValue
+    nameWithType: MemoHashAbstract.GetTrimmedHexValue
+    fullName: stellar_dotnet_sdk.MemoHashAbstract.GetTrimmedHexValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.MemoHashAbstract.Equals(Object)
+  commentId: M:stellar_dotnet_sdk.MemoHashAbstract.Equals(Object)
+  parent: stellar_dotnet_sdk.MemoHashAbstract
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: MemoHashAbstract.Equals(Object)
+  fullName: stellar_dotnet_sdk.MemoHashAbstract.Equals(Object)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.MemoHashAbstract.Equals(Object)
+    name: Equals
+    nameWithType: MemoHashAbstract.Equals
+    fullName: stellar_dotnet_sdk.MemoHashAbstract.Equals
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Object
+    name: Object
+    nameWithType: Object
+    fullName: Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.MemoHashAbstract.Equals(Object)
+    name: Equals
+    nameWithType: MemoHashAbstract.Equals
+    fullName: stellar_dotnet_sdk.MemoHashAbstract.Equals
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Object
+    name: Object
+    nameWithType: Object
+    fullName: Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.MemoHashAbstract.GetHashCode
+  commentId: M:stellar_dotnet_sdk.MemoHashAbstract.GetHashCode
+  parent: stellar_dotnet_sdk.MemoHashAbstract
+  name: GetHashCode()
+  nameWithType: MemoHashAbstract.GetHashCode()
+  fullName: stellar_dotnet_sdk.MemoHashAbstract.GetHashCode()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.MemoHashAbstract.GetHashCode
+    name: GetHashCode
+    nameWithType: MemoHashAbstract.GetHashCode
+    fullName: stellar_dotnet_sdk.MemoHashAbstract.GetHashCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.MemoHashAbstract.GetHashCode
+    name: GetHashCode
+    nameWithType: MemoHashAbstract.GetHashCode
+    fullName: stellar_dotnet_sdk.MemoHashAbstract.GetHashCode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Memo.None
+  commentId: M:stellar_dotnet_sdk.Memo.None
+  parent: stellar_dotnet_sdk.Memo
+  name: None()
+  nameWithType: Memo.None()
+  fullName: stellar_dotnet_sdk.Memo.None()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Memo.None
+    name: None
+    nameWithType: Memo.None
+    fullName: stellar_dotnet_sdk.Memo.None
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Memo.None
+    name: None
+    nameWithType: Memo.None
+    fullName: stellar_dotnet_sdk.Memo.None
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Memo.Text(System.String)
+  commentId: M:stellar_dotnet_sdk.Memo.Text(System.String)
+  parent: stellar_dotnet_sdk.Memo
+  isExternal: true
+  name: Text(String)
+  nameWithType: Memo.Text(String)
+  fullName: stellar_dotnet_sdk.Memo.Text(System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Memo.Text(System.String)
+    name: Text
+    nameWithType: Memo.Text
+    fullName: stellar_dotnet_sdk.Memo.Text
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Memo.Text(System.String)
+    name: Text
+    nameWithType: Memo.Text
+    fullName: stellar_dotnet_sdk.Memo.Text
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Memo.Id(System.Int64)
+  commentId: M:stellar_dotnet_sdk.Memo.Id(System.Int64)
+  parent: stellar_dotnet_sdk.Memo
+  isExternal: true
+  name: Id(Int64)
+  nameWithType: Memo.Id(Int64)
+  fullName: stellar_dotnet_sdk.Memo.Id(System.Int64)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Memo.Id(System.Int64)
+    name: Id
+    nameWithType: Memo.Id
+    fullName: stellar_dotnet_sdk.Memo.Id
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Memo.Id(System.Int64)
+    name: Id
+    nameWithType: Memo.Id
+    fullName: stellar_dotnet_sdk.Memo.Id
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Memo.Hash(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.Memo.Hash(System.Byte[])
+  parent: stellar_dotnet_sdk.Memo
+  isExternal: true
+  name: Hash(Byte[])
+  nameWithType: Memo.Hash(Byte[])
+  fullName: stellar_dotnet_sdk.Memo.Hash(System.Byte[])
+  nameWithType.vb: Memo.Hash(Byte())
+  fullName.vb: stellar_dotnet_sdk.Memo.Hash(System.Byte())
+  name.vb: Hash(Byte())
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Memo.Hash(System.Byte[])
+    name: Hash
+    nameWithType: Memo.Hash
+    fullName: stellar_dotnet_sdk.Memo.Hash
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Memo.Hash(System.Byte[])
+    name: Hash
+    nameWithType: Memo.Hash
+    fullName: stellar_dotnet_sdk.Memo.Hash
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Memo.Hash(System.String)
+  commentId: M:stellar_dotnet_sdk.Memo.Hash(System.String)
+  parent: stellar_dotnet_sdk.Memo
+  isExternal: true
+  name: Hash(String)
+  nameWithType: Memo.Hash(String)
+  fullName: stellar_dotnet_sdk.Memo.Hash(System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Memo.Hash(System.String)
+    name: Hash
+    nameWithType: Memo.Hash
+    fullName: stellar_dotnet_sdk.Memo.Hash
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Memo.Hash(System.String)
+    name: Hash
+    nameWithType: Memo.Hash
+    fullName: stellar_dotnet_sdk.Memo.Hash
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Memo.ReturnHash(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.Memo.ReturnHash(System.Byte[])
+  parent: stellar_dotnet_sdk.Memo
+  isExternal: true
+  name: ReturnHash(Byte[])
+  nameWithType: Memo.ReturnHash(Byte[])
+  fullName: stellar_dotnet_sdk.Memo.ReturnHash(System.Byte[])
+  nameWithType.vb: Memo.ReturnHash(Byte())
+  fullName.vb: stellar_dotnet_sdk.Memo.ReturnHash(System.Byte())
+  name.vb: ReturnHash(Byte())
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Memo.ReturnHash(System.Byte[])
+    name: ReturnHash
+    nameWithType: Memo.ReturnHash
+    fullName: stellar_dotnet_sdk.Memo.ReturnHash
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Memo.ReturnHash(System.Byte[])
+    name: ReturnHash
+    nameWithType: Memo.ReturnHash
+    fullName: stellar_dotnet_sdk.Memo.ReturnHash
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Memo.ReturnHash(System.String)
+  commentId: M:stellar_dotnet_sdk.Memo.ReturnHash(System.String)
+  parent: stellar_dotnet_sdk.Memo
+  isExternal: true
+  name: ReturnHash(String)
+  nameWithType: Memo.ReturnHash(String)
+  fullName: stellar_dotnet_sdk.Memo.ReturnHash(System.String)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Memo.ReturnHash(System.String)
+    name: ReturnHash
+    nameWithType: Memo.ReturnHash
+    fullName: stellar_dotnet_sdk.Memo.ReturnHash
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Memo.ReturnHash(System.String)
+    name: ReturnHash
+    nameWithType: Memo.ReturnHash
+    fullName: stellar_dotnet_sdk.Memo.ReturnHash
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Memo.FromXdr(stellar_dotnet_sdk.xdr.Memo)
+  commentId: M:stellar_dotnet_sdk.Memo.FromXdr(stellar_dotnet_sdk.xdr.Memo)
+  parent: stellar_dotnet_sdk.Memo
+  name: FromXdr(Memo)
+  nameWithType: Memo.FromXdr(Memo)
+  fullName: stellar_dotnet_sdk.Memo.FromXdr(stellar_dotnet_sdk.xdr.Memo)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Memo.FromXdr(stellar_dotnet_sdk.xdr.Memo)
+    name: FromXdr
+    nameWithType: Memo.FromXdr
+    fullName: stellar_dotnet_sdk.Memo.FromXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.xdr.Memo
+    name: Memo
+    nameWithType: Memo
+    fullName: stellar_dotnet_sdk.xdr.Memo
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Memo.FromXdr(stellar_dotnet_sdk.xdr.Memo)
+    name: FromXdr
+    nameWithType: Memo.FromXdr
+    fullName: stellar_dotnet_sdk.Memo.FromXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: stellar_dotnet_sdk.xdr.Memo
+    name: Memo
+    nameWithType: Memo
+    fullName: stellar_dotnet_sdk.xdr.Memo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.Memo.Equals(System.Object)
+  commentId: M:stellar_dotnet_sdk.Memo.Equals(System.Object)
+  parent: stellar_dotnet_sdk.Memo
+  isExternal: true
+  name: Equals(System.Object)
+  nameWithType: Memo.Equals(System.Object)
+  fullName: stellar_dotnet_sdk.Memo.Equals(System.Object)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.Memo.Equals(System.Object)
+    name: Equals
+    nameWithType: Memo.Equals
+    fullName: stellar_dotnet_sdk.Memo.Equals
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: System.Object
+    nameWithType: System.Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.Memo.Equals(System.Object)
+    name: Equals
+    nameWithType: Memo.Equals
+    fullName: stellar_dotnet_sdk.Memo.Equals
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: System.Object
+    nameWithType: System.Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.MemoReturnHash.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.MemoReturnHash.#ctor
+  name: MemoReturnHash
+  nameWithType: MemoReturnHash.MemoReturnHash
+  fullName: stellar_dotnet_sdk.MemoReturnHash.MemoReturnHash
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.MemoHashAbstract.ToXdr
+  commentId: M:stellar_dotnet_sdk.MemoHashAbstract.ToXdr
+  parent: stellar_dotnet_sdk.MemoHashAbstract
+  name: ToXdr()
+  nameWithType: MemoHashAbstract.ToXdr()
+  fullName: stellar_dotnet_sdk.MemoHashAbstract.ToXdr()
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.MemoHashAbstract.ToXdr
+    name: ToXdr
+    nameWithType: MemoHashAbstract.ToXdr
+    fullName: stellar_dotnet_sdk.MemoHashAbstract.ToXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.MemoHashAbstract.ToXdr
+    name: ToXdr
+    nameWithType: MemoHashAbstract.ToXdr
+    fullName: stellar_dotnet_sdk.MemoHashAbstract.ToXdr
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.MemoReturnHash.ToXdr*
+  commentId: Overload:stellar_dotnet_sdk.MemoReturnHash.ToXdr
+  name: ToXdr
+  nameWithType: MemoReturnHash.ToXdr
+  fullName: stellar_dotnet_sdk.MemoReturnHash.ToXdr
+- uid: stellar_dotnet_sdk.xdr.Memo
+  commentId: T:stellar_dotnet_sdk.xdr.Memo
+  parent: stellar_dotnet_sdk.xdr
+  name: Memo
+  nameWithType: Memo
+  fullName: stellar_dotnet_sdk.xdr.Memo
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr

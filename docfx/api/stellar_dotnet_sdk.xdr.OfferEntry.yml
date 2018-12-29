@@ -1,0 +1,559 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.OfferEntry
+  commentId: T:stellar_dotnet_sdk.xdr.OfferEntry
+  id: OfferEntry
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.OfferEntry.#ctor
+  - stellar_dotnet_sdk.xdr.OfferEntry.Amount
+  - stellar_dotnet_sdk.xdr.OfferEntry.Buying
+  - stellar_dotnet_sdk.xdr.OfferEntry.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.OfferEntry.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OfferEntry)
+  - stellar_dotnet_sdk.xdr.OfferEntry.Ext
+  - stellar_dotnet_sdk.xdr.OfferEntry.Flags
+  - stellar_dotnet_sdk.xdr.OfferEntry.OfferID
+  - stellar_dotnet_sdk.xdr.OfferEntry.Price
+  - stellar_dotnet_sdk.xdr.OfferEntry.SellerID
+  - stellar_dotnet_sdk.xdr.OfferEntry.Selling
+  langs:
+  - csharp
+  - vb
+  name: OfferEntry
+  nameWithType: OfferEntry
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: OfferEntry
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class OfferEntry : object'
+    content.vb: >-
+      Public Class OfferEntry
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.OfferEntry.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.OfferEntry
+  langs:
+  - csharp
+  - vb
+  name: OfferEntry()
+  nameWithType: OfferEntry.OfferEntry()
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.OfferEntry()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+    startLine: 37
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public OfferEntry()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.OfferEntry.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.SellerID
+  commentId: P:stellar_dotnet_sdk.xdr.OfferEntry.SellerID
+  id: SellerID
+  parent: stellar_dotnet_sdk.xdr.OfferEntry
+  langs:
+  - csharp
+  - vb
+  name: SellerID
+  nameWithType: OfferEntry.SellerID
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.SellerID
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SellerID
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+    startLine: 38
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AccountID SellerID { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountID
+    content.vb: Public Property SellerID As AccountID
+  overload: stellar_dotnet_sdk.xdr.OfferEntry.SellerID*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.OfferID
+  commentId: P:stellar_dotnet_sdk.xdr.OfferEntry.OfferID
+  id: OfferID
+  parent: stellar_dotnet_sdk.xdr.OfferEntry
+  langs:
+  - csharp
+  - vb
+  name: OfferID
+  nameWithType: OfferEntry.OfferID
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.OfferID
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: OfferID
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+    startLine: 39
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint64 OfferID { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint64
+    content.vb: Public Property OfferID As Uint64
+  overload: stellar_dotnet_sdk.xdr.OfferEntry.OfferID*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Selling
+  commentId: P:stellar_dotnet_sdk.xdr.OfferEntry.Selling
+  id: Selling
+  parent: stellar_dotnet_sdk.xdr.OfferEntry
+  langs:
+  - csharp
+  - vb
+  name: Selling
+  nameWithType: OfferEntry.Selling
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Selling
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Selling
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+    startLine: 40
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Asset Selling { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Asset
+    content.vb: Public Property Selling As Asset
+  overload: stellar_dotnet_sdk.xdr.OfferEntry.Selling*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Buying
+  commentId: P:stellar_dotnet_sdk.xdr.OfferEntry.Buying
+  id: Buying
+  parent: stellar_dotnet_sdk.xdr.OfferEntry
+  langs:
+  - csharp
+  - vb
+  name: Buying
+  nameWithType: OfferEntry.Buying
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Buying
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Buying
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+    startLine: 41
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Asset Buying { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Asset
+    content.vb: Public Property Buying As Asset
+  overload: stellar_dotnet_sdk.xdr.OfferEntry.Buying*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Amount
+  commentId: P:stellar_dotnet_sdk.xdr.OfferEntry.Amount
+  id: Amount
+  parent: stellar_dotnet_sdk.xdr.OfferEntry
+  langs:
+  - csharp
+  - vb
+  name: Amount
+  nameWithType: OfferEntry.Amount
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Amount
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Amount
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+    startLine: 42
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Int64 Amount { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Int64
+    content.vb: Public Property Amount As Int64
+  overload: stellar_dotnet_sdk.xdr.OfferEntry.Amount*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Price
+  commentId: P:stellar_dotnet_sdk.xdr.OfferEntry.Price
+  id: Price
+  parent: stellar_dotnet_sdk.xdr.OfferEntry
+  langs:
+  - csharp
+  - vb
+  name: Price
+  nameWithType: OfferEntry.Price
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Price
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Price
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+    startLine: 43
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Price Price { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Price
+    content.vb: Public Property Price As Price
+  overload: stellar_dotnet_sdk.xdr.OfferEntry.Price*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Flags
+  commentId: P:stellar_dotnet_sdk.xdr.OfferEntry.Flags
+  id: Flags
+  parent: stellar_dotnet_sdk.xdr.OfferEntry
+  langs:
+  - csharp
+  - vb
+  name: Flags
+  nameWithType: OfferEntry.Flags
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Flags
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Flags
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+    startLine: 44
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint32 Flags { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint32
+    content.vb: Public Property Flags As Uint32
+  overload: stellar_dotnet_sdk.xdr.OfferEntry.Flags*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Ext
+  commentId: P:stellar_dotnet_sdk.xdr.OfferEntry.Ext
+  id: Ext
+  parent: stellar_dotnet_sdk.xdr.OfferEntry
+  langs:
+  - csharp
+  - vb
+  name: Ext
+  nameWithType: OfferEntry.Ext
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Ext
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Ext
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+    startLine: 45
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public OfferEntry.OfferEntryExt Ext { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.OfferEntry.OfferEntryExt
+    content.vb: Public Property Ext As OfferEntry.OfferEntryExt
+  overload: stellar_dotnet_sdk.xdr.OfferEntry.Ext*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OfferEntry)
+  commentId: M:stellar_dotnet_sdk.xdr.OfferEntry.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OfferEntry)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.OfferEntry)
+  parent: stellar_dotnet_sdk.xdr.OfferEntry
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, OfferEntry)
+  nameWithType: OfferEntry.Encode(XdrDataOutputStream, OfferEntry)
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.OfferEntry)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+    startLine: 47
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, OfferEntry encodedOfferEntry)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedOfferEntry
+      type: stellar_dotnet_sdk.xdr.OfferEntry
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedOfferEntry As OfferEntry)
+  overload: stellar_dotnet_sdk.xdr.OfferEntry.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.OfferEntry.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.OfferEntry
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: OfferEntry.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/OfferEntry.cs
+    startLine: 58
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static OfferEntry Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.OfferEntry
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As OfferEntry
+  overload: stellar_dotnet_sdk.xdr.OfferEntry.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntry.#ctor
+  name: OfferEntry
+  nameWithType: OfferEntry.OfferEntry
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.OfferEntry
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.SellerID*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntry.SellerID
+  name: SellerID
+  nameWithType: OfferEntry.SellerID
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.SellerID
+- uid: stellar_dotnet_sdk.xdr.AccountID
+  commentId: T:stellar_dotnet_sdk.xdr.AccountID
+  parent: stellar_dotnet_sdk.xdr
+  name: AccountID
+  nameWithType: AccountID
+  fullName: stellar_dotnet_sdk.xdr.AccountID
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.OfferID*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntry.OfferID
+  name: OfferID
+  nameWithType: OfferEntry.OfferID
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.OfferID
+- uid: stellar_dotnet_sdk.xdr.Uint64
+  commentId: T:stellar_dotnet_sdk.xdr.Uint64
+  parent: stellar_dotnet_sdk.xdr
+  name: Uint64
+  nameWithType: Uint64
+  fullName: stellar_dotnet_sdk.xdr.Uint64
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Selling*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntry.Selling
+  name: Selling
+  nameWithType: OfferEntry.Selling
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Selling
+- uid: stellar_dotnet_sdk.xdr.Asset
+  commentId: T:stellar_dotnet_sdk.xdr.Asset
+  parent: stellar_dotnet_sdk.xdr
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.xdr.Asset
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Buying*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntry.Buying
+  name: Buying
+  nameWithType: OfferEntry.Buying
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Buying
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Amount*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntry.Amount
+  name: Amount
+  nameWithType: OfferEntry.Amount
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Amount
+- uid: stellar_dotnet_sdk.xdr.Int64
+  commentId: T:stellar_dotnet_sdk.xdr.Int64
+  parent: stellar_dotnet_sdk.xdr
+  name: Int64
+  nameWithType: Int64
+  fullName: stellar_dotnet_sdk.xdr.Int64
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Price*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntry.Price
+  name: Price
+  nameWithType: OfferEntry.Price
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Price
+- uid: stellar_dotnet_sdk.xdr.Price
+  commentId: T:stellar_dotnet_sdk.xdr.Price
+  parent: stellar_dotnet_sdk.xdr
+  name: Price
+  nameWithType: Price
+  fullName: stellar_dotnet_sdk.xdr.Price
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Flags*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntry.Flags
+  name: Flags
+  nameWithType: OfferEntry.Flags
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Flags
+- uid: stellar_dotnet_sdk.xdr.Uint32
+  commentId: T:stellar_dotnet_sdk.xdr.Uint32
+  parent: stellar_dotnet_sdk.xdr
+  name: Uint32
+  nameWithType: Uint32
+  fullName: stellar_dotnet_sdk.xdr.Uint32
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Ext*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntry.Ext
+  name: Ext
+  nameWithType: OfferEntry.Ext
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Ext
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.OfferEntryExt
+  commentId: T:stellar_dotnet_sdk.xdr.OfferEntry.OfferEntryExt
+  parent: stellar_dotnet_sdk.xdr
+  name: OfferEntry.OfferEntryExt
+  nameWithType: OfferEntry.OfferEntryExt
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.OfferEntryExt
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntry.Encode
+  name: Encode
+  nameWithType: OfferEntry.Encode
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.OfferEntry
+  commentId: T:stellar_dotnet_sdk.xdr.OfferEntry
+  parent: stellar_dotnet_sdk.xdr
+  name: OfferEntry
+  nameWithType: OfferEntry
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry
+- uid: stellar_dotnet_sdk.xdr.OfferEntry.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.OfferEntry.Decode
+  name: Decode
+  nameWithType: OfferEntry.Decode
+  fullName: stellar_dotnet_sdk.xdr.OfferEntry.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

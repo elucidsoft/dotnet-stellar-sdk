@@ -1,0 +1,236 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.CreateAccountResult
+  commentId: T:stellar_dotnet_sdk.xdr.CreateAccountResult
+  id: CreateAccountResult
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.CreateAccountResult.#ctor
+  - stellar_dotnet_sdk.xdr.CreateAccountResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.CreateAccountResult.Discriminant
+  - stellar_dotnet_sdk.xdr.CreateAccountResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.CreateAccountResult)
+  langs:
+  - csharp
+  - vb
+  name: CreateAccountResult
+  nameWithType: CreateAccountResult
+  fullName: stellar_dotnet_sdk.xdr.CreateAccountResult
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CreateAccountResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CreateAccountResult
+    path: ../stellar-dotnet-sdk/xdr/generated/CreateAccountResult.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class CreateAccountResult : object'
+    content.vb: >-
+      Public Class CreateAccountResult
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.CreateAccountResult.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.CreateAccountResult.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.CreateAccountResult
+  langs:
+  - csharp
+  - vb
+  name: CreateAccountResult()
+  nameWithType: CreateAccountResult.CreateAccountResult()
+  fullName: stellar_dotnet_sdk.xdr.CreateAccountResult.CreateAccountResult()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CreateAccountResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/CreateAccountResult.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public CreateAccountResult()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.CreateAccountResult.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.CreateAccountResult.Discriminant
+  commentId: P:stellar_dotnet_sdk.xdr.CreateAccountResult.Discriminant
+  id: Discriminant
+  parent: stellar_dotnet_sdk.xdr.CreateAccountResult
+  langs:
+  - csharp
+  - vb
+  name: Discriminant
+  nameWithType: CreateAccountResult.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.CreateAccountResult.Discriminant
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CreateAccountResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Discriminant
+    path: ../stellar-dotnet-sdk/xdr/generated/CreateAccountResult.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public CreateAccountResultCode Discriminant { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.CreateAccountResultCode
+    content.vb: Public Property Discriminant As CreateAccountResultCode
+  overload: stellar_dotnet_sdk.xdr.CreateAccountResult.Discriminant*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.CreateAccountResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.CreateAccountResult)
+  commentId: M:stellar_dotnet_sdk.xdr.CreateAccountResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.CreateAccountResult)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.CreateAccountResult)
+  parent: stellar_dotnet_sdk.xdr.CreateAccountResult
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, CreateAccountResult)
+  nameWithType: CreateAccountResult.Encode(XdrDataOutputStream, CreateAccountResult)
+  fullName: stellar_dotnet_sdk.xdr.CreateAccountResult.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.CreateAccountResult)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CreateAccountResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/CreateAccountResult.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, CreateAccountResult encodedCreateAccountResult)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedCreateAccountResult
+      type: stellar_dotnet_sdk.xdr.CreateAccountResult
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedCreateAccountResult As CreateAccountResult)
+  overload: stellar_dotnet_sdk.xdr.CreateAccountResult.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.CreateAccountResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.CreateAccountResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.CreateAccountResult
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: CreateAccountResult.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.CreateAccountResult.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/CreateAccountResult.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/CreateAccountResult.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static CreateAccountResult Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.CreateAccountResult
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As CreateAccountResult
+  overload: stellar_dotnet_sdk.xdr.CreateAccountResult.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.CreateAccountResult.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CreateAccountResult.#ctor
+  name: CreateAccountResult
+  nameWithType: CreateAccountResult.CreateAccountResult
+  fullName: stellar_dotnet_sdk.xdr.CreateAccountResult.CreateAccountResult
+- uid: stellar_dotnet_sdk.xdr.CreateAccountResult.Discriminant*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CreateAccountResult.Discriminant
+  name: Discriminant
+  nameWithType: CreateAccountResult.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.CreateAccountResult.Discriminant
+- uid: stellar_dotnet_sdk.xdr.CreateAccountResultCode
+  commentId: T:stellar_dotnet_sdk.xdr.CreateAccountResultCode
+  parent: stellar_dotnet_sdk.xdr
+  name: CreateAccountResultCode
+  nameWithType: CreateAccountResultCode
+  fullName: stellar_dotnet_sdk.xdr.CreateAccountResultCode
+- uid: stellar_dotnet_sdk.xdr.CreateAccountResult.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CreateAccountResult.Encode
+  name: Encode
+  nameWithType: CreateAccountResult.Encode
+  fullName: stellar_dotnet_sdk.xdr.CreateAccountResult.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.CreateAccountResult
+  commentId: T:stellar_dotnet_sdk.xdr.CreateAccountResult
+  parent: stellar_dotnet_sdk.xdr
+  name: CreateAccountResult
+  nameWithType: CreateAccountResult
+  fullName: stellar_dotnet_sdk.xdr.CreateAccountResult
+- uid: stellar_dotnet_sdk.xdr.CreateAccountResult.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.CreateAccountResult.Decode
+  name: Decode
+  nameWithType: CreateAccountResult.Decode
+  fullName: stellar_dotnet_sdk.xdr.CreateAccountResult.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

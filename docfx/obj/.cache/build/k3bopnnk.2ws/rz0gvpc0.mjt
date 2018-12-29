@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Asset
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Asset
+   ">
+    <meta name="generator" content="docfx 2.40.6.0">
+    
+    <link rel="shortcut icon" href="../favicon">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="stellar_dotnet_sdk.Asset">
+  <h1 id="stellar_dotnet_sdk_Asset" data-uid="stellar_dotnet_sdk.Asset">Class Asset
+  </h1>
+  <div class="markdown level0 summary"><p sourcefile="api/stellar_dotnet_sdk.Asset.yml" sourcestartlinenumber="2">Asset class represents an asset, either the native asset (XLM) or a asset code / issuer account ID pair.
+An asset code describes an asset code and issuer pair. In the case of the native asset XLM, the issuer will be null.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Asset</span></div>
+  </div>
+  
+      <div class="level2"><a class="xref" href="stellar_dotnet_sdk.AssetTypeCreditAlphaNum.html">AssetTypeCreditAlphaNum</a></div>
+      <div class="level2"><a class="xref" href="stellar_dotnet_sdk.AssetTypeNative.html">AssetTypeNative</a></div>
+  
+  
+  <h6><strong>Namespace</strong>: System.Dynamic.ExpandoObject</h6>
+  <h6><strong>Assembly</strong>: stellar-dotnet-sdk.dll</h6>
+  
+  <h5 id="stellar_dotnet_sdk_Asset_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Asset : object</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h3 id="methods">Methods
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Asset_Create_String_String_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Asset.Create(String%2CString%2CString)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Asset.cs/#L19" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_Asset_Create_" data-uid="stellar_dotnet_sdk.Asset.Create*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Asset_Create_String_String_String_" data-uid="stellar_dotnet_sdk.Asset.Create(String,String,String)"><a href="#collapsible-stellar_dotnet_sdk_Asset_Create_String_String_String_" class="expander" data-toggle="collapse">Create(String, String, String)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Asset_Create_String_String_String_" class="collapse in">
+  <div class="markdown level1 summary"><p sourcefile="api/stellar_dotnet_sdk.Asset.yml" sourcestartlinenumber="2">Create an asset base on the parameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Asset Create(String type, String code, String issuer)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">type</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">code</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">String</span></span>
+        <span class="parametername">issuer</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a>
+        <p><p sourcefile="api/stellar_dotnet_sdk.Asset.yml" sourcestartlinenumber="1">Asset</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_stellar_dotnet_sdk_KeyPair_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String%2Cstellar_dotnet_sdk.KeyPair)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Asset.cs/#L36" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_Asset_CreateNonNativeAsset_" data-uid="stellar_dotnet_sdk.Asset.CreateNonNativeAsset*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_stellar_dotnet_sdk_KeyPair_" data-uid="stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,stellar_dotnet_sdk.KeyPair)"><a href="#collapsible-stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_stellar_dotnet_sdk_KeyPair_" class="expander" data-toggle="collapse">CreateNonNativeAsset(String, KeyPair)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_stellar_dotnet_sdk_KeyPair_" class="collapse in">
+  <div class="markdown level1 summary"><p sourcefile="api/stellar_dotnet_sdk.Asset.yml" sourcestartlinenumber="2">Creates one of <a class="xref" href="stellar_dotnet_sdk.AssetTypeCreditAlphaNum4.html">AssetTypeCreditAlphaNum4</a> or <a class="xref" href="stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.html">AssetTypeCreditAlphaNum12</a> object based on a code length</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Asset CreateNonNativeAsset(string code, KeyPair issuer)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">code</span>
+        <p><p sourcefile="api/stellar_dotnet_sdk.Asset.yml" sourcestartlinenumber="1">Asset code</p>
+</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
+        <span class="parametername">issuer</span>
+        <p><p sourcefile="api/stellar_dotnet_sdk.Asset.yml" sourcestartlinenumber="1">Asset issuer</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Asset.cs/#L86" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_Asset_CreateNonNativeAsset_" data-uid="stellar_dotnet_sdk.Asset.CreateNonNativeAsset*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_System_String_System_String_" data-uid="stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,System.String,System.String)"><a href="#collapsible-stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_System_String_System_String_" class="expander" data-toggle="collapse">CreateNonNativeAsset(String, String, String)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_System_String_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p sourcefile="api/stellar_dotnet_sdk.Asset.yml" sourcestartlinenumber="2">Creates one of AssetTypeCreditAlphaNum4 or AssetTypeCreditAlphaNum12 object based on a code length</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Asset CreateNonNativeAsset(string assetType, string accountId, string code)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">assetType</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">accountId</span>
+        <p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="pull-right"><span class="xref">System.String</span></span>
+        <span class="parametername">code</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Asset_FromXdr_stellar_dotnet_sdk_xdr_Asset_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Asset.FromXdr(stellar_dotnet_sdk.xdr.Asset)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Asset.cs/#L49" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_Asset_FromXdr_" data-uid="stellar_dotnet_sdk.Asset.FromXdr*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Asset_FromXdr_stellar_dotnet_sdk_xdr_Asset_" data-uid="stellar_dotnet_sdk.Asset.FromXdr(stellar_dotnet_sdk.xdr.Asset)"><a href="#collapsible-stellar_dotnet_sdk_Asset_FromXdr_stellar_dotnet_sdk_xdr_Asset_" class="expander" data-toggle="collapse">FromXdr(Asset)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Asset_FromXdr_stellar_dotnet_sdk_xdr_Asset_" class="collapse in">
+  <div class="markdown level1 summary"><p sourcefile="api/stellar_dotnet_sdk.Asset.yml" sourcestartlinenumber="2">Generates Asset object from a given XDR object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Asset FromXdr(Asset thisXdr)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.xdr.Asset.html">Asset</a></span>
+        <span class="parametername">thisXdr</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Asset_GetType.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Asset.GetType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Asset.cs/#L76" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_Asset_GetType_" data-uid="stellar_dotnet_sdk.Asset.GetType*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Asset_GetType" data-uid="stellar_dotnet_sdk.Asset.GetType"><a href="#collapsible-stellar_dotnet_sdk_Asset_GetType" class="expander" data-toggle="collapse">GetType()</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Asset_GetType" class="collapse in">
+  <div class="markdown level1 summary"><p sourcefile="api/stellar_dotnet_sdk.Asset.yml" sourcestartlinenumber="2">Returns asset type. Possible types:</p>
+<ul>
+<li>native See <a class="xref" href="stellar_dotnet_sdk.AssetTypeNative.html">AssetTypeNative</a> for more information.</li>
+<li>credit_alphanum4 See <a class="xref" href="stellar_dotnet_sdk.AssetTypeCreditAlphaNum4.html">AssetTypeCreditAlphaNum4</a> for more information.</li>
+<li>credit_alphanum12 See <a class="xref" href="stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.html">AssetTypeCreditAlphaNum12</a> for more information.</li>
+</ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string GetType()</code></pre>
+  </div>
+  
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Asset_ToXdr.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Asset.ToXdr%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Asset.cs/#L81" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_Asset_ToXdr_" data-uid="stellar_dotnet_sdk.Asset.ToXdr*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Asset_ToXdr" data-uid="stellar_dotnet_sdk.Asset.ToXdr"><a href="#collapsible-stellar_dotnet_sdk_Asset_ToXdr" class="expander" data-toggle="collapse">ToXdr()</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Asset_ToXdr" class="collapse in">
+  <div class="markdown level1 summary"><p sourcefile="api/stellar_dotnet_sdk.Asset.yml" sourcestartlinenumber="2">Generates XDR object from a given Asset object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Asset ToXdr()</code></pre>
+  </div>
+  
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.xdr.Asset.html">Asset</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Asset.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Asset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Asset.cs/#L10" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

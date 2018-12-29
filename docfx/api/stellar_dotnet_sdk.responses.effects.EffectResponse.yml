@@ -1,0 +1,496 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse
+  commentId: T:stellar_dotnet_sdk.responses.effects.EffectResponse
+  id: EffectResponse
+  parent: stellar_dotnet_sdk.responses.effects
+  children:
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+  langs:
+  - csharp
+  - vb
+  name: EffectResponse
+  nameWithType: EffectResponse
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: EffectResponse
+    path: ../stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+    startLine: 6
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: 'public abstract class EffectResponse : Response, IPagingToken'
+    content.vb: >-
+      Public MustInherit Class EffectResponse
+          Inherits Response
+          Implements IPagingToken
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.responses.Response
+  derivedClasses:
+  - stellar_dotnet_sdk.responses.effects.AccountCreatedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.AccountDebitedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.AccountFlagsUpdatedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.AccountHomeDomainUpdatedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.AccountInflationDestinationUpdatedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.AccountRemovedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.AccountThresholdsUpdatedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.DataCreatedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.DataRemovedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.DataUpdatedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.OfferCreatedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.OfferRemovedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.OfferUpdatedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.SequenceBumpedEffectResponse
+  - stellar_dotnet_sdk.responses.effects.SignerEffectResponse
+  - stellar_dotnet_sdk.responses.effects.TradeEffectResponse
+  - stellar_dotnet_sdk.responses.effects.TrustlineAuthorizationResponse
+  - stellar_dotnet_sdk.responses.effects.TrustlineCUDResponse
+  implements:
+  - stellar_dotnet_sdk.responses.IPagingToken
+  inheritedMembers:
+  - stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  - stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  - stellar_dotnet_sdk.responses.Response.RateLimitReset
+  - stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+  id: Id
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: EffectResponse.Id
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Id
+    path: ../stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+    startLine: 9
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public string Id { get; protected set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Id As String
+  overload: stellar_dotnet_sdk.responses.effects.EffectResponse.Id*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+  id: Account
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  langs:
+  - csharp
+  - vb
+  name: Account
+  nameWithType: EffectResponse.Account
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Account
+    path: ../stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+    startLine: 11
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public KeyPair Account { get; protected set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+    content.vb: Public Property Account As KeyPair
+  overload: stellar_dotnet_sdk.responses.effects.EffectResponse.Account*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+  id: Type
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: EffectResponse.Type
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Type
+    path: ../stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+    startLine: 15
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public string Type { get; protected set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Type As String
+  overload: stellar_dotnet_sdk.responses.effects.EffectResponse.Type*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+  id: TypeId
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  langs:
+  - csharp
+  - vb
+  name: TypeId
+  nameWithType: EffectResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TypeId
+    path: ../stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public virtual int TypeId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Overridable ReadOnly Property TypeId As Integer
+  overload: stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+  id: PagingToken
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  langs:
+  - csharp
+  - vb
+  name: PagingToken
+  nameWithType: EffectResponse.PagingToken
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PagingToken
+    path: ../stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+    startLine: 21
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public string PagingToken { get; protected set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property PagingToken As String
+  overload: stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken*
+  implements:
+  - stellar_dotnet_sdk.responses.IPagingToken.PagingToken
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+  id: Links
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  langs:
+  - csharp
+  - vb
+  name: Links
+  nameWithType: EffectResponse.Links
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Links
+    path: ../stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public EffectResponse.EffectsResponseLinks Links { get; protected set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.responses.effects.EffectResponse.EffectsResponseLinks
+    content.vb: Public Property Links As EffectResponse.EffectsResponseLinks
+  overload: stellar_dotnet_sdk.responses.effects.EffectResponse.Links*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+  id: CreatedAt
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: EffectResponse.CreatedAt
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: CreatedAt
+    path: ../stellar-dotnet-sdk/responses/effects/EffectResponse.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public DateTime CreatedAt { get; protected set; }
+    parameters: []
+    return:
+      type: DateTime
+    content.vb: Public Property CreatedAt As DateTime
+  overload: stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+references:
+- uid: stellar_dotnet_sdk.responses.effects
+  commentId: N:stellar_dotnet_sdk.responses.effects
+  name: stellar_dotnet_sdk.responses.effects
+  nameWithType: stellar_dotnet_sdk.responses.effects
+  fullName: stellar_dotnet_sdk.responses.effects
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.Response
+  commentId: T:stellar_dotnet_sdk.responses.Response
+  parent: stellar_dotnet_sdk.responses
+  name: Response
+  nameWithType: Response
+  fullName: stellar_dotnet_sdk.responses.Response
+- uid: stellar_dotnet_sdk.responses.IPagingToken
+  commentId: T:stellar_dotnet_sdk.responses.IPagingToken
+  parent: stellar_dotnet_sdk.responses
+  name: IPagingToken
+  nameWithType: IPagingToken
+  fullName: stellar_dotnet_sdk.responses.IPagingToken
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitLimit
+  nameWithType: Response.RateLimitLimit
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitRemaining
+  nameWithType: Response.RateLimitRemaining
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitReset
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitReset
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitReset
+  nameWithType: Response.RateLimitReset
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitReset
+- uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  commentId: M:stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  parent: stellar_dotnet_sdk.responses.Response
+  isExternal: true
+  name: SetHeaders(HttpResponseHeaders)
+  nameWithType: Response.SetHeaders(HttpResponseHeaders)
+  fullName: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Id*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+  name: Id
+  nameWithType: EffectResponse.Id
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Account*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+  name: Account
+  nameWithType: EffectResponse.Account
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Type*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+  name: Type
+  nameWithType: EffectResponse.Type
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+  name: TypeId
+  nameWithType: EffectResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+  name: PagingToken
+  nameWithType: EffectResponse.PagingToken
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+- uid: stellar_dotnet_sdk.responses.IPagingToken.PagingToken
+  commentId: P:stellar_dotnet_sdk.responses.IPagingToken.PagingToken
+  parent: stellar_dotnet_sdk.responses.IPagingToken
+  name: PagingToken
+  nameWithType: IPagingToken.PagingToken
+  fullName: stellar_dotnet_sdk.responses.IPagingToken.PagingToken
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Links*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+  name: Links
+  nameWithType: EffectResponse.Links
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.EffectsResponseLinks
+  commentId: T:stellar_dotnet_sdk.responses.effects.EffectResponse.EffectsResponseLinks
+  parent: stellar_dotnet_sdk.responses.effects
+  name: EffectResponse.EffectsResponseLinks
+  nameWithType: EffectResponse.EffectsResponseLinks
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.EffectsResponseLinks
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+  name: CreatedAt
+  nameWithType: EffectResponse.CreatedAt
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+- uid: DateTime
+  commentId: '!:DateTime'
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: DateTime

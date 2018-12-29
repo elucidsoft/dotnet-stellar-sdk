@@ -1,0 +1,552 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse
+  commentId: T:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse
+  id: AccountCreditedEffectResponse
+  parent: stellar_dotnet_sdk.responses.effects
+  children:
+  - stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.#ctor
+  - stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.#ctor(System.String,System.String,System.String,System.String)
+  - stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Amount
+  - stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Asset
+  - stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetCode
+  - stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetIssuer
+  - stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetType
+  - stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.TypeId
+  langs:
+  - csharp
+  - vb
+  name: AccountCreditedEffectResponse
+  nameWithType: AccountCreditedEffectResponse
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AccountCreditedEffectResponse
+    path: ../stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  summary: "\nRepresents account_credited effect response.\nSee: https://www.stellar.org/developers/horizon/reference/resources/effect.html\n<xref href=\"stellar_dotnet_sdk.requests.EffectsRequestBuilder\" data-throw-if-not-resolved=\"false\"></xref>\n<xref href=\"stellar_dotnet_sdk.Server\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: 'public class AccountCreditedEffectResponse : EffectResponse, IPagingToken'
+    content.vb: >-
+      Public Class AccountCreditedEffectResponse
+          Inherits EffectResponse
+          Implements IPagingToken
+  inheritance:
+  - System.Object
+  - stellar_dotnet_sdk.responses.Response
+  - stellar_dotnet_sdk.responses.effects.EffectResponse
+  implements:
+  - stellar_dotnet_sdk.responses.IPagingToken
+  inheritedMembers:
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+  - stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+  - stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  - stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  - stellar_dotnet_sdk.responses.Response.RateLimitReset
+  - stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.#ctor
+  commentId: M:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse
+  langs:
+  - csharp
+  - vb
+  name: AccountCreditedEffectResponse()
+  nameWithType: AccountCreditedEffectResponse.AccountCreditedEffectResponse()
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AccountCreditedEffectResponse()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public AccountCreditedEffectResponse()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.#ctor(System.String,System.String,System.String,System.String)
+  commentId: M:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.#ctor(System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String,System.String)'
+  parent: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse
+  langs:
+  - csharp
+  - vb
+  name: AccountCreditedEffectResponse(String, String, String, String)
+  nameWithType: AccountCreditedEffectResponse.AccountCreditedEffectResponse(String, String, String, String)
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AccountCreditedEffectResponse(System.String, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  example: []
+  syntax:
+    content: public AccountCreditedEffectResponse(string amount, string assetType, string assetCode, string assetIssuer)
+    parameters:
+    - id: amount
+      type: System.String
+    - id: assetType
+      type: System.String
+    - id: assetCode
+      type: System.String
+    - id: assetIssuer
+      type: System.String
+    content.vb: Public Sub New(amount As String, assetType As String, assetCode As String, assetIssuer As String)
+  overload: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.TypeId
+  commentId: P:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.TypeId
+  id: TypeId
+  parent: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse
+  langs:
+  - csharp
+  - vb
+  name: TypeId
+  nameWithType: AccountCreditedEffectResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.TypeId
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TypeId
+    path: ../stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public override int TypeId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Overrides ReadOnly Property TypeId As Integer
+  overridden: stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+  overload: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.TypeId*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Amount
+  commentId: P:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Amount
+  id: Amount
+  parent: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse
+  langs:
+  - csharp
+  - vb
+  name: Amount
+  nameWithType: AccountCreditedEffectResponse.Amount
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Amount
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Amount
+    path: ../stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public string Amount { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Amount As String
+  overload: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Amount*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetType
+  commentId: P:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetType
+  id: AssetType
+  parent: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse
+  langs:
+  - csharp
+  - vb
+  name: AssetType
+  nameWithType: AccountCreditedEffectResponse.AssetType
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetType
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetType
+    path: ../stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+    startLine: 31
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public string AssetType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssetType As String
+  overload: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetCode
+  commentId: P:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetCode
+  id: AssetCode
+  parent: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse
+  langs:
+  - csharp
+  - vb
+  name: AssetCode
+  nameWithType: AccountCreditedEffectResponse.AssetCode
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetCode
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetCode
+    path: ../stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+    startLine: 34
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public string AssetCode { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssetCode As String
+  overload: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetCode*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetIssuer
+  commentId: P:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetIssuer
+  id: AssetIssuer
+  parent: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse
+  langs:
+  - csharp
+  - vb
+  name: AssetIssuer
+  nameWithType: AccountCreditedEffectResponse.AssetIssuer
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetIssuer
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetIssuer
+    path: ../stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+    startLine: 37
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public string AssetIssuer { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssetIssuer As String
+  overload: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetIssuer*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Asset
+  commentId: P:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Asset
+  id: Asset
+  parent: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse
+  langs:
+  - csharp
+  - vb
+  name: Asset
+  nameWithType: AccountCreditedEffectResponse.Asset
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Asset
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Asset
+    path: ../stellar-dotnet-sdk/responses/effects/AccountCreditedEffectResponse.cs
+    startLine: 40
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses.effects
+  syntax:
+    content: public Asset Asset { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.Asset
+    content.vb: Public ReadOnly Property Asset As Asset
+  overload: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Asset*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  commentId: T:stellar_dotnet_sdk.requests.EffectsRequestBuilder
+  parent: stellar_dotnet_sdk.requests
+  name: EffectsRequestBuilder
+  nameWithType: EffectsRequestBuilder
+  fullName: stellar_dotnet_sdk.requests.EffectsRequestBuilder
+- uid: stellar_dotnet_sdk.Server
+  commentId: T:stellar_dotnet_sdk.Server
+  name: Server
+  nameWithType: Server
+  fullName: stellar_dotnet_sdk.Server
+- uid: stellar_dotnet_sdk.responses.effects
+  commentId: N:stellar_dotnet_sdk.responses.effects
+  name: stellar_dotnet_sdk.responses.effects
+  nameWithType: stellar_dotnet_sdk.responses.effects
+  fullName: stellar_dotnet_sdk.responses.effects
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.Response
+  commentId: T:stellar_dotnet_sdk.responses.Response
+  parent: stellar_dotnet_sdk.responses
+  name: Response
+  nameWithType: Response
+  fullName: stellar_dotnet_sdk.responses.Response
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse
+  commentId: T:stellar_dotnet_sdk.responses.effects.EffectResponse
+  parent: stellar_dotnet_sdk.responses.effects
+  name: EffectResponse
+  nameWithType: EffectResponse
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse
+- uid: stellar_dotnet_sdk.responses.IPagingToken
+  commentId: T:stellar_dotnet_sdk.responses.IPagingToken
+  parent: stellar_dotnet_sdk.responses
+  name: IPagingToken
+  nameWithType: IPagingToken
+  fullName: stellar_dotnet_sdk.responses.IPagingToken
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: Id
+  nameWithType: EffectResponse.Id
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Id
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: Account
+  nameWithType: EffectResponse.Account
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Account
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: Type
+  nameWithType: EffectResponse.Type
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Type
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: PagingToken
+  nameWithType: EffectResponse.PagingToken
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: Links
+  nameWithType: EffectResponse.Links
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Links
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: CreatedAt
+  nameWithType: EffectResponse.CreatedAt
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitLimit
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitLimit
+  nameWithType: Response.RateLimitLimit
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitLimit
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitRemaining
+  nameWithType: Response.RateLimitRemaining
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitRemaining
+- uid: stellar_dotnet_sdk.responses.Response.RateLimitReset
+  commentId: P:stellar_dotnet_sdk.responses.Response.RateLimitReset
+  parent: stellar_dotnet_sdk.responses.Response
+  name: RateLimitReset
+  nameWithType: Response.RateLimitReset
+  fullName: stellar_dotnet_sdk.responses.Response.RateLimitReset
+- uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  commentId: M:stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  parent: stellar_dotnet_sdk.responses.Response
+  isExternal: true
+  name: SetHeaders(HttpResponseHeaders)
+  nameWithType: Response.SetHeaders(HttpResponseHeaders)
+  fullName: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+  spec.csharp:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: stellar_dotnet_sdk.responses.Response.SetHeaders(HttpResponseHeaders)
+    name: SetHeaders
+    nameWithType: Response.SetHeaders
+    fullName: stellar_dotnet_sdk.responses.Response.SetHeaders
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: HttpResponseHeaders
+    name: HttpResponseHeaders
+    nameWithType: HttpResponseHeaders
+    fullName: HttpResponseHeaders
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: stellar_dotnet_sdk.requests
+  commentId: N:stellar_dotnet_sdk.requests
+  name: stellar_dotnet_sdk.requests
+  nameWithType: stellar_dotnet_sdk.requests
+  fullName: stellar_dotnet_sdk.requests
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.#ctor
+  name: AccountCreditedEffectResponse
+  nameWithType: AccountCreditedEffectResponse.AccountCreditedEffectResponse
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AccountCreditedEffectResponse
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+  parent: stellar_dotnet_sdk.responses.effects.EffectResponse
+  name: TypeId
+  nameWithType: EffectResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.TypeId*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.TypeId
+  name: TypeId
+  nameWithType: AccountCreditedEffectResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.TypeId
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Amount*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Amount
+  name: Amount
+  nameWithType: AccountCreditedEffectResponse.Amount
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Amount
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetType*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetType
+  name: AssetType
+  nameWithType: AccountCreditedEffectResponse.AssetType
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetType
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetCode*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetCode
+  name: AssetCode
+  nameWithType: AccountCreditedEffectResponse.AssetCode
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetCode
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetIssuer*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetIssuer
+  name: AssetIssuer
+  nameWithType: AccountCreditedEffectResponse.AssetIssuer
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.AssetIssuer
+- uid: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Asset*
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Asset
+  name: Asset
+  nameWithType: AccountCreditedEffectResponse.Asset
+  fullName: stellar_dotnet_sdk.responses.effects.AccountCreditedEffectResponse.Asset
+- uid: stellar_dotnet_sdk.Asset
+  commentId: T:stellar_dotnet_sdk.Asset
+  parent: stellar_dotnet_sdk
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.Asset
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk

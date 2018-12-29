@@ -1,0 +1,270 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.NodeID
+  commentId: T:stellar_dotnet_sdk.xdr.NodeID
+  id: NodeID
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.NodeID.#ctor
+  - stellar_dotnet_sdk.xdr.NodeID.#ctor(stellar_dotnet_sdk.xdr.PublicKey)
+  - stellar_dotnet_sdk.xdr.NodeID.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.NodeID.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.NodeID)
+  - stellar_dotnet_sdk.xdr.NodeID.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: NodeID
+  nameWithType: NodeID
+  fullName: stellar_dotnet_sdk.xdr.NodeID
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/NodeID.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NodeID
+    path: ../stellar-dotnet-sdk/xdr/generated/NodeID.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class NodeID : object'
+    content.vb: >-
+      Public Class NodeID
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.NodeID.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.NodeID.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.NodeID
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: NodeID.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.NodeID.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/NodeID.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/NodeID.cs
+    startLine: 14
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public PublicKey InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.PublicKey
+    content.vb: Public Property InnerValue As PublicKey
+  overload: stellar_dotnet_sdk.xdr.NodeID.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.NodeID.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.NodeID.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.NodeID
+  langs:
+  - csharp
+  - vb
+  name: NodeID()
+  nameWithType: NodeID.NodeID()
+  fullName: stellar_dotnet_sdk.xdr.NodeID.NodeID()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/NodeID.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/NodeID.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public NodeID()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.NodeID.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.NodeID.#ctor(stellar_dotnet_sdk.xdr.PublicKey)
+  commentId: M:stellar_dotnet_sdk.xdr.NodeID.#ctor(stellar_dotnet_sdk.xdr.PublicKey)
+  id: '#ctor(stellar_dotnet_sdk.xdr.PublicKey)'
+  parent: stellar_dotnet_sdk.xdr.NodeID
+  langs:
+  - csharp
+  - vb
+  name: NodeID(PublicKey)
+  nameWithType: NodeID.NodeID(PublicKey)
+  fullName: stellar_dotnet_sdk.xdr.NodeID.NodeID(stellar_dotnet_sdk.xdr.PublicKey)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/NodeID.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/NodeID.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public NodeID(PublicKey value)
+    parameters:
+    - id: value
+      type: stellar_dotnet_sdk.xdr.PublicKey
+    content.vb: Public Sub New(value As PublicKey)
+  overload: stellar_dotnet_sdk.xdr.NodeID.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.NodeID.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.NodeID)
+  commentId: M:stellar_dotnet_sdk.xdr.NodeID.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.NodeID)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.NodeID)
+  parent: stellar_dotnet_sdk.xdr.NodeID
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, NodeID)
+  nameWithType: NodeID.Encode(XdrDataOutputStream, NodeID)
+  fullName: stellar_dotnet_sdk.xdr.NodeID.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.NodeID)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/NodeID.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/NodeID.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, NodeID encodedNodeID)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedNodeID
+      type: stellar_dotnet_sdk.xdr.NodeID
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedNodeID As NodeID)
+  overload: stellar_dotnet_sdk.xdr.NodeID.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.NodeID.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.NodeID.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.NodeID
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: NodeID.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.NodeID.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/NodeID.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/NodeID.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static NodeID Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.NodeID
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As NodeID
+  overload: stellar_dotnet_sdk.xdr.NodeID.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.NodeID.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.NodeID.InnerValue
+  name: InnerValue
+  nameWithType: NodeID.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.NodeID.InnerValue
+- uid: stellar_dotnet_sdk.xdr.PublicKey
+  commentId: T:stellar_dotnet_sdk.xdr.PublicKey
+  parent: stellar_dotnet_sdk.xdr
+  name: PublicKey
+  nameWithType: PublicKey
+  fullName: stellar_dotnet_sdk.xdr.PublicKey
+- uid: stellar_dotnet_sdk.xdr.NodeID.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.NodeID.#ctor
+  name: NodeID
+  nameWithType: NodeID.NodeID
+  fullName: stellar_dotnet_sdk.xdr.NodeID.NodeID
+- uid: stellar_dotnet_sdk.xdr.NodeID.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.NodeID.Encode
+  name: Encode
+  nameWithType: NodeID.Encode
+  fullName: stellar_dotnet_sdk.xdr.NodeID.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.NodeID
+  commentId: T:stellar_dotnet_sdk.xdr.NodeID
+  parent: stellar_dotnet_sdk.xdr
+  name: NodeID
+  nameWithType: NodeID
+  fullName: stellar_dotnet_sdk.xdr.NodeID
+- uid: stellar_dotnet_sdk.xdr.NodeID.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.NodeID.Decode
+  name: Decode
+  nameWithType: NodeID.Decode
+  fullName: stellar_dotnet_sdk.xdr.NodeID.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

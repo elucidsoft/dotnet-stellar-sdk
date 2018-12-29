@@ -1,0 +1,235 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  commentId: T:stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  id: TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.#ctor
+  - stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Discriminant
+  - stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext)
+  langs:
+  - csharp
+  - vb
+  name: TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  nameWithType: TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  fullName: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TrustLineEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: TrustLineEntryV1Ext
+    path: ../stellar-dotnet-sdk/xdr/generated/TrustLineEntry.cs
+    startLine: 126
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class TrustLineEntryV1Ext : object'
+    content.vb: >-
+      Public Class TrustLineEntryV1Ext
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  langs:
+  - csharp
+  - vb
+  name: TrustLineEntryV1Ext()
+  nameWithType: TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.TrustLineEntryV1Ext()
+  fullName: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.TrustLineEntryV1Ext()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TrustLineEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/TrustLineEntry.cs
+    startLine: 128
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public TrustLineEntryV1Ext()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Discriminant
+  commentId: P:stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Discriminant
+  id: Discriminant
+  parent: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  langs:
+  - csharp
+  - vb
+  name: Discriminant
+  nameWithType: TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Discriminant
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TrustLineEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Discriminant
+    path: ../stellar-dotnet-sdk/xdr/generated/TrustLineEntry.cs
+    startLine: 130
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public int Discriminant { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Discriminant As Integer
+  overload: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Discriminant*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext)
+  commentId: M:stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext)
+  parent: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext)
+  nameWithType: TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Encode(XdrDataOutputStream, TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext)
+  fullName: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TrustLineEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/TrustLineEntry.cs
+    startLine: 132
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext encodedTrustLineEntryV1Ext)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedTrustLineEntryV1Ext
+      type: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedTrustLineEntryV1Ext As TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext)
+  overload: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/TrustLineEntry.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/TrustLineEntry.cs
+    startLine: 141
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  overload: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.#ctor
+  name: TrustLineEntryV1Ext
+  nameWithType: TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.TrustLineEntryV1Ext
+  fullName: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.TrustLineEntryV1Ext
+- uid: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Discriminant*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Discriminant
+  name: Discriminant
+  nameWithType: TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Discriminant
+  fullName: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Discriminant
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Encode
+  name: Encode
+  nameWithType: TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Encode
+  fullName: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  commentId: T:stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  parent: stellar_dotnet_sdk.xdr
+  name: TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  nameWithType: TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+  fullName: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext
+- uid: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Decode
+  name: Decode
+  nameWithType: TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Decode
+  fullName: stellar_dotnet_sdk.xdr.TrustLineEntry.TrustLineEntryExt.TrustLineEntryV1.TrustLineEntryV1Ext.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

@@ -1,0 +1,279 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.ManageDataOperation.Builder
+  commentId: T:stellar_dotnet_sdk.ManageDataOperation.Builder
+  id: ManageDataOperation.Builder
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.ManageDataOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.ManageDataOp)
+  - stellar_dotnet_sdk.ManageDataOperation.Builder.#ctor(System.String,System.Byte[])
+  - stellar_dotnet_sdk.ManageDataOperation.Builder.Build
+  - stellar_dotnet_sdk.ManageDataOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  langs:
+  - csharp
+  - vb
+  name: ManageDataOperation.Builder
+  nameWithType: ManageDataOperation.Builder
+  fullName: stellar_dotnet_sdk.ManageDataOperation.Builder
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageDataOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Builder
+    path: ../stellar-dotnet-sdk/ManageDataOperation.cs
+    startLine: 45
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: 'public class Builder : object'
+    content.vb: >-
+      Public Class Builder
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.ManageDataOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.ManageDataOp)
+  commentId: M:stellar_dotnet_sdk.ManageDataOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.ManageDataOp)
+  id: '#ctor(stellar_dotnet_sdk.xdr.ManageDataOp)'
+  parent: stellar_dotnet_sdk.ManageDataOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder(ManageDataOp)
+  nameWithType: ManageDataOperation.Builder.Builder(ManageDataOp)
+  fullName: stellar_dotnet_sdk.ManageDataOperation.Builder.Builder(stellar_dotnet_sdk.xdr.ManageDataOp)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageDataOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/ManageDataOperation.cs
+    startLine: 58
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nConstruct a new ManageOffer builder from a ManageDataOp XDR.\n"
+  example: []
+  syntax:
+    content: public Builder(ManageDataOp op)
+    parameters:
+    - id: op
+      type: stellar_dotnet_sdk.xdr.ManageDataOp
+      description: "\n<xref href=\"stellar_dotnet_sdk.xdr.ManageDataOp\" data-throw-if-not-resolved=\"false\"></xref>\n"
+    content.vb: Public Sub New(op As ManageDataOp)
+  overload: stellar_dotnet_sdk.ManageDataOperation.Builder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.ManageDataOperation.Builder.#ctor(System.String,System.Byte[])
+  commentId: M:stellar_dotnet_sdk.ManageDataOperation.Builder.#ctor(System.String,System.Byte[])
+  id: '#ctor(System.String,System.Byte[])'
+  parent: stellar_dotnet_sdk.ManageDataOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder(String, Byte[])
+  nameWithType: ManageDataOperation.Builder.Builder(String, Byte[])
+  fullName: stellar_dotnet_sdk.ManageDataOperation.Builder.Builder(System.String, System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageDataOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/ManageDataOperation.cs
+    startLine: 72
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates a new ManageData builder. If you want to delete data entry pass null as a <pre><code>value</code></pre> param.\n"
+  example: []
+  syntax:
+    content: public Builder(string name, byte[] value)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of data entry
+    - id: value
+      type: System.Byte[]
+      description: The value of data entry. <pre><code>null</code></pre>null will delete data entry.
+    content.vb: Public Sub New(name As String, value As Byte())
+  overload: stellar_dotnet_sdk.ManageDataOperation.Builder.#ctor*
+  nameWithType.vb: ManageDataOperation.Builder.Builder(String, Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.ManageDataOperation.Builder.Builder(System.String, System.Byte())
+  name.vb: Builder(String, Byte())
+- uid: stellar_dotnet_sdk.ManageDataOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.ManageDataOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  id: SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  parent: stellar_dotnet_sdk.ManageDataOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetSourceAccount(KeyPair)
+  nameWithType: ManageDataOperation.Builder.SetSourceAccount(KeyPair)
+  fullName: stellar_dotnet_sdk.ManageDataOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageDataOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetSourceAccount
+    path: ../stellar-dotnet-sdk/ManageDataOperation.cs
+    startLine: 83
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSets the source account for this operation.\n"
+  example: []
+  syntax:
+    content: public ManageDataOperation.Builder SetSourceAccount(KeyPair sourceAccount)
+    parameters:
+    - id: sourceAccount
+      type: stellar_dotnet_sdk.KeyPair
+      description: The operation&apos;s source account.
+    return:
+      type: stellar_dotnet_sdk.ManageDataOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetSourceAccount(sourceAccount As KeyPair) As ManageDataOperation.Builder
+  overload: stellar_dotnet_sdk.ManageDataOperation.Builder.SetSourceAccount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.ManageDataOperation.Builder.Build
+  commentId: M:stellar_dotnet_sdk.ManageDataOperation.Builder.Build
+  id: Build
+  parent: stellar_dotnet_sdk.ManageDataOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Build()
+  nameWithType: ManageDataOperation.Builder.Build()
+  fullName: stellar_dotnet_sdk.ManageDataOperation.Builder.Build()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ManageDataOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Build
+    path: ../stellar-dotnet-sdk/ManageDataOperation.cs
+    startLine: 92
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBuilds an operation\n"
+  example: []
+  syntax:
+    content: public ManageDataOperation Build()
+    return:
+      type: stellar_dotnet_sdk.ManageDataOperation
+    content.vb: Public Function Build As ManageDataOperation
+  overload: stellar_dotnet_sdk.ManageDataOperation.Builder.Build*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.ManageDataOp
+  commentId: T:stellar_dotnet_sdk.xdr.ManageDataOp
+  parent: stellar_dotnet_sdk.xdr
+  name: ManageDataOp
+  nameWithType: ManageDataOp
+  fullName: stellar_dotnet_sdk.xdr.ManageDataOp
+- uid: stellar_dotnet_sdk.ManageDataOperation.Builder.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.ManageDataOperation.Builder.#ctor
+  name: Builder
+  nameWithType: ManageDataOperation.Builder.Builder
+  fullName: stellar_dotnet_sdk.ManageDataOperation.Builder.Builder
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: stellar_dotnet_sdk.ManageDataOperation.Builder.SetSourceAccount*
+  commentId: Overload:stellar_dotnet_sdk.ManageDataOperation.Builder.SetSourceAccount
+  name: SetSourceAccount
+  nameWithType: ManageDataOperation.Builder.SetSourceAccount
+  fullName: stellar_dotnet_sdk.ManageDataOperation.Builder.SetSourceAccount
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk.ManageDataOperation.Builder
+  commentId: T:stellar_dotnet_sdk.ManageDataOperation.Builder
+  parent: stellar_dotnet_sdk
+  name: ManageDataOperation.Builder
+  nameWithType: ManageDataOperation.Builder
+  fullName: stellar_dotnet_sdk.ManageDataOperation.Builder
+- uid: stellar_dotnet_sdk.ManageDataOperation.Builder.Build*
+  commentId: Overload:stellar_dotnet_sdk.ManageDataOperation.Builder.Build
+  name: Build
+  nameWithType: ManageDataOperation.Builder.Build
+  fullName: stellar_dotnet_sdk.ManageDataOperation.Builder.Build
+- uid: stellar_dotnet_sdk.ManageDataOperation
+  commentId: T:stellar_dotnet_sdk.ManageDataOperation
+  parent: stellar_dotnet_sdk
+  name: ManageDataOperation
+  nameWithType: ManageDataOperation
+  fullName: stellar_dotnet_sdk.ManageDataOperation

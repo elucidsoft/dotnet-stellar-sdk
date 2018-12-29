@@ -1,0 +1,148 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum
+  commentId: T:stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum
+  id: AccountFlags.AccountFlagsEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum.AUTH_IMMUTABLE_FLAG
+  - stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum.AUTH_REQUIRED_FLAG
+  - stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum.AUTH_REVOCABLE_FLAG
+  langs:
+  - csharp
+  - vb
+  name: AccountFlags.AccountFlagsEnum
+  nameWithType: AccountFlags.AccountFlagsEnum
+  fullName: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AccountFlagsEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountFlags.cs
+    startLine: 26
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum AccountFlagsEnum : int'
+    content.vb: Public Enum AccountFlagsEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum.AUTH_REQUIRED_FLAG
+  commentId: F:stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum.AUTH_REQUIRED_FLAG
+  id: AUTH_REQUIRED_FLAG
+  parent: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum
+  langs:
+  - csharp
+  - vb
+  name: AUTH_REQUIRED_FLAG
+  nameWithType: AccountFlags.AccountFlagsEnum.AUTH_REQUIRED_FLAG
+  fullName: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum.AUTH_REQUIRED_FLAG
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AUTH_REQUIRED_FLAG
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountFlags.cs
+    startLine: 28
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: AUTH_REQUIRED_FLAG = null
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum
+    content.vb: AUTH_REQUIRED_FLAG = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum.AUTH_REVOCABLE_FLAG
+  commentId: F:stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum.AUTH_REVOCABLE_FLAG
+  id: AUTH_REVOCABLE_FLAG
+  parent: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum
+  langs:
+  - csharp
+  - vb
+  name: AUTH_REVOCABLE_FLAG
+  nameWithType: AccountFlags.AccountFlagsEnum.AUTH_REVOCABLE_FLAG
+  fullName: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum.AUTH_REVOCABLE_FLAG
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AUTH_REVOCABLE_FLAG
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountFlags.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: AUTH_REVOCABLE_FLAG = null
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum
+    content.vb: AUTH_REVOCABLE_FLAG = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum.AUTH_IMMUTABLE_FLAG
+  commentId: F:stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum.AUTH_IMMUTABLE_FLAG
+  id: AUTH_IMMUTABLE_FLAG
+  parent: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum
+  langs:
+  - csharp
+  - vb
+  name: AUTH_IMMUTABLE_FLAG
+  nameWithType: AccountFlags.AccountFlagsEnum.AUTH_IMMUTABLE_FLAG
+  fullName: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum.AUTH_IMMUTABLE_FLAG
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/AccountFlags.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AUTH_IMMUTABLE_FLAG
+    path: ../stellar-dotnet-sdk/xdr/generated/AccountFlags.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: AUTH_IMMUTABLE_FLAG = null
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum
+    content.vb: AUTH_IMMUTABLE_FLAG = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum
+  commentId: T:stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: AccountFlags.AccountFlagsEnum
+  nameWithType: AccountFlags.AccountFlagsEnum
+  fullName: stellar_dotnet_sdk.xdr.AccountFlags.AccountFlagsEnum

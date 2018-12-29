@@ -1,0 +1,112 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.requests.OrderDirection
+  commentId: T:stellar_dotnet_sdk.requests.OrderDirection
+  id: OrderDirection
+  parent: stellar_dotnet_sdk.requests
+  children:
+  - stellar_dotnet_sdk.requests.OrderDirection.ASC
+  - stellar_dotnet_sdk.requests.OrderDirection.DESC
+  langs:
+  - csharp
+  - vb
+  name: OrderDirection
+  nameWithType: OrderDirection
+  fullName: stellar_dotnet_sdk.requests.OrderDirection
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/RequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: OrderDirection
+    path: ../stellar-dotnet-sdk/requests/RequestBuilder.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: 'public enum OrderDirection : int'
+    content.vb: Public Enum OrderDirection As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.requests.OrderDirection.ASC
+  commentId: F:stellar_dotnet_sdk.requests.OrderDirection.ASC
+  id: ASC
+  parent: stellar_dotnet_sdk.requests.OrderDirection
+  langs:
+  - csharp
+  - vb
+  name: ASC
+  nameWithType: OrderDirection.ASC
+  fullName: stellar_dotnet_sdk.requests.OrderDirection.ASC
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/RequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ASC
+    path: ../stellar-dotnet-sdk/requests/RequestBuilder.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: ASC = 0
+    return:
+      type: stellar_dotnet_sdk.requests.OrderDirection
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.requests.OrderDirection.DESC
+  commentId: F:stellar_dotnet_sdk.requests.OrderDirection.DESC
+  id: DESC
+  parent: stellar_dotnet_sdk.requests.OrderDirection
+  langs:
+  - csharp
+  - vb
+  name: DESC
+  nameWithType: OrderDirection.DESC
+  fullName: stellar_dotnet_sdk.requests.OrderDirection.DESC
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/RequestBuilder.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: DESC
+    path: ../stellar-dotnet-sdk/requests/RequestBuilder.cs
+    startLine: 11
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: DESC = 1
+    return:
+      type: stellar_dotnet_sdk.requests.OrderDirection
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.requests
+  commentId: N:stellar_dotnet_sdk.requests
+  name: stellar_dotnet_sdk.requests
+  nameWithType: stellar_dotnet_sdk.requests
+  fullName: stellar_dotnet_sdk.requests
+- uid: stellar_dotnet_sdk.requests.OrderDirection
+  commentId: T:stellar_dotnet_sdk.requests.OrderDirection
+  parent: stellar_dotnet_sdk.requests
+  name: OrderDirection
+  nameWithType: OrderDirection
+  fullName: stellar_dotnet_sdk.requests.OrderDirection

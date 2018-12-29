@@ -1,0 +1,204 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.ITransactionBuilderAccount
+  commentId: T:stellar_dotnet_sdk.ITransactionBuilderAccount
+  id: ITransactionBuilderAccount
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementedSequenceNumber
+  - stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementSequenceNumber
+  - stellar_dotnet_sdk.ITransactionBuilderAccount.KeyPair
+  - stellar_dotnet_sdk.ITransactionBuilderAccount.SequenceNumber
+  langs:
+  - csharp
+  - vb
+  name: ITransactionBuilderAccount
+  nameWithType: ITransactionBuilderAccount
+  fullName: stellar_dotnet_sdk.ITransactionBuilderAccount
+  type: Interface
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ITransactionBuilderAccount.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ITransactionBuilderAccount
+    path: ../stellar-dotnet-sdk/ITransactionBuilderAccount.cs
+    startLine: 2
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: public interface ITransactionBuilderAccount
+    content.vb: Public Interface ITransactionBuilderAccount
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: stellar_dotnet_sdk.ITransactionBuilderAccount.KeyPair
+  commentId: P:stellar_dotnet_sdk.ITransactionBuilderAccount.KeyPair
+  id: KeyPair
+  parent: stellar_dotnet_sdk.ITransactionBuilderAccount
+  langs:
+  - csharp
+  - vb
+  name: KeyPair
+  nameWithType: ITransactionBuilderAccount.KeyPair
+  fullName: stellar_dotnet_sdk.ITransactionBuilderAccount.KeyPair
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ITransactionBuilderAccount.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: KeyPair
+    path: ../stellar-dotnet-sdk/ITransactionBuilderAccount.cs
+    startLine: 4
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: KeyPair KeyPair { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+    content.vb: ReadOnly Property KeyPair As KeyPair
+  overload: stellar_dotnet_sdk.ITransactionBuilderAccount.KeyPair*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: stellar_dotnet_sdk.ITransactionBuilderAccount.SequenceNumber
+  commentId: P:stellar_dotnet_sdk.ITransactionBuilderAccount.SequenceNumber
+  id: SequenceNumber
+  parent: stellar_dotnet_sdk.ITransactionBuilderAccount
+  langs:
+  - csharp
+  - vb
+  name: SequenceNumber
+  nameWithType: ITransactionBuilderAccount.SequenceNumber
+  fullName: stellar_dotnet_sdk.ITransactionBuilderAccount.SequenceNumber
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ITransactionBuilderAccount.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SequenceNumber
+    path: ../stellar-dotnet-sdk/ITransactionBuilderAccount.cs
+    startLine: 5
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  syntax:
+    content: long SequenceNumber { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: ReadOnly Property SequenceNumber As Long
+  overload: stellar_dotnet_sdk.ITransactionBuilderAccount.SequenceNumber*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementedSequenceNumber
+  commentId: P:stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementedSequenceNumber
+  id: IncrementedSequenceNumber
+  parent: stellar_dotnet_sdk.ITransactionBuilderAccount
+  langs:
+  - csharp
+  - vb
+  name: IncrementedSequenceNumber
+  nameWithType: ITransactionBuilderAccount.IncrementedSequenceNumber
+  fullName: stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementedSequenceNumber
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ITransactionBuilderAccount.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: IncrementedSequenceNumber
+    path: ../stellar-dotnet-sdk/ITransactionBuilderAccount.cs
+    startLine: 10
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nReturns sequence number incremented by one, but does not increment internal counter.\n"
+  example: []
+  syntax:
+    content: long IncrementedSequenceNumber { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: ReadOnly Property IncrementedSequenceNumber As Long
+  overload: stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementedSequenceNumber*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementSequenceNumber
+  commentId: M:stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementSequenceNumber
+  id: IncrementSequenceNumber
+  parent: stellar_dotnet_sdk.ITransactionBuilderAccount
+  langs:
+  - csharp
+  - vb
+  name: IncrementSequenceNumber()
+  nameWithType: ITransactionBuilderAccount.IncrementSequenceNumber()
+  fullName: stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementSequenceNumber()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/ITransactionBuilderAccount.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: IncrementSequenceNumber
+    path: ../stellar-dotnet-sdk/ITransactionBuilderAccount.cs
+    startLine: 15
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nIncrements sequence number in this object by one.\n"
+  example: []
+  syntax:
+    content: void IncrementSequenceNumber()
+    content.vb: Sub IncrementSequenceNumber
+  overload: stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementSequenceNumber*
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: stellar_dotnet_sdk.ITransactionBuilderAccount.KeyPair*
+  commentId: Overload:stellar_dotnet_sdk.ITransactionBuilderAccount.KeyPair
+  name: KeyPair
+  nameWithType: ITransactionBuilderAccount.KeyPair
+  fullName: stellar_dotnet_sdk.ITransactionBuilderAccount.KeyPair
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk.ITransactionBuilderAccount.SequenceNumber*
+  commentId: Overload:stellar_dotnet_sdk.ITransactionBuilderAccount.SequenceNumber
+  name: SequenceNumber
+  nameWithType: ITransactionBuilderAccount.SequenceNumber
+  fullName: stellar_dotnet_sdk.ITransactionBuilderAccount.SequenceNumber
+- uid: System.Int64
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementedSequenceNumber*
+  commentId: Overload:stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementedSequenceNumber
+  name: IncrementedSequenceNumber
+  nameWithType: ITransactionBuilderAccount.IncrementedSequenceNumber
+  fullName: stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementedSequenceNumber
+- uid: stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementSequenceNumber*
+  commentId: Overload:stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementSequenceNumber
+  name: IncrementSequenceNumber
+  nameWithType: ITransactionBuilderAccount.IncrementSequenceNumber
+  fullName: stellar_dotnet_sdk.ITransactionBuilderAccount.IncrementSequenceNumber

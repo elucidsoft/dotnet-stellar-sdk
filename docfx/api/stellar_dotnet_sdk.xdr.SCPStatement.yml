@@ -1,0 +1,330 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.SCPStatement
+  commentId: T:stellar_dotnet_sdk.xdr.SCPStatement
+  id: SCPStatement
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.SCPStatement.#ctor
+  - stellar_dotnet_sdk.xdr.SCPStatement.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.SCPStatement.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SCPStatement)
+  - stellar_dotnet_sdk.xdr.SCPStatement.NodeID
+  - stellar_dotnet_sdk.xdr.SCPStatement.Pledges
+  - stellar_dotnet_sdk.xdr.SCPStatement.SlotIndex
+  langs:
+  - csharp
+  - vb
+  name: SCPStatement
+  nameWithType: SCPStatement
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SCPStatement
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 49
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class SCPStatement : object'
+    content.vb: >-
+      Public Class SCPStatement
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.SCPStatement.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.SCPStatement
+  langs:
+  - csharp
+  - vb
+  name: SCPStatement()
+  nameWithType: SCPStatement.SCPStatement()
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatement()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 51
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public SCPStatement()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.NodeID
+  commentId: P:stellar_dotnet_sdk.xdr.SCPStatement.NodeID
+  id: NodeID
+  parent: stellar_dotnet_sdk.xdr.SCPStatement
+  langs:
+  - csharp
+  - vb
+  name: NodeID
+  nameWithType: SCPStatement.NodeID
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.NodeID
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: NodeID
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 52
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public NodeID NodeID { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.NodeID
+    content.vb: Public Property NodeID As NodeID
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.NodeID*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SlotIndex
+  commentId: P:stellar_dotnet_sdk.xdr.SCPStatement.SlotIndex
+  id: SlotIndex
+  parent: stellar_dotnet_sdk.xdr.SCPStatement
+  langs:
+  - csharp
+  - vb
+  name: SlotIndex
+  nameWithType: SCPStatement.SlotIndex
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SlotIndex
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SlotIndex
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 53
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint64 SlotIndex { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint64
+    content.vb: Public Property SlotIndex As Uint64
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.SlotIndex*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.Pledges
+  commentId: P:stellar_dotnet_sdk.xdr.SCPStatement.Pledges
+  id: Pledges
+  parent: stellar_dotnet_sdk.xdr.SCPStatement
+  langs:
+  - csharp
+  - vb
+  name: Pledges
+  nameWithType: SCPStatement.Pledges
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.Pledges
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Pledges
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 54
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public SCPStatement.SCPStatementPledges Pledges { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges
+    content.vb: Public Property Pledges As SCPStatement.SCPStatementPledges
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.Pledges*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SCPStatement)
+  commentId: M:stellar_dotnet_sdk.xdr.SCPStatement.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SCPStatement)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.SCPStatement)
+  parent: stellar_dotnet_sdk.xdr.SCPStatement
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, SCPStatement)
+  nameWithType: SCPStatement.Encode(XdrDataOutputStream, SCPStatement)
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.SCPStatement)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 56
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, SCPStatement encodedSCPStatement)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedSCPStatement
+      type: stellar_dotnet_sdk.xdr.SCPStatement
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedSCPStatement As SCPStatement)
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.SCPStatement.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.SCPStatement
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: SCPStatement.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatement.cs
+    startLine: 62
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static SCPStatement Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.SCPStatement
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As SCPStatement
+  overload: stellar_dotnet_sdk.xdr.SCPStatement.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.#ctor
+  name: SCPStatement
+  nameWithType: SCPStatement.SCPStatement
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatement
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.NodeID*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.NodeID
+  name: NodeID
+  nameWithType: SCPStatement.NodeID
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.NodeID
+- uid: stellar_dotnet_sdk.xdr.NodeID
+  commentId: T:stellar_dotnet_sdk.xdr.NodeID
+  parent: stellar_dotnet_sdk.xdr
+  name: NodeID
+  nameWithType: NodeID
+  fullName: stellar_dotnet_sdk.xdr.NodeID
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SlotIndex*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.SlotIndex
+  name: SlotIndex
+  nameWithType: SCPStatement.SlotIndex
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SlotIndex
+- uid: stellar_dotnet_sdk.xdr.Uint64
+  commentId: T:stellar_dotnet_sdk.xdr.Uint64
+  parent: stellar_dotnet_sdk.xdr
+  name: Uint64
+  nameWithType: Uint64
+  fullName: stellar_dotnet_sdk.xdr.Uint64
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.Pledges*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.Pledges
+  name: Pledges
+  nameWithType: SCPStatement.Pledges
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.Pledges
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges
+  commentId: T:stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges
+  parent: stellar_dotnet_sdk.xdr
+  name: SCPStatement.SCPStatementPledges
+  nameWithType: SCPStatement.SCPStatementPledges
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.SCPStatementPledges
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.Encode
+  name: Encode
+  nameWithType: SCPStatement.Encode
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.SCPStatement
+  commentId: T:stellar_dotnet_sdk.xdr.SCPStatement
+  parent: stellar_dotnet_sdk.xdr
+  name: SCPStatement
+  nameWithType: SCPStatement
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement
+- uid: stellar_dotnet_sdk.xdr.SCPStatement.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.SCPStatement.Decode
+  name: Decode
+  nameWithType: SCPStatement.Decode
+  fullName: stellar_dotnet_sdk.xdr.SCPStatement.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

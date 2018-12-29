@@ -1,0 +1,269 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.Uint32
+  commentId: T:stellar_dotnet_sdk.xdr.Uint32
+  id: Uint32
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.Uint32.#ctor
+  - stellar_dotnet_sdk.xdr.Uint32.#ctor(System.Int32)
+  - stellar_dotnet_sdk.xdr.Uint32.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.Uint32.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Uint32)
+  - stellar_dotnet_sdk.xdr.Uint32.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: Uint32
+  nameWithType: Uint32
+  fullName: stellar_dotnet_sdk.xdr.Uint32
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Uint32.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Uint32
+    path: ../stellar-dotnet-sdk/xdr/generated/Uint32.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class Uint32 : object'
+    content.vb: >-
+      Public Class Uint32
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.Uint32.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.Uint32.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.Uint32
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: Uint32.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.Uint32.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Uint32.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/Uint32.cs
+    startLine: 14
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public int InnerValue { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property InnerValue As Integer
+  overload: stellar_dotnet_sdk.xdr.Uint32.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Uint32.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.Uint32.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.Uint32
+  langs:
+  - csharp
+  - vb
+  name: Uint32()
+  nameWithType: Uint32.Uint32()
+  fullName: stellar_dotnet_sdk.xdr.Uint32.Uint32()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Uint32.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/Uint32.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint32()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.Uint32.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Uint32.#ctor(System.Int32)
+  commentId: M:stellar_dotnet_sdk.xdr.Uint32.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: stellar_dotnet_sdk.xdr.Uint32
+  langs:
+  - csharp
+  - vb
+  name: Uint32(Int32)
+  nameWithType: Uint32.Uint32(Int32)
+  fullName: stellar_dotnet_sdk.xdr.Uint32.Uint32(System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Uint32.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/Uint32.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Uint32(int value)
+    parameters:
+    - id: value
+      type: System.Int32
+    content.vb: Public Sub New(value As Integer)
+  overload: stellar_dotnet_sdk.xdr.Uint32.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Uint32.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Uint32)
+  commentId: M:stellar_dotnet_sdk.xdr.Uint32.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Uint32)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Uint32)
+  parent: stellar_dotnet_sdk.xdr.Uint32
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, Uint32)
+  nameWithType: Uint32.Encode(XdrDataOutputStream, Uint32)
+  fullName: stellar_dotnet_sdk.xdr.Uint32.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.Uint32)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Uint32.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/Uint32.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, Uint32 encodedUint32)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedUint32
+      type: stellar_dotnet_sdk.xdr.Uint32
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedUint32 As Uint32)
+  overload: stellar_dotnet_sdk.xdr.Uint32.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.Uint32.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.Uint32.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.Uint32
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: Uint32.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.Uint32.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Uint32.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/Uint32.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static Uint32 Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.Uint32
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As Uint32
+  overload: stellar_dotnet_sdk.xdr.Uint32.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.Uint32.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Uint32.InnerValue
+  name: InnerValue
+  nameWithType: Uint32.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.Uint32.InnerValue
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: stellar_dotnet_sdk.xdr.Uint32.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Uint32.#ctor
+  name: Uint32
+  nameWithType: Uint32.Uint32
+  fullName: stellar_dotnet_sdk.xdr.Uint32.Uint32
+- uid: stellar_dotnet_sdk.xdr.Uint32.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Uint32.Encode
+  name: Encode
+  nameWithType: Uint32.Encode
+  fullName: stellar_dotnet_sdk.xdr.Uint32.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.Uint32
+  commentId: T:stellar_dotnet_sdk.xdr.Uint32
+  parent: stellar_dotnet_sdk.xdr
+  name: Uint32
+  nameWithType: Uint32
+  fullName: stellar_dotnet_sdk.xdr.Uint32
+- uid: stellar_dotnet_sdk.xdr.Uint32.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Uint32.Decode
+  name: Decode
+  nameWithType: Uint32.Decode
+  fullName: stellar_dotnet_sdk.xdr.Uint32.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

@@ -1,0 +1,101 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.EventSource.ServerSentEventArgs
+  commentId: T:stellar_dotnet_sdk.EventSource.ServerSentEventArgs
+  id: EventSource.ServerSentEventArgs
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.EventSource.ServerSentEventArgs.Data
+  langs:
+  - csharp
+  - vb
+  name: EventSource.ServerSentEventArgs
+  nameWithType: EventSource.ServerSentEventArgs
+  fullName: stellar_dotnet_sdk.EventSource.ServerSentEventArgs
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ServerSentEventArgs
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 531
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nServer Sent Event Message Object\n"
+  example: []
+  syntax:
+    content: 'public sealed class ServerSentEventArgs : EventArgs'
+    content.vb: >-
+      Public NotInheritable Class ServerSentEventArgs
+          Inherits EventArgs
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: stellar_dotnet_sdk.EventSource.ServerSentEventArgs.Data
+  commentId: P:stellar_dotnet_sdk.EventSource.ServerSentEventArgs.Data
+  id: Data
+  parent: stellar_dotnet_sdk.EventSource.ServerSentEventArgs
+  langs:
+  - csharp
+  - vb
+  name: Data
+  nameWithType: EventSource.ServerSentEventArgs.Data
+  fullName: stellar_dotnet_sdk.EventSource.ServerSentEventArgs.Data
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/EventSource.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Data
+    path: ../stellar-dotnet-sdk/EventSource.cs
+    startLine: 538
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nGets the data.\n"
+  example: []
+  syntax:
+    content: public string Data { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Data As String
+  overload: stellar_dotnet_sdk.EventSource.ServerSentEventArgs.Data*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.EventSource.ServerSentEventArgs.Data*
+  commentId: Overload:stellar_dotnet_sdk.EventSource.ServerSentEventArgs.Data
+  name: Data
+  nameWithType: EventSource.ServerSentEventArgs.Data
+  fullName: stellar_dotnet_sdk.EventSource.ServerSentEventArgs.Data
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

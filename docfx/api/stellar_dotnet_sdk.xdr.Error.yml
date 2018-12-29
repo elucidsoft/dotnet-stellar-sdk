@@ -1,0 +1,282 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.Error
+  commentId: T:stellar_dotnet_sdk.xdr.Error
+  id: Error
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.Error.#ctor
+  - stellar_dotnet_sdk.xdr.Error.Code
+  - stellar_dotnet_sdk.xdr.Error.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.Error.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Error)
+  - stellar_dotnet_sdk.xdr.Error.Msg
+  langs:
+  - csharp
+  - vb
+  name: Error
+  nameWithType: Error
+  fullName: stellar_dotnet_sdk.xdr.Error
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Error.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Error
+    path: ../stellar-dotnet-sdk/xdr/generated/Error.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class Error : object'
+    content.vb: >-
+      Public Class Error
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.Error.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.Error.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.Error
+  langs:
+  - csharp
+  - vb
+  name: Error()
+  nameWithType: Error.Error()
+  fullName: stellar_dotnet_sdk.xdr.Error.Error()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Error.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/Error.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Error()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.Error.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Error.Code
+  commentId: P:stellar_dotnet_sdk.xdr.Error.Code
+  id: Code
+  parent: stellar_dotnet_sdk.xdr.Error
+  langs:
+  - csharp
+  - vb
+  name: Code
+  nameWithType: Error.Code
+  fullName: stellar_dotnet_sdk.xdr.Error.Code
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Error.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Code
+    path: ../stellar-dotnet-sdk/xdr/generated/Error.cs
+    startLine: 19
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public ErrorCode Code { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.ErrorCode
+    content.vb: Public Property Code As ErrorCode
+  overload: stellar_dotnet_sdk.xdr.Error.Code*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Error.Msg
+  commentId: P:stellar_dotnet_sdk.xdr.Error.Msg
+  id: Msg
+  parent: stellar_dotnet_sdk.xdr.Error
+  langs:
+  - csharp
+  - vb
+  name: Msg
+  nameWithType: Error.Msg
+  fullName: stellar_dotnet_sdk.xdr.Error.Msg
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Error.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Msg
+    path: ../stellar-dotnet-sdk/xdr/generated/Error.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public String Msg { get; set; }
+    parameters: []
+    return:
+      type: String
+    content.vb: Public Property Msg As String
+  overload: stellar_dotnet_sdk.xdr.Error.Msg*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Error.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Error)
+  commentId: M:stellar_dotnet_sdk.xdr.Error.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Error)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Error)
+  parent: stellar_dotnet_sdk.xdr.Error
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, Error)
+  nameWithType: Error.Encode(XdrDataOutputStream, Error)
+  fullName: stellar_dotnet_sdk.xdr.Error.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.Error)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Error.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/Error.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, Error encodedError)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedError
+      type: stellar_dotnet_sdk.xdr.Error
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedError As  Error)
+  overload: stellar_dotnet_sdk.xdr.Error.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.Error.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.Error.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.Error
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: Error.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.Error.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Error.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/Error.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static Error Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.Error
+    content.vb: 'Public Shared Function Decode(stream As XdrDataInputStream) As '
+  overload: stellar_dotnet_sdk.xdr.Error.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.Error.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Error.#ctor
+  name: Error
+  nameWithType: Error.Error
+  fullName: stellar_dotnet_sdk.xdr.Error.Error
+- uid: stellar_dotnet_sdk.xdr.Error.Code*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Error.Code
+  name: Code
+  nameWithType: Error.Code
+  fullName: stellar_dotnet_sdk.xdr.Error.Code
+- uid: stellar_dotnet_sdk.xdr.ErrorCode
+  commentId: T:stellar_dotnet_sdk.xdr.ErrorCode
+  parent: stellar_dotnet_sdk.xdr
+  name: ErrorCode
+  nameWithType: ErrorCode
+  fullName: stellar_dotnet_sdk.xdr.ErrorCode
+- uid: stellar_dotnet_sdk.xdr.Error.Msg*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Error.Msg
+  name: Msg
+  nameWithType: Error.Msg
+  fullName: stellar_dotnet_sdk.xdr.Error.Msg
+- uid: String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: String
+- uid: stellar_dotnet_sdk.xdr.Error.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Error.Encode
+  name: Encode
+  nameWithType: Error.Encode
+  fullName: stellar_dotnet_sdk.xdr.Error.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.Error
+  commentId: T:stellar_dotnet_sdk.xdr.Error
+  parent: stellar_dotnet_sdk.xdr
+  name: Error
+  nameWithType: Error
+  fullName: stellar_dotnet_sdk.xdr.Error
+- uid: stellar_dotnet_sdk.xdr.Error.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Error.Decode
+  name: Decode
+  nameWithType: Error.Decode
+  fullName: stellar_dotnet_sdk.xdr.Error.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

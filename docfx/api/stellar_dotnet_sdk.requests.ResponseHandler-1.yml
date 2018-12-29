@@ -1,0 +1,182 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.requests.ResponseHandler`1
+  commentId: T:stellar_dotnet_sdk.requests.ResponseHandler`1
+  id: ResponseHandler`1
+  parent: stellar_dotnet_sdk.requests
+  children:
+  - stellar_dotnet_sdk.requests.ResponseHandler`1.HandleResponse(HttpResponseMessage)
+  langs:
+  - csharp
+  - vb
+  name: ResponseHandler<T>
+  nameWithType: ResponseHandler<T>
+  fullName: stellar_dotnet_sdk.requests.ResponseHandler<T>
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/ResponseHandler.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ResponseHandler
+    path: ../stellar-dotnet-sdk/requests/ResponseHandler.cs
+    startLine: 7
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: 'public class ResponseHandler<T> : object where T : class'
+    typeParameters:
+    - id: T
+    content.vb: >-
+      Public Class ResponseHandler(Of T As Class)
+          Inherits Object
+  inheritance:
+  - System.Object
+  nameWithType.vb: ResponseHandler(Of T)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: stellar_dotnet_sdk.requests.ResponseHandler(Of T)
+  name.vb: ResponseHandler(Of T)
+- uid: stellar_dotnet_sdk.requests.ResponseHandler`1.HandleResponse(HttpResponseMessage)
+  commentId: M:stellar_dotnet_sdk.requests.ResponseHandler`1.HandleResponse(HttpResponseMessage)
+  id: HandleResponse(HttpResponseMessage)
+  parent: stellar_dotnet_sdk.requests.ResponseHandler`1
+  langs:
+  - csharp
+  - vb
+  name: HandleResponse(HttpResponseMessage)
+  nameWithType: ResponseHandler<T>.HandleResponse(HttpResponseMessage)
+  fullName: stellar_dotnet_sdk.requests.ResponseHandler<T>.HandleResponse(HttpResponseMessage)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/requests/ResponseHandler.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: HandleResponse
+    path: ../stellar-dotnet-sdk/requests/ResponseHandler.cs
+    startLine: 9
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.requests
+  syntax:
+    content: public Task<T> HandleResponse(HttpResponseMessage response)
+    parameters:
+    - id: response
+      type: HttpResponseMessage
+    return:
+      type: Task{{T}}
+    content.vb: Public Function HandleResponse(response As HttpResponseMessage) As Task(Of T)
+  overload: stellar_dotnet_sdk.requests.ResponseHandler`1.HandleResponse*
+  nameWithType.vb: ResponseHandler(Of T).HandleResponse(HttpResponseMessage)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.requests.ResponseHandler(Of T).HandleResponse(HttpResponseMessage)
+references:
+- uid: stellar_dotnet_sdk.requests
+  commentId: N:stellar_dotnet_sdk.requests
+  name: stellar_dotnet_sdk.requests
+  nameWithType: stellar_dotnet_sdk.requests
+  fullName: stellar_dotnet_sdk.requests
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.requests.ResponseHandler`1.HandleResponse*
+  commentId: Overload:stellar_dotnet_sdk.requests.ResponseHandler`1.HandleResponse
+  name: HandleResponse
+  nameWithType: ResponseHandler<T>.HandleResponse
+  fullName: stellar_dotnet_sdk.requests.ResponseHandler<T>.HandleResponse
+  nameWithType.vb: ResponseHandler(Of T).HandleResponse
+  fullName.vb: stellar_dotnet_sdk.requests.ResponseHandler(Of T).HandleResponse
+- uid: HttpResponseMessage
+  commentId: '!:HttpResponseMessage'
+  isExternal: true
+  name: HttpResponseMessage
+  nameWithType: HttpResponseMessage
+  fullName: HttpResponseMessage
+- uid: Task{{T}}
+  commentId: '!:Task{`0}'
+  definition: Task`1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Task`1
+  isExternal: true
+  name: Task<>
+  nameWithType: Task<>
+  fullName: Task<>
+  nameWithType.vb: Task(Of )
+  fullName.vb: Task(Of )
+  name.vb: Task(Of )
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

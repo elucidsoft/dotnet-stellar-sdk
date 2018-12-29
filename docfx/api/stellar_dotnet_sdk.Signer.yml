@@ -1,0 +1,346 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.Signer
+  commentId: T:stellar_dotnet_sdk.Signer
+  id: Signer
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.Signer.Ed25519PublicKey(stellar_dotnet_sdk.KeyPair)
+  - stellar_dotnet_sdk.Signer.PreAuthTx(stellar_dotnet_sdk.Transaction)
+  - stellar_dotnet_sdk.Signer.PreAuthTx(stellar_dotnet_sdk.Transaction,stellar_dotnet_sdk.Network)
+  - stellar_dotnet_sdk.Signer.PreAuthTx(System.Byte[])
+  - stellar_dotnet_sdk.Signer.Sha256Hash(System.Byte[])
+  langs:
+  - csharp
+  - vb
+  name: Signer
+  nameWithType: Signer
+  fullName: stellar_dotnet_sdk.Signer
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Signer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Signer
+    path: ../stellar-dotnet-sdk/Signer.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSigner is a helper class that creates <xref href=\"stellar_dotnet_sdk.xdr.SignerKey\" data-throw-if-not-resolved=\"false\"></xref> objects.\n"
+  example: []
+  syntax:
+    content: 'public class Signer : object'
+    content.vb: >-
+      Public Class Signer
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.Signer.Ed25519PublicKey(stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.Signer.Ed25519PublicKey(stellar_dotnet_sdk.KeyPair)
+  id: Ed25519PublicKey(stellar_dotnet_sdk.KeyPair)
+  parent: stellar_dotnet_sdk.Signer
+  langs:
+  - csharp
+  - vb
+  name: Ed25519PublicKey(KeyPair)
+  nameWithType: Signer.Ed25519PublicKey(KeyPair)
+  fullName: stellar_dotnet_sdk.Signer.Ed25519PublicKey(stellar_dotnet_sdk.KeyPair)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Signer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Ed25519PublicKey
+    path: ../stellar-dotnet-sdk/Signer.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreate <pre><code>ed25519PublicKey</code></pre> <xref href=\"stellar_dotnet_sdk.xdr.SignerKey\" data-throw-if-not-resolved=\"false\"></xref> from\na <see cref=\"!:sdkxdr.KeyPair\"></see>\n"
+  example: []
+  syntax:
+    content: public static SignerKey Ed25519PublicKey(KeyPair keyPair)
+    parameters:
+    - id: keyPair
+      type: stellar_dotnet_sdk.KeyPair
+      description: ''
+    return:
+      type: stellar_dotnet_sdk.xdr.SignerKey
+      description: sdkxdr.SignerKey
+    content.vb: Public Shared Function Ed25519PublicKey(keyPair As KeyPair) As SignerKey
+  overload: stellar_dotnet_sdk.Signer.Ed25519PublicKey*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Signer.Sha256Hash(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.Signer.Sha256Hash(System.Byte[])
+  id: Sha256Hash(System.Byte[])
+  parent: stellar_dotnet_sdk.Signer
+  langs:
+  - csharp
+  - vb
+  name: Sha256Hash(Byte[])
+  nameWithType: Signer.Sha256Hash(Byte[])
+  fullName: stellar_dotnet_sdk.Signer.Sha256Hash(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Signer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Sha256Hash
+    path: ../stellar-dotnet-sdk/Signer.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreate <pre><code>sha256Hash</code></pre> <xref href=\"stellar_dotnet_sdk.xdr.SignerKey\" data-throw-if-not-resolved=\"false\"></xref> from\na sha256 hash of a preimage.\n"
+  example: []
+  syntax:
+    content: public static SignerKey Sha256Hash(byte[] hash)
+    parameters:
+    - id: hash
+      type: System.Byte[]
+      description: ''
+    return:
+      type: stellar_dotnet_sdk.xdr.SignerKey
+      description: sdkxdr.SignerKey
+    content.vb: Public Shared Function Sha256Hash(hash As Byte()) As SignerKey
+  overload: stellar_dotnet_sdk.Signer.Sha256Hash*
+  nameWithType.vb: Signer.Sha256Hash(Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.Signer.Sha256Hash(System.Byte())
+  name.vb: Sha256Hash(Byte())
+- uid: stellar_dotnet_sdk.Signer.PreAuthTx(stellar_dotnet_sdk.Transaction)
+  commentId: M:stellar_dotnet_sdk.Signer.PreAuthTx(stellar_dotnet_sdk.Transaction)
+  id: PreAuthTx(stellar_dotnet_sdk.Transaction)
+  parent: stellar_dotnet_sdk.Signer
+  langs:
+  - csharp
+  - vb
+  name: PreAuthTx(Transaction)
+  nameWithType: Signer.PreAuthTx(Transaction)
+  fullName: stellar_dotnet_sdk.Signer.PreAuthTx(stellar_dotnet_sdk.Transaction)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Signer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PreAuthTx
+    path: ../stellar-dotnet-sdk/Signer.cs
+    startLine: 50
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreate <pre><code>preAuthTx</code></pre> <xref href=\"stellar_dotnet_sdk.xdr.SignerKey\" data-throw-if-not-resolved=\"false\"></xref> from\na <xref href=\"stellar_dotnet_sdk.xdr.Transaction\" data-throw-if-not-resolved=\"false\"></xref> hash.\n"
+  example: []
+  syntax:
+    content: public static SignerKey PreAuthTx(Transaction tx)
+    parameters:
+    - id: tx
+      type: stellar_dotnet_sdk.Transaction
+      description: ''
+    return:
+      type: stellar_dotnet_sdk.xdr.SignerKey
+      description: sdkxdr.SignerKey
+    content.vb: Public Shared Function PreAuthTx(tx As Transaction) As SignerKey
+  overload: stellar_dotnet_sdk.Signer.PreAuthTx*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Signer.PreAuthTx(stellar_dotnet_sdk.Transaction,stellar_dotnet_sdk.Network)
+  commentId: M:stellar_dotnet_sdk.Signer.PreAuthTx(stellar_dotnet_sdk.Transaction,stellar_dotnet_sdk.Network)
+  id: PreAuthTx(stellar_dotnet_sdk.Transaction,stellar_dotnet_sdk.Network)
+  parent: stellar_dotnet_sdk.Signer
+  langs:
+  - csharp
+  - vb
+  name: PreAuthTx(Transaction, Network)
+  nameWithType: Signer.PreAuthTx(Transaction, Network)
+  fullName: stellar_dotnet_sdk.Signer.PreAuthTx(stellar_dotnet_sdk.Transaction, stellar_dotnet_sdk.Network)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Signer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PreAuthTx
+    path: ../stellar-dotnet-sdk/Signer.cs
+    startLine: 62
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreate <pre><code>preAuthTx</code></pre> <xref href=\"stellar_dotnet_sdk.xdr.SignerKey\" data-throw-if-not-resolved=\"false\"></xref> from\na <xref href=\"stellar_dotnet_sdk.xdr.Transaction\" data-throw-if-not-resolved=\"false\"></xref> hash.\n"
+  example: []
+  syntax:
+    content: public static SignerKey PreAuthTx(Transaction tx, Network network)
+    parameters:
+    - id: tx
+      type: stellar_dotnet_sdk.Transaction
+      description: ''
+    - id: network
+      type: stellar_dotnet_sdk.Network
+      description: ''
+    return:
+      type: stellar_dotnet_sdk.xdr.SignerKey
+      description: sdkxdr.SignerKey
+    content.vb: Public Shared Function PreAuthTx(tx As Transaction, network As Network) As SignerKey
+  overload: stellar_dotnet_sdk.Signer.PreAuthTx*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.Signer.PreAuthTx(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.Signer.PreAuthTx(System.Byte[])
+  id: PreAuthTx(System.Byte[])
+  parent: stellar_dotnet_sdk.Signer
+  langs:
+  - csharp
+  - vb
+  name: PreAuthTx(Byte[])
+  nameWithType: Signer.PreAuthTx(Byte[])
+  fullName: stellar_dotnet_sdk.Signer.PreAuthTx(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/Signer.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: PreAuthTx
+    path: ../stellar-dotnet-sdk/Signer.cs
+    startLine: 76
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreate <pre><code>preAuthTx</code></pre> <xref href=\"stellar_dotnet_sdk.xdr.SignerKey\" data-throw-if-not-resolved=\"false\"></xref> from\na transaction hash.\n"
+  example: []
+  syntax:
+    content: public static SignerKey PreAuthTx(byte[] hash)
+    parameters:
+    - id: hash
+      type: System.Byte[]
+      description: ''
+    return:
+      type: stellar_dotnet_sdk.xdr.SignerKey
+      description: sdkxdr.SignerKey
+    content.vb: Public Shared Function PreAuthTx(hash As Byte()) As SignerKey
+  overload: stellar_dotnet_sdk.Signer.PreAuthTx*
+  nameWithType.vb: Signer.PreAuthTx(Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: stellar_dotnet_sdk.Signer.PreAuthTx(System.Byte())
+  name.vb: PreAuthTx(Byte())
+references:
+- uid: stellar_dotnet_sdk.xdr.SignerKey
+  commentId: T:stellar_dotnet_sdk.xdr.SignerKey
+  parent: stellar_dotnet_sdk.xdr
+  name: SignerKey
+  nameWithType: SignerKey
+  fullName: stellar_dotnet_sdk.xdr.SignerKey
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.Signer.Ed25519PublicKey*
+  commentId: Overload:stellar_dotnet_sdk.Signer.Ed25519PublicKey
+  name: Ed25519PublicKey
+  nameWithType: Signer.Ed25519PublicKey
+  fullName: stellar_dotnet_sdk.Signer.Ed25519PublicKey
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk.Signer.Sha256Hash*
+  commentId: Overload:stellar_dotnet_sdk.Signer.Sha256Hash
+  name: Sha256Hash
+  nameWithType: Signer.Sha256Hash
+  fullName: stellar_dotnet_sdk.Signer.Sha256Hash
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: stellar_dotnet_sdk.xdr.Transaction
+  commentId: T:stellar_dotnet_sdk.xdr.Transaction
+  parent: stellar_dotnet_sdk.xdr
+  name: Transaction
+  nameWithType: Transaction
+  fullName: stellar_dotnet_sdk.xdr.Transaction
+- uid: stellar_dotnet_sdk.Signer.PreAuthTx*
+  commentId: Overload:stellar_dotnet_sdk.Signer.PreAuthTx
+  name: PreAuthTx
+  nameWithType: Signer.PreAuthTx
+  fullName: stellar_dotnet_sdk.Signer.PreAuthTx
+- uid: stellar_dotnet_sdk.Transaction
+  commentId: T:stellar_dotnet_sdk.Transaction
+  parent: stellar_dotnet_sdk
+  name: Transaction
+  nameWithType: Transaction
+  fullName: stellar_dotnet_sdk.Transaction
+- uid: stellar_dotnet_sdk.Network
+  commentId: T:stellar_dotnet_sdk.Network
+  parent: stellar_dotnet_sdk
+  name: Network
+  nameWithType: Network
+  fullName: stellar_dotnet_sdk.Network

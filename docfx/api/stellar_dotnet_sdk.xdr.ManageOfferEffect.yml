@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.ManageOfferEffect
+  commentId: T:stellar_dotnet_sdk.xdr.ManageOfferEffect
+  id: ManageOfferEffect
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.ManageOfferEffect.Create(stellar_dotnet_sdk.xdr.ManageOfferEffect.ManageOfferEffectEnum)
+  - stellar_dotnet_sdk.xdr.ManageOfferEffect.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.ManageOfferEffect.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageOfferEffect)
+  - stellar_dotnet_sdk.xdr.ManageOfferEffect.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: ManageOfferEffect
+  nameWithType: ManageOfferEffect
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferEffect
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageOfferEffect.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: ManageOfferEffect
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageOfferEffect.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class ManageOfferEffect : object'
+    content.vb: >-
+      Public Class ManageOfferEffect
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.ManageOfferEffect.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.ManageOfferEffect.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.ManageOfferEffect
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: ManageOfferEffect.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferEffect.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageOfferEffect.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageOfferEffect.cs
+    startLine: 25
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public ManageOfferEffect.ManageOfferEffectEnum InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.ManageOfferEffect.ManageOfferEffectEnum
+    content.vb: Public Property InnerValue As ManageOfferEffect.ManageOfferEffectEnum
+  overload: stellar_dotnet_sdk.xdr.ManageOfferEffect.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.ManageOfferEffect.Create(stellar_dotnet_sdk.xdr.ManageOfferEffect.ManageOfferEffectEnum)
+  commentId: M:stellar_dotnet_sdk.xdr.ManageOfferEffect.Create(stellar_dotnet_sdk.xdr.ManageOfferEffect.ManageOfferEffectEnum)
+  id: Create(stellar_dotnet_sdk.xdr.ManageOfferEffect.ManageOfferEffectEnum)
+  parent: stellar_dotnet_sdk.xdr.ManageOfferEffect
+  langs:
+  - csharp
+  - vb
+  name: Create(ManageOfferEffect.ManageOfferEffectEnum)
+  nameWithType: ManageOfferEffect.Create(ManageOfferEffect.ManageOfferEffectEnum)
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferEffect.Create(stellar_dotnet_sdk.xdr.ManageOfferEffect.ManageOfferEffectEnum)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageOfferEffect.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Create
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageOfferEffect.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static ManageOfferEffect Create(ManageOfferEffect.ManageOfferEffectEnum v)
+    parameters:
+    - id: v
+      type: stellar_dotnet_sdk.xdr.ManageOfferEffect.ManageOfferEffectEnum
+    return:
+      type: stellar_dotnet_sdk.xdr.ManageOfferEffect
+    content.vb: Public Shared Function Create(v As ManageOfferEffect.ManageOfferEffectEnum) As ManageOfferEffect
+  overload: stellar_dotnet_sdk.xdr.ManageOfferEffect.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.ManageOfferEffect.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.ManageOfferEffect.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.ManageOfferEffect
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: ManageOfferEffect.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferEffect.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageOfferEffect.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageOfferEffect.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static ManageOfferEffect Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.ManageOfferEffect
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As ManageOfferEffect
+  overload: stellar_dotnet_sdk.xdr.ManageOfferEffect.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.ManageOfferEffect.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageOfferEffect)
+  commentId: M:stellar_dotnet_sdk.xdr.ManageOfferEffect.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageOfferEffect)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.ManageOfferEffect)
+  parent: stellar_dotnet_sdk.xdr.ManageOfferEffect
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, ManageOfferEffect)
+  nameWithType: ManageOfferEffect.Encode(XdrDataOutputStream, ManageOfferEffect)
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferEffect.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.ManageOfferEffect)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/ManageOfferEffect.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/ManageOfferEffect.cs
+    startLine: 48
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, ManageOfferEffect value)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: value
+      type: stellar_dotnet_sdk.xdr.ManageOfferEffect
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, value As ManageOfferEffect)
+  overload: stellar_dotnet_sdk.xdr.ManageOfferEffect.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.ManageOfferEffect.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageOfferEffect.InnerValue
+  name: InnerValue
+  nameWithType: ManageOfferEffect.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferEffect.InnerValue
+- uid: stellar_dotnet_sdk.xdr.ManageOfferEffect.ManageOfferEffectEnum
+  commentId: T:stellar_dotnet_sdk.xdr.ManageOfferEffect.ManageOfferEffectEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: ManageOfferEffect.ManageOfferEffectEnum
+  nameWithType: ManageOfferEffect.ManageOfferEffectEnum
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferEffect.ManageOfferEffectEnum
+- uid: stellar_dotnet_sdk.xdr.ManageOfferEffect.Create*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageOfferEffect.Create
+  name: Create
+  nameWithType: ManageOfferEffect.Create
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferEffect.Create
+- uid: stellar_dotnet_sdk.xdr.ManageOfferEffect
+  commentId: T:stellar_dotnet_sdk.xdr.ManageOfferEffect
+  parent: stellar_dotnet_sdk.xdr
+  name: ManageOfferEffect
+  nameWithType: ManageOfferEffect
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferEffect
+- uid: stellar_dotnet_sdk.xdr.ManageOfferEffect.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageOfferEffect.Decode
+  name: Decode
+  nameWithType: ManageOfferEffect.Decode
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferEffect.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream
+- uid: stellar_dotnet_sdk.xdr.ManageOfferEffect.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.ManageOfferEffect.Encode
+  name: Encode
+  nameWithType: ManageOfferEffect.Encode
+  fullName: stellar_dotnet_sdk.xdr.ManageOfferEffect.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream

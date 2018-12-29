@@ -1,0 +1,303 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4
+  commentId: T:stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4
+  id: Asset.AssetAlphaNum4
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.#ctor
+  - stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.AssetCode
+  - stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4)
+  - stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Issuer
+  langs:
+  - csharp
+  - vb
+  name: Asset.AssetAlphaNum4
+  nameWithType: Asset.AssetAlphaNum4
+  fullName: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Asset.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetAlphaNum4
+    path: ../stellar-dotnet-sdk/xdr/generated/Asset.cs
+    startLine: 74
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class AssetAlphaNum4 : object'
+    content.vb: >-
+      Public Class AssetAlphaNum4
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4
+  langs:
+  - csharp
+  - vb
+  name: AssetAlphaNum4()
+  nameWithType: Asset.AssetAlphaNum4.AssetAlphaNum4()
+  fullName: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.AssetAlphaNum4()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Asset.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/Asset.cs
+    startLine: 76
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AssetAlphaNum4()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.AssetCode
+  commentId: P:stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.AssetCode
+  id: AssetCode
+  parent: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4
+  langs:
+  - csharp
+  - vb
+  name: AssetCode
+  nameWithType: Asset.AssetAlphaNum4.AssetCode
+  fullName: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.AssetCode
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Asset.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetCode
+    path: ../stellar-dotnet-sdk/xdr/generated/Asset.cs
+    startLine: 77
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public byte[] AssetCode { get; set; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public Property AssetCode As Byte()
+  overload: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.AssetCode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Issuer
+  commentId: P:stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Issuer
+  id: Issuer
+  parent: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4
+  langs:
+  - csharp
+  - vb
+  name: Issuer
+  nameWithType: Asset.AssetAlphaNum4.Issuer
+  fullName: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Issuer
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Asset.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Issuer
+    path: ../stellar-dotnet-sdk/xdr/generated/Asset.cs
+    startLine: 78
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public AccountID Issuer { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.AccountID
+    content.vb: Public Property Issuer As AccountID
+  overload: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Issuer*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4)
+  commentId: M:stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4)
+  parent: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, Asset.AssetAlphaNum4)
+  nameWithType: Asset.AssetAlphaNum4.Encode(XdrDataOutputStream, Asset.AssetAlphaNum4)
+  fullName: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Asset.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/Asset.cs
+    startLine: 80
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, Asset.AssetAlphaNum4 encodedAssetAlphaNum4)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedAssetAlphaNum4
+      type: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedAssetAlphaNum4 As Asset.AssetAlphaNum4)
+  overload: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: Asset.AssetAlphaNum4.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Asset.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/Asset.cs
+    startLine: 86
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static Asset.AssetAlphaNum4 Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As Asset.AssetAlphaNum4
+  overload: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.#ctor
+  name: AssetAlphaNum4
+  nameWithType: Asset.AssetAlphaNum4.AssetAlphaNum4
+  fullName: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.AssetAlphaNum4
+- uid: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.AssetCode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.AssetCode
+  name: AssetCode
+  nameWithType: Asset.AssetAlphaNum4.AssetCode
+  fullName: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.AssetCode
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Issuer*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Issuer
+  name: Issuer
+  nameWithType: Asset.AssetAlphaNum4.Issuer
+  fullName: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Issuer
+- uid: stellar_dotnet_sdk.xdr.AccountID
+  commentId: T:stellar_dotnet_sdk.xdr.AccountID
+  parent: stellar_dotnet_sdk.xdr
+  name: AccountID
+  nameWithType: AccountID
+  fullName: stellar_dotnet_sdk.xdr.AccountID
+- uid: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Encode
+  name: Encode
+  nameWithType: Asset.AssetAlphaNum4.Encode
+  fullName: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4
+  commentId: T:stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4
+  parent: stellar_dotnet_sdk.xdr
+  name: Asset.AssetAlphaNum4
+  nameWithType: Asset.AssetAlphaNum4
+  fullName: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4
+- uid: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Decode
+  name: Decode
+  nameWithType: Asset.AssetAlphaNum4.Decode
+  fullName: stellar_dotnet_sdk.xdr.Asset.AssetAlphaNum4.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

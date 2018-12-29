@@ -1,0 +1,263 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.AllowTrustOperation.Builder
+  commentId: T:stellar_dotnet_sdk.AllowTrustOperation.Builder
+  id: AllowTrustOperation.Builder
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.AllowTrustOperation.Builder.#ctor(stellar_dotnet_sdk.KeyPair,System.String,System.Boolean)
+  - stellar_dotnet_sdk.AllowTrustOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.AllowTrustOp)
+  - stellar_dotnet_sdk.AllowTrustOperation.Builder.Build
+  - stellar_dotnet_sdk.AllowTrustOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  langs:
+  - csharp
+  - vb
+  name: AllowTrustOperation.Builder
+  nameWithType: AllowTrustOperation.Builder
+  fullName: stellar_dotnet_sdk.AllowTrustOperation.Builder
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/AllowTrustOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Builder
+    path: ../stellar-dotnet-sdk/AllowTrustOperation.cs
+    startLine: 81
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBuilds AllowTrust operation.\n"
+  example: []
+  syntax:
+    content: 'public class Builder : object'
+    content.vb: >-
+      Public Class Builder
+          Inherits Object
+  see:
+  - linkId: stellar_dotnet_sdk.AllowTrustOperation
+    commentId: T:stellar_dotnet_sdk.AllowTrustOperation
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.AllowTrustOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.AllowTrustOp)
+  commentId: M:stellar_dotnet_sdk.AllowTrustOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.AllowTrustOp)
+  id: '#ctor(stellar_dotnet_sdk.xdr.AllowTrustOp)'
+  parent: stellar_dotnet_sdk.AllowTrustOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder(AllowTrustOp)
+  nameWithType: AllowTrustOperation.Builder.Builder(AllowTrustOp)
+  fullName: stellar_dotnet_sdk.AllowTrustOperation.Builder.Builder(stellar_dotnet_sdk.xdr.AllowTrustOp)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/AllowTrustOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/AllowTrustOperation.cs
+    startLine: 94
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBuilder to build the AllowTrust Operation given an XDR AllowTrustOp\n"
+  example: []
+  syntax:
+    content: public Builder(AllowTrustOp op)
+    parameters:
+    - id: op
+      type: stellar_dotnet_sdk.xdr.AllowTrustOp
+      description: ''
+    content.vb: Public Sub New(op As AllowTrustOp)
+  overload: stellar_dotnet_sdk.AllowTrustOperation.Builder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.AllowTrustOperation.Builder.#ctor(stellar_dotnet_sdk.KeyPair,System.String,System.Boolean)
+  commentId: M:stellar_dotnet_sdk.AllowTrustOperation.Builder.#ctor(stellar_dotnet_sdk.KeyPair,System.String,System.Boolean)
+  id: '#ctor(stellar_dotnet_sdk.KeyPair,System.String,System.Boolean)'
+  parent: stellar_dotnet_sdk.AllowTrustOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Builder(KeyPair, String, Boolean)
+  nameWithType: AllowTrustOperation.Builder.Builder(KeyPair, String, Boolean)
+  fullName: stellar_dotnet_sdk.AllowTrustOperation.Builder.Builder(stellar_dotnet_sdk.KeyPair, System.String, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/AllowTrustOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/AllowTrustOperation.cs
+    startLine: 123
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nCreates a new AllowTrust builder.\n"
+  example: []
+  syntax:
+    content: public Builder(KeyPair trustor, string assetCode, bool authorize)
+    parameters:
+    - id: trustor
+      type: stellar_dotnet_sdk.KeyPair
+      description: The account of the recipient of the trustline.
+    - id: assetCode
+      type: System.String
+      description: "\nThe asset of the trustline the source account is authorizing. For example, if a gateway wants\nto allow another account to hold its USD credit, the type is USD.\n"
+    - id: authorize
+      type: System.Boolean
+      description: Flag indicating whether the trustline is authorized.
+    content.vb: Public Sub New(trustor As KeyPair, assetCode As String, authorize As Boolean)
+  overload: stellar_dotnet_sdk.AllowTrustOperation.Builder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.AllowTrustOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  commentId: M:stellar_dotnet_sdk.AllowTrustOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  id: SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  parent: stellar_dotnet_sdk.AllowTrustOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: SetSourceAccount(KeyPair)
+  nameWithType: AllowTrustOperation.Builder.SetSourceAccount(KeyPair)
+  fullName: stellar_dotnet_sdk.AllowTrustOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/AllowTrustOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SetSourceAccount
+    path: ../stellar-dotnet-sdk/AllowTrustOperation.cs
+    startLine: 135
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nSet source account of this operation\n"
+  example: []
+  syntax:
+    content: public AllowTrustOperation.Builder SetSourceAccount(KeyPair sourceAccount)
+    parameters:
+    - id: sourceAccount
+      type: stellar_dotnet_sdk.KeyPair
+      description: Source account
+    return:
+      type: stellar_dotnet_sdk.AllowTrustOperation.Builder
+      description: Builder object so you can chain methods.
+    content.vb: Public Function SetSourceAccount(sourceAccount As KeyPair) As AllowTrustOperation.Builder
+  overload: stellar_dotnet_sdk.AllowTrustOperation.Builder.SetSourceAccount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.AllowTrustOperation.Builder.Build
+  commentId: M:stellar_dotnet_sdk.AllowTrustOperation.Builder.Build
+  id: Build
+  parent: stellar_dotnet_sdk.AllowTrustOperation.Builder
+  langs:
+  - csharp
+  - vb
+  name: Build()
+  nameWithType: AllowTrustOperation.Builder.Build()
+  fullName: stellar_dotnet_sdk.AllowTrustOperation.Builder.Build()
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/AllowTrustOperation.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Build
+    path: ../stellar-dotnet-sdk/AllowTrustOperation.cs
+    startLine: 144
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nBuilds an operation\n"
+  example: []
+  syntax:
+    content: public AllowTrustOperation Build()
+    return:
+      type: stellar_dotnet_sdk.AllowTrustOperation
+    content.vb: Public Function Build As AllowTrustOperation
+  overload: stellar_dotnet_sdk.AllowTrustOperation.Builder.Build*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: stellar_dotnet_sdk.AllowTrustOperation
+  commentId: T:stellar_dotnet_sdk.AllowTrustOperation
+  parent: stellar_dotnet_sdk
+  name: AllowTrustOperation
+  nameWithType: AllowTrustOperation
+  fullName: stellar_dotnet_sdk.AllowTrustOperation
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.AllowTrustOperation.Builder.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.AllowTrustOperation.Builder.#ctor
+  name: Builder
+  nameWithType: AllowTrustOperation.Builder.Builder
+  fullName: stellar_dotnet_sdk.AllowTrustOperation.Builder.Builder
+- uid: stellar_dotnet_sdk.xdr.AllowTrustOp
+  commentId: T:stellar_dotnet_sdk.xdr.AllowTrustOp
+  parent: stellar_dotnet_sdk.xdr
+  name: AllowTrustOp
+  nameWithType: AllowTrustOp
+  fullName: stellar_dotnet_sdk.xdr.AllowTrustOp
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: stellar_dotnet_sdk.AllowTrustOperation.Builder.SetSourceAccount*
+  commentId: Overload:stellar_dotnet_sdk.AllowTrustOperation.Builder.SetSourceAccount
+  name: SetSourceAccount
+  nameWithType: AllowTrustOperation.Builder.SetSourceAccount
+  fullName: stellar_dotnet_sdk.AllowTrustOperation.Builder.SetSourceAccount
+- uid: stellar_dotnet_sdk.AllowTrustOperation.Builder
+  commentId: T:stellar_dotnet_sdk.AllowTrustOperation.Builder
+  parent: stellar_dotnet_sdk
+  name: AllowTrustOperation.Builder
+  nameWithType: AllowTrustOperation.Builder
+  fullName: stellar_dotnet_sdk.AllowTrustOperation.Builder
+- uid: stellar_dotnet_sdk.AllowTrustOperation.Builder.Build*
+  commentId: Overload:stellar_dotnet_sdk.AllowTrustOperation.Builder.Build
+  name: Build
+  nameWithType: AllowTrustOperation.Builder.Build
+  fullName: stellar_dotnet_sdk.AllowTrustOperation.Builder.Build

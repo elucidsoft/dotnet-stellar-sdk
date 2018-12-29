@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType
+  commentId: T:stellar_dotnet_sdk.xdr.EnvelopeType
+  id: EnvelopeType
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.EnvelopeType.Create(stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum)
+  - stellar_dotnet_sdk.xdr.EnvelopeType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.EnvelopeType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.EnvelopeType)
+  - stellar_dotnet_sdk.xdr.EnvelopeType.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: EnvelopeType
+  nameWithType: EnvelopeType
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: EnvelopeType
+    path: ../stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class EnvelopeType : object'
+    content.vb: >-
+      Public Class EnvelopeType
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.EnvelopeType.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.EnvelopeType
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: EnvelopeType.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+    startLine: 25
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public EnvelopeType.EnvelopeTypeEnum InnerValue { get; set; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+    content.vb: Public Property InnerValue As EnvelopeType.EnvelopeTypeEnum
+  overload: stellar_dotnet_sdk.xdr.EnvelopeType.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.Create(stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum)
+  commentId: M:stellar_dotnet_sdk.xdr.EnvelopeType.Create(stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum)
+  id: Create(stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum)
+  parent: stellar_dotnet_sdk.xdr.EnvelopeType
+  langs:
+  - csharp
+  - vb
+  name: Create(EnvelopeType.EnvelopeTypeEnum)
+  nameWithType: EnvelopeType.Create(EnvelopeType.EnvelopeTypeEnum)
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.Create(stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Create
+    path: ../stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static EnvelopeType Create(EnvelopeType.EnvelopeTypeEnum v)
+    parameters:
+    - id: v
+      type: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+    return:
+      type: stellar_dotnet_sdk.xdr.EnvelopeType
+    content.vb: Public Shared Function Create(v As EnvelopeType.EnvelopeTypeEnum) As EnvelopeType
+  overload: stellar_dotnet_sdk.xdr.EnvelopeType.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.EnvelopeType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.EnvelopeType
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: EnvelopeType.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+    startLine: 35
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static EnvelopeType Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.EnvelopeType
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As EnvelopeType
+  overload: stellar_dotnet_sdk.xdr.EnvelopeType.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.EnvelopeType)
+  commentId: M:stellar_dotnet_sdk.xdr.EnvelopeType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.EnvelopeType)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.EnvelopeType)
+  parent: stellar_dotnet_sdk.xdr.EnvelopeType
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, EnvelopeType)
+  nameWithType: EnvelopeType.Encode(XdrDataOutputStream, EnvelopeType)
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.EnvelopeType)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/EnvelopeType.cs
+    startLine: 48
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, EnvelopeType value)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: value
+      type: stellar_dotnet_sdk.xdr.EnvelopeType
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, value As EnvelopeType)
+  overload: stellar_dotnet_sdk.xdr.EnvelopeType.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.EnvelopeType.InnerValue
+  name: InnerValue
+  nameWithType: EnvelopeType.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.InnerValue
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: EnvelopeType.EnvelopeTypeEnum
+  nameWithType: EnvelopeType.EnvelopeTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.EnvelopeTypeEnum
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.Create*
+  commentId: Overload:stellar_dotnet_sdk.xdr.EnvelopeType.Create
+  name: Create
+  nameWithType: EnvelopeType.Create
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.Create
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType
+  commentId: T:stellar_dotnet_sdk.xdr.EnvelopeType
+  parent: stellar_dotnet_sdk.xdr
+  name: EnvelopeType
+  nameWithType: EnvelopeType
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.EnvelopeType.Decode
+  name: Decode
+  nameWithType: EnvelopeType.Decode
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream
+- uid: stellar_dotnet_sdk.xdr.EnvelopeType.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.EnvelopeType.Encode
+  name: Encode
+  nameWithType: EnvelopeType.Encode
+  fullName: stellar_dotnet_sdk.xdr.EnvelopeType.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream

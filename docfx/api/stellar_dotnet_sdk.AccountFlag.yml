@@ -1,0 +1,156 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.AccountFlag
+  commentId: T:stellar_dotnet_sdk.AccountFlag
+  id: AccountFlag
+  parent: stellar_dotnet_sdk
+  children:
+  - stellar_dotnet_sdk.AccountFlag.AuthImmutableFlag
+  - stellar_dotnet_sdk.AccountFlag.AuthRequiredFlag
+  - stellar_dotnet_sdk.AccountFlag.AuthRevocableFlag
+  langs:
+  - csharp
+  - vb
+  name: AccountFlag
+  nameWithType: AccountFlag
+  fullName: stellar_dotnet_sdk.AccountFlag
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/AccountFlag.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AccountFlag
+    path: ../stellar-dotnet-sdk/AccountFlag.cs
+    startLine: 7
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: 'public enum AccountFlag : int'
+    content.vb: Public Enum AccountFlag As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.AccountFlag.AuthRequiredFlag
+  commentId: F:stellar_dotnet_sdk.AccountFlag.AuthRequiredFlag
+  id: AuthRequiredFlag
+  parent: stellar_dotnet_sdk.AccountFlag
+  langs:
+  - csharp
+  - vb
+  name: AuthRequiredFlag
+  nameWithType: AccountFlag.AuthRequiredFlag
+  fullName: stellar_dotnet_sdk.AccountFlag.AuthRequiredFlag
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/AccountFlag.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AuthRequiredFlag
+    path: ../stellar-dotnet-sdk/AccountFlag.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nWith this setting, an anchor must approve anyone who wants to hold its asset.\n"
+  example: []
+  syntax:
+    content: AuthRequiredFlag = null
+    return:
+      type: stellar_dotnet_sdk.AccountFlag
+    content.vb: AuthRequiredFlag = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.AccountFlag.AuthRevocableFlag
+  commentId: F:stellar_dotnet_sdk.AccountFlag.AuthRevocableFlag
+  id: AuthRevocableFlag
+  parent: stellar_dotnet_sdk.AccountFlag
+  langs:
+  - csharp
+  - vb
+  name: AuthRevocableFlag
+  nameWithType: AccountFlag.AuthRevocableFlag
+  fullName: stellar_dotnet_sdk.AccountFlag.AuthRevocableFlag
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/AccountFlag.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AuthRevocableFlag
+    path: ../stellar-dotnet-sdk/AccountFlag.cs
+    startLine: 17
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nWith this setting, an anchor can set the authorize flag of an existing trustline to freeze the assets held by an asset holder.\n"
+  example: []
+  syntax:
+    content: AuthRevocableFlag = null
+    return:
+      type: stellar_dotnet_sdk.AccountFlag
+    content.vb: AuthRevocableFlag = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.AccountFlag.AuthImmutableFlag
+  commentId: F:stellar_dotnet_sdk.AccountFlag.AuthImmutableFlag
+  id: AuthImmutableFlag
+  parent: stellar_dotnet_sdk.AccountFlag
+  langs:
+  - csharp
+  - vb
+  name: AuthImmutableFlag
+  nameWithType: AccountFlag.AuthImmutableFlag
+  fullName: stellar_dotnet_sdk.AccountFlag.AuthImmutableFlag
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/AccountFlag.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AuthImmutableFlag
+    path: ../stellar-dotnet-sdk/AccountFlag.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk
+  summary: "\nWith this setting, none of the following authorization flags can be changed.\n"
+  example: []
+  syntax:
+    content: AuthImmutableFlag = null
+    return:
+      type: stellar_dotnet_sdk.AccountFlag
+    content.vb: AuthImmutableFlag = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: stellar_dotnet_sdk.AccountFlag
+  commentId: T:stellar_dotnet_sdk.AccountFlag
+  parent: stellar_dotnet_sdk
+  name: AccountFlag
+  nameWithType: AccountFlag
+  fullName: stellar_dotnet_sdk.AccountFlag

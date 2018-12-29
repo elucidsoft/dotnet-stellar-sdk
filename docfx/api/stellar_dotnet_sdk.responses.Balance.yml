@@ -1,0 +1,452 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.responses.Balance
+  commentId: T:stellar_dotnet_sdk.responses.Balance
+  id: Balance
+  parent: stellar_dotnet_sdk.responses
+  children:
+  - stellar_dotnet_sdk.responses.Balance.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  - stellar_dotnet_sdk.responses.Balance.Asset
+  - stellar_dotnet_sdk.responses.Balance.AssetCode
+  - stellar_dotnet_sdk.responses.Balance.AssetIssuer
+  - stellar_dotnet_sdk.responses.Balance.AssetType
+  - stellar_dotnet_sdk.responses.Balance.BalanceString
+  - stellar_dotnet_sdk.responses.Balance.BuyingLiabilities
+  - stellar_dotnet_sdk.responses.Balance.Limit
+  - stellar_dotnet_sdk.responses.Balance.SellingLiabilities
+  langs:
+  - csharp
+  - vb
+  name: Balance
+  nameWithType: Balance
+  fullName: stellar_dotnet_sdk.responses.Balance
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Balance.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Balance
+    path: ../stellar-dotnet-sdk/responses/Balance.cs
+    startLine: 8
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  summary: "\nRepresents account balance.\n"
+  example: []
+  syntax:
+    content: 'public class Balance : object'
+    content.vb: >-
+      Public Class Balance
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.responses.Balance.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  commentId: M:stellar_dotnet_sdk.responses.Balance.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String)'
+  parent: stellar_dotnet_sdk.responses.Balance
+  langs:
+  - csharp
+  - vb
+  name: Balance(String, String, String, String, String, String, String)
+  nameWithType: Balance.Balance(String, String, String, String, String, String, String)
+  fullName: stellar_dotnet_sdk.responses.Balance.Balance(System.String, System.String, System.String, System.String, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Balance.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/responses/Balance.cs
+    startLine: 13
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public Balance(string assetType, string assetCode, string assetIssuer, string balance, string limit, string buyingLiabilities, string sellingLiabilities)
+    parameters:
+    - id: assetType
+      type: System.String
+    - id: assetCode
+      type: System.String
+    - id: assetIssuer
+      type: System.String
+    - id: balance
+      type: System.String
+    - id: limit
+      type: System.String
+    - id: buyingLiabilities
+      type: System.String
+    - id: sellingLiabilities
+      type: System.String
+    content.vb: Public Sub New(assetType As String, assetCode As String, assetIssuer As String, balance As String, limit As String, buyingLiabilities As String, sellingLiabilities As String)
+  overload: stellar_dotnet_sdk.responses.Balance.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.responses.Balance.AssetType
+  commentId: P:stellar_dotnet_sdk.responses.Balance.AssetType
+  id: AssetType
+  parent: stellar_dotnet_sdk.responses.Balance
+  langs:
+  - csharp
+  - vb
+  name: AssetType
+  nameWithType: Balance.AssetType
+  fullName: stellar_dotnet_sdk.responses.Balance.AssetType
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Balance.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetType
+    path: ../stellar-dotnet-sdk/responses/Balance.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string AssetType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssetType As String
+  overload: stellar_dotnet_sdk.responses.Balance.AssetType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.Balance.AssetCode
+  commentId: P:stellar_dotnet_sdk.responses.Balance.AssetCode
+  id: AssetCode
+  parent: stellar_dotnet_sdk.responses.Balance
+  langs:
+  - csharp
+  - vb
+  name: AssetCode
+  nameWithType: Balance.AssetCode
+  fullName: stellar_dotnet_sdk.responses.Balance.AssetCode
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Balance.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetCode
+    path: ../stellar-dotnet-sdk/responses/Balance.cs
+    startLine: 27
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string AssetCode { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AssetCode As String
+  overload: stellar_dotnet_sdk.responses.Balance.AssetCode*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.Balance.AssetIssuer
+  commentId: P:stellar_dotnet_sdk.responses.Balance.AssetIssuer
+  id: AssetIssuer
+  parent: stellar_dotnet_sdk.responses.Balance
+  langs:
+  - csharp
+  - vb
+  name: AssetIssuer
+  nameWithType: Balance.AssetIssuer
+  fullName: stellar_dotnet_sdk.responses.Balance.AssetIssuer
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Balance.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: AssetIssuer
+    path: ../stellar-dotnet-sdk/responses/Balance.cs
+    startLine: 30
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public KeyPair AssetIssuer { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.KeyPair
+    content.vb: Public ReadOnly Property AssetIssuer As KeyPair
+  overload: stellar_dotnet_sdk.responses.Balance.AssetIssuer*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.Balance.Asset
+  commentId: P:stellar_dotnet_sdk.responses.Balance.Asset
+  id: Asset
+  parent: stellar_dotnet_sdk.responses.Balance
+  langs:
+  - csharp
+  - vb
+  name: Asset
+  nameWithType: Balance.Asset
+  fullName: stellar_dotnet_sdk.responses.Balance.Asset
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Balance.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Asset
+    path: ../stellar-dotnet-sdk/responses/Balance.cs
+    startLine: 34
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public Asset Asset { get; }
+    parameters: []
+    return:
+      type: stellar_dotnet_sdk.Asset
+    content.vb: Public ReadOnly Property Asset As Asset
+  overload: stellar_dotnet_sdk.responses.Balance.Asset*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.Balance.Limit
+  commentId: P:stellar_dotnet_sdk.responses.Balance.Limit
+  id: Limit
+  parent: stellar_dotnet_sdk.responses.Balance
+  langs:
+  - csharp
+  - vb
+  name: Limit
+  nameWithType: Balance.Limit
+  fullName: stellar_dotnet_sdk.responses.Balance.Limit
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Balance.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Limit
+    path: ../stellar-dotnet-sdk/responses/Balance.cs
+    startLine: 37
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string Limit { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Limit As String
+  overload: stellar_dotnet_sdk.responses.Balance.Limit*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.Balance.BalanceString
+  commentId: P:stellar_dotnet_sdk.responses.Balance.BalanceString
+  id: BalanceString
+  parent: stellar_dotnet_sdk.responses.Balance
+  langs:
+  - csharp
+  - vb
+  name: BalanceString
+  nameWithType: Balance.BalanceString
+  fullName: stellar_dotnet_sdk.responses.Balance.BalanceString
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Balance.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BalanceString
+    path: ../stellar-dotnet-sdk/responses/Balance.cs
+    startLine: 40
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string BalanceString { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property BalanceString As String
+  overload: stellar_dotnet_sdk.responses.Balance.BalanceString*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.Balance.BuyingLiabilities
+  commentId: P:stellar_dotnet_sdk.responses.Balance.BuyingLiabilities
+  id: BuyingLiabilities
+  parent: stellar_dotnet_sdk.responses.Balance
+  langs:
+  - csharp
+  - vb
+  name: BuyingLiabilities
+  nameWithType: Balance.BuyingLiabilities
+  fullName: stellar_dotnet_sdk.responses.Balance.BuyingLiabilities
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Balance.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: BuyingLiabilities
+    path: ../stellar-dotnet-sdk/responses/Balance.cs
+    startLine: 43
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string BuyingLiabilities { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property BuyingLiabilities As String
+  overload: stellar_dotnet_sdk.responses.Balance.BuyingLiabilities*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: stellar_dotnet_sdk.responses.Balance.SellingLiabilities
+  commentId: P:stellar_dotnet_sdk.responses.Balance.SellingLiabilities
+  id: SellingLiabilities
+  parent: stellar_dotnet_sdk.responses.Balance
+  langs:
+  - csharp
+  - vb
+  name: SellingLiabilities
+  nameWithType: Balance.SellingLiabilities
+  fullName: stellar_dotnet_sdk.responses.Balance.SellingLiabilities
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/responses/Balance.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SellingLiabilities
+    path: ../stellar-dotnet-sdk/responses/Balance.cs
+    startLine: 46
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.responses
+  syntax:
+    content: public string SellingLiabilities { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property SellingLiabilities As String
+  overload: stellar_dotnet_sdk.responses.Balance.SellingLiabilities*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: stellar_dotnet_sdk.responses
+  commentId: N:stellar_dotnet_sdk.responses
+  name: stellar_dotnet_sdk.responses
+  nameWithType: stellar_dotnet_sdk.responses
+  fullName: stellar_dotnet_sdk.responses
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.responses.Balance.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.responses.Balance.#ctor
+  name: Balance
+  nameWithType: Balance.Balance
+  fullName: stellar_dotnet_sdk.responses.Balance.Balance
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: stellar_dotnet_sdk.responses.Balance.AssetType*
+  commentId: Overload:stellar_dotnet_sdk.responses.Balance.AssetType
+  name: AssetType
+  nameWithType: Balance.AssetType
+  fullName: stellar_dotnet_sdk.responses.Balance.AssetType
+- uid: stellar_dotnet_sdk.responses.Balance.AssetCode*
+  commentId: Overload:stellar_dotnet_sdk.responses.Balance.AssetCode
+  name: AssetCode
+  nameWithType: Balance.AssetCode
+  fullName: stellar_dotnet_sdk.responses.Balance.AssetCode
+- uid: stellar_dotnet_sdk.responses.Balance.AssetIssuer*
+  commentId: Overload:stellar_dotnet_sdk.responses.Balance.AssetIssuer
+  name: AssetIssuer
+  nameWithType: Balance.AssetIssuer
+  fullName: stellar_dotnet_sdk.responses.Balance.AssetIssuer
+- uid: stellar_dotnet_sdk.KeyPair
+  commentId: T:stellar_dotnet_sdk.KeyPair
+  parent: stellar_dotnet_sdk
+  name: KeyPair
+  nameWithType: KeyPair
+  fullName: stellar_dotnet_sdk.KeyPair
+- uid: stellar_dotnet_sdk
+  commentId: N:stellar_dotnet_sdk
+  name: stellar_dotnet_sdk
+  nameWithType: stellar_dotnet_sdk
+  fullName: stellar_dotnet_sdk
+- uid: stellar_dotnet_sdk.responses.Balance.Asset*
+  commentId: Overload:stellar_dotnet_sdk.responses.Balance.Asset
+  name: Asset
+  nameWithType: Balance.Asset
+  fullName: stellar_dotnet_sdk.responses.Balance.Asset
+- uid: stellar_dotnet_sdk.Asset
+  commentId: T:stellar_dotnet_sdk.Asset
+  parent: stellar_dotnet_sdk
+  name: Asset
+  nameWithType: Asset
+  fullName: stellar_dotnet_sdk.Asset
+- uid: stellar_dotnet_sdk.responses.Balance.Limit*
+  commentId: Overload:stellar_dotnet_sdk.responses.Balance.Limit
+  name: Limit
+  nameWithType: Balance.Limit
+  fullName: stellar_dotnet_sdk.responses.Balance.Limit
+- uid: stellar_dotnet_sdk.responses.Balance.BalanceString*
+  commentId: Overload:stellar_dotnet_sdk.responses.Balance.BalanceString
+  name: BalanceString
+  nameWithType: Balance.BalanceString
+  fullName: stellar_dotnet_sdk.responses.Balance.BalanceString
+- uid: stellar_dotnet_sdk.responses.Balance.BuyingLiabilities*
+  commentId: Overload:stellar_dotnet_sdk.responses.Balance.BuyingLiabilities
+  name: BuyingLiabilities
+  nameWithType: Balance.BuyingLiabilities
+  fullName: stellar_dotnet_sdk.responses.Balance.BuyingLiabilities
+- uid: stellar_dotnet_sdk.responses.Balance.SellingLiabilities*
+  commentId: Overload:stellar_dotnet_sdk.responses.Balance.SellingLiabilities
+  name: SellingLiabilities
+  nameWithType: Balance.SellingLiabilities
+  fullName: stellar_dotnet_sdk.responses.Balance.SellingLiabilities

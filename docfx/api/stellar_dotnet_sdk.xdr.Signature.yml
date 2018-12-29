@@ -1,0 +1,293 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.Signature
+  commentId: T:stellar_dotnet_sdk.xdr.Signature
+  id: Signature
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.Signature.#ctor
+  - stellar_dotnet_sdk.xdr.Signature.#ctor(System.Byte[])
+  - stellar_dotnet_sdk.xdr.Signature.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  - stellar_dotnet_sdk.xdr.Signature.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Signature)
+  - stellar_dotnet_sdk.xdr.Signature.InnerValue
+  langs:
+  - csharp
+  - vb
+  name: Signature
+  nameWithType: Signature
+  fullName: stellar_dotnet_sdk.xdr.Signature
+  type: Class
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Signature.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Signature
+    path: ../stellar-dotnet-sdk/xdr/generated/Signature.cs
+    startLine: 12
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public class Signature : object'
+    content.vb: >-
+      Public Class Signature
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: stellar_dotnet_sdk.xdr.Signature.InnerValue
+  commentId: P:stellar_dotnet_sdk.xdr.Signature.InnerValue
+  id: InnerValue
+  parent: stellar_dotnet_sdk.xdr.Signature
+  langs:
+  - csharp
+  - vb
+  name: InnerValue
+  nameWithType: Signature.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.Signature.InnerValue
+  type: Property
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Signature.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: InnerValue
+    path: ../stellar-dotnet-sdk/xdr/generated/Signature.cs
+    startLine: 14
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public byte[] InnerValue { get; set; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public Property InnerValue As Byte()
+  overload: stellar_dotnet_sdk.xdr.Signature.InnerValue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Signature.#ctor
+  commentId: M:stellar_dotnet_sdk.xdr.Signature.#ctor
+  id: '#ctor'
+  parent: stellar_dotnet_sdk.xdr.Signature
+  langs:
+  - csharp
+  - vb
+  name: Signature()
+  nameWithType: Signature.Signature()
+  fullName: stellar_dotnet_sdk.xdr.Signature.Signature()
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Signature.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/Signature.cs
+    startLine: 16
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Signature()
+    content.vb: Public Sub New
+  overload: stellar_dotnet_sdk.xdr.Signature.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: stellar_dotnet_sdk.xdr.Signature.#ctor(System.Byte[])
+  commentId: M:stellar_dotnet_sdk.xdr.Signature.#ctor(System.Byte[])
+  id: '#ctor(System.Byte[])'
+  parent: stellar_dotnet_sdk.xdr.Signature
+  langs:
+  - csharp
+  - vb
+  name: Signature(Byte[])
+  nameWithType: Signature.Signature(Byte[])
+  fullName: stellar_dotnet_sdk.xdr.Signature.Signature(System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Signature.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: .ctor
+    path: ../stellar-dotnet-sdk/xdr/generated/Signature.cs
+    startLine: 18
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public Signature(byte[] value)
+    parameters:
+    - id: value
+      type: System.Byte[]
+    content.vb: Public Sub New(value As Byte())
+  overload: stellar_dotnet_sdk.xdr.Signature.#ctor*
+  nameWithType.vb: Signature.Signature(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: stellar_dotnet_sdk.xdr.Signature.Signature(System.Byte())
+  name.vb: Signature(Byte())
+- uid: stellar_dotnet_sdk.xdr.Signature.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Signature)
+  commentId: M:stellar_dotnet_sdk.xdr.Signature.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Signature)
+  id: Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream,stellar_dotnet_sdk.xdr.Signature)
+  parent: stellar_dotnet_sdk.xdr.Signature
+  langs:
+  - csharp
+  - vb
+  name: Encode(XdrDataOutputStream, Signature)
+  nameWithType: Signature.Encode(XdrDataOutputStream, Signature)
+  fullName: stellar_dotnet_sdk.xdr.Signature.Encode(stellar_dotnet_sdk.xdr.XdrDataOutputStream, stellar_dotnet_sdk.xdr.Signature)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Signature.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Encode
+    path: ../stellar-dotnet-sdk/xdr/generated/Signature.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static void Encode(XdrDataOutputStream stream, Signature encodedSignature)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+    - id: encodedSignature
+      type: stellar_dotnet_sdk.xdr.Signature
+    content.vb: Public Shared Sub Encode(stream As XdrDataOutputStream, encodedSignature As Signature)
+  overload: stellar_dotnet_sdk.xdr.Signature.Encode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: stellar_dotnet_sdk.xdr.Signature.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  commentId: M:stellar_dotnet_sdk.xdr.Signature.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  id: Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  parent: stellar_dotnet_sdk.xdr.Signature
+  langs:
+  - csharp
+  - vb
+  name: Decode(XdrDataInputStream)
+  nameWithType: Signature.Decode(XdrDataInputStream)
+  fullName: stellar_dotnet_sdk.xdr.Signature.Decode(stellar_dotnet_sdk.xdr.XdrDataInputStream)
+  type: Method
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/Signature.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: Decode
+    path: ../stellar-dotnet-sdk/xdr/generated/Signature.cs
+    startLine: 29
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: public static Signature Decode(XdrDataInputStream stream)
+    parameters:
+    - id: stream
+      type: stellar_dotnet_sdk.xdr.XdrDataInputStream
+    return:
+      type: stellar_dotnet_sdk.xdr.Signature
+    content.vb: Public Shared Function Decode(stream As XdrDataInputStream) As Signature
+  overload: stellar_dotnet_sdk.xdr.Signature.Decode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: System.Object
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: stellar_dotnet_sdk.xdr.Signature.InnerValue*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Signature.InnerValue
+  name: InnerValue
+  nameWithType: Signature.InnerValue
+  fullName: stellar_dotnet_sdk.xdr.Signature.InnerValue
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: stellar_dotnet_sdk.xdr.Signature.#ctor*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Signature.#ctor
+  name: Signature
+  nameWithType: Signature.Signature
+  fullName: stellar_dotnet_sdk.xdr.Signature.Signature
+- uid: stellar_dotnet_sdk.xdr.Signature.Encode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Signature.Encode
+  name: Encode
+  nameWithType: Signature.Encode
+  fullName: stellar_dotnet_sdk.xdr.Signature.Encode
+- uid: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataOutputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataOutputStream
+  nameWithType: XdrDataOutputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataOutputStream
+- uid: stellar_dotnet_sdk.xdr.Signature
+  commentId: T:stellar_dotnet_sdk.xdr.Signature
+  parent: stellar_dotnet_sdk.xdr
+  name: Signature
+  nameWithType: Signature
+  fullName: stellar_dotnet_sdk.xdr.Signature
+- uid: stellar_dotnet_sdk.xdr.Signature.Decode*
+  commentId: Overload:stellar_dotnet_sdk.xdr.Signature.Decode
+  name: Decode
+  nameWithType: Signature.Decode
+  fullName: stellar_dotnet_sdk.xdr.Signature.Decode
+- uid: stellar_dotnet_sdk.xdr.XdrDataInputStream
+  commentId: T:stellar_dotnet_sdk.xdr.XdrDataInputStream
+  parent: stellar_dotnet_sdk.xdr
+  name: XdrDataInputStream
+  nameWithType: XdrDataInputStream
+  fullName: stellar_dotnet_sdk.xdr.XdrDataInputStream

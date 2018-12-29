@@ -1,0 +1,182 @@
+### YamlMime:ManagedReference
+items:
+- uid: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
+  id: SCPStatementType.SCPStatementTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  children:
+  - stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_CONFIRM
+  - stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_EXTERNALIZE
+  - stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_NOMINATE
+  - stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_PREPARE
+  langs:
+  - csharp
+  - vb
+  name: SCPStatementType.SCPStatementTypeEnum
+  nameWithType: SCPStatementType.SCPStatementTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
+  type: Enum
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatementType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SCPStatementTypeEnum
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatementType.cs
+    startLine: 20
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: 'public enum SCPStatementTypeEnum : int'
+    content.vb: Public Enum SCPStatementTypeEnum As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_PREPARE
+  commentId: F:stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_PREPARE
+  id: SCP_ST_PREPARE
+  parent: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: SCP_ST_PREPARE
+  nameWithType: SCPStatementType.SCPStatementTypeEnum.SCP_ST_PREPARE
+  fullName: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_PREPARE
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatementType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SCP_ST_PREPARE
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatementType.cs
+    startLine: 22
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SCP_ST_PREPARE = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
+    content.vb: SCP_ST_PREPARE = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_CONFIRM
+  commentId: F:stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_CONFIRM
+  id: SCP_ST_CONFIRM
+  parent: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: SCP_ST_CONFIRM
+  nameWithType: SCPStatementType.SCPStatementTypeEnum.SCP_ST_CONFIRM
+  fullName: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_CONFIRM
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatementType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SCP_ST_CONFIRM
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatementType.cs
+    startLine: 23
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SCP_ST_CONFIRM = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
+    content.vb: SCP_ST_CONFIRM = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_EXTERNALIZE
+  commentId: F:stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_EXTERNALIZE
+  id: SCP_ST_EXTERNALIZE
+  parent: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: SCP_ST_EXTERNALIZE
+  nameWithType: SCPStatementType.SCPStatementTypeEnum.SCP_ST_EXTERNALIZE
+  fullName: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_EXTERNALIZE
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatementType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SCP_ST_EXTERNALIZE
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatementType.cs
+    startLine: 24
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SCP_ST_EXTERNALIZE = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
+    content.vb: SCP_ST_EXTERNALIZE = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_NOMINATE
+  commentId: F:stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_NOMINATE
+  id: SCP_ST_NOMINATE
+  parent: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
+  langs:
+  - csharp
+  - vb
+  name: SCP_ST_NOMINATE
+  nameWithType: SCPStatementType.SCPStatementTypeEnum.SCP_ST_NOMINATE
+  fullName: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum.SCP_ST_NOMINATE
+  type: Field
+  source:
+    remote:
+      path: stellar-dotnet-sdk/xdr/generated/SCPStatementType.cs
+      branch: master
+      repo: https://github.com/elucidsoft/dotnet-stellar-sdk.git
+    id: SCP_ST_NOMINATE
+    path: ../stellar-dotnet-sdk/xdr/generated/SCPStatementType.cs
+    startLine: 25
+  assemblies:
+  - stellar-dotnet-sdk
+  namespace: stellar_dotnet_sdk.xdr
+  syntax:
+    content: SCP_ST_NOMINATE = null
+    return:
+      type: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
+    content.vb: SCP_ST_NOMINATE = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: stellar_dotnet_sdk.xdr
+  commentId: N:stellar_dotnet_sdk.xdr
+  name: stellar_dotnet_sdk.xdr
+  nameWithType: stellar_dotnet_sdk.xdr
+  fullName: stellar_dotnet_sdk.xdr
+- uid: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
+  commentId: T:stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
+  parent: stellar_dotnet_sdk.xdr
+  name: SCPStatementType.SCPStatementTypeEnum
+  nameWithType: SCPStatementType.SCPStatementTypeEnum
+  fullName: stellar_dotnet_sdk.xdr.SCPStatementType.SCPStatementTypeEnum
