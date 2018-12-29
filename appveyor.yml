@@ -9,6 +9,6 @@ build:
   parallel: true
   verbosity: minimal
 test_script:
- - cmd: vstest.console /logger:Appveyor stellar-dotnet-sdk-test
+ - cmd: dotnet test ./stellar-dotnet-sdk-test --test-adapter-path:. --logger:Appveyor
 deploy: off
 
