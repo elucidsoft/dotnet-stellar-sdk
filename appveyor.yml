@@ -12,7 +12,7 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 before_build:
-- cmd: dotnet restore
+- cmd: dotnet restore stellar-dotnet-sdk.sln
 build:
   project: stellar-dotnet-sdk.sln
   parallel: true
