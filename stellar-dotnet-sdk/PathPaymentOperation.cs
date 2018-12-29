@@ -1,8 +1,15 @@
 ﻿using System;
+using stellar_dotnet_sdk.xdr;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
+    /// <summary>
+    /// Represents a <see cref="PathPaymentOp"/>.
+    /// Use <see cref="Builder"/> to create a new PathPaymentOperation.
+    /// 
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#path-payment">Path Payment</see>
+    /// </summary>
     public class PathPaymentOperation : Operation
     {
         private PathPaymentOperation(Asset sendAsset, string sendMax, KeyPair destination,
@@ -71,9 +78,8 @@ namespace stellar_dotnet_sdk
         }
 
         /// <summary>
-        ///     Builds PathPayment operation.
+        ///     Builds a <see cref="PathPaymentOperation"/>.
         /// </summary>
-        /// <see cref="PathPaymentOperation" />
         public class Builder
         {
             private readonly string _DestAmount;
@@ -99,12 +105,13 @@ namespace stellar_dotnet_sdk
 
             /// <summary>
             ///     Creates a new PathPaymentOperation builder.
-            ///     <param name="sendAsset"> The asset deducted from the sender's account.</param>
-            ///     <param name="sendMax"> The asset deducted from the sender's account.</param>
-            ///     <param name="destination"> Payment destination.</param>
-            ///     <param name="destAsset"> The asset the destination account receives.</param>
-            ///     <param name="destAmount"> The amount of destination asset the destination account receives.</param>
-            ///     <exception cref="ArithmeticException"> When sendMax or destAmount has more than 7 decimal places.</exception>
+            /// </summary>
+            /// <param name="sendAsset"> The asset deducted from the sender's account.</param>
+            /// <param name="sendMax"> The asset deducted from the sender's account.</param>
+            /// <param name="destination"> Payment destination.</param>
+            /// <param name="destAsset"> The asset the destination account receives.</param>
+            /// <param name="destAmount"> The amount of destination asset the destination account receives.</param>
+            /// <exception cref="ArithmeticException"> When sendMax or destAmount has more than 7 decimal places.</exception>
             public Builder(Asset sendAsset, string sendMax, KeyPair destination, Asset destAsset, string destAmount)
             {
                 _SendAsset = sendAsset ?? throw new ArgumentNullException(nameof(sendAsset), "sendAsset cannot be null");

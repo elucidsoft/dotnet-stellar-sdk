@@ -1,8 +1,15 @@
 ﻿using System;
+using stellar_dotnet_sdk.xdr;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
+    /// <summary>
+    /// Represents a <see cref="ChangeTrustOp"/>.
+    /// Use <see cref="Builder"/> to create a new ChangeTrustOperation.
+    /// 
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#change-trust">Change Trust</see>
+    /// </summary>
     public class ChangeTrustOperation : Operation
     {
         private ChangeTrustOperation(Asset asset, string limit)

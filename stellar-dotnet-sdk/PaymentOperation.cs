@@ -4,6 +4,12 @@ using Int64 = stellar_dotnet_sdk.xdr.Int64;
 
 namespace stellar_dotnet_sdk
 {
+    /// <summary>
+    /// Represents a <see cref="PaymentOp"/> operation.
+    /// Use <see cref="Builder"/> to create a new PaymentOperation.
+    /// 
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#payment">Payment</see>
+    /// </summary>
     public class PaymentOperation : Operation
     {
         private PaymentOperation(KeyPair destination, Asset asset, string amount)
@@ -13,10 +19,19 @@ namespace stellar_dotnet_sdk
             Amount = amount ?? throw new ArgumentNullException(nameof(amount), "amount cannot be null");
         }
 
+        /// <summary>
+        /// Account address that receives the payment.
+        /// </summary>
         public KeyPair Destination { get; }
 
+        /// <summary>
+        /// Asset to send to the destination account.
+        /// </summary>
         public Asset Asset { get; }
 
+        /// <summary>
+        /// Amount of the aforementioned asset to send.
+        /// </summary>
         public string Amount { get; }
 
         public override xdr.Operation.OperationBody ToOperationBody()

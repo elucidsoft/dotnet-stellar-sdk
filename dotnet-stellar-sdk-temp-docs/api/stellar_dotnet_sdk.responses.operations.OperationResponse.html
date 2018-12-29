@@ -1,0 +1,540 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class OperationResponse
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class OperationResponse
+   ">
+    <meta name="generator" content="docfx 2.40.6.0">
+    
+    <link rel="shortcut icon" href="../favicon">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse">
+  <h1 id="stellar_dotnet_sdk_responses_operations_OperationResponse" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse">Class OperationResponse
+  </h1>
+  <div class="markdown level0 summary"><p>Abstract class for operation responses.
+See: <a href="https://www.stellar.org/developers/horizon/reference/resources/operation.html">https://www.stellar.org/developers/horizon/reference/resources/operation.html</a>
+<a class="xref" href="stellar_dotnet_sdk.requests.OperationsRequestBuilder.html">OperationsRequestBuilder</a>
+<a class="xref" href="stellar_dotnet_sdk.Server.html">Server</a></p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="stellar_dotnet_sdk.responses.Response.html">Response</a></div>
+    <div class="level2"><span class="xref">OperationResponse</span></div>
+  </div>
+  
+      <div class="level3"><a class="xref" href="stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.html">AccountMergeOperationResponse</a></div>
+      <div class="level3"><a class="xref" href="stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.html">AllowTrustOperationResponse</a></div>
+      <div class="level3"><a class="xref" href="stellar_dotnet_sdk.responses.operations.BumpSequenceOperationResponse.html">BumpSequenceOperationResponse</a></div>
+      <div class="level3"><a class="xref" href="stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.html">ChangeTrustOperationResponse</a></div>
+      <div class="level3"><a class="xref" href="stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.html">CreateAccountOperationResponse</a></div>
+      <div class="level3"><a class="xref" href="stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.html">CreatePassiveOfferOperationResponse</a></div>
+      <div class="level3"><a class="xref" href="stellar_dotnet_sdk.responses.operations.InflationOperationResponse.html">InflationOperationResponse</a></div>
+      <div class="level3"><a class="xref" href="stellar_dotnet_sdk.responses.operations.ManageDataOperationResponse.html">ManageDataOperationResponse</a></div>
+      <div class="level3"><a class="xref" href="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.html">ManageOfferOperationResponse</a></div>
+      <div class="level3"><a class="xref" href="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.html">PathPaymentOperationResponse</a></div>
+      <div class="level3"><a class="xref" href="stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.html">PaymentOperationResponse</a></div>
+      <div class="level3"><a class="xref" href="stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.html">SetOptionsOperationResponse</a></div>
+  
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitLimit">Response.RateLimitLimit</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitRemaining">Response.RateLimitRemaining</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+    </div>
+  </div>
+  
+  <h6><strong>Namespace</strong>: System.Dynamic.ExpandoObject</h6>
+  <h6><strong>Assembly</strong>: stellar-dotnet-sdk.dll</h6>
+  
+  <h5 id="stellar_dotnet_sdk_responses_operations_OperationResponse_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(OperationDeserializer))]
+public abstract class OperationResponse : Response, IPagingToken</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h3 id="properties">Properties
+  </h3>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_OperationResponse_CreatedAt.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/appveyor/stellar-dotnet-sdk/responses/operations/OperationResponse.cs/#L56" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_operations_OperationResponse_CreatedAt_" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_operations_OperationResponse_CreatedAt" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.CreatedAt"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_CreatedAt" class="expander" data-toggle="collapse">CreatedAt</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_CreatedAt" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;created_at&quot;)]
+public string CreatedAt { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_OperationResponse_Id.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.OperationResponse.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/appveyor/stellar-dotnet-sdk/responses/operations/OperationResponse.cs/#L17" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_operations_OperationResponse_Id_" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.Id*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_operations_OperationResponse_Id" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.Id"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_Id" class="expander" data-toggle="collapse">Id</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_Id" class="collapse in">
+  <div class="markdown level1 summary"><p>Id of the operation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;id&quot;)]
+public long Id { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Int64</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_OperationResponse_Links.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.OperationResponse.Links%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/appveyor/stellar-dotnet-sdk/responses/operations/OperationResponse.cs/#L68" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_operations_OperationResponse_Links_" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.Links*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_operations_OperationResponse_Links" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.Links"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_Links" class="expander" data-toggle="collapse">Links</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_Links" class="collapse in">
+  <div class="markdown level1 summary"><p>Links of Paging</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;_links&quot;)]
+public OperationResponseLinks Links { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponseLinks.html">OperationResponseLinks</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_OperationResponse_PagingToken.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/appveyor/stellar-dotnet-sdk/responses/operations/OperationResponse.cs/#L30" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_operations_OperationResponse_PagingToken_" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_operations_OperationResponse_PagingToken" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.PagingToken"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_PagingToken" class="expander" data-toggle="collapse">PagingToken</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_PagingToken" class="collapse in">
+  <div class="markdown level1 summary"><p>Paging Token of Paging</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;paging_token&quot;)]
+public string PagingToken { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.responses.IPagingToken.html#stellar_dotnet_sdk_responses_IPagingToken_PagingToken">IPagingToken.PagingToken</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_OperationResponse_SourceAccount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/appveyor/stellar-dotnet-sdk/responses/operations/OperationResponse.cs/#L23" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_operations_OperationResponse_SourceAccount_" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_operations_OperationResponse_SourceAccount" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_SourceAccount" class="expander" data-toggle="collapse">SourceAccount</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_SourceAccount" class="collapse in">
+  <div class="markdown level1 summary"><p>Source Account of Operation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;source_account&quot;)]
+[JsonConverter(typeof(KeyPairTypeAdapter))]
+public KeyPair SourceAccount { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionHash.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/appveyor/stellar-dotnet-sdk/responses/operations/OperationResponse.cs/#L62" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionHash_" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionHash" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionHash" class="expander" data-toggle="collapse">TransactionHash</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionHash" class="collapse in">
+  <div class="markdown level1 summary"><p>Returns transaction hash of transaction this operation belongs to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;transaction_hash&quot;)]
+public string TransactionHash { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_OperationResponse_Type.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.OperationResponse.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/appveyor/stellar-dotnet-sdk/responses/operations/OperationResponse.cs/#L47" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_operations_OperationResponse_Type_" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.Type*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_operations_OperationResponse_Type" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.Type"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_Type" class="expander" data-toggle="collapse">Type</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_Type" class="collapse in">
+  <div class="markdown level1 summary"><p>Returns operation type. Possible types:
+crete_account
+payment
+allow_trust
+change_trust
+set_options
+account_merge
+manage_offer
+path_payments
+create_passive_offer
+inflation
+manage_data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;type&quot;)]
+public string Type { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_OperationResponse_TypeId.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/appveyor/stellar-dotnet-sdk/responses/operations/OperationResponse.cs/#L50" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_operations_OperationResponse_TypeId_" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_operations_OperationResponse_TypeId" data-uid="stellar_dotnet_sdk.responses.operations.OperationResponse.TypeId"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_TypeId" class="expander" data-toggle="collapse">TypeId</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_operations_OperationResponse_TypeId" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;type_i&quot;)]
+public virtual int TypeId { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Int32</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_OperationResponse.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.OperationResponse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/appveyor/stellar-dotnet-sdk/responses/operations/OperationResponse.cs/#L11" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
