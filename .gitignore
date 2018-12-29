@@ -38,3 +38,4 @@ package/lib/
 .vs/
 *.DotSettings
 .idea/.idea.stellar-dotnetcore-sdk/.idea/workspace.xml
+stellar-dotnet-sdk-test/coverage.opencover.xml
