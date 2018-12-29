@@ -10,5 +10,10 @@ build:
   verbosity: minimal
 test_script:
  - cmd: dotnet test ./stellar-dotnet-sdk-test --test-adapter-path:. --logger:Appveyor
+after_test:
+  - ps: |
+      $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
+      Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
+      bash codecov.sh -f "coverage.xml" -t 3d1827ed-854c-484b-a639-02544eb921b8
 deploy: off
 
