@@ -1,6 +1,4 @@
-version: 1.0.{build}
-environment: 
-    APPVEYOR_BLOCK_DOTNETCORE_TESTS_AUTORUN: true
+version: {build}
 pull_requests:
   do_not_increment_build_number: true
 os: Visual Studio 2017
@@ -14,13 +12,10 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 before_build:
-- cmd: nuget restore
+- cmd: dotnet restore
 build:
-  project: SigfolioWallet.sln
+  project: stellar-dotnet-sdk.sln
   parallel: true
   verbosity: minimal
 deploy: off
-test:
-    assemblies:
-        only:
-         -  SigfolioWallet.Test\bin\Debug\netcoreapp2.1\SigfolioWallet.Test.dll
+
