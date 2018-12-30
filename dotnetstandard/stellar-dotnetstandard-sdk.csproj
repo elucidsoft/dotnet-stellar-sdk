@@ -33,8 +33,4 @@
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="powershell.exe $(SolutionDir)\package\build_package.ps1" />
-  </Target>
-
 </Project>
