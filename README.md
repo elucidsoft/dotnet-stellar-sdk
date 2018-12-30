@@ -1,9 +1,8 @@
-# dotnet-stellar-sdk
-Stellar API SDK for .NET Core 2.x and .NET Standard 2.0
-
 [![Build Status](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk.svg?branch=master)](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk)
 [![codecov](https://codecov.io/gh/elucidsoft/dotnet-stellar-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/elucidsoft/dotnet-stellar-sdk)
 [![CodeFactor](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk/badge)](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk)
+# dotnet-stellar-sdk
+Stellar API SDK for .NET Core 2.x and .NET Standard 2.0
 
 [![Build history](https://buildstats.info/travisci/chart/elucidsoft/dotnet-stellar-sdk)](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk/builds)
 
