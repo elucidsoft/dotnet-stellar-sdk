@@ -5,10 +5,10 @@
         <id>stellar-dotnet-sdk</id>
 
         <!-- The package version number that is used when resolving dependencies -->
-        <version>2.1.0-beta2</version>
+        <version>2.1.0-beta3</version>
 
         <!-- Authors contain text that appears directly on the gallery -->
-        <authors>Eric Malamisura, Michael Monte, Kirbyrawr</authors>
+        <authors>Eric Malamisura, Michael Monte, Kirbyrawr, Francesco Ceccon</authors>
 
         <!-- 
             Owners are typically nuget.org identities that allow gallery
@@ -17,7 +17,7 @@
         <owners>elucidsoft, michaeljmonte, kirbyrawr</owners>
 
         <!-- License and project URLs provide links for the gallery -->
-        <licenseUrl>https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/LICENSE.txt</licenseUrl>
+        <license type="file">LICENSE.txt</license>
         <projectUrl>https://github.com/elucidsoft/dotnet-stellar-sdk</projectUrl>
 
         <!-- The icon is used in Visual Studio's package manager UI -->
@@ -31,14 +31,22 @@
 
         <!-- Any details about this particular release -->
         <releaseNotes>
+	    - Can now use a Bip39 Seed to generate a KeyPair (SEP-0005)
+            - Stream Fixes
             - .NET Core 2.1
             - Horizon Release 12.3 Compatability
             - Nett version 0.10.0 upgrade
             - Newtonsoft.Json 12.0.1 upgrade
-            - Fixed: AccountResponse missing ITransactionBuilderAccount interface.
-            - Fixed: Server.SubmitTransaction for an unfunded account fails.
-            - Feature: Support Non-ED25519 Keys in Response
-            - Feature: Added support for Visual Studio SourceLink (https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink)
+            - Fix for AccountResponse missing ITransactionBuilderAccount interface.
+            - Fix for Server.SubmitTransaction for an unfunded account fails.
+            - Support Non-ED25519 Keys in Response
+            - Added support for Visual Studio SourceLink (https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink)
+	    - Timebounds Fixes and Improvements
+	    - Serialization of Responses
+	    - Follow Linked Resources (HAL and Link Following)
+	    - Horizon 0.15.0 Support
+	    - Documentation Improvements
+	    - Removed .NET Core independent build from NuGet package. The .NET Standard 2.0 will work with core, was not needed and causing issues.
         </releaseNotes>
 
         <!-- 
@@ -61,5 +69,7 @@
 
 
     </metadata>
-
+    <files>
+	<file src="..\LICENSE.txt" target="" />
+    </files>
 </package>
