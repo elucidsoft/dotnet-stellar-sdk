@@ -1,14 +1,11 @@
 [![Build Status](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk.svg?branch=master)](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk)
 [![codecov](https://codecov.io/gh/elucidsoft/dotnet-stellar-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/elucidsoft/dotnet-stellar-sdk)
-[![CodeFactor](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk/badge)](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk)
+[![CodeFactor](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk/badge)](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk)  
+[![NuGet Badge](https://buildstats.info/nuget/stellar-dotnet-sdk)](https://www.nuget.org/packages/stellar-dotnet-sdk)
+[![NuGet Badge](https://buildstats.info/nuget/stellar-dotnet-sdk?includeprereleases=true)](https://www.nuget.org/packages/stellar-dotnet-sdk/2.1.0-beta3)  
+[![Build history](https://buildstats.info/travisci/chart/elucidsoft/dotnet-stellar-sdk)](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk/builds)  
 # dotnet-stellar-sdk
 Stellar API SDK for .NET Core 2.x and .NET Standard 2.0
-
-[![Build history](https://buildstats.info/travisci/chart/elucidsoft/dotnet-stellar-sdk)](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk/builds)
-
-[![NuGet Badge](https://buildstats.info/nuget/stellar-dotnet-sdk)](https://www.nuget.org/packages/stellar-dotnet-sdk)
-[![NuGet Badge](https://buildstats.info/nuget/stellar-dotnet-sdk?includeprereleases=true)](https://www.nuget.org/packages/stellar-dotnet-sdk/2.1.0-beta3)
-
 
 The .NET Core Stellar Sdk library provides APIs to build transactions and connect to [Horizon](https://github.com/stellar/horizon).
 
