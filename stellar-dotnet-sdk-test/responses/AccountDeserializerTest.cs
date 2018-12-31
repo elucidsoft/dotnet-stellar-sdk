@@ -51,7 +51,7 @@ namespace stellar_dotnet_sdk_test.responses
             var asset = (AssetTypeCreditAlphaNum) account.Balances[0].Asset;
             Assert.IsInstanceOfType(asset, typeof(AssetTypeCreditAlphaNum));
             Assert.AreEqual(asset.Code, "ABC");
-            Assert.AreEqual(asset.Issuer.AccountId, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
+            Assert.AreEqual(asset.Issuer, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
             
             Assert.AreEqual(account.Balances[0].BalanceString, "1001.0000000");
             Assert.AreEqual(account.Balances[0].Limit, "12000.4775807");

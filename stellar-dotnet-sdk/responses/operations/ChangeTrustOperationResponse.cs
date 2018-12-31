@@ -10,6 +10,11 @@ namespace stellar_dotnet_sdk.responses.operations
     /// </summary>
     public class ChangeTrustOperationResponse : OperationResponse
     {
+        public ChangeTrustOperationResponse()
+        {
+
+        }
+
         public ChangeTrustOperationResponse(string assetCode, string assetIssuer, string assetType, string limit, string trustee, string trustor)
         {
             AssetCode = assetCode;

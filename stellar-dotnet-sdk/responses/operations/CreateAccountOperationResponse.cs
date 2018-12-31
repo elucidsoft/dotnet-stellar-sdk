@@ -21,6 +21,11 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "starting_balance")]
         public string StartingBalance { get; private set; }
 
+        public CreateAccountOperationResponse()
+        {
+
+        }
+
         public CreateAccountOperationResponse(string account, string funder, string startingBalance)
         {
             Account = account;

@@ -45,7 +45,7 @@ namespace stellar_dotnet_sdk_test
                 "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAEqBfIAAAAAAAAAAABtoeVYgAAAEDLki9Oi700N60Lo8gUmEFHbKvYG4QSqXiLIt9T0ru2O5BphVl/jR9tYtHAD+UeDYhgXNgwUxqTEu1WukvEyYcD",
                 transaction.ToEnvelopeXdrBase64());
 
-            Assert.AreEqual(transaction.SourceAccount, source);
+            Assert.AreEqual(transaction.SourceAccount.AccountId, source.AccountId);
             Assert.AreEqual(transaction.SequenceNumber, sequenceNumber + 1);
             Assert.AreEqual(transaction.Fee, 100);
         }
@@ -300,7 +300,7 @@ namespace stellar_dotnet_sdk_test
             var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
             var sequenceNumber = 2908908335136768L;
-            var account = new Account(source, sequenceNumber);
+            var account = new Account(source.AccountId, sequenceNumber);
             var transaction = new Transaction.Builder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .Build();

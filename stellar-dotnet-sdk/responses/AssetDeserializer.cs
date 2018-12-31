@@ -16,7 +16,7 @@ namespace stellar_dotnet_sdk.responses
             {
                 var code = new JProperty("asset_code", credit.Code);
                 jsonObject.Add(code);
-                var issuer = new JProperty("asset_issuer", credit.Issuer.AccountId);
+                var issuer = new JProperty("asset_issuer", credit.Issuer);
                 jsonObject.Add(issuer);
             }
             jsonObject.WriteTo(writer);
