@@ -2,16 +2,43 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.0.0-standard</Version>
+    <Version>2.1.0-beta3</Version>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
     <RootNamespace>stellar_dotnet_sdk</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>The .NET Stellar SDK facilitates client integration with the Stellar Horizon API server and submission of Stellar transactions. It has two main uses: querying Horizon and building, signing, and submitting transactions to the Stellar network.</Description>
+    <PackageId>dotnet-stellar-sdk</PackageId>
+    <PackageLicense>sss</PackageLicense>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <Copyright>elucidsoft 2018</Copyright>
+    <PackageProjectUrl>https://github.com/elucidsoft/dotnet-stellar-sdk</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/elucidsoft/dotnet-stellar-sdk</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <PackageTags>'.NET Core' 'Stellar' 'Horizon' 'Blockchain' 'Crypto' 'Distributed Ledger'</PackageTags>
+    <PackageReleaseNotes>- Can now use a Bip39 Seed to generate a KeyPair (SEP-0005)
+- Stream Fixes
+- .NET Core 2.1
+- Horizon Release 12.3 Compatability
+- Nett version 0.10.0 upgrade
+- Newtonsoft.Json 12.0.1 upgrade
+- Fix for AccountResponse missing ITransactionBuilderAccount interface.
+- Fix for Server.SubmitTransaction for an unfunded account fails.
+- Support Non-ED25519 Keys in Response
+- Added support for Visual Studio SourceLink (https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink)
+- Timebounds Fixes and Improvements
+- Serialization of Responses
+- Follow Linked Resources (HAL and Link Following)
+- Horizon 0.15.0 Support
+- Documentation Improvements
+- Removed .NET Core independent build from NuGet package. The .NET Standard 2.0 will work with core, was not needed and causing issues.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <OutputPath>..\package\lib\</OutputPath>
+    <OutputPath></OutputPath>
   </PropertyGroup>
 
 
@@ -21,5 +48,7 @@
     <PackageReference Include="Nett" Version="0.10.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
-
+  <ItemGroup>
+    <None Include="..\LICENSE.txt" Pack="true" PackagePath="" />
+  </ItemGroup>
 </Project>
