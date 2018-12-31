@@ -2,21 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.1.0-beta3</Version>
+    <Version>2.1.0-beta4</Version>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
     <RootNamespace>stellar_dotnet_sdk</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>The .NET Stellar SDK facilitates client integration with the Stellar Horizon API server and submission of Stellar transactions. It has two main uses: querying Horizon and building, signing, and submitting transactions to the Stellar network.</Description>
-    <PackageId>dotnet-stellar-sdk</PackageId>
+    <PackageId>stellar-dotnet-sdk</PackageId>
     <PackageLicense>sss</PackageLicense>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Copyright>elucidsoft 2018</Copyright>
     <PackageProjectUrl>https://github.com/elucidsoft/dotnet-stellar-sdk</PackageProjectUrl>
     <RepositoryUrl>https://github.com/elucidsoft/dotnet-stellar-sdk</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <IncludeSymbols>true</IncludeSymbols>
     <PackageTags>'.NET Core' 'Stellar' 'Horizon' 'Blockchain' 'Crypto' 'Distributed Ledger'</PackageTags>
     <PackageReleaseNotes>- Can now use a Bip39 Seed to generate a KeyPair (SEP-0005)
 - Stream Fixes
