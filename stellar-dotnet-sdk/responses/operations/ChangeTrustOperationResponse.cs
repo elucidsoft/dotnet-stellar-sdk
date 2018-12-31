@@ -20,23 +20,25 @@ namespace stellar_dotnet_sdk.responses.operations
             Trustor = trustor;
         }
 
+        public override int TypeId => 6;
+
         [JsonProperty(PropertyName = "asset_code")]
-        public string AssetCode { get; }
+        public string AssetCode { get; private set; }
 
         [JsonProperty(PropertyName = "asset_issuer")]
-        public string AssetIssuer { get; }
+        public string AssetIssuer { get; private set; }
 
         [JsonProperty(PropertyName = "asset_type")]
-        public string AssetType { get; }
+        public string AssetType { get; private set; }
 
         [JsonProperty(PropertyName = "limit")]
-        public string Limit { get; }
+        public string Limit { get; private set; }
 
         [JsonProperty(PropertyName = "trustee")]
-        public string Trustee { get; }
+        public string Trustee { get; private set; }
 
         [JsonProperty(PropertyName = "trustor")]
-        public string Trustor { get; }
+        public string Trustor { get; private set; }
 
         public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);
     }

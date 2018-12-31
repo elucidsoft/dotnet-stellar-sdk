@@ -8,7 +8,8 @@ namespace stellar_dotnet_sdk.responses.operations
     /// <seealso cref="requests.OperationsRequestBuilder"/>
     /// <seealso cref="Server"/>
     /// </summary>
-    public abstract class OperationResponse : IPagingToken
+    [JsonConverter(typeof(OperationDeserializer))]
+    public abstract class OperationResponse : Response, IPagingToken
     {
         /// <summary>
         /// Id of the operation
@@ -29,7 +30,7 @@ namespace stellar_dotnet_sdk.responses.operations
         public string PagingToken { get; private set; }
 
         /// <summary>
-        /// Returns operation type. Possible types: 
+        /// Returns operation type. Possible types:
         /// crete_account
         /// payment
         /// allow_trust
@@ -45,8 +46,11 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "type")]
         public string Type { get; private set; }
 
+        [JsonProperty(PropertyName = "type_i")]
+        public virtual int TypeId { get; }
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [JsonProperty(PropertyName = "created_at")]
         public string CreatedAt { get; private set; }

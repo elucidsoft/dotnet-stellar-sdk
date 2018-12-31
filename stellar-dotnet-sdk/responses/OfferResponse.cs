@@ -32,9 +32,11 @@ namespace stellar_dotnet_sdk.responses
         public string Seller { get; private set; }
 
         [JsonProperty(PropertyName = "selling")]
+        [JsonConverter(typeof(AssetDeserializer))]
         public Asset Selling { get; private set; }
 
         [JsonProperty(PropertyName = "buying")]
+        [JsonConverter(typeof(AssetDeserializer))]
         public Asset Buying { get; private set; }
 
         [JsonProperty(PropertyName = "amount")]

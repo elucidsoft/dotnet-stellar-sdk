@@ -41,11 +41,6 @@ namespace stellar_dotnet_sdk.requests
         {
             throw new NotImplementedException();
         }
-
-        public override OrderBookRequestBuilder Limit(int number)
-        {
-            throw new NotImplementedException();
-        }
         
         public override OrderBookRequestBuilder Order(OrderDirection direction)
         {

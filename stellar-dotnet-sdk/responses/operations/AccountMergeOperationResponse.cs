@@ -10,11 +10,13 @@ namespace stellar_dotnet_sdk.responses.operations
     /// </summary>
     public class AccountMergeOperationResponse : OperationResponse
     {
+        public override int TypeId => 8;
+
         [JsonProperty(PropertyName = "account")]
-        public string Account { get; }
+        public string Account { get; private set; }
 
         [JsonProperty(PropertyName = "into")]
-        public string Into { get; }
+        public string Into { get; private set; }
 
         public AccountMergeOperationResponse(string account, string into)
         {

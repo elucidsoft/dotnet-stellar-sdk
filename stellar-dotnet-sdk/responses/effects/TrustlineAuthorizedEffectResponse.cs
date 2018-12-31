@@ -8,6 +8,13 @@
     /// </summary>
     public class TrustlineAuthorizedEffectResponse : TrustlineAuthorizationResponse
     {
+        public override int TypeId => 23;
+
+        public TrustlineAuthorizedEffectResponse()
+        {
+
+        }
+
         /// <inheritdoc />
         public TrustlineAuthorizedEffectResponse(string trustor, string assetType, string assetCode)
             : base(trustor, assetType, assetCode)

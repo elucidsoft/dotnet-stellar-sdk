@@ -1,13 +1,9 @@
-# dotnet-stellar-sdk
-Stellar API SDK for .NET Core 2.x and .NET Standard 2.0
-
 [![Build Status](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk.svg?branch=master)](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk)
 [![codecov](https://codecov.io/gh/elucidsoft/dotnet-stellar-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/elucidsoft/dotnet-stellar-sdk)
-[![CodeFactor](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk/badge)](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk)
-
-[![Build history](https://buildstats.info/travisci/chart/elucidsoft/dotnet-stellar-sdk)](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk/builds)
-
-[![NuGet Badge](https://buildstats.info/nuget/stellar-dotnet-sdk)](https://www.nuget.org/packages/stellar-dotnet-sdk)
+[![CodeFactor](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk/badge)](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk)  
+[![Build history](https://buildstats.info/travisci/chart/elucidsoft/dotnet-stellar-sdk)](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk/builds)  
+# dotnet-stellar-sdk [![NuGet Badge](https://buildstats.info/nuget/stellar-dotnet-sdk)](https://www.nuget.org/packages/stellar-dotnet-sdk) [![NuGet Badge](https://buildstats.info/nuget/stellar-dotnet-sdk?includeprereleases=true)](https://www.nuget.org/packages/stellar-dotnet-sdk/2.1.0-beta3)  
+Stellar API SDK for .NET Core 2.x and .NET Standard 2.0
 
 The .NET Core Stellar Sdk library provides APIs to build transactions and connect to [Horizon](https://github.com/stellar/horizon).
 
@@ -17,6 +13,8 @@ This project is a full port of the official [Java SDK API](https://github.com/st
 
 ## Quick Start
 To install using Nuget run `Install-Package stellar-dotnet-sdk` or install the Nuget package from Visual Studio.
+
+If you have questions or need help on how to do something please use the [Stellar Stack Exchange](https://stellar.stackexchange.com/).
 
 ## Capabilities
 - [Accounts](https://www.stellar.org/developers/guides/concepts/accounts.html) - Create, Query, Payment, Path Payment, Manage Offer, Create Passive Offer, Set Options, Change Trust, Allow Trust, Account Merge, Inflation, Manage Data, Paging (Limit, Cursor, Sorting)
@@ -63,6 +61,12 @@ In the root of the solution there is a console application called TestConsole, i
 In order to generate the XDR Files automatically in C# a custom XDR Generator must be used. We created a fork of xdrgen that does this located here: https://github.com/michaeljmonte/xdrgen
 
 You can use that version of xdrgen to regenerate the XDR files from the .x files located from the [source](https://github.com/stellar/stellar-core/tree/master/src/xdr) of the original API SDK for Horizon.
+
+## Contributors
+- Eric Malamisura (Twitter: [@emalamisura](https://twitter.com/emalamisura), Keybase: [elucidsoft](https://keybase.io/elucidsoft))
+- Kirbyrawr (Keybase: [Kirbyrawr](https://keybase.io/Kirbyrawr))
+- Michael Monte
+- Francesco Ceccon
 
 ## License
 dotnetcore-stellar-sdk is licensed under an Apache-2.0 license. See the [LICENSE](https://github.com/elucidsoft/dotnetcore-stellar-sdk/blob/master/LICENSE.txt) file for details.

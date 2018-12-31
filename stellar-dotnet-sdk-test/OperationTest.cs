@@ -29,6 +29,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
             Assert.AreEqual(destination.AccountId, parsedOperation.Destination.AccountId);
             Assert.AreEqual(startingAmount, parsedOperation.StartingBalance);
+            Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAACVAvkAA==",
@@ -58,6 +59,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(destination.AccountId, parsedOperation.Destination.AccountId);
             Assert.IsTrue(parsedOperation.Asset is AssetTypeNative);
             Assert.AreEqual(amount, parsedOperation.Amount);
+            Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAEAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAAAAAAAlQL5AA=",
@@ -103,6 +105,7 @@ namespace stellar_dotnet_sdk_test
             Assert.IsTrue(parsedOperation.DestAsset is AssetTypeCreditAlphaNum4);
             Assert.AreEqual(destAmount, parsedOperation.DestAmount);
             Assert.AreEqual(path.Length, parsedOperation.Path.Length);
+            Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAIAAAAAAAAAAAAAA+gAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAABVVNEAAAAAACNlYd30HdCuLI54eyYjyX/fDyH9IJWIr/hKDcXKQbq1QAAAAAAAAPoAAAAAgAAAAFVU0QAAAAAACoIKnpnw8rtrfxa276dFZo1C19mDqWXtG4ufhWrLUd1AAAAAlRFU1RURVNUAAAAAAAAAABE/ttVl8BLV0csW/xgXtbXOVf1lMyDluMiafl0IDVFIg==",
@@ -146,6 +149,7 @@ namespace stellar_dotnet_sdk_test
             Assert.IsTrue(parsedOperation.DestAsset is AssetTypeCreditAlphaNum4);
             Assert.AreEqual(destAmount, parsedOperation.DestAmount);
             Assert.AreEqual(0, parsedOperation.Path.Length);
+            Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAIAAAAAAAAAAAAAA+gAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAABVVNEAAAAAACNlYd30HdCuLI54eyYjyX/fDyH9IJWIr/hKDcXKQbq1QAAAAAAAAPoAAAAAA==",
@@ -172,6 +176,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
             Assert.IsTrue(parsedOperation.Asset is AssetTypeNative);
             Assert.AreEqual(limit, parsedOperation.Limit);
+            Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAYAAAAAf/////////8=",
@@ -200,6 +205,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(trustor.AccountId, parsedOperation.Trustor.AccountId);
             Assert.AreEqual(assetCode, parsedOperation.AssetCode);
             Assert.AreEqual(authorize, parsedOperation.Authorize);
+            Assert.AreEqual(OperationThreshold.Low, parsedOperation.Threshold);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAcAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAABVVNEQQAAAAE=",
@@ -253,6 +259,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(signer.Ed25519.InnerValue, parsedOperation.Signer.Ed25519.InnerValue);
             Assert.AreEqual(signerWeight, parsedOperation.SignerWeight);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
+            Assert.AreEqual(OperationThreshold.High, parsedOperation.Threshold);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAUAAAABAAAAAO3gUmG83C+VCqO6FztuMtXJF/l7grZA7MjRzqdZ9W8QAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAIAAAABAAAAAwAAAAEAAAAEAAAAAQAAAAtzdGVsbGFyLm9yZwAAAAABAAAAAET+21WXwEtXRyxb/GBe1tc5V/WUzIOW4yJp+XQgNUUiAAAAAQ==",
@@ -401,6 +408,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(priceObj.Numerator, 5333399);
             Assert.AreEqual(priceObj.Denominator, 6250000);
             Assert.AreEqual(offerId, parsedOperation.OfferId);
+            Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAMAAAAAAAAAAVVTRAAAAAAARP7bVZfAS1dHLFv8YF7W1zlX9ZTMg5bjImn5dCA1RSIAAAAAAAAAZABRYZcAX14QAAAAAAAAAAE=",
@@ -436,6 +444,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(price, parsedOperation.Price);
             Assert.AreEqual(priceObj.Numerator, 36731261);
             Assert.AreEqual(priceObj.Denominator, 12500000);
+            Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAQAAAAAAAAAAVVTRAAAAAAARP7bVZfAS1dHLFv8YF7W1zlX9ZTMg5bjImn5dCA1RSIAAAAAAAAAZAIweX0Avrwg",
@@ -459,6 +468,7 @@ namespace stellar_dotnet_sdk_test
             var parsedOperation = (AccountMergeOperation) Operation.FromXdr(xdr);
 
             Assert.AreEqual(destination.AccountId, parsedOperation.Destination.AccountId);
+            Assert.AreEqual(OperationThreshold.High, parsedOperation.Threshold);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAgAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxA=",
@@ -481,6 +491,7 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual("test", parsedOperation.Name);
             Assert.IsTrue(new byte[] {0, 1, 2, 3, 4}.SequenceEqual(parsedOperation.Value));
+            Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAoAAAAEdGVzdAAAAAEAAAAFAAECAwQAAAA=",
@@ -562,7 +573,27 @@ namespace stellar_dotnet_sdk_test
             var parsedOperation = (BumpSequenceOperation) Operation.FromXdr(xdr);
 
             Assert.AreEqual(156L, parsedOperation.BumpTo);
+            Assert.AreEqual(OperationThreshold.Low, parsedOperation.Threshold);
+
             Assert.AreEqual("AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAsAAAAAAAAAnA==", operation.ToXdrBase64());
+        }
+
+        [TestMethod]
+        public void TestInflationOperation()
+        {
+            // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
+            var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
+
+            var operation = new InflationOperation.Builder()
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+
+            var parsedOperation = (InflationOperation) Operation.FromXdr(xdr);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+
+            Assert.AreEqual("AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAk=", operation.ToXdrBase64());
         }
 
         [TestMethod]

@@ -22,16 +22,17 @@ namespace TestConsole
                 //    .FundAccount(KeyPair.Random())
                 //    .Execute();
 
-                await GetLedgerTransactions(server);
-                await ShowAccountTransactions(server);
+                //await GetLedgerTransactions(server);
+                //await ShowAccountTransactions(server);
+                ShowTestKeyValue(server);
             }
 
             using (var server = new Server("https://horizon.stellar.org"))
             {
                 Console.WriteLine("-- Streaming All New Ledgers On The Network --");
-                await server.Ledgers
+                await server.Transactions
                     .Cursor("now")
-                    .Stream((sender, response) => { ShowOperationResponse(server, sender, response); })
+                    .Stream((sender, response) => { ShowTransactionRecord(response); })
                     .Connect();
             }
 
@@ -70,7 +71,7 @@ namespace TestConsole
 
         private static void ShowTransactionRecord(TransactionResponse tran)
         {
-            Console.WriteLine($"Ledger: {tran.Ledger}, Hash: {tran.Hash}, Fee Paid: {tran.FeePaid}");
+            Console.WriteLine($"Ledger: {tran.Ledger}, Hash: {tran.Hash}, Fee Paid: {tran.FeePaid}, Pt:{tran.PagingToken}");
         }
 
         private static async void ShowOperationResponse(Server server, object sender, LedgerResponse lr)
@@ -103,5 +104,20 @@ namespace TestConsole
             Console.WriteLine($"id: {lr.Sequence}, tx/ops: {lr.TransactionCount + "/" + lr.OperationCount}, accts: {accts}, payments: {payments}, offers: {offers}, options: {options}");
             Console.WriteLine($"Uri: {((LedgersRequestBuilder) sender).Uri}");
         }
+
+        private static void ShowTestKeyValue(Server server)
+        {
+            Console.WriteLine("-- Getting TestKey for Account --");
+
+            var data = server.Accounts.AccountData(KeyPair.FromAccountId("GAZHWW2NBPDVJ6PEEOZ2X43QV5JUDYS3XN4OWOTBR6WUACTUML2CCJLI"), "TestKey");
+            
+            var dataResult = data.Result;
+
+            Console.WriteLine("Encoded Value: " + dataResult.Value);
+            Console.WriteLine("Decoded Value: " + dataResult.ValueDecoded);
+
+            Console.WriteLine();
+        }
+
     }
 }

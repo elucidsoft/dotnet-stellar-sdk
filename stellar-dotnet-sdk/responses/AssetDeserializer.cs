@@ -1,17 +1,29 @@
 ﻿using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 
 namespace stellar_dotnet_sdk.responses
 {
-    public class AssetDeserializer : JsonConverter
+    public class AssetDeserializer : JsonConverter<Asset>
     {
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, Asset value, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            var jsonObject = new JObject();
+            var assetType = new JProperty("asset_type", value.GetType());
+            jsonObject.Add(assetType);
+            if (value is AssetTypeCreditAlphaNum credit)
+            {
+                var code = new JProperty("asset_code", credit.Code);
+                jsonObject.Add(code);
+                var issuer = new JProperty("asset_issuer", credit.Issuer.AccountId);
+                jsonObject.Add(issuer);
+            }
+            jsonObject.WriteTo(writer);
         }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override Asset ReadJson(JsonReader reader, Type objectType, Asset existingValue, bool hasExistingValue,
+            JsonSerializer serializer)
         {
             var jsonObject = JObject.Load(reader);
 
@@ -25,11 +37,6 @@ namespace stellar_dotnet_sdk.responses
             var code = jsonObject.GetValue("asset_code").ToObject<string>();
             var issuer = jsonObject.GetValue("asset_issuer").ToObject<string>();
             return Asset.CreateNonNativeAsset(code, issuer);
-        }
-
-        public override bool CanConvert(Type objectType)
-        {
-            return objectType == typeof(Asset);
         }
     }
 }

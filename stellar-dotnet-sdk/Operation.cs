@@ -15,6 +15,14 @@ namespace stellar_dotnet_sdk
             set => _sourceAccount = value ?? throw new ArgumentNullException(nameof(value), "keypair cannot be null");
         }
 
+        /// <summary>
+        /// Threshold level for the operation.
+        /// </summary>
+        public virtual OperationThreshold Threshold
+        {
+            get => OperationThreshold.Medium;
+        }
+
         public static long ToXdrAmount(string value)
         {
             if (string.IsNullOrEmpty(value))
@@ -67,8 +75,8 @@ namespace stellar_dotnet_sdk
 
         ///<summary>
         ///</summary>
-        /// <returns>new Operation object from Operation XDR object.</returns> 
-        /// <param name="thisXdr">XDR object</param> 
+        /// <returns>new Operation object from Operation XDR object.</returns>
+        /// <param name="thisXdr">XDR object</param>
         public static Operation FromXdr(xdr.Operation thisXdr)
         {
             var body = thisXdr.Body;
@@ -107,6 +115,9 @@ namespace stellar_dotnet_sdk
                     break;
                 case OperationType.OperationTypeEnum.BUMP_SEQUENCE:
                     operation = new BumpSequenceOperation.Builder(body.BumpSequenceOp).Build();
+                    break;
+                case OperationType.OperationTypeEnum.INFLATION:
+                    operation = new InflationOperation.Builder().Build();
                     break;
                 default:
                     throw new Exception("Unknown operation body " + body.Discriminant.InnerValue);

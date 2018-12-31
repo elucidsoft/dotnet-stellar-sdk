@@ -10,7 +10,7 @@
         ///<summary>
         /// Returns sequence number incremented by one, but does not increment internal counter.
         ///</summary>
-        long GetIncrementedSequenceNumber();
+        long IncrementedSequenceNumber { get; }
 
         ///<summary>
         /// Increments sequence number in this object by one.

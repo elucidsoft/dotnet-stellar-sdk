@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
+using stellar_dotnet_sdk.responses.operations;
 
 namespace stellar_dotnet_sdk.responses.effects
 {
+    [JsonConverter(typeof(EffectDeserializer))]
     public abstract class EffectResponse : Response, IPagingToken
     {
         [JsonProperty(PropertyName = "id")] public string Id { get; protected set; }
@@ -10,7 +12,11 @@ namespace stellar_dotnet_sdk.responses.effects
         [JsonProperty(PropertyName = "account")]
         public string Account { get; protected set; }
 
-        [JsonProperty(PropertyName = "type")] public string Type { get; protected set; }
+        [JsonProperty(PropertyName = "type")]
+        public string Type { get; protected set; }
+
+        [JsonProperty(PropertyName = "type_i")]
+        public virtual int TypeId { get; }
 
         [JsonProperty(PropertyName = "paging_token")]
         public string PagingToken { get; protected set; }
@@ -27,15 +33,16 @@ namespace stellar_dotnet_sdk.responses.effects
         public class EffectsResponseLinks
         {
             [JsonProperty(PropertyName = "operation")]
-            public Link Operation { get; }
+            public Link<OperationResponse> Operation { get; }
 
             [JsonProperty(PropertyName = "precedes")]
-            public Link Precedes { get; }
+            public Link<EffectResponse> Precedes { get; }
 
             [JsonProperty(PropertyName = "succeeds")]
-            public Link Succeeds { get; }
+            public Link<EffectResponse> Succeeds { get; }
 
-            public EffectsResponseLinks(Link operation, Link precedes, Link succeeds)
+            public EffectsResponseLinks(Link<OperationResponse> operation, Link<EffectResponse> precedes,
+                Link<EffectResponse> succeeds)
             {
                 Operation = operation;
                 Precedes = precedes;

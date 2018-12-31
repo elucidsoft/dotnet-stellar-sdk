@@ -1,13 +1,14 @@
 ﻿using System;
+using stellar_dotnet_sdk.xdr;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
     /// <summary>
-    ///     Represents
-    ///     <a href="https://www.stellar.org/developers/learn/concepts/list-of-operations.html#set-options">SetOptions</a>
-    ///     operation.
-    ///     See <a href="https://www.stellar.org/developers/learn/concepts/list-of-operations.html">List of Operations</a>
+    /// Represents a <see cref="SetOptionsOp"/>.
+    /// Use <see cref="Builder"/> to create a new SetOptionsOperation.
+    /// 
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#set-options">Set Options</see>
     /// </summary>
     public class SetOptionsOperation : Operation
     {
@@ -46,6 +47,11 @@ namespace stellar_dotnet_sdk
         public sdkxdr.SignerKey Signer { get; }
 
         public int? SignerWeight { get; }
+
+        public override OperationThreshold Threshold
+        {
+            get => OperationThreshold.High;
+        }
 
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {

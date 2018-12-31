@@ -15,9 +15,19 @@ namespace stellar_dotnet_sdk
 
         public string NetworkPassphrase { get; }
 
-        public byte[] NetworkId => Util.Hash(Encoding.UTF8.GetBytes(Current.NetworkPassphrase));
+        public byte[] NetworkId => Util.Hash(Encoding.UTF8.GetBytes(NetworkPassphrase));
 
         public static Network Current { get; private set; }
+
+        public static Network Public()
+        {
+            return new Network(PUBLIC);
+        }
+
+        public static Network Test()
+        {
+            return new Network(TESTNET);
+        }
 
         public static void Use(Network network)
         {
@@ -31,12 +41,12 @@ namespace stellar_dotnet_sdk
 
         public static void UsePublicNetwork()
         {
-            Use(new Network(PUBLIC));
+            Use(Public());
         }
 
         public static void UseTestNetwork()
         {
-            Use(new Network(TESTNET));
+            Use(Test());
         }
     }
 }

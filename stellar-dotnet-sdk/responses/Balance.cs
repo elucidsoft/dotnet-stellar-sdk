@@ -28,6 +28,9 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "asset_issuer")]
         public string AssetIssuer { get; private set; }
 
+        [JsonIgnore]
+        public Asset Asset => Asset.Create(AssetType, AssetCode, _assetIssuer);
+
         [JsonProperty(PropertyName = "limit")]
         public string Limit { get; private set; }
 

@@ -21,6 +21,17 @@ namespace stellar_dotnet_sdk_test.responses
             AssertCreateAccountOperationData(instance);
         }
 
+        [TestMethod]
+        public void TestSerializeDeserializeCreateAccountOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationCreateAccount.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertCreateAccountOperationData(back);
+        }
+
         public static void AssertCreateAccountOperationData(OperationResponse instance)
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -39,7 +50,8 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(operation.Links.Precedes.Href, "/operations?cursor=3936840037961729&order=asc");
             Assert.AreEqual(operation.Links.Self.Href, "/operations/3936840037961729");
             Assert.AreEqual(operation.Links.Succeeds.Href, "/operations?cursor=3936840037961729&order=desc");
-            Assert.AreEqual(operation.Links.Transaction.Href, "/transactions/75608563ae63757ffc0650d84d1d13c0f3cd4970a294a2a6b43e3f454e0f9e6d");
+            Assert.AreEqual(operation.Links.Transaction.Href,
+                "/transactions/75608563ae63757ffc0650d84d1d13c0f3cd4970a294a2a6b43e3f454e0f9e6d");
         }
 
         [TestMethod]
@@ -48,6 +60,22 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationPayment.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertPaymentData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializePaymentOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationPayment.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertPaymentData(back);
+        }
+
+        private static void AssertPaymentData(OperationResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is PaymentOperationResponse);
             var operation = (PaymentOperationResponse) instance;
@@ -72,6 +100,22 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationPaymentNonNative.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertNonNativePaymentData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeNonNativePaymentOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationPaymentNonNative.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertNonNativePaymentData(back);
+        }
+
+        private static void AssertNonNativePaymentData(OperationResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is PaymentOperationResponse);
             var operation = (PaymentOperationResponse) instance;
@@ -88,6 +132,22 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationAllowTrust.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertAllowTrustData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeAllowTrustOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationAllowTrust.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertAllowTrustData(back);
+        }
+
+        private static void AssertAllowTrustData(OperationResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AllowTrustOperationResponse);
             var operation = (AllowTrustOperationResponse) instance;
@@ -104,6 +164,22 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationChangeTrust.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertChangeTrustData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeChangeTrustOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationChangeTrust.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertChangeTrustData(back);
+        }
+
+        private static void AssertChangeTrustData(OperationResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is ChangeTrustOperationResponse);
             var operation = (ChangeTrustOperationResponse) instance;
@@ -120,6 +196,22 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationSetOptions.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertSetOptionsData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeSetOptionsOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationSetOptions.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertSetOptionsData(back);
+        }
+
+        private static void AssertSetOptionsData(OperationResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is SetOptionsOperationResponse);
             var operation = (SetOptionsOperationResponse) instance;
@@ -142,8 +234,24 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationSetOptionsNonEd25519Key.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertSetOptionsOperationWithNonEd25519KeyData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeSetOptionsOperationWithNonEd25519Key()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationSetOptionsNonEd25519Key.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertSetOptionsOperationWithNonEd25519KeyData(back);
+        }
+
+        private static void AssertSetOptionsOperationWithNonEd25519KeyData(OperationResponse instance)
+        {
             Assert.IsTrue(instance is SetOptionsOperationResponse);
-            var operation = (SetOptionsOperationResponse)instance;
+            var operation = (SetOptionsOperationResponse) instance;
 
             Assert.AreEqual(operation.SignerKey, "TBGFYVCU76LJ7GZOCGR4X7DG2NV42JPG5CKRL42LA5FZOFI3U2WU7ZAL");
         }
@@ -154,6 +262,22 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationAccountMerge.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertAccountMergeData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeAccountMergeOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationAccountMerge.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertAccountMergeData(back);
+        }
+
+        private static void AssertAccountMergeData(OperationResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountMergeOperationResponse);
             var operation = (AccountMergeOperationResponse) instance;
@@ -168,6 +292,22 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationManageOffer.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertManageOfferData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeManageOfferOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationManageOffer.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertManageOfferData(back);
+        }
+
+        private static void AssertManageOfferData(OperationResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is ManageOfferOperationResponse);
             var operation = (ManageOfferOperationResponse) instance;
@@ -184,6 +324,22 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationPathPayment.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertPathPaymentData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializePathPaymentOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationPathPayment.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertPathPaymentData(back);
+        }
+
+        private static void AssertPathPaymentData(OperationResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is PathPaymentOperationResponse);
             var operation = (PathPaymentOperationResponse) instance;
@@ -202,6 +358,22 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationPassiveOffer.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertCreatePassiveOfferData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeCreatePassiveOfferOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationPassiveOffer.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertCreatePassiveOfferData(back);
+        }
+
+        private static void AssertCreatePassiveOfferData(OperationResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is CreatePassiveOfferOperationResponse);
             var operation = (CreatePassiveOfferOperationResponse) instance;
@@ -212,11 +384,27 @@ namespace stellar_dotnet_sdk_test.responses
         }
 
         [TestMethod]
-        public void TestDeserializeInfationOperation()
+        public void TestDeserializeInflationOperation()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationInflation.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertInflationData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeInflationOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationInflation.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertInflationData(back);
+        }
+
+        private static void AssertInflationData(OperationResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is InflationOperationResponse);
             var operation = (InflationOperationResponse) instance;
@@ -230,6 +418,22 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationManageData.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertManageDataData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeManageDataOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationManageData.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertManageDataData(back);
+        }
+
+        private static void AssertManageDataData(OperationResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is ManageDataOperationResponse);
             var operation = (ManageDataOperationResponse) instance;
@@ -245,6 +449,22 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationManageDataValueEmpty.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertManageDataValueEmptyData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeManageDataOperationValueEmpty()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationManageDataValueEmpty.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertManageDataValueEmptyData(back);
+        }
+
+        private static void AssertManageDataValueEmptyData(OperationResponse instance)
+        {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is ManageDataOperationResponse);
             var operation = (ManageDataOperationResponse) instance;
@@ -256,15 +476,8 @@ namespace stellar_dotnet_sdk_test.responses
         public void TestDeserializeUnknownOperation()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationUnknown.json"));
-            try
-            {
-                var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-                Assert.Fail();
-            }
-            catch
-            {
-                //We want the exception to pass the test, that is what it should be doing.
-            }
+            Assert.ThrowsException<JsonSerializationException>(() =>
+                JsonSingleton.GetInstance<OperationResponse>(json));
         }
 
         [TestMethod]
@@ -273,41 +486,27 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "operationBumpSequence.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
+            AssertBumpSequenceData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeBumpSequenceOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationBumpSequence.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertBumpSequenceData(back);
+        }
+
+        private static void AssertBumpSequenceData(OperationResponse instance)
+        {
             Assert.IsTrue(instance is BumpSequenceOperationResponse);
             var operation = (BumpSequenceOperationResponse) instance;
 
             Assert.AreEqual(12884914177L, operation.Id);
             Assert.AreEqual(79473726952833048L, operation.BumpTo);
-        }
-
-        [TestMethod]
-        public void TestWriteJson()
-        {
-            //An experiment to see if we can get full coverage of the OperationDeserializer.
-            try
-            {
-                var json = File.ReadAllText(Path.Combine("testdata", "operationBumpSequence.json"));
-                var instance = JsonSingleton.GetInstance<OperationResponse>(json);
-
-                var opD = new OperationDeserializer();
-                var sb = new StringBuilder();
-                var sw = new StringWriter(sb);
-
-                using (JsonWriter writer = new JsonTextWriter(sw))
-                {
-                    opD.WriteJson(writer, instance, new JsonSerializer());
-                }
-
-                Assert.Fail();
-            }
-            catch (NotImplementedException)
-            {
-                //We want this test to pass if the NotImplementedException is thrown.
-            }
-            catch (Exception)
-            {
-                Assert.Fail();
-            }
         }
     }
 }

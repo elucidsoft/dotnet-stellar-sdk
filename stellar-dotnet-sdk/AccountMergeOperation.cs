@@ -4,7 +4,10 @@ using stellar_dotnet_sdk.xdr;
 namespace stellar_dotnet_sdk
 {
     /// <summary>
-    /// Transfers native balance to destination account.
+    /// Represents an <see cref="AccountID"/> Encode operation.
+    /// Use <see cref="Builder"/> to create a new AccountMergeOperation.
+    /// 
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#account-merge">Account Merge</see>
     /// </summary>
     public class AccountMergeOperation : Operation
     {
@@ -17,6 +20,11 @@ namespace stellar_dotnet_sdk
         ///     The account that receives the remaining XLM balance of the source account.
         /// </summary>
         public KeyPair Destination { get; }
+
+        public override OperationThreshold Threshold
+        {
+            get => OperationThreshold.High;
+        }
 
         /// <summary>
         /// Returns the Account Merge XDR Operation Body

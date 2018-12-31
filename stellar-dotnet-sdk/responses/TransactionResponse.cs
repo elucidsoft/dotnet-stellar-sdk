@@ -1,5 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
+using stellar_dotnet_sdk.responses.effects;
+using stellar_dotnet_sdk.responses.operations;
+using stellar_dotnet_sdk.responses.page;
 
 namespace stellar_dotnet_sdk.responses
 {
@@ -40,26 +43,62 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "_links")]
         public TransactionResponseLinks Links { get; private set; }
 
+        [JsonProperty(PropertyName = "memo_type")]
+        public string MemoType { get; private set; }
+
+        [JsonProperty(PropertyName = "memo")]
+        public string MemoValue { get; private set; }
+
         public Memo Memo
         {
-            get => _Memo;
-            set
+            get
             {
-                if (_Memo != null)
+                switch (MemoType)
                 {
-                    throw new Exception("Memo has been already set.");
+                    case "none":
+                        return Memo.None();
+                    case "id":
+                        return Memo.Id(long.Parse(MemoValue));
+                    case "hash":
+                        return Memo.Hash(Convert.FromBase64String(MemoValue));
+                    case "return":
+                        return Memo.ReturnHash(Convert.FromBase64String(MemoValue));
+                    default:
+                        throw new ArgumentException(nameof(MemoType));
                 }
-
-                _Memo = value ?? throw new ArgumentNullException(nameof(value), "memo cannot be null");
-                _Memo = value;
+            }
+            private set
+            {
+                switch (value)
+                {
+                    case MemoNone _:
+                        MemoType = "none";
+                        MemoValue = null;
+                        return;
+                    case MemoId id:
+                        MemoType = "id";
+                        MemoValue = id.IdValue.ToString();
+                        return;
+                    case MemoHash h:
+                        MemoType = "hash";
+                        MemoValue = Convert.ToBase64String(h.MemoBytes);
+                        return;
+                    case MemoReturnHash r:
+                        MemoType = "return";
+                        MemoValue = Convert.ToBase64String(r.MemoBytes);
+                        return;
+                    default:
+                        throw new ArgumentException(nameof(value));
+                }
             }
         }
 
-        private Memo _Memo;
+        public TransactionResponse()
+        {
+            // Used by deserializer
+        }
 
-        public string MemoStr { get; }
-
-        public TransactionResponse(string hash, long ledger, string createdAt, string sourceAccount, string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr, string resultXdr, string resultMetaXdr, string memo, TransactionResponseLinks links)
+        public TransactionResponse(string hash, long ledger, string createdAt, string sourceAccount, string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr, string resultXdr, string resultMetaXdr, Memo memo, TransactionResponseLinks links)
         {
             Hash = hash;
             Ledger = ledger;
@@ -72,7 +111,7 @@ namespace stellar_dotnet_sdk.responses
             EnvelopeXdr = envelopeXdr;
             ResultXdr = resultXdr;
             ResultMetaXdr = resultMetaXdr;
-            MemoStr = memo;
+            Memo = memo;
             Links = links;
         }
 
@@ -82,26 +121,29 @@ namespace stellar_dotnet_sdk.responses
         public class TransactionResponseLinks
         {
             [JsonProperty(PropertyName = "account")]
-            public Link Account { get; private set; }
+            public Link<AccountResponse> Account { get; private set; }
 
             [JsonProperty(PropertyName = "effects")]
-            public Link Effects { get; private set; }
+            public Link<Page<EffectResponse>> Effects { get; private set; }
 
             [JsonProperty(PropertyName = "ledger")]
-            public Link Ledger { get; private set; }
+            public Link<LedgerResponse> Ledger { get; private set; }
 
             [JsonProperty(PropertyName = "operations")]
-            public Link Operations { get; private set; }
+            public Link<Page<OperationResponse>> Operations { get; private set; }
 
             [JsonProperty(PropertyName = "precedes")]
-            public Link Precedes { get; private set; }
+            public Link<TransactionResponse> Precedes { get; private set; }
 
-            [JsonProperty(PropertyName = "self")] public Link Self { get; private set; }
+            [JsonProperty(PropertyName = "self")]
+            public Link<TransactionResponse> Self { get; private set; }
 
             [JsonProperty(PropertyName = "succeeds")]
-            public Link Succeeds { get; private set; }
+            public Link<TransactionResponse> Succeeds { get; private set; }
 
-            public TransactionResponseLinks(Link account, Link effects, Link ledger, Link operations, Link self, Link precedes, Link succeeds)
+            public TransactionResponseLinks(Link<AccountResponse> account, Link<Page<EffectResponse>> effects,
+                Link<LedgerResponse> ledger, Link<Page<OperationResponse>> operations, Link<TransactionResponse> self,
+                Link<TransactionResponse> precedes, Link<TransactionResponse> succeeds)
             {
                 Account = account;
                 Effects = effects;

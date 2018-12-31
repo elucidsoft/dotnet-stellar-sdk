@@ -33,6 +33,14 @@ namespace stellar_dotnet_sdk.requests
             return await responseHandler.HandleResponse(response);
         }
 
+        public async Task<AccountDataResponse> AccountData(Uri uri)
+        {
+            var responseHandler = new ResponseHandler<AccountDataResponse>();
+
+            var response = await HttpClient.GetAsync(uri);
+            return await responseHandler.HandleResponse(response);
+        }
+
         /// <summary>
         ///     Requests GET /accounts/{account}
         ///     https://www.stellar.org/developers/horizon/reference/accounts-single.html
@@ -43,6 +51,19 @@ namespace stellar_dotnet_sdk.requests
         {
             SetSegments("accounts", account);
             return await Account(BuildUri());
+        }
+
+        /// <summary>
+        ///     Requests GET /accounts/{account}/data/{key}
+        ///     https://www.stellar.org/developers/horizon/reference/endpoints/data-for-account.html
+        /// </summary>
+        /// <param name="account">Account to fetch</param>
+        /// <param name="key">Key to the data needing retrieval.</param>
+        /// <returns></returns>
+        public async Task<AccountDataResponse> AccountData(KeyPair account, string key)
+        {
+            SetSegments("accounts", account.AccountId, "data", key);
+            return await AccountData(BuildUri());
         }
     }
 }

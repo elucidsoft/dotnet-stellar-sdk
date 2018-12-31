@@ -3,6 +3,7 @@ mono: none
 dotnet: 2.1.300
 dist: trusty
 script:
+ - dotnet restore ./stellar-dotnet-sdk.sln
  - dotnet build ./dotnetcore/
  - dotnet build ./dotnetstandard/
  - dotnet build ./stellar-dotnet-sdk-test/

@@ -36,10 +36,10 @@ namespace stellar_dotnet_sdk_test
             KeyPair random = KeyPair.Random();
             var account = new Account(random.AccountId, 100L);
             long incremented;
-            incremented = account.GetIncrementedSequenceNumber();
+            incremented = account.IncrementedSequenceNumber;
             Assert.AreEqual(100L, account.SequenceNumber);
             Assert.AreEqual(101L, incremented);
-            incremented = account.GetIncrementedSequenceNumber();
+            incremented = account.IncrementedSequenceNumber;
             Assert.AreEqual(100L, account.SequenceNumber);
             Assert.AreEqual(101L, incremented);
         }

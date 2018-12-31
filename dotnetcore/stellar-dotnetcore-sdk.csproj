@@ -16,6 +16,25 @@
     <PackageId>stellar-dotnetcore-sdk</PackageId>
     <Company>elucidsoft llc</Company>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+    <!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+    <!-- Optional: Include the PDB in the built .nupkg -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="dotnetstandard-bip32" Version="1.0.0" />
+    <PackageReference Include="dotnetstandard-bip39" Version="1.0.2" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-63127-02" PrivateAssets="All" />
+  </ItemGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DocumentationFile>bin\Debug\netcoreapp2.0\stellar-dotnetcore-sdk.xml</DocumentationFile>
@@ -31,7 +50,7 @@
     <Compile Remove="..\stellar-dotnet-sdk\obj\**\*.*" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Nett" Version="0.9.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Nett" Version="0.10.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
 </Project>

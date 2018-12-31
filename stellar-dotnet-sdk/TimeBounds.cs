@@ -8,14 +8,32 @@ namespace stellar_dotnet_sdk
         ///<summary>
         ///Timebounds constructor.
         ///</summary>
-        ///<param name="minTime"> 64bit Unix timestamp</param>
+        ///<param name="minTime"> 64bit Unix timestamp, 0 if unset</param>
+        ///<param name="maxTime"> 64bit Unix timestamp, 0 if unset</param>
         public TimeBounds(long minTime, long maxTime)
         {
-            if (minTime >= maxTime)
+            if (maxTime != 0 && minTime >= maxTime)
                 throw new ArgumentException("minTime must be >= maxTime");
 
             MinTime = minTime;
             MaxTime = maxTime;
+        }
+
+        ///<summary>
+        ///Timebounds constructor.
+        ///</summary>
+        ///<param name="minTime"> earliest time the transaction is valid from</param>
+        ///<param name="maxTime"> latest time the transaction is valid to</param>
+        public TimeBounds(DateTimeOffset? minTime = null, DateTimeOffset? maxTime = null)
+        {
+            if (maxTime != null && minTime >= maxTime)
+                throw new ArgumentException("minTime must be >= maxTime");
+
+            var minEpoch = minTime?.ToUnixTimeSeconds() ?? 0;
+            var maxEpoch = maxTime?.ToUnixTimeSeconds() ?? 0;
+
+            MinTime = minEpoch;
+            MaxTime = maxEpoch;
         }
 
         public long MinTime { get; }

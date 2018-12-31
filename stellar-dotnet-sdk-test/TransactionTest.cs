@@ -292,5 +292,31 @@ namespace stellar_dotnet_sdk_test
                 Assert.IsTrue(exception.Message.Contains("Memo has been already added."));
             }
         }
+
+        [TestMethod]
+        public void TestExplicitNetworkArgument()
+        {
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+
+            var sequenceNumber = 2908908335136768L;
+            var account = new Account(source, sequenceNumber);
+            var transaction = new Transaction.Builder(account)
+                .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                .Build();
+
+            Network.UsePublicNetwork();
+            var publicNetworkHash = transaction.Hash();
+
+            Network.UseTestNetwork();
+            var testNetworkHash = transaction.Hash();
+
+            Assert.IsFalse(testNetworkHash.SequenceEqual(publicNetworkHash));
+
+            var network = Network.Public();
+            var explicitPublicNetworkHash = transaction.Hash(network);
+
+            Assert.IsTrue(publicNetworkHash.SequenceEqual(explicitPublicNetworkHash));
+        }
     }
 }

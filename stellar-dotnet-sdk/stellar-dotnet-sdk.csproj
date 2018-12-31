@@ -16,8 +16,10 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Nett" Version="0.9.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="dotnetstandard-bip32" Version="1.0.0" />
+    <PackageReference Include="dotnetstandard-bip39" Version="1.0.2" />
+    <PackageReference Include="Nett" Version="0.10.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
 
 </Project>

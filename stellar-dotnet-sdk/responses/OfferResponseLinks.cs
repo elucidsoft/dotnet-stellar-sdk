@@ -4,15 +4,16 @@ namespace stellar_dotnet_sdk.responses
 {
     public class OfferResponseLinks
     {
-        public OfferResponseLinks(Link self, Link offerMager)
+        public OfferResponseLinks(Link<OfferResponse> self, Link<AccountResponse> offerMaker)
         {
             Self = self;
-            OfferMager = offerMager;
+            OfferMaker = offerMaker;
         }
 
-        [JsonProperty(PropertyName = "self")] public Link Self { get; private set; }
+        [JsonProperty(PropertyName = "self")]
+        public Link<OfferResponse> Self { get; private set; }
 
         [JsonProperty(PropertyName = "offer_maker")]
-        public Link OfferMager { get; private set; }
+        public Link<AccountResponse> OfferMaker { get; private set; }
     }
 }

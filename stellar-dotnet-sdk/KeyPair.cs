@@ -1,8 +1,9 @@
-﻿using System;
-using System.Linq;
-using System.Security.Cryptography;
+﻿using dotnetstandard_bip32;
 using stellar_dotnet_sdk.chaos.nacl;
 using stellar_dotnet_sdk.xdr;
+using System;
+using System.Linq;
+using System.Security.Cryptography;
 
 namespace stellar_dotnet_sdk
 {
@@ -71,14 +72,14 @@ namespace stellar_dotnet_sdk
         {
             get
             {
-                var stream = new XdrDataOutputStream();
-                var accountId = new AccountID(XdrPublicKey);
+                XdrDataOutputStream stream = new XdrDataOutputStream();
+                AccountID accountId = new AccountID(XdrPublicKey);
                 AccountID.Encode(stream, accountId);
-                var bytes = stream.ToArray();
-                var length = bytes.Length;
-                var signatureHintBytes = bytes.Skip(length - 4).Take(4).ToArray();
+                byte[] bytes = stream.ToArray();
+                int length = bytes.Length;
+                byte[] signatureHintBytes = bytes.Skip(length - 4).Take(4).ToArray();
 
-                var signatureHint = new SignatureHint(signatureHintBytes);
+                SignatureHint signatureHint = new SignatureHint(signatureHintBytes);
                 return signatureHint;
             }
         }
@@ -90,12 +91,12 @@ namespace stellar_dotnet_sdk
         {
             get
             {
-                var publicKey = new PublicKey
+                PublicKey publicKey = new PublicKey
                 {
-                    Discriminant = new PublicKeyType {InnerValue = PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519}
+                    Discriminant = new PublicKeyType { InnerValue = PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519 }
                 };
 
-                var uint256 = new Uint256(PublicKey);
+                Uint256 uint256 = new Uint256(PublicKey);
                 publicKey.Ed25519 = uint256;
 
                 return publicKey;
@@ -109,12 +110,12 @@ namespace stellar_dotnet_sdk
         {
             get
             {
-                var signerKey = new SignerKey
+                SignerKey signerKey = new SignerKey
                 {
-                    Discriminant = new SignerKeyType {InnerValue = SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519}
+                    Discriminant = new SignerKeyType { InnerValue = SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519 }
                 };
 
-                var uint256 = new Uint256(PublicKey);
+                Uint256 uint256 = new Uint256(PublicKey);
                 signerKey.Ed25519 = uint256;
 
                 return signerKey;
@@ -159,7 +160,7 @@ namespace stellar_dotnet_sdk
         /// </returns>
         public static KeyPair FromSecretSeed(string seed)
         {
-            var bytes = StrKey.DecodeStellarSecretSeed(seed);
+            byte[] bytes = StrKey.DecodeStellarSecretSeed(seed);
             return FromSecretSeed(bytes);
         }
 
@@ -172,7 +173,7 @@ namespace stellar_dotnet_sdk
         /// </returns>
         public static KeyPair FromSecretSeed(byte[] seed)
         {
-            Ed25519.KeyPairFromSeed(out var publicKey, out var privateKey, seed);
+            Ed25519.KeyPairFromSeed(out byte[] publicKey, out byte[] privateKey, seed);
 
             return new KeyPair(publicKey, privateKey, seed);
         }
@@ -186,8 +187,22 @@ namespace stellar_dotnet_sdk
         /// </returns>
         public static KeyPair FromAccountId(string accountId)
         {
-            var decoded = StrKey.DecodeStellarAccountId(accountId);
+            byte[] decoded = StrKey.DecodeStellarAccountId(accountId);
             return FromPublicKey(decoded);
+        }
+
+        public static KeyPair FromBIP39Seed(string seed, uint accountIndex)
+        {
+            BIP32 bip32 = new BIP32();
+
+            string path = $"m/44'/148'/{accountIndex}'";
+            return FromSecretSeed(bip32.DerivePath(path, seed).Key);
+        }
+
+        public static KeyPair FromBIP39Seed(byte[] seedBytes, uint accountIndex)
+        {
+            string seed = seedBytes.ToStringHex();
+            return FromBIP39Seed(seed, accountIndex);
         }
 
         /// <summary>
@@ -208,8 +223,8 @@ namespace stellar_dotnet_sdk
         /// <returns>a random Stellar keypair</returns>
         public static KeyPair Random()
         {
-            var b = new byte[32];
-            using (var rngCrypto = new RNGCryptoServiceProvider())
+            byte[] b = new byte[32];
+            using (RNGCryptoServiceProvider rngCrypto = new RNGCryptoServiceProvider())
             {
                 rngCrypto.GetBytes(b);
             }
@@ -225,7 +240,9 @@ namespace stellar_dotnet_sdk
         public byte[] Sign(byte[] data)
         {
             if (PrivateKey == null)
+            {
                 throw new Exception("KeyPair does not contain secret key. Use KeyPair.fromSecretSeed method to create a new KeyPair with a secret key.");
+            }
 
             return Ed25519.Sign(data, PrivateKey);
         }
@@ -237,7 +254,7 @@ namespace stellar_dotnet_sdk
         /// <returns><see cref="DecoratedSignature"/></returns>
         public DecoratedSignature SignDecorated(byte[] message)
         {
-            var rawSig = Sign(message);
+            byte[] rawSig = Sign(message);
 
             return new DecoratedSignature
             {
@@ -254,7 +271,7 @@ namespace stellar_dotnet_sdk
         /// <returns>True if they match, false otherwise.</returns>
         public bool Verify(byte[] data, byte[] signature)
         {
-            var result = false;
+            bool result = false;
 
             try
             {

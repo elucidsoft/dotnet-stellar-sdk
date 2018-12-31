@@ -1,8 +1,15 @@
 ﻿using System;
+using stellar_dotnet_sdk.xdr;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
+    /// <summary>
+    /// Represents a <see cref="CreatePassiveOfferOp"/>.
+    /// Use <see cref="Builder"/> to create a new CreatePassiveOfferOperation.
+    /// 
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#create-passive-offer">Manage Offer</see>
+    /// </summary>
     public class CreatePassiveOfferOperation : Operation
     {
         private CreatePassiveOfferOperation(Asset selling, Asset buying, string amount, string price)

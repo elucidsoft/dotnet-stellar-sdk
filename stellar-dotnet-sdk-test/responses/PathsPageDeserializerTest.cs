@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.responses;
 using stellar_dotnet_sdk.responses.page;
@@ -18,9 +19,21 @@ namespace stellar_dotnet_sdk_test.responses
             AssertTestData(pathsPage);
         }
 
+        [TestMethod]
+        public void TestSerializeDeserialize()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "pathsPage.json"));
+            var pathsPage = JsonSingleton.GetInstance<Page<PathResponse>>(json);
+            var serialized = JsonConvert.SerializeObject(pathsPage);
+            var back = JsonConvert.DeserializeObject<Page<PathResponse>>(serialized);
+
+            AssertTestData(back);
+        }
+
         public static void AssertTestData(Page<PathResponse> pathsPage)
         {
-            Assert.IsNotNull(pathsPage.NextPage());
+            Assert.IsNull(pathsPage.NextPage());
+            Assert.IsNull(pathsPage.PreviousPage());
 
             Assert.AreEqual(pathsPage.Records[0].DestinationAmount, "20.0000000");
             Assert.AreEqual(pathsPage.Records[0].DestinationAsset, Asset.CreateNonNativeAsset("EUR", "GDSBCQO34HWPGUGQSP3QBFEXVTSR2PW46UIGTHVWGWJGQKH3AFNHXHXN"));

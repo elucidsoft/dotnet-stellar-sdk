@@ -11,6 +11,11 @@ namespace stellar_dotnet_sdk.responses.operations
     /// </summary>
     public class PathPaymentOperationResponse : OperationResponse
     {
+        public PathPaymentOperationResponse()
+        {
+
+        }
+
         /// <summary>
         /// Sends an amount in a specific asset to a destination account through a path of offers. This allows the asset sent (e.g., 450 XLM) to be different from the asset received (e.g, 6 BTC).
         /// </summary>
@@ -39,65 +44,67 @@ namespace stellar_dotnet_sdk.responses.operations
             SendAssetIssuer = sendAssetIssuer;
         }
 
+        public override int TypeId => 2;
+
         /// <summary>
         /// The amount of destination asset the destination account receives.
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
-        public string Amount { get; }
+        public string Amount { get; private set; }
 
         /// <summary>
         /// The amount of source asset deducted from senders account.
         /// </summary>
         [JsonProperty(PropertyName = "source_max")]
-        public string SourceMax { get; }
+        public string SourceMax { get; private set; }
 
         /// <summary>
         /// Account address that is sending the payment.
         /// </summary>
         [JsonProperty(PropertyName = "from")]
-        public string From { get; }
+        public string From { get; private set; }
 
         /// <summary>
         /// Account address that receives the payment.
         /// </summary>
         [JsonProperty(PropertyName = "to")]
-        public string To { get; }
+        public string To { get; private set; }
 
         /// <summary>
         /// Account address that receives the payment.
         /// </summary>
         [JsonProperty(PropertyName = "asset_type")]
-        public string AssetType { get; }
+        public string AssetType { get; private set; }
 
         /// <summary>
         /// The asset code (Alpha4, Alpha12, etc.)
         /// </summary>
         [JsonProperty(PropertyName = "asset_code")]
-        public string AssetCode { get; }
+        public string AssetCode { get; private set; }
 
         /// <summary>
         /// The account that created the asset
         /// </summary>
         [JsonProperty(PropertyName = "asset_issuer")]
-        public string AssetIssuer { get; }
+        public string AssetIssuer { get; private set; }
 
         /// <summary>
         /// The asset type (USD, BTC, etc.) to be sent.
         /// </summary>
         [JsonProperty(PropertyName = "send_asset_type")]
-        public string SendAssetType { get; }
+        public string SendAssetType { get; private set; }
 
         /// <summary>
         /// The asset code (Alpha4, Alpha12, etc.) to be sent
         /// </summary>
         [JsonProperty(PropertyName = "send_asset_code")]
-        public string SendAssetCode { get; }
+        public string SendAssetCode { get; private set; }
 
         /// <summary>
         /// The account that created the asset to be sent.
         /// </summary>
         [JsonProperty(PropertyName = "send_asset_issuer")]
-        public string SendAssetIssuer { get; }
+        public string SendAssetIssuer { get; private set; }
 
         /// <summary>
         /// Asset from source to send.

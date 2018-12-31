@@ -4,9 +4,20 @@ using static stellar_dotnet_sdk.xdr.Operation;
 
 namespace stellar_dotnet_sdk
 {
+    /// <summary>
+    /// Represents a <see cref="BumpSequenceOp"/>.
+    /// Use <see cref="Builder"/> to create a new BumpSequenceOperation.
+    /// 
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#bump-sequence">Bump Sequence</see>
+    /// </summary>
     public class BumpSequenceOperation : Operation
     {
         public long BumpTo { get; }
+
+        public override OperationThreshold Threshold
+        {
+            get => OperationThreshold.Low;
+        }
 
         public BumpSequenceOperation(long bumpTo)
         {

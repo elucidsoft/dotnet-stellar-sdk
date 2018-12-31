@@ -45,5 +45,18 @@ namespace stellar_dotnet_sdk.requests
 
             return this;
         }
+
+
+        ///<Summary>
+        /// Builds request to <code>GET /accounts/{account}/trades</code>
+        /// <a href="https://www.stellar.org/developers/horizon/reference/endpoints/trades-for-account.html">Trades for Account</a>
+        /// </Summary>
+        /// <param name="account">Account for which to get trades</param> 
+        public TradesRequestBuilder ForAccount(KeyPair account)
+        {
+            account = account ?? throw new ArgumentNullException(nameof(account), "account cannot be null");
+            this.SetSegments("accounts", account.AccountId, "trades");
+            return this;
+        }
     }
 }
