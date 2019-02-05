@@ -58,12 +58,12 @@ namespace stellar_dotnet_sdk.requests
         ///     <see cref="OperationsRequestBuilder" />
         /// </returns>
         /// <exception cref="HttpRequestException"></exception>
-        public OperationsRequestBuilder ForAccount(KeyPair account)
+        public OperationsRequestBuilder ForAccount(string account)
         {
             if (account == null)
                 throw new ArgumentNullException(nameof(account), "account cannot be null");
 
-            SetSegments("accounts", account.AccountId, "operations");
+            SetSegments("accounts", account, "operations");
 
             return this;
         }

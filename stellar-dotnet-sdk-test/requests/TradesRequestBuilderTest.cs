@@ -15,8 +15,8 @@ namespace stellar_dotnet_sdk_test.requests
         {
             var server = new Server("https://horizon-testnet.stellar.org");
             var uri = server.Trades
-                .BaseAsset(Asset.CreateNonNativeAsset("EUR", KeyPair.FromAccountId("GAUPA4HERNBDPVO4IUA3MJXBCRRK5W54EVXTDK6IIUTGDQRB6D5W242W")))
-                .CounterAsset(Asset.CreateNonNativeAsset("USD", KeyPair.FromAccountId("GDRRHSJMHXDTQBT4JTCILNGF5AS54FEMTXL7KOLMF6TFTHRK6SSUSUZZ")))
+                .BaseAsset(Asset.CreateNonNativeAsset("EUR", "GAUPA4HERNBDPVO4IUA3MJXBCRRK5W54EVXTDK6IIUTGDQRB6D5W242W"))
+                .CounterAsset(Asset.CreateNonNativeAsset("USD", "GDRRHSJMHXDTQBT4JTCILNGF5AS54FEMTXL7KOLMF6TFTHRK6SSUSUZZ"))
                 .Cursor("13537736921089")
                 .Limit(200)
                 .Order(OrderDirection.ASC)
@@ -43,8 +43,8 @@ namespace stellar_dotnet_sdk_test.requests
             using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
             {
                 var trades = await server.Trades
-                    .BaseAsset(new AssetTypeCreditAlphaNum4("EUR", KeyPair.FromAccountId("GAUPA4HERNBDPVO4IUA3MJXBCRRK5W54EVXTDK6IIUTGDQRB6D5W242W")))
-                    .CounterAsset(new AssetTypeCreditAlphaNum4("USD", KeyPair.FromAccountId("GDRRHSJMHXDTQBT4JTCILNGF5AS54FEMTXL7KOLMF6TFTHRK6SSUSUZZ")))
+                    .BaseAsset(new AssetTypeCreditAlphaNum4("EUR", "GAUPA4HERNBDPVO4IUA3MJXBCRRK5W54EVXTDK6IIUTGDQRB6D5W242W"))
+                    .CounterAsset(new AssetTypeCreditAlphaNum4("USD", "GDRRHSJMHXDTQBT4JTCILNGF5AS54FEMTXL7KOLMF6TFTHRK6SSUSUZZ"))
                     .Execute();
 
                 TradesPageDeserializerTest.AssertTestData(trades);

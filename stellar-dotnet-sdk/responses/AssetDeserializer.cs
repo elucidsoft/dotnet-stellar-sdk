@@ -16,7 +16,7 @@ namespace stellar_dotnet_sdk.responses
             {
                 var code = new JProperty("asset_code", credit.Code);
                 jsonObject.Add(code);
-                var issuer = new JProperty("asset_issuer", credit.Issuer.AccountId);
+                var issuer = new JProperty("asset_issuer", credit.Issuer);
                 jsonObject.Add(issuer);
             }
             jsonObject.WriteTo(writer);
@@ -36,7 +36,7 @@ namespace stellar_dotnet_sdk.responses
 
             var code = jsonObject.GetValue("asset_code").ToObject<string>();
             var issuer = jsonObject.GetValue("asset_issuer").ToObject<string>();
-            return Asset.CreateNonNativeAsset(code, KeyPair.FromAccountId(issuer));
+            return Asset.CreateNonNativeAsset(code, issuer);
         }
     }
 }

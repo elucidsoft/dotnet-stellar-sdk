@@ -19,10 +19,10 @@ namespace stellar_dotnet_sdk.requests
         /// <a href="https://www.stellar.org/developers/horizon/reference/effects-for-account.html">Effects for Account</a>
         /// </Summary>
         /// <param name="account">Account for which to get effects</param> 
-        public EffectsRequestBuilder ForAccount(KeyPair account)
+        public EffectsRequestBuilder ForAccount(string account)
         {
             account = account ?? throw new ArgumentNullException(nameof(account), "account cannot be null");
-            this.SetSegments("accounts", account.AccountId, "effects");
+            this.SetSegments("accounts", account, "effects");
             return this;
         }
 

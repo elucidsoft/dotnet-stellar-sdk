@@ -42,10 +42,10 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(tradesPage.Records[0].OfferId, "695254");
             Assert.AreEqual(tradesPage.Records[0].BaseOfferId, "10");
             Assert.AreEqual(tradesPage.Records[0].CounterOfferId, "11");
-            Assert.AreEqual(tradesPage.Records[0].BaseAccount.AccountId, "GBZXCJIUEPDXGHMS64UBJHUVKV6ETWYOVHADLTBXJNJFUC7A7RU5B3GN");
+            Assert.AreEqual(tradesPage.Records[0].BaseAccount, "GBZXCJIUEPDXGHMS64UBJHUVKV6ETWYOVHADLTBXJNJFUC7A7RU5B3GN");
             Assert.AreEqual(tradesPage.Records[0].BaseAmount, "0.1217566");
             Assert.AreEqual(tradesPage.Records[0].BaseAssetType, "native");
-            Assert.AreEqual(tradesPage.Records[0].CounterAccount.AccountId, "GBHKUQDYXGK5IEYORI7DZMMXANOIEHHOF364LNT4Q7EWPUL7FOO2SP6D");
+            Assert.AreEqual(tradesPage.Records[0].CounterAccount, "GBHKUQDYXGK5IEYORI7DZMMXANOIEHHOF364LNT4Q7EWPUL7FOO2SP6D");
             Assert.AreEqual(tradesPage.Records[0].CounterAmount, "0.0199601");
             Assert.AreEqual(tradesPage.Records[0].CounterAssetType, "credit_alphanum4");
             Assert.AreEqual(tradesPage.Records[0].CounterAssetCode, "SLT");

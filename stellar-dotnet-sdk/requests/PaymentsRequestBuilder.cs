@@ -19,10 +19,10 @@ namespace stellar_dotnet_sdk.requests
         /// <a href="https://www.stellar.org/developers/horizon/reference/payments-for-account.html">Effects for Account</a>
         /// </Summary>
         /// <param name="account">Account for which to get payments</param> 
-        public PaymentsRequestBuilder ForAccount(KeyPair account)
+        public PaymentsRequestBuilder ForAccount(string account)
         {
             account = account ?? throw new ArgumentNullException(nameof(account), "account cannot be null");
-            this.SetSegments("accounts", account.AccountId, "payments");
+            this.SetSegments("accounts", account, "payments");
             return this;
         }
 

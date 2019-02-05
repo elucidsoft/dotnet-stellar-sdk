@@ -21,8 +21,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// Source Account of Operation
         /// </summary>
         [JsonProperty(PropertyName = "source_account")]
-        [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair SourceAccount { get; private set; }
+        public string SourceAccount { get; private set; }
 
         /// <summary>
         /// Paging Token of Paging

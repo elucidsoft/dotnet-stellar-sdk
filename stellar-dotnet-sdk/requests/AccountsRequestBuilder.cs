@@ -47,9 +47,9 @@ namespace stellar_dotnet_sdk.requests
         /// </summary>
         /// <param name="account">Account to fetch</param>
         /// <returns></returns>
-        public async Task<AccountResponse> Account(KeyPair account)
+        public async Task<AccountResponse> Account(string account)
         {
-            SetSegments("accounts", account.AccountId);
+            SetSegments("accounts", account);
             return await Account(BuildUri());
         }
 

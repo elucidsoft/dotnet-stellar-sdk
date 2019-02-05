@@ -16,7 +16,7 @@ namespace stellar_dotnet_sdk.responses.effects
         }
 
         /// <inheritdoc />
-        public TradeEffectResponse(KeyPair seller, long offerId, string soldAmount, string soldAssetType, string soldAssetCode,
+        public TradeEffectResponse(string seller, long offerId, string soldAmount, string soldAssetType, string soldAssetCode,
             string soldAssetIssuer, string boughtAmount, string boughtAssetType, string boughtAssetCode, string boughtAssetIssuer)
         {
             Seller = seller;
@@ -34,8 +34,7 @@ namespace stellar_dotnet_sdk.responses.effects
         public override int TypeId => 33;
 
         [JsonProperty(PropertyName = "seller")]
-        [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair Seller { get; private set; }
+        public string Seller { get; private set; }
 
         [JsonProperty(PropertyName = "offer_id")]
         public long OfferId { get; private set; }

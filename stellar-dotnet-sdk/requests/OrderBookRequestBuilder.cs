@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk.requests
             if (asset is AssetTypeCreditAlphaNum creditAlphaNumAsset)
             {
                 UriBuilder.SetQueryParam("buying_asset_code", creditAlphaNumAsset.Code);
-                UriBuilder.SetQueryParam("buying_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
+                UriBuilder.SetQueryParam("buying_asset_issuer", creditAlphaNumAsset.Issuer);
             }
 
             return this;
@@ -31,7 +31,7 @@ namespace stellar_dotnet_sdk.requests
             if (asset is AssetTypeCreditAlphaNum creditAlphaNumAsset)
             {
                 UriBuilder.SetQueryParam("selling_asset_code", creditAlphaNumAsset.Code);
-                UriBuilder.SetQueryParam("selling_asset_issuer", creditAlphaNumAsset.Issuer.AccountId);
+                UriBuilder.SetQueryParam("selling_asset_issuer", creditAlphaNumAsset.Issuer);
             }
 
             return this;

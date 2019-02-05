@@ -24,7 +24,7 @@ namespace stellar_dotnet_sdk
             }
             else
             {
-                return Asset.CreateNonNativeAsset(code, KeyPair.FromAccountId(issuer));
+                return Asset.CreateNonNativeAsset(code, issuer);
             }
         }
 
@@ -33,7 +33,7 @@ namespace stellar_dotnet_sdk
         /// </summary>
         /// <param name="code">Asset code</param> 
         /// <param name="issuer">Asset issuer</param> 
-        public static Asset CreateNonNativeAsset(string code, KeyPair issuer)
+        public static Asset CreateNonNativeAsset(string code, string issuer)
         {
             if (code.Length >= 1 && code.Length <= 4)
                 return new AssetTypeCreditAlphaNum4(code, issuer);
@@ -55,11 +55,11 @@ namespace stellar_dotnet_sdk
                 case AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4:
                     var assetCode4 = Util.PaddedByteArrayToString(thisXdr.AlphaNum4.AssetCode);
                     var issuer4 = KeyPair.FromXdrPublicKey(thisXdr.AlphaNum4.Issuer.InnerValue);
-                    return new AssetTypeCreditAlphaNum4(assetCode4, issuer4);
+                    return new AssetTypeCreditAlphaNum4(assetCode4, issuer4.AccountId);
                 case AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12:
                     var assetCode12 = Util.PaddedByteArrayToString(thisXdr.AlphaNum12.AssetCode);
                     var issuer12 = KeyPair.FromXdrPublicKey(thisXdr.AlphaNum12.Issuer.InnerValue);
-                    return new AssetTypeCreditAlphaNum12(assetCode12, issuer12);
+                    return new AssetTypeCreditAlphaNum12(assetCode12, issuer12.AccountId);
                 default:
                     throw new ArgumentException("Unknown asset type " + thisXdr.Discriminant.InnerValue);
             }
@@ -88,8 +88,7 @@ namespace stellar_dotnet_sdk
             if (assetType == "native")
                 return new AssetTypeNative();
 
-            var issuer = KeyPair.FromAccountId(accountId);
-            return CreateNonNativeAsset(code, issuer);
+            return CreateNonNativeAsset(code, accountId);
         }
     }
 }

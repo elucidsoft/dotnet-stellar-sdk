@@ -83,9 +83,9 @@ namespace stellar_dotnet_sdk_test
 
             Asset sendAsset = new AssetTypeNative();
             var sendMax = "0.0001";
-            Asset destAsset = new AssetTypeCreditAlphaNum4("USD", issuer);
+            Asset destAsset = new AssetTypeCreditAlphaNum4("USD", issuer.AccountId);
             var destAmount = "0.0001";
-            Asset[] path = {new AssetTypeCreditAlphaNum4("USD", pathIssuer1), new AssetTypeCreditAlphaNum12("TESTTEST", pathIssuer2)};
+            Asset[] path = {new AssetTypeCreditAlphaNum4("USD", pathIssuer1.AccountId), new AssetTypeCreditAlphaNum12("TESTTEST", pathIssuer2.AccountId)};
 
             var operation = new PathPaymentOperation.Builder(
                     sendAsset, sendMax, destination, destAsset, destAmount)
@@ -129,7 +129,7 @@ namespace stellar_dotnet_sdk_test
 
             Asset sendAsset = new AssetTypeNative();
             var sendMax = "0.0001";
-            Asset destAsset = new AssetTypeCreditAlphaNum4("USD", issuer);
+            Asset destAsset = new AssetTypeCreditAlphaNum4("USD", issuer.AccountId);
             var destAmount = "0.0001";
 
             var operation = new PathPaymentOperation.Builder(
@@ -343,7 +343,7 @@ namespace stellar_dotnet_sdk_test
             var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
             var sequenceNumber = 2908908335136768L;
-            var account = new Account(source, sequenceNumber);
+            var account = new Account(source.AccountId, sequenceNumber);
             var transaction = new Transaction.Builder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .Build();
@@ -385,7 +385,7 @@ namespace stellar_dotnet_sdk_test
             var issuer = KeyPair.FromSecretSeed("SA64U7C5C7BS5IHWEPA7YWFN3Z6FE5L6KAMYUIT4AQ7KVTVLD23C6HEZ");
 
             Asset selling = new AssetTypeNative();
-            var buying = Asset.CreateNonNativeAsset("USD", issuer);
+            var buying = Asset.CreateNonNativeAsset("USD", issuer.AccountId);
             var amount = "0.00001";
             var price = "0.85334384"; // n=5333399 d=6250000
             var priceObj = Price.FromString(price);
@@ -424,7 +424,7 @@ namespace stellar_dotnet_sdk_test
             var issuer = KeyPair.FromSecretSeed("SA64U7C5C7BS5IHWEPA7YWFN3Z6FE5L6KAMYUIT4AQ7KVTVLD23C6HEZ");
 
             Asset selling = new AssetTypeNative();
-            var buying = Asset.CreateNonNativeAsset("USD", issuer);
+            var buying = Asset.CreateNonNativeAsset("USD", issuer.AccountId);
             var amount = "0.00001";
             var price = "2.93850088"; // n=36731261 d=12500000
             var priceObj = Price.FromString(price);

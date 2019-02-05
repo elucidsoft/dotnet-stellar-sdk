@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk.responses
     /// </summary>
     public class TradeResponse : Response, IPagingToken
     {
-        public TradeResponse(String id, String pagingToken, String ledgerCloseTime, String offerId, bool baseIsSeller, KeyPair baseAccount, String baseOfferId, String baseAmount, String baseAssetType, String baseAssetCode, String baseAssetIssuer, KeyPair counterAccount, String counterOfferId, String counterAmount, String counterAssetType, String counterAssetCode, String counterAssetIssuer, Price price)
+        public TradeResponse(String id, String pagingToken, String ledgerCloseTime, String offerId, bool baseIsSeller, string baseAccount, String baseOfferId, String baseAmount, String baseAssetType, String baseAssetCode, String baseAssetIssuer, string counterAccount, String counterOfferId, String counterAmount, String counterAssetType, String counterAssetCode, String counterAssetIssuer, Price price)
         {
             Id = id;
             PagingToken = pagingToken;
@@ -48,8 +48,7 @@ namespace stellar_dotnet_sdk.responses
         public bool BaseIsSeller { get; }
 
         [JsonProperty(PropertyName = "base_account")]
-        [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair BaseAccount { get; }
+        public string BaseAccount { get; }
 
         [JsonProperty(PropertyName = "base_offer_id")]
         public String BaseOfferId { get; }
@@ -67,8 +66,7 @@ namespace stellar_dotnet_sdk.responses
         public String BaseAssetIssuer { get; }
 
         [JsonProperty(PropertyName = "counter_account")]
-        [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair CounterAccount { get; }
+        public string CounterAccount { get; }
 
         [JsonProperty(PropertyName = "counter_offer_id")]
         public String CounterOfferId { get; }

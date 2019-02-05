@@ -44,7 +44,7 @@ namespace TestConsole
             Console.WriteLine("-- Show Account Transactions (ForAccount) --");
 
             var transactions = await server.Transactions
-                .ForAccount(KeyPair.FromAccountId("GAZHWW2NBPDVJ6PEEOZ2X43QV5JUDYS3XN4OWOTBR6WUACTUML2CCJLI"))
+                .ForAccount("GAZHWW2NBPDVJ6PEEOZ2X43QV5JUDYS3XN4OWOTBR6WUACTUML2CCJLI")
                 .Execute();
 
             ShowTransactionRecords(transactions.Records);

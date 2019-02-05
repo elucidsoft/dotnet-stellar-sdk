@@ -20,10 +20,10 @@ namespace stellar_dotnet_sdk.requests
         /// </summary>
         /// <param name="account">Account for which to get offers</param>
         /// <returns></returns>
-        public OffersRequestBuilder ForAccount(KeyPair account)
+        public OffersRequestBuilder ForAccount(string account)
         {
             account = account ?? throw new ArgumentNullException(nameof(account), "account cannot be null");
-            this.SetSegments("accounts", account.AccountId, "offers");
+            this.SetSegments("accounts", account, "offers");
             return this;
         }
     }

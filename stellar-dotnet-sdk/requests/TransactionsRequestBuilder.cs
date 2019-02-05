@@ -43,10 +43,10 @@ namespace stellar_dotnet_sdk.requests
         /// <a href="https://www.stellar.org/developers/horizon/reference/payments-for-account.html">Transactions for Account</a>
         /// </Summary>
         /// <param name="account">Account for which to get transactions</param> 
-        public TransactionsRequestBuilder ForAccount(KeyPair account)
+        public TransactionsRequestBuilder ForAccount(string account)
         {
             account = account ?? throw new ArgumentNullException(nameof(account), "account cannot be null");
-            this.SetSegments("accounts", account.AccountId, "transactions");
+            this.SetSegments("accounts", account, "transactions");
             return this;
         }
 

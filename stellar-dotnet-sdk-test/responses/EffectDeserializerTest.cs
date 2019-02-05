@@ -38,7 +38,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountCreatedEffectResponse);
             var effect = (AccountCreatedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ");
+            Assert.AreEqual(effect.Account, "GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ");
             Assert.AreEqual(effect.StartingBalance, "30.0");
             Assert.AreEqual(effect.PagingToken, "65571265847297-1");
 
@@ -76,7 +76,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountRemovedEffectResponse);
             var effect = (AccountRemovedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ");
+            Assert.AreEqual(effect.Account, "GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ");
 
             Assert.AreEqual(effect.Links.Operation.Href,
                 "http://horizon-testnet.stellar.org/operations/65571265847297");
@@ -112,7 +112,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountCreditedEffectResponse);
             var effect = (AccountCreditedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GDLGTRIBFH24364GPWPUS45GUFC2GU4ARPGWTXVCPLGTUHX3IOS3ON47");
+            Assert.AreEqual(effect.Account, "GDLGTRIBFH24364GPWPUS45GUFC2GU4ARPGWTXVCPLGTUHX3IOS3ON47");
             Assert.AreEqual(effect.Asset, new AssetTypeNative());
             Assert.AreEqual(effect.Amount, "1000.0");
 
@@ -150,7 +150,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountDebitedEffectResponse);
             var effect = (AccountDebitedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H");
+            Assert.AreEqual(effect.Account, "GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H");
             Assert.AreEqual(effect.Asset, new AssetTypeNative());
             Assert.AreEqual(effect.Amount, "30.0");
 
@@ -188,7 +188,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountThresholdsUpdatedEffectResponse);
             var effect = (AccountThresholdsUpdatedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
+            Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.LowThreshold, 2);
             Assert.AreEqual(effect.MedThreshold, 3);
             Assert.AreEqual(effect.HighThreshold, 4);
@@ -227,7 +227,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountHomeDomainUpdatedEffectResponse);
             var effect = (AccountHomeDomainUpdatedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
+            Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.HomeDomain, "stellar.org");
 
             Assert.AreEqual(effect.Links.Operation.Href,
@@ -264,7 +264,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountFlagsUpdatedEffectResponse);
             var effect = (AccountFlagsUpdatedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
+            Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.AuthRequiredFlag, false);
             Assert.AreEqual(effect.AuthRevokableFlag, true);
 
@@ -302,7 +302,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is SignerCreatedEffectResponse);
             var effect = (SignerCreatedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GB24LPGAHYTWRYOXIDKXLI55SBRWW42T3TZKDAAW3BOJX4ADVIATFTLU");
+            Assert.AreEqual(effect.Account, "GB24LPGAHYTWRYOXIDKXLI55SBRWW42T3TZKDAAW3BOJX4ADVIATFTLU");
             Assert.AreEqual(effect.Weight, 1);
             Assert.AreEqual(effect.PublicKey, "GB24LPGAHYTWRYOXIDKXLI55SBRWW42T3TZKDAAW3BOJX4ADVIATFTLU");
 
@@ -340,7 +340,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is SignerRemovedEffectResponse);
             var effect = (SignerRemovedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GCFKT6BN2FEASCEVDNHEC4LLFT2KLUUPEMKM4OJPEJ65H2AEZ7IH4RV6");
+            Assert.AreEqual(effect.Account, "GCFKT6BN2FEASCEVDNHEC4LLFT2KLUUPEMKM4OJPEJ65H2AEZ7IH4RV6");
             Assert.AreEqual(effect.Weight, 0);
             Assert.AreEqual(effect.PublicKey, "GCFKT6BN2FEASCEVDNHEC4LLFT2KLUUPEMKM4OJPEJ65H2AEZ7IH4RV6");
 
@@ -378,7 +378,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is SignerUpdatedEffectResponse);
             var effect = (SignerUpdatedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
+            Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.Weight, 2);
             Assert.AreEqual(effect.PublicKey, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
 
@@ -416,10 +416,8 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is TrustlineCreatedEffectResponse);
             var effect = (TrustlineCreatedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
-            Assert.AreEqual(effect.Asset,
-                Asset.CreateNonNativeAsset("EUR",
-                    KeyPair.FromAccountId("GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA")));
+            Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
+            Assert.AreEqual(effect.Asset, Asset.CreateNonNativeAsset("EUR", "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA"));
             Assert.AreEqual(effect.Limit, "1000.0");
 
             Assert.AreEqual(effect.Links.Operation.Href,
@@ -456,10 +454,8 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is TrustlineRemovedEffectResponse);
             var effect = (TrustlineRemovedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
-            Assert.AreEqual(effect.Asset,
-                Asset.CreateNonNativeAsset("EUR",
-                    KeyPair.FromAccountId("GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA")));
+            Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
+            Assert.AreEqual(effect.Asset, Asset.CreateNonNativeAsset("EUR", "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA"));
             Assert.AreEqual(effect.Limit, "0.0");
 
             Assert.AreEqual(effect.Links.Operation.Href,
@@ -496,10 +492,8 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is TrustlineUpdatedEffectResponse);
             var effect = (TrustlineUpdatedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
-            Assert.AreEqual(effect.Asset,
-                Asset.CreateNonNativeAsset("TESTTEST",
-                    KeyPair.FromAccountId("GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA")));
+            Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
+            Assert.AreEqual(effect.Asset, Asset.CreateNonNativeAsset("TESTTEST", "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA"));
             Assert.AreEqual(effect.Limit, "100.0");
 
             Assert.AreEqual(effect.Links.Operation.Href,
@@ -536,10 +530,10 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is TrustlineAuthorizedEffectResponse);
             var effect = (TrustlineAuthorizedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
+            Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.AssetType, "credit_alphanum12");
             Assert.AreEqual(effect.AssetCode, "TESTTEST");
-            Assert.AreEqual(effect.Trustor.AccountId, "GB3E4AB4VWXJDUVN4Z3CPBU5HTMWVEQXONZYVDFMHQD6333KHCOL3UBR");
+            Assert.AreEqual(effect.Trustor, "GB3E4AB4VWXJDUVN4Z3CPBU5HTMWVEQXONZYVDFMHQD6333KHCOL3UBR");
 
             Assert.AreEqual(effect.Links.Operation.Href,
                 "http://horizon-testnet.stellar.org/operations/33788507721730");
@@ -575,10 +569,10 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is TrustlineDeauthorizedEffectResponse);
             var effect = (TrustlineDeauthorizedEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
+            Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.AssetType, "credit_alphanum4");
             Assert.AreEqual(effect.AssetCode, "EUR");
-            Assert.AreEqual(effect.Trustor.AccountId, "GB3E4AB4VWXJDUVN4Z3CPBU5HTMWVEQXONZYVDFMHQD6333KHCOL3UBR");
+            Assert.AreEqual(effect.Trustor, "GB3E4AB4VWXJDUVN4Z3CPBU5HTMWVEQXONZYVDFMHQD6333KHCOL3UBR");
 
             Assert.AreEqual(effect.Links.Operation.Href,
                 "http://horizon-testnet.stellar.org/operations/33788507721730");
@@ -614,24 +608,17 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is TradeEffectResponse);
             var effect = (TradeEffectResponse) instance;
 
-            Assert.AreEqual(effect.Account.AccountId, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
-            Assert.AreEqual(effect.Seller.AccountId, "GCVHDLN6EHZBYW2M3BQIY32C23E4GPIRZZDBNF2Q73DAZ5VJDRGSMYRB");
+            Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
+            Assert.AreEqual(effect.Seller, "GCVHDLN6EHZBYW2M3BQIY32C23E4GPIRZZDBNF2Q73DAZ5VJDRGSMYRB");
             Assert.AreEqual(effect.OfferId, 1);
             Assert.AreEqual(effect.SoldAmount, "1000.0");
-            Assert.AreEqual(effect.SoldAsset,
-                Asset.CreateNonNativeAsset("EUR",
-                    KeyPair.FromAccountId("GCWVFBJ24754I5GXG4JOEB72GJCL3MKWC7VAEYWKGQHPVH3ENPNBSKWS")));
+            Assert.AreEqual(effect.SoldAsset, Asset.CreateNonNativeAsset("EUR", "GCWVFBJ24754I5GXG4JOEB72GJCL3MKWC7VAEYWKGQHPVH3ENPNBSKWS"));
             Assert.AreEqual(effect.BoughtAmount, "60.0");
-            Assert.AreEqual(effect.BoughtAsset,
-                Asset.CreateNonNativeAsset("TESTTEST",
-                    KeyPair.FromAccountId("GAHXPUDP3AK6F2QQM4FIRBGPNGKLRDDSTQCVKEXXKKRHJZUUQ23D5BU7")));
+            Assert.AreEqual(effect.BoughtAsset, Asset.CreateNonNativeAsset("TESTTEST", "GAHXPUDP3AK6F2QQM4FIRBGPNGKLRDDSTQCVKEXXKKRHJZUUQ23D5BU7"));
 
-            Assert.AreEqual(effect.Links.Operation.Href,
-                "http://horizon-testnet.stellar.org/operations/33788507721730");
-            Assert.AreEqual(effect.Links.Succeeds.Href,
-                "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2");
-            Assert.AreEqual(effect.Links.Precedes.Href,
-                "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2");
+            Assert.AreEqual(effect.Links.Operation.Href, "http://horizon-testnet.stellar.org/operations/33788507721730");
+            Assert.AreEqual(effect.Links.Succeeds.Href, "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2");
+            Assert.AreEqual(effect.Links.Precedes.Href, "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2");
         }
 
         [TestMethod]
@@ -660,7 +647,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountInflationDestinationUpdatedEffectResponse);
             var effect = (AccountInflationDestinationUpdatedEffectResponse) instance;
 
-            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
         }
 
@@ -690,7 +677,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is DataCreatedEffectResponse);
             var effect = (DataCreatedEffectResponse) instance;
 
-            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
         }
 
@@ -720,7 +707,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is DataRemovedEffectResponse);
             var effect = (DataRemovedEffectResponse) instance;
 
-            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
         }
 
@@ -750,7 +737,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is DataUpdatedEffectResponse);
             var effect = (DataUpdatedEffectResponse) instance;
 
-            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
         }
 
@@ -786,7 +773,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is SequenceBumpedEffectResponse);
             var effect = (SequenceBumpedEffectResponse) instance;
 
-            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
             Assert.AreEqual(79473726952833048L, effect.NewSequence);
         }
@@ -816,7 +803,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is OfferCreatedEffectResponse);
             var effect = (OfferCreatedEffectResponse) instance;
 
-            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
         }
 
@@ -845,7 +832,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is OfferRemovedEffectResponse);
             var effect = (OfferRemovedEffectResponse) instance;
 
-            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
         }
 
@@ -874,7 +861,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is OfferUpdatedEffectResponse);
             var effect = (OfferUpdatedEffectResponse) instance;
 
-            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account.AccountId);
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
         }
     }

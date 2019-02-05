@@ -8,7 +8,7 @@ namespace stellar_dotnet_sdk
     /// </summary>
     public class AssetTypeCreditAlphaNum : Asset
     {
-        private readonly KeyPair _issuer;
+        private readonly string _issuer;
 
         /// <summary>
         /// Creates an AssetTypeCreditAlphaNum based on the code and KeyPair
@@ -16,14 +16,14 @@ namespace stellar_dotnet_sdk
         /// <param name="code">The asset code.</param>
         /// <param name="issuer">The KeyPair of the issuer.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public AssetTypeCreditAlphaNum(string code, KeyPair issuer)
+        public AssetTypeCreditAlphaNum(string code, string issuer)
         {
             Code = code ?? throw new ArgumentNullException(nameof(code), "code cannot be null");
 
             if (issuer == null)
                 throw new ArgumentNullException(nameof(issuer), "issuer cannot be null");
 
-            _issuer = KeyPair.FromAccountId(issuer.AccountId);
+            _issuer = issuer;
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace stellar_dotnet_sdk
         /// <summary>
         /// Return the asset issuer
         /// </summary>
-        public KeyPair Issuer => KeyPair.FromAccountId(_issuer.AccountId);
+        public String Issuer => _issuer;
 
         /// <inheritdoc />
         public override int GetHashCode()
@@ -48,7 +48,7 @@ namespace stellar_dotnet_sdk
 
                 var hash = hashingBase;
                 hash = (hash * hashingMultiplier) ^ (!ReferenceEquals(null, Code) ? Code.GetHashCode() : 0);
-                hash = (hash * hashingMultiplier) ^ (!ReferenceEquals(null, Issuer) ? Issuer.AccountId.GetHashCode() : 0);
+                hash = (hash * hashingMultiplier) ^ (!ReferenceEquals(null, Issuer) ? Issuer.GetHashCode() : 0);
                 return hash;
             }
         }
@@ -59,7 +59,7 @@ namespace stellar_dotnet_sdk
             var o = (AssetTypeCreditAlphaNum) obj;
 
             return Code.Equals(o.Code) &&
-                   Issuer.AccountId.Equals(o.Issuer.AccountId);
+                   Issuer.Equals(o.Issuer);
         }
 
         /// <inheritdoc />

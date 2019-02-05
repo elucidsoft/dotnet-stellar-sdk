@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk.responses
     /// </summary>
     public class OfferResponse : Response, IPagingToken
     {
-        public OfferResponse(long id, string pagingToken, KeyPair seller, Asset selling, Asset buying, string amount, string price, OfferResponseLinks links)
+        public OfferResponse(long id, string pagingToken, string seller, Asset selling, Asset buying, string amount, string price, OfferResponseLinks links)
         {
             Id = id;
             PagingToken = pagingToken;
@@ -29,8 +29,7 @@ namespace stellar_dotnet_sdk.responses
         public string PagingToken { get; private set; }
 
         [JsonProperty(PropertyName = "seller")]
-        [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair Seller { get; private set; }
+        public string Seller { get; private set; }
 
         [JsonProperty(PropertyName = "selling")]
         [JsonConverter(typeof(AssetDeserializer))]

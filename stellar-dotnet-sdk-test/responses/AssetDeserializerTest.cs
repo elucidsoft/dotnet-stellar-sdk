@@ -25,7 +25,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(asset.GetType(), "credit_alphanum4");
             var creditAsset = (AssetTypeCreditAlphaNum) asset;
             Assert.AreEqual(creditAsset.Code, "CNY");
-            Assert.AreEqual(creditAsset.Issuer.AccountId, "GAREELUB43IRHWEASCFBLKHURCGMHE5IF6XSE7EXDLACYHGRHM43RFOX");
+            Assert.AreEqual(creditAsset.Issuer, "GAREELUB43IRHWEASCFBLKHURCGMHE5IF6XSE7EXDLACYHGRHM43RFOX");
         }
     }
 }

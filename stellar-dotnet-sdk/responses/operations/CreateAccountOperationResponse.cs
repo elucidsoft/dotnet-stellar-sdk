@@ -13,12 +13,10 @@ namespace stellar_dotnet_sdk.responses.operations
         public override int TypeId => 0;
 
         [JsonProperty(PropertyName = "account")]
-        [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair Account { get; private set; }
+        public string Account { get; private set; }
 
         [JsonProperty(PropertyName = "funder")]
-        [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair Funder { get; private set; }
+        public string Funder { get; private set; }
 
         [JsonProperty(PropertyName = "starting_balance")]
         public string StartingBalance { get; private set; }
@@ -28,7 +26,7 @@ namespace stellar_dotnet_sdk.responses.operations
 
         }
 
-        public CreateAccountOperationResponse(KeyPair account, KeyPair funder, string startingBalance)
+        public CreateAccountOperationResponse(string account, string funder, string startingBalance)
         {
             Account = account;
             Funder = funder;

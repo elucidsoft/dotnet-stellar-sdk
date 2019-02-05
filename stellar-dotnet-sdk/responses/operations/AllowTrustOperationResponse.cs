@@ -20,7 +20,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// <param name="assetCode">Asset code.</param>
         /// <param name="assetIssuer">Asset issuer.</param>
         /// <param name="authorize">true when allowing trust, false when revoking trust</param>
-        public AllowTrustOperationResponse(KeyPair trustor, KeyPair trustee, string assetType, string assetCode, string assetIssuer, bool authorize)
+        public AllowTrustOperationResponse(string trustor, string trustee, string assetType, string assetCode, string assetIssuer, bool authorize)
         {
             Trustor = trustor;
             Trustee = trustee;
@@ -41,15 +41,13 @@ namespace stellar_dotnet_sdk.responses.operations
         /// Trustor account.
         /// </summary>
         [JsonProperty(PropertyName = "trustor")]
-        [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair Trustor { get; private set; }
+        public string Trustor { get; private set; }
 
         /// <summary>
         /// Trustee account.
         /// </summary>
         [JsonProperty(PropertyName = "trustee")]
-        [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair Trustee { get; private set; }
+        public string Trustee { get; private set; }
 
         /// <summary>
         /// Asset type (native / alphanum4 / alphanum12)

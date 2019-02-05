@@ -30,7 +30,7 @@ namespace stellar_dotnet_sdk_test.responses
 
         public static void AssertTestData(AccountResponse account)
         {
-            Assert.AreEqual(account.KeyPair.AccountId, "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
+            Assert.AreEqual(account.AccountId, "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
             Assert.AreEqual(account.PagingToken, "1");
             Assert.AreEqual(account.SequenceNumber, 2319149195853854);
             Assert.AreEqual(account.SubentryCount, 0);
@@ -47,11 +47,12 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(account.Balances[0].AssetType, "credit_alphanum4");
             Assert.AreEqual(account.Balances[0].AssetCode, "ABC");
-            Assert.AreEqual(account.Balances[0].AssetIssuer.AccountId, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
+            Assert.AreEqual(account.Balances[0].AssetIssuer, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
             var asset = (AssetTypeCreditAlphaNum) account.Balances[0].Asset;
             Assert.IsInstanceOfType(asset, typeof(AssetTypeCreditAlphaNum));
             Assert.AreEqual(asset.Code, "ABC");
-            Assert.AreEqual(asset.Issuer.AccountId, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
+            Assert.AreEqual(asset.Issuer, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
+            
             Assert.AreEqual(account.Balances[0].BalanceString, "1001.0000000");
             Assert.AreEqual(account.Balances[0].Limit, "12000.4775807");
             Assert.AreEqual(account.Balances[0].BuyingLiabilities, "100.1234567");

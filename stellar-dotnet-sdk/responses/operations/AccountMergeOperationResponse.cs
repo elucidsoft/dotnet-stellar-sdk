@@ -13,19 +13,18 @@ namespace stellar_dotnet_sdk.responses.operations
         public override int TypeId => 8;
 
         [JsonProperty(PropertyName = "account")]
-        [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair Account { get; private set; }
+        public string Account { get; private set; }
 
         [JsonProperty(PropertyName = "into")]
-        [JsonConverter(typeof(KeyPairTypeAdapter))]
-        public KeyPair Into { get; private set; }
+        public string Into { get; private set; }
 
-        public AccountMergeOperationResponse()
+        public AccountMergeOperationResponse() 
         {
 
         }
 
-        public AccountMergeOperationResponse(KeyPair account, KeyPair into)
+
+        public AccountMergeOperationResponse(string account, string into)
         {
             Account = account;
             Into = into;

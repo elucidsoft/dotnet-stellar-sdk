@@ -38,14 +38,13 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is CreateAccountOperationResponse);
             var operation = (CreateAccountOperationResponse) instance;
 
-            Assert.AreEqual(operation.SourceAccount.AccountId,
-                "GD6WU64OEP5C4LRBH6NK3MHYIA2ADN6K6II6EXPNVUR3ERBXT4AN4ACD");
+            Assert.AreEqual(operation.SourceAccount, "GD6WU64OEP5C4LRBH6NK3MHYIA2ADN6K6II6EXPNVUR3ERBXT4AN4ACD");
             Assert.AreEqual(operation.PagingToken, "3936840037961729");
             Assert.AreEqual(operation.Id, 3936840037961729L);
 
-            Assert.AreEqual(operation.Account.AccountId, "GAR4DDXYNSN2CORG3XQFLAPWYKTUMLZYHYWV4Y2YJJ4JO6ZJFXMJD7PT");
+            Assert.AreEqual(operation.Account, "GAR4DDXYNSN2CORG3XQFLAPWYKTUMLZYHYWV4Y2YJJ4JO6ZJFXMJD7PT");
             Assert.AreEqual(operation.StartingBalance, "299454.904954");
-            Assert.AreEqual(operation.Funder.AccountId, "GD6WU64OEP5C4LRBH6NK3MHYIA2ADN6K6II6EXPNVUR3ERBXT4AN4ACD");
+            Assert.AreEqual(operation.Funder, "GD6WU64OEP5C4LRBH6NK3MHYIA2ADN6K6II6EXPNVUR3ERBXT4AN4ACD");
 
             Assert.AreEqual(operation.Links.Effects.Href, "/operations/3936840037961729/effects{?cursor,limit,order}");
             Assert.AreEqual(operation.Links.Precedes.Href, "/operations?cursor=3936840037961729&order=asc");
@@ -86,12 +85,11 @@ namespace stellar_dotnet_sdk_test.responses
 
         public static void AssertPaymentOperationTestData(PaymentOperationResponse operation)
         {
-            Assert.AreEqual(operation.SourceAccount.AccountId,
-                "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ");
+            Assert.AreEqual(operation.SourceAccount, "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ");
             Assert.AreEqual(operation.Id, 3940808587743233L);
 
-            Assert.AreEqual(operation.From.AccountId, "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ");
-            Assert.AreEqual(operation.To.AccountId, "GDWNY2POLGK65VVKIH5KQSH7VWLKRTQ5M6ADLJAYC2UEHEBEARCZJWWI");
+            Assert.AreEqual(operation.From, "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ");
+            Assert.AreEqual(operation.To, "GDWNY2POLGK65VVKIH5KQSH7VWLKRTQ5M6ADLJAYC2UEHEBEARCZJWWI");
             Assert.AreEqual(operation.Amount, "100.0");
             Assert.AreEqual(operation.Asset, new AssetTypeNative());
         }
@@ -122,12 +120,10 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is PaymentOperationResponse);
             var operation = (PaymentOperationResponse) instance;
 
-            Assert.AreEqual(operation.From.AccountId, "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA");
-            Assert.AreEqual(operation.To.AccountId, "GBHUSIZZ7FS2OMLZVZ4HLWJMXQ336NFSXHYERD7GG54NRITDTEWWBBI6");
+            Assert.AreEqual(operation.From, "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA");
+            Assert.AreEqual(operation.To, "GBHUSIZZ7FS2OMLZVZ4HLWJMXQ336NFSXHYERD7GG54NRITDTEWWBBI6");
             Assert.AreEqual(operation.Amount, "1000000000.0");
-            Assert.AreEqual(operation.Asset,
-                Asset.CreateNonNativeAsset("EUR",
-                    KeyPair.FromAccountId("GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA")));
+            Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA"));
         }
 
         [TestMethod]
@@ -156,12 +152,10 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AllowTrustOperationResponse);
             var operation = (AllowTrustOperationResponse) instance;
 
-            Assert.AreEqual(operation.Trustee.AccountId, "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
-            Assert.AreEqual(operation.Trustor.AccountId, "GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F");
+            Assert.AreEqual(operation.Trustee, "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
+            Assert.AreEqual(operation.Trustor, "GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F");
             Assert.AreEqual(operation.Authorize, true);
-            Assert.AreEqual(operation.Asset,
-                Asset.CreateNonNativeAsset("EUR",
-                    KeyPair.FromAccountId("GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM")));
+            Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM"));
         }
 
         [TestMethod]
@@ -190,12 +184,10 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is ChangeTrustOperationResponse);
             var operation = (ChangeTrustOperationResponse) instance;
 
-            Assert.AreEqual(operation.Trustee.AccountId, "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
-            Assert.AreEqual(operation.Trustor.AccountId, "GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F");
+            Assert.AreEqual(operation.Trustee, "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
+            Assert.AreEqual(operation.Trustor, "GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F");
             Assert.AreEqual(operation.Limit, "922337203685.4775807");
-            Assert.AreEqual(operation.Asset,
-                Asset.CreateNonNativeAsset("EUR",
-                    KeyPair.FromAccountId("GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM")));
+            Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM"));
         }
 
         [TestMethod]
@@ -227,8 +219,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(operation.SignerKey, "GD3ZYXVC7C3ECD5I4E5NGPBFJJSULJ6HJI2FBHGKYFV34DSIWB4YEKJZ");
             Assert.AreEqual(operation.SignerWeight, 1);
             Assert.AreEqual(operation.HomeDomain, "stellar.org");
-            Assert.AreEqual(operation.InflationDestination.AccountId,
-                "GBYWSY4NPLLPTP22QYANGTT7PEHND64P4D4B6LFEUHGUZRVYJK2H4TBE");
+            Assert.AreEqual(operation.InflationDestination, "GBYWSY4NPLLPTP22QYANGTT7PEHND64P4D4B6LFEUHGUZRVYJK2H4TBE");
             Assert.AreEqual(operation.LowThreshold, 1);
             Assert.AreEqual(operation.MedThreshold, 2);
             Assert.AreEqual(operation.HighThreshold, 3);
@@ -291,8 +282,8 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountMergeOperationResponse);
             var operation = (AccountMergeOperationResponse) instance;
 
-            Assert.AreEqual(operation.Account.AccountId, "GD6GKRABNDVYDETEZJQEPS7IBQMERCN44R5RCI4LJNX6BMYQM2KPGGZ2");
-            Assert.AreEqual(operation.Into.AccountId, "GAZWSWPDQTBHFIPBY4FEDFW2J6E2LE7SZHJWGDZO6Q63W7DBSRICO2KN");
+            Assert.AreEqual(operation.Account, "GD6GKRABNDVYDETEZJQEPS7IBQMERCN44R5RCI4LJNX6BMYQM2KPGGZ2");
+            Assert.AreEqual(operation.Into, "GAZWSWPDQTBHFIPBY4FEDFW2J6E2LE7SZHJWGDZO6Q63W7DBSRICO2KN");
         }
 
         [TestMethod]
@@ -323,9 +314,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(operation.OfferId, 0);
             Assert.AreEqual(operation.Amount, "100.0");
-            Assert.AreEqual(operation.BuyingAsset,
-                Asset.CreateNonNativeAsset("CNY",
-                    KeyPair.FromAccountId("GAZWSWPDQTBHFIPBY4FEDFW2J6E2LE7SZHJWGDZO6Q63W7DBSRICO2KN")));
+            Assert.AreEqual(operation.BuyingAsset, Asset.CreateNonNativeAsset("CNY", "GAZWSWPDQTBHFIPBY4FEDFW2J6E2LE7SZHJWGDZO6Q63W7DBSRICO2KN"));
             Assert.AreEqual(operation.SellingAsset, new AssetTypeNative());
         }
 
@@ -355,16 +344,12 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is PathPaymentOperationResponse);
             var operation = (PathPaymentOperationResponse) instance;
 
-            Assert.AreEqual(operation.From.AccountId, "GCXKG6RN4ONIEPCMNFB732A436Z5PNDSRLGWK7GBLCMQLIFO4S7EYWVU");
-            Assert.AreEqual(operation.To.AccountId, "GA5WBPYA5Y4WAEHXWR2UKO2UO4BUGHUQ74EUPKON2QHV4WRHOIRNKKH2");
+            Assert.AreEqual(operation.From, "GCXKG6RN4ONIEPCMNFB732A436Z5PNDSRLGWK7GBLCMQLIFO4S7EYWVU");
+            Assert.AreEqual(operation.To, "GA5WBPYA5Y4WAEHXWR2UKO2UO4BUGHUQ74EUPKON2QHV4WRHOIRNKKH2");
             Assert.AreEqual(operation.Amount, "10.0");
             Assert.AreEqual(operation.SourceMax, "100.0");
-            Assert.AreEqual(operation.Asset,
-                Asset.CreateNonNativeAsset("EUR",
-                    KeyPair.FromAccountId("GCQPYGH4K57XBDENKKX55KDTWOTK5WDWRQOH2LHEDX3EKVIQRLMESGBG")));
-            Assert.AreEqual(operation.SendAsset,
-                Asset.CreateNonNativeAsset("USD",
-                    KeyPair.FromAccountId("GC23QF2HUE52AMXUFUH3AYJAXXGXXV2VHXYYR6EYXETPKDXZSAW67XO4")));
+            Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", "GCQPYGH4K57XBDENKKX55KDTWOTK5WDWRQOH2LHEDX3EKVIQRLMESGBG"));
+            Assert.AreEqual(operation.SendAsset, Asset.CreateNonNativeAsset("USD", "GC23QF2HUE52AMXUFUH3AYJAXXGXXV2VHXYYR6EYXETPKDXZSAW67XO4"));
         }
 
         [TestMethod]
@@ -394,9 +379,7 @@ namespace stellar_dotnet_sdk_test.responses
             var operation = (CreatePassiveOfferOperationResponse) instance;
 
             Assert.AreEqual(operation.Amount, "11.27827");
-            Assert.AreEqual(operation.BuyingAsset,
-                Asset.CreateNonNativeAsset("USD",
-                    KeyPair.FromAccountId("GDS5JW5E6DRSSN5XK4LW7E6VUMFKKE2HU5WCOVFTO7P2RP7OXVCBLJ3Y")));
+            Assert.AreEqual(operation.BuyingAsset, Asset.CreateNonNativeAsset("USD", "GDS5JW5E6DRSSN5XK4LW7E6VUMFKKE2HU5WCOVFTO7P2RP7OXVCBLJ3Y"));
             Assert.AreEqual(operation.SellingAsset, new AssetTypeNative());
         }
 
