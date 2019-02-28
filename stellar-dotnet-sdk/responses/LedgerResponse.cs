@@ -19,9 +19,6 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "prev_hash")]
         public string PrevHash { get; private set; }
 
-        [JsonProperty(PropertyName = "transaction_count")]
-        public int TransactionCount { get; private set; }
-
         [JsonProperty(PropertyName = "successful_transaction_count")]
         public int SuccessfulTransactionCount { get; private set; }
 
@@ -58,7 +55,7 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "_links")]
         public LedgerResponseLinks Links { get; private set; }
 
-        public LedgerResponse(long sequence, String hash, String pagingToken, String prevHash, int transactionCount, 
+        public LedgerResponse(long sequence, String hash, String pagingToken, String prevHash,
             int failedTransactionCount, int successfulTransactionCount, int operationCount, String closedAt, 
             String totalCoins, String feePool, long baseFee, String baseReserve, String baseFeeInStroops, 
             String baseReserveInStroops, int maxTxSetSize, LedgerResponseLinks links)
@@ -67,7 +64,6 @@ namespace stellar_dotnet_sdk.responses
             Hash = hash;
             PagingToken = pagingToken;
             PrevHash = prevHash;
-            TransactionCount = transactionCount;
             FailedTransactionCount = failedTransactionCount;
             SuccessfulTransactionCount = successfulTransactionCount;
             OperationCount = operationCount;

@@ -52,7 +52,20 @@ namespace stellar_dotnet_sdk_test.requests
                 Assert.AreEqual("https://horizon-testnet.stellar.org/ledgers/200000000000/transactions?limit=50&order=asc", uri.ToString());
             }
         }
-
+        
+        [TestMethod]
+        public void TestIncludeFailed()
+        {
+            var server = new Server("https://horizon-testnet.stellar.org");
+            var uri = server.Transactions
+                .ForLedger(200000000000L)
+                .IncludeFailed(true)
+                .Limit(50)
+                .Order(OrderDirection.ASC)
+                .BuildUri();
+            Assert.AreEqual("https://horizon-testnet.stellar.org/ledgers/200000000000/transactions?include_failed=true&limit=50&order=asc", uri.ToString());            
+        }
+        
         [TestMethod]
         public async Task TestTransactionsExecute()
         {

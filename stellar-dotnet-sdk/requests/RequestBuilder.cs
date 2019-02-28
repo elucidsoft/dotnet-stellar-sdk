@@ -106,7 +106,7 @@ namespace stellar_dotnet_sdk.requests
         }
 
         /// <summary>
-        ///     llows to stream SSE events from horizon.
+        ///     Allows to stream SSE events from horizon.
         ///     Certain endpoints in Horizon can be called in streaming mode using Server-Sent Events.
         ///     This mode will keep the connection to horizon open and horizon will continue to return
         ///     http://www.w3.org/TR/eventsource/

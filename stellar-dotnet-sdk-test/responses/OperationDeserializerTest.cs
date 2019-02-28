@@ -46,6 +46,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(operation.StartingBalance, "299454.904954");
             Assert.AreEqual(operation.Funder, "GD6WU64OEP5C4LRBH6NK3MHYIA2ADN6K6II6EXPNVUR3ERBXT4AN4ACD");
 
+            Assert.IsTrue(operation.TransactionSuccessful);
             Assert.AreEqual(operation.Links.Effects.Href, "/operations/3936840037961729/effects{?cursor,limit,order}");
             Assert.AreEqual(operation.Links.Precedes.Href, "/operations?cursor=3936840037961729&order=asc");
             Assert.AreEqual(operation.Links.Self.Href, "/operations/3936840037961729");
@@ -92,6 +93,8 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(operation.To, "GDWNY2POLGK65VVKIH5KQSH7VWLKRTQ5M6ADLJAYC2UEHEBEARCZJWWI");
             Assert.AreEqual(operation.Amount, "100.0");
             Assert.AreEqual(operation.Asset, new AssetTypeNative());
+            
+            Assert.IsFalse(operation.TransactionSuccessful);
         }
 
         [TestMethod]

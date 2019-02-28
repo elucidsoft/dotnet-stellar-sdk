@@ -69,7 +69,7 @@ namespace stellar_dotnet_sdk.requests
         }
 
         /// <summary>
-        ///     uilds request to GET /ledgers/{ledgerSeq}/operations
+        ///     Builds request to GET /ledgers/{ledgerSeq}/operations
         ///     See: https://www.stellar.org/developers/horizon/reference/operations-for-ledger.html
         /// </summary>
         /// <param name="ledgerSeq">Ledger for which to get operations</param>
@@ -80,6 +80,19 @@ namespace stellar_dotnet_sdk.requests
         {
             SetSegments("ledgers", ledgerSeq.ToString(), "operations");
 
+            return this;
+        }
+        
+        /// <summary>
+        ///     Set <code>include_failed</code> flag to include operations of failed transactions.
+        /// </summary>
+        /// <param name="includeFailed">Set to true to include operations of failed transactions in results</param>
+        /// <returns>
+        ///     <see cref="OperationsRequestBuilder" />
+        /// </returns>
+        public OperationsRequestBuilder IncludeFailed(bool includeFailed)
+        {
+            UriBuilder.SetQueryParam("include_failed", includeFailed.ToString().ToLowerInvariant());
             return this;
         }
 

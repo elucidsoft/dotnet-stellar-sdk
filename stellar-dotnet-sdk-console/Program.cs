@@ -101,7 +101,7 @@ namespace TestConsole
                         break;
                 }
 
-            Console.WriteLine($"id: {lr.Sequence}, tx/ops: {lr.TransactionCount + "/" + lr.OperationCount}, accts: {accts}, payments: {payments}, offers: {offers}, options: {options}");
+            Console.WriteLine($"id: {lr.Sequence}, tx/ops: {lr.SuccessfulTransactionCount + "/" + lr.OperationCount}, accts: {accts}, payments: {payments}, offers: {offers}, options: {options}");
             Console.WriteLine($"Uri: {((LedgersRequestBuilder) sender).Uri}");
         }
 

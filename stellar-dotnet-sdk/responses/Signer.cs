@@ -15,10 +15,6 @@ namespace stellar_dotnet_sdk.responses
             Weight = weight ?? throw new ArgumentNullException(nameof(weight), "weight cannot be null");
         }
 
-        [Obsolete("Use Key instead.", false)]
-        [JsonProperty(PropertyName = "public_key")]
-        public string AccountId { get; private set; }
-
         [JsonProperty(PropertyName = "key")]
         public string Key { get; private set; }
 

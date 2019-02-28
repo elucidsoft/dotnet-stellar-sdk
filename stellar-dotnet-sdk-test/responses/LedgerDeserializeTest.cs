@@ -34,7 +34,6 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(ledger.PagingToken, "3860428274794496");
             Assert.AreEqual(ledger.PrevHash, "50c8695eb32171a19858413e397cc50b504ceacc819010bdf8ff873aff7858d7");
             Assert.AreEqual(ledger.Sequence, 898826);
-            Assert.AreEqual(ledger.TransactionCount, 5);
             Assert.AreEqual(ledger.SuccessfulTransactionCount, 3);
             Assert.AreEqual(ledger.FailedTransactionCount, 2);
             Assert.AreEqual(ledger.OperationCount, 10);

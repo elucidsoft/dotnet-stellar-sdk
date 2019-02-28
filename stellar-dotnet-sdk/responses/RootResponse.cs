@@ -25,9 +25,6 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "network_passphrase")]
         public string NetworkPassphrase { get; }
 
-        [JsonProperty(PropertyName = "protocol_version")]
-        public int ProtocolVersion { get; }
-
         [JsonProperty(PropertyName = "current_protocol_version")]
         public int CurrentProtocolVersion { get; }
         
@@ -35,7 +32,7 @@ namespace stellar_dotnet_sdk.responses
         public int CoreSupportedProtocolVersion { get; }
         
         public RootResponse(string horizonVersion, string stellarCoreVersion, int historyLatestLedger, int historyElderLedger, 
-            int coreLatestLedger, string networkPassphrase, int protocolVersion, int currentProtocolVersion, int coreSupportedProtocolVersion)
+            int coreLatestLedger, string networkPassphrase, int currentProtocolVersion, int coreSupportedProtocolVersion)
         {
             HorizonVersion = horizonVersion;
             StellarCoreVersion = stellarCoreVersion;
@@ -43,7 +40,6 @@ namespace stellar_dotnet_sdk.responses
             HistoryElderLedger = historyElderLedger;
             CoreLatestLedger = coreLatestLedger;
             NetworkPassphrase = networkPassphrase;
-            ProtocolVersion = protocolVersion;
             CurrentProtocolVersion = currentProtocolVersion;
             CoreSupportedProtocolVersion = coreSupportedProtocolVersion;
         }

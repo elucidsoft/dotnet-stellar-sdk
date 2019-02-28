@@ -60,5 +60,19 @@ namespace stellar_dotnet_sdk.requests
             SetSegments("ledgers", ledgerSeq.ToString(), "transactions");
             return this;
         }
+        
+        /// <summary>
+        ///     Set <code>include_failed</code> flag to include failed transactions.
+        /// </summary>
+        /// <param name="includeFailed">Set to true to include failed transactions in results</param>
+        /// <returns>
+        ///     <see cref="OperationsRequestBuilder" />
+        /// </returns>
+        public TransactionsRequestBuilder IncludeFailed(bool includeFailed)
+        {
+            UriBuilder.SetQueryParam("include_failed", includeFailed.ToString().ToLowerInvariant());
+            
+            return this;
+        }        
     }
 }

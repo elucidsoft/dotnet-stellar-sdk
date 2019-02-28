@@ -67,6 +67,19 @@ namespace stellar_dotnet_sdk_test.requests
         }
 
         [TestMethod]
+        public void TestIncludeFailed()
+        {
+            var server = new Server("https://horizon-testnet.stellar.org");
+            var uri = server.Operations
+                .ForLedger(200000000000L)
+                .IncludeFailed(true)
+                .Limit(50)
+                .Order(OrderDirection.ASC)
+                .BuildUri();
+            Assert.AreEqual("https://horizon-testnet.stellar.org/ledgers/200000000000/operations?include_failed=true&limit=50&order=asc", uri.ToString());            
+        }
+        
+        [TestMethod]
         public async Task TestOperationsExecute()
         {
             var jsonResponse = File.ReadAllText(Path.Combine("testdata", "operationPage.json"));
