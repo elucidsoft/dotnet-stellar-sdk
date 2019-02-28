@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Reflection;
 using System.Threading.Tasks;
 using stellar_dotnet_sdk.requests;
 using stellar_dotnet_sdk.responses;
@@ -10,61 +11,69 @@ namespace stellar_dotnet_sdk
     public class Server : IDisposable
     {
         private readonly Uri _serverUri;
+        private readonly HttpClient _httpClient;
+        private readonly bool _ownHttpClient;
+
+        private const string ClientNameHeader = "X-Client-Name";
+        private const string ClientVersionHeader = "X-Client-Version";
 
         public Server(string uri, HttpClient httpClient)
         {
-            HttpClient = httpClient;
+            _httpClient = httpClient;
             _serverUri = new Uri(uri);
+            _ownHttpClient = false;
         }
 
         public Server(string uri)
-            : this(uri, new HttpClient())
+            : this(uri, CreateHttpClient())
         {
+            _ownHttpClient = true;
+        }
+
+        public void Dispose()
+        {
+            if (_ownHttpClient)
+            {
+                _httpClient?.Dispose();
+            }
         }
 
         public RootResponse Root()
         {
             ResponseHandler<RootResponse> responseHandler = new ResponseHandler<RootResponse>();
 
-            var response = HttpClient.GetAsync(_serverUri).Result;
+            var response = _httpClient.GetAsync(_serverUri).Result;
 
             return responseHandler.HandleResponse(response).Result;
         }
 
-        public static HttpClient HttpClient { get; set; }
+        public AccountsRequestBuilder Accounts => new AccountsRequestBuilder(_serverUri, _httpClient);
 
-        public AccountsRequestBuilder Accounts => new AccountsRequestBuilder(_serverUri, HttpClient);
+        public AssetsRequestBuilder Assets => new AssetsRequestBuilder(_serverUri, _httpClient);
 
-        public AssetsRequestBuilder Assets => new AssetsRequestBuilder(_serverUri, HttpClient);
+        public EffectsRequestBuilder Effects => new EffectsRequestBuilder(_serverUri, _httpClient);
 
-        public EffectsRequestBuilder Effects => new EffectsRequestBuilder(_serverUri, HttpClient);
+        public LedgersRequestBuilder Ledgers => new LedgersRequestBuilder(_serverUri, _httpClient);
 
-        public LedgersRequestBuilder Ledgers => new LedgersRequestBuilder(_serverUri, HttpClient);
+        public OffersRequestBuilder Offers => new OffersRequestBuilder(_serverUri, _httpClient);
 
-        public OffersRequestBuilder Offers => new OffersRequestBuilder(_serverUri, HttpClient);
+        public OperationsRequestBuilder Operations => new OperationsRequestBuilder(_serverUri, _httpClient);
 
-        public OperationsRequestBuilder Operations => new OperationsRequestBuilder(_serverUri, HttpClient);
+        public OperationFeeStatsRequestBuilder OperationFeeStats => new OperationFeeStatsRequestBuilder(_serverUri, _httpClient);
 
-        public OperationFeeStatsRequestBuilder OperationFeeStats => new OperationFeeStatsRequestBuilder(_serverUri, HttpClient);
+        public OrderBookRequestBuilder OrderBook => new OrderBookRequestBuilder(_serverUri, _httpClient);
 
-        public OrderBookRequestBuilder OrderBook => new OrderBookRequestBuilder(_serverUri, HttpClient);
+        public TradesRequestBuilder Trades => new TradesRequestBuilder(_serverUri, _httpClient);
 
-        public TradesRequestBuilder Trades => new TradesRequestBuilder(_serverUri, HttpClient);
+        public PathsRequestBuilder Paths => new PathsRequestBuilder(_serverUri, _httpClient);
 
-        public PathsRequestBuilder Paths => new PathsRequestBuilder(_serverUri, HttpClient);
+        public PaymentsRequestBuilder Payments => new PaymentsRequestBuilder(_serverUri, _httpClient);
 
-        public PaymentsRequestBuilder Payments => new PaymentsRequestBuilder(_serverUri, HttpClient);
+        public TransactionsRequestBuilder Transactions => new TransactionsRequestBuilder(_serverUri, _httpClient);
 
-        public TransactionsRequestBuilder Transactions => new TransactionsRequestBuilder(_serverUri, HttpClient);
+        public FriendBotRequestBuilder TestNetFriendBot => new FriendBotRequestBuilder(_serverUri, _httpClient);
 
-        public FriendBotRequestBuilder TestNetFriendBot => new FriendBotRequestBuilder(_serverUri, HttpClient);
-
-        public void Dispose()
-        {
-            HttpClient?.Dispose();
-        }
-
-        public TradesAggregationRequestBuilder TradeAggregations => new TradesAggregationRequestBuilder(_serverUri, HttpClient);
+        public TradesAggregationRequestBuilder TradeAggregations => new TradesAggregationRequestBuilder(_serverUri, _httpClient);
 
         public async Task<SubmitTransactionResponse> SubmitTransaction(Transaction transaction)
         {
@@ -75,7 +84,7 @@ namespace stellar_dotnet_sdk
                 new KeyValuePair<string, string>("tx", transaction.ToEnvelopeXdrBase64())
             };
 
-            var response = await HttpClient.PostAsync(transactionUri, new FormUrlEncodedContent(paramsPairs.ToArray()));
+            var response = await _httpClient.PostAsync(transactionUri, new FormUrlEncodedContent(paramsPairs.ToArray()));
             if (response.Content != null)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
@@ -95,7 +104,7 @@ namespace stellar_dotnet_sdk
                 new KeyValuePair<string, string>("tx", transactionEnvelopeBase64)
             };
 
-            var response = await HttpClient.PostAsync(transactionUri, new FormUrlEncodedContent(paramsPairs.ToArray()));
+            var response = await _httpClient.PostAsync(transactionUri, new FormUrlEncodedContent(paramsPairs.ToArray()));
             if (response.Content != null)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
@@ -104,6 +113,20 @@ namespace stellar_dotnet_sdk
             }
 
             return null;
+        }
+
+        public static HttpClient CreateHttpClient()
+        {
+            return CreateHttpClient(new HttpClientHandler());
+        }
+
+        public static HttpClient CreateHttpClient(HttpMessageHandler handler)
+        {
+            var httpClient = new HttpClient(handler);
+            var assembly = Assembly.GetAssembly(typeof(Server)).GetName();
+            httpClient.DefaultRequestHeaders.Add(ClientNameHeader, assembly.Name);
+            httpClient.DefaultRequestHeaders.Add(ClientVersionHeader, assembly.Version.ToString());
+            return httpClient;
         }
     }
 }
