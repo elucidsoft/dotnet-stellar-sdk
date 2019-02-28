@@ -19,6 +19,7 @@
   },
   "amount": "100.0",
   "asset_type": "native",
+  "transaction_successful": false,
   "from": "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ",
   "id": 3940808587743233,
   "paging_token": "3940808587743233",

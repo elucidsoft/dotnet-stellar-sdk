@@ -35,6 +35,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(915744L, transaction.Ledger);
             Assert.AreEqual("2015-11-20T17:01:28Z", transaction.CreatedAt);
             Assert.AreEqual("3933090531512320", transaction.PagingToken);
+            Assert.AreEqual(transaction.Successful, true);
             Assert.AreEqual("GCUB7JL4APK7LKJ6MZF7Q2JTLHAGNBIUA7XIXD5SQTG52GQ2DAT6XZMK", transaction.SourceAccount);
             Assert.AreEqual(2373051035426646L, transaction.SourceAccountSequence);
             Assert.AreEqual(100L, transaction.FeePaid);
@@ -73,6 +74,7 @@ namespace stellar_dotnet_sdk_test.responses
             var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
 
             Assert.IsTrue(transaction.Memo is MemoNone);
+            Assert.AreEqual(transaction.Successful, false);
         }
     }
 }

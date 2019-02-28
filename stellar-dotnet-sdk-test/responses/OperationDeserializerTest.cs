@@ -41,6 +41,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(operation.SourceAccount, "GD6WU64OEP5C4LRBH6NK3MHYIA2ADN6K6II6EXPNVUR3ERBXT4AN4ACD");
             Assert.AreEqual(operation.PagingToken, "3936840037961729");
             Assert.AreEqual(operation.Id, 3936840037961729L);
+            Assert.IsNotNull(operation.TransactionSuccessful);
 
             Assert.AreEqual(operation.Account, "GAR4DDXYNSN2CORG3XQFLAPWYKTUMLZYHYWV4Y2YJJ4JO6ZJFXMJD7PT");
             Assert.AreEqual(operation.StartingBalance, "299454.904954");
@@ -87,6 +88,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             Assert.AreEqual(operation.SourceAccount, "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ");
             Assert.AreEqual(operation.Id, 3940808587743233L);
+            Assert.AreEqual(operation.TransactionSuccessful, false);
 
             Assert.AreEqual(operation.From, "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ");
             Assert.AreEqual(operation.To, "GDWNY2POLGK65VVKIH5KQSH7VWLKRTQ5M6ADLJAYC2UEHEBEARCZJWWI");
@@ -119,6 +121,8 @@ namespace stellar_dotnet_sdk_test.responses
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is PaymentOperationResponse);
             var operation = (PaymentOperationResponse) instance;
+
+            Assert.AreEqual(operation.TransactionSuccessful, true);
 
             Assert.AreEqual(operation.From, "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA");
             Assert.AreEqual(operation.To, "GBHUSIZZ7FS2OMLZVZ4HLWJMXQ336NFSXHYERD7GG54NRITDTEWWBBI6");

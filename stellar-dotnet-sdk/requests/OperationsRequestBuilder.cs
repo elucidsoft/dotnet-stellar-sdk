@@ -100,5 +100,11 @@ namespace stellar_dotnet_sdk.requests
 
             return this;
         }
+
+        public OperationsRequestBuilder IncludeFailed(bool value)
+        {
+            UriBuilder.SetQueryParam("include_failed", value.ToString().ToLower());
+            return this;
+        }
     }
 }

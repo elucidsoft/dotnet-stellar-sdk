@@ -18,6 +18,7 @@
   },
   "id": "3603043769651201",
   "paging_token": "3603043769651201",
+  "transaction_successful": true,
   "source_account": "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA",
   "type": "payment",
   "type_i": 1,

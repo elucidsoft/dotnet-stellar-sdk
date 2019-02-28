@@ -1,6 +1,18 @@
 ﻿{
   "last_ledger": "20882791",
   "last_ledger_base_fee": "100",
+  "ledger_capacity_usage": "0.97",
   "min_accepted_fee": "101",
-  "mode_accepted_fee": "102"
+  "mode_accepted_fee": "102",
+  "p10_accepted_fee": "103",
+  "p20_accepted_fee": "104",
+  "p30_accepted_fee": "105",
+  "p40_accepted_fee": "106",
+  "p50_accepted_fee": "107",
+  "p60_accepted_fee": "108",
+  "p70_accepted_fee": "109",
+  "p80_accepted_fee": "110",
+  "p90_accepted_fee": "111",
+  "p95_accepted_fee": "112",
+  "p99_accepted_fee": "113"
 }

@@ -19,6 +19,9 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "source_account")]
         public string SourceAccount { get; private set; }
 
+        [JsonProperty(PropertyName = "successful")]
+        public bool Successful { get; private set; }
+
         [JsonProperty(PropertyName = "paging_token")]
         public string PagingToken { get; private set; }
 
@@ -98,12 +101,13 @@ namespace stellar_dotnet_sdk.responses
             // Used by deserializer
         }
 
-        public TransactionResponse(string hash, long ledger, string createdAt, string sourceAccount, string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr, string resultXdr, string resultMetaXdr, Memo memo, TransactionResponseLinks links)
+        public TransactionResponse(string hash, long ledger, string createdAt, string sourceAccount, bool successful, string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr, string resultXdr, string resultMetaXdr, Memo memo, TransactionResponseLinks links)
         {
             Hash = hash;
             Ledger = ledger;
             CreatedAt = createdAt;
             SourceAccount = sourceAccount;
+            Successful = successful;
             PagingToken = pagingToken;
             SourceAccountSequence = sourceAccountSequence;
             FeePaid = feePaid;

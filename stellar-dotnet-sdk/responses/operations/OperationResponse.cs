@@ -61,6 +61,9 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "transaction_hash")]
         public string TransactionHash { get; private set; }
 
+        [JsonProperty(PropertyName = "transaction_successful")]
+        public bool TransactionSuccessful { get; private set; }
+
         /// <summary>
         /// Links of Paging
         /// </summary>

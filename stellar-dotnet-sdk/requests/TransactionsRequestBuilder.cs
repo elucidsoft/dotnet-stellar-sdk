@@ -60,5 +60,11 @@ namespace stellar_dotnet_sdk.requests
             SetSegments("ledgers", ledgerSeq.ToString(), "transactions");
             return this;
         }
+
+        public TransactionsRequestBuilder IncludeFailed(bool value)
+        {
+            UriBuilder.SetQueryParam("include_failed", value.ToString().ToLower());
+            return this;
+        }
     }
 }
