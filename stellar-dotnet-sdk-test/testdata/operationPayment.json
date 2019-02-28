@@ -24,6 +24,7 @@
   "paging_token": "3940808587743233",
   "source_account": "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ",
   "to": "GDWNY2POLGK65VVKIH5KQSH7VWLKRTQ5M6ADLJAYC2UEHEBEARCZJWWI",
+  "transaction_successful": false,
   "type": "payment",
   "type_i": 1
 }

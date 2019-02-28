@@ -37,7 +37,8 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(root.HistoryElderLedger, 1);
             Assert.AreEqual(root.CoreLatestLedger, 18369117);
             Assert.AreEqual(root.NetworkPassphrase, "Public Global Stellar Network ; September 2015");
-            Assert.AreEqual(root.ProtocolVersion, 9);
+            Assert.AreEqual(root.CurrentProtocolVersion, 10);
+            Assert.AreEqual(root.CoreSupportedProtocolVersion, 11);
         }
     }
 }

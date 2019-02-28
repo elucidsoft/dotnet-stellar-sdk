@@ -39,7 +39,9 @@
           "n": 10,
           "d": 1
         },
-        "price": "11.0000000"
+        "price": "11.0000000",
+        "last_modified_ledger": 22200794,
+        "last_modified_time": "2019-01-28T12:30:38Z"
       }
     ]
   }

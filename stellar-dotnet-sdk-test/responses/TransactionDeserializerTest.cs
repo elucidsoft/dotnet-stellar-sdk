@@ -26,6 +26,7 @@ namespace stellar_dotnet_sdk_test.responses
             var serialized = JsonConvert.SerializeObject(transaction);
             var back = JsonConvert.DeserializeObject<TransactionResponse>(serialized);
 
+            Assert.IsTrue(back.Successful);
             AssertTestData(back);
         }
 
@@ -72,6 +73,7 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "transactionTransactionWithoutMemo.json"));
             var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
 
+            Assert.IsFalse(transaction.Successful);
             Assert.IsTrue(transaction.Memo is MemoNone);
         }
     }
