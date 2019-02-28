@@ -28,7 +28,14 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "protocol_version")]
         public int ProtocolVersion { get; }
 
-        public RootResponse(string horizonVersion, string stellarCoreVersion, int historyLatestLedger, int historyElderLedger, int coreLatestLedger, string networkPassphrase, int protocolVersion)
+        [JsonProperty(PropertyName = "current_protocol_version")]
+        public int CurrentProtocolVersion { get; }
+        
+        [JsonProperty(PropertyName = "core_supported_protocol_version")]
+        public int CoreSupportedProtocolVersion { get; }
+        
+        public RootResponse(string horizonVersion, string stellarCoreVersion, int historyLatestLedger, int historyElderLedger, 
+            int coreLatestLedger, string networkPassphrase, int protocolVersion, int currentProtocolVersion, int coreSupportedProtocolVersion)
         {
             HorizonVersion = horizonVersion;
             StellarCoreVersion = stellarCoreVersion;
@@ -37,7 +44,8 @@ namespace stellar_dotnet_sdk.responses
             CoreLatestLedger = coreLatestLedger;
             NetworkPassphrase = networkPassphrase;
             ProtocolVersion = protocolVersion;
-            
+            CurrentProtocolVersion = currentProtocolVersion;
+            CoreSupportedProtocolVersion = coreSupportedProtocolVersion;
         }
     }
 }

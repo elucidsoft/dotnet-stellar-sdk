@@ -29,10 +29,11 @@ namespace stellar_dotnet_sdk.responses.operations
         /// <param name="sendAssetType">The asset type (USD, BTC, etc.) to be sent.</param>
         /// <param name="sendAssetCode">The asset code (Alpha4, Alpha12, etc.) to be sent</param>
         /// <param name="sendAssetIssuer">The account that created the asset to be sent.</param>
-        public PathPaymentOperationResponse(string amount, string sourceMax, string from, string to, string assetType, string assetCode,
+        public PathPaymentOperationResponse(string amount, string sourceAmount, string sourceMax, string from, string to, string assetType, string assetCode,
             string assetIssuer, string sendAssetType, string sendAssetCode, string sendAssetIssuer)
         {
             Amount = amount;
+            SourceAmount = sourceAmount;
             SourceMax = sourceMax;
             From = from;
             To = to;
@@ -51,6 +52,12 @@ namespace stellar_dotnet_sdk.responses.operations
         /// </summary>
         [JsonProperty(PropertyName = "amount")]
         public string Amount { get; private set; }
+
+        /// <summary>
+        /// The amount of source asset deducted from senders account.
+        /// </summary>
+        [JsonProperty(PropertyName = "source_amount")]
+        public string SourceAmount { get; private set; }
 
         /// <summary>
         /// The amount of source asset deducted from senders account.

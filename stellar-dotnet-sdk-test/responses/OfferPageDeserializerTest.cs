@@ -39,6 +39,8 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(offerResponsePage.Records[0].Buying, Asset.CreateNonNativeAsset("USD", "GA2IYMIZSAMDD6QQTTSIEL73H2BKDJQTA7ENDEEAHJ3LMVF7OYIZPXQD"));
             Assert.AreEqual(offerResponsePage.Records[0].Amount, "10.0000000");
             Assert.AreEqual(offerResponsePage.Records[0].Price, "11.0000000");
+            Assert.AreEqual(offerResponsePage.Records[0].LastModifiedLedger, 22200794);
+            Assert.AreEqual(offerResponsePage.Records[0].LastModifiedTime, "2019-01-28T12:30:38Z");
 
             Assert.AreEqual(offerResponsePage.Links.Next.Href,
                 "https://horizon-testnet.stellar.org/accounts/GA2IYMIZSAMDD6QQTTSIEL73H2BKDJQTA7ENDEEAHJ3LMVF7OYIZPXQD/offers?order=asc&limit=10&cursor=241");

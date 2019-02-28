@@ -347,6 +347,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(operation.From, "GCXKG6RN4ONIEPCMNFB732A436Z5PNDSRLGWK7GBLCMQLIFO4S7EYWVU");
             Assert.AreEqual(operation.To, "GA5WBPYA5Y4WAEHXWR2UKO2UO4BUGHUQ74EUPKON2QHV4WRHOIRNKKH2");
             Assert.AreEqual(operation.Amount, "10.0");
+            Assert.AreEqual(operation.SourceAmount, "1.173");
             Assert.AreEqual(operation.SourceMax, "100.0");
             Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", "GCQPYGH4K57XBDENKKX55KDTWOTK5WDWRQOH2LHEDX3EKVIQRLMESGBG"));
             Assert.AreEqual(operation.SendAsset, Asset.CreateNonNativeAsset("USD", "GC23QF2HUE52AMXUFUH3AYJAXXGXXV2VHXYYR6EYXETPKDXZSAW67XO4"));

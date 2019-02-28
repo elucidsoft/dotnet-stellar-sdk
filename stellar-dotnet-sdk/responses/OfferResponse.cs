@@ -11,7 +11,8 @@ namespace stellar_dotnet_sdk.responses
     /// </summary>
     public class OfferResponse : Response, IPagingToken
     {
-        public OfferResponse(long id, string pagingToken, string seller, Asset selling, Asset buying, string amount, string price, OfferResponseLinks links)
+        public OfferResponse(long id, string pagingToken, string seller, Asset selling, Asset buying, string amount, 
+            string price, int lastModifiedLedger, string lastModifiedTime, OfferResponseLinks links)
         {
             Id = id;
             PagingToken = pagingToken;
@@ -20,10 +21,13 @@ namespace stellar_dotnet_sdk.responses
             Buying = buying;
             Amount = amount;
             Price = price;
+            LastModifiedLedger = lastModifiedLedger;
+            LastModifiedTime = lastModifiedTime;
             Links = links;
         }
 
-        [JsonProperty(PropertyName = "id")] public long Id { get; private set; }
+        [JsonProperty(PropertyName = "id")] 
+        public long Id { get; private set; }
 
         [JsonProperty(PropertyName = "paging_token")]
         public string PagingToken { get; private set; }
@@ -42,7 +46,14 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "amount")]
         public string Amount { get; private set; }
 
-        [JsonProperty(PropertyName = "price")] public string Price { get; private set; }
+        [JsonProperty(PropertyName = "price")]
+        public string Price { get; private set; }
+        
+        [JsonProperty(PropertyName = "last_modified_ledger")]
+        public int LastModifiedLedger { get; private set; }
+        
+        [JsonProperty(PropertyName = "last_modified_time")]
+        public string LastModifiedTime { get; private set; }                
 
         [JsonProperty(PropertyName = "_links")]
         public OfferResponseLinks Links { get; private set; }
