@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.1.0-beta4</Version>
+    <Version>2.1.0</Version>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
@@ -33,6 +32,9 @@
 - Horizon 0.15.0 Support
 - Documentation Improvements
 - Removed .NET Core independent build from NuGet package. The .NET Standard 2.0 will work with core, was not needed and causing issues.</PackageReleaseNotes>
+- Horizon 0.16.0 Support
+- Horizon 0.17.0 Support
+- Client identity information in request headers
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
