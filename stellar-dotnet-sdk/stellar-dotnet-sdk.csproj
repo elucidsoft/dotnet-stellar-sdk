@@ -16,25 +16,7 @@
     <RepositoryUrl>https://github.com/elucidsoft/dotnet-stellar-sdk</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>'.NET Core' 'Stellar' 'Horizon' 'Blockchain' 'Crypto' 'Distributed Ledger'</PackageTags>
-    <PackageReleaseNotes>- Can now use a Bip39 Seed to generate a KeyPair (SEP-0005)
-- Stream Fixes
-- .NET Core 2.1
-- Horizon Release 12.3 Compatability
-- Nett version 0.10.0 upgrade
-- Newtonsoft.Json 12.0.1 upgrade
-- Fix for AccountResponse missing ITransactionBuilderAccount interface.
-- Fix for Server.SubmitTransaction for an unfunded account fails.
-- Support Non-ED25519 Keys in Response
-- Added support for Visual Studio SourceLink (https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink)
-- Timebounds Fixes and Improvements
-- Serialization of Responses
-- Follow Linked Resources (HAL and Link Following)
-- Horizon 0.15.0 Support
-- Documentation Improvements
-- Removed .NET Core independent build from NuGet package. The .NET Standard 2.0 will work with core, was not needed and causing issues.</PackageReleaseNotes>
-- Horizon 0.16.0 Support
-- Horizon 0.17.0 Support
-- Client identity information in request headers
+    <ReleaseNotes>https://github.com/elucidsoft/dotnet-stellar-sdk/releases</ReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
