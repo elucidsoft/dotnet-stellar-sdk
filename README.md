@@ -1,7 +1,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/n34q6l3wyar2rq5l/branch/master?svg=true)](https://ci.appveyor.com/project/elucidsoft/dotnet-stellar-sdk/branch/master)
 [![codecov](https://codecov.io/gh/elucidsoft/dotnet-stellar-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/elucidsoft/dotnet-stellar-sdk)
 [![CodeFactor](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk/badge)](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk)  
-[![Build history](https://buildstats.info/appveyor/chart/elucidsoft/dotnet-stellar-sdk)](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk/builds)  
+[![Build history](https://buildstats.info/appveyor/chart/elucidsoft/dotnet-stellar-sdk)](https://ci.appveyor.com/project/elucidsoft/dotnet-stellar-sdk)  
 # dotnet-stellar-sdk [![NuGet Badge](https://buildstats.info/nuget/stellar-dotnet-sdk)](https://www.nuget.org/packages/stellar-dotnet-sdk)
 
 Stellar API SDK for .NET Core 2.x and .NET Standard 2.0
