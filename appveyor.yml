@@ -20,12 +20,12 @@ build:
   parallel: true
   verbosity: minimal
 test_script:
- - cmd: dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -output:"coverage.xml" -p:ExcludeByFile=\"../stellar-dotnet-sdk/chaos.nacl/**/*.cs\" -p:ExcludeByFile=\"../stellar-dotnet-sdk/xdr/generated/*.cs\" ./stellar-dotnet-sdk-test --test-adapter-path:. --logger:Appveyor 
+ - cmd: dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:ExcludeByFile=\"../stellar-dotnet-sdk/chaos.nacl/**/*.cs\" -p:ExcludeByFile=\"../stellar-dotnet-sdk/xdr/generated/*.cs\" ./stellar-dotnet-sdk-test --test-adapter-path:. --logger:Appveyor 
 after_test:
   - ps: |
       $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
       Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
-      bash codecov.sh -f "coverage.xml" -t 3d1827ed-854c-484b-a639-02544eb921b8
+      bash codecov.sh -f "./stellar-dotnet-sdk-test/coverage.opencover.xml" -t 3d1827ed-854c-484b-a639-02544eb921b8
 deploy:
   provider: NuGet
   api_key:
