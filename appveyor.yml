@@ -4,6 +4,14 @@ pull_requests:
 os: Visual Studio 2017
 before_build:
 - cmd: dotnet restore stellar-dotnet-sdk.sln
+dotnet_csproj:
+  patch: true
+  file: stellar-dotnet-sdk.csproj
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
 build:
   project: stellar-dotnet-sdk.sln
   parallel: true
