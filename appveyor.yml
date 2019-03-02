@@ -28,4 +28,4 @@ deploy:
   api_key:
     secure: CVuX3vYVhZGwqgX6dQTi/V724vsO7PFLkDwkvIHuSeNuh4NASWRm4318O52x7k+2
   skip_symbols: false
-  artifact: ./stellar-dotnet-sdk/bin/Debug/stellar-dotnet-sdk.*.nupkg
+  artifact: ./stellar-dotnet-sdk/**/*.nupkg
