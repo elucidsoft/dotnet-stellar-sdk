@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk.svg?branch=master)](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk)
+[![Build status](https://ci.appveyor.com/api/projects/status/n34q6l3wyar2rq5l/branch/master?svg=true)](https://ci.appveyor.com/project/elucidsoft/dotnet-stellar-sdk/branch/master)
 [![codecov](https://codecov.io/gh/elucidsoft/dotnet-stellar-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/elucidsoft/dotnet-stellar-sdk)
 [![CodeFactor](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk/badge)](https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk)  
 [![Build history](https://buildstats.info/travisci/chart/elucidsoft/dotnet-stellar-sdk)](https://travis-ci.org/elucidsoft/dotnet-stellar-sdk/builds)  
