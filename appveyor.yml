@@ -15,5 +15,9 @@ after_test:
       $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
       Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
       bash codecov.sh -f "coverage.opencover.xml" -t 3d1827ed-854c-484b-a639-02544eb921b8
-deploy: off
-
+deploy:
+  provider: NuGet
+  api_key:
+    secure: CVuX3vYVhZGwqgX6dQTi/V724vsO7PFLkDwkvIHuSeNuh4NASWRm4318O52x7k+2
+  skip_symbols: false
+  artifact: /.*\.nupkg/
