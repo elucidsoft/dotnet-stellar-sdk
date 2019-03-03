@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk.requests
     public class FriendBotRequestBuilder : RequestBuilder<FriendBotRequestBuilder>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="serverUri"></param>
         public FriendBotRequestBuilder(Uri serverUri, HttpClient httpClient)
@@ -27,9 +27,9 @@ namespace stellar_dotnet_sdk.requests
             }
         }
 
-        public FriendBotRequestBuilder FundAccount(KeyPair account)
+        public FriendBotRequestBuilder FundAccount(string accountId)
         {
-            UriBuilder.SetQueryParam("addr", account.AccountId);
+            UriBuilder.SetQueryParam("addr", accountId);
             return this;
         }
 

@@ -47,8 +47,8 @@ namespace stellar_dotnet_sdk_test.requests
 
             using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
             {
-                var accountData = await server.Accounts.AccountData(KeyPair.FromAccountId("GAKLBGHNHFQ3BMUYG5KU4BEWO6EYQHZHAXEWC33W34PH2RBHZDSQBD75"), "TestValue");
-            
+                var accountData = await server.Accounts.AccountData("GAKLBGHNHFQ3BMUYG5KU4BEWO6EYQHZHAXEWC33W34PH2RBHZDSQBD75", "TestValue");
+
                 Assert.AreEqual("VGVzdFZhbHVl", accountData.Value);
                 Assert.AreEqual("TestValue", accountData.ValueDecoded);
             }
