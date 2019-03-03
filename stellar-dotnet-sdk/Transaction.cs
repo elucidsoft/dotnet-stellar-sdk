@@ -285,6 +285,7 @@ namespace stellar_dotnet_sdk
             private readonly ITransactionBuilderAccount _sourceAccount;
             private Memo _memo;
             private TimeBounds _timeBounds;
+            private int _fee;
 
             /// <summary>
             ///     Construct a new transaction builder.
@@ -297,6 +298,7 @@ namespace stellar_dotnet_sdk
             {
                 _sourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
                 _operations = new BlockingCollection<Operation>();
+                _fee = BaseFee;
             }
 
             public int OperationsCount => _operations.Count;
@@ -349,6 +351,22 @@ namespace stellar_dotnet_sdk
             }
 
             /// <summary>
+            ///     Set the transaction fee (in Stroops) per operation.
+            ///     See: https://www.stellar.org/developers/learn/concepts/transactions.html
+            /// </summary>
+            /// <param name="fee">fee (in Stroops) for each operation in the transaction</param>
+            /// <returns>Builder object so you can chain methods.</returns>
+            public Builder SetFee(int fee)
+            {
+                if (_fee <= 0)
+                    throw new ArgumentException("Fee must be a positive amount", nameof(fee));
+
+                _fee = fee;
+
+                return this;
+            }
+
+            /// <summary>
             ///     Builds a transaction. It will increment sequence number of the source account.
             /// </summary>
             /// <returns></returns>
@@ -356,7 +374,7 @@ namespace stellar_dotnet_sdk
             {
                 var operations = _operations.ToArray();
 
-                var transaction = new Transaction(_sourceAccount.KeyPair, operations.Length * BaseFee, _sourceAccount.IncrementedSequenceNumber, operations, _memo, _timeBounds);
+                var transaction = new Transaction(_sourceAccount.KeyPair, operations.Length * _fee, _sourceAccount.IncrementedSequenceNumber, operations, _memo, _timeBounds);
                 // Increment sequence number when there were no exceptions when creating a transaction
                 _sourceAccount.IncrementSequenceNumber();
                 return transaction;

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Security.Cryptography;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -134,6 +134,45 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(
                 ((CreateAccountOperation) transaction.Operations[0]).StartingBalance,
                 ((CreateAccountOperation) transaction2.Operations[0]).StartingBalance
+            );
+        }
+
+        [TestMethod]
+        public void TestBuilderFee()
+        {
+            // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+
+            var account = new Account(source.AccountId, 2908908335136768L);
+            var transaction = new Transaction.Builder(account)
+                .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                .SetFee(173)
+                .Build();
+
+            // Convert transaction to binary XDR and back again to make sure fee is correctly de/serialized.
+            var bytes = transaction.ToUnsignedEnvelopeXdrBase64().ToCharArray();
+            var xdrDataInputStream = new XdrDataInputStream(Convert.FromBase64CharArray(bytes, 0, bytes.Length));
+
+            var decodedTransaction = XdrTransaction.Decode(xdrDataInputStream);
+
+            Assert.AreEqual(decodedTransaction.Fee.InnerValue, 173 * 2);
+
+            var transaction2 = Transaction.FromEnvelopeXdr(transaction.ToUnsignedEnvelopeXdr());
+
+            Assert.AreEqual(transaction.SourceAccount.AccountId, transaction2.SourceAccount.AccountId);
+            Assert.AreEqual(transaction.SequenceNumber, transaction2.SequenceNumber);
+            Assert.AreEqual(transaction.Memo, transaction2.Memo);
+            Assert.AreEqual(transaction.TimeBounds, transaction2.TimeBounds);
+            Assert.AreEqual(transaction.Fee, transaction2.Fee);
+            Assert.AreEqual(
+                ((CreateAccountOperation) transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation) transaction2.Operations[0]).StartingBalance
+            );
+            Assert.AreEqual(
+                ((CreateAccountOperation) transaction.Operations[1]).StartingBalance,
+                ((CreateAccountOperation) transaction2.Operations[1]).StartingBalance
             );
         }
 
