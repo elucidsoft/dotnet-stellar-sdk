@@ -3,6 +3,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
+using stellar_dotnet_sdk.responses;
 using stellar_dotnet_sdk.xdr;
 using Memo = stellar_dotnet_sdk.Memo;
 using TimeBounds = stellar_dotnet_sdk.TimeBounds;
@@ -317,6 +318,17 @@ namespace stellar_dotnet_sdk_test
             var explicitPublicNetworkHash = transaction.Hash(network);
 
             Assert.IsTrue(publicNetworkHash.SequenceEqual(explicitPublicNetworkHash));
+        }
+
+        [TestMethod]
+        public void TestFromAccountResponse()
+        {
+            var response = new AccountResponse("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR", 123);
+            var transaction = new Transaction.Builder(response)
+                .AddOperation(new CreateAccountOperation.Builder(response.KeyPair, "2000").Build())
+                .Build();
+
+            Assert.IsNotNull(transaction);
         }
     }
 }

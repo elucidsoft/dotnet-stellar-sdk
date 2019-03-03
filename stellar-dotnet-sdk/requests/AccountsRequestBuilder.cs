@@ -60,9 +60,9 @@ namespace stellar_dotnet_sdk.requests
         /// <param name="account">Account to fetch</param>
         /// <param name="key">Key to the data needing retrieval.</param>
         /// <returns></returns>
-        public async Task<AccountDataResponse> AccountData(KeyPair account, string key)
+        public async Task<AccountDataResponse> AccountData(string accountId, string key)
         {
-            SetSegments("accounts", account.AccountId, "data", key);
+            SetSegments("accounts", accountId, "data", key);
             return await AccountData(BuildUri());
         }
     }

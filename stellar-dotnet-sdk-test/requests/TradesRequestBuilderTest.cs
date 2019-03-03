@@ -56,7 +56,7 @@ namespace stellar_dotnet_sdk_test.requests
         {
             var server = new Server("https://horizon-testnet.stellar.org");
             var uri = server.Trades
-                    .ForAccount(KeyPair.FromAccountId("GDRRHSJMHXDTQBT4JTCILNGF5AS54FEMTXL7KOLMF6TFTHRK6SSUSUZZ"))
+                    .ForAccount("GDRRHSJMHXDTQBT4JTCILNGF5AS54FEMTXL7KOLMF6TFTHRK6SSUSUZZ")
                     .Cursor("13537736921089")
                     .Limit(200)
                     .Order(OrderDirection.ASC)

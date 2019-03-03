@@ -46,7 +46,7 @@ namespace stellar_dotnet_sdk_test.requests
             using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
                 var uri = server.TestNetFriendBot
-                    .FundAccount(KeyPair.FromAccountId("GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H"))
+                    .FundAccount("GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H")
                     .BuildUri();
 
                 Assert.AreEqual("https://horizon-testnet.stellar.org/friendbot?addr=GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H", uri.ToString());
@@ -64,7 +64,7 @@ namespace stellar_dotnet_sdk_test.requests
             using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
             {
                 var friendBotResponse = await server.TestNetFriendBot
-                    .FundAccount(KeyPair.FromAccountId("GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7"))
+                    .FundAccount("GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7")
                     .Execute();
 
                 FriendBotResponseTest.AssertSuccessTestData(friendBotResponse);
