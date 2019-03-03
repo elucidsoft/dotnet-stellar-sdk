@@ -56,7 +56,7 @@ namespace stellar_dotnet_sdk.responses
 
         public long IncrementedSequenceNumber => SequenceNumber + 1;
 
-        public KeyPair KeyPair => throw new System.NotImplementedException();
+        public KeyPair KeyPair => KeyPair.FromAccountId(AccountId);
 
         public void IncrementSequenceNumber()
         {
