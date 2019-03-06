@@ -28,6 +28,15 @@ namespace stellar_dotnet_sdk_test.responses
             AssertTestData(back);
         }
 
+        [TestMethod]
+        public void TestAssetResponseFlagDefaultsToNotImmutable()
+        {
+            var assetResponseFlags = new AssetResponseFlags(authRequired: true, authRevocable: true);
+            Assert.IsTrue(assetResponseFlags.AuthRequired);
+            Assert.IsTrue(assetResponseFlags.AuthRevocable);
+            Assert.IsFalse(assetResponseFlags.AuthImmutable);
+        }
+
         public static void AssertTestData(Page<AssetResponse> assetsPage)
         {
             Assert.AreEqual("https://horizon-testnet.stellar.org/assets?cursor=&limit=200&order=desc", assetsPage.Links.Self.Href);
@@ -42,6 +51,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("", assetsPage.Records[0].Links.Toml.Href);
             Assert.AreEqual(false, assetsPage.Records[0].Flags.AuthRequired);
             Assert.AreEqual(false, assetsPage.Records[0].Flags.AuthRevocable);
+            Assert.AreEqual(true, assetsPage.Records[0].Flags.AuthImmutable);
         }
     }
 }
