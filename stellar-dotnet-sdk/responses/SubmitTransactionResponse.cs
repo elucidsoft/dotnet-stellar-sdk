@@ -47,6 +47,18 @@ namespace stellar_dotnet_sdk.responses
             }
         }
 
+        public TransactionResult Result
+        {
+            get
+            {
+                if (IsSuccess())
+                {
+                    return TransactionResult.FromXdr(_resultXdr);
+                }
+                return TransactionResult.FromXdr(SubmitTransactionResponseExtras.ResultXdr);
+            }
+        }
+
         [JsonProperty(PropertyName = "extras")]
         public Extras SubmitTransactionResponseExtras { get; private set; }
 
@@ -68,7 +80,7 @@ namespace stellar_dotnet_sdk.responses
         /// Helper method that returns Offer ID for ManageOffer from TransactionResult Xdr.
         /// This is helpful when you need ID of an offer to update it later.
         /// </summary>
-        /// <param name="position">Position of ManageOffer operation. If ManageOffer is second operation in this transaction this should be equal <code>1</code>.</param> 
+        /// <param name="position">Position of ManageOffer operation. If ManageOffer is second operation in this transaction this should be equal <code>1</code>.</param>
         /// <returns>Offer ID or <code>null</code> when operation at <code>position</code> is not a ManageOffer operation or error has occurred.</returns>
         public long? GetOfferIdFromResult(int position)
         {
@@ -79,11 +91,11 @@ namespace stellar_dotnet_sdk.responses
 
             byte[] bytes = Convert.FromBase64String(ResultXdr);
             XdrDataInputStream xdrInputStream = new XdrDataInputStream(bytes);
-            TransactionResult result;
+            xdr.TransactionResult result;
 
             try
             {
-                result = TransactionResult.Decode(xdrInputStream);
+                result = xdr.TransactionResult.Decode(xdrInputStream);
             }
             catch (Exception)
             {

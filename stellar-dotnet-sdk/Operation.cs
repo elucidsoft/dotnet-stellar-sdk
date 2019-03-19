@@ -5,8 +5,6 @@ namespace stellar_dotnet_sdk
 {
     public abstract class Operation
     {
-        private static readonly decimal ONE = new decimal(10000000);
-
         private KeyPair _sourceAccount;
 
         public KeyPair SourceAccount
@@ -25,24 +23,12 @@ namespace stellar_dotnet_sdk
 
         public static long ToXdrAmount(string value)
         {
-            if (string.IsNullOrEmpty(value))
-                throw new ArgumentNullException(nameof(value), "value cannot be null");
-
-            //This bascially takes a decimal value and turns it into a large integer.
-            var amount = decimal.Parse(value) * ONE;
-
-            //MJM: Added to satify the OperationTest unit test of making sure a failure
-            //happens when casting a decimal with fractional places into a long.
-            if (amount % 1 > 0)
-                throw new ArithmeticException("Unable to cast decimal with fractional places into long.");
-
-            return (long) amount;
+            return Amount.ToXdr(value);
         }
 
         public static string FromXdrAmount(long value)
         {
-            var amount = decimal.Divide(new decimal(value), ONE);
-            return amount.ToString();
+            return Amount.FromXdr(value);
         }
 
         ///<summary>
