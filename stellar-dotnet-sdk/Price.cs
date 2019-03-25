@@ -84,7 +84,17 @@ namespace stellar_dotnet_sdk
             return xdr;
         }
 
-        public new bool Equals(object obj)
+        /// <summary>
+        ///     Create Price from XDR.
+        /// </summary>
+        /// <param name="price">Price XDR object.</param>
+        /// <returns></returns>
+        public static Price FromXdr(sdkxdr.Price price)
+        {
+            return new Price(price.N.InnerValue, price.D.InnerValue);
+        }
+
+        public override bool Equals(object obj)
         {
             if (obj == null)
                 return false;
@@ -96,6 +106,11 @@ namespace stellar_dotnet_sdk
 
             return Numerator == price.Numerator &&
                    Denominator == price.Denominator;
+        }
+
+        public override int GetHashCode()
+        {
+            return (Numerator << 2) ^ Denominator;
         }
     }
 }

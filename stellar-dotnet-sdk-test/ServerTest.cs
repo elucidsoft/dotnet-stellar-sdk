@@ -113,6 +113,9 @@ namespace stellar_dotnet_sdk_test
             Assert.IsTrue(response.IsSuccess());
             Assert.AreEqual("stellar-dotnet-sdk", clientName);
             Assert.IsFalse(string.IsNullOrWhiteSpace(clientVersion));
+            var result = response.Result;
+            Assert.IsInstanceOfType(result, typeof(TransactionResultSuccess));
+            Assert.AreEqual("0.00001", result.FeeCharged);
         }
 
         [TestMethod]
@@ -130,6 +133,11 @@ namespace stellar_dotnet_sdk_test
             Assert.IsNotNull(response.SubmitTransactionResponseExtras);
             Assert.AreEqual("tx_failed", response.SubmitTransactionResponseExtras.ExtrasResultCodes.TransactionResultCode);
             Assert.AreEqual("op_no_destination", response.SubmitTransactionResponseExtras.ExtrasResultCodes.OperationsResultCodes[0]);
+
+            var result = response.Result;
+            Assert.IsInstanceOfType(result, typeof(TransactionResultFailed));
+            Assert.AreEqual("0.00001", result.FeeCharged);
+            Assert.AreEqual(1, ((TransactionResultFailed) result).Results.Count);
         }
 
         public class FakeHttpMessageHandler : HttpMessageHandler

@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk.responses
 
         [JsonProperty(PropertyName = "source_account")]
         public string SourceAccount { get; private set; }
-        
+
         [DefaultValue(true)]
         [JsonProperty(PropertyName = "successful", DefaultValueHandling = DefaultValueHandling.Populate)]
         public bool Successful { get; private set; }
@@ -98,13 +98,15 @@ namespace stellar_dotnet_sdk.responses
             }
         }
 
+        public TransactionResult Result => TransactionResult.FromXdr(ResultXdr);
+
         public TransactionResponse()
         {
             // Used by deserializer
         }
 
         public TransactionResponse(string hash, long ledger, string createdAt, string sourceAccount, bool successful,
-            string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr, 
+            string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr,
             string resultXdr, string resultMetaXdr, Memo memo, TransactionResponseLinks links)
         {
             Hash = hash;
