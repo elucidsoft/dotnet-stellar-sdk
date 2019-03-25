@@ -29,6 +29,7 @@ after_test:
 deploy:
   on:
       branch: master
+      APPVEYOR_REPO_TAG: true
   provider: NuGet
   api_key:
     secure: CVuX3vYVhZGwqgX6dQTi/V724vsO7PFLkDwkvIHuSeNuh4NASWRm4318O52x7k+2
