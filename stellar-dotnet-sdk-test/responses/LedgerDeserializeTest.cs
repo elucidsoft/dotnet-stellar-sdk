@@ -28,6 +28,23 @@ namespace stellar_dotnet_sdk_test.responses
             AssertTestData(back);
         }
 
+        [TestMethod]
+        public void TestSerializeDeserializeNullFailedTransactionCount()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "ledgerNullFailedTransactionCount.json"));
+            var ledger = JsonSingleton.GetInstance<LedgerResponse>(json);
+            var serialized = JsonConvert.SerializeObject(ledger);
+            var back = JsonConvert.DeserializeObject<LedgerResponse>(serialized);
+
+            Assert.AreEqual(ledger.Hash, "7f7cc428fa2b5f17fea0dba3bdbd36972f3dff4fae9345cc1f013b1133bbf7c4");
+            Assert.AreEqual(ledger.PagingToken, "2147483648000");
+            Assert.AreEqual(ledger.PrevHash, "29a54d2641d0051e4748d1ed1c9e53bd3634b2aaa823fb709341b93328c6d313");
+            Assert.AreEqual(ledger.Sequence, 500);
+            Assert.AreEqual(ledger.SuccessfulTransactionCount, 0);
+            Assert.AreEqual(ledger.FailedTransactionCount, null);
+            Assert.AreEqual(ledger.OperationCount, 0);
+        }
+
         public static void AssertTestData(LedgerResponse ledger)
         {
             Assert.AreEqual(ledger.Hash, "686bb246db89b099cd3963a4633eb5e4315d89dfd3c00594c80b41a483847bfa");
