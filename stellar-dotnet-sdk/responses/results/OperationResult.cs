@@ -4,6 +4,9 @@ namespace stellar_dotnet_sdk.responses.results
 {
     public class OperationResult
     {
+        /// <summary>
+        /// Whether the operation was successful.
+        /// </summary>
         public virtual bool IsSuccess => false;
 
         public static OperationResult FromXdr(xdr.OperationResult result)

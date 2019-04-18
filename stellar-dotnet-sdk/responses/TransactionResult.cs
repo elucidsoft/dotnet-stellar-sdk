@@ -7,6 +7,9 @@ namespace stellar_dotnet_sdk.responses
 {
     public class TransactionResult
     {
+        /// <summary>
+        /// Actual fee charged for the transaction.
+        /// </summary>
         public string FeeCharged { get; set; }
 
         public virtual bool IsSuccess { get; }
