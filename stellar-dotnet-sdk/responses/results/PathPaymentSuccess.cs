@@ -1,11 +1,20 @@
 namespace stellar_dotnet_sdk.responses.results
 {
+    /// <summary>
+    /// Operation successful.
+    /// </summary>
     public class PathPaymentSuccess : PathPaymentResult
     {
         public override bool IsSuccess => true;
 
+        /// <summary>
+        /// Offers claimed in this payment.
+        /// </summary>
         public ClaimOfferAtom[] Offers { get; set; }
 
+        /// <summary>
+        /// Payment result.
+        /// </summary>
         public SimplePaymentResult Last { get; set; }
 
         public class SimplePaymentResult

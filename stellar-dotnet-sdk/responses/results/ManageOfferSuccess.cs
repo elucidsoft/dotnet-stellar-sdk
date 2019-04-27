@@ -4,10 +4,16 @@ using stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk.responses.results
 {
+    /// <summary>
+    /// Operation successful.
+    /// </summary>
     public class ManageOfferSuccess : ManageOfferResult
     {
         public override bool IsSuccess => true;
 
+        /// <summary>
+        /// Offers that got claimed while creating this offer.
+        /// </summary>
         public ClaimOfferAtom[] OffersClaimed { get; set; }
 
         public static ManageOfferSuccess FromXdr(xdr.ManageOfferSuccessResult result)
