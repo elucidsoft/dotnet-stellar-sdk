@@ -36,6 +36,8 @@ namespace stellar_dotnet_sdk.responses.results
                     return PaymentResult.FromXdr(result.PaymentResult);
                 case xdr.OperationType.OperationTypeEnum.PATH_PAYMENT:
                     return PathPaymentResult.FromXdr(result.PathPaymentResult);
+                case xdr.OperationType.OperationTypeEnum.MANAGE_BUY_OFFER:
+                    return ManageBuyOfferResult.FromXdr(result.ManageBuyOfferResult);
                 case xdr.OperationType.OperationTypeEnum.MANAGE_SELL_OFFER:
                     return ManageSellOfferResult.FromXdr(result.ManageSellOfferResult);
                 case xdr.OperationType.OperationTypeEnum.CREATE_PASSIVE_SELL_OFFER:
