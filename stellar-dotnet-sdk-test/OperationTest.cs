@@ -391,15 +391,15 @@ namespace stellar_dotnet_sdk_test
             var priceObj = Price.FromString(price);
             long offerId = 1;
 
-            var operation = new ManageOfferOperation.Builder(selling, buying, amount, price)
+            var operation = new ManageSellOfferOperation.Builder(selling, buying, amount, price)
                 .SetOfferId(offerId)
                 .SetSourceAccount(source)
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (ManageOfferOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (ManageSellOfferOperation) Operation.FromXdr(xdr);
 
-            Assert.AreEqual(100L, xdr.Body.ManageOfferOp.Amount.InnerValue);
+            Assert.AreEqual(100L, xdr.Body.ManageSellOfferOp.Amount.InnerValue);
             Assert.IsTrue(parsedOperation.Selling is AssetTypeNative);
             Assert.IsTrue(parsedOperation.Buying is AssetTypeCreditAlphaNum4);
             Assert.IsTrue(parsedOperation.Buying.Equals(buying));
@@ -429,14 +429,14 @@ namespace stellar_dotnet_sdk_test
             var price = "2.93850088"; // n=36731261 d=12500000
             var priceObj = Price.FromString(price);
 
-            var operation = new CreatePassiveOfferOperation.Builder(selling, buying, amount, price)
+            var operation = new CreatePassiveSellOfferOperation.Builder(selling, buying, amount, price)
                 .SetSourceAccount(source)
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (CreatePassiveOfferOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (CreatePassiveSellOfferOperation) Operation.FromXdr(xdr);
 
-            Assert.AreEqual(100L, xdr.Body.CreatePassiveOfferOp.Amount.InnerValue);
+            Assert.AreEqual(100L, xdr.Body.CreatePassiveSellOfferOp.Amount.InnerValue);
             Assert.IsTrue(parsedOperation.Selling is AssetTypeNative);
             Assert.IsTrue(parsedOperation.Buying is AssetTypeCreditAlphaNum4);
             Assert.IsTrue(parsedOperation.Buying.Equals(buying));

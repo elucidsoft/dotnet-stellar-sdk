@@ -48,8 +48,8 @@ namespace stellar_dotnet_sdk
             }
 
             return new TimeBounds(
-                timeBounds.MinTime.InnerValue,
-                timeBounds.MaxTime.InnerValue
+                timeBounds.MinTime.InnerValue.InnerValue,
+                timeBounds.MaxTime.InnerValue.InnerValue
             );
         }
 
@@ -60,8 +60,8 @@ namespace stellar_dotnet_sdk
             var maxTime = new Uint64();
             minTime.InnerValue = MinTime;
             maxTime.InnerValue = MaxTime;
-            timeBounds.MinTime = minTime;
-            timeBounds.MaxTime = maxTime;
+            timeBounds.MinTime = new TimePoint(minTime);
+            timeBounds.MaxTime = new TimePoint(maxTime);
             return timeBounds;
         }
 

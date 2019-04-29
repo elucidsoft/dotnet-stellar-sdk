@@ -7,7 +7,7 @@ namespace stellar_dotnet_sdk.responses.results
     /// <summary>
     /// Operation successful.
     /// </summary>
-    public class ManageOfferSuccess : ManageOfferResult
+    public class ManageSellOfferSuccess : ManageSellOfferResult
     {
         public override bool IsSuccess => true;
 
@@ -16,7 +16,7 @@ namespace stellar_dotnet_sdk.responses.results
         /// </summary>
         public ClaimOfferAtom[] OffersClaimed { get; set; }
 
-        public static ManageOfferSuccess FromXdr(xdr.ManageOfferSuccessResult result)
+        public static ManageSellOfferSuccess FromXdr(xdr.ManageOfferSuccessResult result)
         {
             var offersClaimed = result.OffersClaimed.Select(ClaimOfferAtom.FromXdr).ToArray();
 
@@ -24,25 +24,25 @@ namespace stellar_dotnet_sdk.responses.results
             {
                 case ManageOfferEffect.ManageOfferEffectEnum.MANAGE_OFFER_CREATED:
                     var createdOffer = OfferEntry.FromXdr(result.Offer.Offer);
-                    return new ManageOfferCreated
+                    return new ManageSellOfferCreated
                     {
                         OffersClaimed = offersClaimed,
                         Offer = createdOffer,
                     };
                 case ManageOfferEffect.ManageOfferEffectEnum.MANAGE_OFFER_UPDATED:
                     var updatedOffer = OfferEntry.FromXdr(result.Offer.Offer);
-                    return new ManageOfferUpdated
+                    return new ManageSellOfferUpdated
                     {
                         OffersClaimed = offersClaimed,
                         Offer = updatedOffer,
                     };
                 case ManageOfferEffect.ManageOfferEffectEnum.MANAGE_OFFER_DELETED:
-                    return new ManageOfferDeleted
+                    return new ManageSellOfferDeleted
                     {
                         OffersClaimed = offersClaimed
                     };
                 default:
-                    throw new SystemException("Unknown ManageOfferSuccess type");
+                    throw new SystemException("Unknown ManageSellOfferSuccess type");
             }
         }
     }

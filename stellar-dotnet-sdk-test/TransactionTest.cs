@@ -121,8 +121,8 @@ namespace stellar_dotnet_sdk_test
 
             var decodedTransaction = XdrTransaction.Decode(xdrDataInputStream);
 
-            Assert.AreEqual(decodedTransaction.TimeBounds.MinTime.InnerValue, 42);
-            Assert.AreEqual(decodedTransaction.TimeBounds.MaxTime.InnerValue, 1337);
+            Assert.AreEqual(decodedTransaction.TimeBounds.MinTime.InnerValue.InnerValue, 42);
+            Assert.AreEqual(decodedTransaction.TimeBounds.MaxTime.InnerValue.InnerValue, 1337);
 
             var transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
 

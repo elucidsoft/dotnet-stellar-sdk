@@ -76,7 +76,7 @@ namespace stellar_dotnet_sdk_test.xdr
             var expected = Encoding.UTF8.GetBytes(new[] {'G', 'O', 'L', 'D'});
             var actual = transactionEnvelope.Tx.Operations[0].Body.PaymentOp.Asset.AlphaNum4.AssetCode;
 
-            Assert.IsTrue(expected.SequenceEqual(actual));
+            Assert.IsTrue(expected.SequenceEqual(actual.InnerValue));
         }
 
         private void GetDebugBytes(byte[] bytes)

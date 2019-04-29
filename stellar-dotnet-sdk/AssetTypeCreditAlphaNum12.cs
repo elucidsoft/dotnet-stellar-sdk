@@ -14,13 +14,13 @@ namespace stellar_dotnet_sdk
         {
             return "credit_alphanum12";
         }
-        
+
         public override xdr.Asset ToXdr()
         {
             var thisXdr = new xdr.Asset();
             thisXdr.Discriminant = AssetType.Create(AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12);
             var credit = new xdr.Asset.AssetAlphaNum12();
-            credit.AssetCode = Util.PaddedByteArray(Code, 12);
+            credit.AssetCode = new AssetCode12(Util.PaddedByteArray(Code, 12));
             var accountID = new AccountID();
             accountID.InnerValue = KeyPair.FromAccountId(Issuer).XdrPublicKey;
             credit.Issuer = accountID;

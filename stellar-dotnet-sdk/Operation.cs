@@ -78,11 +78,11 @@ namespace stellar_dotnet_sdk
                 case OperationType.OperationTypeEnum.PATH_PAYMENT:
                     operation = new PathPaymentOperation.Builder(body.PathPaymentOp).Build();
                     break;
-                case OperationType.OperationTypeEnum.MANAGE_OFFER:
-                    operation = new ManageOfferOperation.Builder(body.ManageOfferOp).Build();
+                case OperationType.OperationTypeEnum.MANAGE_SELL_OFFER:
+                    operation = new ManageSellOfferOperation.Builder(body.ManageSellOfferOp).Build();
                     break;
-                case OperationType.OperationTypeEnum.CREATE_PASSIVE_OFFER:
-                    operation = new CreatePassiveOfferOperation.Builder(body.CreatePassiveOfferOp).Build();
+                case OperationType.OperationTypeEnum.CREATE_PASSIVE_SELL_OFFER:
+                    operation = new CreatePassiveSellOfferOperation.Builder(body.CreatePassiveSellOfferOp).Build();
                     break;
                 case OperationType.OperationTypeEnum.SET_OPTIONS:
                     operation = new SetOptionsOperation.Builder(body.SetOptionsOp).Build();

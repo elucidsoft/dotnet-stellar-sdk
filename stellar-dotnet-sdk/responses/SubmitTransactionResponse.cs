@@ -107,17 +107,17 @@ namespace stellar_dotnet_sdk.responses
                 return null;
             }
 
-            if (result.Result.Results[position].Tr.Discriminant.InnerValue != OperationType.OperationTypeEnum.MANAGE_OFFER)
+            if (result.Result.Results[position].Tr.Discriminant.InnerValue != OperationType.OperationTypeEnum.MANAGE_SELL_OFFER)
             {
                 return null;
             }
 
-            if (result.Result.Results[0].Tr.ManageOfferResult.Success.Offer.Offer == null)
+            if (result.Result.Results[0].Tr.ManageSellOfferResult.Success.Offer.Offer == null)
             {
                 return null;
             }
 
-            return result.Result.Results[0].Tr.ManageOfferResult.Success.Offer.Offer.OfferID.InnerValue;
+            return result.Result.Results[0].Tr.ManageSellOfferResult.Success.Offer.Offer.OfferID.InnerValue;
         }
 
         ///<summary>
