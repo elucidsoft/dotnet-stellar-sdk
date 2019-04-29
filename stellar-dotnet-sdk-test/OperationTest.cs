@@ -377,7 +377,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
-        public void TestManageOfferOperation()
+        public void TestManageSellOfferOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
             var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
@@ -412,6 +412,45 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAMAAAAAAAAAAVVTRAAAAAAARP7bVZfAS1dHLFv8YF7W1zlX9ZTMg5bjImn5dCA1RSIAAAAAAAAAZABRYZcAX14QAAAAAAAAAAE=",
+                operation.ToXdrBase64());
+        }
+
+        [TestMethod]
+        public void TestManageBuyOfferOperation()
+        {
+            // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
+            var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
+            // GBCP5W2VS7AEWV2HFRN7YYC623LTSV7VSTGIHFXDEJU7S5BAGVCSETRR
+            var issuer = KeyPair.FromSecretSeed("SA64U7C5C7BS5IHWEPA7YWFN3Z6FE5L6KAMYUIT4AQ7KVTVLD23C6HEZ");
+
+            Asset selling = new AssetTypeNative();
+            var buying = Asset.CreateNonNativeAsset("USD", issuer.AccountId);
+            var amount = "0.00001";
+            var price = "0.85334384"; // n=5333399 d=6250000
+            var priceObj = Price.FromString(price);
+            long offerId = 1;
+
+            var operation = new ManageBuyOfferOperation.Builder(selling, buying, amount, price)
+                .SetOfferId(offerId)
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+            var parsedOperation = (ManageBuyOfferOperation) Operation.FromXdr(xdr);
+
+            Assert.AreEqual(100L, xdr.Body.ManageBuyOfferOp.BuyAmount.InnerValue);
+            Assert.IsTrue(parsedOperation.Selling is AssetTypeNative);
+            Assert.IsTrue(parsedOperation.Buying is AssetTypeCreditAlphaNum4);
+            Assert.IsTrue(parsedOperation.Buying.Equals(buying));
+            Assert.AreEqual(amount, parsedOperation.BuyAmount);
+            Assert.AreEqual(price, parsedOperation.Price);
+            Assert.AreEqual(priceObj.Numerator, 5333399);
+            Assert.AreEqual(priceObj.Denominator, 6250000);
+            Assert.AreEqual(offerId, parsedOperation.OfferId);
+            Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
+
+            Assert.AreEqual(
+                "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAwAAAAAAAAAAVVTRAAAAAAARP7bVZfAS1dHLFv8YF7W1zlX9ZTMg5bjImn5dCA1RSIAAAAAAAAAZABRYZcAX14QAAAAAAAAAAE=",
                 operation.ToXdrBase64());
         }
 

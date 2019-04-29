@@ -81,6 +81,9 @@ namespace stellar_dotnet_sdk
                 case OperationType.OperationTypeEnum.MANAGE_SELL_OFFER:
                     operation = new ManageSellOfferOperation.Builder(body.ManageSellOfferOp).Build();
                     break;
+                case OperationType.OperationTypeEnum.MANAGE_BUY_OFFER:
+                    operation = new ManageBuyOfferOperation.Builder(body.ManageBuyOfferOp).Build();
+                    break;
                 case OperationType.OperationTypeEnum.CREATE_PASSIVE_SELL_OFFER:
                     operation = new CreatePassiveSellOfferOperation.Builder(body.CreatePassiveSellOfferOp).Build();
                     break;
