@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
@@ -9,9 +9,10 @@ namespace stellar_dotnet_sdk
     ///
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#create-passive-offer">Manage Offer</see>
     /// </summary>
-    public class CreatePassiveSellOfferOperation : Operation
+    [Obsolete("This class has been renamed to CreatePassiveOfferOperation")]
+    public class CreatePassiveOfferOperation : Operation
     {
-        private CreatePassiveSellOfferOperation(Asset selling, Asset buying, string amount, string price)
+        private CreatePassiveOfferOperation(Asset selling, Asset buying, string amount, string price)
         {
             Selling = selling ?? throw new ArgumentNullException(nameof(selling), "selling cannot be null");
             Buying = buying ?? throw new ArgumentNullException(nameof(buying), "buying cannot be null");
@@ -103,13 +104,14 @@ namespace stellar_dotnet_sdk
             /// <summary>
             ///     Builds an operation
             /// </summary>
-            public CreatePassiveSellOfferOperation Build()
+            public CreatePassiveOfferOperation Build()
             {
-                var operation = new CreatePassiveSellOfferOperation(_Selling, _Buying, _Amount, _Price);
+                var operation = new CreatePassiveOfferOperation(_Selling, _Buying, _Amount, _Price);
                 if (mSourceAccount != null)
                     operation.SourceAccount = mSourceAccount;
                 return operation;
             }
         }
+
     }
 }

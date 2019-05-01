@@ -377,6 +377,31 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        public void TestManageOfferOperation()
+        {
+            // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
+            var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
+            // GBCP5W2VS7AEWV2HFRN7YYC623LTSV7VSTGIHFXDEJU7S5BAGVCSETRR
+            var issuer = KeyPair.FromSecretSeed("SA64U7C5C7BS5IHWEPA7YWFN3Z6FE5L6KAMYUIT4AQ7KVTVLD23C6HEZ");
+
+            Asset selling = new AssetTypeNative();
+            var buying = Asset.CreateNonNativeAsset("USD", issuer.AccountId);
+            var amount = "0.00001";
+            var price = "0.85334384"; // n=5333399 d=6250000
+            var priceObj = Price.FromString(price);
+            long offerId = 1;
+
+            var operation = new ManageOfferOperation.Builder(selling, buying, amount, price)
+                .SetOfferId(offerId)
+                .SetSourceAccount(source)
+                .Build();
+
+            Assert.AreEqual(
+                "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAMAAAAAAAAAAVVTRAAAAAAARP7bVZfAS1dHLFv8YF7W1zlX9ZTMg5bjImn5dCA1RSIAAAAAAAAAZABRYZcAX14QAAAAAAAAAAE=",
+                operation.ToXdrBase64());
+        }
+
+        [TestMethod]
         public void TestManageSellOfferOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -456,6 +481,29 @@ namespace stellar_dotnet_sdk_test
 
         [TestMethod]
         public void TestCreatePassiveOfferOperation()
+        {
+            // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
+            var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
+            // GBCP5W2VS7AEWV2HFRN7YYC623LTSV7VSTGIHFXDEJU7S5BAGVCSETRR
+            var issuer = KeyPair.FromSecretSeed("SA64U7C5C7BS5IHWEPA7YWFN3Z6FE5L6KAMYUIT4AQ7KVTVLD23C6HEZ");
+
+            Asset selling = new AssetTypeNative();
+            var buying = Asset.CreateNonNativeAsset("USD", issuer.AccountId);
+            var amount = "0.00001";
+            var price = "2.93850088"; // n=36731261 d=12500000
+            var priceObj = Price.FromString(price);
+
+            var operation = new CreatePassiveOfferOperation.Builder(selling, buying, amount, price)
+                .SetSourceAccount(source)
+                .Build();
+
+            Assert.AreEqual(
+                "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAQAAAAAAAAAAVVTRAAAAAAARP7bVZfAS1dHLFv8YF7W1zlX9ZTMg5bjImn5dCA1RSIAAAAAAAAAZAIweX0Avrwg",
+                operation.ToXdrBase64());
+        }
+
+        [TestMethod]
+        public void TestCreatePassiveSellOfferOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
             var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
