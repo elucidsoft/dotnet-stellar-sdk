@@ -6,7 +6,7 @@ before_build:
 - cmd: dotnet restore stellar-dotnet-sdk.sln
 dotnet_csproj:
   patch: true
-  file: 'stellar-dotnet-sdk.csproj;stellar-dotnet-sdk-xdr.csproj'
+  file: '**\*.csproj'
   version: '{version}'
   package_version: '{version}'
   assembly_version: '{version}'
@@ -32,6 +32,6 @@ deploy:
       APPVEYOR_REPO_TAG: true
   provider: NuGet
   api_key:
-    secure: CVuX3vYVhZGwqgX6dQTi/V724vsO7PFLkDwkvIHuSeNuh4NASWRm4318O52x7k+2
+    secure: annUVAOZprjjfbeznABCpjSEMoyXB+P6NtVLj9loesY2JQ3z0liMdgF08aFiXcI3
   skip_symbols: false
   artifact: nuget
