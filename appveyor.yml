@@ -7,11 +7,11 @@ before_build:
 dotnet_csproj:
   patch: true
   file: stellar-dotnet-sdk.csproj
-  version: '{tag}'
-  package_version: '{tag}'
-  assembly_version: '{tag}'
-  file_version: '{tag}'
-  informational_version: '{tag}'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
 artifacts:
   - path: '**\*.nupkg'
     name: nuget
