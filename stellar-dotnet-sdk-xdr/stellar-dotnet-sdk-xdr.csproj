@@ -13,8 +13,8 @@
     <PackageLicense></PackageLicense>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Copyright>elucidsoft 2019</Copyright>
-    <PackageProjectUrl>https://github.com/elucidsoft/dotnet-stellar-sdk</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/elucidsoft/dotnet-stellar-sdk</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/elucidsoft/dotnet-stellar-sdk/tree/master/stellar-dotnet-sdk-xdr</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/elucidsoft/dotnet-stellar-sdk/tree/master/stellar-dotnet-sdk-xdr</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>'.NET Core' 'Stellar' 'Horizon' 'Blockchain' 'Crypto' 'Distributed Ledger'</PackageTags>
     <ReleaseNotes>https://github.com/elucidsoft/dotnet-stellar-sdk/releases</ReleaseNotes>
