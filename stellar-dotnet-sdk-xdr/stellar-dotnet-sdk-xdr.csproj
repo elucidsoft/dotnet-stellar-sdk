@@ -2,17 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.1.0</Version>
+    <Version>1.0</Version>
     <ApplicationIcon />
     <OutputType>Library</OutputType>
     <StartupObject />
     <RootNamespace>stellar_dotnet_sdk_xdr</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>The .NET Stellar SDK facilitates client integration with the Stellar Horizon API server and submission of Stellar transactions. It has two main uses: querying Horizon and building, signing, and submitting transactions to the Stellar network.</Description>
+    <Description>The .NET Standard XDR Objects for the Stellar Network Protocol</Description>
     <PackageId>stellar-dotnet-sdk-xdr</PackageId>
-    <PackageLicense>sss</PackageLicense>
+    <PackageLicense></PackageLicense>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <Copyright>elucidsoft 2018</Copyright>
+    <Copyright>elucidsoft 2019</Copyright>
     <PackageProjectUrl>https://github.com/elucidsoft/dotnet-stellar-sdk</PackageProjectUrl>
     <RepositoryUrl>https://github.com/elucidsoft/dotnet-stellar-sdk</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
