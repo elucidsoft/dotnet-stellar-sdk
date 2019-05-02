@@ -12,6 +12,14 @@ dotnet_csproj:
   assembly_version: '{version}'
   file_version: '{version}'
   informational_version: '{version}'
+dotnet_xdr_csproj:
+  patch: true
+  file: stellar-dotnet-sdk-xdr.csproj
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
 artifacts:
   - path: '**\*.nupkg'
     name: nuget
