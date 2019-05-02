@@ -1,9 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <RootNamespace>stellar_dotnet_sdk_xdr</RootNamespace>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>2.1.0</Version>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+    <RootNamespace>stellar_dotnet_sdk_xdr</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>The .NET Stellar SDK facilitates client integration with the Stellar Horizon API server and submission of Stellar transactions. It has two main uses: querying Horizon and building, signing, and submitting transactions to the Stellar network.</Description>
+    <PackageId>stellar-dotnet-sdk-xdr</PackageId>
+    <PackageLicense>sss</PackageLicense>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <Copyright>elucidsoft 2018</Copyright>
+    <PackageProjectUrl>https://github.com/elucidsoft/dotnet-stellar-sdk</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/elucidsoft/dotnet-stellar-sdk</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>'.NET Core' 'Stellar' 'Horizon' 'Blockchain' 'Crypto' 'Distributed Ledger'</PackageTags>
+    <ReleaseNotes>https://github.com/elucidsoft/dotnet-stellar-sdk/releases</ReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.txt" Pack="true" PackagePath="" />
+  </ItemGroup>
 
   <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>

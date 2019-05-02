@@ -6,7 +6,7 @@ before_build:
 - cmd: dotnet restore stellar-dotnet-sdk.sln
 dotnet_csproj:
   patch: true
-  file: stellar-dotnet-sdk.csproj
+  file: 'stellar-dotnet-sdk.csproj;stellar-dotnet-sdk-xdr.csproj'
   version: '{version}'
   package_version: '{version}'
   assembly_version: '{version}'
