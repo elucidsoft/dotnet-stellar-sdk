@@ -8,7 +8,7 @@ namespace stellar_dotnet_sdk
     /// <summary>
     /// Represents a <see cref="AllowTrustOp"/>.
     /// Use <see cref="Builder"/> to create a new AllowTrustOperation.
-    /// 
+    ///
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#allow-trust">Allow Trust</see>
     /// </summary>
     public class AllowTrustOperation : Operation
@@ -57,12 +57,12 @@ namespace stellar_dotnet_sdk
             if (AssetCode.Length <= 4)
             {
                 asset.Discriminant = sdkxdr.AssetType.Create(sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4);
-                asset.AssetCode4 = Util.PaddedByteArray(AssetCode, 4);
+                asset.AssetCode4 = new AssetCode4(Util.PaddedByteArray(AssetCode, 4));
             }
             else
             {
                 asset.Discriminant = sdkxdr.AssetType.Create(sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12);
-                asset.AssetCode12 = Util.PaddedByteArray(AssetCode, 12);
+                asset.AssetCode12 = new AssetCode12(Util.PaddedByteArray(AssetCode, 12));
             }
 
             op.Asset = asset;
@@ -98,10 +98,10 @@ namespace stellar_dotnet_sdk
                 switch (op.Asset.Discriminant.InnerValue)
                 {
                     case sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4:
-                        _assetCode = Encoding.UTF8.GetString(op.Asset.AssetCode4);
+                        _assetCode = Encoding.UTF8.GetString(op.Asset.AssetCode4.InnerValue);
                         break;
                     case sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12:
-                        _assetCode = Encoding.UTF8.GetString(op.Asset.AssetCode12);
+                        _assetCode = Encoding.UTF8.GetString(op.Asset.AssetCode12.InnerValue);
                         break;
                     case sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE:
                         break;

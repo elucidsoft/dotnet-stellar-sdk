@@ -1,15 +1,15 @@
-﻿using System;
-using stellar_dotnet_sdk.xdr;
+using System;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
     /// <summary>
-    /// Represents a <see cref="CreatePassiveOfferOp"/>.
-    /// Use <see cref="Builder"/> to create a new CreatePassiveOfferOperation.
-    /// 
+    /// Represents a <see cref="CreatePassiveSellOfferOp"/>.
+    /// Use <see cref="Builder"/> to create a new CreatePassiveSellOfferOperation.
+    ///
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#create-passive-offer">Manage Offer</see>
     /// </summary>
+    [Obsolete("This class has been renamed to CreatePassiveOfferOperation")]
     public class CreatePassiveOfferOperation : Operation
     {
         private CreatePassiveOfferOperation(Asset selling, Asset buying, string amount, string price)
@@ -30,7 +30,7 @@ namespace stellar_dotnet_sdk
 
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {
-            var op = new sdkxdr.CreatePassiveOfferOp();
+            var op = new sdkxdr.CreatePassiveSellOfferOp();
             op.Selling = Selling.ToXdr();
             op.Buying = Buying.ToXdr();
             var amount = new sdkxdr.Int64();
@@ -40,8 +40,8 @@ namespace stellar_dotnet_sdk
             op.Price = price.ToXdr();
 
             var body = new sdkxdr.Operation.OperationBody();
-            body.Discriminant = sdkxdr.OperationType.Create(sdkxdr.OperationType.OperationTypeEnum.CREATE_PASSIVE_OFFER);
-            body.CreatePassiveOfferOp = op;
+            body.Discriminant = sdkxdr.OperationType.Create(sdkxdr.OperationType.OperationTypeEnum.CREATE_PASSIVE_SELL_OFFER);
+            body.CreatePassiveSellOfferOp = op;
 
             return body;
         }
@@ -49,7 +49,7 @@ namespace stellar_dotnet_sdk
         /// <summary>
         ///     Builds CreatePassiveOffer operation.
         /// </summary>
-        /// <see cref="CreatePassiveOfferOperation" />
+        /// <see cref="CreatePassiveSellOfferOperation" />
         public class Builder
         {
             private readonly string _Amount;
@@ -64,7 +64,7 @@ namespace stellar_dotnet_sdk
             ///     Construct a new CreatePassiveOffer builder from a CreatePassiveOfferOp XDR.
             /// </summary>
             /// <param name="op"></param>
-            public Builder(sdkxdr.CreatePassiveOfferOp op)
+            public Builder(sdkxdr.CreatePassiveSellOfferOp op)
             {
                 _Selling = Asset.FromXdr(op.Selling);
                 _Buying = Asset.FromXdr(op.Buying);
@@ -112,5 +112,6 @@ namespace stellar_dotnet_sdk
                 return operation;
             }
         }
+
     }
 }

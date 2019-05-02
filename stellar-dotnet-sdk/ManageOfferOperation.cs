@@ -1,15 +1,16 @@
-﻿using System;
+using System;
 using stellar_dotnet_sdk.xdr;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
     /// <summary>
-    /// Represents a <see cref="ManageOfferOp"/>.
-    /// Use <see cref="Builder"/> to create a new ManageOfferOperation.
-    /// 
+    /// Represents a <see cref="ManageSellOfferOp"/>.
+    /// Use <see cref="Builder"/> to create a new ManageSellOfferOperation.
+    ///
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#manage-offer">Manage Offer</see>
     /// </summary>
+    [Obsolete("This class has been renamed to ManageSellOfferOperation.")]
     public class ManageOfferOperation : Operation
     {
         private ManageOfferOperation(Asset selling, Asset buying, string amount, string price, long offerId)
@@ -34,30 +35,26 @@ namespace stellar_dotnet_sdk
 
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {
-            var op = new sdkxdr.ManageOfferOp();
-            op.Selling = Selling.ToXdr();
-            op.Buying = Buying.ToXdr();
-            var amount = new sdkxdr.Int64();
-            amount.InnerValue = ToXdrAmount(Amount);
+            var op = new sdkxdr.ManageSellOfferOp {Selling = Selling.ToXdr(), Buying = Buying.ToXdr()};
+            var amount = new sdkxdr.Int64 {InnerValue = ToXdrAmount(Amount)};
             op.Amount = amount;
             var price = stellar_dotnet_sdk.Price.FromString(Price);
             op.Price = price.ToXdr();
-            var offerId = new sdkxdr.Uint64();
-            offerId.InnerValue = OfferId;
+            var offerId = new sdkxdr.Int64 {InnerValue = OfferId};
             op.OfferID = offerId;
 
             var body = new sdkxdr.Operation.OperationBody();
-            body.Discriminant = sdkxdr.OperationType.Create(sdkxdr.OperationType.OperationTypeEnum.MANAGE_OFFER);
-            body.ManageOfferOp = op;
+            body.Discriminant = sdkxdr.OperationType.Create(sdkxdr.OperationType.OperationTypeEnum.MANAGE_SELL_OFFER);
+            body.ManageSellOfferOp = op;
 
             return body;
         }
 
         /// <summary>
         ///     Builds ManageOffer operation. If you want to update existing offer use
-        ///     <see cref="stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId(long)" />.
+        ///     <see cref="ManageSellOfferOperation.Builder.SetOfferId(long)" />.
         ///     <summary>
-        ///         <see cref="ManageOfferOperation" />
+        ///         <see cref="ManageSellOfferOperation" />
         public class Builder
         {
             private readonly string _Amount;
@@ -75,7 +72,7 @@ namespace stellar_dotnet_sdk
             /// <param name="op">
             ///     <see cref="sdkxdr.ManageOfferOp" />
             /// </param>
-            public Builder(sdkxdr.ManageOfferOp op)
+            public Builder(sdkxdr.ManageSellOfferOp op)
             {
                 _Selling = Asset.FromXdr(op.Selling);
                 _Buying = Asset.FromXdr(op.Buying);
@@ -87,8 +84,8 @@ namespace stellar_dotnet_sdk
             }
 
             /// <summary>
-            ///     Creates a new ManageOffer builder. If you want to update existing offer use
-            ///     <see cref="stellar_dotnet_sdk.ManageOfferOperation.Builder.SetOfferId(long)" />.
+            ///     Creates a new ManageSellOffer builder. If you want to update existing offer use
+            ///     <see cref="ManageSellOfferOperation.Builder.SetOfferId(long)" />.
             /// </summary>
             /// <param name="selling">The asset being sold in this operation</param>
             /// <param name="buying"> The asset being bought in this operation</param>

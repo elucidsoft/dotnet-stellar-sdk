@@ -19,12 +19,6 @@
     <ReleaseNotes>https://github.com/elucidsoft/dotnet-stellar-sdk/releases</ReleaseNotes>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <OutputPath></OutputPath>
-  </PropertyGroup>
-
-
   <ItemGroup>
     <PackageReference Include="dotnetstandard-bip32" Version="1.0.0" />
     <PackageReference Include="dotnetstandard-bip39" Version="1.0.2" />
@@ -33,5 +27,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\LICENSE.txt" Pack="true" PackagePath="" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\stellar-dotnet-sdk-xdr\stellar-dotnet-sdk-xdr.csproj" />
   </ItemGroup>
 </Project>

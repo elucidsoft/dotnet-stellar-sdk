@@ -4,7 +4,7 @@ using stellar_dotnet_sdk.xdr;
 namespace stellar_dotnet_sdk
 {
     /// <summary>
-    /// Asset class represents an asset, either the native asset (XLM) or a asset code / issuer account ID pair. 
+    /// Asset class represents an asset, either the native asset (XLM) or a asset code / issuer account ID pair.
     /// An asset code describes an asset code and issuer pair. In the case of the native asset XLM, the issuer will be null.
     /// </summary>
     public abstract class Asset
@@ -31,8 +31,8 @@ namespace stellar_dotnet_sdk
         ///<summary>
         /// Creates one of <seealso cref="AssetTypeCreditAlphaNum4"/> or <seealso cref="AssetTypeCreditAlphaNum12"/> object based on a code length
         /// </summary>
-        /// <param name="code">Asset code</param> 
-        /// <param name="issuer">Asset issuer</param> 
+        /// <param name="code">Asset code</param>
+        /// <param name="issuer">Asset issuer</param>
         public static Asset CreateNonNativeAsset(string code, string issuer)
         {
             if (code.Length >= 1 && code.Length <= 4)
@@ -45,7 +45,7 @@ namespace stellar_dotnet_sdk
         /// <summary>
         ///  Generates Asset object from a given XDR object
         ///  </summary>
-        /// <param name="thisXdr"></param> 
+        /// <param name="thisXdr"></param>
         public static Asset FromXdr(xdr.Asset thisXdr)
         {
             switch (thisXdr.Discriminant.InnerValue)
@@ -53,11 +53,11 @@ namespace stellar_dotnet_sdk
                 case AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE:
                     return new AssetTypeNative();
                 case AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4:
-                    var assetCode4 = Util.PaddedByteArrayToString(thisXdr.AlphaNum4.AssetCode);
+                    var assetCode4 = Util.PaddedByteArrayToString(thisXdr.AlphaNum4.AssetCode.InnerValue);
                     var issuer4 = KeyPair.FromXdrPublicKey(thisXdr.AlphaNum4.Issuer.InnerValue);
                     return new AssetTypeCreditAlphaNum4(assetCode4, issuer4.AccountId);
                 case AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12:
-                    var assetCode12 = Util.PaddedByteArrayToString(thisXdr.AlphaNum12.AssetCode);
+                    var assetCode12 = Util.PaddedByteArrayToString(thisXdr.AlphaNum12.AssetCode.InnerValue);
                     var issuer12 = KeyPair.FromXdrPublicKey(thisXdr.AlphaNum12.Issuer.InnerValue);
                     return new AssetTypeCreditAlphaNum12(assetCode12, issuer12.AccountId);
                 default:

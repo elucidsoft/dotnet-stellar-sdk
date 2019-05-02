@@ -16,9 +16,9 @@ namespace stellar_dotnet_sdk
         /// Medium security level.
         /// <seealso cref="ChangeTrustOperation"/>
         /// <seealso cref="CreateAccountOperation"/>
-        /// <seealso cref="CreatePassiveOfferOperation"/>
+        /// <seealso cref="CreatePassiveSellOfferOperation"/>
         /// <seealso cref="ManageDataOperation"/>
-        /// <seealso cref="ManageOfferOperation"/>
+        /// <seealso cref="ManageSellOfferOperation"/>
         /// <seealso cref="PathPaymentOperation"/>
         /// <seealso cref="PaymentOperation"/>
         /// </summary>
