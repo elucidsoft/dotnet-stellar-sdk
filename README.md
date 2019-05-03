@@ -12,6 +12,11 @@ Read more about [Stellar](https://www.stellar.org/)
 
 This project is a full port of the official [Java SDK API](https://github.com/stellar/java-stellar-sdk).  It is fully functional and all of the original Java Unit Tests were also ported and are passing.  
 
+## XDR
+[![NuGet Badge](https://buildstats.info/nuget/stellar-dotnet-sdk-xdr)](https://www.nuget.org/packages/stellar-dotnet-sdk-xdr/)
+
+If you only need the XDR objects in a .NET Standard NuGet package, then you can get those here: https://www.nuget.org/packages/stellar-dotnet-sdk-xdr/ 
+
 ## Quick Start
 To install using Nuget run `Install-Package stellar-dotnet-sdk` or install the Nuget package from Visual Studio.
 
