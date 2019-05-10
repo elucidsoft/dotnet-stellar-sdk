@@ -246,7 +246,12 @@ namespace stellar_dotnet_sdk
                     case "data":
                         if (IsWanted(_eventType))
                         {
-                            if (sb == null) sb = new StringBuilder();
+                            if (value == "\"byebye\"")
+                                break;
+
+                            if (sb == null)
+                                sb = new StringBuilder();
+
                             sb.AppendLine(value);
                         }
 

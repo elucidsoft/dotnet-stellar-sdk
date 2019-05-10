@@ -15,24 +15,24 @@ namespace TestConsole
 
         public static async Task Main(string[] args)
         {
-            Network.UseTestNetwork();
-            using (var server = new Server("https://horizon-testnet.stellar.org"))
-            {
-                //var friendBot = await server.TestNetFriendBot
-                //    .FundAccount(KeyPair.Random())
-                //    .Execute();
+            //Network.UseTestNetwork();
+            //using (var server = new Server("https://horizon-testnet.stellar.org"))
+            //{
+            //    //var friendBot = await server.TestNetFriendBot
+            //    //    .FundAccount(KeyPair.Random())
+            //    //    .Execute();
 
-                //await GetLedgerTransactions(server);
-                //await ShowAccountTransactions(server);
-                ShowTestKeyValue(server);
-            }
+            //    //await GetLedgerTransactions(server);
+            //    //await ShowAccountTransactions(server);
+            //    ShowTestKeyValue(server);
+            //}
 
             using (var server = new Server("https://horizon.stellar.org"))
             {
                 Console.WriteLine("-- Streaming All New Ledgers On The Network --");
-                await server.Transactions
+                await server.Ledgers
                     .Cursor("now")
-                    .Stream((sender, response) => { ShowTransactionRecord(response); })
+                    .Stream((sender, response) => { ShowOperationResponse(server, sender, response); })
                     .Connect();
             }
 
