@@ -24,32 +24,11 @@ namespace stellar_dotnet_sdk
     ///     a message event handler on the resulting Event Source object. The EventSource attempts to be resilient to
     ///     transitory network errors and interruptions by automatically retrying connections to maintain persistence.
     /// </summary>
-    public sealed class EventSource : IDisposable, IEventSource
+    public sealed partial class EventSource : IDisposable, IEventSource
     {
-        #region Public Enums
-
-        /// <summary>
-        ///     The possible values of the readyState property.
-        /// </summary>
-        public enum EventSourceState
-        {
-            Connecting = 0,
-            Open = 1,
-            Closed = 2,
-            Shutdown = 3
-        }
-
-        #endregion Public Enums
-
-        #region Protected Fields
 
         private static readonly TraceSource Trace = new TraceSource("EventSource");
         private const int DefaultRetryInterval = 3000;
-
-        #endregion Protected Fields
-
-        #region Private Fields
-
         private readonly byte[] _buffer = new byte[8192];
         private StringBuilder _eventStream;
         private string _eventType;
@@ -60,10 +39,6 @@ namespace stellar_dotnet_sdk
         private int _retryInterval = DefaultRetryInterval;
         private Timer _retryTimer;
         private bool _shutdownToken;
-
-        #endregion Private Fields
-
-        #region Public Constructors
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="EventSource" /> class.
@@ -87,10 +62,6 @@ namespace stellar_dotnet_sdk
             _readyState = EventSourceState.Closed;
         }
 
-        #endregion Public Constructors
-
-        #region Public Events
-
         /// <summary>
         ///     Occurs when an error occurs.
         /// </summary>
@@ -105,10 +76,6 @@ namespace stellar_dotnet_sdk
         ///     Occurs when the ready state changes.
         /// </summary>
         public event EventHandler<StateChangeEventArgs> StateChange;
-
-        #endregion Public Events
-
-        #region Public Properties
 
         /// <summary>
         ///     Gets or sets the headers to be sent in the request. For more
@@ -151,10 +118,6 @@ namespace stellar_dotnet_sdk
         /// </summary>
         public Uri Url { get; set; }
 
-        #endregion Public Properties
-
-        #region Public Methods
-
         /// <summary>
         ///     Begin the process to connect to the the EventSource. The EventSource attempts to be resilient to
         ///     transitory network errors and interruptions by automatically retrying connections to maintain persistence.
@@ -191,10 +154,6 @@ namespace stellar_dotnet_sdk
             CloseConnection();
             ReadyState = EventSourceState.Shutdown;
         }
-
-        #endregion Public Methods
-
-        #region Protected Methods
 
         /// <summary>
         ///     Configures the web request object. Override this method to add custom
@@ -246,7 +205,12 @@ namespace stellar_dotnet_sdk
                     case "data":
                         if (IsWanted(_eventType))
                         {
-                            if (sb == null) sb = new StringBuilder();
+                            if (value == "\"byebye\"")
+                                break;
+
+                            if (sb == null)
+                                sb = new StringBuilder();
+
                             sb.AppendLine(value);
                         }
 
@@ -284,9 +248,7 @@ namespace stellar_dotnet_sdk
         private void OnErrorEvent(ServerSentErrorEventArgs e)
         {
             Trace.TraceInformation("Raising OnErrorEvent ({0})", e.Exception.Message);
-            var handler = Error;
-            if (handler != null)
-                handler(this, e);
+            Error?.Invoke(this, e);
         }
 
         /// <summary>
@@ -296,9 +258,7 @@ namespace stellar_dotnet_sdk
         private void OnMessageEvent(ServerSentEventArgs e)
         {
             Trace.TraceInformation("Raising OnMessageEvent ({0})", _eventType);
-            var handler = Message;
-            if (handler != null)
-                handler(this, e);
+            Message?.Invoke(this, e);
         }
 
         /// <summary>
@@ -308,9 +268,7 @@ namespace stellar_dotnet_sdk
         private void OnStateChangeEvent(StateChangeEventArgs e)
         {
             Trace.TraceInformation("Raising OnStateChangeEvent ({0})", e.NewState);
-            var handler = StateChange;
-            if (handler != null)
-                handler(this, e);
+            StateChange?.Invoke(this, e);
         }
 
         /// <summary>
@@ -335,10 +293,6 @@ namespace stellar_dotnet_sdk
             // Increase backoff timer up to a minute each retry
             if (backoff) _retryInterval = (int) Math.Min(_retryInterval * 1.5, 60000);
         }
-
-        #endregion Protected Methods
-
-        #region Private Methods
 
         /// <summary>
         ///     Closes the connection.
@@ -484,6 +438,7 @@ namespace stellar_dotnet_sdk
                 }
 
                 for (var i = 0; i < bytesRead; i++)
+                {
                     if (i > 0 && _buffer[i] == '\n' && _buffer[i - 1] == '\n')
                     {
                         DispatchEvent(_eventStream.ToString().Split('\n'));
@@ -493,10 +448,10 @@ namespace stellar_dotnet_sdk
                     {
                         _eventStream.Append((char) _buffer[i]);
                     }
+                }
             }
-            catch(Exception ex)
+            catch (Exception)
             {
-                //OnErrorEvent(new ServerSentErrorEventArgs { Exception = ex });
                 CloseConnection();
                 RetryAfterDelay();
                 return;
@@ -506,56 +461,5 @@ namespace stellar_dotnet_sdk
             if (!_shutdownToken && ReadyState == EventSourceState.Open)
                 _httpStream.BeginRead(_buffer, 0, _buffer.Length, EndReadFromStream, null);
         }
-
-        #endregion Private Methods
-
-        #region Public Classes
-
-        /// <summary>
-        ///     Server Sent Error Event Object
-        /// </summary>
-        public sealed class ServerSentErrorEventArgs : EventArgs
-        {
-            #region Public Properties
-
-            /// <summary>
-            /// Internal Exception
-            /// </summary>
-            public Exception Exception { get; internal set; }
-
-            #endregion Public Properties
-        }
-
-        /// <summary>
-        ///     Server Sent Event Message Object
-        /// </summary>
-        public sealed class ServerSentEventArgs : EventArgs
-        {
-            #region Public Properties
-
-            /// <summary>
-            ///     Gets the data.
-            /// </summary>
-            public string Data { get; set; }
-
-            #endregion Public Properties
-        }
-
-        /// <summary>
-        ///     Server Sent Error Event Object
-        /// </summary>
-        public sealed class StateChangeEventArgs : EventArgs
-        {
-            #region Public Properties
-
-            /// <summary>
-            /// New State changed to
-            /// </summary>
-            public EventSourceState NewState { get; internal set; }
-
-            #endregion Public Properties
-        }
-
-        #endregion Public Classes
     }
 }
