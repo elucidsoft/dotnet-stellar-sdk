@@ -1,9 +1,10 @@
 ﻿using dotnetstandard_bip32;
-using stellar_dotnet_sdk.chaos.nacl;
 using stellar_dotnet_sdk.xdr;
 using System;
 using System.Linq;
 using System.Security.Cryptography;
+using NSec.Cryptography;
+using PublicKey = stellar_dotnet_sdk.xdr.PublicKey;
 
 namespace stellar_dotnet_sdk
 {
@@ -13,6 +14,13 @@ namespace stellar_dotnet_sdk
     /// </summary>
     public class KeyPair
     {
+        private KeyPair(Key secretKey, byte[] seed)
+        {
+            _secretKey = secretKey ?? throw new ArgumentNullException(nameof(secretKey));
+            _publicKey = secretKey.PublicKey;
+            SeedBytes = seed ?? throw new ArgumentNullException(nameof(seed));
+        }
+
         /// <summary>
         /// Creates a new Keypair object from public key.
         /// </summary>
@@ -30,20 +38,34 @@ namespace stellar_dotnet_sdk
         /// <param name="seed"></param>
         public KeyPair(byte[] publicKey, byte[] privateKey, byte[] seed)
         {
-            PublicKey = publicKey ?? throw new ArgumentNullException(nameof(publicKey), "publicKey cannot be null");
-            PrivateKey = privateKey;
+            _publicKey = NSec.Cryptography.PublicKey.Import(SignatureAlgorithm.Ed25519, publicKey,
+                KeyBlobFormat.RawPublicKey);
+
+            if (privateKey != null)
+            {
+                _secretKey = Key.Import(SignatureAlgorithm.Ed25519, privateKey, KeyBlobFormat.RawPrivateKey,
+                    new KeyCreationParameters() {ExportPolicy = KeyExportPolicies.AllowPlaintextExport});
+            }
+            else
+            {
+                _secretKey = null;
+            }
+
             SeedBytes = seed;
         }
+
+        private readonly Key _secretKey;
+        private readonly NSec.Cryptography.PublicKey _publicKey;
 
         /// <summary>
         /// The public key.
         /// </summary>
-        public byte[] PublicKey { get; }
+        public byte[] PublicKey => _publicKey.Export(KeyBlobFormat.RawPublicKey);
 
         /// <summary>
         /// The private key.
         /// </summary>
-        public byte[] PrivateKey { get; }
+        public byte[] PrivateKey => _secretKey.Export(KeyBlobFormat.RawPrivateKey);
 
         /// <summary>
         /// The bytes of the Secret Seed
@@ -148,7 +170,7 @@ namespace stellar_dotnet_sdk
         /// <returns></returns>
         public bool CanSign()
         {
-            return PrivateKey != null;
+            return _secretKey != null;
         }
 
         /// <summary>
@@ -173,9 +195,10 @@ namespace stellar_dotnet_sdk
         /// </returns>
         public static KeyPair FromSecretSeed(byte[] seed)
         {
-            Ed25519.KeyPairFromSeed(out byte[] publicKey, out byte[] privateKey, seed);
+            var privateKey = Key.Import(SignatureAlgorithm.Ed25519, seed, KeyBlobFormat.RawPrivateKey,
+                new KeyCreationParameters() { ExportPolicy = KeyExportPolicies.AllowPlaintextExport });
 
-            return new KeyPair(publicKey, privateKey, seed);
+            return new KeyPair(privateKey, seed);
         }
 
         /// <summary>
@@ -239,12 +262,12 @@ namespace stellar_dotnet_sdk
         /// <returns>signed bytes, null if the private key for this keypair is null.</returns>
         public byte[] Sign(byte[] data)
         {
-            if (PrivateKey == null)
+            if (_secretKey == null)
             {
                 throw new Exception("KeyPair does not contain secret key. Use KeyPair.fromSecretSeed method to create a new KeyPair with a secret key.");
             }
 
-            return Ed25519.Sign(data, PrivateKey);
+            return SignatureAlgorithm.Ed25519.Sign(_secretKey, data);
         }
 
         /// <summary>
@@ -275,7 +298,7 @@ namespace stellar_dotnet_sdk
 
             try
             {
-                result = Ed25519.Verify(signature, data, PublicKey);
+                return SignatureAlgorithm.Ed25519.Verify(_publicKey, data, signature);
             }
             catch
             {
