@@ -13,7 +13,5 @@ identified and resolved as quickly as possible.
 
 ## Reporting a Vulnerability
 
-If you find a vulnerability please do not submit it as a public issue. Instead contact 
-me at eric@elucidsoft.com and I will discuss the issue with you.  This prevents potential
-bad actors from using the public issues as a way to discover harmful security issues and use
+If you find a vulnerability please do not submit it as a public issue. Instead please use the security tab on GitHub to submit the security vulnerability.  This will keep it from being publicly visible and I will discuss the issue with you.  This prevents potential bad actors from using the public issues as a way to discover harmful security issues and use
 those as attack vectors.
