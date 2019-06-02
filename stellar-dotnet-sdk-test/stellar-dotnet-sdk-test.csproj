@@ -19,6 +19,7 @@
     <PackageReference Include="Moq" Version="4.10.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+    <PackageReference Include="SpecFlow.MsTest" Version="3.0.213" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\stellar-dotnet-sdk\stellar-dotnet-sdk.csproj" />
