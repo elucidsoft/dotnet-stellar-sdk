@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace stellar_dotnet_sdk.responses
 {
-    public class AccountResponse : Response, ITransactionBuilderAccount, IPagingToken
+    public class AccountResponse : Response, ITransactionBuilderAccount
     {
         private AccountResponse()
         {
@@ -25,9 +25,6 @@ namespace stellar_dotnet_sdk.responses
 
         [JsonProperty(PropertyName = "sequence")]
         public long SequenceNumber { get; set; }
-
-        [JsonProperty(PropertyName = "paging_token")]
-        public string PagingToken { get; set; }
 
         [JsonProperty(PropertyName = "subentry_count")]
         public int SubentryCount { get; set; }
