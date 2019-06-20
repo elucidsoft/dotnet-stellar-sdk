@@ -18,12 +18,12 @@ namespace stellar_dotnet_sdk.requests
         {
             if (Network.Current == null)
             {
-                throw new NotSupportedException("FriendBot requires the TESTNET Network to be set explicitly.");
+                throw new NotSupportedException("FriendBot requires the Testnet Network to be set explicitly.");
             }
 
             if (Network.IsPublicNetwork(Network.Current))
             {
-                throw new NotSupportedException("FriendBot is only supported on the TESTNET Network.");
+                throw new NotSupportedException("FriendBot is only supported on the Testnet Network.");
             }
         }
 

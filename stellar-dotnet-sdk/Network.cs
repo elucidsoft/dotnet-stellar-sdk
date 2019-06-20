@@ -5,8 +5,8 @@ namespace stellar_dotnet_sdk
 {
     public class Network
     {
-        private static readonly string PUBLIC = "Public Global Stellar Network ; September 2015";
-        private static readonly string TESTNET = "Test SDF Network ; September 2015";
+        public static readonly string PublicPassphrase = "Public Global Stellar Network ; September 2015";
+        public static readonly string TestnetPassphrase = "Test SDF Network ; September 2015";
 
         public Network(string networkPassphrase)
         {
@@ -21,12 +21,12 @@ namespace stellar_dotnet_sdk
 
         public static Network Public()
         {
-            return new Network(PUBLIC);
+            return new Network(PublicPassphrase);
         }
 
         public static Network Test()
         {
-            return new Network(TESTNET);
+            return new Network(TestnetPassphrase);
         }
 
         public static void Use(Network network)
@@ -36,7 +36,7 @@ namespace stellar_dotnet_sdk
 
         public static bool IsPublicNetwork(Network network)
         {
-            return network.NetworkPassphrase == PUBLIC;
+            return network.NetworkPassphrase == PublicPassphrase;
         }
 
         public static void UsePublicNetwork()
