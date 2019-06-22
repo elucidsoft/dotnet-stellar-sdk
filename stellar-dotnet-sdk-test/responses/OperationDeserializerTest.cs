@@ -93,7 +93,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(operation.To, "GDWNY2POLGK65VVKIH5KQSH7VWLKRTQ5M6ADLJAYC2UEHEBEARCZJWWI");
             Assert.AreEqual(operation.Amount, "100.0");
             Assert.AreEqual(operation.Asset, new AssetTypeNative());
-            
+
             Assert.IsFalse(operation.TransactionSuccessful);
         }
 
@@ -312,12 +312,48 @@ namespace stellar_dotnet_sdk_test.responses
         private static void AssertManageOfferData(OperationResponse instance)
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
-            Assert.IsTrue(instance is ManageOfferOperationResponse);
-            var operation = (ManageOfferOperationResponse) instance;
+            Assert.IsTrue(instance is ManageSellOfferOperationResponse);
+            var operation = (ManageSellOfferOperationResponse) instance;
+
+            Assert.AreEqual(operation.OfferId, 96052902);
+            Assert.AreEqual(operation.Amount, "243.7500000");
+            Assert.AreEqual(operation.Price, "8.0850240");
+            Assert.AreEqual(operation.SellingAsset,
+                Asset.CreateNonNativeAsset("USD", "GDSRCV5VTM3U7Y3L6DFRP3PEGBNQMGOWSRTGSBWX6Z3H6C7JHRI4XFJP"));
+            Assert.AreEqual(operation.BuyingAsset, new AssetTypeNative());
+        }
+
+        [TestMethod]
+        public void TestDeserializeManageBuyOfferOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationManageBuyOffer.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            AssertManageBuyOfferData(instance);
+        }
+
+        [TestMethod]
+        public void TestSerializeDeserializeManageBuyOfferOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationManageBuyOffer.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertManageBuyOfferData(back);
+        }
+
+        private static void AssertManageBuyOfferData(OperationResponse instance)
+        {
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is ManageBuyOfferOperationResponse);
+            var operation = (ManageBuyOfferOperationResponse) instance;
 
             Assert.AreEqual(operation.OfferId, 0);
-            Assert.AreEqual(operation.Amount, "100.0");
-            Assert.AreEqual(operation.BuyingAsset, Asset.CreateNonNativeAsset("CNY", "GAZWSWPDQTBHFIPBY4FEDFW2J6E2LE7SZHJWGDZO6Q63W7DBSRICO2KN"));
+            Assert.AreEqual(operation.Amount, "50000.0000000");
+            Assert.AreEqual(operation.Price, "0.0463000");
+            Assert.AreEqual(operation.BuyingAsset,
+                Asset.CreateNonNativeAsset("RMT", "GDEGOXPCHXWFYY234D2YZSPEJ24BX42ESJNVHY5H7TWWQSYRN5ZKZE3N"));
             Assert.AreEqual(operation.SellingAsset, new AssetTypeNative());
         }
 
