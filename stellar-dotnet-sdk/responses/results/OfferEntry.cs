@@ -72,6 +72,8 @@ namespace stellar_dotnet_sdk.responses.results
         {
             switch (flags)
             {
+                case 0:
+                    return 0;
                 case 1: // PASSIVE_FLAG
                     return OfferEntryFlags.Passive;
                 default:
