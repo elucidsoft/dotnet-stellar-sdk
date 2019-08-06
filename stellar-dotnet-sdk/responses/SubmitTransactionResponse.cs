@@ -62,7 +62,7 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "extras")]
         public Extras SubmitTransactionResponseExtras { get; private set; }
 
-        public SubmitTransactionResponse(Extras extras, long? ledger, string hash, string envelopeXdr, string resultXdr)
+        public SubmitTransactionResponse(Extras extras, int? ledger, string hash, string envelopeXdr, string resultXdr)
         {
             SubmitTransactionResponseExtras = extras;
             Ledger = ledger;

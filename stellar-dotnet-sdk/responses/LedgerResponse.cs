@@ -55,7 +55,7 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "_links")]
         public LedgerResponseLinks Links { get; private set; }
 
-        public LedgerResponse(long sequence, String hash, String pagingToken, String prevHash,
+        public LedgerResponse(int sequence, String hash, String pagingToken, String prevHash,
             int? failedTransactionCount, int successfulTransactionCount, int operationCount, String closedAt,
             String totalCoins, String feePool, long baseFee, String baseReserve, String baseFeeInStroops,
             String baseReserveInStroops, int maxTxSetSize, LedgerResponseLinks links)

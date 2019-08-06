@@ -105,7 +105,7 @@ namespace stellar_dotnet_sdk.responses
             // Used by deserializer
         }
 
-        public TransactionResponse(string hash, long ledger, string createdAt, string sourceAccount, bool successful,
+        public TransactionResponse(string hash, int ledger, string createdAt, string sourceAccount, bool successful,
             string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr,
             string resultXdr, string resultMetaXdr, Memo memo, TransactionResponseLinks links)
         {
