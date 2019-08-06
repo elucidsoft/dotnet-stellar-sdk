@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
@@ -39,7 +39,7 @@ namespace stellar_dotnet_sdk
                 throw new ArgumentNullException(nameof(price), "price cannot be null");
 
             var maxInt = new decimal(int.MaxValue);
-            var number = Convert.ToDecimal(price);
+            var number = Convert.ToDecimal(price, CultureInfo.InvariantCulture);
             decimal a;
             decimal f;
             var fractions = new List<decimal[]>();
@@ -61,7 +61,7 @@ namespace stellar_dotnet_sdk
                 if (f.CompareTo(0m) == 0)
                     break;
                 number = decimal.Divide(1m, f);
-                i = i + 1;
+                i += 1;
             }
 
             var n = fractions[fractions.Count - 1][0];

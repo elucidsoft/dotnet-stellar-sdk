@@ -72,7 +72,7 @@ namespace stellar_dotnet_sdk
                 _BuyAmount = FromXdrAmount(op.BuyAmount.InnerValue);
                 var n = new decimal(op.Price.N.InnerValue);
                 var d = new decimal(op.Price.D.InnerValue);
-                _Price = decimal.Divide(n, d).ToString();
+                _Price = Amount.DecimalToString(decimal.Divide(n, d));
                 offerId = op.OfferID.InnerValue;
             }
 
