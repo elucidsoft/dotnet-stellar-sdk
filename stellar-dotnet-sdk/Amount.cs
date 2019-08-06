@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 namespace stellar_dotnet_sdk
 {
@@ -6,10 +7,16 @@ namespace stellar_dotnet_sdk
     {
         private static readonly decimal ONE = new decimal(10000000);
 
+
+        public static string DecimalToString(decimal d)
+        {
+            return d.ToString(CultureInfo.InvariantCulture);
+        }
+
         public static string FromXdr(long value)
         {
             var amount = decimal.Divide(new decimal(value), ONE);
-            return amount.ToString();
+            return DecimalToString(amount);
         }
 
         public static long ToXdr(string value)
@@ -18,7 +25,7 @@ namespace stellar_dotnet_sdk
                 throw new ArgumentNullException(nameof(value), "value cannot be null");
 
             //This basically takes a decimal value and turns it into a large integer.
-            var amount = decimal.Parse(value) * ONE;
+            var amount = decimal.Parse(value, CultureInfo.InvariantCulture) * ONE;
 
             //MJM: Added to satisfy the OperationTest unit test of making sure a failure
             //happens when casting a decimal with fractional places into a long.
