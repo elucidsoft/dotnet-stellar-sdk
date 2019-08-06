@@ -50,10 +50,10 @@ namespace stellar_dotnet_sdk.responses
         public long LastLedgerBaseFee { get; }
 
         [JsonProperty(PropertyName = "last_ledger")]
-        public long LastLedger { get; }
+        public int LastLedger { get; }
 
-        public OperationFeeStatsResponse(long min, long mode,  long p10, long p20, long p30, long p40, long p50, long p60,
-            long p70, long p80, long p90, long p95, long p99, decimal ledgerCapacityUsage, long lastLedgerBaseFee, long lastLedger)
+        public OperationFeeStatsResponse(long min, long mode, long p10, long p20, long p30, long p40, long p50, long p60,
+            long p70, long p80, long p90, long p95, long p99, decimal ledgerCapacityUsage, long lastLedgerBaseFee, int lastLedger)
         {
             Min = min;
             Mode = mode;

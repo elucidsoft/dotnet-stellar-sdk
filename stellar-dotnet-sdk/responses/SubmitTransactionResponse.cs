@@ -13,7 +13,7 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "hash")] public string Hash { get; private set; }
 
         [JsonProperty(PropertyName = "ledger")]
-        public long? Ledger { get; private set; }
+        public int? Ledger { get; private set; }
 
         [JsonProperty(PropertyName = "envelope_xdr")]
         public string EnvelopeXdr

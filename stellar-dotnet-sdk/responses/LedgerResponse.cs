@@ -9,7 +9,7 @@ namespace stellar_dotnet_sdk.responses
     public class LedgerResponse : Response, IPagingToken
     {
         [JsonProperty(PropertyName = "sequence")]
-        public long Sequence { get; private set; }
+        public int Sequence { get; private set; }
 
         [JsonProperty(PropertyName = "hash")] public string Hash { get; private set; }
 
