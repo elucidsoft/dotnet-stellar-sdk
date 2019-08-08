@@ -12,13 +12,13 @@ namespace stellar_dotnet_sdk
         /// <summary>
         /// Build a challenge transaction you can use for Stellar Web Authentication.
         /// </summary>
-        /// <param name="serverKeypair">server signing keypair</param>
-        /// <param name="clientAccountId">the client account id that needs authentication</param>
-        /// <param name="anchorName">anchor name</param>
+        /// <param name="serverKeypair">Server signing keypair</param>
+        /// <param name="clientAccountId">The client account id that needs authentication</param>
+        /// <param name="anchorName">The anchor name</param>
         /// <param name="nonce">48 bytes long cryptographic-quality random data</param>
-        /// <param name="now">datetime from which the transaction is valid</param>
-        /// <param name="timeout">transaction lifespan</param>
-        /// <param name="network">network the transaction will be submitted to</param>
+        /// <param name="now">The datetime from which the transaction is valid</param>
+        /// <param name="timeout">The transaction lifespan</param>
+        /// <param name="network">The network the transaction will be submitted to</param>
         /// <returns>The challenge transaction</returns>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
@@ -68,6 +68,86 @@ namespace stellar_dotnet_sdk
             tx.Sign(serverKeypair, network);
 
             return tx;
+        }
+
+        /// <summary>
+        /// Verify that a transaction is a valid Stellar Web Authentication transaction.
+        ///
+        /// Performs the following checks:
+        ///
+        ///   1. Transaction sequence number is 0
+        ///   2. Transaction source account is <paramref name="serverAccountId"/>
+        ///   3. Transaction has one operation only, of type ManageDataOperation
+        ///   4. The ManageDataOperation name and value are correct
+        ///   5. Transaction time bounds are still valid
+        ///   6. Transaction is signed by server and client
+        /// </summary>
+        /// <param name="transaction">The challenge transaction</param>
+        /// <param name="serverAccountId">The server account id</param>
+        /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
+        /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
+        /// <returns>True if the transaction is valid</returns>
+        /// <exception cref="InvalidWebAuthenticationException"></exception>
+        public static bool VerifyChallengeTransaction(Transaction transaction, string serverAccountId,
+            Network network = null, DateTimeOffset? now = null)
+        {
+            network = network ?? Network.Current;
+
+            if (transaction.SequenceNumber != 0)
+                throw new InvalidWebAuthenticationException("Challenge transaction sequence number must be 0");
+
+            if (transaction.SourceAccount.AccountId != serverAccountId)
+                throw new InvalidWebAuthenticationException("Challenge transaction source must be serverAccountId");
+
+            if (transaction.Operations.Length != 1)
+                throw new InvalidWebAuthenticationException("Challenge transaction must contain one operation");
+
+            var operation = transaction.Operations[0] as ManageDataOperation;
+
+            if (operation is null)
+                throw new InvalidWebAuthenticationException("Challenge transaction operation must be of type ManageDataOperation");
+
+            var stringValue = Encoding.UTF8.GetString(operation.Value);
+            if (stringValue.Length != 64)
+                throw new InvalidWebAuthenticationException("Challenge transaction operation data must be 64 bytes long");
+
+            try
+            {
+                // There is no need to check for decoded value length since we know it's valid base64 and 64 bytes long.
+                var _ = Convert.FromBase64String(stringValue);
+            }
+            catch (System.FormatException)
+            {
+                throw new InvalidWebAuthenticationException("Challenge transaction operation data must be base64 encoded");
+            }
+
+            if (!ValidateSignedBy(transaction, serverAccountId, network))
+                throw new InvalidWebAuthenticationException("Challenge transaction not signed by server");
+
+            if (!ValidateSignedBy(transaction, operation.SourceAccount.AccountId, network))
+                throw new InvalidWebAuthenticationException("Challenge transaction not signed by client");
+
+            if (!ValidateTimeBounds(transaction.TimeBounds, now ?? DateTimeOffset.Now))
+                throw new InvalidWebAuthenticationException("Challenge transaction expired");
+
+            return true;
+        }
+
+        private static bool ValidateSignedBy(Transaction transaction, string accountId, Network network)
+        {
+            var transactionHash = transaction.Hash(network);
+            var keypair = KeyPair.FromAccountId(accountId);
+
+            var signature = transaction.Signatures.Find(sig => keypair.Verify(transactionHash, sig.Signature));
+            return signature != null;
+        }
+
+        private static bool ValidateTimeBounds(TimeBounds timeBounds, DateTimeOffset now)
+        {
+            if (timeBounds is null) return false;
+            if (timeBounds.MinTime == 0 || timeBounds.MaxTime == 0) return false;
+            var unixNow = now.ToUnixTimeSeconds();
+            return timeBounds.MinTime <= unixNow && unixNow <= timeBounds.MaxTime;
         }
     }
 }

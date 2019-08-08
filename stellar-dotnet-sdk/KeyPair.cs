@@ -294,18 +294,25 @@ namespace stellar_dotnet_sdk
         /// <returns>True if they match, false otherwise.</returns>
         public bool Verify(byte[] data, byte[] signature)
         {
-            bool result = false;
-
             try
             {
                 return SignatureAlgorithm.Ed25519.Verify(_publicKey, data, signature);
             }
             catch
             {
-                result = false;
+                return false;
             }
+        }
 
-            return result;
+        /// <summary>
+        ///     Verify the provided data and signature match this keypair's public key.
+        /// </summary>
+        /// <param name="data">The data that was signed.</param>
+        /// <param name="signature">The signature.</param>
+        /// <returns>True if they match, false otherwise.</returns>
+        public bool Verify(byte[] data, xdr.Signature signature)
+        {
+            return Verify(data, signature.InnerValue);
         }
     }
 }

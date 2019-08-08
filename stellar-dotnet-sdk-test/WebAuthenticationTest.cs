@@ -54,6 +54,252 @@ namespace stellar_dotnet_sdk_test
 
         }
 
+        [TestMethod]
+        public void TestVerifyChallengeTransactionReturnsTrueForValidTransaction()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+
+            var now = DateTimeOffset.Now;
+
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            tx.Sign(clientKeypair);
+
+            Assert.IsTrue(WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, now: now));
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionThrowsIfSequenceIsNotZero()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+
+            var now = DateTimeOffset.Now;
+
+            var nonce = new byte[64];
+            var tx = new Transaction
+                .Builder(new Account(serverKeypair.AccountId, 0))
+                .AddOperation(new ManageDataOperation.Builder("NET auth", nonce).Build())
+                .Build();
+            tx.Sign(clientKeypair);
+
+            Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
+            {
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, now: now);
+            });
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionThrowsIfServerAccountIdIsDifferent()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+
+            var now = DateTimeOffset.Now;
+
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            tx.Sign(clientKeypair);
+
+            Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
+            {
+                WebAuthentication.VerifyChallengeTransaction(tx, KeyPair.Random().AccountId, now: now);
+            });
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionThrowsIfTransactionHasNoManageDataOperation()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+
+            var now = DateTimeOffset.Now;
+
+            var tx = new Transaction
+                .Builder(new Account(serverKeypair.AccountId, -1))
+                .AddOperation(
+                    new AccountMergeOperation.Builder(serverKeypair)
+                        .SetSourceAccount(clientKeypair)
+                        .Build())
+                .Build();
+            tx.Sign(clientKeypair);
+
+            Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
+            {
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, now: now);
+            });
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionThrowsIfOperationHasNoSourceAccount()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+
+            var now = DateTimeOffset.Now;
+            var nonce = new byte[64];
+            var tx = new Transaction
+                .Builder(new Account(serverKeypair.AccountId, -1))
+                .AddOperation(new ManageDataOperation.Builder("NET auth", nonce).Build())
+                .Build();
+            tx.Sign(clientKeypair);
+
+            Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
+            {
+
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, now: now);
+            });
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionThrowsIfOperationDataIsNotBase64Encoded()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+
+            var now = DateTimeOffset.Now;
+            var nonce = new byte[64];
+            var tx = new Transaction
+                .Builder(new Account(serverKeypair.AccountId, -1))
+                .AddOperation(
+                    new ManageDataOperation
+                    .Builder("NET auth", nonce)
+                        .SetSourceAccount(clientKeypair)
+                        .Build())
+                .Build();
+            tx.Sign(clientKeypair);
+
+            Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
+            {
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, now: now);
+            });
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionThrowsIfNotSignedByServer()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+
+            var now = DateTimeOffset.Now;
+
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            tx.Signatures.Clear();
+            tx.Sign(clientKeypair);
+
+            Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
+            {
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, now: now);
+            });
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionThrowsIfSignedByServerOnDifferentNetwork()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+
+            var now = DateTimeOffset.Now;
+
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            tx.Sign(clientKeypair);
+
+            Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
+            {
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, now: now, network: Network.Public());
+            });
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionThrowsIfNotSignedByClient()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+
+            var now = DateTimeOffset.Now;
+
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+
+            Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
+            {
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, now: now);
+            });
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionThrowsIfSignedByClientOnDifferentNetwork()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+
+            var now = DateTimeOffset.Now;
+
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            tx.Sign(clientKeypair, Network.Public());
+
+            Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
+            {
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, now: now, network: Network.Test());
+            });
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionThrowsIfItsTooEarly()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+
+            var now = DateTimeOffset.Now;
+
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            tx.Sign(clientKeypair);
+
+            Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
+                {
+                    WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, now: now.Subtract(TimeSpan.FromDays(1.0)));
+                });
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionThrowsIfItsTooLate()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+
+            var now = DateTimeOffset.Now;
+
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            tx.Sign(clientKeypair);
+
+            Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
+                {
+                    WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, now: now.Add(TimeSpan.FromDays(1.0)));
+                });
+        }
+
         private void CheckAccounts(Transaction tx, KeyPair serverKeypair)
         {
 
