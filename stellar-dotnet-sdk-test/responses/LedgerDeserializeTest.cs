@@ -39,7 +39,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(ledger.Hash, "7f7cc428fa2b5f17fea0dba3bdbd36972f3dff4fae9345cc1f013b1133bbf7c4");
             Assert.AreEqual(ledger.PagingToken, "2147483648000");
             Assert.AreEqual(ledger.PrevHash, "29a54d2641d0051e4748d1ed1c9e53bd3634b2aaa823fb709341b93328c6d313");
-            Assert.AreEqual(ledger.Sequence, 500);
+            Assert.AreEqual(ledger.Sequence, (uint)500);
             Assert.AreEqual(ledger.SuccessfulTransactionCount, 0);
             Assert.AreEqual(ledger.FailedTransactionCount, null);
             Assert.AreEqual(ledger.OperationCount, 0);
@@ -50,7 +50,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(ledger.Hash, "686bb246db89b099cd3963a4633eb5e4315d89dfd3c00594c80b41a483847bfa");
             Assert.AreEqual(ledger.PagingToken, "3860428274794496");
             Assert.AreEqual(ledger.PrevHash, "50c8695eb32171a19858413e397cc50b504ceacc819010bdf8ff873aff7858d7");
-            Assert.AreEqual(ledger.Sequence, 898826);
+            Assert.AreEqual(ledger.Sequence, (uint)898826);
             Assert.AreEqual(ledger.SuccessfulTransactionCount, 3);
             Assert.AreEqual(ledger.FailedTransactionCount, 2);
             Assert.AreEqual(ledger.OperationCount, 10);
