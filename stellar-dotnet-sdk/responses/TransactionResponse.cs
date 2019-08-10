@@ -12,7 +12,7 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "hash")] public string Hash { get; private set; }
 
         [JsonProperty(PropertyName = "ledger")]
-        public long Ledger { get; private set; }
+        public uint Ledger { get; private set; }
 
         [JsonProperty(PropertyName = "created_at")]
         public string CreatedAt { get; private set; }
@@ -105,7 +105,7 @@ namespace stellar_dotnet_sdk.responses
             // Used by deserializer
         }
 
-        public TransactionResponse(string hash, long ledger, string createdAt, string sourceAccount, bool successful,
+        public TransactionResponse(string hash, uint ledger, string createdAt, string sourceAccount, bool successful,
             string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr,
             string resultXdr, string resultMetaXdr, Memo memo, TransactionResponseLinks links)
         {

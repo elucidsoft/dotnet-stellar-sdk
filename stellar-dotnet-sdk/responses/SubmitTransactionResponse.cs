@@ -10,10 +10,11 @@ namespace stellar_dotnet_sdk.responses
         private readonly string _envelopeXdr;
         private readonly string _resultXdr;
 
-        [JsonProperty(PropertyName = "hash")] public string Hash { get; private set; }
+        [JsonProperty(PropertyName = "hash")]
+        public string Hash { get; private set; }
 
         [JsonProperty(PropertyName = "ledger")]
-        public long? Ledger { get; private set; }
+        public uint? Ledger { get; private set; }
 
         [JsonProperty(PropertyName = "envelope_xdr")]
         public string EnvelopeXdr
@@ -62,7 +63,7 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "extras")]
         public Extras SubmitTransactionResponseExtras { get; private set; }
 
-        public SubmitTransactionResponse(Extras extras, long? ledger, string hash, string envelopeXdr, string resultXdr)
+        public SubmitTransactionResponse(Extras extras, uint? ledger, string hash, string envelopeXdr, string resultXdr)
         {
             SubmitTransactionResponseExtras = extras;
             Ledger = ledger;
