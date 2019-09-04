@@ -76,9 +76,9 @@ namespace stellar_dotnet_sdk_test.requests
                 .Limit(50)
                 .Order(OrderDirection.ASC)
                 .BuildUri();
-            Assert.AreEqual("https://horizon-testnet.stellar.org/ledgers/200000000000/operations?include_failed=true&limit=50&order=asc", uri.ToString());            
+            Assert.AreEqual("https://horizon-testnet.stellar.org/ledgers/200000000000/operations?include_failed=true&limit=50&order=asc", uri.ToString());
         }
-        
+
         [TestMethod]
         public async Task TestOperationsExecute()
         {
@@ -95,12 +95,12 @@ namespace stellar_dotnet_sdk_test.requests
         }
 
         [TestMethod]
-        public void TestStream()
+        public async Task TestStream()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationCreateAccount.json"));
-            var streamableTest = new StreamableTest<OperationResponse>(json, OperationDeserializerTest.AssertCreateAccountOperationData);
 
-            streamableTest.AssertIsValid();
+            var streamableTest = new StreamableTest<OperationResponse>(json, OperationDeserializerTest.AssertCreateAccountOperationData);
+            await streamableTest.Run();
         }
     }
 }

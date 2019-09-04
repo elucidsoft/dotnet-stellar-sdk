@@ -81,12 +81,12 @@ namespace stellar_dotnet_sdk_test.requests
         }
 
         [TestMethod]
-        public void TestStream()
+        public async Task TestStream()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationPayment.json"));
-            var streamableTest = new StreamableTest<PaymentOperationResponse>(json, OperationDeserializerTest.AssertPaymentOperationTestData);
 
-            streamableTest.AssertIsValid();
+            var streamableTest = new StreamableTest<PaymentOperationResponse>(json, OperationDeserializerTest.AssertPaymentOperationTestData);
+            await streamableTest.Run();
         }
     }
 }
