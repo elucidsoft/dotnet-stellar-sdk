@@ -5,8 +5,12 @@ using Newtonsoft.Json;
 namespace stellar_dotnet_sdk.responses
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public abstract class Response
+        public abstract class Response
     {
+        private const string XRateLimitLimit = "X-Ratelimit-Limit";
+        private const string XRateLimitRemaining = "X-Ratelimit-Remaining";
+        private const string XRateLimitReset = "X-Ratelimit-Reset";
+
         protected int RateLimitLimit { get; private set; }
 
         protected int RateLimitRemaining { get; private set; }
@@ -15,9 +19,14 @@ namespace stellar_dotnet_sdk.responses
 
         public void SetHeaders(HttpResponseHeaders headers)
         {
-            RateLimitLimit = int.Parse(headers.GetValues("X-Ratelimit-Limit").First());
-            RateLimitRemaining = int.Parse(headers.GetValues("X-Ratelimit-Remaining").First());
-            RateLimitReset = int.Parse(headers.GetValues("X-Ratelimit-Reset").First());
+            if(headers.Contains(XRateLimitLimit))
+                RateLimitLimit = int.Parse(headers.GetValues(XRateLimitLimit).First());
+
+            if (headers.Contains(XRateLimitRemaining))
+                RateLimitRemaining = int.Parse(headers.GetValues(XRateLimitRemaining).First());
+
+            if (headers.Contains(XRateLimitReset))
+                RateLimitReset = int.Parse(headers.GetValues(XRateLimitReset).First());
         }
     }
 }
