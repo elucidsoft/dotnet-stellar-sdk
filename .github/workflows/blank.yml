@@ -8,7 +8,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: codecov/codecov-action@v1.0.2
-      with: ${{secrets.CODECOV_TOKEN}}
+      with: 
+        token: ${{secrets.CODECOV_TOKEN}}
         file: ./stellar-dotnet-sdk-test/coverage.opencover.xml
     - name: Build Solution
       run: dotnet build ./stellar-dotnet-sdk.sln
