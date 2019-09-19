@@ -6,4 +6,4 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Nuget Push
-      run: dotnet nuget push **/*.nupkg -k ${{secrets.NUGET_TOKEN}}
+      run: dotnet nuget push **/*.nupkg -k ${{ secrets.NUGET_TOKEN }}
