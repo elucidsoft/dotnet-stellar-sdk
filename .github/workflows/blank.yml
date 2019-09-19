@@ -10,4 +10,4 @@ jobs:
     - name: Build Solution
       run: dotnet build ./stellar-dotnet-sdk.sln
     - name: Run Unit Tests
-      run: dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:ExcludeByFile=\"../stellar-dotnet-sdk/chaos.nacl/**/*.cs\" -p:ExcludeByFile=\"../stellar-dotnet-sdk-xdr/generated/*.cs\" ./stellar-dotnet-sdk-test --test-adapter-path:. --logger:Appveyor
+      run: dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:ExcludeByFile=\"../stellar-dotnet-sdk/chaos.nacl/**/*.cs\" -p:ExcludeByFile=\"../stellar-dotnet-sdk-xdr/generated/*.cs\" ./stellar-dotnet-sdk-test --test-adapter-path:. 
