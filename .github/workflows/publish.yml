@@ -1,0 +1,9 @@
+name: Publish Nuget
+on: [release]
+jobs:
+  build:
+    runs-on: ubuntu-latest  
+    steps:
+    - uses: actions/checkout@master
+    - name: Nuget Push
+      run: dotnet nuget push **/*.nupkg -k ${{NUGET_TOKEN}}
