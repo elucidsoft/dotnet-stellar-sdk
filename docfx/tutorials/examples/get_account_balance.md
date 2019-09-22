@@ -11,6 +11,7 @@ In this example you will learn how to get the balance of an account.
 
 ```csharp
 using System;
+using System.Threading.Tasks;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.responses;
 

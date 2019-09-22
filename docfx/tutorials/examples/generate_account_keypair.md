@@ -9,12 +9,20 @@ In this example you will learn how to generate an account keypair.
 ## Code Example
 
 ```csharp
-//Generate a random KeyPair
-KeyPair keypair = KeyPair.Random();
+using System;
+using System.Threading.Tasks;
+using stellar_dotnet_sdk;
 
-//Show the KeyPair public and secret
-Console.WriteLine("Account ID: " + keypair.AccountId);
-Console.WriteLine("Secret: " + keypair.SecretSeed);
+//Set network and server
+private static async Task GenerateAccountKeypair()
+{
+    //Generate a random KeyPair
+    KeyPair keypair = KeyPair.Random();
+
+    //Show the KeyPair public address and secret seed
+    Console.WriteLine("Account ID: " + keypair.AccountId);
+    Console.WriteLine("Secret: " + keypair.SecretSeed);
+}
 ```
 
 ## Documentation References
