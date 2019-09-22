@@ -22,7 +22,7 @@ public async Task GetAccountBalance()
    Server server = new Server("https://horizon-testnet.stellar.org");
 
    //Generate a keypair from the account id.
-   KeyPair keypair = KeyPair.FromAccountId("GCNGBERZIYCB46MGO5YQW7P54QZTIVZEBBNTVY3PNQVHOJPL4B432NMI");
+   KeyPair keypair = KeyPair.FromAccountId("ACCOUNT_ID");
 
    //Load the account
    AccountResponse accountResponse = await server.Accounts.Account(keypair.AccountId);
