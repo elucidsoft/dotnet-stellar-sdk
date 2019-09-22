@@ -1,4 +1,4 @@
-# Send Native Assets
+# Send Native Assets (XLM)
 
 ## Description
 
@@ -9,47 +9,55 @@ In this example you will learn how to send **native assets** from one account to
 
 ## Code Example
 ```csharp
-//Set network and server
-Network network = new Network("Test SDF Network ; September 2015");
-Server server = new Server("https://horizon-testnet.stellar.org");
+using System;
+using System.Threading.Tasks;
+using stellar_dotnet_sdk;
+using stellar_dotnet_sdk.responses;
 
-//Source keypair from the secret seed
-KeyPair sourceKeypair = KeyPair.FromSecretSeed("SOURCE_SECRET_SEED");
-
-//Destination keypair from the account id
-destinationKeyPair = KeyPair.FromAccountId("DESTINATION_ACCOUNT_ID");
-
-//Load source account data
-AccountResponse sourceAccountResponse = await server.Accounts.Account(sourceKeyPair);
-
-//Create source account object
-Account sourceAccount = new Account(sourceAccountResponse.KeyPair, sourceAccountResponse.SequenceNumber);
-
-//Create asset object with specific amount
-//You can use native or non native ones.
-Asset asset = new AssetTypeNative();
-string amount = "1";
-
-//Create payment operation
-PaymentOperation operation = new PaymentOperation.Builder(destinationKeyPair, asset, amount).SetSourceAccount(sourceAccount.KeyPair).Build();
-
-//Create transaction and add the payment operation we created
-Transaction transaction = new Transaction.Builder(sourceAccount).AddOperation(operation).Build();
-
-//Sign Transaction
-transaction.Sign(sourceKeyPair);
-
-//Try to send the transaction
-try
+public async Task SendNativeAssets()
 {
-	Console.WriteLine("Sending Transaction");
-	await server.SubmitTransaction(transaction);
-	Console.WriteLine("Success!");
-}
-catch (Exception exception)
-{
-	Console.WriteLine("Send Transaction Failed");
-	Console.WriteLine("Exception: " + exception.Message);
+    //Set network and server
+    Network network = new Network("Test SDF Network ; September 2015");
+    Server server = new Server("https://horizon-testnet.stellar.org");
+
+    //Source keypair from the secret seed
+    KeyPair sourceKeypair = KeyPair.FromSecretSeed("SOURCE_SECRET_SEED");
+
+    //Destination keypair from the account id
+    KeyPair destinationKeyPair = KeyPair.FromAccountId("DESTINATION_ACCOUNT_ID");
+
+    //Load source account data
+    AccountResponse sourceAccountResponse = await server.Accounts.Account(sourceKeypair.AccountId);
+
+    //Create source account object
+    Account sourceAccount = new Account(sourceKeypair.AccountId, sourceAccountResponse.SequenceNumber);
+
+    //Create asset object with specific amount
+    //You can use native or non native ones.
+    Asset asset = new AssetTypeNative();
+    string amount = "1";
+
+    //Create payment operation
+    PaymentOperation operation = new PaymentOperation.Builder(destinationKeyPair, asset, amount).SetSourceAccount(sourceAccount.KeyPair).Build();
+
+    //Create transaction and add the payment operation we created
+    Transaction transaction = new Transaction.Builder(sourceAccount).AddOperation(operation).Build();
+
+    //Sign Transaction
+    transaction.Sign(sourceKeypair);
+
+    //Try to send the transaction
+    try
+    {
+        Console.WriteLine("Sending Transaction");
+        await server.SubmitTransaction(transaction);
+        Console.WriteLine("Success!");
+    }
+    catch (Exception exception)
+    {
+        Console.WriteLine("Send Transaction Failed");
+        Console.WriteLine("Exception: " + exception.Message);
+    }
 }
 ```
 

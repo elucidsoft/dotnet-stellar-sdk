@@ -7,22 +7,26 @@ In this example you will learn how to import a XDR Base64 to a Transaction.
 ## Code Example
 
 ```csharp
-//Create Transaction from the XDR
-Transaction transaction = Transaction.FromEnvelopeXdr("AAAAAKc+U3o1WjRxpnB6oOH2Og/zKt1Lc30vUzmujsNNCBr0AAAAZACZoa8AAAABAAAAAAAAAAAAAAABAAAAAQAAAACnPlN6NVo0caZweqDh9joP8yrdS3N9L1M5ro7DTQga9AAAAAEAAAAAF+GO8KrTBkIS3/UKI9eWmcC0Ohywzz4DhJjazdgP8TQAAAACU0tJTjAxAAAAAAAAAAAAAKc+U3o1WjRxpnB6oOH2Og/zKt1Lc30vUzmujsNNCBr0AAAA6NSlEAAAAAAAAAAAAU0IGvQAAABAm9m56U4mizdoj4iE1lOi05hu72yrZpFHhJHvCHX2YFlJPhmldjUwB4M2V7pgyQpqrqYKbZ7sHjMYHwj+7KbLCg==");
+using System;
+using stellar_dotnet_sdk;
 
-//Get Source Account
-Console.WriteLine(transaction.SourceAccount.AccountId);
+public void ImportXDRBase64ToTransaction()
+{
+    //Create Transaction from the XDR
+    Transaction transaction = Transaction.FromEnvelopeXdr("AAAAAKc+U3o1WjRxpnB6oOH2Og/zKt1Lc30vUzmujsNNCBr0AAAAZACZoa8AAAABAAAAAAAAAAAAAAABAAAAAQAAAACnPlN6NVo0caZweqDh9joP8yrdS3N9L1M5ro7DTQga9AAAAAEAAAAAF+GO8KrTBkIS3/UKI9eWmcC0Ohywzz4DhJjazdgP8TQAAAACU0tJTjAxAAAAAAAAAAAAAKc+U3o1WjRxpnB6oOH2Og/zKt1Lc30vUzmujsNNCBr0AAAA6NSlEAAAAAAAAAAAAU0IGvQAAABAm9m56U4mizdoj4iE1lOi05hu72yrZpFHhJHvCHX2YFlJPhmldjUwB4M2V7pgyQpqrqYKbZ7sHjMYHwj+7KbLCg==");
 
-//Get Memo
-Console.WriteLine(transaction.Memo.ToString());
+    //Get Source Account
+    Console.WriteLine(transaction.SourceAccount.AccountId);
 
-//Get Sequence Number
-Console.WriteLine(transaction.SequenceNumber);
+    //Get Memo
+    Console.WriteLine(transaction.Memo.ToString());
 
-//Get Operation
-Console.WriteLine(Encoding.UTF8.GetString(transaction.Operations[0].ToOperationBody().PaymentOp.Asset.AlphaNum12.AssetCode));
+    //Get Sequence Number
+    Console.WriteLine(transaction.SequenceNumber);
 
-Console.ReadLine();
+    //Get first Operation AssetCode
+    Console.WriteLine(transaction.Operations[0].ToOperationBody().PaymentOp.Asset.AlphaNum12.AssetCode);
+}
 ```
 
 
