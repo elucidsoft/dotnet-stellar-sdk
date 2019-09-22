@@ -10,26 +10,34 @@ In this example you will learn how to get the balance of an account.
 ## Code Example
 
 ```csharp
+using System;
+using stellar_dotnet_sdk;
+using stellar_dotnet_sdk.responses;
+
 //Set network and server
-Network network = new Network("Test SDF Network ; September 2015");
-Server server = new Server("https://horizon-testnet.stellar.org");
-
-//Generate a keypair from the account id.
-KeyPair keypair = KeyPair.FromAccountId("ACCOUNT_ID");
-
-//Load the account
-AccountResponse accountResponse = await server.Accounts.Account(keypair);
-
-//Get the balance
-Balance[] balances = accountResponse.Balances;
-
-//Show the balance
-for (int i = 0; i < balances.Length; i++)
+public async Task GetAccountBalance()
 {
-   Balance asset = balances[i];
-   Console.WriteLine("Asset Code: " + asset.AssetCode);
-   Console.WriteLine("Asset Amount: " + asset.Amount);
-}  
+   //Set network and server
+   Network network = new Network("Test SDF Network ; September 2015");
+   Server server = new Server("https://horizon-testnet.stellar.org");
+
+   //Generate a keypair from the account id.
+   KeyPair keypair = KeyPair.FromAccountId("GCNGBERZIYCB46MGO5YQW7P54QZTIVZEBBNTVY3PNQVHOJPL4B432NMI");
+
+   //Load the account
+   AccountResponse accountResponse = await server.Accounts.Account(keypair.AccountId);
+
+   //Get the balance
+   Balance[] balances = accountResponse.Balances;
+
+   //Show the balance
+   for (int i = 0; i < balances.Length; i++)
+   {
+       Balance asset = balances[i];
+       Console.WriteLine("Asset Code: " + asset.AssetCode);
+       Console.WriteLine("Asset Amount: " + asset.BalanceString);
+   }
+}
 ```
 
 ## Documentation References
