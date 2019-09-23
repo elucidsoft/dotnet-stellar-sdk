@@ -1,8 +1,5 @@
 {{^_disableContribution}}
 <div class="contribution-panel mobile-hide">
-    {{#docurl}}
-    <a href="{{docurl}}" title="{{__global.improveThisDoc}}" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-    {{/docurl}}
     {{#sourceurl}}
     <a href="{{sourceurl}}" title="{{__global.viewSource}}" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
     {{/sourceurl}}

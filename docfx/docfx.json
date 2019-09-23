@@ -6,7 +6,7 @@
 		}],
 		"dest": "api",
 		"filter": "filterConfig.yml",
-		"disableGitFeatures": false
+		"disableGitFeatures": true
 	}],
 	"build": {
 		"content": [{
@@ -47,7 +47,7 @@
 			"_gitContribute": {
 				"repo": "https://github.com/elucidsoft/dotnet-stellar-sdk",
 				"branch": "master",
-				"apiSpecFolder": "docfx"
+				"apiSpecFolder": "docfx/api"
 			}
 		},
 		"template": [
@@ -59,6 +59,6 @@
 		"noLangKeyword": false,
 		"keepFileLink": false,
 		"cleanupCacheHistory": false,
-		"disableGitFeatures": false
+		"disableGitFeatures": true
 	}
 }
