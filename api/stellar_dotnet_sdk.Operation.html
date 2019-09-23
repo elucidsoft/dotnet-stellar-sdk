@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Operation
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -86,9 +86,12 @@
       <div class="level2"><a class="xref" href="stellar_dotnet_sdk.ChangeTrustOperation.html">ChangeTrustOperation</a></div>
       <div class="level2"><a class="xref" href="stellar_dotnet_sdk.CreateAccountOperation.html">CreateAccountOperation</a></div>
       <div class="level2"><a class="xref" href="stellar_dotnet_sdk.CreatePassiveOfferOperation.html">CreatePassiveOfferOperation</a></div>
+      <div class="level2"><a class="xref" href="stellar_dotnet_sdk.CreatePassiveSellOfferOperation.html">CreatePassiveSellOfferOperation</a></div>
       <div class="level2"><a class="xref" href="stellar_dotnet_sdk.InflationOperation.html">InflationOperation</a></div>
+      <div class="level2"><a class="xref" href="stellar_dotnet_sdk.ManageBuyOfferOperation.html">ManageBuyOfferOperation</a></div>
       <div class="level2"><a class="xref" href="stellar_dotnet_sdk.ManageDataOperation.html">ManageDataOperation</a></div>
       <div class="level2"><a class="xref" href="stellar_dotnet_sdk.ManageOfferOperation.html">ManageOfferOperation</a></div>
+      <div class="level2"><a class="xref" href="stellar_dotnet_sdk.ManageSellOfferOperation.html">ManageSellOfferOperation</a></div>
       <div class="level2"><a class="xref" href="stellar_dotnet_sdk.PathPaymentOperation.html">PathPaymentOperation</a></div>
       <div class="level2"><a class="xref" href="stellar_dotnet_sdk.PaymentOperation.html">PaymentOperation</a></div>
       <div class="level2"><a class="xref" href="stellar_dotnet_sdk.SetOptionsOperation.html">SetOptionsOperation</a></div>
@@ -99,7 +102,7 @@
   
   <h5 id="stellar_dotnet_sdk_Operation_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Operation : object</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Operation</code></pre>
   </div>
   
   
@@ -114,7 +117,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Operation_SourceAccount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Operation.SourceAccount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L12" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L10" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Operation_SourceAccount_" data-uid="stellar_dotnet_sdk.Operation.SourceAccount*"></a>
@@ -157,7 +160,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Operation_Threshold.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Operation.Threshold%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L21" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L19" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Operation_Threshold_" data-uid="stellar_dotnet_sdk.Operation.Threshold*"></a>
@@ -203,7 +206,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Operation_FromXdr_stellar_dotnet_sdk_xdr_Operation_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Operation.FromXdr(stellar_dotnet_sdk.xdr.Operation)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L80" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L66" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Operation_FromXdr_" data-uid="stellar_dotnet_sdk.Operation.FromXdr*"></a>
@@ -220,15 +223,20 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.xdr.Operation.html">Operation</a></span>
-        <span class="parametername">thisXdr</span>
-        <p><p>XDR object</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.Operation</span></td>
+        <td><span class="parametername">thisXdr</span></td>
+        <td><p>XDR object</p>
+</td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -258,7 +266,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Operation_FromXdrAmount_System_Int64_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Operation.FromXdrAmount(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L42" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L29" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Operation_FromXdrAmount_" data-uid="stellar_dotnet_sdk.Operation.FromXdrAmount*"></a>
@@ -275,14 +283,19 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int64</span></span>
-        <span class="parametername">value</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -311,7 +324,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Operation_ToOperationBody.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Operation.ToOperationBody%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L135" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L124" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Operation_ToOperationBody_" data-uid="stellar_dotnet_sdk.Operation.ToOperationBody*"></a>
@@ -333,7 +346,7 @@
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.xdr.Operation.OperationBody.html">Operation.OperationBody</a>
+        <span class="xref">stellar_dotnet_sdk.xdr.Operation.OperationBody</span>
         <p><p>OperationBody XDR object</p>
 </p>
       </td>
@@ -356,7 +369,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Operation_ToXdr.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Operation.ToXdr%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L51" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L37" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Operation_ToXdr_" data-uid="stellar_dotnet_sdk.Operation.ToXdr*"></a>
@@ -378,7 +391,7 @@
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.xdr.Operation.html">Operation</a>
+        <span class="xref">stellar_dotnet_sdk.xdr.Operation</span>
         <p>
       </td>
     </tr>
@@ -400,7 +413,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Operation_ToXdrAmount_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Operation.ToXdrAmount(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L26" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L24" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Operation_ToXdrAmount_" data-uid="stellar_dotnet_sdk.Operation.ToXdrAmount*"></a>
@@ -417,14 +430,19 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">value</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -453,7 +471,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Operation_ToXdrBase64.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Operation.ToXdrBase64%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L68" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Operation.cs/#L54" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Operation_ToXdrBase64_" data-uid="stellar_dotnet_sdk.Operation.ToXdrBase64*"></a>

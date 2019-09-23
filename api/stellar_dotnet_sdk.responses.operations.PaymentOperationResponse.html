@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class PaymentOperationResponse
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -108,6 +108,9 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
       <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionHash">OperationResponse.TransactionHash</a>
     </div>
     <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionSuccessful">OperationResponse.TransactionSuccessful</a>
+    </div>
+    <div>
       <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_Links">OperationResponse.Links</a>
     </div>
     <div>
@@ -120,7 +123,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -175,7 +178,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PaymentOperationResponse__ctor_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_KeyPair_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2Cstellar_dotnet_sdk.KeyPair%2Cstellar_dotnet_sdk.KeyPair)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PaymentOperationResponse__ctor_System_String_System_String_System_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PaymentOperationResponse.cs/#L28" title="View Source"><i class="fa fa-code"></i></a>
@@ -183,68 +186,63 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   
   <a id="stellar_dotnet_sdk_responses_operations_PaymentOperationResponse__ctor_" data-uid="stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_operations_PaymentOperationResponse__ctor_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_KeyPair_" data-uid="stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.#ctor(System.String,System.String,System.String,System.String,stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair)"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_PaymentOperationResponse__ctor_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_KeyPair_" class="expander" data-toggle="collapse">PaymentOperationResponse(String, String, String, String, KeyPair, KeyPair)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_operations_PaymentOperationResponse__ctor_System_String_System_String_System_String_System_String_System_String_System_String_" data-uid="stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_PaymentOperationResponse__ctor_System_String_System_String_System_String_System_String_System_String_System_String_" class="expander" data-toggle="collapse">PaymentOperationResponse(String, String, String, String, String, String)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_operations_PaymentOperationResponse__ctor_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_KeyPair_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_operations_PaymentOperationResponse__ctor_System_String_System_String_System_String_System_String_System_String_System_String_" class="collapse in">
   <div class="markdown level1 summary"><p>Sends an amount in a specific asset to a destination account.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PaymentOperationResponse(string amount, string assetType, string assetCode, string assetIssuer, KeyPair from, KeyPair to)</code></pre>
+    <pre><code class="lang-csharp hljs">public PaymentOperationResponse(string amount, string assetType, string assetCode, string assetIssuer, string from, string to)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">amount</span>
-        <p><p>Amount of the aforementioned asset to send.</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">assetType</span>
-        <p><p>The asset type (USD, BTC, etc.)</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">assetCode</span>
-        <p><p>The asset code (Alpha4, Alpha12, etc.)</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">assetIssuer</span>
-        <p><p>The account that created the asset</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">from</span>
-        <p><p>Account address that is sending the payment.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">to</span>
-        <p><p>Account address that receives the payment.</p>
-</p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>Amount of the aforementioned asset to send.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">assetType</span></td>
+        <td><p>The asset type (USD, BTC, etc.)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">assetCode</span></td>
+        <td><p>The asset code (Alpha4, Alpha12, etc.)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">assetIssuer</span></td>
+        <td><p>The account that created the asset</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">from</span></td>
+        <td><p>Account address that is sending the payment.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">to</span></td>
+        <td><p>Account address that receives the payment.</p>
+</td>
+      </tr>
   </table>
   
   
@@ -280,7 +278,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Amount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;amount&quot;)]
+public string Amount { get; }</code></pre>
   </div>
   
   
@@ -310,7 +309,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_Asset.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.Asset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PaymentOperationResponse.cs/#L81" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PaymentOperationResponse.cs/#L79" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_Asset_" data-uid="stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.Asset*"></a>
@@ -368,7 +367,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_code&quot;)]
+public string AssetCode { get; }</code></pre>
   </div>
   
   
@@ -411,7 +411,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_issuer&quot;)]
+public string AssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -455,7 +456,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_type&quot;)]
+public string AssetType { get; }</code></pre>
   </div>
   
   
@@ -499,7 +501,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair From { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;from&quot;)]
+public string From { get; }</code></pre>
   </div>
   
   
@@ -510,7 +513,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -529,7 +532,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_To.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.To%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PaymentOperationResponse.cs/#L74" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PaymentOperationResponse.cs/#L73" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_To_" data-uid="stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.To*"></a>
@@ -542,7 +545,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair To { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;to&quot;)]
+public string To { get; }</code></pre>
   </div>
   
   
@@ -553,7 +557,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>

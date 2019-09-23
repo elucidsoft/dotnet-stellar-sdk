@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class PathPaymentOperation.Builder
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -88,7 +88,7 @@
   
   <h5 id="stellar_dotnet_sdk_PathPaymentOperation_Builder_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Builder : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Builder</code></pre>
   </div>
   
   
@@ -121,47 +121,44 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></span>
-        <span class="parametername">sendAsset</span>
-        <p><p>The asset deducted from the sender's account.</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">sendMax</span>
-        <p><p>The asset deducted from the sender's account.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">destination</span>
-        <p><p>Payment destination.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></span>
-        <span class="parametername">destAsset</span>
-        <p><p>The asset the destination account receives.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">destAmount</span>
-        <p><p>The amount of destination asset the destination account receives.</p>
-</p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></td>
+        <td><span class="parametername">sendAsset</span></td>
+        <td><p>The asset deducted from the sender's account.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sendMax</span></td>
+        <td><p>The asset deducted from the sender's account.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
+        <td><span class="parametername">destination</span></td>
+        <td><p>Payment destination.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></td>
+        <td><span class="parametername">destAsset</span></td>
+        <td><p>The asset the destination account receives.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">destAmount</span></td>
+        <td><p>The amount of destination asset the destination account receives.</p>
+</td>
+      </tr>
   </table>
   
   
@@ -173,6 +170,16 @@
   
   
   
+  <h5 class="exceptions">Exceptions</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.ArithmeticException</span>
+        <p><p>When sendMax or destAmount has more than 7 decimal places.</p>
+</p>
+      </td>
+    </tr>
+  </table>
   
   </div>
   
@@ -198,14 +205,19 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.xdr.PathPaymentOp.html">PathPaymentOp</a></span>
-        <span class="parametername">op</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.PathPaymentOp</span></td>
+        <td><span class="parametername">op</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -288,14 +300,19 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a>[]</span>
-        <span class="parametername">path</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td></td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -342,15 +359,20 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">sourceAccount</span>
-        <p><p>The operation's source account.</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
+        <td><span class="parametername">sourceAccount</span></td>
+        <td><p>The operation's source account.</p>
+</td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>

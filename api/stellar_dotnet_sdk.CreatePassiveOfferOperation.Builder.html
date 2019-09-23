@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class CreatePassiveOfferOperation.Builder
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -88,7 +88,7 @@
   
   <h5 id="stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Builder : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Builder</code></pre>
   </div>
   
   
@@ -121,39 +121,38 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></span>
-        <span class="parametername">selling</span>
-        <p><p>The asset being sold in this operation</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></span>
-        <span class="parametername">buying</span>
-        <p><p>The asset being bought in this operation</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">amount</span>
-        <p><p>Amount of selling being sold.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">price</span>
-        <p><p>Price of 1 unit of selling in terms of buying.</p>
-</p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></td>
+        <td><span class="parametername">selling</span></td>
+        <td><p>The asset being sold in this operation</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></td>
+        <td><span class="parametername">buying</span></td>
+        <td><p>The asset being bought in this operation</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>Amount of selling being sold.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">price</span></td>
+        <td><p>Price of 1 unit of selling in terms of buying.</p>
+</td>
+      </tr>
   </table>
   
   
@@ -165,12 +164,22 @@
   
   
   
+  <h5 class="exceptions">Exceptions</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.ArithmeticException</span>
+        <p><p>when amount has more than 7 decimal places.</p>
+</p>
+      </td>
+    </tr>
+  </table>
   
   </div>
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder__ctor_stellar_dotnet_sdk_xdr_CreatePassiveOfferOp_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.%23ctor(stellar_dotnet_sdk.xdr.CreatePassiveOfferOp)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder__ctor_stellar_dotnet_sdk_xdr_CreatePassiveSellOfferOp_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.%23ctor(stellar_dotnet_sdk.xdr.CreatePassiveSellOfferOp)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/CreatePassiveOfferOperation.cs/#L67" title="View Source"><i class="fa fa-code"></i></a>
@@ -178,27 +187,32 @@
   
   <a id="stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder__ctor_" data-uid="stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder__ctor_stellar_dotnet_sdk_xdr_CreatePassiveOfferOp_" data-uid="stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.CreatePassiveOfferOp)"><a href="#collapsible-stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder__ctor_stellar_dotnet_sdk_xdr_CreatePassiveOfferOp_" class="expander" data-toggle="collapse">Builder(CreatePassiveOfferOp)</a></h4>
+  <h4 id="stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder__ctor_stellar_dotnet_sdk_xdr_CreatePassiveSellOfferOp_" data-uid="stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.CreatePassiveSellOfferOp)"><a href="#collapsible-stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder__ctor_stellar_dotnet_sdk_xdr_CreatePassiveSellOfferOp_" class="expander" data-toggle="collapse">Builder(CreatePassiveSellOfferOp)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder__ctor_stellar_dotnet_sdk_xdr_CreatePassiveOfferOp_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder__ctor_stellar_dotnet_sdk_xdr_CreatePassiveSellOfferOp_" class="collapse in">
   <div class="markdown level1 summary"><p>Construct a new CreatePassiveOffer builder from a CreatePassiveOfferOp XDR.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Builder(CreatePassiveOfferOp op)</code></pre>
+    <pre><code class="lang-csharp hljs">public Builder(CreatePassiveSellOfferOp op)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.xdr.CreatePassiveOfferOp.html">CreatePassiveOfferOp</a></span>
-        <span class="parametername">op</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.CreatePassiveSellOfferOp</span></td>
+        <td><span class="parametername">op</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -282,15 +296,20 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">sourceAccount</span>
-        <p><p>The operation's source account.</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
+        <td><span class="parametername">sourceAccount</span></td>
+        <td><p>The operation's source account.</p>
+</td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>

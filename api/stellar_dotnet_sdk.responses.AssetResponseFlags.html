@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class AssetResponseFlags
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_AssetResponseFlags_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AssetResponseFlags : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class AssetResponseFlags</code></pre>
   </div>
   
   
@@ -102,7 +102,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AssetResponseFlags__ctor_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AssetResponseFlags.%23ctor(System.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AssetResponseFlags.cs/#L22" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AssetResponseFlags.cs/#L38" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_AssetResponseFlags__ctor_" data-uid="stellar_dotnet_sdk.responses.AssetResponseFlags.#ctor*"></a>
@@ -115,25 +115,89 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public AssetResponseFlags(bool authRequired, bool authRevocable)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This constructor has been deprecated. Use AssetResponseFlags(bool authRequired, bool authRevocable, bool authImmutable) instead.&quot;)]
+public AssetResponseFlags(bool authRequired, bool authRevocable)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">authRequired</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">authRequired</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">authRevocable</span></td>
+        <td></td>
+      </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AssetResponseFlags__ctor_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AssetResponseFlags.%23ctor(System.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AssetResponseFlags.cs/#L30" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_AssetResponseFlags__ctor_" data-uid="stellar_dotnet_sdk.responses.AssetResponseFlags.#ctor*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_AssetResponseFlags__ctor_System_Boolean_System_Boolean_System_Boolean_" data-uid="stellar_dotnet_sdk.responses.AssetResponseFlags.#ctor(System.Boolean,System.Boolean,System.Boolean)"><a href="#collapsible-stellar_dotnet_sdk_responses_AssetResponseFlags__ctor_System_Boolean_System_Boolean_System_Boolean_" class="expander" data-toggle="collapse">AssetResponseFlags(Boolean, Boolean, Boolean)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_AssetResponseFlags__ctor_System_Boolean_System_Boolean_System_Boolean_" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConstructor]
+public AssetResponseFlags(bool authRequired, bool authRevocable, bool authImmutable)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">authRevocable</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">authRequired</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">authRevocable</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">authImmutable</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -152,10 +216,55 @@
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AssetResponseFlags_AuthImmutable.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AssetResponseFlags.AuthImmutable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AssetResponseFlags.cs/#L26" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_AssetResponseFlags_AuthImmutable_" data-uid="stellar_dotnet_sdk.responses.AssetResponseFlags.AuthImmutable*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_AssetResponseFlags_AuthImmutable" data-uid="stellar_dotnet_sdk.responses.AssetResponseFlags.AuthImmutable"><a href="#collapsible-stellar_dotnet_sdk_responses_AssetResponseFlags_AuthImmutable" class="expander" data-toggle="collapse">AuthImmutable</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_AssetResponseFlags_AuthImmutable" class="collapse in">
+  <div class="markdown level1 summary"><p>None of the authorization flags can be set and the issuing account can never be deleted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;auth_immutable&quot;)]
+public bool AuthImmutable { get; set; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AssetResponseFlags_AuthRequired.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AssetResponseFlags.AuthRequired%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AssetResponseFlags.cs/#L13" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AssetResponseFlags.cs/#L14" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_AssetResponseFlags_AuthRequired_" data-uid="stellar_dotnet_sdk.responses.AssetResponseFlags.AuthRequired*"></a>
@@ -163,12 +272,14 @@
   <h4 id="stellar_dotnet_sdk_responses_AssetResponseFlags_AuthRequired" data-uid="stellar_dotnet_sdk.responses.AssetResponseFlags.AuthRequired"><a href="#collapsible-stellar_dotnet_sdk_responses_AssetResponseFlags_AuthRequired" class="expander" data-toggle="collapse">AuthRequired</a></h4>
   
   <div id="collapsible-stellar_dotnet_sdk_responses_AssetResponseFlags_AuthRequired" class="collapse in">
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The anchor must approve anyone who wants to hold this asset.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool AuthRequired { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;auth_required&quot;)]
+public bool AuthRequired { get; set; }</code></pre>
   </div>
   
   
@@ -198,7 +309,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AssetResponseFlags_AuthRevocable.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AssetResponseFlags.AuthRevocable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AssetResponseFlags.cs/#L19" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AssetResponseFlags.cs/#L20" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_AssetResponseFlags_AuthRevocable_" data-uid="stellar_dotnet_sdk.responses.AssetResponseFlags.AuthRevocable*"></a>
@@ -206,12 +317,14 @@
   <h4 id="stellar_dotnet_sdk_responses_AssetResponseFlags_AuthRevocable" data-uid="stellar_dotnet_sdk.responses.AssetResponseFlags.AuthRevocable"><a href="#collapsible-stellar_dotnet_sdk_responses_AssetResponseFlags_AuthRevocable" class="expander" data-toggle="collapse">AuthRevocable</a></h4>
   
   <div id="collapsible-stellar_dotnet_sdk_responses_AssetResponseFlags_AuthRevocable" class="collapse in">
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The anchor can freeze the asset.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool AuthRevocable { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;auth_revocable&quot;)]
+public bool AuthRevocable { get; set; }</code></pre>
   </div>
   
   
@@ -241,7 +354,7 @@
           </div>
           <div class="contribution-panel mobile-hide">
               <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AssetResponseFlags.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AssetResponseFlags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AssetResponseFlags.cs/#L8" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AssetResponseFlags.cs/#L9" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

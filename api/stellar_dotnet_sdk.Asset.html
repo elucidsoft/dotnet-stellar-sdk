@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Asset
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -91,7 +91,7 @@ An asset code describes an asset code and issuer pair. In the case of the native
   
   <h5 id="stellar_dotnet_sdk_Asset_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Asset : object</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Asset</code></pre>
   </div>
   
   
@@ -103,7 +103,7 @@ An asset code describes an asset code and issuer pair. In the case of the native
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Asset_Create_String_String_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Asset.Create(String%2CString%2CString)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Asset_Create_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Asset.Create(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Asset.cs/#L19" title="View Source"><i class="fa fa-code"></i></a>
@@ -111,41 +111,42 @@ An asset code describes an asset code and issuer pair. In the case of the native
   
   <a id="stellar_dotnet_sdk_Asset_Create_" data-uid="stellar_dotnet_sdk.Asset.Create*"></a>
   
-  <h4 id="stellar_dotnet_sdk_Asset_Create_String_String_String_" data-uid="stellar_dotnet_sdk.Asset.Create(String,String,String)"><a href="#collapsible-stellar_dotnet_sdk_Asset_Create_String_String_String_" class="expander" data-toggle="collapse">Create(String, String, String)</a></h4>
+  <h4 id="stellar_dotnet_sdk_Asset_Create_System_String_System_String_System_String_" data-uid="stellar_dotnet_sdk.Asset.Create(System.String,System.String,System.String)"><a href="#collapsible-stellar_dotnet_sdk_Asset_Create_System_String_System_String_System_String_" class="expander" data-toggle="collapse">Create(String, String, String)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_Asset_Create_String_String_String_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_Asset_Create_System_String_System_String_System_String_" class="collapse in">
   <div class="markdown level1 summary"><p>Create an asset base on the parameters.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Asset Create(String type, String code, String issuer)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Asset Create(string type, string code, string issuer)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">String</span></span>
-        <span class="parametername">type</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">String</span></span>
-        <span class="parametername">code</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">String</span></span>
-        <span class="parametername">issuer</span>
-        <p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">code</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">issuer</span></td>
+        <td></td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -172,7 +173,7 @@ An asset code describes an asset code and issuer pair. In the case of the native
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_stellar_dotnet_sdk_KeyPair_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String%2Cstellar_dotnet_sdk.KeyPair)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Asset.cs/#L36" title="View Source"><i class="fa fa-code"></i></a>
@@ -180,36 +181,39 @@ An asset code describes an asset code and issuer pair. In the case of the native
   
   <a id="stellar_dotnet_sdk_Asset_CreateNonNativeAsset_" data-uid="stellar_dotnet_sdk.Asset.CreateNonNativeAsset*"></a>
   
-  <h4 id="stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_stellar_dotnet_sdk_KeyPair_" data-uid="stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,stellar_dotnet_sdk.KeyPair)"><a href="#collapsible-stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_stellar_dotnet_sdk_KeyPair_" class="expander" data-toggle="collapse">CreateNonNativeAsset(String, KeyPair)</a></h4>
+  <h4 id="stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_System_String_" data-uid="stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,System.String)"><a href="#collapsible-stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_System_String_" class="expander" data-toggle="collapse">CreateNonNativeAsset(String, String)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_stellar_dotnet_sdk_KeyPair_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_System_String_" class="collapse in">
   <div class="markdown level1 summary"><p>Creates one of <a class="xref" href="stellar_dotnet_sdk.AssetTypeCreditAlphaNum4.html">AssetTypeCreditAlphaNum4</a> or <a class="xref" href="stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.html">AssetTypeCreditAlphaNum12</a> object based on a code length</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Asset CreateNonNativeAsset(string code, KeyPair issuer)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Asset CreateNonNativeAsset(string code, string issuer)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">code</span>
-        <p><p>Asset code</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">issuer</span>
-        <p><p>Asset issuer</p>
-</p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">code</span></td>
+        <td><p>Asset code</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">issuer</span></td>
+        <td><p>Asset issuer</p>
+</td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -256,28 +260,29 @@ An asset code describes an asset code and issuer pair. In the case of the native
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">assetType</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">accountId</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">code</span>
-        <p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">assetType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">accountId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">code</span></td>
+        <td></td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -324,14 +329,19 @@ An asset code describes an asset code and issuer pair. In the case of the native
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.xdr.Asset.html">Asset</a></span>
-        <span class="parametername">thisXdr</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.Asset</span></td>
+        <td><span class="parametername">thisXdr</span></td>
+        <td></td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -431,7 +441,7 @@ An asset code describes an asset code and issuer pair. In the case of the native
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.xdr.Asset.html">Asset</a>
+        <span class="xref">stellar_dotnet_sdk.xdr.Asset</span>
         <p>
       </td>
     </tr>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class RootResponse
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -94,7 +94,7 @@
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -115,76 +115,74 @@
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_RootResponse__ctor_System_String_System_String_System_Int32_System_Int32_System_Int32_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.RootResponse.%23ctor(System.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_RootResponse__ctor_System_String_System_String_System_Int32_System_Int32_System_Int32_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.RootResponse.%23ctor(System.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/RootResponse.cs/#L31" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/RootResponse.cs/#L34" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_RootResponse__ctor_" data-uid="stellar_dotnet_sdk.responses.RootResponse.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_RootResponse__ctor_System_String_System_String_System_Int32_System_Int32_System_Int32_System_String_System_Int32_" data-uid="stellar_dotnet_sdk.responses.RootResponse.#ctor(System.String,System.String,System.Int32,System.Int32,System.Int32,System.String,System.Int32)"><a href="#collapsible-stellar_dotnet_sdk_responses_RootResponse__ctor_System_String_System_String_System_Int32_System_Int32_System_Int32_System_String_System_Int32_" class="expander" data-toggle="collapse">RootResponse(String, String, Int32, Int32, Int32, String, Int32)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_RootResponse__ctor_System_String_System_String_System_Int32_System_Int32_System_Int32_System_String_System_Int32_System_Int32_" data-uid="stellar_dotnet_sdk.responses.RootResponse.#ctor(System.String,System.String,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.Int32)"><a href="#collapsible-stellar_dotnet_sdk_responses_RootResponse__ctor_System_String_System_String_System_Int32_System_Int32_System_Int32_System_String_System_Int32_System_Int32_" class="expander" data-toggle="collapse">RootResponse(String, String, Int32, Int32, Int32, String, Int32, Int32)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_RootResponse__ctor_System_String_System_String_System_Int32_System_Int32_System_Int32_System_String_System_Int32_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_RootResponse__ctor_System_String_System_String_System_Int32_System_Int32_System_Int32_System_String_System_Int32_System_Int32_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public RootResponse(string horizonVersion, string stellarCoreVersion, int historyLatestLedger, int historyElderLedger, int coreLatestLedger, string networkPassphrase, int protocolVersion)</code></pre>
+    <pre><code class="lang-csharp hljs">public RootResponse(string horizonVersion, string stellarCoreVersion, int historyLatestLedger, int historyElderLedger, int coreLatestLedger, string networkPassphrase, int currentProtocolVersion, int coreSupportedProtocolVersion)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">horizonVersion</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">stellarCoreVersion</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">historyLatestLedger</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">historyElderLedger</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">coreLatestLedger</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">networkPassphrase</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">protocolVersion</span>
-        <p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">horizonVersion</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">stellarCoreVersion</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">historyLatestLedger</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">historyElderLedger</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">coreLatestLedger</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">networkPassphrase</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">currentProtocolVersion</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">coreSupportedProtocolVersion</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -219,7 +217,96 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int CoreLatestLedger { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;core_latest_ledger&quot;)]
+public int CoreLatestLedger { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Int32</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_RootResponse_CoreSupportedProtocolVersion.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.RootResponse.CoreSupportedProtocolVersion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/RootResponse.cs/#L31" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_RootResponse_CoreSupportedProtocolVersion_" data-uid="stellar_dotnet_sdk.responses.RootResponse.CoreSupportedProtocolVersion*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_RootResponse_CoreSupportedProtocolVersion" data-uid="stellar_dotnet_sdk.responses.RootResponse.CoreSupportedProtocolVersion"><a href="#collapsible-stellar_dotnet_sdk_responses_RootResponse_CoreSupportedProtocolVersion" class="expander" data-toggle="collapse">CoreSupportedProtocolVersion</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_RootResponse_CoreSupportedProtocolVersion" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;core_supported_protocol_version&quot;)]
+public int CoreSupportedProtocolVersion { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Int32</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_RootResponse_CurrentProtocolVersion.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.RootResponse.CurrentProtocolVersion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/RootResponse.cs/#L28" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_RootResponse_CurrentProtocolVersion_" data-uid="stellar_dotnet_sdk.responses.RootResponse.CurrentProtocolVersion*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_RootResponse_CurrentProtocolVersion" data-uid="stellar_dotnet_sdk.responses.RootResponse.CurrentProtocolVersion"><a href="#collapsible-stellar_dotnet_sdk_responses_RootResponse_CurrentProtocolVersion" class="expander" data-toggle="collapse">CurrentProtocolVersion</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_RootResponse_CurrentProtocolVersion" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;current_protocol_version&quot;)]
+public int CurrentProtocolVersion { get; }</code></pre>
   </div>
   
   
@@ -262,7 +349,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int HistoryElderLedger { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;history_elder_ledger&quot;)]
+public int HistoryElderLedger { get; }</code></pre>
   </div>
   
   
@@ -305,7 +393,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int HistoryLatestLedger { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;history_latest_ledger&quot;)]
+public int HistoryLatestLedger { get; }</code></pre>
   </div>
   
   
@@ -348,7 +437,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string HorizonVersion { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;horizon_version&quot;)]
+public string HorizonVersion { get; }</code></pre>
   </div>
   
   
@@ -391,7 +481,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string NetworkPassphrase { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;network_passphrase&quot;)]
+public string NetworkPassphrase { get; }</code></pre>
   </div>
   
   
@@ -403,49 +494,6 @@
     <tr>
       <td>
         <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_RootResponse_ProtocolVersion.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.RootResponse.ProtocolVersion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/RootResponse.cs/#L28" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="stellar_dotnet_sdk_responses_RootResponse_ProtocolVersion_" data-uid="stellar_dotnet_sdk.responses.RootResponse.ProtocolVersion*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_responses_RootResponse_ProtocolVersion" data-uid="stellar_dotnet_sdk.responses.RootResponse.ProtocolVersion"><a href="#collapsible-stellar_dotnet_sdk_responses_RootResponse_ProtocolVersion" class="expander" data-toggle="collapse">ProtocolVersion</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_responses_RootResponse_ProtocolVersion" class="collapse in">
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int ProtocolVersion { get; }</code></pre>
-  </div>
-  
-  
-  
-  
-  
-  <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Int32</span>
         <p>
       </td>
     </tr>
@@ -477,7 +525,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string StellarCoreVersion { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;core_version&quot;)]
+public string StellarCoreVersion { get; }</code></pre>
   </div>
   
   

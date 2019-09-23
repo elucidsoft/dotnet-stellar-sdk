@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class AccountResponseLinks
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_AccountResponseLinks_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AccountResponseLinks : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class AccountResponseLinks</code></pre>
   </div>
   
   
@@ -119,42 +119,39 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.effects.EffectResponse.html">EffectResponse</a>&gt;&gt;</span>
-        <span class="parametername">effects</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.OfferResponse.html">OfferResponse</a>&gt;&gt;</span>
-        <span class="parametername">offers</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>&gt;&gt;</span>
-        <span class="parametername">operations</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.AccountResponse.html">AccountResponse</a>&gt;</span>
-        <span class="parametername">self</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.TransactionResponse.html">TransactionResponse</a>&gt;&gt;</span>
-        <span class="parametername">transactions</span>
-        <p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.effects.EffectResponse.html">EffectResponse</a>&gt;&gt;</td>
+        <td><span class="parametername">effects</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.OfferResponse.html">OfferResponse</a>&gt;&gt;</td>
+        <td><span class="parametername">offers</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>&gt;&gt;</td>
+        <td><span class="parametername">operations</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.AccountResponse.html">AccountResponse</a>&gt;</td>
+        <td><span class="parametername">self</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.TransactionResponse.html">TransactionResponse</a>&gt;&gt;</td>
+        <td><span class="parametername">transactions</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -189,7 +186,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link&lt;Page&lt;EffectResponse&gt;&gt; Effects { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;effects&quot;)]
+public Link&lt;Page&lt;EffectResponse&gt;&gt; Effects { get; }</code></pre>
   </div>
   
   
@@ -232,7 +230,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link&lt;Page&lt;OfferResponse&gt;&gt; Offers { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;offers&quot;)]
+public Link&lt;Page&lt;OfferResponse&gt;&gt; Offers { get; }</code></pre>
   </div>
   
   
@@ -275,7 +274,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link&lt;Page&lt;OperationResponse&gt;&gt; Operations { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;operations&quot;)]
+public Link&lt;Page&lt;OperationResponse&gt;&gt; Operations { get; }</code></pre>
   </div>
   
   
@@ -318,7 +318,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link&lt;AccountResponse&gt; Self { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;self&quot;)]
+public Link&lt;AccountResponse&gt; Self { get; }</code></pre>
   </div>
   
   
@@ -361,7 +362,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link&lt;Page&lt;TransactionResponse&gt;&gt; Transactions { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;transactions&quot;)]
+public Link&lt;Page&lt;TransactionResponse&gt;&gt; Transactions { get; }</code></pre>
   </div>
   
   

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SetOptionsOperationResponse
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -108,6 +108,9 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
       <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionHash">OperationResponse.TransactionHash</a>
     </div>
     <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionSuccessful">OperationResponse.TransactionSuccessful</a>
+    </div>
+    <div>
       <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_Links">OperationResponse.Links</a>
     </div>
     <div>
@@ -120,7 +123,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -175,7 +178,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse__ctor_System_Int32_System_Int32_System_Int32_stellar_dotnet_sdk_KeyPair_System_String_System_String_System_Int32_System_Int32_System_String___System_String___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.%23ctor(System.Int32%2CSystem.Int32%2CSystem.Int32%2Cstellar_dotnet_sdk.KeyPair%2CSystem.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32%2CSystem.String%5B%5D%2CSystem.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse__ctor_System_Int32_System_Int32_System_Int32_System_String_System_String_System_String_System_Int32_System_Int32_System_String___System_String___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.%23ctor(System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32%2CSystem.String%5B%5D%2CSystem.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/SetOptionsOperationResponse.cs/#L34" title="View Source"><i class="fa fa-code"></i></a>
@@ -183,101 +186,88 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   
   <a id="stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse__ctor_" data-uid="stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse__ctor_System_Int32_System_Int32_System_Int32_stellar_dotnet_sdk_KeyPair_System_String_System_String_System_Int32_System_Int32_System_String___System_String___" data-uid="stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.#ctor(System.Int32,System.Int32,System.Int32,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.Int32,System.Int32,System.String[],System.String[])"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse__ctor_System_Int32_System_Int32_System_Int32_stellar_dotnet_sdk_KeyPair_System_String_System_String_System_Int32_System_Int32_System_String___System_String___" class="expander" data-toggle="collapse">SetOptionsOperationResponse(Int32, Int32, Int32, KeyPair, String, String, Int32, Int32, String[], String[])</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse__ctor_System_Int32_System_Int32_System_Int32_System_String_System_String_System_String_System_Int32_System_Int32_System_String___System_String___" data-uid="stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.#ctor(System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.Int32,System.Int32,System.String[],System.String[])"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse__ctor_System_Int32_System_Int32_System_Int32_System_String_System_String_System_String_System_Int32_System_Int32_System_String___System_String___" class="expander" data-toggle="collapse">SetOptionsOperationResponse(Int32, Int32, Int32, String, String, String, Int32, Int32, String[], String[])</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse__ctor_System_Int32_System_Int32_System_Int32_stellar_dotnet_sdk_KeyPair_System_String_System_String_System_Int32_System_Int32_System_String___System_String___" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse__ctor_System_Int32_System_Int32_System_Int32_System_String_System_String_System_String_System_Int32_System_Int32_System_String___System_String___" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SetOptionsOperationResponse(int lowThreshold, int medThreshold, int highThreshold, KeyPair inflationDestination, string homeDomain, string signerKey, int signerWeight, int masterKeyWeight, string[] clearFlags, string[] setFlags)</code></pre>
+    <pre><code class="lang-csharp hljs">public SetOptionsOperationResponse(int lowThreshold, int medThreshold, int highThreshold, string inflationDestination, string homeDomain, string signerKey, int signerWeight, int masterKeyWeight, string[] clearFlags, string[] setFlags)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">lowThreshold</span>
-        <p><p>A number from 0-255 representing the threshold this account sets on all operations it performs that have a low threshold.</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">medThreshold</span>
-        <p><p>A number from 0-255 representing the threshold this account sets on all operations it performs that have a medium threshold.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">highThreshold</span>
-        <p><p>A number from 0-255 representing the threshold this account sets on all operations it performs that have a high threshold.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">inflationDestination</span>
-        <p><p>Account of the inflation destination.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">homeDomain</span>
-        <p><p>Sets the home domain of an account.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">signerKey</span>
-        <p><p>Add, update, or remove a signer from an account.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">signerWeight</span>
-        <p><p>Weight of the signer.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">masterKeyWeight</span>
-        <p><p>Weight of the master key.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span>[]</span>
-        <span class="parametername">clearFlags</span>
-        <p><p>Indicates which flags to clear. For details about the flags, please refer to the accounts doc. The bit mask integer subtracts
+  </thead>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">lowThreshold</span></td>
+        <td><p>A number from 0-255 representing the threshold this account sets on all operations it performs that have a low threshold.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">medThreshold</span></td>
+        <td><p>A number from 0-255 representing the threshold this account sets on all operations it performs that have a medium threshold.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">highThreshold</span></td>
+        <td><p>A number from 0-255 representing the threshold this account sets on all operations it performs that have a high threshold.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">inflationDestination</span></td>
+        <td><p>Account of the inflation destination.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">homeDomain</span></td>
+        <td><p>Sets the home domain of an account.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">signerKey</span></td>
+        <td><p>Add, update, or remove a signer from an account.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">signerWeight</span></td>
+        <td><p>Weight of the signer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">masterKeyWeight</span></td>
+        <td><p>Weight of the master key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">clearFlags</span></td>
+        <td><p>Indicates which flags to clear. For details about the flags, please refer to the accounts doc. The bit mask integer subtracts
 from the existing flags of the account. This allows for setting specific bits without knowledge of existing flags.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span>[]</span>
-        <span class="parametername">setFlags</span>
-        <p><p>Indicates which flags to set. For details about the flags, please refer to the accounts doc. The bit mask integer adds onto the
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">setFlags</span></td>
+        <td><p>Indicates which flags to set. For details about the flags, please refer to the accounts doc. The bit mask integer adds onto the
 existing flags of the account. This allows for setting specific bits without knowledge of existing flags.</p>
-</p>
-      </td>
-    </tr>
+</td>
+      </tr>
   </table>
   
   
@@ -299,7 +289,7 @@ existing flags of the account. This allows for setting specific bits without kno
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse_ClearFlags.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.ClearFlags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/SetOptionsOperationResponse.cs/#L104" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/SetOptionsOperationResponse.cs/#L103" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse_ClearFlags_" data-uid="stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.ClearFlags*"></a>
@@ -314,7 +304,8 @@ from the existing flags of the account. This allows for setting specific bits wi
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string[] ClearFlags { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;clear_flags_s&quot;)]
+public string[] ClearFlags { get; }</code></pre>
   </div>
   
   
@@ -358,7 +349,8 @@ from the existing flags of the account. This allows for setting specific bits wi
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int HighThreshold { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;high_threshold&quot;)]
+public int HighThreshold { get; }</code></pre>
   </div>
   
   
@@ -388,7 +380,7 @@ from the existing flags of the account. This allows for setting specific bits wi
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse_HomeDomain.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.HomeDomain%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/SetOptionsOperationResponse.cs/#L79" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/SetOptionsOperationResponse.cs/#L78" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse_HomeDomain_" data-uid="stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.HomeDomain*"></a>
@@ -402,7 +394,8 @@ from the existing flags of the account. This allows for setting specific bits wi
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string HomeDomain { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;home_domain&quot;)]
+public string HomeDomain { get; }</code></pre>
   </div>
   
   
@@ -446,7 +439,8 @@ from the existing flags of the account. This allows for setting specific bits wi
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair InflationDestination { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;inflation_dest&quot;)]
+public string InflationDestination { get; }</code></pre>
   </div>
   
   
@@ -457,7 +451,7 @@ from the existing flags of the account. This allows for setting specific bits wi
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -490,7 +484,8 @@ from the existing flags of the account. This allows for setting specific bits wi
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int LowThreshold { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;low_threshold&quot;)]
+public int LowThreshold { get; }</code></pre>
   </div>
   
   
@@ -520,7 +515,7 @@ from the existing flags of the account. This allows for setting specific bits wi
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse_MasterKeyWeight.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.MasterKeyWeight%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/SetOptionsOperationResponse.cs/#L97" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/SetOptionsOperationResponse.cs/#L96" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse_MasterKeyWeight_" data-uid="stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.MasterKeyWeight*"></a>
@@ -534,7 +529,8 @@ from the existing flags of the account. This allows for setting specific bits wi
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int MasterKeyWeight { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;master_key_weight&quot;)]
+public int MasterKeyWeight { get; }</code></pre>
   </div>
   
   
@@ -578,7 +574,8 @@ from the existing flags of the account. This allows for setting specific bits wi
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int MedThreshold { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;med_threshold&quot;)]
+public int MedThreshold { get; }</code></pre>
   </div>
   
   
@@ -608,7 +605,7 @@ from the existing flags of the account. This allows for setting specific bits wi
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse_SetFlags.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.SetFlags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/SetOptionsOperationResponse.cs/#L111" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/SetOptionsOperationResponse.cs/#L110" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse_SetFlags_" data-uid="stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.SetFlags*"></a>
@@ -623,7 +620,8 @@ existing flags of the account. This allows for setting specific bits without kno
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string[] SetFlags { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;set_flags_s&quot;)]
+public string[] SetFlags { get; }</code></pre>
   </div>
   
   
@@ -653,7 +651,7 @@ existing flags of the account. This allows for setting specific bits without kno
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse_SignerKey.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.SignerKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/SetOptionsOperationResponse.cs/#L85" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/SetOptionsOperationResponse.cs/#L84" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse_SignerKey_" data-uid="stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.SignerKey*"></a>
@@ -667,7 +665,8 @@ existing flags of the account. This allows for setting specific bits without kno
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SignerKey { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;signer_key&quot;)]
+public string SignerKey { get; }</code></pre>
   </div>
   
   
@@ -697,7 +696,7 @@ existing flags of the account. This allows for setting specific bits without kno
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse_SignerWeight.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.SignerWeight%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/SetOptionsOperationResponse.cs/#L91" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/SetOptionsOperationResponse.cs/#L90" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_SetOptionsOperationResponse_SignerWeight_" data-uid="stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.SignerWeight*"></a>
@@ -711,7 +710,8 @@ existing flags of the account. This allows for setting specific bits without kno
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int SignerWeight { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;signer_weight&quot;)]
+public int SignerWeight { get; }</code></pre>
   </div>
   
   

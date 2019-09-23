@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Page&lt;T&gt;.EmbeddedRecords
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_page_Page_1_EmbeddedRecords_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EmbeddedRecords : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class EmbeddedRecords</code></pre>
   </div>
   
   
@@ -115,7 +115,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;T&gt; Records { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;records&quot;)]
+public List&lt;T&gt; Records { get; }</code></pre>
   </div>
   
   
@@ -126,7 +127,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">List</span>&lt;T&gt;
+        <span class="xref">System.Collections.Generic.List</span>&lt;T&gt;
         <p>
       </td>
     </tr>

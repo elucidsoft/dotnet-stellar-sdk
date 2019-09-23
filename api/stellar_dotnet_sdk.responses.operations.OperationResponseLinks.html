@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class OperationResponseLinks
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -91,7 +91,7 @@ to show you what parameters a give resource can take.</p>
   
   <h5 id="stellar_dotnet_sdk_responses_operations_OperationResponseLinks_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OperationResponseLinks : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class OperationResponseLinks</code></pre>
   </div>
   
   
@@ -158,47 +158,44 @@ to show you what parameters a give resource can take.</p>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.effects.EffectResponse.html">EffectResponse</a>&gt;&gt;</span>
-        <span class="parametername">effects</span>
-        <p><p>This endpoint represents effects that occurred as a result of a given operation.</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>&gt;</span>
-        <span class="parametername">precedes</span>
-        <p><p>This endpoint represents precedes that occurred as a result of a given operation.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>&gt;</span>
-        <span class="parametername">self</span>
-        <p><p>This endpoint represents self that occurred as a result of a given operation.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>&gt;</span>
-        <span class="parametername">succeeds</span>
-        <p><p>This endpoint represents succeeds that occurred as a result of a given operation.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.TransactionResponse.html">TransactionResponse</a>&gt;</span>
-        <span class="parametername">transaction</span>
-        <p><p>This endpoint represents transaction that occurred as a result of a given operation.</p>
-</p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.page.Page-1.html">Page</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.effects.EffectResponse.html">EffectResponse</a>&gt;&gt;</td>
+        <td><span class="parametername">effects</span></td>
+        <td><p>This endpoint represents effects that occurred as a result of a given operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>&gt;</td>
+        <td><span class="parametername">precedes</span></td>
+        <td><p>This endpoint represents precedes that occurred as a result of a given operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>&gt;</td>
+        <td><span class="parametername">self</span></td>
+        <td><p>This endpoint represents self that occurred as a result of a given operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html">OperationResponse</a>&gt;</td>
+        <td><span class="parametername">succeeds</span></td>
+        <td><p>This endpoint represents succeeds that occurred as a result of a given operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.Link-1.html">Link</a>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.TransactionResponse.html">TransactionResponse</a>&gt;</td>
+        <td><span class="parametername">transaction</span></td>
+        <td><p>This endpoint represents transaction that occurred as a result of a given operation.</p>
+</td>
+      </tr>
   </table>
   
   
@@ -234,7 +231,8 @@ to show you what parameters a give resource can take.</p>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link&lt;Page&lt;EffectResponse&gt;&gt; Effects { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;effects&quot;)]
+public Link&lt;Page&lt;EffectResponse&gt;&gt; Effects { get; }</code></pre>
   </div>
   
   
@@ -278,7 +276,8 @@ to show you what parameters a give resource can take.</p>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link&lt;OperationResponse&gt; Precedes { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;precedes&quot;)]
+public Link&lt;OperationResponse&gt; Precedes { get; }</code></pre>
   </div>
   
   
@@ -322,7 +321,8 @@ to show you what parameters a give resource can take.</p>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link&lt;OperationResponse&gt; Self { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;self&quot;)]
+public Link&lt;OperationResponse&gt; Self { get; }</code></pre>
   </div>
   
   
@@ -366,7 +366,8 @@ to show you what parameters a give resource can take.</p>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link&lt;OperationResponse&gt; Succeeds { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;succeeds&quot;)]
+public Link&lt;OperationResponse&gt; Succeeds { get; }</code></pre>
   </div>
   
   
@@ -410,7 +411,8 @@ to show you what parameters a give resource can take.</p>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Link&lt;TransactionResponse&gt; Transaction { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;transaction&quot;)]
+public Link&lt;TransactionResponse&gt; Transaction { get; }</code></pre>
   </div>
   
   

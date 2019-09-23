@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class PaymentOperation.Builder
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -88,7 +88,7 @@
   
   <h5 id="stellar_dotnet_sdk_PaymentOperation_Builder_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Builder : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Builder</code></pre>
   </div>
   
   
@@ -121,31 +121,32 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">destination</span>
-        <p><p>The destination keypair (uses only the public key).</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></span>
-        <span class="parametername">asset</span>
-        <p><p>The asset to send.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">amount</span>
-        <p><p>The amount to send in lumens.</p>
-</p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
+        <td><span class="parametername">destination</span></td>
+        <td><p>The destination keypair (uses only the public key).</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></td>
+        <td><span class="parametername">asset</span></td>
+        <td><p>The asset to send.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount to send in lumens.</p>
+</td>
+      </tr>
   </table>
   
   
@@ -183,15 +184,20 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.xdr.PaymentOp.html">PaymentOp</a></span>
-        <span class="parametername">op</span>
-        <p><p><a class="xref" href="stellar_dotnet_sdk.xdr.PaymentOp.html">PaymentOp</a></p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.PaymentOp</span></td>
+        <td><span class="parametername">op</span></td>
+        <td><p><span class="xref">stellar_dotnet_sdk.xdr.PaymentOp</span></p>
+</td>
+      </tr>
   </table>
   
   
@@ -275,15 +281,20 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">account</span>
-        <p><p>The operation's source account.</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
+        <td><span class="parametername">account</span></td>
+        <td><p>The operation's source account.</p>
+</td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>

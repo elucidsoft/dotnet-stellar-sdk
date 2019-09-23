@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Account
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -88,7 +88,7 @@
   
   <h5 id="stellar_dotnet_sdk_Account_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Account : object, ITransactionBuilderAccount</code></pre>
+    <pre><code class="lang-csharp hljs">public class Account : ITransactionBuilderAccount</code></pre>
   </div>
   
   
@@ -100,7 +100,7 @@
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Account__ctor_stellar_dotnet_sdk_KeyPair_System_Nullable_System_Int64__.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Account.%23ctor(stellar_dotnet_sdk.KeyPair%2CSystem.Nullable%7BSystem.Int64%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Account__ctor_System_String_System_Nullable_System_Int64__.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Account.%23ctor(System.String%2CSystem.Nullable%7BSystem.Int64%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Account.cs/#L15" title="View Source"><i class="fa fa-code"></i></a>
@@ -108,36 +108,38 @@
   
   <a id="stellar_dotnet_sdk_Account__ctor_" data-uid="stellar_dotnet_sdk.Account.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_Account__ctor_stellar_dotnet_sdk_KeyPair_System_Nullable_System_Int64__" data-uid="stellar_dotnet_sdk.Account.#ctor(stellar_dotnet_sdk.KeyPair,System.Nullable{System.Int64})"><a href="#collapsible-stellar_dotnet_sdk_Account__ctor_stellar_dotnet_sdk_KeyPair_System_Nullable_System_Int64__" class="expander" data-toggle="collapse">Account(KeyPair, Nullable&lt;Int64&gt;)</a></h4>
+  <h4 id="stellar_dotnet_sdk_Account__ctor_System_String_System_Nullable_System_Int64__" data-uid="stellar_dotnet_sdk.Account.#ctor(System.String,System.Nullable{System.Int64})"><a href="#collapsible-stellar_dotnet_sdk_Account__ctor_System_String_System_Nullable_System_Int64__" class="expander" data-toggle="collapse">Account(String, Nullable&lt;Int64&gt;)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_Account__ctor_stellar_dotnet_sdk_KeyPair_System_Nullable_System_Int64__" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_Account__ctor_System_String_System_Nullable_System_Int64__" class="collapse in">
   <div class="markdown level1 summary"><p>Class constructor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Account(KeyPair keypair, long? sequenceNumber)</code></pre>
+    <pre><code class="lang-csharp hljs">public Account(string accountId, long? sequenceNumber)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">keypair</span>
-        <p><p>KeyPair associated with this Account</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int64</span>&gt;</span>
-        <span class="parametername">sequenceNumber</span>
-        <p><p>Current sequence number of the account (can be obtained using dotnet-stellar-sdk or horizon server)</p>
-</p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">accountId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="parametername">sequenceNumber</span></td>
+        <td><p>Current sequence number of the account (can be obtained using dotnet-stellar-sdk or horizon server)</p>
+</td>
+      </tr>
   </table>
   
   
@@ -156,10 +158,56 @@
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Account_AccountId.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Account.AccountId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Account.cs/#L24" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_Account_AccountId_" data-uid="stellar_dotnet_sdk.Account.AccountId*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Account_AccountId" data-uid="stellar_dotnet_sdk.Account.AccountId"><a href="#collapsible-stellar_dotnet_sdk_Account_AccountId" class="expander" data-toggle="collapse">AccountId</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Account_AccountId" class="collapse in">
+  <div class="markdown level1 summary"><p>Returns the AccountID of the account.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AccountId { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.ITransactionBuilderAccount.html#stellar_dotnet_sdk_ITransactionBuilderAccount_AccountId">ITransactionBuilderAccount.AccountId</a></div>
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Account_IncrementedSequenceNumber.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Account.IncrementedSequenceNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Account.cs/#L35" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Account.cs/#L40" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Account_IncrementedSequenceNumber_" data-uid="stellar_dotnet_sdk.Account.IncrementedSequenceNumber*"></a>
@@ -206,7 +254,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Account_KeyPair.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Account.KeyPair%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Account.cs/#L24" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Account.cs/#L29" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Account_KeyPair_" data-uid="stellar_dotnet_sdk.Account.KeyPair*"></a>
@@ -214,7 +262,8 @@
   <h4 id="stellar_dotnet_sdk_Account_KeyPair" data-uid="stellar_dotnet_sdk.Account.KeyPair"><a href="#collapsible-stellar_dotnet_sdk_Account_KeyPair" class="expander" data-toggle="collapse">KeyPair</a></h4>
   
   <div id="collapsible-stellar_dotnet_sdk_Account_KeyPair" class="collapse in">
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the KeyPair of the account.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
@@ -251,7 +300,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Account_SequenceNumber.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Account.SequenceNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Account.cs/#L29" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Account.cs/#L34" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Account_SequenceNumber_" data-uid="stellar_dotnet_sdk.Account.SequenceNumber*"></a>
@@ -299,7 +348,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Account_IncrementSequenceNumber.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Account.IncrementSequenceNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Account.cs/#L40" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Account.cs/#L45" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Account_IncrementSequenceNumber_" data-uid="stellar_dotnet_sdk.Account.IncrementSequenceNumber*"></a>

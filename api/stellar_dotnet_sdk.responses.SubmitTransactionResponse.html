@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SubmitTransactionResponse
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -94,7 +94,7 @@
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -115,62 +115,59 @@
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse__ctor_stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_System_Nullable_System_Int64__System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.%23ctor(stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras%2CSystem.Nullable%7BSystem.Int64%7D%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse__ctor_stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_System_Nullable_System_UInt32__System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.%23ctor(stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras%2CSystem.Nullable%7BSystem.UInt32%7D%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L53" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L66" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse__ctor_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_SubmitTransactionResponse__ctor_stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_System_Nullable_System_Int64__System_String_System_String_System_String_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.#ctor(stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras,System.Nullable{System.Int64},System.String,System.String,System.String)"><a href="#collapsible-stellar_dotnet_sdk_responses_SubmitTransactionResponse__ctor_stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_System_Nullable_System_Int64__System_String_System_String_System_String_" class="expander" data-toggle="collapse">SubmitTransactionResponse(SubmitTransactionResponse.Extras, Nullable&lt;Int64&gt;, String, String, String)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_SubmitTransactionResponse__ctor_stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_System_Nullable_System_UInt32__System_String_System_String_System_String_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.#ctor(stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras,System.Nullable{System.UInt32},System.String,System.String,System.String)"><a href="#collapsible-stellar_dotnet_sdk_responses_SubmitTransactionResponse__ctor_stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_System_Nullable_System_UInt32__System_String_System_String_System_String_" class="expander" data-toggle="collapse">SubmitTransactionResponse(SubmitTransactionResponse.Extras, Nullable&lt;UInt32&gt;, String, String, String)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_SubmitTransactionResponse__ctor_stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_System_Nullable_System_Int64__System_String_System_String_System_String_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_SubmitTransactionResponse__ctor_stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_System_Nullable_System_UInt32__System_String_System_String_System_String_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SubmitTransactionResponse(SubmitTransactionResponse.Extras extras, long? ledger, string hash, string envelopeXdr, string resultXdr)</code></pre>
+    <pre><code class="lang-csharp hljs">public SubmitTransactionResponse(SubmitTransactionResponse.Extras extras, uint? ledger, string hash, string envelopeXdr, string resultXdr)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.html">SubmitTransactionResponse.Extras</a></span>
-        <span class="parametername">extras</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int64</span>&gt;</span>
-        <span class="parametername">ledger</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">hash</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">envelopeXdr</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">resultXdr</span>
-        <p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.html">SubmitTransactionResponse.Extras</a></td>
+        <td><span class="parametername">extras</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
+        <td><span class="parametername">ledger</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">hash</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">envelopeXdr</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">resultXdr</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -192,7 +189,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_EnvelopeXdr.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.EnvelopeXdr%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L18" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L19" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_EnvelopeXdr_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.EnvelopeXdr*"></a>
@@ -205,7 +202,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string EnvelopeXdr { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;envelope_xdr&quot;)]
+public string EnvelopeXdr { get; }</code></pre>
   </div>
   
   
@@ -248,7 +246,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Hash { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;hash&quot;)]
+public string Hash { get; }</code></pre>
   </div>
   
   
@@ -278,7 +277,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Ledger.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Ledger%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L15" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L16" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Ledger_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Ledger*"></a>
@@ -291,7 +290,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long? Ledger { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;ledger&quot;)]
+public uint? Ledger { get; }</code></pre>
   </div>
   
   
@@ -302,7 +302,50 @@
   <table>
     <tr>
       <td>
-        <span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int64</span>&gt;
+        <span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt32</span>&gt;
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Result.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Result%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L51" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Result_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Result*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Result" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Result"><a href="#collapsible-stellar_dotnet_sdk_responses_SubmitTransactionResponse_Result" class="expander" data-toggle="collapse">Result</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_SubmitTransactionResponse_Result" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TransactionResult Result { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.responses.TransactionResult.html">TransactionResult</a>
         <p>
       </td>
     </tr>
@@ -321,7 +364,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_ResultXdr.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.ResultXdr%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L34" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L35" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_ResultXdr_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.ResultXdr*"></a>
@@ -334,7 +377,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ResultXdr { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;result_xdr&quot;)]
+public string ResultXdr { get; }</code></pre>
   </div>
   
   
@@ -364,7 +408,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_SubmitTransactionResponseExtras.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.SubmitTransactionResponseExtras%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L50" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L63" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_SubmitTransactionResponseExtras_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.SubmitTransactionResponseExtras*"></a>
@@ -377,7 +421,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SubmitTransactionResponse.Extras SubmitTransactionResponseExtras { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;extras&quot;)]
+public SubmitTransactionResponse.Extras SubmitTransactionResponseExtras { get; }</code></pre>
   </div>
   
   
@@ -409,7 +454,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_GetOfferIdFromResult_System_Int32_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.GetOfferIdFromResult(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L73" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L86" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_GetOfferIdFromResult_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.GetOfferIdFromResult*"></a>
@@ -428,15 +473,20 @@ This is helpful when you need ID of an offer to update it later.</p>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">position</span>
-        <p><p>Position of ManageOffer operation. If ManageOffer is second operation in this transaction this should be equal <pre><code>1</code></pre>.</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>Position of ManageOffer operation. If ManageOffer is second operation in this transaction this should be equal <pre><code>1</code></pre>.</p>
+</td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -466,7 +516,7 @@ This is helpful when you need ID of an offer to update it later.</p>
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_IsSuccess.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.IsSuccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L62" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L75" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_IsSuccess_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.IsSuccess*"></a>

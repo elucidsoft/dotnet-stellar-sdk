@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class TradeEffectResponse
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -117,7 +117,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -172,7 +172,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_TradeEffectResponse__ctor_stellar_dotnet_sdk_KeyPair_System_Int64_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.TradeEffectResponse.%23ctor(stellar_dotnet_sdk.KeyPair%2CSystem.Int64%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_TradeEffectResponse__ctor_System_String_System_Int64_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.TradeEffectResponse.%23ctor(System.String%2CSystem.Int64%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L19" title="View Source"><i class="fa fa-code"></i></a>
@@ -180,89 +180,76 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   
   <a id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse__ctor_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse__ctor_stellar_dotnet_sdk_KeyPair_System_Int64_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.#ctor(stellar_dotnet_sdk.KeyPair,System.Int64,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)"><a href="#collapsible-stellar_dotnet_sdk_responses_effects_TradeEffectResponse__ctor_stellar_dotnet_sdk_KeyPair_System_Int64_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" class="expander" data-toggle="collapse">TradeEffectResponse(KeyPair, Int64, String, String, String, String, String, String, String, String)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse__ctor_System_String_System_Int64_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.#ctor(System.String,System.Int64,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)"><a href="#collapsible-stellar_dotnet_sdk_responses_effects_TradeEffectResponse__ctor_System_String_System_Int64_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" class="expander" data-toggle="collapse">TradeEffectResponse(String, Int64, String, String, String, String, String, String, String, String)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_effects_TradeEffectResponse__ctor_stellar_dotnet_sdk_KeyPair_System_Int64_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_effects_TradeEffectResponse__ctor_System_String_System_Int64_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TradeEffectResponse(KeyPair seller, long offerId, string soldAmount, string soldAssetType, string soldAssetCode, string soldAssetIssuer, string boughtAmount, string boughtAssetType, string boughtAssetCode, string boughtAssetIssuer)</code></pre>
+    <pre><code class="lang-csharp hljs">public TradeEffectResponse(string seller, long offerId, string soldAmount, string soldAssetType, string soldAssetCode, string soldAssetIssuer, string boughtAmount, string boughtAssetType, string boughtAssetCode, string boughtAssetIssuer)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">seller</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int64</span></span>
-        <span class="parametername">offerId</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">soldAmount</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">soldAssetType</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">soldAssetCode</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">soldAssetIssuer</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">boughtAmount</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">boughtAssetType</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">boughtAssetCode</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">boughtAssetIssuer</span>
-        <p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">seller</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">offerId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">soldAmount</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">soldAssetType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">soldAssetCode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">soldAssetIssuer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">boughtAmount</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">boughtAssetType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">boughtAssetCode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">boughtAssetIssuer</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -284,7 +271,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_TradeEffectResponse_BoughtAmount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.TradeEffectResponse.BoughtAmount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L55" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L54" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse_BoughtAmount_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.BoughtAmount*"></a>
@@ -297,7 +284,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BoughtAmount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;bought_amount&quot;)]
+public string BoughtAmount { get; }</code></pre>
   </div>
   
   
@@ -327,7 +315,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_TradeEffectResponse_BoughtAsset.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.TradeEffectResponse.BoughtAsset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L67" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L66" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse_BoughtAsset_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.BoughtAsset*"></a>
@@ -370,7 +358,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_TradeEffectResponse_BoughtAssetCode.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.TradeEffectResponse.BoughtAssetCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L61" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L60" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse_BoughtAssetCode_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.BoughtAssetCode*"></a>
@@ -383,7 +371,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BoughtAssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;bought_asset_code&quot;)]
+public string BoughtAssetCode { get; }</code></pre>
   </div>
   
   
@@ -413,7 +402,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_TradeEffectResponse_BoughtAssetIssuer.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.TradeEffectResponse.BoughtAssetIssuer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L64" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L63" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse_BoughtAssetIssuer_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.BoughtAssetIssuer*"></a>
@@ -426,7 +415,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BoughtAssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;bought_asset_issuer&quot;)]
+public string BoughtAssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -456,7 +446,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_TradeEffectResponse_BoughtAssetType.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.TradeEffectResponse.BoughtAssetType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L58" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L57" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse_BoughtAssetType_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.BoughtAssetType*"></a>
@@ -469,7 +459,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BoughtAssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;bought_asset_type&quot;)]
+public string BoughtAssetType { get; }</code></pre>
   </div>
   
   
@@ -499,7 +490,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_TradeEffectResponse_OfferId.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.TradeEffectResponse.OfferId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L40" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L39" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse_OfferId_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.OfferId*"></a>
@@ -512,7 +503,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long OfferId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;offer_id&quot;)]
+public long OfferId { get; }</code></pre>
   </div>
   
   
@@ -555,7 +547,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair Seller { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;seller&quot;)]
+public string Seller { get; }</code></pre>
   </div>
   
   
@@ -566,7 +559,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -585,7 +578,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SoldAmount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SoldAmount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L43" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L42" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SoldAmount_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SoldAmount*"></a>
@@ -598,7 +591,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SoldAmount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;sold_amount&quot;)]
+public string SoldAmount { get; }</code></pre>
   </div>
   
   
@@ -628,7 +622,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SoldAsset.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SoldAsset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L69" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L68" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SoldAsset_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SoldAsset*"></a>
@@ -671,7 +665,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SoldAssetCode.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SoldAssetCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L49" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L48" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SoldAssetCode_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SoldAssetCode*"></a>
@@ -684,7 +678,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SoldAssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;sold_asset_code&quot;)]
+public string SoldAssetCode { get; }</code></pre>
   </div>
   
   
@@ -714,7 +709,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SoldAssetIssuer.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SoldAssetIssuer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L52" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L51" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SoldAssetIssuer_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SoldAssetIssuer*"></a>
@@ -727,7 +722,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SoldAssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;sold_asset_issuer&quot;)]
+public string SoldAssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -757,7 +753,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SoldAssetType.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SoldAssetType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L46" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/TradeEffectResponse.cs/#L45" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SoldAssetType_" data-uid="stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SoldAssetType*"></a>
@@ -770,7 +766,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/eff
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SoldAssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;sold_asset_type&quot;)]
+public string SoldAssetType { get; }</code></pre>
   </div>
   
   

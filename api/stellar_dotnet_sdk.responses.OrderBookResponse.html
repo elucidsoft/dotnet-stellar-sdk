@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class OrderBookResponse
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_OrderBookResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OrderBookResponse : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class OrderBookResponse</code></pre>
   </div>
   
   
@@ -119,35 +119,34 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></span>
-        <span class="parametername">orderBookBase</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></span>
-        <span class="parametername">counter</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.OrderBookResponse.Row.html">OrderBookResponse.Row</a>[]</span>
-        <span class="parametername">asks</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.OrderBookResponse.Row.html">OrderBookResponse.Row</a>[]</span>
-        <span class="parametername">bids</span>
-        <p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></td>
+        <td><span class="parametername">orderBookBase</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Asset.html">Asset</a></td>
+        <td><span class="parametername">counter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.OrderBookResponse.Row.html">OrderBookResponse.Row</a>[]</td>
+        <td><span class="parametername">asks</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.OrderBookResponse.Row.html">OrderBookResponse.Row</a>[]</td>
+        <td><span class="parametername">bids</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -182,7 +181,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OrderBookResponse.Row[] Asks { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asks&quot;)]
+public OrderBookResponse.Row[] Asks { get; }</code></pre>
   </div>
   
   
@@ -225,7 +225,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OrderBookResponse.Row[] Bids { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;bids&quot;)]
+public OrderBookResponse.Row[] Bids { get; }</code></pre>
   </div>
   
   
@@ -268,7 +269,9 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Asset Counter { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;counter&quot;)]
+[JsonConverter(typeof(AssetDeserializer))]
+public Asset Counter { get; }</code></pre>
   </div>
   
   
@@ -311,7 +314,9 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Asset OrderBookBase { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;base&quot;)]
+[JsonConverter(typeof(AssetDeserializer))]
+public Asset OrderBookBase { get; }</code></pre>
   </div>
   
   

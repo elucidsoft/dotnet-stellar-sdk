@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Transaction
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -87,7 +87,7 @@
   
   <h5 id="stellar_dotnet_sdk_Transaction_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Transaction : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Transaction</code></pre>
   </div>
   
   
@@ -298,7 +298,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">List</span>&lt;<a class="xref" href="stellar_dotnet_sdk.xdr.DecoratedSignature.html">DecoratedSignature</a>&gt;
+        <span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">stellar_dotnet_sdk.xdr.DecoratedSignature</span>&gt;
         <p>
       </td>
     </tr>
@@ -422,14 +422,19 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.xdr.TransactionEnvelope.html">TransactionEnvelope</a></span>
-        <span class="parametername">envelope</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.TransactionEnvelope</span></td>
+        <td><span class="parametername">envelope</span></td>
+        <td></td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -475,14 +480,19 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">envelope</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">envelope</span></td>
+        <td></td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -573,15 +583,20 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a></span>
-        <span class="parametername">network</span>
-        <p><p>The network <a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a> the transaction will be sent to.</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a></td>
+        <td><span class="parametername">network</span></td>
+        <td><p>The network <a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a> the transaction will be sent to.</p>
+</td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -628,15 +643,20 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">signer</span>
-        <p><p>signer <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> object representing a signer</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
+        <td><span class="parametername">signer</span></td>
+        <td><p>signer <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> object representing a signer</p>
+</td>
+      </tr>
   </table>
   
   
@@ -674,23 +694,26 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">signer</span>
-        <p><p>signer <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> object representing a signer</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a></span>
-        <span class="parametername">network</span>
-        <p><p>The network <a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a> the transaction will be sent to.</p>
-</p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
+        <td><span class="parametername">signer</span></td>
+        <td><p>signer <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> object representing a signer</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a></td>
+        <td><span class="parametername">network</span></td>
+        <td><p>The network <a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a> the transaction will be sent to.</p>
+</td>
+      </tr>
   </table>
   
   
@@ -728,15 +751,20 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Byte</span>[]</span>
-        <span class="parametername">preimage</span>
-        <p><p>the sha256 hash of preimage should be equal to signer hash</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">preimage</span></td>
+        <td><p>the sha256 hash of preimage should be equal to signer hash</p>
+</td>
+      </tr>
   </table>
   
   
@@ -818,15 +846,20 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a></span>
-        <span class="parametername">network</span>
-        <p><p>The network <a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a> the transaction will be sent to.</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a></td>
+        <td><span class="parametername">network</span></td>
+        <td><p>The network <a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a> the transaction will be sent to.</p>
+</td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -877,7 +910,7 @@
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.xdr.TransactionEnvelope.html">TransactionEnvelope</a>
+        <span class="xref">stellar_dotnet_sdk.xdr.TransactionEnvelope</span>
         <p>
       </td>
     </tr>
@@ -965,7 +998,7 @@
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.xdr.TransactionEnvelope.html">TransactionEnvelope</a>
+        <span class="xref">stellar_dotnet_sdk.xdr.TransactionEnvelope</span>
         <p>
       </td>
     </tr>
@@ -1053,7 +1086,7 @@
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.xdr.Transaction.html">Transaction</a>
+        <span class="xref">stellar_dotnet_sdk.xdr.Transaction</span>
         <p>
       </td>
     </tr>

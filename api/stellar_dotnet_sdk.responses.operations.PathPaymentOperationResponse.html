@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class PathPaymentOperationResponse
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -108,6 +108,9 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
       <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionHash">OperationResponse.TransactionHash</a>
     </div>
     <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionSuccessful">OperationResponse.TransactionSuccessful</a>
+    </div>
+    <div>
       <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_Links">OperationResponse.Links</a>
     </div>
     <div>
@@ -120,7 +123,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -175,7 +178,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse__ctor_System_String_System_String_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_KeyPair_System_String_System_String_System_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.%23ctor(System.String%2CSystem.String%2Cstellar_dotnet_sdk.KeyPair%2Cstellar_dotnet_sdk.KeyPair%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L32" title="View Source"><i class="fa fa-code"></i></a>
@@ -183,100 +186,92 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse__ctor_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse__ctor_System_String_System_String_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_KeyPair_System_String_System_String_System_String_System_String_System_String_System_String_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor(System.String,System.String,stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.String,System.String,System.String,System.String)"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse__ctor_System_String_System_String_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_KeyPair_System_String_System_String_System_String_System_String_System_String_System_String_" class="expander" data-toggle="collapse">PathPaymentOperationResponse(String, String, KeyPair, KeyPair, String, String, String, String, String, String)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" class="expander" data-toggle="collapse">PathPaymentOperationResponse(String, String, String, String, String, String, String, String, String, String, String)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse__ctor_System_String_System_String_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_KeyPair_System_String_System_String_System_String_System_String_System_String_System_String_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" class="collapse in">
   <div class="markdown level1 summary"><p>Sends an amount in a specific asset to a destination account through a path of offers. This allows the asset sent (e.g., 450 XLM) to be different from the asset received (e.g, 6 BTC).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PathPaymentOperationResponse(string amount, string sourceMax, KeyPair from, KeyPair to, string assetType, string assetCode, string assetIssuer, string sendAssetType, string sendAssetCode, string sendAssetIssuer)</code></pre>
+    <pre><code class="lang-csharp hljs">public PathPaymentOperationResponse(string amount, string sourceAmount, string sourceMax, string from, string to, string assetType, string assetCode, string assetIssuer, string sendAssetType, string sendAssetCode, string sendAssetIssuer)</code></pre>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">amount</span>
-        <p><p>The amount of destination asset the destination account receives.</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">sourceMax</span>
-        <p><p>The amount of source asset deducted from senders account.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">from</span>
-        <p><p>Account address that is sending the payment.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">to</span>
-        <p><p>Account address that receives the payment.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">assetType</span>
-        <p><p>Account address that receives the payment.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">assetCode</span>
-        <p><p>The asset code (Alpha4, Alpha12, etc.)</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">assetIssuer</span>
-        <p><p>The account that created the asset</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">sendAssetType</span>
-        <p><p>The asset type (USD, BTC, etc.) to be sent.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">sendAssetCode</span>
-        <p><p>The asset code (Alpha4, Alpha12, etc.) to be sent</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">sendAssetIssuer</span>
-        <p><p>The account that created the asset to be sent.</p>
-</p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td><p>The amount of destination asset the destination account receives.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sourceAmount</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sourceMax</span></td>
+        <td><p>The amount of source asset deducted from senders account.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">from</span></td>
+        <td><p>Account address that is sending the payment.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">to</span></td>
+        <td><p>Account address that receives the payment.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">assetType</span></td>
+        <td><p>Account address that receives the payment.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">assetCode</span></td>
+        <td><p>The asset code (Alpha4, Alpha12, etc.)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">assetIssuer</span></td>
+        <td><p>The account that created the asset</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sendAssetType</span></td>
+        <td><p>The asset type (USD, BTC, etc.) to be sent.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sendAssetCode</span></td>
+        <td><p>The asset code (Alpha4, Alpha12, etc.) to be sent</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sendAssetIssuer</span></td>
+        <td><p>The account that created the asset to be sent.</p>
+</td>
+      </tr>
   </table>
   
   
@@ -298,7 +293,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_Amount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Amount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L52" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L53" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_Amount_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Amount*"></a>
@@ -312,7 +307,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Amount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;amount&quot;)]
+public string Amount { get; }</code></pre>
   </div>
   
   
@@ -342,7 +338,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_Asset.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Asset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L114" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L119" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_Asset_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.Asset*"></a>
@@ -386,7 +382,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_AssetCode.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L84" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L89" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_AssetCode_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetCode*"></a>
@@ -400,7 +396,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_code&quot;)]
+public string AssetCode { get; }</code></pre>
   </div>
   
   
@@ -430,7 +427,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_AssetIssuer.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetIssuer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L90" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L95" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_AssetIssuer_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetIssuer*"></a>
@@ -444,7 +441,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_issuer&quot;)]
+public string AssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -474,7 +472,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_AssetType.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L78" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L83" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_AssetType_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.AssetType*"></a>
@@ -488,7 +486,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_type&quot;)]
+public string AssetType { get; }</code></pre>
   </div>
   
   
@@ -518,7 +517,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_From.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.From%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L64" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L71" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_From_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.From*"></a>
@@ -532,7 +531,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair From { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;from&quot;)]
+public string From { get; }</code></pre>
   </div>
   
   
@@ -543,7 +543,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -562,7 +562,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SendAsset.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAsset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L119" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L124" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SendAsset_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAsset*"></a>
@@ -606,7 +606,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SendAssetCode.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L102" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L107" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SendAssetCode_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetCode*"></a>
@@ -620,7 +620,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SendAssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;send_asset_code&quot;)]
+public string SendAssetCode { get; }</code></pre>
   </div>
   
   
@@ -650,7 +651,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SendAssetIssuer.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetIssuer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L108" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L113" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SendAssetIssuer_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetIssuer*"></a>
@@ -664,7 +665,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SendAssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;send_asset_issuer&quot;)]
+public string SendAssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -694,7 +696,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SendAssetType.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L96" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L101" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SendAssetType_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SendAssetType*"></a>
@@ -708,7 +710,53 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SendAssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;send_asset_type&quot;)]
+public string SendAssetType { get; }</code></pre>
+  </div>
+  
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SourceAmount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceAmount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L59" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SourceAmount_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceAmount*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SourceAmount" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceAmount"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SourceAmount" class="expander" data-toggle="collapse">SourceAmount</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SourceAmount" class="collapse in">
+  <div class="markdown level1 summary"><p>The amount of source asset deducted from senders account.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;source_amount&quot;)]
+public string SourceAmount { get; }</code></pre>
   </div>
   
   
@@ -738,7 +786,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SourceMax.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceMax%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L58" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L65" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_SourceMax_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.SourceMax*"></a>
@@ -752,7 +800,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SourceMax { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;source_max&quot;)]
+public string SourceMax { get; }</code></pre>
   </div>
   
   
@@ -782,7 +831,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_To.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.To%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L71" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L77" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_To_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.To*"></a>
@@ -796,7 +845,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair To { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;to&quot;)]
+public string To { get; }</code></pre>
   </div>
   
   
@@ -807,7 +857,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -826,7 +876,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_TypeId.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.TypeId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L47" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/PathPaymentOperationResponse.cs/#L48" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_PathPaymentOperationResponse_TypeId_" data-uid="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.TypeId*"></a>
