@@ -35,16 +35,21 @@
 
 {{#parameters.0}}
 <h5 class="parameters">{{__global.parameters}}</h5>
-<table>
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>Type</th>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+</thead>
 {{/parameters.0}}
 {{#parameters}}
-  <tr>
-    <td>
-      <span class="pull-right">{{{type.specName.0.value}}}</span>
-      <span class="parametername">{{{id}}}</span>
-      <p>{{{description}}}</p>
-    </td>
-  </tr>
+    <tr>
+      <td>{{{type.specName.0.value}}}</td>
+      <td><span class="parametername">{{{id}}}</span></td>
+      <td>{{{description}}}</td>
+    </tr>
 {{/parameters}}
 {{#parameters.0}}
 </table>

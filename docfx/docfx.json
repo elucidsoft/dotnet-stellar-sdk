@@ -17,12 +17,10 @@
 			},
 			{
 				"files": [
-					"articles/**.md",
-					"articles/**/toc.yml",
 					"toc.yml",
 					"*.md",
-					"examples/**.md",
-					"examples/**/toc.yml",
+					"tutorials/**.md",
+					"tutorials/**/toc.yml",
 				]
 			}
 		],
@@ -36,8 +34,7 @@
 				"apidoc/**.md"
 			],
 			"exclude": [
-				"obj/**",
-				"docs/**"
+				"obj/**"
 			]
 		}],
 		"dest": "_site",
@@ -54,7 +51,7 @@
 		},
 		"template": [
 			"default",
-			"templates/docfx-tmpl/src"
+			"templates/docfx-stellar-template/src"
 		],
 		"postProcessors": [],
 		"markdownEngineName": "markdig",

@@ -1,7 +1,7 @@
 MIT License
 
-Modified work -> Copyright (c) 2018 Kirbyrawr
-Original work -> Copyright (c) 2017 Mathew Sachin
+Copyright (c) 2019 Kirbyrawr (Modified Version)
+Copyright (c) 2017 Mathew Sachin (Original Author)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
