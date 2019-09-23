@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class FederationResponse
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -89,7 +89,7 @@ See <a href="https://www.stellar.org/developers/learn/concepts/federation.html">
   
   <h5 id="stellar_dotnet_sdk_federation_FederationResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class FederationResponse : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class FederationResponse</code></pre>
   </div>
   
   
@@ -121,35 +121,34 @@ See <a href="https://www.stellar.org/developers/learn/concepts/federation.html">
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">stellarAddress</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">accountId</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">memoType</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">memo</span>
-        <p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">stellarAddress</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">accountId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">memoType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">memo</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -184,7 +183,8 @@ See <a href="https://www.stellar.org/developers/learn/concepts/federation.html">
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string AccountId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;account_id&quot;)]
+public string AccountId { get; }</code></pre>
   </div>
   
   
@@ -227,7 +227,8 @@ See <a href="https://www.stellar.org/developers/learn/concepts/federation.html">
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Memo { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;memo&quot;)]
+public string Memo { get; }</code></pre>
   </div>
   
   
@@ -270,7 +271,8 @@ See <a href="https://www.stellar.org/developers/learn/concepts/federation.html">
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string MemoType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;memo_type&quot;)]
+public string MemoType { get; }</code></pre>
   </div>
   
   
@@ -313,7 +315,8 @@ See <a href="https://www.stellar.org/developers/learn/concepts/federation.html">
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string StellarAddress { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;stellar_address&quot;)]
+public string StellarAddress { get; }</code></pre>
   </div>
   
   
@@ -342,7 +345,6 @@ See <a href="https://www.stellar.org/developers/learn/concepts/federation.html">
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_federation_FederationResponse.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.federation.FederationResponse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
               <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/federation/FederationResponse.cs/#L9" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           

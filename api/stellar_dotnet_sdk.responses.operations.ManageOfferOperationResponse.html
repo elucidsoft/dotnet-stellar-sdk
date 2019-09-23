@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ManageOfferOperationResponse
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -86,6 +86,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <div class="level3"><span class="xref">ManageOfferOperationResponse</span></div>
   </div>
   
+      <div class="level4"><a class="xref" href="stellar_dotnet_sdk.responses.operations.ManageBuyOfferOperationResponse.html">ManageBuyOfferOperationResponse</a></div>
+      <div class="level4"><a class="xref" href="stellar_dotnet_sdk.responses.operations.ManageSellOfferOperationResponse.html">ManageSellOfferOperationResponse</a></div>
   
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -102,10 +104,16 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
       <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_Type">OperationResponse.Type</a>
     </div>
     <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_TypeId">OperationResponse.TypeId</a>
+    </div>
+    <div>
       <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_CreatedAt">OperationResponse.CreatedAt</a>
     </div>
     <div>
       <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionHash">OperationResponse.TransactionHash</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionSuccessful">OperationResponse.TransactionSuccessful</a>
     </div>
     <div>
       <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_Links">OperationResponse.Links</a>
@@ -120,7 +128,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -195,70 +203,59 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">offerId</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">amount</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">price</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">buyingAssetType</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">buyingAssetCode</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">buyingAssetIssuer</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">sellingAssetType</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">sellingAssetCode</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">sellingAssetIssuer</span>
-        <p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offerId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">price</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">buyingAssetType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">buyingAssetCode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">buyingAssetIssuer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sellingAssetType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sellingAssetCode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sellingAssetIssuer</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -280,7 +277,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_Amount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.Amount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L36" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L34" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_Amount_" data-uid="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.Amount*"></a>
@@ -293,7 +290,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Amount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;amount&quot;)]
+public string Amount { get; }</code></pre>
   </div>
   
   
@@ -323,7 +321,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_BuyingAsset.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.BuyingAsset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L62" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L58" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_BuyingAsset_" data-uid="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.BuyingAsset*"></a>
@@ -366,7 +364,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_BuyingAssetCode.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.BuyingAssetCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L47" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L43" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_BuyingAssetCode_" data-uid="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.BuyingAssetCode*"></a>
@@ -379,7 +377,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BuyingAssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;buying_asset_code&quot;)]
+public string BuyingAssetCode { get; }</code></pre>
   </div>
   
   
@@ -409,7 +408,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_BuyingAssetIssuer.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.BuyingAssetIssuer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L50" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L46" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_BuyingAssetIssuer_" data-uid="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.BuyingAssetIssuer*"></a>
@@ -422,7 +421,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BuyingAssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;buying_asset_issuer&quot;)]
+public string BuyingAssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -452,7 +452,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_BuyingAssetType.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.BuyingAssetType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L44" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L40" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_BuyingAssetType_" data-uid="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.BuyingAssetType*"></a>
@@ -465,7 +465,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BuyingAssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;buying_asset_type&quot;)]
+public string BuyingAssetType { get; }</code></pre>
   </div>
   
   
@@ -495,7 +496,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_OfferId.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.OfferId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L33" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L31" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_OfferId_" data-uid="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.OfferId*"></a>
@@ -508,7 +509,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int OfferId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;offer_id&quot;)]
+public int OfferId { get; }</code></pre>
   </div>
   
   
@@ -538,7 +540,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_Price.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.Price%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L41" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L37" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_Price_" data-uid="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.Price*"></a>
@@ -551,7 +553,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Price { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;price&quot;)]
+public string Price { get; }</code></pre>
   </div>
   
   
@@ -581,7 +584,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_SellingAsset.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.SellingAsset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L64" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L60" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_SellingAsset_" data-uid="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.SellingAsset*"></a>
@@ -624,7 +627,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_SellingAssetCode.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.SellingAssetCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L56" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L52" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_SellingAssetCode_" data-uid="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.SellingAssetCode*"></a>
@@ -637,7 +640,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SellingAssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;selling_asset_code&quot;)]
+public string SellingAssetCode { get; }</code></pre>
   </div>
   
   
@@ -667,7 +671,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_SellingAssetIssuer.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.SellingAssetIssuer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L59" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L55" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_SellingAssetIssuer_" data-uid="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.SellingAssetIssuer*"></a>
@@ -680,7 +684,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SellingAssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;selling_asset_issuer&quot;)]
+public string SellingAssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -710,7 +715,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_SellingAssetType.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.SellingAssetType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L53" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L49" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_SellingAssetType_" data-uid="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.SellingAssetType*"></a>
@@ -723,7 +728,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SellingAssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;selling_asset_type&quot;)]
+public string SellingAssetType { get; }</code></pre>
   </div>
   
   
@@ -748,56 +754,10 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_TypeId.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.TypeId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L31" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_TypeId_" data-uid="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.TypeId*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_TypeId" data-uid="stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.TypeId"><a href="#collapsible-stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_TypeId" class="expander" data-toggle="collapse">TypeId</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_TypeId" class="collapse in">
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override int TypeId { get; }</code></pre>
-  </div>
-  
-  
-  
-  
-  
-  <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Int32</span>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_TypeId">OperationResponse.TypeId</a></div>
-  
-  
-  
-  
-  
-  </div>
-  
   
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
               <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/ManageOfferOperationResponse.cs/#L11" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
