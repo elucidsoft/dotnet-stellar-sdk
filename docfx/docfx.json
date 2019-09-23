@@ -46,8 +46,7 @@
 			"_appFaviconPath" : "favicon",
 			"_gitContribute": {
 				"repo": "https://github.com/elucidsoft/dotnet-stellar-sdk",
-				"branch": "master",
-				"apiSpecFolder": "docfx/api"
+				"branch": "master"
 			}
 		},
 		"template": [
