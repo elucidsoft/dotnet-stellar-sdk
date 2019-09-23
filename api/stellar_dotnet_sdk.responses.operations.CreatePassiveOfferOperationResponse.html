@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class CreatePassiveOfferOperationResponse
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -108,6 +108,9 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
       <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionHash">OperationResponse.TransactionHash</a>
     </div>
     <div>
+      <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionSuccessful">OperationResponse.TransactionSuccessful</a>
+    </div>
+    <div>
       <a class="xref" href="stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_Links">OperationResponse.Links</a>
     </div>
     <div>
@@ -120,7 +123,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -195,70 +198,59 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">offerId</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">amount</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">price</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">buyingAssetType</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">buyingAssetCode</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">buyingAssetIssuer</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">sellingAssetType</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">sellingAssetCode</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">sellingAssetIssuer</span>
-        <p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offerId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">amount</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">price</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">buyingAssetType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">buyingAssetCode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">buyingAssetIssuer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sellingAssetType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sellingAssetCode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sellingAssetIssuer</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -293,7 +285,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Amount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;amount&quot;)]
+public string Amount { get; }</code></pre>
   </div>
   
   
@@ -379,7 +372,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BuyingAssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;buying_asset_code&quot;)]
+public string BuyingAssetCode { get; }</code></pre>
   </div>
   
   
@@ -422,7 +416,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BuyingAssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;buying_asset_issuer&quot;)]
+public string BuyingAssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -465,7 +460,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string BuyingAssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;buying_asset_type&quot;)]
+public string BuyingAssetType { get; }</code></pre>
   </div>
   
   
@@ -508,7 +504,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int OfferId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;offer_id&quot;)]
+public int OfferId { get; }</code></pre>
   </div>
   
   
@@ -551,7 +548,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Price1 { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;price&quot;)]
+public string Price1 { get; }</code></pre>
   </div>
   
   
@@ -637,7 +635,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SellingAssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;selling_asset_code&quot;)]
+public string SellingAssetCode { get; }</code></pre>
   </div>
   
   
@@ -680,7 +679,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SellingAssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;selling_asset_issuer&quot;)]
+public string SellingAssetIssuer { get; }</code></pre>
   </div>
   
   
@@ -723,7 +723,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SellingAssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;selling_asset_type&quot;)]
+public string SellingAssetType { get; }</code></pre>
   </div>
   
   
@@ -797,7 +798,6 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/resources/ope
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_operations_CreatePassiveOfferOperationResponse.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
               <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/operations/CreatePassiveOfferOperationResponse.cs/#L11" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           

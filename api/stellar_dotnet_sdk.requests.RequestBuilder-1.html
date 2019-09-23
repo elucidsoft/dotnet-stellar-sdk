@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class RequestBuilder&lt;T&gt;
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -92,7 +92,8 @@
   
   <h5 id="stellar_dotnet_sdk_requests_RequestBuilder_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class RequestBuilder&lt;T&gt; : object where T : class</code></pre>
+    <pre><code class="lang-csharp hljs">public class RequestBuilder&lt;T&gt;
+    where T : class</code></pre>
   </div>
   
   
@@ -113,7 +114,7 @@
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_Uri_System_String_HttpClient_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.%23ctor(Uri%2CSystem.String%2CHttpClient)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_System_Uri_System_String_System_Net_Http_HttpClient_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.%23ctor(System.Uri%2CSystem.String%2CSystem.Net.Http.HttpClient)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L39" title="View Source"><i class="fa fa-code"></i></a>
@@ -121,9 +122,9 @@
   
   <a id="stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_Uri_System_String_HttpClient_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.#ctor(Uri,System.String,HttpClient)"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_Uri_System_String_HttpClient_" class="expander" data-toggle="collapse">RequestBuilder(Uri, String, HttpClient)</a></h4>
+  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_System_Uri_System_String_System_Net_Http_HttpClient_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.#ctor(System.Uri,System.String,System.Net.Http.HttpClient)"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_System_Uri_System_String_System_Net_Http_HttpClient_" class="expander" data-toggle="collapse">RequestBuilder(Uri, String, HttpClient)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_Uri_System_String_HttpClient_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1__ctor_System_Uri_System_String_System_Net_Http_HttpClient_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -133,28 +134,29 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">Uri</span></span>
-        <span class="parametername">serverUri</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">defaultSegment</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">HttpClient</span></span>
-        <span class="parametername">httpClient</span>
-        <p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">serverUri</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">defaultSegment</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpClient</span></td>
+        <td><span class="parametername">httpClient</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -198,7 +200,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">UriBuilder</span>
+        <span class="xref">System.UriBuilder</span>
         <p>
       </td>
     </tr>
@@ -244,7 +246,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">HttpClient</span>
+        <span class="xref">System.Net.Http.HttpClient</span>
         <p>
       </td>
     </tr>
@@ -329,7 +331,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">Uri</span>
+        <span class="xref">System.Uri</span>
         <p>
       </td>
     </tr>
@@ -372,14 +374,19 @@ Read <a href="https://www.stellar.org/developers/horizon/reference/resources/pag
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">cursor</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">cursor</span></td>
+        <td></td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -405,7 +412,7 @@ Read <a href="https://www.stellar.org/developers/horizon/reference/resources/pag
   
   <span class="small pull-right mobile-hide">
     <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_Uri_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.Execute%60%601(Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_System_Uri_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601.Execute%60%601(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L26" title="View Source"><i class="fa fa-code"></i></a>
@@ -413,9 +420,9 @@ Read <a href="https://www.stellar.org/developers/horizon/reference/resources/pag
   
   <a id="stellar_dotnet_sdk_requests_RequestBuilder_1_Execute_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.Execute*"></a>
   
-  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_Uri_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(Uri)"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_Uri_" class="expander" data-toggle="collapse">Execute&lt;TZ&gt;(Uri)</a></h4>
+  <h4 id="stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_System_Uri_" data-uid="stellar_dotnet_sdk.requests.RequestBuilder`1.Execute``1(System.Uri)"><a href="#collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_System_Uri_" class="expander" data-toggle="collapse">Execute&lt;TZ&gt;(Uri)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_Uri_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_System_Uri_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -426,21 +433,26 @@ Read <a href="https://www.stellar.org/developers/horizon/reference/resources/pag
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">Uri</span></span>
-        <span class="parametername">uri</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">uri</span></td>
+        <td></td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
   <table>
     <tr>
       <td>
-        <span class="xref">Task</span>&lt;TZ&gt;
+        <span class="xref">System.Threading.Tasks.Task</span>&lt;TZ&gt;
         <p>
       </td>
     </tr>
@@ -491,14 +503,19 @@ For range and default values check documentation of the endpoint requested.</p>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Int32</span></span>
-        <span class="parametername">number</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">number</span></td>
+        <td></td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -545,14 +562,19 @@ For range and default values check documentation of the endpoint requested.</p>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.requests.OrderDirection.html">OrderDirection</a></span>
-        <span class="parametername">direction</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.requests.OrderDirection.html">OrderDirection</a></td>
+        <td><span class="parametername">direction</span></td>
+        <td></td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -598,14 +620,19 @@ For range and default values check documentation of the endpoint requested.</p>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span>[]</span>
-        <span class="parametername">segments</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">segments</span></td>
+        <td></td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -633,7 +660,6 @@ For range and default values check documentation of the endpoint requested.</p>
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_RequestBuilder_1.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.RequestBuilder%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
               <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/RequestBuilder.cs/#L18" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SubmitTransactionResponse.Extras
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -88,7 +88,7 @@
   
   <h5 id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Extras : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Extras</code></pre>
   </div>
   
   
@@ -103,7 +103,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras__ctor_System_String_System_String_stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultCodes_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.%23ctor(System.String%2CSystem.String%2Cstellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L125" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L138" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras__ctor_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.#ctor*"></a>
@@ -120,28 +120,29 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">envelopeXdr</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">resultXdr</span>
-        <p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.html">SubmitTransactionResponse.Extras.ResultCodes</a></span>
-        <span class="parametername">resultCodes</span>
-        <p>
-      </td>
-    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">envelopeXdr</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">resultXdr</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultCodes.html">SubmitTransactionResponse.Extras.ResultCodes</a></td>
+        <td><span class="parametername">resultCodes</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -163,7 +164,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_EnvelopeXdr.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.EnvelopeXdr%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L116" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L129" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_EnvelopeXdr_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.EnvelopeXdr*"></a>
@@ -176,7 +177,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string EnvelopeXdr { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;envelope_xdr&quot;)]
+public string EnvelopeXdr { get; }</code></pre>
   </div>
   
   
@@ -206,7 +208,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ExtrasResultCodes.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ExtrasResultCodes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L122" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L135" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ExtrasResultCodes_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ExtrasResultCodes*"></a>
@@ -219,7 +221,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SubmitTransactionResponse.Extras.ResultCodes ExtrasResultCodes { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;result_codes&quot;)]
+public SubmitTransactionResponse.Extras.ResultCodes ExtrasResultCodes { get; }</code></pre>
   </div>
   
   
@@ -249,7 +252,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultXdr.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultXdr%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L119" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L132" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras_ResultXdr_" data-uid="stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras.ResultXdr*"></a>
@@ -262,7 +265,8 @@
   <h5 class="decalaration">Declaration</h5>
   
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ResultXdr { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;result_xdr&quot;)]
+public string ResultXdr { get; }</code></pre>
   </div>
   
   
@@ -291,8 +295,7 @@
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_SubmitTransactionResponse_Extras.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.SubmitTransactionResponse.Extras%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L114" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/SubmitTransactionResponse.cs/#L127" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Transaction.Builder
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -88,7 +88,7 @@
   
   <h5 id="stellar_dotnet_sdk_Transaction_Builder_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Builder : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Builder</code></pre>
   </div>
   
   
@@ -103,7 +103,7 @@
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Builder__ctor_stellar_dotnet_sdk_ITransactionBuilderAccount_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Builder.%23ctor(stellar_dotnet_sdk.ITransactionBuilderAccount)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L296" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L297" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Transaction_Builder__ctor_" data-uid="stellar_dotnet_sdk.Transaction.Builder.#ctor*"></a>
@@ -121,16 +121,21 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.ITransactionBuilderAccount.html">ITransactionBuilderAccount</a></span>
-        <span class="parametername">sourceAccount</span>
-        <p><p>The source account for this transaction. This account is the account
-who will use a sequence number. When build() is called, the account object's sequence number will be incremented.</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.ITransactionBuilderAccount.html">ITransactionBuilderAccount</a></td>
+        <td><span class="parametername">sourceAccount</span></td>
+        <td><p>The source account for this transaction. This account is the account
+who will use a sequence number. When build() is called, the account object's sequence number will be incremented.</p>
+</td>
+      </tr>
   </table>
   
   
@@ -152,7 +157,7 @@ who will use a sequence number. When build() is called, the account object's seq
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Builder_OperationsCount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Builder.OperationsCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L302" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L304" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Transaction_Builder_OperationsCount_" data-uid="stellar_dotnet_sdk.Transaction.Builder.OperationsCount*"></a>
@@ -197,7 +202,7 @@ who will use a sequence number. When build() is called, the account object's seq
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Builder_AddMemo_stellar_dotnet_sdk_Memo_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Builder.AddMemo(stellar_dotnet_sdk.Memo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L325" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L327" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Transaction_Builder_AddMemo_" data-uid="stellar_dotnet_sdk.Transaction.Builder.AddMemo*"></a>
@@ -216,15 +221,20 @@ See: <a href="https://www.stellar.org/developers/learn/concepts/transactions.htm
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Memo.html">Memo</a></span>
-        <span class="parametername">memo</span>
-        <p><p>Memo</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Memo.html">Memo</a></td>
+        <td><span class="parametername">memo</span></td>
+        <td><p>Memo</p>
+</td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -254,7 +264,7 @@ See: <a href="https://www.stellar.org/developers/learn/concepts/transactions.htm
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Builder_AddOperation_stellar_dotnet_sdk_Operation_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Builder.AddOperation(stellar_dotnet_sdk.Operation)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L310" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L312" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Transaction_Builder_AddOperation_" data-uid="stellar_dotnet_sdk.Transaction.Builder.AddOperation*"></a>
@@ -273,15 +283,20 @@ See: <a href="https://www.stellar.org/developers/learn/concepts/list-of-operatio
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.Operation.html">Operation</a></span>
-        <span class="parametername">operation</span>
-        <p><p>operation</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Operation.html">Operation</a></td>
+        <td><span class="parametername">operation</span></td>
+        <td><p>operation</p>
+</td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -311,7 +326,7 @@ See: <a href="https://www.stellar.org/developers/learn/concepts/list-of-operatio
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Builder_AddTimeBounds_stellar_dotnet_sdk_TimeBounds_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Builder.AddTimeBounds(stellar_dotnet_sdk.TimeBounds)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L341" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L343" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Transaction_Builder_AddTimeBounds_" data-uid="stellar_dotnet_sdk.Transaction.Builder.AddTimeBounds*"></a>
@@ -330,15 +345,20 @@ See: <a href="https://www.stellar.org/developers/learn/concepts/transactions.htm
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.TimeBounds.html">TimeBounds</a></span>
-        <span class="parametername">timeBounds</span>
-        <p><p>timeBounds</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.TimeBounds.html">TimeBounds</a></td>
+        <td><span class="parametername">timeBounds</span></td>
+        <td><p>timeBounds</p>
+</td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -368,7 +388,7 @@ See: <a href="https://www.stellar.org/developers/learn/concepts/transactions.htm
     <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Builder_Build.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Builder.Build%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L355" title="View Source"><i class="fa fa-code"></i></a>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L373" title="View Source"><i class="fa fa-code"></i></a>
   </span>
   
   <a id="stellar_dotnet_sdk_Transaction_Builder_Build_" data-uid="stellar_dotnet_sdk.Transaction.Builder.Build*"></a>
@@ -407,11 +427,72 @@ See: <a href="https://www.stellar.org/developers/learn/concepts/transactions.htm
   
   </div>
   
+  <span class="small pull-right mobile-hide">
+    <span class="divider"> </span>
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Builder_SetFee_System_Int32_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Builder.SetFee(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L359" title="View Source"><i class="fa fa-code"></i></a>
+  </span>
+  
+  <a id="stellar_dotnet_sdk_Transaction_Builder_SetFee_" data-uid="stellar_dotnet_sdk.Transaction.Builder.SetFee*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_Builder_SetFee_System_Int32_" data-uid="stellar_dotnet_sdk.Transaction.Builder.SetFee(System.Int32)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_Builder_SetFee_System_Int32_" class="expander" data-toggle="collapse">SetFee(Int32)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_Builder_SetFee_System_Int32_" class="collapse in">
+  <div class="markdown level1 summary"><p>Set the transaction fee (in Stroops) per operation.
+See: <a href="https://www.stellar.org/developers/learn/concepts/transactions.html">https://www.stellar.org/developers/learn/concepts/transactions.html</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transaction.Builder SetFee(int fee)</code></pre>
+  </div>
+  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">fee</span></td>
+        <td><p>fee (in Stroops) for each operation in the transaction</p>
+</td>
+      </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Transaction.Builder.html">Transaction.Builder</a>
+        <p><p>Builder object so you can chain methods.</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
   
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Builder.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Builder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
               <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L282" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           

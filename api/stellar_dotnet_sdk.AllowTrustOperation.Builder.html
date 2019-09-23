@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class AllowTrustOperation.Builder
    ">
-    <meta name="generator" content="docfx 2.40.6.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -88,7 +88,7 @@
   
   <h5 id="stellar_dotnet_sdk_AllowTrustOperation_Builder_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Builder : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class Builder</code></pre>
   </div>
   
   
@@ -121,32 +121,33 @@
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">trustor</span>
-        <p><p>The account of the recipient of the trustline.</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.String</span></span>
-        <span class="parametername">assetCode</span>
-        <p><p>The asset of the trustline the source account is authorizing. For example, if a gateway wants
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
+        <td><span class="parametername">trustor</span></td>
+        <td><p>The account of the recipient of the trustline.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">assetCode</span></td>
+        <td><p>The asset of the trustline the source account is authorizing. For example, if a gateway wants
 to allow another account to hold its USD credit, the type is USD.</p>
-</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span class="pull-right"><span class="xref">System.Boolean</span></span>
-        <span class="parametername">authorize</span>
-        <p><p>Flag indicating whether the trustline is authorized.</p>
-</p>
-      </td>
-    </tr>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">authorize</span></td>
+        <td><p>Flag indicating whether the trustline is authorized.</p>
+</td>
+      </tr>
   </table>
   
   
@@ -184,14 +185,19 @@ to allow another account to hold its USD credit, the type is USD.</p>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.xdr.AllowTrustOp.html">AllowTrustOp</a></span>
-        <span class="parametername">op</span>
-        <p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.AllowTrustOp</span></td>
+        <td><span class="parametername">op</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -203,6 +209,15 @@ to allow another account to hold its USD credit, the type is USD.</p>
   
   
   
+  <h5 class="exceptions">Exceptions</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Exception</span>
+        <p>
+      </td>
+    </tr>
+  </table>
   
   </div>
   <h3 id="methods">Methods
@@ -275,15 +290,20 @@ to allow another account to hold its USD credit, the type is USD.</p>
   </div>
   
   <h5 class="parameters">Parameters</h5>
-  <table>
+  <table class="table table-striped">
+  <thead>
     <tr>
-      <td>
-        <span class="pull-right"><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></span>
-        <span class="parametername">sourceAccount</span>
-        <p><p>Source account</p>
-</p>
-      </td>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
     </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
+        <td><span class="parametername">sourceAccount</span></td>
+        <td><p>Source account</p>
+</td>
+      </tr>
   </table>
   
   <h5 class="returns">Returns</h5>
@@ -312,7 +332,6 @@ to allow another account to hold its USD credit, the type is USD.</p>
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_AllowTrustOperation_Builder.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.AllowTrustOperation.Builder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc" class="fab btn-warning pull-right"><i class="glyphicon glyphicon-pencil"></i></a>
               <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/AllowTrustOperation.cs/#L82" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
