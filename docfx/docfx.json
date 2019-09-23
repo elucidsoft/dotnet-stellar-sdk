@@ -6,7 +6,7 @@
 		}],
 		"dest": "api",
 		"filter": "filterConfig.yml",
-		"disableGitFeatures": false
+		"disableGitFeatures": true
 	}],
 	"build": {
 		"content": [{
@@ -58,6 +58,6 @@
 		"noLangKeyword": false,
 		"keepFileLink": false,
 		"cleanupCacheHistory": false,
-		"disableGitFeatures": false
+		"disableGitFeatures": true
 	}
 }
