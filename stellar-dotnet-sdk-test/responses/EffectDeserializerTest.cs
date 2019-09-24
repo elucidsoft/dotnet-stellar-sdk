@@ -610,7 +610,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.Seller, "GCVHDLN6EHZBYW2M3BQIY32C23E4GPIRZZDBNF2Q73DAZ5VJDRGSMYRB");
-            Assert.AreEqual(effect.OfferId, 1);
+            Assert.AreEqual(effect.OfferId, "1");
             Assert.AreEqual(effect.SoldAmount, "1000.0");
             Assert.AreEqual(effect.SoldAsset, Asset.CreateNonNativeAsset("EUR", "GCWVFBJ24754I5GXG4JOEB72GJCL3MKWC7VAEYWKGQHPVH3ENPNBSKWS"));
             Assert.AreEqual(effect.BoughtAmount, "60.0");

@@ -315,7 +315,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is ManageSellOfferOperationResponse);
             var operation = (ManageSellOfferOperationResponse) instance;
 
-            Assert.AreEqual(operation.OfferId, 96052902);
+            Assert.AreEqual(operation.OfferId, "96052902");
             Assert.AreEqual(operation.Amount, "243.7500000");
             Assert.AreEqual(operation.Price, "8.0850240");
             Assert.AreEqual(operation.SellingAsset,
@@ -349,7 +349,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is ManageBuyOfferOperationResponse);
             var operation = (ManageBuyOfferOperationResponse) instance;
 
-            Assert.AreEqual(operation.OfferId, 0);
+            Assert.AreEqual(operation.OfferId, "0");
             Assert.AreEqual(operation.Amount, "50000.0000000");
             Assert.AreEqual(operation.Price, "0.0463000");
             Assert.AreEqual(operation.BuyingAsset,

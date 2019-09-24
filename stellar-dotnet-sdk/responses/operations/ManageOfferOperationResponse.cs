@@ -15,7 +15,7 @@ namespace stellar_dotnet_sdk.responses.operations
 
         }
 
-        public ManageOfferOperationResponse(int offerId, string amount, string price, string buyingAssetType, string buyingAssetCode, string buyingAssetIssuer, string sellingAssetType, string sellingAssetCode, string sellingAssetIssuer)
+        public ManageOfferOperationResponse(string offerId, string amount, string price, string buyingAssetType, string buyingAssetCode, string buyingAssetIssuer, string sellingAssetType, string sellingAssetCode, string sellingAssetIssuer)
         {
             OfferId = offerId;
             Amount = amount;
@@ -29,7 +29,7 @@ namespace stellar_dotnet_sdk.responses.operations
         }
 
         [JsonProperty(PropertyName = "offer_id")]
-        public int OfferId { get; private set; }
+        public string OfferId { get; private set; }
 
         [JsonProperty(PropertyName = "amount")]
         public string Amount { get; private set; }
