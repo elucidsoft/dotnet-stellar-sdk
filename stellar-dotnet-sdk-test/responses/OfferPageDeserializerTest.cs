@@ -32,7 +32,7 @@ namespace stellar_dotnet_sdk_test.responses
 
         public static void AssertTestData(Page<OfferResponse> offerResponsePage)
         {
-            Assert.AreEqual(offerResponsePage.Records[0].Id, 241);
+            Assert.AreEqual(offerResponsePage.Records[0].Id, "241");
             Assert.AreEqual(offerResponsePage.Records[0].Seller, "GA2IYMIZSAMDD6QQTTSIEL73H2BKDJQTA7ENDEEAHJ3LMVF7OYIZPXQD");
             Assert.AreEqual(offerResponsePage.Records[0].PagingToken, "241");
             Assert.AreEqual(offerResponsePage.Records[0].Selling, Asset.CreateNonNativeAsset("INR", "GA2IYMIZSAMDD6QQTTSIEL73H2BKDJQTA7ENDEEAHJ3LMVF7OYIZPXQD"));

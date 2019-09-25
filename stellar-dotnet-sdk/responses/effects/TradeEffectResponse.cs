@@ -16,7 +16,7 @@ namespace stellar_dotnet_sdk.responses.effects
         }
 
         /// <inheritdoc />
-        public TradeEffectResponse(string seller, long offerId, string soldAmount, string soldAssetType, string soldAssetCode,
+        public TradeEffectResponse(string seller, string offerId, string soldAmount, string soldAssetType, string soldAssetCode,
             string soldAssetIssuer, string boughtAmount, string boughtAssetType, string boughtAssetCode, string boughtAssetIssuer)
         {
             Seller = seller;
@@ -37,7 +37,7 @@ namespace stellar_dotnet_sdk.responses.effects
         public string Seller { get; private set; }
 
         [JsonProperty(PropertyName = "offer_id")]
-        public long OfferId { get; private set; }
+        public string OfferId { get; private set; }
 
         [JsonProperty(PropertyName = "sold_amount")]
         public string SoldAmount { get; private set; }

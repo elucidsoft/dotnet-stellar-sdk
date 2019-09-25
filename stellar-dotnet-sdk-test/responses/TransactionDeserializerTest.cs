@@ -16,6 +16,20 @@ namespace stellar_dotnet_sdk_test.responses
             var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
 
             AssertTestData(transaction);
+            Assert.AreEqual(100L, transaction.FeePaid);
+            Assert.AreEqual(100L, transaction.FeeCharged);
+            Assert.AreEqual(1050L, transaction.MaxFee);
+        }
+
+        [TestMethod]
+        public void TestDeserializeOfVersionBefore020()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "transactionTransactionPre020.json"));
+            var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
+            AssertTestData(transaction);
+            Assert.AreEqual(100L, transaction.FeePaid);
+            Assert.AreEqual(0L, transaction.FeeCharged);
+            Assert.AreEqual(0L, transaction.MaxFee);
         }
 
         [TestMethod]
@@ -28,6 +42,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.IsTrue(back.Successful);
             AssertTestData(back);
+            Assert.AreEqual(100L, transaction.FeePaid);
+            Assert.AreEqual(100L, transaction.FeeCharged);
+            Assert.AreEqual(1050L, transaction.MaxFee);
         }
 
         public static void AssertTestData(TransactionResponse transaction)
@@ -38,7 +55,6 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("3933090531512320", transaction.PagingToken);
             Assert.AreEqual("GCUB7JL4APK7LKJ6MZF7Q2JTLHAGNBIUA7XIXD5SQTG52GQ2DAT6XZMK", transaction.SourceAccount);
             Assert.AreEqual(2373051035426646L, transaction.SourceAccountSequence);
-            Assert.AreEqual(100L, transaction.FeePaid);
             Assert.AreEqual(1, transaction.OperationCount);
             Assert.AreEqual(
                 "AAAAAKgfpXwD1fWpPmZL+GkzWcBmhRQH7ouPsoTN3RoaGCfrAAAAZAAIbkcAAB9WAAAAAAAAAANRBBZE6D1qyGjISUGLY5Ldvp31PwAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAP1qe44j+i4uIT+arbD4QDQBt8ryEeJd7a0jskQ3nwDeAAAAAAAAAADA7RnarSzCwj3OT+M2btCMFpVBdqxJS+Sr00qBjtFv7gAAAABLCs/QAAAAAAAAAAEaGCfrAAAAQG/56Cj2J8W/KCZr+oC4sWND1CTGWfaccHNtuibQH8kZIb+qBSDY94g7hiaAXrlIeg9b7oz/XuP3x9MWYw2jtwM=",

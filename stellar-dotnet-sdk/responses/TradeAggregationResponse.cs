@@ -1,17 +1,15 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace stellar_dotnet_sdk.responses
 {
     public class TradeAggregationResponse : Response
     {
         [JsonProperty(PropertyName = "timestamp")]
-        public long Timestamp { get; }
+        public string Timestamp { get; }
 
         [JsonProperty(PropertyName = "trade_count")]
-        public int TradeCount { get; }
+        public string TradeCount { get; }
 
         [JsonProperty(PropertyName = "base_volume")]
         public String BaseVolume { get; }
@@ -29,17 +27,17 @@ namespace stellar_dotnet_sdk.responses
 
         [JsonProperty(PropertyName = "close")] public String Close { get; }
 
-        public TradeAggregationResponse(long timestamp, int tradeCount, String baseVolume, String counterVolume, String avg, String high, String low, String open, String close)
+        public TradeAggregationResponse(string timestamp, string tradeCount, String baseVolume, String counterVolume, String avg, String high, String low, String open, String close)
         {
-            this.Timestamp = timestamp;
-            this.TradeCount = tradeCount;
-            this.BaseVolume = baseVolume;
-            this.CounterVolume = counterVolume;
-            this.Avg = avg;
-            this.High = high;
-            this.Low = low;
-            this.Open = open;
-            this.Close = close;
+            Timestamp = timestamp;
+            TradeCount = tradeCount;
+            BaseVolume = baseVolume;
+            CounterVolume = counterVolume;
+            Avg = avg;
+            High = high;
+            Low = low;
+            Open = open;
+            Close = close;
         }
     }
 }
