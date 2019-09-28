@@ -79,8 +79,6 @@ public class Operation  {
 
     public CreateAccountOp CreateAccountOp {get; set;}
     public PaymentOp PaymentOp {get; set;}
-    [Obsolete("[Protocol 12] Is now PathPaymentStrictReceiveOp")]
-    public PathPaymentStrictReceiveOp PathPaymentOp {get; set;}
     public PathPaymentStrictReceiveOp PathPaymentStrictReceiveOp {get; set;}
     public ManageSellOfferOp ManageSellOfferOp {get; set;}
     public CreatePassiveSellOfferOp CreatePassiveSellOfferOp {get; set;}

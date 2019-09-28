@@ -3,7 +3,7 @@ namespace stellar_dotnet_sdk.responses.results
     /// <summary>
     /// Destination would go above their limit.
     /// </summary>
-    public class PathPaymentLineFull : PathPaymentResult
+    public class PathPaymentStrictReceiveLineFull : PathPaymentStrictReceiveResult
     {
 
     }

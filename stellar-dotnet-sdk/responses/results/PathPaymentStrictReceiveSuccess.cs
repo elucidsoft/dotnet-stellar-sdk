@@ -3,7 +3,7 @@ namespace stellar_dotnet_sdk.responses.results
     /// <summary>
     /// Operation successful.
     /// </summary>
-    public class PathPaymentSuccess : PathPaymentResult
+    public class PathPaymentStrictReceiveSuccess : PathPaymentStrictReceiveResult
     {
         public override bool IsSuccess => true;
 

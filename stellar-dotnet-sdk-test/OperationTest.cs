@@ -88,17 +88,17 @@ namespace stellar_dotnet_sdk_test
             var destAmount = "0.0001";
             Asset[] path = {new AssetTypeCreditAlphaNum4("USD", pathIssuer1.AccountId), new AssetTypeCreditAlphaNum12("TESTTEST", pathIssuer2.AccountId)};
 
-            var operation = new PathPaymentOperation.Builder(
+            var operation = new PathPaymentStrictReceiveOperation.Builder(
                     sendAsset, sendMax, destination, destAsset, destAmount)
                 .SetPath(path)
                 .SetSourceAccount(source)
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (PathPaymentOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (PathPaymentStrictReceiveOperation) Operation.FromXdr(xdr);
 
-            Assert.AreEqual(1000L, xdr.Body.PathPaymentOp.SendMax.InnerValue);
-            Assert.AreEqual(1000L, xdr.Body.PathPaymentOp.DestAmount.InnerValue);
+            Assert.AreEqual(1000L, xdr.Body.PathPaymentStrictReceiveOp.SendMax.InnerValue);
+            Assert.AreEqual(1000L, xdr.Body.PathPaymentStrictReceiveOp.DestAmount.InnerValue);
             Assert.IsTrue(parsedOperation.SendAsset is AssetTypeNative);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
             Assert.AreEqual(destination.AccountId, parsedOperation.Destination.AccountId);
@@ -133,16 +133,16 @@ namespace stellar_dotnet_sdk_test
             Asset destAsset = new AssetTypeCreditAlphaNum4("USD", issuer.AccountId);
             var destAmount = "0.0001";
 
-            var operation = new PathPaymentOperation.Builder(
+            var operation = new PathPaymentStrictReceiveOperation.Builder(
                     sendAsset, sendMax, destination, destAsset, destAmount)
                 .SetSourceAccount(source)
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (PathPaymentOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (PathPaymentStrictReceiveOperation) Operation.FromXdr(xdr);
 
-            Assert.AreEqual(1000L, xdr.Body.PathPaymentOp.SendMax.InnerValue);
-            Assert.AreEqual(1000L, xdr.Body.PathPaymentOp.DestAmount.InnerValue);
+            Assert.AreEqual(1000L, xdr.Body.PathPaymentStrictReceiveOp.SendMax.InnerValue);
+            Assert.AreEqual(1000L, xdr.Body.PathPaymentStrictReceiveOp.DestAmount.InnerValue);
             Assert.IsTrue(parsedOperation.SendAsset is AssetTypeNative);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
             Assert.AreEqual(destination.AccountId, parsedOperation.Destination.AccountId);
