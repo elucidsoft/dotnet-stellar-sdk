@@ -6,7 +6,7 @@ using stellar_dotnet_sdk.responses.results;
 namespace stellar_dotnet_sdk_test.responses.results
 {
     [TestClass]
-    public class PathPaymentResultTest
+    public class PathPaymentStrictReceiveResultTest
     {
         [TestMethod]
         public void TestSuccess()
