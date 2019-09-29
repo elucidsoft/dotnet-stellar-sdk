@@ -78,7 +78,7 @@ namespace stellar_dotnet_sdk
         }
 
         /// <summary>
-        ///     Builds a <see cref="PathPaymentOperation"/>.
+        ///     Builds a <see cref="PathPaymentStrictSendOperation"/>.
         /// </summary>
         public class Builder
         {
@@ -104,7 +104,7 @@ namespace stellar_dotnet_sdk
             }
 
             /// <summary>
-            ///     Creates a new PathPaymentOperation builder.
+            ///     Creates a new PathPaymentStrictSendOperation builder.
             /// </summary>
             /// <param name="sendAsset"> The asset deducted from the sender's account.</param>
             /// <param name="sendAmount"> The asset deducted from the sender's account.</param>
