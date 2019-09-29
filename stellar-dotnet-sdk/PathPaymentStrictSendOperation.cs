@@ -10,16 +10,16 @@ namespace stellar_dotnet_sdk
     /// 
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#path-payment">Path Payment</see>
     /// </summary>
-    public class PathPaymentStrictReceiveOperation : Operation
+    public class PathPaymentStrictSendOperation : Operation
     {
-        private PathPaymentStrictReceiveOperation(Asset sendAsset, string sendMax, KeyPair destination,
-            Asset destAsset, string destAmount, Asset[] path)
+        private PathPaymentStrictSendOperation(Asset sendAsset, string sendAmount, KeyPair destination,
+            Asset destAsset, string destMin, Asset[] path)
         {
             SendAsset = sendAsset ?? throw new ArgumentNullException(nameof(sendAsset), "sendAsset cannot be null");
-            SendMax = sendMax ?? throw new ArgumentNullException(nameof(sendMax), "sendMax cannot be null");
+            SendAmount = sendAmount ?? throw new ArgumentNullException(nameof(sendAmount), "sendAmount cannot be null");
             Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
             DestAsset = destAsset ?? throw new ArgumentNullException(nameof(destAsset), "destAsset cannot be null");
-            DestAmount = destAmount ?? throw new ArgumentNullException(nameof(destAmount), "destAmount cannot be null");
+            DestMin = destMin ?? throw new ArgumentNullException(nameof(destMin), "destMin cannot be null");
 
             if (path == null)
             {
@@ -35,36 +35,36 @@ namespace stellar_dotnet_sdk
 
         public Asset SendAsset { get; }
 
-        public string SendMax { get; }
+        public string SendAmount { get; }
 
         public KeyPair Destination { get; }
 
         public Asset DestAsset { get; }
 
-        public string DestAmount { get; }
+        public string DestMin { get; }
 
         public Asset[] Path { get; }
 
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {
-            var op = new sdkxdr.PathPaymentStrictReceiveOp();
+            var op = new sdkxdr.PathPaymentStrictSendOp();
 
             // sendAsset
             op.SendAsset = SendAsset.ToXdr();
-            // sendMax
-            var sendMax = new sdkxdr.Int64();
-            sendMax.InnerValue = ToXdrAmount(SendMax);
-            op.SendMax = sendMax;
+            // sendAmount
+            var sendAmount = new sdkxdr.Int64();
+            sendAmount.InnerValue = ToXdrAmount(SendAmount);
+            op.SendAmount = sendAmount;
             // destination
             var destination = new sdkxdr.AccountID();
             destination.InnerValue = Destination.XdrPublicKey;
             op.Destination = destination;
             // destAsset
             op.DestAsset = DestAsset.ToXdr();
-            // destAmount
-            var destAmount = new sdkxdr.Int64();
-            destAmount.InnerValue = ToXdrAmount(DestAmount);
-            op.DestAmount = destAmount;
+            // destMin
+            var destMin = new sdkxdr.Int64();
+            destMin.InnerValue = ToXdrAmount(DestMin);
+            op.DestMin = destMin;
             // path
             var path = new sdkxdr.Asset[Path.Length];
             for (var i = 0; i < Path.Length; i++)
@@ -73,7 +73,7 @@ namespace stellar_dotnet_sdk
 
             var body = new sdkxdr.Operation.OperationBody();
             body.Discriminant = sdkxdr.OperationType.Create(sdkxdr.OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_RECEIVE);
-            body.PathPaymentStrictReceiveOp = op;
+            body.PathPaymentStrictSendOp = op;
             return body;
         }
 
@@ -82,22 +82,22 @@ namespace stellar_dotnet_sdk
         /// </summary>
         public class Builder
         {
-            private readonly string _DestAmount;
+            private readonly string _DestMin;
             private readonly Asset _DestAsset;
             private readonly KeyPair _Destination;
             private readonly Asset _SendAsset;
-            private readonly string _SendMax;
+            private readonly string _SendAmount;
             private Asset[] _Path;
 
             private KeyPair _SourceAccount;
 
-            public Builder(sdkxdr.PathPaymentStrictReceiveOp op)
+            public Builder(sdkxdr.PathPaymentStrictSendOp op)
             {
                 _SendAsset = Asset.FromXdr(op.SendAsset);
-                _SendMax = FromXdrAmount(op.SendMax.InnerValue);
+                _SendAmount = FromXdrAmount(op.SendAmount.InnerValue);
                 _Destination = KeyPair.FromXdrPublicKey(op.Destination.InnerValue);
                 _DestAsset = Asset.FromXdr(op.DestAsset);
-                _DestAmount = FromXdrAmount(op.DestAmount.InnerValue);
+                _DestMin = FromXdrAmount(op.DestMin.InnerValue);
                 _Path = new Asset[op.Path.Length];
                 for (var i = 0; i < op.Path.Length; i++)
                     _Path[i] = Asset.FromXdr(op.Path[i]);
@@ -107,18 +107,18 @@ namespace stellar_dotnet_sdk
             ///     Creates a new PathPaymentOperation builder.
             /// </summary>
             /// <param name="sendAsset"> The asset deducted from the sender's account.</param>
-            /// <param name="sendMax"> The asset deducted from the sender's account.</param>
+            /// <param name="sendAmount"> The asset deducted from the sender's account.</param>
             /// <param name="destination"> Payment destination.</param>
             /// <param name="destAsset"> The asset the destination account receives.</param>
-            /// <param name="destAmount"> The amount of destination asset the destination account receives.</param>
-            /// <exception cref="ArithmeticException"> When sendMax or destAmount has more than 7 decimal places.</exception>
-            public Builder(Asset sendAsset, string sendMax, KeyPair destination, Asset destAsset, string destAmount)
+            /// <param name="destMin"> The amount of destination asset the destination account receives.</param>
+            /// <exception cref="ArithmeticException"> When sendAmount or destMin has more than 7 decimal places.</exception>
+            public Builder(Asset sendAsset, string sendAmount, KeyPair destination, Asset destAsset, string destMin)
             {
                 _SendAsset = sendAsset ?? throw new ArgumentNullException(nameof(sendAsset), "sendAsset cannot be null");
-                _SendMax = sendMax ?? throw new ArgumentNullException(nameof(sendMax), "sendMax cannot be null");
+                _SendAmount = sendAmount ?? throw new ArgumentNullException(nameof(sendAmount), "sendAmount cannot be null");
                 _Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
                 _DestAsset = destAsset ?? throw new ArgumentNullException(nameof(destAsset), "destAsset cannot be null");
-                _DestAmount = destAmount ?? throw new ArgumentNullException(nameof(destAmount), "destAmount cannot be null");
+                _DestMin = destMin ?? throw new ArgumentNullException(nameof(destMin), "destMin cannot be null");
             }
 
             /// <summary>
@@ -156,9 +156,9 @@ namespace stellar_dotnet_sdk
             ///     Builds an operation
             /// </summary>
             /// <returns></returns>
-            public PathPaymentStrictReceiveOperation Build()
+            public PathPaymentStrictSendOperation Build()
             {
-                var operation = new PathPaymentStrictReceiveOperation(_SendAsset, _SendMax, _Destination, _DestAsset, _DestAmount, _Path);
+                var operation = new PathPaymentStrictSendOperation(_SendAsset, _SendAmount, _Destination, _DestAsset, _DestMin, _Path);
                 if (_SourceAccount != null)
                     operation.SourceAccount = _SourceAccount;
                 return operation;
