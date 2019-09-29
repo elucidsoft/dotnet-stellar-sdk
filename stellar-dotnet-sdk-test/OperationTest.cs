@@ -68,7 +68,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
-        public void TestPathPaymentOperation()
+        public void TestPathPaymentStrictReceiveOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
             var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
@@ -114,7 +114,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
-        public void TestPathPaymentEmptyPathOperation()
+        public void TestPathPaymentStrictReceiveEmptyPathOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
             var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
@@ -154,6 +154,92 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAIAAAAAAAAAAAAAA+gAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAABVVNEAAAAAACNlYd30HdCuLI54eyYjyX/fDyH9IJWIr/hKDcXKQbq1QAAAAAAAAPoAAAAAA==",
+                operation.ToXdrBase64());
+        }
+
+        [TestMethod]
+        public void TestPathPaymentStrictSendOperation()
+        {
+            // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
+            var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
+            // GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR
+            var destination = KeyPair.FromSecretSeed("SDHZGHURAYXKU2KMVHPOXI6JG2Q4BSQUQCEOY72O3QQTCLR2T455PMII");
+            // GCGZLB3X2B3UFOFSHHQ6ZGEPEX7XYPEH6SBFMIV74EUDOFZJA3VNL6X4
+            var issuer = KeyPair.FromSecretSeed("SBOBVZUN6WKVMI6KIL2GHBBEETEV6XKQGILITNH6LO6ZA22DBMSDCPAG");
+
+            // GAVAQKT2M7B4V3NN7RNNXPU5CWNDKC27MYHKLF5UNYXH4FNLFVDXKRSV
+            var pathIssuer1 = KeyPair.FromSecretSeed("SALDLG5XU5AEJWUOHAJPSC4HJ2IK3Z6BXXP4GWRHFT7P7ILSCFFQ7TC5");
+            // GBCP5W2VS7AEWV2HFRN7YYC623LTSV7VSTGIHFXDEJU7S5BAGVCSETRR
+            var pathIssuer2 = KeyPair.FromSecretSeed("SA64U7C5C7BS5IHWEPA7YWFN3Z6FE5L6KAMYUIT4AQ7KVTVLD23C6HEZ");
+
+            Asset sendAsset = new AssetTypeNative();
+            var sendAmount = "0.0001";
+            Asset destAsset = new AssetTypeCreditAlphaNum4("USD", issuer.AccountId);
+            var destMin = "0.0001";
+            Asset[] path = {new AssetTypeCreditAlphaNum4("USD", pathIssuer1.AccountId), new AssetTypeCreditAlphaNum12("TESTTEST", pathIssuer2.AccountId)};
+
+            var operation = new PathPaymentStrictSendOperation.Builder(
+                    sendAsset, sendAmount, destination, destAsset, destMin)
+                .SetPath(path)
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+            var parsedOperation = (PathPaymentStrictSendOperation) Operation.FromXdr(xdr);
+
+            Assert.IsTrue(parsedOperation.SendAsset is AssetTypeNative);
+            Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
+            Assert.AreEqual(destination.AccountId, parsedOperation.Destination.AccountId);
+            Assert.AreEqual(sendAmount, parsedOperation.SendAmount);
+            Assert.IsTrue(parsedOperation.DestAsset is AssetTypeCreditAlphaNum4);
+            Assert.AreEqual(destMin, parsedOperation.DestMin);
+            Assert.AreEqual(path.Length, parsedOperation.Path.Length);
+            Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
+
+            Assert.AreEqual(
+                "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAA0AAAAAAAAAAAAAA+gAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAABVVNEAAAAAACNlYd30HdCuLI54eyYjyX/fDyH9IJWIr/hKDcXKQbq1QAAAAAAAAPoAAAAAgAAAAFVU0QAAAAAACoIKnpnw8rtrfxa276dFZo1C19mDqWXtG4ufhWrLUd1AAAAAlRFU1RURVNUAAAAAAAAAABE/ttVl8BLV0csW/xgXtbXOVf1lMyDluMiafl0IDVFIg==",
+                operation.ToXdrBase64());
+        }
+
+        [TestMethod]
+        public void TestPathPaymentStrictSendEmptyPathOperation()
+        {
+            // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
+            var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
+            // GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR
+            var destination = KeyPair.FromSecretSeed("SDHZGHURAYXKU2KMVHPOXI6JG2Q4BSQUQCEOY72O3QQTCLR2T455PMII");
+            // GCGZLB3X2B3UFOFSHHQ6ZGEPEX7XYPEH6SBFMIV74EUDOFZJA3VNL6X4
+            var issuer = KeyPair.FromSecretSeed("SBOBVZUN6WKVMI6KIL2GHBBEETEV6XKQGILITNH6LO6ZA22DBMSDCPAG");
+
+            // GAVAQKT2M7B4V3NN7RNNXPU5CWNDKC27MYHKLF5UNYXH4FNLFVDXKRSV
+            var unused1 = KeyPair.FromSecretSeed("SALDLG5XU5AEJWUOHAJPSC4HJ2IK3Z6BXXP4GWRHFT7P7ILSCFFQ7TC5");
+            // GBCP5W2VS7AEWV2HFRN7YYC623LTSV7VSTGIHFXDEJU7S5BAGVCSETRR
+            var unused = KeyPair.FromSecretSeed("SA64U7C5C7BS5IHWEPA7YWFN3Z6FE5L6KAMYUIT4AQ7KVTVLD23C6HEZ");
+
+            Asset sendAsset = new AssetTypeNative();
+            var sendAmount = "0.0001";
+            Asset destAsset = new AssetTypeCreditAlphaNum4("USD", issuer.AccountId);
+            var destMin = "0.0001";
+
+            var operation = new PathPaymentStrictSendOperation.Builder(
+                    sendAsset, sendAmount, destination, destAsset, destMin)
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+            var parsedOperation = (PathPaymentStrictSendOperation) Operation.FromXdr(xdr);
+
+            Assert.IsTrue(parsedOperation.SendAsset is AssetTypeNative);
+            Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
+            Assert.AreEqual(destination.AccountId, parsedOperation.Destination.AccountId);
+            Assert.AreEqual(sendAmount, parsedOperation.SendAmount);
+            Assert.IsTrue(parsedOperation.DestAsset is AssetTypeCreditAlphaNum4);
+            Assert.AreEqual(destMin, parsedOperation.DestMin);
+            Assert.AreEqual(0, parsedOperation.Path.Length);
+            Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
+
+            Assert.AreEqual(
+                "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAA0AAAAAAAAAAAAAA+gAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAABVVNEAAAAAACNlYd30HdCuLI54eyYjyX/fDyH9IJWIr/hKDcXKQbq1QAAAAAAAAPoAAAAAA==",
                 operation.ToXdrBase64());
         }
 

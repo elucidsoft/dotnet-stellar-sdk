@@ -72,7 +72,7 @@ namespace stellar_dotnet_sdk
             op.Path = path;
 
             var body = new sdkxdr.Operation.OperationBody();
-            body.Discriminant = sdkxdr.OperationType.Create(sdkxdr.OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_RECEIVE);
+            body.Discriminant = sdkxdr.OperationType.Create(sdkxdr.OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND);
             body.PathPaymentStrictSendOp = op;
             return body;
         }

@@ -108,6 +108,9 @@ namespace stellar_dotnet_sdk
                 case OperationType.OperationTypeEnum.INFLATION:
                     operation = new InflationOperation.Builder().Build();
                     break;
+                case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND:
+                    operation = new PathPaymentStrictSendOperation.Builder(body.PathPaymentStrictSendOp).Build();
+                    break;                
                 default:
                     throw new Exception("Unknown operation body " + body.Discriminant.InnerValue);
             }
