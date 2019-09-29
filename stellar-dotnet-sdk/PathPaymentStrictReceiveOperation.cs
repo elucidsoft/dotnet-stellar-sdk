@@ -5,8 +5,8 @@ using sdkxdr = stellar_dotnet_sdk.xdr;
 namespace stellar_dotnet_sdk
 {
     /// <summary>
-    /// Represents a <see cref="PathPaymentOp"/>.
-    /// Use <see cref="Builder"/> to create a new PathPaymentOperation.
+    /// Represents a <see cref="PathPaymentStrictReceiveOperation"/>.
+    /// Use <see cref="Builder"/> to create a new PathPaymentStrictReceiveOperation.
     /// 
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#path-payment">Path Payment</see>
     /// </summary>
@@ -78,7 +78,7 @@ namespace stellar_dotnet_sdk
         }
 
         /// <summary>
-        ///     Builds a <see cref="PathPaymentOperation"/>.
+        ///     Builds a <see cref="PathPaymentStrictReceiveOperation"/>.
         /// </summary>
         public class Builder
         {
@@ -104,7 +104,7 @@ namespace stellar_dotnet_sdk
             }
 
             /// <summary>
-            ///     Creates a new PathPaymentOperation builder.
+            ///     Creates a new PathPaymentStrictReceiveOperation builder.
             /// </summary>
             /// <param name="sendAsset"> The asset deducted from the sender's account.</param>
             /// <param name="sendMax"> The asset deducted from the sender's account.</param>

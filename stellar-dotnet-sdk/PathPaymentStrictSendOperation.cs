@@ -5,8 +5,8 @@ using sdkxdr = stellar_dotnet_sdk.xdr;
 namespace stellar_dotnet_sdk
 {
     /// <summary>
-    /// Represents a <see cref="PathPaymentOp"/>.
-    /// Use <see cref="Builder"/> to create a new PathPaymentOperation.
+    /// Represents a <see cref="PathPaymentStrictSendOperation"/>.
+    /// Use <see cref="Builder"/> to create a new PathPaymentStrictSendOperation.
     /// 
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#path-payment">Path Payment</see>
     /// </summary>
