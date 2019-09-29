@@ -12,7 +12,7 @@ namespace stellar_dotnet_sdk_test.responses.results
         public void TestSuccess()
         {
             var tx = Util.AssertResultOfType(
-                "AAAAAACYloD/////AAAAAQAAAAAAAAACAAAAAAAAAAEAAAAAKoNGsl81xj8D8XyekzKZXRuSU2KImhHkQj4QWhroY64AAAAAAAAE0gAAAAAAAAAAAJiWgAAAAAFVU0QAAAAAACqDRrJfNcY/A/F8npMymV0bklNiiJoR5EI+EFoa6GOuAAAAAAADDUAAAAAAAyzXIcEd0vK9XlVfmjyQE9QpJjOLzYUN5orR0N+Dz+QAAAABVVNEAAAAAAAqg0ayXzXGPwPxfJ6TMpldG5JTYoiaEeRCPhBaGuhjrgAAAAAAAw1AAAAAAA==",
+                "AAAAAACYloD/////AAAAAQAAAAAAAAANAAAAAAAAAAEAAAAAKoNGsl81xj8D8XyekzKZXRuSU2KImhHkQj4QWhroY64AAAAAAAAE0gAAAAAAAAAAAJiWgAAAAAFVU0QAAAAAACqDRrJfNcY/A/F8npMymV0bklNiiJoR5EI+EFoa6GOuAAAAAAADDUAAAAAAAyzXIcEd0vK9XlVfmjyQE9QpJjOLzYUN5orR0N+Dz+QAAAABVVNEAAAAAAAqg0ayXzXGPwPxfJ6TMpldG5JTYoiaEeRCPhBaGuhjrgAAAAAAAw1AAAAAAA==",
                 typeof(PathPaymentStrictSendSuccess), true);
             var failed = (TransactionResultFailed) tx;
             var op = (PathPaymentStrictSendSuccess) failed.Results[0];
@@ -32,62 +32,62 @@ namespace stellar_dotnet_sdk_test.responses.results
         [TestMethod]
         public void TestMalformed()
         {
-            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAC/////wAAAAA=", typeof(PathPaymentStrictSendMalformed),
+            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAN/////wAAAAA=", typeof(PathPaymentStrictSendMalformed),
                 false);
         }
 
         [TestMethod]
         public void TestUnderfunded()
         {
-            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAC/////gAAAAA=", typeof(PathPaymentStrictSendUnderfunded),
+            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAN/////gAAAAA=", typeof(PathPaymentStrictSendUnderfunded),
                 false);
         }
 
         [TestMethod]
         public void TestSrcNoTrust()
         {
-            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAC/////QAAAAA=", typeof(PathPaymentStrictSendSrcNoTrust),
+            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAN/////QAAAAA=", typeof(PathPaymentStrictSendSrcNoTrust),
                 false);
         }
 
         [TestMethod]
         public void TestSrcNotAuthorized()
         {
-            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAC/////AAAAAA=", typeof(PathPaymentStrictSendSrcNotAuthorized),
+            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAN/////AAAAAA=", typeof(PathPaymentStrictSendSrcNotAuthorized),
                 false);
         }
 
         [TestMethod]
         public void TestNoDestination()
         {
-            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAC////+wAAAAA=", typeof(PathPaymentStrictSendNoDestination),
+            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAN////+wAAAAA=", typeof(PathPaymentStrictSendNoDestination),
                 false);
         }
 
         [TestMethod]
         public void TestNoTrust()
         {
-            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAC////+gAAAAA=", typeof(PathPaymentStrictSendNoTrust), false);
+            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAN////+gAAAAA=", typeof(PathPaymentStrictSendNoTrust), false);
         }
 
         [TestMethod]
         public void TestNotAuthorized()
         {
-            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAC////+QAAAAA=", typeof(PathPaymentStrictSendNotAuthorized),
+            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAN////+QAAAAA=", typeof(PathPaymentStrictSendNotAuthorized),
                 false);
         }
 
         [TestMethod]
         public void TestLineFull()
         {
-            Util.AssertResultOfType("UGF0aFBheW1lbnRTdHJpY3RTZW5kTGluZUZ1bGw=", typeof(PathPaymentStrictSendLineFull), false);
+            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAN////+AAAAAA=", typeof(PathPaymentStrictSendLineFull), false);
         }
 
         [TestMethod]
         public void TestNoIssuer()
         {
             var tx = Util.AssertResultOfType(
-                "AAAAAACYloD/////AAAAAQAAAAAAAAAC////9wAAAAFVU0QAAAAAACqDRrJfNcY/A/F8npMymV0bklNiiJoR5EI+EFoa6GOuAAAAAA==",
+                "AAAAAACYloD/////AAAAAQAAAAAAAAAN////9wAAAAFVU0QAAAAAACqDRrJfNcY/A/F8npMymV0bklNiiJoR5EI+EFoa6GOuAAAAAA==",
                 typeof(PathPaymentStrictSendNoIssuer), false);
             var failed = (TransactionResultFailed) tx;
             var op = (PathPaymentStrictSendNoIssuer) failed.Results[0];
@@ -97,21 +97,21 @@ namespace stellar_dotnet_sdk_test.responses.results
         [TestMethod]
         public void TestTooFewOffer()
         {
-            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAC////9gAAAAA=", typeof(PathPaymentStrictSendTooFewOffers),
+            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAN////9gAAAAA=", typeof(PathPaymentStrictSendTooFewOffers),
                 false);
         }
 
         [TestMethod]
         public void TestOfferCrossSelf()
         {
-            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAC////9QAAAAA=", typeof(PathPaymentStrictSendOfferCrossSelf),
+            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAN////9QAAAAA=", typeof(PathPaymentStrictSendOfferCrossSelf),
                 false);
         }
 
         [TestMethod]
         public void TestUnderDestMin()
         {
-            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAC////9AAAAAA=", typeof(PathPaymentStrictSendUnderDestMin),
+            Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAN////9AAAAAA=", typeof(PathPaymentStrictSendUnderDestMin),
                 false);
         }
     }

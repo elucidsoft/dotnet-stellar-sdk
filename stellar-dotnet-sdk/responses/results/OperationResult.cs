@@ -56,6 +56,8 @@ namespace stellar_dotnet_sdk.responses.results
                     return ManageDataResult.FromXdr(result.ManageDataResult);
                 case xdr.OperationType.OperationTypeEnum.BUMP_SEQUENCE:
                     return BumpSequenceResult.FromXdr(result.BumpSeqResult);
+                case xdr.OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND:
+                    return PathPaymentStrictSendResult.FromXdr(result.PathPaymentStrictSendResult);
                 default:
                     throw new SystemException("Unknown OperationType");
             }
