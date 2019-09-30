@@ -6,7 +6,9 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  typedef unsigned int uint32;
+
 //  ===========================================================================
     public class Uint32
     {

@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  enum OperationResultCode
 //  {
 //      opINNER = 0, // inner object result is valid
@@ -16,6 +17,7 @@ namespace stellar_dotnet_sdk.xdr
 //      opTOO_MANY_SUBENTRIES = -4, // max number of subentries already reached
 //      opEXCEEDED_WORK_LIMIT = -5  // operation did too much work
 //  };
+
 //  ===========================================================================
     public class OperationResultCode
     {

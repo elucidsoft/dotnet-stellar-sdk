@@ -6,12 +6,14 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  enum AssetType
 //  {
 //      ASSET_TYPE_NATIVE = 0,
 //      ASSET_TYPE_CREDIT_ALPHANUM4 = 1,
 //      ASSET_TYPE_CREDIT_ALPHANUM12 = 2
 //  };
+
 //  ===========================================================================
     public class AssetType
     {

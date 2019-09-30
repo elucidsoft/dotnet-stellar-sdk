@@ -75,8 +75,8 @@ namespace stellar_dotnet_sdk
                 case OperationType.OperationTypeEnum.PAYMENT:
                     operation = new PaymentOperation.Builder(body.PaymentOp).Build();
                     break;
-                case OperationType.OperationTypeEnum.PATH_PAYMENT:
-                    operation = new PathPaymentOperation.Builder(body.PathPaymentOp).Build();
+                case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_RECEIVE:
+                    operation = new PathPaymentStrictReceiveOperation.Builder(body.PathPaymentStrictReceiveOp).Build();
                     break;
                 case OperationType.OperationTypeEnum.MANAGE_SELL_OFFER:
                     operation = new ManageSellOfferOperation.Builder(body.ManageSellOfferOp).Build();
@@ -108,6 +108,9 @@ namespace stellar_dotnet_sdk
                 case OperationType.OperationTypeEnum.INFLATION:
                     operation = new InflationOperation.Builder().Build();
                     break;
+                case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND:
+                    operation = new PathPaymentStrictSendOperation.Builder(body.PathPaymentStrictSendOp).Build();
+                    break;                
                 default:
                     throw new Exception("Unknown operation body " + body.Discriminant.InnerValue);
             }

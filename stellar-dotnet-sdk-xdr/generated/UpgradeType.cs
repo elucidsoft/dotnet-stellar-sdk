@@ -6,7 +6,9 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  typedef opaque UpgradeType<128>;
+
 //  ===========================================================================
     public class UpgradeType
     {

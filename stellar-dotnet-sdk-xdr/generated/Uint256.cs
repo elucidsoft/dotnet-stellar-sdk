@@ -6,7 +6,9 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  typedef opaque uint256[32];
+
 //  ===========================================================================
     public class Uint256
     {

@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct DontHave
 //  {
 //      MessageType type;
 //      uint256 reqHash;
 //  };
+
 //  ===========================================================================
     public class DontHave
     {

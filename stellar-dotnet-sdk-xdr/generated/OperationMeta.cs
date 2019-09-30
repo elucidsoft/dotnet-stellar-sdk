@@ -6,10 +6,12 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct OperationMeta
 //  {
 //      LedgerEntryChanges changes;
 //  };
+
 //  ===========================================================================
     public class OperationMeta
     {

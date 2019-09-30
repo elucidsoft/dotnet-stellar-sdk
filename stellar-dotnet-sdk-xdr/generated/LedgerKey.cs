@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  union LedgerKey switch (LedgerEntryType type)
 //  {
 //  case ACCOUNT:
@@ -35,6 +36,7 @@ namespace stellar_dotnet_sdk.xdr
 //          string64 dataName;
 //      } data;
 //  };
+
 //  ===========================================================================
     public class LedgerKey
     {
@@ -43,6 +45,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public LedgerEntryType Discriminant { get; set; } = new LedgerEntryType();
+
         public LedgerKeyAccount Account { get; set; }
         public LedgerKeyTrustLine TrustLine { get; set; }
         public LedgerKeyOffer Offer { get; set; }

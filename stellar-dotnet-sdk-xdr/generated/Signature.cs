@@ -6,7 +6,9 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  typedef opaque Signature<64>;
+
 //  ===========================================================================
     public class Signature
     {

@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct Price
 //  {
 //      int32 n; // numerator
 //      int32 d; // denominator
 //  };
+
 //  ===========================================================================
     public class Price
     {

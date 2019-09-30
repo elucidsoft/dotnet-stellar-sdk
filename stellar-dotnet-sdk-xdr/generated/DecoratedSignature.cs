@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct DecoratedSignature
 //  {
 //      SignatureHint hint;  // last 4 bytes of the public key, used as a hint
 //      Signature signature; // actual signature
 //  };
+
 //  ===========================================================================
     public class DecoratedSignature
     {

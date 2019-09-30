@@ -6,12 +6,14 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct SimplePaymentResult
 //  {
 //      AccountID destination;
 //      Asset asset;
 //      int64 amount;
 //  };
+
 //  ===========================================================================
     public class SimplePaymentResult
     {

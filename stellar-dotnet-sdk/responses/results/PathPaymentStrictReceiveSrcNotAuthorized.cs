@@ -3,7 +3,7 @@ namespace stellar_dotnet_sdk.responses.results
     /// <summary>
     /// Source not authorized to transfer.
     /// </summary>
-    public class PathPaymentSrcNotAuthorized : PathPaymentResult
+    public class PathPaymentStrictReceiveSrcNotAuthorized : PathPaymentStrictReceiveResult
     {
 
     }

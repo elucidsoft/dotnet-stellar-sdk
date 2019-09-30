@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  union PublicKey switch (PublicKeyType type)
 //  {
 //  case PUBLIC_KEY_TYPE_ED25519:
 //      uint256 ed25519;
 //  };
+
 //  ===========================================================================
     public class PublicKey
     {
@@ -19,6 +21,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public PublicKeyType Discriminant { get; set; } = new PublicKeyType();
+
         public Uint256 Ed25519 { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, PublicKey encodedPublicKey)

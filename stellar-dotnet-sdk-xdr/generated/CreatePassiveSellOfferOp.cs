@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct CreatePassiveSellOfferOp
 //  {
 //      Asset selling; // A
@@ -13,6 +14,7 @@ namespace stellar_dotnet_sdk.xdr
 //      int64 amount;  // amount taker gets. if set to 0, delete the offer
 //      Price price;   // cost of A in terms of B
 //  };
+
 //  ===========================================================================
     public class CreatePassiveSellOfferOp
     {

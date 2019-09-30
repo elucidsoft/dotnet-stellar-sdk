@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct OfferEntry
 //  {
 //      AccountID sellerID;
@@ -30,6 +31,7 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      ext;
 //  };
+
 //  ===========================================================================
     public class OfferEntry
     {

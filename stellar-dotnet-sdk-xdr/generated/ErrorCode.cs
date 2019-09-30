@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  enum ErrorCode
 //  {
 //      ERR_MISC = 0, // Unspecific error
@@ -14,6 +15,7 @@ namespace stellar_dotnet_sdk.xdr
 //      ERR_AUTH = 3, // Authentication failure
 //      ERR_LOAD = 4  // System overloaded
 //  };
+
 //  ===========================================================================
     public class ErrorCode
     {

@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  enum CreateAccountResultCode
 //  {
 //      // codes considered as "success" for the operation
@@ -18,6 +19,7 @@ namespace stellar_dotnet_sdk.xdr
 //          -3, // would create an account below the min reserve
 //      CREATE_ACCOUNT_ALREADY_EXIST = -4 // account already exists
 //  };
+
 //  ===========================================================================
     public class CreateAccountResultCode
     {

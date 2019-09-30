@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct TransactionEnvelope
 //  {
 //      Transaction tx;
@@ -13,6 +14,7 @@ namespace stellar_dotnet_sdk.xdr
 //       * a TransactionSignaturePayload */
 //      DecoratedSignature signatures<20>;
 //  };
+
 //  ===========================================================================
     public class TransactionEnvelope
     {

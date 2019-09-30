@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  enum LedgerUpgradeType
 //  {
 //      LEDGER_UPGRADE_VERSION = 1,
@@ -13,6 +14,7 @@ namespace stellar_dotnet_sdk.xdr
 //      LEDGER_UPGRADE_MAX_TX_SET_SIZE = 3,
 //      LEDGER_UPGRADE_BASE_RESERVE = 4
 //  };
+
 //  ===========================================================================
     public class LedgerUpgradeType
     {

@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  enum ChangeTrustResultCode
 //  {
 //      // codes considered as "success" for the operation
@@ -19,6 +20,7 @@ namespace stellar_dotnet_sdk.xdr
 //          -4, // not enough funds to create a new trust line,
 //      CHANGE_TRUST_SELF_NOT_ALLOWED = -5  // trusting self is not allowed
 //  };
+
 //  ===========================================================================
     public class ChangeTrustResultCode
     {

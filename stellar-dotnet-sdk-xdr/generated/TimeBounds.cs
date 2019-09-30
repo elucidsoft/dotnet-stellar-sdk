@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct TimeBounds
 //  {
 //      TimePoint minTime;
 //      TimePoint maxTime; // 0 here means no maxTime
 //  };
+
 //  ===========================================================================
     public class TimeBounds
     {

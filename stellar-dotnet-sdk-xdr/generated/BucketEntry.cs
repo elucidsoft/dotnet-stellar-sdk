@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  union BucketEntry switch (BucketEntryType type)
 //  {
 //  case LIVEENTRY:
@@ -17,6 +18,7 @@ namespace stellar_dotnet_sdk.xdr
 //  case METAENTRY:
 //      BucketMetadata metaEntry;
 //  };
+
 //  ===========================================================================
     public class BucketEntry
     {
@@ -25,6 +27,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public BucketEntryType Discriminant { get; set; } = new BucketEntryType();
+
         public LedgerEntry LiveEntry { get; set; }
         public LedgerKey DeadEntry { get; set; }
         public BucketMetadata MetaEntry { get; set; }

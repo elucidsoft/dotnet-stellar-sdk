@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct Hello
 //  {
 //      uint32 ledgerVersion;
@@ -18,6 +19,7 @@ namespace stellar_dotnet_sdk.xdr
 //      AuthCert cert;
 //      uint256 nonce;
 //  };
+
 //  ===========================================================================
     public class Hello
     {

@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct SCPEnvelope
 //  {
 //      SCPStatement statement;
 //      Signature signature;
 //  };
+
 //  ===========================================================================
     public class SCPEnvelope
     {

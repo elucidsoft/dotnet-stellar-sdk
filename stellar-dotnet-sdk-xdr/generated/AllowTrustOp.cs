@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct AllowTrustOp
 //  {
 //      AccountID trustor;
@@ -24,6 +25,7 @@ namespace stellar_dotnet_sdk.xdr
 //  
 //      bool authorize;
 //  };
+
 //  ===========================================================================
     public class AllowTrustOp
     {
@@ -58,6 +60,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public AssetType Discriminant { get; set; } = new AssetType();
+
             public AssetCode4 AssetCode4 { get; set; }
             public AssetCode12 AssetCode12 { get; set; }
 
