@@ -1,0 +1,14 @@
+{{^_disableContribution}}
+<div class="contribution-panel mobile-hide">
+    {{#sourceurl}}
+    <a href="{{sourceurl}}" title="{{__global.viewSource}}" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
+    {{/sourceurl}}
+</div>
+{{/_disableContribution}}
+
+<div class="hidden-sm col-md-2" role="complementary">
+  <div class="sideaffix">
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    </nav>
+  </div>
+</div>

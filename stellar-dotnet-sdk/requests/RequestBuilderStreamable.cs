@@ -28,18 +28,15 @@ namespace stellar_dotnet_sdk.requests
         /// <a href="http://www.w3.org/TR/eventsource/" target="_blank">Server-Sent Events</a>
         /// <a href="https://www.stellar.org/developers/horizon/learn/responses.html" target="_blank">Response Format documentation</a>
         /// </Summary>
-        /// <param name="listener">EventListener implementation with EffectResponse type</param> 
-        /// <returns>EventSource object, so you can <code>close()</code> connection when not needed anymore</param> 
+        /// <param name="listener">EventListener implementation with EffectResponse type</param>
+        /// <returns>EventSource object, so you can <code>close()</code> connection when not needed anymore</param>
         public IEventSource Stream(EventHandler<TResponse> listener)
         {
             if (EventSource == null)
-                EventSource = new EventSource(BuildUri());
+                EventSource = new SSEEventSource(BuildUri());
 
             EventSource.Message += (sender, e) =>
             {
-                if (e.Data == $"\"hello\"{Environment.NewLine}")
-                    return;
-
                 var responseObject = JsonSingleton.GetInstance<TResponse>(e.Data) ?? throw new NotSupportedException("Unknown response type");
 
                 if (responseObject is IPagingToken page)

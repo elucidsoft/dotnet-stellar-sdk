@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  union AccountMergeResult switch (AccountMergeResultCode code)
 //  {
 //  case ACCOUNT_MERGE_SUCCESS:
@@ -13,6 +14,7 @@ namespace stellar_dotnet_sdk.xdr
 //  default:
 //      void;
 //  };
+
 //  ===========================================================================
     public class AccountMergeResult
     {
@@ -21,6 +23,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public AccountMergeResultCode Discriminant { get; set; } = new AccountMergeResultCode();
+
         public Int64 SourceAccountBalance { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, AccountMergeResult encodedAccountMergeResult)

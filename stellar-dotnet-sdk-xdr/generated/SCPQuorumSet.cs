@@ -6,12 +6,14 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct SCPQuorumSet
 //  {
 //      uint32 threshold;
 //      PublicKey validators<>;
 //      SCPQuorumSet innerSets<>;
 //  };
+
 //  ===========================================================================
     public class SCPQuorumSet
     {

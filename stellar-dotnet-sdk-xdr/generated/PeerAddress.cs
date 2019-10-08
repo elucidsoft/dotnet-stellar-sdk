@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct PeerAddress
 //  {
 //      union switch (IPAddrType type)
@@ -19,6 +20,7 @@ namespace stellar_dotnet_sdk.xdr
 //      uint32 port;
 //      uint32 numFailures;
 //  };
+
 //  ===========================================================================
     public class PeerAddress
     {
@@ -53,6 +55,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public IPAddrType Discriminant { get; set; } = new IPAddrType();
+
             public byte[] Ipv4 { get; set; }
             public byte[] Ipv6 { get; set; }
 

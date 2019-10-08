@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  enum AccountMergeResultCode
 //  {
 //      // codes considered as "success" for the operation
@@ -19,6 +20,7 @@ namespace stellar_dotnet_sdk.xdr
 //      ACCOUNT_MERGE_DEST_FULL = -6        // can't add source balance to
 //                                          // destination balance
 //  };
+
 //  ===========================================================================
     public class AccountMergeResultCode
     {

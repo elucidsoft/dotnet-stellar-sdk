@@ -6,10 +6,12 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct Curve25519Public
 //  {
 //          opaque key[32];
 //  };
+
 //  ===========================================================================
     public class Curve25519Public
     {

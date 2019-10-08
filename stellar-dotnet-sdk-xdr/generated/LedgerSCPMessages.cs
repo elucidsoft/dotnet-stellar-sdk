@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct LedgerSCPMessages
 //  {
 //      uint32 ledgerSeq;
 //      SCPEnvelope messages<>;
 //  };
+
 //  ===========================================================================
     public class LedgerSCPMessages
     {

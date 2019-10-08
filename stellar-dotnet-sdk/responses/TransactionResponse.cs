@@ -9,10 +9,11 @@ namespace stellar_dotnet_sdk.responses
 {
     public class TransactionResponse : Response, IPagingToken
     {
-        [JsonProperty(PropertyName = "hash")] public string Hash { get; private set; }
+        [JsonProperty(PropertyName = "hash")]
+        public string Hash { get; private set; }
 
         [JsonProperty(PropertyName = "ledger")]
-        public long Ledger { get; private set; }
+        public uint Ledger { get; private set; }
 
         [JsonProperty(PropertyName = "created_at")]
         public string CreatedAt { get; private set; }
@@ -31,7 +32,17 @@ namespace stellar_dotnet_sdk.responses
         public long SourceAccountSequence { get; private set; }
 
         [JsonProperty(PropertyName = "fee_paid")]
-        public long FeePaid { get; private set; }
+        private long? _feePaid { get; set; }
+
+        [Obsolete("Use FeeCharged unless you are using Horizon < 0.20")]
+        public long FeePaid => _feePaid ?? FeeCharged;
+
+        [JsonProperty(PropertyName = "fee_charged")]
+        public long FeeCharged { get; set; }
+
+        [DefaultValue(0)]
+        [JsonProperty(PropertyName = "max_fee")]
+        public long MaxFee { get; private set; }
 
         [JsonProperty(PropertyName = "operation_count")]
         public int OperationCount { get; private set; }
@@ -105,7 +116,7 @@ namespace stellar_dotnet_sdk.responses
             // Used by deserializer
         }
 
-        public TransactionResponse(string hash, long ledger, string createdAt, string sourceAccount, bool successful,
+        public TransactionResponse(string hash, uint ledger, string createdAt, string sourceAccount, bool successful,
             string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr,
             string resultXdr, string resultMetaXdr, Memo memo, TransactionResponseLinks links)
         {
@@ -116,7 +127,7 @@ namespace stellar_dotnet_sdk.responses
             Successful = successful;
             PagingToken = pagingToken;
             SourceAccountSequence = sourceAccountSequence;
-            FeePaid = feePaid;
+            _feePaid = feePaid;
             OperationCount = operationCount;
             EnvelopeXdr = envelopeXdr;
             ResultXdr = resultXdr;

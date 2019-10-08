@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  union AuthenticatedMessage switch (uint32 v)
 //  {
 //  case 0:
@@ -16,6 +17,7 @@ namespace stellar_dotnet_sdk.xdr
 //     HmacSha256Mac mac;
 //      } v0;
 //  };
+
 //  ===========================================================================
     public class AuthenticatedMessage
     {
@@ -24,6 +26,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public Uint32 Discriminant { get; set; } = new Uint32();
+
         public AuthenticatedMessageV0 V0 { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, AuthenticatedMessage encodedAuthenticatedMessage)

@@ -52,7 +52,7 @@ namespace stellar_dotnet_sdk_test.requests
                 Assert.AreEqual("https://horizon-testnet.stellar.org/ledgers/200000000000/transactions?limit=50&order=asc", uri.ToString());
             }
         }
-        
+
         [TestMethod]
         public void TestIncludeFailed()
         {
@@ -63,9 +63,9 @@ namespace stellar_dotnet_sdk_test.requests
                 .Limit(50)
                 .Order(OrderDirection.ASC)
                 .BuildUri();
-            Assert.AreEqual("https://horizon-testnet.stellar.org/ledgers/200000000000/transactions?include_failed=true&limit=50&order=asc", uri.ToString());            
+            Assert.AreEqual("https://horizon-testnet.stellar.org/ledgers/200000000000/transactions?include_failed=true&limit=50&order=asc", uri.ToString());
         }
-        
+
         [TestMethod]
         public async Task TestTransactionsExecute()
         {
@@ -83,12 +83,12 @@ namespace stellar_dotnet_sdk_test.requests
         }
 
         [TestMethod]
-        public void TestStream()
+        public async Task TestStream()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "transactionTransaction.json"));
-            var streamableTest = new StreamableTest<TransactionResponse>(json, TransactionDeserializerTest.AssertTestData);
 
-            streamableTest.AssertIsValid();
+            var streamableTest = new StreamableTest<TransactionResponse>(json, TransactionDeserializerTest.AssertTestData);
+            await streamableTest.Run();
         }
     }
 }

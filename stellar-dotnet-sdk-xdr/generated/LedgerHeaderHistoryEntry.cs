@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct LedgerHeaderHistoryEntry
 //  {
 //      Hash hash;
@@ -19,6 +20,7 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      ext;
 //  };
+
 //  ===========================================================================
     public class LedgerHeaderHistoryEntry
     {

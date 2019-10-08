@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  enum TrustLineFlags
 //  {
 //      // issuer has authorized account to perform transactions with its credit
 //      AUTHORIZED_FLAG = 1
 //  };
+
 //  ===========================================================================
     public class TrustLineFlags
     {

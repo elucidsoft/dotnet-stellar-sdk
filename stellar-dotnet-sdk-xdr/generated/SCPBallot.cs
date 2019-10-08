@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct SCPBallot
 //  {
 //      uint32 counter; // n
 //      Value value;    // x
 //  };
+
 //  ===========================================================================
     public class SCPBallot
     {

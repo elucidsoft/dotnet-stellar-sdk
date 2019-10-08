@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct SCPHistoryEntryV0
 //  {
 //      SCPQuorumSet quorumSets<>; // additional quorum sets used by ledgerMessages
 //      LedgerSCPMessages ledgerMessages;
 //  };
+
 //  ===========================================================================
     public class SCPHistoryEntryV0
     {

@@ -6,12 +6,14 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct AuthCert
 //  {
 //      Curve25519Public pubkey;
 //      uint64 expiration;
 //      Signature sig;
 //  };
+
 //  ===========================================================================
     public class AuthCert
     {

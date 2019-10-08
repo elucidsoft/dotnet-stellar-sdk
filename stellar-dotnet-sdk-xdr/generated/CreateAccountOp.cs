@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct CreateAccountOp
 //  {
 //      AccountID destination; // account to create
 //      int64 startingBalance; // amount they end up with
 //  };
+
 //  ===========================================================================
     public class CreateAccountOp
     {

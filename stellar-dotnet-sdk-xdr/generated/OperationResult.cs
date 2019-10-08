@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  union OperationResult switch (OperationResultCode code)
 //  {
 //  case opINNER:
@@ -15,8 +16,8 @@ namespace stellar_dotnet_sdk.xdr
 //          CreateAccountResult createAccountResult;
 //      case PAYMENT:
 //          PaymentResult paymentResult;
-//      case PATH_PAYMENT:
-//          PathPaymentResult pathPaymentResult;
+//      case PATH_PAYMENT_STRICT_RECEIVE:
+//          PathPaymentStrictReceiveResult pathPaymentStrictReceiveResult;
 //      case MANAGE_SELL_OFFER:
 //          ManageSellOfferResult manageSellOfferResult;
 //      case CREATE_PASSIVE_SELL_OFFER:
@@ -37,11 +38,14 @@ namespace stellar_dotnet_sdk.xdr
 //          BumpSequenceResult bumpSeqResult;
 //      case MANAGE_BUY_OFFER:
 //  	ManageBuyOfferResult manageBuyOfferResult;
+//      case PATH_PAYMENT_STRICT_SEND:
+//          PathPaymentStrictSendResult pathPaymentStrictSendResult;
 //      }
 //      tr;
 //  default:
 //      void;
 //  };
+
 //  ===========================================================================
     public class OperationResult
     {
@@ -50,6 +54,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public OperationResultCode Discriminant { get; set; } = new OperationResultCode();
+
         public OperationResultTr Tr { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, OperationResult encodedOperationResult)
@@ -89,9 +94,10 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public OperationType Discriminant { get; set; } = new OperationType();
+
             public CreateAccountResult CreateAccountResult { get; set; }
             public PaymentResult PaymentResult { get; set; }
-            public PathPaymentResult PathPaymentResult { get; set; }
+            public PathPaymentStrictReceiveResult PathPaymentStrictReceiveResult { get; set; }
             public ManageSellOfferResult ManageSellOfferResult { get; set; }
             public ManageSellOfferResult CreatePassiveSellOfferResult { get; set; }
             public SetOptionsResult SetOptionsResult { get; set; }
@@ -102,6 +108,7 @@ namespace stellar_dotnet_sdk.xdr
             public ManageDataResult ManageDataResult { get; set; }
             public BumpSequenceResult BumpSeqResult { get; set; }
             public ManageBuyOfferResult ManageBuyOfferResult { get; set; }
+            public PathPaymentStrictSendResult PathPaymentStrictSendResult { get; set; }
 
             public static void Encode(XdrDataOutputStream stream, OperationResultTr encodedOperationResultTr)
             {
@@ -114,8 +121,9 @@ namespace stellar_dotnet_sdk.xdr
                     case OperationType.OperationTypeEnum.PAYMENT:
                         PaymentResult.Encode(stream, encodedOperationResultTr.PaymentResult);
                         break;
-                    case OperationType.OperationTypeEnum.PATH_PAYMENT:
-                        PathPaymentResult.Encode(stream, encodedOperationResultTr.PathPaymentResult);
+                    case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_RECEIVE:
+                        PathPaymentStrictReceiveResult.Encode(stream,
+                            encodedOperationResultTr.PathPaymentStrictReceiveResult);
                         break;
                     case OperationType.OperationTypeEnum.MANAGE_SELL_OFFER:
                         ManageSellOfferResult.Encode(stream, encodedOperationResultTr.ManageSellOfferResult);
@@ -147,6 +155,10 @@ namespace stellar_dotnet_sdk.xdr
                     case OperationType.OperationTypeEnum.MANAGE_BUY_OFFER:
                         ManageBuyOfferResult.Encode(stream, encodedOperationResultTr.ManageBuyOfferResult);
                         break;
+                    case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND:
+                        PathPaymentStrictSendResult.Encode(stream,
+                            encodedOperationResultTr.PathPaymentStrictSendResult);
+                        break;
                 }
             }
 
@@ -163,8 +175,9 @@ namespace stellar_dotnet_sdk.xdr
                     case OperationType.OperationTypeEnum.PAYMENT:
                         decodedOperationResultTr.PaymentResult = PaymentResult.Decode(stream);
                         break;
-                    case OperationType.OperationTypeEnum.PATH_PAYMENT:
-                        decodedOperationResultTr.PathPaymentResult = PathPaymentResult.Decode(stream);
+                    case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_RECEIVE:
+                        decodedOperationResultTr.PathPaymentStrictReceiveResult =
+                            PathPaymentStrictReceiveResult.Decode(stream);
                         break;
                     case OperationType.OperationTypeEnum.MANAGE_SELL_OFFER:
                         decodedOperationResultTr.ManageSellOfferResult = ManageSellOfferResult.Decode(stream);
@@ -195,6 +208,10 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case OperationType.OperationTypeEnum.MANAGE_BUY_OFFER:
                         decodedOperationResultTr.ManageBuyOfferResult = ManageBuyOfferResult.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND:
+                        decodedOperationResultTr.PathPaymentStrictSendResult =
+                            PathPaymentStrictSendResult.Decode(stream);
                         break;
                 }
 

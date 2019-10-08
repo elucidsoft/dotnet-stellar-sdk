@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
@@ -40,12 +41,12 @@ namespace stellar_dotnet_sdk_test.requests
         }
 
         [TestMethod]
-        public void TestStream()
+        public async Task TestStream()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "ledger.json"));
-            var streamableTest = new StreamableTest<LedgerResponse>(json, LedgerDeserializeTest.AssertTestData);
 
-            streamableTest.AssertIsValid();
+            var streamableTest = new StreamableTest<LedgerResponse>(json, LedgerDeserializeTest.AssertTestData);
+            await streamableTest.Run();
         }
     }
 }

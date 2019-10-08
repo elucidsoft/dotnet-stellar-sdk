@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.xdr;
+using Transaction = stellar_dotnet_sdk.xdr.Transaction;
 
 namespace stellar_dotnet_sdk_test.xdr
 {
@@ -77,6 +80,24 @@ namespace stellar_dotnet_sdk_test.xdr
             var actual = transactionEnvelope.Tx.Operations[0].Body.PaymentOp.Asset.AlphaNum4.AssetCode;
 
             Assert.IsTrue(expected.SequenceEqual(actual.InnerValue));
+        }
+
+        // https://github.com/elucidsoft/dotnet-stellar-sdk/issues/185
+        [TestMethod]
+        public void TestDecodeAmountWithNonEnglishCulture()
+        {
+            var oldCulture = CultureInfo.CurrentCulture;
+            try
+            {
+                CultureInfo.CurrentCulture = new CultureInfo("es-ES", false);
+                var xdr = Amount.ToXdr("0.333");
+                var result = Amount.FromXdr(xdr);
+                Assert.AreEqual("0.333", result);
+            }
+            finally
+            {
+                CultureInfo.CurrentCulture = oldCulture;
+            }
         }
 
         private void GetDebugBytes(byte[] bytes)

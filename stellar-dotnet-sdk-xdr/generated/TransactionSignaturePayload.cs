@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct TransactionSignaturePayload
 //  {
 //      Hash networkId;
@@ -17,6 +18,7 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      taggedTransaction;
 //  };
+
 //  ===========================================================================
     public class TransactionSignaturePayload
     {
@@ -51,6 +53,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public EnvelopeType Discriminant { get; set; } = new EnvelopeType();
+
             public Transaction Tx { get; set; }
 
             public static void Encode(XdrDataOutputStream stream,

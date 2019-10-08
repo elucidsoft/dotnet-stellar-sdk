@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct LedgerCloseValueSignature
 //  {
 //      NodeID nodeID;       // which node introduced the value
 //      Signature signature; // nodeID's signature
 //  };
+
 //  ===========================================================================
     public class LedgerCloseValueSignature
     {

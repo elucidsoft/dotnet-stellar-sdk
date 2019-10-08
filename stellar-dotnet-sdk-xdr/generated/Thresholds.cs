@@ -6,7 +6,9 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  typedef opaque Thresholds[4];
+
 //  ===========================================================================
     public class Thresholds
     {

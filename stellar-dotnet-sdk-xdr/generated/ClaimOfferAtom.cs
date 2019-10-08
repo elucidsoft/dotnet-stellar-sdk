@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct ClaimOfferAtom
 //  {
 //      // emitted to identify the offer
@@ -20,6 +21,7 @@ namespace stellar_dotnet_sdk.xdr
 //      Asset assetBought;
 //      int64 amountBought;
 //  };
+
 //  ===========================================================================
     public class ClaimOfferAtom
     {

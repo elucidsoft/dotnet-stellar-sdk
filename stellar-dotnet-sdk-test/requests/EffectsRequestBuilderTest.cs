@@ -1,8 +1,10 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.requests;
+using stellar_dotnet_sdk.responses;
 using stellar_dotnet_sdk.responses.effects;
 using stellar_dotnet_sdk_test.responses;
 
@@ -95,27 +97,24 @@ namespace stellar_dotnet_sdk_test.requests
         }
 
         [TestMethod]
-        public void TestStream()
+        public async Task TestStream()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCreated.json"));
-            var streamableTest = new StreamableTest<EffectResponse>(json, EffectDeserializerTest.AssertAccountCreatedData);
 
-            streamableTest.AssertIsValid();
+            var streamableTest = new StreamableTest<EffectResponse>(json, EffectDeserializerTest.AssertAccountCreatedData);
+            await streamableTest.Run();
         }
 
         [TestMethod]
-        public void TestStreamCursor()
+        public async Task TestStreamCursor()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCreated.json"));
-            var streamableTest = new StreamableTest<EffectResponse>(json, r =>
-            {
-                //do nothing
-            });
+            var eventId = "65571265847297-1";
+            var streamableTest = new StreamableTest<EffectResponse>(json, EffectDeserializerTest.AssertAccountCreatedData, eventId);
+            await streamableTest.Run();
 
-            streamableTest.AssertIsValid();
-
-            var url = streamableTest.Uri;
-            Assert.AreEqual(streamableTest.Uri, "https://horizon-testnet.stellar.org/test?cursor=65571265847297-1");
+            Assert.AreEqual(eventId, streamableTest.LastEventId);
+            Assert.AreEqual("https://horizon-testnet.stellar.org/test?cursor=65571265847297-1", streamableTest.Uri);
         }
     }
 }

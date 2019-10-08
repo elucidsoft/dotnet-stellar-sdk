@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  enum AccountFlags
 //  { // masks for each flag
 //  
@@ -19,6 +20,7 @@ namespace stellar_dotnet_sdk.xdr
 //      // Once set, causes all AUTH_* flags to be read-only
 //      AUTH_IMMUTABLE_FLAG = 0x4
 //  };
+
 //  ===========================================================================
     public class AccountFlags
     {

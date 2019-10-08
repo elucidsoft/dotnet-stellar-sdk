@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  union StellarMessage switch (MessageType type)
 //  {
 //  case ERROR_MSG:
@@ -39,6 +40,7 @@ namespace stellar_dotnet_sdk.xdr
 //  case GET_SCP_STATE:
 //      uint32 getSCPLedgerSeq; // ledger seq requested ; if 0, requests the latest
 //  };
+
 //  ===========================================================================
     public class StellarMessage
     {
@@ -47,6 +49,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public MessageType Discriminant { get; set; } = new MessageType();
+
         public Error Error { get; set; }
         public Hello Hello { get; set; }
         public Auth Auth { get; set; }

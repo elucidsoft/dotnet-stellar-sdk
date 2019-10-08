@@ -6,11 +6,12 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  enum OperationType
 //  {
 //      CREATE_ACCOUNT = 0,
 //      PAYMENT = 1,
-//      PATH_PAYMENT = 2,
+//      PATH_PAYMENT_STRICT_RECEIVE = 2,
 //      MANAGE_SELL_OFFER = 3,
 //      CREATE_PASSIVE_SELL_OFFER = 4,
 //      SET_OPTIONS = 5,
@@ -20,8 +21,10 @@ namespace stellar_dotnet_sdk.xdr
 //      INFLATION = 9,
 //      MANAGE_DATA = 10,
 //      BUMP_SEQUENCE = 11,
-//      MANAGE_BUY_OFFER = 12
+//      MANAGE_BUY_OFFER = 12,
+//      PATH_PAYMENT_STRICT_SEND = 13
 //  };
+
 //  ===========================================================================
     public class OperationType
     {
@@ -29,7 +32,7 @@ namespace stellar_dotnet_sdk.xdr
         {
             CREATE_ACCOUNT = 0,
             PAYMENT = 1,
-            PATH_PAYMENT = 2,
+            PATH_PAYMENT_STRICT_RECEIVE = 2,
             MANAGE_SELL_OFFER = 3,
             CREATE_PASSIVE_SELL_OFFER = 4,
             SET_OPTIONS = 5,
@@ -40,6 +43,7 @@ namespace stellar_dotnet_sdk.xdr
             MANAGE_DATA = 10,
             BUMP_SEQUENCE = 11,
             MANAGE_BUY_OFFER = 12,
+            PATH_PAYMENT_STRICT_SEND = 13,
         }
 
         public OperationTypeEnum InnerValue { get; set; } = default(OperationTypeEnum);
@@ -59,7 +63,7 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case 0: return Create(OperationTypeEnum.CREATE_ACCOUNT);
                 case 1: return Create(OperationTypeEnum.PAYMENT);
-                case 2: return Create(OperationTypeEnum.PATH_PAYMENT);
+                case 2: return Create(OperationTypeEnum.PATH_PAYMENT_STRICT_RECEIVE);
                 case 3: return Create(OperationTypeEnum.MANAGE_SELL_OFFER);
                 case 4: return Create(OperationTypeEnum.CREATE_PASSIVE_SELL_OFFER);
                 case 5: return Create(OperationTypeEnum.SET_OPTIONS);
@@ -70,6 +74,7 @@ namespace stellar_dotnet_sdk.xdr
                 case 10: return Create(OperationTypeEnum.MANAGE_DATA);
                 case 11: return Create(OperationTypeEnum.BUMP_SEQUENCE);
                 case 12: return Create(OperationTypeEnum.MANAGE_BUY_OFFER);
+                case 13: return Create(OperationTypeEnum.PATH_PAYMENT_STRICT_SEND);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

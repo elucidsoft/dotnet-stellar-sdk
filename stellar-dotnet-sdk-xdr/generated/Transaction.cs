@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct Transaction
 //  {
 //      // account used to run the transaction
@@ -32,6 +33,7 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      ext;
 //  };
+
 //  ===========================================================================
     public class Transaction
     {

@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  enum InflationResultCode
 //  {
 //      // codes considered as "success" for the operation
@@ -13,6 +14,7 @@ namespace stellar_dotnet_sdk.xdr
 //      // codes considered as "failure" for the operation
 //      INFLATION_NOT_TIME = -1
 //  };
+
 //  ===========================================================================
     public class InflationResultCode
     {

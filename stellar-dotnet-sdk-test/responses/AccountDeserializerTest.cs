@@ -31,7 +31,6 @@ namespace stellar_dotnet_sdk_test.responses
         public static void AssertTestData(AccountResponse account)
         {
             Assert.AreEqual(account.AccountId, "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
-            Assert.AreEqual(account.PagingToken, "1");
             Assert.AreEqual(account.SequenceNumber, 2319149195853854);
             Assert.AreEqual(account.SubentryCount, 0);
             Assert.AreEqual(account.InflationDestination, "GAGRSA6QNQJN2OQYCBNQGMFLO4QLZFNEHIFXOMTQVSUTWVTWT66TOFSC");

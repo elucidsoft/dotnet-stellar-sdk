@@ -1,30 +1,38 @@
 ﻿{
   "_links": {
     "self": {
-      "href": "http://horizon-testnet.stellar.org/operations/3320426331639809"
+      "href": "https://horizon.stellar.org/operations/105020235379122177"
     },
     "transaction": {
-      "href": "http://horizon-testnet.stellar.org/transactions/1f8fc03b26110e917d124381645d7dcf85927f17e46d8390d254a0bd99cfb0ad"
+      "href": "https://horizon.stellar.org/transactions/a76f49631300ec2949716d521da8791fce7db59639b1608a5fcf4e8aff520464"
     },
     "effects": {
-      "href": "http://horizon-testnet.stellar.org/operations/3320426331639809/effects"
+      "href": "https://horizon.stellar.org/operations/105020235379122177/effects"
     },
     "succeeds": {
-      "href": "http://horizon-testnet.stellar.org/effects?order=desc&cursor=3320426331639809"
+      "href": "https://horizon.stellar.org/effects?order=desc&cursor=105020235379122177"
     },
     "precedes": {
-      "href": "http://horizon-testnet.stellar.org/effects?order=asc&cursor=3320426331639809"
+      "href": "https://horizon.stellar.org/effects?order=asc&cursor=105020235379122177"
     }
   },
-  "id": "3320426331639809",
-  "paging_token": "3320426331639809",
-  "source_account": "GCR6QXX7IRIJVIM5WA5ASQ6MWDOEJNBW3V6RTC5NJXEMOLVTUVKZ725X",
+  "id": "105020235379122177",
+  "paging_token": "105020235379122177",
+  "transaction_successful": true,
+  "source_account": "GBX5SNYZYZJQ2JKO43QI3I6K3QGNA4ARRIUSZ2EMIGXLELO3UZG4APNR",
   "type": "manage_offer",
   "type_i": 3,
-  "offer_id": 0,
-  "amount": "100.0",
-  "buying_asset_type": "credit_alphanum4",
-  "buying_asset_code": "CNY",
-  "buying_asset_issuer": "GAZWSWPDQTBHFIPBY4FEDFW2J6E2LE7SZHJWGDZO6Q63W7DBSRICO2KN",
-  "selling_asset_type": "native"
+  "created_at": "2019-06-21T08:24:48Z",
+  "transaction_hash": "a76f49631300ec2949716d521da8791fce7db59639b1608a5fcf4e8aff520464",
+  "amount": "243.7500000",
+  "price": "8.0850240",
+  "price_r": {
+    "n": 5054660,
+    "d": 625188
+  },
+  "buying_asset_type": "native",
+  "selling_asset_type": "credit_alphanum4",
+  "selling_asset_code": "USD",
+  "selling_asset_issuer": "GDSRCV5VTM3U7Y3L6DFRP3PEGBNQMGOWSRTGSBWX6Z3H6C7JHRI4XFJP",
+  "offer_id": 96052902
 }

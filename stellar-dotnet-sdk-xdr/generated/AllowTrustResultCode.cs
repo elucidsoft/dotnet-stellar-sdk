@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  enum AllowTrustResultCode
 //  {
 //      // codes considered as "success" for the operation
@@ -18,6 +19,7 @@ namespace stellar_dotnet_sdk.xdr
 //      ALLOW_TRUST_CANT_REVOKE = -4,     // source account can't revoke trust,
 //      ALLOW_TRUST_SELF_NOT_ALLOWED = -5 // trusting self is not allowed
 //  };
+
 //  ===========================================================================
     public class AllowTrustResultCode
     {

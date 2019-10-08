@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct BucketMetadata
 //  {
 //      // Indicates the protocol version used to create / merge this bucket.
@@ -19,6 +20,7 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      ext;
 //  };
+
 //  ===========================================================================
     public class BucketMetadata
     {

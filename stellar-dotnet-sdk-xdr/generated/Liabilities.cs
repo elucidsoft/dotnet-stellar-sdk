@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct Liabilities
 //  {
 //      int64 buying;
 //      int64 selling;
 //  };
+
 //  ===========================================================================
     public class Liabilities
     {

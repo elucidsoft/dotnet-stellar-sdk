@@ -15,7 +15,7 @@ namespace stellar_dotnet_sdk.responses.operations
 
         }
 
-        public ManageOfferOperationResponse(int offerId, string amount, string price, string buyingAssetType, string buyingAssetCode, string buyingAssetIssuer, string sellingAssetType, string sellingAssetCode, string sellingAssetIssuer)
+        public ManageOfferOperationResponse(string offerId, string amount, string price, string buyingAssetType, string buyingAssetCode, string buyingAssetIssuer, string sellingAssetType, string sellingAssetCode, string sellingAssetIssuer)
         {
             OfferId = offerId;
             Amount = amount;
@@ -28,15 +28,11 @@ namespace stellar_dotnet_sdk.responses.operations
             SellingAssetIssuer = sellingAssetIssuer;
         }
 
-        public override int TypeId => 3;
-
         [JsonProperty(PropertyName = "offer_id")]
-        public int OfferId { get; private set; }
+        public string OfferId { get; private set; }
 
         [JsonProperty(PropertyName = "amount")]
         public string Amount { get; private set; }
-
-        // Price is not implemented yet in horizon
 
         [JsonProperty(PropertyName = "price")]
         public string Price { get; private set; }

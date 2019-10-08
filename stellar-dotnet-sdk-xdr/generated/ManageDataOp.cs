@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct ManageDataOp
 //  {
 //      string64 dataName;
 //      DataValue* dataValue; // set to null to clear
 //  };
+
 //  ===========================================================================
     public class ManageDataOp
     {

@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct Error
 //  {
 //      ErrorCode code;
 //      string msg<100>;
 //  };
+
 //  ===========================================================================
     public class Error
     {

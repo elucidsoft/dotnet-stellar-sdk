@@ -6,12 +6,14 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct Auth
 //  {
 //      // Empty message, just to confirm
 //      // establishment of MAC keys.
 //      int unused;
 //  };
+
 //  ===========================================================================
     public class Auth
     {

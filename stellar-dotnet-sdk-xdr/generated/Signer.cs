@@ -6,11 +6,13 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct Signer
 //  {
 //      SignerKey key;
 //      uint32 weight; // really only need 1 byte
 //  };
+
 //  ===========================================================================
     public class Signer
     {

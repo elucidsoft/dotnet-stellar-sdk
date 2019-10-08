@@ -6,6 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  union LedgerUpgrade switch (LedgerUpgradeType type)
 //  {
 //  case LEDGER_UPGRADE_VERSION:
@@ -17,6 +18,7 @@ namespace stellar_dotnet_sdk.xdr
 //  case LEDGER_UPGRADE_BASE_RESERVE:
 //      uint32 newBaseReserve; // update baseReserve
 //  };
+
 //  ===========================================================================
     public class LedgerUpgrade
     {
@@ -25,6 +27,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public LedgerUpgradeType Discriminant { get; set; } = new LedgerUpgradeType();
+
         public Uint32 NewLedgerVersion { get; set; }
         public Uint32 NewBaseFee { get; set; }
         public Uint32 NewMaxTxSetSize { get; set; }

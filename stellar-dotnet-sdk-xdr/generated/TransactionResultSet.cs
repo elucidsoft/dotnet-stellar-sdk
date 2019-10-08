@@ -6,10 +6,12 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
+
 //  struct TransactionResultSet
 //  {
 //      TransactionResultPair results<>;
 //  };
+
 //  ===========================================================================
     public class TransactionResultSet
     {

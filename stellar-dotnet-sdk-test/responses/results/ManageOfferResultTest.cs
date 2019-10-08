@@ -1,3 +1,4 @@
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.responses;
@@ -141,6 +142,21 @@ namespace stellar_dotnet_sdk_test.responses.results
         {
             Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAD////9AAAAAA=", typeof(ManageSellOfferLowReserve),
                 false);
+        }
+
+        // Test https://github.com/elucidsoft/dotnet-stellar-sdk/issues/180
+        [TestMethod]
+        public void TestOfferEntryFlagsIsSet()
+        {
+            var result = TransactionResult.FromXdr(
+                "AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAM/Ee4SnT3/gopz3ng3SEYJcq/D+9k6K6UsSPJLpqpV3AAAAAAGV4XUAAAABTEtLMQAAAACqysdXjcCwA0NHMgy+BYFMm3s5N8yUziZS4Dge3zQ05QAAAAAAAAAAAcnDgAAAAAEAAAABAAAAAAAAAAAAAAAA");
+            Assert.IsTrue(result.IsSuccess);
+            var success = (TransactionResultSuccess) result;
+            var manageOfferResult = success.Results.First() as ManageSellOfferCreated;
+            Assert.IsNotNull(manageOfferResult);
+            Assert.IsTrue(manageOfferResult.IsSuccess);
+            var offer = manageOfferResult.Offer;
+            Assert.IsFalse(offer.Flags.HasFlag(OfferEntry.OfferEntryFlags.Passive));
         }
     }
 }

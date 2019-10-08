@@ -15,7 +15,8 @@ namespace stellar_dotnet_sdk
             Connecting = 0,
             Open = 1,
             Closed = 2,
-            Shutdown = 3
+            Shutdown = 3,
+            Raw = 4
         }
     }
 }

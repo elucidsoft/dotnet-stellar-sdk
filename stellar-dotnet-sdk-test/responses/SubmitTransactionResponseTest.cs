@@ -40,7 +40,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(submitTransactionResponse.IsSuccess(), true);
             Assert.AreEqual(submitTransactionResponse.Hash, "ee14b93fcd31d4cfe835b941a0a8744e23a6677097db1fafe0552d8657bed940");
-            Assert.AreEqual(submitTransactionResponse.Ledger, 3128812L);
+            Assert.AreEqual(submitTransactionResponse.Ledger, (uint)3128812);
             Assert.AreEqual(submitTransactionResponse.EnvelopeXdr, "AAAAADSMMRmQGDH6EJzkgi/7PoKhphMHyNGQgDp2tlS/dhGXAAAAZAAT3TUAAAAwAAAAAAAAAAAAAAABAAAAAAAAAAMAAAABSU5SAAAAAAA0jDEZkBgx+hCc5IIv+z6CoaYTB8jRkIA6drZUv3YRlwAAAAFVU0QAAAAAADSMMRmQGDH6EJzkgi/7PoKhphMHyNGQgDp2tlS/dhGXAAAAAAX14QAAAAAKAAAAAQAAAAAAAAAAAAAAAAAAAAG/dhGXAAAAQLuStfImg0OeeGAQmvLkJSZ1MPSkCzCYNbGqX5oYNuuOqZ5SmWhEsC7uOD9ha4V7KengiwNlc0oMNqBVo22S7gk=");
             Assert.AreEqual(submitTransactionResponse.ResultXdr, "AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAADAAAAAAAAAAAAAAAAAAAAADSMMRmQGDH6EJzkgi/7PoKhphMHyNGQgDp2tlS/dhGXAAAAAAAAAPEAAAABSU5SAAAAAAA0jDEZkBgx+hCc5IIv+z6CoaYTB8jRkIA6drZUv3YRlwAAAAFVU0QAAAAAADSMMRmQGDH6EJzkgi/7PoKhphMHyNGQgDp2tlS/dhGXAAAAAAX14QAAAAAKAAAAAQAAAAAAAAAAAAAAAA==");
             Assert.AreEqual(submitTransactionResponse.GetOfferIdFromResult(0), 241L);
