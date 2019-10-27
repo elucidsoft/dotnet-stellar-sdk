@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum PathPaymentStrictReceiveResultCode
 //  {
 //      // codes considered as "success" for the operation
@@ -26,7 +25,6 @@ namespace stellar_dotnet_sdk.xdr
 //      PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF = -11,  // would cross one of its own offers
 //      PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX = -12       // could not satisfy sendmax
 //  };
-
 //  ===========================================================================
     public class PathPaymentStrictReceiveResultCode
     {

@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct PathPaymentStrictReceiveOp
 //  {
 //      Asset sendAsset; // asset we pay with
@@ -20,7 +19,6 @@ namespace stellar_dotnet_sdk.xdr
 //  
 //      Asset path<5>; // additional hops it must go through to get there
 //  };
-
 //  ===========================================================================
     public class PathPaymentStrictReceiveOp
     {

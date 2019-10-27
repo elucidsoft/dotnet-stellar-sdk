@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  union ManageDataResult switch (ManageDataResultCode code)
 //  {
 //  case MANAGE_DATA_SUCCESS:
@@ -14,7 +13,6 @@ namespace stellar_dotnet_sdk.xdr
 //  default:
 //      void;
 //  };
-
 //  ===========================================================================
     public class ManageDataResult
     {

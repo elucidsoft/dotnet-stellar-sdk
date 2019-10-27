@@ -74,7 +74,7 @@ namespace stellar_dotnet_sdk.responses
                     case "none":
                         return Memo.None();
                     case "id":
-                        return Memo.Id(long.Parse(MemoValue));
+                        return Memo.Id(ulong.Parse(MemoValue));
                     case "hash":
                         return Memo.Hash(Convert.FromBase64String(MemoValue));
                     case "return":

@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  union Memo switch (MemoType type)
 //  {
 //  case MEMO_NONE:
@@ -20,7 +19,6 @@ namespace stellar_dotnet_sdk.xdr
 //  case MEMO_RETURN:
 //      Hash retHash; // the hash of the tx you are rejecting
 //  };
-
 //  ===========================================================================
     public class Memo
     {
@@ -29,7 +27,6 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public MemoType Discriminant { get; set; } = new MemoType();
-
         public String Text { get; set; }
         public Uint64 Id { get; set; }
         public Hash Hash { get; set; }

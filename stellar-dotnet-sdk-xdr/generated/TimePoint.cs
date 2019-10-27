@@ -6,9 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  typedef uint64 TimePoint;
-
 //  ===========================================================================
     public class TimePoint
     {

@@ -6,13 +6,11 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum StellarValueType
 //  {
 //      STELLAR_VALUE_BASIC = 0,
 //      STELLAR_VALUE_SIGNED = 1
 //  };
-
 //  ===========================================================================
     public class StellarValueType
     {

@@ -86,6 +86,18 @@ namespace stellar_dotnet_sdk.xdr
                 _bytes[_pos++];
         }
 
+        internal ulong ReadULong()
+        {
+            return
+                ((ulong) _bytes[_pos++] << 56) |
+                ((ulong) _bytes[_pos++] << 48) |
+                ((ulong) _bytes[_pos++] << 40) |
+                ((ulong) _bytes[_pos++] << 32) |
+                ((ulong) _bytes[_pos++] << 24) |
+                ((ulong) _bytes[_pos++] << 16) |
+                ((ulong) _bytes[_pos++] << 8) |
+                _bytes[_pos++];
+        }
         /// <summary>
         /// Read Int32 from Stream
         /// </summary>

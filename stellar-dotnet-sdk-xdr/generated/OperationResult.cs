@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  union OperationResult switch (OperationResultCode code)
 //  {
 //  case opINNER:
@@ -45,7 +44,6 @@ namespace stellar_dotnet_sdk.xdr
 //  default:
 //      void;
 //  };
-
 //  ===========================================================================
     public class OperationResult
     {
@@ -54,7 +52,6 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public OperationResultCode Discriminant { get; set; } = new OperationResultCode();
-
         public OperationResultTr Tr { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, OperationResult encodedOperationResult)
@@ -94,7 +91,6 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public OperationType Discriminant { get; set; } = new OperationType();
-
             public CreateAccountResult CreateAccountResult { get; set; }
             public PaymentResult PaymentResult { get; set; }
             public PathPaymentStrictReceiveResult PathPaymentStrictReceiveResult { get; set; }

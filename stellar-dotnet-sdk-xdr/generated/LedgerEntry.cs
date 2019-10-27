@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct LedgerEntry
 //  {
 //      uint32 lastModifiedLedgerSeq; // ledger the LedgerEntry was last changed
@@ -32,7 +31,6 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      ext;
 //  };
-
 //  ===========================================================================
     public class LedgerEntry
     {
@@ -67,7 +65,6 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public LedgerEntryType Discriminant { get; set; } = new LedgerEntryType();
-
             public AccountEntry Account { get; set; }
             public TrustLineEntry TrustLine { get; set; }
             public OfferEntry Offer { get; set; }

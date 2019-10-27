@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  union SignerKey switch (SignerKeyType type)
 //  {
 //  case SIGNER_KEY_TYPE_ED25519:
@@ -18,7 +17,6 @@ namespace stellar_dotnet_sdk.xdr
 //      /* Hash of random 256 bit preimage X */
 //      uint256 hashX;
 //  };
-
 //  ===========================================================================
     public class SignerKey
     {
@@ -27,7 +25,6 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public SignerKeyType Discriminant { get; set; } = new SignerKeyType();
-
         public Uint256 Ed25519 { get; set; }
         public Uint256 PreAuthTx { get; set; }
         public Uint256 HashX { get; set; }

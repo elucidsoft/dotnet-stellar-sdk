@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum BucketEntryType
 //  {
 //      METAENTRY =
@@ -16,7 +15,6 @@ namespace stellar_dotnet_sdk.xdr
 //      DEADENTRY = 1,
 //      INITENTRY = 2 // At-and-after protocol 11: only created.
 //  };
-
 //  ===========================================================================
     public class BucketEntryType
     {

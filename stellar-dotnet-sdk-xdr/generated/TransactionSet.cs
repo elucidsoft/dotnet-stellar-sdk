@@ -6,13 +6,11 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct TransactionSet
 //  {
 //      Hash previousLedgerHash;
 //      TransactionEnvelope txs<>;
 //  };
-
 //  ===========================================================================
     public class TransactionSet
     {

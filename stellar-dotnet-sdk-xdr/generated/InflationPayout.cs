@@ -6,13 +6,11 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct InflationPayout // or use PaymentResultAtom to limit types?
 //  {
 //      AccountID destination;
 //      int64 amount;
 //  };
-
 //  ===========================================================================
     public class InflationPayout
     {

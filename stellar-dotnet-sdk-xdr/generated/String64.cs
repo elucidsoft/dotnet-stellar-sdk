@@ -6,9 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  typedef string string64<64>;
-
 //  ===========================================================================
     public class String64
     {

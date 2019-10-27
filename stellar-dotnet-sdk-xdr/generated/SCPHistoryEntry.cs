@@ -6,13 +6,11 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  union SCPHistoryEntry switch (int v)
 //  {
 //  case 0:
 //      SCPHistoryEntryV0 v0;
 //  };
-
 //  ===========================================================================
     public class SCPHistoryEntry
     {
@@ -21,7 +19,6 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public int Discriminant { get; set; } = new int();
-
         public SCPHistoryEntryV0 V0 { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, SCPHistoryEntry encodedSCPHistoryEntry)

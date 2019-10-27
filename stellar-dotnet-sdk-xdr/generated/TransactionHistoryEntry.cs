@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct TransactionHistoryEntry
 //  {
 //      uint32 ledgerSeq;
@@ -20,7 +19,6 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      ext;
 //  };
-
 //  ===========================================================================
     public class TransactionHistoryEntry
     {

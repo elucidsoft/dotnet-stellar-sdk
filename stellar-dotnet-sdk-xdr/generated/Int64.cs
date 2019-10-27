@@ -6,9 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  typedef hyper int64;
-
 //  ===========================================================================
     public class Int64
     {

@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum OperationType
 //  {
 //      CREATE_ACCOUNT = 0,
@@ -24,7 +23,6 @@ namespace stellar_dotnet_sdk.xdr
 //      MANAGE_BUY_OFFER = 12,
 //      PATH_PAYMENT_STRICT_SEND = 13
 //  };
-
 //  ===========================================================================
     public class OperationType
     {

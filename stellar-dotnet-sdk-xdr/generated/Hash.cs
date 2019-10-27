@@ -6,9 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  typedef opaque Hash[32];
-
 //  ===========================================================================
     public class Hash
     {

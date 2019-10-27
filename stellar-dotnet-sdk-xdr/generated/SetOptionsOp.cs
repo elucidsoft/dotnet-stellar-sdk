@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct SetOptionsOp
 //  {
 //      AccountID* inflationDest; // sets the inflation destination
@@ -26,7 +25,6 @@ namespace stellar_dotnet_sdk.xdr
 //      // signer is deleted if the weight is 0
 //      Signer* signer;
 //  };
-
 //  ===========================================================================
     public class SetOptionsOp
     {

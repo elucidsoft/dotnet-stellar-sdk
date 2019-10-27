@@ -6,32 +6,30 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  typedef unsigned int uint32;
-
 //  ===========================================================================
     public class Uint32
     {
-        public int InnerValue { get; set; } = default(int);
+        public uint InnerValue { get; set; } = default(uint);
 
         public Uint32()
         {
         }
 
-        public Uint32(int value)
+        public Uint32(uint value)
         {
             InnerValue = value;
         }
 
         public static void Encode(XdrDataOutputStream stream, Uint32 encodedUint32)
         {
-            stream.WriteInt(encodedUint32.InnerValue);
+            stream.WriteUInt(encodedUint32.InnerValue);
         }
 
         public static Uint32 Decode(XdrDataInputStream stream)
         {
             Uint32 decodedUint32 = new Uint32();
-            decodedUint32.InnerValue = stream.ReadInt();
+            decodedUint32.InnerValue = stream.ReadUInt();
             return decodedUint32;
         }
     }

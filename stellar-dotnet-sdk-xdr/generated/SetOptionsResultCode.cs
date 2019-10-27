@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum SetOptionsResultCode
 //  {
 //      // codes considered as "success" for the operation
@@ -22,7 +21,6 @@ namespace stellar_dotnet_sdk.xdr
 //      SET_OPTIONS_BAD_SIGNER = -8,             // signer cannot be masterkey
 //      SET_OPTIONS_INVALID_HOME_DOMAIN = -9     // malformed home domain
 //  };
-
 //  ===========================================================================
     public class SetOptionsResultCode
     {

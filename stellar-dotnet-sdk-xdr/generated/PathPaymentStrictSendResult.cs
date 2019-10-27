@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  union PathPaymentStrictSendResult switch (PathPaymentStrictSendResultCode code)
 //  {
 //  case PATH_PAYMENT_STRICT_SEND_SUCCESS:
@@ -20,7 +19,6 @@ namespace stellar_dotnet_sdk.xdr
 //  default:
 //      void;
 //  };
-
 //  ===========================================================================
     public class PathPaymentStrictSendResult
     {
@@ -29,7 +27,6 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public PathPaymentStrictSendResultCode Discriminant { get; set; } = new PathPaymentStrictSendResultCode();
-
         public PathPaymentStrictSendResultSuccess Success { get; set; }
         public Asset NoIssuer { get; set; }
 

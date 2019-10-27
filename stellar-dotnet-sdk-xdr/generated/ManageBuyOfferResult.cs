@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  union ManageBuyOfferResult switch (ManageBuyOfferResultCode code)
 //  {
 //  case MANAGE_BUY_OFFER_SUCCESS:
@@ -14,7 +13,6 @@ namespace stellar_dotnet_sdk.xdr
 //  default:
 //      void;
 //  };
-
 //  ===========================================================================
     public class ManageBuyOfferResult
     {
@@ -23,7 +21,6 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public ManageBuyOfferResultCode Discriminant { get; set; } = new ManageBuyOfferResultCode();
-
         public ManageOfferSuccessResult Success { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, ManageBuyOfferResult encodedManageBuyOfferResult)

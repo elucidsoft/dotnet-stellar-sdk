@@ -6,9 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  typedef opaque SignatureHint[4];
-
 //  ===========================================================================
     public class SignatureHint
     {

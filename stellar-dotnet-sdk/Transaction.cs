@@ -8,9 +8,9 @@ namespace stellar_dotnet_sdk
 {
     public class Transaction
     {
-        private const int BaseFee = 100;
+        private const uint BaseFee = 100;
 
-        private Transaction(KeyPair sourceAccount, int fee, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)
+        private Transaction(KeyPair sourceAccount, uint fee, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)
         {
             SourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
             SequenceNumber = sequenceNumber;
@@ -25,7 +25,7 @@ namespace stellar_dotnet_sdk
             TimeBounds = timeBounds;
         }
 
-        public int Fee { get; }
+        public uint Fee { get; }
 
         public KeyPair SourceAccount { get; }
 
@@ -254,7 +254,7 @@ namespace stellar_dotnet_sdk
         public static Transaction FromEnvelopeXdr(TransactionEnvelope envelope)
         {
             xdr.Transaction transactionXdr = envelope.Tx;
-            int fee = transactionXdr.Fee.InnerValue;
+            var fee = transactionXdr.Fee.InnerValue;
             KeyPair sourceAccount = KeyPair.FromXdrPublicKey(transactionXdr.SourceAccount.InnerValue);
             long sequenceNumber = transactionXdr.SeqNum.InnerValue.InnerValue;
             Memo memo = Memo.FromXdr(transactionXdr.Memo);
@@ -285,7 +285,7 @@ namespace stellar_dotnet_sdk
             private readonly ITransactionBuilderAccount _sourceAccount;
             private Memo _memo;
             private TimeBounds _timeBounds;
-            private int _fee;
+            private uint _fee;
 
             /// <summary>
             ///     Construct a new transaction builder.
@@ -356,7 +356,7 @@ namespace stellar_dotnet_sdk
             /// </summary>
             /// <param name="fee">fee (in Stroops) for each operation in the transaction</param>
             /// <returns>Builder object so you can chain methods.</returns>
-            public Builder SetFee(int fee)
+            public Builder SetFee(uint fee)
             {
                 if (_fee <= 0)
                     throw new ArgumentException("Fee must be a positive amount", nameof(fee));
@@ -374,7 +374,10 @@ namespace stellar_dotnet_sdk
             {
                 var operations = _operations.ToArray();
 
-                var transaction = new Transaction(_sourceAccount.KeyPair, operations.Length * _fee, _sourceAccount.IncrementedSequenceNumber, operations, _memo, _timeBounds);
+                var totalFee = operations.Length * _fee;
+                if (totalFee > UInt32.MaxValue) throw new InvalidOperationException("Transaction fee overflow");
+
+                var transaction = new Transaction(_sourceAccount.KeyPair, (uint)totalFee, _sourceAccount.IncrementedSequenceNumber, operations, _memo, _timeBounds);
                 // Increment sequence number when there were no exceptions when creating a transaction
                 _sourceAccount.IncrementSequenceNumber();
                 return transaction;

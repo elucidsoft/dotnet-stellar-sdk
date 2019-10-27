@@ -66,9 +66,9 @@ namespace stellar_dotnet_sdk_test
         public void TestMemoId()
         {
             var memo = Memo.Id(9223372036854775807L);
-            Assert.AreEqual(9223372036854775807L, memo.IdValue);
+            Assert.AreEqual(9223372036854775807UL, memo.IdValue);
             Assert.AreEqual(sdkxdr.MemoType.MemoTypeEnum.MEMO_ID, memo.ToXdr().Discriminant.InnerValue);
-            Assert.AreEqual(9223372036854775807L, memo.ToXdr().Id.InnerValue);
+            Assert.AreEqual(9223372036854775807UL, memo.ToXdr().Id.InnerValue);
         }
 
         [TestMethod]
@@ -127,7 +127,8 @@ namespace stellar_dotnet_sdk_test
             var memoXdr = memo.ToXdr();
             Assert.AreEqual(sdkxdr.MemoType.MemoTypeEnum.MEMO_RETURN, memoXdr.Discriminant.InnerValue);
             Assert.IsNull(memoXdr.Hash);
-            Assert.AreEqual("4142434445464748494a4b4c0000000000000000000000000000000000000000", BitConverter.ToString(memoXdr.RetHash.InnerValue).Replace("-", "").ToLower());
+            Assert.AreEqual("4142434445464748494a4b4c0000000000000000000000000000000000000000",
+                BitConverter.ToString(memoXdr.RetHash.InnerValue).Replace("-", "").ToLower());
             Assert.AreEqual("4142434445464748494a4b4c", memo.GetTrimmedHexValue());
         }
 
