@@ -7,14 +7,14 @@ namespace stellar_dotnet_sdk
     /// <summary>
     /// Represents a <see cref="SetOptionsOp"/>.
     /// Use <see cref="Builder"/> to create a new SetOptionsOperation.
-    /// 
+    ///
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#set-options">Set Options</see>
     /// </summary>
     public class SetOptionsOperation : Operation
     {
-        private SetOptionsOperation(KeyPair inflationDestination, int? clearFlags, int? setFlags,
-            int? masterKeyWeight, int? lowThreshold, int? mediumThreshold,
-            int? highThreshold, string homeDomain, sdkxdr.SignerKey signer, int? signerWeight)
+        private SetOptionsOperation(KeyPair inflationDestination, uint? clearFlags, uint? setFlags,
+            uint? masterKeyWeight, uint? lowThreshold, uint? mediumThreshold,
+            uint? highThreshold, string homeDomain, sdkxdr.SignerKey signer, uint? signerWeight)
         {
             InflationDestination = inflationDestination;
             ClearFlags = clearFlags;
@@ -30,23 +30,23 @@ namespace stellar_dotnet_sdk
 
         public KeyPair InflationDestination { get; }
 
-        public int? ClearFlags { get; }
+        public uint? ClearFlags { get; }
 
-        public int? SetFlags { get; }
+        public uint? SetFlags { get; }
 
-        public int? MasterKeyWeight { get; }
+        public uint? MasterKeyWeight { get; }
 
-        public int? LowThreshold { get; }
+        public uint? LowThreshold { get; }
 
-        public int? MediumThreshold { get; }
+        public uint? MediumThreshold { get; }
 
-        public int? HighThreshold { get; }
+        public uint? HighThreshold { get; }
 
         public string HomeDomain { get; }
 
         public sdkxdr.SignerKey Signer { get; }
 
-        public int? SignerWeight { get; }
+        public uint? SignerWeight { get; }
 
         public override OperationThreshold Threshold
         {
@@ -134,41 +134,40 @@ namespace stellar_dotnet_sdk
         /// <see cref="SetOptionsOperation" />
         public class Builder
         {
-            private int? clearFlags;
-            private int? highThreshold;
-            private string homeDomain;
-            private KeyPair inflationDestination;
-            private int? lowThreshold;
-            private int? masterKeyWeight;
-            private int? mediumThreshold;
-            private int? setFlags;
-            private sdkxdr.SignerKey signer;
-            private int? signerWeight;
-            private KeyPair sourceAccount;
+            private uint? _clearFlags;
+            private uint? _highThreshold;
+            private string _homeDomain;
+            private KeyPair _inflationDestination;
+            private uint? _lowThreshold;
+            private uint? _masterKeyWeight;
+            private uint? _mediumThreshold;
+            private uint? _setFlags;
+            private SignerKey _signer;
+            private uint? _signerWeight;
+            private KeyPair _sourceAccount;
 
             public Builder(sdkxdr.SetOptionsOp op)
             {
                 if (op.InflationDest != null)
-                    inflationDestination = KeyPair.FromXdrPublicKey(
-                        op.InflationDest.InnerValue);
+                    _inflationDestination = KeyPair.FromXdrPublicKey(op.InflationDest.InnerValue);
                 if (op.ClearFlags != null)
-                    clearFlags = op.ClearFlags.InnerValue;
+                    _clearFlags = op.ClearFlags.InnerValue;
                 if (op.SetFlags != null)
-                    setFlags = op.SetFlags.InnerValue;
+                    _setFlags = op.SetFlags.InnerValue;
                 if (op.MasterWeight != null)
-                    masterKeyWeight = op.MasterWeight.InnerValue;
+                    _masterKeyWeight = op.MasterWeight.InnerValue;
                 if (op.LowThreshold != null)
-                    lowThreshold = op.LowThreshold.InnerValue;
+                    _lowThreshold = op.LowThreshold.InnerValue;
                 if (op.MedThreshold != null)
-                    mediumThreshold = op.MedThreshold.InnerValue;
+                    _mediumThreshold = op.MedThreshold.InnerValue;
                 if (op.HighThreshold != null)
-                    highThreshold = op.HighThreshold.InnerValue;
+                    _highThreshold = op.HighThreshold.InnerValue;
                 if (op.HomeDomain != null)
-                    homeDomain = op.HomeDomain.InnerValue;
+                    _homeDomain = op.HomeDomain.InnerValue;
                 if (op.Signer != null)
                 {
-                    signer = op.Signer.Key;
-                    signerWeight = op.Signer.Weight.InnerValue & 0xFF;
+                    _signer = op.Signer.Key;
+                    _signerWeight = op.Signer.Weight.InnerValue & 0xFF;
                 }
             }
 
@@ -186,7 +185,7 @@ namespace stellar_dotnet_sdk
             /// <returns>Builder object so you can chain methods.</returns>
             public Builder SetInflationDestination(KeyPair inflationDestination)
             {
-                this.inflationDestination = inflationDestination;
+                _inflationDestination = inflationDestination;
                 return this;
             }
 
@@ -198,10 +197,16 @@ namespace stellar_dotnet_sdk
             ///     <a href="https://www.stellar.org/developers/learn/concepts/accounts.html" target="_blank">accounts doc</a>.
             /// </param>
             /// <returns>Builder object so you can chain methods.</returns>
+            public Builder SetClearFlags(uint clearFlags)
+            {
+                _clearFlags = clearFlags;
+                return this;
+            }
+
             public Builder SetClearFlags(int clearFlags)
             {
-                this.clearFlags = clearFlags;
-                return this;
+                if (clearFlags < 0) throw new ArgumentException("clearFlags must be non negative");
+                return SetClearFlags((uint) clearFlags);
             }
 
             /// <summary>
@@ -212,10 +217,16 @@ namespace stellar_dotnet_sdk
             ///     <a href="https://www.stellar.org/developers/learn/concepts/accounts.html" target="_blank">accounts doc</a>.
             /// </param>
             /// <returns>Builder object so you can chain methods.</returns>
+            public Builder SetSetFlags(uint setFlags)
+            {
+                _setFlags = setFlags;
+                return this;
+            }
+
             public Builder SetSetFlags(int setFlags)
             {
-                this.setFlags = setFlags;
-                return this;
+                if (setFlags < 0) throw new ArgumentException("setFlags must be non negative");
+                return SetSetFlags((uint) setFlags);
             }
 
             /// <summary>
@@ -223,10 +234,16 @@ namespace stellar_dotnet_sdk
             /// </summary>
             /// <param name="masterKeyWeight">Number between 0 and 255</param>
             /// <returns>Builder object so you can chain methods.</returns>
+            public Builder SetMasterKeyWeight(uint masterKeyWeight)
+            {
+                _masterKeyWeight = masterKeyWeight;
+                return this;
+            }
+
             public Builder SetMasterKeyWeight(int masterKeyWeight)
             {
-                this.masterKeyWeight = masterKeyWeight;
-                return this;
+                if (masterKeyWeight < 0) throw new ArgumentException("masterKeyWeight must be non negative");
+                return SetMasterKeyWeight((uint) masterKeyWeight);
             }
 
             /// <summary>
@@ -235,10 +252,16 @@ namespace stellar_dotnet_sdk
             /// </summary>
             /// <param name="lowThreshold">Number between 0 and 255</param>
             /// <returns>Builder object so you can chain methods.</returns>
+            public Builder SetLowThreshold(uint lowThreshold)
+            {
+                _lowThreshold = lowThreshold;
+                return this;
+            }
+
             public Builder SetLowThreshold(int lowThreshold)
             {
-                this.lowThreshold = lowThreshold;
-                return this;
+                if (lowThreshold < 0) throw new ArgumentException("lowThreshold must be non negative");
+                return SetLowThreshold((uint) lowThreshold);
             }
 
             /// <summary>
@@ -247,10 +270,16 @@ namespace stellar_dotnet_sdk
             /// </summary>
             /// <param name="mediumThreshold">Number between 0 and 255</param>
             /// <returns>Builder object so you can chain methods.</returns>
+            public Builder SetMediumThreshold(uint mediumThreshold)
+            {
+                _mediumThreshold = mediumThreshold;
+                return this;
+            }
+
             public Builder SetMediumThreshold(int mediumThreshold)
             {
-                this.mediumThreshold = mediumThreshold;
-                return this;
+                if (mediumThreshold < 0) throw new ArgumentException("mediumThreshold must be non negative");
+                return SetMediumThreshold((uint) mediumThreshold);
             }
 
             /// <summary>
@@ -259,10 +288,16 @@ namespace stellar_dotnet_sdk
             /// </summary>
             /// <param name="highThreshold">Number between 0 and 255</param>
             /// <returns>Builder object so you can chain methods.</returns>
+            public Builder SetHighThreshold(uint highThreshold)
+            {
+                _highThreshold = highThreshold;
+                return this;
+            }
+
             public Builder SetHighThreshold(int highThreshold)
             {
-                this.highThreshold = highThreshold;
-                return this;
+                if (highThreshold < 0) throw new ArgumentException("highThreshold must be non negative");
+                return SetHighThreshold((uint) highThreshold);
             }
 
             /// <summary>
@@ -275,7 +310,7 @@ namespace stellar_dotnet_sdk
             {
                 if (homeDomain.Length > 32)
                     throw new ArgumentException("Home domain must be <= 32 characters");
-                this.homeDomain = homeDomain;
+                _homeDomain = homeDomain;
                 return this;
             }
 
@@ -285,15 +320,32 @@ namespace stellar_dotnet_sdk
             /// <param name="signer">The signer key. Use <see cref="stellar_dotnet_sdk.Signer" /> helper to create this object.</param>
             /// <param name="weight">The weight to attach to the signer (0-255).</param>
             /// <returns>Builder object so you can chain methods.</returns>
-            public Builder SetSigner(sdkxdr.SignerKey signer, int? weight)
+            public Builder SetSigner(SignerKey signer, uint weight)
             {
-                this.signer = signer ?? throw new ArgumentNullException(nameof(signer), "signer cannot be null");
+                _signer = signer ?? throw new ArgumentNullException(nameof(signer), "signer cannot be null");
 
+                _signerWeight = weight & 0xFF;
+                return this;
+            }
+
+            public Builder SetSigner(SignerKey signer, uint? weight)
+            {
                 if (weight == null)
                     throw new ArgumentNullException(nameof(weight), "weight cannot be null");
+                return SetSigner(signer, weight.Value);
+            }
 
-                signerWeight = weight.Value & 0xFF;
-                return this;
+            public Builder SetSigner(SignerKey signer, int weight)
+            {
+                if (weight < 0) throw new ArgumentException("weight must be non negative");
+                return SetSigner(signer, (uint) weight);
+            }
+
+            public Builder SetSigner(SignerKey signer, int? weight)
+            {
+                if (weight == null)
+                    throw new ArgumentNullException(nameof(weight), "weight cannot be null");
+                return SetSigner(signer, weight.Value);
             }
 
             /// <summary>
@@ -303,7 +355,7 @@ namespace stellar_dotnet_sdk
             /// <returns>Builder object so you can chain methods.</returns>
             public Builder SetSourceAccount(KeyPair sourceAccount)
             {
-                this.sourceAccount = sourceAccount;
+                _sourceAccount = sourceAccount;
                 return this;
             }
 
@@ -312,11 +364,11 @@ namespace stellar_dotnet_sdk
             /// </summary>
             public SetOptionsOperation Build()
             {
-                var operation = new SetOptionsOperation(inflationDestination, clearFlags,
-                    setFlags, masterKeyWeight, lowThreshold, mediumThreshold, highThreshold,
-                    homeDomain, signer, signerWeight);
-                if (sourceAccount != null)
-                    operation.SourceAccount = sourceAccount;
+                var operation = new SetOptionsOperation(_inflationDestination, _clearFlags,
+                    _setFlags, _masterKeyWeight, _lowThreshold, _mediumThreshold, _highThreshold,
+                    _homeDomain, _signer, _signerWeight);
+                if (_sourceAccount != null)
+                    operation.SourceAccount = _sourceAccount;
                 return operation;
             }
         }

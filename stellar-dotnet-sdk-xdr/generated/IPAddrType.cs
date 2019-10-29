@@ -6,13 +6,11 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum IPAddrType
 //  {
 //      IPv4 = 0,
 //      IPv6 = 1
 //  };
-
 //  ===========================================================================
     public class IPAddrType
     {

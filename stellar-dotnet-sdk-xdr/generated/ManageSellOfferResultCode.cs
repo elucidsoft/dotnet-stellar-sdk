@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum ManageSellOfferResultCode
 //  {
 //      // codes considered as "success" for the operation
@@ -29,7 +28,6 @@ namespace stellar_dotnet_sdk.xdr
 //  
 //      MANAGE_SELL_OFFER_LOW_RESERVE = -12 // not enough funds to create a new Offer
 //  };
-
 //  ===========================================================================
     public class ManageSellOfferResultCode
     {

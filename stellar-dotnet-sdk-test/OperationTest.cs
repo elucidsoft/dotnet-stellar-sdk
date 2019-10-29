@@ -335,16 +335,16 @@ namespace stellar_dotnet_sdk_test
             var parsedOperation = (SetOptionsOperation) Operation.FromXdr(xdr);
 
             Assert.AreEqual(inflationDestination.AccountId, parsedOperation.InflationDestination.AccountId);
-            Assert.AreEqual(clearFlags, parsedOperation.ClearFlags);
-            Assert.AreEqual(setFlags, parsedOperation.SetFlags);
-            Assert.AreEqual(masterKeyWeight, parsedOperation.MasterKeyWeight);
-            Assert.AreEqual(lowThreshold, parsedOperation.LowThreshold);
-            Assert.AreEqual(mediumThreshold, parsedOperation.MediumThreshold);
-            Assert.AreEqual(highThreshold, parsedOperation.HighThreshold);
+            Assert.AreEqual(1U, parsedOperation.ClearFlags);
+            Assert.AreEqual(1U, parsedOperation.SetFlags);
+            Assert.AreEqual(1U, parsedOperation.MasterKeyWeight);
+            Assert.AreEqual(2U, parsedOperation.LowThreshold);
+            Assert.AreEqual(3U, parsedOperation.MediumThreshold);
+            Assert.AreEqual(4U, parsedOperation.HighThreshold);
             Assert.AreEqual(homeDomain, parsedOperation.HomeDomain);
             Assert.AreEqual(signer.Discriminant.InnerValue, parsedOperation.Signer.Discriminant.InnerValue);
             Assert.AreEqual(signer.Ed25519.InnerValue, parsedOperation.Signer.Ed25519.InnerValue);
-            Assert.AreEqual(signerWeight, parsedOperation.SignerWeight);
+            Assert.AreEqual(1U, parsedOperation.SignerWeight);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
             Assert.AreEqual(OperationThreshold.High, parsedOperation.Threshold);
 
@@ -412,7 +412,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(null, parsedOperation.HighThreshold);
             Assert.AreEqual(null, parsedOperation.HomeDomain);
             Assert.IsTrue(hash.SequenceEqual(parsedOperation.Signer.HashX.InnerValue));
-            Assert.AreEqual(10, parsedOperation.SignerWeight);
+            Assert.AreEqual(10U, parsedOperation.SignerWeight);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
 
             Assert.AreEqual(
@@ -455,7 +455,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(null, parsedOperation.HighThreshold);
             Assert.AreEqual(null, parsedOperation.HomeDomain);
             Assert.IsTrue(transaction.Hash().SequenceEqual(parsedOperation.Signer.PreAuthTx.InnerValue));
-            Assert.AreEqual(10, parsedOperation.SignerWeight);
+            Assert.AreEqual(10U, parsedOperation.SignerWeight);
             Assert.AreEqual(opSource.AccountId, parsedOperation.SourceAccount.AccountId);
 
             Assert.AreEqual(

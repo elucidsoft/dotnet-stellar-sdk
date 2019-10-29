@@ -6,9 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  typedef int64 SequenceNumber;
-
 //  ===========================================================================
     public class SequenceNumber
     {

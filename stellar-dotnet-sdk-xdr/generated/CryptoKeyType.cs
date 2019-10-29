@@ -6,14 +6,12 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum CryptoKeyType
 //  {
 //      KEY_TYPE_ED25519 = 0,
 //      KEY_TYPE_PRE_AUTH_TX = 1,
 //      KEY_TYPE_HASH_X = 2
 //  };
-
 //  ===========================================================================
     public class CryptoKeyType
     {

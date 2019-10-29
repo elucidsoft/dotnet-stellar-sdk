@@ -6,12 +6,10 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum PublicKeyType
 //  {
 //      PUBLIC_KEY_TYPE_ED25519 = KEY_TYPE_ED25519
 //  };
-
 //  ===========================================================================
     public class PublicKeyType
     {

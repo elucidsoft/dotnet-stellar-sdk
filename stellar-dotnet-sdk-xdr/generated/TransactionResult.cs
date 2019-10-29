@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct TransactionResult
 //  {
 //      int64 feeCharged; // actual fee charged for the transaction
@@ -29,7 +28,6 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      ext;
 //  };
-
 //  ===========================================================================
     public class TransactionResult
     {
@@ -64,7 +62,6 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public TransactionResultCode Discriminant { get; set; } = new TransactionResultCode();
-
             public OperationResult[] Results { get; set; }
 
             public static void Encode(XdrDataOutputStream stream,

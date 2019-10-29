@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum LedgerEntryType
 //  {
 //      ACCOUNT = 0,
@@ -14,7 +13,6 @@ namespace stellar_dotnet_sdk.xdr
 //      OFFER = 2,
 //      DATA = 3
 //  };
-
 //  ===========================================================================
     public class LedgerEntryType
     {

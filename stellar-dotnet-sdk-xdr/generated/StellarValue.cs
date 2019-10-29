@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct StellarValue
 //  {
 //      Hash txSetHash;      // transaction set to apply to previous ledger
@@ -29,7 +28,6 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      ext;
 //  };
-
 //  ===========================================================================
     public class StellarValue
     {
@@ -79,7 +77,6 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public StellarValueType Discriminant { get; set; } = new StellarValueType();
-
             public LedgerCloseValueSignature LcValueSignature { get; set; }
 
             public static void Encode(XdrDataOutputStream stream, StellarValueExt encodedStellarValueExt)

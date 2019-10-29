@@ -6,12 +6,10 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct HmacSha256Mac
 //  {
 //          opaque mac[32];
 //  };
-
 //  ===========================================================================
     public class HmacSha256Mac
     {

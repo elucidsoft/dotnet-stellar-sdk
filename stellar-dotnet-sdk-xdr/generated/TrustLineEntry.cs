@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct TrustLineEntry
 //  {
 //      AccountID accountID; // account this trustline belongs to
@@ -37,7 +36,6 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      ext;
 //  };
-
 //  ===========================================================================
     public class TrustLineEntry
     {
@@ -81,7 +79,6 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public int Discriminant { get; set; } = new int();
-
             public TrustLineEntryV1 V1 { get; set; }
 
             public static void Encode(XdrDataOutputStream stream, TrustLineEntryExt encodedTrustLineEntryExt)

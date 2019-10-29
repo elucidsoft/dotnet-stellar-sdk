@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  union TransactionMeta switch (int v)
 //  {
 //  case 0:
@@ -14,7 +13,6 @@ namespace stellar_dotnet_sdk.xdr
 //  case 1:
 //      TransactionMetaV1 v1;
 //  };
-
 //  ===========================================================================
     public class TransactionMeta
     {
@@ -23,7 +21,6 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public int Discriminant { get; set; } = new int();
-
         public OperationMeta[] Operations { get; set; }
         public TransactionMetaV1 V1 { get; set; }
 

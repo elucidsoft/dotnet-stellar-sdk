@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum ThresholdIndexes
 //  {
 //      THRESHOLD_MASTER_WEIGHT = 0,
@@ -14,7 +13,6 @@ namespace stellar_dotnet_sdk.xdr
 //      THRESHOLD_MED = 2,
 //      THRESHOLD_HIGH = 3
 //  };
-
 //  ===========================================================================
     public class ThresholdIndexes
     {

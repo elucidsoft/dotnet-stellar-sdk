@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  union Asset switch (AssetType type)
 //  {
 //  case ASSET_TYPE_NATIVE: // Not credit
@@ -28,7 +27,6 @@ namespace stellar_dotnet_sdk.xdr
 //  
 //      // add other asset types here in the future
 //  };
-
 //  ===========================================================================
     public class Asset
     {
@@ -37,7 +35,6 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public AssetType Discriminant { get; set; } = new AssetType();
-
         public AssetAlphaNum4 AlphaNum4 { get; set; }
         public AssetAlphaNum12 AlphaNum12 { get; set; }
 

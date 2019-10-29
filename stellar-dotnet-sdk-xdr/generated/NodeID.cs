@@ -6,9 +6,7 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  typedef PublicKey NodeID;
-
 //  ===========================================================================
     public class NodeID
     {

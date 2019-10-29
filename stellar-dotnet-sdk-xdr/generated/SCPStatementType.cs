@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum SCPStatementType
 //  {
 //      SCP_ST_PREPARE = 0,
@@ -14,7 +13,6 @@ namespace stellar_dotnet_sdk.xdr
 //      SCP_ST_EXTERNALIZE = 2,
 //      SCP_ST_NOMINATE = 3
 //  };
-
 //  ===========================================================================
     public class SCPStatementType
     {

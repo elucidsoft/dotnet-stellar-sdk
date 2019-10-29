@@ -48,7 +48,7 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual(transaction.SourceAccount.AccountId, source.AccountId);
             Assert.AreEqual(transaction.SequenceNumber, sequenceNumber + 1);
-            Assert.AreEqual(transaction.Fee, 100);
+            Assert.AreEqual(transaction.Fee, 100U);
         }
 
         [TestMethod]
@@ -121,8 +121,8 @@ namespace stellar_dotnet_sdk_test
 
             var decodedTransaction = XdrTransaction.Decode(xdrDataInputStream);
 
-            Assert.AreEqual(decodedTransaction.TimeBounds.MinTime.InnerValue.InnerValue, 42);
-            Assert.AreEqual(decodedTransaction.TimeBounds.MaxTime.InnerValue.InnerValue, 1337);
+            Assert.AreEqual(decodedTransaction.TimeBounds.MinTime.InnerValue.InnerValue, 42U);
+            Assert.AreEqual(decodedTransaction.TimeBounds.MaxTime.InnerValue.InnerValue, 1337U);
 
             var transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
 
@@ -157,7 +157,7 @@ namespace stellar_dotnet_sdk_test
 
             var decodedTransaction = XdrTransaction.Decode(xdrDataInputStream);
 
-            Assert.AreEqual(decodedTransaction.Fee.InnerValue, 173 * 2);
+            Assert.AreEqual(decodedTransaction.Fee.InnerValue, 173 * 2U);
 
             var transaction2 = Transaction.FromEnvelopeXdr(transaction.ToUnsignedEnvelopeXdr());
 
@@ -368,6 +368,15 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             Assert.IsNotNull(transaction);
+        }
+
+        [TestMethod]
+        public void TestFromXdrWithMemoId()
+        {
+            // https://github.com/elucidsoft/dotnet-stellar-sdk/issues/208
+            var tx = Transaction.FromEnvelopeXdr(
+                "AAAAAEdL24Ttos6RnqXCsn8duaV035/QZSC9RXw29IknigHpAAAD6AFb56cAAukDAAAAAQAAAAAAAAAAAAAAAF20fKAAAAACjCiEBz2CpG0AAAABAAAAAAAAAAEAAAAADq+QhtWseqhtnwRIFyZRdLMOVtIqzkujfzUQ22rwZuEAAAAAAAAAAGZeJLcAAAAAAAAAASeKAekAAABAE+X7cGoBhuJ5SDB8WH2B1ZA2RrWIXxGtx+n6wE5d/EggDTpZhRm92b33QqjPUFOfcZ+zbcM+Ny0WR2vcYHEXDA==");
+            Assert.AreEqual("GBDUXW4E5WRM5EM6UXBLE7Y5XGSXJX472BSSBPKFPQ3PJCJHRIA6SH4C", tx.SourceAccount.AccountId);
         }
     }
 }

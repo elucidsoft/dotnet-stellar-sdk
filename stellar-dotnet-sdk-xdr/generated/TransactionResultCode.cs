@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum TransactionResultCode
 //  {
 //      txSUCCESS = 0, // all operations succeeded
@@ -25,7 +24,6 @@ namespace stellar_dotnet_sdk.xdr
 //      txBAD_AUTH_EXTRA = -10,      // unused signatures attached to transaction
 //      txINTERNAL_ERROR = -11       // an unknown error occured
 //  };
-
 //  ===========================================================================
     public class TransactionResultCode
     {

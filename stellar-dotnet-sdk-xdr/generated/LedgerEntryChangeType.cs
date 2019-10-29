@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum LedgerEntryChangeType
 //  {
 //      LEDGER_ENTRY_CREATED = 0, // entry was added to the ledger
@@ -14,7 +13,6 @@ namespace stellar_dotnet_sdk.xdr
 //      LEDGER_ENTRY_REMOVED = 2, // entry was removed from the ledger
 //      LEDGER_ENTRY_STATE = 3    // value of the entry
 //  };
-
 //  ===========================================================================
     public class LedgerEntryChangeType
     {

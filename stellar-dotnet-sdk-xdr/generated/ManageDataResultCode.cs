@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum ManageDataResultCode
 //  {
 //      // codes considered as "success" for the operation
@@ -19,7 +18,6 @@ namespace stellar_dotnet_sdk.xdr
 //      MANAGE_DATA_LOW_RESERVE = -3, // not enough funds to create a new Data Entry
 //      MANAGE_DATA_INVALID_NAME = -4 // Name not a valid string
 //  };
-
 //  ===========================================================================
     public class ManageDataResultCode
     {

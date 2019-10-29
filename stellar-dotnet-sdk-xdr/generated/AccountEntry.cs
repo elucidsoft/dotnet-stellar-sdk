@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct AccountEntry
 //  {
 //      AccountID accountID;      // master public key for this account
@@ -45,7 +44,6 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      ext;
 //  };
-
 //  ===========================================================================
     public class AccountEntry
     {
@@ -127,7 +125,6 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public int Discriminant { get; set; } = new int();
-
             public AccountEntryV1 V1 { get; set; }
 
             public static void Encode(XdrDataOutputStream stream, AccountEntryExt encodedAccountEntryExt)

@@ -71,6 +71,18 @@ namespace stellar_dotnet_sdk.xdr
             Write((byte) (v & 0xff));
         }
 
+        public void WriteULong(ulong v)
+        {
+            Write((byte) ((v >> 56) & 0xff));
+            Write((byte) ((v >> 48) & 0xff));
+            Write((byte) ((v >> 40) & 0xff));
+            Write((byte) ((v >> 32) & 0xff));
+            Write((byte) ((v >> 24) & 0xff));
+            Write((byte) ((v >> 16) & 0xff));
+            Write((byte) ((v >> 8) & 0xff));
+            Write((byte) (v & 0xff));
+        }
+
         public void WriteInt(int i)
         {
             Write((byte) ((i >> 0x18) & 0xff));

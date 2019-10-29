@@ -6,13 +6,11 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct TransactionMetaV1
 //  {
 //      LedgerEntryChanges txChanges; // tx level changes if any
 //      OperationMeta operations<>;   // meta for each operation
 //  };
-
 //  ===========================================================================
     public class TransactionMetaV1
     {

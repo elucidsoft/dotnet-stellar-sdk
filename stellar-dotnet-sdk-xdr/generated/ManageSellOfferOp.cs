@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct ManageSellOfferOp
 //  {
 //      Asset selling;
@@ -17,7 +16,6 @@ namespace stellar_dotnet_sdk.xdr
 //      // 0=create a new offer, otherwise edit an existing offer
 //      int64 offerID;
 //  };
-
 //  ===========================================================================
     public class ManageSellOfferOp
     {

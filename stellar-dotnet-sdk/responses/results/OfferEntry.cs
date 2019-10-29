@@ -68,7 +68,7 @@ namespace stellar_dotnet_sdk.responses.results
             };
         }
 
-        public static OfferEntryFlags FlagsFromXdr(int flags)
+        public static OfferEntryFlags FlagsFromXdr(uint flags)
         {
             switch (flags)
             {

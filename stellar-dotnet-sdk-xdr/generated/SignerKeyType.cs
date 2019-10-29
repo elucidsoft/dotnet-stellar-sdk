@@ -6,14 +6,12 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum SignerKeyType
 //  {
 //      SIGNER_KEY_TYPE_ED25519 = KEY_TYPE_ED25519,
 //      SIGNER_KEY_TYPE_PRE_AUTH_TX = KEY_TYPE_PRE_AUTH_TX,
 //      SIGNER_KEY_TYPE_HASH_X = KEY_TYPE_HASH_X
 //  };
-
 //  ===========================================================================
     public class SignerKeyType
     {

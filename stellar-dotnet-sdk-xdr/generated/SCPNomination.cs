@@ -6,14 +6,12 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct SCPNomination
 //  {
 //      Hash quorumSetHash; // D
 //      Value votes<>;      // X
 //      Value accepted<>;   // Y
 //  };
-
 //  ===========================================================================
     public class SCPNomination
     {

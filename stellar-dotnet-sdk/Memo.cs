@@ -26,7 +26,7 @@
         /// Creates new {@link MemoId} instance.
         /// </summary>
         /// <param name="id">The id value of an Id Memo.</param>
-        public static MemoId Id(long id)
+        public static MemoId Id(ulong id)
         {
             return new MemoId(id);
         }

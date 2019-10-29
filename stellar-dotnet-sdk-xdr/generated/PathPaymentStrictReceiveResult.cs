@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  union PathPaymentStrictReceiveResult switch (PathPaymentStrictReceiveResultCode code)
 //  {
 //  case PATH_PAYMENT_STRICT_RECEIVE_SUCCESS:
@@ -20,7 +19,6 @@ namespace stellar_dotnet_sdk.xdr
 //  default:
 //      void;
 //  };
-
 //  ===========================================================================
     public class PathPaymentStrictReceiveResult
     {
@@ -29,7 +27,6 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public PathPaymentStrictReceiveResultCode Discriminant { get; set; } = new PathPaymentStrictReceiveResultCode();
-
         public PathPaymentStrictReceiveResultSuccess Success { get; set; }
         public Asset NoIssuer { get; set; }
 

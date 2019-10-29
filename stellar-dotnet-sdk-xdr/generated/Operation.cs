@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct Operation
 //  {
 //      // sourceAccount is the account used to run the operation
@@ -47,7 +46,6 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      body;
 //  };
-
 //  ===========================================================================
     public class Operation
     {
@@ -93,7 +91,6 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public OperationType Discriminant { get; set; } = new OperationType();
-
             public CreateAccountOp CreateAccountOp { get; set; }
             public PaymentOp PaymentOp { get; set; }
             public PathPaymentStrictReceiveOp PathPaymentStrictReceiveOp { get; set; }

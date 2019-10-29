@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  union LedgerEntryChange switch (LedgerEntryChangeType type)
 //  {
 //  case LEDGER_ENTRY_CREATED:
@@ -18,7 +17,6 @@ namespace stellar_dotnet_sdk.xdr
 //  case LEDGER_ENTRY_STATE:
 //      LedgerEntry state;
 //  };
-
 //  ===========================================================================
     public class LedgerEntryChange
     {
@@ -27,7 +25,6 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public LedgerEntryChangeType Discriminant { get; set; } = new LedgerEntryChangeType();
-
         public LedgerEntry Created { get; set; }
         public LedgerEntry Updated { get; set; }
         public LedgerKey Removed { get; set; }

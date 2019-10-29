@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum MessageType
 //  {
 //      ERROR_MSG = 0,
@@ -30,7 +29,6 @@ namespace stellar_dotnet_sdk.xdr
 //      // new messages
 //      HELLO = 13
 //  };
-
 //  ===========================================================================
     public class MessageType
     {

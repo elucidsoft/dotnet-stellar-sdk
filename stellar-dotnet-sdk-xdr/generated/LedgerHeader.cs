@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct LedgerHeader
 //  {
 //      uint32 ledgerVersion;    // the protocol version of the ledger
@@ -44,7 +43,6 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      ext;
 //  };
-
 //  ===========================================================================
     public class LedgerHeader
     {

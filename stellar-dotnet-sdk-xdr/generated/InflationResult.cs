@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  union InflationResult switch (InflationResultCode code)
 //  {
 //  case INFLATION_SUCCESS:
@@ -14,7 +13,6 @@ namespace stellar_dotnet_sdk.xdr
 //  default:
 //      void;
 //  };
-
 //  ===========================================================================
     public class InflationResult
     {
@@ -23,7 +21,6 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public InflationResultCode Discriminant { get; set; } = new InflationResultCode();
-
         public InflationPayout[] Payouts { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, InflationResult encodedInflationResult)

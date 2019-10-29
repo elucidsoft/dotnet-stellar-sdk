@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct ManageOfferSuccessResult
 //  {
 //      // offers that got claimed while creating this offer
@@ -22,7 +21,6 @@ namespace stellar_dotnet_sdk.xdr
 //      }
 //      offer;
 //  };
-
 //  ===========================================================================
     public class ManageOfferSuccessResult
     {
@@ -66,7 +64,6 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public ManageOfferEffect Discriminant { get; set; } = new ManageOfferEffect();
-
             public OfferEntry Offer { get; set; }
 
             public static void Encode(XdrDataOutputStream stream,

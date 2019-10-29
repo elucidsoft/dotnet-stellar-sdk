@@ -6,12 +6,10 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  struct BumpSequenceOp
 //  {
 //      SequenceNumber bumpTo;
 //  };
-
 //  ===========================================================================
     public class BumpSequenceOp
     {

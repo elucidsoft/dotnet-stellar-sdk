@@ -5,14 +5,14 @@ namespace stellar_dotnet_sdk
 {
     public class MemoId : Memo
     {
-        public MemoId(long id)
+        public MemoId(ulong id)
         {
             if (id < 0)
                 throw new ArgumentException("id must be a positive number");
             IdValue = id;
         }
 
-        public long IdValue { get; }
+        public ulong IdValue { get; }
 
         public override xdr.Memo ToXdr()
         {

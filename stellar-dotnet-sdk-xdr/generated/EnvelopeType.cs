@@ -6,7 +6,6 @@ using System;
 namespace stellar_dotnet_sdk.xdr
 {
 // === xdr source ============================================================
-
 //  enum EnvelopeType
 //  {
 //      ENVELOPE_TYPE_SCP = 1,
@@ -14,7 +13,6 @@ namespace stellar_dotnet_sdk.xdr
 //      ENVELOPE_TYPE_AUTH = 3,
 //      ENVELOPE_TYPE_SCPVALUE = 4
 //  };
-
 //  ===========================================================================
     public class EnvelopeType
     {
