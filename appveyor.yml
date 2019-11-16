@@ -24,9 +24,9 @@ test_script:
 
 after_test:
   - cmd: packages\coveralls.io\1.4.2\tools\coveralls.net.exe --opencover "./stellar-dotnet-sdk-test/coverage.opencover.xml" -r %COVERALLS_REPO_TOKEN%
-  environment:
-    COVERALLS_REPO_TOKEN:
-      secure: Oo/jr37r3k/ZwDMKK/varxVllvTUUX8aGd/lpZ0eB0+i4Gxno6WsExeLNYNLD2hz
+environment:
+  COVERALLS_REPO_TOKEN:
+    secure: Oo/jr37r3k/ZwDMKK/varxVllvTUUX8aGd/lpZ0eB0+i4Gxno6WsExeLNYNLD2hz
 
 deploy:
   on:
