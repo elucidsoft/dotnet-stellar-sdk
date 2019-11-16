@@ -3,15 +3,15 @@ pull_requests:
   do_not_increment_build_number: true
 os: Visual Studio 2017
 before_build:
-- cmd: dotnet restore stellar-dotnet-sdk.sln
+  - cmd: dotnet restore stellar-dotnet-sdk.sln
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
-  version: '{version}'
-  package_version: '{version}'
-  assembly_version: '{version}'
-  file_version: '{version}'
-  informational_version: '{version}'
+  version: "{version}"
+  package_version: "{version}"
+  assembly_version: "{version}"
+  file_version: "{version}"
+  informational_version: "{version}"
 artifacts:
   - path: 'stellar-dotnet-sdk\**\*.nupkg'
     name: nuget
@@ -20,18 +20,18 @@ build:
   parallel: true
   verbosity: minimal
 test_script:
- - cmd: dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:ExcludeByFile=\"../stellar-dotnet-sdk/chaos.nacl/**/*.cs\" -p:ExcludeByFile=\"../stellar-dotnet-sdk-xdr/generated/*.cs\" ./stellar-dotnet-sdk-test --test-adapter-path:. --logger:Appveyor
-
+  - cmd: dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:ExcludeByFile=\"../stellar-dotnet-sdk/chaos.nacl/**/*.cs\" -p:ExcludeByFile=\"../stellar-dotnet-sdk-xdr/generated/*.cs\" ./stellar-dotnet-sdk-test --test-adapter-path:. --logger:Appveyor
 after_test:
   - cmd: packages\coveralls.io\1.4.2\tools\coveralls.net.exe --opencover "./stellar-dotnet-sdk-test/coverage.opencover.xml" -r %COVERALLS_REPO_TOKEN%
+
 environment:
   COVERALLS_REPO_TOKEN:
     secure: Oo/jr37r3k/ZwDMKK/varxVllvTUUX8aGd/lpZ0eB0+i4Gxno6WsExeLNYNLD2hz
 
 deploy:
   on:
-      branch: master
-      APPVEYOR_REPO_TAG: true
+    branch: master
+    APPVEYOR_REPO_TAG: true
   provider: NuGet
   api_key:
     secure: vm+rrsWiV8YUExTehIEf2ACt0R0xDzYJ0OoHvNlu7hGZfvnop/tpbuamDm16uArT
