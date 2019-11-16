@@ -21,11 +21,13 @@ build:
   verbosity: minimal
 test_script:
  - cmd: dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:ExcludeByFile=\"../stellar-dotnet-sdk/chaos.nacl/**/*.cs\" -p:ExcludeByFile=\"../stellar-dotnet-sdk-xdr/generated/*.cs\" ./stellar-dotnet-sdk-test --test-adapter-path:. --logger:Appveyor
+environment:
+  COVERALLS_REPO_TOKEN: 
+    secure: Oo/jr37r3k/ZwDMKK/varxVllvTUUX8aGd/lpZ0eB0+i4Gxno6WsExeLNYNLD2hz
+
 after_test:
-  - ps: |
-      $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
-      Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
-      bash codecov.sh -f "./stellar-dotnet-sdk-test/coverage.opencover.xml" -t 3d1827ed-854c-484b-a639-02544eb921b8
+  - cmd: packages\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover "./stellar-dotnet-sdk-test/coverage.opencover.xml" -r %COVERALLS_REPO_TOKEN%
+      
 deploy:
   on:
       branch: master
