@@ -71,7 +71,7 @@ namespace TestConsole
 
         private static void ShowTransactionRecord(TransactionResponse tran)
         {
-            Console.WriteLine($"Ledger: {tran.Ledger}, Hash: {tran.Hash}, Fee Paid: {tran.FeePaid}, Pt:{tran.PagingToken}");
+            Console.WriteLine($"Ledger: {tran.Ledger}, Hash: {tran.Hash}, Fee Paid: {tran.FeeCharged}, Pt:{tran.PagingToken}");
         }
 
         private static async void ShowOperationResponse(Server server, object sender, LedgerResponse lr)
