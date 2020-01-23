@@ -25,34 +25,48 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "operationFeeStats.json"));
             var stats = JsonConvert.DeserializeObject<OperationFeeStatsResponse>(json);
+
             var serialized = JsonConvert.SerializeObject(stats);
             var back = JsonConvert.DeserializeObject<OperationFeeStatsResponse>(serialized);
-            
-            Assert.AreEqual(stats.Min, back.Min);
-            Assert.AreEqual(stats.Mode, back.Mode);
+           
             Assert.AreEqual(stats.LastLedger, back.LastLedger);
             Assert.AreEqual(stats.LastLedgerBaseFee, back.LastLedgerBaseFee);
+            Assert.AreEqual(stats.LedgerCapacityUsage, back.LedgerCapacityUsage);
         }
 
         public static void AssertTestData(OperationFeeStatsResponse stats)
         {
-            Assert.AreEqual(20882791L, stats.LastLedger);
-            Assert.AreEqual(100L, stats.LastLedgerBaseFee);
-            Assert.AreEqual(101L, stats.Min);
-            Assert.AreEqual(102L, stats.Mode);
-            Assert.AreEqual(103L, stats.P10);
-            Assert.AreEqual(104L, stats.P20);
-            Assert.AreEqual(105L, stats.P30);
-            Assert.AreEqual(106L, stats.P40);
-            Assert.AreEqual(107L, stats.P50);
-            Assert.AreEqual(108L, stats.P60);
-            Assert.AreEqual(109L, stats.P70);
-            Assert.AreEqual(110L, stats.P80);
-            Assert.AreEqual(111L, stats.P90);
-            Assert.AreEqual(112L, stats.P95);
-            Assert.AreEqual(113L, stats.P99);
             Assert.AreEqual(0.97m, stats.LedgerCapacityUsage);
-            
-         }
+
+            //Assert Fee Charged Data
+            Assert.AreEqual(1, stats.FeeCharged.Min);
+            Assert.AreEqual(100L, stats.FeeCharged.Mode);
+            Assert.AreEqual(10L, stats.FeeCharged.P10);
+            Assert.AreEqual(20L, stats.FeeCharged.P20);
+            Assert.AreEqual(30L, stats.FeeCharged.P30);
+            Assert.AreEqual(40L, stats.FeeCharged.P40);
+            Assert.AreEqual(50L, stats.FeeCharged.P50);
+            Assert.AreEqual(60L, stats.FeeCharged.P60);
+            Assert.AreEqual(70L, stats.FeeCharged.P70);
+            Assert.AreEqual(80L, stats.FeeCharged.P80);
+            Assert.AreEqual(90L, stats.FeeCharged.P90);
+            Assert.AreEqual(95L, stats.FeeCharged.P95);
+            Assert.AreEqual(99L, stats.FeeCharged.P99);
+
+            //Assert Max Fee Data
+            Assert.AreEqual(1L, stats.MaxFee.Min);
+            Assert.AreEqual(100L, stats.MaxFee.Mode);
+            Assert.AreEqual(10L, stats.MaxFee.P10);
+            Assert.AreEqual(20L, stats.MaxFee.P20);
+            Assert.AreEqual(30L, stats.MaxFee.P30);
+            Assert.AreEqual(40L, stats.MaxFee.P40);
+            Assert.AreEqual(50L, stats.MaxFee.P50);
+            Assert.AreEqual(60L, stats.MaxFee.P60);
+            Assert.AreEqual(70L, stats.MaxFee.P70);
+            Assert.AreEqual(80L, stats.MaxFee.P80);
+            Assert.AreEqual(90L, stats.MaxFee.P90);
+            Assert.AreEqual(95L, stats.MaxFee.P95);
+            Assert.AreEqual(99L, stats.MaxFee.P99);
+        }
     }
 }
