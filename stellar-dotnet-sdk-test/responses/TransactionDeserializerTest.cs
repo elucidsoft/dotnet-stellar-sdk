@@ -16,7 +16,6 @@ namespace stellar_dotnet_sdk_test.responses
             var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
 
             AssertTestData(transaction);
-            Assert.AreEqual(100L, transaction.FeePaid);
             Assert.AreEqual(100L, transaction.FeeCharged);
             Assert.AreEqual(1050L, transaction.MaxFee);
         }
@@ -27,7 +26,6 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "transactionTransactionPre020.json"));
             var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
             AssertTestData(transaction);
-            Assert.AreEqual(100L, transaction.FeePaid);
             Assert.AreEqual(0L, transaction.FeeCharged);
             Assert.AreEqual(0L, transaction.MaxFee);
         }
@@ -42,7 +40,6 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.IsTrue(back.Successful);
             AssertTestData(back);
-            Assert.AreEqual(100L, transaction.FeePaid);
             Assert.AreEqual(100L, transaction.FeeCharged);
             Assert.AreEqual(1050L, transaction.MaxFee);
         }
