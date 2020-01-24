@@ -65,5 +65,86 @@ namespace stellar_dotnet_sdk.requests
             SetSegments("accounts", accountId, "data", key);
             return await AccountData(BuildUri());
         }
+
+        /// <summary>
+        /// Filter accounts that have the given signer or have a trustline to the given asset.
+        /// https://www.stellar.org/developers/horizon/reference/endpoints/accounts.html
+        /// </summary>
+        /// <param name="options">The filtering options</param>
+        public AccountsRequestBuilder Accounts(AccountsRequestOptions options)
+        {
+            if (options == null) throw new ArgumentNullException(nameof(options));
+
+            if (options.Signer != null)
+            {
+                UriBuilder.SetQueryParam("signer", options.Signer);
+            }
+
+            if (options.Asset != null)
+            {
+                UriBuilder.SetQueryParam("asset", AssetToQueryParam(options.Asset));
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Filter accounts that have the given signer or have a trustline to the given asset.
+        /// https://www.stellar.org/developers/horizon/reference/endpoints/accounts.html
+        /// </summary>
+        /// <param name="optionsAction"></param>
+        public AccountsRequestBuilder Accounts(Action<AccountsRequestOptions> optionsAction)
+        {
+            if (optionsAction == null) throw new ArgumentNullException(nameof(optionsAction));
+            var options = new AccountsRequestOptions();
+            optionsAction.Invoke(options);
+            return Accounts(options);
+        }
+
+        /// <summary>
+        /// Filter accounts that have the given signer.
+        /// </summary>
+        /// <param name="signer">The signer.</param>
+        /// <returns></returns>
+        public AccountsRequestBuilder WithSigner(string signer)
+        {
+            return Accounts(options => options.Signer = signer);
+        }
+
+        /// <summary>
+        /// Filter accounts that have a trustline to the given asset.
+        /// </summary>
+        /// <param name="asset"></param>
+        /// <returns></returns>
+        public AccountsRequestBuilder WithTrustline(Asset asset)
+        {
+            return Accounts(options => options.Asset = asset);
+        }
+
+        private string AssetToQueryParam(Asset asset)
+        {
+            switch (asset)
+            {
+                case AssetTypeNative _:
+                    return "native";
+                case AssetTypeCreditAlphaNum credit:
+                    return $"{credit.Code}:{credit.Issuer}";
+                default:
+                    throw new ArgumentException($"Unknown Asset type {asset.GetType()}");
+            }
+        }
+
+        public class AccountsRequestOptions
+        {
+            /// <summary>
+            /// Filter accounts that have the given Signer.
+            /// </summary>
+            public string Signer { get; set; }
+
+            /// <summary>
+            /// Filter accounts that trust the given Asset.
+            /// </summary>
+            public Asset Asset { get; set; }
+        }
     }
 }

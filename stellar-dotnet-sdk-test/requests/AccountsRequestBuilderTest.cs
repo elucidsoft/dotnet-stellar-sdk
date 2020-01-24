@@ -53,5 +53,48 @@ namespace stellar_dotnet_sdk_test.requests
                 Assert.AreEqual("TestValue", accountData.ValueDecoded);
             }
         }
+
+        [TestMethod]
+        public async Task TestAccountsWithSigner()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "accountsWithSigner.json"));
+            var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var req = server.Accounts
+                    .WithSigner("GBPOFUJUHOFTZHMZ63H5GE6NX5KVKQRD6N3I2E5AL3T2UG7HSLPLXN2K");
+
+                Assert.AreEqual(
+                    "https://horizon-testnet.stellar.org/accounts?signer=GBPOFUJUHOFTZHMZ63H5GE6NX5KVKQRD6N3I2E5AL3T2UG7HSLPLXN2K",
+                    req.BuildUri().ToString());
+                var accounts = await req.Execute();
+
+                Assert.AreEqual(1, accounts.Records.Count);
+            }
+        }
+
+
+        [TestMethod]
+        public async Task TestAccountsWithTrustline()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "accountsWithTrustline.json"));
+            var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var asset = Asset.CreateNonNativeAsset("FOO",
+                    "GAGLYFZJMN5HEULSTH5CIGPOPAVUYPG5YSWIYDJMAPIECYEBPM2TA3QR");
+                var req = server.Accounts.WithTrustline(asset);
+
+                Assert.AreEqual(
+                    "https://horizon-testnet.stellar.org/accounts?asset=FOO:GAGLYFZJMN5HEULSTH5CIGPOPAVUYPG5YSWIYDJMAPIECYEBPM2TA3QR",
+                    req.BuildUri().ToString());
+                var accounts = await req.Execute();
+
+                Assert.AreEqual(1, accounts.Records.Count);
+            }
+        }
+
     }
 }
