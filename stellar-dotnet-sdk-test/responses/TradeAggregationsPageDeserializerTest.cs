@@ -29,6 +29,28 @@ namespace stellar_dotnet_sdk_test.responses
             AssertTestData(back);
         }
 
+        //Before Horizon 1.0.0 the Timestamp and TradeCount in the json were a long.
+        [TestMethod]
+        public void TestDeserializePre100()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "tradeAggregationsPagePre100.json"));
+            var tradeAggregationsPage = JsonSingleton.GetInstance<Page<TradeAggregationResponse>>(json);
+
+            AssertTestData(tradeAggregationsPage);
+        }
+
+        //Before Horizon 1.0.0 the Timestamp and TradeCount in the json were a long.
+        [TestMethod]
+        public void TestSerializeDeserializePre100()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "tradeAggregationsPagePre100.json"));
+            var tradeAggregationsPage = JsonSingleton.GetInstance<Page<TradeAggregationResponse>>(json);
+            var serialized = JsonConvert.SerializeObject(tradeAggregationsPage);
+            var back = JsonConvert.DeserializeObject<Page<TradeAggregationResponse>>(serialized);
+
+            AssertTestData(back);
+        }
+
         public static void AssertTestData(Page<TradeAggregationResponse> tradeAggregationsPage)
         {
             Assert.AreEqual(tradeAggregationsPage.Links.Next.Href,

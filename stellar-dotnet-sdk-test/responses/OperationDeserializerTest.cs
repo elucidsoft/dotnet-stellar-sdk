@@ -343,13 +343,35 @@ namespace stellar_dotnet_sdk_test.responses
             AssertManageBuyOfferData(back);
         }
 
+        //Before Horizon 1.0.0 the OfferID in the json was a long.
+        [TestMethod]
+        public void TestDeserializeManageBuyOfferOperationPre100()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationManageBuyOfferPre100.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+
+            AssertManageBuyOfferData(instance);
+        }
+
+        //Before Horizon 1.0.0 the OfferID in the json was a long.
+        [TestMethod]
+        public void TestSerializeDeserializeManageBuyOfferOperationPre100()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "operationManageBuyOfferPre100.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertManageBuyOfferData(back);
+        }
+
         private static void AssertManageBuyOfferData(OperationResponse instance)
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is ManageBuyOfferOperationResponse);
             var operation = (ManageBuyOfferOperationResponse) instance;
 
-            Assert.AreEqual(operation.OfferId, "0");
+            Assert.AreEqual(operation.OfferId, "1");
             Assert.AreEqual(operation.Amount, "50000.0000000");
             Assert.AreEqual(operation.Price, "0.0463000");
             Assert.AreEqual(operation.BuyingAsset,
