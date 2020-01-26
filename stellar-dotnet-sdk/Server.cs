@@ -65,7 +65,12 @@ namespace stellar_dotnet_sdk
 
         public TradesRequestBuilder Trades => new TradesRequestBuilder(_serverUri, _httpClient);
 
+        [Obsolete("Paths is deprecated in Horizon v1.0.0. Use PathStrictReceive.")]
         public PathsRequestBuilder Paths => new PathsRequestBuilder(_serverUri, _httpClient);
+
+        public PathStrictSendRequestBuilder PathStrictSend => new PathStrictSendRequestBuilder(_serverUri, _httpClient);
+
+        public PathStrictReceiveRequestBuilder PathStrictReceive => new PathStrictReceiveRequestBuilder(_serverUri, _httpClient);
 
         public PaymentsRequestBuilder Payments => new PaymentsRequestBuilder(_serverUri, _httpClient);
 
