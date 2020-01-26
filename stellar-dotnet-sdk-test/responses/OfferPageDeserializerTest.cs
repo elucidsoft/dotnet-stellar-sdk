@@ -30,6 +30,28 @@ namespace stellar_dotnet_sdk_test.responses
             AssertTestData(back);
         }
 
+        //Before Horizon 1.0.0 the ID in the json was a long.
+        [TestMethod]
+        public void TestDeserializePre100()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "offerPagePre100.json"));
+            var offerResponsePage = JsonSingleton.GetInstance<Page<OfferResponse>>(json);
+
+            AssertTestData(offerResponsePage);
+        }
+
+        //Before Horizon 1.0.0 the ID in the json was a long.
+        [TestMethod]
+        public void TestSerializeDeserializePre100()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "offerPagePre100.json"));
+            var offerResponsePage = JsonSingleton.GetInstance<Page<OfferResponse>>(json);
+            var serialized = JsonConvert.SerializeObject(offerResponsePage);
+            var back = JsonConvert.DeserializeObject<Page<OfferResponse>>(serialized);
+
+            AssertTestData(back);
+        }
+
         public static void AssertTestData(Page<OfferResponse> offerResponsePage)
         {
             Assert.AreEqual(offerResponsePage.Records[0].Id, "241");

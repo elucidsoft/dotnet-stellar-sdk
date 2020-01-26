@@ -602,6 +602,28 @@ namespace stellar_dotnet_sdk_test.responses
             AssertTradeData(back);
         }
 
+        //Before Horizon 1.0.0 the OfferID in the json was a long.
+        [TestMethod]
+        public void TestDeserializeTradeEffectPre100()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectTradePre100.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            AssertTradeData(instance);
+        }
+
+        //Before Horizon 1.0.0 the OfferID in the json was a long.
+        [TestMethod]
+        public void TestSerializeDeserializeTradeEffectPre100()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectTradePre100.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertTradeData(back);
+        }
+
         private static void AssertTradeData(EffectResponse instance)
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
