@@ -39,7 +39,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(0.97m, stats.LedgerCapacityUsage);
 
             //Assert Fee Charged Data
-            Assert.AreEqual(1, stats.FeeCharged.Min);
+            Assert.AreEqual(1L, stats.FeeCharged.Min);
             Assert.AreEqual(100L, stats.FeeCharged.Mode);
             Assert.AreEqual(10L, stats.FeeCharged.P10);
             Assert.AreEqual(20L, stats.FeeCharged.P20);
