@@ -38,5 +38,101 @@ namespace stellar_dotnet_sdk_test.requests
                 OfferPageDeserializerTest.AssertTestData(offerResponsePage);
             }
         }
+
+        [TestMethod]
+        public async Task TestOffersWithSeller()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "offerPage.json"));
+            var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var req = server.Offers.WithSeller("GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
+
+                Assert.AreEqual("https://horizon-testnet.stellar.org/offers?seller=GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7", req.BuildUri().ToString());
+
+                var offerResponsePage = await req.Execute();
+                OfferPageDeserializerTest.AssertTestData(offerResponsePage);
+            }
+        }
+
+        [TestMethod]
+        public async Task TestOffersWithSellingNativeAsset()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "offerPage.json"));
+            var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var req = server.Offers.WithSellingAsset(new AssetTypeNative());
+
+                Assert.AreEqual(
+                    "https://horizon-testnet.stellar.org/offers?selling_asset_type=native",
+                    req.BuildUri().ToString());
+
+                var offerResponsePage = await req.Execute();
+                OfferPageDeserializerTest.AssertTestData(offerResponsePage);
+            }
+        }
+
+        [TestMethod]
+        public async Task TestOffersWithSellingCreditAsset()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "offerPage.json"));
+            var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var nonNativeAsset = Asset.CreateNonNativeAsset("FOO", "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
+                var req = server.Offers.WithSellingAsset(nonNativeAsset);
+
+                Assert.AreEqual(
+                    "https://horizon-testnet.stellar.org/offers?selling_asset_type=credit_alphanum4&selling_asset_code=FOO&selling_asset_issuer=GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7",
+                    req.BuildUri().ToString());
+
+                var offerResponsePage = await req.Execute();
+                OfferPageDeserializerTest.AssertTestData(offerResponsePage);
+            }
+        }
+
+        [TestMethod]
+        public async Task TestOffersWithBuyingNativeAsset()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "offerPage.json"));
+            var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var req = server.Offers.WithBuyingAsset(new AssetTypeNative());
+
+                Assert.AreEqual(
+                    "https://horizon-testnet.stellar.org/offers?buying_asset_type=native",
+                    req.BuildUri().ToString());
+
+                var offerResponsePage = await req.Execute();
+                OfferPageDeserializerTest.AssertTestData(offerResponsePage);
+            }
+        }
+
+        [TestMethod]
+        public async Task TestOffersWithBuyingCreditAsset()
+        {
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "offerPage.json"));
+            var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
+
+            using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
+            {
+                var notNativeAsset = Asset.CreateNonNativeAsset("FOOBARBAZ",
+                    "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
+                var req = server.Offers.WithBuyingAsset(notNativeAsset);
+
+                Assert.AreEqual(
+                    "https://horizon-testnet.stellar.org/offers?buying_asset_type=credit_alphanum12&buying_asset_code=FOOBARBAZ&buying_asset_issuer=GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7",
+                    req.BuildUri().ToString());
+
+                var offerResponsePage = await req.Execute();
+                OfferPageDeserializerTest.AssertTestData(offerResponsePage);
+            }
+        }
     }
 }

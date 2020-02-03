@@ -10,8 +10,8 @@
   "_embedded": {
     "records": [
       {
-        "timestamp": 1517522400000,
-        "trade_count": 26,
+        "timestamp": "1517522400000",
+        "trade_count": "26",
         "base_volume": "27575.0201596",
         "counter_volume": "5085.6410385",
         "avg": "0.1844293",

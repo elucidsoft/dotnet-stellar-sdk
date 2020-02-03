@@ -31,16 +31,9 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "source_account_sequence")]
         public long SourceAccountSequence { get; private set; }
 
-        [JsonProperty(PropertyName = "fee_paid")]
-        private long? _feePaid { get; set; }
-
-        [Obsolete("Use FeeCharged unless you are using Horizon < 0.20")]
-        public long FeePaid => _feePaid ?? FeeCharged;
-
         [JsonProperty(PropertyName = "fee_charged")]
         public long FeeCharged { get; set; }
 
-        [DefaultValue(0)]
         [JsonProperty(PropertyName = "max_fee")]
         public long MaxFee { get; private set; }
 
@@ -127,7 +120,6 @@ namespace stellar_dotnet_sdk.responses
             Successful = successful;
             PagingToken = pagingToken;
             SourceAccountSequence = sourceAccountSequence;
-            _feePaid = feePaid;
             OperationCount = operationCount;
             EnvelopeXdr = envelopeXdr;
             ResultXdr = resultXdr;
