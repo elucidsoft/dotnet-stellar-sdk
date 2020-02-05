@@ -1,6 +1,9 @@
+version: '4.0.{build}
 pull_requests:
-  do_not_increment_build_number: true
+  do_not_increment_build_number: tr
+  ue
 os: Visual Studio 2017
+
 before_build:
   - cmd: dotnet restore stellar-dotnet-sdk.sln
 dotnet_csproj:
