@@ -16,6 +16,8 @@ dotnet_csproj:
 artifacts:
   - path: 'stellar-dotnet-sdk\**\*.nupkg'
     name: nuget
+  - path: 'stellar-dotnet-sdk-xdr\**\*.nupkg'
+    name: nuget
 build:
   project: stellar-dotnet-sdk.sln
   parallel: true
