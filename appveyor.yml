@@ -1,7 +1,8 @@
-version: 3.0.{build}
+version: 4.0.{build} 
 pull_requests:
   do_not_increment_build_number: true
 os: Visual Studio 2017
+
 before_build:
   - cmd: dotnet restore stellar-dotnet-sdk.sln
 dotnet_csproj:
@@ -14,6 +15,8 @@ dotnet_csproj:
   informational_version: "{version}"
 artifacts:
   - path: 'stellar-dotnet-sdk\**\*.nupkg'
+    name: nuget
+  - path: 'stellar-dotnet-sdk-xdr\**\*.nupkg'
     name: nuget
 build:
   project: stellar-dotnet-sdk.sln
