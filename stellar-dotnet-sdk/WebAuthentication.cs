@@ -191,9 +191,12 @@ namespace stellar_dotnet_sdk
             if (serverSigner is null)
                 throw new InvalidWebAuthenticationException("Challenge transaction not signed by server");
 
+            if (allSignersFound.Count == 1)
+                throw new InvalidWebAuthenticationException("Challenge transaction not signed by client");
+
             if (allSignersFound.Count != transaction.Signatures.Count)
                 throw new InvalidWebAuthenticationException("Challenge transaction has unrecognized signatures");
-
+            
             return allSignersFound.Where(signer => signer != serverSigner).ToArray();
         }
 

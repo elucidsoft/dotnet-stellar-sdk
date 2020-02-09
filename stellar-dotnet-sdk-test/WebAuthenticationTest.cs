@@ -816,5 +816,586 @@ namespace stellar_dotnet_sdk_test
                 Assert.IsTrue(exception.Message.Contains("Challenge transaction has unrecognized signatures"));
             }
         }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionThresholdInvalidNoSigners()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var client2Keypair = KeyPair.Random();
+            var client3Keypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(clientKeypair);
+            transaction.Sign(client2Keypair);
+            transaction.Sign(client3Keypair);
+
+            var threshold = 3;
+            var signerSummary = new Dictionary<string, int>()
+            {
+            };
+
+            try
+            {
+                var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, Network.Test()).ToList();
+            }
+
+            catch (Exception exception)
+            {
+                Assert.IsTrue(exception.Message.Contains("signers must be non-empty"));
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionThresholdWeightsAddToMoreThan8Bits()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var client2Keypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(clientKeypair);
+            transaction.Sign(client2Keypair);
+
+            var threshold = 1;
+            var signerSummary = new Dictionary<string, int>()
+            {
+                { clientKeypair.Address, 255 },
+                { client2Keypair.Address, 1 },
+            };
+
+            var wantSigners = new string[2]
+            {
+                clientKeypair.Address,
+                client2Keypair.Address
+            };
+
+            var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, Network.Test()).ToList();
+
+            for (int i = 0; i < wantSigners.Length; i++)
+            {
+                Assert.AreEqual(signersFound[i], wantSigners[i]);
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionSignersInvalidServer()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            //transaction.Sign(serverKeypair);
+            transaction.Sign(clientKeypair);
+
+            var threshold = 1;
+            var signerSummary = new Dictionary<string, int>()
+            {
+                { clientKeypair.Address, 255 },
+            };
+
+            var wantSigners = new string[1]
+            {
+                clientKeypair.Address,
+            };
+
+            try
+            {
+                var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, Network.Test()).ToList();
+            }
+
+            catch (Exception exception)
+            {
+                Assert.IsTrue(exception.Message.Contains("Challenge transaction not signed by server"));
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionSignersValidServerAndClientMasterKey()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(clientKeypair);
+
+            var signers = new string[1]
+            {
+                clientKeypair.Address
+            };
+
+            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test());
+            
+            Assert.AreEqual(clientKeypair.Address, signersFound[0]);
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionSignersInvalidServerAndNoClient()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+
+            var signers = new string[1]
+            {
+                clientKeypair.Address
+            };
+
+            try
+            {
+                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
+            }
+
+            catch (Exception exception)
+            {
+                Assert.IsTrue(exception.Message.Contains("Challenge transaction not signed by client"));
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionSignersInvalidServerAndUnrecognizedClient()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var unrecognizedKeypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(unrecognizedKeypair);
+
+            var signers = new string[1]
+            {
+                clientKeypair.Address
+            };
+
+            try
+            {
+                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
+            }
+
+            catch (Exception exception)
+            {
+                Assert.IsTrue(exception.Message.Contains("Challenge transaction not signed by client"));
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionSignersValidServerAndMultipleClientSigners()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var client2Keypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(clientKeypair);
+            transaction.Sign(client2Keypair);
+
+            var signers = new string[2]
+            {
+                clientKeypair.Address,
+                client2Keypair.Address
+            };
+
+            var wantSigners = new string[2]
+            {
+                clientKeypair.Address,
+                client2Keypair.Address
+            };
+
+            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
+
+            for (int i = 0; i < wantSigners.Length; i++)
+            {
+                Assert.AreEqual(signersFound[i], wantSigners[i]);
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionSignersValidServerAndMultipleClientSignersReverseOrder()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var client2Keypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(client2Keypair);
+            transaction.Sign(clientKeypair);
+
+            var signers = new string[2]
+            {
+                clientKeypair.Address,
+                client2Keypair.Address
+            };
+
+            var wantSigners = new string[2]
+            {
+                clientKeypair.Address,
+                client2Keypair.Address
+            };
+
+            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
+
+            for (int i = 0; i < wantSigners.Length; i++)
+            {
+                Assert.AreEqual(signersFound[i], wantSigners[i]);
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionSignersValidServerAndClientSignersNotMasterKey()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var client2Keypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(client2Keypair);
+
+            var signers = new string[1]
+            {
+                client2Keypair.Address
+            };
+
+            var wantSigners = new string[1]
+            {
+                client2Keypair.Address
+            };
+
+            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
+
+            for (int i = 0; i < wantSigners.Length; i++)
+            {
+                Assert.AreEqual(signersFound[i], wantSigners[i]);
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionSignersValidServerAndClientSignersIgnoresServerSigner()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var client2Keypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(client2Keypair);
+
+            var signers = new string[2]
+            {
+                serverKeypair.Address,
+                client2Keypair.Address
+            };
+
+            var wantSigners = new string[1]
+            {
+                client2Keypair.Address
+            };
+
+            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
+
+            for (int i = 0; i < wantSigners.Length; i++)
+            {
+                Assert.AreEqual(signersFound[i], wantSigners[i]);
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionSignersInvalidServerNoClientSignersIgnoresServerSigner()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var client2Keypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+
+            var signers = new string[2]
+            {
+                serverKeypair.Address,
+                client2Keypair.Address
+            };
+
+            try
+            {
+                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
+            }
+
+            catch (Exception exception)
+            {
+                Assert.IsTrue(exception.Message.Contains("Challenge transaction not signed by client"));
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionSignersValidServerAndClientSignersIgnoresDuplicateSigner()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(clientKeypair);
+
+            var signers = new string[2]
+            {
+                clientKeypair.Address,
+                clientKeypair.Address
+            };
+
+            var wantSigners = new string[1]
+            {
+                clientKeypair.Address
+            };
+
+            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
+
+            for (int i = 0; i < wantSigners.Length; i++)
+            {
+                Assert.AreEqual(signersFound[i], wantSigners[i]);
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionSignersInvalidServerAndClientSignersIgnoresDuplicateSignerInError()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+            var client2Keypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(client2Keypair);
+
+            var signers = new string[2]
+            {
+                clientKeypair.Address,
+                clientKeypair.Address
+            };
+
+            var wantSigners = new string[1]
+            {
+                client2Keypair.Address
+            };
+
+            try
+            {
+                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
+            }
+
+            catch (Exception exception)
+            {
+                Assert.IsTrue(exception.Message.Contains("Challenge transaction not signed by client"));
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionSignersInvalidServerAndClientSignersFailsDuplicateSignatures()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(clientKeypair);
+            transaction.Sign(clientKeypair);
+
+            var signers = new string[1]
+            {
+                clientKeypair.Address
+            };
+
+            try
+            {
+                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
+            }
+
+            catch (Exception exception)
+            {
+                Assert.IsTrue(exception.Message.Contains("Challenge transaction has unrecognized signatures"));
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionSignersInvalidNoSigners()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder("testserver auth", base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new Transaction.Builder(txSource).AddOperation(operation).AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000))).Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(clientKeypair);
+
+            var signers = new string[0]
+            {       
+            };
+
+            try
+            {
+                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
+            }
+
+            catch (Exception exception)
+            {
+                Assert.IsTrue(exception.Message.Contains("signers must be non-empty"));
+            }
+        }
     }
 }
