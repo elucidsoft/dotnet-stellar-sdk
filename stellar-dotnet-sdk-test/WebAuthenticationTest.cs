@@ -393,7 +393,7 @@ namespace stellar_dotnet_sdk_test
             try
             {
                 var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, Network.Test());
-                
+
             }
             catch (Exception exception)
             {
@@ -768,7 +768,6 @@ namespace stellar_dotnet_sdk_test
             {
                 var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, Network.Test()).ToList();
             }
-
             catch(Exception exception)
             {
                 Assert.IsTrue(exception.Message.Contains("Signers with weight 3 do not meet threshold 10"));
@@ -810,7 +809,6 @@ namespace stellar_dotnet_sdk_test
             {
                 var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, Network.Test()).ToList();
             }
-
             catch (Exception exception)
             {
                 Assert.IsTrue(exception.Message.Contains("Challenge transaction has unrecognized signatures"));
@@ -850,7 +848,6 @@ namespace stellar_dotnet_sdk_test
             {
                 var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, Network.Test()).ToList();
             }
-
             catch (Exception exception)
             {
                 Assert.IsTrue(exception.Message.Contains("signers must be non-empty"));
@@ -935,7 +932,6 @@ namespace stellar_dotnet_sdk_test
             {
                 var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, Network.Test()).ToList();
             }
-
             catch (Exception exception)
             {
                 Assert.IsTrue(exception.Message.Contains("Challenge transaction not signed by server"));
@@ -968,7 +964,7 @@ namespace stellar_dotnet_sdk_test
             };
 
             var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test());
-            
+
             Assert.AreEqual(clientKeypair.Address, signersFound[0]);
         }
 
@@ -1000,7 +996,6 @@ namespace stellar_dotnet_sdk_test
             {
                 var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
             }
-
             catch (Exception exception)
             {
                 Assert.IsTrue(exception.Message.Contains("Challenge transaction not signed by client"));
@@ -1037,7 +1032,6 @@ namespace stellar_dotnet_sdk_test
             {
                 var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
             }
-
             catch (Exception exception)
             {
                 Assert.IsTrue(exception.Message.Contains("Challenge transaction not signed by client"));
@@ -1237,7 +1231,6 @@ namespace stellar_dotnet_sdk_test
             {
                 var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
             }
-
             catch (Exception exception)
             {
                 Assert.IsTrue(exception.Message.Contains("Challenge transaction not signed by client"));
@@ -1319,7 +1312,6 @@ namespace stellar_dotnet_sdk_test
             {
                 var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
             }
-
             catch (Exception exception)
             {
                 Assert.IsTrue(exception.Message.Contains("Challenge transaction not signed by client"));
@@ -1356,7 +1348,6 @@ namespace stellar_dotnet_sdk_test
             {
                 var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
             }
-
             catch (Exception exception)
             {
                 Assert.IsTrue(exception.Message.Contains("Challenge transaction has unrecognized signatures"));
@@ -1384,14 +1375,13 @@ namespace stellar_dotnet_sdk_test
             transaction.Sign(clientKeypair);
 
             var signers = new string[0]
-            {       
+            {
             };
 
             try
             {
                 var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, Network.Test()).ToList();
             }
-
             catch (Exception exception)
             {
                 Assert.IsTrue(exception.Message.Contains("signers must be non-empty"));
