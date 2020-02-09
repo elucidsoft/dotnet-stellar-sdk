@@ -183,9 +183,9 @@ namespace stellar_dotnet_sdk
             var serverKeypair = KeyPair.FromAccountId(serverAccountId);
             var clientSigners = signers.Where(signer => signer != serverKeypair.Address).ToList();
 
-            var allSigners = clientSigners.Select(signer => signer.Clone()).ToList();
+            var allSigners = clientSigners.Select(signer => signer.Clone() as string).ToList();
             allSigners.Add(serverKeypair.Address);
-            var allSignersFound = VerifyTransactionSignatures(transaction, signers, network);
+            var allSignersFound = VerifyTransactionSignatures(transaction, allSigners, network);
 
             var serverSigner = allSignersFound.FirstOrDefault(signer => signer == serverKeypair.Address);
             if (serverSigner is null)
