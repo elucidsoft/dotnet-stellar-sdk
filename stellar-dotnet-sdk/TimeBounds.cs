@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk
         public TimeBounds(ulong minTime, ulong maxTime)
         {
             if (maxTime != 0 && minTime >= maxTime)
-                throw new ArgumentException("minTime must be >= maxTime");
+                throw new ArgumentException("minTime must be < maxTime");
 
             _minTime = minTime;
             _maxTime = maxTime;
@@ -32,7 +32,7 @@ namespace stellar_dotnet_sdk
             if (maxTime < 0)
                 throw new ArgumentException("maxTime must be >= 0");
             if (maxTime != 0 && minTime >= maxTime)
-                throw new ArgumentException("minTime must be >= maxTime");
+                throw new ArgumentException("minTime must be < maxTime");
             _minTime = (ulong) minTime;
             _maxTime = (ulong) maxTime;
         }
@@ -45,7 +45,7 @@ namespace stellar_dotnet_sdk
         public TimeBounds(DateTimeOffset? minTime = null, DateTimeOffset? maxTime = null)
         {
             if (maxTime != null && minTime >= maxTime)
-                throw new ArgumentException("minTime must be >= maxTime");
+                throw new ArgumentException("minTime must be < maxTime");
 
             var minEpoch = minTime?.ToUnixTimeSeconds() ?? 0;
             var maxEpoch = maxTime?.ToUnixTimeSeconds() ?? 0;
