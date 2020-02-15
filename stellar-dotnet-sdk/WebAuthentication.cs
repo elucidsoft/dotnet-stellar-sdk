@@ -196,7 +196,7 @@ namespace stellar_dotnet_sdk
 
             if (allSignersFound.Count != transaction.Signatures.Count)
                 throw new InvalidWebAuthenticationException("Challenge transaction has unrecognized signatures");
-            
+
             return allSignersFound.Where(signer => signer != serverSigner).ToArray();
         }
 
@@ -251,6 +251,7 @@ namespace stellar_dotnet_sdk
         {
             var txHash = transaction.Hash(network);
             var signaturesUsed = new Dictionary<xdr.DecoratedSignature, string>();
+            var signersFound = new HashSet<string>();
 
             foreach (var signer in signers)
             {
@@ -266,11 +267,13 @@ namespace stellar_dotnet_sdk
                     if (keypair.Verify(txHash, signature.Signature))
                     {
                         signaturesUsed[signature] = keypair.Address;
+                        signersFound.Add(keypair.Address);
+                        break;
                     }
                 }
             }
 
-            return signaturesUsed.Values.ToArray();
+            return signersFound.ToArray();
         }
     }
 }
