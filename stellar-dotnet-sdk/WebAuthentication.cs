@@ -46,7 +46,7 @@ namespace stellar_dotnet_sdk
 
             network = network ?? Network.Current;
             var validFrom = now ?? DateTimeOffset.Now;
-            var validTo = validFrom.Add(timeout ?? TimeSpan.FromMinutes(5.0));
+            var validFor = timeout ?? TimeSpan.FromMinutes(5.0);
 
             var sourceAccountKeypair = KeyPair.FromAccountId(clientAccountId);
 
@@ -56,7 +56,7 @@ namespace stellar_dotnet_sdk
             var manageDataKey = $"{anchorName} auth";
             var manageDataValue = Encoding.UTF8.GetBytes(Convert.ToBase64String(nonce));
 
-            var timeBounds = new TimeBounds(validFrom, validTo);
+            var timeBounds = new TimeBounds(validFrom, validFor);
 
             var operation = new ManageDataOperation.Builder(manageDataKey, manageDataValue)
                 .SetSourceAccount(sourceAccountKeypair)
