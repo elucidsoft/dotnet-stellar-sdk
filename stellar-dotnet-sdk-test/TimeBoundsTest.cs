@@ -75,5 +75,28 @@ namespace stellar_dotnet_sdk_test
 
             Assert.ThrowsException<ArgumentException>(() => new TimeBounds(now, yesterday));
         }
+
+        [TestMethod]
+        public void TestTimeBoundsWithDuration()
+        {
+            var now = new DateTime(2018, 12, 01, 17, 30, 30);
+            var duration = TimeSpan.FromDays(2.0);
+            var timeBounds = new TimeBounds(now, duration);
+
+            Assert.AreEqual(1543685430, timeBounds.MinTime);
+            Assert.AreEqual(1543858230, timeBounds.MaxTime);
+        }
+
+        [TestMethod]
+        public void TestTimeBoundsWithDurationFromUtcNow()
+        {
+            var now = DateTimeOffset.UtcNow;
+            var duration = TimeSpan.FromDays(2.0);
+            var timeBounds = new TimeBounds(duration);
+            var maxDateTime = DateTimeOffset.FromUnixTimeSeconds(timeBounds.MaxTime);
+
+            Assert.AreNotEqual(0, timeBounds.MinTime);
+            Assert.IsTrue(maxDateTime > now);
+        }
     }
 }
