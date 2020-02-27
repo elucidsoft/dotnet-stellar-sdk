@@ -54,6 +54,23 @@ namespace stellar_dotnet_sdk
             _maxTime = (ulong) maxEpoch;
         }
 
+        /// <summary>
+        /// Timebounds constructor.
+        /// </summary>
+        /// <param name="minTime">earliest time the transaction is valid from</param>
+        /// <param name="duration">duration window the transaction is valid for</param>
+        public TimeBounds(DateTimeOffset minTime, TimeSpan duration) : this(minTime, minTime.Add(duration))
+        {
+        }
+
+        /// <summary>
+        /// Timebounds constructor.
+        /// </summary>
+        /// <param name="duration">duration window the transaction is valid for from now</param>
+        public TimeBounds(TimeSpan duration) : this(DateTimeOffset.UtcNow, duration)
+        {
+        }
+
         public static TimeBounds FromXdr(xdr.TimeBounds timeBounds)
         {
             if (timeBounds == null)
