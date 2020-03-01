@@ -405,13 +405,24 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is PathPaymentStrictReceiveOperationResponse);
             var operation = (PathPaymentStrictReceiveOperationResponse) instance;
 
-            Assert.AreEqual(operation.From, "GCXKG6RN4ONIEPCMNFB732A436Z5PNDSRLGWK7GBLCMQLIFO4S7EYWVU");
-            Assert.AreEqual(operation.To, "GA5WBPYA5Y4WAEHXWR2UKO2UO4BUGHUQ74EUPKON2QHV4WRHOIRNKKH2");
-            Assert.AreEqual(operation.Amount, "10.0");
-            Assert.AreEqual(operation.SourceAmount, "10.0");
-            Assert.AreEqual(operation.SourceMax, "10.0");
-            Assert.AreEqual(operation.DestinationAsset, Asset.CreateNonNativeAsset("EUR", "GCQPYGH4K57XBDENKKX55KDTWOTK5WDWRQOH2LHEDX3EKVIQRLMESGBG"));
-            Assert.AreEqual(operation.SourceAsset, Asset.CreateNonNativeAsset("USD", "GC23QF2HUE52AMXUFUH3AYJAXXGXXV2VHXYYR6EYXETPKDXZSAW67XO4"));
+            PathPaymentStrictReceiveOperationResponse operationTest = new PathPaymentStrictReceiveOperationResponse(
+                "GCXKG6RN4ONIEPCMNFB732A436Z5PNDSRLGWK7GBLCMQLIFO4S7EYWVU",
+                "GA5WBPYA5Y4WAEHXWR2UKO2UO4BUGHUQ74EUPKON2QHV4WRHOIRNKKH2",
+                "credit_alphanum4", "EUR", "GCQPYGH4K57XBDENKKX55KDTWOTK5WDWRQOH2LHEDX3EKVIQRLMESGBG",
+                "10.0",
+                "credit_alphanum4", "USD", "GC23QF2HUE52AMXUFUH3AYJAXXGXXV2VHXYYR6EYXETPKDXZSAW67XO4",
+                "10.0",
+                "10.0",
+                new Asset[] { }
+            );
+
+            Assert.AreEqual(operation.From, operationTest.From);
+            Assert.AreEqual(operation.To, operationTest.To);
+            Assert.AreEqual(operation.Amount, operationTest.Amount);
+            Assert.AreEqual(operation.SourceMax, operationTest.SourceMax);
+            Assert.AreEqual(operation.SourceAmount, operationTest.SourceAmount);
+            Assert.AreEqual(operation.DestinationAsset, Asset.CreateNonNativeAsset(operationTest.AssetType, operation.AssetIssuer, operationTest.AssetCode));
+            Assert.AreEqual(operation.SourceAsset, Asset.CreateNonNativeAsset(operationTest.SourceAssetType, operation.SourceAssetIssuer, operationTest.SourceAssetCode));
         }
 
         [TestMethod]
@@ -440,13 +451,24 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is PathPaymentStrictSendOperationResponse);
             var operation = (PathPaymentStrictSendOperationResponse)instance;
 
-            Assert.AreEqual(operation.From, "GCXVEEBWI4YMRK6AFJQSEUBYDQL4PZ24ECAPJE2ZIAPIQZLZIBAX3LIF");
-            Assert.AreEqual(operation.To, "GCXVEEBWI4YMRK6AFJQSEUBYDQL4PZ24ECAPJE2ZIAPIQZLZIBAX3LIF");
-            Assert.AreEqual(operation.Amount, "0.0859000");
-            Assert.AreEqual(operation.SourceAmount, "1000.0000000");
-            Assert.AreEqual(operation.DestinationMin, "0.0859000");
-            Assert.AreEqual(operation.DestinationAsset, new AssetTypeNative());
-            Assert.AreEqual(operation.SourceAsset, Asset.CreateNonNativeAsset("KIN", "GBDEVU63Y6NTHJQQZIKVTC23NWLQVP3WJ2RI2OTSJTNYOIGICST6DUXR"));
+            PathPaymentStrictSendOperationResponse operationTest = new PathPaymentStrictSendOperationResponse(
+                "GCXVEEBWI4YMRK6AFJQSEUBYDQL4PZ24ECAPJE2ZIAPIQZLZIBAX3LIF",
+                "GCXVEEBWI4YMRK6AFJQSEUBYDQL4PZ24ECAPJE2ZIAPIQZLZIBAX3LIF",
+                "native", "", "",
+                "0.0859000",
+                "credit_alphanum4", "KIN", "GBDEVU63Y6NTHJQQZIKVTC23NWLQVP3WJ2RI2OTSJTNYOIGICST6DUXR",
+                "1000.0000000",
+                "0.0859000",
+                new Asset[] { }
+            );
+
+            Assert.AreEqual(operation.From, operationTest.From);
+            Assert.AreEqual(operation.To, operationTest.To);
+            Assert.AreEqual(operation.Amount, operationTest.Amount);
+            Assert.AreEqual(operation.SourceAmount, operationTest.SourceAmount);
+            Assert.AreEqual(operation.DestinationMin, operationTest.DestinationMin);
+            Assert.AreEqual(operation.DestinationAsset, Asset.Create(operationTest.AssetType, "", ""));
+            Assert.AreEqual(operation.SourceAsset, Asset.CreateNonNativeAsset(operationTest.SourceAssetType, operationTest.SourceAssetIssuer, operationTest.SourceAssetCode));
         }
 
         [TestMethod]
