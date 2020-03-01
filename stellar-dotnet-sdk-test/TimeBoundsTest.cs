@@ -79,7 +79,7 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public void TestTimeBoundsWithDuration()
         {
-            var now = new DateTime(2018, 12, 01, 17, 30, 30);
+            var now = new DateTime(2018, 12, 01, 17, 30, 30, DateTimeKind.Utc);
             var duration = TimeSpan.FromDays(2.0);
             var timeBounds = new TimeBounds(now, duration);
 
