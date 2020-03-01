@@ -34,7 +34,7 @@ namespace stellar_dotnet_sdk.responses
                 case 1:
                     return new PaymentOperationResponse();
                 case 2:
-                    return new PathPaymentOperationResponse();
+                    return new PathPaymentStrictReceiveOperationResponse();
                 case 3:
                     return new ManageSellOfferOperationResponse();
                 case 4:
@@ -55,6 +55,8 @@ namespace stellar_dotnet_sdk.responses
                     return new BumpSequenceOperationResponse();
                 case 12:
                     return new ManageBuyOfferOperationResponse();
+                case 13:
+                    return new PathPaymentStrictSendOperationResponse();
                 default:
                     throw new JsonSerializationException($"Invalid operation 'type_i'='{type}'");
             }
