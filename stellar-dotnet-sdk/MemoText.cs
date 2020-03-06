@@ -9,8 +9,8 @@ namespace stellar_dotnet_sdk
         public MemoText(string text)
         {
             MemoTextValue = text ?? throw new ArgumentNullException(nameof(text), "text cannot be null");
-
-            var length = Encoding.UTF8.GetBytes(text).Length;
+            // RFC section 4.11 defines strings as ASCII encoded
+            var length = Encoding.ASCII.GetBytes(text).Length;
             if (length > 28)
                 throw new MemoTooLongException("text must be <= 28 bytes. length=" + length);
         }

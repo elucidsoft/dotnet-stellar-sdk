@@ -187,5 +187,24 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(memo.GetHashCode(), memo2.GetHashCode());
             Assert.AreEqual(memo, memo2);
         }
+
+        [TestMethod]
+        public void TestMemoTextAsciiEncodedButTooLongIfUtf8()
+        {
+            // This test comes from transaction 3e88850619eafebb844acd8c672fce55159cbdabbcda4e9e4d6de1e0c3636116
+            // on the test network. If the memo is decoded as UTF8, its length is above the limit of 28, but if
+            // decoded as ASCII (as per spec) it's fine.
+            var txXdr =
+                "AAAAAGqjwSAMOZoob9PCTn1rNxY0qjJyBovxDR912gObtac6AAAAZAAGuwkAAABSAAAAAQAAAAAAAAAAAAAAAF5h4XsAAAABAAAAFDd8q5x7M/nN9XhWt2RxdmpxZmltAAAAAQAAAAAAAAABAAAAAOHq5mmDjeY0Rhr+xQSKjKYMWFD9MgjiE5JxgQrBxthIAAAAAU1PT04AAAAA4ermaYON5jRGGv7FBIqMpgxYUP0yCOITknGBCsHG2EgAAAAAAJiWgAAAAAAAAAABm7WnOgAAAEDO4OJ76sJic/t9tm4Nk1uLxvfD5ZUIZedqBQj2k87nCmMVtJGc96moJdDfe2t/C9Dx8ZsIgD/NHHUXs9hXvXsN";
+            var tx = Transaction.FromEnvelopeXdr(txXdr);
+            if (tx.Memo is MemoText memo)
+            {
+                Assert.AreEqual(20, memo.MemoTextValue.Length);
+            }
+            else
+            {
+                throw new Exception("Memo should be MemoText");
+            }
+        }
     }
 }
