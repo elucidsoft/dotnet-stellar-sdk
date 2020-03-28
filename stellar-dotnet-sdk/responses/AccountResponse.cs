@@ -49,7 +49,7 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "_links")]
         public AccountResponseLinks Links { get; set; }
 
-        [JsonProperty("Data")] public Dictionary<string, string> Data { get; private set; }
+        [JsonProperty("Data")] public Dictionary<string, string> Data { get; set; }
 
         public long IncrementedSequenceNumber => SequenceNumber + 1;
 
