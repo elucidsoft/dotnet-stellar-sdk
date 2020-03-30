@@ -47,7 +47,7 @@ namespace stellar_dotnet_sdk_test
             _server.Dispose();
         }
 
-        private HttpResponseMessage ResponseMessage(HttpStatusCode statusCode, string content)
+        public static HttpResponseMessage ResponseMessage(HttpStatusCode statusCode, string content)
         {
             return new HttpResponseMessage
             {
@@ -81,7 +81,8 @@ namespace stellar_dotnet_sdk_test
             var json = File.ReadAllText(Path.Combine("testdata", "serverSuccess.json"));
             When().Returns(ResponseMessage(HttpOk, json));
 
-            var response = await _server.SubmitTransaction(BuildTransaction());
+            var response = await _server.SubmitTransaction(
+                BuildTransaction(), new SubmitTransactionOptions {SkipMemoRequiredCheck = true});
             Assert.IsTrue(response.IsSuccess());
             Assert.AreEqual(response.Ledger, (uint)826150);
             Assert.AreEqual(response.Hash, "2634d2cf5adcbd3487d1df042166eef53830115844fdde1588828667bf93ff42");
@@ -108,7 +109,8 @@ namespace stellar_dotnet_sdk_test
                     })
                 .Returns(ResponseMessage(HttpOk, json));
 
-            var response = await server.SubmitTransaction(BuildTransaction());
+            var response = await server.SubmitTransaction(
+                BuildTransaction(), new SubmitTransactionOptions {SkipMemoRequiredCheck = true});
 
             Assert.IsTrue(response.IsSuccess());
             Assert.AreEqual("stellar-dotnet-sdk", clientName);
@@ -124,7 +126,8 @@ namespace stellar_dotnet_sdk_test
             var json = File.ReadAllText(Path.Combine("testdata", "serverFailure.json"));
             When().Returns(ResponseMessage(HttpBadRequest, json));
 
-            var response = await _server.SubmitTransaction(BuildTransaction());
+            var response = await _server.SubmitTransaction(
+                BuildTransaction(), new SubmitTransactionOptions {SkipMemoRequiredCheck = true});
             Assert.IsFalse(response.IsSuccess());
             Assert.IsNull(response.Ledger);
             Assert.IsNull(response.Hash);
