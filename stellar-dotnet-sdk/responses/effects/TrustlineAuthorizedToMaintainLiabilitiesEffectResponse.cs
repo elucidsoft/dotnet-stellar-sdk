@@ -6,6 +6,8 @@ namespace stellar_dotnet_sdk.responses.effects
 {
     public class TrustlineAuthorizedToMaintainLiabilitiesEffectResponse : TrustlineAuthorizationResponse
     {
+        public override int TypeId => 25;
+
         public TrustlineAuthorizedToMaintainLiabilitiesEffectResponse()
         {
         }

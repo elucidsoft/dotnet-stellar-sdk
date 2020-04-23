@@ -52,7 +52,7 @@
       "asset_type": "native",
       "balance": "20.0000300",
 	  "buying_liabilities": "5.1234567",
-      "selling_liabilities": "1.7654321",
+      "selling_liabilities": "1.7654321"
     }
   ],
   "signers": [
