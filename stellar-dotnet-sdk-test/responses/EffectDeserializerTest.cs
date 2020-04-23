@@ -519,7 +519,7 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineAuthorizedToMaintainLiabilitiesEffect.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
-            AssertTrustlineAuthorizedData(instance);
+            AssertTrustlineAuthorizedToMaintainLiabilitiesEffect(instance);
         }
 
         [TestMethod]
@@ -559,7 +559,6 @@ namespace stellar_dotnet_sdk_test.responses
             var effect = (TrustlineAuthorizedToMaintainLiabilitiesEffectResponse)instance;
 
             TrustlineAuthorizationResponse trustline = new TrustlineAuthorizationResponse("GB3E4AB4VWXJDUVN4Z3CPBU5HTMWVEQXONZYVDFMHQD6333KHCOL3UBR", "credit_alphanum12", "TESTTEST");
-            Assert.AreEqual(new TrustlineAuthorizationResponse().GetType(), instance.GetType());
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.AssetType, trustline.AssetType);

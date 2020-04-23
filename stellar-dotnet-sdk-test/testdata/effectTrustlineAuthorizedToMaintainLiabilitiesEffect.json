@@ -14,7 +14,7 @@
   "paging_token": "33788507721730-2",
   "account": "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO",
   "type": "trustline_authorized",
-  "type_i": 23,
+  "type_i": 25,
   "asset_type": "credit_alphanum12",
   "asset_code": "TESTTEST",
   "trustor": "GB3E4AB4VWXJDUVN4Z3CPBU5HTMWVEQXONZYVDFMHQD6333KHCOL3UBR"
