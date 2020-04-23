@@ -558,6 +558,8 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is TrustlineAuthorizedToMaintainLiabilitiesEffectResponse);
             var effect = (TrustlineAuthorizedToMaintainLiabilitiesEffectResponse)instance;
 
+            Assert.AreEqual(new TrustlineAuthorizationResponse().GetType(), instance.GetType());
+
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.AssetType, "credit_alphanum12");
             Assert.AreEqual(effect.AssetCode, "TESTTEST");
