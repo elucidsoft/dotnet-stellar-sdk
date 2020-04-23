@@ -558,12 +558,13 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is TrustlineAuthorizedToMaintainLiabilitiesEffectResponse);
             var effect = (TrustlineAuthorizedToMaintainLiabilitiesEffectResponse)instance;
 
+            TrustlineAuthorizationResponse trustline = new TrustlineAuthorizationResponse("GB3E4AB4VWXJDUVN4Z3CPBU5HTMWVEQXONZYVDFMHQD6333KHCOL3UBR", "credit_alphanum12", "TESTTEST");
             Assert.AreEqual(new TrustlineAuthorizationResponse().GetType(), instance.GetType());
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
-            Assert.AreEqual(effect.AssetType, "credit_alphanum12");
-            Assert.AreEqual(effect.AssetCode, "TESTTEST");
-            Assert.AreEqual(effect.Trustor, "GB3E4AB4VWXJDUVN4Z3CPBU5HTMWVEQXONZYVDFMHQD6333KHCOL3UBR");
+            Assert.AreEqual(effect.AssetType, trustline.AssetType);
+            Assert.AreEqual(effect.AssetCode, trustline.AssetCode);
+            Assert.AreEqual(effect.Trustor, trustline.Trustor);
 
             Assert.AreEqual(effect.Links.Operation.Href,
                 "http://horizon-testnet.stellar.org/operations/33788507721730");
