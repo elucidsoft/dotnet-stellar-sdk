@@ -514,6 +514,15 @@ namespace stellar_dotnet_sdk_test.responses
         }
 
         [TestMethod]
+        public void TestDeserializeTrustlineAuthorizedToMaintainLiabilitiesEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineAuthorizedToMaintainLiabilitiesEffect.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+
+            AssertTrustlineAuthorizedData(instance);
+        }
+
+        [TestMethod]
         public void TestSerializeDeserializeTrustlineAuthorizedEffect()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineAuthorized.json"));
@@ -529,6 +538,25 @@ namespace stellar_dotnet_sdk_test.responses
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is TrustlineAuthorizedEffectResponse);
             var effect = (TrustlineAuthorizedEffectResponse) instance;
+
+            Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
+            Assert.AreEqual(effect.AssetType, "credit_alphanum12");
+            Assert.AreEqual(effect.AssetCode, "TESTTEST");
+            Assert.AreEqual(effect.Trustor, "GB3E4AB4VWXJDUVN4Z3CPBU5HTMWVEQXONZYVDFMHQD6333KHCOL3UBR");
+
+            Assert.AreEqual(effect.Links.Operation.Href,
+                "http://horizon-testnet.stellar.org/operations/33788507721730");
+            Assert.AreEqual(effect.Links.Succeeds.Href,
+                "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2");
+            Assert.AreEqual(effect.Links.Precedes.Href,
+                "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2");
+        }
+
+        private static void AssertTrustlineAuthorizedToMaintainLiabilitiesEffect(EffectResponse instance)
+        {
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is TrustlineAuthorizedToMaintainLiabilitiesEffectResponse);
+            var effect = (TrustlineAuthorizedToMaintainLiabilitiesEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.AssetType, "credit_alphanum12");

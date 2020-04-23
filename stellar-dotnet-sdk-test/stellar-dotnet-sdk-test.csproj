@@ -74,6 +74,9 @@
     <None Update="testdata\effectTrade.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="testdata\effectTrustlineAuthorizedToMaintainLiabilitiesEffect.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="testdata\effectTrustlineDeAuthorized.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -70,6 +70,8 @@ namespace stellar_dotnet_sdk.responses
                         return new TrustlineAuthorizedEffectResponse();
                     case 24:
                         return new TrustlineDeauthorizedEffectResponse();
+                    case 25:
+                        return new TrustlineAuthorizedToMaintainLiabilitiesEffectResponse();
 
                     // trading effects
                     case 30:
