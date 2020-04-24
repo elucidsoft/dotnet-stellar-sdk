@@ -56,6 +56,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(account.Balances[0].Limit, "12000.4775807");
             Assert.AreEqual(account.Balances[0].BuyingLiabilities, "100.1234567");
             Assert.AreEqual(account.Balances[0].SellingLiabilities, "100.7654321");
+            Assert.AreEqual(account.Balances[0].SellingLiabilities, "100.7654321");
+            Assert.AreEqual(account.Balances[0].IsAuthorized, false);
+            Assert.AreEqual(account.Balances[0].IsAuthorizedToMaintainLiabilities, true);
 
             Assert.AreEqual(account.Balances[1].AssetType, "native");
             Assert.IsInstanceOfType(account.Balances[1].Asset, typeof(AssetTypeNative));

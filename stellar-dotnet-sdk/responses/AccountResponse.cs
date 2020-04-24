@@ -38,7 +38,8 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "thresholds")]
         public Thresholds Thresholds { get; set; }
 
-        [JsonProperty(PropertyName = "flags")] public Flags Flags { get; set; }
+        [JsonProperty(PropertyName = "flags")] 
+        public Flags Flags { get; set; }
 
         [JsonProperty(PropertyName = "balances")]
         public Balance[] Balances { get; set; }

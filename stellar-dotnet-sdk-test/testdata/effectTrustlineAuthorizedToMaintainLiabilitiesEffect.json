@@ -1,0 +1,21 @@
+﻿{
+  "_links": {
+    "operation": {
+      "href": "http://horizon-testnet.stellar.org/operations/33788507721730"
+    },
+    "succeeds": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2"
+    },
+    "precedes": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2"
+    }
+  },
+  "id": "0000033788507721730-0000000002",
+  "paging_token": "33788507721730-2",
+  "account": "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO",
+  "type": "trustline_authorized",
+  "type_i": 25,
+  "asset_type": "credit_alphanum12",
+  "asset_code": "TESTTEST",
+  "trustor": "GB3E4AB4VWXJDUVN4Z3CPBU5HTMWVEQXONZYVDFMHQD6333KHCOL3UBR"
+}

@@ -163,7 +163,7 @@ namespace stellar_dotnet_sdk_test
             {
                 Balances = new[]
                 {
-                    new Balance("native", null, null, "12345.6789", null, "0.0", "0.0"),
+                    new Balance("native", null, null, "12345.6789", null, "0.0", "0.0", false, true),
                 },
                 Data = accountData,
                 Flags = new Flags(false, false, false),

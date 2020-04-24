@@ -44,7 +44,9 @@
       "limit": "12000.4775807",
       "asset_type": "credit_alphanum4",
       "asset_code": "ABC",
-      "asset_issuer": "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU"
+      "asset_issuer": "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU",
+      "is_authorized": false,
+      "is_authorized_to_maintain_liabilities": true
     },
     {
       "asset_type": "native",
