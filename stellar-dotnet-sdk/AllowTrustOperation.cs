@@ -67,7 +67,15 @@ namespace stellar_dotnet_sdk
 
             op.Asset = asset;
             // authorize
-            op.Authorize = Authorize;
+            if (Authorize)
+            {
+                op.Authorize = new Uint32(1);
+            }
+            else
+            {
+                op.Authorize = new Uint32(0);
+            }
+
 
             var body = new sdkxdr.Operation.OperationBody();
             body.Discriminant = sdkxdr.OperationType.Create(sdkxdr.OperationType.OperationTypeEnum.ALLOW_TRUST);
@@ -109,7 +117,7 @@ namespace stellar_dotnet_sdk
                         throw new Exception("Unknown asset code");
                 }
 
-                _authorize = op.Authorize;
+                _authorize = op.Authorize.InnerValue != 0;
             }
 
             /// <summary>

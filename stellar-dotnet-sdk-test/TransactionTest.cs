@@ -69,6 +69,24 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        public void TestFromXdrWithMemo()
+        {
+            var transaction = Transaction.FromEnvelopeXdr(
+                "AAAAACq1Ixcw1fchtF5aLTSw1zaYAYjb3WbBRd4jqYJKThB9AAAAZAA8tDoAAAALAAAAAAAAAAEAAAAZR29sZCBwYXltZW50IGZvciBzZXJ2aWNlcwAAAAAAAAEAAAAAAAAAAQAAAAARREGslec48mbJJygIwZoLvRtL6/gGL4ss2TOpnOUOhgAAAAFHT0xEAAAAACq1Ixcw1fchtF5aLTSw1zaYAYjb3WbBRd4jqYJKThB9AAAAADuaygAAAAAAAAAAAA==");
+            Assert.AreEqual(1, transaction.Operations.Length);
+            Assert.IsInstanceOfType(transaction.Memo, typeof(MemoText));
+            var op = transaction.Operations[0];
+            Assert.IsNull(op.SourceAccount);
+            Assert.IsInstanceOfType(op, typeof(PaymentOperation));
+            var payment = op as PaymentOperation;
+            Assert.IsNotNull(payment);
+            Assert.AreEqual("100", payment.Amount);
+            var asset = payment.Asset as AssetTypeCreditAlphaNum;
+            Assert.IsNotNull(asset);
+            Assert.AreEqual("GOLD", asset.Code);
+        }
+
+        [TestMethod]
         public void TestBuilderMemoText()
         {
             // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4

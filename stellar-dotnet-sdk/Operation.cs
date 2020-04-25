@@ -5,9 +5,9 @@ namespace stellar_dotnet_sdk
 {
     public abstract class Operation
     {
-        private KeyPair _sourceAccount;
+        private IAccountId _sourceAccount;
 
-        public KeyPair SourceAccount
+        public IAccountId SourceAccount
         {
             get => _sourceAccount;
             set => _sourceAccount = value ?? throw new ArgumentNullException(nameof(value), "keypair cannot be null");
@@ -16,10 +16,7 @@ namespace stellar_dotnet_sdk
         /// <summary>
         /// Threshold level for the operation.
         /// </summary>
-        public virtual OperationThreshold Threshold
-        {
-            get => OperationThreshold.Medium;
-        }
+        public virtual OperationThreshold Threshold => OperationThreshold.Medium;
 
         public static long ToXdrAmount(string value)
         {
@@ -39,9 +36,7 @@ namespace stellar_dotnet_sdk
             var thisXdr = new xdr.Operation();
             if (SourceAccount != null)
             {
-                var sourceAccount = new AccountID();
-                sourceAccount.InnerValue = SourceAccount.XdrPublicKey;
-                thisXdr.SourceAccount = sourceAccount;
+                thisXdr.SourceAccount = SourceAccount.MuxedAccount;
             }
 
             thisXdr.Body = ToOperationBody();
@@ -110,13 +105,16 @@ namespace stellar_dotnet_sdk
                     break;
                 case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND:
                     operation = new PathPaymentStrictSendOperation.Builder(body.PathPaymentStrictSendOp).Build();
-                    break;                
+                    break;
                 default:
                     throw new Exception("Unknown operation body " + body.Discriminant.InnerValue);
             }
 
             if (thisXdr.SourceAccount != null)
-                operation.SourceAccount = KeyPair.FromXdrPublicKey(thisXdr.SourceAccount.InnerValue);
+            {
+                operation.SourceAccount = MuxedAccount.FromXdrMuxedAccount(thisXdr.SourceAccount);
+            }
+
             return operation;
         }
 

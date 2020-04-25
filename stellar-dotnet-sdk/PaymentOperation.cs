@@ -7,12 +7,12 @@ namespace stellar_dotnet_sdk
     /// <summary>
     /// Represents a <see cref="PaymentOp"/> operation.
     /// Use <see cref="Builder"/> to create a new PaymentOperation.
-    /// 
+    ///
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#payment">Payment</see>
     /// </summary>
     public class PaymentOperation : Operation
     {
-        private PaymentOperation(KeyPair destination, Asset asset, string amount)
+        private PaymentOperation(IAccountId destination, Asset asset, string amount)
         {
             Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
             Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
@@ -22,7 +22,7 @@ namespace stellar_dotnet_sdk
         /// <summary>
         /// Account address that receives the payment.
         /// </summary>
-        public KeyPair Destination { get; }
+        public IAccountId Destination { get; }
 
         /// <summary>
         /// Asset to send to the destination account.
@@ -39,9 +39,7 @@ namespace stellar_dotnet_sdk
             var op = new PaymentOp();
 
             // destination
-            var destination = new AccountID();
-            destination.InnerValue = Destination.XdrPublicKey;
-            op.Destination = destination;
+            op.Destination = Destination.MuxedAccount;
             // asset
             op.Asset = Asset.ToXdr();
             // amount
@@ -63,17 +61,17 @@ namespace stellar_dotnet_sdk
         {
             private readonly string amount;
             private readonly Asset asset;
-            private readonly KeyPair destination;
+            private readonly IAccountId destination;
 
-            private KeyPair mSourceAccount;
+            private IAccountId mSourceAccount;
 
             ///<summary>
             /// Construct a new PaymentOperation builder from a PaymentOp XDR.
             ///</summary>
-            ///<param name="op"><see cref="PaymentOp"/></param> 
+            ///<param name="op"><see cref="PaymentOp"/></param>
             public Builder(PaymentOp op)
             {
-                destination = KeyPair.FromXdrPublicKey(op.Destination.InnerValue);
+                destination = MuxedAccount.FromXdrMuxedAccount(op.Destination);
                 asset = Asset.FromXdr(op.Asset);
                 amount = FromXdrAmount(op.Amount.InnerValue);
             }
@@ -81,9 +79,9 @@ namespace stellar_dotnet_sdk
             ///<summary>
             /// Creates a new PaymentOperation builder.
             ///</summary>
-            ///<param name="destination">The destination keypair (uses only the public key).</param> 
-            ///<param name="asset">The asset to send.</param> 
-            ///<param name="amount">The amount to send in lumens.</param> 
+            ///<param name="destination">The destination keypair (uses only the public key).</param>
+            ///<param name="asset">The asset to send.</param>
+            ///<param name="amount">The amount to send in lumens.</param>
             public Builder(KeyPair destination, Asset asset, string amount)
             {
                 this.destination = destination;
@@ -94,8 +92,8 @@ namespace stellar_dotnet_sdk
             ///<summary>
             /// Sets the source account for this operation.
             ///</summary>
-            ///<param name="account">The operation's source account.</param> 
-            ///<returns>Builder object so you can chain methods.</returns> 
+            ///<param name="account">The operation's source account.</param>
+            ///<returns>Builder object so you can chain methods.</returns>
             ///
             public Builder SetSourceAccount(KeyPair account)
             {

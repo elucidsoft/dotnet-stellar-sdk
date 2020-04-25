@@ -6,12 +6,12 @@ namespace stellar_dotnet_sdk
     /// <summary>
     /// Represents an <see cref="AccountID"/> Encode operation.
     /// Use <see cref="Builder"/> to create a new AccountMergeOperation.
-    /// 
+    ///
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#account-merge">Account Merge</see>
     /// </summary>
     public class AccountMergeOperation : Operation
     {
-        private AccountMergeOperation(KeyPair destination)
+        private AccountMergeOperation(IAccountId destination)
         {
             Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
         }
@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk
         /// <summary>
         ///     The account that receives the remaining XLM balance of the source account.
         /// </summary>
-        public KeyPair Destination { get; }
+        public IAccountId Destination { get; }
 
         public override OperationThreshold Threshold
         {
@@ -33,8 +33,7 @@ namespace stellar_dotnet_sdk
         public override xdr.Operation.OperationBody ToOperationBody()
         {
             var body = new xdr.Operation.OperationBody();
-            var destination = new AccountID {InnerValue = Destination.XdrPublicKey};
-            body.Destination = destination;
+            body.Destination = Destination.MuxedAccount;
             body.Discriminant = OperationType.Create(OperationType.OperationTypeEnum.ACCOUNT_MERGE);
             return body;
         }
@@ -45,7 +44,7 @@ namespace stellar_dotnet_sdk
         /// </summary>
         public class Builder
         {
-            private readonly KeyPair _destination;
+            private readonly IAccountId _destination;
 
             /// <summary>
             /// Builder to build the AccountMerge Operation given an XDR OperationBody
@@ -53,14 +52,14 @@ namespace stellar_dotnet_sdk
             /// <param name="op"></param>
             public Builder(xdr.Operation.OperationBody op)
             {
-                _destination = KeyPair.FromXdrPublicKey(op.Destination.InnerValue);
+                _destination = MuxedAccount.FromXdrMuxedAccount(op.Destination);
             }
 
             /// <summary>
             ///     Creates a new AccountMerge builder.
             /// </summary>
             /// <param name="destination">destination The account that receives the remaining XLM balance of the source account.</param>
-            public Builder(KeyPair destination)
+            public Builder(IAccountId destination)
             {
                 _destination = destination;
             }

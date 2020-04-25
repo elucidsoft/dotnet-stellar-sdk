@@ -137,7 +137,9 @@ namespace stellar_dotnet_sdk
 
             // Transaction XDR bytes
             var txWriter = new XdrDataOutputStream();
-            xdr.Transaction.Encode(txWriter, ToXdr());
+            xdr.PublicKeyType.Encode(txWriter,
+                new PublicKeyType {InnerValue = PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519});
+            xdr.TransactionV0.Encode(txWriter, ToXdr());
 
             writer.Write(txWriter.ToArray());
 
@@ -148,7 +150,7 @@ namespace stellar_dotnet_sdk
         ///     Generates Transaction XDR object.
         /// </summary>
         /// <returns></returns>
-        public xdr.Transaction ToXdr()
+        public xdr.TransactionV0 ToXdr()
         {
             // fee
             var fee = new Uint32 {InnerValue = Fee};
@@ -158,7 +160,7 @@ namespace stellar_dotnet_sdk
             var sequenceNumber = new SequenceNumber {InnerValue = sequenceNumberUint};
 
             // sourceAccount
-            var sourceAccount = new AccountID {InnerValue = SourceAccount.XdrPublicKey};
+            var sourceAccount = new Uint256(SourceAccount.PublicKey);
 
             // operations
             var operations = new xdr.Operation[Operations.Length];
@@ -167,13 +169,13 @@ namespace stellar_dotnet_sdk
                 operations[i] = Operations[i].ToXdr();
 
             // ext
-            var ext = new xdr.Transaction.TransactionExt {Discriminant = 0};
+            var ext = new xdr.TransactionV0.TransactionV0Ext { Discriminant = 0};
 
-            var transaction = new xdr.Transaction
+            var transaction = new xdr.TransactionV0
             {
                 Fee = fee,
                 SeqNum = sequenceNumber,
-                SourceAccount = sourceAccount,
+                SourceAccountEd25519 = sourceAccount,
                 Operations = operations,
                 Memo = Memo.ToXdr(),
                 TimeBounds = TimeBounds?.ToXdr(),
@@ -192,11 +194,13 @@ namespace stellar_dotnet_sdk
                 throw new NotEnoughSignaturesException("Transaction must be signed by at least one signer. Use transaction.sign().");
 
             var thisXdr = new TransactionEnvelope();
+            thisXdr.Discriminant = new EnvelopeType {InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_V0};
+            thisXdr.V0 = new TransactionV0Envelope();
             var transaction = ToXdr();
-            thisXdr.Tx = transaction;
+            thisXdr.V0.Tx = transaction;
 
             var signatures = Signatures.ToArray();
-            thisXdr.Signatures = signatures;
+            thisXdr.V0.Signatures = signatures;
             return thisXdr;
         }
 
@@ -210,9 +214,12 @@ namespace stellar_dotnet_sdk
                 throw new TooManySignaturesException("Transaction must not be signed. Use ToEnvelopeXDR.");
 
             var thisXdr = new TransactionEnvelope();
+            thisXdr.Discriminant = new EnvelopeType {InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_V0};
+            thisXdr.V0 = new TransactionV0Envelope();
+
             var transaction = ToXdr();
-            thisXdr.Tx = transaction;
-            thisXdr.Signatures = new DecoratedSignature[0];
+            thisXdr.V0.Tx = transaction;
+            thisXdr.V0.Signatures = new DecoratedSignature[0];
 
             return thisXdr;
         }
@@ -253,27 +260,33 @@ namespace stellar_dotnet_sdk
 
         public static Transaction FromEnvelopeXdr(TransactionEnvelope envelope)
         {
-            xdr.Transaction transactionXdr = envelope.Tx;
-            var fee = transactionXdr.Fee.InnerValue;
-            KeyPair sourceAccount = KeyPair.FromXdrPublicKey(transactionXdr.SourceAccount.InnerValue);
-            long sequenceNumber = transactionXdr.SeqNum.InnerValue.InnerValue;
-            Memo memo = Memo.FromXdr(transactionXdr.Memo);
-            TimeBounds timeBounds = TimeBounds.FromXdr(transactionXdr.TimeBounds);
-
-            Operation[] operations = new Operation[transactionXdr.Operations.Length];
-            for (int i = 0; i < transactionXdr.Operations.Length; i++)
+            switch (envelope.Discriminant.InnerValue)
             {
-                operations[i] = Operation.FromXdr(transactionXdr.Operations[i]);
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_V0:
+                    var transactionXdr = envelope.V0.Tx;
+                    var fee = transactionXdr.Fee.InnerValue;
+                    KeyPair sourceAccount = KeyPair.FromPublicKey(transactionXdr.SourceAccountEd25519.InnerValue);
+                    long sequenceNumber = transactionXdr.SeqNum.InnerValue.InnerValue;
+                    Memo memo = Memo.FromXdr(transactionXdr.Memo);
+                    TimeBounds timeBounds = TimeBounds.FromXdr(transactionXdr.TimeBounds);
+
+                    Operation[] operations = new Operation[transactionXdr.Operations.Length];
+                    for (int i = 0; i < transactionXdr.Operations.Length; i++)
+                    {
+                        operations[i] = Operation.FromXdr(transactionXdr.Operations[i]);
+                    }
+
+                    Transaction transaction = new Transaction(sourceAccount, fee, sequenceNumber, operations, memo, timeBounds);
+
+                    foreach (var signature in envelope.V0.Signatures)
+                    {
+                        transaction.Signatures.Add(signature);
+                    }
+
+                    return transaction;
+                default:
+                    throw new NotImplementedException();
             }
-
-            Transaction transaction = new Transaction(sourceAccount, fee, sequenceNumber, operations, memo, timeBounds);
-
-            foreach (var signature in envelope.Signatures)
-            {
-                transaction.Signatures.Add(signature);
-            }
-
-            return transaction;
         }
 
         /// <summary>

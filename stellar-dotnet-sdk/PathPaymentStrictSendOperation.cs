@@ -7,12 +7,12 @@ namespace stellar_dotnet_sdk
     /// <summary>
     /// Represents a <see cref="PathPaymentStrictSendOperation"/>.
     /// Use <see cref="Builder"/> to create a new PathPaymentStrictSendOperation.
-    /// 
+    ///
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#path-payment">Path Payment</see>
     /// </summary>
     public class PathPaymentStrictSendOperation : Operation
     {
-        private PathPaymentStrictSendOperation(Asset sendAsset, string sendAmount, KeyPair destination,
+        private PathPaymentStrictSendOperation(Asset sendAsset, string sendAmount, IAccountId destination,
             Asset destAsset, string destMin, Asset[] path)
         {
             SendAsset = sendAsset ?? throw new ArgumentNullException(nameof(sendAsset), "sendAsset cannot be null");
@@ -37,7 +37,7 @@ namespace stellar_dotnet_sdk
 
         public string SendAmount { get; }
 
-        public KeyPair Destination { get; }
+        public IAccountId Destination { get; }
 
         public Asset DestAsset { get; }
 
@@ -56,9 +56,7 @@ namespace stellar_dotnet_sdk
             sendAmount.InnerValue = ToXdrAmount(SendAmount);
             op.SendAmount = sendAmount;
             // destination
-            var destination = new sdkxdr.AccountID();
-            destination.InnerValue = Destination.XdrPublicKey;
-            op.Destination = destination;
+            op.Destination = Destination.MuxedAccount;
             // destAsset
             op.DestAsset = DestAsset.ToXdr();
             // destMin
@@ -84,18 +82,18 @@ namespace stellar_dotnet_sdk
         {
             private readonly string _DestMin;
             private readonly Asset _DestAsset;
-            private readonly KeyPair _Destination;
+            private readonly IAccountId _Destination;
             private readonly Asset _SendAsset;
             private readonly string _SendAmount;
             private Asset[] _Path;
 
-            private KeyPair _SourceAccount;
+            private IAccountId _SourceAccount;
 
             public Builder(sdkxdr.PathPaymentStrictSendOp op)
             {
                 _SendAsset = Asset.FromXdr(op.SendAsset);
                 _SendAmount = FromXdrAmount(op.SendAmount.InnerValue);
-                _Destination = KeyPair.FromXdrPublicKey(op.Destination.InnerValue);
+                _Destination = MuxedAccount.FromXdrMuxedAccount(op.Destination);
                 _DestAsset = Asset.FromXdr(op.DestAsset);
                 _DestMin = FromXdrAmount(op.DestMin.InnerValue);
                 _Path = new Asset[op.Path.Length];
