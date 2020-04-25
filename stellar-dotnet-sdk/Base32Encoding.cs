@@ -1,7 +1,13 @@
 ﻿using System;
+using dotnetstandard_bip32;
 
 namespace stellar_dotnet_sdk
 {
+    public class Base32EncodingOptions
+    {
+        public bool OmitPadding { get; set; }
+    }
+
     public static class Base32Encoding
     {
         public static byte[] ToBytes(string input)
@@ -43,7 +49,15 @@ namespace stellar_dotnet_sdk
             return returnArray;
         }
 
-        public static string ToString(byte[] input)
+        public static string ToString(byte[] input, Action<Base32EncodingOptions> optionsFunc = null)
+        {
+            var defaultOptions = new Base32EncodingOptions {OmitPadding = false};
+            optionsFunc?.Invoke(defaultOptions);
+
+            return ToString(input, defaultOptions);
+        }
+
+        public static string ToString(byte[] input, Base32EncodingOptions options)
         {
             if (input == null || input.Length == 0)
                 throw new ArgumentNullException("input");
@@ -74,10 +88,13 @@ namespace stellar_dotnet_sdk
             if (arrayIndex != charCount)
             {
                 returnArray[arrayIndex++] = ValueToChar(nextChar);
-                while (arrayIndex != charCount) returnArray[arrayIndex++] = '='; //padding
+                if (!options.OmitPadding)
+                {
+                    while (arrayIndex != charCount) returnArray[arrayIndex++] = '='; //padding
+                }
             }
 
-            return new string(returnArray);
+            return new string(returnArray.Slice(0, arrayIndex));
         }
 
         private static int CharToValue(char c)
