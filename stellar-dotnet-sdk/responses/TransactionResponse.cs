@@ -31,6 +31,9 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "source_account_sequence")]
         public long SourceAccountSequence { get; private set; }
 
+        [JsonProperty(PropertyName = "fee_account")]
+        public long FeeAccount { get; set; }
+
         [JsonProperty(PropertyName = "fee_charged")]
         public long FeeCharged { get; set; }
 
@@ -57,6 +60,12 @@ namespace stellar_dotnet_sdk.responses
 
         [JsonProperty(PropertyName = "memo")]
         public string MemoValue { get; private set; }
+
+        [JsonProperty(PropertyName = "fee_bump_transaction")]
+        public FeeBumpTransaction FeeBumpTransaction { get; set; }
+
+        [JsonProperty(PropertyName = "inner_transaction")]
+        public InnerTransaction InnerTransaction { get; set; }
 
         public Memo Memo
         {
