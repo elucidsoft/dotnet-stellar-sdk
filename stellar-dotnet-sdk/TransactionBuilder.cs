@@ -29,6 +29,26 @@ namespace stellar_dotnet_sdk
             _fee = BaseFee;
         }
 
+        public static FeeBumpTransaction BuildFeeBumpTransaction(IAccountId feeSource, Transaction inner, long fee)
+        {
+            var innerOps = inner.Operations.Length;
+            var innerBaseFeeRate = inner.Fee / innerOps;
+
+            if (fee < innerBaseFeeRate)
+            {
+                throw new Exception($"Invalid fee, it should be at least {innerBaseFeeRate} stroops");
+            }
+
+            if (fee < BaseFee)
+            {
+                throw new Exception($"Invalid fee, it should be at least {BaseFee} stroops");
+            }
+
+            var feeBumpFee = fee * (innerOps + 1);
+
+            return new FeeBumpTransaction(feeSource, inner, feeBumpFee);
+        }
+
         public int OperationsCount => _operations.Count;
 
         /// <summary>
@@ -113,7 +133,7 @@ namespace stellar_dotnet_sdk
             return transaction;
         }
 
-        public static Transaction FromEnvelopeXdr(string envelope)
+        public static TransactionBase FromEnvelopeXdr(string envelope)
         {
             byte[] bytes = Convert.FromBase64String(envelope);
 
@@ -121,7 +141,7 @@ namespace stellar_dotnet_sdk
             return FromEnvelopeXdr(transactionEnvelope);
         }
 
-        public static Transaction FromEnvelopeXdr(TransactionEnvelope envelope)
+        public static TransactionBase FromEnvelopeXdr(TransactionEnvelope envelope)
         {
             switch (envelope.Discriminant.InnerValue)
             {
@@ -129,6 +149,8 @@ namespace stellar_dotnet_sdk
                     return Transaction.FromEnvelopeXdr(envelope);
                 case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX:
                     return Transaction.FromEnvelopeXdr(envelope);
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_FEE_BUMP:
+                    return FeeBumpTransaction.FromEnvelopeXdr(envelope);
                 default:
                     throw new ArgumentException($"Unknown envelope type {envelope.Discriminant.InnerValue}");
             }

@@ -16,13 +16,10 @@ namespace stellar_dotnet_sdk
             V1
         }
 
-        public TransactionBase(uint fee)
+        public TransactionBase()
         {
-            Fee = fee;
             Signatures = new List<DecoratedSignature>();
         }
-
-        public uint Fee { get; }
 
         public List<DecoratedSignature> Signatures { get; }
 

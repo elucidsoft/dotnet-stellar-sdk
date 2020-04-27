@@ -8,9 +8,10 @@ namespace stellar_dotnet_sdk
 {
     public class Transaction : TransactionBase
     {
-        public Transaction(IAccountId sourceAccount, uint fee, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds) : base(fee)
+        public Transaction(IAccountId sourceAccount, uint fee, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)
         {
             SourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
+            Fee = fee;
             SequenceNumber = sequenceNumber;
             Operations = operations ?? throw new ArgumentNullException(nameof(operations), "operations cannot be null");
 
@@ -20,6 +21,8 @@ namespace stellar_dotnet_sdk
             Memo = memo ?? Memo.None();
             TimeBounds = timeBounds;
         }
+
+        public uint Fee { get; }
 
         public IAccountId SourceAccount { get; }
 
@@ -222,7 +225,7 @@ namespace stellar_dotnet_sdk
             }
         }
 
-        private static Transaction FromEnvelopeXdrV0(TransactionV0Envelope envelope)
+        public static Transaction FromEnvelopeXdrV0(TransactionV0Envelope envelope)
         {
             var transactionXdr = envelope.Tx;
             var fee = transactionXdr.Fee.InnerValue;
@@ -247,7 +250,7 @@ namespace stellar_dotnet_sdk
             return transaction;
         }
 
-        private static Transaction FromEnvelopeXdrV1(TransactionV1Envelope envelope)
+        public static Transaction FromEnvelopeXdrV1(TransactionV1Envelope envelope)
         {
             var transactionXdr = envelope.Tx;
             var fee = transactionXdr.Fee.InnerValue;
