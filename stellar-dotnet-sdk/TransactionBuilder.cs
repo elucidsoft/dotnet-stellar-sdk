@@ -126,7 +126,7 @@ namespace stellar_dotnet_sdk
             var totalFee = operations.Length * _fee;
             if (totalFee > UInt32.MaxValue) throw new InvalidOperationException("Transaction fee overflow");
 
-            var transaction = new Transaction(_sourceAccount.KeyPair, (uint) totalFee,
+            var transaction = new Transaction(_sourceAccount.MuxedAccount, (uint) totalFee,
                 _sourceAccount.IncrementedSequenceNumber, operations, _memo, _timeBounds);
             // Increment sequence number when there were no exceptions when creating a transaction
             _sourceAccount.IncrementSequenceNumber();

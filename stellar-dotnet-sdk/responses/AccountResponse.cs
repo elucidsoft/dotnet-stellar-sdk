@@ -38,7 +38,7 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "thresholds")]
         public Thresholds Thresholds { get; set; }
 
-        [JsonProperty(PropertyName = "flags")] 
+        [JsonProperty(PropertyName = "flags")]
         public Flags Flags { get; set; }
 
         [JsonProperty(PropertyName = "balances")]
@@ -55,6 +55,8 @@ namespace stellar_dotnet_sdk.responses
         public long IncrementedSequenceNumber => SequenceNumber + 1;
 
         public KeyPair KeyPair => KeyPair.FromAccountId(AccountId);
+
+        public IAccountId MuxedAccount => KeyPair;
 
         public void IncrementSequenceNumber()
         {
