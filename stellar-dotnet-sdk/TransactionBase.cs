@@ -127,9 +127,9 @@ namespace stellar_dotnet_sdk
         ///     Generates TransactionEnvelope XDR object. This transaction MUST be signed before being useful
         /// </summary>
         /// <returns></returns>
-        public string ToUnsignedEnvelopeXdrBase64()
+        public string ToUnsignedEnvelopeXdrBase64(TransactionXdrVersion version = TransactionXdrVersion.V0)
         {
-            var envelope = ToUnsignedEnvelopeXdr();
+            var envelope = ToUnsignedEnvelopeXdr(version);
             var writer = new XdrDataOutputStream();
             TransactionEnvelope.Encode(writer, envelope);
 
@@ -140,9 +140,9 @@ namespace stellar_dotnet_sdk
         ///     Returns base64-encoded TransactionEnvelope XDR object. Transaction need to have at least one signature.
         /// </summary>
         /// <returns></returns>
-        public string ToEnvelopeXdrBase64()
+        public string ToEnvelopeXdrBase64(TransactionXdrVersion version = TransactionXdrVersion.V0)
         {
-            var envelope = ToEnvelopeXdr();
+            var envelope = ToEnvelopeXdr(version);
             var writer = new XdrDataOutputStream();
             TransactionEnvelope.Encode(writer, envelope);
 
