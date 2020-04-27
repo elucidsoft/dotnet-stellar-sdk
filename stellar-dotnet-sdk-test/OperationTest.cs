@@ -24,7 +24,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (CreateAccountOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (CreateAccountOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(10000000000L, xdr.Body.CreateAccountOp.StartingBalance.InnerValue);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
@@ -53,7 +53,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (PaymentOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (PaymentOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(10000000000L, xdr.Body.PaymentOp.Amount.InnerValue);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
@@ -86,7 +86,7 @@ namespace stellar_dotnet_sdk_test
             var sendMax = "0.0001";
             Asset destAsset = new AssetTypeCreditAlphaNum4("USD", issuer.AccountId);
             var destAmount = "0.0001";
-            Asset[] path = {new AssetTypeCreditAlphaNum4("USD", pathIssuer1.AccountId), new AssetTypeCreditAlphaNum12("TESTTEST", pathIssuer2.AccountId)};
+            Asset[] path = { new AssetTypeCreditAlphaNum4("USD", pathIssuer1.AccountId), new AssetTypeCreditAlphaNum12("TESTTEST", pathIssuer2.AccountId) };
 
             var operation = new PathPaymentStrictReceiveOperation.Builder(
                     sendAsset, sendMax, destination, destAsset, destAmount)
@@ -95,7 +95,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (PathPaymentStrictReceiveOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (PathPaymentStrictReceiveOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(1000L, xdr.Body.PathPaymentStrictReceiveOp.SendMax.InnerValue);
             Assert.AreEqual(1000L, xdr.Body.PathPaymentStrictReceiveOp.DestAmount.InnerValue);
@@ -139,7 +139,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (PathPaymentStrictReceiveOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (PathPaymentStrictReceiveOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(1000L, xdr.Body.PathPaymentStrictReceiveOp.SendMax.InnerValue);
             Assert.AreEqual(1000L, xdr.Body.PathPaymentStrictReceiveOp.DestAmount.InnerValue);
@@ -176,7 +176,7 @@ namespace stellar_dotnet_sdk_test
             var sendAmount = "0.0001";
             Asset destAsset = new AssetTypeCreditAlphaNum4("USD", issuer.AccountId);
             var destMin = "0.0001";
-            Asset[] path = {new AssetTypeCreditAlphaNum4("USD", pathIssuer1.AccountId), new AssetTypeCreditAlphaNum12("TESTTEST", pathIssuer2.AccountId)};
+            Asset[] path = { new AssetTypeCreditAlphaNum4("USD", pathIssuer1.AccountId), new AssetTypeCreditAlphaNum12("TESTTEST", pathIssuer2.AccountId) };
 
             var operation = new PathPaymentStrictSendOperation.Builder(
                     sendAsset, sendAmount, destination, destAsset, destMin)
@@ -185,7 +185,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (PathPaymentStrictSendOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (PathPaymentStrictSendOperation)Operation.FromXdr(xdr);
 
             Assert.IsTrue(parsedOperation.SendAsset is AssetTypeNative);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
@@ -227,7 +227,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (PathPaymentStrictSendOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (PathPaymentStrictSendOperation)Operation.FromXdr(xdr);
 
             Assert.IsTrue(parsedOperation.SendAsset is AssetTypeNative);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
@@ -257,7 +257,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (ChangeTrustOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (ChangeTrustOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(9223372036854775807L, xdr.Body.ChangeTrustOp.Limit.InnerValue);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
@@ -279,24 +279,76 @@ namespace stellar_dotnet_sdk_test
             var trustor = KeyPair.FromSecretSeed("SDHZGHURAYXKU2KMVHPOXI6JG2Q4BSQUQCEOY72O3QQTCLR2T455PMII");
 
             const string assetCode = "USDA";
-            const bool authorize = true;
 
-            var operation = new AllowTrustOperation.Builder(trustor, assetCode, true)
+            var operation = new AllowTrustOperation.Builder(trustor, assetCode, true, true)
                 .SetSourceAccount(source)
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (AllowTrustOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (AllowTrustOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
             Assert.AreEqual(trustor.AccountId, parsedOperation.Trustor.AccountId);
             Assert.AreEqual(assetCode, parsedOperation.AssetCode);
-            Assert.AreEqual(authorize, parsedOperation.Authorize);
+
             Assert.AreEqual(OperationThreshold.Low, parsedOperation.Threshold);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAcAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAABVVNEQQAAAAE=",
                 operation.ToXdrBase64());
+
+            TestAllowTrustOperationAuthorize(source, trustor, assetCode);
+        }
+
+        private static void TestAllowTrustOperationAuthorize(KeyPair source, KeyPair trustor, string assetCode)
+        {
+            AllowTrustOperation operation = null;
+            stellar_dotnet_sdk.xdr.Operation xdr = null;
+            AllowTrustOperation parsedOperation = null;
+
+            //Authorize: true, MaintainLiabilities: false -> true, false
+            operation = new AllowTrustOperation.Builder(trustor, assetCode, true, false)
+               .SetSourceAccount(source)
+               .Build();
+
+            xdr = operation.ToXdr();
+            parsedOperation = (AllowTrustOperation)Operation.FromXdr(xdr);
+
+            Assert.AreEqual(true, parsedOperation.Authorize);
+            Assert.AreEqual(false, parsedOperation.AuthorizeToMaintainLiabilities);
+
+            //Authorize: false, MaintainLiabilities: true -> false, true
+            operation = new AllowTrustOperation.Builder(trustor, assetCode, false, true)
+               .SetSourceAccount(source)
+               .Build();
+
+            xdr = operation.ToXdr();
+            parsedOperation = (AllowTrustOperation)Operation.FromXdr(xdr);
+
+            Assert.AreEqual(false, parsedOperation.Authorize);
+            Assert.AreEqual(true, parsedOperation.AuthorizeToMaintainLiabilities);
+
+            //Authorize: true, MaintainLiabilities: true -> true, false
+            operation = new AllowTrustOperation.Builder(trustor, assetCode, true, true)
+               .SetSourceAccount(source)
+               .Build();
+
+            xdr = operation.ToXdr();
+            parsedOperation = (AllowTrustOperation)Operation.FromXdr(xdr);
+
+            Assert.AreEqual(true, parsedOperation.Authorize);
+            Assert.AreEqual(false, parsedOperation.AuthorizeToMaintainLiabilities);
+
+            //Authorize: false, MaintainLiabilities: false -> false, false
+            operation = new AllowTrustOperation.Builder(trustor, assetCode, false, false)
+                .SetSourceAccount(source)
+                .Build();
+
+            xdr = operation.ToXdr();
+            parsedOperation = (AllowTrustOperation)Operation.FromXdr(xdr);
+
+            Assert.AreEqual(false, parsedOperation.Authorize);
+            Assert.AreEqual(false, parsedOperation.AuthorizeToMaintainLiabilities);
         }
 
         [TestMethod]
@@ -332,7 +384,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (SetOptionsOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (SetOptionsOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(inflationDestination.AccountId, parsedOperation.InflationDestination.AccountId);
             Assert.AreEqual(1U, parsedOperation.ClearFlags);
@@ -367,7 +419,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (SetOptionsOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (SetOptionsOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(null, parsedOperation.InflationDestination);
             Assert.AreEqual(null, parsedOperation.ClearFlags);
@@ -401,7 +453,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (SetOptionsOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (SetOptionsOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(null, parsedOperation.InflationDestination);
             Assert.AreEqual(null, parsedOperation.ClearFlags);
@@ -431,7 +483,7 @@ namespace stellar_dotnet_sdk_test
 
             var sequenceNumber = 2908908335136768L;
             var account = new Account(source.AccountId, sequenceNumber);
-            var transaction = new Transaction.Builder(account)
+            var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .Build();
 
@@ -444,7 +496,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (SetOptionsOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (SetOptionsOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(null, parsedOperation.InflationDestination);
             Assert.AreEqual(null, parsedOperation.ClearFlags);
@@ -478,7 +530,7 @@ namespace stellar_dotnet_sdk_test
             var priceObj = Price.FromString(price);
             long offerId = 1;
 
-            var operation = new ManageOfferOperation.Builder(selling, buying, amount, price)
+            var operation = new ManageSellOfferOperation.Builder(selling, buying, amount, price)
                 .SetOfferId(offerId)
                 .SetSourceAccount(source)
                 .Build();
@@ -509,7 +561,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (ManageSellOfferOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (ManageSellOfferOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(100L, xdr.Body.ManageSellOfferOp.Amount.InnerValue);
             Assert.IsTrue(parsedOperation.Selling is AssetTypeNative);
@@ -548,7 +600,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (ManageBuyOfferOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (ManageBuyOfferOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(100L, xdr.Body.ManageBuyOfferOp.BuyAmount.InnerValue);
             Assert.IsTrue(parsedOperation.Selling is AssetTypeNative);
@@ -580,7 +632,7 @@ namespace stellar_dotnet_sdk_test
             var price = "2.93850088"; // n=36731261 d=12500000
             var priceObj = Price.FromString(price);
 
-            var operation = new CreatePassiveOfferOperation.Builder(selling, buying, amount, price)
+            var operation = new CreatePassiveSellOfferOperation.Builder(selling, buying, amount, price)
                 .SetSourceAccount(source)
                 .Build();
 
@@ -608,7 +660,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             var xdr = operation.ToXdr();
-            var parsedOperation = (CreatePassiveSellOfferOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (CreatePassiveSellOfferOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(100L, xdr.Body.CreatePassiveSellOfferOp.Amount.InnerValue);
             Assert.IsTrue(parsedOperation.Selling is AssetTypeNative);
@@ -639,7 +691,7 @@ namespace stellar_dotnet_sdk_test
 
             var xdr = operation.ToXdr();
 
-            var parsedOperation = (AccountMergeOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (AccountMergeOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(destination.AccountId, parsedOperation.Destination.AccountId);
             Assert.AreEqual(OperationThreshold.High, parsedOperation.Threshold);
@@ -655,16 +707,16 @@ namespace stellar_dotnet_sdk_test
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
             var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
 
-            var operation = new ManageDataOperation.Builder("test", new byte[] {0, 1, 2, 3, 4})
+            var operation = new ManageDataOperation.Builder("test", new byte[] { 0, 1, 2, 3, 4 })
                 .SetSourceAccount(source)
                 .Build();
 
             var xdr = operation.ToXdr();
 
-            var parsedOperation = (ManageDataOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (ManageDataOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual("test", parsedOperation.Name);
-            Assert.IsTrue(new byte[] {0, 1, 2, 3, 4}.SequenceEqual(parsedOperation.Value));
+            Assert.IsTrue(new byte[] { 0, 1, 2, 3, 4 }.SequenceEqual(parsedOperation.Value));
             Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
 
             Assert.AreEqual(
@@ -684,7 +736,7 @@ namespace stellar_dotnet_sdk_test
 
             var xdr = operation.ToXdr();
 
-            var parsedOperation = (ManageDataOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (ManageDataOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual("test", parsedOperation.Name);
             Assert.AreEqual(null, parsedOperation.Value);
@@ -744,7 +796,7 @@ namespace stellar_dotnet_sdk_test
 
             var xdr = operation.ToXdr();
 
-            var parsedOperation = (BumpSequenceOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (BumpSequenceOperation)Operation.FromXdr(xdr);
 
             Assert.AreEqual(156L, parsedOperation.BumpTo);
             Assert.AreEqual(OperationThreshold.Low, parsedOperation.Threshold);
@@ -764,7 +816,7 @@ namespace stellar_dotnet_sdk_test
 
             var xdr = operation.ToXdr();
 
-            var parsedOperation = (InflationOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (InflationOperation)Operation.FromXdr(xdr);
             Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
 
             Assert.AreEqual("AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAk=", operation.ToXdrBase64());

@@ -62,7 +62,7 @@ namespace stellar_dotnet_sdk
                 .SetSourceAccount(sourceAccountKeypair)
                 .Build();
 
-            var tx = new Transaction.Builder(serverAccount)
+            var tx = new TransactionBuilder(serverAccount)
                 .AddTimeBounds(timeBounds)
                 .AddOperation(operation)
                 .Build();
