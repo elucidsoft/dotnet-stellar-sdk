@@ -61,11 +61,8 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "memo")]
         public string MemoValue { get; private set; }
 
-        //[JsonProperty(PropertyName = "fee_bump_transaction")]
-        //public FeeBumpTransaction FeeBumpTransaction { get; set; }
-
-        //[JsonProperty(PropertyName = "inner_transaction")]
-        //public InnerTransaction InnerTransaction { get; set; }
+        [JsonProperty(PropertyName = "fee_bump_transaction")]
+        public FeeBumpTransaction FeeBumpTransaction { get; set; }
 
         public Memo Memo
         {
