@@ -62,7 +62,7 @@ namespace stellar_dotnet_sdk_test
             var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
             var account = new Account(source.AccountId, 2908908335136768L);
-            var builder = new Transaction.Builder(account)
+            var builder = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .AddMemo(Memo.Text("Hello world!"));
 

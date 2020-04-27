@@ -483,7 +483,7 @@ namespace stellar_dotnet_sdk_test
 
             var sequenceNumber = 2908908335136768L;
             var account = new Account(source.AccountId, sequenceNumber);
-            var transaction = new Transaction.Builder(account)
+            var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .Build();
 
@@ -530,7 +530,7 @@ namespace stellar_dotnet_sdk_test
             var priceObj = Price.FromString(price);
             long offerId = 1;
 
-            var operation = new ManageOfferOperation.Builder(selling, buying, amount, price)
+            var operation = new ManageSellOfferOperation.Builder(selling, buying, amount, price)
                 .SetOfferId(offerId)
                 .SetSourceAccount(source)
                 .Build();
@@ -632,7 +632,7 @@ namespace stellar_dotnet_sdk_test
             var price = "2.93850088"; // n=36731261 d=12500000
             var priceObj = Price.FromString(price);
 
-            var operation = new CreatePassiveOfferOperation.Builder(selling, buying, amount, price)
+            var operation = new CreatePassiveSellOfferOperation.Builder(selling, buying, amount, price)
                 .SetSourceAccount(source)
                 .Build();
 

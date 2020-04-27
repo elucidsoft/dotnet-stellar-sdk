@@ -77,7 +77,6 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientKeypair = KeyPair.Random();
-            var anchorName = "NET";
             Network.UseTestNetwork();
 
             var now = DateTimeOffset.Now;
@@ -118,7 +117,6 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientKeypair = KeyPair.Random();
-            var anchorName = "NET";
             Network.UseTestNetwork();
 
             var now = DateTimeOffset.Now;
@@ -142,7 +140,6 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientKeypair = KeyPair.Random();
-            var anchorName = "NET";
             Network.UseTestNetwork();
 
             var now = DateTimeOffset.Now;
@@ -164,7 +161,6 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientKeypair = KeyPair.Random();
-            var anchorName = "NET";
             Network.UseTestNetwork();
 
             var now = DateTimeOffset.Now;

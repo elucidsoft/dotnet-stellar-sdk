@@ -189,8 +189,7 @@ namespace stellar_dotnet_sdk_test
             var keypair = KeyPair.Random();
             var destination = KeyPair.FromAccountId(destinationAccountId);
             var account = new AccountResponse(destinationAccountId, 56199647068161);
-            var builder = new Transaction
-                    .Builder(account)
+            var builder = new TransactionBuilder(account)
                 .AddOperation(
                     new PaymentOperation.Builder(destination, new AssetTypeNative(), "100.50")
                         .Build());
