@@ -6,11 +6,9 @@ using stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
-    public class Transaction
+    public class Transaction : TransactionBase
     {
-        private const uint BaseFee = 100;
-
-        private Transaction(KeyPair sourceAccount, uint fee, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)
+        public Transaction(IAccountId sourceAccount, uint fee, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds) : base(fee)
         {
             SourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
             SequenceNumber = sequenceNumber;
@@ -19,15 +17,11 @@ namespace stellar_dotnet_sdk
             if (operations.Length == 0)
                 throw new ArgumentNullException(nameof(operations), "At least one operation required");
 
-            Fee = fee;
-            Signatures = new List<DecoratedSignature>();
             Memo = memo ?? Memo.None();
             TimeBounds = timeBounds;
         }
 
-        public uint Fee { get; }
-
-        public KeyPair SourceAccount { get; }
+        public IAccountId SourceAccount { get; }
 
         public long SequenceNumber { get; }
 
@@ -37,92 +31,12 @@ namespace stellar_dotnet_sdk
 
         public TimeBounds TimeBounds { get; }
 
-        public List<DecoratedSignature> Signatures { get; }
-
-        /// <summary>
-        /// Adds a new signature ed25519PublicKey to this transaction.
-        /// </summary>
-        /// <param name="signer"> signer <see cref="KeyPair"/> object representing a signer</param>
-        public void Sign(KeyPair signer)
-        {
-            Sign(signer, Network.Current);
-        }
-
-        /// <summary>
-        /// Adds a new signature ed25519PublicKey to this transaction.
-        /// </summary>
-        /// <param name="signer"> signer <see cref="KeyPair"/> object representing a signer</param>
-        /// <param name="network">The network <see cref="Network"/> the transaction will be sent to.</param>
-        public void Sign(KeyPair signer, Network network)
-        {
-            if (signer == null)
-                throw new ArgumentNullException(nameof(signer), "signer cannot be null");
-
-            var txHash = Hash(network);
-            Signatures.Add(signer.SignDecorated(txHash));
-        }
-
-        /// <summary>
-        ///     Adds a new sha256Hash signature to this transaction by revealing preimage.
-        /// </summary>
-        /// <param name="preimage">the sha256 hash of preimage should be equal to signer hash</param>
-        public void Sign(byte[] preimage)
-        {
-            var signature = new Signature
-            {
-                InnerValue = preimage ?? throw new ArgumentNullException(nameof(preimage), "preimage cannot be null")
-            };
-
-            var hash = Util.Hash(preimage);
-
-            var length = hash.Length;
-            var signatureHintBytes = hash.Skip(length - 4).Take(4).ToArray();
-
-            var signatureHint = new SignatureHint {InnerValue = signatureHintBytes};
-
-            var decoratedSignature = new DecoratedSignature
-            {
-                Hint = signatureHint,
-                Signature = signature
-            };
-
-            Signatures.Add(decoratedSignature);
-        }
-
-        /// <summary>
-        ///     Returns transaction hash.
-        /// </summary>
-        /// <returns></returns>
-        public byte[] Hash()
-        {
-            return Hash(Network.Current);
-        }
-
-        /// <summary>
-        ///     Returns transaction hash for the given network.
-        /// </summary>
-        /// <param name="network">The network <see cref="Network"/> the transaction will be sent to.</param>
-        /// <returns></returns>
-        public byte[] Hash(Network network)
-        {
-            return Util.Hash(SignatureBase(network));
-        }
-
-        /// <summary>
-        ///     Returns signature base.
-        /// </summary>
-        /// <returns></returns>
-        public byte[] SignatureBase()
-        {
-            return SignatureBase(Network.Current);
-        }
-
         /// <summary>
         ///     Returns signature base for the given network.
         /// </summary>
         /// <param name="network">The network <see cref="Network"/> the transaction will be sent to.</param>
         /// <returns></returns>
-        public byte[] SignatureBase(Network network)
+        public override byte[] SignatureBase(Network network)
         {
             if (network == null)
                 throw new NoNetworkSelectedException();
@@ -139,19 +53,32 @@ namespace stellar_dotnet_sdk
             var txWriter = new XdrDataOutputStream();
             xdr.PublicKeyType.Encode(txWriter,
                 new PublicKeyType {InnerValue = PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519});
-            xdr.TransactionV0.Encode(txWriter, ToXdr());
+            xdr.TransactionV0.Encode(txWriter, ToXdrV0());
 
             writer.Write(txWriter.ToArray());
 
             return writer.ToArray();
         }
 
+
         /// <summary>
         ///     Generates Transaction XDR object.
         /// </summary>
         /// <returns></returns>
-        public xdr.TransactionV0 ToXdr()
+        public TransactionV0 ToXdr()
         {
+            return ToXdrV0();
+        }
+
+        /// <summary>
+        ///     Generates Transaction XDR object.
+        /// </summary>
+        /// <returns></returns>
+        public TransactionV0 ToXdrV0()
+        {
+            if (!(SourceAccount is KeyPair))
+                throw new Exception("TransactionEnvelope V0 expects a KeyPair source account");
+
             // fee
             var fee = new Uint32 {InnerValue = Fee};
 
@@ -169,9 +96,9 @@ namespace stellar_dotnet_sdk
                 operations[i] = Operations[i].ToXdr();
 
             // ext
-            var ext = new xdr.TransactionV0.TransactionV0Ext { Discriminant = 0};
+            var ext = new TransactionV0.TransactionV0Ext {Discriminant = 0};
 
-            var transaction = new xdr.TransactionV0
+            var transaction = new TransactionV0
             {
                 Fee = fee,
                 SeqNum = sequenceNumber,
@@ -185,69 +112,91 @@ namespace stellar_dotnet_sdk
         }
 
         /// <summary>
+        ///     Generates Transaction XDR object.
+        /// </summary>
+        /// <returns></returns>
+        public xdr.Transaction ToXdrV1()
+        {
+            // fee
+            var fee = new Uint32 {InnerValue = Fee};
+
+            // sequenceNumber
+            var sequenceNumberUint = new xdr.Int64(SequenceNumber);
+            var sequenceNumber = new SequenceNumber {InnerValue = sequenceNumberUint};
+
+            // sourceAccount
+            var sourceAccount = SourceAccount.MuxedAccount;
+
+            // operations
+            var operations = new xdr.Operation[Operations.Length];
+
+            for (var i = 0; i < Operations.Length; i++)
+                operations[i] = Operations[i].ToXdr();
+
+            // ext
+            var ext = new xdr.Transaction.TransactionExt {Discriminant = 0};
+
+            var transaction = new xdr.Transaction
+            {
+                Fee = fee,
+                SeqNum = sequenceNumber,
+                SourceAccount = sourceAccount,
+                Operations = operations,
+                Memo = Memo.ToXdr(),
+                TimeBounds = TimeBounds?.ToXdr(),
+                Ext = ext
+            };
+            return transaction;
+        }
+
+        /// <summary>
         ///     Generates TransactionEnvelope XDR object. Transaction need to have at least one signature.
         /// </summary>
         /// <returns></returns>
-        public TransactionEnvelope ToEnvelopeXdr()
+        public override TransactionEnvelope ToEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V0)
         {
             if (Signatures.Count == 0)
                 throw new NotEnoughSignaturesException("Transaction must be signed by at least one signer. Use transaction.sign().");
 
-            var thisXdr = new TransactionEnvelope();
-            thisXdr.Discriminant = new EnvelopeType {InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_V0};
-            thisXdr.V0 = new TransactionV0Envelope();
-            var transaction = ToXdr();
-            thisXdr.V0.Tx = transaction;
-
-            var signatures = Signatures.ToArray();
-            thisXdr.V0.Signatures = signatures;
-            return thisXdr;
+            return ToEnvelopeXdr(version, Signatures.ToArray());
         }
 
         /// <summary>
         ///     Generates TransactionEnvelope XDR object. This transaction MUST be signed before being useful
         /// </summary>
         /// <returns></returns>
-        public TransactionEnvelope ToUnsignedEnvelopeXdr()
+        public override TransactionEnvelope ToUnsignedEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V0)
         {
             if (Signatures.Count > 0)
                 throw new TooManySignaturesException("Transaction must not be signed. Use ToEnvelopeXDR.");
 
+            return ToEnvelopeXdr(version, new DecoratedSignature[0]);
+        }
+
+        private TransactionEnvelope ToEnvelopeXdr(TransactionXdrVersion version, DecoratedSignature[] signatures)
+        {
             var thisXdr = new TransactionEnvelope();
-            thisXdr.Discriminant = new EnvelopeType {InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_V0};
-            thisXdr.V0 = new TransactionV0Envelope();
+            if (version == TransactionXdrVersion.V0)
+            {
+                thisXdr.Discriminant = new EnvelopeType {InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_V0};
+                thisXdr.V0 = new TransactionV0Envelope();
 
-            var transaction = ToXdr();
-            thisXdr.V0.Tx = transaction;
-            thisXdr.V0.Signatures = new DecoratedSignature[0];
-
+                var transaction = ToXdrV0();
+                thisXdr.V0.Tx = transaction;
+                thisXdr.V0.Signatures = signatures;
+            } else if (version == TransactionXdrVersion.V1)
+            {
+                thisXdr.Discriminant = new EnvelopeType {InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX};
+                thisXdr.V1 = new TransactionV1Envelope();
+                var transaction = ToXdrV1();
+                thisXdr.V1.Tx = transaction;
+                thisXdr.V1.Signatures = signatures;
+            }
+            else
+            {
+                throw new Exception($"Invalid TransactionXdrVersion {version}");
+            }
             return thisXdr;
-        }
-
-        /// <summary>
-        ///     Generates TransactionEnvelope XDR object. This transaction MUST be signed before being useful
-        /// </summary>
-        /// <returns></returns>
-        public string ToUnsignedEnvelopeXdrBase64()
-        {
-            var envelope = ToUnsignedEnvelopeXdr();
-            var writer = new XdrDataOutputStream();
-            TransactionEnvelope.Encode(writer, envelope);
-
-            return Convert.ToBase64String(writer.ToArray());
-        }
-
-        /// <summary>
-        ///     Returns base64-encoded TransactionEnvelope XDR object. Transaction need to have at least one signature.
-        /// </summary>
-        /// <returns></returns>
-        public string ToEnvelopeXdrBase64()
-        {
-            var envelope = ToEnvelopeXdr();
-            var writer = new XdrDataOutputStream();
-            TransactionEnvelope.Encode(writer, envelope);
-
-            return Convert.ToBase64String(writer.ToArray());
         }
 
         public static Transaction FromEnvelopeXdr(string envelope)
@@ -260,141 +209,75 @@ namespace stellar_dotnet_sdk
 
         public static Transaction FromEnvelopeXdr(TransactionEnvelope envelope)
         {
-            switch (envelope.Discriminant.InnerValue)
             {
-                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_V0:
-                    var transactionXdr = envelope.V0.Tx;
-                    var fee = transactionXdr.Fee.InnerValue;
-                    KeyPair sourceAccount = KeyPair.FromPublicKey(transactionXdr.SourceAccountEd25519.InnerValue);
-                    long sequenceNumber = transactionXdr.SeqNum.InnerValue.InnerValue;
-                    Memo memo = Memo.FromXdr(transactionXdr.Memo);
-                    TimeBounds timeBounds = TimeBounds.FromXdr(transactionXdr.TimeBounds);
-
-                    Operation[] operations = new Operation[transactionXdr.Operations.Length];
-                    for (int i = 0; i < transactionXdr.Operations.Length; i++)
-                    {
-                        operations[i] = Operation.FromXdr(transactionXdr.Operations[i]);
-                    }
-
-                    Transaction transaction = new Transaction(sourceAccount, fee, sequenceNumber, operations, memo, timeBounds);
-
-                    foreach (var signature in envelope.V0.Signatures)
-                    {
-                        transaction.Signatures.Add(signature);
-                    }
-
-                    return transaction;
-                default:
-                    throw new NotImplementedException();
+                switch (envelope.Discriminant.InnerValue)
+                {
+                    case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_V0:
+                        return FromEnvelopeXdrV0(envelope.V0);
+                    case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX:
+                        return FromEnvelopeXdrV1(envelope.V1);
+                    default:
+                        throw new ArgumentException($"Invalid TransactionEnvelope: expected an ENVELOPE_TYPE_TX or ENVELOPE_TYPE_TX_V0 but received {envelope.Discriminant.InnerValue}");
+                }
             }
         }
 
-        /// <summary>
-        ///     Builds a new Transaction object.
-        /// </summary>
-        public class Builder
+        private static Transaction FromEnvelopeXdrV0(TransactionV0Envelope envelope)
         {
-            private readonly BlockingCollection<Operation> _operations;
-            private readonly ITransactionBuilderAccount _sourceAccount;
-            private Memo _memo;
-            private TimeBounds _timeBounds;
-            private uint _fee;
+            var transactionXdr = envelope.Tx;
+            var fee = transactionXdr.Fee.InnerValue;
+            KeyPair sourceAccount = KeyPair.FromPublicKey(transactionXdr.SourceAccountEd25519.InnerValue);
+            long sequenceNumber = transactionXdr.SeqNum.InnerValue.InnerValue;
+            Memo memo = Memo.FromXdr(transactionXdr.Memo);
+            TimeBounds timeBounds = TimeBounds.FromXdr(transactionXdr.TimeBounds);
 
-            /// <summary>
-            ///     Construct a new transaction builder.
-            /// </summary>
-            /// <param name="sourceAccount">
-            ///     The source account for this transaction. This account is the account
-            ///     who will use a sequence number. When build() is called, the account object's sequence number will be incremented.
-            /// </param>
-            public Builder(ITransactionBuilderAccount sourceAccount)
+            Operation[] operations = new Operation[transactionXdr.Operations.Length];
+            for (int i = 0; i < transactionXdr.Operations.Length; i++)
             {
-                _sourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
-                _operations = new BlockingCollection<Operation>();
-                _fee = BaseFee;
+                operations[i] = Operation.FromXdr(transactionXdr.Operations[i]);
             }
 
-            public int OperationsCount => _operations.Count;
+            Transaction transaction = new Transaction(sourceAccount, fee, sequenceNumber, operations, memo, timeBounds);
 
-            /// <summary>
-            ///     Adds a new operation to this transaction.
-            ///     See: https://www.stellar.org/developers/learn/concepts/list-of-operations.html
-            /// </summary>
-            /// <param name="operation">operation</param>
-            /// <returns>Builder object so you can chain methods.</returns>
-            public Builder AddOperation(Operation operation)
+            foreach (var signature in envelope.Signatures)
             {
-                if (operation == null)
-                    throw new ArgumentNullException(nameof(operation), "operation cannot be null");
-
-                _operations.Add(operation);
-                return this;
+                transaction.Signatures.Add(signature);
             }
 
-            /// <summary>
-            ///     Adds a memo to this transaction.
-            ///     See: https://www.stellar.org/developers/learn/concepts/transactions.html
-            /// </summary>
-            /// <param name="memo">Memo</param>
-            /// <returns>Builder object so you can chain methods.</returns>
-            public Builder AddMemo(Memo memo)
+            return transaction;
+        }
+
+        private static Transaction FromEnvelopeXdrV1(TransactionV1Envelope envelope)
+        {
+            var transactionXdr = envelope.Tx;
+            var fee = transactionXdr.Fee.InnerValue;
+            var sourceAccount = MuxedAccount.FromXdrMuxedAccount(transactionXdr.SourceAccount);
+            long sequenceNumber = transactionXdr.SeqNum.InnerValue.InnerValue;
+            Memo memo = Memo.FromXdr(transactionXdr.Memo);
+            TimeBounds timeBounds = TimeBounds.FromXdr(transactionXdr.TimeBounds);
+
+            Operation[] operations = new Operation[transactionXdr.Operations.Length];
+            for (int i = 0; i < transactionXdr.Operations.Length; i++)
             {
-                if (_memo != null)
-                    throw new ArgumentException("Memo has been already added.", nameof(memo));
-
-                _memo = memo ?? throw new ArgumentNullException(nameof(memo), "memo cannot be null");
-
-                return this;
+                operations[i] = Operation.FromXdr(transactionXdr.Operations[i]);
             }
 
-            /// <summary>
-            ///     Adds a time-bounds to this transaction.
-            ///     See: https://www.stellar.org/developers/learn/concepts/transactions.html
-            /// </summary>
-            /// <param name="timeBounds">timeBounds</param>
-            /// <returns>Builder object so you can chain methods.</returns>
-            public Builder AddTimeBounds(TimeBounds timeBounds)
+            Transaction transaction = new Transaction(sourceAccount, fee, sequenceNumber, operations, memo, timeBounds);
+
+            foreach (var signature in envelope.Signatures)
             {
-                if (_timeBounds != null)
-                    throw new ArgumentException("TimeBounds has been already added.", nameof(timeBounds));
-
-                _timeBounds = timeBounds ?? throw new ArgumentNullException(nameof(timeBounds), "timeBounds cannot be null");
-
-                return this;
+                transaction.Signatures.Add(signature);
             }
 
-            /// <summary>
-            ///     Set the transaction fee (in Stroops) per operation.
-            ///     See: https://www.stellar.org/developers/learn/concepts/transactions.html
-            /// </summary>
-            /// <param name="fee">fee (in Stroops) for each operation in the transaction</param>
-            /// <returns>Builder object so you can chain methods.</returns>
-            public Builder SetFee(uint fee)
+            return transaction;
+        }
+
+        [Obsolete("Use TransactionBuilder instead")]
+        public class Builder : TransactionBuilder
+        {
+            public Builder(ITransactionBuilderAccount sourceAccount) : base(sourceAccount)
             {
-                if (_fee <= 0)
-                    throw new ArgumentException("Fee must be a positive amount", nameof(fee));
-
-                _fee = fee;
-
-                return this;
-            }
-
-            /// <summary>
-            ///     Builds a transaction. It will increment sequence number of the source account.
-            /// </summary>
-            /// <returns></returns>
-            public Transaction Build()
-            {
-                var operations = _operations.ToArray();
-
-                var totalFee = operations.Length * _fee;
-                if (totalFee > UInt32.MaxValue) throw new InvalidOperationException("Transaction fee overflow");
-
-                var transaction = new Transaction(_sourceAccount.KeyPair, (uint)totalFee, _sourceAccount.IncrementedSequenceNumber, operations, _memo, _timeBounds);
-                // Increment sequence number when there were no exceptions when creating a transaction
-                _sourceAccount.IncrementSequenceNumber();
-                return transaction;
             }
         }
-    }
+   }
 }

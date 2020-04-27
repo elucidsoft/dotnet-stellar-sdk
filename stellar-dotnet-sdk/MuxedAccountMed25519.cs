@@ -8,6 +8,7 @@ namespace stellar_dotnet_sdk
     {
         public ulong Id { get; }
         public KeyPair Key { get; }
+        public byte[] PublicKey => Key.PublicKey;
 
         /// <summary>
         /// Create a new MuxedAccountMed25519 with the given key and id.
@@ -60,7 +61,6 @@ namespace stellar_dotnet_sdk
                 muxedAccount.Med25519.Id = new Uint64(Id);
                 muxedAccount.Med25519.Ed25519 = new Uint256(Key.PublicKey);
                 return muxedAccount;
-
             }
         }
 
