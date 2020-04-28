@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using stellar_dotnet_sdk;
@@ -62,7 +63,7 @@ namespace stellar_dotnet_sdk_test.responses
                 transaction.ResultMetaXdr);
 
             Assert.IsTrue(transaction.Memo is MemoHash);
-            var memo = (MemoHash) transaction.Memo;
+            var memo = (MemoHash)transaction.Memo;
             Assert.AreEqual("51041644e83d6ac868c849418b6392ddbe9df53f000000000000000000000000", memo.GetHexValue());
 
             Assert.AreEqual("/accounts/GCUB7JL4APK7LKJ6MZF7Q2JTLHAGNBIUA7XIXD5SQTG52GQ2DAT6XZMK",
@@ -88,6 +89,33 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.IsFalse(transaction.Successful);
             Assert.IsTrue(transaction.Memo is MemoNone);
+        }
+
+        [TestMethod]
+        public void TestDeserializeFeeBump()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "transactionFeeBump.json"));
+            var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
+
+            Assert.AreEqual(transaction.Hash, "3dfef7d7226995b504f2827cc63d45ad41e9687bb0a8abcf08ba755fedca0352");
+            Assert.AreEqual(transaction.Ledger, 123L);
+            Assert.AreEqual(transaction.Successful, true);
+            Assert.AreEqual(transaction.SourceAccount, "GABQGAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB2MX");
+            Assert.AreEqual(transaction.FeeAccount, "GABAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGKJ");
+            Assert.AreEqual(transaction.SourceAccountSequence, 97L);
+            Assert.AreEqual(transaction.MaxFee, 776L);
+            Assert.AreEqual(transaction.FeeCharged, 123L);
+            Assert.AreEqual(transaction.OperationCount, 1);
+            Assert.AreEqual(transaction.Signatures, new List<string>() { "Hh4e" });
+
+            FeeBumpTransaction feeBumpTransaction = transaction.FeeBumpTransaction;
+            Assert.AreEqual(feeBumpTransaction.Hash(), "3dfef7d7226995b504f2827cc63d45ad41e9687bb0a8abcf08ba755fedca0352");
+            Assert.AreEqual(feeBumpTransaction.Signatures, new List<string>() { "Hh4e" });
+
+            TransactionResponse.InnerTransaction innerTransaction = transaction.InnerTx;
+            Assert.AreEqual(innerTransaction.Hash, "e98869bba8bce08c10b78406202127f3888c25454cd37b02600862452751f526");
+            Assert.AreEqual(innerTransaction.MaxFee, 99L);
+            Assert.AreEqual(innerTransaction.Signatures, new List<string> { "FBQU" });
         }
     }
 }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using stellar_dotnet_sdk.responses.effects;
 using stellar_dotnet_sdk.responses.operations;
 using stellar_dotnet_sdk.responses.page;
+using System.Collections.Generic;
 
 namespace stellar_dotnet_sdk.responses
 {
@@ -21,6 +22,9 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "source_account")]
         public string SourceAccount { get; private set; }
 
+        [JsonProperty(PropertyName = "fee_account")]
+        public string FeeAccount { get; set; }
+
         [DefaultValue(true)]
         [JsonProperty(PropertyName = "successful", DefaultValueHandling = DefaultValueHandling.Populate)]
         public bool Successful { get; private set; }
@@ -30,9 +34,6 @@ namespace stellar_dotnet_sdk.responses
 
         [JsonProperty(PropertyName = "source_account_sequence")]
         public long SourceAccountSequence { get; private set; }
-
-        [JsonProperty(PropertyName = "fee_account")]
-        public long FeeAccount { get; set; }
 
         [JsonProperty(PropertyName = "fee_charged")]
         public long FeeCharged { get; set; }
@@ -52,6 +53,15 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "result_meta_xdr")]
         public string ResultMetaXdr { get; private set; }
 
+        [JsonProperty(PropertyName = "signatures")]
+        public List<string> Signatures { get; private set; }
+
+        [JsonProperty(PropertyName = "fee_bump_transaction")]
+        public FeeBumpTransaction FeeBumpTransaction { get; set; }
+
+        [JsonProperty(PropertyName = "inner_transaction")]
+        public InnerTransaction InnerTx { get; private set; }
+
         [JsonProperty(PropertyName = "_links")]
         public TransactionResponseLinks Links { get; private set; }
 
@@ -60,9 +70,6 @@ namespace stellar_dotnet_sdk.responses
 
         [JsonProperty(PropertyName = "memo")]
         public string MemoValue { get; private set; }
-
-        [JsonProperty(PropertyName = "fee_bump_transaction")]
-        public FeeBumpTransaction FeeBumpTransaction { get; set; }
 
         public Memo Memo
         {
@@ -115,9 +122,10 @@ namespace stellar_dotnet_sdk.responses
             // Used by deserializer
         }
 
-        public TransactionResponse(string hash, uint ledger, string createdAt, string sourceAccount, bool successful,
+        public TransactionResponse(string hash, uint ledger, string createdAt, string sourceAccount, string feeAccount, bool successful,
             string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr,
-            string resultXdr, string resultMetaXdr, Memo memo, TransactionResponseLinks links)
+            string resultXdr, string resultMetaXdr, Memo memo, List<String> signatures,
+            FeeBumpTransaction feeBumpTransaction, InnerTransaction innerTransaction, TransactionResponseLinks links)
         {
             Hash = hash;
             Ledger = ledger;
@@ -131,47 +139,69 @@ namespace stellar_dotnet_sdk.responses
             ResultXdr = resultXdr;
             ResultMetaXdr = resultMetaXdr;
             Memo = memo;
+            Signatures = signatures;
+            FeeBumpTransaction = feeBumpTransaction;
+            InnerTx = innerTransaction;
             Links = links;
         }
 
-        ///
-        /// Links connected to transaction.
-        ///
-        public class TransactionResponseLinks
+        public class InnerTransaction
         {
-            [JsonProperty(PropertyName = "account")]
-            public Link<AccountResponse> Account { get; private set; }
+            [JsonProperty(PropertyName = "hash")]
+            public string Hash { get; private set; }
 
-            [JsonProperty(PropertyName = "effects")]
-            public Link<Page<EffectResponse>> Effects { get; private set; }
+            [JsonProperty(PropertyName = "signatures")]
+            public List<string> Signatures { get; private set; }
 
-            [JsonProperty(PropertyName = "ledger")]
-            public Link<LedgerResponse> Ledger { get; private set; }
+            [JsonProperty(PropertyName = "max_fee")]
+            public long MaxFee { get; private set; }
 
-            [JsonProperty(PropertyName = "operations")]
-            public Link<Page<OperationResponse>> Operations { get; private set; }
-
-            [JsonProperty(PropertyName = "precedes")]
-            public Link<TransactionResponse> Precedes { get; private set; }
-
-            [JsonProperty(PropertyName = "self")]
-            public Link<TransactionResponse> Self { get; private set; }
-
-            [JsonProperty(PropertyName = "succeeds")]
-            public Link<TransactionResponse> Succeeds { get; private set; }
-
-            public TransactionResponseLinks(Link<AccountResponse> account, Link<Page<EffectResponse>> effects,
-                Link<LedgerResponse> ledger, Link<Page<OperationResponse>> operations, Link<TransactionResponse> self,
-                Link<TransactionResponse> precedes, Link<TransactionResponse> succeeds)
+            public InnerTransaction(String hash, List<String> signatures, long maxFee)
             {
-                Account = account;
-                Effects = effects;
-                Ledger = ledger;
-                Operations = operations;
-                Self = self;
-                Precedes = precedes;
-                Succeeds = succeeds;
+                Hash = hash;
+                Signatures = signatures;
+                MaxFee = maxFee;
             }
+        }
+    }
+
+    ///
+    /// Links connected to transaction.
+    ///
+    public class TransactionResponseLinks
+    {
+        [JsonProperty(PropertyName = "account")]
+        public Link<AccountResponse> Account { get; private set; }
+
+        [JsonProperty(PropertyName = "effects")]
+        public Link<Page<EffectResponse>> Effects { get; private set; }
+
+        [JsonProperty(PropertyName = "ledger")]
+        public Link<LedgerResponse> Ledger { get; private set; }
+
+        [JsonProperty(PropertyName = "operations")]
+        public Link<Page<OperationResponse>> Operations { get; private set; }
+
+        [JsonProperty(PropertyName = "precedes")]
+        public Link<TransactionResponse> Precedes { get; private set; }
+
+        [JsonProperty(PropertyName = "self")]
+        public Link<TransactionResponse> Self { get; private set; }
+
+        [JsonProperty(PropertyName = "succeeds")]
+        public Link<TransactionResponse> Succeeds { get; private set; }
+
+        public TransactionResponseLinks(Link<AccountResponse> account, Link<Page<EffectResponse>> effects,
+            Link<LedgerResponse> ledger, Link<Page<OperationResponse>> operations, Link<TransactionResponse> self,
+            Link<TransactionResponse> precedes, Link<TransactionResponse> succeeds)
+        {
+            Account = account;
+            Effects = effects;
+            Ledger = ledger;
+            Operations = operations;
+            Self = self;
+            Precedes = precedes;
+            Succeeds = succeeds;
         }
     }
 }
