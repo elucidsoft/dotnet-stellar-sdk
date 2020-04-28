@@ -422,5 +422,28 @@ namespace stellar_dotnet_sdk_test
                 "AAAAAEdL24Ttos6RnqXCsn8duaV035/QZSC9RXw29IknigHpAAAD6AFb56cAAukDAAAAAQAAAAAAAAAAAAAAAF20fKAAAAACjCiEBz2CpG0AAAABAAAAAAAAAAEAAAAADq+QhtWseqhtnwRIFyZRdLMOVtIqzkujfzUQ22rwZuEAAAAAAAAAAGZeJLcAAAAAAAAAASeKAekAAABAE+X7cGoBhuJ5SDB8WH2B1ZA2RrWIXxGtx+n6wE5d/EggDTpZhRm92b33QqjPUFOfcZ+zbcM+Ny0WR2vcYHEXDA==");
             Assert.AreEqual("GBDUXW4E5WRM5EM6UXBLE7Y5XGSXJX472BSSBPKFPQ3PJCJHRIA6SH4C", tx.SourceAccount.AccountId);
         }
+
+        [TestMethod]
+        public void TestTransactionWithMuxedAccount()
+        {
+            var network = new Network("Standalone Network ; February 2017");
+            var source = KeyPair.FromSecretSeed(network.NetworkId);
+            var txSource = new MuxedAccountMed25519(source, 0);
+            var account = new Account(txSource, 7);
+            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
+            var amount = "2000";
+            var asset = new AssetTypeNative();
+            var tx = new TransactionBuilder(account)
+                .SetFee(100)
+                .AddTimeBounds(new TimeBounds(0, 0))
+                .AddOperation(
+                    new PaymentOperation.Builder(destination, asset, amount).Build())
+                .AddMemo(new MemoText("Happy birthday!"))
+                .Build();
+            var xdr = tx.ToUnsignedEnvelopeXdrBase64(TransactionBase.TransactionXdrVersion.V1);
+            var back = TransactionBuilder.FromEnvelopeXdr(xdr) as Transaction;
+            Assert.IsNotNull(back);
+            Assert.AreEqual(txSource.Address, back.SourceAccount.Address);
+        }
     }
 }

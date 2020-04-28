@@ -12,7 +12,7 @@ namespace stellar_dotnet_sdk_test
         {
             try
             {
-                var unused = new Account(null, 10L);
+                var unused = new Account((string) null, 10L);
                 Assert.Fail();
             }
             catch (ArgumentNullException)
@@ -28,6 +28,26 @@ namespace stellar_dotnet_sdk_test
             catch (ArgumentNullException)
             {
             }
+        }
+
+        [TestMethod]
+        public void TestWithStringArgumentIsKeyPair()
+        {
+            var keypair = KeyPair.Random();
+            var account = new Account(keypair.Address, 7);
+            Assert.AreEqual(account.AccountId, keypair.AccountId);
+            Assert.AreEqual(account.KeyPair.AccountId, keypair.AccountId);
+        }
+
+        [TestMethod]
+        public void TestWithMuxedAccount()
+        {
+            var keypair = KeyPair.Random();
+            var muxed = new MuxedAccountMed25519(keypair, 10);
+            var account = new Account(muxed, 7);
+            Assert.AreNotEqual(account.AccountId, keypair.AccountId);
+            Assert.AreEqual(account.AccountId, muxed.AccountId);
+            Assert.AreEqual(account.KeyPair.AccountId, keypair.AccountId);
         }
 
         [TestMethod]
