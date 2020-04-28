@@ -123,7 +123,7 @@ namespace stellar_dotnet_sdk.responses
         }
 
         public TransactionResponse(string hash, uint ledger, string createdAt, string sourceAccount, string feeAccount, bool successful,
-            string pagingToken, long sourceAccountSequence, long feePaid, int operationCount, string envelopeXdr,
+            string pagingToken, long sourceAccountSequence, long maxFee, long feeCharged, int operationCount, string envelopeXdr,
             string resultXdr, string resultMetaXdr, Memo memo, List<String> signatures,
             FeeBumpTransaction feeBumpTransaction, InnerTransaction innerTransaction, TransactionResponseLinks links)
         {
@@ -131,9 +131,12 @@ namespace stellar_dotnet_sdk.responses
             Ledger = ledger;
             CreatedAt = createdAt;
             SourceAccount = sourceAccount;
+            FeeAccount = feeAccount;
             Successful = successful;
             PagingToken = pagingToken;
             SourceAccountSequence = sourceAccountSequence;
+            MaxFee = maxFee;
+            FeeCharged = feeCharged;
             OperationCount = operationCount;
             EnvelopeXdr = envelopeXdr;
             ResultXdr = resultXdr;

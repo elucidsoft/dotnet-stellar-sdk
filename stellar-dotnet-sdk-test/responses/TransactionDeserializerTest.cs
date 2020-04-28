@@ -97,15 +97,21 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata", "transactionFeeBump.json"));
             var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
 
-            Assert.AreEqual(transaction.Hash, "3dfef7d7226995b504f2827cc63d45ad41e9687bb0a8abcf08ba755fedca0352");
-            Assert.AreEqual(transaction.Ledger, 123L);
-            Assert.AreEqual(transaction.Successful, true);
-            Assert.AreEqual(transaction.SourceAccount, "GABQGAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB2MX");
-            Assert.AreEqual(transaction.FeeAccount, "GABAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGKJ");
-            Assert.AreEqual(transaction.SourceAccountSequence, 97L);
-            Assert.AreEqual(transaction.MaxFee, 776L);
-            Assert.AreEqual(transaction.FeeCharged, 123L);
-            Assert.AreEqual(transaction.OperationCount, 1);
+            var transaction2 = new TransactionResponse(transaction.Hash, transaction.Ledger, transaction.CreatedAt, transaction.SourceAccount, transaction.FeeAccount,
+                                                       transaction.Successful, transaction.PagingToken, transaction.SourceAccountSequence, transaction.MaxFee, 123L, transaction.OperationCount,
+                                                       transaction.EnvelopeXdr, transaction.ResultXdr, transaction.ResultMetaXdr, transaction.Memo, transaction.Signatures, transaction.FeeBumpTx,
+                                                       transaction.InnerTx, transaction.Links);
+
+
+            Assert.AreEqual(transaction.Hash, transaction2.Hash);
+            Assert.AreEqual(transaction.Ledger, transaction2.Ledger);
+            Assert.AreEqual(transaction.Successful, transaction.Successful);
+            Assert.AreEqual(transaction.SourceAccount, transaction2.SourceAccount);
+            Assert.AreEqual(transaction.FeeAccount, transaction2.FeeAccount);
+            Assert.AreEqual(transaction.SourceAccountSequence, transaction2.SourceAccountSequence);
+            Assert.AreEqual(transaction.MaxFee, transaction2.MaxFee);
+            Assert.AreEqual(transaction.FeeCharged, transaction2.FeeCharged);
+            Assert.AreEqual(transaction.OperationCount, transaction2.OperationCount);
             CollectionAssert.AreEqual(transaction.Signatures, new List<string>() { "Hh4e" });
 
             TransactionResponse.FeeBumpTransaction feeBumpTransaction = transaction.FeeBumpTx;
