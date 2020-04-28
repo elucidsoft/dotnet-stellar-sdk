@@ -106,16 +106,16 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(transaction.MaxFee, 776L);
             Assert.AreEqual(transaction.FeeCharged, 123L);
             Assert.AreEqual(transaction.OperationCount, 1);
-            Assert.AreEqual(transaction.Signatures, new List<string>() { "Hh4e" });
+            CollectionAssert.AreEqual(transaction.Signatures, new List<string>() { "Hh4e" });
 
-            FeeBumpTransaction feeBumpTransaction = transaction.FeeBumpTransaction;
-            Assert.AreEqual(feeBumpTransaction.Hash(), "3dfef7d7226995b504f2827cc63d45ad41e9687bb0a8abcf08ba755fedca0352");
-            Assert.AreEqual(feeBumpTransaction.Signatures, new List<string>() { "Hh4e" });
+            TransactionResponse.FeeBumpTransaction feeBumpTransaction = transaction.FeeBumpTx;
+            Assert.AreEqual(feeBumpTransaction.Hash, "3dfef7d7226995b504f2827cc63d45ad41e9687bb0a8abcf08ba755fedca0352");
+            CollectionAssert.AreEqual(feeBumpTransaction.Signatures, new List<string>() { "Hh4e" });
 
             TransactionResponse.InnerTransaction innerTransaction = transaction.InnerTx;
             Assert.AreEqual(innerTransaction.Hash, "e98869bba8bce08c10b78406202127f3888c25454cd37b02600862452751f526");
             Assert.AreEqual(innerTransaction.MaxFee, 99L);
-            Assert.AreEqual(innerTransaction.Signatures, new List<string> { "FBQU" });
+            CollectionAssert.AreEqual(innerTransaction.Signatures, new List<string> { "FBQU" });
         }
     }
 }

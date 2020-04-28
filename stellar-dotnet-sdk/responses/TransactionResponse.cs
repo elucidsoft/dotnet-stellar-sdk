@@ -57,7 +57,7 @@ namespace stellar_dotnet_sdk.responses
         public List<string> Signatures { get; private set; }
 
         [JsonProperty(PropertyName = "fee_bump_transaction")]
-        public FeeBumpTransaction FeeBumpTransaction { get; set; }
+        public FeeBumpTransaction FeeBumpTx { get; set; }
 
         [JsonProperty(PropertyName = "inner_transaction")]
         public InnerTransaction InnerTx { get; private set; }
@@ -140,9 +140,24 @@ namespace stellar_dotnet_sdk.responses
             ResultMetaXdr = resultMetaXdr;
             Memo = memo;
             Signatures = signatures;
-            FeeBumpTransaction = feeBumpTransaction;
+            FeeBumpTx = feeBumpTransaction;
             InnerTx = innerTransaction;
             Links = links;
+        }
+
+        public class FeeBumpTransaction
+        {
+            [JsonProperty(PropertyName = "hash")]
+            public string Hash { get; private set; }
+
+            [JsonProperty(PropertyName = "signatures")]
+            public List<string> Signatures { get; private set; }
+
+            public FeeBumpTransaction(string hash, List<string> signatures)
+            {
+                Hash = hash;
+                Signatures = signatures;
+            }
         }
 
         public class InnerTransaction
