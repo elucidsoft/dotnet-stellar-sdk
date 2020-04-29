@@ -8,5 +8,6 @@ namespace stellar_dotnet_sdk
         byte[] PublicKey { get; }
         string Address { get; }
         string AccountId { get; }
+        bool IsMuxedAccount { get; }
     }
 }

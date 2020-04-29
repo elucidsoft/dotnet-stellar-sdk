@@ -162,6 +162,8 @@ namespace stellar_dotnet_sdk
             }
         }
 
+        public bool IsMuxedAccount => false;
+
         /// <summary>
         /// Returns a KeyPair from a Public Key
         /// </summary>

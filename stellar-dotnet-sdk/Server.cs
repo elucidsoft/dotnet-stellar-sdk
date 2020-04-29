@@ -166,11 +166,13 @@ namespace stellar_dotnet_sdk
         /// It will sequantially load each destination account and check if it has the data field
         /// <c>config.memo_required</c> set to <c>"MQ=="</c>.
         /// </summary>
-        /// <param name="tx"></param>
+        /// <param name="transaction"></param>
         /// <returns></returns>
         /// <exception cref="AccountRequiresMemoException"></exception>
-        public async Task CheckMemoRequired(Transaction tx)
+        public async Task CheckMemoRequired(TransactionBase transaction)
         {
+            var tx = GetTransactionToCheck(transaction);
+
             if (tx.Memo != null && !Equals(tx.Memo, Memo.None()))
             {
                 return;
@@ -185,7 +187,15 @@ namespace stellar_dotnet_sdk
                     continue;
                 }
 
-                var destination = PaymentOperationDestination(operation);
+                // If it's a muxed account it already contains the memo.
+                var destinationKey = PaymentOperationDestination(operation);
+                if (destinationKey.IsMuxedAccount)
+                {
+                    continue;
+                }
+
+                var destination = destinationKey.Address;
+
                 if (destinations.Contains(destination))
                 {
                     continue;
@@ -228,6 +238,19 @@ namespace stellar_dotnet_sdk
             return httpClient;
         }
 
+        private Transaction GetTransactionToCheck(TransactionBase transaction)
+        {
+            switch (transaction)
+            {
+                case FeeBumpTransaction feeBump:
+                    return feeBump.InnerTransaction;
+                case Transaction tx:
+                    return tx;
+                default:
+                    throw new ArgumentException($"Invalid transaction of type {transaction.GetType().Name}");
+            }
+        }
+
         private bool IsPaymentOperation(Operation op)
         {
             switch (op)
@@ -242,18 +265,18 @@ namespace stellar_dotnet_sdk
             }
         }
 
-        private string PaymentOperationDestination(Operation op)
+        private IAccountId PaymentOperationDestination(Operation op)
         {
             switch (op)
             {
                 case PaymentOperation p:
-                    return p.Destination.Address;
+                    return p.Destination;
                 case PathPaymentStrictSendOperation p:
-                    return p.Destination.Address;
+                    return p.Destination;
                 case PathPaymentStrictReceiveOperation p:
-                    return p.Destination.Address;
+                    return p.Destination;
                 case AccountMergeOperation p:
-                    return p.Destination.Address;
+                    return p.Destination;
                 default:
                     throw new ArgumentException("Expected payment operation.");
             }
