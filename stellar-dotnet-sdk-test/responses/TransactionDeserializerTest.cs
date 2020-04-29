@@ -92,6 +92,27 @@ namespace stellar_dotnet_sdk_test.responses
         }
 
         [TestMethod]
+        public void TestDeserializeTransactionPreProtocol13()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "transactionTransaction.json"));
+            var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
+
+            var transaction2 = new TransactionResponse(transaction.Hash, transaction.Ledger, transaction.CreatedAt, transaction.SourceAccount,
+                                                       transaction.Successful, transaction.PagingToken, transaction.SourceAccountSequence, transaction.FeeCharged, transaction.OperationCount,
+                                                       transaction.EnvelopeXdr, transaction.ResultXdr, transaction.ResultMetaXdr, transaction.Memo, transaction.Links);
+
+
+            Assert.AreEqual(transaction.Hash, transaction2.Hash);
+            Assert.AreEqual(transaction.Ledger, transaction2.Ledger);
+            Assert.AreEqual(transaction.Successful, transaction.Successful);
+            Assert.AreEqual(transaction.SourceAccount, transaction2.SourceAccount);
+            Assert.AreEqual(transaction.FeeAccount, transaction2.FeeAccount);
+            Assert.AreEqual(transaction.SourceAccountSequence, transaction2.SourceAccountSequence);
+            Assert.AreEqual(transaction.FeeCharged, transaction2.FeeCharged);
+            Assert.AreEqual(transaction.OperationCount, transaction2.OperationCount);
+        }
+
+        [TestMethod]
         public void TestDeserializeFeeBump()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "transactionFeeBump.json"));
