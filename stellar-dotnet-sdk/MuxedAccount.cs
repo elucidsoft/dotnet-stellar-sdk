@@ -1,4 +1,3 @@
-
 using System;
 using stellar_dotnet_sdk.xdr;
 
