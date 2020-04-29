@@ -196,8 +196,7 @@ namespace stellar_dotnet_sdk_test
             var builder = new TransactionBuilder(account)
                 .AddOperation(pathPaymentStrictReceiveOperation)
                 .AddOperation(pathPaymentStrictSendOperation)
-                .AddOperation(accountMergeOperation)
-                .AddMemo(Memo.Text("Hello world!"));
+                .AddOperation(accountMergeOperation);
 
             var transaction = builder.Build();
             Assert.AreEqual(2908908335136769L, transaction.SequenceNumber);
