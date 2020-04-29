@@ -144,7 +144,7 @@ namespace stellar_dotnet_sdk_test
                 .Returns(ServerTest.ResponseMessage(HttpStatusCode.OK, BuildAccountResponse(destinations[1])))
                 .Returns(ServerTest.ResponseMessage(HttpStatusCode.OK, BuildAccountResponse(destinations[2])));
 
-            var tx = BuildTransaction(accountId, operations, Memo.Text("foobar"));
+            var tx = BuildTransaction(accountId, operations, Memo.None());
             await _server.CheckMemoRequired(tx);
         }
 
