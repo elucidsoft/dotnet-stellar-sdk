@@ -110,7 +110,7 @@ namespace stellar_dotnet_sdk
             /// <param name="destAsset"> The asset the destination account receives.</param>
             /// <param name="destMin"> The amount of destination asset the destination account receives.</param>
             /// <exception cref="ArithmeticException"> When sendAmount or destMin has more than 7 decimal places.</exception>
-            public Builder(Asset sendAsset, string sendAmount, KeyPair destination, Asset destAsset, string destMin)
+            public Builder(Asset sendAsset, string sendAmount, IAccountId destination, Asset destAsset, string destMin)
             {
                 _SendAsset = sendAsset ?? throw new ArgumentNullException(nameof(sendAsset), "sendAsset cannot be null");
                 _SendAmount = sendAmount ?? throw new ArgumentNullException(nameof(sendAmount), "sendAmount cannot be null");
@@ -144,7 +144,7 @@ namespace stellar_dotnet_sdk
             /// </summary>
             /// <param name="sourceAccount"> The operation's source account.</param>
             /// <returns>Builder object so you can chain methods.</returns>
-            public Builder SetSourceAccount(KeyPair sourceAccount)
+            public Builder SetSourceAccount(IAccountId sourceAccount)
             {
                 _SourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
                 return this;
