@@ -144,7 +144,7 @@ namespace stellar_dotnet_sdk_test
                 .Returns(ServerTest.ResponseMessage(HttpStatusCode.OK, BuildAccountResponse(destinations[1])))
                 .Returns(ServerTest.ResponseMessage(HttpStatusCode.OK, BuildAccountResponse(destinations[2])));
 
-            var tx = BuildTransaction(accountId, new Operation[] { }, Memo.Text("foobar"));
+            var tx = BuildTransaction(accountId, operations, Memo.Text("foobar"));
             await _server.CheckMemoRequired(tx);
         }
 
@@ -180,30 +180,6 @@ namespace stellar_dotnet_sdk_test
 
             var tx = BuildTransaction(accountId, new Operation[] { payment }, Memo.None(), skipDefaultOp: true);
             await _server.CheckMemoRequired(tx);
-        }
-
-        [TestMethod]
-        public async Task TestIsPaymentOperation()
-        {
-            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
-            var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
-
-            var pathPaymentStrictSendOperation = new PathPaymentStrictSendOperation.Builder(Asset.CreateNonNativeAsset("ABCD", KeyPair.Random().AccountId), "300", KeyPair.Random(), new AssetTypeNative(), "200").Build();
-            var pathPaymentStrictReceiveOperation = new PathPaymentStrictReceiveOperation.Builder(Asset.CreateNonNativeAsset("ABCD", KeyPair.Random().AccountId), "300", KeyPair.Random(), new AssetTypeNative(), "200").Build();
-            var accountMergeOperation = new AccountMergeOperation.Builder(KeyPair.Random()).Build();
-
-            var account = new Account(source.AccountId, 2908908335136768L);
-            var builder = new TransactionBuilder(account)
-                .AddOperation(pathPaymentStrictReceiveOperation)
-                .AddOperation(pathPaymentStrictSendOperation)
-                .AddOperation(accountMergeOperation);
-
-            var transaction = builder.Build();
-            Assert.AreEqual(2908908335136769L, transaction.SequenceNumber);
-            Assert.AreEqual(2908908335136769L, account.SequenceNumber);
-            transaction.Sign(source);
-
-            await _server.CheckMemoRequired(transaction);
         }
 
         private string BuildAccountResponse(string accountId, Dictionary<string, string> data = null)
