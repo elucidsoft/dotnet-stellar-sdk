@@ -1,3 +1,4 @@
+using System;
 using System.Security.Cryptography;
 using dotnetstandard_bip32;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -42,6 +43,35 @@ namespace stellar_dotnet_sdk_test
             InnerTransaction.Sign(InnerSource, Network);
             FeeSource = KeyPair.FromSecretSeed("SB7ZMPZB3YMMK5CUWENXVLZWBK4KYX4YU5JBXQNZSK2DP2Q7V3LVTO5V");
             Transaction = TransactionBuilder.BuildFeeBumpTransaction(FeeSource, InnerTransaction, 100);
+        }
+
+        [TestMethod]
+        public void TestLessThanInnerBaseFeeRate()
+        {
+            try
+            {
+                var transaction = TransactionBuilder.BuildFeeBumpTransaction(FeeSource, InnerTransaction, 50);
+            }
+            catch (Exception e)
+            {
+                var innerOps = InnerTransaction.Operations.Length;
+                var innerBaseFeeRate = InnerTransaction.Fee / innerOps;
+
+                Assert.AreEqual(e.Message, $"Invalid fee, it should be at least {innerBaseFeeRate} stroops");
+            }
+        }
+
+        [TestMethod]
+        public void TestLessThanBaseFee()
+        {
+            try
+            {
+                var transaction = TransactionBuilder.BuildFeeBumpTransaction(FeeSource, InnerTransaction, 50);
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual(e.Message, $"Invalid fee, it should be at least {BaseFee} stroops");
+            }
         }
 
         [TestMethod]
