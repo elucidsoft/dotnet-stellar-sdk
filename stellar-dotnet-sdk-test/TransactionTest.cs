@@ -87,8 +87,8 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(transaction.SequenceNumber, transaction2.SequenceNumber);
             Assert.AreEqual(transaction.Fee, transaction2.Fee);
             Assert.AreEqual(
-                ((CreateAccountOperation) transaction.Operations[0]).StartingBalance,
-                ((CreateAccountOperation) transaction2.Operations[0]).StartingBalance
+                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
             );
 
             CollectionAssert.AreEqual(transaction.Signatures, transaction2.Signatures);
@@ -138,8 +138,8 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(transaction.Memo, transaction2.Memo);
             Assert.AreEqual(transaction.Fee, transaction2.Fee);
             Assert.AreEqual(
-                ((CreateAccountOperation) transaction.Operations[0]).StartingBalance,
-                ((CreateAccountOperation) transaction2.Operations[0]).StartingBalance
+                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
             );
         }
 
@@ -176,8 +176,8 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(transaction.TimeBounds, transaction2.TimeBounds);
             Assert.AreEqual(transaction.Fee, transaction2.Fee);
             Assert.AreEqual(
-                ((CreateAccountOperation) transaction.Operations[0]).StartingBalance,
-                ((CreateAccountOperation) transaction2.Operations[0]).StartingBalance
+                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
             );
         }
 
@@ -211,12 +211,12 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(transaction.TimeBounds, transaction2.TimeBounds);
             Assert.AreEqual(transaction.Fee, transaction2.Fee);
             Assert.AreEqual(
-                ((CreateAccountOperation) transaction.Operations[0]).StartingBalance,
-                ((CreateAccountOperation) transaction2.Operations[0]).StartingBalance
+                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
             );
             Assert.AreEqual(
-                ((CreateAccountOperation) transaction.Operations[1]).StartingBalance,
-                ((CreateAccountOperation) transaction2.Operations[1]).StartingBalance
+                ((CreateAccountOperation)transaction.Operations[1]).StartingBalance,
+                ((CreateAccountOperation)transaction2.Operations[1]).StartingBalance
             );
         }
 
@@ -444,6 +444,92 @@ namespace stellar_dotnet_sdk_test
             var back = TransactionBuilder.FromEnvelopeXdr(xdr) as Transaction;
             Assert.IsNotNull(back);
             Assert.AreEqual(txSource.Address, back.SourceAccount.Address);
+        }
+
+        [TestMethod]
+        public void SignatureBaseNoNetwork()
+        {
+            var network = new Network("Standalone Network ; February 2017");
+            var source = KeyPair.FromSecretSeed(network.NetworkId);
+            var txSource = new MuxedAccountMed25519(source, 0);
+            var account = new Account(txSource, 7);
+            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
+            var amount = "2000";
+            var asset = new AssetTypeNative();
+            var tx = new TransactionBuilder(account)
+                .SetFee(100)
+                .AddTimeBounds(new TimeBounds(0, 0))
+                .AddOperation(
+                    new PaymentOperation.Builder(destination, asset, amount).Build())
+                .AddMemo(new MemoText("Happy birthday!"))
+                .Build();
+
+            try
+            {
+                tx.SignatureBase(null);
+            }
+            catch (Exception e)
+            {
+                Assert.IsNotNull(e);
+            }
+        }
+
+        [TestMethod]
+        public void ToXdrWithMuxedAccount()
+        {
+            var network = new Network("Standalone Network ; February 2017");
+            var source = KeyPair.FromSecretSeed(network.NetworkId);
+            var txSource = new MuxedAccountMed25519(source, 0);
+            var account = new Account(txSource, 7);
+            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
+            var amount = "2000";
+            var asset = new AssetTypeNative();
+            var tx = new TransactionBuilder(account)
+                .SetFee(100)
+                .AddTimeBounds(new TimeBounds(0, 0))
+                .AddOperation(
+                    new PaymentOperation.Builder(destination, asset, amount).Build())
+                .AddMemo(new MemoText("Happy birthday!"))
+                .Build();
+
+            try
+            {
+                tx.ToXdr();
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual(e.Message, "TransactionEnvelope V0 expects a KeyPair source account");
+            }
+        }
+
+        [TestMethod]
+        public void ToUnsignedEnvelopeXdrWithSignatures()
+        {
+            var network = new Network("Standalone Network ; February 2017");
+            var source = KeyPair.FromSecretSeed(network.NetworkId);
+            var txSource = KeyPair.Random();
+            var account = new Account(txSource, 7);
+            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
+            var amount = "2000";
+            var asset = new AssetTypeNative();
+            var tx = new TransactionBuilder(account)
+                .SetFee(100)
+                .AddTimeBounds(new TimeBounds(0, 0))
+                .AddOperation(
+                    new PaymentOperation.Builder(destination, asset, amount).Build())
+                .AddMemo(new MemoText("Happy birthday!"))
+                .Build();
+
+            tx.Sign(KeyPair.Random());
+
+            try
+            {
+                tx.ToUnsignedEnvelopeXdr();
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual(e.Message, "Transaction must not be signed. Use ToEnvelopeXDR.");
+            }
         }
     }
 }
