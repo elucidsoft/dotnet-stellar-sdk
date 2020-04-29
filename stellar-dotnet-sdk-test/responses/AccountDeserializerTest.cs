@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using stellar_dotnet_sdk;
@@ -16,6 +17,34 @@ namespace stellar_dotnet_sdk_test.responses
             var account = JsonSingleton.GetInstance<AccountResponse>(json);
 
             AssertTestData(account);
+        }
+
+        public class UnkownAccountId : IAccountId
+        {
+            public stellar_dotnet_sdk.xdr.MuxedAccount MuxedAccount => throw new NotImplementedException();
+
+            public byte[] PublicKey => throw new NotImplementedException();
+
+            public string Address => throw new NotImplementedException();
+
+            public string AccountId => throw new NotImplementedException();
+
+            public bool IsMuxedAccount => throw new NotImplementedException();
+        }
+
+        [TestMethod]
+        public void TestMuxedAccountException()
+        {
+            var account = new Account(new UnkownAccountId(), 128);
+
+            try
+            {
+                var keypair = account.KeyPair;
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual(e.Message, "Invalid Account MuxedAccount type");
+            }
         }
 
         [TestMethod]
@@ -47,11 +76,11 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(account.Balances[0].AssetType, "credit_alphanum4");
             Assert.AreEqual(account.Balances[0].AssetCode, "ABC");
             Assert.AreEqual(account.Balances[0].AssetIssuer, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
-            var asset = (AssetTypeCreditAlphaNum) account.Balances[0].Asset;
+            var asset = (AssetTypeCreditAlphaNum)account.Balances[0].Asset;
             Assert.IsInstanceOfType(asset, typeof(AssetTypeCreditAlphaNum));
             Assert.AreEqual(asset.Code, "ABC");
             Assert.AreEqual(asset.Issuer, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
-            
+
             Assert.AreEqual(account.Balances[0].BalanceString, "1001.0000000");
             Assert.AreEqual(account.Balances[0].Limit, "12000.4775807");
             Assert.AreEqual(account.Balances[0].BuyingLiabilities, "100.1234567");
