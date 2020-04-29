@@ -73,5 +73,7 @@ namespace stellar_dotnet_sdk
         /// Get the MuxedAccount account id, starting with M.
         /// </summary>
         public string AccountId => Address;
+
+        public bool IsMuxedAccount => true;
     }
 }

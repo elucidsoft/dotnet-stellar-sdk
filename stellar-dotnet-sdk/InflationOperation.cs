@@ -5,7 +5,7 @@ namespace stellar_dotnet_sdk
 {
     /// <summary>
     /// Use <see cref="Builder"/> to create a new InflationOperation.
-    /// 
+    ///
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#inflation">Inflation</see>
     /// </summary>
     public class InflationOperation : Operation
@@ -22,14 +22,14 @@ namespace stellar_dotnet_sdk
 
         public class Builder
         {
-            private KeyPair mSourceAccount;
+            private IAccountId mSourceAccount;
 
             /// <summary>
             ///     Sets the source account for this operation.
             /// </summary>
             /// <param name="sourceAccount">The operation's source account.</param>
             /// <returns>Builder object so you can chain methods.</returns>
-            public Builder SetSourceAccount(KeyPair sourceAccount)
+            public Builder SetSourceAccount(IAccountId sourceAccount)
             {
                 mSourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
                 return this;

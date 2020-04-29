@@ -109,7 +109,7 @@ namespace stellar_dotnet_sdk
             /// <param name="destAsset"> The asset the destination account receives.</param>
             /// <param name="destAmount"> The amount of destination asset the destination account receives.</param>
             /// <exception cref="ArithmeticException"> When sendMax or destAmount has more than 7 decimal places.</exception>
-            public Builder(Asset sendAsset, string sendMax, KeyPair destination, Asset destAsset, string destAmount)
+            public Builder(Asset sendAsset, string sendMax, IAccountId destination, Asset destAsset, string destAmount)
             {
                 _SendAsset = sendAsset ?? throw new ArgumentNullException(nameof(sendAsset), "sendAsset cannot be null");
                 _SendMax = sendMax ?? throw new ArgumentNullException(nameof(sendMax), "sendMax cannot be null");
@@ -143,7 +143,7 @@ namespace stellar_dotnet_sdk
             /// </summary>
             /// <param name="sourceAccount"> The operation's source account.</param>
             /// <returns>Builder object so you can chain methods.</returns>
-            public Builder SetSourceAccount(KeyPair sourceAccount)
+            public Builder SetSourceAccount(IAccountId sourceAccount)
             {
                 _SourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
                 return this;
