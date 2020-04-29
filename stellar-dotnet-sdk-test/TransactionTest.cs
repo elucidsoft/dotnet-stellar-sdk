@@ -447,7 +447,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
-        public void SignatureBaseNoNetwork()
+        public void TestSignatureBaseNoNetwork()
         {
             var network = new Network("Standalone Network ; February 2017");
             var source = KeyPair.FromSecretSeed(network.NetworkId);
@@ -475,7 +475,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
-        public void ToXdrWithMuxedAccount()
+        public void TestToXdrWithMuxedAccount()
         {
             var network = new Network("Standalone Network ; February 2017");
             var source = KeyPair.FromSecretSeed(network.NetworkId);
@@ -503,7 +503,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
-        public void ToUnsignedEnvelopeXdrWithSignatures()
+        public void TestToUnsignedEnvelopeXdrWithSignatures()
         {
             var network = new Network("Standalone Network ; February 2017");
             var source = KeyPair.FromSecretSeed(network.NetworkId);

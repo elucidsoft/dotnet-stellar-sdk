@@ -34,7 +34,7 @@ namespace stellar_dotnet_sdk_test
         {
             Network.UseTestNetwork();
 
-            _fakeHttpMessageHandler = new Mock<FakeHttpMessageHandler> {CallBase = true};
+            _fakeHttpMessageHandler = new Mock<FakeHttpMessageHandler> { CallBase = true };
             _httpClient = new HttpClient(_fakeHttpMessageHandler.Object);
             _server = new Server("https://horizon.stellar.org", _httpClient);
         }
@@ -82,7 +82,7 @@ namespace stellar_dotnet_sdk_test
             When().Returns(ResponseMessage(HttpOk, json));
 
             var response = await _server.SubmitTransaction(
-                BuildTransaction(), new SubmitTransactionOptions {SkipMemoRequiredCheck = true});
+                BuildTransaction(), new SubmitTransactionOptions { SkipMemoRequiredCheck = true });
             Assert.IsTrue(response.IsSuccess());
             Assert.AreEqual(response.Ledger, (uint)826150);
             Assert.AreEqual(response.Hash, "2634d2cf5adcbd3487d1df042166eef53830115844fdde1588828667bf93ff42");
@@ -92,7 +92,7 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public async Task TestDefaultClientHeaders()
         {
-            var messageHandler = new Mock<FakeHttpMessageHandler> {CallBase = true};
+            var messageHandler = new Mock<FakeHttpMessageHandler> { CallBase = true };
             var httpClient = Server.CreateHttpClient(messageHandler.Object);
             var server = new Server("https://horizon.stellar.org", httpClient);
 
@@ -110,7 +110,7 @@ namespace stellar_dotnet_sdk_test
                 .Returns(ResponseMessage(HttpOk, json));
 
             var response = await server.SubmitTransaction(
-                BuildTransaction(), new SubmitTransactionOptions {SkipMemoRequiredCheck = true});
+                BuildTransaction(), new SubmitTransactionOptions { SkipMemoRequiredCheck = true });
 
             Assert.IsTrue(response.IsSuccess());
             Assert.AreEqual("stellar-dotnet-sdk", clientName);
@@ -127,7 +127,7 @@ namespace stellar_dotnet_sdk_test
             When().Returns(ResponseMessage(HttpBadRequest, json));
 
             var response = await _server.SubmitTransaction(
-                BuildTransaction(), new SubmitTransactionOptions {SkipMemoRequiredCheck = true});
+                BuildTransaction(), new SubmitTransactionOptions { SkipMemoRequiredCheck = true });
             Assert.IsFalse(response.IsSuccess());
             Assert.IsNull(response.Ledger);
             Assert.IsNull(response.Hash);
@@ -140,7 +140,35 @@ namespace stellar_dotnet_sdk_test
             var result = response.Result;
             Assert.IsInstanceOfType(result, typeof(TransactionResultFailed));
             Assert.AreEqual("0.00001", result.FeeCharged);
-            Assert.AreEqual(1, ((TransactionResultFailed) result).Results.Count);
+            Assert.AreEqual(1, ((TransactionResultFailed)result).Results.Count);
+        }
+
+        [TestMethod]
+        public async Task TestNoSkipMemoRequiredCheck()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "serverSuccess.json"));
+            When().Returns(ResponseMessage(HttpOk, json));
+
+            var response = await _server.SubmitTransaction(
+                BuildTransaction(), new SubmitTransactionOptions { SkipMemoRequiredCheck = false });
+            Assert.IsTrue(response.IsSuccess());
+            Assert.AreEqual(response.Ledger, (uint)826150);
+            Assert.AreEqual(response.Hash, "2634d2cf5adcbd3487d1df042166eef53830115844fdde1588828667bf93ff42");
+            Assert.IsNull(response.SubmitTransactionResponseExtras);
+        }
+
+        [TestMethod]
+        public async Task TestSubmitTransactionEnvelopeBase64()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "serverSuccess.json"));
+            When().Returns(ResponseMessage(HttpOk, json));
+
+            var response = await _server.SubmitTransaction(
+                BuildTransaction().ToEnvelopeXdrBase64(), new SubmitTransactionOptions { SkipMemoRequiredCheck = false });
+            Assert.IsTrue(response.IsSuccess());
+            Assert.AreEqual(response.Ledger, (uint)826150);
+            Assert.AreEqual(response.Hash, "2634d2cf5adcbd3487d1df042166eef53830115844fdde1588828667bf93ff42");
+            Assert.IsNull(response.SubmitTransactionResponseExtras);
         }
 
         public class FakeHttpMessageHandler : HttpMessageHandler
