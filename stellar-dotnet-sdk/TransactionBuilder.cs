@@ -31,8 +31,12 @@ namespace stellar_dotnet_sdk
 
         public static FeeBumpTransaction BuildFeeBumpTransaction(IAccountId feeSource, Transaction inner, long fee)
         {
-            var innerOps = inner.Operations.Length;
-            var innerBaseFeeRate = inner.Fee / innerOps;
+            long innerOps = inner.Operations.Length;
+            long innerBaseFeeRate = inner.Fee;
+            if (innerOps > 0)
+            {
+                innerBaseFeeRate = innerBaseFeeRate / innerOps;
+            }
 
             if (fee < innerBaseFeeRate)
             {
@@ -44,7 +48,7 @@ namespace stellar_dotnet_sdk
                 throw new Exception($"Invalid fee, it should be at least {BaseFee} stroops");
             }
 
-            var feeBumpFee = fee * (innerOps + 1);
+            var feeBumpFee = checked(fee * (innerOps + 1));
 
             return new FeeBumpTransaction(feeSource, inner, feeBumpFee);
         }
@@ -123,10 +127,10 @@ namespace stellar_dotnet_sdk
         {
             var operations = _operations.ToArray();
 
-            var totalFee = operations.Length * _fee;
-            if (totalFee > UInt32.MaxValue) throw new InvalidOperationException("Transaction fee overflow");
-
-            var transaction = new Transaction(_sourceAccount.MuxedAccount, (uint) totalFee,
+            //var totalFee = operations.Length * _fee;
+            var opsCount = Convert.ToUInt32(operations.Length);
+            uint totalFee = checked(opsCount * _fee);
+            var transaction = new Transaction(_sourceAccount.MuxedAccount, totalFee,
                 _sourceAccount.IncrementedSequenceNumber, operations, _memo, _timeBounds);
             // Increment sequence number when there were no exceptions when creating a transaction
             _sourceAccount.IncrementSequenceNumber();

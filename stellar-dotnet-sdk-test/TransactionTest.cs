@@ -531,5 +531,28 @@ namespace stellar_dotnet_sdk_test
                 Assert.AreEqual(e.Message, "Transaction must not be signed. Use ToEnvelopeXDR.");
             }
         }
+
+        [TestMethod]
+        public void TestTransactionFeeOverflow()
+        {
+            var source = KeyPair.Random();
+            var txSource = new MuxedAccountMed25519(source, 0);
+            var account = new Account(txSource, 7);
+            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
+            var amount = "2000";
+            var asset = new AssetTypeNative();
+            Assert.ThrowsException<OverflowException>(() =>
+            {
+                var tx = new TransactionBuilder(account)
+                    .SetFee(UInt32.MaxValue)
+                    .AddTimeBounds(new TimeBounds(0, 0))
+                    .AddOperation(
+                        new PaymentOperation.Builder(destination, asset, amount).Build())
+                    .AddOperation(
+                        new PaymentOperation.Builder(destination, asset, amount).Build())
+                    .Build();
+
+            });
+        }
     }
 }
