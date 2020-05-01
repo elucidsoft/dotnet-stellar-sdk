@@ -28,8 +28,34 @@ namespace stellar_dotnet_sdk
             string anchorName, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
             Network network = null)
         {
-            if (serverKeypair is null) throw new ArgumentNullException(nameof(serverKeypair));
             if (string.IsNullOrEmpty(clientAccountId)) throw new ArgumentNullException(nameof(clientAccountId));
+
+            if (StrKey.DecodeVersionByte(clientAccountId) != StrKey.VersionByte.ACCOUNT_ID)
+                throw new InvalidWebAuthenticationException($"{nameof(clientAccountId)} is not a valid account id");
+            var clientAccountKeypair = KeyPair.FromAccountId(clientAccountId);
+            return BuildChallengeTransaction(serverKeypair, clientAccountKeypair, anchorName, nonce, now, timeout,
+                network);
+        }
+
+        /// <summary>
+        /// Build a challenge transaction you can use for Stellar Web Authentication.
+        /// </summary>
+        /// <param name="serverKeypair">Server signing keypair</param>
+        /// <param name="clientAccountId">The client account id that needs authentication</param>
+        /// <param name="anchorName">The anchor name</param>
+        /// <param name="nonce">48 bytes long cryptographic-quality random data</param>
+        /// <param name="now">The datetime from which the transaction is valid</param>
+        /// <param name="timeout">The transaction lifespan</param>
+        /// <param name="network">The network the transaction will be submitted to</param>
+        /// <returns>The challenge transaction</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, KeyPair clientAccountId,
+            string anchorName, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
+            Network network = null)
+        {
+            if (serverKeypair is null) throw new ArgumentNullException(nameof(serverKeypair));
+            if (clientAccountId is null) throw new ArgumentNullException(nameof(clientAccountId));
             if (string.IsNullOrEmpty(anchorName)) throw new ArgumentNullException(nameof(anchorName));
 
             if (nonce is null)
@@ -48,10 +74,9 @@ namespace stellar_dotnet_sdk
             var validFrom = now ?? DateTimeOffset.Now;
             var validFor = timeout ?? TimeSpan.FromMinutes(5.0);
 
-            var sourceAccountKeypair = KeyPair.FromAccountId(clientAccountId);
 
             // Sequence number is incremented by 1 before building the transaction, set it to -1 to have 0
-            var serverAccount = new Account(serverKeypair.AccountId, -1);
+            var serverAccount = new Account(serverKeypair, -1);
 
             var manageDataKey = $"{anchorName} auth";
             var manageDataValue = Encoding.UTF8.GetBytes(Convert.ToBase64String(nonce));
@@ -59,7 +84,7 @@ namespace stellar_dotnet_sdk
             var timeBounds = new TimeBounds(validFrom, validFor);
 
             var operation = new ManageDataOperation.Builder(manageDataKey, manageDataValue)
-                .SetSourceAccount(sourceAccountKeypair)
+                .SetSourceAccount(clientAccountId)
                 .Build();
 
             var tx = new TransactionBuilder(serverAccount)
@@ -98,6 +123,12 @@ namespace stellar_dotnet_sdk
             if (transaction.SequenceNumber != 0)
                 throw new InvalidWebAuthenticationException("Challenge transaction sequence number must be 0");
 
+            if (!(transaction is Transaction))
+                throw new InvalidWebAuthenticationException("Challenge transaction cannot be a fee bump transaction");
+
+            if (transaction.SourceAccount.IsMuxedAccount)
+                throw new InvalidWebAuthenticationException("Challenge transaction source cannot be a muxed account");
+
             if (transaction.SourceAccount.AccountId != serverAccountId)
                 throw new InvalidWebAuthenticationException("Challenge transaction source must be serverAccountId");
 
@@ -113,7 +144,12 @@ namespace stellar_dotnet_sdk
             if (operation.SourceAccount is null)
                 throw new InvalidWebAuthenticationException("Challenge transaction operation must have source account");
 
-            var clientAccountId = operation.SourceAccount.Address;
+            var clientAccountKeypair = operation.SourceAccount;
+
+            if (clientAccountKeypair.IsMuxedAccount)
+                throw new InvalidWebAuthenticationException("Challenge transaction operation source account cannot be a muxed account");
+
+            var clientAccountId = clientAccountKeypair.Address;
 
             var stringValue = Encoding.UTF8.GetString(operation.Value);
             if (stringValue.Length != 64)

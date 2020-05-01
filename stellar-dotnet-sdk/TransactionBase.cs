@@ -57,8 +57,8 @@ namespace stellar_dotnet_sdk
         /// <summary>
         /// Adds a new signature ed25519PublicKey to this transaction.
         /// </summary>
-        /// <param name="signer"> signer <see cref="KeyPair"/> object representing a signer</param>
-        public void Sign(KeyPair signer)
+        /// <param name="signer"> signer <see cref="IAccountId"/> object representing a signer</param>
+        public void Sign(IAccountId signer)
         {
             Sign(signer, Network.Current);
         }
@@ -66,15 +66,15 @@ namespace stellar_dotnet_sdk
         /// <summary>
         /// Adds a new signature ed25519PublicKey to this transaction.
         /// </summary>
-        /// <param name="signer"> signer <see cref="KeyPair"/> object representing a signer</param>
+        /// <param name="signer"> signer <see cref="IAccountId"/> object representing a signer</param>
         /// <param name="network">The network <see cref="Network"/> the transaction will be sent to.</param>
-        public void Sign(KeyPair signer, Network network)
+        public void Sign(IAccountId signer, Network network)
         {
             if (signer == null)
                 throw new ArgumentNullException(nameof(signer), "signer cannot be null");
 
             var txHash = Hash(network);
-            Signatures.Add(signer.SignDecorated(txHash));
+            Signatures.Add(signer.SigningKey.SignDecorated(txHash));
         }
 
         /// <summary>

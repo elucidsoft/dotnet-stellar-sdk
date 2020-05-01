@@ -30,6 +30,8 @@ namespace stellar_dotnet_sdk_test.responses
             public string AccountId => throw new NotImplementedException();
 
             public bool IsMuxedAccount => throw new NotImplementedException();
+
+            public KeyPair SigningKey => throw new NotImplementedException();
         }
 
         [TestMethod]

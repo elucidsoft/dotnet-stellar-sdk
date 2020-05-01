@@ -74,6 +74,11 @@ namespace stellar_dotnet_sdk
         /// </summary>
         public string AccountId => Address;
 
+        /// <summary>
+        /// Return the signing key for the muxed account.
+        /// </summary>
+        public KeyPair SigningKey => Key;
+
         public bool IsMuxedAccount => true;
     }
 }

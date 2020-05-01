@@ -70,6 +70,15 @@ namespace stellar_dotnet_sdk
             return DecodeCheck(VersionByte.SEED, data);
         }
 
+        public static VersionByte DecodeVersionByte(string encoded)
+        {
+            var decoded = CheckedBase32Decode(encoded);
+            var versionByte = decoded[0];
+            if (!Enum.IsDefined(typeof(VersionByte), versionByte))
+                throw new FormatException("Version byte is invalid");
+            return (VersionByte) versionByte;
+        }
+
         public static string EncodeCheck(VersionByte versionByte, byte[] data)
         {
             var bytes = new List<byte>
@@ -85,14 +94,7 @@ namespace stellar_dotnet_sdk
 
         public static byte[] DecodeCheck(VersionByte versionByte, string encoded)
         {
-            if (encoded.Length == 0)
-                throw new ArgumentException("Encoded string is empty");
-
-            foreach (var t in encoded)
-                if (t > 127)
-                    throw new ArgumentException("Illegal characters in encoded string.");
-
-            var decoded = Base32Encoding.ToBytes(encoded);
+            var decoded = CheckedBase32Decode(encoded);
             var decodedVersionByte = decoded[0];
 
             var payload = new byte[decoded.Length - 2];
@@ -179,6 +181,18 @@ namespace stellar_dotnet_sdk
         public static bool IsValidEd25519SecretSeed(string seed)
         {
             return IsValid(VersionByte.SEED, seed);
+        }
+
+        private static byte[] CheckedBase32Decode(string encoded)
+        {
+            if (encoded.Length == 0)
+                throw new ArgumentException("Encoded string is empty");
+
+            foreach (var t in encoded)
+                if (t > 127)
+                    throw new ArgumentException("Illegal characters in encoded string.");
+
+            return Base32Encoding.ToBytes(encoded);
         }
     }
 }
