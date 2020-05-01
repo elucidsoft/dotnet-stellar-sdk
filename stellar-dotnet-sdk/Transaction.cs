@@ -8,6 +8,7 @@ namespace stellar_dotnet_sdk
 {
     public class Transaction : TransactionBase
     {
+        [Obsolete("You should be using TransactionBuilder directly, this constructor will be hidden in future releases.")]
         public Transaction(IAccountId sourceAccount, uint fee, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)
         {
             SourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
