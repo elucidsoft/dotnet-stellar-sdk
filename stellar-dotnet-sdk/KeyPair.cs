@@ -145,19 +145,23 @@ namespace stellar_dotnet_sdk
         }
 
         /// <summary>
+        /// The signing key.
+        /// </summary>
+        public KeyPair SigningKey => this;
+
+        /// <summary>
         /// XDR MuxedAccount
         /// </summary>
         public xdr.MuxedAccount MuxedAccount
         {
             get
             {
+                Uint256 uint256 = new Uint256(PublicKey);
                 var muxedAccount = new xdr.MuxedAccount
                 {
-                    Discriminant = new CryptoKeyType {InnerValue = CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_ED25519}
+                    Discriminant = new CryptoKeyType {InnerValue = CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_ED25519},
+                    Ed25519 = uint256
                 };
-
-                Uint256 uint256 = new Uint256(PublicKey);
-                muxedAccount.Ed25519 = uint256;
                 return muxedAccount;
             }
         }

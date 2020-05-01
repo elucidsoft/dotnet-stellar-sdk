@@ -48,11 +48,15 @@ namespace stellar_dotnet_sdk
             var fee = new Int64 {InnerValue = Fee};
             var feeSource = FeeSource.MuxedAccount;
 
-            var inner = new xdr.FeeBumpTransaction.FeeBumpTransactionInnerTx();
-            inner.Discriminant = new EnvelopeType {InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX};
-            inner.V1 = new TransactionV1Envelope();
-            inner.V1.Tx = InnerTransaction.ToXdrV1();
-            inner.V1.Signatures = InnerTransaction.Signatures.ToArray();
+            var inner = new xdr.FeeBumpTransaction.FeeBumpTransactionInnerTx
+            {
+                Discriminant = new EnvelopeType {InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX},
+                V1 = new TransactionV1Envelope
+                {
+                    Tx = InnerTransaction.ToXdrV1(),
+                    Signatures = InnerTransaction.Signatures.ToArray()
+                }
+            };
 
             var ext = new xdr.FeeBumpTransaction.FeeBumpTransactionExt {Discriminant = 0};
 

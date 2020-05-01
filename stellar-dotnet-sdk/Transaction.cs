@@ -44,22 +44,22 @@ namespace stellar_dotnet_sdk
             if (network == null)
                 throw new NoNetworkSelectedException();
 
-            var writer = new XdrDataOutputStream();
-
             // Hashed NetworkID
-            writer.Write(network.NetworkId);
+            var networkHash = new Hash {InnerValue = network.NetworkId};
+            var taggedTransaction = new TransactionSignaturePayload.TransactionSignaturePayloadTaggedTransaction
+            {
+                Discriminant = EnvelopeType.Create(EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX),
+                Tx = ToXdrV1(),
+            };
 
-            // Envelope Type - 4 bytes
-            EnvelopeType.Encode(writer, EnvelopeType.Create(EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX));
+            var txSignature = new TransactionSignaturePayload
+            {
+                NetworkId = networkHash,
+                TaggedTransaction = taggedTransaction
+            };
 
-            // Transaction XDR bytes
-            var txWriter = new XdrDataOutputStream();
-            xdr.PublicKeyType.Encode(txWriter,
-                new PublicKeyType {InnerValue = PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519});
-            xdr.TransactionV0.Encode(txWriter, ToXdrV0());
-
-            writer.Write(txWriter.ToArray());
-
+            var writer = new XdrDataOutputStream();
+            TransactionSignaturePayload.Encode(writer, txSignature);
             return writer.ToArray();
         }
 
