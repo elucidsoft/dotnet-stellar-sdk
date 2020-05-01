@@ -150,7 +150,7 @@ namespace stellar_dotnet_sdk_test
                 Util.BytesToHex(innerTx.Hash(network)).ToLowerInvariant());
 
             var feeSource = KeyPair.FromAccountId("GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3");
-            var feeBumpTx = TransactionBuilder.BuildFeeBumpTransaction(feeSource, InnerTransaction, 200);
+            var feeBumpTx = TransactionBuilder.BuildFeeBumpTransaction(feeSource, innerTx, 200);
 
             Assert.AreEqual(
                 "382b1588ee8b315177a34ae96ebcaeb81c0ad3e04fee7c6b5a583b826517e1e4",
