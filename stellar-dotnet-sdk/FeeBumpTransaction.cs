@@ -6,7 +6,7 @@ namespace stellar_dotnet_sdk
 {
     public class FeeBumpTransaction : TransactionBase
     {
-        public FeeBumpTransaction(IAccountId feeSource, Transaction innerTx, long fee)
+        internal FeeBumpTransaction(IAccountId feeSource, Transaction innerTx, long fee)
         {
             FeeSource = feeSource;
             InnerTransaction = innerTx;
