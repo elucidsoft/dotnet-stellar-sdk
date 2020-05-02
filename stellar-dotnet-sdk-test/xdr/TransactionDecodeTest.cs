@@ -25,7 +25,7 @@ namespace stellar_dotnet_sdk_test.xdr
             var unused = new MemoryStream(bytes);
             var transactionEnvelope = TransactionEnvelope.Decode(new XdrDataInputStream(bytes));
 
-            var uint64 = transactionEnvelope.Tx.SeqNum.InnerValue.InnerValue;
+            var uint64 = transactionEnvelope.V0.Tx.SeqNum.InnerValue.InnerValue;
             Assert.AreEqual(2373025265623291L, uint64);
         }
 
@@ -74,10 +74,10 @@ namespace stellar_dotnet_sdk_test.xdr
 
             var transactionEnvelope = TransactionEnvelope.Decode(new XdrDataInputStream(bytes));
 
-            Assert.AreEqual(1, transactionEnvelope.Tx.Operations.Length);
+            Assert.AreEqual(1, transactionEnvelope.V0.Tx.Operations.Length);
 
             var expected = Encoding.UTF8.GetBytes(new[] {'G', 'O', 'L', 'D'});
-            var actual = transactionEnvelope.Tx.Operations[0].Body.PaymentOp.Asset.AlphaNum4.AssetCode;
+            var actual = transactionEnvelope.V0.Tx.Operations[0].Body.PaymentOp.Asset.AlphaNum4.AssetCode;
 
             Assert.IsTrue(expected.SequenceEqual(actual.InnerValue));
         }

@@ -12,7 +12,7 @@ namespace stellar_dotnet_sdk
     /// <see cref="KeyPair"/> represents public (and secret) keys of the account.
     /// Currently <see cref="KeyPair"/> only supports ed25519 but in a future this class can be abstraction layer for other public-key signature systems.
     /// </summary>
-    public class KeyPair
+    public class KeyPair : IAccountId
     {
         private KeyPair(Key secretKey, byte[] seed)
         {
@@ -143,6 +143,30 @@ namespace stellar_dotnet_sdk
                 return signerKey;
             }
         }
+
+        /// <summary>
+        /// The signing key.
+        /// </summary>
+        public KeyPair SigningKey => this;
+
+        /// <summary>
+        /// XDR MuxedAccount
+        /// </summary>
+        public xdr.MuxedAccount MuxedAccount
+        {
+            get
+            {
+                Uint256 uint256 = new Uint256(PublicKey);
+                var muxedAccount = new xdr.MuxedAccount
+                {
+                    Discriminant = new CryptoKeyType {InnerValue = CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_ED25519},
+                    Ed25519 = uint256
+                };
+                return muxedAccount;
+            }
+        }
+
+        public bool IsMuxedAccount => false;
 
         /// <summary>
         /// Returns a KeyPair from a Public Key

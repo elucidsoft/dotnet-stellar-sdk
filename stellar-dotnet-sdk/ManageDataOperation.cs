@@ -7,7 +7,7 @@ namespace stellar_dotnet_sdk
     /// <summary>
     /// Represents a <see cref="ManageDataOp"/>.
     /// Use <see cref="Builder"/> to create a new ManageDataOperation.
-    /// 
+    ///
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#manage-data">Manage Data</see>
     /// </summary>
     public class ManageDataOperation : Operation
@@ -48,7 +48,7 @@ namespace stellar_dotnet_sdk
             private readonly string name;
             private readonly byte[] value;
 
-            private KeyPair mSourceAccount;
+            private IAccountId mSourceAccount;
 
             /// <summary>
             ///     Construct a new ManageOffer builder from a ManageDataOp XDR.
@@ -81,7 +81,7 @@ namespace stellar_dotnet_sdk
             /// </summary>
             /// <param name="sourceAccount">The operation's source account.</param>
             /// <returns>Builder object so you can chain methods.</returns>
-            public Builder SetSourceAccount(KeyPair sourceAccount)
+            public Builder SetSourceAccount(IAccountId sourceAccount)
             {
                 mSourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
                 return this;

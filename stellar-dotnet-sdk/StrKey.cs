@@ -9,6 +9,7 @@ namespace stellar_dotnet_sdk
         public enum VersionByte : byte
         {
             ACCOUNT_ID = 6 << 3,
+            MUXED_ACCOUNT = 12 << 3,
             SEED = 18 << 3,
             PRE_AUTH_TX = 19 << 3,
             SHA256_HASH = 23 << 3
@@ -17,6 +18,21 @@ namespace stellar_dotnet_sdk
         public static string EncodeStellarAccountId(byte[] data)
         {
             return EncodeCheck(VersionByte.ACCOUNT_ID, data);
+        }
+
+        public static string EncodeStellarMuxedAccount(byte[] data, ulong id)
+        {
+            // 8 bytes for 64 bit id + data
+            var dataToEncode = new byte[8 + data.Length];
+            // Prepend the id in network byte order to the data
+            var idBytes = BitConverter.GetBytes(id);
+            if (BitConverter.IsLittleEndian)
+            {
+                Array.Reverse(idBytes);
+            }
+            Buffer.BlockCopy(idBytes, 0, dataToEncode, 0, 8);
+            Buffer.BlockCopy(data, 0, dataToEncode, 8, data.Length);
+            return EncodeCheck(VersionByte.MUXED_ACCOUNT, dataToEncode);
         }
 
         public static string EncodeStellarSecretSeed(byte[] data)
@@ -29,9 +45,38 @@ namespace stellar_dotnet_sdk
             return DecodeCheck(VersionByte.ACCOUNT_ID, data);
         }
 
+        public static (ulong, byte[]) DecodeStellarMuxedAccount(string data)
+        {
+            var bytes = DecodeCheck(VersionByte.MUXED_ACCOUNT, data);
+            var keyData = new byte[bytes.Length - 8];
+            ulong id;
+            Buffer.BlockCopy(bytes, 8, keyData, 0, keyData.Length);
+
+            if (BitConverter.IsLittleEndian)
+            {
+                var idBuffer = new byte[8];
+                Buffer.BlockCopy(bytes, 0, idBuffer, 0, 8);
+                Array.Reverse(idBuffer);
+                id = BitConverter.ToUInt64(idBuffer, 0);
+                return (id, keyData);
+            }
+
+            id = BitConverter.ToUInt64(bytes, 0);
+            return (id, keyData);
+        }
+
         public static byte[] DecodeStellarSecretSeed(string data)
         {
             return DecodeCheck(VersionByte.SEED, data);
+        }
+
+        public static VersionByte DecodeVersionByte(string encoded)
+        {
+            var decoded = CheckedBase32Decode(encoded);
+            var versionByte = decoded[0];
+            if (!Enum.IsDefined(typeof(VersionByte), versionByte))
+                throw new FormatException("Version byte is invalid");
+            return (VersionByte) versionByte;
         }
 
         public static string EncodeCheck(VersionByte versionByte, byte[] data)
@@ -44,16 +89,12 @@ namespace stellar_dotnet_sdk
             bytes.AddRange(data);
             var checksum = CalculateChecksum(bytes.ToArray());
             bytes.AddRange(checksum);
-            return Base32Encoding.ToString(bytes.ToArray());
+            return Base32Encoding.ToString(bytes.ToArray(), options => options.OmitPadding = true);
         }
 
         public static byte[] DecodeCheck(VersionByte versionByte, string encoded)
         {
-            for (var i = 0; i < encoded.Length; i++)
-                if (encoded[i] > 127)
-                    throw new ArgumentException("Illegal characters in encoded char array.");
-
-            var decoded = Base32Encoding.ToBytes(encoded);
+            var decoded = CheckedBase32Decode(encoded);
             var decodedVersionByte = decoded[0];
 
             var payload = new byte[decoded.Length - 2];
@@ -109,25 +150,22 @@ namespace stellar_dotnet_sdk
 
         public static bool IsValid(VersionByte versionByte, string encoded)
         {
-            if (encoded?.Length != 56)
-            {
-                return false;
-            }
-
             try
             {
                 var decoded = DecodeCheck(versionByte, encoded);
-                if (decoded.Length != 32)
+                // Muxed accounts are encoded as a 64 bit ulong wih 32 bytes of data
+                if (versionByte == VersionByte.MUXED_ACCOUNT)
                 {
-                    return false;
+                    return decoded.Length == 40;
                 }
+
+                // All other types have 32 bytes of data
+                return decoded.Length == 32;
             }
             catch
             {
                 return false;
             }
-
-            return true;
         }
 
         public static bool IsValidEd25519PublicKey(string publicKey)
@@ -135,9 +173,26 @@ namespace stellar_dotnet_sdk
             return IsValid(VersionByte.ACCOUNT_ID, publicKey);
         }
 
+        public static bool IsValidMuxedAccount(string publicKey)
+        {
+            return IsValid(VersionByte.MUXED_ACCOUNT, publicKey);
+        }
+
         public static bool IsValidEd25519SecretSeed(string seed)
         {
             return IsValid(VersionByte.SEED, seed);
+        }
+
+        private static byte[] CheckedBase32Decode(string encoded)
+        {
+            if (encoded.Length == 0)
+                throw new ArgumentException("Encoded string is empty");
+
+            foreach (var t in encoded)
+                if (t > 127)
+                    throw new ArgumentException("Illegal characters in encoded string.");
+
+            return Base32Encoding.ToBytes(encoded);
         }
     }
 }

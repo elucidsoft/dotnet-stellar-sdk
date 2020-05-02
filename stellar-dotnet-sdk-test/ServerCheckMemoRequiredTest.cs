@@ -33,7 +33,7 @@ namespace stellar_dotnet_sdk_test
         {
             Network.UseTestNetwork();
 
-            _fakeHttpMessageHandler = new Mock<ServerTest.FakeHttpMessageHandler> {CallBase = true};
+            _fakeHttpMessageHandler = new Mock<ServerTest.FakeHttpMessageHandler> { CallBase = true };
             _httpClient = new HttpClient(_fakeHttpMessageHandler.Object);
             _server = new Server("https://horizon.stellar.org", _httpClient);
         }
@@ -105,7 +105,7 @@ namespace stellar_dotnet_sdk_test
                     .Builder(KeyPair.FromAccountId(accountId), new AssetTypeNative(), "100.500")
                 .Build();
 
-            var tx = BuildTransaction(accountId, new Operation[] {payment});
+            var tx = BuildTransaction(accountId, new Operation[] { payment });
             await _server.CheckMemoRequired(tx);
         }
 
@@ -144,7 +144,7 @@ namespace stellar_dotnet_sdk_test
                 .Returns(ServerTest.ResponseMessage(HttpStatusCode.OK, BuildAccountResponse(destinations[1])))
                 .Returns(ServerTest.ResponseMessage(HttpStatusCode.OK, BuildAccountResponse(destinations[2])));
 
-            var tx = BuildTransaction(accountId, new Operation[] { }, Memo.Text("foobar"));
+            var tx = BuildTransaction(accountId, operations, Memo.None());
             await _server.CheckMemoRequired(tx);
         }
 
@@ -153,6 +153,32 @@ namespace stellar_dotnet_sdk_test
         {
             var accountId = "GAYHAAKPAQLMGIJYMIWPDWCGUCQ5LAWY4Q7Q3IKSP57O7GUPD3NEOSEA";
             var tx = BuildTransaction(accountId, new Operation[] { }, Memo.Text("foobar"));
+            await _server.CheckMemoRequired(tx);
+        }
+
+        [TestMethod]
+        public async Task TestCheckFeeBumpTransaction()
+        {
+            var accountId = "GAYHAAKPAQLMGIJYMIWPDWCGUCQ5LAWY4Q7Q3IKSP57O7GUPD3NEOSEA";
+            var innerTx = BuildTransaction(accountId, new Operation[] { }, Memo.Text("foobar"));
+            var feeSource = KeyPair.FromAccountId("GD7HCWFO77E76G6BKJLRHRFRLE6I7BMPJQZQKGNYTT3SPE6BA4DHJAQY");
+            var tx = TransactionBuilder.BuildFeeBumpTransaction(feeSource, innerTx, 200);
+            await _server.CheckMemoRequired(tx);
+        }
+
+        [TestMethod]
+        public async Task TestSkipCheckIfDestinationIsMuxedAccount()
+        {
+            var accountId = "GAYHAAKPAQLMGIJYMIWPDWCGUCQ5LAWY4Q7Q3IKSP57O7GUPD3NEOSEA";
+
+            var muxed = MuxedAccountMed25519.FromMuxedAccountId(
+                "MAAAAAAAAAAAJURAAB2X52XFQP6FBXLGT6LWOOWMEXWHEWBDVRZ7V5WH34Y22MPFBHUHY");
+
+            var payment = new PaymentOperation
+                    .Builder(muxed, new AssetTypeNative(), "100.500")
+                .Build();
+
+            var tx = BuildTransaction(accountId, new Operation[] { payment }, Memo.None(), skipDefaultOp: true);
             await _server.CheckMemoRequired(tx);
         }
 
@@ -184,16 +210,18 @@ namespace stellar_dotnet_sdk_test
             return BuildTransaction(destination, new Operation[] { });
         }
 
-        private Transaction BuildTransaction(string destinationAccountId, Operation[] operations, Memo memo = null)
+        private Transaction BuildTransaction(string destinationAccountId, Operation[] operations, Memo memo = null, bool skipDefaultOp = false)
         {
             var keypair = KeyPair.Random();
             var destination = KeyPair.FromAccountId(destinationAccountId);
             var account = new AccountResponse(destinationAccountId, 56199647068161);
-            var builder = new Transaction
-                    .Builder(account)
-                .AddOperation(
+            var builder = new TransactionBuilder(account);
+            if (!skipDefaultOp)
+            {
+                builder.AddOperation(
                     new PaymentOperation.Builder(destination, new AssetTypeNative(), "100.50")
                         .Build());
+            }
 
             if (memo != null)
             {

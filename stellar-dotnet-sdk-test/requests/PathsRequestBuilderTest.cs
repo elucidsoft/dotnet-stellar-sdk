@@ -15,7 +15,9 @@ namespace stellar_dotnet_sdk_test.requests
         {
             using (var server = new Server("https://horizon-testnet.stellar.org"))
             {
+#pragma warning disable 0618
                 var uri = server.Paths
+#pragma warning restore 0618
                     .DestinationAccount("GB24QI3BJNKBY4YNJZ2I37HFIYK56BL2OURFML76X46RQQKDLVT7WKJF")
                     .SourceAccount("GD4KO3IOYYWIYVI236Y35K2DU6VNYRH3BPNFJSH57J5BLLCQHBIOK3IN")
                     .DestinationAmount("20.50")
@@ -46,7 +48,9 @@ namespace stellar_dotnet_sdk_test.requests
 
             using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
             {
+#pragma warning disable 0618
                 var account = await server.Paths
+#pragma warning restore 0618
                     .SourceAccount("GD4KO3IOYYWIYVI236Y35K2DU6VNYRH3BPNFJSH57J5BLLCQHBIOK3IN")
                     .DestinationAccount("GB24QI3BJNKBY4YNJZ2I37HFIYK56BL2OURFML76X46RQQKDLVT7WKJF")
                     .DestinationAmount("20")

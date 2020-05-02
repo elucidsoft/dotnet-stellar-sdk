@@ -28,6 +28,32 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        public void TestOldTransactionBuilder()
+        {
+            // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
+
+            var sequenceNumber = 2908908335136768L;
+            var account = new Account(source.AccountId, sequenceNumber);
+            // Test that we do not break the old api. So suppress the warning for now.
+#pragma warning disable 0618
+            var transaction = new Transaction.Builder(account)
+                .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                .Build();
+#pragma warning restore 0618
+            transaction.Sign(source);
+
+            Assert.AreEqual(
+                "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAEqBfIAAAAAAAAAAABtoeVYgAAAEDLki9Oi700N60Lo8gUmEFHbKvYG4QSqXiLIt9T0ru2O5BphVl/jR9tYtHAD+UeDYhgXNgwUxqTEu1WukvEyYcD",
+                transaction.ToEnvelopeXdrBase64());
+
+            Assert.AreEqual(transaction.SourceAccount.AccountId, source.AccountId);
+            Assert.AreEqual(transaction.SequenceNumber, sequenceNumber + 1);
+            Assert.AreEqual(transaction.Fee, 100U);
+        }
+
+        [TestMethod]
         public void TestBuilderSuccessTestnet()
         {
             // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
@@ -36,7 +62,7 @@ namespace stellar_dotnet_sdk_test
 
             var sequenceNumber = 2908908335136768L;
             var account = new Account(source.AccountId, sequenceNumber);
-            var transaction = new Transaction.Builder(account)
+            var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .Build();
 
@@ -61,11 +87,29 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(transaction.SequenceNumber, transaction2.SequenceNumber);
             Assert.AreEqual(transaction.Fee, transaction2.Fee);
             Assert.AreEqual(
-                ((CreateAccountOperation) transaction.Operations[0]).StartingBalance,
-                ((CreateAccountOperation) transaction2.Operations[0]).StartingBalance
+                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
             );
 
             CollectionAssert.AreEqual(transaction.Signatures, transaction2.Signatures);
+        }
+
+        [TestMethod]
+        public void TestFromXdrWithMemo()
+        {
+            var transaction = Transaction.FromEnvelopeXdr(
+                "AAAAACq1Ixcw1fchtF5aLTSw1zaYAYjb3WbBRd4jqYJKThB9AAAAZAA8tDoAAAALAAAAAAAAAAEAAAAZR29sZCBwYXltZW50IGZvciBzZXJ2aWNlcwAAAAAAAAEAAAAAAAAAAQAAAAARREGslec48mbJJygIwZoLvRtL6/gGL4ss2TOpnOUOhgAAAAFHT0xEAAAAACq1Ixcw1fchtF5aLTSw1zaYAYjb3WbBRd4jqYJKThB9AAAAADuaygAAAAAAAAAAAA==");
+            Assert.AreEqual(1, transaction.Operations.Length);
+            Assert.IsInstanceOfType(transaction.Memo, typeof(MemoText));
+            var op = transaction.Operations[0];
+            Assert.IsNull(op.SourceAccount);
+            Assert.IsInstanceOfType(op, typeof(PaymentOperation));
+            var payment = op as PaymentOperation;
+            Assert.IsNotNull(payment);
+            Assert.AreEqual("100", payment.Amount);
+            var asset = payment.Asset as AssetTypeCreditAlphaNum;
+            Assert.IsNotNull(asset);
+            Assert.AreEqual("GOLD", asset.Code);
         }
 
         [TestMethod]
@@ -76,7 +120,7 @@ namespace stellar_dotnet_sdk_test
             var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
             var account = new Account(source.AccountId, 2908908335136768);
-            var transaction = new Transaction.Builder(account)
+            var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .AddMemo(Memo.Text("Hello world!"))
                 .Build();
@@ -94,8 +138,8 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(transaction.Memo, transaction2.Memo);
             Assert.AreEqual(transaction.Fee, transaction2.Fee);
             Assert.AreEqual(
-                ((CreateAccountOperation) transaction.Operations[0]).StartingBalance,
-                ((CreateAccountOperation) transaction2.Operations[0]).StartingBalance
+                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
             );
         }
 
@@ -107,7 +151,7 @@ namespace stellar_dotnet_sdk_test
             var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
             var account = new Account(source.AccountId, 2908908335136768L);
-            var transaction = new Transaction.Builder(account)
+            var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .AddTimeBounds(new TimeBounds(42, 1337))
                 .AddMemo(Memo.Hash("abcdef"))
@@ -132,8 +176,8 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(transaction.TimeBounds, transaction2.TimeBounds);
             Assert.AreEqual(transaction.Fee, transaction2.Fee);
             Assert.AreEqual(
-                ((CreateAccountOperation) transaction.Operations[0]).StartingBalance,
-                ((CreateAccountOperation) transaction2.Operations[0]).StartingBalance
+                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
             );
         }
 
@@ -145,7 +189,7 @@ namespace stellar_dotnet_sdk_test
             var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
             var account = new Account(source.AccountId, 2908908335136768L);
-            var transaction = new Transaction.Builder(account)
+            var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .SetFee(173)
@@ -167,12 +211,12 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(transaction.TimeBounds, transaction2.TimeBounds);
             Assert.AreEqual(transaction.Fee, transaction2.Fee);
             Assert.AreEqual(
-                ((CreateAccountOperation) transaction.Operations[0]).StartingBalance,
-                ((CreateAccountOperation) transaction2.Operations[0]).StartingBalance
+                ((CreateAccountOperation)transaction.Operations[0]).StartingBalance,
+                ((CreateAccountOperation)transaction2.Operations[0]).StartingBalance
             );
             Assert.AreEqual(
-                ((CreateAccountOperation) transaction.Operations[1]).StartingBalance,
-                ((CreateAccountOperation) transaction2.Operations[1]).StartingBalance
+                ((CreateAccountOperation)transaction.Operations[1]).StartingBalance,
+                ((CreateAccountOperation)transaction2.Operations[1]).StartingBalance
             );
         }
 
@@ -186,7 +230,7 @@ namespace stellar_dotnet_sdk_test
             var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
             var account = new Account(source.AccountId, 2908908335136768L);
-            var transaction = new Transaction.Builder(account)
+            var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .Build();
 
@@ -206,7 +250,7 @@ namespace stellar_dotnet_sdk_test
             var destination = KeyPair.FromAccountId("GDJJRRMBK4IWLEPJGIE6SXD2LP7REGZODU7WDC3I2D6MR37F4XSHBKX2");
 
             var account = new Account(source.AccountId, 0L);
-            var transaction = new Transaction.Builder(account)
+            var transaction = new TransactionBuilder(account)
                 .AddOperation(new PaymentOperation.Builder(destination, new AssetTypeNative(), "2000").Build())
                 .Build();
 
@@ -235,7 +279,7 @@ namespace stellar_dotnet_sdk_test
             var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
             var account = new Account(source.AccountId, 2908908335136768L);
-            var transaction = new Transaction.Builder(account)
+            var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .Build();
 
@@ -258,7 +302,7 @@ namespace stellar_dotnet_sdk_test
             var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
             var account = new Account(source.AccountId, 2908908335136768L);
-            var transaction = new Transaction.Builder(account)
+            var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .Build();
             try
@@ -279,7 +323,7 @@ namespace stellar_dotnet_sdk_test
             var destination = KeyPair.FromAccountId("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR");
 
             var account = new Account(source.AccountId, 2908908335136768L);
-            var transaction = new Transaction.Builder(account)
+            var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .Build();
             try
@@ -301,7 +345,7 @@ namespace stellar_dotnet_sdk_test
             var account = new Account(source.AccountId, 2908908335136768L);
             try
             {
-                var unused = new Transaction.Builder(account).Build();
+                var unused = new TransactionBuilder(account).Build();
                 Assert.Fail();
             }
             catch (Exception exception)
@@ -321,7 +365,7 @@ namespace stellar_dotnet_sdk_test
             try
             {
                 var account = new Account(source.AccountId, 2908908335136768L);
-                new Transaction.Builder(account)
+                new TransactionBuilder(account)
                     .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                     .AddMemo(Memo.None())
                     .AddMemo(Memo.None());
@@ -341,7 +385,7 @@ namespace stellar_dotnet_sdk_test
 
             var sequenceNumber = 2908908335136768L;
             var account = new Account(source.AccountId, sequenceNumber);
-            var transaction = new Transaction.Builder(account)
+            var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .Build();
 
@@ -363,7 +407,7 @@ namespace stellar_dotnet_sdk_test
         public void TestFromAccountResponse()
         {
             var response = new AccountResponse("GDW6AUTBXTOC7FIKUO5BOO3OGLK4SF7ZPOBLMQHMZDI45J2Z6VXRB5NR", 123);
-            var transaction = new Transaction.Builder(response)
+            var transaction = new TransactionBuilder(response)
                 .AddOperation(new CreateAccountOperation.Builder(response.KeyPair, "2000").Build())
                 .Build();
 
@@ -377,6 +421,138 @@ namespace stellar_dotnet_sdk_test
             var tx = Transaction.FromEnvelopeXdr(
                 "AAAAAEdL24Ttos6RnqXCsn8duaV035/QZSC9RXw29IknigHpAAAD6AFb56cAAukDAAAAAQAAAAAAAAAAAAAAAF20fKAAAAACjCiEBz2CpG0AAAABAAAAAAAAAAEAAAAADq+QhtWseqhtnwRIFyZRdLMOVtIqzkujfzUQ22rwZuEAAAAAAAAAAGZeJLcAAAAAAAAAASeKAekAAABAE+X7cGoBhuJ5SDB8WH2B1ZA2RrWIXxGtx+n6wE5d/EggDTpZhRm92b33QqjPUFOfcZ+zbcM+Ny0WR2vcYHEXDA==");
             Assert.AreEqual("GBDUXW4E5WRM5EM6UXBLE7Y5XGSXJX472BSSBPKFPQ3PJCJHRIA6SH4C", tx.SourceAccount.AccountId);
+        }
+
+        [TestMethod]
+        public void TestTransactionWithMuxedAccount()
+        {
+            var network = new Network("Standalone Network ; February 2017");
+            var source = KeyPair.FromSecretSeed(network.NetworkId);
+            var txSource = new MuxedAccountMed25519(source, 0);
+            var account = new Account(txSource, 7);
+            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
+            var amount = "2000";
+            var asset = new AssetTypeNative();
+            var tx = new TransactionBuilder(account)
+                .SetFee(100)
+                .AddTimeBounds(new TimeBounds(0, 0))
+                .AddOperation(
+                    new PaymentOperation.Builder(destination, asset, amount).Build())
+                .AddMemo(new MemoText("Happy birthday!"))
+                .Build();
+            var xdr = tx.ToUnsignedEnvelopeXdrBase64(TransactionBase.TransactionXdrVersion.V1);
+            var back = TransactionBuilder.FromEnvelopeXdr(xdr) as Transaction;
+            Assert.IsNotNull(back);
+            Assert.AreEqual(txSource.Address, back.SourceAccount.Address);
+        }
+
+        [TestMethod]
+        public void TestSignatureBaseNoNetwork()
+        {
+            var network = new Network("Standalone Network ; February 2017");
+            var source = KeyPair.FromSecretSeed(network.NetworkId);
+            var txSource = new MuxedAccountMed25519(source, 0);
+            var account = new Account(txSource, 7);
+            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
+            var amount = "2000";
+            var asset = new AssetTypeNative();
+            var tx = new TransactionBuilder(account)
+                .SetFee(100)
+                .AddTimeBounds(new TimeBounds(0, 0))
+                .AddOperation(
+                    new PaymentOperation.Builder(destination, asset, amount).Build())
+                .AddMemo(new MemoText("Happy birthday!"))
+                .Build();
+
+            try
+            {
+                tx.SignatureBase(null);
+            }
+            catch (Exception e)
+            {
+                Assert.IsNotNull(e);
+            }
+        }
+
+        [TestMethod]
+        public void TestToXdrWithMuxedAccount()
+        {
+            var network = new Network("Standalone Network ; February 2017");
+            var source = KeyPair.FromSecretSeed(network.NetworkId);
+            var txSource = new MuxedAccountMed25519(source, 0);
+            var account = new Account(txSource, 7);
+            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
+            var amount = "2000";
+            var asset = new AssetTypeNative();
+            var tx = new TransactionBuilder(account)
+                .SetFee(100)
+                .AddTimeBounds(new TimeBounds(0, 0))
+                .AddOperation(
+                    new PaymentOperation.Builder(destination, asset, amount).Build())
+                .AddMemo(new MemoText("Happy birthday!"))
+                .Build();
+
+            try
+            {
+                tx.ToXdr();
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual(e.Message, "TransactionEnvelope V0 expects a KeyPair source account");
+            }
+        }
+
+        [TestMethod]
+        public void TestToUnsignedEnvelopeXdrWithSignatures()
+        {
+            var network = new Network("Standalone Network ; February 2017");
+            var source = KeyPair.FromSecretSeed(network.NetworkId);
+            var txSource = KeyPair.Random();
+            var account = new Account(txSource, 7);
+            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
+            var amount = "2000";
+            var asset = new AssetTypeNative();
+            var tx = new TransactionBuilder(account)
+                .SetFee(100)
+                .AddTimeBounds(new TimeBounds(0, 0))
+                .AddOperation(
+                    new PaymentOperation.Builder(destination, asset, amount).Build())
+                .AddMemo(new MemoText("Happy birthday!"))
+                .Build();
+
+            tx.Sign(KeyPair.Random());
+
+            try
+            {
+                tx.ToUnsignedEnvelopeXdr();
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual(e.Message, "Transaction must not be signed. Use ToEnvelopeXDR.");
+            }
+        }
+
+        [TestMethod]
+        public void TestTransactionFeeOverflow()
+        {
+            var source = KeyPair.Random();
+            var txSource = new MuxedAccountMed25519(source, 0);
+            var account = new Account(txSource, 7);
+            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
+            var amount = "2000";
+            var asset = new AssetTypeNative();
+            Assert.ThrowsException<OverflowException>(() =>
+            {
+                var tx = new TransactionBuilder(account)
+                    .SetFee(UInt32.MaxValue)
+                    .AddTimeBounds(new TimeBounds(0, 0))
+                    .AddOperation(
+                        new PaymentOperation.Builder(destination, asset, amount).Build())
+                    .AddOperation(
+                        new PaymentOperation.Builder(destination, asset, amount).Build())
+                    .Build();
+
+            });
         }
     }
 }

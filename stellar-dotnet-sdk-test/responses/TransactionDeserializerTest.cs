@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using stellar_dotnet_sdk;
@@ -62,7 +63,7 @@ namespace stellar_dotnet_sdk_test.responses
                 transaction.ResultMetaXdr);
 
             Assert.IsTrue(transaction.Memo is MemoHash);
-            var memo = (MemoHash) transaction.Memo;
+            var memo = (MemoHash)transaction.Memo;
             Assert.AreEqual("51041644e83d6ac868c849418b6392ddbe9df53f000000000000000000000000", memo.GetHexValue());
 
             Assert.AreEqual("/accounts/GCUB7JL4APK7LKJ6MZF7Q2JTLHAGNBIUA7XIXD5SQTG52GQ2DAT6XZMK",
@@ -88,6 +89,60 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.IsFalse(transaction.Successful);
             Assert.IsTrue(transaction.Memo is MemoNone);
+        }
+
+        [TestMethod]
+        public void TestDeserializeTransactionPreProtocol13()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "transactionTransaction.json"));
+            var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
+
+            var transaction2 = new TransactionResponse(transaction.Hash, transaction.Ledger, transaction.CreatedAt, transaction.SourceAccount,
+                                                       transaction.Successful, transaction.PagingToken, transaction.SourceAccountSequence, transaction.FeeCharged, transaction.OperationCount,
+                                                       transaction.EnvelopeXdr, transaction.ResultXdr, transaction.ResultMetaXdr, transaction.Memo, transaction.Links);
+
+
+            Assert.AreEqual(transaction.Hash, transaction2.Hash);
+            Assert.AreEqual(transaction.Ledger, transaction2.Ledger);
+            Assert.AreEqual(transaction.Successful, transaction.Successful);
+            Assert.AreEqual(transaction.SourceAccount, transaction2.SourceAccount);
+            Assert.AreEqual(transaction.FeeAccount, transaction2.FeeAccount);
+            Assert.AreEqual(transaction.SourceAccountSequence, transaction2.SourceAccountSequence);
+            Assert.AreEqual(transaction.FeeCharged, transaction2.FeeCharged);
+            Assert.AreEqual(transaction.OperationCount, transaction2.OperationCount);
+        }
+
+        [TestMethod]
+        public void TestDeserializeFeeBump()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "transactionFeeBump.json"));
+            var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
+
+            var transaction2 = new TransactionResponse(transaction.Hash, transaction.Ledger, transaction.CreatedAt, transaction.SourceAccount, transaction.FeeAccount,
+                                                       transaction.Successful, transaction.PagingToken, transaction.SourceAccountSequence, transaction.MaxFee, 123L, transaction.OperationCount,
+                                                       transaction.EnvelopeXdr, transaction.ResultXdr, transaction.ResultMetaXdr, transaction.Memo, transaction.Signatures, transaction.FeeBumpTx,
+                                                       transaction.InnerTx, transaction.Links);
+
+
+            Assert.AreEqual(transaction.Hash, transaction2.Hash);
+            Assert.AreEqual(transaction.Ledger, transaction2.Ledger);
+            Assert.AreEqual(transaction.Successful, transaction.Successful);
+            Assert.AreEqual(transaction.SourceAccount, transaction2.SourceAccount);
+            Assert.AreEqual(transaction.FeeAccount, transaction2.FeeAccount);
+            Assert.AreEqual(transaction.SourceAccountSequence, transaction2.SourceAccountSequence);
+            Assert.AreEqual(transaction.MaxFee, transaction2.MaxFee);
+            Assert.AreEqual(transaction.FeeCharged, transaction2.FeeCharged);
+            Assert.AreEqual(transaction.OperationCount, transaction2.OperationCount);
+            CollectionAssert.AreEqual(transaction.Signatures, new List<string>() { "Hh4e" });
+
+            TransactionResponse.FeeBumpTransaction feeBumpTransaction = transaction.FeeBumpTx;
+            Assert.AreEqual(feeBumpTransaction.Hash, "3dfef7d7226995b504f2827cc63d45ad41e9687bb0a8abcf08ba755fedca0352");
+            CollectionAssert.AreEqual(feeBumpTransaction.Signatures, new List<string>() { "Hh4e" });
+
+            TransactionResponse.InnerTransaction innerTransaction = transaction.InnerTx;
+            Assert.AreEqual(innerTransaction.Hash, "e98869bba8bce08c10b78406202127f3888c25454cd37b02600862452751f526");
+            Assert.AreEqual(innerTransaction.MaxFee, 99L);
+            CollectionAssert.AreEqual(innerTransaction.Signatures, new List<string> { "FBQU" });
         }
     }
 }

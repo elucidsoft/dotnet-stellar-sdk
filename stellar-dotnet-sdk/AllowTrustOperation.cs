@@ -1,6 +1,6 @@
-﻿using System;
+﻿using stellar_dotnet_sdk.xdr;
+using System;
 using System.Text;
-using stellar_dotnet_sdk.xdr;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
@@ -13,11 +13,12 @@ namespace stellar_dotnet_sdk
     /// </summary>
     public class AllowTrustOperation : Operation
     {
-        private AllowTrustOperation(KeyPair trustor, string assetCode, bool authorize)
+        private AllowTrustOperation(KeyPair trustor, string assetCode, bool authorize, bool authorizeToMaintainLiabilities)
         {
             Trustor = trustor ?? throw new ArgumentNullException(nameof(trustor), "trustor cannot be null");
             AssetCode = assetCode ?? throw new ArgumentNullException(nameof(assetCode), "assetCode cannot be null");
             Authorize = authorize;
+            AuthorizeToMaintainLiabilities = authorizeToMaintainLiabilities;
         }
 
         /// <summary>
@@ -34,6 +35,8 @@ namespace stellar_dotnet_sdk
         /// True to authorize the line, false to deauthorize.
         /// </summary>
         public bool Authorize { get; }
+
+        public bool AuthorizeToMaintainLiabilities { get; }
 
         public override OperationThreshold Threshold
         {
@@ -52,6 +55,7 @@ namespace stellar_dotnet_sdk
             var trustor = new sdkxdr.AccountID();
             trustor.InnerValue = Trustor.XdrPublicKey;
             op.Trustor = trustor;
+
             // asset
             var asset = new sdkxdr.AllowTrustOp.AllowTrustOpAsset();
             if (AssetCode.Length <= 4)
@@ -66,8 +70,24 @@ namespace stellar_dotnet_sdk
             }
 
             op.Asset = asset;
+
             // authorize
-            op.Authorize = Authorize;
+            var trustlineFlag = new Uint32();
+
+            if (Authorize)
+            {
+                trustlineFlag.InnerValue = (uint)TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_FLAG;
+            }
+            else if (AuthorizeToMaintainLiabilities)
+            {
+                trustlineFlag.InnerValue = (uint)TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_TO_MAINTAIN_LIABILITIES_FLAG;
+            }
+            else
+            {
+                trustlineFlag.InnerValue = 0;
+            }
+
+            op.Authorize = trustlineFlag;
 
             var body = new sdkxdr.Operation.OperationBody();
             body.Discriminant = sdkxdr.OperationType.Create(sdkxdr.OperationType.OperationTypeEnum.ALLOW_TRUST);
@@ -81,9 +101,10 @@ namespace stellar_dotnet_sdk
         /// <see cref="AllowTrustOperation" />
         public class Builder
         {
+            private readonly KeyPair _trustor;
             private readonly string _assetCode;
             private readonly bool _authorize;
-            private readonly KeyPair _trustor;
+            private readonly bool _authorizeToMaintainLiabilities;
 
             private KeyPair _sourceAccount;
 
@@ -109,7 +130,23 @@ namespace stellar_dotnet_sdk
                         throw new Exception("Unknown asset code");
                 }
 
-                _authorize = op.Authorize;
+                uint trustlineFlag = op.Authorize.InnerValue;
+
+                if (trustlineFlag == (uint)TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_FLAG)
+                {
+                    _authorize = true;
+                    _authorizeToMaintainLiabilities = false;
+                }
+                else if (trustlineFlag == (uint)TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_TO_MAINTAIN_LIABILITIES_FLAG)
+                {
+                    _authorize = false;
+                    _authorizeToMaintainLiabilities = true;
+                }
+                else
+                {
+                    _authorize = false;
+                    _authorizeToMaintainLiabilities = false;
+                }
             }
 
             /// <summary>
@@ -121,11 +158,13 @@ namespace stellar_dotnet_sdk
             ///     to allow another account to hold its USD credit, the type is USD.
             /// </param>
             /// <param name="authorize">Flag indicating whether the trustline is authorized.</param>
-            public Builder(KeyPair trustor, string assetCode, bool authorize)
+            /// <param name="authorizeToMaintainLiabilities">Flag indicating whether the trustline is authorized to maintain liabilities</param>
+            public Builder(KeyPair trustor, string assetCode, bool authorize, bool authorizeToMaintainLiabilities)
             {
                 _trustor = trustor;
                 _assetCode = assetCode;
                 _authorize = authorize;
+                _authorizeToMaintainLiabilities = authorizeToMaintainLiabilities;
             }
 
             /// <summary>
@@ -144,7 +183,7 @@ namespace stellar_dotnet_sdk
             /// </summary>
             public AllowTrustOperation Build()
             {
-                var operation = new AllowTrustOperation(_trustor, _assetCode, _authorize);
+                var operation = new AllowTrustOperation(_trustor, _assetCode, _authorize, _authorizeToMaintainLiabilities);
                 if (_sourceAccount != null)
                     operation.SourceAccount = _sourceAccount;
                 return operation;

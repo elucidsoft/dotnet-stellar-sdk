@@ -1,4 +1,5 @@
 ﻿using System;
+using dotnetstandard_bip32;
 
 namespace stellar_dotnet_sdk
 {
@@ -23,15 +24,15 @@ namespace stellar_dotnet_sdk
                 if (bitsRemaining > 5)
                 {
                     mask = cValue << (bitsRemaining - 5);
-                    curByte = (byte) (curByte | mask);
+                    curByte = (byte)(curByte | mask);
                     bitsRemaining -= 5;
                 }
                 else
                 {
                     mask = cValue >> (5 - bitsRemaining);
-                    curByte = (byte) (curByte | mask);
+                    curByte = (byte)(curByte | mask);
                     returnArray[arrayIndex++] = curByte;
-                    curByte = (byte) (cValue << (3 + bitsRemaining));
+                    curByte = (byte)(cValue << (3 + bitsRemaining));
                     bitsRemaining += 3;
                 }
             }
@@ -43,12 +44,20 @@ namespace stellar_dotnet_sdk
             return returnArray;
         }
 
-        public static string ToString(byte[] input)
+        public static string ToString(byte[] input, Action<Base32EncodingOptions> optionsFunc = null)
+        {
+            var defaultOptions = new Base32EncodingOptions { OmitPadding = false };
+            optionsFunc?.Invoke(defaultOptions);
+
+            return ToString(input, defaultOptions);
+        }
+
+        public static string ToString(byte[] input, Base32EncodingOptions options)
         {
             if (input == null || input.Length == 0)
                 throw new ArgumentNullException("input");
 
-            var charCount = (int) Math.Ceiling(input.Length / 5d) * 8;
+            var charCount = (int)Math.Ceiling(input.Length / 5d) * 8;
             var returnArray = new char[charCount];
 
             byte nextChar = 0, bitsRemaining = 5;
@@ -56,28 +65,31 @@ namespace stellar_dotnet_sdk
 
             foreach (var b in input)
             {
-                nextChar = (byte) (nextChar | (b >> (8 - bitsRemaining)));
+                nextChar = (byte)(nextChar | (b >> (8 - bitsRemaining)));
                 returnArray[arrayIndex++] = ValueToChar(nextChar);
 
                 if (bitsRemaining < 4)
                 {
-                    nextChar = (byte) ((b >> (3 - bitsRemaining)) & 31);
+                    nextChar = (byte)((b >> (3 - bitsRemaining)) & 31);
                     returnArray[arrayIndex++] = ValueToChar(nextChar);
                     bitsRemaining += 5;
                 }
 
                 bitsRemaining -= 3;
-                nextChar = (byte) ((b << bitsRemaining) & 31);
+                nextChar = (byte)((b << bitsRemaining) & 31);
             }
 
             //if we didn't end with a full char
             if (arrayIndex != charCount)
             {
                 returnArray[arrayIndex++] = ValueToChar(nextChar);
-                while (arrayIndex != charCount) returnArray[arrayIndex++] = '='; //padding
+                if (!options.OmitPadding)
+                {
+                    while (arrayIndex != charCount) returnArray[arrayIndex++] = '='; //padding
+                }
             }
 
-            return new string(returnArray);
+            return new string(returnArray.Slice(0, arrayIndex));
         }
 
         private static int CharToValue(char c)
@@ -100,10 +112,10 @@ namespace stellar_dotnet_sdk
         private static char ValueToChar(byte b)
         {
             if (b < 26)
-                return (char) (b + 65);
+                return (char)(b + 65);
 
             if (b < 32)
-                return (char) (b + 24);
+                return (char)(b + 24);
 
             throw new ArgumentException("Byte is not a value Base32 value.", "b");
         }
