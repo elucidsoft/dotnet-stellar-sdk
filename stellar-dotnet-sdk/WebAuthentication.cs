@@ -120,11 +120,11 @@ namespace stellar_dotnet_sdk
         {
             network = network ?? Network.Current;
 
+            if (transaction is null)
+                throw new InvalidWebAuthenticationException("Challenge transaction cannot be null");
+
             if (transaction.SequenceNumber != 0)
                 throw new InvalidWebAuthenticationException("Challenge transaction sequence number must be 0");
-
-            if (!(transaction is Transaction))
-                throw new InvalidWebAuthenticationException("Challenge transaction cannot be a fee bump transaction");
 
             if (transaction.SourceAccount.IsMuxedAccount)
                 throw new InvalidWebAuthenticationException("Challenge transaction source cannot be a muxed account");
