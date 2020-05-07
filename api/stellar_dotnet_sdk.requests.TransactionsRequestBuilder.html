@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class TransactionsRequestBuilder
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,7 +73,7 @@
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  
+
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -90,7 +90,7 @@
       <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilderStreamable-2.html#stellar_dotnet_sdk_requests_RequestBuilderStreamable_2_EventSource">RequestBuilderStreamable&lt;TransactionsRequestBuilder, TransactionResponse&gt;.EventSource</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilderStreamable-2.html#stellar_dotnet_sdk_requests_RequestBuilderStreamable_2_Stream_System_EventHandler__1__">RequestBuilderStreamable&lt;TransactionsRequestBuilder, TransactionResponse&gt;.Stream(EventHandler&lt;TransactionResponse&gt;)</a>
+      <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilderStreamable-2.html#stellar_dotnet_sdk_requests_RequestBuilderStreamable_2_Stream_EventHandler__1__">RequestBuilderStreamable&lt;TransactionsRequestBuilder, TransactionResponse&gt;.Stream(EventHandler&lt;TransactionResponse&gt;)</a>
     </div>
     <div>
       <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilderExecutePageable-2.html#stellar_dotnet_sdk_requests_RequestBuilderExecutePageable_2_Execute">RequestBuilderExecutePageable&lt;TransactionsRequestBuilder, TransactionResponse&gt;.Execute()</a>
@@ -102,7 +102,7 @@
       <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilder-1.html#stellar_dotnet_sdk_requests_RequestBuilder_1_HttpClient">RequestBuilder&lt;TransactionsRequestBuilder&gt;.HttpClient</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilder-1.html#stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_System_Uri_">RequestBuilder&lt;TransactionsRequestBuilder&gt;.Execute&lt;TZ&gt;(Uri)</a>
+      <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilder-1.html#stellar_dotnet_sdk_requests_RequestBuilder_1_Execute__1_Uri_">RequestBuilder&lt;TransactionsRequestBuilder&gt;.Execute&lt;TZ&gt;(Uri)</a>
     </div>
     <div>
       <a class="xref" href="stellar_dotnet_sdk.requests.RequestBuilder-1.html#stellar_dotnet_sdk_requests_RequestBuilder_1_Uri">RequestBuilder&lt;TransactionsRequestBuilder&gt;.Uri</a>
@@ -131,7 +131,7 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class TransactionsRequestBuilder : RequestBuilderStreamable&lt;TransactionsRequestBuilder, TransactionResponse&gt;</code></pre>
   </div>
-  
+
   
   
   
@@ -139,27 +139,20 @@
   <h3 id="constructors">Constructors
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_TransactionsRequestBuilder__ctor_System_Uri_System_Net_Http_HttpClient_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.TransactionsRequestBuilder.%23ctor(System.Uri%2CSystem.Net.Http.HttpClient)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/TransactionsRequestBuilder.cs/#L11" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_requests_TransactionsRequestBuilder__ctor_" data-uid="stellar_dotnet_sdk.requests.TransactionsRequestBuilder.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_requests_TransactionsRequestBuilder__ctor_System_Uri_System_Net_Http_HttpClient_" data-uid="stellar_dotnet_sdk.requests.TransactionsRequestBuilder.#ctor(System.Uri,System.Net.Http.HttpClient)"><a href="#collapsible-stellar_dotnet_sdk_requests_TransactionsRequestBuilder__ctor_System_Uri_System_Net_Http_HttpClient_" class="expander" data-toggle="collapse">TransactionsRequestBuilder(Uri, HttpClient)</a></h4>
+  <h4 id="stellar_dotnet_sdk_requests_TransactionsRequestBuilder__ctor_Uri_HttpClient_" data-uid="stellar_dotnet_sdk.requests.TransactionsRequestBuilder.#ctor(Uri,HttpClient)"><a href="#collapsible-stellar_dotnet_sdk_requests_TransactionsRequestBuilder__ctor_Uri_HttpClient_" class="expander" data-toggle="collapse">TransactionsRequestBuilder(Uri, HttpClient)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_requests_TransactionsRequestBuilder__ctor_System_Uri_System_Net_Http_HttpClient_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_requests_TransactionsRequestBuilder__ctor_Uri_HttpClient_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TransactionsRequestBuilder(Uri serverURI, HttpClient httpClient)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -170,12 +163,12 @@
     </tr>
   </thead>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><span class="xref">Uri</span></td>
         <td><span class="parametername">serverURI</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Net.Http.HttpClient</span></td>
+        <td><span class="xref">HttpClient</span></td>
         <td><span class="parametername">httpClient</span></td>
         <td></td>
       </tr>
@@ -195,13 +188,6 @@
   <h3 id="methods">Methods
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_TransactionsRequestBuilder_ForAccount_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForAccount(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/TransactionsRequestBuilder.cs/#L46" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_requests_TransactionsRequestBuilder_ForAccount_" data-uid="stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForAccount*"></a>
   
@@ -211,11 +197,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TransactionsRequestBuilder ForAccount(string account)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -254,13 +240,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_TransactionsRequestBuilder_ForLedger_System_Int64_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForLedger(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/TransactionsRequestBuilder.cs/#L58" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_requests_TransactionsRequestBuilder_ForLedger_" data-uid="stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForLedger*"></a>
   
@@ -270,11 +249,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TransactionsRequestBuilder ForLedger(long ledgerSeq)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -313,13 +292,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_TransactionsRequestBuilder_IncludeFailed_System_Boolean_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.TransactionsRequestBuilder.IncludeFailed(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/TransactionsRequestBuilder.cs/#L71" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_requests_TransactionsRequestBuilder_IncludeFailed_" data-uid="stellar_dotnet_sdk.requests.TransactionsRequestBuilder.IncludeFailed*"></a>
   
@@ -330,11 +302,11 @@
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TransactionsRequestBuilder IncludeFailed(bool includeFailed)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -374,13 +346,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Transaction_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/TransactionsRequestBuilder.cs/#L35" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Transaction_" data-uid="stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction*"></a>
   
@@ -392,11 +357,11 @@
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task&lt;TransactionResponse&gt; Transaction(string transactionId)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -417,7 +382,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.TransactionResponse.html">TransactionResponse</a>&gt;
+        <span class="xref">Task</span>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.TransactionResponse.html">TransactionResponse</a>&gt;
         <p>
       </td>
     </tr>
@@ -434,29 +399,22 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Transaction_System_Uri_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/TransactionsRequestBuilder.cs/#L22" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Transaction_" data-uid="stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction*"></a>
   
-  <h4 id="stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Transaction_System_Uri_" data-uid="stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(System.Uri)"><a href="#collapsible-stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Transaction_System_Uri_" class="expander" data-toggle="collapse">Transaction(Uri)</a></h4>
+  <h4 id="stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Transaction_Uri_" data-uid="stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction(Uri)"><a href="#collapsible-stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Transaction_Uri_" class="expander" data-toggle="collapse">Transaction(Uri)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Transaction_System_Uri_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_requests_TransactionsRequestBuilder_Transaction_Uri_" class="collapse in">
   <div class="markdown level1 summary"><p>Requests specific uri and returns LedgerResponse
 This method is helpful for getting the links.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task&lt;TransactionResponse&gt; Transaction(Uri uri)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -467,7 +425,7 @@ This method is helpful for getting the links.</p>
     </tr>
   </thead>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><span class="xref">Uri</span></td>
         <td><span class="parametername">uri</span></td>
         <td></td>
       </tr>
@@ -477,7 +435,7 @@ This method is helpful for getting the links.</p>
   <table>
     <tr>
       <td>
-        <span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.TransactionResponse.html">TransactionResponse</a>&gt;
+        <span class="xref">Task</span>&lt;<a class="xref" href="stellar_dotnet_sdk.responses.TransactionResponse.html">TransactionResponse</a>&gt;
         <p>
       </td>
     </tr>
@@ -498,7 +456,6 @@ This method is helpful for getting the links.</p>
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/requests/TransactionsRequestBuilder.cs/#L9" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

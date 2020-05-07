@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class EffectResponse.EffectsResponseLinks
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -74,7 +74,7 @@
   <div class="markdown level0 summary"><p>Represents effect links.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
+
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -88,9 +88,9 @@
   
   <h5 id="stellar_dotnet_sdk_responses_effects_EffectResponse_EffectsResponseLinks_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EffectsResponseLinks</code></pre>
+    <pre><code class="lang-csharp hljs">public class EffectsResponseLinks : object</code></pre>
   </div>
-  
+
   
   
   
@@ -98,13 +98,6 @@
   <h3 id="constructors">Constructors
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_EffectResponse_EffectsResponseLinks__ctor_stellar_dotnet_sdk_responses_Link_stellar_dotnet_sdk_responses_operations_OperationResponse__stellar_dotnet_sdk_responses_Link_stellar_dotnet_sdk_responses_effects_EffectResponse__stellar_dotnet_sdk_responses_Link_stellar_dotnet_sdk_responses_effects_EffectResponse__.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.EffectResponse.EffectsResponseLinks.%23ctor(stellar_dotnet_sdk.responses.Link%7Bstellar_dotnet_sdk.responses.operations.OperationResponse%7D%2Cstellar_dotnet_sdk.responses.Link%7Bstellar_dotnet_sdk.responses.effects.EffectResponse%7D%2Cstellar_dotnet_sdk.responses.Link%7Bstellar_dotnet_sdk.responses.effects.EffectResponse%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/EffectResponse.cs/#L44" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_EffectResponse_EffectsResponseLinks__ctor_" data-uid="stellar_dotnet_sdk.responses.effects.EffectResponse.EffectsResponseLinks.#ctor*"></a>
   
@@ -114,11 +107,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public EffectsResponseLinks(Link&lt;OperationResponse&gt; operation, Link&lt;EffectResponse&gt; precedes, Link&lt;EffectResponse&gt; succeeds)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -159,13 +152,6 @@
   <h3 id="properties">Properties
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_EffectResponse_EffectsResponseLinks_Operation.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.EffectResponse.EffectsResponseLinks.Operation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/EffectResponse.cs/#L35" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_EffectResponse_EffectsResponseLinks_Operation_" data-uid="stellar_dotnet_sdk.responses.effects.EffectResponse.EffectsResponseLinks.Operation*"></a>
   
@@ -175,12 +161,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;operation&quot;)]
-public Link&lt;OperationResponse&gt; Operation { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Link&lt;OperationResponse&gt; Operation { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -203,13 +188,6 @@ public Link&lt;OperationResponse&gt; Operation { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_EffectResponse_EffectsResponseLinks_Precedes.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.EffectResponse.EffectsResponseLinks.Precedes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/EffectResponse.cs/#L38" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_EffectResponse_EffectsResponseLinks_Precedes_" data-uid="stellar_dotnet_sdk.responses.effects.EffectResponse.EffectsResponseLinks.Precedes*"></a>
   
@@ -219,12 +197,11 @@ public Link&lt;OperationResponse&gt; Operation { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;precedes&quot;)]
-public Link&lt;EffectResponse&gt; Precedes { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Link&lt;EffectResponse&gt; Precedes { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -247,13 +224,6 @@ public Link&lt;EffectResponse&gt; Precedes { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_EffectResponse_EffectsResponseLinks_Succeeds.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.EffectResponse.EffectsResponseLinks.Succeeds%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/EffectResponse.cs/#L41" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_EffectResponse_EffectsResponseLinks_Succeeds_" data-uid="stellar_dotnet_sdk.responses.effects.EffectResponse.EffectsResponseLinks.Succeeds*"></a>
   
@@ -263,12 +233,11 @@ public Link&lt;EffectResponse&gt; Precedes { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;succeeds&quot;)]
-public Link&lt;EffectResponse&gt; Succeeds { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Link&lt;EffectResponse&gt; Succeeds { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -295,7 +264,6 @@ public Link&lt;EffectResponse&gt; Succeeds { get; }</code></pre>
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/EffectResponse.cs/#L33" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

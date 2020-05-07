@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class PaymentOperation.Builder
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -74,7 +74,7 @@
   <div class="markdown level0 summary"><p>Builds Payment operation.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
+
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -88,9 +88,9 @@
   
   <h5 id="stellar_dotnet_sdk_PaymentOperation_Builder_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Builder</code></pre>
+    <pre><code class="lang-csharp hljs">public class Builder : object</code></pre>
   </div>
-  
+
   
   
   
@@ -98,28 +98,21 @@
   <h3 id="constructors">Constructors
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_PaymentOperation_Builder__ctor_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_Asset_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.PaymentOperation.Builder.%23ctor(stellar_dotnet_sdk.KeyPair%2Cstellar_dotnet_sdk.Asset%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L87" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_PaymentOperation_Builder__ctor_" data-uid="stellar_dotnet_sdk.PaymentOperation.Builder.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_PaymentOperation_Builder__ctor_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_Asset_System_String_" data-uid="stellar_dotnet_sdk.PaymentOperation.Builder.#ctor(stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.Asset,System.String)"><a href="#collapsible-stellar_dotnet_sdk_PaymentOperation_Builder__ctor_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_Asset_System_String_" class="expander" data-toggle="collapse">Builder(KeyPair, Asset, String)</a></h4>
+  <h4 id="stellar_dotnet_sdk_PaymentOperation_Builder__ctor_stellar_dotnet_sdk_IAccountId_stellar_dotnet_sdk_Asset_System_String_" data-uid="stellar_dotnet_sdk.PaymentOperation.Builder.#ctor(stellar_dotnet_sdk.IAccountId,stellar_dotnet_sdk.Asset,System.String)"><a href="#collapsible-stellar_dotnet_sdk_PaymentOperation_Builder__ctor_stellar_dotnet_sdk_IAccountId_stellar_dotnet_sdk_Asset_System_String_" class="expander" data-toggle="collapse">Builder(IAccountId, Asset, String)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_PaymentOperation_Builder__ctor_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_Asset_System_String_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_PaymentOperation_Builder__ctor_stellar_dotnet_sdk_IAccountId_stellar_dotnet_sdk_Asset_System_String_" class="collapse in">
   <div class="markdown level1 summary"><p>Creates a new PaymentOperation builder.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Builder(KeyPair destination, Asset asset, string amount)</code></pre>
+    <pre><code class="lang-csharp hljs">public Builder(IAccountId destination, Asset asset, string amount)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -130,7 +123,7 @@
     </tr>
   </thead>
       <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
+        <td><a class="xref" href="stellar_dotnet_sdk.IAccountId.html">IAccountId</a></td>
         <td><span class="parametername">destination</span></td>
         <td><p>The destination keypair (uses only the public key).</p>
 </td>
@@ -161,13 +154,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_PaymentOperation_Builder__ctor_stellar_dotnet_sdk_xdr_PaymentOp_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.PaymentOperation.Builder.%23ctor(stellar_dotnet_sdk.xdr.PaymentOp)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L74" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_PaymentOperation_Builder__ctor_" data-uid="stellar_dotnet_sdk.PaymentOperation.Builder.#ctor*"></a>
   
@@ -178,11 +164,11 @@
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Builder(PaymentOp op)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -214,13 +200,6 @@
   <h3 id="methods">Methods
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_PaymentOperation_Builder_Build.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.PaymentOperation.Builder.Build%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L109" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_PaymentOperation_Builder_Build_" data-uid="stellar_dotnet_sdk.PaymentOperation.Builder.Build*"></a>
   
@@ -231,11 +210,11 @@
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public PaymentOperation Build()</code></pre>
   </div>
-  
+
   
   <h5 class="returns">Returns</h5>
   <table>
@@ -258,28 +237,21 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_PaymentOperation_Builder_SetSourceAccount_stellar_dotnet_sdk_KeyPair_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.PaymentOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L100" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_PaymentOperation_Builder_SetSourceAccount_" data-uid="stellar_dotnet_sdk.PaymentOperation.Builder.SetSourceAccount*"></a>
   
-  <h4 id="stellar_dotnet_sdk_PaymentOperation_Builder_SetSourceAccount_stellar_dotnet_sdk_KeyPair_" data-uid="stellar_dotnet_sdk.PaymentOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)"><a href="#collapsible-stellar_dotnet_sdk_PaymentOperation_Builder_SetSourceAccount_stellar_dotnet_sdk_KeyPair_" class="expander" data-toggle="collapse">SetSourceAccount(KeyPair)</a></h4>
+  <h4 id="stellar_dotnet_sdk_PaymentOperation_Builder_SetSourceAccount_stellar_dotnet_sdk_IAccountId_" data-uid="stellar_dotnet_sdk.PaymentOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.IAccountId)"><a href="#collapsible-stellar_dotnet_sdk_PaymentOperation_Builder_SetSourceAccount_stellar_dotnet_sdk_IAccountId_" class="expander" data-toggle="collapse">SetSourceAccount(IAccountId)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_PaymentOperation_Builder_SetSourceAccount_stellar_dotnet_sdk_KeyPair_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_PaymentOperation_Builder_SetSourceAccount_stellar_dotnet_sdk_IAccountId_" class="collapse in">
   <div class="markdown level1 summary"><p>Sets the source account for this operation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PaymentOperation.Builder SetSourceAccount(KeyPair account)</code></pre>
+    <pre><code class="lang-csharp hljs">public PaymentOperation.Builder SetSourceAccount(IAccountId account)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -290,7 +262,7 @@
     </tr>
   </thead>
       <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
+        <td><a class="xref" href="stellar_dotnet_sdk.IAccountId.html">IAccountId</a></td>
         <td><span class="parametername">account</span></td>
         <td><p>The operation's source account.</p>
 </td>
@@ -323,7 +295,6 @@
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/PaymentOperation.cs/#L62" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

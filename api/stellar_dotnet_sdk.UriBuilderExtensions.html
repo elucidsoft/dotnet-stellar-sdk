@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class UriBuilderExtensions
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,7 +73,7 @@
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  
+
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -87,9 +87,9 @@
   
   <h5 id="stellar_dotnet_sdk_UriBuilderExtensions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class UriBuilderExtensions</code></pre>
+    <pre><code class="lang-csharp hljs">public static class UriBuilderExtensions : object</code></pre>
   </div>
-  
+
   
   
   
@@ -97,30 +97,23 @@
   <h3 id="methods">Methods
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_UriBuilderExtensions_GetQueryParams_System_UriBuilder_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.UriBuilderExtensions.GetQueryParams(System.UriBuilder)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/UriBuilderExtensions.cs/#L44" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_UriBuilderExtensions_GetQueryParams_" data-uid="stellar_dotnet_sdk.UriBuilderExtensions.GetQueryParams*"></a>
   
-  <h4 id="stellar_dotnet_sdk_UriBuilderExtensions_GetQueryParams_System_UriBuilder_" data-uid="stellar_dotnet_sdk.UriBuilderExtensions.GetQueryParams(System.UriBuilder)"><a href="#collapsible-stellar_dotnet_sdk_UriBuilderExtensions_GetQueryParams_System_UriBuilder_" class="expander" data-toggle="collapse">GetQueryParams(UriBuilder)</a></h4>
+  <h4 id="stellar_dotnet_sdk_UriBuilderExtensions_GetQueryParams_UriBuilder_" data-uid="stellar_dotnet_sdk.UriBuilderExtensions.GetQueryParams(UriBuilder)"><a href="#collapsible-stellar_dotnet_sdk_UriBuilderExtensions_GetQueryParams_UriBuilder_" class="expander" data-toggle="collapse">GetQueryParams(UriBuilder)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_UriBuilderExtensions_GetQueryParams_System_UriBuilder_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_UriBuilderExtensions_GetQueryParams_UriBuilder_" class="collapse in">
   <div class="markdown level1 summary"><p>Gets the query string key-value pairs of the URI.
 Note that the one of the keys may be null (&quot;?123&quot;) and
 that one of the keys may be an empty string (&quot;?=123&quot;).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static IEnumerable&lt;KeyValuePair&lt;string, string&gt;&gt; GetQueryParams(this UriBuilder uri)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -131,7 +124,7 @@ that one of the keys may be an empty string (&quot;?=123&quot;).</p>
     </tr>
   </thead>
       <tr>
-        <td><span class="xref">System.UriBuilder</span></td>
+        <td><span class="xref">UriBuilder</span></td>
         <td><span class="parametername">uri</span></td>
         <td></td>
       </tr>
@@ -141,7 +134,7 @@ that one of the keys may be an empty string (&quot;?=123&quot;).</p>
   <table>
     <tr>
       <td>
-        <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;&gt;
+        <span class="xref">IEnumerable</span>&lt;<span class="xref">KeyValuePair</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;&gt;
         <p>
       </td>
     </tr>
@@ -158,27 +151,20 @@ that one of the keys may be an empty string (&quot;?=123&quot;).</p>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_UriBuilderExtensions_SetPath_System_UriBuilder_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.UriBuilderExtensions.SetPath(System.UriBuilder%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/UriBuilderExtensions.cs/#L33" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_UriBuilderExtensions_SetPath_" data-uid="stellar_dotnet_sdk.UriBuilderExtensions.SetPath*"></a>
   
-  <h4 id="stellar_dotnet_sdk_UriBuilderExtensions_SetPath_System_UriBuilder_System_String_" data-uid="stellar_dotnet_sdk.UriBuilderExtensions.SetPath(System.UriBuilder,System.String)"><a href="#collapsible-stellar_dotnet_sdk_UriBuilderExtensions_SetPath_System_UriBuilder_System_String_" class="expander" data-toggle="collapse">SetPath(UriBuilder, String)</a></h4>
+  <h4 id="stellar_dotnet_sdk_UriBuilderExtensions_SetPath_UriBuilder_System_String_" data-uid="stellar_dotnet_sdk.UriBuilderExtensions.SetPath(UriBuilder,System.String)"><a href="#collapsible-stellar_dotnet_sdk_UriBuilderExtensions_SetPath_UriBuilder_System_String_" class="expander" data-toggle="collapse">SetPath(UriBuilder, String)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_UriBuilderExtensions_SetPath_System_UriBuilder_System_String_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_UriBuilderExtensions_SetPath_UriBuilder_System_String_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static UriBuilder SetPath(this UriBuilder uri, string path)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -189,7 +175,7 @@ that one of the keys may be an empty string (&quot;?=123&quot;).</p>
     </tr>
   </thead>
       <tr>
-        <td><span class="xref">System.UriBuilder</span></td>
+        <td><span class="xref">UriBuilder</span></td>
         <td><span class="parametername">uri</span></td>
         <td></td>
       </tr>
@@ -204,7 +190,7 @@ that one of the keys may be an empty string (&quot;?=123&quot;).</p>
   <table>
     <tr>
       <td>
-        <span class="xref">System.UriBuilder</span>
+        <span class="xref">UriBuilder</span>
         <p>
       </td>
     </tr>
@@ -221,29 +207,22 @@ that one of the keys may be an empty string (&quot;?=123&quot;).</p>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_UriBuilderExtensions_SetQueryParam_System_UriBuilder_System_String_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.UriBuilderExtensions.SetQueryParam(System.UriBuilder%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/UriBuilderExtensions.cs/#L14" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_UriBuilderExtensions_SetQueryParam_" data-uid="stellar_dotnet_sdk.UriBuilderExtensions.SetQueryParam*"></a>
   
-  <h4 id="stellar_dotnet_sdk_UriBuilderExtensions_SetQueryParam_System_UriBuilder_System_String_System_String_" data-uid="stellar_dotnet_sdk.UriBuilderExtensions.SetQueryParam(System.UriBuilder,System.String,System.String)"><a href="#collapsible-stellar_dotnet_sdk_UriBuilderExtensions_SetQueryParam_System_UriBuilder_System_String_System_String_" class="expander" data-toggle="collapse">SetQueryParam(UriBuilder, String, String)</a></h4>
+  <h4 id="stellar_dotnet_sdk_UriBuilderExtensions_SetQueryParam_UriBuilder_System_String_System_String_" data-uid="stellar_dotnet_sdk.UriBuilderExtensions.SetQueryParam(UriBuilder,System.String,System.String)"><a href="#collapsible-stellar_dotnet_sdk_UriBuilderExtensions_SetQueryParam_UriBuilder_System_String_System_String_" class="expander" data-toggle="collapse">SetQueryParam(UriBuilder, String, String)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_UriBuilderExtensions_SetQueryParam_System_UriBuilder_System_String_System_String_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_UriBuilderExtensions_SetQueryParam_UriBuilder_System_String_System_String_" class="collapse in">
   <div class="markdown level1 summary"><p>Sets the specified query parameter key-value pair of the URI.
 If the key already exists, the value is overwritten.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static UriBuilder SetQueryParam(this UriBuilder uri, string key, string value)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -254,7 +233,7 @@ If the key already exists, the value is overwritten.</p>
     </tr>
   </thead>
       <tr>
-        <td><span class="xref">System.UriBuilder</span></td>
+        <td><span class="xref">UriBuilder</span></td>
         <td><span class="parametername">uri</span></td>
         <td></td>
       </tr>
@@ -274,7 +253,7 @@ If the key already exists, the value is overwritten.</p>
   <table>
     <tr>
       <td>
-        <span class="xref">System.UriBuilder</span>
+        <span class="xref">UriBuilder</span>
         <p>
       </td>
     </tr>
@@ -295,7 +274,6 @@ If the key already exists, the value is overwritten.</p>
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/UriBuilderExtensions.cs/#L8" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

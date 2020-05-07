@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Balance
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -74,7 +74,7 @@
   <div class="markdown level0 summary"><p>Represents account balance.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
+
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -88,9 +88,9 @@
   
   <h5 id="stellar_dotnet_sdk_responses_Balance_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Balance</code></pre>
+    <pre><code class="lang-csharp hljs">public class Balance : object</code></pre>
   </div>
-  
+
   
   
   
@@ -98,27 +98,20 @@
   <h3 id="constructors">Constructors
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Balance__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Balance.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Balance.cs/#L11" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_Balance__ctor_" data-uid="stellar_dotnet_sdk.responses.Balance.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_Balance__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" data-uid="stellar_dotnet_sdk.responses.Balance.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String)"><a href="#collapsible-stellar_dotnet_sdk_responses_Balance__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" class="expander" data-toggle="collapse">Balance(String, String, String, String, String, String, String)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_Balance__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Boolean_System_Boolean_" data-uid="stellar_dotnet_sdk.responses.Balance.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)"><a href="#collapsible-stellar_dotnet_sdk_responses_Balance__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Boolean_System_Boolean_" class="expander" data-toggle="collapse">Balance(String, String, String, String, String, String, String, Boolean, Boolean)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_Balance__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_Balance__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Boolean_System_Boolean_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Balance(string assetType, string assetCode, string assetIssuer, string balance, string limit, string buyingLiabilities, string sellingLiabilities)</code></pre>
+    <pre><code class="lang-csharp hljs">public Balance(string assetType, string assetCode, string assetIssuer, string balance, string limit, string buyingLiabilities, string sellingLiabilities, bool isAuthorized, bool isAuthorizedToMaintainLiabilities)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -163,6 +156,16 @@
         <td><span class="parametername">sellingLiabilities</span></td>
         <td></td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">isAuthorized</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">isAuthorizedToMaintainLiabilities</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -179,13 +182,6 @@
   <h3 id="properties">Properties
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Balance_Asset.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Balance.Asset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Balance.cs/#L31" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_Balance_Asset_" data-uid="stellar_dotnet_sdk.responses.Balance.Asset*"></a>
   
@@ -195,12 +191,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonIgnore]
-public Asset Asset { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Asset Asset { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -223,13 +218,6 @@ public Asset Asset { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Balance_AssetCode.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Balance.AssetCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Balance.cs/#L25" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_Balance_AssetCode_" data-uid="stellar_dotnet_sdk.responses.Balance.AssetCode*"></a>
   
@@ -239,12 +227,11 @@ public Asset Asset { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_code&quot;)]
-public string AssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string AssetCode { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -267,13 +254,6 @@ public string AssetCode { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Balance_AssetIssuer.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Balance.AssetIssuer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Balance.cs/#L28" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_Balance_AssetIssuer_" data-uid="stellar_dotnet_sdk.responses.Balance.AssetIssuer*"></a>
   
@@ -283,12 +263,11 @@ public string AssetCode { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_issuer&quot;)]
-public string AssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string AssetIssuer { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -311,13 +290,6 @@ public string AssetIssuer { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Balance_AssetType.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Balance.AssetType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Balance.cs/#L22" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_Balance_AssetType_" data-uid="stellar_dotnet_sdk.responses.Balance.AssetType*"></a>
   
@@ -327,12 +299,11 @@ public string AssetIssuer { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;asset_type&quot;)]
-public string AssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string AssetType { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -355,13 +326,6 @@ public string AssetType { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Balance_BalanceString.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Balance.BalanceString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Balance.cs/#L37" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_Balance_BalanceString_" data-uid="stellar_dotnet_sdk.responses.Balance.BalanceString*"></a>
   
@@ -371,12 +335,11 @@ public string AssetType { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;balance&quot;)]
-public string BalanceString { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string BalanceString { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -399,13 +362,6 @@ public string BalanceString { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Balance_BuyingLiabilities.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Balance.BuyingLiabilities%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Balance.cs/#L40" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_Balance_BuyingLiabilities_" data-uid="stellar_dotnet_sdk.responses.Balance.BuyingLiabilities*"></a>
   
@@ -415,12 +371,11 @@ public string BalanceString { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;buying_liabilities&quot;)]
-public string BuyingLiabilities { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string BuyingLiabilities { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -443,13 +398,78 @@ public string BuyingLiabilities { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Balance_Limit.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Balance.Limit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Balance.cs/#L34" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
+  
+  <a id="stellar_dotnet_sdk_responses_Balance_IsAuthorized_" data-uid="stellar_dotnet_sdk.responses.Balance.IsAuthorized*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_Balance_IsAuthorized" data-uid="stellar_dotnet_sdk.responses.Balance.IsAuthorized"><a href="#collapsible-stellar_dotnet_sdk_responses_Balance_IsAuthorized" class="expander" data-toggle="collapse">IsAuthorized</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_Balance_IsAuthorized" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAuthorized { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_responses_Balance_IsAuthorizedToMaintainLiabilities_" data-uid="stellar_dotnet_sdk.responses.Balance.IsAuthorizedToMaintainLiabilities*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_Balance_IsAuthorizedToMaintainLiabilities" data-uid="stellar_dotnet_sdk.responses.Balance.IsAuthorizedToMaintainLiabilities"><a href="#collapsible-stellar_dotnet_sdk_responses_Balance_IsAuthorizedToMaintainLiabilities" class="expander" data-toggle="collapse">IsAuthorizedToMaintainLiabilities</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_Balance_IsAuthorizedToMaintainLiabilities" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAuthorizedToMaintainLiabilities { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
   
   <a id="stellar_dotnet_sdk_responses_Balance_Limit_" data-uid="stellar_dotnet_sdk.responses.Balance.Limit*"></a>
   
@@ -459,12 +479,11 @@ public string BuyingLiabilities { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;limit&quot;)]
-public string Limit { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Limit { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -487,13 +506,6 @@ public string Limit { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_Balance_SellingLiabilities.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.Balance.SellingLiabilities%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Balance.cs/#L43" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_Balance_SellingLiabilities_" data-uid="stellar_dotnet_sdk.responses.Balance.SellingLiabilities*"></a>
   
@@ -503,12 +515,11 @@ public string Limit { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;selling_liabilities&quot;)]
-public string SellingLiabilities { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string SellingLiabilities { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -535,7 +546,6 @@ public string SellingLiabilities { get; }</code></pre>
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/Balance.cs/#L9" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

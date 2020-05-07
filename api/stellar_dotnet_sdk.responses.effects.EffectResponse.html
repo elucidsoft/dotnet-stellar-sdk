@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class EffectResponse
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,7 +73,7 @@
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  
+
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -113,7 +113,7 @@
       <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_RateLimitReset">Response.RateLimitReset</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_System_Net_Http_Headers_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
+      <a class="xref" href="stellar_dotnet_sdk.responses.Response.html#stellar_dotnet_sdk_responses_Response_SetHeaders_HttpResponseHeaders_">Response.SetHeaders(HttpResponseHeaders)</a>
     </div>
   </div>
   
@@ -122,10 +122,9 @@
   
   <h5 id="stellar_dotnet_sdk_responses_effects_EffectResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(EffectDeserializer))]
-public abstract class EffectResponse : Response, IPagingToken</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class EffectResponse : Response, IPagingToken</code></pre>
   </div>
-  
+
   
   
   
@@ -133,13 +132,6 @@ public abstract class EffectResponse : Response, IPagingToken</code></pre>
   <h3 id="properties">Properties
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_EffectResponse_Account.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.EffectResponse.Account%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/EffectResponse.cs/#L12" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_EffectResponse_Account_" data-uid="stellar_dotnet_sdk.responses.effects.EffectResponse.Account*"></a>
   
@@ -149,12 +141,11 @@ public abstract class EffectResponse : Response, IPagingToken</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;account&quot;)]
-public string Account { get; protected set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Account { get; protected set; }</code></pre>
   </div>
-  
+
   
   
   
@@ -177,13 +168,6 @@ public string Account { get; protected set; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_EffectResponse_CreatedAt.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/EffectResponse.cs/#L27" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_EffectResponse_CreatedAt_" data-uid="stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt*"></a>
   
@@ -193,12 +177,11 @@ public string Account { get; protected set; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;created_at&quot;)]
-public DateTime CreatedAt { get; protected set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public DateTime CreatedAt { get; protected set; }</code></pre>
   </div>
-  
+
   
   
   
@@ -207,7 +190,7 @@ public DateTime CreatedAt { get; protected set; }</code></pre>
   <table>
     <tr>
       <td>
-        <span class="xref">System.DateTime</span>
+        <span class="xref">DateTime</span>
         <p>
       </td>
     </tr>
@@ -221,13 +204,6 @@ public DateTime CreatedAt { get; protected set; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_EffectResponse_Id.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.EffectResponse.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/EffectResponse.cs/#L10" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_EffectResponse_Id_" data-uid="stellar_dotnet_sdk.responses.effects.EffectResponse.Id*"></a>
   
@@ -237,12 +213,11 @@ public DateTime CreatedAt { get; protected set; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;id&quot;)]
-public string Id { get; protected set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Id { get; protected set; }</code></pre>
   </div>
-  
+
   
   
   
@@ -265,13 +240,6 @@ public string Id { get; protected set; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_EffectResponse_Links.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.EffectResponse.Links%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/EffectResponse.cs/#L24" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_EffectResponse_Links_" data-uid="stellar_dotnet_sdk.responses.effects.EffectResponse.Links*"></a>
   
@@ -281,12 +249,11 @@ public string Id { get; protected set; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;_links&quot;)]
-public EffectResponse.EffectsResponseLinks Links { get; protected set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public EffectResponse.EffectsResponseLinks Links { get; protected set; }</code></pre>
   </div>
-  
+
   
   
   
@@ -309,13 +276,6 @@ public EffectResponse.EffectsResponseLinks Links { get; protected set; }</code><
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_EffectResponse_PagingToken.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/EffectResponse.cs/#L21" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_EffectResponse_PagingToken_" data-uid="stellar_dotnet_sdk.responses.effects.EffectResponse.PagingToken*"></a>
   
@@ -325,12 +285,11 @@ public EffectResponse.EffectsResponseLinks Links { get; protected set; }</code><
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;paging_token&quot;)]
-public string PagingToken { get; protected set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string PagingToken { get; protected set; }</code></pre>
   </div>
-  
+
   
   
   
@@ -355,13 +314,6 @@ public string PagingToken { get; protected set; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_EffectResponse_Type.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.EffectResponse.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/EffectResponse.cs/#L15" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_EffectResponse_Type_" data-uid="stellar_dotnet_sdk.responses.effects.EffectResponse.Type*"></a>
   
@@ -371,12 +323,11 @@ public string PagingToken { get; protected set; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;type&quot;)]
-public string Type { get; protected set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Type { get; protected set; }</code></pre>
   </div>
-  
+
   
   
   
@@ -399,13 +350,6 @@ public string Type { get; protected set; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_effects_EffectResponse_TypeId.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/EffectResponse.cs/#L18" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_effects_EffectResponse_TypeId_" data-uid="stellar_dotnet_sdk.responses.effects.EffectResponse.TypeId*"></a>
   
@@ -415,12 +359,11 @@ public string Type { get; protected set; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;type_i&quot;)]
-public virtual int TypeId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual int TypeId { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -447,7 +390,6 @@ public virtual int TypeId { get; }</code></pre>
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/effects/EffectResponse.cs/#L7" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

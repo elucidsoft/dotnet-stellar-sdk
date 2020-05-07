@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace stellar_dotnet_sdk.responses.operations
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -147,9 +147,15 @@ The key of each link specifies that links relation to the current resource, and 
 <p>The transactions link is also templated, which means that the href attribute of the link is actually a URI template, as specified by RFC 6570. We use URI templates
 to show you what parameters a give resource can take.</p>
 </section>
-      <h4><a class="xref" href="stellar_dotnet_sdk.responses.operations.PathPaymentOperationResponse.html">PathPaymentOperationResponse</a></h4>
-      <section><p>Sends an amount in a specific asset to a destination account through a path of offers. This allows the asset sent (e.g., 450 XLM) to be different from the asset received (e.g, 6 BTC).
-See: <a href="https://www.stellar.org/developers/horizon/reference/resources/operation.html">https://www.stellar.org/developers/horizon/reference/resources/operation.html</a>
+      <h4><a class="xref" href="stellar_dotnet_sdk.responses.operations.PathPaymentStrictReceiveOperationResponse.html">PathPaymentStrictReceiveOperationResponse</a></h4>
+      <section><p>A path payment strict receive operation represents a payment from one account to another through a path.
+See: <a href="https://www.stellar.org/developers/horizon/reference/resources/operation.html#path-payment">https://www.stellar.org/developers/horizon/reference/resources/operation.html#path-payment</a>
+<span class="xref">stellar_dotnetcore_sdk.requests.OperationsRequestBuilder</span>
+<span class="xref">stellar_dotnetcore_sdk.Server</span></p>
+</section>
+      <h4><a class="xref" href="stellar_dotnet_sdk.responses.operations.PathPaymentStrictSendOperationResponse.html">PathPaymentStrictSendOperationResponse</a></h4>
+      <section><p>A path payment strict send operation represents a payment from one account to another through a path. This type of payment starts as one type of asset and ends as another type of asset.
+See: <a href="https://www.stellar.org/developers/horizon/reference/resources/operation.html#path-payment-strict-send">https://www.stellar.org/developers/horizon/reference/resources/operation.html#path-payment-strict-send</a>
 <span class="xref">stellar_dotnetcore_sdk.requests.OperationsRequestBuilder</span>
 <span class="xref">stellar_dotnetcore_sdk.Server</span></p>
 </section>

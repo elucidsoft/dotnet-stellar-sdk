@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Transaction
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,37 +73,130 @@
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  
+
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">Transaction</span></div>
+    <div class="level1"><a class="xref" href="stellar_dotnet_sdk.TransactionBase.html">TransactionBase</a></div>
+    <div class="level2"><span class="xref">Transaction</span></div>
   </div>
   
   
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Signatures">TransactionBase.Signatures</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_SignatureBase">TransactionBase.SignatureBase()</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Sign_stellar_dotnet_sdk_IAccountId_">TransactionBase.Sign(IAccountId)</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Sign_stellar_dotnet_sdk_IAccountId_stellar_dotnet_sdk_Network_">TransactionBase.Sign(IAccountId, Network)</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Sign_System_Byte___">TransactionBase.Sign(Byte[])</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Hash">TransactionBase.Hash()</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Hash_stellar_dotnet_sdk_Network_">TransactionBase.Hash(Network)</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_ToUnsignedEnvelopeXdrBase64_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_">TransactionBase.ToUnsignedEnvelopeXdrBase64(TransactionBase.TransactionXdrVersion)</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_ToEnvelopeXdrBase64_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_">TransactionBase.ToEnvelopeXdrBase64(TransactionBase.TransactionXdrVersion)</a>
+    </div>
+  </div>
   
   <h6><strong>Namespace</strong>: System.Dynamic.ExpandoObject</h6>
   <h6><strong>Assembly</strong>: stellar-dotnet-sdk.dll</h6>
   
   <h5 id="stellar_dotnet_sdk_Transaction_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Transaction</code></pre>
+    <pre><code class="lang-csharp hljs">public class Transaction : TransactionBase</code></pre>
   </div>
+
+  
+  
+  
+  
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction__ctor_" data-uid="stellar_dotnet_sdk.Transaction.#ctor*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction__ctor_stellar_dotnet_sdk_IAccountId_System_UInt32_System_Int64_stellar_dotnet_sdk_Operation___stellar_dotnet_sdk_Memo_stellar_dotnet_sdk_TimeBounds_" data-uid="stellar_dotnet_sdk.Transaction.#ctor(stellar_dotnet_sdk.IAccountId,System.UInt32,System.Int64,stellar_dotnet_sdk.Operation[],stellar_dotnet_sdk.Memo,stellar_dotnet_sdk.TimeBounds)"><a href="#collapsible-stellar_dotnet_sdk_Transaction__ctor_stellar_dotnet_sdk_IAccountId_System_UInt32_System_Int64_stellar_dotnet_sdk_Operation___stellar_dotnet_sdk_Memo_stellar_dotnet_sdk_TimeBounds_" class="expander" data-toggle="collapse">Transaction(IAccountId, UInt32, Int64, Operation[], Memo, TimeBounds)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction__ctor_stellar_dotnet_sdk_IAccountId_System_UInt32_System_Int64_stellar_dotnet_sdk_Operation___stellar_dotnet_sdk_Memo_stellar_dotnet_sdk_TimeBounds_" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transaction(IAccountId sourceAccount, uint fee, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.IAccountId.html">IAccountId</a></td>
+        <td><span class="parametername">sourceAccount</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">fee</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">sequenceNumber</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Operation.html">Operation</a>[]</td>
+        <td><span class="parametername">operations</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Memo.html">Memo</a></td>
+        <td><span class="parametername">memo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.TimeBounds.html">TimeBounds</a></td>
+        <td><span class="parametername">timeBounds</span></td>
+        <td></td>
+      </tr>
+  </table>
   
   
   
   
   
+  
+  
+  
+  
+  
+  
+  </div>
   <h3 id="properties">Properties
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Fee.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Fee%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L28" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_Transaction_Fee_" data-uid="stellar_dotnet_sdk.Transaction.Fee*"></a>
   
@@ -113,11 +206,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Fee { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public uint Fee { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -126,7 +219,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">System.Int32</span>
+        <span class="xref">System.UInt32</span>
         <p>
       </td>
     </tr>
@@ -140,13 +233,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Memo.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Memo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L36" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_Transaction_Memo_" data-uid="stellar_dotnet_sdk.Transaction.Memo*"></a>
   
@@ -156,11 +242,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Memo Memo { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -183,13 +269,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Operations.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Operations%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L34" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_Transaction_Operations_" data-uid="stellar_dotnet_sdk.Transaction.Operations*"></a>
   
@@ -199,11 +278,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Operation[] Operations { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -226,13 +305,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_SequenceNumber.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.SequenceNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L32" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_Transaction_SequenceNumber_" data-uid="stellar_dotnet_sdk.Transaction.SequenceNumber*"></a>
   
@@ -242,11 +314,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public long SequenceNumber { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -269,56 +341,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Signatures.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Signatures%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L40" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="stellar_dotnet_sdk_Transaction_Signatures_" data-uid="stellar_dotnet_sdk.Transaction.Signatures*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_Transaction_Signatures" data-uid="stellar_dotnet_sdk.Transaction.Signatures"><a href="#collapsible-stellar_dotnet_sdk_Transaction_Signatures" class="expander" data-toggle="collapse">Signatures</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_Transaction_Signatures" class="collapse in">
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;DecoratedSignature&gt; Signatures { get; }</code></pre>
-  </div>
-  
-  
-  
-  
-  
-  <h5 class="propertyValue">Property Value</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">stellar_dotnet_sdk.xdr.DecoratedSignature</span>&gt;
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_SourceAccount.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.SourceAccount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L30" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_Transaction_SourceAccount_" data-uid="stellar_dotnet_sdk.Transaction.SourceAccount*"></a>
   
@@ -328,11 +350,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyPair SourceAccount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IAccountId SourceAccount { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -341,7 +363,7 @@
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a>
+        <a class="xref" href="stellar_dotnet_sdk.IAccountId.html">IAccountId</a>
         <p>
       </td>
     </tr>
@@ -355,13 +377,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_TimeBounds.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.TimeBounds%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L38" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_Transaction_TimeBounds_" data-uid="stellar_dotnet_sdk.Transaction.TimeBounds*"></a>
   
@@ -371,11 +386,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TimeBounds TimeBounds { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -400,13 +415,6 @@
   <h3 id="methods">Methods
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_FromEnvelopeXdr_stellar_dotnet_sdk_xdr_TransactionEnvelope_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.FromEnvelopeXdr(stellar_dotnet_sdk.xdr.TransactionEnvelope)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L254" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdr_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdr*"></a>
   
@@ -416,11 +424,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Transaction FromEnvelopeXdr(TransactionEnvelope envelope)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -458,13 +466,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_FromEnvelopeXdr_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.FromEnvelopeXdr(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L246" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdr_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdr*"></a>
   
@@ -474,11 +475,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Transaction FromEnvelopeXdr(string envelope)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -516,34 +517,41 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Hash.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Hash%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L96" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
-  <a id="stellar_dotnet_sdk_Transaction_Hash_" data-uid="stellar_dotnet_sdk.Transaction.Hash*"></a>
+  <a id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV0_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdrV0*"></a>
   
-  <h4 id="stellar_dotnet_sdk_Transaction_Hash" data-uid="stellar_dotnet_sdk.Transaction.Hash"><a href="#collapsible-stellar_dotnet_sdk_Transaction_Hash" class="expander" data-toggle="collapse">Hash()</a></h4>
+  <h4 id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV0_stellar_dotnet_sdk_xdr_TransactionV0Envelope_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdrV0(stellar_dotnet_sdk.xdr.TransactionV0Envelope)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV0_stellar_dotnet_sdk_xdr_TransactionV0Envelope_" class="expander" data-toggle="collapse">FromEnvelopeXdrV0(TransactionV0Envelope)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_Transaction_Hash" class="collapse in">
-  <div class="markdown level1 summary"><p>Returns transaction hash.</p>
-</div>
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV0_stellar_dotnet_sdk_xdr_TransactionV0Envelope_" class="collapse in">
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public byte[] Hash()</code></pre>
+    <pre><code class="lang-csharp hljs">public static Transaction FromEnvelopeXdrV0(TransactionV0Envelope envelope)</code></pre>
   </div>
-  
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.TransactionV0Envelope</span></td>
+        <td><span class="parametername">envelope</span></td>
+        <td></td>
+      </tr>
+  </table>
   
   <h5 class="returns">Returns</h5>
   <table>
     <tr>
       <td>
-        <span class="xref">System.Byte</span>[]
+        <a class="xref" href="stellar_dotnet_sdk.Transaction.html">Transaction</a>
         <p>
       </td>
     </tr>
@@ -560,28 +568,20 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Hash_stellar_dotnet_sdk_Network_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Hash(stellar_dotnet_sdk.Network)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L106" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
-  <a id="stellar_dotnet_sdk_Transaction_Hash_" data-uid="stellar_dotnet_sdk.Transaction.Hash*"></a>
+  <a id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV1_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdrV1*"></a>
   
-  <h4 id="stellar_dotnet_sdk_Transaction_Hash_stellar_dotnet_sdk_Network_" data-uid="stellar_dotnet_sdk.Transaction.Hash(stellar_dotnet_sdk.Network)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_Hash_stellar_dotnet_sdk_Network_" class="expander" data-toggle="collapse">Hash(Network)</a></h4>
+  <h4 id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV1_stellar_dotnet_sdk_xdr_TransactionV1Envelope_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdrV1(stellar_dotnet_sdk.xdr.TransactionV1Envelope)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV1_stellar_dotnet_sdk_xdr_TransactionV1Envelope_" class="expander" data-toggle="collapse">FromEnvelopeXdrV1(TransactionV1Envelope)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_Transaction_Hash_stellar_dotnet_sdk_Network_" class="collapse in">
-  <div class="markdown level1 summary"><p>Returns transaction hash for the given network.</p>
-</div>
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV1_stellar_dotnet_sdk_xdr_TransactionV1Envelope_" class="collapse in">
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public byte[] Hash(Network network)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Transaction FromEnvelopeXdrV1(TransactionV1Envelope envelope)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -592,10 +592,9 @@
     </tr>
   </thead>
       <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a></td>
-        <td><span class="parametername">network</span></td>
-        <td><p>The network <a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a> the transaction will be sent to.</p>
-</td>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.TransactionV1Envelope</span></td>
+        <td><span class="parametername">envelope</span></td>
+        <td></td>
       </tr>
   </table>
   
@@ -603,7 +602,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">System.Byte</span>[]
+        <a class="xref" href="stellar_dotnet_sdk.Transaction.html">Transaction</a>
         <p>
       </td>
     </tr>
@@ -620,216 +619,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Sign_stellar_dotnet_sdk_KeyPair_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Sign(stellar_dotnet_sdk.KeyPair)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L46" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="stellar_dotnet_sdk_Transaction_Sign_" data-uid="stellar_dotnet_sdk.Transaction.Sign*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_Transaction_Sign_stellar_dotnet_sdk_KeyPair_" data-uid="stellar_dotnet_sdk.Transaction.Sign(stellar_dotnet_sdk.KeyPair)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_Sign_stellar_dotnet_sdk_KeyPair_" class="expander" data-toggle="collapse">Sign(KeyPair)</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_Transaction_Sign_stellar_dotnet_sdk_KeyPair_" class="collapse in">
-  <div class="markdown level1 summary"><p>Adds a new signature ed25519PublicKey to this transaction.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Sign(KeyPair signer)</code></pre>
-  </div>
-  
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-      <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
-        <td><span class="parametername">signer</span></td>
-        <td><p>signer <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> object representing a signer</p>
-</td>
-      </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Sign_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_Network_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Sign(stellar_dotnet_sdk.KeyPair%2Cstellar_dotnet_sdk.Network)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L56" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="stellar_dotnet_sdk_Transaction_Sign_" data-uid="stellar_dotnet_sdk.Transaction.Sign*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_Transaction_Sign_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_Network_" data-uid="stellar_dotnet_sdk.Transaction.Sign(stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.Network)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_Sign_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_Network_" class="expander" data-toggle="collapse">Sign(KeyPair, Network)</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_Transaction_Sign_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_Network_" class="collapse in">
-  <div class="markdown level1 summary"><p>Adds a new signature ed25519PublicKey to this transaction.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Sign(KeyPair signer, Network network)</code></pre>
-  </div>
-  
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-      <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
-        <td><span class="parametername">signer</span></td>
-        <td><p>signer <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> object representing a signer</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a></td>
-        <td><span class="parametername">network</span></td>
-        <td><p>The network <a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a> the transaction will be sent to.</p>
-</td>
-      </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_Sign_System_Byte___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.Sign(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L69" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="stellar_dotnet_sdk_Transaction_Sign_" data-uid="stellar_dotnet_sdk.Transaction.Sign*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_Transaction_Sign_System_Byte___" data-uid="stellar_dotnet_sdk.Transaction.Sign(System.Byte[])"><a href="#collapsible-stellar_dotnet_sdk_Transaction_Sign_System_Byte___" class="expander" data-toggle="collapse">Sign(Byte[])</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_Transaction_Sign_System_Byte___" class="collapse in">
-  <div class="markdown level1 summary"><p>Adds a new sha256Hash signature to this transaction by revealing preimage.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Sign(byte[] preimage)</code></pre>
-  </div>
-  
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-      <tr>
-        <td><span class="xref">System.Byte</span>[]</td>
-        <td><span class="parametername">preimage</span></td>
-        <td><p>the sha256 hash of preimage should be equal to signer hash</p>
-</td>
-      </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_SignatureBase.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.SignatureBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L115" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="stellar_dotnet_sdk_Transaction_SignatureBase_" data-uid="stellar_dotnet_sdk.Transaction.SignatureBase*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_Transaction_SignatureBase" data-uid="stellar_dotnet_sdk.Transaction.SignatureBase"><a href="#collapsible-stellar_dotnet_sdk_Transaction_SignatureBase" class="expander" data-toggle="collapse">SignatureBase()</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_Transaction_SignatureBase" class="collapse in">
-  <div class="markdown level1 summary"><p>Returns signature base.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public byte[] SignatureBase()</code></pre>
-  </div>
-  
-  
-  <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.Byte</span>[]
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_SignatureBase_stellar_dotnet_sdk_Network_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.SignatureBase(stellar_dotnet_sdk.Network)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L125" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_Transaction_SignatureBase_" data-uid="stellar_dotnet_sdk.Transaction.SignatureBase*"></a>
   
@@ -840,11 +629,11 @@
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public byte[] SignatureBase(Network network)</code></pre>
+    <pre><code class="lang-csharp hljs">public override byte[] SignatureBase(Network network)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -876,6 +665,8 @@
   
   
   
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_SignatureBase_stellar_dotnet_sdk_Network_">TransactionBase.SignatureBase(Network)</a></div>
   
   
   
@@ -883,28 +674,36 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_ToEnvelopeXdr.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.ToEnvelopeXdr%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L189" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_Transaction_ToEnvelopeXdr_" data-uid="stellar_dotnet_sdk.Transaction.ToEnvelopeXdr*"></a>
   
-  <h4 id="stellar_dotnet_sdk_Transaction_ToEnvelopeXdr" data-uid="stellar_dotnet_sdk.Transaction.ToEnvelopeXdr"><a href="#collapsible-stellar_dotnet_sdk_Transaction_ToEnvelopeXdr" class="expander" data-toggle="collapse">ToEnvelopeXdr()</a></h4>
+  <h4 id="stellar_dotnet_sdk_Transaction_ToEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_" data-uid="stellar_dotnet_sdk.Transaction.ToEnvelopeXdr(stellar_dotnet_sdk.TransactionBase.TransactionXdrVersion)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_ToEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_" class="expander" data-toggle="collapse">ToEnvelopeXdr(TransactionBase.TransactionXdrVersion)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_Transaction_ToEnvelopeXdr" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_ToEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_" class="collapse in">
   <div class="markdown level1 summary"><p>Generates TransactionEnvelope XDR object. Transaction need to have at least one signature.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TransactionEnvelope ToEnvelopeXdr()</code></pre>
+    <pre><code class="lang-csharp hljs">public override TransactionEnvelope ToEnvelopeXdr(TransactionBase.TransactionXdrVersion version = TransactionBase.TransactionXdrVersion.V0)</code></pre>
   </div>
-  
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.TransactionBase.TransactionXdrVersion.html">TransactionBase.TransactionXdrVersion</a></td>
+        <td><span class="parametername">version</span></td>
+        <td></td>
+      </tr>
+  </table>
   
   <h5 class="returns">Returns</h5>
   <table>
@@ -920,6 +719,8 @@
   
   
   
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_ToEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_">TransactionBase.ToEnvelopeXdr(TransactionBase.TransactionXdrVersion)</a></div>
   
   
   
@@ -927,72 +728,36 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_ToEnvelopeXdrBase64.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.ToEnvelopeXdrBase64%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L237" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="stellar_dotnet_sdk_Transaction_ToEnvelopeXdrBase64_" data-uid="stellar_dotnet_sdk.Transaction.ToEnvelopeXdrBase64*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_Transaction_ToEnvelopeXdrBase64" data-uid="stellar_dotnet_sdk.Transaction.ToEnvelopeXdrBase64"><a href="#collapsible-stellar_dotnet_sdk_Transaction_ToEnvelopeXdrBase64" class="expander" data-toggle="collapse">ToEnvelopeXdrBase64()</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_Transaction_ToEnvelopeXdrBase64" class="collapse in">
-  <div class="markdown level1 summary"><p>Returns base64-encoded TransactionEnvelope XDR object. Transaction need to have at least one signature.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ToEnvelopeXdrBase64()</code></pre>
-  </div>
-  
-  
-  <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdr.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.ToUnsignedEnvelopeXdr%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L207" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdr_" data-uid="stellar_dotnet_sdk.Transaction.ToUnsignedEnvelopeXdr*"></a>
   
-  <h4 id="stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdr" data-uid="stellar_dotnet_sdk.Transaction.ToUnsignedEnvelopeXdr"><a href="#collapsible-stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdr" class="expander" data-toggle="collapse">ToUnsignedEnvelopeXdr()</a></h4>
+  <h4 id="stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_" data-uid="stellar_dotnet_sdk.Transaction.ToUnsignedEnvelopeXdr(stellar_dotnet_sdk.TransactionBase.TransactionXdrVersion)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_" class="expander" data-toggle="collapse">ToUnsignedEnvelopeXdr(TransactionBase.TransactionXdrVersion)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdr" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_" class="collapse in">
   <div class="markdown level1 summary"><p>Generates TransactionEnvelope XDR object. This transaction MUST be signed before being useful</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TransactionEnvelope ToUnsignedEnvelopeXdr()</code></pre>
+    <pre><code class="lang-csharp hljs">public override TransactionEnvelope ToUnsignedEnvelopeXdr(TransactionBase.TransactionXdrVersion version = TransactionBase.TransactionXdrVersion.V0)</code></pre>
   </div>
-  
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.TransactionBase.TransactionXdrVersion.html">TransactionBase.TransactionXdrVersion</a></td>
+        <td><span class="parametername">version</span></td>
+        <td></td>
+      </tr>
+  </table>
   
   <h5 class="returns">Returns</h5>
   <table>
@@ -1008,6 +773,8 @@
   
   
   
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_ToUnsignedEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_">TransactionBase.ToUnsignedEnvelopeXdr(TransactionBase.TransactionXdrVersion)</a></div>
   
   
   
@@ -1015,57 +782,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdrBase64.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.ToUnsignedEnvelopeXdrBase64%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L224" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
-  
-  <a id="stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdrBase64_" data-uid="stellar_dotnet_sdk.Transaction.ToUnsignedEnvelopeXdrBase64*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdrBase64" data-uid="stellar_dotnet_sdk.Transaction.ToUnsignedEnvelopeXdrBase64"><a href="#collapsible-stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdrBase64" class="expander" data-toggle="collapse">ToUnsignedEnvelopeXdrBase64()</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdrBase64" class="collapse in">
-  <div class="markdown level1 summary"><p>Generates TransactionEnvelope XDR object. This transaction MUST be signed before being useful</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ToUnsignedEnvelopeXdrBase64()</code></pre>
-  </div>
-  
-  
-  <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <span class="xref">System.String</span>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_Transaction_ToXdr.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.Transaction.ToXdr%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L151" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_Transaction_ToXdr_" data-uid="stellar_dotnet_sdk.Transaction.ToXdr*"></a>
   
@@ -1076,11 +792,85 @@
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Transaction ToXdr()</code></pre>
+    <pre><code class="lang-csharp hljs">public TransactionV0 ToXdr()</code></pre>
+  </div>
+
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">stellar_dotnet_sdk.xdr.TransactionV0</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   </div>
   
+  
+  <a id="stellar_dotnet_sdk_Transaction_ToXdrV0_" data-uid="stellar_dotnet_sdk.Transaction.ToXdrV0*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_ToXdrV0" data-uid="stellar_dotnet_sdk.Transaction.ToXdrV0"><a href="#collapsible-stellar_dotnet_sdk_Transaction_ToXdrV0" class="expander" data-toggle="collapse">ToXdrV0()</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_ToXdrV0" class="collapse in">
+  <div class="markdown level1 summary"><p>Generates Transaction XDR object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TransactionV0 ToXdrV0()</code></pre>
+  </div>
+
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">stellar_dotnet_sdk.xdr.TransactionV0</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_ToXdrV1_" data-uid="stellar_dotnet_sdk.Transaction.ToXdrV1*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_ToXdrV1" data-uid="stellar_dotnet_sdk.Transaction.ToXdrV1"><a href="#collapsible-stellar_dotnet_sdk_Transaction_ToXdrV1" class="expander" data-toggle="collapse">ToXdrV1()</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_ToXdrV1" class="collapse in">
+  <div class="markdown level1 summary"><p>Generates Transaction XDR object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transaction ToXdrV1()</code></pre>
+  </div>
+
   
   <h5 class="returns">Returns</h5>
   <table>
@@ -1107,7 +897,6 @@
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/Transaction.cs/#L9" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

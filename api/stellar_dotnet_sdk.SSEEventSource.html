@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SSEEventSource
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,7 +73,7 @@
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  
+
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -87,9 +87,9 @@
   
   <h5 id="stellar_dotnet_sdk_SSEEventSource_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SSEEventSource : IEventSource, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public class SSEEventSource : object, IEventSource, IDisposable</code></pre>
   </div>
-  
+
   
   
   
@@ -97,27 +97,20 @@
   <h3 id="constructors">Constructors
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_SSEEventSource__ctor_System_Uri_System_Action_LaunchDarkly_EventSource_ConfigurationBuilder__.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.SSEEventSource.%23ctor(System.Uri%2CSystem.Action%7BLaunchDarkly.EventSource.ConfigurationBuilder%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L12" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_SSEEventSource__ctor_" data-uid="stellar_dotnet_sdk.SSEEventSource.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_SSEEventSource__ctor_System_Uri_System_Action_LaunchDarkly_EventSource_ConfigurationBuilder__" data-uid="stellar_dotnet_sdk.SSEEventSource.#ctor(System.Uri,System.Action{LaunchDarkly.EventSource.ConfigurationBuilder})"><a href="#collapsible-stellar_dotnet_sdk_SSEEventSource__ctor_System_Uri_System_Action_LaunchDarkly_EventSource_ConfigurationBuilder__" class="expander" data-toggle="collapse">SSEEventSource(Uri, Action&lt;ConfigurationBuilder&gt;)</a></h4>
+  <h4 id="stellar_dotnet_sdk_SSEEventSource__ctor_Uri_Action_ConfigurationBuilder__" data-uid="stellar_dotnet_sdk.SSEEventSource.#ctor(Uri,Action{ConfigurationBuilder})"><a href="#collapsible-stellar_dotnet_sdk_SSEEventSource__ctor_Uri_Action_ConfigurationBuilder__" class="expander" data-toggle="collapse">SSEEventSource(Uri, Action&lt;ConfigurationBuilder&gt;)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_SSEEventSource__ctor_System_Uri_System_Action_LaunchDarkly_EventSource_ConfigurationBuilder__" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_SSEEventSource__ctor_Uri_Action_ConfigurationBuilder__" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SSEEventSource(Uri uri, Action&lt;ConfigurationBuilder&gt; configureEventSource = null)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -128,12 +121,12 @@
     </tr>
   </thead>
       <tr>
-        <td><span class="xref">System.Uri</span></td>
+        <td><span class="xref">Uri</span></td>
         <td><span class="parametername">uri</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Action</span>&lt;<span class="xref">LaunchDarkly.EventSource.ConfigurationBuilder</span>&gt;</td>
+        <td><span class="xref">Action</span>&lt;<span class="xref">ConfigurationBuilder</span>&gt;</td>
         <td><span class="parametername">configureEventSource</span></td>
         <td></td>
       </tr>
@@ -153,13 +146,6 @@
   <h3 id="properties">Properties
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_SSEEventSource_Headers.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.SSEEventSource.Headers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L26" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_SSEEventSource_Headers_" data-uid="stellar_dotnet_sdk.SSEEventSource.Headers*"></a>
   
@@ -169,12 +155,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete]
-public NameValueCollection Headers { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public NameValueCollection Headers { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -183,7 +168,7 @@ public NameValueCollection Headers { get; }</code></pre>
   <table>
     <tr>
       <td>
-        <span class="xref">System.Collections.Specialized.NameValueCollection</span>
+        <span class="xref">NameValueCollection</span>
         <p>
       </td>
     </tr>
@@ -199,13 +184,6 @@ public NameValueCollection Headers { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_SSEEventSource_LastEventId.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.SSEEventSource.LastEventId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L29" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_SSEEventSource_LastEventId_" data-uid="stellar_dotnet_sdk.SSEEventSource.LastEventId*"></a>
   
@@ -215,11 +193,11 @@ public NameValueCollection Headers { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string LastEventId { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -244,13 +222,6 @@ public NameValueCollection Headers { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_SSEEventSource_MessageTypes.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.SSEEventSource.MessageTypes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L31" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_SSEEventSource_MessageTypes_" data-uid="stellar_dotnet_sdk.SSEEventSource.MessageTypes*"></a>
   
@@ -260,12 +231,11 @@ public NameValueCollection Headers { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete]
-public string[] MessageTypes { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string[] MessageTypes { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -290,13 +260,6 @@ public string[] MessageTypes { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_SSEEventSource_ReadyState.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.SSEEventSource.ReadyState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L34" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_SSEEventSource_ReadyState_" data-uid="stellar_dotnet_sdk.SSEEventSource.ReadyState*"></a>
   
@@ -306,11 +269,11 @@ public string[] MessageTypes { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public EventSource.EventSourceState ReadyState { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -335,13 +298,6 @@ public string[] MessageTypes { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_SSEEventSource_Timeout.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.SSEEventSource.Timeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L36" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_SSEEventSource_Timeout_" data-uid="stellar_dotnet_sdk.SSEEventSource.Timeout*"></a>
   
@@ -351,11 +307,11 @@ public string[] MessageTypes { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int Timeout { get; set; }</code></pre>
   </div>
-  
+
   
   
   
@@ -380,13 +336,6 @@ public string[] MessageTypes { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_SSEEventSource_Url.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.SSEEventSource.Url%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L38" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_SSEEventSource_Url_" data-uid="stellar_dotnet_sdk.SSEEventSource.Url*"></a>
   
@@ -396,11 +345,11 @@ public string[] MessageTypes { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Uri Url { get; set; }</code></pre>
   </div>
-  
+
   
   
   
@@ -409,7 +358,7 @@ public string[] MessageTypes { get; }</code></pre>
   <table>
     <tr>
       <td>
-        <span class="xref">System.Uri</span>
+        <span class="xref">Uri</span>
         <p>
       </td>
     </tr>
@@ -427,13 +376,6 @@ public string[] MessageTypes { get; }</code></pre>
   <h3 id="methods">Methods
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_SSEEventSource_Connect.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.SSEEventSource.Connect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L46" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_SSEEventSource_Connect_" data-uid="stellar_dotnet_sdk.SSEEventSource.Connect*"></a>
   
@@ -443,17 +385,17 @@ public string[] MessageTypes { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Task Connect()</code></pre>
   </div>
-  
+
   
   <h5 class="returns">Returns</h5>
   <table>
     <tr>
       <td>
-        <span class="xref">System.Threading.Tasks.Task</span>
+        <span class="xref">Task</span>
         <p>
       </td>
     </tr>
@@ -472,13 +414,6 @@ public string[] MessageTypes { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_SSEEventSource_Dispose.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.SSEEventSource.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L51" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_SSEEventSource_Dispose_" data-uid="stellar_dotnet_sdk.SSEEventSource.Dispose*"></a>
   
@@ -488,11 +423,11 @@ public string[] MessageTypes { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
   </div>
-  
+
   
   
   
@@ -502,20 +437,12 @@ public string[] MessageTypes { get; }</code></pre>
   
   <h5 class="implements">Implements</h5>
       <div><a class="xref" href="stellar_dotnet_sdk.IEventSource.html#stellar_dotnet_sdk_IEventSource_Dispose">IEventSource.Dispose()</a></div>
-      <div><span class="xref">System.IDisposable.Dispose()</span></div>
   
   
   
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_SSEEventSource_Shutdown.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.SSEEventSource.Shutdown%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L56" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_SSEEventSource_Shutdown_" data-uid="stellar_dotnet_sdk.SSEEventSource.Shutdown*"></a>
   
@@ -525,11 +452,11 @@ public string[] MessageTypes { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Shutdown()</code></pre>
   </div>
-  
+
   
   
   
@@ -547,13 +474,6 @@ public string[] MessageTypes { get; }</code></pre>
   <h3 id="events">Events
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_SSEEventSource_Error.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.SSEEventSource.Error%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L40" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   
   <h4 id="stellar_dotnet_sdk_SSEEventSource_Error" data-uid="stellar_dotnet_sdk.SSEEventSource.Error"><a href="#collapsible-stellar_dotnet_sdk_SSEEventSource_Error" class="expander" data-toggle="collapse">Error</a></h4>
@@ -562,11 +482,11 @@ public string[] MessageTypes { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event EventHandler&lt;EventSource.ServerSentErrorEventArgs&gt; Error</code></pre>
   </div>
-  
+
   
   
   
@@ -576,7 +496,7 @@ public string[] MessageTypes { get; }</code></pre>
   <table>
     <tr>
       <td>
-        <span class="xref">System.EventHandler</span>&lt;<a class="xref" href="stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs.html">EventSource.ServerSentErrorEventArgs</a>&gt;
+        <span class="xref">EventHandler</span>&lt;<a class="xref" href="stellar_dotnet_sdk.EventSource.ServerSentErrorEventArgs.html">EventSource.ServerSentErrorEventArgs</a>&gt;
         <p>
       </td>
     </tr>
@@ -591,13 +511,6 @@ public string[] MessageTypes { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_SSEEventSource_Message.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.SSEEventSource.Message%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L42" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   
   <h4 id="stellar_dotnet_sdk_SSEEventSource_Message" data-uid="stellar_dotnet_sdk.SSEEventSource.Message"><a href="#collapsible-stellar_dotnet_sdk_SSEEventSource_Message" class="expander" data-toggle="collapse">Message</a></h4>
@@ -606,11 +519,11 @@ public string[] MessageTypes { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event EventHandler&lt;EventSource.ServerSentEventArgs&gt; Message</code></pre>
   </div>
-  
+
   
   
   
@@ -620,7 +533,7 @@ public string[] MessageTypes { get; }</code></pre>
   <table>
     <tr>
       <td>
-        <span class="xref">System.EventHandler</span>&lt;<a class="xref" href="stellar_dotnet_sdk.EventSource.ServerSentEventArgs.html">EventSource.ServerSentEventArgs</a>&gt;
+        <span class="xref">EventHandler</span>&lt;<a class="xref" href="stellar_dotnet_sdk.EventSource.ServerSentEventArgs.html">EventSource.ServerSentEventArgs</a>&gt;
         <p>
       </td>
     </tr>
@@ -635,13 +548,6 @@ public string[] MessageTypes { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_SSEEventSource_StateChange.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.SSEEventSource.StateChange%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L44" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   
   <h4 id="stellar_dotnet_sdk_SSEEventSource_StateChange" data-uid="stellar_dotnet_sdk.SSEEventSource.StateChange"><a href="#collapsible-stellar_dotnet_sdk_SSEEventSource_StateChange" class="expander" data-toggle="collapse">StateChange</a></h4>
@@ -650,11 +556,11 @@ public string[] MessageTypes { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event EventHandler&lt;EventSource.StateChangeEventArgs&gt; StateChange</code></pre>
   </div>
-  
+
   
   
   
@@ -664,7 +570,7 @@ public string[] MessageTypes { get; }</code></pre>
   <table>
     <tr>
       <td>
-        <span class="xref">System.EventHandler</span>&lt;<a class="xref" href="stellar_dotnet_sdk.EventSource.StateChangeEventArgs.html">EventSource.StateChangeEventArgs</a>&gt;
+        <span class="xref">EventHandler</span>&lt;<a class="xref" href="stellar_dotnet_sdk.EventSource.StateChangeEventArgs.html">EventSource.StateChangeEventArgs</a>&gt;
         <p>
       </td>
     </tr>
@@ -683,7 +589,6 @@ public string[] MessageTypes { get; }</code></pre>
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/SSEEventSource.cs/#L8" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

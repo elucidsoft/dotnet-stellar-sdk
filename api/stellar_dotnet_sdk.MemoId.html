@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class MemoId
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,7 +73,7 @@
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  
+
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -91,7 +91,7 @@
       <a class="xref" href="stellar_dotnet_sdk.Memo.html#stellar_dotnet_sdk_Memo_Text_System_String_">Memo.Text(String)</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.Memo.html#stellar_dotnet_sdk_Memo_Id_System_Int64_">Memo.Id(Int64)</a>
+      <a class="xref" href="stellar_dotnet_sdk.Memo.html#stellar_dotnet_sdk_Memo_Id_System_UInt64_">Memo.Id(UInt64)</a>
     </div>
     <div>
       <a class="xref" href="stellar_dotnet_sdk.Memo.html#stellar_dotnet_sdk_Memo_Hash_System_Byte___">Memo.Hash(Byte[])</a>
@@ -108,6 +108,9 @@
     <div>
       <a class="xref" href="stellar_dotnet_sdk.Memo.html#stellar_dotnet_sdk_Memo_FromXdr_stellar_dotnet_sdk_xdr_Memo_">Memo.FromXdr(Memo)</a>
     </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.Memo.html#stellar_dotnet_sdk_Memo_Equals_System_Object_">Memo.Equals(System.Object)</a>
+    </div>
   </div>
   
   <h6><strong>Namespace</strong>: System.Dynamic.ExpandoObject</h6>
@@ -117,7 +120,7 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class MemoId : Memo</code></pre>
   </div>
-  
+
   
   
   
@@ -125,27 +128,20 @@
   <h3 id="constructors">Constructors
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_MemoId__ctor_System_Int64_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.MemoId.%23ctor(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/MemoId.cs/#L8" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_MemoId__ctor_" data-uid="stellar_dotnet_sdk.MemoId.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_MemoId__ctor_System_Int64_" data-uid="stellar_dotnet_sdk.MemoId.#ctor(System.Int64)"><a href="#collapsible-stellar_dotnet_sdk_MemoId__ctor_System_Int64_" class="expander" data-toggle="collapse">MemoId(Int64)</a></h4>
+  <h4 id="stellar_dotnet_sdk_MemoId__ctor_System_UInt64_" data-uid="stellar_dotnet_sdk.MemoId.#ctor(System.UInt64)"><a href="#collapsible-stellar_dotnet_sdk_MemoId__ctor_System_UInt64_" class="expander" data-toggle="collapse">MemoId(UInt64)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_MemoId__ctor_System_Int64_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_MemoId__ctor_System_UInt64_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MemoId(long id)</code></pre>
+    <pre><code class="lang-csharp hljs">public MemoId(ulong id)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -156,7 +152,7 @@
     </tr>
   </thead>
       <tr>
-        <td><span class="xref">System.Int64</span></td>
+        <td><span class="xref">System.UInt64</span></td>
         <td><span class="parametername">id</span></td>
         <td></td>
       </tr>
@@ -176,13 +172,6 @@
   <h3 id="properties">Properties
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_MemoId_IdValue.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.MemoId.IdValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/MemoId.cs/#L15" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_MemoId_IdValue_" data-uid="stellar_dotnet_sdk.MemoId.IdValue*"></a>
   
@@ -192,11 +181,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long IdValue { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public ulong IdValue { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -205,7 +194,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">System.Int64</span>
+        <span class="xref">System.UInt64</span>
         <p>
       </td>
     </tr>
@@ -221,27 +210,20 @@
   <h3 id="methods">Methods
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_MemoId_Equals_System_Object_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.MemoId.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/MemoId.cs/#L27" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_MemoId_Equals_" data-uid="stellar_dotnet_sdk.MemoId.Equals*"></a>
   
-  <h4 id="stellar_dotnet_sdk_MemoId_Equals_System_Object_" data-uid="stellar_dotnet_sdk.MemoId.Equals(System.Object)"><a href="#collapsible-stellar_dotnet_sdk_MemoId_Equals_System_Object_" class="expander" data-toggle="collapse">Equals(Object)</a></h4>
+  <h4 id="stellar_dotnet_sdk_MemoId_Equals_Object_" data-uid="stellar_dotnet_sdk.MemoId.Equals(Object)"><a href="#collapsible-stellar_dotnet_sdk_MemoId_Equals_Object_" class="expander" data-toggle="collapse">Equals(Object)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_MemoId_Equals_System_Object_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_MemoId_Equals_Object_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override bool Equals(object o)</code></pre>
+    <pre><code class="lang-csharp hljs">public override bool Equals(Object o)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -252,7 +234,7 @@
     </tr>
   </thead>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">Object</span></td>
         <td><span class="parametername">o</span></td>
         <td></td>
       </tr>
@@ -272,8 +254,6 @@
   
   
   
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="stellar_dotnet_sdk.Memo.html#stellar_dotnet_sdk_Memo_Equals_System_Object_">Memo.Equals(Object)</a></div>
   
   
   
@@ -281,13 +261,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_MemoId_GetHashCode.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.MemoId.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/MemoId.cs/#L35" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_MemoId_GetHashCode_" data-uid="stellar_dotnet_sdk.MemoId.GetHashCode*"></a>
   
@@ -297,11 +270,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
   </div>
-  
+
   
   <h5 class="returns">Returns</h5>
   <table>
@@ -326,13 +299,6 @@
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_MemoId_ToXdr.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.MemoId.ToXdr%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/MemoId.cs/#L17" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_MemoId_ToXdr_" data-uid="stellar_dotnet_sdk.MemoId.ToXdr*"></a>
   
@@ -342,11 +308,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override Memo ToXdr()</code></pre>
   </div>
-  
+
   
   <h5 class="returns">Returns</h5>
   <table>
@@ -375,7 +341,6 @@
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/MemoId.cs/#L6" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

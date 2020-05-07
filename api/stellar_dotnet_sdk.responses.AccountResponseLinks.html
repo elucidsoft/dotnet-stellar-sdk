@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class AccountResponseLinks
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,7 +73,7 @@
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  
+
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -87,9 +87,9 @@
   
   <h5 id="stellar_dotnet_sdk_responses_AccountResponseLinks_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AccountResponseLinks</code></pre>
+    <pre><code class="lang-csharp hljs">public class AccountResponseLinks : object</code></pre>
   </div>
-  
+
   
   
   
@@ -97,13 +97,6 @@
   <h3 id="constructors">Constructors
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponseLinks__ctor_stellar_dotnet_sdk_responses_Link_stellar_dotnet_sdk_responses_page_Page_stellar_dotnet_sdk_responses_effects_EffectResponse___stellar_dotnet_sdk_responses_Link_stellar_dotnet_sdk_responses_page_Page_stellar_dotnet_sdk_responses_OfferResponse___stellar_dotnet_sdk_responses_Link_stellar_dotnet_sdk_responses_page_Page_stellar_dotnet_sdk_responses_operations_OperationResponse___stellar_dotnet_sdk_responses_Link_stellar_dotnet_sdk_responses_AccountResponse__stellar_dotnet_sdk_responses_Link_stellar_dotnet_sdk_responses_page_Page_stellar_dotnet_sdk_responses_TransactionResponse___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponseLinks.%23ctor(stellar_dotnet_sdk.responses.Link%7Bstellar_dotnet_sdk.responses.page.Page%7Bstellar_dotnet_sdk.responses.effects.EffectResponse%7D%7D%2Cstellar_dotnet_sdk.responses.Link%7Bstellar_dotnet_sdk.responses.page.Page%7Bstellar_dotnet_sdk.responses.OfferResponse%7D%7D%2Cstellar_dotnet_sdk.responses.Link%7Bstellar_dotnet_sdk.responses.page.Page%7Bstellar_dotnet_sdk.responses.operations.OperationResponse%7D%7D%2Cstellar_dotnet_sdk.responses.Link%7Bstellar_dotnet_sdk.responses.AccountResponse%7D%2Cstellar_dotnet_sdk.responses.Link%7Bstellar_dotnet_sdk.responses.page.Page%7Bstellar_dotnet_sdk.responses.TransactionResponse%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponseLinks.cs/#L10" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponseLinks__ctor_" data-uid="stellar_dotnet_sdk.responses.AccountResponseLinks.#ctor*"></a>
   
@@ -113,11 +106,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public AccountResponseLinks(Link&lt;Page&lt;EffectResponse&gt;&gt; effects, Link&lt;Page&lt;OfferResponse&gt;&gt; offers, Link&lt;Page&lt;OperationResponse&gt;&gt; operations, Link&lt;AccountResponse&gt; self, Link&lt;Page&lt;TransactionResponse&gt;&gt; transactions)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -168,13 +161,6 @@
   <h3 id="properties">Properties
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponseLinks_Effects.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponseLinks.Effects%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponseLinks.cs/#L21" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponseLinks_Effects_" data-uid="stellar_dotnet_sdk.responses.AccountResponseLinks.Effects*"></a>
   
@@ -184,12 +170,11 @@
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;effects&quot;)]
-public Link&lt;Page&lt;EffectResponse&gt;&gt; Effects { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Link&lt;Page&lt;EffectResponse&gt;&gt; Effects { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -212,13 +197,6 @@ public Link&lt;Page&lt;EffectResponse&gt;&gt; Effects { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponseLinks_Offers.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponseLinks.Offers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponseLinks.cs/#L24" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponseLinks_Offers_" data-uid="stellar_dotnet_sdk.responses.AccountResponseLinks.Offers*"></a>
   
@@ -228,12 +206,11 @@ public Link&lt;Page&lt;EffectResponse&gt;&gt; Effects { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;offers&quot;)]
-public Link&lt;Page&lt;OfferResponse&gt;&gt; Offers { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Link&lt;Page&lt;OfferResponse&gt;&gt; Offers { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -256,13 +233,6 @@ public Link&lt;Page&lt;OfferResponse&gt;&gt; Offers { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponseLinks_Operations.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponseLinks.Operations%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponseLinks.cs/#L27" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponseLinks_Operations_" data-uid="stellar_dotnet_sdk.responses.AccountResponseLinks.Operations*"></a>
   
@@ -272,12 +242,11 @@ public Link&lt;Page&lt;OfferResponse&gt;&gt; Offers { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;operations&quot;)]
-public Link&lt;Page&lt;OperationResponse&gt;&gt; Operations { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Link&lt;Page&lt;OperationResponse&gt;&gt; Operations { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -300,13 +269,6 @@ public Link&lt;Page&lt;OperationResponse&gt;&gt; Operations { get; }</code></pre
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponseLinks_Self.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponseLinks.Self%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponseLinks.cs/#L30" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponseLinks_Self_" data-uid="stellar_dotnet_sdk.responses.AccountResponseLinks.Self*"></a>
   
@@ -316,12 +278,11 @@ public Link&lt;Page&lt;OperationResponse&gt;&gt; Operations { get; }</code></pre
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;self&quot;)]
-public Link&lt;AccountResponse&gt; Self { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Link&lt;AccountResponse&gt; Self { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -344,13 +305,6 @@ public Link&lt;AccountResponse&gt; Self { get; }</code></pre>
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_responses_AccountResponseLinks_Transactions.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.responses.AccountResponseLinks.Transactions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponseLinks.cs/#L33" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_responses_AccountResponseLinks_Transactions_" data-uid="stellar_dotnet_sdk.responses.AccountResponseLinks.Transactions*"></a>
   
@@ -360,12 +314,11 @@ public Link&lt;AccountResponse&gt; Self { get; }</code></pre>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonProperty(PropertyName = &quot;transactions&quot;)]
-public Link&lt;Page&lt;TransactionResponse&gt;&gt; Transactions { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Link&lt;Page&lt;TransactionResponse&gt;&gt; Transactions { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -392,7 +345,6 @@ public Link&lt;Page&lt;TransactionResponse&gt;&gt; Transactions { get; }</code><
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/responses/AccountResponseLinks.cs/#L8" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

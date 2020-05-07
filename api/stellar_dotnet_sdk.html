@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace stellar_dotnet_sdk
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -89,6 +89,11 @@ Use <a class="xref" href="stellar_dotnet_sdk.AccountMergeOperation.Builder.html"
       <section><p>Builds AccountMerge operation.
 <a class="xref" href="stellar_dotnet_sdk.AccountMergeOperation.html">AccountMergeOperation</a></p>
 </section>
+      <h4><a class="xref" href="stellar_dotnet_sdk.AccountRequiresMemoException.html">AccountRequiresMemoException</a></h4>
+      <section><p>AccountRequiresMemoException is thrown when a transaction is trying to submit a payment operation to an account
+that requires a memo.</p>
+<p>See SEP0029: <a href="https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0029.md">https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0029.md</a></p>
+</section>
       <h4><a class="xref" href="stellar_dotnet_sdk.AllowTrustOperation.html">AllowTrustOperation</a></h4>
       <section><p>Represents a <span class="xref">stellar_dotnet_sdk.xdr.AllowTrustOp</span>.
 Use <a class="xref" href="stellar_dotnet_sdk.AllowTrustOperation.Builder.html">AllowTrustOperation.Builder</a> to create a new AllowTrustOperation.</p>
@@ -103,6 +108,8 @@ Use <a class="xref" href="stellar_dotnet_sdk.AllowTrustOperation.Builder.html">A
       <section><p>Asset class represents an asset, either the native asset (XLM) or a asset code / issuer account ID pair.
 An asset code describes an asset code and issuer pair. In the case of the native asset XLM, the issuer will be null.</p>
 </section>
+      <h4><a class="xref" href="stellar_dotnet_sdk.AssetExtensions.html">AssetExtensions</a></h4>
+      <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.AssetTypeCreditAlphaNum.html">AssetTypeCreditAlphaNum</a></h4>
       <section><p>Assets are uniquely identified by the asset code and the issuer. Ultimately, it’s up to the issuer to set the asset code. By convention, however, currencies should be represented by
 the appropriate ISO 4217 code. For stocks and bonds, use the appropriate ISIN number.</p>
@@ -114,6 +121,8 @@ the appropriate ISO 4217 code. For stocks and bonds, use the appropriate ISIN nu
       <h4><a class="xref" href="stellar_dotnet_sdk.AssetTypeNative.html">AssetTypeNative</a></h4>
       <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.Base32Encoding.html">Base32Encoding</a></h4>
+      <section></section>
+      <h4><a class="xref" href="stellar_dotnet_sdk.Base32EncodingOptions.html">Base32EncodingOptions</a></h4>
       <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.BumpSequenceOperation.html">BumpSequenceOperation</a></h4>
       <section><p>Represents a <span class="xref">stellar_dotnet_sdk.xdr.BumpSequenceOp</span>.
@@ -167,6 +176,8 @@ Use <a class="xref" href="stellar_dotnet_sdk.CreatePassiveSellOfferOperation.Bui
       <h4><a class="xref" href="stellar_dotnet_sdk.EventSource.StateChangeEventArgs.html">EventSource.StateChangeEventArgs</a></h4>
       <section><p>Server Sent Error Event Object</p>
 </section>
+      <h4><a class="xref" href="stellar_dotnet_sdk.FeeBumpTransaction.html">FeeBumpTransaction</a></h4>
+      <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.FormatException.html">FormatException</a></h4>
       <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.HashCode.html">HashCode</a></h4>
@@ -229,17 +240,29 @@ Use <a class="xref" href="stellar_dotnet_sdk.ManageSellOfferOperation.Builder.ht
       <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.MemoTooLongException.html">MemoTooLongException</a></h4>
       <section></section>
+      <h4><a class="xref" href="stellar_dotnet_sdk.MuxedAccount.html">MuxedAccount</a></h4>
+      <section></section>
+      <h4><a class="xref" href="stellar_dotnet_sdk.MuxedAccountMed25519.html">MuxedAccountMed25519</a></h4>
+      <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a></h4>
       <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.Operation.html">Operation</a></h4>
       <section></section>
-      <h4><a class="xref" href="stellar_dotnet_sdk.PathPaymentOperation.html">PathPaymentOperation</a></h4>
-      <section><p>Represents a <span class="xref">stellar_dotnet_sdk.xdr.PathPaymentOp</span>.
-Use <a class="xref" href="stellar_dotnet_sdk.PathPaymentOperation.Builder.html">PathPaymentOperation.Builder</a> to create a new PathPaymentOperation.</p>
+      <h4><a class="xref" href="stellar_dotnet_sdk.PathPaymentStrictReceiveOperation.html">PathPaymentStrictReceiveOperation</a></h4>
+      <section><p>Represents a <a class="xref" href="stellar_dotnet_sdk.PathPaymentStrictReceiveOperation.html">PathPaymentStrictReceiveOperation</a>.
+Use <a class="xref" href="stellar_dotnet_sdk.PathPaymentStrictReceiveOperation.Builder.html">PathPaymentStrictReceiveOperation.Builder</a> to create a new PathPaymentStrictReceiveOperation.</p>
 <p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#path-payment">Path Payment</a></p>
 </section>
-      <h4><a class="xref" href="stellar_dotnet_sdk.PathPaymentOperation.Builder.html">PathPaymentOperation.Builder</a></h4>
-      <section><p>Builds a <a class="xref" href="stellar_dotnet_sdk.PathPaymentOperation.html">PathPaymentOperation</a>.</p>
+      <h4><a class="xref" href="stellar_dotnet_sdk.PathPaymentStrictReceiveOperation.Builder.html">PathPaymentStrictReceiveOperation.Builder</a></h4>
+      <section><p>Builds a <a class="xref" href="stellar_dotnet_sdk.PathPaymentStrictReceiveOperation.html">PathPaymentStrictReceiveOperation</a>.</p>
+</section>
+      <h4><a class="xref" href="stellar_dotnet_sdk.PathPaymentStrictSendOperation.html">PathPaymentStrictSendOperation</a></h4>
+      <section><p>Represents a <a class="xref" href="stellar_dotnet_sdk.PathPaymentStrictSendOperation.html">PathPaymentStrictSendOperation</a>.
+Use <a class="xref" href="stellar_dotnet_sdk.PathPaymentStrictSendOperation.Builder.html">PathPaymentStrictSendOperation.Builder</a> to create a new PathPaymentStrictSendOperation.</p>
+<p>See also: <a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#path-payment">Path Payment</a></p>
+</section>
+      <h4><a class="xref" href="stellar_dotnet_sdk.PathPaymentStrictSendOperation.Builder.html">PathPaymentStrictSendOperation.Builder</a></h4>
+      <section><p>Builds a <a class="xref" href="stellar_dotnet_sdk.PathPaymentStrictSendOperation.html">PathPaymentStrictSendOperation</a>.</p>
 </section>
       <h4><a class="xref" href="stellar_dotnet_sdk.PaymentOperation.html">PaymentOperation</a></h4>
       <section><p>Represents a <span class="xref">stellar_dotnet_sdk.xdr.PaymentOp</span> operation.
@@ -268,13 +291,18 @@ Use <a class="xref" href="stellar_dotnet_sdk.SetOptionsOperation.Builder.html">S
       <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.StrKey.html">StrKey</a></h4>
       <section></section>
+      <h4><a class="xref" href="stellar_dotnet_sdk.SubmitTransactionOptions.html">SubmitTransactionOptions</a></h4>
+      <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.TimeBounds.html">TimeBounds</a></h4>
       <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.Transaction.html">Transaction</a></h4>
       <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.Transaction.Builder.html">Transaction.Builder</a></h4>
-      <section><p>Builds a new Transaction object.</p>
-</section>
+      <section></section>
+      <h4><a class="xref" href="stellar_dotnet_sdk.TransactionBase.html">TransactionBase</a></h4>
+      <section></section>
+      <h4><a class="xref" href="stellar_dotnet_sdk.TransactionBuilder.html">TransactionBuilder</a></h4>
+      <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.UriBuilderExtensions.html">UriBuilderExtensions</a></h4>
       <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.Util.html">Util</a></h4>
@@ -285,6 +313,8 @@ Use <a class="xref" href="stellar_dotnet_sdk.SetOptionsOperation.Builder.html">S
 </section>
     <h3 id="interfaces">Interfaces
   </h3>
+      <h4><a class="xref" href="stellar_dotnet_sdk.IAccountId.html">IAccountId</a></h4>
+      <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.IEventSource.html">IEventSource</a></h4>
       <section></section>
       <h4><a class="xref" href="stellar_dotnet_sdk.ITransactionBuilderAccount.html">ITransactionBuilderAccount</a></h4>
@@ -301,6 +331,9 @@ Use <a class="xref" href="stellar_dotnet_sdk.SetOptionsOperation.Builder.html">S
 </section>
       <h4><a class="xref" href="stellar_dotnet_sdk.StrKey.VersionByte.html">StrKey.VersionByte</a></h4>
       <section></section>
+      <h4><a class="xref" href="stellar_dotnet_sdk.TransactionBase.TransactionXdrVersion.html">TransactionBase.TransactionXdrVersion</a></h4>
+      <section><p>Feature flag to control which version of the envelope is generated.</p>
+</section>
 </article>
           </div>
           <div class="contribution-panel mobile-hide">

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class KeyPair
    ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="../favicon">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -75,7 +75,7 @@
 Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> only supports ed25519 but in a future this class can be abstraction layer for other public-key signature systems.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  
+
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
@@ -89,9 +89,9 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   <h5 id="stellar_dotnet_sdk_KeyPair_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class KeyPair</code></pre>
+    <pre><code class="lang-csharp hljs">public class KeyPair : object, IAccountId</code></pre>
   </div>
-  
+
   
   
   
@@ -99,13 +99,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   <h3 id="constructors">Constructors
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair__ctor_System_Byte___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.%23ctor(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L28" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair__ctor_" data-uid="stellar_dotnet_sdk.KeyPair.#ctor*"></a>
   
@@ -116,11 +109,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public KeyPair(byte[] publicKey)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -149,13 +142,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair__ctor_System_Byte___System_Byte___System_Byte___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.%23ctor(System.Byte%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L39" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair__ctor_" data-uid="stellar_dotnet_sdk.KeyPair.#ctor*"></a>
   
@@ -166,11 +152,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public KeyPair(byte[] publicKey, byte[] privateKey, byte[] seed)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -211,13 +197,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   <h3 id="properties">Properties
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_AccountId.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.AccountId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L78" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_AccountId_" data-uid="stellar_dotnet_sdk.KeyPair.AccountId*"></a>
   
@@ -228,11 +207,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string AccountId { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -249,19 +228,14 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   
   
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.IAccountId.html#stellar_dotnet_sdk_IAccountId_AccountId">IAccountId.AccountId</a></div>
   
   
   
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_Address.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.Address%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L83" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_Address_" data-uid="stellar_dotnet_sdk.KeyPair.Address*"></a>
   
@@ -272,11 +246,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Address { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -293,19 +267,91 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   
   
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.IAccountId.html#stellar_dotnet_sdk_IAccountId_Address">IAccountId.Address</a></div>
   
   
   
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_PrivateKey.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.PrivateKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L68" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
+  
+  <a id="stellar_dotnet_sdk_KeyPair_IsMuxedAccount_" data-uid="stellar_dotnet_sdk.KeyPair.IsMuxedAccount*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_KeyPair_IsMuxedAccount" data-uid="stellar_dotnet_sdk.KeyPair.IsMuxedAccount"><a href="#collapsible-stellar_dotnet_sdk_KeyPair_IsMuxedAccount" class="expander" data-toggle="collapse">IsMuxedAccount</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_KeyPair_IsMuxedAccount" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMuxedAccount { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.IAccountId.html#stellar_dotnet_sdk_IAccountId_IsMuxedAccount">IAccountId.IsMuxedAccount</a></div>
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_KeyPair_MuxedAccount_" data-uid="stellar_dotnet_sdk.KeyPair.MuxedAccount*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_KeyPair_MuxedAccount" data-uid="stellar_dotnet_sdk.KeyPair.MuxedAccount"><a href="#collapsible-stellar_dotnet_sdk_KeyPair_MuxedAccount" class="expander" data-toggle="collapse">MuxedAccount</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_KeyPair_MuxedAccount" class="collapse in">
+  <div class="markdown level1 summary"><p>XDR MuxedAccount</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MuxedAccount MuxedAccount { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">stellar_dotnet_sdk.xdr.MuxedAccount</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.IAccountId.html#stellar_dotnet_sdk_IAccountId_MuxedAccount">IAccountId.MuxedAccount</a></div>
+  
+  
+  
+  
+  </div>
+  
   
   <a id="stellar_dotnet_sdk_KeyPair_PrivateKey_" data-uid="stellar_dotnet_sdk.KeyPair.PrivateKey*"></a>
   
@@ -316,11 +362,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public byte[] PrivateKey { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -343,13 +389,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_PublicKey.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.PublicKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L63" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_PublicKey_" data-uid="stellar_dotnet_sdk.KeyPair.PublicKey*"></a>
   
@@ -360,11 +399,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public byte[] PublicKey { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -381,19 +420,14 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   
   
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.IAccountId.html#stellar_dotnet_sdk_IAccountId_PublicKey">IAccountId.PublicKey</a></div>
   
   
   
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_SecretSeed.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.SecretSeed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L88" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_SecretSeed_" data-uid="stellar_dotnet_sdk.KeyPair.SecretSeed*"></a>
   
@@ -404,11 +438,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string SecretSeed { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -431,13 +465,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_SeedBytes.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.SeedBytes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L73" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_SeedBytes_" data-uid="stellar_dotnet_sdk.KeyPair.SeedBytes*"></a>
   
@@ -448,11 +475,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public byte[] SeedBytes { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -475,13 +502,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_SignatureHint.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.SignatureHint%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L93" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_SignatureHint_" data-uid="stellar_dotnet_sdk.KeyPair.SignatureHint*"></a>
   
@@ -492,11 +512,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SignatureHint SignatureHint { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -519,13 +539,45 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_XdrPublicKey.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.XdrPublicKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L112" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
+  
+  <a id="stellar_dotnet_sdk_KeyPair_SigningKey_" data-uid="stellar_dotnet_sdk.KeyPair.SigningKey*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_KeyPair_SigningKey" data-uid="stellar_dotnet_sdk.KeyPair.SigningKey"><a href="#collapsible-stellar_dotnet_sdk_KeyPair_SigningKey" class="expander" data-toggle="collapse">SigningKey</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_KeyPair_SigningKey" class="collapse in">
+  <div class="markdown level1 summary"><p>The signing key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyPair SigningKey { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.IAccountId.html#stellar_dotnet_sdk_IAccountId_SigningKey">IAccountId.SigningKey</a></div>
+  
+  
+  
+  
+  </div>
+  
   
   <a id="stellar_dotnet_sdk_KeyPair_XdrPublicKey_" data-uid="stellar_dotnet_sdk.KeyPair.XdrPublicKey*"></a>
   
@@ -536,11 +588,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public PublicKey XdrPublicKey { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -563,13 +615,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_XdrSignerKey.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.XdrSignerKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L131" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_XdrSignerKey_" data-uid="stellar_dotnet_sdk.KeyPair.XdrSignerKey*"></a>
   
@@ -580,11 +625,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SignerKey XdrSignerKey { get; }</code></pre>
   </div>
-  
+
   
   
   
@@ -609,13 +654,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   <h3 id="methods">Methods
   </h3>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_CanSign.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.CanSign%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L171" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_CanSign_" data-uid="stellar_dotnet_sdk.KeyPair.CanSign*"></a>
   
@@ -626,11 +664,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool CanSign()</code></pre>
   </div>
-  
+
   
   <h5 class="returns">Returns</h5>
   <table>
@@ -653,13 +691,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_FromAccountId_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.FromAccountId(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L211" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_FromAccountId_" data-uid="stellar_dotnet_sdk.KeyPair.FromAccountId*"></a>
   
@@ -670,11 +701,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static KeyPair FromAccountId(string accountId)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -714,13 +745,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_FromBIP39Seed_System_Byte___System_UInt32_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.FromBIP39Seed(System.Byte%5B%5D%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L225" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_FromBIP39Seed_" data-uid="stellar_dotnet_sdk.KeyPair.FromBIP39Seed*"></a>
   
@@ -730,11 +754,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static KeyPair FromBIP39Seed(byte[] seedBytes, uint accountIndex)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -777,13 +801,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_FromBIP39Seed_System_String_System_UInt32_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.FromBIP39Seed(System.String%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L217" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_FromBIP39Seed_" data-uid="stellar_dotnet_sdk.KeyPair.FromBIP39Seed*"></a>
   
@@ -793,11 +810,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static KeyPair FromBIP39Seed(string seed, uint accountIndex)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -840,13 +857,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_FromPublicKey_System_Byte___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.FromPublicKey(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L238" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_FromPublicKey_" data-uid="stellar_dotnet_sdk.KeyPair.FromPublicKey*"></a>
   
@@ -857,11 +867,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static KeyPair FromPublicKey(byte[] publicKey)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -901,13 +911,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_FromSecretSeed_System_Byte___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.FromSecretSeed(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L196" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_FromSecretSeed_" data-uid="stellar_dotnet_sdk.KeyPair.FromSecretSeed*"></a>
   
@@ -918,11 +921,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static KeyPair FromSecretSeed(byte[] seed)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -962,13 +965,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_FromSecretSeed_System_String_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.FromSecretSeed(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L183" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_FromSecretSeed_" data-uid="stellar_dotnet_sdk.KeyPair.FromSecretSeed*"></a>
   
@@ -979,11 +975,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static KeyPair FromSecretSeed(string seed)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -1023,13 +1019,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_FromXdrPublicKey_stellar_dotnet_sdk_xdr_PublicKey_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.FromXdrPublicKey(stellar_dotnet_sdk.xdr.PublicKey)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L152" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_FromXdrPublicKey_" data-uid="stellar_dotnet_sdk.KeyPair.FromXdrPublicKey*"></a>
   
@@ -1040,11 +1029,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static KeyPair FromXdrPublicKey(PublicKey publicKey)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -1083,13 +1072,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_FromXdrSignerKey_stellar_dotnet_sdk_xdr_SignerKey_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.FromXdrSignerKey(stellar_dotnet_sdk.xdr.SignerKey)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L162" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_FromXdrSignerKey_" data-uid="stellar_dotnet_sdk.KeyPair.FromXdrSignerKey*"></a>
   
@@ -1100,11 +1082,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static KeyPair FromXdrSignerKey(SignerKey signerKey)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -1143,13 +1125,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_Random.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.Random%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L247" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_Random_" data-uid="stellar_dotnet_sdk.KeyPair.Random*"></a>
   
@@ -1160,11 +1135,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static KeyPair Random()</code></pre>
   </div>
-  
+
   
   <h5 class="returns">Returns</h5>
   <table>
@@ -1188,13 +1163,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_Sign_System_Byte___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.Sign(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L263" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_Sign_" data-uid="stellar_dotnet_sdk.KeyPair.Sign*"></a>
   
@@ -1205,11 +1173,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public byte[] Sign(byte[] data)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -1249,13 +1217,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_SignDecorated_System_Byte___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.SignDecorated(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L278" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_SignDecorated_" data-uid="stellar_dotnet_sdk.KeyPair.SignDecorated*"></a>
   
@@ -1266,11 +1227,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DecoratedSignature SignDecorated(byte[] message)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -1309,13 +1270,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_Verify_System_Byte___stellar_dotnet_sdk_xdr_Signature_.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.Verify(System.Byte%5B%5D%2Cstellar_dotnet_sdk.xdr.Signature)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L313" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_Verify_" data-uid="stellar_dotnet_sdk.KeyPair.Verify*"></a>
   
@@ -1326,11 +1280,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Verify(byte[] data, Signature signature)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -1376,13 +1330,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
   
   </div>
   
-  <span class="small pull-right mobile-hide">
-    <span class="divider"> </span>
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/new/master/apiSpec/new?filename=stellar_dotnet_sdk_KeyPair_Verify_System_Byte___System_Byte___.md&amp;value=---%0Auid%3A%20stellar_dotnet_sdk.KeyPair.Verify(System.Byte%5B%5D%2CSystem.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" title="Improve this Doc"><i class="fa fa-pencil"></i></a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L295" title="View Source"><i class="fa fa-code"></i></a>
-  </span>
   
   <a id="stellar_dotnet_sdk_KeyPair_Verify_" data-uid="stellar_dotnet_sdk.KeyPair.Verify*"></a>
   
@@ -1393,11 +1340,11 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
-  
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Verify(byte[] data, byte[] signature)</code></pre>
   </div>
-  
+
   <h5 class="parameters">Parameters</h5>
   <table class="table table-striped">
   <thead>
@@ -1447,7 +1394,6 @@ Currently <a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a> onl
 </article>
           </div>
           <div class="contribution-panel mobile-hide">
-              <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/stellar-dotnet-sdk/KeyPair.cs/#L15" title="View Source" class="fab btn-info pull-right"><i class="fa fa-code"></i></a>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
