@@ -60,7 +60,11 @@ Usage
 
 Check the [Tutorials](https://elucidsoft.github.io/dotnet-stellar-sdk/tutorials/index.html) page to get started.
 
-**In case of doubts or issues, you can ask for help here:** - [Stellar Stack Exchange](https://stellar.stackexchange.com/) - [Keybase Team](https://keybase.io/team/stellar_dotnet)
+**In case of doubts or issues, you can ask for help here:**
+
+-	[Stellar Stack Exchange](https://stellar.stackexchange.com/)
+
+-	[Keybase Team](https://keybase.io/team/stellar_dotnet)
 
 XDR
 ---
