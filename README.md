@@ -104,4 +104,4 @@ Acknowledgements
 
 <!-- Disclaimer -->
 
-<!--> This readme is a modification of https://github.com/othneildrew/Best-README-Template that is licensed under MIT</-->
+<!-- This readme is a modification of https://github.com/othneildrew/Best-README-Template that is licensed under MIT -->
