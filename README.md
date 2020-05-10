@@ -86,7 +86,7 @@ Contributors
 -	Eric Malamisura (Twitter: [@emalamisura](https://twitter.com/emalamisura), Keybase: [elucidsoft](https://keybase.io/elucidsoft)\)
 -	Kirbyrawr (Keybase: [Kirbyrawr](https://keybase.io/Kirbyrawr)\)
 -	Michael Monte
--	Francesco Ceccon\`
+-	Francesco Ceccon
 
 <!-- LICENSE -->
 
