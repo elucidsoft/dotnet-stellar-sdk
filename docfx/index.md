@@ -2,22 +2,6 @@
 
 <br /><p align="center"> <img width="460" height="300" src="https://raw.githubusercontent.com/elucidsoft/dotnet-stellar-sdk/master/docfx/images/logo.svg"> </a> <!-- TITLE AND BADGES --> <h3 align="center">dotnet-stellar-sdk</h3> <p align="center"> Stellar API SDK for .NET Core 2.x and .NET Standard 2.0 <br /> <a href="https://ci.appveyor.com/project/elucidsoft/dotnet-stellar-sdk/branch/master"> <img src="https://ci.appveyor.com/api/projects/status/n34q6l3wyar2rq5l/branch/master?svg=true"></a> <a href="https://coveralls.io/github/elucidsoft/dotnet-stellar-sdk?branch=master"> <img src="https://coveralls.io/repos/github/elucidsoft/dotnet-stellar-sdk/badge.svg?branch=master"></a><a href="https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk"> <img src="https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk/badge"></a> <a href="https://www.nuget.org/packages/stellar-dotnet-sdk"> <img src="https://buildstats.info/nuget/stellar-dotnet-sdk"> </a><br /><br /><!-- USEFUL LINKS--><a href="https://github.com/elucidsoft/dotnet-stellar-sdk/issues/new?template=Bug_report.md">Report Bug</a> · <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/issues/new?template=Feature_request.md">Request Feature</a> · <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/security/policy">Report Security Vulnerability</a> </p></p>
 
-<!-- TABLE OF CONTENTS -->
-
-## Table of Contents
-
--   [About the Project](#about-the-project)
--   [Installation](#installation)
-    -   [Visual Studio](#visual-studio)
-    -   [JetBrains Rider](#jetbrains-rider)
-    -   [Other](#other)
--   [Usage](#usage)
--   [XDR](#xdr)
--   [XDR Generation](#xdr-generation)
--   [Contributors](#contributors)
--   [License](#license)
--   [Acknowledgements](#acknowledgements)
-
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
