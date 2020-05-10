@@ -1,110 +1,101 @@
 <!-- PROJECT LOGO -->
 
-<br /><p align="center"> <a href="https://github.com/elucidsoft/dotnet-stellar-sdk"><img width="460" height="300" src="https://raw.githubusercontent.com/elucidsoft/dotnet-stellar-sdk/master/.github/images/logo.svg"> </a> <!-- TITLE AND BADGES --> <h3 align="center">dotnet-stellar-sdk</h3> <p align="center"> Stellar API SDK for .NET Core 2.x and .NET Standard 2.0 <br /> <a href="https://ci.appveyor.com/project/elucidsoft/dotnet-stellar-sdk/branch/master"> <img src="https://ci.appveyor.com/api/projects/status/n34q6l3wyar2rq5l/branch/master?svg=true"></a> <a href="https://coveralls.io/github/elucidsoft/dotnet-stellar-sdk?branch=coveralls"> <img src="https://coveralls.io/repos/github/elucidsoft/dotnet-stellar-sdk/badge.svg?branch=coveralls"></a><a href="https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk"> <img src="https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk/badge"></a> <a href="https://www.nuget.org/packages/stellar-dotnet-sdk"> <img src="https://buildstats.info/nuget/stellar-dotnet-sdk"> </a><br /><br /><!-- USEFUL LINKS--><a href="https://elucidsoft.github.io/dotnet-stellar-sdk/"><strong>Explore the docs »</strong></a> <br /> <br /> <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/issues/new?template=Bug_report.md">Report Bug</a> · <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/issues/new?template=Feature_request.md">Request Feature</a> · <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/security/policy">Report Security Vulnerability</a> </p></p>
+<br /><p align="center"> <a href="https://github.com/elucidsoft/dotnet-stellar-sdk"><img width="460" height="300" src="https://raw.githubusercontent.com/elucidsoft/dotnet-stellar-sdk/master/.github/images/logo.svg"> </a> <!-- TITLE AND BADGES --> <h3 align="center">dotnet-stellar-sdk</h3> <p align="center"> Stellar API SDK for .NET Core 2.x and .NET Standard 2.0 <br /> <a href="https://ci.appveyor.com/project/elucidsoft/dotnet-stellar-sdk/branch/master"> <img src="https://ci.appveyor.com/api/projects/status/n34q6l3wyar2rq5l/branch/master?svg=true"></a> <a href="https://coveralls.io/github/elucidsoft/dotnet-stellar-sdk?branch=master"> <img src="https://coveralls.io/repos/github/elucidsoft/dotnet-stellar-sdk/badge.svg?branch=master"></a><a href="https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk"> <img src="https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk/badge"></a> <a href="https://www.nuget.org/packages/stellar-dotnet-sdk"> <img src="https://buildstats.info/nuget/stellar-dotnet-sdk"> </a><br /><br /><!-- USEFUL LINKS--><a href="https://elucidsoft.github.io/dotnet-stellar-sdk/"><strong>Explore the docs »</strong></a> <br /> <br /> <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/issues/new?template=Bug_report.md">Report Bug</a> · <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/issues/new?template=Feature_request.md">Request Feature</a> · <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/security/policy">Report Security Vulnerability</a> </p></p>
 
 <!-- TABLE OF CONTENTS -->
 
-Table of Contents
------------------
+## Table of Contents
 
--	[About the Project](#about-the-project)
--	[Installation](#installation)
-	-	[Visual Studio](#visual-studio)
-	-	[JetBrains Rider](#jetbrains-rider)
-	-	[Other](#other)
--	[Usage](#usage)
--	[XDR](#xdr)
--	[XDR Generation](#xdr-generation)
--	[Contributors](#contributors)
--	[License](#license)
--	[Acknowledgements](#acknowledgements)
+-   [About the Project](#about-the-project)
+-   [Installation](#installation)
+    -   [Visual Studio](#visual-studio)
+    -   [JetBrains Rider](#jetbrains-rider)
+    -   [Other](#other)
+-   [Usage](#usage)
+-   [XDR](#xdr)
+-   [XDR Generation](#xdr-generation)
+-   [Contributors](#contributors)
+-   [License](#license)
+-   [Acknowledgements](#acknowledgements)
 
 <!-- ABOUT THE PROJECT -->
 
-About The Project
------------------
+## About The Project
 
 `dotnet-stellar-sdk` is a **Net Core/Standard** library for communicating with a [Stellar Horizon server](https://github.com/stellar/go/tree/master/services/horizon). It is used for building Stellar apps.
 
-*This project originated as a full port of the official [Java SDK API](https://github.com/stellar/java-stellar-sdk)*
+_This project originated as a full port of the official [Java SDK API](https://github.com/stellar/java-stellar-sdk)_
 
-Installation
-------------
+## Installation
 
 The `stellar-dotnet-sdk` library is bundled in a NuGet Package.
 
--	[NuGet Package](https://www.nuget.org/packages/stellar-dotnet-sdk)
+-   [NuGet Package](https://www.nuget.org/packages/stellar-dotnet-sdk)
 
 ### Visual Studio
 
--	Using the [console](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-powershell)
+-   Using the [console](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-powershell)
 
-	-	Run `Install-Package stellar-dotnet-sdk` in the console.
+    -   Run `Install-Package stellar-dotnet-sdk` in the console.
 
--	Using the [NuGet Package Manager](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio)
+-   Using the [NuGet Package Manager](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio)
 
-	-	Search this package [NuGet Package](https://www.nuget.org/packages/stellar-dotnet-sdk) and install it.
+    -   Search this package [NuGet Package](https://www.nuget.org/packages/stellar-dotnet-sdk) and install it.
 
 ### JetBrains Rider
 
--	https://www.jetbrains.com/help/rider/Using_NuGet.html#
+-   <https://www.jetbrains.com/help/rider/Using_NuGet.html#>
 
 ### Other
 
--	https://docs.microsoft.com/en-us/nuget/consume-packages/overview-and-workflow#ways-to-install-a-nuget-package
+-   <https://docs.microsoft.com/en-us/nuget/consume-packages/overview-and-workflow#ways-to-install-a-nuget-package>
 
 <!-- USAGE EXAMPLES -->
 
-Usage
------
+## Usage
 
 Check the [Tutorials](https://elucidsoft.github.io/dotnet-stellar-sdk/tutorials/index.html) page to get started.
 
 **In case of doubts or issues, you can ask for help here:**
 
--	[Stellar Stack Exchange](https://stellar.stackexchange.com/)
+-   [Stellar Stack Exchange](https://stellar.stackexchange.com/)
 
--	[Keybase Team](https://keybase.io/team/stellar_dotnet)
+-   [Keybase Team](https://keybase.io/team/stellar_dotnet)
 
-XDR
----
+## XDR
 
 [![NuGet Badge](https://buildstats.info/nuget/stellar-dotnet-sdk-xdr)](https://www.nuget.org/packages/stellar-dotnet-sdk-xdr/)
 
-If you only need the XDR objects in a .NET Standard NuGet package, then you can get those here: https://www.nuget.org/packages/stellar-dotnet-sdk-xdr/
+If you only need the XDR objects in a .NET Standard NuGet package, then you can get those here: <https://www.nuget.org/packages/stellar-dotnet-sdk-xdr/>
 
-XDR Generation
---------------
+## XDR Generation
 
 In order to generate the XDR Files automatically in C# a custom XDR Generator must be used.
 
-You can find the latest working generator here: https://github.com/fracek/xdrgen/tree/csharp
+You can find the latest working generator here: <https://github.com/fracek/xdrgen/tree/csharp>
 
 You can use that version of xdrgen to regenerate the XDR files from the .x files located from the [source](https://github.com/stellar/stellar-core/tree/master/src/xdr) of the original API SDK for Horizon.
 
 <!-- CONTRIBUTORS-->
 
-Contributors
-------------
+## Contributors
 
--	Eric Malamisura (Twitter: [@emalamisura](https://twitter.com/emalamisura), Keybase: [elucidsoft](https://keybase.io/elucidsoft)\)
--	Kirbyrawr (Keybase: [Kirbyrawr](https://keybase.io/Kirbyrawr)\)
--	Michael Monte
--	Francesco Ceccon
+-   Eric Malamisura (Twitter: [@emalamisura](https://twitter.com/emalamisura), Keybase: [elucidsoft](https://keybase.io/elucidsoft))
+-   Kirbyrawr (Keybase: [Kirbyrawr](https://keybase.io/Kirbyrawr))
+-   Michael Monte
+-   Francesco Ceccon
 
 <!-- LICENSE -->
 
-License
--------
+## License
 
 `dotnet-stellar-sdk` is licensed under an Apache-2.0 license. See the [LICENSE](https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/LICENSE.txt) file for details.
 
 <!-- ACKNOWLEDGEMENTS -->
 
-Acknowledgements
-----------------
+## Acknowledgements
 
--	Stellar Development Foundation
+-   Stellar Development Foundation
 
 <!-- Disclaimer -->
 
