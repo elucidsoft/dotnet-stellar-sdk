@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Quick Start </title>
+    <title>dotnet-stellar-sdk </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Quick Start ">
+    <meta name="title" content="dotnet-stellar-sdk ">
     <meta name="generator" content="docfx 2.51.0.0">
     
     <link rel="shortcut icon" href="favicon">
@@ -61,52 +61,73 @@
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
 
-<p><strong>Stellar API SDK for .NET Core 2.x and .NET Standard 2.0</strong></p>
-<p>The .NET Core Stellar Sdk library provides APIs to build transactions and connect to <a href="https://github.com/stellar/horizon">Horizon</a>.</p>
-<p>Read more about <a href="https://www.stellar.org/">Stellar</a></p>
-<p>This project is a full port of the official <a href="https://github.com/stellar/java-stellar-sdk">Java SDK API</a>.  It is fully functional and all of the original Java Unit Tests were also ported and are passing.</p>
-<h2 id="quick-start">Quick Start</h2>
-<p>To install using Nuget run <code>Install-Package stellar-dotnet-sdk</code> or install the Nuget package from Visual Studio.</p>
-<h2 id="capabilities">Capabilities</h2>
+<!-- PROJECT LOGO -->
+<p><br><p align="center"> <img width="460" height="300" src="https://raw.githubusercontent.com/elucidsoft/dotnet-stellar-sdk/master/docfx/images/logo.svg">  <!-- TITLE AND BADGES --> <h3 align="center">dotnet-stellar-sdk</h3> <p align="center"> Stellar API SDK for .NET Core 2.x and .NET Standard 2.0 <br> <a href="https://ci.appveyor.com/project/elucidsoft/dotnet-stellar-sdk/branch/master"> <img src="https://ci.appveyor.com/api/projects/status/n34q6l3wyar2rq5l/branch/master?svg=true"></a> <a href="https://coveralls.io/github/elucidsoft/dotnet-stellar-sdk?branch=master"> <img src="https://coveralls.io/repos/github/elucidsoft/dotnet-stellar-sdk/badge.svg?branch=master"></a><a href="https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk"> <img src="https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk/badge"></a> <a href="https://www.nuget.org/packages/stellar-dotnet-sdk"> <img src="https://buildstats.info/nuget/stellar-dotnet-sdk"> </a><br><br><!-- USEFUL LINKS--><a href="https://github.com/elucidsoft/dotnet-stellar-sdk/issues/new?template=Bug_report.md">Report Bug</a> · <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/issues/new?template=Feature_request.md">Request Feature</a> · <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/security/policy">Report Security Vulnerability</a> </p></p></p>
+<!-- ABOUT THE PROJECT -->
+<h2 id="about-the-project">About The Project</h2>
+<p><code>dotnet-stellar-sdk</code> is a <strong>Net Core/Standard</strong> library for communicating with a <a href="https://github.com/stellar/go/tree/master/services/horizon">Stellar Horizon server</a>. It is used for building Stellar apps.</p>
+<p><em>This project originated as a full port of the official <a href="https://github.com/stellar/java-stellar-sdk">Java SDK API</a></em></p>
+<h2 id="installation">Installation</h2>
+<p>The <code>stellar-dotnet-sdk</code> library is bundled in a NuGet Package.</p>
 <ul>
-<li><a href="https://www.stellar.org/developers/guides/concepts/accounts.html">Accounts</a> - Create, Query, Payment, Path Payment, Manage Offer, Create Passive Offer, Set Options, Change Trust, Allow Trust, Account Merge, Inflation, Manage Data, Paging (Limit, Cursor, Sorting)</li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/assets.html">Assets</a> - CreateNonNativeAsset types (AlphaNum4, AlphaNum12), XDR Conversion</li>
-<li><a href="https://www.stellar.org/developers/horizon/reference/endpoints/assets-all.html">All Assets</a> - This endpoint represents all assets. It will give you all the assets in the system along with various statistics about each.</li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/exchange.html">Distributed Exchange</a> - Orderbook, Passive Offers</li>
-<li><a href="https://www.stellar.org/developers/learn/concepts/federation.html">Federation</a></li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/inflation.html">Inflation</a> - Inflation Operation</li>
-<li><a href="https://www.stellar.org/developers/horizon/reference/resources/ledger.html">Ledger</a> Create, Query, Paging (Limit, Cursor, Sorting)</li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/multi-sig.html">Multisignature</a> - Allows multiple signature per transaction, Thresholds, ed25519 signature scheme, Transaction Signing, Allow Trust, Set Options, Hash, Envelopes</li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/stellar-toml.html">Stellar.toml</a> - Supports the Stellar TOML format.</li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/test-net.html">Testnet</a> - Supports Network switching from Public to Testnet</li>
-<li><a href="https://www.stellar.org/developers/horizon/reference/endpoints/trade_aggregations.html">Trade Aggregations</a> - Trade Aggregations are catered specifically for developers of trading clients. They facilitate efficient gathering of historical trade data. This is done by dividing a given time range into segments and aggregate statistics, for a given asset pair (base, counter) over each of these segments.</li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/transactions.html">Transactions</a> - Source Accounmt, Fee, Sequence Number, Supported Operations (see below), Signatures (multiple), Memo (Text, Id, Hash, Return)</li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/xdr.html">XDR</a> - Full XDR Support, Custom XDRGenerator, Supports .x files</li>
+<li><a href="https://www.nuget.org/packages/stellar-dotnet-sdk">NuGet Package</a></li>
 </ul>
-<h3 id="supported-operations">Supported Operations</h3>
+<h3 id="visual-studio">Visual Studio</h3>
 <ul>
-<li><a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#create-account">Create Account</a></li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#payment">Payment</a></li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#path-payment">Path Payment</a></li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#manage-offer">Manage Offer</a></li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#create-passive-offer">Create Passive Offer</a></li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#set-options">Set Options</a></li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#change-trust">Change Trust</a></li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#allow-trust">Allow Trust</a></li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#account-merge">Account Merge</a></li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#inflation">Inflation</a></li>
-<li><a href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#manage-data">Manage Data</a></li>
-<li><a href="https://www.stellar.org/developers/horizon/reference/paging.html">Paging</a> (Limit, Cursor, Sorting)</li>
-<li><a href="https://www.stellar.org/developers/horizon/reference/rate-limiting.html">Rate Limiting</a> (Limit, Remaining, Reset)</li>
-<li><a href="https://www.stellar.org/developers/horizon/reference/responses.html">Response Format</a> (Links, Embedded Resourced, Attributes, Pages, Streaming)</li>
+<li><p>Using the <a href="https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-powershell">console</a></p>
+<ul>
+<li>Run <code>Install-Package stellar-dotnet-sdk</code> in the console.</li>
 </ul>
-<h2 id="basic-usage">Basic Usage</h2>
-<p>For some examples on how to use this library, take a look at the <a href="https://www.stellar.org/developers/guides/get-started/create-account.html">Get Started docs in the developers site</a>.</p>
+</li>
+<li><p>Using the <a href="https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio">NuGet Package Manager</a></p>
+<ul>
+<li>Search this package <a href="https://www.nuget.org/packages/stellar-dotnet-sdk">NuGet Package</a> and install it.</li>
+</ul>
+</li>
+</ul>
+<h3 id="jetbrains-rider">JetBrains Rider</h3>
+<ul>
+<li><a href="https://www.jetbrains.com/help/rider/Using_NuGet.html#">https://www.jetbrains.com/help/rider/Using_NuGet.html#</a></li>
+</ul>
+<h3 id="other">Other</h3>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/nuget/consume-packages/overview-and-workflow#ways-to-install-a-nuget-package">https://docs.microsoft.com/en-us/nuget/consume-packages/overview-and-workflow#ways-to-install-a-nuget-package</a></li>
+</ul>
+<!-- USAGE EXAMPLES -->
+<h2 id="usage">Usage</h2>
+<p>Check the <a href="https://elucidsoft.github.io/dotnet-stellar-sdk/tutorials/index.html">Tutorials</a> page to get started.</p>
+<p><strong>In case of doubts or issues, you can ask for help here:</strong></p>
+<ul>
+<li><p><a href="https://stellar.stackexchange.com/">Stellar Stack Exchange</a></p>
+</li>
+<li><p><a href="https://keybase.io/team/stellar_dotnet">Keybase Team</a></p>
+</li>
+</ul>
+<h2 id="xdr">XDR</h2>
+<p><a href="https://www.nuget.org/packages/stellar-dotnet-sdk-xdr/"><img src="https://buildstats.info/nuget/stellar-dotnet-sdk-xdr" alt="NuGet Badge"></a></p>
+<p>If you only need the XDR objects in a .NET Standard NuGet package, then you can get those here: <a href="https://www.nuget.org/packages/stellar-dotnet-sdk-xdr/">https://www.nuget.org/packages/stellar-dotnet-sdk-xdr/</a></p>
 <h2 id="xdr-generation">XDR Generation</h2>
-<p>In order to generate the XDR Files automatically in C# a custom XDR Generator must be used. We created a fork of xdrgen that does this located here: <a href="https://github.com/michaeljmonte/xdrgen">https://github.com/michaeljmonte/xdrgen</a></p>
+<p>In order to generate the XDR Files automatically in C# a custom XDR Generator must be used.</p>
+<p>You can find the latest working generator here: <a href="https://github.com/fracek/xdrgen/tree/csharp">https://github.com/fracek/xdrgen/tree/csharp</a></p>
 <p>You can use that version of xdrgen to regenerate the XDR files from the .x files located from the <a href="https://github.com/stellar/stellar-core/tree/master/src/xdr">source</a> of the original API SDK for Horizon.</p>
+<!-- CONTRIBUTORS-->
+<h2 id="contributors">Contributors</h2>
+<ul>
+<li>Eric Malamisura (Twitter: <a href="https://twitter.com/emalamisura">@emalamisura</a>, Keybase: <a href="https://keybase.io/elucidsoft">elucidsoft</a>)</li>
+<li>Kirbyrawr (Keybase: <a href="https://keybase.io/Kirbyrawr">Kirbyrawr</a>)</li>
+<li>Michael Monte</li>
+<li>Francesco Ceccon</li>
+</ul>
+<!-- LICENSE -->
 <h2 id="license">License</h2>
-<p>dotnetcore-stellar-sdk is licensed under an Apache-2.0 license. See the <a href="https://github.com/elucidsoft/dotnetcore-stellar-sdk/blob/master/LICENSE.txt">LICENSE</a> file for details.</p>
+<p><code>dotnet-stellar-sdk</code> is licensed under an Apache-2.0 license. See the <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/blob/master/LICENSE.txt">LICENSE</a> file for details.</p>
+<!-- ACKNOWLEDGEMENTS -->
+<h2 id="acknowledgements">Acknowledgements</h2>
+<ul>
+<li>Stellar Development Foundation</li>
+</ul>
+<!-- Disclaimer -->
+<!-- This readme is a modification of https://github.com/othneildrew/Best-README-Template that is licensed under MIT -->
 </article>
           </div>
           <div class="contribution-panel mobile-hide">

@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "7krCjrP1+pJcCFxtFiSJkg=="
+          "hash": "w7Ia7P3p8PRWTLkUsdlLQQ=="
         }
       },
       "is_incremental": false,
@@ -4496,7 +4496,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "4L4xRKfwdDdiNkUDuOuZGg=="
+          "hash": "WHfiLTTTQeyDIYAWCFoR4w=="
         }
       },
       "is_incremental": false,
@@ -4587,12 +4587,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "tutorials/toc.yml",
       "output": {
         ".html": {
           "relative_path": "tutorials/toc.html",
-          "hash": "pEfTWe8PV/54POudcvnZtw=="
+          "hash": "9FQWlKxT5744LuZ/xs+fGA=="
         }
       },
       "is_incremental": false,
