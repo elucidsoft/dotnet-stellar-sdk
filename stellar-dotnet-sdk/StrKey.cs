@@ -9,7 +9,6 @@ namespace stellar_dotnet_sdk
         public enum VersionByte : byte
         {
             ACCOUNT_ID = 6 << 3,
-            MUXED_ACCOUNT = 12 << 3,
             SEED = 18 << 3,
             PRE_AUTH_TX = 19 << 3,
             SHA256_HASH = 23 << 3
@@ -20,19 +19,9 @@ namespace stellar_dotnet_sdk
             return EncodeCheck(VersionByte.ACCOUNT_ID, data);
         }
 
-        public static string EncodeStellarMuxedAccount(byte[] data, ulong id)
+        internal static string EncodeStellarMuxedAccount(byte[] data, ulong id)
         {
-            // 8 bytes for 64 bit id + data
-            var dataToEncode = new byte[8 + data.Length];
-            // Prepend the id in network byte order to the data
-            var idBytes = BitConverter.GetBytes(id);
-            if (BitConverter.IsLittleEndian)
-            {
-                Array.Reverse(idBytes);
-            }
-            Buffer.BlockCopy(idBytes, 0, dataToEncode, 0, 8);
-            Buffer.BlockCopy(data, 0, dataToEncode, 8, data.Length);
-            return EncodeCheck(VersionByte.MUXED_ACCOUNT, dataToEncode);
+            throw new NotImplementedException("Support for muxed accounts has been disabled until SEP-23 is voted by the network");
         }
 
         public static string EncodeStellarSecretSeed(byte[] data)
@@ -45,24 +34,9 @@ namespace stellar_dotnet_sdk
             return DecodeCheck(VersionByte.ACCOUNT_ID, data);
         }
 
-        public static (ulong, byte[]) DecodeStellarMuxedAccount(string data)
+        internal static (ulong, byte[]) DecodeStellarMuxedAccount(string data)
         {
-            var bytes = DecodeCheck(VersionByte.MUXED_ACCOUNT, data);
-            var keyData = new byte[bytes.Length - 8];
-            ulong id;
-            Buffer.BlockCopy(bytes, 8, keyData, 0, keyData.Length);
-
-            if (BitConverter.IsLittleEndian)
-            {
-                var idBuffer = new byte[8];
-                Buffer.BlockCopy(bytes, 0, idBuffer, 0, 8);
-                Array.Reverse(idBuffer);
-                id = BitConverter.ToUInt64(idBuffer, 0);
-                return (id, keyData);
-            }
-
-            id = BitConverter.ToUInt64(bytes, 0);
-            return (id, keyData);
+            throw new NotImplementedException("Support for muxed accounts has been disabled until SEP-23 is voted by the network");
         }
 
         public static byte[] DecodeStellarSecretSeed(string data)
@@ -153,13 +127,6 @@ namespace stellar_dotnet_sdk
             try
             {
                 var decoded = DecodeCheck(versionByte, encoded);
-                // Muxed accounts are encoded as a 64 bit ulong wih 32 bytes of data
-                if (versionByte == VersionByte.MUXED_ACCOUNT)
-                {
-                    return decoded.Length == 40;
-                }
-
-                // All other types have 32 bytes of data
                 return decoded.Length == 32;
             }
             catch
@@ -171,11 +138,6 @@ namespace stellar_dotnet_sdk
         public static bool IsValidEd25519PublicKey(string publicKey)
         {
             return IsValid(VersionByte.ACCOUNT_ID, publicKey);
-        }
-
-        public static bool IsValidMuxedAccount(string publicKey)
-        {
-            return IsValid(VersionByte.MUXED_ACCOUNT, publicKey);
         }
 
         public static bool IsValidEd25519SecretSeed(string seed)

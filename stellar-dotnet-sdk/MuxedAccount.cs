@@ -16,7 +16,6 @@ namespace stellar_dotnet_sdk
                 default:
                     throw new InvalidOperationException("Invalid MuxedAccount type");
             }
-
         }
     }
 }
