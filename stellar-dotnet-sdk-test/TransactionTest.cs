@@ -426,80 +426,15 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public void TestTransactionWithMuxedAccount()
         {
-            var network = new Network("Standalone Network ; February 2017");
-            var source = KeyPair.FromSecretSeed(network.NetworkId);
-            var txSource = new MuxedAccountMed25519(source, 0);
-            var account = new Account(txSource, 7);
-            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
-            var amount = "2000";
-            var asset = new AssetTypeNative();
-            var tx = new TransactionBuilder(account)
-                .SetFee(100)
-                .AddTimeBounds(new TimeBounds(0, 0))
-                .AddOperation(
-                    new PaymentOperation.Builder(destination, asset, amount).Build())
-                .AddMemo(new MemoText("Happy birthday!"))
-                .Build();
+            var originalXdr =
+                "AAAAAgAAAQAAAAAAAAAAAHN2/eiOTNYcwPspSheGs/HQYfXy8cpXRl+qkyIRuUbWAAAAZAAAAAAAAAAIAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAD0hhcHB5IGJpcnRoZGF5IQAAAAABAAAAAAAAAAEAAAAA4EiRthjlDMvx/ZR8o2GTsMrssrR/MtMFmqHOfei/mxIAAAAAAAAABKgXyAAAAAAAAAAAAA==";
+            var tx = Transaction.FromEnvelopeXdr(originalXdr);
             var xdr = tx.ToUnsignedEnvelopeXdrBase64(TransactionBase.TransactionXdrVersion.V1);
+            Assert.AreEqual(originalXdr, xdr);
             var back = TransactionBuilder.FromEnvelopeXdr(xdr) as Transaction;
             Assert.IsNotNull(back);
-            Assert.AreEqual(txSource.Address, back.SourceAccount.Address);
-        }
-
-        [TestMethod]
-        public void TestSignatureBaseNoNetwork()
-        {
-            var network = new Network("Standalone Network ; February 2017");
-            var source = KeyPair.FromSecretSeed(network.NetworkId);
-            var txSource = new MuxedAccountMed25519(source, 0);
-            var account = new Account(txSource, 7);
-            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
-            var amount = "2000";
-            var asset = new AssetTypeNative();
-            var tx = new TransactionBuilder(account)
-                .SetFee(100)
-                .AddTimeBounds(new TimeBounds(0, 0))
-                .AddOperation(
-                    new PaymentOperation.Builder(destination, asset, amount).Build())
-                .AddMemo(new MemoText("Happy birthday!"))
-                .Build();
-
-            try
-            {
-                tx.SignatureBase(null);
-            }
-            catch (Exception e)
-            {
-                Assert.IsNotNull(e);
-            }
-        }
-
-        [TestMethod]
-        public void TestToXdrWithMuxedAccount()
-        {
-            var network = new Network("Standalone Network ; February 2017");
-            var source = KeyPair.FromSecretSeed(network.NetworkId);
-            var txSource = new MuxedAccountMed25519(source, 0);
-            var account = new Account(txSource, 7);
-            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
-            var amount = "2000";
-            var asset = new AssetTypeNative();
-            var tx = new TransactionBuilder(account)
-                .SetFee(100)
-                .AddTimeBounds(new TimeBounds(0, 0))
-                .AddOperation(
-                    new PaymentOperation.Builder(destination, asset, amount).Build())
-                .AddMemo(new MemoText("Happy birthday!"))
-                .Build();
-
-            try
-            {
-                tx.ToXdr();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual(e.Message, "TransactionEnvelope V0 expects a KeyPair source account");
-            }
+            Assert.AreEqual(tx.SourceAccount.Address, back.SourceAccount.Address);
+            CollectionAssert.AreEqual(tx.SourceAccount.PublicKey, back.SourceAccount.PublicKey);
         }
 
         [TestMethod]
@@ -530,29 +465,6 @@ namespace stellar_dotnet_sdk_test
             {
                 Assert.AreEqual(e.Message, "Transaction must not be signed. Use ToEnvelopeXDR.");
             }
-        }
-
-        [TestMethod]
-        public void TestTransactionFeeOverflow()
-        {
-            var source = KeyPair.Random();
-            var txSource = new MuxedAccountMed25519(source, 0);
-            var account = new Account(txSource, 7);
-            var destination = KeyPair.FromAccountId("GDQERENWDDSQZS7R7WKHZI3BSOYMV3FSWR7TFUYFTKQ447PIX6NREOJM");
-            var amount = "2000";
-            var asset = new AssetTypeNative();
-            Assert.ThrowsException<OverflowException>(() =>
-            {
-                var tx = new TransactionBuilder(account)
-                    .SetFee(UInt32.MaxValue)
-                    .AddTimeBounds(new TimeBounds(0, 0))
-                    .AddOperation(
-                        new PaymentOperation.Builder(destination, asset, amount).Build())
-                    .AddOperation(
-                        new PaymentOperation.Builder(destination, asset, amount).Build())
-                    .Build();
-
-            });
         }
     }
 }

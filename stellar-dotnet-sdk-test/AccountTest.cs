@@ -40,17 +40,6 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
-        public void TestWithMuxedAccount()
-        {
-            var keypair = KeyPair.Random();
-            var muxed = new MuxedAccountMed25519(keypair, 10);
-            var account = new Account(muxed, 7);
-            Assert.AreNotEqual(account.AccountId, keypair.AccountId);
-            Assert.AreEqual(account.AccountId, muxed.AccountId);
-            Assert.AreEqual(account.KeyPair.AccountId, keypair.AccountId);
-        }
-
-        [TestMethod]
         public void TestGetIncrementedSequenceNumber()
         {
             KeyPair random = KeyPair.Random();
