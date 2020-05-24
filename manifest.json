@@ -729,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.MuxedAccountMed25519.html",
-          "hash": "+j0ref2D+wtXLrYO5ReQgg=="
+          "hash": "ja3yIOcxTtz4pylo29Iixg=="
         }
       },
       "is_incremental": false,
@@ -933,7 +933,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.StrKey.html",
-          "hash": "aYB3j6pJ+BsEy46aemA48w=="
+          "hash": "AI8LlUwuAGoOvLQ1QRiyhg=="
         }
       },
       "is_incremental": false,
