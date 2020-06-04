@@ -96,8 +96,13 @@ namespace stellar_dotnet_sdk_test.responses
         {
             var json = File.ReadAllText(Path.Combine("testdata", "transactionTransactionWithMemo.json"));
             var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
+            TransactionResponse copyTransaction = new TransactionResponse(transaction.Hash, transaction.Ledger, transaction.CreatedAt, transaction.SourceAccount,
+                                                            transaction.FeeAccount, transaction.Successful, transaction.PagingToken, transaction.SourceAccountSequence,
+                                                            transaction.MaxFee, transaction.FeeCharged, transaction.OperationCount, transaction.EnvelopeXdr,
+                                                            transaction.ResultXdr, transaction.ResultMetaXdr, transaction.Memo, transaction.Signatures,
+                                                            transaction.FeeBumpTx, transaction.InnerTx, transaction.Links);
 
-            Assert.AreEqual(transaction.MemoValue, "Some sample text");
+            Assert.AreEqual(transaction.MemoValue, copyTransaction.MemoValue);
             Assert.IsFalse(transaction.Successful);
         }
 
