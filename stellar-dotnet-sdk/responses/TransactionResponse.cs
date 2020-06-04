@@ -79,6 +79,8 @@ namespace stellar_dotnet_sdk.responses
                 {
                     case "none":
                         return Memo.None();
+                    case "text":
+                        return Memo.Text(MemoValue);
                     case "id":
                         return Memo.Id(ulong.Parse(MemoValue));
                     case "hash":
@@ -96,6 +98,10 @@ namespace stellar_dotnet_sdk.responses
                     case MemoNone _:
                         MemoType = "none";
                         MemoValue = null;
+                        return;
+                    case MemoText text:
+                        MemoType = "text";
+                        MemoValue = text.MemoTextValue;
                         return;
                     case MemoId id:
                         MemoType = "id";
