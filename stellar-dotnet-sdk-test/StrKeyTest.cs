@@ -33,6 +33,30 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        public void TestDecodeEncodeMuxedAccount()
+        {
+            var address = "MAAAAAAAAAAAAAB7BQ2L7E5NBWMXDUCMZSIPOBKRDSBYVLMXGSSKF6YNPIB7Y77ITLVL6";
+            var (id, key) = StrKey.DecodeStellarMuxedAccount(address);
+            Assert.IsTrue(StrKey.IsValidMuxedAccount(address));
+            Assert.AreEqual(0UL, id);
+            var encodedKey = StrKey.EncodeStellarAccountId(key);
+            Assert.AreEqual("GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVSGZ", encodedKey);
+            Assert.AreEqual(address, StrKey.EncodeStellarMuxedAccount(key, id));
+        }
+
+        [TestMethod]
+        public void TestDecodeEncodeMuxedAccountWithLargeId()
+        {
+            var address = "MCAAAAAAAAAAAAB7BQ2L7E5NBWMXDUCMZSIPOBKRDSBYVLMXGSSKF6YNPIB7Y77ITKNOG";
+            var (id, key) = StrKey.DecodeStellarMuxedAccount(address);
+            Assert.IsTrue(StrKey.IsValidMuxedAccount(address));
+            Assert.AreEqual(9223372036854775808UL, id);
+            var encodedKey = StrKey.EncodeStellarAccountId(key);
+            Assert.AreEqual("GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVSGZ", encodedKey);
+            Assert.AreEqual(address, StrKey.EncodeStellarMuxedAccount(key, id));
+        }
+
+        [TestMethod]
         public void IsValidEd25519PublicKey()
         {
             var address = "GCZHXL5HXQX5ABDM26LHYRCQZ5OJFHLOPLZX47WEBP3V2PF5AVFK2A5D";
@@ -52,6 +76,18 @@ namespace stellar_dotnet_sdk_test
         {
             var result = StrKey.IsValidEd25519PublicKey(address);
 
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        //[DataRow("MCAAAAAAAAAAAAB7BQ2L7E5NBWMXDUCMZSIPOBKRDSBYVLMXGSSKF6YNPIB7Y77ITKNOGA", DisplayName = "Invalid length (congruent to 6 mod 8)")]
+        [DataRow("MAAAAAAAAAAAAAB7BQ2L7E5NBWMXDUCMZSIPOBKRDSBYVLMXGSSKF6YNPIB7Y77ITIADJPA", DisplayName = "Invalid length (base-32 decoding should yield 43 bytes, not 44)")]
+        [DataRow("M4AAAAAAAAAAAAB7BQ2L7E5NBWMXDUCMZSIPOBKRDSBYVLMXGSSKF6YNPIB7Y77ITIU2K", DisplayName = "Invalid algorithm (low 3 bits of version byte are 7)")]
+        //[DataRow("MAAAAAAAAAAAAAB7BQ2L7E5NBWMXDUCMZSIPOBKRDSBYVLMXGSSKF6YNPIB7Y77ITLVL6", DisplayName = "Padding bytes are not allowed")]
+        [DataRow("MAAAAAAAAAAAAAB7BQ2L7E5NBWMXDUCMZSIPOBKRDSBYVLMXGSSKF6YNPIB7Y77ITLVL4", DisplayName = "Invalid checksum")]
+        public void IsNotValidMuxedAccount(string address)
+        {
+            var result = StrKey.IsValidMuxedAccount(address);
             Assert.IsFalse(result);
         }
 

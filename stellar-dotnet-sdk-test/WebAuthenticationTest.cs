@@ -56,6 +56,29 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        public void TestBuildChallengeTransactionFailsWithMuxedAccount()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientAccountId =
+                MuxedAccountMed25519.FromMuxedAccountId(
+                    "MAAAAAAAAAAAJURAAB2X52XFQP6FBXLGT6LWOOWMEXWHEWBDVRZ7V5WH34Y22MPFBHUHY");
+            var anchorName = "NET";
+
+            var nonce = new byte[48];
+            Array.Clear(nonce, 0, nonce.Length);
+
+            var now = new DateTimeOffset();
+            var duration = TimeSpan.FromMinutes(10.0);
+
+            Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
+            {
+                var tx = WebAuthentication
+                    .BuildChallengeTransaction(serverKeypair, clientAccountId.Address, anchorName, nonce, now, duration,
+                        Network.Test());
+            });
+        }
+
+        [TestMethod]
         public void TestVerifyChallengeTransactionReturnsTrueForValidTransaction()
         {
             var serverKeypair = KeyPair.Random();
