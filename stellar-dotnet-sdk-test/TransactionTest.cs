@@ -46,6 +46,10 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual(
                 "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAEqBfIAAAAAAAAAAABtoeVYgAAAEDLki9Oi700N60Lo8gUmEFHbKvYG4QSqXiLIt9T0ru2O5BphVl/jR9tYtHAD+UeDYhgXNgwUxqTEu1WukvEyYcD",
+                transaction.ToEnvelopeXdrBase64(TransactionBase.TransactionXdrVersion.V0));
+
+            Assert.AreEqual(
+                "AAAAAgAAAABexSIg06FtXzmFBQQtHZsrnyWxUzmthkBEhs/ktoeVYgAAAGQAClWjAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAO3gUmG83C+VCqO6FztuMtXJF/l7grZA7MjRzqdZ9W8QAAAABKgXyAAAAAAAAAAAAbaHlWIAAABAy5IvTou9NDetC6PIFJhBR2yr2BuEEql4iyLfU9K7tjuQaYVZf40fbWLRwA/lHg2IYFzYMFMakxLtVrpLxMmHAw==",
                 transaction.ToEnvelopeXdrBase64());
 
             Assert.AreEqual(transaction.SourceAccount.AccountId, source.AccountId);
@@ -70,6 +74,10 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual(
                 "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAEqBfIAAAAAAAAAAABtoeVYgAAAEDLki9Oi700N60Lo8gUmEFHbKvYG4QSqXiLIt9T0ru2O5BphVl/jR9tYtHAD+UeDYhgXNgwUxqTEu1WukvEyYcD",
+                transaction.ToEnvelopeXdrBase64(TransactionBase.TransactionXdrVersion.V0));
+
+            Assert.AreEqual(
+                "AAAAAgAAAABexSIg06FtXzmFBQQtHZsrnyWxUzmthkBEhs/ktoeVYgAAAGQAClWjAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAO3gUmG83C+VCqO6FztuMtXJF/l7grZA7MjRzqdZ9W8QAAAABKgXyAAAAAAAAAAAAbaHlWIAAABAy5IvTou9NDetC6PIFJhBR2yr2BuEEql4iyLfU9K7tjuQaYVZf40fbWLRwA/lHg2IYFzYMFMakxLtVrpLxMmHAw==",
                 transaction.ToEnvelopeXdrBase64());
 
             Assert.AreEqual(transaction.SourceAccount.AccountId, source.AccountId);
@@ -129,6 +137,10 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual(
                 "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAEAAAAMSGVsbG8gd29ybGQhAAAAAQAAAAAAAAAAAAAAAO3gUmG83C+VCqO6FztuMtXJF/l7grZA7MjRzqdZ9W8QAAAABKgXyAAAAAAAAAAAAbaHlWIAAABAxzofBhoayuUnz8t0T1UNWrTgmJ+lCh9KaeOGu2ppNOz9UGw0abGLhv+9oWQsstaHx6YjwWxL+8GBvwBUVWRlBQ==",
+                transaction.ToEnvelopeXdrBase64(TransactionBase.TransactionXdrVersion.V0));
+
+            Assert.AreEqual(
+                "AAAAAgAAAABexSIg06FtXzmFBQQtHZsrnyWxUzmthkBEhs/ktoeVYgAAAGQAClWjAAAAAQAAAAAAAAABAAAADEhlbGxvIHdvcmxkIQAAAAEAAAAAAAAAAAAAAADt4FJhvNwvlQqjuhc7bjLVyRf5e4K2QOzI0c6nWfVvEAAAAASoF8gAAAAAAAAAAAG2h5ViAAAAQMc6HwYaGsrlJ8/LdE9VDVq04JifpQofSmnjhrtqaTTs/VBsNGmxi4b/vaFkLLLWh8emI8FsS/vBgb8AVFVkZQU=",
                 transaction.ToEnvelopeXdrBase64());
 
             var transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
@@ -160,10 +172,7 @@ namespace stellar_dotnet_sdk_test
             transaction.Sign(source);
 
             // Convert transaction to binary XDR and back again to make sure timebounds are correctly de/serialized.
-            var bytes = transaction.ToEnvelopeXdrBase64().ToCharArray();
-            var xdrDataInputStream = new XdrDataInputStream(Convert.FromBase64CharArray(bytes, 0, bytes.Length));
-
-            var decodedTransaction = XdrTransaction.Decode(xdrDataInputStream);
+            var decodedTransaction = transaction.ToEnvelopeXdr().V1.Tx;
 
             Assert.AreEqual(decodedTransaction.TimeBounds.MinTime.InnerValue.InnerValue, 42U);
             Assert.AreEqual(decodedTransaction.TimeBounds.MaxTime.InnerValue.InnerValue, 1337U);
@@ -196,10 +205,7 @@ namespace stellar_dotnet_sdk_test
                 .Build();
 
             // Convert transaction to binary XDR and back again to make sure fee is correctly de/serialized.
-            var bytes = transaction.ToUnsignedEnvelopeXdrBase64().ToCharArray();
-            var xdrDataInputStream = new XdrDataInputStream(Convert.FromBase64CharArray(bytes, 0, bytes.Length));
-
-            var decodedTransaction = XdrTransaction.Decode(xdrDataInputStream);
+            var decodedTransaction = transaction.ToUnsignedEnvelopeXdr().V1.Tx;
 
             Assert.AreEqual(decodedTransaction.Fee.InnerValue, 173 * 2U);
 
@@ -238,7 +244,12 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual(
                 "AAAAAF7FIiDToW1fOYUFBC0dmyufJbFTOa2GQESGz+S2h5ViAAAAZAAKVaMAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA7eBSYbzcL5UKo7oXO24y1ckX+XuCtkDsyNHOp1n1bxAAAAAEqBfIAAAAAAAAAAABtoeVYgAAAEDzfR5PgRFim5Wdvq9ImdZNWGBxBWwYkQPa9l5iiBdtPLzAZv6qj+iOfSrqinsoF0XrLkwdIcZQVtp3VRHhRoUE",
+                transaction.ToEnvelopeXdrBase64(TransactionBase.TransactionXdrVersion.V0));
+
+            Assert.AreEqual(
+                "AAAAAgAAAABexSIg06FtXzmFBQQtHZsrnyWxUzmthkBEhs/ktoeVYgAAAGQAClWjAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAO3gUmG83C+VCqO6FztuMtXJF/l7grZA7MjRzqdZ9W8QAAAABKgXyAAAAAAAAAAAAbaHlWIAAABA830eT4ERYpuVnb6vSJnWTVhgcQVsGJED2vZeYogXbTy8wGb+qo/ojn0q6op7KBdF6y5MHSHGUFbad1UR4UaFBA==",
                 transaction.ToEnvelopeXdrBase64());
+
         }
 
         [TestMethod]
@@ -440,7 +451,7 @@ namespace stellar_dotnet_sdk_test
                     new PaymentOperation.Builder(destination, asset, amount).Build())
                 .AddMemo(new MemoText("Happy birthday!"))
                 .Build();
-            var xdr = tx.ToUnsignedEnvelopeXdrBase64(TransactionBase.TransactionXdrVersion.V1);
+            var xdr = tx.ToUnsignedEnvelopeXdrBase64();
             var back = TransactionBuilder.FromEnvelopeXdr(xdr) as Transaction;
             Assert.IsNotNull(back);
             Assert.AreEqual(txSource.Address, back.SourceAccount.Address);

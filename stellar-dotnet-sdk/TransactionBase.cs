@@ -35,7 +35,7 @@ namespace stellar_dotnet_sdk
         /// </summary>
         /// <param name="version">The envelope version to generated. Defaults to V0</param>
         /// <returns></returns>
-        public abstract TransactionEnvelope ToEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V0);
+        public abstract TransactionEnvelope ToEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V1);
 
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace stellar_dotnet_sdk
         /// </summary>
         /// <param name="version">The envelope version to generated. Defaults to V0</param>
         /// <returns></returns>
-        public abstract TransactionEnvelope ToUnsignedEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V0);
+        public abstract TransactionEnvelope ToUnsignedEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V1);
 
         /// <summary>
         ///     Returns signature base.
@@ -127,7 +127,7 @@ namespace stellar_dotnet_sdk
         ///     Generates TransactionEnvelope XDR object. This transaction MUST be signed before being useful
         /// </summary>
         /// <returns></returns>
-        public string ToUnsignedEnvelopeXdrBase64(TransactionXdrVersion version = TransactionXdrVersion.V0)
+        public string ToUnsignedEnvelopeXdrBase64(TransactionXdrVersion version = TransactionXdrVersion.V1)
         {
             var envelope = ToUnsignedEnvelopeXdr(version);
             var writer = new XdrDataOutputStream();
@@ -140,7 +140,7 @@ namespace stellar_dotnet_sdk
         ///     Returns base64-encoded TransactionEnvelope XDR object. Transaction need to have at least one signature.
         /// </summary>
         /// <returns></returns>
-        public string ToEnvelopeXdrBase64(TransactionXdrVersion version = TransactionXdrVersion.V0)
+        public string ToEnvelopeXdrBase64(TransactionXdrVersion version = TransactionXdrVersion.V1)
         {
             var envelope = ToEnvelopeXdr(version);
             var writer = new XdrDataOutputStream();
