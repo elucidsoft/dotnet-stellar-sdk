@@ -157,7 +157,7 @@ namespace stellar_dotnet_sdk
         ///     Generates TransactionEnvelope XDR object. Transaction need to have at least one signature.
         /// </summary>
         /// <returns></returns>
-        public override TransactionEnvelope ToEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V0)
+        public override TransactionEnvelope ToEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V1)
         {
             if (Signatures.Count == 0)
                 throw new NotEnoughSignaturesException("Transaction must be signed by at least one signer. Use transaction.sign().");
@@ -169,7 +169,7 @@ namespace stellar_dotnet_sdk
         ///     Generates TransactionEnvelope XDR object. This transaction MUST be signed before being useful
         /// </summary>
         /// <returns></returns>
-        public override TransactionEnvelope ToUnsignedEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V0)
+        public override TransactionEnvelope ToUnsignedEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V1)
         {
             if (Signatures.Count > 0)
                 throw new TooManySignaturesException("Transaction must not be signed. Use ToEnvelopeXDR.");

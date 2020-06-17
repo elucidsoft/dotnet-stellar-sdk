@@ -166,6 +166,22 @@ namespace stellar_dotnet_sdk_test
             await _server.CheckMemoRequired(tx);
         }
 
+        [TestMethod]
+        public async Task TestSkipCheckIfDestinationIsMuxedAccount()
+        {
+            var accountId = "GAYHAAKPAQLMGIJYMIWPDWCGUCQ5LAWY4Q7Q3IKSP57O7GUPD3NEOSEA";
+
+            var muxed = MuxedAccountMed25519.FromMuxedAccountId(
+                "MAAAAAAAAAAAJURAAB2X52XFQP6FBXLGT6LWOOWMEXWHEWBDVRZ7V5WH34Y22MPFBHUHY");
+
+            var payment = new PaymentOperation
+                    .Builder(muxed, new AssetTypeNative(), "100.500")
+                .Build();
+
+            var tx = BuildTransaction(accountId, new Operation[] { payment }, Memo.None(), skipDefaultOp: true);
+            await _server.CheckMemoRequired(tx);
+        }
+
         private string BuildAccountResponse(string accountId, Dictionary<string, string> data = null)
         {
             var accountData = data ?? new Dictionary<string, string>();

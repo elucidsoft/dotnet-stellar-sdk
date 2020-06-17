@@ -70,7 +70,7 @@ namespace stellar_dotnet_sdk
             return transaction;
         }
 
-        public override TransactionEnvelope ToEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V0)
+        public override TransactionEnvelope ToEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V1)
         {
             if (Signatures.Count == 0)
                 throw new NotEnoughSignaturesException("FeeBumpTransaction must be signed by at least one signer. Use transaction.sign().");
@@ -78,7 +78,7 @@ namespace stellar_dotnet_sdk
             return ToEnvelopeXdr(version, Signatures.ToArray());
         }
 
-        public override TransactionEnvelope ToUnsignedEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V0)
+        public override TransactionEnvelope ToUnsignedEnvelopeXdr(TransactionXdrVersion version = TransactionXdrVersion.V1)
         {
             if (Signatures.Count > 0)
                 throw new TooManySignaturesException("FeeBumpTransaction must not be signed. Use ToEnvelopeXDR.");
