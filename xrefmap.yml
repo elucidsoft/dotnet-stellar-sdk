@@ -3902,6 +3902,19 @@ references:
   commentId: T:stellar_dotnet_sdk.MuxedAccountMed25519
   fullName: stellar_dotnet_sdk.MuxedAccountMed25519
   nameWithType: MuxedAccountMed25519
+- uid: stellar_dotnet_sdk.MuxedAccountMed25519.#ctor(stellar_dotnet_sdk.KeyPair,System.UInt64)
+  name: MuxedAccountMed25519(KeyPair, UInt64)
+  href: api/stellar_dotnet_sdk.MuxedAccountMed25519.html#stellar_dotnet_sdk_MuxedAccountMed25519__ctor_stellar_dotnet_sdk_KeyPair_System_UInt64_
+  commentId: M:stellar_dotnet_sdk.MuxedAccountMed25519.#ctor(stellar_dotnet_sdk.KeyPair,System.UInt64)
+  fullName: stellar_dotnet_sdk.MuxedAccountMed25519.MuxedAccountMed25519(stellar_dotnet_sdk.KeyPair, System.UInt64)
+  nameWithType: MuxedAccountMed25519.MuxedAccountMed25519(KeyPair, UInt64)
+- uid: stellar_dotnet_sdk.MuxedAccountMed25519.#ctor*
+  name: MuxedAccountMed25519
+  href: api/stellar_dotnet_sdk.MuxedAccountMed25519.html#stellar_dotnet_sdk_MuxedAccountMed25519__ctor_
+  commentId: Overload:stellar_dotnet_sdk.MuxedAccountMed25519.#ctor
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.MuxedAccountMed25519.MuxedAccountMed25519
+  nameWithType: MuxedAccountMed25519.MuxedAccountMed25519
 - uid: stellar_dotnet_sdk.MuxedAccountMed25519.AccountId
   name: AccountId
   href: api/stellar_dotnet_sdk.MuxedAccountMed25519.html#stellar_dotnet_sdk_MuxedAccountMed25519_AccountId
@@ -3928,6 +3941,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.MuxedAccountMed25519.Address
   nameWithType: MuxedAccountMed25519.Address
+- uid: stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountId(System.String)
+  name: FromMuxedAccountId(String)
+  href: api/stellar_dotnet_sdk.MuxedAccountMed25519.html#stellar_dotnet_sdk_MuxedAccountMed25519_FromMuxedAccountId_System_String_
+  commentId: M:stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountId(System.String)
+  fullName: stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountId(System.String)
+  nameWithType: MuxedAccountMed25519.FromMuxedAccountId(String)
+- uid: stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountId*
+  name: FromMuxedAccountId
+  href: api/stellar_dotnet_sdk.MuxedAccountMed25519.html#stellar_dotnet_sdk_MuxedAccountMed25519_FromMuxedAccountId_
+  commentId: Overload:stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountId
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountId
+  nameWithType: MuxedAccountMed25519.FromMuxedAccountId
+- uid: stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountXdr(stellar_dotnet_sdk.xdr.MuxedAccount.MuxedAccountMed25519)
+  name: FromMuxedAccountXdr(MuxedAccount.MuxedAccountMed25519)
+  href: api/stellar_dotnet_sdk.MuxedAccountMed25519.html#stellar_dotnet_sdk_MuxedAccountMed25519_FromMuxedAccountXdr_stellar_dotnet_sdk_xdr_MuxedAccount_MuxedAccountMed25519_
+  commentId: M:stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountXdr(stellar_dotnet_sdk.xdr.MuxedAccount.MuxedAccountMed25519)
+  fullName: stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountXdr(stellar_dotnet_sdk.xdr.MuxedAccount.MuxedAccountMed25519)
+  nameWithType: MuxedAccountMed25519.FromMuxedAccountXdr(MuxedAccount.MuxedAccountMed25519)
+- uid: stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountXdr*
+  name: FromMuxedAccountXdr
+  href: api/stellar_dotnet_sdk.MuxedAccountMed25519.html#stellar_dotnet_sdk_MuxedAccountMed25519_FromMuxedAccountXdr_
+  commentId: Overload:stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountXdr
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountXdr
+  nameWithType: MuxedAccountMed25519.FromMuxedAccountXdr
 - uid: stellar_dotnet_sdk.MuxedAccountMed25519.Id
   name: Id
   href: api/stellar_dotnet_sdk.MuxedAccountMed25519.html#stellar_dotnet_sdk_MuxedAccountMed25519_Id
@@ -17341,6 +17380,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.StrKey.DecodeStellarAccountId
   nameWithType: StrKey.DecodeStellarAccountId
+- uid: stellar_dotnet_sdk.StrKey.DecodeStellarMuxedAccount(System.String)
+  name: DecodeStellarMuxedAccount(String)
+  href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_DecodeStellarMuxedAccount_System_String_
+  commentId: M:stellar_dotnet_sdk.StrKey.DecodeStellarMuxedAccount(System.String)
+  fullName: stellar_dotnet_sdk.StrKey.DecodeStellarMuxedAccount(System.String)
+  nameWithType: StrKey.DecodeStellarMuxedAccount(String)
+- uid: stellar_dotnet_sdk.StrKey.DecodeStellarMuxedAccount*
+  name: DecodeStellarMuxedAccount
+  href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_DecodeStellarMuxedAccount_
+  commentId: Overload:stellar_dotnet_sdk.StrKey.DecodeStellarMuxedAccount
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.StrKey.DecodeStellarMuxedAccount
+  nameWithType: StrKey.DecodeStellarMuxedAccount
 - uid: stellar_dotnet_sdk.StrKey.DecodeStellarSecretSeed(System.String)
   name: DecodeStellarSecretSeed(String)
   href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_DecodeStellarSecretSeed_System_String_
@@ -17399,6 +17451,22 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.StrKey.EncodeStellarAccountId
   nameWithType: StrKey.EncodeStellarAccountId
+- uid: stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount(System.Byte[],System.UInt64)
+  name: EncodeStellarMuxedAccount(Byte[], UInt64)
+  href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_EncodeStellarMuxedAccount_System_Byte___System_UInt64_
+  commentId: M:stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount(System.Byte[],System.UInt64)
+  name.vb: EncodeStellarMuxedAccount(Byte(), UInt64)
+  fullName: stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount(System.Byte[], System.UInt64)
+  fullName.vb: stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount(System.Byte(), System.UInt64)
+  nameWithType: StrKey.EncodeStellarMuxedAccount(Byte[], UInt64)
+  nameWithType.vb: StrKey.EncodeStellarMuxedAccount(Byte(), UInt64)
+- uid: stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount*
+  name: EncodeStellarMuxedAccount
+  href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_EncodeStellarMuxedAccount_
+  commentId: Overload:stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount
+  nameWithType: StrKey.EncodeStellarMuxedAccount
 - uid: stellar_dotnet_sdk.StrKey.EncodeStellarSecretSeed(System.Byte[])
   name: EncodeStellarSecretSeed(Byte[])
   href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_EncodeStellarSecretSeed_System_Byte___
@@ -17454,6 +17522,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.StrKey.IsValidEd25519SecretSeed
   nameWithType: StrKey.IsValidEd25519SecretSeed
+- uid: stellar_dotnet_sdk.StrKey.IsValidMuxedAccount(System.String)
+  name: IsValidMuxedAccount(String)
+  href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_IsValidMuxedAccount_System_String_
+  commentId: M:stellar_dotnet_sdk.StrKey.IsValidMuxedAccount(System.String)
+  fullName: stellar_dotnet_sdk.StrKey.IsValidMuxedAccount(System.String)
+  nameWithType: StrKey.IsValidMuxedAccount(String)
+- uid: stellar_dotnet_sdk.StrKey.IsValidMuxedAccount*
+  name: IsValidMuxedAccount
+  href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_IsValidMuxedAccount_
+  commentId: Overload:stellar_dotnet_sdk.StrKey.IsValidMuxedAccount
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.StrKey.IsValidMuxedAccount
+  nameWithType: StrKey.IsValidMuxedAccount
 - uid: stellar_dotnet_sdk.StrKey.VersionByte
   name: StrKey.VersionByte
   href: api/stellar_dotnet_sdk.StrKey.VersionByte.html

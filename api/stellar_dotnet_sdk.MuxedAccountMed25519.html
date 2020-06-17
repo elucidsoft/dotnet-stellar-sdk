@@ -94,6 +94,56 @@
   
   
   
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="stellar_dotnet_sdk_MuxedAccountMed25519__ctor_" data-uid="stellar_dotnet_sdk.MuxedAccountMed25519.#ctor*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_MuxedAccountMed25519__ctor_stellar_dotnet_sdk_KeyPair_System_UInt64_" data-uid="stellar_dotnet_sdk.MuxedAccountMed25519.#ctor(stellar_dotnet_sdk.KeyPair,System.UInt64)"><a href="#collapsible-stellar_dotnet_sdk_MuxedAccountMed25519__ctor_stellar_dotnet_sdk_KeyPair_System_UInt64_" class="expander" data-toggle="collapse">MuxedAccountMed25519(KeyPair, UInt64)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_MuxedAccountMed25519__ctor_stellar_dotnet_sdk_KeyPair_System_UInt64_" class="collapse in">
+  <div class="markdown level1 summary"><p>Create a new MuxedAccountMed25519 with the given key and id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MuxedAccountMed25519(KeyPair key, ulong id)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.KeyPair.html">KeyPair</a></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
   <h3 id="properties">Properties
   </h3>
   
@@ -395,6 +445,112 @@
   
   <h5 class="implements">Implements</h5>
       <div><a class="xref" href="stellar_dotnet_sdk.IAccountId.html#stellar_dotnet_sdk_IAccountId_SigningKey">IAccountId.SigningKey</a></div>
+  
+  
+  
+  
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="stellar_dotnet_sdk_MuxedAccountMed25519_FromMuxedAccountId_" data-uid="stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountId*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_MuxedAccountMed25519_FromMuxedAccountId_System_String_" data-uid="stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountId(System.String)"><a href="#collapsible-stellar_dotnet_sdk_MuxedAccountMed25519_FromMuxedAccountId_System_String_" class="expander" data-toggle="collapse">FromMuxedAccountId(String)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_MuxedAccountMed25519_FromMuxedAccountId_System_String_" class="collapse in">
+  <div class="markdown level1 summary"><p>Create a new MuxedAccountMed25519 from an account id in the format &quot;M...&quot;.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MuxedAccountMed25519 FromMuxedAccountId(string muxedAccountId)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">muxedAccountId</span></td>
+        <td></td>
+      </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.MuxedAccountMed25519.html">MuxedAccountMed25519</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_MuxedAccountMed25519_FromMuxedAccountXdr_" data-uid="stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountXdr*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_MuxedAccountMed25519_FromMuxedAccountXdr_stellar_dotnet_sdk_xdr_MuxedAccount_MuxedAccountMed25519_" data-uid="stellar_dotnet_sdk.MuxedAccountMed25519.FromMuxedAccountXdr(stellar_dotnet_sdk.xdr.MuxedAccount.MuxedAccountMed25519)"><a href="#collapsible-stellar_dotnet_sdk_MuxedAccountMed25519_FromMuxedAccountXdr_stellar_dotnet_sdk_xdr_MuxedAccount_MuxedAccountMed25519_" class="expander" data-toggle="collapse">FromMuxedAccountXdr(MuxedAccount.MuxedAccountMed25519)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_MuxedAccountMed25519_FromMuxedAccountXdr_stellar_dotnet_sdk_xdr_MuxedAccount_MuxedAccountMed25519_" class="collapse in">
+  <div class="markdown level1 summary"><p>Create a new MuxedAccountMed25519 from the xdr object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MuxedAccountMed25519 FromMuxedAccountXdr(MuxedAccount.MuxedAccountMed25519 muxed)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.MuxedAccount.MuxedAccountMed25519</span></td>
+        <td><span class="parametername">muxed</span></td>
+        <td></td>
+      </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.MuxedAccountMed25519.html">MuxedAccountMed25519</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
   
   
   
