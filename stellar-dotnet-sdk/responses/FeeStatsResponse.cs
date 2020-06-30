@@ -2,7 +2,7 @@
 
 namespace stellar_dotnet_sdk.responses
 {
-    public class OperationFeeStatsResponse : Response
+    public class FeeStatsResponse : Response
     {
         [JsonProperty(PropertyName = "ledger_capacity_usage")]
         public decimal LedgerCapacityUsage { get; }
@@ -18,8 +18,8 @@ namespace stellar_dotnet_sdk.responses
 
         [JsonProperty(PropertyName = "max_fee")]
         public FeeStatsResponseData MaxFee { get; private set; }
-       
-        public OperationFeeStatsResponse(decimal ledgerCapacityUsage, long lastLedgerBaseFee, uint lastLedger, FeeStatsResponseData feeCharged, FeeStatsResponseData maxFee)
+
+        public FeeStatsResponse(decimal ledgerCapacityUsage, long lastLedgerBaseFee, uint lastLedger, FeeStatsResponseData feeCharged, FeeStatsResponseData maxFee)
         {
             LedgerCapacityUsage = ledgerCapacityUsage;
             LastLedgerBaseFee = lastLedgerBaseFee;

@@ -10,26 +10,26 @@ using stellar_dotnet_sdk_test.responses;
 namespace stellar_dotnet_sdk_test.requests
 {
     [TestClass]
-    public class OperationFeeRequestBuilderTest
+    public class FeeRequestBuilderTest
     {
         [TestMethod]
         public void TestBuilder()
         {
             Server server = new Server("https://horizon-testnet.stellar.org");
-            Uri uri = server.OperationFeeStats.BuildUri();
-            Assert.AreEqual("https://horizon-testnet.stellar.org/operation_fee_stats", uri.ToString());
+            Uri uri = server.FeeStats.BuildUri();
+            Assert.AreEqual("https://horizon-testnet.stellar.org/fee_stats", uri.ToString());
         }
 
         [TestMethod]
         public async Task TestExecute()
         {
-            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "operationFeeStats.json"));
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "feeStats.json"));
             var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
 
             using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
             {
-                var fees = await server.OperationFeeStats.Execute();
-                OperationFeeStatsDeserializerTest.AssertTestData(fees);
+                var fees = await server.FeeStats.Execute();
+                FeeStatsDeserializerTest.AssertTestData(fees);
             }
         }
     }
