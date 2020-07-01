@@ -10,31 +10,31 @@ using stellar_dotnet_sdk.responses;
 namespace stellar_dotnet_sdk_test.responses
 {
     [TestClass]
-    public class OperationFeeStatsDeserializerTest
+    public class FeeStatsDeserializerTest
     {
         [TestMethod]
         public void TestDeserialize()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "operationFeeStats.json"));
-            var stats = JsonSingleton.GetInstance<OperationFeeStatsResponse>(json);
+            var json = File.ReadAllText(Path.Combine("testdata", "feeStats.json"));
+            var stats = JsonSingleton.GetInstance<FeeStatsResponse>(json);
             AssertTestData(stats);
         }
 
         [TestMethod]
         public void TestSerializeDeserialize()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "operationFeeStats.json"));
-            var stats = JsonConvert.DeserializeObject<OperationFeeStatsResponse>(json);
+            var json = File.ReadAllText(Path.Combine("testdata", "feeStats.json"));
+            var stats = JsonConvert.DeserializeObject<FeeStatsResponse>(json);
 
             var serialized = JsonConvert.SerializeObject(stats);
-            var back = JsonConvert.DeserializeObject<OperationFeeStatsResponse>(serialized);
-           
+            var back = JsonConvert.DeserializeObject<FeeStatsResponse>(serialized);
+
             Assert.AreEqual(stats.LastLedger, back.LastLedger);
             Assert.AreEqual(stats.LastLedgerBaseFee, back.LastLedgerBaseFee);
             Assert.AreEqual(stats.LedgerCapacityUsage, back.LedgerCapacityUsage);
         }
 
-        public static void AssertTestData(OperationFeeStatsResponse stats)
+        public static void AssertTestData(FeeStatsResponse stats)
         {
             Assert.AreEqual(0.97m, stats.LedgerCapacityUsage);
 

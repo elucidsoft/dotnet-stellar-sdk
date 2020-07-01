@@ -182,7 +182,7 @@
     <None Update="testdata\operationPassiveOffer.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationFeeStats.json">
+    <None Update="testdata\feeStats.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="testdata\operationPathPaymentStrictSend.json">

@@ -62,7 +62,7 @@ namespace stellar_dotnet_sdk
 
         public OperationsRequestBuilder Operations => new OperationsRequestBuilder(_serverUri, _httpClient);
 
-        public OperationFeeStatsRequestBuilder OperationFeeStats => new OperationFeeStatsRequestBuilder(_serverUri, _httpClient);
+        public FeeStatsRequestBuilder FeeStats => new FeeStatsRequestBuilder(_serverUri, _httpClient);
 
         public OrderBookRequestBuilder OrderBook => new OrderBookRequestBuilder(_serverUri, _httpClient);
 
