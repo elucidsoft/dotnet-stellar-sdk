@@ -873,7 +873,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.Server.html",
-          "hash": "CFblq6ZpJroAmkt6oBly1Q=="
+          "hash": "lZfZ1nnUNLGSNX6dueyqWQ=="
         }
       },
       "is_incremental": false,
@@ -1241,6 +1241,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.requests.FeeStatsRequestBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.requests.FeeStatsRequestBuilder.html",
+          "hash": "SUZ2TqVtZWODUPNJdyxSyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.requests.FriendBotRequestBuilder.yml",
       "output": {
         ".html": {
@@ -1294,18 +1306,6 @@
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.requests.OffersRequestBuilder.html",
           "hash": "Oe2nOudGBSAzgc6BCRwL0A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/stellar_dotnet_sdk.requests.OperationFeeStatsRequestBuilder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/stellar_dotnet_sdk.requests.OperationFeeStatsRequestBuilder.html",
-          "hash": "SoRj3mxricJwRNt02s41oA=="
         }
       },
       "is_incremental": false,
@@ -1401,7 +1401,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.requests.RequestBuilder-1.html",
-          "hash": "3kH5Yo1Tj1NJ2mJJyPNCyQ=="
+          "hash": "m2EqnfTrf+d4x8dSkQhSwQ=="
         }
       },
       "is_incremental": false,
@@ -1497,7 +1497,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.requests.html",
-          "hash": "BoNdSeT/Rmv/hSf6XxDSMw=="
+          "hash": "U2j+Xl/PohwoCQKwf+OhMg=="
         }
       },
       "is_incremental": false,
@@ -1606,6 +1606,30 @@
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.EffectDeserializer.html",
           "hash": "XiBICrJe/pnAWgzOcGG8Ig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.FeeStatsResponse.FeeStatsResponseData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.FeeStatsResponse.FeeStatsResponseData.html",
+          "hash": "DWxPPeUvgayPqF04jlDX7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.FeeStatsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.FeeStatsResponse.html",
+          "hash": "iv0AIiJv9fLg80rXidFoBw=="
         }
       },
       "is_incremental": false,
@@ -1781,30 +1805,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/stellar_dotnet_sdk.responses.OperationFeeStatsResponse.FeeStatsResponseData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/stellar_dotnet_sdk.responses.OperationFeeStatsResponse.FeeStatsResponseData.html",
-          "hash": "P58qARYpRInVLxL8Ae0eXw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/stellar_dotnet_sdk.responses.OperationFeeStatsResponse.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/stellar_dotnet_sdk.responses.OperationFeeStatsResponse.html",
-          "hash": "Y8aGDLAKJyhA1an9DDNSVg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.OrderBookResponse.Row.yml",
       "output": {
         ".html": {
@@ -1857,7 +1857,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.Response.html",
-          "hash": "Ak1Hx4BXAGXmbtXvN9wZDw=="
+          "hash": "0IAhkxIV8q+lVyHuVJvocg=="
         }
       },
       "is_incremental": false,
@@ -4449,7 +4449,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.html",
-          "hash": "W8/N3yxUWHli067Vj0T97A=="
+          "hash": "qKuHshvt0jlfam+nDfZL7w=="
         }
       },
       "is_incremental": false,
@@ -4473,7 +4473,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "fBkMoQnliRaxgukKAV6sUA=="
+          "hash": "FzcXyBHLaRGdgHzvKn4NlQ=="
         }
       },
       "is_incremental": false,
