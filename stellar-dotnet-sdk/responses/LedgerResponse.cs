@@ -11,7 +11,8 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "sequence")]
         public uint Sequence { get; private set; }
 
-        [JsonProperty(PropertyName = "hash")] public string Hash { get; private set; }
+        [JsonProperty(PropertyName = "hash")]
+        public string Hash { get; private set; }
 
         [JsonProperty(PropertyName = "paging_token")]
         public string PagingToken { get; private set; }
@@ -52,13 +53,16 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "base_reserve_in_stroops")]
         public String BaseReserveInStroops { get; private set; }
 
+        [JsonProperty(PropertyName = "tx_set_operation_count")]
+        public int? TxSetOperationCount { get; private set; }
+
         [JsonProperty(PropertyName = "_links")]
         public LedgerResponseLinks Links { get; private set; }
 
         public LedgerResponse(uint sequence, String hash, String pagingToken, String prevHash,
             int? failedTransactionCount, int successfulTransactionCount, int operationCount, String closedAt,
             String totalCoins, String feePool, long baseFee, String baseReserve, String baseFeeInStroops,
-            String baseReserveInStroops, int maxTxSetSize, LedgerResponseLinks links)
+            String baseReserveInStroops, int maxTxSetSize, int? txSetOperationCount, LedgerResponseLinks links)
         {
             Sequence = sequence;
             Hash = hash;
@@ -75,6 +79,7 @@ namespace stellar_dotnet_sdk.responses
             BaseReserve = baseReserve;
             BaseReserveInStroops = baseReserveInStroops;
             MaxTxSetSize = maxTxSetSize;
+            TxSetOperationCount = txSetOperationCount;
             Links = links;
         }
 

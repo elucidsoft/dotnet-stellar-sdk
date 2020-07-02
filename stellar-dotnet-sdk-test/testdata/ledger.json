@@ -29,5 +29,6 @@
   "fee_pool": "1908.2248818",
   "base_fee": 100,
   "base_reserve": "10.0000000",
-  "max_tx_set_size": 50
+  "max_tx_set_size": 50,
+  "tx_set_operation_count": 5
 }
