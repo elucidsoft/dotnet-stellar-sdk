@@ -134,7 +134,7 @@
     <None Update="testdata\ledger.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\ledgerNullFailedTransactionCount.json">
+    <None Update="testdata\ledgerNullValues.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="testdata\ledgerPage.json">

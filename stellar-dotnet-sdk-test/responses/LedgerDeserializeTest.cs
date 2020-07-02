@@ -31,7 +31,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeNullFailedTransactionCount()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "ledgerNullFailedTransactionCount.json"));
+            var json = File.ReadAllText(Path.Combine("testdata", "ledgerNullValues.json"));
             var ledger = JsonSingleton.GetInstance<LedgerResponse>(json);
             var serialized = JsonConvert.SerializeObject(ledger);
             var back = JsonConvert.DeserializeObject<LedgerResponse>(serialized);
@@ -42,6 +42,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(ledger.Sequence, (uint)500);
             Assert.AreEqual(ledger.SuccessfulTransactionCount, 0);
             Assert.AreEqual(ledger.FailedTransactionCount, null);
+            Assert.AreEqual(ledger.TxSetOperationCount, null);
             Assert.AreEqual(ledger.OperationCount, 0);
         }
 
@@ -60,6 +61,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(ledger.BaseFee, 100);
             Assert.AreEqual(ledger.BaseReserve, "10.0000000");
             Assert.AreEqual(ledger.MaxTxSetSize, 50);
+            Assert.AreEqual(ledger.TxSetOperationCount, 5);
             Assert.AreEqual(ledger.Links.Effects.Href, "/ledgers/898826/effects{?cursor,limit,order}");
             Assert.AreEqual(ledger.Links.Operations.Href, "/ledgers/898826/operations{?cursor,limit,order}");
             Assert.AreEqual(ledger.Links.Self.Href, "/ledgers/898826");
