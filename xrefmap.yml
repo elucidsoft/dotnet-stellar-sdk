@@ -9485,15 +9485,15 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.LedgerResponse
   fullName: stellar_dotnet_sdk.responses.LedgerResponse
   nameWithType: LedgerResponse
-- uid: stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.UInt32,String,String,String,System.Nullable{System.Int32},System.Int32,System.Int32,String,String,String,System.Int64,String,String,String,System.Int32,stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
-  name: LedgerResponse(UInt32, String, String, String, Nullable<Int32>, Int32, Int32, String, String, String, Int64, String, String, String, Int32, LedgerResponse.LedgerResponseLinks)
-  href: api/stellar_dotnet_sdk.responses.LedgerResponse.html#stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_UInt32_String_String_String_System_Nullable_System_Int32__System_Int32_System_Int32_String_String_String_System_Int64_String_String_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_
-  commentId: M:stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.UInt32,String,String,String,System.Nullable{System.Int32},System.Int32,System.Int32,String,String,String,System.Int64,String,String,String,System.Int32,stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
-  name.vb: LedgerResponse(UInt32, String, String, String, Nullable(Of Int32), Int32, Int32, String, String, String, Int64, String, String, String, Int32, LedgerResponse.LedgerResponseLinks)
-  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponse(System.UInt32, String, String, String, System.Nullable<System.Int32>, System.Int32, System.Int32, String, String, String, System.Int64, String, String, String, System.Int32, stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
-  fullName.vb: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponse(System.UInt32, String, String, String, System.Nullable(Of System.Int32), System.Int32, System.Int32, String, String, String, System.Int64, String, String, String, System.Int32, stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
-  nameWithType: LedgerResponse.LedgerResponse(UInt32, String, String, String, Nullable<Int32>, Int32, Int32, String, String, String, Int64, String, String, String, Int32, LedgerResponse.LedgerResponseLinks)
-  nameWithType.vb: LedgerResponse.LedgerResponse(UInt32, String, String, String, Nullable(Of Int32), Int32, Int32, String, String, String, Int64, String, String, String, Int32, LedgerResponse.LedgerResponseLinks)
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.UInt32,String,String,String,System.Nullable{System.Int32},System.Int32,System.Int32,String,String,String,System.Int64,String,String,String,System.Int32,System.Nullable{System.Int32},stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
+  name: LedgerResponse(UInt32, String, String, String, Nullable<Int32>, Int32, Int32, String, String, String, Int64, String, String, String, Int32, Nullable<Int32>, LedgerResponse.LedgerResponseLinks)
+  href: api/stellar_dotnet_sdk.responses.LedgerResponse.html#stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_UInt32_String_String_String_System_Nullable_System_Int32__System_Int32_System_Int32_String_String_String_System_Int64_String_String_String_System_Int32_System_Nullable_System_Int32__stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_
+  commentId: M:stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.UInt32,String,String,String,System.Nullable{System.Int32},System.Int32,System.Int32,String,String,String,System.Int64,String,String,String,System.Int32,System.Nullable{System.Int32},stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
+  name.vb: LedgerResponse(UInt32, String, String, String, Nullable(Of Int32), Int32, Int32, String, String, String, Int64, String, String, String, Int32, Nullable(Of Int32), LedgerResponse.LedgerResponseLinks)
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponse(System.UInt32, String, String, String, System.Nullable<System.Int32>, System.Int32, System.Int32, String, String, String, System.Int64, String, String, String, System.Int32, System.Nullable<System.Int32>, stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
+  fullName.vb: stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponse(System.UInt32, String, String, String, System.Nullable(Of System.Int32), System.Int32, System.Int32, String, String, String, System.Int64, String, String, String, System.Int32, System.Nullable(Of System.Int32), stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)
+  nameWithType: LedgerResponse.LedgerResponse(UInt32, String, String, String, Nullable<Int32>, Int32, Int32, String, String, String, Int64, String, String, String, Int32, Nullable<Int32>, LedgerResponse.LedgerResponseLinks)
+  nameWithType.vb: LedgerResponse.LedgerResponse(UInt32, String, String, String, Nullable(Of Int32), Int32, Int32, String, String, String, Int64, String, String, String, Int32, Nullable(Of Int32), LedgerResponse.LedgerResponseLinks)
 - uid: stellar_dotnet_sdk.responses.LedgerResponse.#ctor*
   name: LedgerResponse
   href: api/stellar_dotnet_sdk.responses.LedgerResponse.html#stellar_dotnet_sdk_responses_LedgerResponse__ctor_
@@ -9783,6 +9783,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.LedgerResponse.TotalCoins
   nameWithType: LedgerResponse.TotalCoins
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.TxSetOperationCount
+  name: TxSetOperationCount
+  href: api/stellar_dotnet_sdk.responses.LedgerResponse.html#stellar_dotnet_sdk_responses_LedgerResponse_TxSetOperationCount
+  commentId: P:stellar_dotnet_sdk.responses.LedgerResponse.TxSetOperationCount
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.TxSetOperationCount
+  nameWithType: LedgerResponse.TxSetOperationCount
+- uid: stellar_dotnet_sdk.responses.LedgerResponse.TxSetOperationCount*
+  name: TxSetOperationCount
+  href: api/stellar_dotnet_sdk.responses.LedgerResponse.html#stellar_dotnet_sdk_responses_LedgerResponse_TxSetOperationCount_
+  commentId: Overload:stellar_dotnet_sdk.responses.LedgerResponse.TxSetOperationCount
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.LedgerResponse.TxSetOperationCount
+  nameWithType: LedgerResponse.TxSetOperationCount
 - uid: stellar_dotnet_sdk.responses.Link
   name: Link
   href: api/stellar_dotnet_sdk.responses.Link.html

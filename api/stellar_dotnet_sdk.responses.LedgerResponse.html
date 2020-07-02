@@ -116,15 +116,15 @@
   
   <a id="stellar_dotnet_sdk_responses_LedgerResponse__ctor_" data-uid="stellar_dotnet_sdk.responses.LedgerResponse.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_UInt32_String_String_String_System_Nullable_System_Int32__System_Int32_System_Int32_String_String_String_System_Int64_String_String_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_" data-uid="stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.UInt32,String,String,String,System.Nullable{System.Int32},System.Int32,System.Int32,String,String,String,System.Int64,String,String,String,System.Int32,stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)"><a href="#collapsible-stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_UInt32_String_String_String_System_Nullable_System_Int32__System_Int32_System_Int32_String_String_String_System_Int64_String_String_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_" class="expander" data-toggle="collapse">LedgerResponse(UInt32, String, String, String, Nullable&lt;Int32&gt;, Int32, Int32, String, String, String, Int64, String, String, String, Int32, LedgerResponse.LedgerResponseLinks)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_UInt32_String_String_String_System_Nullable_System_Int32__System_Int32_System_Int32_String_String_String_System_Int64_String_String_String_System_Int32_System_Nullable_System_Int32__stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_" data-uid="stellar_dotnet_sdk.responses.LedgerResponse.#ctor(System.UInt32,String,String,String,System.Nullable{System.Int32},System.Int32,System.Int32,String,String,String,System.Int64,String,String,String,System.Int32,System.Nullable{System.Int32},stellar_dotnet_sdk.responses.LedgerResponse.LedgerResponseLinks)"><a href="#collapsible-stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_UInt32_String_String_String_System_Nullable_System_Int32__System_Int32_System_Int32_String_String_String_System_Int64_String_String_String_System_Int32_System_Nullable_System_Int32__stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_" class="expander" data-toggle="collapse">LedgerResponse(UInt32, String, String, String, Nullable&lt;Int32&gt;, Int32, Int32, String, String, String, Int64, String, String, String, Int32, Nullable&lt;Int32&gt;, LedgerResponse.LedgerResponseLinks)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_UInt32_String_String_String_System_Nullable_System_Int32__System_Int32_System_Int32_String_String_String_System_Int64_String_String_String_System_Int32_stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_LedgerResponse__ctor_System_UInt32_String_String_String_System_Nullable_System_Int32__System_Int32_System_Int32_String_String_String_System_Int64_String_String_String_System_Int32_System_Nullable_System_Int32__stellar_dotnet_sdk_responses_LedgerResponse_LedgerResponseLinks_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LedgerResponse(uint sequence, String hash, String pagingToken, String prevHash, int? failedTransactionCount, int successfulTransactionCount, int operationCount, String closedAt, String totalCoins, String feePool, long baseFee, String baseReserve, String baseFeeInStroops, String baseReserveInStroops, int maxTxSetSize, LedgerResponse.LedgerResponseLinks links)</code></pre>
+    <pre><code class="lang-csharp hljs">public LedgerResponse(uint sequence, String hash, String pagingToken, String prevHash, int? failedTransactionCount, int successfulTransactionCount, int operationCount, String closedAt, String totalCoins, String feePool, long baseFee, String baseReserve, String baseFeeInStroops, String baseReserveInStroops, int maxTxSetSize, int? txSetOperationCount, LedgerResponse.LedgerResponseLinks links)</code></pre>
   </div>
 
   <h5 class="parameters">Parameters</h5>
@@ -209,6 +209,11 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">maxTxSetSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">txSetOperationCount</span></td>
         <td></td>
       </tr>
       <tr>
@@ -797,6 +802,42 @@
     <tr>
       <td>
         <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_responses_LedgerResponse_TxSetOperationCount_" data-uid="stellar_dotnet_sdk.responses.LedgerResponse.TxSetOperationCount*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_LedgerResponse_TxSetOperationCount" data-uid="stellar_dotnet_sdk.responses.LedgerResponse.TxSetOperationCount"><a href="#collapsible-stellar_dotnet_sdk_responses_LedgerResponse_TxSetOperationCount" class="expander" data-toggle="collapse">TxSetOperationCount</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_LedgerResponse_TxSetOperationCount" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? TxSetOperationCount { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;
         <p>
       </td>
     </tr>
