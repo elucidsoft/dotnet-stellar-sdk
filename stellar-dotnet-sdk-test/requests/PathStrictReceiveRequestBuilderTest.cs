@@ -25,7 +25,7 @@ namespace stellar_dotnet_sdk_test.requests
                     .DestinationAsset(destinationAsset)
                     .DestinationAmount("10.1");
 
-                Assert.AreEqual("https://horizon-testnet.stellar.org/path/strict-receive?" +
+                Assert.AreEqual("https://horizon-testnet.stellar.org/paths/strict-receive?" +
                                 "source_account=GARSFJNXJIHO6ULUBK3DBYKVSIZE7SC72S5DYBCHU7DKL22UXKVD7MXP&" +
                                 "source_assets=native,USD:GAEDTJ4PPEFVW5XV2S7LUXBEHNQMX5Q2GM562RJGOQG7GVCE5H3HIB4V&" +
                                 "destination_account=GAEDTJ4PPEFVW5XV2S7LUXBEHNQMX5Q2GM562RJGOQG7GVCE5H3HIB4V&" +

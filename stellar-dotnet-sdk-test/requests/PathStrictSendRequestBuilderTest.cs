@@ -24,7 +24,7 @@ namespace stellar_dotnet_sdk_test.requests
                     .DestinationAccount("GAEDTJ4PPEFVW5XV2S7LUXBEHNQMX5Q2GM562RJGOQG7GVCE5H3HIB4V")
                     .DestinationAssets(new [] {new AssetTypeNative(), sourceAsset});
 
-                Assert.AreEqual("https://horizon-testnet.stellar.org/path/strict-send?" +
+                Assert.AreEqual("https://horizon-testnet.stellar.org/paths/strict-send?" +
                                 "source_amount=10.1&" +
                                 "source_asset_type=credit_alphanum4&" +
                                 "source_asset_code=USD&" +

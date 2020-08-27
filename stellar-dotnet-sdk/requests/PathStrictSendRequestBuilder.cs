@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk.requests
         PathStrictSendRequestBuilder : RequestBuilderExecutePageable<PathStrictSendRequestBuilder, PathResponse>
     {
         public PathStrictSendRequestBuilder(Uri serverUri, HttpClient httpClient)
-            : base(serverUri, "path/strict-send", httpClient)
+            : base(serverUri, "paths/strict-send", httpClient)
         {
         }
 
