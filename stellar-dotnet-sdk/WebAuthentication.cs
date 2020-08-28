@@ -111,11 +111,12 @@ namespace stellar_dotnet_sdk
         /// </summary>
         /// <param name="transaction">The challenge transaction</param>
         /// <param name="serverAccountId">The server account id</param>
+        /// <param name="homeDomain">The server home domain</param>
         /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
         /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
         /// <returns>The client account id</returns>
         /// <exception cref="InvalidWebAuthenticationException"></exception>
-        public static string ReadChallengeTransaction(Transaction transaction, string serverAccountId,
+        public static string ReadChallengeTransaction(Transaction transaction, string serverAccountId, string homeDomain,
             Network network = null, DateTimeOffset? now = null)
         {
             network = network ?? Network.Current;
@@ -156,6 +157,9 @@ namespace stellar_dotnet_sdk
                 throw new InvalidWebAuthenticationException(
                     "Challenge transaction operation data must be 64 bytes long");
 
+            if (operation.Name != $"{homeDomain} auth")
+                throw new InvalidWebAuthenticationException("Challenge transaction operation data must have home domain key");
+
             try
             {
                 // There is no need to check for decoded value length since we know it's valid base64 and 64 bytes long.
@@ -178,10 +182,10 @@ namespace stellar_dotnet_sdk
 
         public static ICollection<string> VerifyChallengeTransactionThreshold(Transaction transaction,
             string serverAccountId,
-            int threshold, Dictionary<string, int> signerSummary, Network network = null, DateTimeOffset? now = null)
+            int threshold, Dictionary<string, int> signerSummary, string homeDomain, Network network = null, DateTimeOffset? now = null)
         {
             var signersFound =
-                VerifyChallengeTransactionSigners(transaction, serverAccountId, signerSummary.Keys.ToArray(), network,
+                VerifyChallengeTransactionSigners(transaction, serverAccountId, signerSummary.Keys.ToArray(), homeDomain, network,
                     now);
             var weight = signersFound.Sum(signer => signerSummary[signer]);
             if (weight < threshold)
@@ -201,19 +205,20 @@ namespace stellar_dotnet_sdk
         /// <param name="transaction">The challenge transaction</param>
         /// <param name="serverAccountId">The server account id</param>
         /// <param name="signers"></param>
+        /// <param name="homeDomain">The server home domain</param>
         /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
         /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         public static string[] VerifyChallengeTransactionSigners(Transaction transaction, string serverAccountId,
-            ICollection<string> signers, Network network = null, DateTimeOffset? now = null)
+            ICollection<string> signers, string homeDomain, Network network = null, DateTimeOffset? now = null)
         {
             if (!signers.Any())
                 throw new ArgumentException($"{nameof(signers)} must be non-empty");
 
             network = network ?? Network.Current;
 
-            ReadChallengeTransaction(transaction, serverAccountId, network, now);
+            ReadChallengeTransaction(transaction, serverAccountId, homeDomain, network, now);
 
             // Remove server signer if present
             var serverKeypair = KeyPair.FromAccountId(serverAccountId);
@@ -250,17 +255,18 @@ namespace stellar_dotnet_sdk
         /// </summary>
         /// <param name="transaction">The challenge transaction</param>
         /// <param name="serverAccountId">The server account id</param>
+        /// <param name="homeDomain">The server home domain</param>
         /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
         /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
         /// <returns>True if the transaction is valid</returns>
         /// <exception cref="InvalidWebAuthenticationException"></exception>
         [Obsolete("Use VerifyChallengeTransactionThreshold and VerifyChallengeTransactionSigners")]
-        public static bool VerifyChallengeTransaction(Transaction transaction, string serverAccountId,
+        public static bool VerifyChallengeTransaction(Transaction transaction, string serverAccountId, string homeDomain,
             Network network = null, DateTimeOffset? now = null)
         {
             network = network ?? Network.Current;
 
-            var clientAccountId = ReadChallengeTransaction(transaction, serverAccountId, network, now);
+            var clientAccountId = ReadChallengeTransaction(transaction, serverAccountId, homeDomain, network, now);
 
             if (!ValidateSignedBy(transaction, clientAccountId, network))
                 throw new InvalidWebAuthenticationException("Challenge transaction not signed by client");
