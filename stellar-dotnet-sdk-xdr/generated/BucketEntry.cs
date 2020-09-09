@@ -25,6 +25,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public BucketEntryType Discriminant { get; set; } = new BucketEntryType();
+
         public LedgerEntry LiveEntry { get; set; }
         public LedgerKey DeadEntry { get; set; }
         public BucketMetadata MetaEntry { get; set; }

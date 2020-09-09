@@ -22,7 +22,7 @@ namespace stellar_dotnet_sdk.xdr
 //      // thresholds stores unsigned bytes: [weight of master|low|medium|high]
 //      Thresholds thresholds;
 //  
-//      Signer signers<20>; // possible signers for this account
+//      Signer signers<MAX_SIGNERS>; // possible signers for this account
 //  
 //      // reserved for future use
 //      union switch (int v)
@@ -30,17 +30,7 @@ namespace stellar_dotnet_sdk.xdr
 //      case 0:
 //          void;
 //      case 1:
-//          struct
-//          {
-//              Liabilities liabilities;
-//  
-//              union switch (int v)
-//              {
-//              case 0:
-//                  void;
-//              }
-//              ext;
-//          } v1;
+//          AccountEntryExtensionV1 v1;
 //      }
 //      ext;
 //  };
@@ -125,7 +115,8 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public int Discriminant { get; set; } = new int();
-            public AccountEntryV1 V1 { get; set; }
+
+            public AccountEntryExtensionV1 V1 { get; set; }
 
             public static void Encode(XdrDataOutputStream stream, AccountEntryExt encodedAccountEntryExt)
             {
@@ -135,7 +126,7 @@ namespace stellar_dotnet_sdk.xdr
                     case 0:
                         break;
                     case 1:
-                        AccountEntryV1.Encode(stream, encodedAccountEntryExt.V1);
+                        AccountEntryExtensionV1.Encode(stream, encodedAccountEntryExt.V1);
                         break;
                 }
             }
@@ -150,68 +141,11 @@ namespace stellar_dotnet_sdk.xdr
                     case 0:
                         break;
                     case 1:
-                        decodedAccountEntryExt.V1 = AccountEntryV1.Decode(stream);
+                        decodedAccountEntryExt.V1 = AccountEntryExtensionV1.Decode(stream);
                         break;
                 }
 
                 return decodedAccountEntryExt;
-            }
-
-            public class AccountEntryV1
-            {
-                public AccountEntryV1()
-                {
-                }
-
-                public Liabilities Liabilities { get; set; }
-                public AccountEntryV1Ext Ext { get; set; }
-
-                public static void Encode(XdrDataOutputStream stream, AccountEntryV1 encodedAccountEntryV1)
-                {
-                    Liabilities.Encode(stream, encodedAccountEntryV1.Liabilities);
-                    AccountEntryV1Ext.Encode(stream, encodedAccountEntryV1.Ext);
-                }
-
-                public static AccountEntryV1 Decode(XdrDataInputStream stream)
-                {
-                    AccountEntryV1 decodedAccountEntryV1 = new AccountEntryV1();
-                    decodedAccountEntryV1.Liabilities = Liabilities.Decode(stream);
-                    decodedAccountEntryV1.Ext = AccountEntryV1Ext.Decode(stream);
-                    return decodedAccountEntryV1;
-                }
-
-                public class AccountEntryV1Ext
-                {
-                    public AccountEntryV1Ext()
-                    {
-                    }
-
-                    public int Discriminant { get; set; } = new int();
-
-                    public static void Encode(XdrDataOutputStream stream, AccountEntryV1Ext encodedAccountEntryV1Ext)
-                    {
-                        stream.WriteInt((int) encodedAccountEntryV1Ext.Discriminant);
-                        switch (encodedAccountEntryV1Ext.Discriminant)
-                        {
-                            case 0:
-                                break;
-                        }
-                    }
-
-                    public static AccountEntryV1Ext Decode(XdrDataInputStream stream)
-                    {
-                        AccountEntryV1Ext decodedAccountEntryV1Ext = new AccountEntryV1Ext();
-                        int discriminant = stream.ReadInt();
-                        decodedAccountEntryV1Ext.Discriminant = discriminant;
-                        switch (decodedAccountEntryV1Ext.Discriminant)
-                        {
-                            case 0:
-                                break;
-                        }
-
-                        return decodedAccountEntryV1Ext;
-                    }
-                }
             }
         }
     }

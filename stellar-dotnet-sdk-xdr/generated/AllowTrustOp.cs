@@ -59,6 +59,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public AssetType Discriminant { get; set; } = new AssetType();
+
             public AssetCode4 AssetCode4 { get; set; }
             public AssetCode12 AssetCode12 { get; set; }
 

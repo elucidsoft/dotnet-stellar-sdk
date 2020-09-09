@@ -60,6 +60,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public EnvelopeType Discriminant { get; set; } = new EnvelopeType();
+
             public TransactionV1Envelope V1 { get; set; }
 
             public static void Encode(XdrDataOutputStream stream,

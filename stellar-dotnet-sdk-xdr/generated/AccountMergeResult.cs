@@ -21,6 +21,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public AccountMergeResultCode Discriminant { get; set; } = new AccountMergeResultCode();
+
         public Int64 SourceAccountBalance { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, AccountMergeResult encodedAccountMergeResult)

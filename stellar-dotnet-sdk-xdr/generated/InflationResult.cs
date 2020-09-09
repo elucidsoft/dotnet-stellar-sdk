@@ -21,6 +21,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public InflationResultCode Discriminant { get; set; } = new InflationResultCode();
+
         public InflationPayout[] Payouts { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, InflationResult encodedInflationResult)

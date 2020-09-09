@@ -21,6 +21,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public ManageBuyOfferResultCode Discriminant { get; set; } = new ManageBuyOfferResultCode();
+
         public ManageOfferSuccessResult Success { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, ManageBuyOfferResult encodedManageBuyOfferResult)

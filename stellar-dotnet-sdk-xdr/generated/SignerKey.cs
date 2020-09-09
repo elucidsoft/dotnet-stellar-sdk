@@ -25,6 +25,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public SignerKeyType Discriminant { get; set; } = new SignerKeyType();
+
         public Uint256 Ed25519 { get; set; }
         public Uint256 PreAuthTx { get; set; }
         public Uint256 HashX { get; set; }

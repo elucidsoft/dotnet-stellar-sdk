@@ -25,8 +25,9 @@ namespace stellar_dotnet_sdk.xdr
 //      txBAD_AUTH_EXTRA = -10,      // unused signatures attached to transaction
 //      txINTERNAL_ERROR = -11,      // an unknown error occured
 //  
-//      txNOT_SUPPORTED = -12,        // transaction type not supported
-//      txFEE_BUMP_INNER_FAILED = -13 // fee bump inner transaction failed
+//      txNOT_SUPPORTED = -12,         // transaction type not supported
+//      txFEE_BUMP_INNER_FAILED = -13, // fee bump inner transaction failed
+//      txBAD_SPONSORSHIP = -14        // sponsorship not confirmed
 //  };
 //  ===========================================================================
     public class TransactionResultCode
@@ -48,6 +49,7 @@ namespace stellar_dotnet_sdk.xdr
             txINTERNAL_ERROR = -11,
             txNOT_SUPPORTED = -12,
             txFEE_BUMP_INNER_FAILED = -13,
+            txBAD_SPONSORSHIP = -14,
         }
 
         public TransactionResultCodeEnum InnerValue { get; set; } = default(TransactionResultCodeEnum);
@@ -80,6 +82,7 @@ namespace stellar_dotnet_sdk.xdr
                 case -11: return Create(TransactionResultCodeEnum.txINTERNAL_ERROR);
                 case -12: return Create(TransactionResultCodeEnum.txNOT_SUPPORTED);
                 case -13: return Create(TransactionResultCodeEnum.txFEE_BUMP_INNER_FAILED);
+                case -14: return Create(TransactionResultCodeEnum.txBAD_SPONSORSHIP);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

@@ -78,6 +78,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public SCPStatementType Discriminant { get; set; } = new SCPStatementType();
+
             public SCPStatementPrepare Prepare { get; set; }
             public SCPStatementConfirm Confirm { get; set; }
             public SCPStatementExternalize Externalize { get; set; }

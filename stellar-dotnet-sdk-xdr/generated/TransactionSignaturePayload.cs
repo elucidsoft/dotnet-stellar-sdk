@@ -53,6 +53,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public EnvelopeType Discriminant { get; set; } = new EnvelopeType();
+
             public Transaction Tx { get; set; }
             public FeeBumpTransaction FeeBump { get; set; }
 

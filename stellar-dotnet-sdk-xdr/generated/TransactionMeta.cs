@@ -23,6 +23,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public int Discriminant { get; set; } = new int();
+
         public OperationMeta[] Operations { get; set; }
         public TransactionMetaV1 V1 { get; set; }
         public TransactionMetaV2 V2 { get; set; }

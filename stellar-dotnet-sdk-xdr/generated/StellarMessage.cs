@@ -53,6 +53,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public MessageType Discriminant { get; set; } = new MessageType();
+
         public Error Error { get; set; }
         public Hello Hello { get; set; }
         public Auth Auth { get; set; }

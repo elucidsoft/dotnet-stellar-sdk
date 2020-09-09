@@ -27,6 +27,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public PathPaymentStrictSendResultCode Discriminant { get; set; } = new PathPaymentStrictSendResultCode();
+
         public PathPaymentStrictSendResultSuccess Success { get; set; }
         public Asset NoIssuer { get; set; }
 

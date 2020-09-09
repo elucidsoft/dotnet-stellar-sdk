@@ -39,6 +39,16 @@ namespace stellar_dotnet_sdk.xdr
 //          ManageBuyOfferResult manageBuyOfferResult;
 //      case PATH_PAYMENT_STRICT_SEND:
 //          PathPaymentStrictSendResult pathPaymentStrictSendResult;
+//      case CREATE_CLAIMABLE_BALANCE:
+//          CreateClaimableBalanceResult createClaimableBalanceResult;
+//      case CLAIM_CLAIMABLE_BALANCE:
+//          ClaimClaimableBalanceResult claimClaimableBalanceResult;
+//      case BEGIN_SPONSORING_FUTURE_RESERVES:
+//          BeginSponsoringFutureReservesResult beginSponsoringFutureReservesResult;
+//      case END_SPONSORING_FUTURE_RESERVES:
+//          EndSponsoringFutureReservesResult endSponsoringFutureReservesResult;
+//      case REVOKE_SPONSORSHIP:
+//          RevokeSponsorshipResult revokeSponsorshipResult;
 //      }
 //      tr;
 //  default:
@@ -52,6 +62,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public OperationResultCode Discriminant { get; set; } = new OperationResultCode();
+
         public OperationResultTr Tr { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, OperationResult encodedOperationResult)
@@ -91,6 +102,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public OperationType Discriminant { get; set; } = new OperationType();
+
             public CreateAccountResult CreateAccountResult { get; set; }
             public PaymentResult PaymentResult { get; set; }
             public PathPaymentStrictReceiveResult PathPaymentStrictReceiveResult { get; set; }
@@ -105,6 +117,11 @@ namespace stellar_dotnet_sdk.xdr
             public BumpSequenceResult BumpSeqResult { get; set; }
             public ManageBuyOfferResult ManageBuyOfferResult { get; set; }
             public PathPaymentStrictSendResult PathPaymentStrictSendResult { get; set; }
+            public CreateClaimableBalanceResult CreateClaimableBalanceResult { get; set; }
+            public ClaimClaimableBalanceResult ClaimClaimableBalanceResult { get; set; }
+            public BeginSponsoringFutureReservesResult BeginSponsoringFutureReservesResult { get; set; }
+            public EndSponsoringFutureReservesResult EndSponsoringFutureReservesResult { get; set; }
+            public RevokeSponsorshipResult RevokeSponsorshipResult { get; set; }
 
             public static void Encode(XdrDataOutputStream stream, OperationResultTr encodedOperationResultTr)
             {
@@ -154,6 +171,25 @@ namespace stellar_dotnet_sdk.xdr
                     case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND:
                         PathPaymentStrictSendResult.Encode(stream,
                             encodedOperationResultTr.PathPaymentStrictSendResult);
+                        break;
+                    case OperationType.OperationTypeEnum.CREATE_CLAIMABLE_BALANCE:
+                        CreateClaimableBalanceResult.Encode(stream,
+                            encodedOperationResultTr.CreateClaimableBalanceResult);
+                        break;
+                    case OperationType.OperationTypeEnum.CLAIM_CLAIMABLE_BALANCE:
+                        ClaimClaimableBalanceResult.Encode(stream,
+                            encodedOperationResultTr.ClaimClaimableBalanceResult);
+                        break;
+                    case OperationType.OperationTypeEnum.BEGIN_SPONSORING_FUTURE_RESERVES:
+                        BeginSponsoringFutureReservesResult.Encode(stream,
+                            encodedOperationResultTr.BeginSponsoringFutureReservesResult);
+                        break;
+                    case OperationType.OperationTypeEnum.END_SPONSORING_FUTURE_RESERVES:
+                        EndSponsoringFutureReservesResult.Encode(stream,
+                            encodedOperationResultTr.EndSponsoringFutureReservesResult);
+                        break;
+                    case OperationType.OperationTypeEnum.REVOKE_SPONSORSHIP:
+                        RevokeSponsorshipResult.Encode(stream, encodedOperationResultTr.RevokeSponsorshipResult);
                         break;
                 }
             }
@@ -208,6 +244,25 @@ namespace stellar_dotnet_sdk.xdr
                     case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND:
                         decodedOperationResultTr.PathPaymentStrictSendResult =
                             PathPaymentStrictSendResult.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.CREATE_CLAIMABLE_BALANCE:
+                        decodedOperationResultTr.CreateClaimableBalanceResult =
+                            CreateClaimableBalanceResult.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.CLAIM_CLAIMABLE_BALANCE:
+                        decodedOperationResultTr.ClaimClaimableBalanceResult =
+                            ClaimClaimableBalanceResult.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.BEGIN_SPONSORING_FUTURE_RESERVES:
+                        decodedOperationResultTr.BeginSponsoringFutureReservesResult =
+                            BeginSponsoringFutureReservesResult.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.END_SPONSORING_FUTURE_RESERVES:
+                        decodedOperationResultTr.EndSponsoringFutureReservesResult =
+                            EndSponsoringFutureReservesResult.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.REVOKE_SPONSORSHIP:
+                        decodedOperationResultTr.RevokeSponsorshipResult = RevokeSponsorshipResult.Decode(stream);
                         break;
                 }
 

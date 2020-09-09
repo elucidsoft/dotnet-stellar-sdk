@@ -65,6 +65,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public TransactionResultCode Discriminant { get; set; } = new TransactionResultCode();
+
             public InnerTransactionResultPair InnerResultPair { get; set; }
             public OperationResult[] Results { get; set; }
 

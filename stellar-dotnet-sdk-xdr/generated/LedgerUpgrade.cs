@@ -25,6 +25,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public LedgerUpgradeType Discriminant { get; set; } = new LedgerUpgradeType();
+
         public Uint32 NewLedgerVersion { get; set; }
         public Uint32 NewBaseFee { get; set; }
         public Uint32 NewMaxTxSetSize { get; set; }

@@ -21,7 +21,12 @@ namespace stellar_dotnet_sdk.xdr
 //      MANAGE_DATA = 10,
 //      BUMP_SEQUENCE = 11,
 //      MANAGE_BUY_OFFER = 12,
-//      PATH_PAYMENT_STRICT_SEND = 13
+//      PATH_PAYMENT_STRICT_SEND = 13,
+//      CREATE_CLAIMABLE_BALANCE = 14,
+//      CLAIM_CLAIMABLE_BALANCE = 15,
+//      BEGIN_SPONSORING_FUTURE_RESERVES = 16,
+//      END_SPONSORING_FUTURE_RESERVES = 17,
+//      REVOKE_SPONSORSHIP = 18
 //  };
 //  ===========================================================================
     public class OperationType
@@ -42,6 +47,11 @@ namespace stellar_dotnet_sdk.xdr
             BUMP_SEQUENCE = 11,
             MANAGE_BUY_OFFER = 12,
             PATH_PAYMENT_STRICT_SEND = 13,
+            CREATE_CLAIMABLE_BALANCE = 14,
+            CLAIM_CLAIMABLE_BALANCE = 15,
+            BEGIN_SPONSORING_FUTURE_RESERVES = 16,
+            END_SPONSORING_FUTURE_RESERVES = 17,
+            REVOKE_SPONSORSHIP = 18,
         }
 
         public OperationTypeEnum InnerValue { get; set; } = default(OperationTypeEnum);
@@ -73,6 +83,11 @@ namespace stellar_dotnet_sdk.xdr
                 case 11: return Create(OperationTypeEnum.BUMP_SEQUENCE);
                 case 12: return Create(OperationTypeEnum.MANAGE_BUY_OFFER);
                 case 13: return Create(OperationTypeEnum.PATH_PAYMENT_STRICT_SEND);
+                case 14: return Create(OperationTypeEnum.CREATE_CLAIMABLE_BALANCE);
+                case 15: return Create(OperationTypeEnum.CLAIM_CLAIMABLE_BALANCE);
+                case 16: return Create(OperationTypeEnum.BEGIN_SPONSORING_FUTURE_RESERVES);
+                case 17: return Create(OperationTypeEnum.END_SPONSORING_FUTURE_RESERVES);
+                case 18: return Create(OperationTypeEnum.REVOKE_SPONSORSHIP);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

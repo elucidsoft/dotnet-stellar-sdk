@@ -19,6 +19,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public PublicKeyType Discriminant { get; set; } = new PublicKeyType();
+
         public Uint256 Ed25519 { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, PublicKey encodedPublicKey)
