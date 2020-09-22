@@ -948,11 +948,7 @@ namespace stellar_dotnet_sdk_test
             // GAS4V4O2B7DW5T7IQRPEEVCRXMDZESKISR7DVIGKZQYYV3OSQ5SH5LVP
             var otherAccount = KeyPair.FromSecretSeed("SBMSVD4KKELKGZXHBUQTIROWUAPQASDX7KEJITARP4VMZ6KLUHOGPTYW");
 
-            var signerKey = new SignerKey
-            {
-                Discriminant = SignerKeyType.Create(SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519),
-                Ed25519 = otherAccount.XdrPublicKey.Ed25519
-            };
+            var signerKey = Signer.Ed25519PublicKey(otherAccount);
             
             var operation = new RevokeSignerSponsorshipOperation.Builder(otherAccount, signerKey)
                 .SetSourceAccount(source)
