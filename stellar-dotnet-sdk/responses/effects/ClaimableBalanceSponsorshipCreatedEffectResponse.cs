@@ -1,7 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace stellar_dotnet_sdk.responses.effects
 {
@@ -16,7 +13,7 @@ namespace stellar_dotnet_sdk.responses.effects
         public override int TypeId => 66;
 
         [JsonProperty(PropertyName = "balance_id")]
-        public string BalanceID{ get; private set; }
+        public string BalanceID { get; private set; }
 
         [JsonProperty(PropertyName = "sponsor")]
         public string Sponsor { get; private set; }

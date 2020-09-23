@@ -1,7 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace stellar_dotnet_sdk.responses.effects
 {
@@ -20,7 +17,7 @@ namespace stellar_dotnet_sdk.responses.effects
         public string FormerSponsor { get; private set; }
 
         [JsonProperty(PropertyName = "new_sponsor")]
-        public long NewSponsor { get; private set; }
+        public string NewSponsor { get; private set; }
 
         public AccountSponsorshipUpdatedEffectResponse()
         {
