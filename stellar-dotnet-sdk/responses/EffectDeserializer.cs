@@ -101,7 +101,7 @@ namespace stellar_dotnet_sdk.responses
                 case 61:
                     return new AccountSponsorshipUpdatedEffectResponse();
                 case 62:
-                    return new AccountSponsorshipdRemovedEffectResponse();
+                    return new AccountSponsorshipRemovedEffectResponse();
 
                 case 63:
                     return new TrustlineSponsorshipCreatedEffectResponse();

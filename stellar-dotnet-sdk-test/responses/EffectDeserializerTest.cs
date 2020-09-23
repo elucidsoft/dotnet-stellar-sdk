@@ -1,11 +1,10 @@
-﻿using System;
-using System.IO;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.responses;
 using stellar_dotnet_sdk.responses.effects;
+using System;
+using System.IO;
 
 namespace stellar_dotnet_sdk_test.responses
 {
@@ -15,7 +14,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertAccountCreatedData(instance);
@@ -24,7 +23,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeAccountCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -36,7 +35,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountCreatedEffectResponse);
-            var effect = (AccountCreatedEffectResponse) instance;
+            var effect = (AccountCreatedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ");
             Assert.AreEqual(effect.StartingBalance, "30.0");
@@ -53,7 +52,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertAccountRemovedData(instance);
@@ -62,7 +61,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeAccountRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -74,7 +73,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountRemovedEffectResponse);
-            var effect = (AccountRemovedEffectResponse) instance;
+            var effect = (AccountRemovedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ");
 
@@ -89,7 +88,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountCreditedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCredited.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountCredited.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertAccountCreditedData(instance);
@@ -98,7 +97,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeAccountCreditedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountCredited.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountCredited.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -110,7 +109,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountCreditedEffectResponse);
-            var effect = (AccountCreditedEffectResponse) instance;
+            var effect = (AccountCreditedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GDLGTRIBFH24364GPWPUS45GUFC2GU4ARPGWTXVCPLGTUHX3IOS3ON47");
             Assert.AreEqual(effect.Asset, new AssetTypeNative());
@@ -127,7 +126,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountDebitedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountDebited.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountDebited.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertAccountDebitedData(instance);
@@ -136,7 +135,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeAccountDebitedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountDebited.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountDebited.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -148,7 +147,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountDebitedEffectResponse);
-            var effect = (AccountDebitedEffectResponse) instance;
+            var effect = (AccountDebitedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H");
             Assert.AreEqual(effect.Asset, new AssetTypeNative());
@@ -165,7 +164,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountThresholdsUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountThresholdsUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountThresholdsUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertAccountThresholdsUpdatedData(instance);
@@ -174,7 +173,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeAccountThresholdsUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountThresholdsUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountThresholdsUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -186,7 +185,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountThresholdsUpdatedEffectResponse);
-            var effect = (AccountThresholdsUpdatedEffectResponse) instance;
+            var effect = (AccountThresholdsUpdatedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.LowThreshold, 2);
@@ -204,7 +203,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountHomeDomainUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountHomeDomainUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountHomeDomainUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertAccountHomeDomainUpdatedData(instance);
@@ -213,7 +212,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeAccountHomeDomainUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountHomeDomainUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountHomeDomainUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -225,7 +224,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountHomeDomainUpdatedEffectResponse);
-            var effect = (AccountHomeDomainUpdatedEffectResponse) instance;
+            var effect = (AccountHomeDomainUpdatedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.HomeDomain, "stellar.org");
@@ -241,7 +240,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountFlagsUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountFlagsUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountFlagsUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertAccountFlagsUpdatedData(instance);
@@ -250,7 +249,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeAccountFlagsUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountFlagsUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountFlagsUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -262,7 +261,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountFlagsUpdatedEffectResponse);
-            var effect = (AccountFlagsUpdatedEffectResponse) instance;
+            var effect = (AccountFlagsUpdatedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.AuthRequiredFlag, false);
@@ -279,7 +278,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeSignerCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectSignerCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectSignerCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertSignerCreatedData(instance);
@@ -288,7 +287,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeSignerCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectSignerCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectSignerCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -300,7 +299,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is SignerCreatedEffectResponse);
-            var effect = (SignerCreatedEffectResponse) instance;
+            var effect = (SignerCreatedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GB24LPGAHYTWRYOXIDKXLI55SBRWW42T3TZKDAAW3BOJX4ADVIATFTLU");
             Assert.AreEqual(effect.Weight, 1);
@@ -317,7 +316,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeSignerRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectSignerRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectSignerRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertSignerRemoveData(instance);
@@ -326,7 +325,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeSignerRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectSignerRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectSignerRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -338,7 +337,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is SignerRemovedEffectResponse);
-            var effect = (SignerRemovedEffectResponse) instance;
+            var effect = (SignerRemovedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GCFKT6BN2FEASCEVDNHEC4LLFT2KLUUPEMKM4OJPEJ65H2AEZ7IH4RV6");
             Assert.AreEqual(effect.Weight, 0);
@@ -355,7 +354,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeSignerUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectSignerUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectSignerUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertSignerUpdatedData(instance);
@@ -364,7 +363,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeSignerUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectSignerUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectSignerUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -376,7 +375,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is SignerUpdatedEffectResponse);
-            var effect = (SignerUpdatedEffectResponse) instance;
+            var effect = (SignerUpdatedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.Weight, 2);
@@ -393,7 +392,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTrustlineCreatedData(instance);
@@ -402,7 +401,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeTrustlineCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -414,7 +413,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is TrustlineCreatedEffectResponse);
-            var effect = (TrustlineCreatedEffectResponse) instance;
+            var effect = (TrustlineCreatedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.Asset, Asset.CreateNonNativeAsset("EUR", "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA"));
@@ -431,7 +430,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTrustlineRemovedData(instance);
@@ -440,7 +439,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeTrustlineRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -452,7 +451,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is TrustlineRemovedEffectResponse);
-            var effect = (TrustlineRemovedEffectResponse) instance;
+            var effect = (TrustlineRemovedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.Asset, Asset.CreateNonNativeAsset("EUR", "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA"));
@@ -469,7 +468,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTrustlineUpdatedData(instance);
@@ -478,7 +477,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeTrustlineUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -490,7 +489,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is TrustlineUpdatedEffectResponse);
-            var effect = (TrustlineUpdatedEffectResponse) instance;
+            var effect = (TrustlineUpdatedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.Asset, Asset.CreateNonNativeAsset("TESTTEST", "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA"));
@@ -507,7 +506,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineAuthorizedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineAuthorized.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineAuthorized.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTrustlineAuthorizedData(instance);
@@ -516,7 +515,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineAuthorizedToMaintainLiabilitiesEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineAuthorizedToMaintainLiabilitiesEffect.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineAuthorizedToMaintainLiabilitiesEffect.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTrustlineAuthorizedToMaintainLiabilitiesEffect(instance);
@@ -525,7 +524,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeTrustlineAuthorizedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineAuthorized.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineAuthorized.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -537,7 +536,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is TrustlineAuthorizedEffectResponse);
-            var effect = (TrustlineAuthorizedEffectResponse) instance;
+            var effect = (TrustlineAuthorizedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.AssetType, "credit_alphanum12");
@@ -576,7 +575,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineDeauthorizedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineDeAuthorized.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineDeAuthorized.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTrustlineDeauthorizedData(instance);
@@ -585,7 +584,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeTrustlineDeauthorizedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTrustlineDeAuthorized.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineDeAuthorized.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -597,7 +596,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is TrustlineDeauthorizedEffectResponse);
-            var effect = (TrustlineDeauthorizedEffectResponse) instance;
+            var effect = (TrustlineDeauthorizedEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.AssetType, "credit_alphanum4");
@@ -615,7 +614,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTradeEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTrade.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrade.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTradeData(instance);
@@ -624,7 +623,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeTradeEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTrade.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrade.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -636,7 +635,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTradeEffectPre100()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTradePre100.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTradePre100.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTradeData(instance);
@@ -646,7 +645,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeTradeEffectPre100()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectTradePre100.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTradePre100.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -658,7 +657,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is TradeEffectResponse);
-            var effect = (TradeEffectResponse) instance;
+            var effect = (TradeEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
             Assert.AreEqual(effect.Seller, "GCVHDLN6EHZBYW2M3BQIY32C23E4GPIRZZDBNF2Q73DAZ5VJDRGSMYRB");
@@ -676,7 +675,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountInflationUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountInflationUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountInflationUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertAccountInflationUpdated(instance);
@@ -685,7 +684,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeAccountInflationUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectAccountInflationUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountInflationUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -697,7 +696,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is AccountInflationDestinationUpdatedEffectResponse);
-            var effect = (AccountInflationDestinationUpdatedEffectResponse) instance;
+            var effect = (AccountInflationDestinationUpdatedEffectResponse)instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -706,7 +705,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeDataCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectDataCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectDataCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertDataCreatedData(instance);
@@ -715,7 +714,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeDataCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectDataCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectDataCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -727,7 +726,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is DataCreatedEffectResponse);
-            var effect = (DataCreatedEffectResponse) instance;
+            var effect = (DataCreatedEffectResponse)instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -736,7 +735,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeDataRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectDataRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectDataRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertDataRemovedData(instance);
@@ -745,7 +744,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeDataRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectDataRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectDataRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -757,7 +756,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is DataRemovedEffectResponse);
-            var effect = (DataRemovedEffectResponse) instance;
+            var effect = (DataRemovedEffectResponse)instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -766,7 +765,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeDataUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectDataUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectDataUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertDataUpdatedData(instance);
@@ -775,7 +774,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeDataUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectDataUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectDataUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -787,7 +786,7 @@ namespace stellar_dotnet_sdk_test.responses
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
             Assert.IsTrue(instance is DataUpdatedEffectResponse);
-            var effect = (DataUpdatedEffectResponse) instance;
+            var effect = (DataUpdatedEffectResponse)instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -796,14 +795,14 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestUnknownEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectUnknown.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectUnknown.json"));
             Assert.ThrowsException<JsonSerializationException>(() => JsonSingleton.GetInstance<EffectResponse>(json));
         }
 
         [TestMethod]
         public void TestDeserializeSequenceBumpedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "sequenceBumped.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectSequenceBumped.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertSequenceBumpedData(instance);
@@ -812,7 +811,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeSequenceBumpedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "sequenceBumped.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectSequenceBumped.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -823,7 +822,7 @@ namespace stellar_dotnet_sdk_test.responses
         private static void AssertSequenceBumpedData(EffectResponse instance)
         {
             Assert.IsTrue(instance is SequenceBumpedEffectResponse);
-            var effect = (SequenceBumpedEffectResponse) instance;
+            var effect = (SequenceBumpedEffectResponse)instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -833,7 +832,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeOfferCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectOfferCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectOfferCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertOfferCreatedData(instance);
@@ -842,7 +841,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeOfferCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectOfferCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectOfferCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -853,7 +852,7 @@ namespace stellar_dotnet_sdk_test.responses
         private static void AssertOfferCreatedData(EffectResponse instance)
         {
             Assert.IsTrue(instance is OfferCreatedEffectResponse);
-            var effect = (OfferCreatedEffectResponse) instance;
+            var effect = (OfferCreatedEffectResponse)instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -862,7 +861,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeOfferRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectOfferRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectOfferRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertOfferRemovedData(instance);
@@ -871,7 +870,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeOfferRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectOfferRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectOfferRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -882,7 +881,7 @@ namespace stellar_dotnet_sdk_test.responses
         private static void AssertOfferRemovedData(EffectResponse instance)
         {
             Assert.IsTrue(instance is OfferRemovedEffectResponse);
-            var effect = (OfferRemovedEffectResponse) instance;
+            var effect = (OfferRemovedEffectResponse)instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
@@ -891,7 +890,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeOfferUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectOfferUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectOfferUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertOfferUpdatedData(instance);
@@ -900,7 +899,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeOfferUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "effectOfferUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectOfferUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -911,10 +910,72 @@ namespace stellar_dotnet_sdk_test.responses
         private static void AssertOfferUpdatedData(EffectResponse instance)
         {
             Assert.IsTrue(instance is OfferUpdatedEffectResponse);
-            var effect = (OfferUpdatedEffectResponse) instance;
+            var effect = (OfferUpdatedEffectResponse)instance;
 
             Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Account);
             Assert.AreEqual(DateTimeOffset.Parse("2018-06-06T10:23:57Z").UtcDateTime, effect.CreatedAt);
+        }
+
+        //Account Sponsorship Created
+        [TestMethod]
+        public void TestSerializationAccountSponsorshipCreatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountSponsorshipCreated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertAccountSponsorshipCreatedData(back);
+        }
+
+        private static void AssertAccountSponsorshipCreatedData(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is AccountSponsorshipCreatedEffectResponse);
+            var effect = (AccountSponsorshipCreatedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Sponsor);
+        }
+
+        //Account Sponsorship Removed
+        [TestMethod]
+        public void TestSerializationAccountSponsorshipRemovedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountSponsorshipRemoved.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertAccountSponsorshipRemovedData(back);
+        }
+
+        private static void AssertAccountSponsorshipRemovedData(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is AccountSponsorshipRemovedEffectResponse);
+            var effect = (AccountSponsorshipRemovedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.FormerSponsor);
+        }
+
+
+        //Account Sponsorship Updated
+        [TestMethod]
+        public void TestSerializationAccountSponsorshipUpdatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountSponsorshipUpdated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertAccountSponsorshipUpdatedData(back);
+        }
+
+        private static void AssertAccountSponsorshipUpdatedData(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is AccountSponsorshipUpdatedEffectResponse);
+            var effect = (AccountSponsorshipUpdatedEffectResponse)instance;
+
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.FormerSponsor);
+            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.NewSponsor);
         }
     }
 }

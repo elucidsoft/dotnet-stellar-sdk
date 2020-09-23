@@ -1,0 +1,20 @@
+﻿{
+  "_links": {
+    "operation": {
+      "href": "http://horizon-testnet.stellar.org/operations/13563506724865"
+    },
+    "succeeds": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=desc&cursor=13563506724865-1"
+    },
+    "precedes": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=asc&cursor=13563506724865-1"
+    }
+  },
+  "id": "0000013563506724865-0000000001",
+  "paging_token": "13563506724865-1",
+  "account": "GDLGTRIBFH24364GPWPUS45GUFC2GU4ARPGWTXVCPLGTUHX3IOS3ON47",
+  "type": "account_credited",
+  "type_i": 2,
+  "asset_type": "native",
+  "amount": "1000.0"
+}
