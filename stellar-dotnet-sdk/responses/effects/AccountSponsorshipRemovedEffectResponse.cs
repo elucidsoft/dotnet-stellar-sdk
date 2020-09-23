@@ -8,19 +8,19 @@ namespace stellar_dotnet_sdk.responses.effects
     ///     <seealso cref="requests.EffectsRequestBuilder" />
     ///     <seealso cref="Server" />
     /// </summary>
-    public class AccountSponsorshipdRemovedEffectResponse : EffectResponse
+    public class AccountSponsorshipRemovedEffectResponse : EffectResponse
     {
         public override int TypeId => 62;
 
         [JsonProperty(PropertyName = "former_sponsor")]
         public string FormerSponsor { get; private set; }
 
-        public AccountSponsorshipdRemovedEffectResponse()
+        public AccountSponsorshipRemovedEffectResponse()
         {
 
         }
 
-        public AccountSponsorshipdRemovedEffectResponse(string formerSponsor)
+        public AccountSponsorshipRemovedEffectResponse(string formerSponsor)
         {
             FormerSponsor = formerSponsor;
         }
