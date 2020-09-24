@@ -44,13 +44,31 @@
     <None Update="testdata\assetPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\effects\effectAccountSponsorshipRemoved.json">
+    <None Update="testdata\effects\claimableBalance\claimableBalanceSponsorshipUpdated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\effects\effectAccountSponsorshipUpdated.json">
+    <None Update="testdata\effects\claimableBalance\claimableBalanceSponsorshipRemoved.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\effects\effectAccountSponsorshipCreated.json">
+    <None Update="testdata\effects\claimableBalance\claimableBalanceSponsorshipCreated.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\effects\claimableBalance\claimableBalanceCreated.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\effects\claimableBalance\claimableBalanceClaimed.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\effects\claimableBalance\claimableBalanceClaimantCreated.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\effects\accountSponsorship\accountSponsorshipRemoved.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\effects\accountSponsorship\accountSponsorshipUpdated.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\effects\accountSponsorship\accountSponsorshipCreated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="testdata\effects\effectAccountInflationUpdated.json">

@@ -1,0 +1,21 @@
+﻿{
+  "_links": {
+    "operation": {
+      "href": "https://horizon-protocol14.stellar.org/operations/213223651414017"
+    },
+    "succeeds": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=desc\u0026cursor=213223651414017-4"
+    },
+    "precedes": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=asc\u0026cursor=213223651414017-4"
+    }
+  },
+  "id": "0000213223651414017-0000000004",
+  "paging_token": "213223651414017-4",
+  "account": "GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY",
+  "type": "claimable_balance_sponsorship_removed",
+  "type_i": 68,
+  "created_at": "2020-09-24T19:27:10Z",
+  "balance_id": "00000000be7e37b24927c095e2292d5d0e6db8b0f2dbeb1355847c7fccb458cbdd61bfd0",
+  "former_sponsor": "GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY"
+}

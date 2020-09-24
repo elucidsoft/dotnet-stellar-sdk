@@ -920,7 +920,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationAccountSponsorshipCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountSponsorshipCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/accountSponsorship", "accountSponsorshipCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -940,7 +940,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationAccountSponsorshipRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountSponsorshipRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/accountSponsorship", "accountSponsorshipRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -961,7 +961,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationAccountSponsorshipUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectAccountSponsorshipUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/accountSponsorship", "accountSponsorshipUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -974,6 +974,138 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountSponsorshipUpdatedEffectResponse);
             var effect = (AccountSponsorshipUpdatedEffectResponse)instance;
 
+            Assert.AreEqual("GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ", effect.FormerSponsor);
+            Assert.AreEqual("GBVFLWXYCIGPO3455XVFIKHS66FCT5AI64ZARKS7QJN4NF7K5FOXTJNL", effect.NewSponsor);
+        }
+
+        //Claimable Balance Claimant Created
+        [TestMethod]
+        public void TestSerializationClaimableBalanceClaimantCreatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects/claimableBalance", "claimableBalanceClaimantCreated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertClaimableBalanceClaimantCreatedEffect(back);
+        }
+
+        private static void AssertClaimableBalanceClaimantCreatedEffect(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is ClaimableBalanceClaimantCreatedEffectResponse);
+            var effect = (ClaimableBalanceClaimantCreatedEffectResponse)instance;
+
+            Assert.AreEqual("native", effect.Asset);
+            Assert.AreEqual("00000000be7e37b24927c095e2292d5d0e6db8b0f2dbeb1355847c7fccb458cbdd61bfd0", effect.BalanceID);
+            Assert.AreEqual("1.0000000", effect.Amount);
+            Assert.AreEqual(604800, effect.Predicate.NotPredicate.RelBefore);
+        }
+
+
+        // Claimable Balance Claimed
+        [TestMethod]
+        public void TestSerializationClaimableBalanceClaimedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects/claimableBalance", "claimableBalanceClaimed.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertClaimableBalanceClaimedEffect(back);
+        }
+
+        private static void AssertClaimableBalanceClaimedEffect(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is ClaimableBalanceClaimedEffectResponse);
+            var effect = (ClaimableBalanceClaimedEffectResponse)instance;
+
+            Assert.AreEqual("native", effect.Asset);
+            Assert.AreEqual("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7", effect.BalanceID);
+            Assert.AreEqual("1.0000000", effect.Amount);
+        }
+
+        // Claimable Balance Created
+        [TestMethod]
+        public void TestSerializationClaimableBalanceCreatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects/claimableBalance", "claimableBalanceCreated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertClaimableBalanceCreatedEffect(back);
+        }
+
+        private static void AssertClaimableBalanceCreatedEffect(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is ClaimableBalanceCreatedEffectResponse);
+            var effect = (ClaimableBalanceCreatedEffectResponse)instance;
+
+            Assert.AreEqual("native", effect.Asset);
+            Assert.AreEqual("00000000be7e37b24927c095e2292d5d0e6db8b0f2dbeb1355847c7fccb458cbdd61bfd0", effect.BalanceID);
+            Assert.AreEqual("1.0000000", effect.Amount);
+        }
+
+        // Claimable Balance Sponsorship Created
+        [TestMethod]
+        public void TestSerializationClaimableBalanceSponsorshipCreatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects/claimableBalance", "claimableBalanceSponsorshipCreated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertClaimableBalanceSponsorshipCreatedEffect(back);
+        }
+
+        private static void AssertClaimableBalanceSponsorshipCreatedEffect(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is ClaimableBalanceSponsorshipCreatedEffectResponse);
+            var effect = (ClaimableBalanceSponsorshipCreatedEffectResponse)instance;
+
+            Assert.AreEqual("00000000be7e37b24927c095e2292d5d0e6db8b0f2dbeb1355847c7fccb458cbdd61bfd0", effect.BalanceID);
+            Assert.AreEqual("GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY", effect.Sponsor);
+        }
+
+        // Claimable Balance Sponsorship Removed
+        [TestMethod]
+        public void TestSerializationClaimableBalanceSponsorshipRemovedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects/claimableBalance", "claimableBalanceSponsorshipRemoved.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertClaimableBalanceSponsorshipRemovedEffect(back);
+        }
+
+        private static void AssertClaimableBalanceSponsorshipRemovedEffect(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is ClaimableBalanceSponsorshipRemovedEffectResponse);
+            var effect = (ClaimableBalanceSponsorshipRemovedEffectResponse)instance;
+
+            Assert.AreEqual("00000000be7e37b24927c095e2292d5d0e6db8b0f2dbeb1355847c7fccb458cbdd61bfd0", effect.BalanceID);
+            Assert.AreEqual("GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY", effect.FormerSponsor);
+        }
+
+        // Claimable Balance Sponsorship Updated
+        [TestMethod]
+        public void TestSerializationClaimableBalanceSponsorshipUpdatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects/claimableBalance", "claimableBalanceSponsorshipUpdated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertClaimableBalanceSponsorshipUpdatedEffect(back);
+        }
+
+        private static void AssertClaimableBalanceSponsorshipUpdatedEffect(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is ClaimableBalanceSponsorshipUpdatedEffectResponse);
+            var effect = (ClaimableBalanceSponsorshipUpdatedEffectResponse)instance;
+
+            Assert.AreEqual("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7", effect.BalanceID);
             Assert.AreEqual("GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ", effect.FormerSponsor);
             Assert.AreEqual("GBVFLWXYCIGPO3455XVFIKHS66FCT5AI64ZARKS7QJN4NF7K5FOXTJNL", effect.NewSponsor);
         }
