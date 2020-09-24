@@ -933,7 +933,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountSponsorshipCreatedEffectResponse);
             var effect = (AccountSponsorshipCreatedEffectResponse)instance;
 
-            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.Sponsor);
+            Assert.AreEqual("GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ", effect.Sponsor);
         }
 
         //Account Sponsorship Removed
@@ -953,7 +953,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountSponsorshipRemovedEffectResponse);
             var effect = (AccountSponsorshipRemovedEffectResponse)instance;
 
-            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.FormerSponsor);
+            Assert.AreEqual("GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ", effect.FormerSponsor);
         }
 
 
@@ -974,8 +974,8 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountSponsorshipUpdatedEffectResponse);
             var effect = (AccountSponsorshipUpdatedEffectResponse)instance;
 
-            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.FormerSponsor);
-            Assert.AreEqual("GDPFGP4IPE5DXG6XRXC4ZBUI43PAGRQ5VVNJ3LJTBXDBZ4ITO6HBHNSF", effect.NewSponsor);
+            Assert.AreEqual("GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ", effect.FormerSponsor);
+            Assert.AreEqual("GBVFLWXYCIGPO3455XVFIKHS66FCT5AI64ZARKS7QJN4NF7K5FOXTJNL", effect.NewSponsor);
         }
     }
 }
