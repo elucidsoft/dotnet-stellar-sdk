@@ -1,0 +1,21 @@
+﻿{
+  "_links": {
+    "operation": {
+      "href": "https://horizon-protocol14.stellar.org/operations/216187178848258"
+    },
+    "succeeds": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=desc\u0026cursor=216187178848258-2"
+    },
+    "precedes": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=asc\u0026cursor=216187178848258-2"
+    }
+  },
+  "id": "0000216187178848258-0000000002",
+  "paging_token": "216187178848258-2",
+  "account": "GAXHU2XHSMTZYAKFCVTULAYUL34BFPPLRVJYZMEOHP7IWPZJKSVY67RJ",
+  "type": "trustline_sponsorship_created",
+  "type_i": 63,
+  "created_at": "2020-09-24T20:24:41Z",
+  "asset": "ABC:GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY",
+  "sponsor": "GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU"
+}

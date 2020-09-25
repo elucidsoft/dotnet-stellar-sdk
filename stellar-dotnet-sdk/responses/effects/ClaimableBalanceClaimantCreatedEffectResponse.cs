@@ -1,7 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace stellar_dotnet_sdk.responses.effects
 {
@@ -25,14 +22,14 @@ namespace stellar_dotnet_sdk.responses.effects
         public string Amount { get; private set; }
 
         [JsonProperty(PropertyName = "predicate")]
-        public xdr.ClaimPredicate Predicate { get; private set; }
+        public ClaimPredicate Predicate { get; private set; }
 
         public ClaimableBalanceClaimantCreatedEffectResponse()
         {
 
         }
 
-        public ClaimableBalanceClaimantCreatedEffectResponse(string asset, string balanceID, string amount, xdr.ClaimPredicate predicate)
+        public ClaimableBalanceClaimantCreatedEffectResponse(string asset, string balanceID, string amount, ClaimPredicate predicate)
         {
             Asset = asset;
             BalanceID = balanceID;
