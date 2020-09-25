@@ -44,6 +44,15 @@
     <None Update="testdata\assetPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="testdata\effects\signerSponsorship\signerSponsorshipUpdated.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\effects\signerSponsorship\signerSponsorshipRemoved.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\effects\signerSponsorship\signerSponsorshipCreated.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="testdata\effects\claimableBalance\claimableBalanceSponsorshipUpdated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

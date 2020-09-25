@@ -1109,5 +1109,69 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ", effect.FormerSponsor);
             Assert.AreEqual("GBVFLWXYCIGPO3455XVFIKHS66FCT5AI64ZARKS7QJN4NF7K5FOXTJNL", effect.NewSponsor);
         }
+
+        //Signer Sponsorship Created
+        [TestMethod]
+        public void TestSerializationSignerSponsorshipCreatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects/signerSponsorship", "signerSponsorshipCreated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertSignerSponsorshipCreatedEffect(back);
+        }
+
+        private static void AssertSignerSponsorshipCreatedEffect(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is SignerSponsorshipCreatedEffectResponse);
+            var effect = (SignerSponsorshipCreatedEffectResponse)instance;
+
+            Assert.AreEqual("XAMF7DNTEJY74JPVMGTPZE4LFYTEGBXMGBHNUUMAA7IXMSBGHAMWSND6", effect.Signer);
+            Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", effect.Sponsor);
+        }
+
+        //Signer Sponsorship Removed
+        [TestMethod]
+        public void TestSerializationSignerSponsorshipRemovedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects/signerSponsorship", "signerSponsorshipRemoved.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertSignerSponsorshipRemovedEffect(back);
+        }
+
+        private static void AssertSignerSponsorshipRemovedEffect(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is SignerSponsorshipRemovedEffectResponse);
+            var effect = (SignerSponsorshipRemovedEffectResponse)instance;
+
+            Assert.AreEqual("XAMF7DNTEJY74JPVMGTPZE4LFYTEGBXMGBHNUUMAA7IXMSBGHAMWSND6", effect.Signer);
+            Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", effect.FormerSponsor);
+        }
+
+        //Signer Sponsorship Updated
+        [TestMethod]
+        public void TestSerializationSignerSponsorshipUpdatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects/signerSponsorship", "signerSponsorshipUpdated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertSignerSponsorshipUpdatedEffect(back);
+        }
+
+        private static void AssertSignerSponsorshipUpdatedEffect(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is SignerSponsorshipUpdatedEffectResponse);
+            var effect = (SignerSponsorshipUpdatedEffectResponse)instance;
+
+            Assert.AreEqual("XAMF7DNTEJY74JPVMGTPZE4LFYTEGBXMGBHNUUMAA7IXMSBGHAMWSND6", effect.Signer);
+            Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", effect.FormerSponsor);
+            Assert.AreEqual("GB5N4275ETC6A77K4DTDL3EFAQMN66PC7UITDUZUBM7Y6LDJP7EYSGOB", effect.NewSponsor);
+        }
     }
 }
