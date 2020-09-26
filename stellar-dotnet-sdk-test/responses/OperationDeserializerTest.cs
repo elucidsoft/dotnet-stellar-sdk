@@ -672,5 +672,26 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7", operation.BalanceID);
             Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", operation.Claimant);
         }
+
+        //Begin Sponsoring Future Reserves
+        [TestMethod]
+        public void TestSerializationBeginSponsoringFutureReservesOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationBeginSponsoringFutureReserves.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertBeginSponsoringFutureReservesData(back);
+        }
+
+        private static void AssertBeginSponsoringFutureReservesData(OperationResponse instance)
+        {
+            Assert.IsTrue(instance is BeginSponsoringFutureReservesOperationResponse);
+            var operation = (BeginSponsoringFutureReservesOperationResponse)instance;
+
+            Assert.AreEqual(215542933753857, operation.Id);
+            Assert.AreEqual("GAXHU2XHSMTZYAKFCVTULAYUL34BFPPLRVJYZMEOHP7IWPZJKSVY67RJ", operation.SponsoredID);
+        }
     }
 }
