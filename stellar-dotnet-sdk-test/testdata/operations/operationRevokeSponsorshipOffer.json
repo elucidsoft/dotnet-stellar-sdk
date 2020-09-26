@@ -1,0 +1,29 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "https://horizon-protocol14.stellar.org/operations/286800736161794"
+    },
+    "transaction": {
+      "href": "https://horizon-protocol14.stellar.org/transactions/902af03082facf944e10d7736e57d9daad7be5e5e1158077f664ee17eddbcdc7"
+    },
+    "effects": {
+      "href": "https://horizon-protocol14.stellar.org/operations/286800736161794/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=desc\u0026cursor=286800736161794"
+    },
+    "precedes": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=asc\u0026cursor=286800736161794"
+    }
+  },
+  "id": "286800736161794",
+  "paging_token": "286800736161794",
+  "transaction_successful": true,
+  "source_account": "GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU",
+  "type": "revoke_sponsorship",
+  "type_i": 18,
+  "created_at": "2020-09-25T19:14:56Z",
+  "transaction_hash": "902af03082facf944e10d7736e57d9daad7be5e5e1158077f664ee17eddbcdc7",
+  "data_account_id": "GDHSYF7V3DZRM7Q2HS5J6FHAHNWETMBFMG7DOSWU3GA7OM4KGOPZM3FB",
+  "data_name": "hello"
+}

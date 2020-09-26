@@ -65,6 +65,8 @@ namespace stellar_dotnet_sdk.responses
                     return new BeginSponsoringFutureReservesOperationResponse();
                 case 17:
                     return new EndSponsoringFutureReservesOperationResponse();
+                case 18:
+                    return new RevokeSponsorshipOperationResponse();
                 default:
                     throw new JsonSerializationException($"Invalid operation 'type_i'='{type}'");
             }

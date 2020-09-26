@@ -1,0 +1,29 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "https://horizon-protocol14.stellar.org/operations/286500088451074"
+    },
+    "transaction": {
+      "href": "https://horizon-protocol14.stellar.org/transactions/4b6d298f91cf3f2282c6f759bbce034ccd317ced2f78fd8edfc3966b09aa158f"
+    },
+    "effects": {
+      "href": "https://horizon-protocol14.stellar.org/operations/286500088451074/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=desc\u0026cursor=286500088451074"
+    },
+    "precedes": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=asc\u0026cursor=286500088451074"
+    }
+  },
+  "id": "286500088451074",
+  "paging_token": "286500088451074",
+  "transaction_successful": true,
+  "source_account": "GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU",
+  "type": "revoke_sponsorship",
+  "type_i": 18,
+  "created_at": "2020-09-25T19:09:06Z",
+  "transaction_hash": "4b6d298f91cf3f2282c6f759bbce034ccd317ced2f78fd8edfc3966b09aa158f",
+  "trustline_account_id": "GDHSYF7V3DZRM7Q2HS5J6FHAHNWETMBFMG7DOSWU3GA7OM4KGOPZM3FB",
+  "trustline_asset": "XYZ:GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY"
+}

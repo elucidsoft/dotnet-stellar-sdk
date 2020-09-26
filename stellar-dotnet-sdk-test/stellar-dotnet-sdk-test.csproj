@@ -191,6 +191,24 @@
     <None Update="testdata\offerPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="testdata\operations\operationRevokeSponsorshipSignerKey.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\operationRevokeSponsorshipTrustline.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\operationRevokeSponsorshipOffer.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\operationRevokeSponsorshipData.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\operationRevokeSponsorshipClaimableBalance.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\operationRevokeSponsorshipAccountID.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="testdata\operations\operationEndSponsoringFutureReserves.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

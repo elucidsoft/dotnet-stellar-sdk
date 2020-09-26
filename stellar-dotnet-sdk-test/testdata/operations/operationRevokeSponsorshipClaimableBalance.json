@@ -1,0 +1,28 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "https://horizon-protocol14.stellar.org/operations/287054139232258"
+    },
+    "transaction": {
+      "href": "https://horizon-protocol14.stellar.org/transactions/bdb4c426c0132799c8072b1a0cf211b523b4ed7c0e14f70e6d4f0c3f96c4ceba"
+    },
+    "effects": {
+      "href": "https://horizon-protocol14.stellar.org/operations/287054139232258/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=desc\u0026cursor=287054139232258"
+    },
+    "precedes": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=asc\u0026cursor=287054139232258"
+    }
+  },
+  "id": "287054139232258",
+  "paging_token": "287054139232258",
+  "transaction_successful": true,
+  "source_account": "GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU",
+  "type": "revoke_sponsorship",
+  "type_i": 18,
+  "created_at": "2020-09-25T19:19:51Z",
+  "transaction_hash": "bdb4c426c0132799c8072b1a0cf211b523b4ed7c0e14f70e6d4f0c3f96c4ceba",
+  "claimable_balance_id": "00000000c582697b67cbec7f9ce64f4dc67bfb2bfd26318bb9f964f4d70e3f41f650b1e6"
+}
