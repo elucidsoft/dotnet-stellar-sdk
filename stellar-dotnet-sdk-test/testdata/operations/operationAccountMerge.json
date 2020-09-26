@@ -1,0 +1,26 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "http://horizon-testnet.stellar.org/operations/3424497684189185"
+    },
+    "transaction": {
+      "href": "http://horizon-testnet.stellar.org/transactions/68f4d37780e2a85f5698b73977126a595dff99aed852f14a7eb39221ce1f96d5"
+    },
+    "effects": {
+      "href": "http://horizon-testnet.stellar.org/operations/3424497684189185/effects"
+    },
+    "succeeds": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=desc&cursor=3424497684189185"
+    },
+    "precedes": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=asc&cursor=3424497684189185"
+    }
+  },
+  "id": "3424497684189185",
+  "paging_token": "3424497684189185",
+  "source_account": "GD6GKRABNDVYDETEZJQEPS7IBQMERCN44R5RCI4LJNX6BMYQM2KPGGZ2",
+  "type": "account_merge",
+  "type_i": 8,
+  "account": "GD6GKRABNDVYDETEZJQEPS7IBQMERCN44R5RCI4LJNX6BMYQM2KPGGZ2",
+  "into": "GAZWSWPDQTBHFIPBY4FEDFW2J6E2LE7SZHJWGDZO6Q63W7DBSRICO2KN"
+}

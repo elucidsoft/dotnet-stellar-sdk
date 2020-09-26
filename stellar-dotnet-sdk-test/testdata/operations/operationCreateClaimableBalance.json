@@ -1,0 +1,40 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "https://horizon-protocol14.stellar.org/operations/213223651414017"
+    },
+    "transaction": {
+      "href": "https://horizon-protocol14.stellar.org/transactions/d922fc6d11de591ad914e9b6bffe5442c96f5564e0a502cdb466906480f32222"
+    },
+    "effects": {
+      "href": "https://horizon-protocol14.stellar.org/operations/213223651414017/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=desc\u0026cursor=213223651414017"
+    },
+    "precedes": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=asc\u0026cursor=213223651414017"
+    }
+  },
+  "id": "213223651414017",
+  "paging_token": "213223651414017",
+  "transaction_successful": true,
+  "source_account": "GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY",
+  "type": "create_claimable_balance",
+  "type_i": 14,
+  "created_at": "2020-09-24T19:27:10Z",
+  "transaction_hash": "d922fc6d11de591ad914e9b6bffe5442c96f5564e0a502cdb466906480f32222",
+  "sponsor": "GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY",
+  "asset": "native",
+  "amount": "1.0000000",
+  "claimants": [
+    {
+      "destination": "GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU",
+      "predicate": {
+        "not": {
+          "relBefore": 604800
+        }
+      }
+    }
+  ]
+}

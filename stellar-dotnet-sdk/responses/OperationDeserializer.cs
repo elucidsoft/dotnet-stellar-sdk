@@ -1,7 +1,7 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using stellar_dotnet_sdk.responses.operations;
+using System;
 
 namespace stellar_dotnet_sdk.responses
 {
@@ -57,6 +57,10 @@ namespace stellar_dotnet_sdk.responses
                     return new ManageBuyOfferOperationResponse();
                 case 13:
                     return new PathPaymentStrictSendOperationResponse();
+                case 14:
+                    return new CreateClaimableBalanceOperationResponse();
+                case 15:
+                    return new ClaimClaimableBalanceOperationResponse();
                 default:
                     throw new JsonSerializationException($"Invalid operation 'type_i'='{type}'");
             }

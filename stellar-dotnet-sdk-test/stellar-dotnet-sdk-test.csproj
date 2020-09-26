@@ -191,64 +191,70 @@
     <None Update="testdata\offerPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationAccountMerge.json">
+    <None Update="testdata\operations\operationClaimClaimableBalance.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationAllowTrust.json">
+    <None Update="testdata\operations\operationCreateClaimableBalance.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationBumpSequence.json">
+    <None Update="testdata\operations\operationAccountMerge.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationChangeTrust.json">
+    <None Update="testdata\operations\operationAllowTrust.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationCreateAccount.json">
+    <None Update="testdata\operations\operationBumpSequence.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationInflation.json">
+    <None Update="testdata\operations\operationChangeTrust.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationManageBuyOffer.json">
+    <None Update="testdata\operations\operationCreateAccount.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationManageData.json">
+    <None Update="testdata\operations\operationInflation.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationManageDataValueEmpty.json">
+    <None Update="testdata\operations\operationManageBuyOffer.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationManageOffer.json">
+    <None Update="testdata\operations\operationManageData.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationPage.json">
+    <None Update="testdata\operations\operationManageDataValueEmpty.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationPassiveOffer.json">
+    <None Update="testdata\operations\operationManageOffer.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\operationPage.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\operationPassiveOffer.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="testdata\feeStats.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationPathPaymentStrictSend.json">
+    <None Update="testdata\operations\operationPathPaymentStrictSend.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationPathPaymentStrictReceive.json">
+    <None Update="testdata\operations\operationPathPaymentStrictReceive.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationPayment.json">
+    <None Update="testdata\operations\operationPayment.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationPaymentNonNative.json">
+    <None Update="testdata\operations\operationPaymentNonNative.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationSetOptions.json">
+    <None Update="testdata\operations\operationSetOptions.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationSetOptionsNonEd25519Key.json">
+    <None Update="testdata\operations\operationSetOptionsNonEd25519Key.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationUnknown.json">
+    <None Update="testdata\operations\operationUnknown.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="testdata\orderBook.json">
@@ -305,7 +311,7 @@
     <None Update="testdata\transactionTransactionWithoutMemo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operationManageBuyOfferPre100.json">
+    <None Update="testdata\operations\operationManageBuyOfferPre100.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="testdata\transactionTransactionPre020.json">
