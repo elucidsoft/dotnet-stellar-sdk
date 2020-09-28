@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk.responses.effects
     /// </summary>
     public class SignerSponsorshipUpdatedEffectResponse : EffectResponse
     {
-        public override int TypeId => 70;
+        public override int TypeId => 73;
 
         [JsonProperty(PropertyName = "signer")]
         public string Signer { get; private set; }

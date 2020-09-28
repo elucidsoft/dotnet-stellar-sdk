@@ -111,17 +111,24 @@ namespace stellar_dotnet_sdk.responses
                     return new TrustlineSponsorshipRemovedEffectResponse();
 
                 case 66:
-                    return new ClaimableBalanceSponsorshipCreatedEffectResponse();
+                    return new DataSponsorshipCreatedEffectResponse();
                 case 67:
-                    return new ClaimableBalanceSponsorshipUpdatedEffectResponse();
+                    return new DataSponsorshipUpdatedEffectResponse();
                 case 68:
-                    return new ClaimableBalanceSponsorshipRemovedEffectResponse();
+                    return new DataSponsorshipRemovedEffectResponse();
 
                 case 69:
-                    return new SignerSponsorshipCreatedEffectResponse();
+                    return new ClaimableBalanceSponsorshipCreatedEffectResponse();
                 case 70:
-                    return new SignerSponsorshipUpdatedEffectResponse();
+                    return new ClaimableBalanceSponsorshipUpdatedEffectResponse();
                 case 71:
+                    return new ClaimableBalanceSponsorshipRemovedEffectResponse();
+
+                case 72:
+                    return new SignerSponsorshipCreatedEffectResponse();
+                case 73:
+                    return new SignerSponsorshipUpdatedEffectResponse();
+                case 74:
                     return new SignerSponsorshipRemovedEffectResponse();
 
                 default:

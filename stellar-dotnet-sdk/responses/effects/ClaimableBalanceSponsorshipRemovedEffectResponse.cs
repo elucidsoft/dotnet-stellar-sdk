@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk.responses.effects
     /// </summary>
     public class ClaimableBalanceSponsorshipRemovedEffectResponse : EffectResponse
     {
-        public override int TypeId => 68;
+        public override int TypeId => 71;
 
         [JsonProperty(PropertyName = "balance_id")]
         public string BalanceID { get; private set; }

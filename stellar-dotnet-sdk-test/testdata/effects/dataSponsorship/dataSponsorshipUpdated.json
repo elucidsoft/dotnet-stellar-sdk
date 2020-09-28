@@ -1,0 +1,20 @@
+﻿{
+  "_links": {
+    "operation": {
+      "href": "http://horizon-testnet.stellar.org/operations/65571265847297"
+    },
+    "succeeds": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=desc&cursor=65571265847297-1"
+    },
+    "precedes": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=asc&cursor=65571265847297-1"
+    }
+  },
+  "id": "0000065571265847297-0000000001",
+  "paging_token": "65571265847297-1",
+  "former_sponsor": "GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ",
+  "new_sponsor": "GBVFLWXYCIGPO3455XVFIKHS66FCT5AI64ZARKS7QJN4NF7K5FOXTJNL",
+  "data_name": "welcome-friend",
+  "type": "data_sponsorship_updated",
+  "type_i": 67
+}
