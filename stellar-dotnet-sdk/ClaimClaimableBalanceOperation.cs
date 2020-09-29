@@ -1,4 +1,3 @@
-
 using System;
 
 namespace stellar_dotnet_sdk
