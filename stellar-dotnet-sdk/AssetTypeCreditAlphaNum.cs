@@ -73,5 +73,11 @@ namespace stellar_dotnet_sdk
         {
             throw new NotSupportedException();
         }
+        
+        /// <inheritdoc />
+        public override string CanonicalName()
+        {
+            return $"{Code}:{Issuer}";
+        }
     }
 }

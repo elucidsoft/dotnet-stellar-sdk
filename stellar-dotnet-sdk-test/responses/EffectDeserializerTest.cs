@@ -998,8 +998,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("native", effect.Asset);
             Assert.AreEqual("00000000be7e37b24927c095e2292d5d0e6db8b0f2dbeb1355847c7fccb458cbdd61bfd0", effect.BalanceID);
             Assert.AreEqual("1.0000000", effect.Amount);
-            Assert.AreEqual(effect.Predicate, ClaimPredicate.Not(ClaimPredicate.BeforeRelativeTime(604800)));
-
+            Assert.IsNotNull(effect.Predicate.ToClaimPredicate());
         }
 
 

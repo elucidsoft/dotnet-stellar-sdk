@@ -1,0 +1,21 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon-protocol14.stellar.org/claimable_balances/00000000c582697b67cbec7f9ce64f4dc67bfb2bfd26318bb9f964f4d70e3f41f650b1e6"
+    }
+  },
+  "id": "00000000c582697b67cbec7f9ce64f4dc67bfb2bfd26318bb9f964f4d70e3f41f650b1e6",
+  "asset": "native",
+  "amount": "13.1200000",
+  "sponsor": "GB5N4275ETC6A77K4DTDL3EFAQMN66PC7UITDUZUBM7Y6LDJP7EYSGOB",
+  "last_modified_ledger": 66835,
+  "claimants": [
+    {
+      "destination": "GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY",
+      "predicate": {
+        "unconditional": true
+      }
+    }
+  ],
+  "paging_token": "66835-00000000c582697b67cbec7f9ce64f4dc67bfb2bfd26318bb9f964f4d70e3f41f650b1e6"
+}

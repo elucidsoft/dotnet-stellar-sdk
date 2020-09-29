@@ -797,7 +797,7 @@ namespace stellar_dotnet_sdk_test.responses
             var operation = (RevokeSponsorshipOperationResponse)instance;
 
             Assert.AreEqual(286800736161794, operation.Id);
-            Assert.AreEqual("", operation.OfferID);
+            Assert.IsNull(operation.OfferID);
         }
 
         //Revoke Sponsorship Signer Key

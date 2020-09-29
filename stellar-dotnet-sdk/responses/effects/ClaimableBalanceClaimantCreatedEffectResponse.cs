@@ -22,14 +22,14 @@ namespace stellar_dotnet_sdk.responses.effects
         public string Amount { get; private set; }
 
         [JsonProperty(PropertyName = "predicate")]
-        public ClaimPredicate Predicate { get; private set; }
+        public Predicate Predicate { get; private set; }
 
         public ClaimableBalanceClaimantCreatedEffectResponse()
         {
 
         }
 
-        public ClaimableBalanceClaimantCreatedEffectResponse(string asset, string balanceID, string amount, ClaimPredicate predicate)
+        public ClaimableBalanceClaimantCreatedEffectResponse(string asset, string balanceID, string amount, Predicate predicate)
         {
             Asset = asset;
             BalanceID = balanceID;
