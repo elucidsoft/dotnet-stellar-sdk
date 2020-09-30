@@ -65,6 +65,18 @@ namespace stellar_dotnet_sdk_test
 
             Assert.IsNotNull(parsed.LeftPredicate);
             Assert.IsNotNull(parsed.RightPredicate);
+        }
+
+        [TestMethod]
+        public void TestClaimPredicateUnconditional()
+        {
+            var predicate = ClaimPredicate.Unconditional();
+            var xdr = predicate.ToXdr();
+
+            var parsed = (ClaimPredicateUnconditional) ClaimPredicate.FromXdr(xdr);
+
+            Assert.IsNotNull(parsed);
         }        
+        
     }
 }

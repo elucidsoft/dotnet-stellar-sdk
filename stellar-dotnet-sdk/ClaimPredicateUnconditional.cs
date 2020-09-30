@@ -12,10 +12,5 @@ namespace stellar_dotnet_sdk
                 },
             };
         }
-
-        public static ClaimPredicateUnconditional FromXdr()
-        {
-            return new ClaimPredicateUnconditional();
-        }
     }
 }
