@@ -2,6 +2,12 @@ using System.Linq;
 
 namespace stellar_dotnet_sdk
 {
+    /// <summary>
+    /// Represents a <see cref="CreateClaimableBalanceOperation"/>.
+    /// Use <see cref="Builder"/> to create a new CreateClaimableBalanceOperation.
+    ///
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html">Create Claimable Balance</see>
+    /// </summary>
     public class CreateClaimableBalanceOperation : Operation
     {
         public Asset Asset { get; }
@@ -29,6 +35,10 @@ namespace stellar_dotnet_sdk
             };
         }
 
+        /// <summary>
+        ///     Builds CreatePassiveSellOfferOperation operation.
+        /// </summary>
+        /// <see cref="CreateClaimableBalanceOperation" />
         public class Builder
         {
             private Asset _asset;

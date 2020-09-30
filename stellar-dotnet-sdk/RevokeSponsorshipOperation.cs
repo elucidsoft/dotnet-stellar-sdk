@@ -4,6 +4,10 @@ namespace stellar_dotnet_sdk
 {
     public abstract class RevokeSponsorshipOperation : Operation
     {
+        /// <summary>
+        ///     Builds RevokeSponsorshipOperation operation.
+        /// </summary>
+        /// <see cref="RevokeSponsorshipOperation" />
         public class Builder
         {
             private readonly RevokeLedgerEntrySponsorshipOperation.Builder _ledgerEntryBuilder;

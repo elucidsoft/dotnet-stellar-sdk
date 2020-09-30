@@ -2,6 +2,12 @@ using System;
 
 namespace stellar_dotnet_sdk
 {
+    /// <summary>
+    /// Represents a <see cref="ClaimClaimableBalanceOperation"/>.
+    /// Use <see cref="Builder"/> to create a new ClaimClaimableBalanceOperation.
+    ///
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html">Claim Claimable Balance</see>
+    /// </summary> 
     public class ClaimClaimableBalanceOperation : Operation
     {
         public byte[] BalanceId { get; }
@@ -30,6 +36,10 @@ namespace stellar_dotnet_sdk
             };
         }
 
+        /// <summary>
+        ///     Builds ClaimClaimableBalanceOperation operation.
+        /// </summary>
+        /// <see cref="ClaimClaimableBalanceOperation" />
         public class Builder
         {
             private byte[] _balanceId;

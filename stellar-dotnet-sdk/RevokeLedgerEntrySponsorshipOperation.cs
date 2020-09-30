@@ -2,6 +2,12 @@ using System;
 
 namespace stellar_dotnet_sdk
 {
+    /// <summary>
+    /// Represents a <see cref="RevokeSponsorshipOperation"/>.
+    /// Use <see cref="Builder"/> to create a new RevokeLedgerEntrySponsorshipOperation.
+    ///
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html">Revoke Sponsorship</see>
+    /// </summary>
     public class RevokeLedgerEntrySponsorshipOperation : RevokeSponsorshipOperation
     {
         public LedgerKey LedgerKey { get; }
