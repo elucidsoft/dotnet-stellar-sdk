@@ -648,7 +648,10 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("native", operation.Asset);
             Assert.AreEqual("1.0000000", operation.Amount);
             Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", operation.Claimants[0].Destination);
-            //Assert.AreEqual(, operation.Claimants[0].Predicate);
+            
+            var back = new CreateClaimableBalanceOperationResponse(
+                operation.Sponsor, operation.Asset, operation.Amount, operation.Claimants);
+            Assert.IsNotNull(back);
         }
 
         //Claim Claimable Balance
@@ -671,6 +674,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(214525026504705, operation.Id);
             Assert.AreEqual("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7", operation.BalanceID);
             Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", operation.Claimant);
+            
+            var back = new ClaimClaimableBalanceOperationResponse(operation.BalanceID, operation.Claimant);
+            Assert.IsNotNull(back);
         }
 
         //Begin Sponsoring Future Reserves
@@ -692,6 +698,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(215542933753857, operation.Id);
             Assert.AreEqual("GAXHU2XHSMTZYAKFCVTULAYUL34BFPPLRVJYZMEOHP7IWPZJKSVY67RJ", operation.SponsoredID);
+            
+            var back = new BeginSponsoringFutureReservesOperationResponse(operation.SponsoredID);
+            Assert.IsNotNull(back);
         }
 
         //End Sponsoring Future Reserves
@@ -713,6 +722,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(215542933753859, operation.Id);
             Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", operation.BeginSponsor);
+            
+            var back = new EndSponsoringFutureReservesOperationResponse(operation.BeginSponsor);
+            Assert.IsNotNull(back);
         }
 
         //Revoke Sponsorship Account ID

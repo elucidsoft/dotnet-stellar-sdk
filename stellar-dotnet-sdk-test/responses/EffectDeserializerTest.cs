@@ -47,6 +47,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=65571265847297-1");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=65571265847297-1");
+            
+            var back = new AccountCreatedEffectResponse(effect.StartingBalance);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -121,6 +124,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=13563506724865-1");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=13563506724865-1");
+            
+            var back = new AccountCreditedEffectResponse(effect.Amount, effect.AssetType, effect.AssetCode, effect.AssetIssuer);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -159,6 +165,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=65571265843201-2");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=65571265843201-2");
+            
+            var back = new AccountDebitedEffectResponse(effect.Amount, effect.AssetType, effect.AssetCode, effect.AssetIssuer);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -198,6 +207,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=18970870550529-1");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=18970870550529-1");
+            
+            var back = new AccountThresholdsUpdatedEffectResponse(effect.LowThreshold, effect.MedThreshold, effect.HighThreshold);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -235,6 +247,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=18970870550529-1");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=18970870550529-1");
+            
+            var back = new AccountHomeDomainUpdatedEffectResponse(effect.HomeDomain);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -273,6 +288,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=18970870550529-1");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=18970870550529-1");
+            
+            var back = new AccountFlagsUpdatedEffectResponse(effect.AuthRequiredFlag, effect.AuthRevokableFlag);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -311,6 +329,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=65571265859585-3");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=65571265859585-3");
+            
+            var back = new SignerCreatedEffectResponse(effect.Weight, effect.PublicKey);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -349,6 +370,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=43658342567940-2");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=43658342567940-2");
+            
+            var back = new SignerRemovedEffectResponse(effect.Weight, effect.PublicKey);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -387,6 +411,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2");
+            
+            var back = new SignerUpdatedEffectResponse(effect.Weight, effect.PublicKey);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -425,6 +452,10 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2");
+
+            var back = new TrustlineCreatedEffectResponse(effect.Limit, effect.AssetType, effect.AssetCode,
+                effect.AssetIssuer);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -463,6 +494,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2");
+            
+            var back = new TrustlineRemovedEffectResponse(effect.Limit, effect.AssetType, effect.AssetCode, effect.AssetIssuer);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -501,6 +535,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2");
+            
+            var back = new TrustlineUpdatedEffectResponse(effect.Limit, effect.AssetType, effect.AssetCode, effect.AssetIssuer);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -549,6 +586,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2");
+            
+            var back = new TrustlineAuthorizedEffectResponse(effect.Trustor, effect.AssetType, effect.AssetCode);
+            Assert.IsNotNull(back);
         }
 
         private static void AssertTrustlineAuthorizedToMaintainLiabilitiesEffect(EffectResponse instance)
@@ -570,6 +610,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2");
+            
+            var back = new TrustlineAuthorizedToMaintainLiabilitiesEffectResponse(effect.Trustor, effect.AssetType, effect.AssetCode);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -609,6 +652,9 @@ namespace stellar_dotnet_sdk_test.responses
                 "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2");
             Assert.AreEqual(effect.Links.Precedes.Href,
                 "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2");
+            
+            var back = new TrustlineDeauthorizedEffectResponse(effect.Trustor, effect.AssetType, effect.AssetCode);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -670,6 +716,11 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(effect.Links.Operation.Href, "http://horizon-testnet.stellar.org/operations/33788507721730");
             Assert.AreEqual(effect.Links.Succeeds.Href, "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2");
             Assert.AreEqual(effect.Links.Precedes.Href, "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2");
+
+            var back = new TradeEffectResponse(effect.Seller, effect.OfferId, effect.SoldAmount, effect.SoldAssetType,
+                effect.SoldAssetCode, effect.SoldAssetIssuer, effect.BoughtAmount, effect.BoughtAssetType,
+                effect.BoughtAssetCode, effect.BoughtAssetType);
+            Assert.IsNotNull(back);
         }
 
         [TestMethod]
@@ -934,6 +985,9 @@ namespace stellar_dotnet_sdk_test.responses
             var effect = (AccountSponsorshipCreatedEffectResponse)instance;
 
             Assert.AreEqual("GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ", effect.Sponsor);
+            
+            var back = new AccountSponsorshipCreatedEffectResponse(effect.Sponsor);
+            Assert.IsNotNull(back);
         }
 
         //Account Sponsorship Removed
@@ -954,6 +1008,9 @@ namespace stellar_dotnet_sdk_test.responses
             var effect = (AccountSponsorshipRemovedEffectResponse)instance;
 
             Assert.AreEqual("GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ", effect.FormerSponsor);
+            
+            var back = new AccountSponsorshipRemovedEffectResponse(effect.FormerSponsor);
+            Assert.IsNotNull(back);
         }
 
 
@@ -976,6 +1033,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual("GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ", effect.FormerSponsor);
             Assert.AreEqual("GBVFLWXYCIGPO3455XVFIKHS66FCT5AI64ZARKS7QJN4NF7K5FOXTJNL", effect.NewSponsor);
+            
+            var back = new AccountSponsorshipUpdatedEffectResponse(effect.FormerSponsor, effect.NewSponsor);
+            Assert.IsNotNull(back);
         }
 
         //Claimable Balance Claimant Created
@@ -999,6 +1059,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("00000000be7e37b24927c095e2292d5d0e6db8b0f2dbeb1355847c7fccb458cbdd61bfd0", effect.BalanceID);
             Assert.AreEqual("1.0000000", effect.Amount);
             Assert.IsNotNull(effect.Predicate.ToClaimPredicate());
+            
+            var back = new ClaimableBalanceClaimantCreatedEffectResponse(effect.Asset, effect.BalanceID, effect.Amount, effect.Predicate);
+            Assert.IsNotNull(back);
         }
 
 
@@ -1022,6 +1085,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("native", effect.Asset);
             Assert.AreEqual("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7", effect.BalanceID);
             Assert.AreEqual("1.0000000", effect.Amount);
+            
+            var back = new ClaimableBalanceClaimedEffectResponse(effect.Asset, effect.BalanceID, effect.Amount);
+            Assert.IsNotNull(back);
         }
 
         // Claimable Balance Created
@@ -1044,6 +1110,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("native", effect.Asset);
             Assert.AreEqual("00000000be7e37b24927c095e2292d5d0e6db8b0f2dbeb1355847c7fccb458cbdd61bfd0", effect.BalanceID);
             Assert.AreEqual("1.0000000", effect.Amount);
+            
+            var back = new ClaimableBalanceCreatedEffectResponse(effect.Asset, effect.BalanceID, effect.Amount);
+            Assert.IsNotNull(back);
         }
 
         // Claimable Balance Sponsorship Created
@@ -1065,6 +1134,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual("00000000be7e37b24927c095e2292d5d0e6db8b0f2dbeb1355847c7fccb458cbdd61bfd0", effect.BalanceID);
             Assert.AreEqual("GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY", effect.Sponsor);
+            
+            var back = new ClaimableBalanceSponsorshipCreatedEffectResponse(effect.BalanceID, effect.Sponsor);
+            Assert.IsNotNull(back);
         }
 
         // Claimable Balance Sponsorship Removed
@@ -1086,6 +1158,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual("00000000be7e37b24927c095e2292d5d0e6db8b0f2dbeb1355847c7fccb458cbdd61bfd0", effect.BalanceID);
             Assert.AreEqual("GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY", effect.FormerSponsor);
+            
+            var back = new ClaimableBalanceSponsorshipRemovedEffectResponse(effect.BalanceID, effect.FormerSponsor);
+            Assert.IsNotNull(back);
         }
 
         // Claimable Balance Sponsorship Updated
@@ -1108,6 +1183,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7", effect.BalanceID);
             Assert.AreEqual("GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ", effect.FormerSponsor);
             Assert.AreEqual("GBVFLWXYCIGPO3455XVFIKHS66FCT5AI64ZARKS7QJN4NF7K5FOXTJNL", effect.NewSponsor);
+            
+            var back = new ClaimableBalanceSponsorshipUpdatedEffectResponse(effect.BalanceID, effect.FormerSponsor, effect.NewSponsor);
+            Assert.IsNotNull(back);
         }
 
         //Signer Sponsorship Created
@@ -1129,6 +1207,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual("XAMF7DNTEJY74JPVMGTPZE4LFYTEGBXMGBHNUUMAA7IXMSBGHAMWSND6", effect.Signer);
             Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", effect.Sponsor);
+            
+            var back = new SignerSponsorshipCreatedEffectResponse(effect.Signer, effect.Sponsor);
+            Assert.IsNotNull(back);
         }
 
         //Signer Sponsorship Removed
@@ -1150,6 +1231,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual("XAMF7DNTEJY74JPVMGTPZE4LFYTEGBXMGBHNUUMAA7IXMSBGHAMWSND6", effect.Signer);
             Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", effect.FormerSponsor);
+            
+            var back = new SignerSponsorshipRemovedEffectResponse(effect.Signer, effect.FormerSponsor);
+            Assert.IsNotNull(back);
         }
 
         //Signer Sponsorship Updated
@@ -1172,6 +1256,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("XAMF7DNTEJY74JPVMGTPZE4LFYTEGBXMGBHNUUMAA7IXMSBGHAMWSND6", effect.Signer);
             Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", effect.FormerSponsor);
             Assert.AreEqual("GB5N4275ETC6A77K4DTDL3EFAQMN66PC7UITDUZUBM7Y6LDJP7EYSGOB", effect.NewSponsor);
+            
+            var back = new SignerSponsorshipUpdatedEffectResponse(effect.Signer, effect.FormerSponsor, effect.NewSponsor);
+            Assert.IsNotNull(back);
         }
 
         //Trustline Sponsorship Created
@@ -1193,6 +1280,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual("ABC:GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY", effect.Asset);
             Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", effect.Sponsor);
+            
+            var back = new TrustlineSponsorshipCreatedEffectResponse(effect.Asset, effect.Sponsor);
+            Assert.IsNotNull(back);
         }
 
         //Trustline Sponsorship Removed
@@ -1214,6 +1304,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual("ABC:GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY", effect.Asset);
             Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", effect.FormerSponsor);
+            
+            var back = new TrustlineSponsorshipRemovedEffectResponse(effect.Asset, effect.FormerSponsor);
+            Assert.IsNotNull(back);
         }
 
         //Trustline Sponsorship Updated
@@ -1236,6 +1329,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("XYZ:GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY", effect.Asset);
             Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", effect.FormerSponsor);
             Assert.AreEqual("GB5N4275ETC6A77K4DTDL3EFAQMN66PC7UITDUZUBM7Y6LDJP7EYSGOB", effect.NewSponsor);
+            
+            var back = new TrustlineSponsorshipUpdatedEffectResponse(effect.Asset, effect.FormerSponsor, effect.NewSponsor);
+            Assert.IsNotNull(back);
         }
 
         //Data Sponsorship Created
@@ -1257,6 +1353,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual("GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ", effect.Sponsor);
             Assert.AreEqual("welcome-friend", effect.DataName);
+            
+            var back = new DataSponsorshipCreatedEffectResponse(effect.Sponsor, effect.DataName);
+            Assert.IsNotNull(back);
         }
 
         //Data Sponsorship Removed
@@ -1278,6 +1377,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual("GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ", effect.FormerSponsor);
             Assert.AreEqual("welcome-friend", effect.DataName);
+            
+            var back = new DataSponsorshipRemovedEffectResponse(effect.FormerSponsor, effect.DataName);
+            Assert.IsNotNull(back);
         }
 
 
@@ -1301,6 +1403,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ", effect.FormerSponsor);
             Assert.AreEqual("GBVFLWXYCIGPO3455XVFIKHS66FCT5AI64ZARKS7QJN4NF7K5FOXTJNL", effect.NewSponsor);
             Assert.AreEqual("welcome-friend", effect.DataName);
+            
+            var back = new DataSponsorshipUpdatedEffectResponse(effect.FormerSponsor, effect.NewSponsor, effect.DataName);
+            Assert.IsNotNull(back);
         }
 
     }
