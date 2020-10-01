@@ -1,0 +1,30 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "//horizon-testnet.stellar.org/operations/3603043769651201"
+    },
+    "transaction": {
+      "href": "//horizon-testnet.stellar.org/transactions/b59dee0f85bc7efdefa1a6eec7a0b6f602d567cca6e7f587056d41d42ca48879"
+    },
+    "effects": {
+      "href": "//horizon-testnet.stellar.org/operations/3603043769651201/effects"
+    },
+    "succeeds": {
+      "href": "//horizon-testnet.stellar.org/effects?order=desc&cursor=3603043769651201"
+    },
+    "precedes": {
+      "href": "//horizon-testnet.stellar.org/effects?order=asc&cursor=3603043769651201"
+    }
+  },
+  "id": "3603043769651201",
+  "paging_token": "3603043769651201",
+  "source_account": "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA",
+  "type": "payment",
+  "type_i": 1,
+  "asset_type": "credit_alphanum4",
+  "asset_code": "EUR",
+  "asset_issuer": "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA",
+  "from": "GAZN3PPIDQCSP5JD4ETQQQ2IU2RMFYQTAL4NNQZUGLLO2XJJJ3RDSDGA",
+  "to": "GBHUSIZZ7FS2OMLZVZ4HLWJMXQ336NFSXHYERD7GG54NRITDTEWWBBI6",
+  "amount": "1000000000.0"
+}

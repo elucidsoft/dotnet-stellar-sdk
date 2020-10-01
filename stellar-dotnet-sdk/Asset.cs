@@ -90,5 +90,10 @@ namespace stellar_dotnet_sdk
 
             return CreateNonNativeAsset(code, accountId);
         }
+
+        /// <summary>
+        /// Returns the asset canonical name.
+        /// </summary>
+        public abstract string CanonicalName();
     }
 }

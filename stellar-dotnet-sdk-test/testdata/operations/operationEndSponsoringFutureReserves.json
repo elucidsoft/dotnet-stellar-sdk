@@ -1,0 +1,28 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "https://horizon-protocol14.stellar.org/operations/215542933753859"
+    },
+    "transaction": {
+      "href": "https://horizon-protocol14.stellar.org/transactions/cdb0dc784abcb59f8d868c33a08f8476e35999b10374cbc376ccfb653bd1c76f"
+    },
+    "effects": {
+      "href": "https://horizon-protocol14.stellar.org/operations/215542933753859/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=desc\u0026cursor=215542933753859"
+    },
+    "precedes": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=asc\u0026cursor=215542933753859"
+    }
+  },
+  "id": "215542933753859",
+  "paging_token": "215542933753859",
+  "transaction_successful": true,
+  "source_account": "GAXHU2XHSMTZYAKFCVTULAYUL34BFPPLRVJYZMEOHP7IWPZJKSVY67RJ",
+  "type": "end_sponsoring_future_reserves",
+  "type_i": 17,
+  "created_at": "2020-09-24T20:12:11Z",
+  "transaction_hash": "cdb0dc784abcb59f8d868c33a08f8476e35999b10374cbc376ccfb653bd1c76f",
+  "begin_sponsor": "GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU"
+}

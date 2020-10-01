@@ -25,5 +25,11 @@ namespace stellar_dotnet_sdk
             thisXdr.Discriminant = AssetType.Create(AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE);
             return thisXdr;
         }
+
+        /// <inheritdoc />        
+        public override string CanonicalName()
+        {
+            return "native";
+        }
     }
 }

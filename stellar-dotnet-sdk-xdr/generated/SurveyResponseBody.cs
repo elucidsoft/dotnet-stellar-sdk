@@ -19,6 +19,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public SurveyMessageCommandType Discriminant { get; set; } = new SurveyMessageCommandType();
+
         public TopologyResponseBody TopologyResponseBody { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, SurveyResponseBody encodedSurveyResponseBody)

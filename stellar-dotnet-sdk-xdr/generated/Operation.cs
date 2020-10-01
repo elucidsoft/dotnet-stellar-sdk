@@ -43,6 +43,16 @@ namespace stellar_dotnet_sdk.xdr
 //          ManageBuyOfferOp manageBuyOfferOp;
 //      case PATH_PAYMENT_STRICT_SEND:
 //          PathPaymentStrictSendOp pathPaymentStrictSendOp;
+//      case CREATE_CLAIMABLE_BALANCE:
+//          CreateClaimableBalanceOp createClaimableBalanceOp;
+//      case CLAIM_CLAIMABLE_BALANCE:
+//          ClaimClaimableBalanceOp claimClaimableBalanceOp;
+//      case BEGIN_SPONSORING_FUTURE_RESERVES:
+//          BeginSponsoringFutureReservesOp beginSponsoringFutureReservesOp;
+//      case END_SPONSORING_FUTURE_RESERVES:
+//          void;
+//      case REVOKE_SPONSORSHIP:
+//          RevokeSponsorshipOp revokeSponsorshipOp;
 //      }
 //      body;
 //  };
@@ -91,6 +101,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public OperationType Discriminant { get; set; } = new OperationType();
+
             public CreateAccountOp CreateAccountOp { get; set; }
             public PaymentOp PaymentOp { get; set; }
             public PathPaymentStrictReceiveOp PathPaymentStrictReceiveOp { get; set; }
@@ -104,6 +115,10 @@ namespace stellar_dotnet_sdk.xdr
             public BumpSequenceOp BumpSequenceOp { get; set; }
             public ManageBuyOfferOp ManageBuyOfferOp { get; set; }
             public PathPaymentStrictSendOp PathPaymentStrictSendOp { get; set; }
+            public CreateClaimableBalanceOp CreateClaimableBalanceOp { get; set; }
+            public ClaimClaimableBalanceOp ClaimClaimableBalanceOp { get; set; }
+            public BeginSponsoringFutureReservesOp BeginSponsoringFutureReservesOp { get; set; }
+            public RevokeSponsorshipOp RevokeSponsorshipOp { get; set; }
 
             public static void Encode(XdrDataOutputStream stream, OperationBody encodedOperationBody)
             {
@@ -150,6 +165,21 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND:
                         PathPaymentStrictSendOp.Encode(stream, encodedOperationBody.PathPaymentStrictSendOp);
+                        break;
+                    case OperationType.OperationTypeEnum.CREATE_CLAIMABLE_BALANCE:
+                        CreateClaimableBalanceOp.Encode(stream, encodedOperationBody.CreateClaimableBalanceOp);
+                        break;
+                    case OperationType.OperationTypeEnum.CLAIM_CLAIMABLE_BALANCE:
+                        ClaimClaimableBalanceOp.Encode(stream, encodedOperationBody.ClaimClaimableBalanceOp);
+                        break;
+                    case OperationType.OperationTypeEnum.BEGIN_SPONSORING_FUTURE_RESERVES:
+                        BeginSponsoringFutureReservesOp.Encode(stream,
+                            encodedOperationBody.BeginSponsoringFutureReservesOp);
+                        break;
+                    case OperationType.OperationTypeEnum.END_SPONSORING_FUTURE_RESERVES:
+                        break;
+                    case OperationType.OperationTypeEnum.REVOKE_SPONSORSHIP:
+                        RevokeSponsorshipOp.Encode(stream, encodedOperationBody.RevokeSponsorshipOp);
                         break;
                 }
             }
@@ -201,6 +231,21 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND:
                         decodedOperationBody.PathPaymentStrictSendOp = PathPaymentStrictSendOp.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.CREATE_CLAIMABLE_BALANCE:
+                        decodedOperationBody.CreateClaimableBalanceOp = CreateClaimableBalanceOp.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.CLAIM_CLAIMABLE_BALANCE:
+                        decodedOperationBody.ClaimClaimableBalanceOp = ClaimClaimableBalanceOp.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.BEGIN_SPONSORING_FUTURE_RESERVES:
+                        decodedOperationBody.BeginSponsoringFutureReservesOp =
+                            BeginSponsoringFutureReservesOp.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.END_SPONSORING_FUTURE_RESERVES:
+                        break;
+                    case OperationType.OperationTypeEnum.REVOKE_SPONSORSHIP:
+                        decodedOperationBody.RevokeSponsorshipOp = RevokeSponsorshipOp.Decode(stream);
                         break;
                 }
 

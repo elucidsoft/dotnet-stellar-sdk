@@ -25,6 +25,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public CryptoKeyType Discriminant { get; set; } = new CryptoKeyType();
+
         public Uint256 Ed25519 { get; set; }
         public MuxedAccountMed25519 Med25519 { get; set; }
 

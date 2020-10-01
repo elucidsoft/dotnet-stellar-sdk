@@ -25,6 +25,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public LedgerEntryChangeType Discriminant { get; set; } = new LedgerEntryChangeType();
+
         public LedgerEntry Created { get; set; }
         public LedgerEntry Updated { get; set; }
         public LedgerKey Removed { get; set; }

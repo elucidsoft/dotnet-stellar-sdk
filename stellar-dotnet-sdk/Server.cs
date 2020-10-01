@@ -54,6 +54,7 @@ namespace stellar_dotnet_sdk
 
         public AssetsRequestBuilder Assets => new AssetsRequestBuilder(_serverUri, _httpClient);
 
+        public ClaimableBalancesRequestBuilder ClaimableBalances => new ClaimableBalancesRequestBuilder(_serverUri, _httpClient);
         public EffectsRequestBuilder Effects => new EffectsRequestBuilder(_serverUri, _httpClient);
 
         public LedgersRequestBuilder Ledgers => new LedgersRequestBuilder(_serverUri, _httpClient);

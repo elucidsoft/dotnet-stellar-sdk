@@ -4,6 +4,14 @@ using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
+using stellar_dotnet_sdk.xdr;
+using Asset = stellar_dotnet_sdk.Asset;
+using Claimant = stellar_dotnet_sdk.Claimant;
+using ClaimPredicate = stellar_dotnet_sdk.ClaimPredicate;
+using LedgerKey = stellar_dotnet_sdk.LedgerKey;
+using Operation = stellar_dotnet_sdk.Operation;
+using Price = stellar_dotnet_sdk.Price;
+using Signer = stellar_dotnet_sdk.Signer;
 
 namespace stellar_dotnet_sdk_test
 {
@@ -820,6 +828,138 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
 
             Assert.AreEqual("AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAk=", operation.ToXdrBase64());
+        }
+
+        [TestMethod]
+        public void TestCreateClaimableBalanceOperation()
+        {
+            // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
+            var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
+
+            // GAS4V4O2B7DW5T7IQRPEEVCRXMDZESKISR7DVIGKZQYYV3OSQ5SH5LVP
+            var destination = KeyPair.FromSecretSeed("SBMSVD4KKELKGZXHBUQTIROWUAPQASDX7KEJITARP4VMZ6KLUHOGPTYW");
+
+            var asset = new AssetTypeNative();
+            var claimant = new Claimant
+            {
+                Destination = destination,
+                Predicate = ClaimPredicate.Not(ClaimPredicate.BeforeRelativeTime(TimeSpan.FromHours(7.0))),
+            };
+            
+            var operation = new CreateClaimableBalanceOperation.Builder(asset, "123.45", new[] {claimant})
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+
+            var parsedOperation = (CreateClaimableBalanceOperation) Operation.FromXdr(xdr);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+
+            Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAAA4AAAAAAAAAAEmU+aAAAAABAAAAAAAAAAAlyvHaD8duz+iEXkJUUbsHkklIlH46oMrMMYrt0odkfgAAAAMAAAABAAAABQAAAAAAAGJw", operation.ToXdrBase64());
+        }
+
+        [TestMethod]
+        public void TestClaimClaimableBalanceOperation()
+        {
+            // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
+            var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
+
+
+            var balanceId = Enumerable.Repeat((byte)0x07, 32).ToArray();
+            var operation = new ClaimClaimableBalanceOperation.Builder(balanceId)
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+
+            var parsedOperation = (ClaimClaimableBalanceOperation) Operation.FromXdr(xdr);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+
+            Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAAA8AAAAABwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwc=", operation.ToXdrBase64());
+        }
+        
+        [TestMethod]
+        public void TestBeginSponsoringFutureReservesOperation()
+        {
+            // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
+            var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
+
+            // GAS4V4O2B7DW5T7IQRPEEVCRXMDZESKISR7DVIGKZQYYV3OSQ5SH5LVP
+            var sponsored = KeyPair.FromSecretSeed("SBMSVD4KKELKGZXHBUQTIROWUAPQASDX7KEJITARP4VMZ6KLUHOGPTYW");
+            
+            var operation = new BeginSponsoringFutureReservesOperation.Builder(sponsored)
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+
+            var parsedOperation = (BeginSponsoringFutureReservesOperation) Operation.FromXdr(xdr);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+
+            Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAABAAAAAAJcrx2g/Hbs/ohF5CVFG7B5JJSJR+OqDKzDGK7dKHZH4=", operation.ToXdrBase64());
+        }
+
+        [TestMethod]
+        public void TestEndSponsoringFutureReservesOperation()
+        {
+            // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
+            var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
+            
+            var operation = new EndSponsoringFutureReservesOperation.Builder()
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+
+            var parsedOperation = (EndSponsoringFutureReservesOperation) Operation.FromXdr(xdr);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+
+            Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAABE=", operation.ToXdrBase64());
+        }
+
+        [TestMethod]
+        public void TestRevokeLedgerEntrySponsorshipOperation()
+        {
+            // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
+            var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
+
+            // GAS4V4O2B7DW5T7IQRPEEVCRXMDZESKISR7DVIGKZQYYV3OSQ5SH5LVP
+            var otherAccount = KeyPair.FromSecretSeed("SBMSVD4KKELKGZXHBUQTIROWUAPQASDX7KEJITARP4VMZ6KLUHOGPTYW");
+
+            var ledgerKey = LedgerKey.Account(otherAccount);
+            var operation = new RevokeLedgerEntrySponsorshipOperation.Builder(ledgerKey)
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+
+            var parsedOperation = (RevokeLedgerEntrySponsorshipOperation) Operation.FromXdr(xdr);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+
+            Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAABIAAAAAAAAAAAAAAAAlyvHaD8duz+iEXkJUUbsHkklIlH46oMrMMYrt0odkfg==", operation.ToXdrBase64());
+        }
+
+        [TestMethod]
+        public void TestRevokeSignerSponsorshipOperation()
+        {
+            // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
+            var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
+
+            // GAS4V4O2B7DW5T7IQRPEEVCRXMDZESKISR7DVIGKZQYYV3OSQ5SH5LVP
+            var otherAccount = KeyPair.FromSecretSeed("SBMSVD4KKELKGZXHBUQTIROWUAPQASDX7KEJITARP4VMZ6KLUHOGPTYW");
+
+            var signerKey = Signer.Ed25519PublicKey(otherAccount);
+            
+            var operation = new RevokeSignerSponsorshipOperation.Builder(otherAccount, signerKey)
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+
+            var parsedOperation = (RevokeSignerSponsorshipOperation) Operation.FromXdr(xdr);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+
+            Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAABIAAAABAAAAACXK8doPx27P6IReQlRRuweSSUiUfjqgyswxiu3Sh2R+AAAAACXK8doPx27P6IReQlRRuweSSUiUfjqgyswxiu3Sh2R+", operation.ToXdrBase64());
         }
 
         [TestMethod]

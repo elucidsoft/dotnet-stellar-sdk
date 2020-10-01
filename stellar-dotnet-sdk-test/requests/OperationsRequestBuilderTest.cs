@@ -1,10 +1,10 @@
-﻿using System.IO;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.requests;
 using stellar_dotnet_sdk.responses.operations;
 using stellar_dotnet_sdk_test.responses;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk_test.requests
 {
@@ -82,7 +82,7 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public async Task TestOperationsExecute()
         {
-            var jsonResponse = File.ReadAllText(Path.Combine("testdata", "operationPage.json"));
+            var jsonResponse = File.ReadAllText(Path.Combine("testdata/operations", "operationPage.json"));
             var fakeHttpClient = FakeHttpClient.CreateFakeHttpClient(jsonResponse);
 
             using (var server = new Server("https://horizon-testnet.stellar.org", fakeHttpClient))
@@ -97,7 +97,7 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public async Task TestStream()
         {
-            var json = File.ReadAllText(Path.Combine("testdata", "operationCreateAccount.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationCreateAccount.json"));
 
             var streamableTest = new StreamableTest<OperationResponse>(json, OperationDeserializerTest.AssertCreateAccountOperationData);
             await streamableTest.Run();

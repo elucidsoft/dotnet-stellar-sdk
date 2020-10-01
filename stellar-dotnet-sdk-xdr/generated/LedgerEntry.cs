@@ -20,6 +20,8 @@ namespace stellar_dotnet_sdk.xdr
 //          OfferEntry offer;
 //      case DATA:
 //          DataEntry data;
+//      case CLAIMABLE_BALANCE:
+//          ClaimableBalanceEntry claimableBalance;
 //      }
 //      data;
 //  
@@ -28,6 +30,8 @@ namespace stellar_dotnet_sdk.xdr
 //      {
 //      case 0:
 //          void;
+//      case 1:
+//          LedgerEntryExtensionV1 v1;
 //      }
 //      ext;
 //  };
@@ -65,10 +69,12 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public LedgerEntryType Discriminant { get; set; } = new LedgerEntryType();
+
             public AccountEntry Account { get; set; }
             public TrustLineEntry TrustLine { get; set; }
             public OfferEntry Offer { get; set; }
             public DataEntry Data { get; set; }
+            public ClaimableBalanceEntry ClaimableBalance { get; set; }
 
             public static void Encode(XdrDataOutputStream stream, LedgerEntryData encodedLedgerEntryData)
             {
@@ -86,6 +92,9 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case LedgerEntryType.LedgerEntryTypeEnum.DATA:
                         DataEntry.Encode(stream, encodedLedgerEntryData.Data);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE:
+                        ClaimableBalanceEntry.Encode(stream, encodedLedgerEntryData.ClaimableBalance);
                         break;
                 }
             }
@@ -109,6 +118,9 @@ namespace stellar_dotnet_sdk.xdr
                     case LedgerEntryType.LedgerEntryTypeEnum.DATA:
                         decodedLedgerEntryData.Data = DataEntry.Decode(stream);
                         break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE:
+                        decodedLedgerEntryData.ClaimableBalance = ClaimableBalanceEntry.Decode(stream);
+                        break;
                 }
 
                 return decodedLedgerEntryData;
@@ -123,12 +135,17 @@ namespace stellar_dotnet_sdk.xdr
 
             public int Discriminant { get; set; } = new int();
 
+            public LedgerEntryExtensionV1 V1 { get; set; }
+
             public static void Encode(XdrDataOutputStream stream, LedgerEntryExt encodedLedgerEntryExt)
             {
                 stream.WriteInt((int) encodedLedgerEntryExt.Discriminant);
                 switch (encodedLedgerEntryExt.Discriminant)
                 {
                     case 0:
+                        break;
+                    case 1:
+                        LedgerEntryExtensionV1.Encode(stream, encodedLedgerEntryExt.V1);
                         break;
                 }
             }
@@ -141,6 +158,9 @@ namespace stellar_dotnet_sdk.xdr
                 switch (decodedLedgerEntryExt.Discriminant)
                 {
                     case 0:
+                        break;
+                    case 1:
+                        decodedLedgerEntryExt.V1 = LedgerEntryExtensionV1.Decode(stream);
                         break;
                 }
 

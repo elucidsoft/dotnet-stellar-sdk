@@ -28,7 +28,8 @@ namespace stellar_dotnet_sdk.xdr
 //      case txBAD_AUTH_EXTRA:
 //      case txINTERNAL_ERROR:
 //      case txNOT_SUPPORTED:
-//          // txFEE_BUMP_INNER_FAILED is not included
+//      // txFEE_BUMP_INNER_FAILED is not included
+//      case txBAD_SPONSORSHIP:
 //          void;
 //      }
 //      result;
@@ -75,6 +76,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public TransactionResultCode Discriminant { get; set; } = new TransactionResultCode();
+
             public OperationResult[] Results { get; set; }
 
             public static void Encode(XdrDataOutputStream stream,
@@ -104,6 +106,7 @@ namespace stellar_dotnet_sdk.xdr
                     case TransactionResultCode.TransactionResultCodeEnum.txBAD_AUTH_EXTRA:
                     case TransactionResultCode.TransactionResultCodeEnum.txINTERNAL_ERROR:
                     case TransactionResultCode.TransactionResultCodeEnum.txNOT_SUPPORTED:
+                    case TransactionResultCode.TransactionResultCodeEnum.txBAD_SPONSORSHIP:
                         break;
                 }
             }
@@ -136,6 +139,7 @@ namespace stellar_dotnet_sdk.xdr
                     case TransactionResultCode.TransactionResultCodeEnum.txBAD_AUTH_EXTRA:
                     case TransactionResultCode.TransactionResultCodeEnum.txINTERNAL_ERROR:
                     case TransactionResultCode.TransactionResultCodeEnum.txNOT_SUPPORTED:
+                    case TransactionResultCode.TransactionResultCodeEnum.txBAD_SPONSORSHIP:
                         break;
                 }
 

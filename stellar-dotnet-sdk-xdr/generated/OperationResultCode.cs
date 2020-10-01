@@ -14,7 +14,8 @@ namespace stellar_dotnet_sdk.xdr
 //      opNO_ACCOUNT = -2,          // source account was not found
 //      opNOT_SUPPORTED = -3,       // operation not supported at this time
 //      opTOO_MANY_SUBENTRIES = -4, // max number of subentries already reached
-//      opEXCEEDED_WORK_LIMIT = -5  // operation did too much work
+//      opEXCEEDED_WORK_LIMIT = -5, // operation did too much work
+//      opTOO_MANY_SPONSORING = -6  // account is sponsoring too many entries
 //  };
 //  ===========================================================================
     public class OperationResultCode
@@ -27,6 +28,7 @@ namespace stellar_dotnet_sdk.xdr
             opNOT_SUPPORTED = -3,
             opTOO_MANY_SUBENTRIES = -4,
             opEXCEEDED_WORK_LIMIT = -5,
+            opTOO_MANY_SPONSORING = -6,
         }
 
         public OperationResultCodeEnum InnerValue { get; set; } = default(OperationResultCodeEnum);
@@ -50,6 +52,7 @@ namespace stellar_dotnet_sdk.xdr
                 case -3: return Create(OperationResultCodeEnum.opNOT_SUPPORTED);
                 case -4: return Create(OperationResultCodeEnum.opTOO_MANY_SUBENTRIES);
                 case -5: return Create(OperationResultCodeEnum.opEXCEEDED_WORK_LIMIT);
+                case -6: return Create(OperationResultCodeEnum.opTOO_MANY_SPONSORING);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

@@ -106,6 +106,21 @@ namespace stellar_dotnet_sdk
                 case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND:
                     operation = new PathPaymentStrictSendOperation.Builder(body.PathPaymentStrictSendOp).Build();
                     break;
+                case OperationType.OperationTypeEnum.CREATE_CLAIMABLE_BALANCE:
+                    operation = new CreateClaimableBalanceOperation.Builder(body.CreateClaimableBalanceOp).Build();
+                    break;
+                case OperationType.OperationTypeEnum.CLAIM_CLAIMABLE_BALANCE:
+                    operation = new ClaimClaimableBalanceOperation.Builder(body.ClaimClaimableBalanceOp).Build();
+                    break;
+                case OperationType.OperationTypeEnum.BEGIN_SPONSORING_FUTURE_RESERVES:
+                    operation = new BeginSponsoringFutureReservesOperation.Builder(body.BeginSponsoringFutureReservesOp).Build();
+                    break;
+                case OperationType.OperationTypeEnum.END_SPONSORING_FUTURE_RESERVES:
+                    operation = new EndSponsoringFutureReservesOperation.Builder().Build();
+                    break;
+                case OperationType.OperationTypeEnum.REVOKE_SPONSORSHIP:
+                    operation = new RevokeSponsorshipOperation.Builder(body.RevokeSponsorshipOp).Build();
+                    break;
                 default:
                     throw new Exception("Unknown operation body " + body.Discriminant.InnerValue);
             }

@@ -34,6 +34,12 @@ namespace stellar_dotnet_sdk.xdr
 //          AccountID accountID;
 //          string64 dataName;
 //      } data;
+//  
+//  case CLAIMABLE_BALANCE:
+//      struct
+//      {
+//          ClaimableBalanceID balanceID;
+//      } claimableBalance;
 //  };
 //  ===========================================================================
     public class LedgerKey
@@ -43,10 +49,12 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public LedgerEntryType Discriminant { get; set; } = new LedgerEntryType();
+
         public LedgerKeyAccount Account { get; set; }
         public LedgerKeyTrustLine TrustLine { get; set; }
         public LedgerKeyOffer Offer { get; set; }
         public LedgerKeyData Data { get; set; }
+        public LedgerKeyClaimableBalance ClaimableBalance { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, LedgerKey encodedLedgerKey)
         {
@@ -64,6 +72,9 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case LedgerEntryType.LedgerEntryTypeEnum.DATA:
                     LedgerKeyData.Encode(stream, encodedLedgerKey.Data);
+                    break;
+                case LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE:
+                    LedgerKeyClaimableBalance.Encode(stream, encodedLedgerKey.ClaimableBalance);
                     break;
             }
         }
@@ -86,6 +97,9 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case LedgerEntryType.LedgerEntryTypeEnum.DATA:
                     decodedLedgerKey.Data = LedgerKeyData.Decode(stream);
+                    break;
+                case LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE:
+                    decodedLedgerKey.ClaimableBalance = LedgerKeyClaimableBalance.Decode(stream);
                     break;
             }
 
@@ -182,6 +196,28 @@ namespace stellar_dotnet_sdk.xdr
                 decodedLedgerKeyData.AccountID = AccountID.Decode(stream);
                 decodedLedgerKeyData.DataName = String64.Decode(stream);
                 return decodedLedgerKeyData;
+            }
+        }
+
+        public class LedgerKeyClaimableBalance
+        {
+            public LedgerKeyClaimableBalance()
+            {
+            }
+
+            public ClaimableBalanceID BalanceID { get; set; }
+
+            public static void Encode(XdrDataOutputStream stream,
+                LedgerKeyClaimableBalance encodedLedgerKeyClaimableBalance)
+            {
+                ClaimableBalanceID.Encode(stream, encodedLedgerKeyClaimableBalance.BalanceID);
+            }
+
+            public static LedgerKeyClaimableBalance Decode(XdrDataInputStream stream)
+            {
+                LedgerKeyClaimableBalance decodedLedgerKeyClaimableBalance = new LedgerKeyClaimableBalance();
+                decodedLedgerKeyClaimableBalance.BalanceID = ClaimableBalanceID.Decode(stream);
+                return decodedLedgerKeyClaimableBalance;
             }
         }
     }

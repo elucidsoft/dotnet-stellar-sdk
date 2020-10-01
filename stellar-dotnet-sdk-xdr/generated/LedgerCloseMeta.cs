@@ -19,6 +19,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public int Discriminant { get; set; } = new int();
+
         public LedgerCloseMetaV0 V0 { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, LedgerCloseMeta encodedLedgerCloseMeta)

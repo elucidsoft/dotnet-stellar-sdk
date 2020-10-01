@@ -79,6 +79,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public int Discriminant { get; set; } = new int();
+
             public TrustLineEntryV1 V1 { get; set; }
 
             public static void Encode(XdrDataOutputStream stream, TrustLineEntryExt encodedTrustLineEntryExt)

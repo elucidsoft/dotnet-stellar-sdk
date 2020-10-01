@@ -77,6 +77,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public StellarValueType Discriminant { get; set; } = new StellarValueType();
+
             public LedgerCloseValueSignature LcValueSignature { get; set; }
 
             public static void Encode(XdrDataOutputStream stream, StellarValueExt encodedStellarValueExt)

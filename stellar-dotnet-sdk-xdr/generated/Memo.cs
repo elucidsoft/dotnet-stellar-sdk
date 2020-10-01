@@ -27,6 +27,7 @@ namespace stellar_dotnet_sdk.xdr
         }
 
         public MemoType Discriminant { get; set; } = new MemoType();
+
         public String Text { get; set; }
         public Uint64 Id { get; set; }
         public Hash Hash { get; set; }

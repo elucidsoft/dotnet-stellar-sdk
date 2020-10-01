@@ -64,6 +64,7 @@ namespace stellar_dotnet_sdk.xdr
             }
 
             public ManageOfferEffect Discriminant { get; set; } = new ManageOfferEffect();
+
             public OfferEntry Offer { get; set; }
 
             public static void Encode(XdrDataOutputStream stream,
