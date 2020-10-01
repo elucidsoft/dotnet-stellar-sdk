@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.Asset.html",
-          "hash": "xqTX7a3Ovx8nWMr1IKnk7A=="
+          "hash": "gLJd5e4cpH8ZVc2/XoJtHQ=="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.AssetTypeCreditAlphaNum.html",
-          "hash": "s9jNeA1zWKGDCbw2Cfdgrw=="
+          "hash": "Bcwdbn5gkjwNAnFQzsEF8Q=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.AssetTypeCreditAlphaNum12.html",
-          "hash": "LcJOrQiVjaHNSMHBKOGeag=="
+          "hash": "Nry7mynH0feq94C9UV8+8A=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.AssetTypeCreditAlphaNum4.html",
-          "hash": "OvstefY07cpnNP1n8uYSzg=="
+          "hash": "NU7slS7GclGkmq5M9ddtKA=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.AssetTypeNative.html",
-          "hash": "jkhSo2kSirhK4e5e8J0trg=="
+          "hash": "7SGki8uSjv4aS+qAV6iIJg=="
         }
       },
       "is_incremental": false,
@@ -202,6 +202,30 @@
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.Base32EncodingOptions.html",
           "hash": "NTvlDY+5SITLyqEmBHZTJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.BeginSponsoringFutureReservesOperation.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.BeginSponsoringFutureReservesOperation.Builder.html",
+          "hash": "B7x8Bs7TmPa3lE0k1DLJ0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.BeginSponsoringFutureReservesOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.BeginSponsoringFutureReservesOperation.html",
+          "hash": "d2YMsXz2HFciLCmZnwwc+g=="
         }
       },
       "is_incremental": false,
@@ -257,6 +281,126 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.ClaimClaimableBalanceOperation.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.ClaimClaimableBalanceOperation.Builder.html",
+          "hash": "wruxAdV/Z67SukrF/SxPhw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.ClaimClaimableBalanceOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.ClaimClaimableBalanceOperation.html",
+          "hash": "RmUje79AMSGTRtif7YsAlw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.ClaimPredicate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.ClaimPredicate.html",
+          "hash": "36L8Es3n1jt3I67H+j5HFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.ClaimPredicateAnd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.ClaimPredicateAnd.html",
+          "hash": "AATBVXlSCAzborZhNInD7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.html",
+          "hash": "aCbpxO0wTEElMVRREC09kQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.html",
+          "hash": "oOJvtbSJx60SVox9+5EWbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.ClaimPredicateNot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.ClaimPredicateNot.html",
+          "hash": "dmDk4+KIt/fS1Etylo4uog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.ClaimPredicateOr.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.ClaimPredicateOr.html",
+          "hash": "NT//BpbkIiEe3sbHr9mnYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.ClaimPredicateUnconditional.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.ClaimPredicateUnconditional.html",
+          "hash": "JkufQdlmvNHtbX8Ms5xZfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.Claimant.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.Claimant.html",
+          "hash": "yqj11Njiff7ih2NXhBouVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.CreateAccountOperation.Builder.yml",
       "output": {
         ".html": {
@@ -274,6 +418,30 @@
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.CreateAccountOperation.html",
           "hash": "70mj/M4Zi2tVJ62uU4h8Sg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.CreateClaimableBalanceOperation.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.CreateClaimableBalanceOperation.Builder.html",
+          "hash": "2xeDprg5gIptw9304u8PlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.CreateClaimableBalanceOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.CreateClaimableBalanceOperation.html",
+          "hash": "vbIBtXp8vTb6bfOwt3UJRA=="
         }
       },
       "is_incremental": false,
@@ -322,6 +490,30 @@
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.CreatePassiveSellOfferOperation.html",
           "hash": "voKDZikHkT2KGqB4L3Zmdg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.EndSponsoringFutureReservesOperation.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.EndSponsoringFutureReservesOperation.Builder.html",
+          "hash": "WMTL1KIWp7SVDM553KnVXg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.EndSponsoringFutureReservesOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.EndSponsoringFutureReservesOperation.html",
+          "hash": "UclQNtQMojDgcQKMtrVoew=="
         }
       },
       "is_incremental": false,
@@ -514,6 +706,78 @@
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.KeyPair.html",
           "hash": "S0196LihACfNcA8ztylpXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.LedgerKey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.LedgerKey.html",
+          "hash": "4hMp6TJyZhMZ+hGYbpDsqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.LedgerKeyAccount.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.LedgerKeyAccount.html",
+          "hash": "0t3MD7jdKbNSGjcmdM2Hsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.LedgerKeyClaimableBalance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.LedgerKeyClaimableBalance.html",
+          "hash": "7zfmLk43ANTL3Rojv6Wxuw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.LedgerKeyData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.LedgerKeyData.html",
+          "hash": "5gdKohkbFGFUiHjs2SA0JA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.LedgerKeyOffer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.LedgerKeyOffer.html",
+          "hash": "uJUwQ9xL0j3X/DfRKxcC+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.LedgerKeyTrustline.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.LedgerKeyTrustline.html",
+          "hash": "M3KegFdBklclL362b7asgg=="
         }
       },
       "is_incremental": false,
@@ -753,7 +1017,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.Operation.html",
-          "hash": "4Co3wfplMiX9D/IfMf2eHw=="
+          "hash": "wSIy8MlnjhZdtcULTFTERg=="
         }
       },
       "is_incremental": false,
@@ -857,6 +1121,78 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.RevokeLedgerEntrySponsorshipOperation.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.RevokeLedgerEntrySponsorshipOperation.Builder.html",
+          "hash": "XSNhhpUGiXHL1RaeU3zk6A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.RevokeLedgerEntrySponsorshipOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.RevokeLedgerEntrySponsorshipOperation.html",
+          "hash": "Rp2BInh/BCZTdT5i9EfdtA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.RevokeSignerSponsorshipOperation.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.RevokeSignerSponsorshipOperation.Builder.html",
+          "hash": "00dSGUa4dMWhFEPd3i66Hg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.RevokeSignerSponsorshipOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.RevokeSignerSponsorshipOperation.html",
+          "hash": "iDR5fK0m2bHcYCZg1pWAcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.RevokeSponsorshipOperation.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.RevokeSponsorshipOperation.Builder.html",
+          "hash": "l5mbHJJo0MmKxYlhH9UlpQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.RevokeSponsorshipOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.RevokeSponsorshipOperation.html",
+          "hash": "7wNjSwT5x/QTSASDqYdC+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.SSEEventSource.yml",
       "output": {
         ".html": {
@@ -873,7 +1209,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.Server.html",
-          "hash": "lZfZ1nnUNLGSNX6dueyqWQ=="
+          "hash": "e5xaEua8Ht7WwoIONcQWRA=="
         }
       },
       "is_incremental": false,
@@ -1217,6 +1553,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.requests.ClaimableBalancesRequestBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.requests.ClaimableBalancesRequestBuilder.html",
+          "hash": "2d7procDGLFeKB/Kk1XBTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.requests.ClientProtocolException.yml",
       "output": {
         ".html": {
@@ -1413,7 +1761,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.requests.RequestBuilderExecutePageable-2.html",
-          "hash": "kBjIJobX3EopWKY8tky+cA=="
+          "hash": "5S8P5p6lSXlTzLA1kCd0Jg=="
         }
       },
       "is_incremental": false,
@@ -1497,7 +1845,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.requests.html",
-          "hash": "U2j+Xl/PohwoCQKwf+OhMg=="
+          "hash": "OKZeNOZfjv+o5lnItRb3NA=="
         }
       },
       "is_incremental": false,
@@ -1594,6 +1942,30 @@
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.Balance.html",
           "hash": "N/ua7q9Ya/Ege4eM3azQfw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.ClaimableBalanceResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.ClaimableBalanceResponse.html",
+          "hash": "q9HxJjsjGg5CxZpuHJMGxg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.Claimant.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.Claimant.html",
+          "hash": "ODAPfdo7MC90L0OVoox7SA=="
         }
       },
       "is_incremental": false,
@@ -1853,11 +2225,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.Predicate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.Predicate.html",
+          "hash": "mAUSIPUXdLO5lc6njRw/4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.Response.yml",
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.Response.html",
-          "hash": "0IAhkxIV8q+lVyHuVJvocg=="
+          "hash": "NmuMpGu3J46LtUaaOLeDWA=="
         }
       },
       "is_incremental": false,
@@ -2273,11 +2657,119 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.AccountSponsorshipCreatedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.AccountSponsorshipCreatedEffectResponse.html",
+          "hash": "HFuHIxtxqTlwIvtt01Vf4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.AccountSponsorshipRemovedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.AccountSponsorshipRemovedEffectResponse.html",
+          "hash": "+RaNGwtdx4IbsBe21zpGCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.AccountSponsorshipUpdatedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.AccountSponsorshipUpdatedEffectResponse.html",
+          "hash": "dkQn1fNOKL1YbZve1g8Ayw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.AccountThresholdsUpdatedEffectResponse.yml",
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.effects.AccountThresholdsUpdatedEffectResponse.html",
           "hash": "FxcilqTc7jQ9adlrZfp3+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.ClaimableBalanceClaimantCreatedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.ClaimableBalanceClaimantCreatedEffectResponse.html",
+          "hash": "Y1KSXKhYqag2cA+Ecim4+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.ClaimableBalanceClaimedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.ClaimableBalanceClaimedEffectResponse.html",
+          "hash": "9a79ULB12Fd126BePiTozg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.ClaimableBalanceCreatedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.ClaimableBalanceCreatedEffectResponse.html",
+          "hash": "Vy7I4Do2/lWsJ7LIWFjddg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.ClaimableBalanceSponsorshipCreatedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.ClaimableBalanceSponsorshipCreatedEffectResponse.html",
+          "hash": "ei7NVtVf5eH3HrRe8nWJoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.ClaimableBalanceSponsorshipRemovedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.ClaimableBalanceSponsorshipRemovedEffectResponse.html",
+          "hash": "ZHXHlheqrF1KP5MEiamaag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.ClaimableBalanceSponsorshipUpdatedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.ClaimableBalanceSponsorshipUpdatedEffectResponse.html",
+          "hash": "LnSGWOpiXc7YJbFeyj9F8g=="
         }
       },
       "is_incremental": false,
@@ -2302,6 +2794,42 @@
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.effects.DataRemovedEffectResponse.html",
           "hash": "TzwmZmvhrOwaPZpm/Tcy+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.DataSponsorshipCreatedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.DataSponsorshipCreatedEffectResponse.html",
+          "hash": "CSJH0sEvUH00PENaANiaHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.DataSponsorshipRemovedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.DataSponsorshipRemovedEffectResponse.html",
+          "hash": "6/A5ohSuryn4PIKT0BsLPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.DataSponsorshipUpdatedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.DataSponsorshipUpdatedEffectResponse.html",
+          "hash": "X4PgBoRo7XxXPl33GKF6og=="
         }
       },
       "is_incremental": false,
@@ -2337,7 +2865,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.effects.EffectResponse.html",
-          "hash": "rXc75n2HNokXyOlav/URRw=="
+          "hash": "C4P0qUMO4jEepWqyjpNEFQ=="
         }
       },
       "is_incremental": false,
@@ -2422,6 +2950,42 @@
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.effects.SignerRemovedEffectResponse.html",
           "hash": "UNVDcT6z7ja5Qqn1iJbl/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.SignerSponsorshipCreatedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.SignerSponsorshipCreatedEffectResponse.html",
+          "hash": "Vv6vo+OU5v6lseiHKcoEHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.SignerSponsorshipRemovedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.SignerSponsorshipRemovedEffectResponse.html",
+          "hash": "1kgiJnGGBuEv5LmqzWK54g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.SignerSponsorshipUpdatedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.SignerSponsorshipUpdatedEffectResponse.html",
+          "hash": "MbY7XH4DAqR+xao8VBZyMw=="
         }
       },
       "is_incremental": false,
@@ -2537,6 +3101,42 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.TrustlineSponsorshipCreatedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.TrustlineSponsorshipCreatedEffectResponse.html",
+          "hash": "UjrzAIT1GB4SYZbYlPyZKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.TrustlineSponsorshipRemovedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.TrustlineSponsorshipRemovedEffectResponse.html",
+          "hash": "WBIUsPXmSuih4ZWe5P2AGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.TrustlineSponsorshipUpdatedEffectResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.effects.TrustlineSponsorshipUpdatedEffectResponse.html",
+          "hash": "spf7CGy4X+SK5Z7lvUWqJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.effects.TrustlineUpdatedEffectResponse.yml",
       "output": {
         ".html": {
@@ -2553,7 +3153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.effects.html",
-          "hash": "dDgVJEG1+8evk44skdYwuQ=="
+          "hash": "4FYzlGbLs1LuEj2bd6kEHg=="
         }
       },
       "is_incremental": false,
@@ -2585,6 +3185,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.operations.BeginSponsoringFutureReservesOperationResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.operations.BeginSponsoringFutureReservesOperationResponse.html",
+          "hash": "HtxRUr8MWRQAp/bcmtju2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.operations.BumpSequenceOperationResponse.yml",
       "output": {
         ".html": {
@@ -2609,6 +3221,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.html",
+          "hash": "VvKg5cFENW1cFbZIxlTNmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.yml",
       "output": {
         ".html": {
@@ -2621,11 +3245,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.operations.CreateClaimableBalanceOperationResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.operations.CreateClaimableBalanceOperationResponse.html",
+          "hash": "/4SxHlkoUhlEZ8jCicot/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.yml",
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.html",
           "hash": "d9zlkzlOobMTH09Ku4SVoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.html",
+          "hash": "Kxwj4Fb+G19LYX33HK6vtQ=="
         }
       },
       "is_incremental": false,
@@ -2697,7 +3345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.operations.OperationResponse.html",
-          "hash": "eRi0bDjBRfNvf13NDAHdlw=="
+          "hash": "QfRiOmW1Z3qKNcXk7C4C5g=="
         }
       },
       "is_incremental": false,
@@ -2753,6 +3401,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.operations.RevokeSponsorshipOperationResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.operations.RevokeSponsorshipOperationResponse.html",
+          "hash": "LKuxoVE2hyv5mITNQe5QzQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.operations.SetOptionsOperationResponse.yml",
       "output": {
         ".html": {
@@ -2769,7 +3429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.operations.html",
-          "hash": "r1H7+WQSjhNikRx6gdriIA=="
+          "hash": "NFAXotMfQtzRl39lQI4VJg=="
         }
       },
       "is_incremental": false,
@@ -4449,7 +5109,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.html",
-          "hash": "qKuHshvt0jlfam+nDfZL7w=="
+          "hash": "NlayX3YeAbd0FURg6igb8A=="
         }
       },
       "is_incremental": false,
@@ -4461,7 +5121,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.html",
-          "hash": "vibd55YEKhGy9jE0QySs7w=="
+          "hash": "ukryxjvQ1SDd7ap9WkDy2w=="
         }
       },
       "is_incremental": false,
@@ -4473,7 +5133,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "FzcXyBHLaRGdgHzvKn4NlQ=="
+          "hash": "Q7WhGiF08AMJXtJB6Nl+tw=="
         }
       },
       "is_incremental": false,
@@ -4622,7 +5282,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 371,
+          "total_file_count": 426,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
