@@ -17,10 +17,10 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "unconditional")]
         public bool Unconditional { get; set; }
         
-        [JsonProperty(PropertyName = "absBefore")]
+        [JsonProperty(PropertyName = "abs_before")]
         public DateTimeOffset? AbsBefore { get; set; }
         
-        [JsonProperty(PropertyName = "relBefore")]
+        [JsonProperty(PropertyName = "rel_before")]
         public long? RelBefore { get; set; }
 
         public ClaimPredicate ToClaimPredicate()
