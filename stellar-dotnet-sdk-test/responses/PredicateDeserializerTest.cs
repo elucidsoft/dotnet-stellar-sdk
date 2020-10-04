@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestPredicateDeserialize()
         {
-            var json = "{\"and\":[{\"or\":[{\"relBefore\":12},{\"absBefore\":\"2020-08-26T11:15:39Z\"}]},{\"not\":{\"unconditional\":true}}]}";
+            var json = "{\"and\":[{\"or\":[{\"rel_before\":12},{\"abs_before\":\"2020-08-26T11:15:39Z\"}]},{\"not\":{\"unconditional\":true}}]}";
             var predicate = JsonConvert.DeserializeObject<Predicate>(json);
             var claimPredicate = predicate.ToClaimPredicate();
 

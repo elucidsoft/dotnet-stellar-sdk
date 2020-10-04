@@ -21,7 +21,7 @@
   "amount": "1.0000000",
   "predicate": {
     "not": {
-      "relBefore": 604800
+      "rel_before": 604800
     }
   }
 }
