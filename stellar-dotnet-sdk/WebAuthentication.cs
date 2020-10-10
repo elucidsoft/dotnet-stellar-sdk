@@ -171,9 +171,6 @@ namespace stellar_dotnet_sdk
                 throw new InvalidWebAuthenticationException(
                     "Challenge transaction operation data must be 64 bytes long");
 
-            if (operation.Name != $"{homeDomain} auth")
-                throw new InvalidWebAuthenticationException("Challenge transaction operation data must have home domain key");
-
             try
             {
                 // There is no need to check for decoded value length since we know it's valid base64 and 64 bytes long.
