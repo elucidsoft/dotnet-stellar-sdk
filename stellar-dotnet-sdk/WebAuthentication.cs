@@ -146,7 +146,7 @@ namespace stellar_dotnet_sdk
                 throw new InvalidWebAuthenticationException("Challenge transaction operation must have source account");
 
             var subsequentOperations = transaction.Operations;
-            foreach (var op in subsequentOperations)
+            foreach (var op in subsequentOperations.Skip(1))
             {
                 if (!(op is ManageDataOperation))
                 {
