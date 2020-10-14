@@ -1490,5 +1490,77 @@ namespace stellar_dotnet_sdk_test
                 Assert.IsTrue(exception.Message.Contains("signers must be non-empty"));
             }
         }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionNotValidSubsequentOperation()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var notValidOperation = new PaymentOperation.Builder(KeyPair.Random(), new AssetTypeNative(), "50").SetSourceAccount(opSource.KeyPair).Build();
+
+            var transaction = new TransactionBuilder(txSource)
+                .AddOperation(operation)
+                .AddOperation(notValidOperation)
+                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(clientKeypair);
+
+            try
+            {
+                WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, Network.Test());
+            }
+            catch (Exception exception)
+            {
+                Assert.IsTrue(exception.Message.Contains("The transaction has operations that are not of type 'manageData'"));
+            }
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionNotValidSubsequentDataOperation()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var notValidOperation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(KeyPair.Random()).Build();
+
+            var transaction = new TransactionBuilder(txSource)
+                .AddOperation(operation)
+                .AddOperation(notValidOperation)
+                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(clientKeypair);
+
+            try
+            {
+                WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, Network.Test());
+            }
+            catch (Exception exception)
+            {
+                Assert.IsTrue(exception.Message.Contains("The transaction has operations that are unrecognized"));
+            }
+        }
     }
 }
