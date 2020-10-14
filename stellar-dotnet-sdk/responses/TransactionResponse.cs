@@ -1,10 +1,11 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.ComponentModel;
 using stellar_dotnet_sdk.responses.effects;
 using stellar_dotnet_sdk.responses.operations;
 using stellar_dotnet_sdk.responses.page;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Text;
 
 namespace stellar_dotnet_sdk.responses
 {
@@ -71,6 +72,9 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "memo")]
         public string MemoValue { get; private set; }
 
+        [JsonProperty(PropertyName = "memo_bytes")]
+        public string MemoBytes { get; private set; }
+
         public Memo Memo
         {
             get
@@ -80,7 +84,14 @@ namespace stellar_dotnet_sdk.responses
                     case "none":
                         return Memo.None();
                     case "text":
-                        return Memo.Text(MemoValue);
+                        if (MemoBytes != null)
+                        {
+                            return Memo.Text(Encoding.UTF8.GetString(Convert.FromBase64String(MemoBytes)));
+                        }
+                        else
+                        {
+                            return Memo.Text(MemoValue);
+                        }
                     case "id":
                         return Memo.Id(ulong.Parse(MemoValue));
                     case "hash":
