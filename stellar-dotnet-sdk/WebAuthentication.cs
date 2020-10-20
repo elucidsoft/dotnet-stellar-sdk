@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +16,7 @@ namespace stellar_dotnet_sdk
         /// </summary>
         /// <param name="serverKeypair">Server signing keypair</param>
         /// <param name="clientAccountId">The client account id that needs authentication</param>
-        /// <param name="anchorName">The anchor name</param>
+        /// <param name="domainName">The domain name</param>
         /// <param name="nonce">48 bytes long cryptographic-quality random data</param>
         /// <param name="now">The datetime from which the transaction is valid</param>
         /// <param name="timeout">The transaction lifespan</param>
@@ -25,7 +25,7 @@ namespace stellar_dotnet_sdk
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
         public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, string clientAccountId,
-            string anchorName, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
+            string domainName, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
             Network network = null)
         {
             if (string.IsNullOrEmpty(clientAccountId)) throw new ArgumentNullException(nameof(clientAccountId));
@@ -33,7 +33,7 @@ namespace stellar_dotnet_sdk
             if (StrKey.DecodeVersionByte(clientAccountId) != StrKey.VersionByte.ACCOUNT_ID)
                 throw new InvalidWebAuthenticationException($"{nameof(clientAccountId)} is not a valid account id");
             var clientAccountKeypair = KeyPair.FromAccountId(clientAccountId);
-            return BuildChallengeTransaction(serverKeypair, clientAccountKeypair, anchorName, nonce, now, timeout,
+            return BuildChallengeTransaction(serverKeypair, clientAccountKeypair, domainName, nonce, now, timeout,
                 network);
         }
 
@@ -42,7 +42,7 @@ namespace stellar_dotnet_sdk
         /// </summary>
         /// <param name="serverKeypair">Server signing keypair</param>
         /// <param name="clientAccountId">The client account id that needs authentication</param>
-        /// <param name="anchorName">The anchor name</param>
+        /// <param name="domainName">The domain name</param>
         /// <param name="nonce">48 bytes long cryptographic-quality random data</param>
         /// <param name="now">The datetime from which the transaction is valid</param>
         /// <param name="timeout">The transaction lifespan</param>
@@ -51,12 +51,12 @@ namespace stellar_dotnet_sdk
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
         public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, KeyPair clientAccountId,
-            string anchorName, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
+            string domainName, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
             Network network = null)
         {
             if (serverKeypair is null) throw new ArgumentNullException(nameof(serverKeypair));
             if (clientAccountId is null) throw new ArgumentNullException(nameof(clientAccountId));
-            if (string.IsNullOrEmpty(anchorName)) throw new ArgumentNullException(nameof(anchorName));
+            if (string.IsNullOrEmpty(domainName)) throw new ArgumentNullException(nameof(domainName));
 
             if (nonce is null)
             {
@@ -78,7 +78,7 @@ namespace stellar_dotnet_sdk
             // Sequence number is incremented by 1 before building the transaction, set it to -1 to have 0
             var serverAccount = new Account(serverKeypair, -1);
 
-            var manageDataKey = $"{anchorName} auth";
+            var manageDataKey = $"{domainName} auth";
             var manageDataValue = Encoding.UTF8.GetBytes(Convert.ToBase64String(nonce));
 
             var timeBounds = new TimeBounds(validFrom, validFor);
@@ -133,8 +133,8 @@ namespace stellar_dotnet_sdk
             if (transaction.SourceAccount.AccountId != serverAccountId)
                 throw new InvalidWebAuthenticationException("Challenge transaction source must be serverAccountId");
 
-            if (transaction.Operations.Length != 1)
-                throw new InvalidWebAuthenticationException("Challenge transaction must contain one operation");
+            if (transaction.Operations.Length < 1)
+                throw new InvalidWebAuthenticationException("Challenge transaction must contain atleast one operation");
 
             var operation = transaction.Operations[0] as ManageDataOperation;
 
@@ -144,6 +144,20 @@ namespace stellar_dotnet_sdk
 
             if (operation.SourceAccount is null)
                 throw new InvalidWebAuthenticationException("Challenge transaction operation must have source account");
+
+            var subsequentOperations = transaction.Operations;
+            foreach (var op in subsequentOperations.Skip(1))
+            {
+                if (!(op is ManageDataOperation))
+                {
+                    throw new InvalidWebAuthenticationException("The transaction has operations that are not of type 'manageData'");
+                }
+
+                if (op.SourceAccount.AccountId != serverAccountId)
+                {
+                    throw new InvalidWebAuthenticationException("The transaction has operations that are unrecognized");
+                }
+            }
 
             var clientAccountKeypair = operation.SourceAccount;
 
@@ -156,9 +170,6 @@ namespace stellar_dotnet_sdk
             if (stringValue.Length != 64)
                 throw new InvalidWebAuthenticationException(
                     "Challenge transaction operation data must be 64 bytes long");
-
-            if (operation.Name != $"{homeDomain} auth")
-                throw new InvalidWebAuthenticationException("Challenge transaction operation data must have home domain key");
 
             try
             {
@@ -276,7 +287,7 @@ namespace stellar_dotnet_sdk
 
         private static bool ValidateSignedBy(Transaction transaction, string accountId, Network network)
         {
-            var signaturesUsed = VerifyTransactionSignatures(transaction, new[] {accountId}, network);
+            var signaturesUsed = VerifyTransactionSignatures(transaction, new[] { accountId }, network);
             return signaturesUsed.Count == 1;
         }
 

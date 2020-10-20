@@ -80,7 +80,7 @@ You can use that version of xdrgen to regenerate the XDR files from the .x files
 
 ## Contributors
 
--   Eric Malamisura (Twitter: [@emalamisura](https://twitter.com/emalamisura), Keybase: [elucidsoft](https://keybase.io/elucidsoft))
+-   Eric Malamisura (Twitter: [@EricDaCoder](https://twitter.com/EricDaCoder), Keybase: [elucidsoft](https://keybase.io/elucidsoft))
 -   Kirbyrawr (Keybase: [Kirbyrawr](https://keybase.io/Kirbyrawr))
 -   Michael Monte
 -   Francesco Ceccon
