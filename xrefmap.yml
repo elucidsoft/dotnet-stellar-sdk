@@ -4702,6 +4702,15 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.Memo.ReturnHash
   nameWithType: Memo.ReturnHash
+- uid: stellar_dotnet_sdk.Memo.Text(System.Byte[])
+  name: Text(Byte[])
+  href: api/stellar_dotnet_sdk.Memo.html#stellar_dotnet_sdk_Memo_Text_System_Byte___
+  commentId: M:stellar_dotnet_sdk.Memo.Text(System.Byte[])
+  name.vb: Text(Byte())
+  fullName: stellar_dotnet_sdk.Memo.Text(System.Byte[])
+  fullName.vb: stellar_dotnet_sdk.Memo.Text(System.Byte())
+  nameWithType: Memo.Text(Byte[])
+  nameWithType.vb: Memo.Text(Byte())
 - uid: stellar_dotnet_sdk.Memo.Text(System.String)
   name: Text(String)
   href: api/stellar_dotnet_sdk.Memo.html#stellar_dotnet_sdk_Memo_Text_System_String_
@@ -5044,6 +5053,15 @@ references:
   commentId: T:stellar_dotnet_sdk.MemoText
   fullName: stellar_dotnet_sdk.MemoText
   nameWithType: MemoText
+- uid: stellar_dotnet_sdk.MemoText.#ctor(System.Byte[])
+  name: MemoText(Byte[])
+  href: api/stellar_dotnet_sdk.MemoText.html#stellar_dotnet_sdk_MemoText__ctor_System_Byte___
+  commentId: M:stellar_dotnet_sdk.MemoText.#ctor(System.Byte[])
+  name.vb: MemoText(Byte())
+  fullName: stellar_dotnet_sdk.MemoText.MemoText(System.Byte[])
+  fullName.vb: stellar_dotnet_sdk.MemoText.MemoText(System.Byte())
+  nameWithType: MemoText.MemoText(Byte[])
+  nameWithType.vb: MemoText.MemoText(Byte())
 - uid: stellar_dotnet_sdk.MemoText.#ctor(System.String)
   name: MemoText(String)
   href: api/stellar_dotnet_sdk.MemoText.html#stellar_dotnet_sdk_MemoText__ctor_System_String_
@@ -5083,6 +5101,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.MemoText.GetHashCode
   nameWithType: MemoText.GetHashCode
+- uid: stellar_dotnet_sdk.MemoText.MemoBytesValue
+  name: MemoBytesValue
+  href: api/stellar_dotnet_sdk.MemoText.html#stellar_dotnet_sdk_MemoText_MemoBytesValue
+  commentId: P:stellar_dotnet_sdk.MemoText.MemoBytesValue
+  fullName: stellar_dotnet_sdk.MemoText.MemoBytesValue
+  nameWithType: MemoText.MemoBytesValue
+- uid: stellar_dotnet_sdk.MemoText.MemoBytesValue*
+  name: MemoBytesValue
+  href: api/stellar_dotnet_sdk.MemoText.html#stellar_dotnet_sdk_MemoText_MemoBytesValue_
+  commentId: Overload:stellar_dotnet_sdk.MemoText.MemoBytesValue
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.MemoText.MemoBytesValue
+  nameWithType: MemoText.MemoBytesValue
 - uid: stellar_dotnet_sdk.MemoText.MemoTextValue
   name: MemoTextValue
   href: api/stellar_dotnet_sdk.MemoText.html#stellar_dotnet_sdk_MemoText_MemoTextValue
@@ -19062,6 +19093,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.TransactionResponse.Memo
   nameWithType: TransactionResponse.Memo
+- uid: stellar_dotnet_sdk.responses.TransactionResponse.MemoBytes
+  name: MemoBytes
+  href: api/stellar_dotnet_sdk.responses.TransactionResponse.html#stellar_dotnet_sdk_responses_TransactionResponse_MemoBytes
+  commentId: P:stellar_dotnet_sdk.responses.TransactionResponse.MemoBytes
+  fullName: stellar_dotnet_sdk.responses.TransactionResponse.MemoBytes
+  nameWithType: TransactionResponse.MemoBytes
+- uid: stellar_dotnet_sdk.responses.TransactionResponse.MemoBytes*
+  name: MemoBytes
+  href: api/stellar_dotnet_sdk.responses.TransactionResponse.html#stellar_dotnet_sdk_responses_TransactionResponse_MemoBytes_
+  commentId: Overload:stellar_dotnet_sdk.responses.TransactionResponse.MemoBytes
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.TransactionResponse.MemoBytes
+  nameWithType: TransactionResponse.MemoBytes
 - uid: stellar_dotnet_sdk.responses.TransactionResponse.MemoType
   name: MemoType
   href: api/stellar_dotnet_sdk.responses.TransactionResponse.html#stellar_dotnet_sdk_responses_TransactionResponse_MemoType
