@@ -32,6 +32,17 @@ namespace stellar_dotnet_sdk_test.responses
         }
 
         [TestMethod]
+        public void TestDeserializeWithTextMemo()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "transactionTransactionTextMemo.json"));
+            var transaction = JsonSingleton.GetInstance<TransactionResponse>(json);
+            var memo = (MemoText) transaction.Memo;
+            Assert.IsNotNull(memo);
+            var encoded = System.Convert.ToBase64String(memo.MemoBytesValue);
+            Assert.AreEqual("6CI8cn49WnAW/uvPOJ2befbuacU=", encoded);
+        }
+
+        [TestMethod]
         public void TestSerializeDeserialize()
         {
             var json = File.ReadAllText(Path.Combine("testdata", "transactionTransaction.json"));

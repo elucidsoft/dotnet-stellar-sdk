@@ -86,7 +86,7 @@ namespace stellar_dotnet_sdk.responses
                     case "text":
                         if (MemoBytes != null)
                         {
-                            return Memo.Text(Encoding.UTF8.GetString(Convert.FromBase64String(MemoBytes)));
+                            return Memo.Text(Convert.FromBase64String(MemoBytes));
                         }
                         else
                         {
