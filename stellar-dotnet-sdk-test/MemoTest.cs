@@ -34,19 +34,50 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual("三", memo.MemoTextValue);
         }
 
-        //[TestMethod]
-        //public void TestMemoTextTooLong()
-        //{
-        //    try
-        //    {
-        //        Memo.Text("12345678901234567890123456789");
-        //        Assert.Fail();
-        //    }
-        //    catch (Exception exception)
-        //    {
-        //        Assert.IsTrue(exception.Message.Contains("text must be <= 28 bytes."));
-        //    }
-        //}
+        [TestMethod]
+        public void TestMemoTextStringNull()
+        {
+            Assert.ThrowsException<ArgumentNullException>(() =>
+            {
+                string text = null;
+                Memo.Text(text);
+            });
+        }
+
+        [TestMethod]
+        public void TestMemoTextStringTooLong()
+        {
+            try
+            {
+                Memo.Text("12345678901234567890123456789");
+                Assert.Fail();
+            }
+            catch (Exception exception)
+            {
+                Assert.IsTrue(exception.Message.Contains("text must be <= 28 bytes."));
+            }
+        }
+
+        [TestMethod]
+        public void TestMemoTextBytesNull()
+        {
+            Assert.ThrowsException<ArgumentNullException>(() =>
+            {
+                byte[] text = null;
+                Memo.Text(text);
+            });
+        }
+
+        [TestMethod]
+        public void TestMemoTextBytesTooLong()
+        {
+            Assert.ThrowsException<MemoTooLongException>(() =>
+            {
+
+                var bytes = Encoding.UTF8.GetBytes("12345678901234567890123456789");
+                Memo.Text(bytes);
+            });
+        }
 
         [TestMethod]
         public void TestMemoTextTooLongUtf8()
