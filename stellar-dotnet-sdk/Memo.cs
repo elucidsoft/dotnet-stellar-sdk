@@ -23,6 +23,15 @@
         }
 
         ///<summary>
+        /// Creates new {@link MemoText} instance.
+        /// </summary>
+        /// <param name="text">The text value of a Text Memo.</param>
+        public static MemoText Text(byte[] text)
+        {
+            return new MemoText(text);
+        }
+
+        ///<summary>
         /// Creates new {@link MemoId} instance.
         /// </summary>
         /// <param name="id">The id value of an Id Memo.</param>

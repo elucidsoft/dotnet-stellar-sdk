@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using stellar_dotnet_sdk;
+using System;
 using System.Linq;
 using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using stellar_dotnet_sdk;
 using FormatException = System.FormatException;
 using sdkxdr = stellar_dotnet_sdk.xdr;
 
@@ -34,33 +34,56 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual("三", memo.MemoTextValue);
         }
 
-        //[TestMethod]
-        //public void TestMemoTextTooLong()
-        //{
-        //    try
-        //    {
-        //        Memo.Text("12345678901234567890123456789");
-        //        Assert.Fail();
-        //    }
-        //    catch (Exception exception)
-        //    {
-        //        Assert.IsTrue(exception.Message.Contains("text must be <= 28 bytes."));
-        //    }
-        //}
+        [TestMethod]
+        public void TestMemoTextStringNull()
+        {
+            Assert.ThrowsException<ArgumentNullException>(() =>
+            {
+                string text = null;
+                Memo.Text(text);
+            });
+        }
 
-        //[TestMethod]
-        //public void TestMemoTextTooLongUtf8()
-        //{
-        //    try
-        //    {
-        //        Memo.Text("价值交易的开源协议!!");
-        //        Assert.Fail();
-        //    }
-        //    catch (Exception exception)
-        //    {
-        //        Assert.IsTrue(exception.Message.Contains("text must be <= 28 bytes."));
-        //    }
-        //}
+        [TestMethod]
+        public void TestMemoTextStringTooLong()
+        {
+            try
+            {
+                Memo.Text("12345678901234567890123456789");
+                Assert.Fail();
+            }
+            catch (Exception exception)
+            {
+                Assert.IsTrue(exception.Message.Contains("text must be <= 28 bytes."));
+            }
+        }
+
+        [TestMethod]
+        public void TestMemoTextBytesNull()
+        {
+            Assert.ThrowsException<ArgumentNullException>(() =>
+            {
+                byte[] text = null;
+                Memo.Text(text);
+            });
+        }
+
+        [TestMethod]
+        public void TestMemoTextBytesTooLong()
+        {
+            Assert.ThrowsException<MemoTooLongException>(() =>
+            {
+
+                var bytes = Encoding.UTF8.GetBytes("12345678901234567890123456789");
+                Memo.Text(bytes);
+            });
+        }
+
+        [TestMethod]
+        public void TestMemoTextTooLongUtf8()
+        {
+            Memo.Text("\"<r~=Zp8yi");
+        }
 
         [TestMethod]
         public void TestMemoId()
@@ -84,7 +107,7 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public void TestMemoHashBytesSuccess()
         {
-            var bytes = Enumerable.Repeat((byte) 'A', 10).ToArray();
+            var bytes = Enumerable.Repeat((byte)'A', 10).ToArray();
             var memo = Memo.Hash(bytes);
             Assert.AreEqual(sdkxdr.MemoType.MemoTypeEnum.MEMO_HASH, memo.ToXdr().Discriminant.InnerValue);
             Assert.AreEqual("AAAAAAAAAA", Util.PaddedByteArrayToString(memo.MemoBytes));
@@ -95,7 +118,7 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public void TestMemoHashTooLong()
         {
-            var longer = Enumerable.Repeat((byte) 0, 33).ToArray();
+            var longer = Enumerable.Repeat((byte)0, 33).ToArray();
             try
             {
                 Memo.Hash(longer);
