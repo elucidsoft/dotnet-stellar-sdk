@@ -32,6 +32,7 @@ namespace stellar_dotnet_sdk_test
             CheckOperation(back, clientAccountId);
         }
 
+
         [TestMethod]
         public void TestBuildChallengeTransactionWithOptions()
         {
@@ -1560,6 +1561,23 @@ namespace stellar_dotnet_sdk_test
             catch (Exception exception)
             {
                 Assert.IsTrue(exception.Message.Contains("The transaction has operations that are unrecognized"));
+            }
+        }
+
+        [TestMethod]
+        public void TestBuildChallengeTransactionBadHomeDomain()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientAccountId = "GBDIT5GUJ7R5BXO3GJHFXJ6AZ5UQK6MNOIDMPQUSMXLIHTUNR2Q5CFNF";
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+            try
+            {
+                WebAuthentication.BuildChallengeTransaction(serverKeypair, clientAccountId, $"{anchorName}bad");
+            }
+            catch (InvalidWebAuthenticationException e)
+            {
+                Assert.AreEqual(e.Message, "Challenge transaction operation key should contain homeDomain");
             }
         }
     }
