@@ -1573,7 +1573,8 @@ namespace stellar_dotnet_sdk_test
             Network.UseTestNetwork();
             try
             {
-                WebAuthentication.BuildChallengeTransaction(serverKeypair, clientAccountId, $"{anchorName}bad");
+                var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientAccountId, anchorName);
+                WebAuthentication.ReadChallengeTransaction(tx, serverKeypair.AccountId, $"{anchorName}bad");
             }
             catch (InvalidWebAuthenticationException e)
             {
