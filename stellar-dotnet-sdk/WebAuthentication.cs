@@ -87,9 +87,6 @@ namespace stellar_dotnet_sdk
                 .SetSourceAccount(clientAccountId)
                 .Build();
 
-            if (operation.Name.Split(' ')[0] != homeDomain)
-                throw new ArgumentException("Operation key should contain homeDomain");
-
             var tx = new TransactionBuilder(serverAccount)
                 .AddTimeBounds(timeBounds)
                 .AddOperation(operation)
