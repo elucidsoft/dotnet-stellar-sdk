@@ -111,7 +111,7 @@
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, KeyPair clientAccountId, string domainName, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null, Network network = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, KeyPair clientAccountId, string homeDomain, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null, Network network = null)</code></pre>
   </div>
 
   <h5 class="parameters">Parameters</h5>
@@ -137,8 +137,8 @@
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">domainName</span></td>
-        <td><p>The domain name</p>
+        <td><span class="parametername">homeDomain</span></td>
+        <td><p>The server home domain</p>
 </td>
       </tr>
       <tr>
@@ -201,7 +201,7 @@
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, string clientAccountId, string domainName, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null, Network network = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, string clientAccountId, string homeDomain, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null, Network network = null)</code></pre>
   </div>
 
   <h5 class="parameters">Parameters</h5>
@@ -227,8 +227,8 @@
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">domainName</span></td>
-        <td><p>The domain name</p>
+        <td><span class="parametername">homeDomain</span></td>
+        <td><p>The server home domain</p>
 </td>
       </tr>
       <tr>
@@ -329,6 +329,101 @@
         <td><span class="parametername">homeDomain</span></td>
         <td><p>The server home domain</p>
 </td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a></td>
+        <td><span class="parametername">network</span></td>
+        <td><p>The network the transaction was submitted to, defaults to Network.Current</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">DateTimeOffset</span>&gt;</td>
+        <td><span class="parametername">now</span></td>
+        <td><p>Current time, defaults to DateTimeOffset.Now</p>
+</td>
+      </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
+        <p><p>The client account id</p>
+</p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.InvalidWebAuthenticationException.html">InvalidWebAuthenticationException</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_WebAuthentication_ReadChallengeTransaction_" data-uid="stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_WebAuthentication_ReadChallengeTransaction_stellar_dotnet_sdk_Transaction_System_String_System_String___stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__" data-uid="stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String[],stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})"><a href="#collapsible-stellar_dotnet_sdk_WebAuthentication_ReadChallengeTransaction_stellar_dotnet_sdk_Transaction_System_String_System_String___stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__" class="expander" data-toggle="collapse">ReadChallengeTransaction(Transaction, String, String[], Network, Nullable&lt;DateTimeOffset&gt;)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_WebAuthentication_ReadChallengeTransaction_stellar_dotnet_sdk_Transaction_System_String_System_String___stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__" class="collapse in">
+  <div class="markdown level1 summary"><p>Read a SEP 10 challenge transaction and return the client account id.</p>
+<p>Performs the following checks:</p>
+<ol>
+<li>Transaction sequence number is 0</li>
+<li>Transaction source account is <code data-dev-comment-type="paramref" class="paramref">serverAccountId</code></li>
+<li>Transaction has one operation only, of type ManageDataOperation</li>
+<li>The ManageDataOperation name and value are correct</li>
+<li>Transaction time bounds are still valid</li>
+<li>Transaction is signed by server</li>
+</ol>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ReadChallengeTransaction(Transaction transaction, string serverAccountId, string[] homeDomains, Network network = null, DateTimeOffset? now = null)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Transaction.html">Transaction</a></td>
+        <td><span class="parametername">transaction</span></td>
+        <td><p>The challenge transaction</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">serverAccountId</span></td>
+        <td><p>The server account id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">homeDomains</span></td>
+        <td></td>
       </tr>
       <tr>
         <td><a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a></td>

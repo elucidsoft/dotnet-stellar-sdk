@@ -22004,6 +22004,15 @@ references:
   fullName.vb: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String, stellar_dotnet_sdk.Network, System.Nullable(Of DateTimeOffset))
   nameWithType: WebAuthentication.ReadChallengeTransaction(Transaction, String, String, Network, Nullable<DateTimeOffset>)
   nameWithType.vb: WebAuthentication.ReadChallengeTransaction(Transaction, String, String, Network, Nullable(Of DateTimeOffset))
+- uid: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String[],stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
+  name: ReadChallengeTransaction(Transaction, String, String[], Network, Nullable<DateTimeOffset>)
+  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_ReadChallengeTransaction_stellar_dotnet_sdk_Transaction_System_String_System_String___stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__
+  commentId: M:stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String[],stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
+  name.vb: ReadChallengeTransaction(Transaction, String, String(), Network, Nullable(Of DateTimeOffset))
+  fullName: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String[], stellar_dotnet_sdk.Network, System.Nullable<DateTimeOffset>)
+  fullName.vb: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String(), stellar_dotnet_sdk.Network, System.Nullable(Of DateTimeOffset))
+  nameWithType: WebAuthentication.ReadChallengeTransaction(Transaction, String, String[], Network, Nullable<DateTimeOffset>)
+  nameWithType.vb: WebAuthentication.ReadChallengeTransaction(Transaction, String, String(), Network, Nullable(Of DateTimeOffset))
 - uid: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction*
   name: ReadChallengeTransaction
   href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_ReadChallengeTransaction_
