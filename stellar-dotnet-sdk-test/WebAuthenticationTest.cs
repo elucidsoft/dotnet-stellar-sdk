@@ -1565,7 +1565,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
-        public void TestBuildChallengeTransactionBadHomeDomain()
+        public void TestReadChallengeTransactionBadHomeDomain()
         {
             var serverKeypair = KeyPair.Random();
             var clientAccountId = "GBDIT5GUJ7R5BXO3GJHFXJ6AZ5UQK6MNOIDMPQUSMXLIHTUNR2Q5CFNF";
@@ -1583,7 +1583,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
-        public void TestBuildChallengeTransactionNoHomeDomain()
+        public void TestReadChallengeTransactionNoHomeDomain()
         {
             var serverKeypair = KeyPair.Random();
             var clientAccountId = "GBDIT5GUJ7R5BXO3GJHFXJ6AZ5UQK6MNOIDMPQUSMXLIHTUNR2Q5CFNF";
@@ -1597,6 +1597,41 @@ namespace stellar_dotnet_sdk_test
             catch (InvalidWebAuthenticationException e)
             {
                 Assert.AreEqual(e.Message, "Invalid homeDomains: a home domain must be provided for verification");
+            }
+        }
+
+        [TestMethod]
+        public void TestReadChallengeTransactionNoTransaction()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientAccountId = "GBDIT5GUJ7R5BXO3GJHFXJ6AZ5UQK6MNOIDMPQUSMXLIHTUNR2Q5CFNF";
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+            try
+            {
+                WebAuthentication.ReadChallengeTransaction(null, serverKeypair.AccountId, new string[0]);
+            }
+            catch (InvalidWebAuthenticationException e)
+            {
+                Assert.AreEqual(e.Message, "Challenge transaction cannot be null");
+            }
+        }
+
+        [TestMethod]
+        public void TestReadChallengeTransactionExpiredTimeBounds()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientAccountId = "GBDIT5GUJ7R5BXO3GJHFXJ6AZ5UQK6MNOIDMPQUSMXLIHTUNR2Q5CFNF";
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+            try
+            {
+                var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientAccountId, anchorName);
+                WebAuthentication.ReadChallengeTransaction(tx, serverKeypair.AccountId, anchorName, now: DateTimeOffset.Now.Subtract(new TimeSpan(0, 20, 0)));
+            }
+            catch (InvalidWebAuthenticationException e)
+            {
+                Assert.AreEqual(e.Message, "Challenge transaction expired");
             }
         }
     }
