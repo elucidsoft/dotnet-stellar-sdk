@@ -1578,7 +1578,25 @@ namespace stellar_dotnet_sdk_test
             }
             catch (InvalidWebAuthenticationException e)
             {
-                Assert.AreEqual(e.Message, "Challenge transaction operation key should contain homeDomain");
+                Assert.AreEqual(e.Message, "Invalid homeDomains: the transaction's operation key name does not match the expected home domain");
+            }
+        }
+
+        [TestMethod]
+        public void TestBuildChallengeTransactionNoHomeDomain()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientAccountId = "GBDIT5GUJ7R5BXO3GJHFXJ6AZ5UQK6MNOIDMPQUSMXLIHTUNR2Q5CFNF";
+            var anchorName = "NET";
+            Network.UseTestNetwork();
+            try
+            {
+                var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientAccountId, anchorName);
+                WebAuthentication.ReadChallengeTransaction(tx, serverKeypair.AccountId, new string[0]);
+            }
+            catch (InvalidWebAuthenticationException e)
+            {
+                Assert.AreEqual(e.Message, "Invalid homeDomains: a home domain must be provided for verification");
             }
         }
     }

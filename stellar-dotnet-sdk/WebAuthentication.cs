@@ -119,6 +119,31 @@ namespace stellar_dotnet_sdk
         public static string ReadChallengeTransaction(Transaction transaction, string serverAccountId, string homeDomain,
             Network network = null, DateTimeOffset? now = null)
         {
+            return ReadChallengeTransaction(transaction, serverAccountId, new string[1] { homeDomain }, network, now);
+        }
+
+        /// <summary>
+        /// Read a SEP 10 challenge transaction and return the client account id.
+        ///
+        /// Performs the following checks:
+        ///
+        ///   1. Transaction sequence number is 0
+        ///   2. Transaction source account is <paramref name="serverAccountId"/>
+        ///   3. Transaction has one operation only, of type ManageDataOperation
+        ///   4. The ManageDataOperation name and value are correct
+        ///   5. Transaction time bounds are still valid
+        ///   6. Transaction is signed by server
+        /// </summary>
+        /// <param name="transaction">The challenge transaction</param>
+        /// <param name="serverAccountId">The server account id</param>
+        /// <param name="homeDomain">The server home domain</param>
+        /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
+        /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
+        /// <returns>The client account id</returns>
+        /// <exception cref="InvalidWebAuthenticationException"></exception>
+        public static string ReadChallengeTransaction(Transaction transaction, string serverAccountId, string[] homeDomains,
+            Network network = null, DateTimeOffset? now = null)
+        {
             network = network ?? Network.Current;
 
             if (transaction is null)
@@ -145,8 +170,22 @@ namespace stellar_dotnet_sdk
             if (operation.SourceAccount is null)
                 throw new InvalidWebAuthenticationException("Challenge transaction operation must have source account");
 
-            if (operation.Name.Split(' ')[0] != homeDomain)
-                throw new InvalidWebAuthenticationException("Challenge transaction operation key should contain homeDomain");
+            if (homeDomains == null || homeDomains.Length == 0)
+                throw new InvalidWebAuthenticationException("Invalid homeDomains: a home domain must be provided for verification");
+
+            string matchedHomeDomain = "";
+
+            foreach (var domain in homeDomains)
+            {
+                if ($"{domain} auth" == operation.Name)
+                {
+                    matchedHomeDomain = domain;
+                    break;
+                }
+            }
+
+            if (string.IsNullOrEmpty(matchedHomeDomain))
+                throw new InvalidWebAuthenticationException("Invalid homeDomains: the transaction's operation key name does not match the expected home domain");
 
             var subsequentOperations = transaction.Operations;
             foreach (var op in subsequentOperations.Skip(1))
