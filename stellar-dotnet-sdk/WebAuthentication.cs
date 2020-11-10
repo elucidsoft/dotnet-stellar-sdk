@@ -16,7 +16,7 @@ namespace stellar_dotnet_sdk
         /// </summary>
         /// <param name="serverKeypair">Server signing keypair</param>
         /// <param name="clientAccountId">The client account id that needs authentication</param>
-        /// <param name="domainName">The domain name</param>
+        /// <param name="homeDomain">The server home domain</param>
         /// <param name="nonce">48 bytes long cryptographic-quality random data</param>
         /// <param name="now">The datetime from which the transaction is valid</param>
         /// <param name="timeout">The transaction lifespan</param>
@@ -25,7 +25,7 @@ namespace stellar_dotnet_sdk
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
         public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, string clientAccountId,
-            string domainName, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
+            string homeDomain, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
             Network network = null)
         {
             if (string.IsNullOrEmpty(clientAccountId)) throw new ArgumentNullException(nameof(clientAccountId));
@@ -33,7 +33,7 @@ namespace stellar_dotnet_sdk
             if (StrKey.DecodeVersionByte(clientAccountId) != StrKey.VersionByte.ACCOUNT_ID)
                 throw new InvalidWebAuthenticationException($"{nameof(clientAccountId)} is not a valid account id");
             var clientAccountKeypair = KeyPair.FromAccountId(clientAccountId);
-            return BuildChallengeTransaction(serverKeypair, clientAccountKeypair, domainName, nonce, now, timeout,
+            return BuildChallengeTransaction(serverKeypair, clientAccountKeypair, homeDomain, nonce, now, timeout,
                 network);
         }
 
@@ -42,7 +42,7 @@ namespace stellar_dotnet_sdk
         /// </summary>
         /// <param name="serverKeypair">Server signing keypair</param>
         /// <param name="clientAccountId">The client account id that needs authentication</param>
-        /// <param name="domainName">The domain name</param>
+        /// <param name="homeDomain">The server home domain</param>
         /// <param name="nonce">48 bytes long cryptographic-quality random data</param>
         /// <param name="now">The datetime from which the transaction is valid</param>
         /// <param name="timeout">The transaction lifespan</param>
@@ -51,12 +51,12 @@ namespace stellar_dotnet_sdk
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
         public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, KeyPair clientAccountId,
-            string domainName, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
+            string homeDomain, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
             Network network = null)
         {
             if (serverKeypair is null) throw new ArgumentNullException(nameof(serverKeypair));
             if (clientAccountId is null) throw new ArgumentNullException(nameof(clientAccountId));
-            if (string.IsNullOrEmpty(domainName)) throw new ArgumentNullException(nameof(domainName));
+            if (string.IsNullOrEmpty(homeDomain)) throw new ArgumentNullException(nameof(homeDomain));
 
             if (nonce is null)
             {
@@ -78,7 +78,7 @@ namespace stellar_dotnet_sdk
             // Sequence number is incremented by 1 before building the transaction, set it to -1 to have 0
             var serverAccount = new Account(serverKeypair, -1);
 
-            var manageDataKey = $"{domainName} auth";
+            var manageDataKey = $"{homeDomain} auth";
             var manageDataValue = Encoding.UTF8.GetBytes(Convert.ToBase64String(nonce));
 
             var timeBounds = new TimeBounds(validFrom, validFor);
@@ -119,6 +119,31 @@ namespace stellar_dotnet_sdk
         public static string ReadChallengeTransaction(Transaction transaction, string serverAccountId, string homeDomain,
             Network network = null, DateTimeOffset? now = null)
         {
+            return ReadChallengeTransaction(transaction, serverAccountId, new string[1] { homeDomain }, network, now);
+        }
+
+        /// <summary>
+        /// Read a SEP 10 challenge transaction and return the client account id.
+        ///
+        /// Performs the following checks:
+        ///
+        ///   1. Transaction sequence number is 0
+        ///   2. Transaction source account is <paramref name="serverAccountId"/>
+        ///   3. Transaction has one operation only, of type ManageDataOperation
+        ///   4. The ManageDataOperation name and value are correct
+        ///   5. Transaction time bounds are still valid
+        ///   6. Transaction is signed by server
+        /// </summary>
+        /// <param name="transaction">The challenge transaction</param>
+        /// <param name="serverAccountId">The server account id</param>
+        /// <param name="homeDomain">The server home domain</param>
+        /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
+        /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
+        /// <returns>The client account id</returns>
+        /// <exception cref="InvalidWebAuthenticationException"></exception>
+        public static string ReadChallengeTransaction(Transaction transaction, string serverAccountId, string[] homeDomains,
+            Network network = null, DateTimeOffset? now = null)
+        {
             network = network ?? Network.Current;
 
             if (transaction is null)
@@ -144,6 +169,23 @@ namespace stellar_dotnet_sdk
 
             if (operation.SourceAccount is null)
                 throw new InvalidWebAuthenticationException("Challenge transaction operation must have source account");
+
+            if (homeDomains == null || homeDomains.Length == 0)
+                throw new InvalidWebAuthenticationException("Invalid homeDomains: a home domain must be provided for verification");
+
+            string matchedHomeDomain = "";
+
+            foreach (var domain in homeDomains)
+            {
+                if (operation.Name == $"{domain} auth")
+                {
+                    matchedHomeDomain = domain;
+                    break;
+                }
+            }
+
+            if (string.IsNullOrEmpty(matchedHomeDomain))
+                throw new InvalidWebAuthenticationException("Invalid homeDomains: the transaction's operation key name does not match the expected home domain");
 
             var subsequentOperations = transaction.Operations;
             foreach (var op in subsequentOperations.Skip(1))
