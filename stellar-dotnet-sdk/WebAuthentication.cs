@@ -177,7 +177,7 @@ namespace stellar_dotnet_sdk
 
             foreach (var domain in homeDomains)
             {
-                if ($"{domain} auth" == operation.Name)
+                if (operation.Name == $"{domain} auth")
                 {
                     matchedHomeDomain = domain;
                     break;
