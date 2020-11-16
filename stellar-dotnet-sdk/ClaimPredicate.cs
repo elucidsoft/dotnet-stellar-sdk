@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk
         public static ClaimPredicate Unconditional() => new ClaimPredicateUnconditional();
         
         public static ClaimPredicate BeforeAbsoluteTime(long unixTimestamp) =>
-            BeforeAbsoluteTime(DateTimeOffset.FromUnixTimeSeconds(unixTimestamp));
+            new ClaimPredicateBeforeAbsoluteTime(unixTimestamp);
         
         public static ClaimPredicate BeforeAbsoluteTime(DateTimeOffset dateTime) => new ClaimPredicateBeforeAbsoluteTime(dateTime);
 

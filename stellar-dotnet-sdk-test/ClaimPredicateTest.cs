@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 
@@ -15,6 +16,16 @@ namespace stellar_dotnet_sdk_test
             var parsed = (ClaimPredicateBeforeAbsoluteTime) ClaimPredicate.FromXdr(xdr);
 
             Assert.AreEqual(1600720493, parsed.DateTime.ToUnixTimeSeconds());
+        }
+        [TestMethod]
+        public void TestClaimPredicateBeforeAbsoluteTimeMaxInt()
+        {
+            var predicate = ClaimPredicate.BeforeAbsoluteTime(Int64.MaxValue);
+            var xdr = predicate.ToXdr();
+
+            var parsed = (ClaimPredicateBeforeAbsoluteTime) ClaimPredicate.FromXdr(xdr);
+
+            Assert.AreEqual(Int64.MaxValue, parsed.UnixTimeSeconds);
         }
 
         [TestMethod]

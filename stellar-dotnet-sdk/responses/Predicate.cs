@@ -18,7 +18,7 @@ namespace stellar_dotnet_sdk.responses
         public bool Unconditional { get; set; }
         
         [JsonProperty(PropertyName = "abs_before")]
-        public DateTimeOffset? AbsBefore { get; set; }
+        public string AbsBefore { get; set; }
         
         [JsonProperty(PropertyName = "rel_before")]
         public long? RelBefore { get; set; }
@@ -52,7 +52,8 @@ namespace stellar_dotnet_sdk.responses
 
             if (AbsBefore != null)
             {
-                return ClaimPredicate.BeforeAbsoluteTime(AbsBefore.Value);
+                var dateTime = DateTimeOffset.Parse(AbsBefore);
+                return ClaimPredicate.BeforeAbsoluteTime(dateTime);
             }
 
             if (RelBefore != null)

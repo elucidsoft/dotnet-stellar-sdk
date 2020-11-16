@@ -637,6 +637,17 @@ namespace stellar_dotnet_sdk_test.responses
 
             AssertCreateClaimableBalanceData(back);
         }
+        
+        [TestMethod]
+        public void TestSerializationCreateClaimableBalanceAbsBeforeMaxIntOperation()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationClaimableBalanceAbsBeforeMaxInt.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            Assert.IsTrue(instance is CreateClaimableBalanceOperationResponse);
+            var operation = (CreateClaimableBalanceOperationResponse)instance;
+
+            Assert.IsNotNull(operation.Claimants[0].Predicate.AbsBefore);
+        }
 
         private static void AssertCreateClaimableBalanceData(OperationResponse instance)
         {
@@ -665,7 +676,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             AssertClaimClaimableBalanceData(back);
         }
-
+        
         private static void AssertClaimClaimableBalanceData(OperationResponse instance)
         {
             Assert.IsTrue(instance is ClaimClaimableBalanceOperationResponse);
