@@ -1,0 +1,38 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon-testnet.stellar.org/operations/602248904196097"
+    },
+    "transaction": {
+      "href": "https://horizon-testnet.stellar.org/transactions/9c84de3a0cc6d3a2a16fb59b0c02c2b78cfa41c0aeb54b05c356fdb6b3652425"
+    },
+    "effects": {
+      "href": "https://horizon-testnet.stellar.org/operations/602248904196097/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon-testnet.stellar.org/effects?order=desc\u0026cursor=602248904196097"
+    },
+    "precedes": {
+      "href": "https://horizon-testnet.stellar.org/effects?order=asc\u0026cursor=602248904196097"
+    }
+  },
+  "id": "602248904196097",
+  "paging_token": "602248904196097",
+  "transaction_successful": true,
+  "source_account": "GDREETGGEEUYMPPHATCUFO5VU7EA4AT7KY45BO2DKROOOGDXHY2IRDN5",
+  "type": "create_claimable_balance",
+  "type_i": 14,
+  "created_at": "2020-11-05T22:15:06Z",
+  "transaction_hash": "9c84de3a0cc6d3a2a16fb59b0c02c2b78cfa41c0aeb54b05c356fdb6b3652425",
+  "sponsor": "GDREETGGEEUYMPPHATCUFO5VU7EA4AT7KY45BO2DKROOOGDXHY2IRDN5",
+  "asset": "native",
+  "amount": "5.0000000",
+  "claimants": [
+    {
+      "destination": "GDREETGGEEUYMPPHATCUFO5VU7EA4AT7KY45BO2DKROOOGDXHY2IRDN5",
+      "predicate": {
+        "abs_before": "+131971-04-21T00:00:00Z"
+      }
+    }
+  ]
+}
