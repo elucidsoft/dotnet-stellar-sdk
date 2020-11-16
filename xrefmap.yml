@@ -1570,6 +1570,12 @@ references:
   commentId: M:stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.#ctor(DateTimeOffset)
   fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.ClaimPredicateBeforeAbsoluteTime(DateTimeOffset)
   nameWithType: ClaimPredicateBeforeAbsoluteTime.ClaimPredicateBeforeAbsoluteTime(DateTimeOffset)
+- uid: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.#ctor(System.Int64)
+  name: ClaimPredicateBeforeAbsoluteTime(Int64)
+  href: api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime__ctor_System_Int64_
+  commentId: M:stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.#ctor(System.Int64)
+  fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.ClaimPredicateBeforeAbsoluteTime(System.Int64)
+  nameWithType: ClaimPredicateBeforeAbsoluteTime.ClaimPredicateBeforeAbsoluteTime(Int64)
 - uid: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.#ctor*
   name: ClaimPredicateBeforeAbsoluteTime
   href: api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime__ctor_
@@ -1603,6 +1609,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.ToXdr
   nameWithType: ClaimPredicateBeforeAbsoluteTime.ToXdr
+- uid: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
+  name: UnixTimeSeconds
+  href: api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_UnixTimeSeconds
+  commentId: P:stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
+  fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
+  nameWithType: ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
+- uid: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds*
+  name: UnixTimeSeconds
+  href: api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_UnixTimeSeconds_
+  commentId: Overload:stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
+  nameWithType: ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
 - uid: stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime
   name: ClaimPredicateBeforeRelativeTime
   href: api/stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.html
