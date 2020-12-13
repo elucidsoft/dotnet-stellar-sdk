@@ -3785,6 +3785,90 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceCannotClaim.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceCannotClaim.html",
+          "hash": "tbfJGQp753UKWVn+MMN1Zg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceDoesNotExist.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceDoesNotExist.html",
+          "hash": "XO1HjFOG8lXuAWbFzp8IdQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceLineFull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceLineFull.html",
+          "hash": "6IQ6jFtvmJJlsQbEeStdsA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceNoTrust.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceNoTrust.html",
+          "hash": "OL69eSsGcW4tHsvemnPL+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceNotAuthorized.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceNotAuthorized.html",
+          "hash": "mcN0dng8KX2Ihhz/+zwbcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceResult.html",
+          "hash": "y9x1ohlFwYGxetbIwcGJZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceSuccess.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimClaimableBalanceSuccess.html",
+          "hash": "iCEXfPX/BCWqzzUvP4K9hg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.results.ClaimOfferAtom.yml",
       "output": {
         ".html": {
@@ -3862,6 +3946,90 @@
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.results.CreateAccountUnderfunded.html",
           "hash": "hJYIRwBi73SjuMfiw6dw3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceLowReserve.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceLowReserve.html",
+          "hash": "NPHXIRVr+3l6GSaMy9O3vA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceMalformed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceMalformed.html",
+          "hash": "V4Em0I8dKCQxNIaybZCMVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceNoTrust.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceNoTrust.html",
+          "hash": "TLnJo7cXwXaxPQLz4v5AGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceNotAuthorized.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceNotAuthorized.html",
+          "hash": "O/WpNh2SK26AyxzAcWu/6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceResult.html",
+          "hash": "T8LTroV33MAgYlG9i0gj/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceSuccess.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceSuccess.html",
+          "hash": "zc7AT4TsbDaK6kOkCPJqlg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceUnderfunded.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceUnderfunded.html",
+          "hash": "26N5YJI/5yCOrT1wEbhasA=="
         }
       },
       "is_incremental": false,
@@ -4425,7 +4593,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.results.OperationResult.html",
-          "hash": "IdHHFzf5H1YtI4e4VOpn1g=="
+          "hash": "ClBRICILpp949Ecq6aJxaw=="
         }
       },
       "is_incremental": false,
@@ -5097,7 +5265,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.results.html",
-          "hash": "TGrFkuizOqbG3xc9nmd+dQ=="
+          "hash": "S8tM3/OherlJbiMYlzthSA=="
         }
       },
       "is_incremental": false,
@@ -5133,7 +5301,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "Q7WhGiF08AMJXtJB6Nl+tw=="
+          "hash": "kxZ/qNaeDLG8KC6/WQyBYA=="
         }
       },
       "is_incremental": false,
@@ -5282,7 +5450,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 426,
+          "total_file_count": 440,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
