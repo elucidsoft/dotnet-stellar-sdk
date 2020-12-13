@@ -5,6 +5,6 @@
     /// </summary>
     public class ClaimClaimableBalanceSuccess : ClaimClaimableBalanceResult
     {
-
+        public override bool IsSuccess => true;
     }
 }
