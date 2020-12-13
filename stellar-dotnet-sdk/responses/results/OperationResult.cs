@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace stellar_dotnet_sdk.responses.results
 {
@@ -58,6 +58,10 @@ namespace stellar_dotnet_sdk.responses.results
                     return BumpSequenceResult.FromXdr(result.BumpSeqResult);
                 case xdr.OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND:
                     return PathPaymentStrictSendResult.FromXdr(result.PathPaymentStrictSendResult);
+                case xdr.OperationType.OperationTypeEnum.CREATE_CLAIMABLE_BALANCE:
+                    return CreateClaimableBalanceResult.FromXdr(result.CreateClaimableBalanceResult);
+                case xdr.OperationType.OperationTypeEnum.CLAIM_CLAIMABLE_BALANCE:
+                    return ClaimClaimableBalanceResult.FromXdr(result.ClaimClaimableBalanceResult);
                 default:
                     throw new SystemException("Unknown OperationType");
             }
