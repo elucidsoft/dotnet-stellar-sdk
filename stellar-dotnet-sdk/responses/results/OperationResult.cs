@@ -62,6 +62,8 @@ namespace stellar_dotnet_sdk.responses.results
                     return CreateClaimableBalanceResult.FromXdr(result.CreateClaimableBalanceResult);
                 case xdr.OperationType.OperationTypeEnum.CLAIM_CLAIMABLE_BALANCE:
                     return ClaimClaimableBalanceResult.FromXdr(result.ClaimClaimableBalanceResult);
+                case xdr.OperationType.OperationTypeEnum.BEGIN_SPONSORING_FUTURE_RESERVES:
+                    return BeginSponsoringFutureReservesResult.FromXdr(result.BeginSponsoringFutureReservesResult);
                 default:
                     throw new SystemException("Unknown OperationType");
             }
