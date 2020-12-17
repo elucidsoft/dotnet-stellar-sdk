@@ -16212,6 +16212,62 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.results.AllowTrustSuccess.IsSuccess
   nameWithType: AllowTrustSuccess.IsSuccess
+- uid: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesAlreadySponsored
+  name: BeginSponsoringFutureReservesAlreadySponsored
+  href: api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesAlreadySponsored.html
+  commentId: T:stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesAlreadySponsored
+  fullName: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesAlreadySponsored
+  nameWithType: BeginSponsoringFutureReservesAlreadySponsored
+- uid: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesMalformed
+  name: BeginSponsoringFutureReservesMalformed
+  href: api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesMalformed.html
+  commentId: T:stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesMalformed
+  fullName: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesMalformed
+  nameWithType: BeginSponsoringFutureReservesMalformed
+- uid: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesRecursive
+  name: BeginSponsoringFutureReservesRecursive
+  href: api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesRecursive.html
+  commentId: T:stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesRecursive
+  fullName: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesRecursive
+  nameWithType: BeginSponsoringFutureReservesRecursive
+- uid: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult
+  name: BeginSponsoringFutureReservesResult
+  href: api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult.html
+  commentId: T:stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult
+  fullName: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult
+  nameWithType: BeginSponsoringFutureReservesResult
+- uid: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult.FromXdr(stellar_dotnet_sdk.xdr.BeginSponsoringFutureReservesResult)
+  name: FromXdr(BeginSponsoringFutureReservesResult)
+  href: api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult.html#stellar_dotnet_sdk_responses_results_BeginSponsoringFutureReservesResult_FromXdr_stellar_dotnet_sdk_xdr_BeginSponsoringFutureReservesResult_
+  commentId: M:stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult.FromXdr(stellar_dotnet_sdk.xdr.BeginSponsoringFutureReservesResult)
+  fullName: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult.FromXdr(stellar_dotnet_sdk.xdr.BeginSponsoringFutureReservesResult)
+  nameWithType: BeginSponsoringFutureReservesResult.FromXdr(BeginSponsoringFutureReservesResult)
+- uid: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult.FromXdr*
+  name: FromXdr
+  href: api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult.html#stellar_dotnet_sdk_responses_results_BeginSponsoringFutureReservesResult_FromXdr_
+  commentId: Overload:stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult.FromXdr
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult.FromXdr
+  nameWithType: BeginSponsoringFutureReservesResult.FromXdr
+- uid: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess
+  name: BeginSponsoringFutureReservesSuccess
+  href: api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess.html
+  commentId: T:stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess
+  fullName: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess
+  nameWithType: BeginSponsoringFutureReservesSuccess
+- uid: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess.IsSuccess
+  name: IsSuccess
+  href: api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess.html#stellar_dotnet_sdk_responses_results_BeginSponsoringFutureReservesSuccess_IsSuccess
+  commentId: P:stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess.IsSuccess
+  fullName: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess.IsSuccess
+  nameWithType: BeginSponsoringFutureReservesSuccess.IsSuccess
+- uid: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess.IsSuccess*
+  name: IsSuccess
+  href: api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess.html#stellar_dotnet_sdk_responses_results_BeginSponsoringFutureReservesSuccess_IsSuccess_
+  commentId: Overload:stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess.IsSuccess
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess.IsSuccess
+  nameWithType: BeginSponsoringFutureReservesSuccess.IsSuccess
 - uid: stellar_dotnet_sdk.responses.results.BumpSequenceBadSeq
   name: BumpSequenceBadSeq
   href: api/stellar_dotnet_sdk.responses.results.BumpSequenceBadSeq.html
@@ -16619,6 +16675,50 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.results.CreateClaimableBalanceUnderfunded
   fullName: stellar_dotnet_sdk.responses.results.CreateClaimableBalanceUnderfunded
   nameWithType: CreateClaimableBalanceUnderfunded
+- uid: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesNotSponsored
+  name: EndSponsoringFutureReservesNotSponsored
+  href: api/stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesNotSponsored.html
+  commentId: T:stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesNotSponsored
+  fullName: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesNotSponsored
+  nameWithType: EndSponsoringFutureReservesNotSponsored
+- uid: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult
+  name: EndSponsoringFutureReservesResult
+  href: api/stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult.html
+  commentId: T:stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult
+  fullName: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult
+  nameWithType: EndSponsoringFutureReservesResult
+- uid: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult.FromXdr(stellar_dotnet_sdk.xdr.EndSponsoringFutureReservesResult)
+  name: FromXdr(EndSponsoringFutureReservesResult)
+  href: api/stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult.html#stellar_dotnet_sdk_responses_results_EndSponsoringFutureReservesResult_FromXdr_stellar_dotnet_sdk_xdr_EndSponsoringFutureReservesResult_
+  commentId: M:stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult.FromXdr(stellar_dotnet_sdk.xdr.EndSponsoringFutureReservesResult)
+  fullName: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult.FromXdr(stellar_dotnet_sdk.xdr.EndSponsoringFutureReservesResult)
+  nameWithType: EndSponsoringFutureReservesResult.FromXdr(EndSponsoringFutureReservesResult)
+- uid: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult.FromXdr*
+  name: FromXdr
+  href: api/stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult.html#stellar_dotnet_sdk_responses_results_EndSponsoringFutureReservesResult_FromXdr_
+  commentId: Overload:stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult.FromXdr
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult.FromXdr
+  nameWithType: EndSponsoringFutureReservesResult.FromXdr
+- uid: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess
+  name: EndSponsoringFutureReservesSuccess
+  href: api/stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess.html
+  commentId: T:stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess
+  fullName: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess
+  nameWithType: EndSponsoringFutureReservesSuccess
+- uid: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess.IsSuccess
+  name: IsSuccess
+  href: api/stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess.html#stellar_dotnet_sdk_responses_results_EndSponsoringFutureReservesSuccess_IsSuccess
+  commentId: P:stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess.IsSuccess
+  fullName: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess.IsSuccess
+  nameWithType: EndSponsoringFutureReservesSuccess.IsSuccess
+- uid: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess.IsSuccess*
+  name: IsSuccess
+  href: api/stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess.html#stellar_dotnet_sdk_responses_results_EndSponsoringFutureReservesSuccess_IsSuccess_
+  commentId: Overload:stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess.IsSuccess
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess.IsSuccess
+  nameWithType: EndSponsoringFutureReservesSuccess.IsSuccess
 - uid: stellar_dotnet_sdk.responses.results.InflationNotTime
   name: InflationNotTime
   href: api/stellar_dotnet_sdk.responses.results.InflationNotTime.html
@@ -17834,6 +17934,68 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.results.PaymentUnderfunded
   fullName: stellar_dotnet_sdk.responses.results.PaymentUnderfunded
   nameWithType: PaymentUnderfunded
+- uid: stellar_dotnet_sdk.responses.results.RevokeSponsorshipDoesNotExist
+  name: RevokeSponsorshipDoesNotExist
+  href: api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipDoesNotExist.html
+  commentId: T:stellar_dotnet_sdk.responses.results.RevokeSponsorshipDoesNotExist
+  fullName: stellar_dotnet_sdk.responses.results.RevokeSponsorshipDoesNotExist
+  nameWithType: RevokeSponsorshipDoesNotExist
+- uid: stellar_dotnet_sdk.responses.results.RevokeSponsorshipLowReserve
+  name: RevokeSponsorshipLowReserve
+  href: api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipLowReserve.html
+  commentId: T:stellar_dotnet_sdk.responses.results.RevokeSponsorshipLowReserve
+  fullName: stellar_dotnet_sdk.responses.results.RevokeSponsorshipLowReserve
+  nameWithType: RevokeSponsorshipLowReserve
+- uid: stellar_dotnet_sdk.responses.results.RevokeSponsorshipNotSponsor
+  name: RevokeSponsorshipNotSponsor
+  href: api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipNotSponsor.html
+  commentId: T:stellar_dotnet_sdk.responses.results.RevokeSponsorshipNotSponsor
+  fullName: stellar_dotnet_sdk.responses.results.RevokeSponsorshipNotSponsor
+  nameWithType: RevokeSponsorshipNotSponsor
+- uid: stellar_dotnet_sdk.responses.results.RevokeSponsorshipOnlyTransferable
+  name: RevokeSponsorshipOnlyTransferable
+  href: api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipOnlyTransferable.html
+  commentId: T:stellar_dotnet_sdk.responses.results.RevokeSponsorshipOnlyTransferable
+  fullName: stellar_dotnet_sdk.responses.results.RevokeSponsorshipOnlyTransferable
+  nameWithType: RevokeSponsorshipOnlyTransferable
+- uid: stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult
+  name: RevokeSponsorshipResult
+  href: api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult.html
+  commentId: T:stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult
+  fullName: stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult
+  nameWithType: RevokeSponsorshipResult
+- uid: stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult.FromXdr(stellar_dotnet_sdk.xdr.RevokeSponsorshipResult)
+  name: FromXdr(RevokeSponsorshipResult)
+  href: api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult.html#stellar_dotnet_sdk_responses_results_RevokeSponsorshipResult_FromXdr_stellar_dotnet_sdk_xdr_RevokeSponsorshipResult_
+  commentId: M:stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult.FromXdr(stellar_dotnet_sdk.xdr.RevokeSponsorshipResult)
+  fullName: stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult.FromXdr(stellar_dotnet_sdk.xdr.RevokeSponsorshipResult)
+  nameWithType: RevokeSponsorshipResult.FromXdr(RevokeSponsorshipResult)
+- uid: stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult.FromXdr*
+  name: FromXdr
+  href: api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult.html#stellar_dotnet_sdk_responses_results_RevokeSponsorshipResult_FromXdr_
+  commentId: Overload:stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult.FromXdr
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult.FromXdr
+  nameWithType: RevokeSponsorshipResult.FromXdr
+- uid: stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess
+  name: RevokeSponsorshipSuccess
+  href: api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess.html
+  commentId: T:stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess
+  fullName: stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess
+  nameWithType: RevokeSponsorshipSuccess
+- uid: stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess.IsSuccess
+  name: IsSuccess
+  href: api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess.html#stellar_dotnet_sdk_responses_results_RevokeSponsorshipSuccess_IsSuccess
+  commentId: P:stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess.IsSuccess
+  fullName: stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess.IsSuccess
+  nameWithType: RevokeSponsorshipSuccess.IsSuccess
+- uid: stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess.IsSuccess*
+  name: IsSuccess
+  href: api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess.html#stellar_dotnet_sdk_responses_results_RevokeSponsorshipSuccess_IsSuccess_
+  commentId: Overload:stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess.IsSuccess
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess.IsSuccess
+  nameWithType: RevokeSponsorshipSuccess.IsSuccess
 - uid: stellar_dotnet_sdk.responses.results.SetOptionsBadFlags
   name: SetOptionsBadFlags
   href: api/stellar_dotnet_sdk.responses.results.SetOptionsBadFlags.html

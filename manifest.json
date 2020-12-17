@@ -3665,6 +3665,66 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesAlreadySponsored.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesAlreadySponsored.html",
+          "hash": "TUbHBDVKltSothTs3WvrEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesMalformed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesMalformed.html",
+          "hash": "iBvdb1oTVCd8/RUzU/u1dg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesRecursive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesRecursive.html",
+          "hash": "mHskTGs19Jh88VIBvqoq/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesResult.html",
+          "hash": "ASBMjNuTUCWQK1iSTf7D4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.BeginSponsoringFutureReservesSuccess.html",
+          "hash": "xyD7wq8Xhwd+idgYW2uuvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.results.BumpSequenceBadSeq.yml",
       "output": {
         ".html": {
@@ -4030,6 +4090,42 @@
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.results.CreateClaimableBalanceUnderfunded.html",
           "hash": "26N5YJI/5yCOrT1wEbhasA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesNotSponsored.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesNotSponsored.html",
+          "hash": "Tm5JCoBBVoz9m/dFGbOvBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesResult.html",
+          "hash": "WrmQNSeFwKDrfBuxwUIt+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.EndSponsoringFutureReservesSuccess.html",
+          "hash": "1S989t93+CiRTA/bL4RHmA=="
         }
       },
       "is_incremental": false,
@@ -4593,7 +4689,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.results.OperationResult.html",
-          "hash": "ClBRICILpp949Ecq6aJxaw=="
+          "hash": "qaUkW95RhHz0N4cvsMlBWA=="
         }
       },
       "is_incremental": false,
@@ -5129,6 +5225,78 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipDoesNotExist.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipDoesNotExist.html",
+          "hash": "3Z0ANnlfUtxrUie8O04gsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipLowReserve.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipLowReserve.html",
+          "hash": "+ZMo1P9yEzxO1ON2ZQtSlw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipNotSponsor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipNotSponsor.html",
+          "hash": "kkWp8nBmAytlFVOZcPz4eg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipOnlyTransferable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipOnlyTransferable.html",
+          "hash": "UhjY/POgnPksa90dvhV6sA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipResult.html",
+          "hash": "AZqQM/1iyb1fhilsUS683g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.results.RevokeSponsorshipSuccess.html",
+          "hash": "dnxruNPtEI8HTAMlSHuYWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.results.SetOptionsBadFlags.yml",
       "output": {
         ".html": {
@@ -5265,7 +5433,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.results.html",
-          "hash": "S8tM3/OherlJbiMYlzthSA=="
+          "hash": "o/RLphw2kx8nJr1p/Kk+MA=="
         }
       },
       "is_incremental": false,
@@ -5301,7 +5469,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "kxZ/qNaeDLG8KC6/WQyBYA=="
+          "hash": "Cx4BSK9uqPkteqmyAcg/fg=="
         }
       },
       "is_incremental": false,
@@ -5450,7 +5618,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 440,
+          "total_file_count": 454,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
