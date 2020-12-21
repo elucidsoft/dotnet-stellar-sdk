@@ -1,11 +1,10 @@
-﻿using System;
+﻿using stellar_dotnet_sdk.requests;
+using stellar_dotnet_sdk.responses;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
-using stellar_dotnet_sdk.requests;
-using stellar_dotnet_sdk.responses;
 
 namespace stellar_dotnet_sdk
 {
@@ -93,7 +92,7 @@ namespace stellar_dotnet_sdk
         /// <returns></returns>
         public Task<SubmitTransactionResponse> SubmitTransaction(Transaction transaction)
         {
-            var options = new SubmitTransactionOptions {SkipMemoRequiredCheck = false};
+            var options = new SubmitTransactionOptions { SkipMemoRequiredCheck = false };
             return SubmitTransaction(transaction.ToEnvelopeXdrBase64(), options);
         }
 
@@ -120,7 +119,7 @@ namespace stellar_dotnet_sdk
         /// <returns></returns>
         public Task<SubmitTransactionResponse> SubmitTransaction(string transactionEnvelopeBase64)
         {
-            var options = new SubmitTransactionOptions {SkipMemoRequiredCheck = false};
+            var options = new SubmitTransactionOptions { SkipMemoRequiredCheck = false };
             return SubmitTransaction(transactionEnvelopeBase64, options);
         }
 
@@ -137,7 +136,17 @@ namespace stellar_dotnet_sdk
         {
             if (!options.SkipMemoRequiredCheck)
             {
-                var tx = Transaction.FromEnvelopeXdr(transactionEnvelopeBase64);
+                TransactionBase tx;
+
+                if (options.FeeBumpTransaction)
+                {
+                    tx = FeeBumpTransaction.FromEnvelopeXdr(transactionEnvelopeBase64);
+                }
+                else
+                {
+                    tx = Transaction.FromEnvelopeXdr(transactionEnvelopeBase64);
+                }
+
                 await CheckMemoRequired(tx);
             }
 

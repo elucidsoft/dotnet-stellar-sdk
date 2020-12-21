@@ -1,5 +1,5 @@
+﻿using stellar_dotnet_sdk.xdr;
 using System;
-using stellar_dotnet_sdk.xdr;
 using Int64 = stellar_dotnet_sdk.xdr.Int64;
 
 namespace stellar_dotnet_sdk
@@ -25,7 +25,7 @@ namespace stellar_dotnet_sdk
                 throw new NoNetworkSelectedException();
 
             // Hashed NetworkID
-            var networkHash = new Hash {InnerValue = network.NetworkId};
+            var networkHash = new Hash { InnerValue = network.NetworkId };
             var taggedTransaction = new TransactionSignaturePayload.TransactionSignaturePayloadTaggedTransaction
             {
                 Discriminant = EnvelopeType.Create(EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_FEE_BUMP),
@@ -45,12 +45,12 @@ namespace stellar_dotnet_sdk
 
         public xdr.FeeBumpTransaction ToXdr()
         {
-            var fee = new Int64 {InnerValue = Fee};
+            var fee = new Int64 { InnerValue = Fee };
             var feeSource = FeeSource.MuxedAccount;
 
             var inner = new xdr.FeeBumpTransaction.FeeBumpTransactionInnerTx
             {
-                Discriminant = new EnvelopeType {InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX},
+                Discriminant = new EnvelopeType { InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX },
                 V1 = new TransactionV1Envelope
                 {
                     Tx = InnerTransaction.ToXdrV1(),
@@ -58,7 +58,7 @@ namespace stellar_dotnet_sdk
                 }
             };
 
-            var ext = new xdr.FeeBumpTransaction.FeeBumpTransactionExt {Discriminant = 0};
+            var ext = new xdr.FeeBumpTransaction.FeeBumpTransactionExt { Discriminant = 0 };
 
             var transaction = new xdr.FeeBumpTransaction
             {
@@ -90,10 +90,19 @@ namespace stellar_dotnet_sdk
             return new TransactionEnvelope
             {
                 Discriminant =
-                    new EnvelopeType {InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_FEE_BUMP},
-                FeeBump = new FeeBumpTransactionEnvelope {Tx = ToXdr(), Signatures = signatures}
+                    new EnvelopeType { InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_FEE_BUMP },
+                FeeBump = new FeeBumpTransactionEnvelope { Tx = ToXdr(), Signatures = signatures }
             };
         }
+
+        public static FeeBumpTransaction FromEnvelopeXdr(string envelope)
+        {
+            byte[] bytes = Convert.FromBase64String(envelope);
+
+            TransactionEnvelope transactionEnvelope = TransactionEnvelope.Decode(new XdrDataInputStream(bytes));
+            return FromEnvelopeXdr(transactionEnvelope);
+        }
+
         public static FeeBumpTransaction FromEnvelopeXdr(TransactionEnvelope envelope)
         {
             {
