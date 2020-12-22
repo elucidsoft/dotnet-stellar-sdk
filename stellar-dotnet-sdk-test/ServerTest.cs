@@ -1,16 +1,15 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using Moq.Language;
+using stellar_dotnet_sdk;
+using stellar_dotnet_sdk.responses;
+using System;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Castle.DynamicProxy.Generators;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using Moq.Language;
-using stellar_dotnet_sdk;
-using stellar_dotnet_sdk.responses;
 
 namespace stellar_dotnet_sdk_test
 {
@@ -73,6 +72,19 @@ namespace stellar_dotnet_sdk_test
             transaction.Sign(source);
 
             return transaction;
+        }
+
+        public FeeBumpTransaction BuildFeeBumpTransaction()
+        {
+            var source = KeyPair.FromSecretSeed("SB7ZMPZB3YMMK5CUWENXVLZWBK4KYX4YU5JBXQNZSK2DP2Q7V3LVTO5V");
+
+            var accountId = "GAYHAAKPAQLMGIJYMIWPDWCGUCQ5LAWY4Q7Q3IKSP57O7GUPD3NEOSEA";
+            var innerTx = BuildTransaction();
+            var feeSource = KeyPair.FromAccountId("GD7HCWFO77E76G6BKJLRHRFRLE6I7BMPJQZQKGNYTT3SPE6BA4DHJAQY");
+
+            var tx = TransactionBuilder.BuildFeeBumpTransaction(feeSource, innerTx, 200);
+            tx.Sign(source);
+            return tx;
         }
 
         [TestMethod]
@@ -165,6 +177,47 @@ namespace stellar_dotnet_sdk_test
 
             var response = await _server.SubmitTransaction(
                 BuildTransaction().ToEnvelopeXdrBase64(), new SubmitTransactionOptions { SkipMemoRequiredCheck = false });
+            Assert.IsTrue(response.IsSuccess());
+            Assert.AreEqual(response.Ledger, (uint)826150);
+            Assert.AreEqual(response.Hash, "2634d2cf5adcbd3487d1df042166eef53830115844fdde1588828667bf93ff42");
+            Assert.IsNull(response.SubmitTransactionResponseExtras);
+        }
+
+        [TestMethod]
+        public async Task TestSubmitFeeBumpTransactionEnvelopeBase64()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "serverSuccess.json"));
+            When().Returns(ResponseMessage(HttpOk, json));
+
+            var response = await _server.SubmitTransaction(
+                BuildFeeBumpTransaction().ToEnvelopeXdrBase64(), new SubmitTransactionOptions { SkipMemoRequiredCheck = false, FeeBumpTransaction = true });
+            Assert.IsTrue(response.IsSuccess());
+            Assert.AreEqual(response.Ledger, (uint)826150);
+            Assert.AreEqual(response.Hash, "2634d2cf5adcbd3487d1df042166eef53830115844fdde1588828667bf93ff42");
+            Assert.IsNull(response.SubmitTransactionResponseExtras);
+        }
+
+        [TestMethod]
+        public async Task TestSubmitFeeBumpTransactionWithoutOptions()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "serverSuccess.json"));
+            When().Returns(ResponseMessage(HttpOk, json));
+
+            var response = await _server.SubmitTransaction(BuildFeeBumpTransaction());
+            Assert.IsTrue(response.IsSuccess());
+            Assert.AreEqual(response.Ledger, (uint)826150);
+            Assert.AreEqual(response.Hash, "2634d2cf5adcbd3487d1df042166eef53830115844fdde1588828667bf93ff42");
+            Assert.IsNull(response.SubmitTransactionResponseExtras);
+        }
+
+        [TestMethod]
+        public async Task TestSubmitFeeBumpTransactionWithOptions()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "serverSuccess.json"));
+            When().Returns(ResponseMessage(HttpOk, json));
+
+            var response = await _server.SubmitTransaction(
+                BuildFeeBumpTransaction(), new SubmitTransactionOptions { SkipMemoRequiredCheck = false });
             Assert.IsTrue(response.IsSuccess());
             Assert.AreEqual(response.Ledger, (uint)826150);
             Assert.AreEqual(response.Hash, "2634d2cf5adcbd3487d1df042166eef53830115844fdde1588828667bf93ff42");
