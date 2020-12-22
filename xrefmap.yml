@@ -2740,6 +2740,12 @@ references:
   commentId: M:stellar_dotnet_sdk.FeeBumpTransaction.FromEnvelopeXdr(stellar_dotnet_sdk.xdr.TransactionEnvelope)
   fullName: stellar_dotnet_sdk.FeeBumpTransaction.FromEnvelopeXdr(stellar_dotnet_sdk.xdr.TransactionEnvelope)
   nameWithType: FeeBumpTransaction.FromEnvelopeXdr(TransactionEnvelope)
+- uid: stellar_dotnet_sdk.FeeBumpTransaction.FromEnvelopeXdr(System.String)
+  name: FromEnvelopeXdr(String)
+  href: api/stellar_dotnet_sdk.FeeBumpTransaction.html#stellar_dotnet_sdk_FeeBumpTransaction_FromEnvelopeXdr_System_String_
+  commentId: M:stellar_dotnet_sdk.FeeBumpTransaction.FromEnvelopeXdr(System.String)
+  fullName: stellar_dotnet_sdk.FeeBumpTransaction.FromEnvelopeXdr(System.String)
+  nameWithType: FeeBumpTransaction.FromEnvelopeXdr(String)
 - uid: stellar_dotnet_sdk.FeeBumpTransaction.FromEnvelopeXdr*
   name: FromEnvelopeXdr
   href: api/stellar_dotnet_sdk.FeeBumpTransaction.html#stellar_dotnet_sdk_FeeBumpTransaction_FromEnvelopeXdr_
@@ -20479,6 +20485,18 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.Server.Root
   nameWithType: Server.Root
+- uid: stellar_dotnet_sdk.Server.SubmitTransaction(stellar_dotnet_sdk.FeeBumpTransaction)
+  name: SubmitTransaction(FeeBumpTransaction)
+  href: api/stellar_dotnet_sdk.Server.html#stellar_dotnet_sdk_Server_SubmitTransaction_stellar_dotnet_sdk_FeeBumpTransaction_
+  commentId: M:stellar_dotnet_sdk.Server.SubmitTransaction(stellar_dotnet_sdk.FeeBumpTransaction)
+  fullName: stellar_dotnet_sdk.Server.SubmitTransaction(stellar_dotnet_sdk.FeeBumpTransaction)
+  nameWithType: Server.SubmitTransaction(FeeBumpTransaction)
+- uid: stellar_dotnet_sdk.Server.SubmitTransaction(stellar_dotnet_sdk.FeeBumpTransaction,stellar_dotnet_sdk.SubmitTransactionOptions)
+  name: SubmitTransaction(FeeBumpTransaction, SubmitTransactionOptions)
+  href: api/stellar_dotnet_sdk.Server.html#stellar_dotnet_sdk_Server_SubmitTransaction_stellar_dotnet_sdk_FeeBumpTransaction_stellar_dotnet_sdk_SubmitTransactionOptions_
+  commentId: M:stellar_dotnet_sdk.Server.SubmitTransaction(stellar_dotnet_sdk.FeeBumpTransaction,stellar_dotnet_sdk.SubmitTransactionOptions)
+  fullName: stellar_dotnet_sdk.Server.SubmitTransaction(stellar_dotnet_sdk.FeeBumpTransaction, stellar_dotnet_sdk.SubmitTransactionOptions)
+  nameWithType: Server.SubmitTransaction(FeeBumpTransaction, SubmitTransactionOptions)
 - uid: stellar_dotnet_sdk.Server.SubmitTransaction(stellar_dotnet_sdk.Transaction)
   name: SubmitTransaction(Transaction)
   href: api/stellar_dotnet_sdk.Server.html#stellar_dotnet_sdk_Server_SubmitTransaction_stellar_dotnet_sdk_Transaction_
@@ -21417,6 +21435,19 @@ references:
   commentId: T:stellar_dotnet_sdk.SubmitTransactionOptions
   fullName: stellar_dotnet_sdk.SubmitTransactionOptions
   nameWithType: SubmitTransactionOptions
+- uid: stellar_dotnet_sdk.SubmitTransactionOptions.FeeBumpTransaction
+  name: FeeBumpTransaction
+  href: api/stellar_dotnet_sdk.SubmitTransactionOptions.html#stellar_dotnet_sdk_SubmitTransactionOptions_FeeBumpTransaction
+  commentId: P:stellar_dotnet_sdk.SubmitTransactionOptions.FeeBumpTransaction
+  fullName: stellar_dotnet_sdk.SubmitTransactionOptions.FeeBumpTransaction
+  nameWithType: SubmitTransactionOptions.FeeBumpTransaction
+- uid: stellar_dotnet_sdk.SubmitTransactionOptions.FeeBumpTransaction*
+  name: FeeBumpTransaction
+  href: api/stellar_dotnet_sdk.SubmitTransactionOptions.html#stellar_dotnet_sdk_SubmitTransactionOptions_FeeBumpTransaction_
+  commentId: Overload:stellar_dotnet_sdk.SubmitTransactionOptions.FeeBumpTransaction
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.SubmitTransactionOptions.FeeBumpTransaction
+  nameWithType: SubmitTransactionOptions.FeeBumpTransaction
 - uid: stellar_dotnet_sdk.SubmitTransactionOptions.SkipMemoRequiredCheck
   name: SkipMemoRequiredCheck
   href: api/stellar_dotnet_sdk.SubmitTransactionOptions.html#stellar_dotnet_sdk_SubmitTransactionOptions_SkipMemoRequiredCheck
