@@ -123,6 +123,18 @@ namespace stellar_dotnet_sdk
             return SubmitTransaction(transactionEnvelopeBase64, options);
         }
 
+        public Task<SubmitTransactionResponse> SubmitTransaction(FeeBumpTransaction feeBump)
+        {
+            var options = new SubmitTransactionOptions { FeeBumpTransaction = true };
+            return SubmitTransaction(feeBump.ToEnvelopeXdrBase64(), options);
+        }
+
+        public Task<SubmitTransactionResponse> SubmitTransaction(FeeBumpTransaction feeBump, SubmitTransactionOptions options)
+        {
+            options.FeeBumpTransaction = true;
+            return SubmitTransaction(feeBump.ToEnvelopeXdrBase64(), options);
+        }
+
         /// <summary>
         /// Submit a transaction to the network.
         ///
