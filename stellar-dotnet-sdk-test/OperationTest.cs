@@ -890,6 +890,7 @@ namespace stellar_dotnet_sdk_test
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
             var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
             
+            // Prepend type bytes (first four bytes are the balance id type)
             var balanceId = Enumerable.Repeat((byte)0x07, 32).Prepend((byte)0).Prepend((byte)0).Prepend((byte)0).Prepend((byte)0).ToArray();
             var operation = new ClaimClaimableBalanceOperation.Builder(balanceId)
                 .SetSourceAccount(source)
