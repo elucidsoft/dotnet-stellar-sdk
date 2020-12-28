@@ -10,10 +10,26 @@ namespace stellar_dotnet_sdk
     /// </summary> 
     public class ClaimClaimableBalanceOperation : Operation
     {
+        /// <summary>
+        ///     The ID of the ClaimableBalanceEntry being claimed.
+        /// </summary>
         public byte[] BalanceId { get; }
 
         public ClaimClaimableBalanceOperation(byte[] balanceId)
         {
+            // Backwards compat - was previously expecting no type to be set, set CLAIMABLE_BALANCE_ID_TYPE_V0 to match previous behaviour.
+            if (balanceId.Length == 32)
+            {
+                var expanded = new byte[36];
+                Array.Copy(balanceId, 0, expanded, 4, 32);
+                balanceId = expanded;
+            } 
+
+            if (balanceId.Length != 36)
+            {
+                throw new ArgumentException("Must be 36 bytes long", nameof(balanceId));
+            }
+
             BalanceId = balanceId;
         }
 
@@ -24,14 +40,7 @@ namespace stellar_dotnet_sdk
                 Discriminant = xdr.OperationType.Create(xdr.OperationType.OperationTypeEnum.CLAIM_CLAIMABLE_BALANCE),
                 ClaimClaimableBalanceOp = new xdr.ClaimClaimableBalanceOp
                 {
-                    BalanceID = new xdr.ClaimableBalanceID
-                    {
-                        Discriminant = new xdr.ClaimableBalanceIDType
-                        {
-                            InnerValue = xdr.ClaimableBalanceIDType.ClaimableBalanceIDTypeEnum.CLAIMABLE_BALANCE_ID_TYPE_V0,
-                        },
-                        V0 = new xdr.Hash(BalanceId)
-                    }
+                    BalanceID = xdr.ClaimableBalanceID.Decode(new xdr.XdrDataInputStream(BalanceId))
                 }
             };
         }
@@ -50,11 +59,29 @@ namespace stellar_dotnet_sdk
                 _balanceId = op.BalanceID.V0.InnerValue;
             }
 
+            /// <summary>
+            ///     Creates a new ClaimClaimableBalanceOperation builder.
+            /// </summary>
+            /// <param name="balanceId">The ID of the ClaimableBalanceEntry being claimed.</param>
+            /// <exception cref="ArgumentException">when balance id is not 36 bytes.</exception>
             public Builder(byte[] balanceId)
             {
-                if (balanceId.Length != 32)
-                    throw new ArgumentException("Must be 32 bytes long", nameof(balanceId));
+                if (balanceId.Length != 36 && balanceId.Length != 32)
+                    // Don't mention the 32 bytes, it's for backwards compat and shouldn't direct towards using it.
+                    throw new ArgumentException("Must be 36 bytes long", nameof(balanceId));
                 _balanceId = balanceId;
+            }
+
+            /// <summary>
+            ///     Creates a new ClaimClaimableBalanceOperation builder.
+            /// </summary>
+            /// <param name="balanceId">The ID of the ClaimableBalanceEntry being claimed.</param>
+            /// <exception cref="ArgumentException">when balance id is not a hex string representing 36 bytes.</exception>
+            public Builder(String balanceId)
+            {
+                if (balanceId.Length != 72)
+                    throw new ArgumentException("Must be a hex string of 72 characters", nameof(balanceId));
+                _balanceId = Util.HexToBytes(balanceId);
             }
 
             /// <summary>

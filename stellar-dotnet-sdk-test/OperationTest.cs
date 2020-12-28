@@ -858,13 +858,16 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAAA4AAAAAAAAAAEmU+aAAAAABAAAAAAAAAAAlyvHaD8duz+iEXkJUUbsHkklIlH46oMrMMYrt0odkfgAAAAMAAAABAAAABQAAAAAAAGJw", operation.ToXdrBase64());
         }
 
+        /// <summary>
+        /// The API didn't previously did not support the balance id type within the balance id (expected 32 bytes rather than the full 36).
+        /// This tests that we can still pass in the 32 bytes for compatability and use the default type (0).
+        /// </summary>
         [TestMethod]
-        public void TestClaimClaimableBalanceOperation()
+        public void TestClaimClaimableBalanceWithLegacyByteIdOperation()
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
             var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
-
-
+            
             var balanceId = Enumerable.Repeat((byte)0x07, 32).ToArray();
             var operation = new ClaimClaimableBalanceOperation.Builder(balanceId)
                 .SetSourceAccount(source)
@@ -877,7 +880,85 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAAA8AAAAABwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwc=", operation.ToXdrBase64());
         }
-        
+
+        /// <summary>
+        /// Claim a claimable balance using the byte representation of the balance id.
+        /// </summary>
+        [TestMethod]
+        public void TestClaimClaimableBalanceWithByteIdOperation()
+        {
+            // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
+            var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
+            
+            var balanceId = Enumerable.Repeat((byte)0x07, 32).Prepend((byte)0).Prepend((byte)0).Prepend((byte)0).Prepend((byte)0).ToArray();
+            var operation = new ClaimClaimableBalanceOperation.Builder(balanceId)
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+
+            var parsedOperation = (ClaimClaimableBalanceOperation)Operation.FromXdr(xdr);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+
+            Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAAA8AAAAABwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwc=", operation.ToXdrBase64());
+        }
+
+        /// <summary>
+        /// Claim a claimable balance using the string representation of the balance id.
+        /// </summary>
+        [TestMethod]
+        public void TestClaimClaimableBalanceWithStringIdOperationValid()
+        {
+            var balanceId = "000000006d6a0c142516a9cc7885a85c5aba3a1f4af5181cf9e7a809ac7ae5e4a58c825f";
+            var accountId = KeyPair.FromAccountId("GABTTS6N4CT7AUN4LD7IFIUMRD5PSMCW6QTLIQNEFZDEI6ZQVUCQMCLN");
+            var operation = new ClaimClaimableBalanceOperation.Builder(balanceId).SetSourceAccount(accountId).Build();
+
+            var xdr = operation.ToXdr();
+            var parsedOperation = (ClaimClaimableBalanceOperation)Operation.FromXdr(xdr);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+            CollectionAssert.AreEqual(operation.BalanceId, parsedOperation.BalanceId);
+
+            Assert.AreEqual(
+                    "AAAAAQAAAAADOcvN4KfwUbxY/oKijIj6+TBW9Ca0QaQuRkR7MK0FBgAAAA8AAAAAbWoMFCUWqcx4hahcWro6H0r1GBz556gJrHrl5KWMgl8=",
+                    operation.ToXdrBase64());
+        }
+
+        [TestMethod]
+        public void TestClaimClaimableBalanceOperationInvalidEmptyBalanceId()
+        {
+            var balanceId = "";
+            var accountId = KeyPair.FromAccountId("GABTTS6N4CT7AUN4LD7IFIUMRD5PSMCW6QTLIQNEFZDEI6ZQVUCQMCLN");
+            
+            Assert.ThrowsException<ArgumentException>(() => 
+                new ClaimClaimableBalanceOperation.Builder(balanceId).SetSourceAccount(accountId).Build());
+        }
+
+        /// <summary>
+        /// The first 4 bytes of the balance id are the balance id type, these are required. The default is 0x00000000.
+        /// </summary>
+        [TestMethod]
+        public void TestClaimClaimableBalanceOperationInvalidClaimableBalanceIDTypeMissing()
+        {
+            var balanceId = "6d6a0c142516a9cc7885a85c5aba3a1f4af5181cf9e7a809ac7ae5e4a58c825f";
+            var accountId = KeyPair.FromAccountId("GABTTS6N4CT7AUN4LD7IFIUMRD5PSMCW6QTLIQNEFZDEI6ZQVUCQMCLN");
+
+            Assert.ThrowsException<ArgumentException>(() =>
+                new ClaimClaimableBalanceOperation.Builder(balanceId).SetSourceAccount(accountId).Build());
+        }
+
+        /// <summary>
+        /// The last 32 bytes of the balance id are the balance id body, this is required.
+        /// </summary>
+        [TestMethod]
+        public void TestClaimClaimableBalanceOperationInvalidClaimableBalanceIDBodyMissing()
+        {
+            var balanceId = "00000000";
+            var accountId = KeyPair.FromAccountId("GABTTS6N4CT7AUN4LD7IFIUMRD5PSMCW6QTLIQNEFZDEI6ZQVUCQMCLN");
+
+            Assert.ThrowsException<ArgumentException>(() =>
+                new ClaimClaimableBalanceOperation.Builder(balanceId).SetSourceAccount(accountId).Build());
+        }
+
         [TestMethod]
         public void TestBeginSponsoringFutureReservesOperation()
         {
