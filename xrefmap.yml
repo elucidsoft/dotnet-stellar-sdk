@@ -1323,6 +1323,12 @@ references:
   commentId: M:stellar_dotnet_sdk.ClaimClaimableBalanceOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.ClaimClaimableBalanceOp)
   fullName: stellar_dotnet_sdk.ClaimClaimableBalanceOperation.Builder.Builder(stellar_dotnet_sdk.xdr.ClaimClaimableBalanceOp)
   nameWithType: ClaimClaimableBalanceOperation.Builder.Builder(ClaimClaimableBalanceOp)
+- uid: stellar_dotnet_sdk.ClaimClaimableBalanceOperation.Builder.#ctor(String)
+  name: Builder(String)
+  href: api/stellar_dotnet_sdk.ClaimClaimableBalanceOperation.Builder.html#stellar_dotnet_sdk_ClaimClaimableBalanceOperation_Builder__ctor_String_
+  commentId: M:stellar_dotnet_sdk.ClaimClaimableBalanceOperation.Builder.#ctor(String)
+  fullName: stellar_dotnet_sdk.ClaimClaimableBalanceOperation.Builder.Builder(String)
+  nameWithType: ClaimClaimableBalanceOperation.Builder.Builder(String)
 - uid: stellar_dotnet_sdk.ClaimClaimableBalanceOperation.Builder.#ctor(System.Byte[])
   name: Builder(Byte[])
   href: api/stellar_dotnet_sdk.ClaimClaimableBalanceOperation.Builder.html#stellar_dotnet_sdk_ClaimClaimableBalanceOperation_Builder__ctor_System_Byte___
