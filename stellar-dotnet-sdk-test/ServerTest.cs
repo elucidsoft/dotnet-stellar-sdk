@@ -2,6 +2,7 @@
 using Moq;
 using Moq.Language;
 using stellar_dotnet_sdk;
+using stellar_dotnet_sdk.federation;
 using stellar_dotnet_sdk.responses;
 using System;
 using System.IO;
@@ -44,6 +45,15 @@ namespace stellar_dotnet_sdk_test
             Network.Use(null);
             _httpClient.Dispose();
             _server.Dispose();
+        }
+
+        public static HttpResponseMessage ResponseMessage(HttpStatusCode statusCode)
+        {
+            return new HttpResponseMessage
+            {
+                StatusCode = statusCode,
+                Content = null
+            };
         }
 
         public static HttpResponseMessage ResponseMessage(HttpStatusCode statusCode, string content)
@@ -153,6 +163,57 @@ namespace stellar_dotnet_sdk_test
             Assert.IsInstanceOfType(result, typeof(TransactionResultFailed));
             Assert.AreEqual("0.00001", result.FeeCharged);
             Assert.AreEqual(1, ((TransactionResultFailed)result).Results.Count);
+        }
+
+        [TestMethod]
+        public async Task TestSubmitTransactionEnsureSuccess()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "serverSuccess.json"));
+            When().Returns(ResponseMessage(HttpOk, json));
+
+            var response = await _server.SubmitTransaction(
+                BuildTransaction().ToEnvelopeXdrBase64(), new SubmitTransactionOptions { SkipMemoRequiredCheck = false });
+            Assert.IsTrue(response.IsSuccess());
+            Assert.AreEqual(response.Ledger, (uint)826150);
+            Assert.AreEqual(response.Hash, "2634d2cf5adcbd3487d1df042166eef53830115844fdde1588828667bf93ff42");
+            Assert.IsNull(response.SubmitTransactionResponseExtras);
+        }
+
+        [TestMethod]
+        public async Task TestSubmitTransactionEnsureSuccessWithContent()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata", "serverFailure.json"));
+            When().Returns(ResponseMessage(HttpBadRequest, json));
+
+            ConnectionErrorException  ex = await Assert.ThrowsExceptionAsync<ConnectionErrorException>( async () => {
+                await _server.SubmitTransaction(BuildTransaction(), new SubmitTransactionOptions { EnsureSuccess = true });
+            });
+
+            Assert.IsTrue(ex.Message.Contains("Status code (BadRequest) is not success."));
+        }
+
+        [TestMethod]
+        public async Task TestSubmitTransactionEnsureSuccessWithEmptyContent()
+        {
+            When().Returns(ResponseMessage(HttpBadRequest, ""));
+
+            ConnectionErrorException  ex = await Assert.ThrowsExceptionAsync<ConnectionErrorException>( async () => {
+                await _server.SubmitTransaction(BuildTransaction(), new SubmitTransactionOptions { EnsureSuccess = true });
+            });
+
+            Assert.AreEqual(ex.Message, "Status code (BadRequest) is not success.");
+        }
+
+        [TestMethod]
+        public async Task TestSubmitTransactionEnsureSuccessWithNullContent()
+        {
+            When().Returns(ResponseMessage(HttpBadRequest));
+
+            ConnectionErrorException  ex = await Assert.ThrowsExceptionAsync<ConnectionErrorException>( async () => {
+                await _server.SubmitTransaction(BuildTransaction(), new SubmitTransactionOptions { EnsureSuccess = true });
+            });
+
+            Assert.AreEqual(ex.Message, "Status code (BadRequest) is not success.");
         }
 
         [TestMethod]
