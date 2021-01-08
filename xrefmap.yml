@@ -21441,6 +21441,19 @@ references:
   commentId: T:stellar_dotnet_sdk.SubmitTransactionOptions
   fullName: stellar_dotnet_sdk.SubmitTransactionOptions
   nameWithType: SubmitTransactionOptions
+- uid: stellar_dotnet_sdk.SubmitTransactionOptions.EnsureSuccess
+  name: EnsureSuccess
+  href: api/stellar_dotnet_sdk.SubmitTransactionOptions.html#stellar_dotnet_sdk_SubmitTransactionOptions_EnsureSuccess
+  commentId: P:stellar_dotnet_sdk.SubmitTransactionOptions.EnsureSuccess
+  fullName: stellar_dotnet_sdk.SubmitTransactionOptions.EnsureSuccess
+  nameWithType: SubmitTransactionOptions.EnsureSuccess
+- uid: stellar_dotnet_sdk.SubmitTransactionOptions.EnsureSuccess*
+  name: EnsureSuccess
+  href: api/stellar_dotnet_sdk.SubmitTransactionOptions.html#stellar_dotnet_sdk_SubmitTransactionOptions_EnsureSuccess_
+  commentId: Overload:stellar_dotnet_sdk.SubmitTransactionOptions.EnsureSuccess
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.SubmitTransactionOptions.EnsureSuccess
+  nameWithType: SubmitTransactionOptions.EnsureSuccess
 - uid: stellar_dotnet_sdk.SubmitTransactionOptions.FeeBumpTransaction
   name: FeeBumpTransaction
   href: api/stellar_dotnet_sdk.SubmitTransactionOptions.html#stellar_dotnet_sdk_SubmitTransactionOptions_FeeBumpTransaction
