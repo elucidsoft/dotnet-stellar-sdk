@@ -172,7 +172,7 @@ namespace stellar_dotnet_sdk_test
             When().Returns(ResponseMessage(HttpOk, json));
 
             var response = await _server.SubmitTransaction(
-                BuildTransaction().ToEnvelopeXdrBase64(), new SubmitTransactionOptions { SkipMemoRequiredCheck = false });
+                BuildTransaction().ToEnvelopeXdrBase64(), new SubmitTransactionOptions { EnsureSuccess = true });
             Assert.IsTrue(response.IsSuccess());
             Assert.AreEqual(response.Ledger, (uint)826150);
             Assert.AreEqual(response.Hash, "2634d2cf5adcbd3487d1df042166eef53830115844fdde1588828667bf93ff42");
