@@ -17,6 +17,7 @@ namespace stellar_dotnet_sdk
         /// <param name="serverKeypair">Server signing keypair</param>
         /// <param name="clientAccountId">The client account id that needs authentication</param>
         /// <param name="homeDomain">The server home domain</param>
+        /// <param name="webAuthDomain">The server auth domain</param>
         /// <param name="nonce">48 bytes long cryptographic-quality random data</param>
         /// <param name="now">The datetime from which the transaction is valid</param>
         /// <param name="timeout">The transaction lifespan</param>
@@ -43,6 +44,7 @@ namespace stellar_dotnet_sdk
         /// <param name="serverKeypair">Server signing keypair</param>
         /// <param name="clientAccountId">The client account id that needs authentication</param>
         /// <param name="homeDomain">The server home domain</param>
+        /// <param name="webAuthDomain">The server auth domain</param>
         /// <param name="nonce">48 bytes long cryptographic-quality random data</param>
         /// <param name="now">The datetime from which the transaction is valid</param>
         /// <param name="timeout">The transaction lifespan</param>
@@ -121,6 +123,7 @@ namespace stellar_dotnet_sdk
         /// <param name="transaction">The challenge transaction</param>
         /// <param name="serverAccountId">The server account id</param>
         /// <param name="homeDomain">The server home domain</param>
+        /// <param name="webAuthDomain">The server auth domain</param>
         /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
         /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
         /// <returns>The client account id</returns>
@@ -146,6 +149,7 @@ namespace stellar_dotnet_sdk
         /// <param name="transaction">The challenge transaction</param>
         /// <param name="serverAccountId">The server account id</param>
         /// <param name="homeDomain">The server home domain</param>
+        /// <param name="webAuthDomain">The server auth domain</param>
         /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
         /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
         /// <returns>The client account id</returns>
@@ -276,6 +280,7 @@ namespace stellar_dotnet_sdk
         /// <param name="serverAccountId">The server account id</param>
         /// <param name="signers"></param>
         /// <param name="homeDomain">The server home domain</param>
+        /// <param name="webAuthDomain">The server auth domain</param>
         /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
         /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
         /// <returns></returns>
@@ -326,6 +331,7 @@ namespace stellar_dotnet_sdk
         /// <param name="transaction">The challenge transaction</param>
         /// <param name="serverAccountId">The server account id</param>
         /// <param name="homeDomain">The server home domain</param>
+        /// <param name="webAuthDomain">The server auth domain</param>
         /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
         /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
         /// <returns>True if the transaction is valid</returns>
