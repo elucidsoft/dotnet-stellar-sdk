@@ -22337,24 +22337,24 @@ references:
   commentId: T:stellar_dotnet_sdk.WebAuthentication
   fullName: stellar_dotnet_sdk.WebAuthentication
   nameWithType: WebAuthentication
-- uid: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair,System.String,System.Byte[],System.Nullable{DateTimeOffset},System.Nullable{TimeSpan},stellar_dotnet_sdk.Network)
-  name: BuildChallengeTransaction(KeyPair, KeyPair, String, Byte[], Nullable<DateTimeOffset>, Nullable<TimeSpan>, Network)
-  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_BuildChallengeTransaction_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_KeyPair_System_String_System_Byte___System_Nullable_DateTimeOffset__System_Nullable_TimeSpan__stellar_dotnet_sdk_Network_
-  commentId: M:stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair,System.String,System.Byte[],System.Nullable{DateTimeOffset},System.Nullable{TimeSpan},stellar_dotnet_sdk.Network)
-  name.vb: BuildChallengeTransaction(KeyPair, KeyPair, String, Byte(), Nullable(Of DateTimeOffset), Nullable(Of TimeSpan), Network)
-  fullName: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair, stellar_dotnet_sdk.KeyPair, System.String, System.Byte[], System.Nullable<DateTimeOffset>, System.Nullable<TimeSpan>, stellar_dotnet_sdk.Network)
-  fullName.vb: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair, stellar_dotnet_sdk.KeyPair, System.String, System.Byte(), System.Nullable(Of DateTimeOffset), System.Nullable(Of TimeSpan), stellar_dotnet_sdk.Network)
-  nameWithType: WebAuthentication.BuildChallengeTransaction(KeyPair, KeyPair, String, Byte[], Nullable<DateTimeOffset>, Nullable<TimeSpan>, Network)
-  nameWithType.vb: WebAuthentication.BuildChallengeTransaction(KeyPair, KeyPair, String, Byte(), Nullable(Of DateTimeOffset), Nullable(Of TimeSpan), Network)
-- uid: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair,System.String,System.String,System.Byte[],System.Nullable{DateTimeOffset},System.Nullable{TimeSpan},stellar_dotnet_sdk.Network)
-  name: BuildChallengeTransaction(KeyPair, String, String, Byte[], Nullable<DateTimeOffset>, Nullable<TimeSpan>, Network)
-  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_BuildChallengeTransaction_stellar_dotnet_sdk_KeyPair_System_String_System_String_System_Byte___System_Nullable_DateTimeOffset__System_Nullable_TimeSpan__stellar_dotnet_sdk_Network_
-  commentId: M:stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair,System.String,System.String,System.Byte[],System.Nullable{DateTimeOffset},System.Nullable{TimeSpan},stellar_dotnet_sdk.Network)
-  name.vb: BuildChallengeTransaction(KeyPair, String, String, Byte(), Nullable(Of DateTimeOffset), Nullable(Of TimeSpan), Network)
-  fullName: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair, System.String, System.String, System.Byte[], System.Nullable<DateTimeOffset>, System.Nullable<TimeSpan>, stellar_dotnet_sdk.Network)
-  fullName.vb: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair, System.String, System.String, System.Byte(), System.Nullable(Of DateTimeOffset), System.Nullable(Of TimeSpan), stellar_dotnet_sdk.Network)
-  nameWithType: WebAuthentication.BuildChallengeTransaction(KeyPair, String, String, Byte[], Nullable<DateTimeOffset>, Nullable<TimeSpan>, Network)
-  nameWithType.vb: WebAuthentication.BuildChallengeTransaction(KeyPair, String, String, Byte(), Nullable(Of DateTimeOffset), Nullable(Of TimeSpan), Network)
+- uid: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.Byte[],System.Nullable{DateTimeOffset},System.Nullable{TimeSpan},stellar_dotnet_sdk.Network)
+  name: BuildChallengeTransaction(KeyPair, KeyPair, String, String, Byte[], Nullable<DateTimeOffset>, Nullable<TimeSpan>, Network)
+  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_BuildChallengeTransaction_stellar_dotnet_sdk_KeyPair_stellar_dotnet_sdk_KeyPair_System_String_System_String_System_Byte___System_Nullable_DateTimeOffset__System_Nullable_TimeSpan__stellar_dotnet_sdk_Network_
+  commentId: M:stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair,stellar_dotnet_sdk.KeyPair,System.String,System.String,System.Byte[],System.Nullable{DateTimeOffset},System.Nullable{TimeSpan},stellar_dotnet_sdk.Network)
+  name.vb: BuildChallengeTransaction(KeyPair, KeyPair, String, String, Byte(), Nullable(Of DateTimeOffset), Nullable(Of TimeSpan), Network)
+  fullName: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair, stellar_dotnet_sdk.KeyPair, System.String, System.String, System.Byte[], System.Nullable<DateTimeOffset>, System.Nullable<TimeSpan>, stellar_dotnet_sdk.Network)
+  fullName.vb: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair, stellar_dotnet_sdk.KeyPair, System.String, System.String, System.Byte(), System.Nullable(Of DateTimeOffset), System.Nullable(Of TimeSpan), stellar_dotnet_sdk.Network)
+  nameWithType: WebAuthentication.BuildChallengeTransaction(KeyPair, KeyPair, String, String, Byte[], Nullable<DateTimeOffset>, Nullable<TimeSpan>, Network)
+  nameWithType.vb: WebAuthentication.BuildChallengeTransaction(KeyPair, KeyPair, String, String, Byte(), Nullable(Of DateTimeOffset), Nullable(Of TimeSpan), Network)
+- uid: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair,System.String,System.String,System.String,System.Byte[],System.Nullable{DateTimeOffset},System.Nullable{TimeSpan},stellar_dotnet_sdk.Network)
+  name: BuildChallengeTransaction(KeyPair, String, String, String, Byte[], Nullable<DateTimeOffset>, Nullable<TimeSpan>, Network)
+  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_BuildChallengeTransaction_stellar_dotnet_sdk_KeyPair_System_String_System_String_System_String_System_Byte___System_Nullable_DateTimeOffset__System_Nullable_TimeSpan__stellar_dotnet_sdk_Network_
+  commentId: M:stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair,System.String,System.String,System.String,System.Byte[],System.Nullable{DateTimeOffset},System.Nullable{TimeSpan},stellar_dotnet_sdk.Network)
+  name.vb: BuildChallengeTransaction(KeyPair, String, String, String, Byte(), Nullable(Of DateTimeOffset), Nullable(Of TimeSpan), Network)
+  fullName: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair, System.String, System.String, System.String, System.Byte[], System.Nullable<DateTimeOffset>, System.Nullable<TimeSpan>, stellar_dotnet_sdk.Network)
+  fullName.vb: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction(stellar_dotnet_sdk.KeyPair, System.String, System.String, System.String, System.Byte(), System.Nullable(Of DateTimeOffset), System.Nullable(Of TimeSpan), stellar_dotnet_sdk.Network)
+  nameWithType: WebAuthentication.BuildChallengeTransaction(KeyPair, String, String, String, Byte[], Nullable<DateTimeOffset>, Nullable<TimeSpan>, Network)
+  nameWithType.vb: WebAuthentication.BuildChallengeTransaction(KeyPair, String, String, String, Byte(), Nullable(Of DateTimeOffset), Nullable(Of TimeSpan), Network)
 - uid: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction*
   name: BuildChallengeTransaction
   href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_BuildChallengeTransaction_
@@ -22362,24 +22362,24 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction
   nameWithType: WebAuthentication.BuildChallengeTransaction
-- uid: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
-  name: ReadChallengeTransaction(Transaction, String, String, Network, Nullable<DateTimeOffset>)
-  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_ReadChallengeTransaction_stellar_dotnet_sdk_Transaction_System_String_System_String_stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__
-  commentId: M:stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
-  name.vb: ReadChallengeTransaction(Transaction, String, String, Network, Nullable(Of DateTimeOffset))
-  fullName: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String, stellar_dotnet_sdk.Network, System.Nullable<DateTimeOffset>)
-  fullName.vb: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String, stellar_dotnet_sdk.Network, System.Nullable(Of DateTimeOffset))
-  nameWithType: WebAuthentication.ReadChallengeTransaction(Transaction, String, String, Network, Nullable<DateTimeOffset>)
-  nameWithType.vb: WebAuthentication.ReadChallengeTransaction(Transaction, String, String, Network, Nullable(Of DateTimeOffset))
-- uid: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String[],stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
-  name: ReadChallengeTransaction(Transaction, String, String[], Network, Nullable<DateTimeOffset>)
-  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_ReadChallengeTransaction_stellar_dotnet_sdk_Transaction_System_String_System_String___stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__
-  commentId: M:stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String[],stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
-  name.vb: ReadChallengeTransaction(Transaction, String, String(), Network, Nullable(Of DateTimeOffset))
-  fullName: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String[], stellar_dotnet_sdk.Network, System.Nullable<DateTimeOffset>)
-  fullName.vb: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String(), stellar_dotnet_sdk.Network, System.Nullable(Of DateTimeOffset))
-  nameWithType: WebAuthentication.ReadChallengeTransaction(Transaction, String, String[], Network, Nullable<DateTimeOffset>)
-  nameWithType.vb: WebAuthentication.ReadChallengeTransaction(Transaction, String, String(), Network, Nullable(Of DateTimeOffset))
+- uid: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String,System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
+  name: ReadChallengeTransaction(Transaction, String, String, String, Network, Nullable<DateTimeOffset>)
+  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_ReadChallengeTransaction_stellar_dotnet_sdk_Transaction_System_String_System_String_System_String_stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__
+  commentId: M:stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String,System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
+  name.vb: ReadChallengeTransaction(Transaction, String, String, String, Network, Nullable(Of DateTimeOffset))
+  fullName: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String, System.String, stellar_dotnet_sdk.Network, System.Nullable<DateTimeOffset>)
+  fullName.vb: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String, System.String, stellar_dotnet_sdk.Network, System.Nullable(Of DateTimeOffset))
+  nameWithType: WebAuthentication.ReadChallengeTransaction(Transaction, String, String, String, Network, Nullable<DateTimeOffset>)
+  nameWithType.vb: WebAuthentication.ReadChallengeTransaction(Transaction, String, String, String, Network, Nullable(Of DateTimeOffset))
+- uid: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String[],System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
+  name: ReadChallengeTransaction(Transaction, String, String[], String, Network, Nullable<DateTimeOffset>)
+  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_ReadChallengeTransaction_stellar_dotnet_sdk_Transaction_System_String_System_String___System_String_stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__
+  commentId: M:stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String[],System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
+  name.vb: ReadChallengeTransaction(Transaction, String, String(), String, Network, Nullable(Of DateTimeOffset))
+  fullName: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String[], System.String, stellar_dotnet_sdk.Network, System.Nullable<DateTimeOffset>)
+  fullName.vb: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String(), System.String, stellar_dotnet_sdk.Network, System.Nullable(Of DateTimeOffset))
+  nameWithType: WebAuthentication.ReadChallengeTransaction(Transaction, String, String[], String, Network, Nullable<DateTimeOffset>)
+  nameWithType.vb: WebAuthentication.ReadChallengeTransaction(Transaction, String, String(), String, Network, Nullable(Of DateTimeOffset))
 - uid: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction*
   name: ReadChallengeTransaction
   href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_ReadChallengeTransaction_
@@ -22387,15 +22387,15 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction
   nameWithType: WebAuthentication.ReadChallengeTransaction
-- uid: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
-  name: VerifyChallengeTransaction(Transaction, String, String, Network, Nullable<DateTimeOffset>)
-  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_VerifyChallengeTransaction_stellar_dotnet_sdk_Transaction_System_String_System_String_stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__
-  commentId: M:stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
-  name.vb: VerifyChallengeTransaction(Transaction, String, String, Network, Nullable(Of DateTimeOffset))
-  fullName: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String, stellar_dotnet_sdk.Network, System.Nullable<DateTimeOffset>)
-  fullName.vb: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String, stellar_dotnet_sdk.Network, System.Nullable(Of DateTimeOffset))
-  nameWithType: WebAuthentication.VerifyChallengeTransaction(Transaction, String, String, Network, Nullable<DateTimeOffset>)
-  nameWithType.vb: WebAuthentication.VerifyChallengeTransaction(Transaction, String, String, Network, Nullable(Of DateTimeOffset))
+- uid: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String,System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
+  name: VerifyChallengeTransaction(Transaction, String, String, String, Network, Nullable<DateTimeOffset>)
+  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_VerifyChallengeTransaction_stellar_dotnet_sdk_Transaction_System_String_System_String_System_String_stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__
+  commentId: M:stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String,System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
+  name.vb: VerifyChallengeTransaction(Transaction, String, String, String, Network, Nullable(Of DateTimeOffset))
+  fullName: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String, System.String, stellar_dotnet_sdk.Network, System.Nullable<DateTimeOffset>)
+  fullName.vb: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransaction(stellar_dotnet_sdk.Transaction, System.String, System.String, System.String, stellar_dotnet_sdk.Network, System.Nullable(Of DateTimeOffset))
+  nameWithType: WebAuthentication.VerifyChallengeTransaction(Transaction, String, String, String, Network, Nullable<DateTimeOffset>)
+  nameWithType.vb: WebAuthentication.VerifyChallengeTransaction(Transaction, String, String, String, Network, Nullable(Of DateTimeOffset))
 - uid: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransaction*
   name: VerifyChallengeTransaction
   href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_VerifyChallengeTransaction_
@@ -22403,15 +22403,15 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransaction
   nameWithType: WebAuthentication.VerifyChallengeTransaction
-- uid: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionSigners(stellar_dotnet_sdk.Transaction,System.String,ICollection{System.String},System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
-  name: VerifyChallengeTransactionSigners(Transaction, String, ICollection<String>, String, Network, Nullable<DateTimeOffset>)
-  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_VerifyChallengeTransactionSigners_stellar_dotnet_sdk_Transaction_System_String_ICollection_System_String__System_String_stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__
-  commentId: M:stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionSigners(stellar_dotnet_sdk.Transaction,System.String,ICollection{System.String},System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
-  name.vb: VerifyChallengeTransactionSigners(Transaction, String, ICollection(Of String), String, Network, Nullable(Of DateTimeOffset))
-  fullName: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionSigners(stellar_dotnet_sdk.Transaction, System.String, ICollection<System.String>, System.String, stellar_dotnet_sdk.Network, System.Nullable<DateTimeOffset>)
-  fullName.vb: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionSigners(stellar_dotnet_sdk.Transaction, System.String, ICollection(Of System.String), System.String, stellar_dotnet_sdk.Network, System.Nullable(Of DateTimeOffset))
-  nameWithType: WebAuthentication.VerifyChallengeTransactionSigners(Transaction, String, ICollection<String>, String, Network, Nullable<DateTimeOffset>)
-  nameWithType.vb: WebAuthentication.VerifyChallengeTransactionSigners(Transaction, String, ICollection(Of String), String, Network, Nullable(Of DateTimeOffset))
+- uid: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionSigners(stellar_dotnet_sdk.Transaction,System.String,ICollection{System.String},System.String,System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
+  name: VerifyChallengeTransactionSigners(Transaction, String, ICollection<String>, String, String, Network, Nullable<DateTimeOffset>)
+  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_VerifyChallengeTransactionSigners_stellar_dotnet_sdk_Transaction_System_String_ICollection_System_String__System_String_System_String_stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__
+  commentId: M:stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionSigners(stellar_dotnet_sdk.Transaction,System.String,ICollection{System.String},System.String,System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
+  name.vb: VerifyChallengeTransactionSigners(Transaction, String, ICollection(Of String), String, String, Network, Nullable(Of DateTimeOffset))
+  fullName: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionSigners(stellar_dotnet_sdk.Transaction, System.String, ICollection<System.String>, System.String, System.String, stellar_dotnet_sdk.Network, System.Nullable<DateTimeOffset>)
+  fullName.vb: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionSigners(stellar_dotnet_sdk.Transaction, System.String, ICollection(Of System.String), System.String, System.String, stellar_dotnet_sdk.Network, System.Nullable(Of DateTimeOffset))
+  nameWithType: WebAuthentication.VerifyChallengeTransactionSigners(Transaction, String, ICollection<String>, String, String, Network, Nullable<DateTimeOffset>)
+  nameWithType.vb: WebAuthentication.VerifyChallengeTransactionSigners(Transaction, String, ICollection(Of String), String, String, Network, Nullable(Of DateTimeOffset))
 - uid: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionSigners*
   name: VerifyChallengeTransactionSigners
   href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_VerifyChallengeTransactionSigners_
@@ -22419,15 +22419,15 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionSigners
   nameWithType: WebAuthentication.VerifyChallengeTransactionSigners
-- uid: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionThreshold(stellar_dotnet_sdk.Transaction,System.String,System.Int32,Dictionary{System.String,System.Int32},System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
-  name: VerifyChallengeTransactionThreshold(Transaction, String, Int32, Dictionary<String, Int32>, String, Network, Nullable<DateTimeOffset>)
-  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_VerifyChallengeTransactionThreshold_stellar_dotnet_sdk_Transaction_System_String_System_Int32_Dictionary_System_String_System_Int32__System_String_stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__
-  commentId: M:stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionThreshold(stellar_dotnet_sdk.Transaction,System.String,System.Int32,Dictionary{System.String,System.Int32},System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
-  name.vb: VerifyChallengeTransactionThreshold(Transaction, String, Int32, Dictionary(Of String, Int32), String, Network, Nullable(Of DateTimeOffset))
-  fullName: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionThreshold(stellar_dotnet_sdk.Transaction, System.String, System.Int32, Dictionary<System.String, System.Int32>, System.String, stellar_dotnet_sdk.Network, System.Nullable<DateTimeOffset>)
-  fullName.vb: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionThreshold(stellar_dotnet_sdk.Transaction, System.String, System.Int32, Dictionary(Of System.String, System.Int32), System.String, stellar_dotnet_sdk.Network, System.Nullable(Of DateTimeOffset))
-  nameWithType: WebAuthentication.VerifyChallengeTransactionThreshold(Transaction, String, Int32, Dictionary<String, Int32>, String, Network, Nullable<DateTimeOffset>)
-  nameWithType.vb: WebAuthentication.VerifyChallengeTransactionThreshold(Transaction, String, Int32, Dictionary(Of String, Int32), String, Network, Nullable(Of DateTimeOffset))
+- uid: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionThreshold(stellar_dotnet_sdk.Transaction,System.String,System.Int32,Dictionary{System.String,System.Int32},System.String,System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
+  name: VerifyChallengeTransactionThreshold(Transaction, String, Int32, Dictionary<String, Int32>, String, String, Network, Nullable<DateTimeOffset>)
+  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_VerifyChallengeTransactionThreshold_stellar_dotnet_sdk_Transaction_System_String_System_Int32_Dictionary_System_String_System_Int32__System_String_System_String_stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__
+  commentId: M:stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionThreshold(stellar_dotnet_sdk.Transaction,System.String,System.Int32,Dictionary{System.String,System.Int32},System.String,System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
+  name.vb: VerifyChallengeTransactionThreshold(Transaction, String, Int32, Dictionary(Of String, Int32), String, String, Network, Nullable(Of DateTimeOffset))
+  fullName: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionThreshold(stellar_dotnet_sdk.Transaction, System.String, System.Int32, Dictionary<System.String, System.Int32>, System.String, System.String, stellar_dotnet_sdk.Network, System.Nullable<DateTimeOffset>)
+  fullName.vb: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionThreshold(stellar_dotnet_sdk.Transaction, System.String, System.Int32, Dictionary(Of System.String, System.Int32), System.String, System.String, stellar_dotnet_sdk.Network, System.Nullable(Of DateTimeOffset))
+  nameWithType: WebAuthentication.VerifyChallengeTransactionThreshold(Transaction, String, Int32, Dictionary<String, Int32>, String, String, Network, Nullable<DateTimeOffset>)
+  nameWithType.vb: WebAuthentication.VerifyChallengeTransactionThreshold(Transaction, String, Int32, Dictionary(Of String, Int32), String, String, Network, Nullable(Of DateTimeOffset))
 - uid: stellar_dotnet_sdk.WebAuthentication.VerifyChallengeTransactionThreshold*
   name: VerifyChallengeTransactionThreshold
   href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_VerifyChallengeTransactionThreshold_
