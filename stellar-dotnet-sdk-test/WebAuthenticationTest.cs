@@ -11,6 +11,8 @@ namespace stellar_dotnet_sdk_test
     public class WebAuthenticationTest
     {
         private const string HomeDomain = "thisisatest.sandbox.anchor.anchordomain.com";
+        private const string WebAuthDomain = "thisisatest.sandbox.anchor.webauth.com";
+
         private string ManageDataOperationName => $"{HomeDomain} auth";
 
         [TestMethod]
@@ -18,9 +20,8 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientAccountId = "GBDIT5GUJ7R5BXO3GJHFXJ6AZ5UQK6MNOIDMPQUSMXLIHTUNR2Q5CFNF";
-            var anchorName = "NET";
             Network.UseTestNetwork();
-            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientAccountId, anchorName);
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientAccountId, HomeDomain, WebAuthDomain);
 
             var serializedTx = tx.ToEnvelopeXdrBase64();
             var back = Transaction.FromEnvelopeXdr(serializedTx);
@@ -38,7 +39,6 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientAccountId = KeyPair.FromAccountId("GBDIT5GUJ7R5BXO3GJHFXJ6AZ5UQK6MNOIDMPQUSMXLIHTUNR2Q5CFNF");
-            var anchorName = "NET";
 
             var nonce = new byte[48];
             Array.Clear(nonce, 0, nonce.Length);
@@ -47,7 +47,7 @@ namespace stellar_dotnet_sdk_test
             var duration = TimeSpan.FromMinutes(10.0);
 
             var tx = WebAuthentication
-                .BuildChallengeTransaction(serverKeypair, clientAccountId, anchorName, nonce, now, duration, Network.Test());
+                .BuildChallengeTransaction(serverKeypair, clientAccountId, HomeDomain, WebAuthDomain, nonce, now, duration, Network.Test());
 
             var serializedTx = tx.ToEnvelopeXdrBase64();
             var back = Transaction.FromEnvelopeXdr(serializedTx);
@@ -66,7 +66,6 @@ namespace stellar_dotnet_sdk_test
             var clientAccountId =
                 MuxedAccountMed25519.FromMuxedAccountId(
                     "MAAAAAAAAAAAJURAAB2X52XFQP6FBXLGT6LWOOWMEXWHEWBDVRZ7V5WH34Y22MPFBHUHY");
-            var anchorName = "NET";
 
             var nonce = new byte[48];
             Array.Clear(nonce, 0, nonce.Length);
@@ -77,7 +76,7 @@ namespace stellar_dotnet_sdk_test
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
             {
                 var tx = WebAuthentication
-                    .BuildChallengeTransaction(serverKeypair, clientAccountId.Address, anchorName, nonce, now, duration,
+                    .BuildChallengeTransaction(serverKeypair, clientAccountId.Address, HomeDomain, WebAuthDomain, nonce, now, duration,
                         Network.Test());
             });
         }
@@ -91,10 +90,10 @@ namespace stellar_dotnet_sdk_test
 
             var now = DateTimeOffset.Now;
 
-            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, HomeDomain, now: now);
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
             tx.Sign(clientKeypair);
 
-            Assert.IsTrue(WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, now: now));
+            Assert.IsTrue(WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: now));
         }
 
         [TestMethod]
@@ -114,7 +113,7 @@ namespace stellar_dotnet_sdk_test
 
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
             {
-                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, now: now);
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
             });
         }
 
@@ -123,17 +122,17 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientKeypair = KeyPair.Random();
-            var anchorName = "NET";
+
             Network.UseTestNetwork();
 
             var now = DateTimeOffset.Now;
 
-            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
             tx.Sign(clientKeypair);
 
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
             {
-                WebAuthentication.VerifyChallengeTransaction(tx, KeyPair.Random().AccountId, HomeDomain, now: now);
+                WebAuthentication.VerifyChallengeTransaction(tx, KeyPair.Random().AccountId, HomeDomain, WebAuthDomain, now: now);
             });
         }
 
@@ -156,7 +155,7 @@ namespace stellar_dotnet_sdk_test
 
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
             {
-                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, now: now);
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
             });
         }
 
@@ -177,7 +176,7 @@ namespace stellar_dotnet_sdk_test
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
             {
 
-                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, now: now);
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
             });
         }
 
@@ -201,7 +200,7 @@ namespace stellar_dotnet_sdk_test
 
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
             {
-                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, now: now);
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
             });
         }
 
@@ -210,18 +209,18 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientKeypair = KeyPair.Random();
-            var anchorName = "NET";
+
             Network.UseTestNetwork();
 
             var now = DateTimeOffset.Now;
 
-            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
             tx.Signatures.Clear();
             tx.Sign(clientKeypair);
 
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
             {
-                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, now: now);
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
             });
         }
 
@@ -230,17 +229,17 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientKeypair = KeyPair.Random();
-            var anchorName = "NET";
+
             Network.UseTestNetwork();
 
             var now = DateTimeOffset.Now;
 
-            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
             tx.Sign(clientKeypair);
 
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
             {
-                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, now: now, network: Network.Public());
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: now, network: Network.Public());
             });
         }
 
@@ -249,16 +248,16 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientKeypair = KeyPair.Random();
-            var anchorName = "NET";
+
             Network.UseTestNetwork();
 
             var now = DateTimeOffset.Now;
 
-            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
 
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
             {
-                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, now: now);
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
             });
         }
 
@@ -267,17 +266,17 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientKeypair = KeyPair.Random();
-            var anchorName = "NET";
+
             Network.UseTestNetwork();
 
             var now = DateTimeOffset.Now;
 
-            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
             tx.Sign(clientKeypair, Network.Public());
 
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
             {
-                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, now: now, network: Network.Test());
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: now, network: Network.Test());
             });
         }
 
@@ -286,17 +285,17 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientKeypair = KeyPair.Random();
-            var anchorName = "NET";
+
             Network.UseTestNetwork();
 
             var now = DateTimeOffset.Now;
 
-            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
             tx.Sign(clientKeypair);
 
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
                 {
-                    WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, now: now.Subtract(TimeSpan.FromDays(1.0)));
+                    WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: now.Subtract(TimeSpan.FromDays(1.0)));
                 });
         }
 
@@ -305,17 +304,17 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientKeypair = KeyPair.Random();
-            var anchorName = "NET";
+
             Network.UseTestNetwork();
 
             var now = DateTimeOffset.Now;
 
-            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, anchorName, now: now);
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair.AccountId, HomeDomain, WebAuthDomain, now: now);
             tx.Sign(clientKeypair);
 
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
                 {
-                    WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, now: now.Add(TimeSpan.FromDays(1.0)));
+                    WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: now.Add(TimeSpan.FromDays(1.0)));
                 });
         }
 
@@ -331,7 +330,7 @@ namespace stellar_dotnet_sdk_test
             var tx = Transaction.FromEnvelopeXdr(txXdr);
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
             {
-                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, now: now.Add(TimeSpan.FromDays(1.0)));
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: now.Add(TimeSpan.FromDays(1.0)));
             });
         }
 
@@ -347,7 +346,7 @@ namespace stellar_dotnet_sdk_test
             var tx = Transaction.FromEnvelopeXdr(txXdr);
             Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
             {
-                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, now: now.Add(TimeSpan.FromDays(1.0)));
+                WebAuthentication.VerifyChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: now.Add(TimeSpan.FromDays(1.0)));
             });
         }
 
@@ -360,11 +359,10 @@ namespace stellar_dotnet_sdk_test
 
         private void CheckOperation(Transaction tx, string clientAccountId)
         {
-
-            Assert.AreEqual(1, tx.Operations.Length);
+            Assert.AreEqual(2, tx.Operations.Length);
             var operation = tx.Operations[0] as ManageDataOperation;
             Assert.IsNotNull(operation);
-            Assert.AreEqual("NET auth", operation.Name);
+            Assert.AreEqual($"{HomeDomain} auth", operation.Name);
             Assert.AreEqual(clientAccountId, operation.SourceAccount.AccountId);
             Assert.AreEqual(64, operation.Value.Length);
             var bytes = Convert.FromBase64String(Encoding.UTF8.GetString(operation.Value));
@@ -395,7 +393,7 @@ namespace stellar_dotnet_sdk_test
             transaction.Sign(serverKeypair);
             transaction.Sign(clientKeypair);
 
-            var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, Network.Test());
+            var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, WebAuthDomain, Network.Test());
 
             Assert.AreEqual(clientKeypair.AccountId, readTransactionID);
         }
@@ -423,7 +421,7 @@ namespace stellar_dotnet_sdk_test
 
             transaction.Sign(serverKeypair);
 
-            var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, Network.Test());
+            var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, WebAuthDomain, Network.Test());
 
             Assert.AreEqual(clientKeypair.AccountId, readTransactionID);
         }
@@ -450,7 +448,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, Network.Test());
+                var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, WebAuthDomain, Network.Test());
 
             }
             catch (Exception exception)
@@ -483,7 +481,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, Network.Test());
+                var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, WebAuthDomain, Network.Test());
             }
             catch (Exception exception)
             {
@@ -515,7 +513,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, Network.Test());
+                var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, WebAuthDomain, Network.Test());
             }
             catch (Exception exception)
             {
@@ -544,7 +542,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, Network.Test());
+                var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, WebAuthDomain, Network.Test());
             }
             catch (Exception exception)
             {
@@ -574,7 +572,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, Network.Test());
+                var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, WebAuthDomain, Network.Test());
             }
             catch (Exception exception)
             {
@@ -604,7 +602,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, Network.Test());
+                var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, WebAuthDomain, Network.Test());
             }
             catch (Exception exception)
             {
@@ -642,7 +640,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, Network.Test());
+                var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, WebAuthDomain, Network.Test());
             }
             catch (Exception exception)
             {
@@ -684,7 +682,7 @@ namespace stellar_dotnet_sdk_test
                 clientKeypair.Address
             };
 
-            var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, Network.Test()).ToList();
+            var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, WebAuthDomain, Network.Test()).ToList();
 
             for (int i = 0; i < wantSigners.Length; i++)
             {
@@ -730,7 +728,7 @@ namespace stellar_dotnet_sdk_test
                 client2Keypair.Address
             };
 
-            var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, Network.Test()).ToList();
+            var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, WebAuthDomain, Network.Test()).ToList();
 
             for (int i = 0; i < wantSigners.Length; i++)
             {
@@ -778,7 +776,7 @@ namespace stellar_dotnet_sdk_test
                 client2Keypair.Address
             };
 
-            var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, Network.Test()).ToList();
+            var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, WebAuthDomain, Network.Test()).ToList();
 
             for (int i = 0; i < wantSigners.Length; i++)
             {
@@ -822,7 +820,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, Network.Test()).ToList();
+                var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, WebAuthDomain, Network.Test()).ToList();
             }
             catch (Exception exception)
             {
@@ -866,7 +864,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, Network.Test()).ToList();
+                var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, WebAuthDomain, Network.Test()).ToList();
             }
             catch (Exception exception)
             {
@@ -908,7 +906,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, Network.Test()).ToList();
+                var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, WebAuthDomain, Network.Test()).ToList();
             }
             catch (Exception exception)
             {
@@ -954,7 +952,7 @@ namespace stellar_dotnet_sdk_test
                 client2Keypair.Address
             };
 
-            var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, Network.Test()).ToList();
+            var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, WebAuthDomain, Network.Test()).ToList();
 
             for (int i = 0; i < wantSigners.Length; i++)
             {
@@ -998,7 +996,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, Network.Test()).ToList();
+                var signersFound = WebAuthentication.VerifyChallengeTransactionThreshold(transaction, serverKeypair.AccountId, threshold, signerSummary, HomeDomain, WebAuthDomain, Network.Test()).ToList();
             }
             catch (Exception exception)
             {
@@ -1034,7 +1032,7 @@ namespace stellar_dotnet_sdk_test
                 clientKeypair.Address
             };
 
-            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, Network.Test());
+            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, WebAuthDomain, Network.Test());
 
             Assert.AreEqual(clientKeypair.Address, signersFound[0]);
         }
@@ -1068,7 +1066,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, Network.Test()).ToList();
+                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, WebAuthDomain, Network.Test()).ToList();
             }
             catch (Exception exception)
             {
@@ -1107,7 +1105,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, Network.Test()).ToList();
+                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, WebAuthDomain, Network.Test()).ToList();
             }
             catch (Exception exception)
             {
@@ -1152,7 +1150,7 @@ namespace stellar_dotnet_sdk_test
                 client2Keypair.Address
             };
 
-            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, Network.Test()).ToList();
+            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, WebAuthDomain, Network.Test()).ToList();
 
             for (int i = 0; i < wantSigners.Length; i++)
             {
@@ -1197,7 +1195,7 @@ namespace stellar_dotnet_sdk_test
                 client2Keypair.Address
             };
 
-            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, Network.Test()).ToList();
+            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, WebAuthDomain, Network.Test()).ToList();
 
             for (int i = 0; i < wantSigners.Length; i++)
             {
@@ -1239,7 +1237,7 @@ namespace stellar_dotnet_sdk_test
                 client2Keypair.Address
             };
 
-            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, Network.Test()).ToList();
+            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, WebAuthDomain, Network.Test()).ToList();
 
             for (int i = 0; i < wantSigners.Length; i++)
             {
@@ -1282,7 +1280,7 @@ namespace stellar_dotnet_sdk_test
                 client2Keypair.Address
             };
 
-            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, Network.Test()).ToList();
+            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, WebAuthDomain, Network.Test()).ToList();
 
             for (int i = 0; i < wantSigners.Length; i++)
             {
@@ -1321,7 +1319,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, Network.Test()).ToList();
+                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, WebAuthDomain, Network.Test()).ToList();
             }
             catch (Exception exception)
             {
@@ -1363,7 +1361,7 @@ namespace stellar_dotnet_sdk_test
                 clientKeypair.Address
             };
 
-            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, Network.Test()).ToList();
+            var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, WebAuthDomain, Network.Test()).ToList();
 
             for (int i = 0; i < wantSigners.Length; i++)
             {
@@ -1408,7 +1406,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, Network.Test()).ToList();
+                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, WebAuthDomain, Network.Test()).ToList();
             }
             catch (Exception exception)
             {
@@ -1447,7 +1445,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, Network.Test()).ToList();
+                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, WebAuthDomain, Network.Test()).ToList();
             }
             catch (Exception exception)
             {
@@ -1484,7 +1482,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, Network.Test()).ToList();
+                var signersFound = WebAuthentication.VerifyChallengeTransactionSigners(transaction, serverKeypair.AccountId, signers, HomeDomain, WebAuthDomain, Network.Test()).ToList();
             }
             catch (Exception exception)
             {
@@ -1520,7 +1518,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, Network.Test());
+                WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, WebAuthDomain, Network.Test());
             }
             catch (Exception exception)
             {
@@ -1556,7 +1554,7 @@ namespace stellar_dotnet_sdk_test
 
             try
             {
-                WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, Network.Test());
+                WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, WebAuthDomain, Network.Test());
             }
             catch (Exception exception)
             {
@@ -1569,12 +1567,12 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientAccountId = "GBDIT5GUJ7R5BXO3GJHFXJ6AZ5UQK6MNOIDMPQUSMXLIHTUNR2Q5CFNF";
-            var anchorName = "NET";
+
             Network.UseTestNetwork();
             try
             {
-                var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientAccountId, anchorName);
-                WebAuthentication.ReadChallengeTransaction(tx, serverKeypair.AccountId, $"{anchorName}bad");
+                var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientAccountId, HomeDomain, WebAuthDomain);
+                WebAuthentication.ReadChallengeTransaction(tx, serverKeypair.AccountId, $"{HomeDomain}bad", WebAuthDomain);
             }
             catch (InvalidWebAuthenticationException e)
             {
@@ -1587,12 +1585,12 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientAccountId = "GBDIT5GUJ7R5BXO3GJHFXJ6AZ5UQK6MNOIDMPQUSMXLIHTUNR2Q5CFNF";
-            var anchorName = "NET";
+
             Network.UseTestNetwork();
             try
             {
-                var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientAccountId, anchorName);
-                WebAuthentication.ReadChallengeTransaction(tx, serverKeypair.AccountId, new string[0]);
+                var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientAccountId, HomeDomain, WebAuthDomain);
+                WebAuthentication.ReadChallengeTransaction(tx, serverKeypair.AccountId, new string[0], WebAuthDomain);
             }
             catch (InvalidWebAuthenticationException e)
             {
@@ -1605,11 +1603,11 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientAccountId = "GBDIT5GUJ7R5BXO3GJHFXJ6AZ5UQK6MNOIDMPQUSMXLIHTUNR2Q5CFNF";
-            var anchorName = "NET";
+
             Network.UseTestNetwork();
             try
             {
-                WebAuthentication.ReadChallengeTransaction(null, serverKeypair.AccountId, new string[0]);
+                WebAuthentication.ReadChallengeTransaction(null, serverKeypair.AccountId, HomeDomain, WebAuthDomain);
             }
             catch (InvalidWebAuthenticationException e)
             {
@@ -1622,17 +1620,45 @@ namespace stellar_dotnet_sdk_test
         {
             var serverKeypair = KeyPair.Random();
             var clientAccountId = "GBDIT5GUJ7R5BXO3GJHFXJ6AZ5UQK6MNOIDMPQUSMXLIHTUNR2Q5CFNF";
-            var anchorName = "NET";
+
             Network.UseTestNetwork();
             try
             {
-                var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientAccountId, anchorName);
-                WebAuthentication.ReadChallengeTransaction(tx, serverKeypair.AccountId, anchorName, now: DateTimeOffset.Now.Subtract(new TimeSpan(0, 20, 0)));
+                var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientAccountId, HomeDomain, WebAuthDomain);
+                WebAuthentication.ReadChallengeTransaction(tx, serverKeypair.AccountId, HomeDomain, WebAuthDomain, now: DateTimeOffset.Now.Subtract(new TimeSpan(0, 20, 0)));
             }
             catch (InvalidWebAuthenticationException e)
             {
                 Assert.AreEqual(e.Message, "Challenge transaction expired");
             }
+        }
+
+        [TestMethod]
+        public void TestReadChallengeTransactionNoWebAuthDomain()
+        {
+            Network.Use(Network.Test());
+
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+
+            var txSource = new Account(serverKeypair.Address, -1);
+            var opSource = new Account(clientKeypair.Address, 0);
+
+            var plainTextBytes = Encoding.UTF8.GetBytes(new string(' ', 48));
+            var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
+
+            var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
+            var transaction = new TransactionBuilder(txSource)
+                .AddOperation(operation)
+                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .Build();
+
+            transaction.Sign(serverKeypair);
+            transaction.Sign(clientKeypair);
+
+            var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, "", Network.Test());
+
+            Assert.AreEqual(clientKeypair.AccountId, readTransactionID);
         }
     }
 }

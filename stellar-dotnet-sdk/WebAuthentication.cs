@@ -17,6 +17,7 @@ namespace stellar_dotnet_sdk
         /// <param name="serverKeypair">Server signing keypair</param>
         /// <param name="clientAccountId">The client account id that needs authentication</param>
         /// <param name="homeDomain">The server home domain</param>
+        /// <param name="webAuthDomain">The server auth domain</param>
         /// <param name="nonce">48 bytes long cryptographic-quality random data</param>
         /// <param name="now">The datetime from which the transaction is valid</param>
         /// <param name="timeout">The transaction lifespan</param>
@@ -25,7 +26,7 @@ namespace stellar_dotnet_sdk
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
         public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, string clientAccountId,
-            string homeDomain, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
+            string homeDomain, string webAuthDomain, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
             Network network = null)
         {
             if (string.IsNullOrEmpty(clientAccountId)) throw new ArgumentNullException(nameof(clientAccountId));
@@ -33,7 +34,7 @@ namespace stellar_dotnet_sdk
             if (StrKey.DecodeVersionByte(clientAccountId) != StrKey.VersionByte.ACCOUNT_ID)
                 throw new InvalidWebAuthenticationException($"{nameof(clientAccountId)} is not a valid account id");
             var clientAccountKeypair = KeyPair.FromAccountId(clientAccountId);
-            return BuildChallengeTransaction(serverKeypair, clientAccountKeypair, homeDomain, nonce, now, timeout,
+            return BuildChallengeTransaction(serverKeypair, clientAccountKeypair, homeDomain, webAuthDomain, nonce, now, timeout,
                 network);
         }
 
@@ -43,6 +44,7 @@ namespace stellar_dotnet_sdk
         /// <param name="serverKeypair">Server signing keypair</param>
         /// <param name="clientAccountId">The client account id that needs authentication</param>
         /// <param name="homeDomain">The server home domain</param>
+        /// <param name="webAuthDomain">The server auth domain</param>
         /// <param name="nonce">48 bytes long cryptographic-quality random data</param>
         /// <param name="now">The datetime from which the transaction is valid</param>
         /// <param name="timeout">The transaction lifespan</param>
@@ -51,12 +53,13 @@ namespace stellar_dotnet_sdk
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
         public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, KeyPair clientAccountId,
-            string homeDomain, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
+            string homeDomain, string webAuthDomain, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
             Network network = null)
         {
             if (serverKeypair is null) throw new ArgumentNullException(nameof(serverKeypair));
             if (clientAccountId is null) throw new ArgumentNullException(nameof(clientAccountId));
             if (string.IsNullOrEmpty(homeDomain)) throw new ArgumentNullException(nameof(homeDomain));
+            if (string.IsNullOrEmpty(webAuthDomain)) throw new ArgumentNullException(nameof(webAuthDomain));
 
             if (nonce is null)
             {
@@ -87,9 +90,17 @@ namespace stellar_dotnet_sdk
                 .SetSourceAccount(clientAccountId)
                 .Build();
 
+            var webAuthDataKey = "web_auth_domain";
+            var webAuthDataValue = Encoding.UTF8.GetBytes(webAuthDomain);
+
+            var webAuthOperation = new ManageDataOperation.Builder(webAuthDataKey, webAuthDataValue)
+                .SetSourceAccount(serverKeypair)
+                .Build();
+
             var tx = new TransactionBuilder(serverAccount)
                 .AddTimeBounds(timeBounds)
                 .AddOperation(operation)
+                .AddOperation(webAuthOperation)
                 .Build();
 
             tx.Sign(serverKeypair, network);
@@ -112,14 +123,15 @@ namespace stellar_dotnet_sdk
         /// <param name="transaction">The challenge transaction</param>
         /// <param name="serverAccountId">The server account id</param>
         /// <param name="homeDomain">The server home domain</param>
+        /// <param name="webAuthDomain">The server auth domain</param>
         /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
         /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
         /// <returns>The client account id</returns>
         /// <exception cref="InvalidWebAuthenticationException"></exception>
-        public static string ReadChallengeTransaction(Transaction transaction, string serverAccountId, string homeDomain,
+        public static string ReadChallengeTransaction(Transaction transaction, string serverAccountId, string homeDomain, string webAuthDomain,
             Network network = null, DateTimeOffset? now = null)
         {
-            return ReadChallengeTransaction(transaction, serverAccountId, new string[1] { homeDomain }, network, now);
+            return ReadChallengeTransaction(transaction, serverAccountId, new string[1] { homeDomain }, webAuthDomain, network, now);
         }
 
         /// <summary>
@@ -137,11 +149,12 @@ namespace stellar_dotnet_sdk
         /// <param name="transaction">The challenge transaction</param>
         /// <param name="serverAccountId">The server account id</param>
         /// <param name="homeDomain">The server home domain</param>
+        /// <param name="webAuthDomain">The server auth domain</param>
         /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
         /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
         /// <returns>The client account id</returns>
         /// <exception cref="InvalidWebAuthenticationException"></exception>
-        public static string ReadChallengeTransaction(Transaction transaction, string serverAccountId, string[] homeDomains,
+        public static string ReadChallengeTransaction(Transaction transaction, string serverAccountId, string[] homeDomains, string webAuthDomain,
             Network network = null, DateTimeOffset? now = null)
         {
             network = network ?? Network.Current;
@@ -199,6 +212,14 @@ namespace stellar_dotnet_sdk
                 {
                     throw new InvalidWebAuthenticationException("The transaction has operations that are unrecognized");
                 }
+
+                var opManageData = (ManageDataOperation)op;
+                var opDataValue = opManageData.Value != null ? Encoding.UTF8.GetString(opManageData.Value) : null;
+
+                if (opManageData.Name == "web_auth_domain" && (opManageData.Value == null || opDataValue != webAuthDomain))
+                {
+                    throw new InvalidWebAuthenticationException($"Invalid 'web_auth_domain' value. Expected: {webAuthDomain} Actual: {opDataValue}");
+                }
             }
 
             var clientAccountKeypair = operation.SourceAccount;
@@ -235,10 +256,10 @@ namespace stellar_dotnet_sdk
 
         public static ICollection<string> VerifyChallengeTransactionThreshold(Transaction transaction,
             string serverAccountId,
-            int threshold, Dictionary<string, int> signerSummary, string homeDomain, Network network = null, DateTimeOffset? now = null)
+            int threshold, Dictionary<string, int> signerSummary, string homeDomain, string webAuthDomain, Network network = null, DateTimeOffset? now = null)
         {
             var signersFound =
-                VerifyChallengeTransactionSigners(transaction, serverAccountId, signerSummary.Keys.ToArray(), homeDomain, network,
+                VerifyChallengeTransactionSigners(transaction, serverAccountId, signerSummary.Keys.ToArray(), homeDomain, webAuthDomain, network,
                     now);
             var weight = signersFound.Sum(signer => signerSummary[signer]);
             if (weight < threshold)
@@ -259,19 +280,20 @@ namespace stellar_dotnet_sdk
         /// <param name="serverAccountId">The server account id</param>
         /// <param name="signers"></param>
         /// <param name="homeDomain">The server home domain</param>
+        /// <param name="webAuthDomain">The server auth domain</param>
         /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
         /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         public static string[] VerifyChallengeTransactionSigners(Transaction transaction, string serverAccountId,
-            ICollection<string> signers, string homeDomain, Network network = null, DateTimeOffset? now = null)
+            ICollection<string> signers, string homeDomain, string webAuthDomain, Network network = null, DateTimeOffset? now = null)
         {
             if (!signers.Any())
                 throw new ArgumentException($"{nameof(signers)} must be non-empty");
 
             network = network ?? Network.Current;
 
-            ReadChallengeTransaction(transaction, serverAccountId, homeDomain, network, now);
+            ReadChallengeTransaction(transaction, serverAccountId, homeDomain, webAuthDomain, network, now);
 
             // Remove server signer if present
             var serverKeypair = KeyPair.FromAccountId(serverAccountId);
@@ -309,17 +331,18 @@ namespace stellar_dotnet_sdk
         /// <param name="transaction">The challenge transaction</param>
         /// <param name="serverAccountId">The server account id</param>
         /// <param name="homeDomain">The server home domain</param>
+        /// <param name="webAuthDomain">The server auth domain</param>
         /// <param name="network">The network the transaction was submitted to, defaults to Network.Current</param>
         /// <param name="now">Current time, defaults to DateTimeOffset.Now</param>
         /// <returns>True if the transaction is valid</returns>
         /// <exception cref="InvalidWebAuthenticationException"></exception>
         [Obsolete("Use VerifyChallengeTransactionThreshold and VerifyChallengeTransactionSigners")]
-        public static bool VerifyChallengeTransaction(Transaction transaction, string serverAccountId, string homeDomain,
+        public static bool VerifyChallengeTransaction(Transaction transaction, string serverAccountId, string homeDomain, string webAuthDomain,
             Network network = null, DateTimeOffset? now = null)
         {
             network = network ?? Network.Current;
 
-            var clientAccountId = ReadChallengeTransaction(transaction, serverAccountId, homeDomain, network, now);
+            var clientAccountId = ReadChallengeTransaction(transaction, serverAccountId, homeDomain, webAuthDomain, network, now);
 
             if (!ValidateSignedBy(transaction, clientAccountId, network))
                 throw new InvalidWebAuthenticationException("Challenge transaction not signed by client");
