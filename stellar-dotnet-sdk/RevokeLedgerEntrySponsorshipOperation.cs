@@ -16,7 +16,7 @@ namespace stellar_dotnet_sdk
         {
             LedgerKey = ledgerKey;
         }
-        
+
         public override xdr.Operation.OperationBody ToOperationBody()
         {
             return new xdr.Operation.OperationBody

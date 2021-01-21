@@ -14,8 +14,8 @@ namespace stellar_dotnet_sdk_test.responses.results
             var tx = Util.AssertResultOfType(
                 "AAAAAACYloD/////AAAAAQAAAAAAAAACAAAAAAAAAAEAAAAAKoNGsl81xj8D8XyekzKZXRuSU2KImhHkQj4QWhroY64AAAAAAAAE0gAAAAAAAAAAAJiWgAAAAAFVU0QAAAAAACqDRrJfNcY/A/F8npMymV0bklNiiJoR5EI+EFoa6GOuAAAAAAADDUAAAAAAAyzXIcEd0vK9XlVfmjyQE9QpJjOLzYUN5orR0N+Dz+QAAAABVVNEAAAAAAAqg0ayXzXGPwPxfJ6TMpldG5JTYoiaEeRCPhBaGuhjrgAAAAAAAw1AAAAAAA==",
                 typeof(PathPaymentStrictReceiveSuccess), true);
-            var failed = (TransactionResultFailed) tx;
-            var op = (PathPaymentStrictReceiveSuccess) failed.Results[0];
+            var failed = (TransactionResultFailed)tx;
+            var op = (PathPaymentStrictReceiveSuccess)failed.Results[0];
             Assert.AreEqual("GABSZVZBYEO5F4V5LZKV7GR4SAJ5IKJGGOF43BIN42FNDUG7QPH6IMRQ", op.Last.Destination.AccountId);
             Assert.AreEqual(Asset.CreateNonNativeAsset("USD", "GAVIGRVSL424MPYD6F6J5EZSTFORXESTMKEJUEPEII7BAWQ25BR25DUC"), op.Last.Asset);
             Assert.AreEqual("0.02", op.Last.Amount);
@@ -89,8 +89,8 @@ namespace stellar_dotnet_sdk_test.responses.results
             var tx = Util.AssertResultOfType(
                 "AAAAAACYloD/////AAAAAQAAAAAAAAAC////9wAAAAFVU0QAAAAAACqDRrJfNcY/A/F8npMymV0bklNiiJoR5EI+EFoa6GOuAAAAAA==",
                 typeof(PathPaymentStrictReceiveNoIssuer), false);
-            var failed = (TransactionResultFailed) tx;
-            var op = (PathPaymentStrictReceiveNoIssuer) failed.Results[0];
+            var failed = (TransactionResultFailed)tx;
+            var op = (PathPaymentStrictReceiveNoIssuer)failed.Results[0];
             Assert.AreEqual(Asset.CreateNonNativeAsset("USD", "GAVIGRVSL424MPYD6F6J5EZSTFORXESTMKEJUEPEII7BAWQ25BR25DUC"), op.NoIssuer);
         }
 

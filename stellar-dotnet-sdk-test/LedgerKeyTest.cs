@@ -14,8 +14,8 @@ namespace stellar_dotnet_sdk_test
             var xdr = ledgerKey.ToXdr();
             var back = LedgerKey.FromXdr(xdr);
 
-            var account = (LedgerKeyAccount) back;
-            
+            var account = (LedgerKeyAccount)back;
+
             Assert.IsNotNull(account);
             Assert.AreEqual(keypair.AccountId, account.Account.AccountId);
         }
@@ -28,8 +28,8 @@ namespace stellar_dotnet_sdk_test
             var xdr = ledgerKey.ToXdr();
             var back = LedgerKey.FromXdr(xdr);
 
-            var data = (LedgerKeyData) back;
-            
+            var data = (LedgerKeyData)back;
+
             Assert.IsNotNull(data);
             Assert.AreEqual("Test Data", data.DataName);
             Assert.AreEqual(keypair.AccountId, data.Account.AccountId);
@@ -43,8 +43,8 @@ namespace stellar_dotnet_sdk_test
             var xdr = ledgerKey.ToXdr();
             var back = LedgerKey.FromXdr(xdr);
 
-            var offer = (LedgerKeyOffer) back;
-            
+            var offer = (LedgerKeyOffer)back;
+
             Assert.IsNotNull(offer);
             Assert.AreEqual(1234, offer.OfferId);
             Assert.AreEqual(keypair.AccountId, offer.Seller.AccountId);
@@ -55,18 +55,18 @@ namespace stellar_dotnet_sdk_test
         {
             var keypair = KeyPair.FromAccountId("GCFRHRU5YRI3IN3IMRMYGWWEG2PX2B6MYH2RJW7NEDE2PTYPISPT3RU7");
             var issuer = KeyPair.FromAccountId("GB24C27VKWCBG7NTCT4J2L4MXJGYC3K3SQ4JOTCSPOVVEN7EZEB43XNE");
-            var asset = Asset.CreateNonNativeAsset("ABCD", issuer.AccountId); 
-            var ledgerKey = LedgerKey.Trustline(keypair,asset);
+            var asset = Asset.CreateNonNativeAsset("ABCD", issuer.AccountId);
+            var ledgerKey = LedgerKey.Trustline(keypair, asset);
             var xdr = ledgerKey.ToXdr();
             var back = LedgerKey.FromXdr(xdr);
 
-            var trustline = (LedgerKeyTrustline) back;
-            
+            var trustline = (LedgerKeyTrustline)back;
+
             Assert.IsNotNull(trustline);
             Assert.AreEqual("ABCD:GB24C27VKWCBG7NTCT4J2L4MXJGYC3K3SQ4JOTCSPOVVEN7EZEB43XNE", trustline.Asset.CanonicalName());
             Assert.AreEqual(keypair.AccountId, trustline.Account.AccountId);
-        }        
-        
+        }
+
 
         [TestMethod]
         public void TestLedgerKeyClaimableBalance()
@@ -76,10 +76,10 @@ namespace stellar_dotnet_sdk_test
             var xdr = ledgerKey.ToXdr();
             var back = LedgerKey.FromXdr(xdr);
 
-            var claimableBalance = (LedgerKeyClaimableBalance) back;
-            
+            var claimableBalance = (LedgerKeyClaimableBalance)back;
+
             Assert.IsNotNull(claimableBalance);
             Assert.AreEqual(balanceId, claimableBalance.BalanceId);
-        }              
+        }
     }
 }

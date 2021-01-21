@@ -38,7 +38,7 @@ namespace stellar_dotnet_sdk.responses
 
             if (href is null) throw new JsonSerializationException();
 
-            return objectType.GetMethod("Create")?.Invoke(null, new object[] {href, templated});
+            return objectType.GetMethod("Create")?.Invoke(null, new object[] { href, templated });
         }
 
         public override bool CanConvert(Type objectType)

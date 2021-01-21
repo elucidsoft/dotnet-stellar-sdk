@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk.responses.effects
         public string Asset { get; private set; }
 
         [JsonProperty(PropertyName = "balance_id")]
-	    public string BalanceID { get; private set; }
+        public string BalanceID { get; private set; }
 
         [JsonProperty(PropertyName = "amount")]
         public string Amount { get; private set; }

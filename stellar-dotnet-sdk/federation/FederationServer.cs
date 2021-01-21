@@ -70,7 +70,7 @@ namespace stellar_dotnet_sdk.federation
             {
                 var response = await _httpClient.GetAsync(stellarTomUri, HttpCompletionOption.ResponseContentRead);
 
-                if ((int) response.StatusCode >= 300)
+                if ((int)response.StatusCode >= 300)
                     throw new StellarTomlNotFoundInvalidException();
 
                 var responseToml = await response.Content.ReadAsStringAsync();

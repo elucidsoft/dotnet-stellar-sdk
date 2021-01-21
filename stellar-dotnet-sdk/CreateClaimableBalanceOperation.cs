@@ -13,14 +13,14 @@ namespace stellar_dotnet_sdk
         public Asset Asset { get; }
         public string Amount { get; }
         public Claimant[] Claimants { get; }
-        
+
         private CreateClaimableBalanceOperation(Asset asset, string amount, Claimant[] claimants)
         {
             Asset = asset;
             Amount = amount;
             Claimants = claimants;
         }
-        
+
         public override xdr.Operation.OperationBody ToOperationBody()
         {
             return new xdr.Operation.OperationBody
@@ -28,7 +28,7 @@ namespace stellar_dotnet_sdk
                 Discriminant = xdr.OperationType.Create(xdr.OperationType.OperationTypeEnum.CREATE_CLAIMABLE_BALANCE),
                 CreateClaimableBalanceOp = new xdr.CreateClaimableBalanceOp
                 {
-                    Amount = new xdr.Int64 {InnerValue = ToXdrAmount(Amount)},
+                    Amount = new xdr.Int64 { InnerValue = ToXdrAmount(Amount) },
                     Asset = Asset.ToXdr(),
                     Claimants = Claimants.Select(claimant => claimant.ToXdr()).ToArray(),
                 }

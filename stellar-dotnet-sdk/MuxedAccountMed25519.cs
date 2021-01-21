@@ -54,7 +54,7 @@ namespace stellar_dotnet_sdk
             {
                 var muxedAccount = new xdr.MuxedAccount
                 {
-                    Discriminant = new CryptoKeyType {InnerValue = CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_MUXED_ED25519}
+                    Discriminant = new CryptoKeyType { InnerValue = CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_MUXED_ED25519 }
                 };
 
                 muxedAccount.Med25519 = new xdr.MuxedAccount.MuxedAccountMed25519();

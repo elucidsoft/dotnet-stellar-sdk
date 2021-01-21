@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk_test.xdr
         [ExpectedException(typeof(IOException))]
         public void TestString()
         {
-            byte[] bytes = {0, 0, 0, 2, (byte) 'a', (byte) 'b', 1, 0};
+            byte[] bytes = { 0, 0, 0, 2, (byte)'a', (byte)'b', 1, 0 };
 
             try
             {
@@ -28,7 +28,7 @@ namespace stellar_dotnet_sdk_test.xdr
         [ExpectedException(typeof(IOException))]
         public void TestVarOpaque()
         {
-            byte[] bytes = {0, 0, 0, 2, (byte) 'a', (byte) 'b', 1, 0};
+            byte[] bytes = { 0, 0, 0, 2, (byte)'a', (byte)'b', 1, 0 };
             try
             {
                 DataValue.Decode(new XdrDataInputStream(bytes));

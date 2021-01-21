@@ -74,13 +74,13 @@ namespace stellar_dotnet_sdk
 
             LastEventId = args.Message.LastEventId;
 
-            Message?.Invoke(this, new EventSource.ServerSentEventArgs { Data = args.Message.Data} );
+            Message?.Invoke(this, new EventSource.ServerSentEventArgs { Data = args.Message.Data });
         }
 
         private static EventSource.StateChangeEventArgs ConvertStateChangeEventArgs(StateChangedEventArgs args)
         {
             var newState = ConvertEventSourceState(args.ReadyState);
-            return new EventSource.StateChangeEventArgs {NewState = newState};
+            return new EventSource.StateChangeEventArgs { NewState = newState };
         }
 
         private static EventSource.EventSourceState ConvertEventSourceState(ReadyState state)
@@ -103,7 +103,7 @@ namespace stellar_dotnet_sdk
 
         private static EventSource.ServerSentErrorEventArgs ConvertExceptionEventArgs(ExceptionEventArgs args)
         {
-            return new EventSource.ServerSentErrorEventArgs {Exception = args.Exception};
+            return new EventSource.ServerSentErrorEventArgs { Exception = args.Exception };
         }
     }
 }

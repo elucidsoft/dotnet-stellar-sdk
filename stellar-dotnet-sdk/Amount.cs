@@ -32,7 +32,7 @@ namespace stellar_dotnet_sdk
             if (amount % 1 > 0)
                 throw new ArithmeticException("Unable to cast decimal with fractional places into long.");
 
-            return (long) amount;
+            return (long)amount;
         }
     }
 }

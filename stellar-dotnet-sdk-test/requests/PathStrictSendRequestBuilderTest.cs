@@ -22,7 +22,7 @@ namespace stellar_dotnet_sdk_test.requests
                     .SourceAmount("10.1")
                     .SourceAsset(sourceAsset)
                     .DestinationAccount("GAEDTJ4PPEFVW5XV2S7LUXBEHNQMX5Q2GM562RJGOQG7GVCE5H3HIB4V")
-                    .DestinationAssets(new [] {new AssetTypeNative(), sourceAsset});
+                    .DestinationAssets(new[] { new AssetTypeNative(), sourceAsset });
 
                 Assert.AreEqual("https://horizon-testnet.stellar.org/paths/strict-send?" +
                                 "source_amount=10.1&" +
@@ -49,7 +49,7 @@ namespace stellar_dotnet_sdk_test.requests
                 var assets = await server.PathStrictSend
                     .SourceAmount("10.1")
                     .SourceAsset(sourceAsset)
-                    .DestinationAssets(new [] {new AssetTypeNative(), sourceAsset})
+                    .DestinationAssets(new[] { new AssetTypeNative(), sourceAsset })
                     .Execute();
 
                 PathsPageDeserializerTest.AssertTestData(assets);

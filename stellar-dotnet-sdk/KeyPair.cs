@@ -44,7 +44,7 @@ namespace stellar_dotnet_sdk
             if (privateKey != null)
             {
                 _secretKey = Key.Import(SignatureAlgorithm.Ed25519, privateKey, KeyBlobFormat.RawPrivateKey,
-                    new KeyCreationParameters() {ExportPolicy = KeyExportPolicies.AllowPlaintextExport});
+                    new KeyCreationParameters() { ExportPolicy = KeyExportPolicies.AllowPlaintextExport });
             }
             else
             {
@@ -159,7 +159,7 @@ namespace stellar_dotnet_sdk
                 Uint256 uint256 = new Uint256(PublicKey);
                 var muxedAccount = new xdr.MuxedAccount
                 {
-                    Discriminant = new CryptoKeyType {InnerValue = CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_ED25519},
+                    Discriminant = new CryptoKeyType { InnerValue = CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_ED25519 },
                     Ed25519 = uint256
                 };
                 return muxedAccount;

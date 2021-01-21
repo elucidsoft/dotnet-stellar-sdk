@@ -845,14 +845,14 @@ namespace stellar_dotnet_sdk_test
                 Destination = destination,
                 Predicate = ClaimPredicate.Not(ClaimPredicate.BeforeRelativeTime(TimeSpan.FromHours(7.0))),
             };
-            
-            var operation = new CreateClaimableBalanceOperation.Builder(asset, "123.45", new[] {claimant})
+
+            var operation = new CreateClaimableBalanceOperation.Builder(asset, "123.45", new[] { claimant })
                 .SetSourceAccount(source)
                 .Build();
 
             var xdr = operation.ToXdr();
 
-            var parsedOperation = (CreateClaimableBalanceOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (CreateClaimableBalanceOperation)Operation.FromXdr(xdr);
             Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
 
             Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAAA4AAAAAAAAAAEmU+aAAAAABAAAAAAAAAAAlyvHaD8duz+iEXkJUUbsHkklIlH46oMrMMYrt0odkfgAAAAMAAAABAAAABQAAAAAAAGJw", operation.ToXdrBase64());
@@ -867,7 +867,7 @@ namespace stellar_dotnet_sdk_test
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
             var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
-            
+
             var balanceId = Enumerable.Repeat((byte)0x07, 32).ToArray();
             var operation = new ClaimClaimableBalanceOperation.Builder(balanceId)
                 .SetSourceAccount(source)
@@ -875,7 +875,7 @@ namespace stellar_dotnet_sdk_test
 
             var xdr = operation.ToXdr();
 
-            var parsedOperation = (ClaimClaimableBalanceOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (ClaimClaimableBalanceOperation)Operation.FromXdr(xdr);
             Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
 
             Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAAA8AAAAABwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwc=", operation.ToXdrBase64());
@@ -889,7 +889,7 @@ namespace stellar_dotnet_sdk_test
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
             var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
-            
+
             // Prepend type bytes (first four bytes are the balance id type)
             var balanceId = Enumerable.Repeat((byte)0x07, 32).Prepend((byte)0).Prepend((byte)0).Prepend((byte)0).Prepend((byte)0).ToArray();
             var operation = new ClaimClaimableBalanceOperation.Builder(balanceId)
@@ -929,8 +929,8 @@ namespace stellar_dotnet_sdk_test
         {
             var balanceId = "";
             var accountId = KeyPair.FromAccountId("GABTTS6N4CT7AUN4LD7IFIUMRD5PSMCW6QTLIQNEFZDEI6ZQVUCQMCLN");
-            
-            Assert.ThrowsException<ArgumentException>(() => 
+
+            Assert.ThrowsException<ArgumentException>(() =>
                 new ClaimClaimableBalanceOperation.Builder(balanceId).SetSourceAccount(accountId).Build());
         }
 
@@ -968,14 +968,14 @@ namespace stellar_dotnet_sdk_test
 
             // GAS4V4O2B7DW5T7IQRPEEVCRXMDZESKISR7DVIGKZQYYV3OSQ5SH5LVP
             var sponsored = KeyPair.FromSecretSeed("SBMSVD4KKELKGZXHBUQTIROWUAPQASDX7KEJITARP4VMZ6KLUHOGPTYW");
-            
+
             var operation = new BeginSponsoringFutureReservesOperation.Builder(sponsored)
                 .SetSourceAccount(source)
                 .Build();
 
             var xdr = operation.ToXdr();
 
-            var parsedOperation = (BeginSponsoringFutureReservesOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (BeginSponsoringFutureReservesOperation)Operation.FromXdr(xdr);
             Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
 
             Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAABAAAAAAJcrx2g/Hbs/ohF5CVFG7B5JJSJR+OqDKzDGK7dKHZH4=", operation.ToXdrBase64());
@@ -986,14 +986,14 @@ namespace stellar_dotnet_sdk_test
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
             var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
-            
+
             var operation = new EndSponsoringFutureReservesOperation.Builder()
                 .SetSourceAccount(source)
                 .Build();
 
             var xdr = operation.ToXdr();
 
-            var parsedOperation = (EndSponsoringFutureReservesOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (EndSponsoringFutureReservesOperation)Operation.FromXdr(xdr);
             Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
 
             Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAABE=", operation.ToXdrBase64());
@@ -1015,7 +1015,7 @@ namespace stellar_dotnet_sdk_test
 
             var xdr = operation.ToXdr();
 
-            var parsedOperation = (RevokeLedgerEntrySponsorshipOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (RevokeLedgerEntrySponsorshipOperation)Operation.FromXdr(xdr);
             Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
 
             Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAABIAAAAAAAAAAAAAAAAlyvHaD8duz+iEXkJUUbsHkklIlH46oMrMMYrt0odkfg==", operation.ToXdrBase64());
@@ -1031,14 +1031,14 @@ namespace stellar_dotnet_sdk_test
             var otherAccount = KeyPair.FromSecretSeed("SBMSVD4KKELKGZXHBUQTIROWUAPQASDX7KEJITARP4VMZ6KLUHOGPTYW");
 
             var signerKey = Signer.Ed25519PublicKey(otherAccount);
-            
+
             var operation = new RevokeSignerSponsorshipOperation.Builder(otherAccount, signerKey)
                 .SetSourceAccount(source)
                 .Build();
 
             var xdr = operation.ToXdr();
 
-            var parsedOperation = (RevokeSignerSponsorshipOperation) Operation.FromXdr(xdr);
+            var parsedOperation = (RevokeSignerSponsorshipOperation)Operation.FromXdr(xdr);
             Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
 
             Assert.AreEqual("AAAAAQAAAADg3G3hclysZlFitS+s5zWyiiJD5B0STWy5LXCj6i5yxQAAABIAAAABAAAAACXK8doPx27P6IReQlRRuweSSUiUfjqgyswxiu3Sh2R+AAAAACXK8doPx27P6IReQlRRuweSSUiUfjqgyswxiu3Sh2R+", operation.ToXdrBase64());

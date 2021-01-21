@@ -102,7 +102,7 @@ namespace TestConsole
                 }
 
             Console.WriteLine($"id: {lr.Sequence}, tx/ops: {lr.SuccessfulTransactionCount + "/" + lr.OperationCount}, accts: {accts}, payments: {payments}, offers: {offers}, options: {options}");
-            Console.WriteLine($"Uri: {((LedgersRequestBuilder) sender).Uri}");
+            Console.WriteLine($"Uri: {((LedgersRequestBuilder)sender).Uri}");
         }
 
         private static void ShowTestKeyValue(Server server)

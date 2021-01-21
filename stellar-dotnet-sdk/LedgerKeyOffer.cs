@@ -10,13 +10,13 @@ namespace stellar_dotnet_sdk
             Seller = seller;
             OfferId = offerId;
         }
-        
+
         public override xdr.LedgerKey ToXdr()
         {
             return new xdr.LedgerKey
             {
                 Discriminant =
-                    new xdr.LedgerEntryType {InnerValue = xdr.LedgerEntryType.LedgerEntryTypeEnum.OFFER},
+                    new xdr.LedgerEntryType { InnerValue = xdr.LedgerEntryType.LedgerEntryTypeEnum.OFFER },
                 Offer = new xdr.LedgerKey.LedgerKeyOffer
                 {
                     SellerID = new xdr.AccountID(Seller.XdrPublicKey),

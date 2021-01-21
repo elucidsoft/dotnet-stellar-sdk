@@ -8,8 +8,8 @@ namespace stellar_dotnet_sdk
         private readonly ulong _minTime;
         private readonly ulong _maxTime;
 
-        public long MinTime => (long) _minTime;
-        public long MaxTime => (long) _maxTime;
+        public long MinTime => (long)_minTime;
+        public long MaxTime => (long)_maxTime;
 
         ///<summary>
         ///Timebounds constructor.
@@ -33,8 +33,8 @@ namespace stellar_dotnet_sdk
                 throw new ArgumentException("maxTime must be >= 0");
             if (maxTime != 0 && minTime >= maxTime)
                 throw new ArgumentException("minTime must be < maxTime");
-            _minTime = (ulong) minTime;
-            _maxTime = (ulong) maxTime;
+            _minTime = (ulong)minTime;
+            _maxTime = (ulong)maxTime;
         }
 
         ///<summary>
@@ -50,8 +50,8 @@ namespace stellar_dotnet_sdk
             var minEpoch = minTime?.ToUnixTimeSeconds() ?? 0;
             var maxEpoch = maxTime?.ToUnixTimeSeconds() ?? 0;
 
-            _minTime = (ulong) minEpoch;
-            _maxTime = (ulong) maxEpoch;
+            _minTime = (ulong)minEpoch;
+            _maxTime = (ulong)maxEpoch;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace stellar_dotnet_sdk
             if (this == o) return true;
             if (o == null || GetType() != o.GetType()) return false;
 
-            TimeBounds that = (TimeBounds) o;
+            TimeBounds that = (TimeBounds)o;
 
             if (MinTime != that.MinTime) return false;
             return MaxTime == that.MaxTime;

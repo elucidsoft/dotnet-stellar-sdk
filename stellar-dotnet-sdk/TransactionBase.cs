@@ -93,7 +93,7 @@ namespace stellar_dotnet_sdk
             var length = hash.Length;
             var signatureHintBytes = hash.Skip(length - 4).Take(4).ToArray();
 
-            var signatureHint = new SignatureHint {InnerValue = signatureHintBytes};
+            var signatureHint = new SignatureHint { InnerValue = signatureHintBytes };
 
             var decoratedSignature = new DecoratedSignature
             {

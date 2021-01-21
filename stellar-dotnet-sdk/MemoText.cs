@@ -14,10 +14,10 @@ namespace stellar_dotnet_sdk
             var bytes = Encoding.UTF8.GetBytes(text);
             if (bytes.Length > 28)
                 throw new MemoTooLongException("text must be <= 28 bytes. length=" + bytes.Length);
-            
+
             MemoBytesValue = bytes;
         }
-        
+
         public MemoText(byte[] text)
         {
             if (text is null)
@@ -43,7 +43,7 @@ namespace stellar_dotnet_sdk
         {
             if (this == o) return true;
             if (o == null || GetType() != o.GetType()) return false;
-            MemoText memoText = (MemoText) o;
+            MemoText memoText = (MemoText)o;
             return Equals(MemoTextValue, memoText.MemoTextValue);
         }
 

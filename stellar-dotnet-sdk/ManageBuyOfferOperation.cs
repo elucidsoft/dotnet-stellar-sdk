@@ -34,12 +34,12 @@ namespace stellar_dotnet_sdk
 
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {
-            var op = new sdkxdr.ManageBuyOfferOp() {Selling = Selling.ToXdr(), Buying = Buying.ToXdr()};
-            var amount = new sdkxdr.Int64 {InnerValue = ToXdrAmount(BuyAmount)};
+            var op = new sdkxdr.ManageBuyOfferOp() { Selling = Selling.ToXdr(), Buying = Buying.ToXdr() };
+            var amount = new sdkxdr.Int64 { InnerValue = ToXdrAmount(BuyAmount) };
             op.BuyAmount = amount;
             var price = stellar_dotnet_sdk.Price.FromString(Price);
             op.Price = price.ToXdr();
-            var offerId = new sdkxdr.Int64 {InnerValue = OfferId};
+            var offerId = new sdkxdr.Int64 { InnerValue = OfferId };
             op.OfferID = offerId;
 
             var body = new sdkxdr.Operation.OperationBody();
@@ -49,7 +49,8 @@ namespace stellar_dotnet_sdk
             return body;
         }
 
-        public class Builder {
+        public class Builder
+        {
             private readonly string _BuyAmount;
             private readonly Asset _Buying;
             private readonly string _Price;

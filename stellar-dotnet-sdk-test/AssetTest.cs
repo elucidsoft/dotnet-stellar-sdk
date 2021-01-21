@@ -32,7 +32,7 @@ namespace stellar_dotnet_sdk_test
             var issuer = KeyPair.Random();
             var asset = new AssetTypeCreditAlphaNum4(code, issuer.AccountId);
             var thisXdr = asset.ToXdr();
-            var parsedAsset = (AssetTypeCreditAlphaNum4) Asset.FromXdr(thisXdr);
+            var parsedAsset = (AssetTypeCreditAlphaNum4)Asset.FromXdr(thisXdr);
             Assert.AreEqual(code, asset.Code);
             Assert.AreEqual(issuer.AccountId, parsedAsset.Issuer);
         }
@@ -44,7 +44,7 @@ namespace stellar_dotnet_sdk_test
             var issuer = KeyPair.Random();
             var asset = new AssetTypeCreditAlphaNum12(code, issuer.AccountId);
             var thisXdr = asset.ToXdr();
-            var parsedAsset = (AssetTypeCreditAlphaNum12) Asset.FromXdr(thisXdr);
+            var parsedAsset = (AssetTypeCreditAlphaNum12)Asset.FromXdr(thisXdr);
             Assert.AreEqual(code, asset.Code);
             Assert.AreEqual(issuer.AccountId, parsedAsset.Issuer);
             Assert.AreEqual(asset.GetType(), "credit_alphanum12");

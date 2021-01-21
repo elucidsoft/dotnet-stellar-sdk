@@ -30,8 +30,8 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestTemplatedLink()
         {
-             var link = new TemplatedLink<OperationResponse>(
-                 "https://horizon.stellar.org/accounts/GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7/operations{?cursor,limit,order}");
+            var link = new TemplatedLink<OperationResponse>(
+                "https://horizon.stellar.org/accounts/GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7/operations{?cursor,limit,order}");
             Assert.AreEqual("horizon.stellar.org", link.Uri.Host);
             Assert.AreEqual("/accounts/GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7/operations",
                 string.Concat(link.Uri.Segments));
@@ -40,19 +40,19 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestTemplatedLinkWithQueryParameters()
         {
-             var link = new TemplatedLink<OperationResponse>(
-                 "https://horizon.stellar.org/accounts/GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7/operations{?cursor,limit,order}");
-             var uri = link.Resolve(new
-             {
-                 limit = 10,
-                 order = OrderDirection.DESC,
-                 cursor = "now"
-             });
+            var link = new TemplatedLink<OperationResponse>(
+                "https://horizon.stellar.org/accounts/GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7/operations{?cursor,limit,order}");
+            var uri = link.Resolve(new
+            {
+                limit = 10,
+                order = OrderDirection.DESC,
+                cursor = "now"
+            });
 
-             var query = HttpUtility.ParseQueryString(uri.Query);
-             Assert.AreEqual("10", query["limit"]);
-             Assert.AreEqual("desc", query["order"]);
-             Assert.AreEqual("now", query["cursor"]);
+            var query = HttpUtility.ParseQueryString(uri.Query);
+            Assert.AreEqual("10", query["limit"]);
+            Assert.AreEqual("desc", query["order"]);
+            Assert.AreEqual("now", query["cursor"]);
         }
 
         [TestMethod]

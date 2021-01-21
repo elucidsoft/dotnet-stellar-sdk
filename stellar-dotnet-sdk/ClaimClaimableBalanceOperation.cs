@@ -23,7 +23,7 @@ namespace stellar_dotnet_sdk
                 var expanded = new byte[36];
                 Array.Copy(balanceId, 0, expanded, 4, 32);
                 balanceId = expanded;
-            } 
+            }
 
             if (balanceId.Length != 36)
             {

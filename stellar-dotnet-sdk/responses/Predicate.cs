@@ -7,19 +7,19 @@ namespace stellar_dotnet_sdk.responses
     {
         [JsonProperty(PropertyName = "and")]
         public Predicate[] And { get; set; }
-        
+
         [JsonProperty(PropertyName = "or")]
         public Predicate[] Or { get; set; }
-        
+
         [JsonProperty(PropertyName = "not")]
-        public Predicate Not {get; set; }
-        
+        public Predicate Not { get; set; }
+
         [JsonProperty(PropertyName = "unconditional")]
         public bool Unconditional { get; set; }
-        
+
         [JsonProperty(PropertyName = "abs_before")]
         public string AbsBefore { get; set; }
-        
+
         [JsonProperty(PropertyName = "rel_before")]
         public long? RelBefore { get; set; }
 
@@ -60,7 +60,7 @@ namespace stellar_dotnet_sdk.responses
             {
                 return ClaimPredicate.BeforeRelativeTime(RelBefore.Value);
             }
-            
+
             throw new Exception("Invalid Predicate");
         }
     }

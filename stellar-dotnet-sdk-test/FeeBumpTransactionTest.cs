@@ -131,7 +131,7 @@ namespace stellar_dotnet_sdk_test
         public void TestBaseFeeOverflowsLong()
         {
             var network = Network.Test();
-            var innerTx = CreateInnerTransaction(100+1, network);
+            var innerTx = CreateInnerTransaction(100 + 1, network);
             var feeSource = KeyPair.FromAccountId("GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3");
             Assert.ThrowsException<OverflowException>(() =>
             {

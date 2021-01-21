@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk
                 {
                     InnerValue = xdr.ClaimPredicateType.ClaimPredicateTypeEnum.CLAIM_PREDICATE_AND,
                 },
-                AndPredicates = new[] {LeftPredicate.ToXdr(), RightPredicate.ToXdr()}
+                AndPredicates = new[] { LeftPredicate.ToXdr(), RightPredicate.ToXdr() }
             };
         }
     }
