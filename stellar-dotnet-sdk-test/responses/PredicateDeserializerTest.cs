@@ -15,20 +15,20 @@ namespace stellar_dotnet_sdk_test.responses
             var predicate = JsonConvert.DeserializeObject<Predicate>(json);
             var claimPredicate = predicate.ToClaimPredicate();
 
-            var andPredicate = (ClaimPredicateAnd) claimPredicate;
+            var andPredicate = (ClaimPredicateAnd)claimPredicate;
             Assert.IsNotNull(andPredicate);
-            
-            var orPredicate = (ClaimPredicateOr) andPredicate.LeftPredicate;
+
+            var orPredicate = (ClaimPredicateOr)andPredicate.LeftPredicate;
             Assert.IsNotNull(orPredicate);
-            var notPredicate = (ClaimPredicateNot) andPredicate.RightPredicate;
+            var notPredicate = (ClaimPredicateNot)andPredicate.RightPredicate;
             Assert.IsNotNull(notPredicate);
 
-            var relBefore = (ClaimPredicateBeforeRelativeTime) orPredicate.LeftPredicate;
+            var relBefore = (ClaimPredicateBeforeRelativeTime)orPredicate.LeftPredicate;
             Assert.IsNotNull(relBefore);
-            var absBefore = (ClaimPredicateBeforeAbsoluteTime) orPredicate.RightPredicate;
+            var absBefore = (ClaimPredicateBeforeAbsoluteTime)orPredicate.RightPredicate;
             Assert.IsNotNull(absBefore);
 
-            var unconditional = (ClaimPredicateUnconditional) notPredicate.Predicate;
+            var unconditional = (ClaimPredicateUnconditional)notPredicate.Predicate;
             Assert.IsNotNull(unconditional);
         }
     }

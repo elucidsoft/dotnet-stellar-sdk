@@ -9,7 +9,7 @@ namespace stellar_dotnet_sdk
         {
             return new xdr.Claimant
             {
-                Discriminant = new xdr.ClaimantType {InnerValue = xdr.ClaimantType.ClaimantTypeEnum.CLAIMANT_TYPE_V0},
+                Discriminant = new xdr.ClaimantType { InnerValue = xdr.ClaimantType.ClaimantTypeEnum.CLAIMANT_TYPE_V0 },
                 V0 = new xdr.Claimant.ClaimantV0
                 {
                     Destination = new xdr.AccountID(Destination.XdrPublicKey),
@@ -17,7 +17,7 @@ namespace stellar_dotnet_sdk
                 }
             };
         }
-        
+
         public static Claimant FromXdr(xdr.Claimant xdr)
         {
             var destination = KeyPair.FromXdrPublicKey(xdr.V0.Destination.InnerValue);

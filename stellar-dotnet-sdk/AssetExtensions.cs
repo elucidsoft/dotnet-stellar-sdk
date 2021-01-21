@@ -12,7 +12,7 @@ namespace stellar_dotnet_sdk
         {
             if (asset is AssetTypeCreditAlphaNum)
             {
-                var creditAsset = (AssetTypeCreditAlphaNum) asset;
+                var creditAsset = (AssetTypeCreditAlphaNum)asset;
                 return $"{creditAsset.Code}:{creditAsset.Issuer}";
             }
             return asset.GetType();

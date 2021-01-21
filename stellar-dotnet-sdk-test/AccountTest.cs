@@ -12,7 +12,7 @@ namespace stellar_dotnet_sdk_test
         {
             try
             {
-                var unused = new Account((string) null, 10L);
+                var unused = new Account((string)null, 10L);
                 Assert.Fail();
             }
             catch (ArgumentNullException)

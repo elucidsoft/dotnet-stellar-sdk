@@ -52,6 +52,6 @@ namespace stellar_dotnet_sdk
                 return operation;
             }
         }
-         
+
     }
 }

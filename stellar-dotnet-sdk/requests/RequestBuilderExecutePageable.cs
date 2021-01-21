@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk.requests
             : base(serverUri, defaultSegment, httpClient)
         {
         }
-        
+
         ///<Summary>
         /// Build and execute request.
         /// </Summary>

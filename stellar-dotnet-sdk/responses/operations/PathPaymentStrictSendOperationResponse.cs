@@ -103,7 +103,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// The source asset issuer account.
         /// </summary>
         [JsonProperty(PropertyName = "source_asset_issuer")]
-        public string SourceAssetIssuer { get; private set; } 
+        public string SourceAssetIssuer { get; private set; }
 
         /// <summary>
         /// The amount sent.

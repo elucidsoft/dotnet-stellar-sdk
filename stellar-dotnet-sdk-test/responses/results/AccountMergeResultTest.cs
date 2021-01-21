@@ -12,8 +12,8 @@ namespace stellar_dotnet_sdk_test.responses.results
         {
             var tx = Util.AssertResultOfType("AAAAAACYloD/////AAAAAQAAAAAAAAAIAAAAAAAAAAAF9eEAAAAAAA==",
                 typeof(AccountMergeSuccess), true);
-            var failed = (TransactionResultFailed) tx;
-            var op = (AccountMergeSuccess) failed.Results[0];
+            var failed = (TransactionResultFailed)tx;
+            var op = (AccountMergeSuccess)failed.Results[0];
             Assert.AreEqual("10", op.SourceAccountBalance);
         }
 

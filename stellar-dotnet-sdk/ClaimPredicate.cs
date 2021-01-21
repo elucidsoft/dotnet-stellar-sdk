@@ -9,23 +9,23 @@ namespace stellar_dotnet_sdk
 
         public static ClaimPredicate Or(ClaimPredicate leftPredicate, ClaimPredicate rightPredicate) =>
             new ClaimPredicateOr(leftPredicate, rightPredicate);
-        
+
         public static ClaimPredicate And(ClaimPredicate leftPredicate, ClaimPredicate rightPredicate) =>
             new ClaimPredicateAnd(leftPredicate, rightPredicate);
 
         public static ClaimPredicate Not(ClaimPredicate predicate) =>
             new ClaimPredicateNot(predicate);
-        
+
         public static ClaimPredicate Unconditional() => new ClaimPredicateUnconditional();
-        
+
         public static ClaimPredicate BeforeAbsoluteTime(long unixTimestamp) =>
             new ClaimPredicateBeforeAbsoluteTime(unixTimestamp);
-        
+
         public static ClaimPredicate BeforeAbsoluteTime(DateTimeOffset dateTime) => new ClaimPredicateBeforeAbsoluteTime(dateTime);
 
         public static ClaimPredicate BeforeRelativeTime(long seconds) =>
             BeforeRelativeTime(TimeSpan.FromSeconds(seconds));
-        
+
         public static ClaimPredicate BeforeRelativeTime(TimeSpan duration) => new ClaimPredicateBeforeRelativeTime(duration);
 
         public static ClaimPredicate FromXdr(xdr.ClaimPredicate xdr)

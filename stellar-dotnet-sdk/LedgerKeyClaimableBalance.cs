@@ -14,7 +14,7 @@ namespace stellar_dotnet_sdk
             return new xdr.LedgerKey
             {
                 Discriminant =
-                    new xdr.LedgerEntryType {InnerValue = xdr.LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE},
+                    new xdr.LedgerEntryType { InnerValue = xdr.LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE },
                 ClaimableBalance = new xdr.LedgerKey.LedgerKeyClaimableBalance
                 {
                     BalanceID = new xdr.ClaimableBalanceID

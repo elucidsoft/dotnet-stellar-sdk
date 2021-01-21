@@ -18,7 +18,7 @@ namespace stellar_dotnet_sdk
             AccountId = accountId;
             SignerKey = signerKey;
         }
-        
+
         public override xdr.Operation.OperationBody ToOperationBody()
         {
             return new xdr.Operation.OperationBody
@@ -90,6 +90,6 @@ namespace stellar_dotnet_sdk
                 return operation;
             }
         }
-         
+
     }
 }

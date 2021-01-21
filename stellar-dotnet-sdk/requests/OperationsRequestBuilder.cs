@@ -82,7 +82,7 @@ namespace stellar_dotnet_sdk.requests
 
             return this;
         }
-        
+
         /// <summary>
         ///     Set <code>include_failed</code> flag to include operations of failed transactions.
         /// </summary>

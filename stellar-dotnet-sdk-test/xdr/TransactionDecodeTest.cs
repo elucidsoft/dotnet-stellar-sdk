@@ -76,7 +76,7 @@ namespace stellar_dotnet_sdk_test.xdr
 
             Assert.AreEqual(1, transactionEnvelope.V0.Tx.Operations.Length);
 
-            var expected = Encoding.UTF8.GetBytes(new[] {'G', 'O', 'L', 'D'});
+            var expected = Encoding.UTF8.GetBytes(new[] { 'G', 'O', 'L', 'D' });
             var actual = transactionEnvelope.V0.Tx.Operations[0].Body.PaymentOp.Asset.AlphaNum4.AssetCode;
 
             Assert.IsTrue(expected.SequenceEqual(actual.InnerValue));
@@ -102,7 +102,7 @@ namespace stellar_dotnet_sdk_test.xdr
 
         private void GetDebugBytes(byte[] bytes)
         {
-            var unused = bytes.Select(a => (sbyte) a).ToArray();
+            var unused = bytes.Select(a => (sbyte)a).ToArray();
         }
     }
 }

@@ -6,7 +6,7 @@ namespace stellar_dotnet_sdk.responses
     public class PathResponse : Response
     {
         [JsonProperty(PropertyName = "destination_amount")]
-        public string DestinationAmount { get; private set;  }
+        public string DestinationAmount { get; private set; }
 
         [JsonProperty(PropertyName = "destination_asset_type")]
         public string DestinationAssetType { get; private set; }

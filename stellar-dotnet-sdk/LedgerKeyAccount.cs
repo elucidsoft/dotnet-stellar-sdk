@@ -3,7 +3,7 @@ namespace stellar_dotnet_sdk
     public class LedgerKeyAccount : LedgerKey
     {
         public KeyPair Account { get; }
-        
+
         public LedgerKeyAccount(KeyPair account)
         {
             Account = account;
@@ -14,8 +14,8 @@ namespace stellar_dotnet_sdk
             return new xdr.LedgerKey
             {
                 Discriminant =
-                    new xdr.LedgerEntryType {InnerValue = xdr.LedgerEntryType.LedgerEntryTypeEnum.ACCOUNT},
-                Account = new xdr.LedgerKey.LedgerKeyAccount {AccountID = new xdr.AccountID(Account.XdrPublicKey)}
+                    new xdr.LedgerEntryType { InnerValue = xdr.LedgerEntryType.LedgerEntryTypeEnum.ACCOUNT },
+                Account = new xdr.LedgerKey.LedgerKeyAccount { AccountID = new xdr.AccountID(Account.XdrPublicKey) }
             };
         }
 

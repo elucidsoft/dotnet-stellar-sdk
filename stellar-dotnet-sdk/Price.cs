@@ -43,8 +43,8 @@ namespace stellar_dotnet_sdk
             decimal a;
             decimal f;
             var fractions = new List<decimal[]>();
-            fractions.Add(new[] {new decimal(0), new decimal(1)});
-            fractions.Add(new[] {new decimal(1), new decimal(0)});
+            fractions.Add(new[] { new decimal(0), new decimal(1) });
+            fractions.Add(new[] { new decimal(1), new decimal(0) });
             var i = 2;
             while (true)
             {
@@ -57,7 +57,7 @@ namespace stellar_dotnet_sdk
                 var k = decimal.Add(decimal.Multiply(a, fractions[i - 1][1]), fractions[i - 2][1]);
                 if (h.CompareTo(maxInt) > 0 || k.CompareTo(maxInt) > 0)
                     break;
-                fractions.Add(new[] {h, k});
+                fractions.Add(new[] { h, k });
                 if (f.CompareTo(0m) == 0)
                     break;
                 number = decimal.Divide(1m, f);
@@ -102,7 +102,7 @@ namespace stellar_dotnet_sdk
             if (!(obj is Price))
                 return false;
 
-            var price = (Price) obj;
+            var price = (Price)obj;
 
             return Numerator == price.Numerator &&
                    Denominator == price.Denominator;

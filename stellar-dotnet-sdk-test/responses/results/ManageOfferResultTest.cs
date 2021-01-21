@@ -15,8 +15,8 @@ namespace stellar_dotnet_sdk_test.responses.results
             var tx = Util.AssertResultOfType(
                 "AAAAAACYloD/////AAAAAQAAAAAAAAADAAAAAAAAAAEAAAAAKoNGsl81xj8D8XyekzKZXRuSU2KImhHkQj4QWhroY64AAAAAAAAE0gAAAAAAAAAAAJiWgAAAAAFVU0QAAAAAACqDRrJfNcY/A/F8npMymV0bklNiiJoR5EI+EFoa6GOuAAAAAAADDUAAAAAAAAAAACqDRrJfNcY/A/F8npMymV0bklNiiJoR5EI+EFoa6GOuAAAAAAAABNIAAAAAAAAAAVVTRAAAAAAAKoNGsl81xj8D8XyekzKZXRuSU2KImhHkQj4QWhroY64AAAAAAJiWgAAAA+gAABEYAAAAAQAAAAAAAAAA",
                 typeof(ManageSellOfferCreated), true);
-            var failed = (TransactionResultFailed) tx;
-            var op = (ManageSellOfferCreated) failed.Results[0];
+            var failed = (TransactionResultFailed)tx;
+            var op = (ManageSellOfferCreated)failed.Results[0];
             var offer = op.Offer;
             Assert.AreEqual("GAVIGRVSL424MPYD6F6J5EZSTFORXESTMKEJUEPEII7BAWQ25BR25DUC", offer.Seller.AccountId);
             Assert.AreEqual(1234, offer.OfferId);
@@ -36,8 +36,8 @@ namespace stellar_dotnet_sdk_test.responses.results
             var tx = Util.AssertResultOfType(
                 "AAAAAACYloD/////AAAAAQAAAAAAAAADAAAAAAAAAAEAAAAAKoNGsl81xj8D8XyekzKZXRuSU2KImhHkQj4QWhroY64AAAAAAAAE0gAAAAAAAAAAAJiWgAAAAAFVU0QAAAAAACqDRrJfNcY/A/F8npMymV0bklNiiJoR5EI+EFoa6GOuAAAAAAADDUAAAAABAAAAACqDRrJfNcY/A/F8npMymV0bklNiiJoR5EI+EFoa6GOuAAAAAAAABNIAAAAAAAAAAVVTRAAAAAAAKoNGsl81xj8D8XyekzKZXRuSU2KImhHkQj4QWhroY64AAAAAAJiWgAAAA+gAABEYAAAAAQAAAAAAAAAA",
                 typeof(ManageSellOfferUpdated), true);
-            var failed = (TransactionResultFailed) tx;
-            var op = (ManageSellOfferUpdated) failed.Results[0];
+            var failed = (TransactionResultFailed)tx;
+            var op = (ManageSellOfferUpdated)failed.Results[0];
             var offer = op.Offer;
             Assert.AreEqual("GAVIGRVSL424MPYD6F6J5EZSTFORXESTMKEJUEPEII7BAWQ25BR25DUC", offer.Seller.AccountId);
             Assert.AreEqual(1234, offer.OfferId);
@@ -57,8 +57,8 @@ namespace stellar_dotnet_sdk_test.responses.results
             var tx = Util.AssertResultOfType(
                 "AAAAAACYloD/////AAAAAQAAAAAAAAADAAAAAAAAAAEAAAAAKoNGsl81xj8D8XyekzKZXRuSU2KImhHkQj4QWhroY64AAAAAAAAE0gAAAAAAAAAAAJiWgAAAAAFVU0QAAAAAACqDRrJfNcY/A/F8npMymV0bklNiiJoR5EI+EFoa6GOuAAAAAAADDUAAAAACAAAAAA==",
                 typeof(ManageSellOfferDeleted), true);
-            var failed = (TransactionResultFailed) tx;
-            var op = (ManageSellOfferDeleted) failed.Results[0];
+            var failed = (TransactionResultFailed)tx;
+            var op = (ManageSellOfferDeleted)failed.Results[0];
             Assert.AreEqual(1, op.OffersClaimed.Length);
         }
 
@@ -151,7 +151,7 @@ namespace stellar_dotnet_sdk_test.responses.results
             var result = TransactionResult.FromXdr(
                 "AAAAAAAAAGQAAAAAAAAAAQAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAM/Ee4SnT3/gopz3ng3SEYJcq/D+9k6K6UsSPJLpqpV3AAAAAAGV4XUAAAABTEtLMQAAAACqysdXjcCwA0NHMgy+BYFMm3s5N8yUziZS4Dge3zQ05QAAAAAAAAAAAcnDgAAAAAEAAAABAAAAAAAAAAAAAAAA");
             Assert.IsTrue(result.IsSuccess);
-            var success = (TransactionResultSuccess) result;
+            var success = (TransactionResultSuccess)result;
             var manageOfferResult = success.Results.First() as ManageSellOfferCreated;
             Assert.IsNotNull(manageOfferResult);
             Assert.IsTrue(manageOfferResult.IsSuccess);

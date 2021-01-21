@@ -20,7 +20,7 @@ namespace stellar_dotnet_sdk
 
         public override xdr.Operation.OperationBody ToOperationBody()
         {
-            var op = new BeginSponsoringFutureReservesOp {SponsoredID = new AccountID(SponsoredId.XdrPublicKey)};
+            var op = new BeginSponsoringFutureReservesOp { SponsoredID = new AccountID(SponsoredId.XdrPublicKey) };
 
             var body = new xdr.Operation.OperationBody
             {

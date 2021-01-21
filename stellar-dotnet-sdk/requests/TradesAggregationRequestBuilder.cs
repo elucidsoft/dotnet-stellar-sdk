@@ -44,7 +44,7 @@ namespace stellar_dotnet_sdk.requests
             UriBuilder.SetQueryParam("base_asset_type", asset.GetType());
             if (asset is AssetTypeCreditAlphaNum)
             {
-                AssetTypeCreditAlphaNum creditAlphaNumAsset = (AssetTypeCreditAlphaNum) asset;
+                AssetTypeCreditAlphaNum creditAlphaNumAsset = (AssetTypeCreditAlphaNum)asset;
                 UriBuilder.SetQueryParam("base_asset_code", creditAlphaNumAsset.Code);
                 UriBuilder.SetQueryParam("base_asset_issuer", creditAlphaNumAsset.Issuer);
             }
@@ -57,7 +57,7 @@ namespace stellar_dotnet_sdk.requests
             UriBuilder.SetQueryParam("counter_asset_type", asset.GetType());
             if (asset is AssetTypeCreditAlphaNum)
             {
-                AssetTypeCreditAlphaNum creditAlphaNumAsset = (AssetTypeCreditAlphaNum) asset;
+                AssetTypeCreditAlphaNum creditAlphaNumAsset = (AssetTypeCreditAlphaNum)asset;
                 UriBuilder.SetQueryParam("counter_asset_code", creditAlphaNumAsset.Code);
                 UriBuilder.SetQueryParam("counter_asset_issuer", creditAlphaNumAsset.Issuer);
             }

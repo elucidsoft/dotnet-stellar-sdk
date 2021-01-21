@@ -39,11 +39,11 @@ namespace stellar_dotnet_sdk
                     return _ledgerEntryBuilder.Build();
                 if (_signerBuilder != null)
                     return _signerBuilder.Build();
-                
+
                 // unreachable
                 throw new Exception("Builder not constructed");
             }
-            
+
         }
     }
 }

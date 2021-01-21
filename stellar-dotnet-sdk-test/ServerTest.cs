@@ -185,7 +185,8 @@ namespace stellar_dotnet_sdk_test
             var json = File.ReadAllText(Path.Combine("testdata", "serverFailure.json"));
             When().Returns(ResponseMessage(HttpBadRequest, json));
 
-            ConnectionErrorException  ex = await Assert.ThrowsExceptionAsync<ConnectionErrorException>( async () => {
+            ConnectionErrorException ex = await Assert.ThrowsExceptionAsync<ConnectionErrorException>(async () =>
+            {
                 await _server.SubmitTransaction(BuildTransaction(), new SubmitTransactionOptions { EnsureSuccess = true });
             });
 
@@ -197,7 +198,8 @@ namespace stellar_dotnet_sdk_test
         {
             When().Returns(ResponseMessage(HttpBadRequest, ""));
 
-            ConnectionErrorException  ex = await Assert.ThrowsExceptionAsync<ConnectionErrorException>( async () => {
+            ConnectionErrorException ex = await Assert.ThrowsExceptionAsync<ConnectionErrorException>(async () =>
+            {
                 await _server.SubmitTransaction(BuildTransaction(), new SubmitTransactionOptions { EnsureSuccess = true });
             });
 
@@ -209,7 +211,8 @@ namespace stellar_dotnet_sdk_test
         {
             When().Returns(ResponseMessage(HttpBadRequest));
 
-            ConnectionErrorException  ex = await Assert.ThrowsExceptionAsync<ConnectionErrorException>( async () => {
+            ConnectionErrorException ex = await Assert.ThrowsExceptionAsync<ConnectionErrorException>(async () =>
+            {
                 await _server.SubmitTransaction(BuildTransaction(), new SubmitTransactionOptions { EnsureSuccess = true });
             });
 

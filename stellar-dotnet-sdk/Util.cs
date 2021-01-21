@@ -15,7 +15,7 @@ namespace stellar_dotnet_sdk
             for (var j = 0; j < bytes.Length; j++)
             {
                 var v = bytes[j] & 0xFF;
-                hexChars[j * 2] = HexArray[(uint) v >> 4];
+                hexChars[j * 2] = HexArray[(uint)v >> 4];
                 hexChars[(j * 2) + 1] = HexArray[v & 0x0F];
             }
 
@@ -27,7 +27,7 @@ namespace stellar_dotnet_sdk
             var len = s.Length;
             var data = new byte[len / 2];
             for (var i = 0; i < len; i += 2)
-                data[i / 2] = (byte) ((Convert.ToByte(s[i].ToString(), 16) << 4)
+                data[i / 2] = (byte)((Convert.ToByte(s[i].ToString(), 16) << 4)
                                       + Convert.ToByte(s[i + 1].ToString(), 16));
             return data;
         }
@@ -53,7 +53,7 @@ namespace stellar_dotnet_sdk
         public static byte[] PaddedByteArray(byte[] bytes, int length)
         {
             var finalBytes = new byte[length];
-            Fill(finalBytes, (byte) 0);
+            Fill(finalBytes, (byte)0);
             Array.Copy(bytes, 0, finalBytes, 0, bytes.Length);
 
             return finalBytes;
@@ -99,7 +99,7 @@ namespace stellar_dotnet_sdk
             unchecked
             {
                 const int p = 16777619;
-                var hash = data.Aggregate((int) 2166136261, (current, t) => (current ^ t) * p);
+                var hash = data.Aggregate((int)2166136261, (current, t) => (current ^ t) * p);
 
                 hash += hash << 13;
                 hash ^= hash >> 7;

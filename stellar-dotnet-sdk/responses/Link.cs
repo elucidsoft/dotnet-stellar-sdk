@@ -24,7 +24,7 @@ namespace stellar_dotnet_sdk.responses
     }
 
     [JsonConverter(typeof(LinkDeserializer))]
-    public class Link<TResponse>  : Link
+    public class Link<TResponse> : Link
         where TResponse : Response
     {
         public static Link<TResponse> Create(string href, bool templated)
