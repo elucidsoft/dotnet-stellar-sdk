@@ -82,6 +82,7 @@ You can use that version of xdrgen to regenerate the XDR files from the .x files
    ```
    git clone https://github.com/fracek/xdrgen
    cd xdrgen
+   git checkout csharp
    rake install
    ```
 2. Regenerate .cs files from .x files:
