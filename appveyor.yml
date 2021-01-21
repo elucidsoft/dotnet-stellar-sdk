@@ -5,6 +5,7 @@ os: Visual Studio 2017
 
 before_build:
   - cmd: dotnet restore stellar-dotnet-sdk.sln
+  - cmd: dotnet tool restore
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
