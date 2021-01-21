@@ -76,6 +76,21 @@ You can find the latest working generator here: <https://github.com/fracek/xdrge
 
 You can use that version of xdrgen to regenerate the XDR files from the .x files located from the [source](https://github.com/stellar/stellar-core/tree/master/src/xdr) of the original API SDK for Horizon.
 
+### Example
+
+1. Install custom XDR generator:
+   ```
+   git clone https://github.com/fracek/xdrgen
+   cd xdrgen
+   rake install
+   ```
+2. Regenerate .cs files from .x files:
+   ```
+   cd dotnet-stellar-sdk/
+   xdrgen -o=./stellar-dotnet-sdk-xdr/generated -l=csharp -n=stellar_dotnet_sdk.xdr ./stellar-dotnet-sdk-xdr/*.x
+   ```
+3. Reformat .cs files using <insert tool here>
+
 <!-- CONTRIBUTORS-->
 
 ## Contributors
