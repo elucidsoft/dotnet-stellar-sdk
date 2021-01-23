@@ -175,14 +175,14 @@ namespace stellar_dotnet_sdk
             if (options.EnsureSuccess && !response.IsSuccessStatusCode)
             {
                 string responseString = string.Empty;
-                if(response.Content != null)
+                if (response.Content != null)
                 {
                     responseString = await response.Content.ReadAsStringAsync();
                 }
-                
-                throw new ConnectionErrorException( $"Status code ({response.StatusCode}) is not success.{ ( !string.IsNullOrEmpty(responseString) ? " Content: " + responseString : "") }");
+
+                throw new ConnectionErrorException($"Status code ({response.StatusCode}) is not success.{ (!string.IsNullOrEmpty(responseString) ? " Content: " + responseString : "") }");
             }
-            
+
             if (response.Content != null)
             {
                 var responseString = await response.Content.ReadAsStringAsync();

@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk.requests
             : base(serverUri, "claimable_balances", httpClient)
         {
         }
-        
+
 
         public ClaimableBalancesRequestBuilder ForAsset(Asset asset)
         {
@@ -23,8 +23,8 @@ namespace stellar_dotnet_sdk.requests
         {
             UriBuilder.SetQueryParam("claimant", claimant.Address);
             return this;
-        }        
-        
+        }
+
         public ClaimableBalancesRequestBuilder ForSponsor(KeyPair sponsor)
         {
             UriBuilder.SetQueryParam("sponsor", sponsor.Address);
@@ -35,9 +35,9 @@ namespace stellar_dotnet_sdk.requests
         {
             var responseHandler = new ResponseHandler<ClaimableBalanceResponse>();
             var response = await HttpClient.GetAsync(uri);
-            return await responseHandler.HandleResponse(response);                
+            return await responseHandler.HandleResponse(response);
         }
-        
+
         public Task<ClaimableBalanceResponse> ClaimableBalance(string balanceId)
         {
             SetSegments("claimable_balances", balanceId);

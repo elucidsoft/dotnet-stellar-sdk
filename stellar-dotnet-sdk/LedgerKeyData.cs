@@ -10,13 +10,13 @@ namespace stellar_dotnet_sdk
             Account = account;
             DataName = dataName;
         }
-        
+
         public override xdr.LedgerKey ToXdr()
         {
             return new xdr.LedgerKey
             {
                 Discriminant =
-                    new xdr.LedgerEntryType {InnerValue = xdr.LedgerEntryType.LedgerEntryTypeEnum.DATA},
+                    new xdr.LedgerEntryType { InnerValue = xdr.LedgerEntryType.LedgerEntryTypeEnum.DATA },
                 Data = new xdr.LedgerKey.LedgerKeyData
                 {
                     AccountID = new xdr.AccountID(Account.XdrPublicKey),

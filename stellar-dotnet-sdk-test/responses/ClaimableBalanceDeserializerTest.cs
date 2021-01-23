@@ -37,7 +37,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("GB5N4275ETC6A77K4DTDL3EFAQMN66PC7UITDUZUBM7Y6LDJP7EYSGOB", claimableBalance.Sponsor);
             Assert.AreEqual(66835, claimableBalance.LastModifiedLedger);
             Assert.AreEqual("66835-00000000c582697b67cbec7f9ce64f4dc67bfb2bfd26318bb9f964f4d70e3f41f650b1e6", claimableBalance.PagingToken);
-            
+
             Assert.AreEqual(1, claimableBalance.Claimants.Length);
             var claimant = claimableBalance.Claimants[0];
             Assert.AreEqual("GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY", claimant.Destination);

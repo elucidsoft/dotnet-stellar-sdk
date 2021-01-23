@@ -20,7 +20,7 @@ namespace stellar_dotnet_sdk_test.requests
                 // Technically not a valid request since it contains both a source account and assets
                 var req = server.PathStrictReceive
                     .SourceAccount("GARSFJNXJIHO6ULUBK3DBYKVSIZE7SC72S5DYBCHU7DKL22UXKVD7MXP")
-                    .SourceAssets(new[] {new AssetTypeNative(), destinationAsset})
+                    .SourceAssets(new[] { new AssetTypeNative(), destinationAsset })
                     .DestinationAccount("GAEDTJ4PPEFVW5XV2S7LUXBEHNQMX5Q2GM562RJGOQG7GVCE5H3HIB4V")
                     .DestinationAsset(destinationAsset)
                     .DestinationAmount("10.1");

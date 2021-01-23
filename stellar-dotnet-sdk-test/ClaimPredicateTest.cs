@@ -13,7 +13,7 @@ namespace stellar_dotnet_sdk_test
             var predicate = ClaimPredicate.BeforeAbsoluteTime(1600720493);
             var xdr = predicate.ToXdr();
 
-            var parsed = (ClaimPredicateBeforeAbsoluteTime) ClaimPredicate.FromXdr(xdr);
+            var parsed = (ClaimPredicateBeforeAbsoluteTime)ClaimPredicate.FromXdr(xdr);
 
             Assert.AreEqual(1600720493, parsed.DateTime.ToUnixTimeSeconds());
         }
@@ -23,7 +23,7 @@ namespace stellar_dotnet_sdk_test
             var predicate = ClaimPredicate.BeforeAbsoluteTime(Int64.MaxValue);
             var xdr = predicate.ToXdr();
 
-            var parsed = (ClaimPredicateBeforeAbsoluteTime) ClaimPredicate.FromXdr(xdr);
+            var parsed = (ClaimPredicateBeforeAbsoluteTime)ClaimPredicate.FromXdr(xdr);
 
             Assert.AreEqual(Int64.MaxValue, parsed.UnixTimeSeconds);
         }
@@ -34,7 +34,7 @@ namespace stellar_dotnet_sdk_test
             var predicate = ClaimPredicate.BeforeRelativeTime(120);
             var xdr = predicate.ToXdr();
 
-            var parsed = (ClaimPredicateBeforeRelativeTime) ClaimPredicate.FromXdr(xdr);
+            var parsed = (ClaimPredicateBeforeRelativeTime)ClaimPredicate.FromXdr(xdr);
 
             Assert.AreEqual(120.0, parsed.Duration.TotalSeconds);
         }
@@ -45,7 +45,7 @@ namespace stellar_dotnet_sdk_test
             var predicate = ClaimPredicate.Not(ClaimPredicate.BeforeRelativeTime(120));
             var xdr = predicate.ToXdr();
 
-            var parsed = (ClaimPredicateNot) ClaimPredicate.FromXdr(xdr);
+            var parsed = (ClaimPredicateNot)ClaimPredicate.FromXdr(xdr);
 
             Assert.IsNotNull(parsed.Predicate);
         }
@@ -58,7 +58,7 @@ namespace stellar_dotnet_sdk_test
                 ClaimPredicate.BeforeRelativeTime(240));
             var xdr = predicate.ToXdr();
 
-            var parsed = (ClaimPredicateAnd) ClaimPredicate.FromXdr(xdr);
+            var parsed = (ClaimPredicateAnd)ClaimPredicate.FromXdr(xdr);
 
             Assert.IsNotNull(parsed.LeftPredicate);
             Assert.IsNotNull(parsed.RightPredicate);
@@ -72,7 +72,7 @@ namespace stellar_dotnet_sdk_test
                 ClaimPredicate.BeforeRelativeTime(240));
             var xdr = predicate.ToXdr();
 
-            var parsed = (ClaimPredicateOr) ClaimPredicate.FromXdr(xdr);
+            var parsed = (ClaimPredicateOr)ClaimPredicate.FromXdr(xdr);
 
             Assert.IsNotNull(parsed.LeftPredicate);
             Assert.IsNotNull(parsed.RightPredicate);
@@ -84,10 +84,10 @@ namespace stellar_dotnet_sdk_test
             var predicate = ClaimPredicate.Unconditional();
             var xdr = predicate.ToXdr();
 
-            var parsed = (ClaimPredicateUnconditional) ClaimPredicate.FromXdr(xdr);
+            var parsed = (ClaimPredicateUnconditional)ClaimPredicate.FromXdr(xdr);
 
             Assert.IsNotNull(parsed);
-        }        
-        
+        }
+
     }
 }

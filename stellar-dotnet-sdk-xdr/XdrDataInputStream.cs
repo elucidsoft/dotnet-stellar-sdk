@@ -42,7 +42,7 @@ namespace stellar_dotnet_sdk.xdr
         /// <param name="count"></param>
         public void Read(byte[] buffer, int offset, int count)
         {
-            var result = ReadFixOpaque((uint) count);
+            var result = ReadFixOpaque((uint)count);
             Array.Copy(result, 0, buffer, offset, count);
         }
 
@@ -76,26 +76,26 @@ namespace stellar_dotnet_sdk.xdr
         internal long ReadLong()
         {
             return
-                ((long) _bytes[_pos++] << 56) |
-                ((long) _bytes[_pos++] << 48) |
-                ((long) _bytes[_pos++] << 40) |
-                ((long) _bytes[_pos++] << 32) |
-                ((long) _bytes[_pos++] << 24) |
-                ((long) _bytes[_pos++] << 16) |
-                ((long) _bytes[_pos++] << 8) |
+                ((long)_bytes[_pos++] << 56) |
+                ((long)_bytes[_pos++] << 48) |
+                ((long)_bytes[_pos++] << 40) |
+                ((long)_bytes[_pos++] << 32) |
+                ((long)_bytes[_pos++] << 24) |
+                ((long)_bytes[_pos++] << 16) |
+                ((long)_bytes[_pos++] << 8) |
                 _bytes[_pos++];
         }
 
         internal ulong ReadULong()
         {
             return
-                ((ulong) _bytes[_pos++] << 56) |
-                ((ulong) _bytes[_pos++] << 48) |
-                ((ulong) _bytes[_pos++] << 40) |
-                ((ulong) _bytes[_pos++] << 32) |
-                ((ulong) _bytes[_pos++] << 24) |
-                ((ulong) _bytes[_pos++] << 16) |
-                ((ulong) _bytes[_pos++] << 8) |
+                ((ulong)_bytes[_pos++] << 56) |
+                ((ulong)_bytes[_pos++] << 48) |
+                ((ulong)_bytes[_pos++] << 40) |
+                ((ulong)_bytes[_pos++] << 32) |
+                ((ulong)_bytes[_pos++] << 24) |
+                ((ulong)_bytes[_pos++] << 16) |
+                ((ulong)_bytes[_pos++] << 8) |
                 _bytes[_pos++];
         }
         /// <summary>
@@ -118,16 +118,16 @@ namespace stellar_dotnet_sdk.xdr
         public uint ReadUInt()
         {
             return
-                ((uint) _bytes[_pos++] << 0x18) |
-                ((uint) _bytes[_pos++] << 0x10) |
-                ((uint) _bytes[_pos++] << 0x08) |
+                ((uint)_bytes[_pos++] << 0x18) |
+                ((uint)_bytes[_pos++] << 0x10) |
+                ((uint)_bytes[_pos++] << 0x08) |
                 _bytes[_pos++];
         }
 
         private unsafe float ReadSingle()
         {
             var num = ReadInt();
-            return *(float*) &num;
+            return *(float*)&num;
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace stellar_dotnet_sdk.xdr
         private unsafe double ReadDouble()
         {
             var num = ReadLong();
-            return *(double*) &num;
+            return *(double*)&num;
         }
 
         /// <summary>
@@ -203,15 +203,15 @@ namespace stellar_dotnet_sdk.xdr
         public byte[] ReadFixOpaque(uint len)
         {
             var result = new byte[len];
-            Array.Copy(_bytes, _pos, result, 0, (int) len);
+            Array.Copy(_bytes, _pos, result, 0, (int)len);
 
             var tail = len % 4u;
             if (tail == 0)
             {
-                _pos += (int) len;
+                _pos += (int)len;
                 return result;
             }
-            var tailLength = (int) (4u - tail);
+            var tailLength = (int)(4u - tail);
             var tailBytes = new byte[tailLength];
 
             Array.Copy(_bytes, _pos + len, tailBytes, 0, tailLength);
@@ -219,7 +219,7 @@ namespace stellar_dotnet_sdk.xdr
             if (tailBytes.Any(a => a != 0))
                 throw new IOException("non-zero padding");
 
-            _pos += (int) len + tailLength;
+            _pos += (int)len + tailLength;
 
             return result;
         }

@@ -206,7 +206,7 @@ namespace stellar_dotnet_sdk
             public Builder SetClearFlags(int clearFlags)
             {
                 if (clearFlags < 0) throw new ArgumentException("clearFlags must be non negative");
-                return SetClearFlags((uint) clearFlags);
+                return SetClearFlags((uint)clearFlags);
             }
 
             /// <summary>
@@ -226,7 +226,7 @@ namespace stellar_dotnet_sdk
             public Builder SetSetFlags(int setFlags)
             {
                 if (setFlags < 0) throw new ArgumentException("setFlags must be non negative");
-                return SetSetFlags((uint) setFlags);
+                return SetSetFlags((uint)setFlags);
             }
 
             /// <summary>
@@ -243,7 +243,7 @@ namespace stellar_dotnet_sdk
             public Builder SetMasterKeyWeight(int masterKeyWeight)
             {
                 if (masterKeyWeight < 0) throw new ArgumentException("masterKeyWeight must be non negative");
-                return SetMasterKeyWeight((uint) masterKeyWeight);
+                return SetMasterKeyWeight((uint)masterKeyWeight);
             }
 
             /// <summary>
@@ -261,7 +261,7 @@ namespace stellar_dotnet_sdk
             public Builder SetLowThreshold(int lowThreshold)
             {
                 if (lowThreshold < 0) throw new ArgumentException("lowThreshold must be non negative");
-                return SetLowThreshold((uint) lowThreshold);
+                return SetLowThreshold((uint)lowThreshold);
             }
 
             /// <summary>
@@ -279,7 +279,7 @@ namespace stellar_dotnet_sdk
             public Builder SetMediumThreshold(int mediumThreshold)
             {
                 if (mediumThreshold < 0) throw new ArgumentException("mediumThreshold must be non negative");
-                return SetMediumThreshold((uint) mediumThreshold);
+                return SetMediumThreshold((uint)mediumThreshold);
             }
 
             /// <summary>
@@ -297,7 +297,7 @@ namespace stellar_dotnet_sdk
             public Builder SetHighThreshold(int highThreshold)
             {
                 if (highThreshold < 0) throw new ArgumentException("highThreshold must be non negative");
-                return SetHighThreshold((uint) highThreshold);
+                return SetHighThreshold((uint)highThreshold);
             }
 
             /// <summary>
@@ -338,7 +338,7 @@ namespace stellar_dotnet_sdk
             public Builder SetSigner(SignerKey signer, int weight)
             {
                 if (weight < 0) throw new ArgumentException("weight must be non negative");
-                return SetSigner(signer, (uint) weight);
+                return SetSigner(signer, (uint)weight);
             }
 
             public Builder SetSigner(SignerKey signer, int? weight)

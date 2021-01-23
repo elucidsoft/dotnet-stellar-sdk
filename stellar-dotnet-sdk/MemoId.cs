@@ -28,7 +28,7 @@ namespace stellar_dotnet_sdk
         {
             if (this == o) return true;
             if (o == null || GetType() != o.GetType()) return false;
-            MemoId memoId = (MemoId) o;
+            MemoId memoId = (MemoId)o;
             return IdValue == memoId.IdValue;
         }
 

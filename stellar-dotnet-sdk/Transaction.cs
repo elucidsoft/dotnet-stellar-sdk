@@ -46,7 +46,7 @@ namespace stellar_dotnet_sdk
                 throw new NoNetworkSelectedException();
 
             // Hashed NetworkID
-            var networkHash = new Hash {InnerValue = network.NetworkId};
+            var networkHash = new Hash { InnerValue = network.NetworkId };
             var taggedTransaction = new TransactionSignaturePayload.TransactionSignaturePayloadTaggedTransaction
             {
                 Discriminant = EnvelopeType.Create(EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX),
@@ -84,11 +84,11 @@ namespace stellar_dotnet_sdk
                 throw new Exception("TransactionEnvelope V0 expects a KeyPair source account");
 
             // fee
-            var fee = new Uint32 {InnerValue = Fee};
+            var fee = new Uint32 { InnerValue = Fee };
 
             // sequenceNumber
             var sequenceNumberUint = new xdr.Int64(SequenceNumber);
-            var sequenceNumber = new SequenceNumber {InnerValue = sequenceNumberUint};
+            var sequenceNumber = new SequenceNumber { InnerValue = sequenceNumberUint };
 
             // sourceAccount
             var sourceAccount = new Uint256(SourceAccount.PublicKey);
@@ -100,7 +100,7 @@ namespace stellar_dotnet_sdk
                 operations[i] = Operations[i].ToXdr();
 
             // ext
-            var ext = new TransactionV0.TransactionV0Ext {Discriminant = 0};
+            var ext = new TransactionV0.TransactionV0Ext { Discriminant = 0 };
 
             var transaction = new TransactionV0
             {
@@ -122,11 +122,11 @@ namespace stellar_dotnet_sdk
         public xdr.Transaction ToXdrV1()
         {
             // fee
-            var fee = new Uint32 {InnerValue = Fee};
+            var fee = new Uint32 { InnerValue = Fee };
 
             // sequenceNumber
             var sequenceNumberUint = new xdr.Int64(SequenceNumber);
-            var sequenceNumber = new SequenceNumber {InnerValue = sequenceNumberUint};
+            var sequenceNumber = new SequenceNumber { InnerValue = sequenceNumberUint };
 
             // sourceAccount
             var sourceAccount = SourceAccount.MuxedAccount;
@@ -138,7 +138,7 @@ namespace stellar_dotnet_sdk
                 operations[i] = Operations[i].ToXdr();
 
             // ext
-            var ext = new xdr.Transaction.TransactionExt {Discriminant = 0};
+            var ext = new xdr.Transaction.TransactionExt { Discriminant = 0 };
 
             var transaction = new xdr.Transaction
             {
@@ -182,15 +182,16 @@ namespace stellar_dotnet_sdk
             var thisXdr = new TransactionEnvelope();
             if (version == TransactionXdrVersion.V0)
             {
-                thisXdr.Discriminant = new EnvelopeType {InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_V0};
+                thisXdr.Discriminant = new EnvelopeType { InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX_V0 };
                 thisXdr.V0 = new TransactionV0Envelope();
 
                 var transaction = ToXdrV0();
                 thisXdr.V0.Tx = transaction;
                 thisXdr.V0.Signatures = signatures;
-            } else if (version == TransactionXdrVersion.V1)
+            }
+            else if (version == TransactionXdrVersion.V1)
             {
-                thisXdr.Discriminant = new EnvelopeType {InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX};
+                thisXdr.Discriminant = new EnvelopeType { InnerValue = EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_TX };
                 thisXdr.V1 = new TransactionV1Envelope();
                 var transaction = ToXdrV1();
                 thisXdr.V1.Tx = transaction;
@@ -283,5 +284,5 @@ namespace stellar_dotnet_sdk
             {
             }
         }
-   }
+    }
 }

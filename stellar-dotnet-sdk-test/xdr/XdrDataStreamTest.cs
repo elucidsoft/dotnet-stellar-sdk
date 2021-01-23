@@ -45,11 +45,11 @@ namespace stellar_dotnet_sdk_test.xdr
         [TestMethod]
         public void ReadFixedLengthOpaqueArray()
         {
-            var bytes = new byte[] {1, 2, 3, 4, 5, 0, 0, 0, 1};
+            var bytes = new byte[] { 1, 2, 3, 4, 5, 0, 0, 0, 1 };
             var xdrInputStream = new XdrDataInputStream(bytes);
             var result = new byte[5];
             xdrInputStream.Read(result, 0, 5);
-            var expected = new byte[] {1, 2, 3, 4, 5};
+            var expected = new byte[] { 1, 2, 3, 4, 5 };
             Assert.IsTrue(expected.SequenceEqual(result));
 
             var sentinel = xdrInputStream.Read();

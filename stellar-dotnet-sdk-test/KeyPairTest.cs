@@ -40,7 +40,7 @@ namespace stellar_dotnet_sdk_test
         public void TestVerifyFalse()
         {
             const string badSig = "687d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
-            byte[] corrupt = {0x00};
+            byte[] corrupt = { 0x00 };
             const string data = "hello world";
             var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(Seed));
 

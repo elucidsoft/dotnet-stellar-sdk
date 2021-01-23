@@ -12,14 +12,14 @@ namespace stellar_dotnet_sdk.requests
             var statusCode = response.StatusCode;
             var content = await response.Content.ReadAsStringAsync();
 
-            if ((int) statusCode == 429)
+            if ((int)statusCode == 429)
             {
                 var retryAfter = int.Parse(response.Headers.GetValues("Retry-After").First());
                 throw new TooManyRequestsException(retryAfter);
             }
 
-            if ((int) statusCode >= 300)
-                throw new HttpResponseException((int) statusCode, response.ReasonPhrase);
+            if ((int)statusCode >= 300)
+                throw new HttpResponseException((int)statusCode, response.ReasonPhrase);
 
             if (string.IsNullOrWhiteSpace(content))
                 throw new ClientProtocolException("Response contains no content");

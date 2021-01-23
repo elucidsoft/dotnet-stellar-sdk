@@ -50,7 +50,7 @@ namespace stellar_dotnet_sdk
         ///</summary>
         public string GetTrimmedHexValue()
         {
-            return GetHexValue().Split(new[] {"00"}, StringSplitOptions.None)[0].ToLower();
+            return GetHexValue().Split(new[] { "00" }, StringSplitOptions.None)[0].ToLower();
         }
 
         public abstract override xdr.Memo ToXdr();
@@ -59,7 +59,7 @@ namespace stellar_dotnet_sdk
         {
             if (this == o) return true;
             if (o == null || GetType() != o.GetType()) return false;
-            MemoHashAbstract that = (MemoHashAbstract) o;
+            MemoHashAbstract that = (MemoHashAbstract)o;
             return MemoBytes.SequenceEqual(that.MemoBytes);
         }
 

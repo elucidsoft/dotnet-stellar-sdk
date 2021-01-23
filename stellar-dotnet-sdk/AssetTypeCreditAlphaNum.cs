@@ -43,7 +43,7 @@ namespace stellar_dotnet_sdk
             unchecked
             {
                 // Choose large primes to avoid hashing collisions
-                const int hashingBase = (int) 2166136261;
+                const int hashingBase = (int)2166136261;
                 const int hashingMultiplier = 16777619;
 
                 var hash = hashingBase;
@@ -56,7 +56,7 @@ namespace stellar_dotnet_sdk
         /// <inheritdoc />
         public override bool Equals(object obj)
         {
-            var o = (AssetTypeCreditAlphaNum) obj;
+            var o = (AssetTypeCreditAlphaNum)obj;
 
             return Code.Equals(o.Code) &&
                    Issuer.Equals(o.Issuer);
@@ -73,7 +73,7 @@ namespace stellar_dotnet_sdk
         {
             throw new NotSupportedException();
         }
-        
+
         /// <inheritdoc />
         public override string CanonicalName()
         {

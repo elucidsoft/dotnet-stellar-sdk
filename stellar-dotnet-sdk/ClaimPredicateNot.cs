@@ -8,7 +8,7 @@ namespace stellar_dotnet_sdk
         {
             Predicate = predicate;
         }
-        
+
         public override xdr.ClaimPredicate ToXdr()
         {
             return new xdr.ClaimPredicate

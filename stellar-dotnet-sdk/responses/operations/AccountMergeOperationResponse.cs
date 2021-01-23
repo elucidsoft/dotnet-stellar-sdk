@@ -18,7 +18,7 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "into")]
         public string Into { get; private set; }
 
-        public AccountMergeOperationResponse() 
+        public AccountMergeOperationResponse()
         {
 
         }

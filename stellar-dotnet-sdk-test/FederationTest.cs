@@ -26,7 +26,7 @@ namespace stellar_dotnet_sdk_test.federation
         {
             _server = new FederationServer("https://api.stellar.org/federation", "stellar.org");
 
-            _fakeHttpMessageHandler = new Mock<FakeHttpMessageHandler> {CallBase = true};
+            _fakeHttpMessageHandler = new Mock<FakeHttpMessageHandler> { CallBase = true };
             _httpClient = new HttpClient(_fakeHttpMessageHandler.Object);
             _server.HttpClient = _httpClient;
         }
