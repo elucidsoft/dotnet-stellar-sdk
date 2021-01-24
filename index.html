@@ -63,6 +63,24 @@
 
 <!-- PROJECT LOGO -->
 <p><br><p align="center"> <img width="460" height="300" src="https://raw.githubusercontent.com/elucidsoft/dotnet-stellar-sdk/master/docfx/images/logo.svg">  <!-- TITLE AND BADGES --> <h3 align="center">dotnet-stellar-sdk</h3> <p align="center"> Stellar API SDK for .NET Core 2.x and .NET Standard 2.0 <br> <a href="https://ci.appveyor.com/project/elucidsoft/dotnet-stellar-sdk/branch/master"> <img src="https://ci.appveyor.com/api/projects/status/n34q6l3wyar2rq5l/branch/master?svg=true"></a> <a href="https://coveralls.io/github/elucidsoft/dotnet-stellar-sdk?branch=master"> <img src="https://coveralls.io/repos/github/elucidsoft/dotnet-stellar-sdk/badge.svg?branch=master"></a><a href="https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk"> <img src="https://www.codefactor.io/repository/github/elucidsoft/dotnet-stellar-sdk/badge"></a> <a href="https://www.nuget.org/packages/stellar-dotnet-sdk"> <img src="https://buildstats.info/nuget/stellar-dotnet-sdk"> </a><br><br><!-- USEFUL LINKS--><a href="https://github.com/elucidsoft/dotnet-stellar-sdk/issues/new?template=Bug_report.md">Report Bug</a> · <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/issues/new?template=Feature_request.md">Request Feature</a> · <a href="https://github.com/elucidsoft/dotnet-stellar-sdk/security/policy">Report Security Vulnerability</a> </p></p></p>
+<!-- TABLE OF CONTENTS -->
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#about-the-project">About the Project</a></li>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#visual-studio">Visual Studio</a></li>
+<li><a href="#jetbrains-rider">JetBrains Rider</a></li>
+<li><a href="#other">Other</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#xdr">XDR</a></li>
+<li><a href="#xdr-generation">XDR Generation</a></li>
+<li><a href="#contributors">Contributors</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
+</ul>
 <!-- ABOUT THE PROJECT -->
 <h2 id="about-the-project">About The Project</h2>
 <p><code>dotnet-stellar-sdk</code> is a <strong>Net Core/Standard</strong> library for communicating with a <a href="https://github.com/stellar/go/tree/master/services/horizon">Stellar Horizon server</a>. It is used for building Stellar apps.</p>
@@ -110,10 +128,29 @@
 <p>In order to generate the XDR Files automatically in C# a custom XDR Generator must be used.</p>
 <p>You can find the latest working generator here: <a href="https://github.com/fracek/xdrgen/tree/csharp">https://github.com/fracek/xdrgen/tree/csharp</a></p>
 <p>You can use that version of xdrgen to regenerate the XDR files from the .x files located from the <a href="https://github.com/stellar/stellar-core/tree/master/src/xdr">source</a> of the original API SDK for Horizon.</p>
+<h3 id="example">Example</h3>
+<ol>
+<li>Install custom XDR generator:
+<pre><code>git clone https://github.com/fracek/xdrgen
+cd xdrgen
+git checkout csharp
+rake install
+</code></pre>
+</li>
+<li>Regenerate .cs files from .x files:
+<pre><code>cd dotnet-stellar-sdk/
+xdrgen -o=./stellar-dotnet-sdk-xdr/generated -l=csharp -n=stellar_dotnet_sdk.xdr ./stellar-dotnet-sdk-xdr/*.x
+</code></pre>
+</li>
+<li>Reformat .cs files using dotnet-format:
+<pre><code>dotnet format
+</code></pre>
+</li>
+</ol>
 <!-- CONTRIBUTORS-->
 <h2 id="contributors">Contributors</h2>
 <ul>
-<li>Eric Malamisura (Twitter: <a href="https://twitter.com/emalamisura">@emalamisura</a>, Keybase: <a href="https://keybase.io/elucidsoft">elucidsoft</a>)</li>
+<li>Eric Malamisura (Twitter: <a href="https://twitter.com/EricDaCoder">@EricDaCoder</a>, Keybase: <a href="https://keybase.io/elucidsoft">elucidsoft</a>)</li>
 <li>Kirbyrawr (Keybase: <a href="https://keybase.io/Kirbyrawr">Kirbyrawr</a>)</li>
 <li>Michael Monte</li>
 <li>Francesco Ceccon</li>
