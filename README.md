@@ -90,7 +90,10 @@ You can use that version of xdrgen to regenerate the XDR files from the .x files
    cd dotnet-stellar-sdk/
    xdrgen -o=./stellar-dotnet-sdk-xdr/generated -l=csharp -n=stellar_dotnet_sdk.xdr ./stellar-dotnet-sdk-xdr/*.x
    ```
-3. Reformat .cs files using <insert tool here>
+3. Reformat .cs files using dotnet-format:
+   ```
+   dotnet format
+   ```
 
 <!-- CONTRIBUTORS-->
 
