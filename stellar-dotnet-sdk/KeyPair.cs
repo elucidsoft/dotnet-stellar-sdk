@@ -12,7 +12,7 @@ namespace stellar_dotnet_sdk
     /// <see cref="KeyPair"/> represents public (and secret) keys of the account.
     /// Currently <see cref="KeyPair"/> only supports ed25519 but in a future this class can be abstraction layer for other public-key signature systems.
     /// </summary>
-    public class KeyPair : IAccountId
+    public class KeyPair : IAccountId, IEquatable<KeyPair>
     {
         private KeyPair(Key secretKey, byte[] seed)
         {
@@ -337,6 +337,14 @@ namespace stellar_dotnet_sdk
         public bool Verify(byte[] data, xdr.Signature signature)
         {
             return Verify(data, signature.InnerValue);
+        }
+
+        public bool Equals(KeyPair other)
+        {
+            if (other == null) return false;
+            if (SeedBytes != null && other.SeedBytes == null) return false;
+            if (SeedBytes == null && other.SeedBytes != null) return false;
+            return _publicKey.Equals(other._publicKey);
         }
     }
 }
