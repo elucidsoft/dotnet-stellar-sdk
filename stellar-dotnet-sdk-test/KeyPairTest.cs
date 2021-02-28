@@ -98,5 +98,39 @@ namespace stellar_dotnet_sdk_test
                 throw;
             }
         }
+
+        [TestMethod]
+        public void TestEqualityWithNullIsFalse()
+        {
+            var keyPair = KeyPair.FromAccountId("GDEAOZWTVHQZGGJY6KG4NAGJQ6DXATXAJO3AMW7C4IXLKMPWWB4FDNFZ");
+            Assert.IsFalse(keyPair.Equals(null));
+        }
+
+        [TestMethod]
+        public void TestEqualityWithKeyWithSecretKeyAndWithout()
+        {
+            var keyPair = KeyPair.FromSecretSeed("SDJHRQF4GCMIIKAAAQ6IHY42X73FQFLHUULAPSKKD4DFDM7UXWWCRHBE");
+            var otherKeyPair = KeyPair.FromAccountId(keyPair.AccountId);
+            Assert.IsFalse(keyPair.Equals(otherKeyPair));
+            Assert.IsFalse(otherKeyPair.Equals(keyPair));
+        }
+
+        [TestMethod]
+        public void TestEqualityWithKeyWithSecretKey()
+        {
+            var keyPair = KeyPair.FromSecretSeed("SDJHRQF4GCMIIKAAAQ6IHY42X73FQFLHUULAPSKKD4DFDM7UXWWCRHBE");
+            var otherKeyPair = KeyPair.FromSecretSeed(keyPair.SecretSeed);
+            Assert.IsTrue(keyPair.Equals(otherKeyPair));
+            Assert.IsTrue(otherKeyPair.Equals(keyPair));
+        }
+
+        [TestMethod]
+        public void TestEqualityWithOnlyPublicKey()
+        {
+            var keyPair = KeyPair.FromAccountId("GDEAOZWTVHQZGGJY6KG4NAGJQ6DXATXAJO3AMW7C4IXLKMPWWB4FDNFZ");
+            var otherKeyPair = KeyPair.FromAccountId(keyPair.AccountId);
+
+            Assert.IsTrue(keyPair.Equals(otherKeyPair));
+        }
     }
 }
