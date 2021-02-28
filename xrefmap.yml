@@ -3344,6 +3344,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.KeyPair.CanSign
   nameWithType: KeyPair.CanSign
+- uid: stellar_dotnet_sdk.KeyPair.Equals(stellar_dotnet_sdk.KeyPair)
+  name: Equals(KeyPair)
+  href: api/stellar_dotnet_sdk.KeyPair.html#stellar_dotnet_sdk_KeyPair_Equals_stellar_dotnet_sdk_KeyPair_
+  commentId: M:stellar_dotnet_sdk.KeyPair.Equals(stellar_dotnet_sdk.KeyPair)
+  fullName: stellar_dotnet_sdk.KeyPair.Equals(stellar_dotnet_sdk.KeyPair)
+  nameWithType: KeyPair.Equals(KeyPair)
+- uid: stellar_dotnet_sdk.KeyPair.Equals*
+  name: Equals
+  href: api/stellar_dotnet_sdk.KeyPair.html#stellar_dotnet_sdk_KeyPair_Equals_
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.Equals
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.KeyPair.Equals
+  nameWithType: KeyPair.Equals
 - uid: stellar_dotnet_sdk.KeyPair.FromAccountId(System.String)
   name: FromAccountId(String)
   href: api/stellar_dotnet_sdk.KeyPair.html#stellar_dotnet_sdk_KeyPair_FromAccountId_System_String_
