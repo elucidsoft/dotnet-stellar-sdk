@@ -17,6 +17,7 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual(1600720493, parsed.DateTime.ToUnixTimeSeconds());
         }
+        
         [TestMethod]
         public void TestClaimPredicateBeforeAbsoluteTimeMaxInt()
         {
