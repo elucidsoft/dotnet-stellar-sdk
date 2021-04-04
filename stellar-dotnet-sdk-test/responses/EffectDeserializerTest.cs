@@ -419,7 +419,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTrustlineCreatedData(instance);
@@ -428,7 +428,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeTrustlineCreatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineCreated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineCreated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -461,7 +461,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTrustlineRemovedData(instance);
@@ -470,7 +470,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeTrustlineRemovedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineRemoved.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineRemoved.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -502,7 +502,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTrustlineUpdatedData(instance);
@@ -511,7 +511,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeTrustlineUpdatedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineUpdated.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineUpdated.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -543,7 +543,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineAuthorizedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineAuthorized.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineAuthorized.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTrustlineAuthorizedData(instance);
@@ -552,7 +552,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineAuthorizedToMaintainLiabilitiesEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineAuthorizedToMaintainLiabilitiesEffect.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineAuthorizedToMaintainLiabilities.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTrustlineAuthorizedToMaintainLiabilitiesEffect(instance);
@@ -561,7 +561,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeTrustlineAuthorizedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineAuthorized.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineAuthorized.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -618,7 +618,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeTrustlineDeauthorizedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineDeAuthorized.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineDeAuthorized.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
             AssertTrustlineDeauthorizedData(instance);
@@ -627,7 +627,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeTrustlineDeauthorizedEffect()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTrustlineDeAuthorized.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineDeAuthorized.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
@@ -1408,5 +1408,57 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsNotNull(back);
         }
 
+
+        //Trustline Flags Updated
+        [TestMethod]
+        public void TestSerializationTrustlineFlagsUpdatedEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineFlagsUpdated.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertTrustlineFlagsUpdatedEffect(back);
+        }
+
+        private static void AssertTrustlineFlagsUpdatedEffect(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is TrustlineFlagsUpdatedEffectResponse);
+            var effect = (TrustlineFlagsUpdatedEffectResponse)instance;
+
+            Assert.AreEqual("credit_alphanum4", effect.AssetType);
+            Assert.AreEqual("EUR", effect.AssetCode);
+            Assert.AreEqual("GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM", effect.AssetIssuer);
+            Assert.AreEqual("GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F", effect.Trustor);
+            Assert.IsTrue(effect.AuthorizedFlag);
+            Assert.IsTrue(effect.AuthorizedToMaintainLiabilities);
+            Assert.IsTrue(effect.ClawbackEnabledFlag);
+
+            var back = new TrustlineFlagsUpdatedEffectResponse(effect.AssetType, effect.AssetCode, effect.AssetIssuer, effect.Trustor, effect.AuthorizedFlag, effect.AuthorizedToMaintainLiabilities, effect.ClawbackEnabledFlag);
+            Assert.IsNotNull(back);
+        }
+
+        //Claimable Balance Clawed Back
+        [TestMethod]
+        public void TestSerializationClaimableBalanceClawedBackEffect()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/effects/claimableBalance", "claimableBalanceClawedBack.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
+
+            AssertClaimableBalanceClawedBackEffect(back);
+        }
+
+        private static void AssertClaimableBalanceClawedBackEffect(EffectResponse instance)
+        {
+            Assert.IsTrue(instance is ClaimableBalanceClawedBackEffectResponse);
+            var effect = (ClaimableBalanceClawedBackEffectResponse)instance;
+
+            Assert.AreEqual("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7", effect.BalanceID);
+
+            var back = new ClaimableBalanceClawedBackEffectResponse();
+            Assert.IsNotNull(back);
+        }
     }
 }

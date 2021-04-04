@@ -44,6 +44,9 @@
     <None Update="testdata\assetPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="testdata\effects\claimableBalance\claimableBalanceClawedBack.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="testdata\effects\dataSponsorship\dataSponsorshipCreated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -128,22 +131,25 @@
     <None Update="testdata\effects\effectTrade.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\effects\effectTrustlineAuthorizedToMaintainLiabilitiesEffect.json">
+    <None Update="testdata\effects\trustline\trustlineFlagsUpdated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\effects\effectTrustlineDeAuthorized.json">
+    <None Update="testdata\effects\trustline\trustlineAuthorizedToMaintainLiabilities.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\effects\effectTrustlineAuthorized.json">
+    <None Update="testdata\effects\trustline\trustlineDeAuthorized.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\effects\effectTrustlineUpdated.json">
+    <None Update="testdata\effects\trustline\trustlineAuthorized.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\effects\effectTrustlineRemoved.json">
+    <None Update="testdata\effects\trustline\trustlineUpdated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\effects\effectTrustlineCreated.json">
+    <None Update="testdata\effects\trustline\trustlineRemoved.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\effects\trustline\trustlineCreated.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="testdata\effects\effectSignerUpdated.json">
