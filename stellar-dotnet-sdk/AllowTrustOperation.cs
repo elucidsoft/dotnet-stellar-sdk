@@ -1,7 +1,7 @@
 ﻿using stellar_dotnet_sdk.xdr;
 using System;
 using System.Text;
-using sdkxdr = stellar_dotnet_sdk.xdr;
+using xdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
@@ -11,6 +11,7 @@ namespace stellar_dotnet_sdk
     ///
     /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html#allow-trust">Allow Trust</see>
     /// </summary>
+    [Obsolete("Deperecated in favor of 'SetTrustlineFlagsOperation'")]
     public class AllowTrustOperation : Operation
     {
         private AllowTrustOperation(KeyPair trustor, string assetCode, bool authorize, bool authorizeToMaintainLiabilities)
@@ -47,25 +48,25 @@ namespace stellar_dotnet_sdk
         /// Returns the Allow Trust XDR Operation Body
         /// </summary>
         /// <returns></returns>
-        public override sdkxdr.Operation.OperationBody ToOperationBody()
+        public override xdr.Operation.OperationBody ToOperationBody()
         {
-            var op = new sdkxdr.AllowTrustOp();
+            var op = new xdr.AllowTrustOp();
 
             // trustor
-            var trustor = new sdkxdr.AccountID();
+            var trustor = new xdr.AccountID();
             trustor.InnerValue = Trustor.XdrPublicKey;
             op.Trustor = trustor;
 
             // asset
-            var asset = new sdkxdr.AllowTrustOp.AllowTrustOpAsset();
+            var asset = new xdr.AssetCode();
             if (AssetCode.Length <= 4)
             {
-                asset.Discriminant = sdkxdr.AssetType.Create(sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4);
+                asset.Discriminant = xdr.AssetType.Create(xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4);
                 asset.AssetCode4 = new AssetCode4(Util.PaddedByteArray(AssetCode, 4));
             }
             else
             {
-                asset.Discriminant = sdkxdr.AssetType.Create(sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12);
+                asset.Discriminant = xdr.AssetType.Create(xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12);
                 asset.AssetCode12 = new AssetCode12(Util.PaddedByteArray(AssetCode, 12));
             }
 
@@ -89,8 +90,8 @@ namespace stellar_dotnet_sdk
 
             op.Authorize = trustlineFlag;
 
-            var body = new sdkxdr.Operation.OperationBody();
-            body.Discriminant = sdkxdr.OperationType.Create(sdkxdr.OperationType.OperationTypeEnum.ALLOW_TRUST);
+            var body = new xdr.Operation.OperationBody();
+            body.Discriminant = xdr.OperationType.Create(xdr.OperationType.OperationTypeEnum.ALLOW_TRUST);
             body.AllowTrustOp = op;
             return body;
         }
@@ -113,18 +114,18 @@ namespace stellar_dotnet_sdk
             /// </summary>
             /// <param name="op"></param>
             /// <exception cref="Exception"></exception>
-            public Builder(sdkxdr.AllowTrustOp op)
+            public Builder(xdr.AllowTrustOp op)
             {
                 _trustor = KeyPair.FromXdrPublicKey(op.Trustor.InnerValue);
                 switch (op.Asset.Discriminant.InnerValue)
                 {
-                    case sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4:
+                    case xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4:
                         _assetCode = Encoding.UTF8.GetString(op.Asset.AssetCode4.InnerValue);
                         break;
-                    case sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12:
+                    case xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12:
                         _assetCode = Encoding.UTF8.GetString(op.Asset.AssetCode12.InnerValue);
                         break;
-                    case sdkxdr.AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE:
+                    case xdr.AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE:
                         break;
                     default:
                         throw new Exception("Unknown asset code");
