@@ -2,37 +2,33 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr
-{
+namespace stellar_dotnet_sdk.xdr {
 
-    // === xdr source ============================================================
+// === xdr source ============================================================
 
-    //  typedef opaque Thresholds[4];
+//  typedef opaque Thresholds[4];
 
-    //  ===========================================================================
-    public class Thresholds
-    {
-        public byte[] InnerValue { get; set; } = default(byte[]);
+//  ===========================================================================
+public class Thresholds  {
+  public byte[] InnerValue {get; set;} = default(byte[]);
 
-        public Thresholds() { }
+  public Thresholds() {}
 
-        public Thresholds(byte[] value)
-        {
-            InnerValue = value;
-        }
+  public Thresholds(byte[] value)
+  {
+    InnerValue = value;
+  }
 
-        public static void Encode(XdrDataOutputStream stream, Thresholds encodedThresholds)
-        {
-            int Thresholdssize = encodedThresholds.InnerValue.Length;
-            stream.Write(encodedThresholds.InnerValue, 0, Thresholdssize);
-        }
-        public static Thresholds Decode(XdrDataInputStream stream)
-        {
-            Thresholds decodedThresholds = new Thresholds();
-            int Thresholdssize = 4;
-            decodedThresholds.InnerValue = new byte[Thresholdssize];
-            stream.Read(decodedThresholds.InnerValue, 0, Thresholdssize);
-            return decodedThresholds;
-        }
-    }
+  public static void Encode(XdrDataOutputStream stream, Thresholds  encodedThresholds) {
+  int Thresholdssize = encodedThresholds.InnerValue.Length;
+  stream.Write(encodedThresholds.InnerValue, 0, Thresholdssize);
+  }
+  public static Thresholds Decode(XdrDataInputStream stream) {
+    Thresholds decodedThresholds = new Thresholds();
+  int Thresholdssize = 4;
+  decodedThresholds.InnerValue = new byte[Thresholdssize];
+  stream.Read(decodedThresholds.InnerValue, 0, Thresholdssize);
+    return decodedThresholds;
+  }
+}
 }

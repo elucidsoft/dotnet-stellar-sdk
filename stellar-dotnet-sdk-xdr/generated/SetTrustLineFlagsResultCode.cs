@@ -2,62 +2,55 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr
-{
+namespace stellar_dotnet_sdk.xdr {
 
-    // === xdr source ============================================================
+// === xdr source ============================================================
 
-    //  enum SetTrustLineFlagsResultCode
-    //  {
-    //      // codes considered as "success" for the operation
-    //      SET_TRUST_LINE_FLAGS_SUCCESS = 0,
-    //  
-    //      // codes considered as "failure" for the operation
-    //      SET_TRUST_LINE_FLAGS_MALFORMED = -1,
-    //      SET_TRUST_LINE_FLAGS_NO_TRUST_LINE = -2,
-    //      SET_TRUST_LINE_FLAGS_CANT_REVOKE = -3,
-    //      SET_TRUST_LINE_FLAGS_INVALID_STATE = -4
-    //  };
+//  enum SetTrustLineFlagsResultCode
+//  {
+//      // codes considered as "success" for the operation
+//      SET_TRUST_LINE_FLAGS_SUCCESS = 0,
+//  
+//      // codes considered as "failure" for the operation
+//      SET_TRUST_LINE_FLAGS_MALFORMED = -1,
+//      SET_TRUST_LINE_FLAGS_NO_TRUST_LINE = -2,
+//      SET_TRUST_LINE_FLAGS_CANT_REVOKE = -3,
+//      SET_TRUST_LINE_FLAGS_INVALID_STATE = -4
+//  };
 
-    //  ===========================================================================
-    public class SetTrustLineFlagsResultCode
-    {
-        public enum SetTrustLineFlagsResultCodeEnum
-        {
-            SET_TRUST_LINE_FLAGS_SUCCESS = 0,
-            SET_TRUST_LINE_FLAGS_MALFORMED = -1,
-            SET_TRUST_LINE_FLAGS_NO_TRUST_LINE = -2,
-            SET_TRUST_LINE_FLAGS_CANT_REVOKE = -3,
-            SET_TRUST_LINE_FLAGS_INVALID_STATE = -4,
-        }
-        public SetTrustLineFlagsResultCodeEnum InnerValue { get; set; } = default(SetTrustLineFlagsResultCodeEnum);
+//  ===========================================================================
+public class SetTrustLineFlagsResultCode  {
+  public enum SetTrustLineFlagsResultCodeEnum {
+  SET_TRUST_LINE_FLAGS_SUCCESS = 0,
+  SET_TRUST_LINE_FLAGS_MALFORMED = -1,
+  SET_TRUST_LINE_FLAGS_NO_TRUST_LINE = -2,
+  SET_TRUST_LINE_FLAGS_CANT_REVOKE = -3,
+  SET_TRUST_LINE_FLAGS_INVALID_STATE = -4,
+  }
+  public SetTrustLineFlagsResultCodeEnum InnerValue {get; set;} = default(SetTrustLineFlagsResultCodeEnum);
 
-        public static SetTrustLineFlagsResultCode Create(SetTrustLineFlagsResultCodeEnum v)
-        {
-            return new SetTrustLineFlagsResultCode
-            {
-                InnerValue = v
-            };
-        }
+  public static SetTrustLineFlagsResultCode Create(SetTrustLineFlagsResultCodeEnum v)
+  {
+    return new SetTrustLineFlagsResultCode {
+      InnerValue = v
+    };
+  }
 
-        public static SetTrustLineFlagsResultCode Decode(XdrDataInputStream stream)
-        {
-            int value = stream.ReadInt();
-            switch (value)
-            {
-                case 0: return Create(SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_SUCCESS);
-                case -1: return Create(SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_MALFORMED);
-                case -2: return Create(SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_NO_TRUST_LINE);
-                case -3: return Create(SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_CANT_REVOKE);
-                case -4: return Create(SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_INVALID_STATE);
-                default:
-                    throw new Exception("Unknown enum value: " + value);
-            }
-        }
-
-        public static void Encode(XdrDataOutputStream stream, SetTrustLineFlagsResultCode value)
-        {
-            stream.WriteInt((int)value.InnerValue);
-        }
+  public static SetTrustLineFlagsResultCode Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
+    switch (value) {
+      case 0: return Create(SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_SUCCESS);
+      case -1: return Create(SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_MALFORMED);
+      case -2: return Create(SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_NO_TRUST_LINE);
+      case -3: return Create(SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_CANT_REVOKE);
+      case -4: return Create(SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_INVALID_STATE);
+      default:
+        throw new Exception("Unknown enum value: " + value);
     }
+  }
+
+  public static void Encode(XdrDataOutputStream stream, SetTrustLineFlagsResultCode value) {
+    stream.WriteInt((int)value.InnerValue);
+  }
+}
 }
