@@ -2,145 +2,159 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  struct LedgerEntry
-//  {
-//      uint32 lastModifiedLedgerSeq; // ledger the LedgerEntry was last changed
-//  
-//      union switch (LedgerEntryType type)
-//      {
-//      case ACCOUNT:
-//          AccountEntry account;
-//      case TRUSTLINE:
-//          TrustLineEntry trustLine;
-//      case OFFER:
-//          OfferEntry offer;
-//      case DATA:
-//          DataEntry data;
-//      case CLAIMABLE_BALANCE:
-//          ClaimableBalanceEntry claimableBalance;
-//      }
-//      data;
-//  
-//      // reserved for future use
-//      union switch (int v)
-//      {
-//      case 0:
-//          void;
-//      case 1:
-//          LedgerEntryExtensionV1 v1;
-//      }
-//      ext;
-//  };
+    //  struct LedgerEntry
+    //  {
+    //      uint32 lastModifiedLedgerSeq; // ledger the LedgerEntry was last changed
+    //  
+    //      union switch (LedgerEntryType type)
+    //      {
+    //      case ACCOUNT:
+    //          AccountEntry account;
+    //      case TRUSTLINE:
+    //          TrustLineEntry trustLine;
+    //      case OFFER:
+    //          OfferEntry offer;
+    //      case DATA:
+    //          DataEntry data;
+    //      case CLAIMABLE_BALANCE:
+    //          ClaimableBalanceEntry claimableBalance;
+    //      }
+    //      data;
+    //  
+    //      // reserved for future use
+    //      union switch (int v)
+    //      {
+    //      case 0:
+    //          void;
+    //      case 1:
+    //          LedgerEntryExtensionV1 v1;
+    //      }
+    //      ext;
+    //  };
 
-//  ===========================================================================
-public class LedgerEntry  {
-  public LedgerEntry () {}
-  public Uint32 LastModifiedLedgerSeq {get; set;}
-  public LedgerEntryData Data {get; set;}
-  public LedgerEntryExt Ext {get; set;}
+    //  ===========================================================================
+    public class LedgerEntry
+    {
+        public LedgerEntry() { }
+        public Uint32 LastModifiedLedgerSeq { get; set; }
+        public LedgerEntryData Data { get; set; }
+        public LedgerEntryExt Ext { get; set; }
 
-  public static void Encode(XdrDataOutputStream stream, LedgerEntry encodedLedgerEntry) {
-    Uint32.Encode(stream, encodedLedgerEntry.LastModifiedLedgerSeq);
-    LedgerEntryData.Encode(stream, encodedLedgerEntry.Data);
-    LedgerEntryExt.Encode(stream, encodedLedgerEntry.Ext);
-  }
-  public static LedgerEntry Decode(XdrDataInputStream stream) {
-    LedgerEntry decodedLedgerEntry = new LedgerEntry();
-    decodedLedgerEntry.LastModifiedLedgerSeq = Uint32.Decode(stream);
-    decodedLedgerEntry.Data = LedgerEntryData.Decode(stream);
-    decodedLedgerEntry.Ext = LedgerEntryExt.Decode(stream);
-    return decodedLedgerEntry;
-  }
+        public static void Encode(XdrDataOutputStream stream, LedgerEntry encodedLedgerEntry)
+        {
+            Uint32.Encode(stream, encodedLedgerEntry.LastModifiedLedgerSeq);
+            LedgerEntryData.Encode(stream, encodedLedgerEntry.Data);
+            LedgerEntryExt.Encode(stream, encodedLedgerEntry.Ext);
+        }
+        public static LedgerEntry Decode(XdrDataInputStream stream)
+        {
+            LedgerEntry decodedLedgerEntry = new LedgerEntry();
+            decodedLedgerEntry.LastModifiedLedgerSeq = Uint32.Decode(stream);
+            decodedLedgerEntry.Data = LedgerEntryData.Decode(stream);
+            decodedLedgerEntry.Ext = LedgerEntryExt.Decode(stream);
+            return decodedLedgerEntry;
+        }
 
-  public class LedgerEntryData {
-    public LedgerEntryData () {}
+        public class LedgerEntryData
+        {
+            public LedgerEntryData() { }
 
-    public LedgerEntryType Discriminant { get; set; } = new LedgerEntryType();
+            public LedgerEntryType Discriminant { get; set; } = new LedgerEntryType();
 
-    public AccountEntry Account {get; set;}
-    public TrustLineEntry TrustLine {get; set;}
-    public OfferEntry Offer {get; set;}
-    public DataEntry Data {get; set;}
-    public ClaimableBalanceEntry ClaimableBalance {get; set;}
-    public static void Encode(XdrDataOutputStream stream, LedgerEntryData encodedLedgerEntryData) {
-    stream.WriteInt((int)encodedLedgerEntryData.Discriminant.InnerValue);
-    switch (encodedLedgerEntryData.Discriminant.InnerValue) {
-    case LedgerEntryType.LedgerEntryTypeEnum.ACCOUNT:
-    AccountEntry.Encode(stream, encodedLedgerEntryData.Account);
-    break;
-    case LedgerEntryType.LedgerEntryTypeEnum.TRUSTLINE:
-    TrustLineEntry.Encode(stream, encodedLedgerEntryData.TrustLine);
-    break;
-    case LedgerEntryType.LedgerEntryTypeEnum.OFFER:
-    OfferEntry.Encode(stream, encodedLedgerEntryData.Offer);
-    break;
-    case LedgerEntryType.LedgerEntryTypeEnum.DATA:
-    DataEntry.Encode(stream, encodedLedgerEntryData.Data);
-    break;
-    case LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE:
-    ClaimableBalanceEntry.Encode(stream, encodedLedgerEntryData.ClaimableBalance);
-    break;
+            public AccountEntry Account { get; set; }
+            public TrustLineEntry TrustLine { get; set; }
+            public OfferEntry Offer { get; set; }
+            public DataEntry Data { get; set; }
+            public ClaimableBalanceEntry ClaimableBalance { get; set; }
+            public static void Encode(XdrDataOutputStream stream, LedgerEntryData encodedLedgerEntryData)
+            {
+                stream.WriteInt((int)encodedLedgerEntryData.Discriminant.InnerValue);
+                switch (encodedLedgerEntryData.Discriminant.InnerValue)
+                {
+                    case LedgerEntryType.LedgerEntryTypeEnum.ACCOUNT:
+                        AccountEntry.Encode(stream, encodedLedgerEntryData.Account);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.TRUSTLINE:
+                        TrustLineEntry.Encode(stream, encodedLedgerEntryData.TrustLine);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.OFFER:
+                        OfferEntry.Encode(stream, encodedLedgerEntryData.Offer);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.DATA:
+                        DataEntry.Encode(stream, encodedLedgerEntryData.Data);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE:
+                        ClaimableBalanceEntry.Encode(stream, encodedLedgerEntryData.ClaimableBalance);
+                        break;
+                }
+            }
+            public static LedgerEntryData Decode(XdrDataInputStream stream)
+            {
+                LedgerEntryData decodedLedgerEntryData = new LedgerEntryData();
+                LedgerEntryType discriminant = LedgerEntryType.Decode(stream);
+                decodedLedgerEntryData.Discriminant = discriminant;
+                switch (decodedLedgerEntryData.Discriminant.InnerValue)
+                {
+                    case LedgerEntryType.LedgerEntryTypeEnum.ACCOUNT:
+                        decodedLedgerEntryData.Account = AccountEntry.Decode(stream);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.TRUSTLINE:
+                        decodedLedgerEntryData.TrustLine = TrustLineEntry.Decode(stream);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.OFFER:
+                        decodedLedgerEntryData.Offer = OfferEntry.Decode(stream);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.DATA:
+                        decodedLedgerEntryData.Data = DataEntry.Decode(stream);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE:
+                        decodedLedgerEntryData.ClaimableBalance = ClaimableBalanceEntry.Decode(stream);
+                        break;
+                }
+                return decodedLedgerEntryData;
+            }
+
+        }
+        public class LedgerEntryExt
+        {
+            public LedgerEntryExt() { }
+
+            public int Discriminant { get; set; } = new int();
+
+            public LedgerEntryExtensionV1 V1 { get; set; }
+            public static void Encode(XdrDataOutputStream stream, LedgerEntryExt encodedLedgerEntryExt)
+            {
+                stream.WriteInt((int)encodedLedgerEntryExt.Discriminant);
+                switch (encodedLedgerEntryExt.Discriminant)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        LedgerEntryExtensionV1.Encode(stream, encodedLedgerEntryExt.V1);
+                        break;
+                }
+            }
+            public static LedgerEntryExt Decode(XdrDataInputStream stream)
+            {
+                LedgerEntryExt decodedLedgerEntryExt = new LedgerEntryExt();
+                int discriminant = stream.ReadInt();
+                decodedLedgerEntryExt.Discriminant = discriminant;
+                switch (decodedLedgerEntryExt.Discriminant)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        decodedLedgerEntryExt.V1 = LedgerEntryExtensionV1.Decode(stream);
+                        break;
+                }
+                return decodedLedgerEntryExt;
+            }
+
+        }
     }
-    }
-    public static LedgerEntryData Decode(XdrDataInputStream stream) {
-    LedgerEntryData decodedLedgerEntryData = new LedgerEntryData();
-    LedgerEntryType discriminant = LedgerEntryType.Decode(stream);
-    decodedLedgerEntryData.Discriminant = discriminant;
-    switch (decodedLedgerEntryData.Discriminant.InnerValue) {
-    case LedgerEntryType.LedgerEntryTypeEnum.ACCOUNT:
-    decodedLedgerEntryData.Account = AccountEntry.Decode(stream);
-    break;
-    case LedgerEntryType.LedgerEntryTypeEnum.TRUSTLINE:
-    decodedLedgerEntryData.TrustLine = TrustLineEntry.Decode(stream);
-    break;
-    case LedgerEntryType.LedgerEntryTypeEnum.OFFER:
-    decodedLedgerEntryData.Offer = OfferEntry.Decode(stream);
-    break;
-    case LedgerEntryType.LedgerEntryTypeEnum.DATA:
-    decodedLedgerEntryData.Data = DataEntry.Decode(stream);
-    break;
-    case LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE:
-    decodedLedgerEntryData.ClaimableBalance = ClaimableBalanceEntry.Decode(stream);
-    break;
-    }
-      return decodedLedgerEntryData;
-    }
-
-  }
-  public class LedgerEntryExt {
-    public LedgerEntryExt () {}
-
-    public int Discriminant { get; set; } = new int();
-
-    public LedgerEntryExtensionV1 V1 {get; set;}
-    public static void Encode(XdrDataOutputStream stream, LedgerEntryExt encodedLedgerEntryExt) {
-    stream.WriteInt((int)encodedLedgerEntryExt.Discriminant);
-    switch (encodedLedgerEntryExt.Discriminant) {
-    case 0:
-    break;
-    case 1:
-    LedgerEntryExtensionV1.Encode(stream, encodedLedgerEntryExt.V1);
-    break;
-    }
-    }
-    public static LedgerEntryExt Decode(XdrDataInputStream stream) {
-    LedgerEntryExt decodedLedgerEntryExt = new LedgerEntryExt();
-    int discriminant =  stream.ReadInt();
-    decodedLedgerEntryExt.Discriminant = discriminant;
-    switch (decodedLedgerEntryExt.Discriminant) {
-    case 0:
-    break;
-    case 1:
-    decodedLedgerEntryExt.V1 = LedgerEntryExtensionV1.Decode(stream);
-    break;
-    }
-      return decodedLedgerEntryExt;
-    }
-
-  }
-}
 }

@@ -25,9 +25,9 @@ namespace stellar_dotnet_sdk
             return new xdr.Operation.OperationBody
             {
                 Discriminant = xdr.OperationType.Create(xdr.OperationType.OperationTypeEnum.CLAWBACK_CLAIMABLE_BALANCE),
-                ClawbackClaimableBalanceOp = new xdr.ClawbackClaimableBalanceOp() 
+                ClawbackClaimableBalanceOp = new xdr.ClawbackClaimableBalanceOp()
                 {
-                   BalanceID = claimableBalanceID
+                    BalanceID = claimableBalanceID
                 }
             };
         }

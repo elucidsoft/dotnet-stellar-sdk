@@ -2,62 +2,71 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  struct ClaimableBalanceEntryExtensionV1
-//  {
-//      union switch (int v)
-//      {
-//      case 0:
-//          void;
-//      }
-//      ext;
-//  
-//      uint32 flags; // see ClaimableBalanceFlags
-//  };
+    //  struct ClaimableBalanceEntryExtensionV1
+    //  {
+    //      union switch (int v)
+    //      {
+    //      case 0:
+    //          void;
+    //      }
+    //      ext;
+    //  
+    //      uint32 flags; // see ClaimableBalanceFlags
+    //  };
 
-//  ===========================================================================
-public class ClaimableBalanceEntryExtensionV1  {
-  public ClaimableBalanceEntryExtensionV1 () {}
-  public ClaimableBalanceEntryExtensionV1Ext Ext {get; set;}
-  public Uint32 Flags {get; set;}
+    //  ===========================================================================
+    public class ClaimableBalanceEntryExtensionV1
+    {
+        public ClaimableBalanceEntryExtensionV1() { }
+        public ClaimableBalanceEntryExtensionV1Ext Ext { get; set; }
+        public Uint32 Flags { get; set; }
 
-  public static void Encode(XdrDataOutputStream stream, ClaimableBalanceEntryExtensionV1 encodedClaimableBalanceEntryExtensionV1) {
-    ClaimableBalanceEntryExtensionV1Ext.Encode(stream, encodedClaimableBalanceEntryExtensionV1.Ext);
-    Uint32.Encode(stream, encodedClaimableBalanceEntryExtensionV1.Flags);
-  }
-  public static ClaimableBalanceEntryExtensionV1 Decode(XdrDataInputStream stream) {
-    ClaimableBalanceEntryExtensionV1 decodedClaimableBalanceEntryExtensionV1 = new ClaimableBalanceEntryExtensionV1();
-    decodedClaimableBalanceEntryExtensionV1.Ext = ClaimableBalanceEntryExtensionV1Ext.Decode(stream);
-    decodedClaimableBalanceEntryExtensionV1.Flags = Uint32.Decode(stream);
-    return decodedClaimableBalanceEntryExtensionV1;
-  }
+        public static void Encode(XdrDataOutputStream stream, ClaimableBalanceEntryExtensionV1 encodedClaimableBalanceEntryExtensionV1)
+        {
+            ClaimableBalanceEntryExtensionV1Ext.Encode(stream, encodedClaimableBalanceEntryExtensionV1.Ext);
+            Uint32.Encode(stream, encodedClaimableBalanceEntryExtensionV1.Flags);
+        }
+        public static ClaimableBalanceEntryExtensionV1 Decode(XdrDataInputStream stream)
+        {
+            ClaimableBalanceEntryExtensionV1 decodedClaimableBalanceEntryExtensionV1 = new ClaimableBalanceEntryExtensionV1();
+            decodedClaimableBalanceEntryExtensionV1.Ext = ClaimableBalanceEntryExtensionV1Ext.Decode(stream);
+            decodedClaimableBalanceEntryExtensionV1.Flags = Uint32.Decode(stream);
+            return decodedClaimableBalanceEntryExtensionV1;
+        }
 
-  public class ClaimableBalanceEntryExtensionV1Ext {
-    public ClaimableBalanceEntryExtensionV1Ext () {}
+        public class ClaimableBalanceEntryExtensionV1Ext
+        {
+            public ClaimableBalanceEntryExtensionV1Ext() { }
 
-    public int Discriminant { get; set; } = new int();
+            public int Discriminant { get; set; } = new int();
 
-    public static void Encode(XdrDataOutputStream stream, ClaimableBalanceEntryExtensionV1Ext encodedClaimableBalanceEntryExtensionV1Ext) {
-    stream.WriteInt((int)encodedClaimableBalanceEntryExtensionV1Ext.Discriminant);
-    switch (encodedClaimableBalanceEntryExtensionV1Ext.Discriminant) {
-    case 0:
-    break;
+            public static void Encode(XdrDataOutputStream stream, ClaimableBalanceEntryExtensionV1Ext encodedClaimableBalanceEntryExtensionV1Ext)
+            {
+                stream.WriteInt((int)encodedClaimableBalanceEntryExtensionV1Ext.Discriminant);
+                switch (encodedClaimableBalanceEntryExtensionV1Ext.Discriminant)
+                {
+                    case 0:
+                        break;
+                }
+            }
+            public static ClaimableBalanceEntryExtensionV1Ext Decode(XdrDataInputStream stream)
+            {
+                ClaimableBalanceEntryExtensionV1Ext decodedClaimableBalanceEntryExtensionV1Ext = new ClaimableBalanceEntryExtensionV1Ext();
+                int discriminant = stream.ReadInt();
+                decodedClaimableBalanceEntryExtensionV1Ext.Discriminant = discriminant;
+                switch (decodedClaimableBalanceEntryExtensionV1Ext.Discriminant)
+                {
+                    case 0:
+                        break;
+                }
+                return decodedClaimableBalanceEntryExtensionV1Ext;
+            }
+
+        }
     }
-    }
-    public static ClaimableBalanceEntryExtensionV1Ext Decode(XdrDataInputStream stream) {
-    ClaimableBalanceEntryExtensionV1Ext decodedClaimableBalanceEntryExtensionV1Ext = new ClaimableBalanceEntryExtensionV1Ext();
-    int discriminant =  stream.ReadInt();
-    decodedClaimableBalanceEntryExtensionV1Ext.Discriminant = discriminant;
-    switch (decodedClaimableBalanceEntryExtensionV1Ext.Discriminant) {
-    case 0:
-    break;
-    }
-      return decodedClaimableBalanceEntryExtensionV1Ext;
-    }
-
-  }
-}
 }

@@ -2,31 +2,35 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  struct Error
-//  {
-//      ErrorCode code;
-//      string msg<100>;
-//  };
+    //  struct Error
+    //  {
+    //      ErrorCode code;
+    //      string msg<100>;
+    //  };
 
-//  ===========================================================================
-public class Error  {
-  public Error () {}
-  public ErrorCode Code {get; set;}
-  public String Msg {get; set;}
+    //  ===========================================================================
+    public class Error
+    {
+        public Error() { }
+        public ErrorCode Code { get; set; }
+        public String Msg { get; set; }
 
-  public static void Encode(XdrDataOutputStream stream, Error encodedError) {
-    ErrorCode.Encode(stream, encodedError.Code);
-    stream.WriteString(encodedError.Msg);
-  }
-  public static Error Decode(XdrDataInputStream stream) {
-    Error decodedError = new Error();
-    decodedError.Code = ErrorCode.Decode(stream);
-    decodedError.Msg = stream.ReadString();
-    return decodedError;
-  }
-}
+        public static void Encode(XdrDataOutputStream stream, Error encodedError)
+        {
+            ErrorCode.Encode(stream, encodedError.Code);
+            stream.WriteString(encodedError.Msg);
+        }
+        public static Error Decode(XdrDataInputStream stream)
+        {
+            Error decodedError = new Error();
+            decodedError.Code = ErrorCode.Decode(stream);
+            decodedError.Msg = stream.ReadString();
+            return decodedError;
+        }
+    }
 }

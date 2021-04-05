@@ -2,34 +2,38 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  typedef opaque EncryptedBody<64000>;
+    //  typedef opaque EncryptedBody<64000>;
 
-//  ===========================================================================
-public class EncryptedBody  {
-  public byte[] InnerValue {get; set;} = default(byte[]);
+    //  ===========================================================================
+    public class EncryptedBody
+    {
+        public byte[] InnerValue { get; set; } = default(byte[]);
 
-  public EncryptedBody() {}
+        public EncryptedBody() { }
 
-  public EncryptedBody(byte[] value)
-  {
-    InnerValue = value;
-  }
+        public EncryptedBody(byte[] value)
+        {
+            InnerValue = value;
+        }
 
-  public static void Encode(XdrDataOutputStream stream, EncryptedBody  encodedEncryptedBody) {
-  int EncryptedBodysize = encodedEncryptedBody.InnerValue.Length;
-  stream.WriteInt(EncryptedBodysize);
-  stream.Write(encodedEncryptedBody.InnerValue, 0, EncryptedBodysize);
-  }
-  public static EncryptedBody Decode(XdrDataInputStream stream) {
-    EncryptedBody decodedEncryptedBody = new EncryptedBody();
-  int EncryptedBodysize = stream.ReadInt();
-  decodedEncryptedBody.InnerValue = new byte[EncryptedBodysize];
-  stream.Read(decodedEncryptedBody.InnerValue, 0, EncryptedBodysize);
-    return decodedEncryptedBody;
-  }
-}
+        public static void Encode(XdrDataOutputStream stream, EncryptedBody encodedEncryptedBody)
+        {
+            int EncryptedBodysize = encodedEncryptedBody.InnerValue.Length;
+            stream.WriteInt(EncryptedBodysize);
+            stream.Write(encodedEncryptedBody.InnerValue, 0, EncryptedBodysize);
+        }
+        public static EncryptedBody Decode(XdrDataInputStream stream)
+        {
+            EncryptedBody decodedEncryptedBody = new EncryptedBody();
+            int EncryptedBodysize = stream.ReadInt();
+            decodedEncryptedBody.InnerValue = new byte[EncryptedBodysize];
+            stream.Read(decodedEncryptedBody.InnerValue, 0, EncryptedBodysize);
+            return decodedEncryptedBody;
+        }
+    }
 }

@@ -2,30 +2,34 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  typedef unsigned hyper uint64;
+    //  typedef unsigned hyper uint64;
 
-//  ===========================================================================
-public class Uint64  {
-  public ulong InnerValue {get; set;} = default(ulong);
+    //  ===========================================================================
+    public class Uint64
+    {
+        public ulong InnerValue { get; set; } = default(ulong);
 
-  public Uint64() {}
+        public Uint64() { }
 
-  public Uint64(ulong value)
-  {
-    InnerValue = value;
-  }
+        public Uint64(ulong value)
+        {
+            InnerValue = value;
+        }
 
-  public static void Encode(XdrDataOutputStream stream, Uint64  encodedUint64) {
-  stream.WriteULong(encodedUint64.InnerValue);
-  }
-  public static Uint64 Decode(XdrDataInputStream stream) {
-    Uint64 decodedUint64 = new Uint64();
-  decodedUint64.InnerValue = stream.ReadULong();
-    return decodedUint64;
-  }
-}
+        public static void Encode(XdrDataOutputStream stream, Uint64 encodedUint64)
+        {
+            stream.WriteULong(encodedUint64.InnerValue);
+        }
+        public static Uint64 Decode(XdrDataInputStream stream)
+        {
+            Uint64 decodedUint64 = new Uint64();
+            decodedUint64.InnerValue = stream.ReadULong();
+            return decodedUint64;
+        }
+    }
 }
