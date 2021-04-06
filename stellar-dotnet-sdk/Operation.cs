@@ -121,6 +121,15 @@ namespace stellar_dotnet_sdk
                 case OperationType.OperationTypeEnum.REVOKE_SPONSORSHIP:
                     operation = new RevokeSponsorshipOperation.Builder(body.RevokeSponsorshipOp).Build();
                     break;
+                case OperationType.OperationTypeEnum.CLAWBACK:
+                    operation = new ClawbackOperation.Builder(body.ClawbackOp).Build();
+                    break;
+                case OperationType.OperationTypeEnum.CLAWBACK_CLAIMABLE_BALANCE:
+                    operation = new ClawbackClaimableBalanceOperation.Builder(body.ClawbackClaimableBalanceOp).Build();
+                    break;
+                case OperationType.OperationTypeEnum.SET_TRUST_LINE_FLAGS:
+                    operation = new SetTrustlineFlagsOperation.Builder(body.SetTrustLineFlagsOp).Build();
+                    break;
                 default:
                     throw new Exception("Unknown operation body " + body.Discriminant.InnerValue);
             }

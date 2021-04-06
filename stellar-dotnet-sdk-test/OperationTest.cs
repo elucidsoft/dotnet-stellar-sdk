@@ -1055,5 +1055,23 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual("101401671144.6800155", Operation.FromXdrAmount(1014016711446800155L));
             Assert.AreEqual("922337203685.4775807", Operation.FromXdrAmount(9223372036854775807L));
         }
+
+
+        [TestMethod]
+        public void TestClawbackClaimableBalanceOperation()
+        {
+            // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
+            var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
+
+            var operation = new ClawbackClaimableBalanceOperation.Builder("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7")
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+
+            var parsedOperation = (ClawbackClaimableBalanceOperation)Operation.FromXdr(xdr);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+            Assert.AreEqual(operation.BalanceId.Length, parsedOperation.BalanceId.Length);
+        }
     }
 }

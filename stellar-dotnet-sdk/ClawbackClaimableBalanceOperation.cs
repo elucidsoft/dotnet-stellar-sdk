@@ -1,4 +1,6 @@
+using System;
 using System.Linq;
+using System.Text;
 
 namespace stellar_dotnet_sdk
 {
@@ -10,24 +12,34 @@ namespace stellar_dotnet_sdk
     /// </summary>
     public class ClawbackClaimableBalanceOperation : Operation
     {
-        public string BalanceID { get; }
+        public byte[] BalanceId { get; }
 
-        private ClawbackClaimableBalanceOperation(string balanceID)
+        private ClawbackClaimableBalanceOperation(byte[] balanceId)
         {
-            BalanceID = balanceID;
+            // Backwards compatibility - was previously expecting no type to be set.
+            if (balanceId.Length == 32)
+            {
+                var expanded = new byte[36];
+                Array.Copy(balanceId, 0, expanded, 4, 32);
+                balanceId = expanded;
+            }
+
+            if (balanceId.Length != 36)
+            {
+                throw new ArgumentException("Must be 36 bytes long", nameof(balanceId));
+            }
+
+            BalanceId = balanceId;
         }
 
         public override xdr.Operation.OperationBody ToOperationBody()
         {
-            var claimableBalanceID = new xdr.ClaimableBalanceID();
-            claimableBalanceID.V0 = new xdr.Hash(System.Convert.FromBase64String(BalanceID));
-
             return new xdr.Operation.OperationBody
             {
                 Discriminant = xdr.OperationType.Create(xdr.OperationType.OperationTypeEnum.CLAWBACK_CLAIMABLE_BALANCE),
                 ClawbackClaimableBalanceOp = new xdr.ClawbackClaimableBalanceOp()
                 {
-                    BalanceID = claimableBalanceID
+                    BalanceID = xdr.ClaimableBalanceID.Decode(new xdr.XdrDataInputStream(BalanceId))
                 }
             };
         }
@@ -38,18 +50,23 @@ namespace stellar_dotnet_sdk
         /// <see cref="ClawbackClaimableBalanceOperation" />
         public class Builder
         {
-            private string _balanceID;
+            private byte[] _balanceId;
 
             private KeyPair _sourceAccount;
 
             public Builder(xdr.ClawbackClaimableBalanceOp op)
             {
-                _balanceID = System.Convert.ToString(op.BalanceID.V0.InnerValue);
+                _balanceId = op.BalanceID.V0.InnerValue;
             }
 
-            public Builder(string balanceID)
+            public Builder(byte[] balanceId)
             {
-                _balanceID = balanceID;
+                _balanceId = balanceId;
+            }
+
+            public Builder(string balanceId)
+            {
+                _balanceId = Util.HexToBytes(balanceId);
             }
 
             /// <summary>
@@ -68,7 +85,7 @@ namespace stellar_dotnet_sdk
             /// </summary>
             public ClawbackClaimableBalanceOperation Build()
             {
-                var operation = new ClawbackClaimableBalanceOperation(_balanceID);
+                var operation = new ClawbackClaimableBalanceOperation(_balanceId);
                 if (_sourceAccount != null)
                     operation.SourceAccount = _sourceAccount;
                 return operation;
