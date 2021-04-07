@@ -1,0 +1,28 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "https://horizon-protocol14.stellar.org/operations/214525026504705"
+    },
+    "transaction": {
+      "href": "https://horizon-protocol14.stellar.org/transactions/3105f6eeae78091ee5bb0e1b74f354cb19e558bbb862d4ff2cf8576a2621dd1b"
+    },
+    "effects": {
+      "href": "https://horizon-protocol14.stellar.org/operations/214525026504705/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=desc\u0026cursor=214525026504705"
+    },
+    "precedes": {
+      "href": "https://horizon-protocol14.stellar.org/effects?order=asc\u0026cursor=214525026504705"
+    }
+  },
+  "id": "214525026504705",
+  "paging_token": "214525026504705",
+  "transaction_successful": true,
+  "source_account": "GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU",
+  "type": "clawback_claimable_balance",
+  "type_i": 20,
+  "created_at": "2020-09-24T19:52:26Z",
+  "transaction_hash": "3105f6eeae78091ee5bb0e1b74f354cb19e558bbb862d4ff2cf8576a2621dd1b",
+  "balance_id": "00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7"
+}
