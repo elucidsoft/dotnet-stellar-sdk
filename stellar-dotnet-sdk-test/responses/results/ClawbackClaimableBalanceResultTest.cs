@@ -13,7 +13,7 @@ namespace stellar_dotnet_sdk_test.responses.results
             var operationResultTr = new XDR.OperationResult.OperationResultTr();
             operationResultTr.Discriminant.InnerValue = XDR.OperationType.OperationTypeEnum.CLAWBACK_CLAIMABLE_BALANCE;
 
-            var result = new XDR.ClawbackClaimableBalanceResult ();
+            var result = new XDR.ClawbackClaimableBalanceResult();
             result.Discriminant.InnerValue = XDR.ClawbackClaimableBalanceResultCode.ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
             operationResultTr.ClawbackClaimableBalanceResult = result;
 

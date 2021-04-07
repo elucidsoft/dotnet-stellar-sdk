@@ -884,7 +884,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is ClawbackClaimableBalanceOperationResponse);
             var operation = (ClawbackClaimableBalanceOperationResponse)instance;
 
-            
+
             Assert.AreEqual(214525026504705, operation.Id);
             Assert.AreEqual(new ClawbackClaimableBalanceOperationResponse("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7").BalanceID, operation.BalanceID);
         }
