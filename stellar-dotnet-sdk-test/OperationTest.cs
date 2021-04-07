@@ -1105,7 +1105,7 @@ namespace stellar_dotnet_sdk_test
                     .SetSourceAccount(source)
                     .Build();
             }
-            catch(ArgumentException e)
+            catch (ArgumentException e)
             {
                 Assert.AreEqual(e.Message, new ArgumentException("Must be 36 bytes long", "balanceId").Message);
             }
