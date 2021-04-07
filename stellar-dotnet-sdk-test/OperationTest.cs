@@ -1073,5 +1073,23 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
             Assert.AreEqual(operation.BalanceId.Length, parsedOperation.BalanceId.Length);
         }
+
+        [TestMethod]
+        public void TestClawbackClaimableBalanceOperationLengthNotCorrect()
+        {
+            // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
+            var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
+
+            try
+            {
+                var operation = new ClawbackClaimableBalanceOperation.Builder(new byte[34])
+                    .SetSourceAccount(source)
+                    .Build();
+            }
+            catch(ArgumentException e)
+            {
+                Assert.AreEqual(e.Message, new ArgumentException("Must be 36 bytes long", "balanceId").Message);
+            }
+        }
     }
 }

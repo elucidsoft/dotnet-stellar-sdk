@@ -867,6 +867,33 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual("XYZ:GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY", operation.TrustlineAsset);
         }
 
+        //Clawback
+        [TestMethod]
+        public void TestClawback()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "clawback.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertClawbackData(back);
+        }
+
+        private static void AssertClawbackData(OperationResponse instance)
+        {
+            Assert.IsTrue(instance is ClawbackOperationResponse);
+            var operation = (ClawbackOperationResponse)instance;
+
+            var operation2 = new ClawbackOperationResponse("credit_alphanum4", "EUR", "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM", "1000", "GTESTJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
+            Assert.AreEqual(3602979345141761, operation.Id);
+            Assert.AreEqual(operation.Amount, operation2.Amount);
+            Assert.AreEqual(operation.AssetCode, operation2.AssetCode);
+            Assert.AreEqual(operation.AssetIssuer, operation2.AssetIssuer);
+            Assert.AreEqual(operation.AssetType, operation2.AssetType);
+            Assert.AreEqual(operation.From, operation2.From);
+            Assert.AreEqual(operation.Asset, operation2.Asset);
+        }
+
         //Clawback Claimable Balance
         [TestMethod]
         public void TestClawbackClaimableBalance()
