@@ -83,7 +83,7 @@ namespace stellar_dotnet_sdk_test.requests
         [TestMethod]
         public async Task TestStream()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationPayment.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "payment.json"));
 
             var streamableTest = new StreamableTest<PaymentOperationResponse>(json, OperationDeserializerTest.AssertPaymentOperationTestData);
             await streamableTest.Run();
