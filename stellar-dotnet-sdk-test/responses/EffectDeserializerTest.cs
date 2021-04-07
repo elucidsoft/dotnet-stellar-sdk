@@ -1455,7 +1455,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is ClaimableBalanceClawedBackEffectResponse);
             var effect = (ClaimableBalanceClawedBackEffectResponse)instance;
 
-            Assert.AreEqual("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7", effect.BalanceID);
+            Assert.AreEqual(new ClaimableBalanceClawedBackEffectResponse("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7").BalanceID, effect.BalanceID);
 
             var back = new ClaimableBalanceClawedBackEffectResponse();
             Assert.IsNotNull(back);
