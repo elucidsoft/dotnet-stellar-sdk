@@ -1,0 +1,34 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "http://horizon-testnet.stellar.org/operations/1253868457431041"
+    },
+    "transaction": {
+      "href": "http://horizon-testnet.stellar.org/transactions/cc392abf8a4e649f16eeba4f40c43a8d50001b14a98ccfc639783125950e99d8"
+    },
+    "effects": {
+      "href": "http://horizon-testnet.stellar.org/operations/1253868457431041/effects"
+    },
+    "succeeds": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=desc&cursor=1253868457431041"
+    },
+    "precedes": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=asc&cursor=1253868457431041"
+    }
+  },
+  "id": "1253868457431041",
+  "paging_token": "1253868457431041",
+  "source_account": "GB6FDI5Q46BJVPNVWJU527NH463N3EF3S6TXRA2YSCZHXANY3YLXB7MC",
+  "type": "set_trust_line_flags",
+  "type_i": 21,
+  "asset_type": "credit_alphanum4",
+  "asset_code": "EUR",
+  "asset_issuer": "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM",
+  "trustor": "GTRUSTORYHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM",
+  "set_flags_s": [
+    "authorized"
+  ],
+  "clear_flags_s": [
+    "authorized_to_maintain_liabilites"
+  ]
+}

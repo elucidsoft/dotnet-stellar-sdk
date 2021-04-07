@@ -1056,6 +1056,25 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual("922337203685.4775807", Operation.FromXdrAmount(9223372036854775807L));
         }
 
+        [TestMethod]
+        public void TestClawbackOperation()
+        {
+            // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
+            var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
+
+            var operation = new ClawbackOperation.Builder(Asset.CreateNonNativeAsset("EUR", "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM"), "1000", KeyPair.FromAccountId("GCFRHRU5YRI3IN3IMRMYGWWEG2PX2B6MYH2RJW7NEDE2PTYPISPT3RU7"))
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+
+            var parsedOperation = (ClawbackOperation)Operation.FromXdr(xdr);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+            Assert.AreEqual(operation.Amount, parsedOperation.Amount);
+            Assert.AreEqual(operation.Asset, parsedOperation.Asset);
+            Assert.AreEqual(operation.From.AccountId, parsedOperation.From.AccountId);
+        }
+
 
         [TestMethod]
         public void TestClawbackClaimableBalanceOperation()
@@ -1090,6 +1109,26 @@ namespace stellar_dotnet_sdk_test
             {
                 Assert.AreEqual(e.Message, new ArgumentException("Must be 36 bytes long", "balanceId").Message);
             }
+        }
+
+        [TestMethod]
+        public void TestSetTrustlineFlagsOperation()
+        {
+            // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
+            var source = KeyPair.FromSecretSeed("SBPQUZ6G4FZNWFHKUWC5BEYWF6R52E3SEP7R3GWYSM2XTKGF5LNTWW4R");
+
+            var operation = new SetTrustlineFlagsOperation.Builder(Asset.CreateNonNativeAsset("EUR", "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM"), KeyPair.Random(), 1, 1)
+                .SetSourceAccount(source)
+                .Build();
+
+            var xdr = operation.ToXdr();
+
+            var parsedOperation = (SetTrustlineFlagsOperation)Operation.FromXdr(xdr);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+            Assert.AreEqual(operation.Asset, parsedOperation.Asset);
+            Assert.AreEqual(operation.Trustor.AccountId, parsedOperation.Trustor.AccountId);
+            Assert.AreEqual(operation.SetFlags, parsedOperation.SetFlags);
+            Assert.AreEqual(operation.ClearFlags, parsedOperation.ClearFlags);
         }
     }
 }

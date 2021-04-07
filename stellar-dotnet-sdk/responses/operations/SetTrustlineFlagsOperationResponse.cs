@@ -19,11 +19,12 @@ namespace stellar_dotnet_sdk.responses.operations
         /// <param name="assetIssuer">Asset issuer.</param>
         /// <param name="amount">Amount</param>
         /// <param name="from">From account</param>
-        public SetTrustlineFlagsOperationResponse(string assetType, string assetCode, string assetIssuer, string trustor, uint? setFlags, uint? clearFlags)
+        public SetTrustlineFlagsOperationResponse(string assetType, string assetCode, string assetIssuer, string trustor, string[] setFlags, string[] clearFlags)
         {
             AssetType = assetType;
             AssetCode = assetCode;
             AssetIssuer = assetIssuer;
+            Trustor = trustor;
             SetFlags = setFlags;
             ClearFlags = clearFlags;
         }
@@ -59,17 +60,20 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "trustor")]
         public string Trustor { get; private set; }
 
-        /// <summary>
-        /// Set Flags.
-        /// </summary>
-        [JsonProperty(PropertyName = "set_flags")]
-        public uint? SetFlags { get; private set; }
 
         /// <summary>
-        /// Set Flags.
+        /// Indicates which flags to clear. For details about the flags, please refer to the accounts doc. The bit mask integer adds onto the
+        /// existing flags of the account. This allows for setting specific bits without knowledge of existing flags.
         /// </summary>
-        [JsonProperty(PropertyName = "clear_flags")]
-        public uint? ClearFlags { get; private set; }
+        [JsonProperty(PropertyName = "clear_flags_s")]
+        public string[] ClearFlags { get; private set; }
+
+        /// <summary>
+        /// Indicates which flags to set. For details about the flags, please refer to the accounts doc. The bit mask integer adds onto the
+        /// existing flags of the account. This allows for setting specific bits without knowledge of existing flags.
+        /// </summary>
+        [JsonProperty(PropertyName = "set_flags_s")]
+        public string[] SetFlags { get; private set; }
 
         /// <summary>
         /// The asset to allow trust.
