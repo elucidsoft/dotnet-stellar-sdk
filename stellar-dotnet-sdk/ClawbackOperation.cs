@@ -4,21 +4,24 @@ namespace stellar_dotnet_sdk
 {
     /// <summary>
     /// Represents a <see cref="CreateClaimableBalanceOperation"/>.
-    /// Use <see cref="Builder"/> to create a new CreateClaimableBalanceOperation.
+    /// Use <see cref="Builder"/> to create a new ClawbackOperation.
     ///
-    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html">Create Claimable Balance</see>
+    /// See also: <see href="https://www.stellar.org/developers/guides/concepts/list-of-operations.html">Clawback</see>
     /// </summary>
     public class ClawbackOperation : Operation
     {
         /// <summary>
-        /// The asset type being authorized.
+        /// The asset to claw.
         /// </summary>
         public Asset Asset { get; }
 
+        /// <summary>
+        /// Amount to claw back.
+        /// </summary>
         public string Amount { get; }
 
         /// <summary>
-        /// The trusting account (the one being authorized)
+        /// The account to claw back the amount from.
         /// </summary>
         public IAccountId From { get; }
 
@@ -45,7 +48,7 @@ namespace stellar_dotnet_sdk
         }
 
         /// <summary>
-        ///     Builds CreatePassiveSellOfferOperation operation.
+        /// Builds Clawback operation.
         /// </summary>
         /// <see cref="ClawbackOperation" />
         public class Builder
@@ -71,7 +74,7 @@ namespace stellar_dotnet_sdk
             }
 
             /// <summary>
-            ///     Sets the source account for this operation.
+            ///  Sets the source account for this operation.
             /// </summary>
             /// <param name="account">The operation's source account.</param>
             /// <returns>Builder object so you can chain methods.</returns>

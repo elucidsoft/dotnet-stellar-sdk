@@ -6,7 +6,7 @@ using System.Text;
 namespace stellar_dotnet_sdk.responses.effects
 {
     /// <summary>
-    ///     Represents claimable_balance_claimed effect response.
+    ///     Represents claimable_balance_clawed_back effect response.
     ///     See: https://www.stellar.org/developers/horizon/reference/resources/effect.html
     ///     <seealso cref="requests.EffectsRequestBuilder" />
     ///     <seealso cref="Server" />

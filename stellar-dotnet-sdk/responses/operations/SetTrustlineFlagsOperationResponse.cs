@@ -4,16 +4,13 @@ namespace stellar_dotnet_sdk.responses.operations
 {
     /// <inheritdoc />
     /// <summary>
-    /// Represents Clawback operation response.
+    /// Represents SetTrustlineFlags operation response.
     /// See: https://www.stellar.org/developers/horizon/reference/resources/operation.html
     /// <seealso cref="T:stellar_dotnetcore_sdk.requests.ClawbackOperationResponse" />
     /// <seealso cref="T:stellar_dotnetcore_sdk.Server" />
     /// </summary>
     public class SetTrustlineFlagsOperationResponse : OperationResponse
     {
-        /// <summary>
-        /// Updates the “authorized” flag of an existing trust line this is called by the issuer of the asset.
-        /// </summary>
         /// <param name="assetType">Asset type (native / alphanum4 / alphanum12)</param>
         /// <param name="assetCode">Asset code.</param>
         /// <param name="assetIssuer">Asset issuer.</param>
@@ -76,7 +73,7 @@ namespace stellar_dotnet_sdk.responses.operations
         public string[] SetFlags { get; private set; }
 
         /// <summary>
-        /// The asset to allow trust.
+        /// Asset representation (Using the values of the other fields)
         /// </summary>
         public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);
     }

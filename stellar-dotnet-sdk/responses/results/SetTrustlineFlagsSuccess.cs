@@ -1,7 +1,7 @@
 ﻿namespace stellar_dotnet_sdk.responses.results
 {
     /// <summary>
-    /// Claimable balance is underfunded.
+    /// Success.
     /// </summary>
     public class SetTrustlineFlagsSuccess : SetTrustlineFlagsResult
     {

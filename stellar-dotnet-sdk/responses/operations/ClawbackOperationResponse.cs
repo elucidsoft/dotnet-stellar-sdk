@@ -11,14 +11,11 @@ namespace stellar_dotnet_sdk.responses.operations
     /// </summary>
     public class ClawbackOperationResponse : OperationResponse
     {
-        /// <summary>
-        /// Updates the “authorized” flag of an existing trust line this is called by the issuer of the asset.
-        /// </summary>
         /// <param name="assetType">Asset type (native / alphanum4 / alphanum12)</param>
         /// <param name="assetCode">Asset code.</param>
         /// <param name="assetIssuer">Asset issuer.</param>
-        /// <param name="amount">Amount</param>
-        /// <param name="from">From account</param>
+        /// <param name="amount">Asset amount clawed back</param>
+        /// <param name="from">Account from which the asset is clawed back</param>
         public ClawbackOperationResponse(string assetType, string assetCode, string assetIssuer, string amount, string from)
         {
             AssetType = assetType;
@@ -60,13 +57,13 @@ namespace stellar_dotnet_sdk.responses.operations
         public string Amount { get; private set; }
 
         /// <summary>
-        /// From account
+        /// Account from which the asset is clawed back
         /// </summary>
         [JsonProperty(PropertyName = "from")]
         public string From { get; private set; }
 
         /// <summary>
-        /// The asset to allow trust.
+        /// Asset representation (Using the values of the other fields)
         /// </summary>
         public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);
     }

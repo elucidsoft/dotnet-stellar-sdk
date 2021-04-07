@@ -1,7 +1,7 @@
 ﻿namespace stellar_dotnet_sdk.responses.results
 {
     /// <summary>
-    /// Not clawback is enabled
+    /// No trust.
     /// </summary>
     public class ClawbackNoTrust : ClawbackResult
     {

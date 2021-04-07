@@ -11,12 +11,12 @@ namespace stellar_dotnet_sdk
     public class SetTrustlineFlagsOperation : Operation
     {
         /// <summary>
-        /// The asset type being authorized.
+        /// The asset to use in the operation.
         /// </summary>
         public Asset Asset { get; }
 
         /// <summary>
-        /// The trusting account (the one being authorized)
+        /// Account whose trustline is affected by this operation.
         /// </summary>
         public KeyPair Trustor { get; }
 

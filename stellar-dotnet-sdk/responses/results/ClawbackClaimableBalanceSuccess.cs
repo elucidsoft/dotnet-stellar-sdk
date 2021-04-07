@@ -1,7 +1,7 @@
 ﻿namespace stellar_dotnet_sdk.responses.results
 {
     /// <summary>
-    /// Claim claimable balance successs.
+    /// Successs.
     /// </summary>
     public class ClawbackClaimableBalanceSuccess : ClawbackClaimableBalanceResult
     {
