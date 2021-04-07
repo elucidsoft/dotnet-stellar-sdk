@@ -68,6 +68,12 @@ namespace stellar_dotnet_sdk.responses.results
                     return EndSponsoringFutureReservesResult.FromXdr(result.EndSponsoringFutureReservesResult);
                 case xdr.OperationType.OperationTypeEnum.REVOKE_SPONSORSHIP:
                     return RevokeSponsorshipResult.FromXdr(result.RevokeSponsorshipResult);
+                case xdr.OperationType.OperationTypeEnum.CLAWBACK:
+                    return ClawbackResult.FromXdr(result.ClawbackResult);
+                case xdr.OperationType.OperationTypeEnum.CLAWBACK_CLAIMABLE_BALANCE:
+                    return ClawbackClaimableBalanceResult.FromXdr(result.ClawbackClaimableBalanceResult);
+                case xdr.OperationType.OperationTypeEnum.SET_TRUST_LINE_FLAGS:
+                    return SetTrustlineFlagsResult.FromXdr(result.SetTrustLineFlagsResult);
                 default:
                     throw new SystemException("Unknown OperationType");
             }
