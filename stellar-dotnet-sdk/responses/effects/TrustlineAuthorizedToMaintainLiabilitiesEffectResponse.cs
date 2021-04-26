@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace stellar_dotnet_sdk.responses.effects
 {
+    [Obsolete("Deprecated in favor of 'TrustlineFlagsUpdatedEffectResponse'")]
     public class TrustlineAuthorizedToMaintainLiabilitiesEffectResponse : TrustlineAuthorizationResponse
     {
         public override int TypeId => 25;

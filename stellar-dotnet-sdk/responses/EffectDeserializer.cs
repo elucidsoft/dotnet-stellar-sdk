@@ -68,6 +68,8 @@ namespace stellar_dotnet_sdk.responses
                     return new TrustlineDeauthorizedEffectResponse();
                 case 25:
                     return new TrustlineAuthorizedToMaintainLiabilitiesEffectResponse();
+                case 26:
+                    return new TrustlineFlagsUpdatedEffectResponse();
 
                 // trading effects
                 case 30:
@@ -130,6 +132,9 @@ namespace stellar_dotnet_sdk.responses
                     return new SignerSponsorshipUpdatedEffectResponse();
                 case 74:
                     return new SignerSponsorshipRemovedEffectResponse();
+
+                case 80:
+                    return new ClaimableBalanceClawedBackEffectResponse();
 
                 default:
                     throw new JsonSerializationException($"Unknown 'type_i'='{type}'");

@@ -13,7 +13,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeCreateAccountOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationCreateAccount.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "createAccount.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertCreateAccountOperationData(instance);
@@ -22,7 +22,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeCreateAccountOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationCreateAccount.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "createAccount.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -56,7 +56,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializePaymentOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationPayment.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "payment.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertPaymentData(instance);
@@ -65,7 +65,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializePaymentOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationPayment.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "payment.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -98,7 +98,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeNonNativePaymentOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationPaymentNonNative.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "paymentNonNative.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertNonNativePaymentData(instance);
@@ -107,7 +107,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeNonNativePaymentOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationPaymentNonNative.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "paymentNonNative.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -130,7 +130,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAllowTrustOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationAllowTrust.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "allowTrust.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertAllowTrustData(instance);
@@ -139,7 +139,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeAllowTrustOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationAllowTrust.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "allowTrust.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -162,7 +162,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeChangeTrustOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationChangeTrust.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "changeTrust.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertChangeTrustData(instance);
@@ -171,7 +171,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeChangeTrustOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationChangeTrust.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "changeTrust.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -194,7 +194,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeSetOptionsOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationSetOptions.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "setOptions.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertSetOptionsData(instance);
@@ -203,7 +203,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeSetOptionsOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationSetOptions.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "setOptions.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -232,7 +232,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeSetOptionsOperationWithNonEd25519Key()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationSetOptionsNonEd25519Key.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "setOptionsNonEd25519Key.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertSetOptionsOperationWithNonEd25519KeyData(instance);
@@ -241,7 +241,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeSetOptionsOperationWithNonEd25519Key()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationSetOptionsNonEd25519Key.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "setOptionsNonEd25519Key.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -260,7 +260,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeAccountMergeOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationAccountMerge.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "accountMerge.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertAccountMergeData(instance);
@@ -269,7 +269,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeAccountMergeOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationAccountMerge.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "accountMerge.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -290,7 +290,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeManageOfferOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationManageOffer.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "manageOffer.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertManageOfferData(instance);
@@ -299,7 +299,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeManageOfferOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationManageOffer.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "manageOffer.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -324,7 +324,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeManageBuyOfferOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationManageBuyOffer.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "manageBuyOffer.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertManageBuyOfferData(instance);
@@ -333,7 +333,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeManageBuyOfferOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationManageBuyOffer.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "manageBuyOffer.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -345,7 +345,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeManageBuyOfferOperationPre100()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationManageBuyOfferPre100.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "manageBuyOfferPre100.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertManageBuyOfferData(instance);
@@ -355,7 +355,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeManageBuyOfferOperationPre100()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationManageBuyOfferPre100.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "manageBuyOfferPre100.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -380,7 +380,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializePathPaymentStrictReceiveOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationPathPaymentStrictReceive.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "pathPaymentStrictReceive.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertPathPaymentStrictReceiveData(instance);
@@ -389,7 +389,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializePathPaymentStrictReceiveOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationPathPaymentStrictReceive.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "pathPaymentStrictReceive.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -426,7 +426,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializePathPaymentStrictSendOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationPathPaymentStrictSend.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "pathPaymentStrictSend.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertPathPaymentStrictSendData(instance);
@@ -435,7 +435,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializePathPaymentStrictSendOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationPathPaymentStrictSend.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "pathPaymentStrictSend.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -472,7 +472,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeCreatePassiveOfferOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationPassiveOffer.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "passiveOffer.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertCreatePassiveOfferData(instance);
@@ -481,7 +481,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeCreatePassiveOfferOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationPassiveOffer.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "passiveOffer.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -503,7 +503,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeInflationOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationInflation.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "inflation.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertInflationData(instance);
@@ -512,7 +512,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeInflationOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationInflation.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "inflation.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -532,7 +532,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestManageDataOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationManageData.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "manageData.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertManageDataData(instance);
@@ -541,7 +541,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeManageDataOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationManageData.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "manageData.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -563,7 +563,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeManageDataOperationValueEmpty()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationManageDataValueEmpty.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "manageDataValueEmpty.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertManageDataValueEmptyData(instance);
@@ -572,7 +572,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeManageDataOperationValueEmpty()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationManageDataValueEmpty.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "manageDataValueEmpty.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -600,7 +600,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestDeserializeBumpSequenceOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationBumpSequence.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "bumpSequence.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
             AssertBumpSequenceData(instance);
@@ -609,7 +609,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializeDeserializeBumpSequenceOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationBumpSequence.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "bumpSequence.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -630,7 +630,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationCreateClaimableBalanceOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationCreateClaimableBalance.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "createClaimableBalance.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -641,7 +641,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationCreateClaimableBalanceAbsBeforeMaxIntOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationClaimableBalanceAbsBeforeMaxInt.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "claimableBalanceAbsBeforeMaxInt.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             Assert.IsTrue(instance is CreateClaimableBalanceOperationResponse);
             var operation = (CreateClaimableBalanceOperationResponse)instance;
@@ -669,7 +669,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationClaimClaimableBalanceOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationClaimClaimableBalance.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "claimClaimableBalance.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -694,7 +694,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationBeginSponsoringFutureReservesOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationBeginSponsoringFutureReserves.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "beginSponsoringFutureReserves.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -718,7 +718,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationEndSponsoringFutureReservesOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationEndSponsoringFutureReserves.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "endSponsoringFutureReserves.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -742,7 +742,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationRevokeSponsorshipAccountIDOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationRevokeSponsorshipAccountID.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "revokeSponsorshipAccountID.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -763,7 +763,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationRevokeSponsorshipClaimableBalanceOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationRevokeSponsorshipClaimableBalance.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "revokeSponsorshipClaimableBalance.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -784,7 +784,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationRevokeSponsorshipDataOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationRevokeSponsorshipData.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "revokeSponsorshipData.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -806,7 +806,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationRevokeSponsorshipOfferOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationRevokeSponsorshipOffer.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "revokeSponsorshipOffer.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -827,7 +827,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationRevokeSponsorshipSignerKey()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationRevokeSponsorshipSignerKey.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "revokeSponsorshipSignerKey.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -849,7 +849,7 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestSerializationRevokeSponsorshipTrustline()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations", "operationRevokeSponsorshipTrustline.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "revokeSponsorshipTrustline.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
@@ -865,6 +865,82 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(286500088451074, operation.Id);
             Assert.AreEqual("GDHSYF7V3DZRM7Q2HS5J6FHAHNWETMBFMG7DOSWU3GA7OM4KGOPZM3FB", operation.TrustlineAccountID);
             Assert.AreEqual("XYZ:GD2I2F7SWUHBAD7XBIZTF7MBMWQYWJVEFMWTXK76NSYVOY52OJRYNTIY", operation.TrustlineAsset);
+        }
+
+        //Clawback
+        [TestMethod]
+        public void TestClawback()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "clawback.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertClawbackData(back);
+        }
+
+        private static void AssertClawbackData(OperationResponse instance)
+        {
+            Assert.IsTrue(instance is ClawbackOperationResponse);
+            var operation = (ClawbackOperationResponse)instance;
+
+            var operation2 = new ClawbackOperationResponse("credit_alphanum4", "EUR", "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM", "1000", "GTESTJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
+            Assert.AreEqual(3602979345141761, operation.Id);
+            Assert.AreEqual(operation.Amount, operation2.Amount);
+            Assert.AreEqual(operation.AssetCode, operation2.AssetCode);
+            Assert.AreEqual(operation.AssetIssuer, operation2.AssetIssuer);
+            Assert.AreEqual(operation.AssetType, operation2.AssetType);
+            Assert.AreEqual(operation.From, operation2.From);
+            Assert.AreEqual(operation.Asset, operation2.Asset);
+        }
+
+        //Clawback Claimable Balance
+        [TestMethod]
+        public void TestClawbackClaimableBalance()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "clawbackClaimableBalance.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertClawbackClaimableBalanceData(back);
+        }
+
+        private static void AssertClawbackClaimableBalanceData(OperationResponse instance)
+        {
+            Assert.IsTrue(instance is ClawbackClaimableBalanceOperationResponse);
+            var operation = (ClawbackClaimableBalanceOperationResponse)instance;
+
+
+            Assert.AreEqual(214525026504705, operation.Id);
+            Assert.AreEqual(new ClawbackClaimableBalanceOperationResponse("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7").BalanceID, operation.BalanceID);
+        }
+
+        //Set Trustline Flags
+        [TestMethod]
+        public void TestSetTrustlineFlags()
+        {
+            var json = File.ReadAllText(Path.Combine("testdata/operations", "setTrustlineFlags.json"));
+            var instance = JsonSingleton.GetInstance<OperationResponse>(json);
+            var serialized = JsonConvert.SerializeObject(instance);
+            var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
+
+            AssertTestSetTrustlineFlagsData(back);
+        }
+
+        private static void AssertTestSetTrustlineFlagsData(OperationResponse instance)
+        {
+            Assert.IsTrue(instance is SetTrustlineFlagsOperationResponse);
+            var operation = (SetTrustlineFlagsOperationResponse)instance;
+            var operation2 = new SetTrustlineFlagsOperationResponse("credit_alphanum4", "EUR", "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM", "GTRUSTORYHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM", new string[1] { "authorized" }, new string[1] { "authorized_to_maintain_liabilites" });
+
+            Assert.AreEqual(operation.AssetType, operation2.AssetType);
+            Assert.AreEqual(operation.AssetCode, operation2.AssetCode);
+            Assert.AreEqual(operation.AssetIssuer, operation2.AssetIssuer);
+            Assert.AreEqual(operation.Trustor, operation2.Trustor);
+            Assert.AreEqual(operation.SetFlags[0], operation2.SetFlags[0]);
+            Assert.AreEqual(operation.ClearFlags[0], operation2.ClearFlags[0]);
+            Assert.AreEqual(operation.Asset, operation2.Asset);
         }
     }
 }

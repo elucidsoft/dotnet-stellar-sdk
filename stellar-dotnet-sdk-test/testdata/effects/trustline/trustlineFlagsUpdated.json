@@ -1,0 +1,25 @@
+﻿{
+  "_links": {
+    "operation": {
+      "href": "http://horizon-testnet.stellar.org/operations/33788507721730"
+    },
+    "succeeds": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2"
+    },
+    "precedes": {
+      "href": "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2"
+    }
+  },
+  "id": "0000033788507721730-0000000002",
+  "paging_token": "33788507721730-2",
+  "account": "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO",
+  "type": "trustline_flags_updated",
+  "type_i": 26,
+  "asset_type": "credit_alphanum4",
+  "asset_code": "EUR",
+  "asset_issuer": "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM",
+  "trustor": "GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F",
+  "authorized_flag": true,
+  "authorized_to_maintain_liabilities": true,
+  "clawback_enabled_flag": true
+}
