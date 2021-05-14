@@ -22,6 +22,8 @@ namespace stellar_dotnet_sdk
 
         public string Limit { get; }
 
+        public const string MaxLimit = "922337203685.4775807";
+
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {
             var op = new sdkxdr.ChangeTrustOp();
@@ -69,6 +71,19 @@ namespace stellar_dotnet_sdk
             {
                 _Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
                 _Limit = limit ?? throw new ArgumentNullException(nameof(limit), "limit cannot be null");
+            }
+
+            /// <summary>
+            ///     Creates a new ChangeTrust builder.
+            /// </summary>
+            /// <param name="asset">
+            ///     The asset of the trustline. For example, if a gateway extends a trustline of up to 200 USD to a
+            ///     user, the line is USD.
+            /// </param>
+            public Builder(Asset asset)
+            {
+                _Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
+                _Limit = MaxLimit;
             }
 
             /// <summary>
