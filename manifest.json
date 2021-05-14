@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.ChangeTrustOperation.Builder.html",
-          "hash": "UkyCHEyUmwWCrbIF8nqLrQ=="
+          "hash": "JBYzjTzAas6Zh/wb6a3SqA=="
         }
       },
       "is_incremental": false,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.ChangeTrustOperation.html",
-          "hash": "MZbW1fIA27vyf+hvQHM+hA=="
+          "hash": "+D83F4pupNRrGEuLTiH0Bw=="
         }
       },
       "is_incremental": false,
