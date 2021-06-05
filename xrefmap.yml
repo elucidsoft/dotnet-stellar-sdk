@@ -7103,6 +7103,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.ForAccount
   nameWithType: OperationsRequestBuilder.ForAccount
+- uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.ForClaimableBalance(System.String)
+  name: ForClaimableBalance(String)
+  href: api/stellar_dotnet_sdk.requests.OperationsRequestBuilder.html#stellar_dotnet_sdk_requests_OperationsRequestBuilder_ForClaimableBalance_System_String_
+  commentId: M:stellar_dotnet_sdk.requests.OperationsRequestBuilder.ForClaimableBalance(System.String)
+  fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.ForClaimableBalance(System.String)
+  nameWithType: OperationsRequestBuilder.ForClaimableBalance(String)
+- uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.ForClaimableBalance*
+  name: ForClaimableBalance
+  href: api/stellar_dotnet_sdk.requests.OperationsRequestBuilder.html#stellar_dotnet_sdk_requests_OperationsRequestBuilder_ForClaimableBalance_
+  commentId: Overload:stellar_dotnet_sdk.requests.OperationsRequestBuilder.ForClaimableBalance
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.requests.OperationsRequestBuilder.ForClaimableBalance
+  nameWithType: OperationsRequestBuilder.ForClaimableBalance
 - uid: stellar_dotnet_sdk.requests.OperationsRequestBuilder.ForLedger(System.Int64)
   name: ForLedger(Int64)
   href: api/stellar_dotnet_sdk.requests.OperationsRequestBuilder.html#stellar_dotnet_sdk_requests_OperationsRequestBuilder_ForLedger_System_Int64_
@@ -8095,6 +8108,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForAccount
   nameWithType: TransactionsRequestBuilder.ForAccount
+- uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForClaimableBalance(System.String)
+  name: ForClaimableBalance(String)
+  href: api/stellar_dotnet_sdk.requests.TransactionsRequestBuilder.html#stellar_dotnet_sdk_requests_TransactionsRequestBuilder_ForClaimableBalance_System_String_
+  commentId: M:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForClaimableBalance(System.String)
+  fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForClaimableBalance(System.String)
+  nameWithType: TransactionsRequestBuilder.ForClaimableBalance(String)
+- uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForClaimableBalance*
+  name: ForClaimableBalance
+  href: api/stellar_dotnet_sdk.requests.TransactionsRequestBuilder.html#stellar_dotnet_sdk_requests_TransactionsRequestBuilder_ForClaimableBalance_
+  commentId: Overload:stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForClaimableBalance
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForClaimableBalance
+  nameWithType: TransactionsRequestBuilder.ForClaimableBalance
 - uid: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.ForLedger(System.Int64)
   name: ForLedger(Int64)
   href: api/stellar_dotnet_sdk.requests.TransactionsRequestBuilder.html#stellar_dotnet_sdk_requests_TransactionsRequestBuilder_ForLedger_System_Int64_
@@ -8549,11 +8575,11 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.AssetResponse
   fullName: stellar_dotnet_sdk.responses.AssetResponse
   nameWithType: AssetResponse
-- uid: stellar_dotnet_sdk.responses.AssetResponse.#ctor(String,String,String,String,String,System.Int32,stellar_dotnet_sdk.responses.AssetResponseFlags,stellar_dotnet_sdk.responses.AssetResponseLinks)
+- uid: stellar_dotnet_sdk.responses.AssetResponse.#ctor(System.String,System.String,System.String,System.String,System.String,System.Int32,stellar_dotnet_sdk.responses.AssetResponseFlags,stellar_dotnet_sdk.responses.AssetResponseLinks)
   name: AssetResponse(String, String, String, String, String, Int32, AssetResponseFlags, AssetResponseLinks)
-  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse__ctor_String_String_String_String_String_System_Int32_stellar_dotnet_sdk_responses_AssetResponseFlags_stellar_dotnet_sdk_responses_AssetResponseLinks_
-  commentId: M:stellar_dotnet_sdk.responses.AssetResponse.#ctor(String,String,String,String,String,System.Int32,stellar_dotnet_sdk.responses.AssetResponseFlags,stellar_dotnet_sdk.responses.AssetResponseLinks)
-  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetResponse(String, String, String, String, String, System.Int32, stellar_dotnet_sdk.responses.AssetResponseFlags, stellar_dotnet_sdk.responses.AssetResponseLinks)
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse__ctor_System_String_System_String_System_String_System_String_System_String_System_Int32_stellar_dotnet_sdk_responses_AssetResponseFlags_stellar_dotnet_sdk_responses_AssetResponseLinks_
+  commentId: M:stellar_dotnet_sdk.responses.AssetResponse.#ctor(System.String,System.String,System.String,System.String,System.String,System.Int32,stellar_dotnet_sdk.responses.AssetResponseFlags,stellar_dotnet_sdk.responses.AssetResponseLinks)
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetResponse(System.String, System.String, System.String, System.String, System.String, System.Int32, stellar_dotnet_sdk.responses.AssetResponseFlags, stellar_dotnet_sdk.responses.AssetResponseLinks)
   nameWithType: AssetResponse.AssetResponse(String, String, String, String, String, Int32, AssetResponseFlags, AssetResponseLinks)
 - uid: stellar_dotnet_sdk.responses.AssetResponse.#ctor*
   name: AssetResponse
@@ -8562,6 +8588,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetResponse
   nameWithType: AssetResponse.AssetResponse
+- uid: stellar_dotnet_sdk.responses.AssetResponse.Accounts
+  name: Accounts
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_Accounts
+  commentId: P:stellar_dotnet_sdk.responses.AssetResponse.Accounts
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.Accounts
+  nameWithType: AssetResponse.Accounts
+- uid: stellar_dotnet_sdk.responses.AssetResponse.Accounts*
+  name: Accounts
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_Accounts_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.Accounts
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.Accounts
+  nameWithType: AssetResponse.Accounts
 - uid: stellar_dotnet_sdk.responses.AssetResponse.Amount
   name: Amount
   href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_Amount
@@ -8588,6 +8627,122 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.AssetResponse.Asset
   nameWithType: AssetResponse.Asset
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts
+  name: AssetResponse.AssetAccounts
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.html
+  commentId: T:stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts
+  nameWithType: AssetResponse.AssetAccounts
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.#ctor(System.Int32,System.Int32,System.Int32)
+  name: AssetAccounts(Int32, Int32, Int32)
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.html#stellar_dotnet_sdk_responses_AssetResponse_AssetAccounts__ctor_System_Int32_System_Int32_System_Int32_
+  commentId: M:stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.#ctor(System.Int32,System.Int32,System.Int32)
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.AssetAccounts(System.Int32, System.Int32, System.Int32)
+  nameWithType: AssetResponse.AssetAccounts.AssetAccounts(Int32, Int32, Int32)
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.#ctor*
+  name: AssetAccounts
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.html#stellar_dotnet_sdk_responses_AssetResponse_AssetAccounts__ctor_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.#ctor
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.AssetAccounts
+  nameWithType: AssetResponse.AssetAccounts.AssetAccounts
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.Authorized
+  name: Authorized
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.html#stellar_dotnet_sdk_responses_AssetResponse_AssetAccounts_Authorized
+  commentId: P:stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.Authorized
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.Authorized
+  nameWithType: AssetResponse.AssetAccounts.Authorized
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.Authorized*
+  name: Authorized
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.html#stellar_dotnet_sdk_responses_AssetResponse_AssetAccounts_Authorized_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.Authorized
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.Authorized
+  nameWithType: AssetResponse.AssetAccounts.Authorized
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.AuthorizedToMaintainLiabilities
+  name: AuthorizedToMaintainLiabilities
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.html#stellar_dotnet_sdk_responses_AssetResponse_AssetAccounts_AuthorizedToMaintainLiabilities
+  commentId: P:stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.AuthorizedToMaintainLiabilities
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.AuthorizedToMaintainLiabilities
+  nameWithType: AssetResponse.AssetAccounts.AuthorizedToMaintainLiabilities
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.AuthorizedToMaintainLiabilities*
+  name: AuthorizedToMaintainLiabilities
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.html#stellar_dotnet_sdk_responses_AssetResponse_AssetAccounts_AuthorizedToMaintainLiabilities_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.AuthorizedToMaintainLiabilities
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.AuthorizedToMaintainLiabilities
+  nameWithType: AssetResponse.AssetAccounts.AuthorizedToMaintainLiabilities
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.Unauthorized
+  name: Unauthorized
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.html#stellar_dotnet_sdk_responses_AssetResponse_AssetAccounts_Unauthorized
+  commentId: P:stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.Unauthorized
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.Unauthorized
+  nameWithType: AssetResponse.AssetAccounts.Unauthorized
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.Unauthorized*
+  name: Unauthorized
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.html#stellar_dotnet_sdk_responses_AssetResponse_AssetAccounts_Unauthorized_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.Unauthorized
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetAccounts.Unauthorized
+  nameWithType: AssetResponse.AssetAccounts.Unauthorized
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances
+  name: AssetResponse.AssetBalances
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.html
+  commentId: T:stellar_dotnet_sdk.responses.AssetResponse.AssetBalances
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances
+  nameWithType: AssetResponse.AssetBalances
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.#ctor(System.String,System.String,System.String)
+  name: AssetBalances(String, String, String)
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.html#stellar_dotnet_sdk_responses_AssetResponse_AssetBalances__ctor_System_String_System_String_System_String_
+  commentId: M:stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.#ctor(System.String,System.String,System.String)
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.AssetBalances(System.String, System.String, System.String)
+  nameWithType: AssetResponse.AssetBalances.AssetBalances(String, String, String)
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.#ctor*
+  name: AssetBalances
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.html#stellar_dotnet_sdk_responses_AssetResponse_AssetBalances__ctor_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.#ctor
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.AssetBalances
+  nameWithType: AssetResponse.AssetBalances.AssetBalances
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.Authorized
+  name: Authorized
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.html#stellar_dotnet_sdk_responses_AssetResponse_AssetBalances_Authorized
+  commentId: P:stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.Authorized
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.Authorized
+  nameWithType: AssetResponse.AssetBalances.Authorized
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.Authorized*
+  name: Authorized
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.html#stellar_dotnet_sdk_responses_AssetResponse_AssetBalances_Authorized_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.Authorized
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.Authorized
+  nameWithType: AssetResponse.AssetBalances.Authorized
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.AuthorizedToMaintainLiabilities
+  name: AuthorizedToMaintainLiabilities
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.html#stellar_dotnet_sdk_responses_AssetResponse_AssetBalances_AuthorizedToMaintainLiabilities
+  commentId: P:stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.AuthorizedToMaintainLiabilities
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.AuthorizedToMaintainLiabilities
+  nameWithType: AssetResponse.AssetBalances.AuthorizedToMaintainLiabilities
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.AuthorizedToMaintainLiabilities*
+  name: AuthorizedToMaintainLiabilities
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.html#stellar_dotnet_sdk_responses_AssetResponse_AssetBalances_AuthorizedToMaintainLiabilities_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.AuthorizedToMaintainLiabilities
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.AuthorizedToMaintainLiabilities
+  nameWithType: AssetResponse.AssetBalances.AuthorizedToMaintainLiabilities
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.Unauthorized
+  name: Unauthorized
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.html#stellar_dotnet_sdk_responses_AssetResponse_AssetBalances_Unauthorized
+  commentId: P:stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.Unauthorized
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.Unauthorized
+  nameWithType: AssetResponse.AssetBalances.Unauthorized
+- uid: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.Unauthorized*
+  name: Unauthorized
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.html#stellar_dotnet_sdk_responses_AssetResponse_AssetBalances_Unauthorized_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.Unauthorized
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetBalances.Unauthorized
+  nameWithType: AssetResponse.AssetBalances.Unauthorized
 - uid: stellar_dotnet_sdk.responses.AssetResponse.AssetCode
   name: AssetCode
   href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_AssetCode
@@ -8627,6 +8782,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.AssetResponse.AssetType
   nameWithType: AssetResponse.AssetType
+- uid: stellar_dotnet_sdk.responses.AssetResponse.Balances
+  name: Balances
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_Balances
+  commentId: P:stellar_dotnet_sdk.responses.AssetResponse.Balances
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.Balances
+  nameWithType: AssetResponse.Balances
+- uid: stellar_dotnet_sdk.responses.AssetResponse.Balances*
+  name: Balances
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_Balances_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.Balances
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.Balances
+  nameWithType: AssetResponse.Balances
+- uid: stellar_dotnet_sdk.responses.AssetResponse.ClaimableBalancesAmount
+  name: ClaimableBalancesAmount
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_ClaimableBalancesAmount
+  commentId: P:stellar_dotnet_sdk.responses.AssetResponse.ClaimableBalancesAmount
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.ClaimableBalancesAmount
+  nameWithType: AssetResponse.ClaimableBalancesAmount
+- uid: stellar_dotnet_sdk.responses.AssetResponse.ClaimableBalancesAmount*
+  name: ClaimableBalancesAmount
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_ClaimableBalancesAmount_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.ClaimableBalancesAmount
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.ClaimableBalancesAmount
+  nameWithType: AssetResponse.ClaimableBalancesAmount
 - uid: stellar_dotnet_sdk.responses.AssetResponse.Flags
   name: Flags
   href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_Flags
@@ -8666,6 +8847,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.AssetResponse.NumAccounts
   nameWithType: AssetResponse.NumAccounts
+- uid: stellar_dotnet_sdk.responses.AssetResponse.NumClaimableBalances
+  name: NumClaimableBalances
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_NumClaimableBalances
+  commentId: P:stellar_dotnet_sdk.responses.AssetResponse.NumClaimableBalances
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.NumClaimableBalances
+  nameWithType: AssetResponse.NumClaimableBalances
+- uid: stellar_dotnet_sdk.responses.AssetResponse.NumClaimableBalances*
+  name: NumClaimableBalances
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_NumClaimableBalances_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.NumClaimableBalances
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.NumClaimableBalances
+  nameWithType: AssetResponse.NumClaimableBalances
 - uid: stellar_dotnet_sdk.responses.AssetResponse.PagingToken
   name: PagingToken
   href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_PagingToken
