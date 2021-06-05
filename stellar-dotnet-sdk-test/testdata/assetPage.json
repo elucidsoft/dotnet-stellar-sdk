@@ -22,6 +22,18 @@
         "asset_code": "ZZZ",
         "asset_issuer": "GCWMJP3GFA2V3M2GSTJUC7H3NM27XG6GDGWJZVM3S536JWYIS6BIWS35",
         "paging_token": "ZZZ_GCWMJP3GFA2V3M2GSTJUC7H3NM27XG6GDGWJZVM3S536JWYIS6BIWS35_credit_alphanum4",
+        "accounts": {
+          "authorized": 1,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "1200000000.0000000",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0,
         "amount": "1200000000.0000000",
         "num_accounts": 1,
         "flags": {
@@ -40,6 +52,18 @@
         "asset_code": "ZZZ",
         "asset_issuer": "GCMWX56ZIU333GRDU2D324BQRAHSIY44IDUVAHHMEM5APGHLRQCX4UGW",
         "paging_token": "ZZZ_GCMWX56ZIU333GRDU2D324BQRAHSIY44IDUVAHHMEM5APGHLRQCX4UGW_credit_alphanum4",
+        "accounts": {
+          "authorized": 0,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "0.0000000",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0,
         "amount": "0.0000000",
         "num_accounts": 1,
         "flags": {
@@ -58,6 +82,18 @@
         "asset_code": "ZZZ",
         "asset_issuer": "GAJDQLTOYL77HTRZTAVCDFPB53SE2F5MVORCL7OYDIBGBYFCVEZUO37N",
         "paging_token": "ZZZ_GAJDQLTOYL77HTRZTAVCDFPB53SE2F5MVORCL7OYDIBGBYFCVEZUO37N_credit_alphanum4",
+        "accounts": {
+          "authorized": 2,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "100000000000.0000000",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0,
         "amount": "100000000000.0000000",
         "num_accounts": 10,
         "flags": {
@@ -76,6 +112,18 @@
         "asset_code": "ZZOP",
         "asset_issuer": "GCWSSMVXQAUWYODSD32IHYUMVCOAYRRRZ3YSYW3QVNTMKOJ3SRYHLZ7I",
         "paging_token": "ZZOP_GCWSSMVXQAUWYODSD32IHYUMVCOAYRRRZ3YSYW3QVNTMKOJ3SRYHLZ7I_credit_alphanum4",
+        "accounts": {
+          "authorized": 0,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "0.0000000",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0,
         "amount": "0.0000000",
         "num_accounts": 1,
         "flags": {
@@ -100,7 +148,19 @@
           "auth_required": false,
           "auth_revocable": false,
           "auth_immutable": false
-        }
+        },
+        "accounts": {
+          "authorized": 1,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "0.0000000",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0
       },
       {
         "_links": {
@@ -112,6 +172,18 @@
         "asset_code": "zz",
         "asset_issuer": "GA6HCMBLTZS5VYYBCATRBRZ3BZJMAFUDKYYF6AH6MVCMGWMRDNSWJPIH",
         "paging_token": "zz_GA6HCMBLTZS5VYYBCATRBRZ3BZJMAFUDKYYF6AH6MVCMGWMRDNSWJPIH_credit_alphanum4",
+        "accounts": {
+          "authorized": 1,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "0.0000000",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0,
         "amount": "0.0000000",
         "num_accounts": 1,
         "flags": {
@@ -130,6 +202,18 @@
         "asset_code": "ZYX",
         "asset_issuer": "GBCDYKPXJTL5T2G2VXJCRN7ZJVO6FEMOVFQRR72IBXFJRW6XYIKMRMYF",
         "paging_token": "ZYX_GBCDYKPXJTL5T2G2VXJCRN7ZJVO6FEMOVFQRR72IBXFJRW6XYIKMRMYF_credit_alphanum4",
+        "accounts": {
+          "authorized": 1,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "10.0000000",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0,
         "amount": "10.0000000",
         "num_accounts": 1,
         "flags": {
@@ -148,6 +232,18 @@
         "asset_code": "zToken",
         "asset_issuer": "GAAUAVHJC6LQKVXBCBWQSHZYUIR3AEX3FOIQP4EGE3OASY5BEJF3ODSI",
         "paging_token": "zToken_GAAUAVHJC6LQKVXBCBWQSHZYUIR3AEX3FOIQP4EGE3OASY5BEJF3ODSI_credit_alphanum12",
+        "accounts": {
+          "authorized": 1,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "1000000.0000000",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0,
         "amount": "1000000.0000000",
         "num_accounts": 1,
         "flags": {
@@ -166,6 +262,18 @@
         "asset_code": "zToken",
         "asset_issuer": "GA343JG4AJODGS6U7D3EJZYUNLQ4622S5O6UOI45NVYJAOCMSCTENYTH",
         "paging_token": "zToken_GA343JG4AJODGS6U7D3EJZYUNLQ4622S5O6UOI45NVYJAOCMSCTENYTH_credit_alphanum12",
+        "accounts": {
+          "authorized": 1,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "3480.0000000",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0,
         "amount": "3480.0000000",
         "num_accounts": 19,
         "flags": {
@@ -184,6 +292,18 @@
         "asset_code": "ZTC",
         "asset_issuer": "GCPZ4KJUWJESXQEY7KKUBJUGMYJCOALJUEHIVVW4LYX2XGRTWSX54TJB",
         "paging_token": "ZTC_GCPZ4KJUWJESXQEY7KKUBJUGMYJCOALJUEHIVVW4LYX2XGRTWSX54TJB_credit_alphanum4",
+        "accounts": {
+          "authorized": 1,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "10100.0000000",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0,
         "amount": "10100.0000000",
         "num_accounts": 2,
         "flags": {
@@ -202,6 +322,18 @@
         "asset_code": "ZRX",
         "asset_issuer": "GCTXMXNEGJAVBRNGFUK2WZ2MXWK7UAHSD32IMG4475BCMDFWF6LEG7D7",
         "paging_token": "ZRX_GCTXMXNEGJAVBRNGFUK2WZ2MXWK7UAHSD32IMG4475BCMDFWF6LEG7D7_credit_alphanum4",
+        "accounts": {
+          "authorized": 1,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "63833.3805580",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0,
         "amount": "63833.3805580",
         "num_accounts": 2,
         "flags": {
@@ -220,6 +352,18 @@
         "asset_code": "ZRX",
         "asset_issuer": "GC2V5ULN5S5G3IAPMYHKMUQ7HJU5EEH3FGT6TH4BTKTGT2YHNSK7LQTF",
         "paging_token": "ZRX_GC2V5ULN5S5G3IAPMYHKMUQ7HJU5EEH3FGT6TH4BTKTGT2YHNSK7LQTF_credit_alphanum4",
+        "accounts": {
+          "authorized": 0,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "0.0000000",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0,
         "amount": "0.0000000",
         "num_accounts": 0,
         "flags": {
@@ -238,6 +382,18 @@
         "asset_code": "ZRX",
         "asset_issuer": "GBANKHXFXNOST75HZRTJGNJWB7QYQ6WWK3PVJKD6VD6ZXPCX3HNNTLLK",
         "paging_token": "ZRX_GBANKHXFXNOST75HZRTJGNJWB7QYQ6WWK3PVJKD6VD6ZXPCX3HNNTLLK_credit_alphanum4",
+        "accounts": {
+          "authorized": 1,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "1000000000.0000000",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0,
         "amount": "1000000000.0000000",
         "num_accounts": 11,
         "flags": {
@@ -256,6 +412,18 @@
         "asset_code": "ZND",
         "asset_issuer": "GB3SLYBRW36GGUZTYLABAEZB3EFSYTPNL5NA7LWGUJTBVNEGZACIEFOT",
         "paging_token": "ZND_GB3SLYBRW36GGUZTYLABAEZB3EFSYTPNL5NA7LWGUJTBVNEGZACIEFOT_credit_alphanum4",
+        "accounts": {
+          "authorized": 0,
+          "authorized_to_maintain_liabilities": 0,
+          "unauthorized": 0
+        },
+        "balances": {
+          "authorized": "0.0000000",
+          "authorized_to_maintain_liabilities": "0.0000000",
+          "unauthorized": "0.0000000"
+        },
+        "claimable_balances_amount": "0.0000000",
+        "num_claimable_balances": 0,
         "amount": "0.0000000",
         "num_accounts": 0,
         "flags": {
