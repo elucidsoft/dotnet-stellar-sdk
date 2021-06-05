@@ -63,6 +63,18 @@ namespace stellar_dotnet_sdk.responses.operations
         public string From { get; private set; }
 
         /// <summary>
+        /// Muxed Account from which the asset is clawed back
+        /// </summary>
+        [JsonProperty(PropertyName = "from_muxed")]
+        public string FromMuxed { get; private set; }
+
+        /// <summary>
+        /// Muxed Account ID from which the asset is clawed back
+        /// </summary>
+        [JsonProperty(PropertyName = "from_muxed_id")]
+        public long FromMuxedID { get; private set; }
+
+        /// <summary>
         /// Asset representation (Using the values of the other fields)
         /// </summary>
         public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);

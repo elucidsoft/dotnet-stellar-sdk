@@ -18,6 +18,12 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "claimant")]
         public string Claimant { get; private set; }
 
+        [JsonProperty(PropertyName = "claimant_muxed")]
+        public string ClaimantMuxed { get; private set; }
+
+        [JsonProperty(PropertyName = "claimant_muxed_id")]
+        public long ClaimantMuxedID { get; private set; }
+
         public ClaimClaimableBalanceOperationResponse()
         {
 
