@@ -46,7 +46,24 @@ namespace stellar_dotnet_sdk.requests
         public TransactionsRequestBuilder ForAccount(string account)
         {
             account = account ?? throw new ArgumentNullException(nameof(account), "account cannot be null");
-            this.SetSegments("accounts", account, "transactions");
+            SetSegments("accounts", account, "transactions");
+            return this;
+        }
+
+        ///<Summary>
+        /// Builds request to <code>GET /claimable_balances/{claimable_balance_id}/transactions</code>
+        /// See: https://www.stellar.org/developers/horizon/reference/transactions-for-claimable-balance.html
+        /// </Summary>
+        /// <param name="claimableBalance">Claimable Balance for which to get transactions</param> 
+        public TransactionsRequestBuilder ForClaimableBalance(string claimableBalance)
+        {
+            if (string.IsNullOrWhiteSpace(claimableBalance))
+            {
+                throw new ArgumentNullException(nameof(claimableBalance), "claimableBalance cannot be null");
+            }
+
+            SetSegments("claimable_balances", claimableBalance, "transactions");
+
             return this;
         }
 

@@ -45,6 +45,18 @@ namespace stellar_dotnet_sdk_test.requests
         }
 
         [TestMethod]
+        public void TestForClaimableBalance()
+        {
+            Server server = new Server("https://horizon-testnet.stellar.org");
+            var uri = server.Operations
+                   .ForClaimableBalance("00000000846c047755e4a46912336f56096b48ece78ddb5fbf6d90f0eb4ecae5324fbddb")
+                    .Limit(200)
+                    .Order(OrderDirection.DESC)
+                    .BuildUri();
+            Assert.AreEqual("https://horizon-testnet.stellar.org/claimable_balances/00000000846c047755e4a46912336f56096b48ece78ddb5fbf6d90f0eb4ecae5324fbddb/operations?limit=200&order=desc", uri.ToString());
+        }
+
+        [TestMethod]
         public void TestLedger()
         {
             var server = new Server("https://horizon-testnet.stellar.org");

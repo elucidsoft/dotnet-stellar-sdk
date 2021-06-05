@@ -68,6 +68,28 @@ namespace stellar_dotnet_sdk.requests
             return this;
         }
 
+
+        /// <summary>
+        ///     Builds request to GET /claimable_balances/{claimable_balance_id}/operations
+        ///     See: https://www.stellar.org/developers/horizon/reference/operations-for-claimable-balance.html
+        /// </summary>
+        /// <param name="claimableBalance">Claimable Balance for which to get operations</param>
+        /// <returns>
+        ///     <see cref="OperationsRequestBuilder" />
+        /// </returns>
+        /// <exception cref="HttpRequestException"></exception>
+        public OperationsRequestBuilder ForClaimableBalance(string claimableBalance)
+        {
+            if (string.IsNullOrWhiteSpace(claimableBalance))
+            {
+                throw new ArgumentNullException(nameof(claimableBalance), "claimableBalance cannot be null");
+            }
+
+            SetSegments("claimable_balances", claimableBalance, "operations");
+
+            return this;
+        }
+
         /// <summary>
         ///     Builds request to GET /ledgers/{ledgerSeq}/operations
         ///     See: https://www.stellar.org/developers/horizon/reference/operations-for-ledger.html
