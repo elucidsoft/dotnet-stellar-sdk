@@ -82,7 +82,7 @@ namespace stellar_dotnet_sdk.responses
                 Authorized = authorized;
                 AuthorizedToMaintainLiabilities = authorizedToMaintainLiabilities;
                 Unauthorized = unauthorized;
-            } 
+            }
         }
 
         public Asset Asset
