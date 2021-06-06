@@ -37,7 +37,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AccountCreatedEffectResponse);
             var effect = (AccountCreatedEffectResponse)instance;
 
-            Assert.AreEqual(effect.Account, "GCBQ6JRBPF3SXQBQ6SO5MRBE7WVV4UCHYOSHQGXSZNPZLFRYVYOWBZRQ");
+            Assert.AreEqual(effect.Account, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
+            Assert.AreEqual(effect.AccountMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
+            Assert.AreEqual(effect.AccountMuxedID, 5123456789);
             Assert.AreEqual(effect.StartingBalance, "30.0");
             Assert.AreEqual(effect.PagingToken, "65571265847297-1");
 
@@ -684,7 +686,7 @@ namespace stellar_dotnet_sdk_test.responses
             var json = File.ReadAllText(Path.Combine("testdata/effects", "effectTradePre100.json"));
             var instance = JsonSingleton.GetInstance<EffectResponse>(json);
 
-            AssertTradeData(instance);
+            AssertTradeDataPre100(instance);
         }
 
         //Before Horizon 1.0.0 the OfferID in the json was a long.
@@ -696,7 +698,31 @@ namespace stellar_dotnet_sdk_test.responses
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<EffectResponse>(serialized);
 
-            AssertTradeData(back);
+            AssertTradeDataPre100(back);
+        }
+
+        private static void AssertTradeDataPre100(EffectResponse instance)
+        {
+            //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
+            Assert.IsTrue(instance is TradeEffectResponse);
+            var effect = (TradeEffectResponse)instance;
+
+            Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
+            Assert.AreEqual(effect.Seller, "GCVHDLN6EHZBYW2M3BQIY32C23E4GPIRZZDBNF2Q73DAZ5VJDRGSMYRB");
+            Assert.AreEqual(effect.OfferId, "1");
+            Assert.AreEqual(effect.SoldAmount, "1000.0");
+            Assert.AreEqual(effect.SoldAsset, Asset.CreateNonNativeAsset("EUR", "GCWVFBJ24754I5GXG4JOEB72GJCL3MKWC7VAEYWKGQHPVH3ENPNBSKWS"));
+            Assert.AreEqual(effect.BoughtAmount, "60.0");
+            Assert.AreEqual(effect.BoughtAsset, Asset.CreateNonNativeAsset("TESTTEST", "GAHXPUDP3AK6F2QQM4FIRBGPNGKLRDDSTQCVKEXXKKRHJZUUQ23D5BU7"));
+
+            Assert.AreEqual(effect.Links.Operation.Href, "http://horizon-testnet.stellar.org/operations/33788507721730");
+            Assert.AreEqual(effect.Links.Succeeds.Href, "http://horizon-testnet.stellar.org/effects?order=desc&cursor=33788507721730-2");
+            Assert.AreEqual(effect.Links.Precedes.Href, "http://horizon-testnet.stellar.org/effects?order=asc&cursor=33788507721730-2");
+
+            var back = new TradeEffectResponse(effect.Seller, effect.OfferId, effect.SoldAmount, effect.SoldAssetType,
+                effect.SoldAssetCode, effect.SoldAssetIssuer, effect.BoughtAmount, effect.BoughtAssetType,
+                effect.BoughtAssetCode, effect.BoughtAssetType);
+            Assert.IsNotNull(back);
         }
 
         private static void AssertTradeData(EffectResponse instance)
@@ -706,7 +732,9 @@ namespace stellar_dotnet_sdk_test.responses
             var effect = (TradeEffectResponse)instance;
 
             Assert.AreEqual(effect.Account, "GA6U5X6WOPNKKDKQULBR7IDHDBAQKOWPHYEC7WSXHZBFEYFD3XVZAKOO");
-            Assert.AreEqual(effect.Seller, "GCVHDLN6EHZBYW2M3BQIY32C23E4GPIRZZDBNF2Q73DAZ5VJDRGSMYRB");
+            Assert.AreEqual(effect.Seller, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
+            Assert.AreEqual(effect.SellerMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
+            Assert.AreEqual(effect.SellerMuxedID, 5123456789);
             Assert.AreEqual(effect.OfferId, "1");
             Assert.AreEqual(effect.SoldAmount, "1000.0");
             Assert.AreEqual(effect.SoldAsset, Asset.CreateNonNativeAsset("EUR", "GCWVFBJ24754I5GXG4JOEB72GJCL3MKWC7VAEYWKGQHPVH3ENPNBSKWS"));
