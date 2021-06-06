@@ -7,10 +7,17 @@ namespace stellar_dotnet_sdk.responses.effects
     [JsonConverter(typeof(EffectDeserializer))]
     public abstract class EffectResponse : Response, IPagingToken
     {
-        [JsonProperty(PropertyName = "id")] public string Id { get; protected set; }
+        [JsonProperty(PropertyName = "id")] 
+        public string Id { get; protected set; }
 
         [JsonProperty(PropertyName = "account")]
         public string Account { get; protected set; }
+
+        [JsonProperty(PropertyName = "account_muxed")]
+        public string AccountMuxed { get; protected set; }
+
+        [JsonProperty(PropertyName = "account_muxed_id")]
+        public long AccountMuxedID { get; protected set; }
 
         [JsonProperty(PropertyName = "type")]
         public string Type { get; protected set; }
