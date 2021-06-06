@@ -23,8 +23,20 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "source_account")]
         public string SourceAccount { get; private set; }
 
+        [JsonProperty(PropertyName = "account_muxed")]
+        public string AccountMuxed { get; private set; }
+
+        [JsonProperty(PropertyName = "account_muxed_id")]
+        public long AccountMuxedID { get; private set; }
+
         [JsonProperty(PropertyName = "fee_account")]
         public string FeeAccount { get; set; }
+
+        [JsonProperty(PropertyName = "fee_account_muxed")]
+        public string FeeAccountMuxed { get; set; }
+
+        [JsonProperty(PropertyName = "fee_account_muxed_id")]
+        public long FeeAccountMuxedID { get; set; }
 
         [DefaultValue(true)]
         [JsonProperty(PropertyName = "successful", DefaultValueHandling = DefaultValueHandling.Populate)]
