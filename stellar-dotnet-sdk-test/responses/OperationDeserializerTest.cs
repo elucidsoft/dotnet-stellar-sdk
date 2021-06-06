@@ -42,7 +42,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(operation.Account, "GAR4DDXYNSN2CORG3XQFLAPWYKTUMLZYHYWV4Y2YJJ4JO6ZJFXMJD7PT");
             Assert.AreEqual(operation.StartingBalance, "299454.904954");
-            Assert.AreEqual(operation.Funder, "GD6WU64OEP5C4LRBH6NK3MHYIA2ADN6K6II6EXPNVUR3ERBXT4AN4ACD");
+            Assert.AreEqual(operation.Funder, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
+            Assert.AreEqual(operation.FunderMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
+            Assert.AreEqual(operation.FunderMuxedID, 5123456789);
 
             Assert.IsTrue(operation.TransactionSuccessful);
             Assert.AreEqual(operation.Links.Effects.Href, "/operations/3936840037961729/effects{?cursor,limit,order}");
@@ -84,10 +86,15 @@ namespace stellar_dotnet_sdk_test.responses
 
         public static void AssertPaymentOperationTestData(PaymentOperationResponse operation)
         {
-            Assert.AreEqual(operation.SourceAccount, "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ");
+            Assert.AreEqual(operation.SourceAccount, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
+            Assert.AreEqual(operation.SourceAccountMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
+            Assert.AreEqual(operation.SourceAccountMuxedID, 5123456789);
+            
             Assert.AreEqual(operation.Id, 3940808587743233L);
 
-            Assert.AreEqual(operation.From, "GB6NVEN5HSUBKMYCE5ZOWSK5K23TBWRUQLZY3KNMXUZ3AQ2ESC4MY4AQ");
+            Assert.AreEqual(operation.From, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
+            Assert.AreEqual(operation.FromMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
+            Assert.AreEqual(operation.FromMuxedID, 5123456789);
             Assert.AreEqual(operation.To, "GDWNY2POLGK65VVKIH5KQSH7VWLKRTQ5M6ADLJAYC2UEHEBEARCZJWWI");
             Assert.AreEqual(operation.Amount, "100.0");
             Assert.AreEqual(operation.Asset, new AssetTypeNative());
@@ -153,8 +160,10 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is AllowTrustOperationResponse);
             var operation = (AllowTrustOperationResponse)instance;
 
-            Assert.AreEqual(operation.Trustee, "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
             Assert.AreEqual(operation.Trustor, "GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F");
+            Assert.AreEqual(operation.Trustee, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
+            Assert.AreEqual(operation.TrusteeMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
+            Assert.AreEqual(operation.TrusteeMuxedID, 5123456789);
             Assert.AreEqual(operation.Authorize, true);
             Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM"));
         }
@@ -186,7 +195,9 @@ namespace stellar_dotnet_sdk_test.responses
             var operation = (ChangeTrustOperationResponse)instance;
 
             Assert.AreEqual(operation.Trustee, "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
-            Assert.AreEqual(operation.Trustor, "GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F");
+            Assert.AreEqual(operation.Trustor, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
+            Assert.AreEqual(operation.TrustorMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
+            Assert.AreEqual(operation.TrustorMuxedID, 5123456789);
             Assert.AreEqual(operation.Limit, "922337203685.4775807");
             Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM"));
         }
@@ -284,7 +295,9 @@ namespace stellar_dotnet_sdk_test.responses
             var operation = (AccountMergeOperationResponse)instance;
 
             Assert.AreEqual(operation.Account, "GD6GKRABNDVYDETEZJQEPS7IBQMERCN44R5RCI4LJNX6BMYQM2KPGGZ2");
-            Assert.AreEqual(operation.Into, "GAZWSWPDQTBHFIPBY4FEDFW2J6E2LE7SZHJWGDZO6Q63W7DBSRICO2KN");
+            Assert.AreEqual(operation.Into, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
+            Assert.AreEqual(operation.IntoMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
+            Assert.AreEqual(operation.IntoMuxedID, "5123456789");
         }
 
         [TestMethod]
@@ -684,7 +697,9 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(214525026504705, operation.Id);
             Assert.AreEqual("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7", operation.BalanceID);
-            Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", operation.Claimant);
+            Assert.AreEqual("GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2", operation.Claimant);
+            Assert.AreEqual("MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24", operation.ClaimantMuxed);
+            Assert.AreEqual(5123456789, operation.ClaimantMuxedID);
 
             var back = new ClaimClaimableBalanceOperationResponse(operation.BalanceID, operation.Claimant);
             Assert.IsNotNull(back);
@@ -732,7 +747,9 @@ namespace stellar_dotnet_sdk_test.responses
             var operation = (EndSponsoringFutureReservesOperationResponse)instance;
 
             Assert.AreEqual(215542933753859, operation.Id);
-            Assert.AreEqual("GAEJ2UF46PKAPJYED6SQ45CKEHSXV63UQEYHVUZSVJU6PK5Y4ZVA4ELU", operation.BeginSponsor);
+            Assert.AreEqual("GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2", operation.BeginSponsor);
+            Assert.AreEqual("MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24", operation.BeginSponsorMuxed);
+            Assert.AreEqual(5123456789, operation.BeginSponsorMuxedID);
 
             var back = new EndSponsoringFutureReservesOperationResponse(operation.BeginSponsor);
             Assert.IsNotNull(back);
@@ -884,14 +901,15 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsTrue(instance is ClawbackOperationResponse);
             var operation = (ClawbackOperationResponse)instance;
 
-            var operation2 = new ClawbackOperationResponse("credit_alphanum4", "EUR", "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM", "1000", "GTESTJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
             Assert.AreEqual(3602979345141761, operation.Id);
-            Assert.AreEqual(operation.Amount, operation2.Amount);
-            Assert.AreEqual(operation.AssetCode, operation2.AssetCode);
-            Assert.AreEqual(operation.AssetIssuer, operation2.AssetIssuer);
-            Assert.AreEqual(operation.AssetType, operation2.AssetType);
-            Assert.AreEqual(operation.From, operation2.From);
-            Assert.AreEqual(operation.Asset, operation2.Asset);
+            Assert.AreEqual(operation.Amount, "1000");
+            Assert.AreEqual(operation.AssetCode, "EUR");
+            Assert.AreEqual(operation.AssetIssuer, "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
+            Assert.AreEqual(operation.AssetType, "credit_alphanum4");
+            Assert.AreEqual(operation.From, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
+            Assert.AreEqual(operation.FromMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
+            Assert.AreEqual(operation.FromMuxedID, 5123456789);
+            Assert.AreEqual(operation.Asset.ToQueryParameterEncodedString(), "EUR:GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
         }
 
         //Clawback Claimable Balance
