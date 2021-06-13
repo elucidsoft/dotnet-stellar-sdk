@@ -206,103 +206,124 @@
     <None Update="testdata\offerPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\clawback.json">
+    <None Update="testdata\operations\accountMerge\accountMergeMuxed.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\clawbackClaimableBalance.json">
+    <None Update="testdata\operations\allowTrust\allowTrustMuxed.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\revokeSponsorshipSignerKey.json">
+    <None Update="testdata\operations\changeTrust\changeTrustMuxed.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\revokeSponsorshipTrustline.json">
+    <None Update="testdata\operations\claimClaimableBalance\claimClaimableBalanceMuxed.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\revokeSponsorshipOffer.json">
+    <None Update="testdata\operations\clawback\clawbackMuxed.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\revokeSponsorshipData.json">
+    <None Update="testdata\operations\clawback\clawback.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\revokeSponsorshipClaimableBalance.json">
+    <None Update="testdata\operations\clawbackClaimableBalance\clawbackClaimableBalance.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\revokeSponsorshipAccountID.json">
+    <None Update="testdata\operations\createAccount\createAccountMuxed.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\endSponsoringFutureReserves.json">
+    <None Update="testdata\operations\payment\paymentMuxed.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\claimClaimableBalance.json">
+    <None Update="testdata\operations\revokeSponsorship\revokeSponsorshipSignerKey.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\beginSponsoringFutureReserves.json">
+    <None Update="testdata\operations\revokeSponsorship\revokeSponsorshipTrustline.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\createClaimableBalance.json">
+    <None Update="testdata\operations\revokeSponsorship\revokeSponsorshipOffer.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\accountMerge.json">
+    <None Update="testdata\operations\revokeSponsorship\revokeSponsorshipData.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\allowTrust.json">
+    <None Update="testdata\operations\revokeSponsorship\revokeSponsorshipClaimableBalance.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\bumpSequence.json">
+    <None Update="testdata\operations\revokeSponsorship\revokeSponsorshipAccountID.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\changeTrust.json">
+    <None Update="testdata\operations\endSponsoringFutureReserves\endSponsoringFutureReserves.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\createAccount.json">
+    <None Update="testdata\operations\claimClaimableBalance\claimClaimableBalance.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\inflation.json">
+    <None Update="testdata\operations\beginSponsoringFutureReserves\beginSponsoringFutureReserves.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\manageBuyOffer.json">
+    <None Update="testdata\operations\createClaimableBalance\createClaimableBalance.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\manageData.json">
+    <None Update="testdata\operations\accountMerge\accountMerge.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\manageDataValueEmpty.json">
+    <None Update="testdata\operations\allowTrust\allowTrust.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\manageOffer.json">
+    <None Update="testdata\operations\bumpSequence\bumpSequence.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\changeTrust\changeTrust.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\createAccount\createAccount.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\inflation\inflation.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\manageBuyOffer\manageBuyOffer.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\manageData\manageData.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\manageData\manageDataValueEmpty.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testdata\operations\manageOffer\manageOffer.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="testdata\operations\operationPage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\passiveOffer.json">
+    <None Update="testdata\operations\createPassiveOffer\createPassiveOffer.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="testdata\feeStats.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\pathPaymentStrictSend.json">
+    <None Update="testdata\operations\pathPaymentStrictSend\pathPaymentStrictSend.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\pathPaymentStrictReceive.json">
+    <None Update="testdata\operations\pathPaymentStrictReceive\pathPaymentStrictReceive.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\payment.json">
+    <None Update="testdata\operations\payment\payment.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\paymentNonNative.json">
+    <None Update="testdata\operations\payment\paymentNonNative.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\setTrustlineFlags.json">
+    <None Update="testdata\operations\setTrustlineFlags\setTrustlineFlags.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\setOptions.json">
+    <None Update="testdata\operations\setOptions\setOptions.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\setOptionsNonEd25519Key.json">
+    <None Update="testdata\operations\setOptions\setOptionsNonEd25519Key.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\operationUnknown.json">
+    <None Update="testdata\operations\operationUnknown\operationUnknown.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="testdata\orderBook.json">
@@ -365,7 +386,7 @@
     <None Update="testdata\transactionTransactionWithoutMemo.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\manageBuyOfferPre100.json">
+    <None Update="testdata\operations\manageBuyOffer\manageBuyOfferPre100.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="testdata\transactionTransactionPre020.json">
@@ -380,7 +401,7 @@
     <None Update="testdata\claimableBalance.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\claimableBalanceAbsBeforeMaxInt.json">
+    <None Update="testdata\operations\createClaimableBalance\createClaimableBalanceAbsBeforeMaxInt.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -22,7 +22,7 @@ namespace stellar_dotnet_sdk.responses.operations
         public string ClaimantMuxed { get; private set; }
 
         [JsonProperty(PropertyName = "claimant_muxed_id")]
-        public long ClaimantMuxedID { get; private set; }
+        public long? ClaimantMuxedID { get; private set; }
 
         public ClaimClaimableBalanceOperationResponse()
         {

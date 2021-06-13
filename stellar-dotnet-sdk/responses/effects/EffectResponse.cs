@@ -17,7 +17,7 @@ namespace stellar_dotnet_sdk.responses.effects
         public string AccountMuxed { get; protected set; }
 
         [JsonProperty(PropertyName = "account_muxed_id")]
-        public long AccountMuxedID { get; protected set; }
+        public long? AccountMuxedID { get; protected set; }
 
         [JsonProperty(PropertyName = "type")]
         public string Type { get; protected set; }

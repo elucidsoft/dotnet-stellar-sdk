@@ -40,7 +40,7 @@ namespace stellar_dotnet_sdk.responses.effects
         public string SellerMuxed { get; private set; }
 
         [JsonProperty(PropertyName = "seller_muxed_id")]
-        public long SellerMuxedID { get; private set; }
+        public long? SellerMuxedID { get; private set; }
 
         [JsonProperty(PropertyName = "offer_id")]
         public string OfferId { get; private set; }

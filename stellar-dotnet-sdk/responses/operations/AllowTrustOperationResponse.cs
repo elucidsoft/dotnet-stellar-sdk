@@ -59,7 +59,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// Trustee account.
         /// </summary>
         [JsonProperty(PropertyName = "trustee_muxed_id")]
-        public long TrusteeMuxedID { get; private set; }
+        public long? TrusteeMuxedID { get; private set; }
 
         /// <summary>
         /// Asset type (native / alphanum4 / alphanum12)

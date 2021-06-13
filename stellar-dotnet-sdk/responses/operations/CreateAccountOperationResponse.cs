@@ -22,7 +22,7 @@ namespace stellar_dotnet_sdk.responses.operations
         public string FunderMuxed { get; private set; }
 
         [JsonProperty(PropertyName = "funder_muxed_id")]
-        public long FunderMuxedID { get; private set; }
+        public long? FunderMuxedID { get; private set; }
 
         [JsonProperty(PropertyName = "starting_balance")]
         public string StartingBalance { get; private set; }

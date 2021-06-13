@@ -71,7 +71,7 @@ namespace stellar_dotnet_sdk.responses.operations
         public string FromMuxed { get; private set; }
 
         [JsonProperty(PropertyName = "from_muxed_id")]
-        public long FromMuxedID { get; private set; }
+        public long? FromMuxedID { get; private set; }
 
         /// <summary>
         ///
@@ -83,7 +83,7 @@ namespace stellar_dotnet_sdk.responses.operations
         public string ToMuxed { get; private set; }
 
         [JsonProperty(PropertyName = "to_muxed_id")]
-        public long ToMuxedID { get; private set; }
+        public long? ToMuxedID { get; private set; }
 
         /// <summary>
         /// Account address that receives the payment.

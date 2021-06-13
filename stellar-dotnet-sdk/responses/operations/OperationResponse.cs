@@ -28,7 +28,7 @@ namespace stellar_dotnet_sdk.responses.operations
         public string SourceAccountMuxed { get; private set; }
 
         [JsonProperty(PropertyName = "source_account_muxed_id")]
-        public long SourceAccountMuxedID { get; private set; }
+        public long? SourceAccountMuxedID { get; private set; }
 
         /// <summary>
         /// Paging Token of Paging
