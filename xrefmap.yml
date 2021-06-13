@@ -10735,6 +10735,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.Account
   nameWithType: EffectResponse.Account
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.AccountMuxed
+  name: AccountMuxed
+  href: api/stellar_dotnet_sdk.responses.effects.EffectResponse.html#stellar_dotnet_sdk_responses_effects_EffectResponse_AccountMuxed
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.AccountMuxed
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.AccountMuxed
+  nameWithType: EffectResponse.AccountMuxed
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.AccountMuxed*
+  name: AccountMuxed
+  href: api/stellar_dotnet_sdk.responses.effects.EffectResponse.html#stellar_dotnet_sdk_responses_effects_EffectResponse_AccountMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.EffectResponse.AccountMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.AccountMuxed
+  nameWithType: EffectResponse.AccountMuxed
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.AccountMuxedID
+  name: AccountMuxedID
+  href: api/stellar_dotnet_sdk.responses.effects.EffectResponse.html#stellar_dotnet_sdk_responses_effects_EffectResponse_AccountMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.effects.EffectResponse.AccountMuxedID
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.AccountMuxedID
+  nameWithType: EffectResponse.AccountMuxedID
+- uid: stellar_dotnet_sdk.responses.effects.EffectResponse.AccountMuxedID*
+  name: AccountMuxedID
+  href: api/stellar_dotnet_sdk.responses.effects.EffectResponse.html#stellar_dotnet_sdk_responses_effects_EffectResponse_AccountMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.EffectResponse.AccountMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.effects.EffectResponse.AccountMuxedID
+  nameWithType: EffectResponse.AccountMuxedID
 - uid: stellar_dotnet_sdk.responses.effects.EffectResponse.CreatedAt
   name: CreatedAt
   href: api/stellar_dotnet_sdk.responses.effects.EffectResponse.html#stellar_dotnet_sdk_responses_effects_EffectResponse_CreatedAt
@@ -11468,6 +11494,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.effects.TradeEffectResponse.Seller
   nameWithType: TradeEffectResponse.Seller
+- uid: stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SellerMuxed
+  name: SellerMuxed
+  href: api/stellar_dotnet_sdk.responses.effects.TradeEffectResponse.html#stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SellerMuxed
+  commentId: P:stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SellerMuxed
+  fullName: stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SellerMuxed
+  nameWithType: TradeEffectResponse.SellerMuxed
+- uid: stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SellerMuxed*
+  name: SellerMuxed
+  href: api/stellar_dotnet_sdk.responses.effects.TradeEffectResponse.html#stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SellerMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SellerMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SellerMuxed
+  nameWithType: TradeEffectResponse.SellerMuxed
+- uid: stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SellerMuxedID
+  name: SellerMuxedID
+  href: api/stellar_dotnet_sdk.responses.effects.TradeEffectResponse.html#stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SellerMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SellerMuxedID
+  fullName: stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SellerMuxedID
+  nameWithType: TradeEffectResponse.SellerMuxedID
+- uid: stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SellerMuxedID*
+  name: SellerMuxedID
+  href: api/stellar_dotnet_sdk.responses.effects.TradeEffectResponse.html#stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SellerMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SellerMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SellerMuxedID
+  nameWithType: TradeEffectResponse.SellerMuxedID
 - uid: stellar_dotnet_sdk.responses.effects.TradeEffectResponse.SoldAmount
   name: SoldAmount
   href: api/stellar_dotnet_sdk.responses.effects.TradeEffectResponse.html#stellar_dotnet_sdk_responses_effects_TradeEffectResponse_SoldAmount
@@ -13688,6 +13740,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.Account
   nameWithType: AccountMergeOperationResponse.Account
+- uid: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.AccountMuxed
+  name: AccountMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.html#stellar_dotnet_sdk_responses_operations_AccountMergeOperationResponse_AccountMuxed
+  commentId: P:stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.AccountMuxed
+  fullName: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.AccountMuxed
+  nameWithType: AccountMergeOperationResponse.AccountMuxed
+- uid: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.AccountMuxed*
+  name: AccountMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.html#stellar_dotnet_sdk_responses_operations_AccountMergeOperationResponse_AccountMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.AccountMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.AccountMuxed
+  nameWithType: AccountMergeOperationResponse.AccountMuxed
+- uid: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.AccountMuxedID
+  name: AccountMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.html#stellar_dotnet_sdk_responses_operations_AccountMergeOperationResponse_AccountMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.AccountMuxedID
+  fullName: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.AccountMuxedID
+  nameWithType: AccountMergeOperationResponse.AccountMuxedID
+- uid: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.AccountMuxedID*
+  name: AccountMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.html#stellar_dotnet_sdk_responses_operations_AccountMergeOperationResponse_AccountMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.AccountMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.AccountMuxedID
+  nameWithType: AccountMergeOperationResponse.AccountMuxedID
 - uid: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.Into
   name: Into
   href: api/stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.html#stellar_dotnet_sdk_responses_operations_AccountMergeOperationResponse_Into
@@ -13701,6 +13779,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.Into
   nameWithType: AccountMergeOperationResponse.Into
+- uid: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.IntoMuxed
+  name: IntoMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.html#stellar_dotnet_sdk_responses_operations_AccountMergeOperationResponse_IntoMuxed
+  commentId: P:stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.IntoMuxed
+  fullName: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.IntoMuxed
+  nameWithType: AccountMergeOperationResponse.IntoMuxed
+- uid: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.IntoMuxed*
+  name: IntoMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.html#stellar_dotnet_sdk_responses_operations_AccountMergeOperationResponse_IntoMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.IntoMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.IntoMuxed
+  nameWithType: AccountMergeOperationResponse.IntoMuxed
+- uid: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.IntoMuxedID
+  name: IntoMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.html#stellar_dotnet_sdk_responses_operations_AccountMergeOperationResponse_IntoMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.IntoMuxedID
+  fullName: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.IntoMuxedID
+  nameWithType: AccountMergeOperationResponse.IntoMuxedID
+- uid: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.IntoMuxedID*
+  name: IntoMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.html#stellar_dotnet_sdk_responses_operations_AccountMergeOperationResponse_IntoMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.IntoMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.IntoMuxedID
+  nameWithType: AccountMergeOperationResponse.IntoMuxedID
 - uid: stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.TypeId
   name: TypeId
   href: api/stellar_dotnet_sdk.responses.operations.AccountMergeOperationResponse.html#stellar_dotnet_sdk_responses_operations_AccountMergeOperationResponse_TypeId
@@ -13817,6 +13921,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.Trustee
   nameWithType: AllowTrustOperationResponse.Trustee
+- uid: stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.TrusteeMuxed
+  name: TrusteeMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.html#stellar_dotnet_sdk_responses_operations_AllowTrustOperationResponse_TrusteeMuxed
+  commentId: P:stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.TrusteeMuxed
+  fullName: stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.TrusteeMuxed
+  nameWithType: AllowTrustOperationResponse.TrusteeMuxed
+- uid: stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.TrusteeMuxed*
+  name: TrusteeMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.html#stellar_dotnet_sdk_responses_operations_AllowTrustOperationResponse_TrusteeMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.TrusteeMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.TrusteeMuxed
+  nameWithType: AllowTrustOperationResponse.TrusteeMuxed
+- uid: stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.TrusteeMuxedID
+  name: TrusteeMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.html#stellar_dotnet_sdk_responses_operations_AllowTrustOperationResponse_TrusteeMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.TrusteeMuxedID
+  fullName: stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.TrusteeMuxedID
+  nameWithType: AllowTrustOperationResponse.TrusteeMuxedID
+- uid: stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.TrusteeMuxedID*
+  name: TrusteeMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.html#stellar_dotnet_sdk_responses_operations_AllowTrustOperationResponse_TrusteeMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.TrusteeMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.TrusteeMuxedID
+  nameWithType: AllowTrustOperationResponse.TrusteeMuxedID
 - uid: stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.Trustor
   name: Trustor
   href: api/stellar_dotnet_sdk.responses.operations.AllowTrustOperationResponse.html#stellar_dotnet_sdk_responses_operations_AllowTrustOperationResponse_Trustor
@@ -14061,6 +14191,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.Trustor
   nameWithType: ChangeTrustOperationResponse.Trustor
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TrustorMuxed
+  name: TrustorMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.html#stellar_dotnet_sdk_responses_operations_ChangeTrustOperationResponse_TrustorMuxed
+  commentId: P:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TrustorMuxed
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TrustorMuxed
+  nameWithType: ChangeTrustOperationResponse.TrustorMuxed
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TrustorMuxed*
+  name: TrustorMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.html#stellar_dotnet_sdk_responses_operations_ChangeTrustOperationResponse_TrustorMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TrustorMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TrustorMuxed
+  nameWithType: ChangeTrustOperationResponse.TrustorMuxed
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TrustorMuxedID
+  name: TrustorMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.html#stellar_dotnet_sdk_responses_operations_ChangeTrustOperationResponse_TrustorMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TrustorMuxedID
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TrustorMuxedID
+  nameWithType: ChangeTrustOperationResponse.TrustorMuxedID
+- uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TrustorMuxedID*
+  name: TrustorMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.html#stellar_dotnet_sdk_responses_operations_ChangeTrustOperationResponse_TrustorMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TrustorMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TrustorMuxedID
+  nameWithType: ChangeTrustOperationResponse.TrustorMuxedID
 - uid: stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.TypeId
   name: TypeId
   href: api/stellar_dotnet_sdk.responses.operations.ChangeTrustOperationResponse.html#stellar_dotnet_sdk_responses_operations_ChangeTrustOperationResponse_TypeId
@@ -14125,6 +14281,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.Claimant
   nameWithType: ClaimClaimableBalanceOperationResponse.Claimant
+- uid: stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.ClaimantMuxed
+  name: ClaimantMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.html#stellar_dotnet_sdk_responses_operations_ClaimClaimableBalanceOperationResponse_ClaimantMuxed
+  commentId: P:stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.ClaimantMuxed
+  fullName: stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.ClaimantMuxed
+  nameWithType: ClaimClaimableBalanceOperationResponse.ClaimantMuxed
+- uid: stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.ClaimantMuxed*
+  name: ClaimantMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.html#stellar_dotnet_sdk_responses_operations_ClaimClaimableBalanceOperationResponse_ClaimantMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.ClaimantMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.ClaimantMuxed
+  nameWithType: ClaimClaimableBalanceOperationResponse.ClaimantMuxed
+- uid: stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.ClaimantMuxedID
+  name: ClaimantMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.html#stellar_dotnet_sdk_responses_operations_ClaimClaimableBalanceOperationResponse_ClaimantMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.ClaimantMuxedID
+  fullName: stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.ClaimantMuxedID
+  nameWithType: ClaimClaimableBalanceOperationResponse.ClaimantMuxedID
+- uid: stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.ClaimantMuxedID*
+  name: ClaimantMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.html#stellar_dotnet_sdk_responses_operations_ClaimClaimableBalanceOperationResponse_ClaimantMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.ClaimantMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.ClaimantMuxedID
+  nameWithType: ClaimClaimableBalanceOperationResponse.ClaimantMuxedID
 - uid: stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.TypeId
   name: TypeId
   href: api/stellar_dotnet_sdk.responses.operations.ClaimClaimableBalanceOperationResponse.html#stellar_dotnet_sdk_responses_operations_ClaimClaimableBalanceOperationResponse_TypeId
@@ -14292,6 +14474,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.From
   nameWithType: ClawbackOperationResponse.From
+- uid: stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.FromMuxed
+  name: FromMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.html#stellar_dotnet_sdk_responses_operations_ClawbackOperationResponse_FromMuxed
+  commentId: P:stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.FromMuxed
+  fullName: stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.FromMuxed
+  nameWithType: ClawbackOperationResponse.FromMuxed
+- uid: stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.FromMuxed*
+  name: FromMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.html#stellar_dotnet_sdk_responses_operations_ClawbackOperationResponse_FromMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.FromMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.FromMuxed
+  nameWithType: ClawbackOperationResponse.FromMuxed
+- uid: stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.FromMuxedID
+  name: FromMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.html#stellar_dotnet_sdk_responses_operations_ClawbackOperationResponse_FromMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.FromMuxedID
+  fullName: stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.FromMuxedID
+  nameWithType: ClawbackOperationResponse.FromMuxedID
+- uid: stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.FromMuxedID*
+  name: FromMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.html#stellar_dotnet_sdk_responses_operations_ClawbackOperationResponse_FromMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.FromMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.FromMuxedID
+  nameWithType: ClawbackOperationResponse.FromMuxedID
 - uid: stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.TypeId
   name: TypeId
   href: api/stellar_dotnet_sdk.responses.operations.ClawbackOperationResponse.html#stellar_dotnet_sdk_responses_operations_ClawbackOperationResponse_TypeId
@@ -14356,6 +14564,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.Funder
   nameWithType: CreateAccountOperationResponse.Funder
+- uid: stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.FunderMuxed
+  name: FunderMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.html#stellar_dotnet_sdk_responses_operations_CreateAccountOperationResponse_FunderMuxed
+  commentId: P:stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.FunderMuxed
+  fullName: stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.FunderMuxed
+  nameWithType: CreateAccountOperationResponse.FunderMuxed
+- uid: stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.FunderMuxed*
+  name: FunderMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.html#stellar_dotnet_sdk_responses_operations_CreateAccountOperationResponse_FunderMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.FunderMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.FunderMuxed
+  nameWithType: CreateAccountOperationResponse.FunderMuxed
+- uid: stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.FunderMuxedID
+  name: FunderMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.html#stellar_dotnet_sdk_responses_operations_CreateAccountOperationResponse_FunderMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.FunderMuxedID
+  fullName: stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.FunderMuxedID
+  nameWithType: CreateAccountOperationResponse.FunderMuxedID
+- uid: stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.FunderMuxedID*
+  name: FunderMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.html#stellar_dotnet_sdk_responses_operations_CreateAccountOperationResponse_FunderMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.FunderMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.FunderMuxedID
+  nameWithType: CreateAccountOperationResponse.FunderMuxedID
 - uid: stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.StartingBalance
   name: StartingBalance
   href: api/stellar_dotnet_sdk.responses.operations.CreateAccountOperationResponse.html#stellar_dotnet_sdk_responses_operations_CreateAccountOperationResponse_StartingBalance
@@ -14694,6 +14928,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.BeginSponsor
   nameWithType: EndSponsoringFutureReservesOperationResponse.BeginSponsor
+- uid: stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxed
+  name: BeginSponsorMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.html#stellar_dotnet_sdk_responses_operations_EndSponsoringFutureReservesOperationResponse_BeginSponsorMuxed
+  commentId: P:stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxed
+  fullName: stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxed
+  nameWithType: EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxed
+- uid: stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxed*
+  name: BeginSponsorMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.html#stellar_dotnet_sdk_responses_operations_EndSponsoringFutureReservesOperationResponse_BeginSponsorMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxed
+  nameWithType: EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxed
+- uid: stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxedID
+  name: BeginSponsorMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.html#stellar_dotnet_sdk_responses_operations_EndSponsoringFutureReservesOperationResponse_BeginSponsorMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxedID
+  fullName: stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxedID
+  nameWithType: EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxedID
+- uid: stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxedID*
+  name: BeginSponsorMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.html#stellar_dotnet_sdk_responses_operations_EndSponsoringFutureReservesOperationResponse_BeginSponsorMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxedID
+  nameWithType: EndSponsoringFutureReservesOperationResponse.BeginSponsorMuxedID
 - uid: stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.TypeId
   name: TypeId
   href: api/stellar_dotnet_sdk.responses.operations.EndSponsoringFutureReservesOperationResponse.html#stellar_dotnet_sdk_responses_operations_EndSponsoringFutureReservesOperationResponse_TypeId
@@ -15080,6 +15340,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccount
   nameWithType: OperationResponse.SourceAccount
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccountMuxed
+  name: SourceAccountMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_SourceAccountMuxed
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccountMuxed
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccountMuxed
+  nameWithType: OperationResponse.SourceAccountMuxed
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccountMuxed*
+  name: SourceAccountMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_SourceAccountMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccountMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccountMuxed
+  nameWithType: OperationResponse.SourceAccountMuxed
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccountMuxedID
+  name: SourceAccountMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_SourceAccountMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccountMuxedID
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccountMuxedID
+  nameWithType: OperationResponse.SourceAccountMuxedID
+- uid: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccountMuxedID*
+  name: SourceAccountMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_SourceAccountMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccountMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.OperationResponse.SourceAccountMuxedID
+  nameWithType: OperationResponse.SourceAccountMuxedID
 - uid: stellar_dotnet_sdk.responses.operations.OperationResponse.TransactionHash
   name: TransactionHash
   href: api/stellar_dotnet_sdk.responses.operations.OperationResponse.html#stellar_dotnet_sdk_responses_operations_OperationResponse_TransactionHash
@@ -15774,6 +16060,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.From
   nameWithType: PaymentOperationResponse.From
+- uid: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.FromMuxed
+  name: FromMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.html#stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_FromMuxed
+  commentId: P:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.FromMuxed
+  fullName: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.FromMuxed
+  nameWithType: PaymentOperationResponse.FromMuxed
+- uid: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.FromMuxed*
+  name: FromMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.html#stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_FromMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.FromMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.FromMuxed
+  nameWithType: PaymentOperationResponse.FromMuxed
+- uid: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.FromMuxedID
+  name: FromMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.html#stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_FromMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.FromMuxedID
+  fullName: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.FromMuxedID
+  nameWithType: PaymentOperationResponse.FromMuxedID
+- uid: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.FromMuxedID*
+  name: FromMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.html#stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_FromMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.FromMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.FromMuxedID
+  nameWithType: PaymentOperationResponse.FromMuxedID
 - uid: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.To
   name: To
   href: api/stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.html#stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_To
@@ -15787,6 +16099,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.To
   nameWithType: PaymentOperationResponse.To
+- uid: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.ToMuxed
+  name: ToMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.html#stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_ToMuxed
+  commentId: P:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.ToMuxed
+  fullName: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.ToMuxed
+  nameWithType: PaymentOperationResponse.ToMuxed
+- uid: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.ToMuxed*
+  name: ToMuxed
+  href: api/stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.html#stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_ToMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.ToMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.ToMuxed
+  nameWithType: PaymentOperationResponse.ToMuxed
+- uid: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.ToMuxedID
+  name: ToMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.html#stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_ToMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.ToMuxedID
+  fullName: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.ToMuxedID
+  nameWithType: PaymentOperationResponse.ToMuxedID
+- uid: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.ToMuxedID*
+  name: ToMuxedID
+  href: api/stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.html#stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_ToMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.ToMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.ToMuxedID
+  nameWithType: PaymentOperationResponse.ToMuxedID
 - uid: stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.TypeId
   name: TypeId
   href: api/stellar_dotnet_sdk.responses.operations.PaymentOperationResponse.html#stellar_dotnet_sdk_responses_operations_PaymentOperationResponse_TypeId
@@ -20249,6 +20587,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.TransactionResponse.TransactionResponse
   nameWithType: TransactionResponse.TransactionResponse
+- uid: stellar_dotnet_sdk.responses.TransactionResponse.AccountMuxed
+  name: AccountMuxed
+  href: api/stellar_dotnet_sdk.responses.TransactionResponse.html#stellar_dotnet_sdk_responses_TransactionResponse_AccountMuxed
+  commentId: P:stellar_dotnet_sdk.responses.TransactionResponse.AccountMuxed
+  fullName: stellar_dotnet_sdk.responses.TransactionResponse.AccountMuxed
+  nameWithType: TransactionResponse.AccountMuxed
+- uid: stellar_dotnet_sdk.responses.TransactionResponse.AccountMuxed*
+  name: AccountMuxed
+  href: api/stellar_dotnet_sdk.responses.TransactionResponse.html#stellar_dotnet_sdk_responses_TransactionResponse_AccountMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.TransactionResponse.AccountMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.TransactionResponse.AccountMuxed
+  nameWithType: TransactionResponse.AccountMuxed
+- uid: stellar_dotnet_sdk.responses.TransactionResponse.AccountMuxedID
+  name: AccountMuxedID
+  href: api/stellar_dotnet_sdk.responses.TransactionResponse.html#stellar_dotnet_sdk_responses_TransactionResponse_AccountMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.TransactionResponse.AccountMuxedID
+  fullName: stellar_dotnet_sdk.responses.TransactionResponse.AccountMuxedID
+  nameWithType: TransactionResponse.AccountMuxedID
+- uid: stellar_dotnet_sdk.responses.TransactionResponse.AccountMuxedID*
+  name: AccountMuxedID
+  href: api/stellar_dotnet_sdk.responses.TransactionResponse.html#stellar_dotnet_sdk_responses_TransactionResponse_AccountMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.TransactionResponse.AccountMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.TransactionResponse.AccountMuxedID
+  nameWithType: TransactionResponse.AccountMuxedID
 - uid: stellar_dotnet_sdk.responses.TransactionResponse.CreatedAt
   name: CreatedAt
   href: api/stellar_dotnet_sdk.responses.TransactionResponse.html#stellar_dotnet_sdk_responses_TransactionResponse_CreatedAt
@@ -20288,6 +20652,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.TransactionResponse.FeeAccount
   nameWithType: TransactionResponse.FeeAccount
+- uid: stellar_dotnet_sdk.responses.TransactionResponse.FeeAccountMuxed
+  name: FeeAccountMuxed
+  href: api/stellar_dotnet_sdk.responses.TransactionResponse.html#stellar_dotnet_sdk_responses_TransactionResponse_FeeAccountMuxed
+  commentId: P:stellar_dotnet_sdk.responses.TransactionResponse.FeeAccountMuxed
+  fullName: stellar_dotnet_sdk.responses.TransactionResponse.FeeAccountMuxed
+  nameWithType: TransactionResponse.FeeAccountMuxed
+- uid: stellar_dotnet_sdk.responses.TransactionResponse.FeeAccountMuxed*
+  name: FeeAccountMuxed
+  href: api/stellar_dotnet_sdk.responses.TransactionResponse.html#stellar_dotnet_sdk_responses_TransactionResponse_FeeAccountMuxed_
+  commentId: Overload:stellar_dotnet_sdk.responses.TransactionResponse.FeeAccountMuxed
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.TransactionResponse.FeeAccountMuxed
+  nameWithType: TransactionResponse.FeeAccountMuxed
+- uid: stellar_dotnet_sdk.responses.TransactionResponse.FeeAccountMuxedID
+  name: FeeAccountMuxedID
+  href: api/stellar_dotnet_sdk.responses.TransactionResponse.html#stellar_dotnet_sdk_responses_TransactionResponse_FeeAccountMuxedID
+  commentId: P:stellar_dotnet_sdk.responses.TransactionResponse.FeeAccountMuxedID
+  fullName: stellar_dotnet_sdk.responses.TransactionResponse.FeeAccountMuxedID
+  nameWithType: TransactionResponse.FeeAccountMuxedID
+- uid: stellar_dotnet_sdk.responses.TransactionResponse.FeeAccountMuxedID*
+  name: FeeAccountMuxedID
+  href: api/stellar_dotnet_sdk.responses.TransactionResponse.html#stellar_dotnet_sdk_responses_TransactionResponse_FeeAccountMuxedID_
+  commentId: Overload:stellar_dotnet_sdk.responses.TransactionResponse.FeeAccountMuxedID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.TransactionResponse.FeeAccountMuxedID
+  nameWithType: TransactionResponse.FeeAccountMuxedID
 - uid: stellar_dotnet_sdk.responses.TransactionResponse.FeeBumpTransaction
   name: TransactionResponse.FeeBumpTransaction
   href: api/stellar_dotnet_sdk.responses.TransactionResponse.FeeBumpTransaction.html
