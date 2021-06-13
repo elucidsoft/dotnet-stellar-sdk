@@ -15,6 +15,12 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "begin_sponsor")]
         public string BeginSponsor { get; private set; }
 
+        [JsonProperty(PropertyName = "begin_sponsor_muxed")]
+        public string BeginSponsorMuxed { get; private set; }
+
+        [JsonProperty(PropertyName = "begin_sponsor_muxed_id")]
+        public long? BeginSponsorMuxedID { get; private set; }
+
         public EndSponsoringFutureReservesOperationResponse()
         {
 

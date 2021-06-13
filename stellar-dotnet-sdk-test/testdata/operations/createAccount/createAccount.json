@@ -1,0 +1,28 @@
+﻿{
+  "_links": {
+    "effects": {
+      "href": "/operations/3936840037961729/effects{?cursor,limit,order}",
+      "templated": true
+    },
+    "precedes": {
+      "href": "/operations?cursor=3936840037961729&order=asc"
+    },
+    "self": {
+      "href": "/operations/3936840037961729"
+    },
+    "succeeds": {
+      "href": "/operations?cursor=3936840037961729&order=desc"
+    },
+    "transaction": {
+      "href": "/transactions/75608563ae63757ffc0650d84d1d13c0f3cd4970a294a2a6b43e3f454e0f9e6d"
+    }
+  },
+  "account": "GAR4DDXYNSN2CORG3XQFLAPWYKTUMLZYHYWV4Y2YJJ4JO6ZJFXMJD7PT",
+  "funder": "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2",
+  "id": 3936840037961729,
+  "paging_token": "3936840037961729",
+  "source_account": "GD6WU64OEP5C4LRBH6NK3MHYIA2ADN6K6II6EXPNVUR3ERBXT4AN4ACD",
+  "starting_balance": "299454.904954",
+  "type": "create_account",
+  "type_i": 0
+}

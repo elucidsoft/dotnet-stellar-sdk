@@ -45,6 +45,12 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "trustor")]
         public string Trustor { get; private set; }
 
+        [JsonProperty(PropertyName = "trustor_muxed")]
+        public string TrustorMuxed { get; private set; }
+
+        [JsonProperty(PropertyName = "trustor_muxed_id")]
+        public long? TrustorMuxedID { get; private set; }
+
         public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);
     }
 }

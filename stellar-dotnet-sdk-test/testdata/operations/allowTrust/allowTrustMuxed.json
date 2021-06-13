@@ -1,0 +1,32 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "//horizon-testnet.stellar.org/operations/3602979345141761"
+    },
+    "transaction": {
+      "href": "//horizon-testnet.stellar.org/transactions/1f265c075e8559ee4c21a32ae53337658e52d7504841adad4144c37143ea01a2"
+    },
+    "effects": {
+      "href": "//horizon-testnet.stellar.org/operations/3602979345141761/effects"
+    },
+    "succeeds": {
+      "href": "//horizon-testnet.stellar.org/effects?order=desc&cursor=3602979345141761"
+    },
+    "precedes": {
+      "href": "//horizon-testnet.stellar.org/effects?order=asc&cursor=3602979345141761"
+    }
+  },
+  "id": "3602979345141761",
+  "paging_token": "3602979345141761",
+  "source_account": "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM",
+  "type": "allow_trust",
+  "type_i": 7,
+  "asset_type": "credit_alphanum4",
+  "asset_code": "EUR",
+  "asset_issuer": "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM",
+  "trustee": "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2",
+  "trustee_muxed": "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24",
+  "trustee_muxed_id": "5123456789",
+  "trustor": "GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F",
+  "authorize": true
+}

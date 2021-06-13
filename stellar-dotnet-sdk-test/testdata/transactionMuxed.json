@@ -1,0 +1,69 @@
+﻿{
+  "_links": {
+    "self": {
+      "href": "transactions/3dfef7d7226995b504f2827cc63d45ad41e9687bb0a8abcf08ba755fedca0352"
+    },
+    "account": {
+      "href": "/accounts/GABQGAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB2MX"
+    },
+    "ledger": {
+      "href": "ledgers/123"
+    },
+    "operations": {
+      "href": "transactions/3dfef7d7226995b504f2827cc63d45ad41e9687bb0a8abcf08ba755fedca0352/operations{?cursor,limit,order}",
+      "templated": true
+    },
+    "effects": {
+      "href": "transactions/3dfef7d7226995b504f2827cc63d45ad41e9687bb0a8abcf08ba755fedca0352/effects{?cursor,limit,order}",
+      "templated": true
+    },
+    "precedes": {
+      "href": "transactions?order=asc&cursor=528280981504"
+    },
+    "succeeds": {
+      "href": "transactions?order=desc&cursor=528280981504"
+    },
+    "transaction": {
+      "href": "transactions/3dfef7d7226995b504f2827cc63d45ad41e9687bb0a8abcf08ba755fedca0352"
+    }
+  },
+  "id": "3dfef7d7226995b504f2827cc63d45ad41e9687bb0a8abcf08ba755fedca0352",
+  "paging_token": "528280981504",
+  "successful": true,
+  "hash": "3dfef7d7226995b504f2827cc63d45ad41e9687bb0a8abcf08ba755fedca0352",
+  "ledger": 123,
+  "created_at": "2020-04-21T10:21:26Z",
+  "source_account": "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2",
+  "account_muxed": "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24",
+  "account_muxed_id": 5123456789,
+  "source_account_sequence": "97",
+  "fee_account": "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2",
+  "fee_account_muxed": "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24",
+  "fee_account_muxed_id": 5123456789,
+  "fee_charged": 123,
+  "max_fee": 776,
+  "operation_count": 1,
+  "envelope_xdr": "AAAABQAAAAACAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMIAAAAAgAAAAADAwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGMAAAAAAAAAYQAAAAEAAAAAAAAAAgAAAAAAAAAEAAAAAAAAAAEAAAAAAAAACwAAAAAAAABiAAAAAAAAAAECAgICAAAAAxQUFAAAAAAAAAAAAQMDAwMAAAADHh4eAA==",
+  "result_xdr": "AAAAAAAAAHsAAAAB6Yhpu6i84IwQt4QGICEn84iMJUVM03sCYAhiRSdR9SYAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAsAAAAAAAAAAAAAAAA=",
+  "result_meta_xdr": "AAAAAQAAAAAAAAAA",
+  "fee_meta_xdr": "AAAAAA==",
+  "memo_type": "none",
+  "signatures": [
+    "Hh4e"
+  ],
+  "valid_after": "1970-01-01T00:00:02Z",
+  "valid_before": "1970-01-01T00:00:04Z",
+  "fee_bump_transaction": {
+    "hash": "3dfef7d7226995b504f2827cc63d45ad41e9687bb0a8abcf08ba755fedca0352",
+    "signatures": [
+      "Hh4e"
+    ]
+  },
+  "inner_transaction": {
+    "hash": "e98869bba8bce08c10b78406202127f3888c25454cd37b02600862452751f526",
+    "signatures": [
+      "FBQU"
+    ],
+    "max_fee": "99"
+  }
+}
