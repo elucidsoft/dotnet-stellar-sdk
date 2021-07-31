@@ -27,7 +27,7 @@ namespace stellar_dotnet_sdk
         /// <exception cref="ArgumentException"></exception>
         public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, string clientAccountId,
             string homeDomain, string webAuthDomain, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
-            Network network = null)
+            Network network = null, string clientDomain = null, KeyPair clientKeypair = null)
         {
             if (string.IsNullOrEmpty(clientAccountId)) throw new ArgumentNullException(nameof(clientAccountId));
 
@@ -35,7 +35,7 @@ namespace stellar_dotnet_sdk
                 throw new InvalidWebAuthenticationException($"{nameof(clientAccountId)} is not a valid account id");
             var clientAccountKeypair = KeyPair.FromAccountId(clientAccountId);
             return BuildChallengeTransaction(serverKeypair, clientAccountKeypair, homeDomain, webAuthDomain, nonce, now, timeout,
-                network);
+                network, clientDomain, clientKeypair);
         }
 
         /// <summary>
@@ -54,12 +54,13 @@ namespace stellar_dotnet_sdk
         /// <exception cref="ArgumentException"></exception>
         public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, KeyPair clientAccountId,
             string homeDomain, string webAuthDomain, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
-            Network network = null)
+            Network network = null, string clientDomain = null, KeyPair clientSigningKey = null)
         {
             if (serverKeypair is null) throw new ArgumentNullException(nameof(serverKeypair));
             if (clientAccountId is null) throw new ArgumentNullException(nameof(clientAccountId));
             if (string.IsNullOrEmpty(homeDomain)) throw new ArgumentNullException(nameof(homeDomain));
             if (string.IsNullOrEmpty(webAuthDomain)) throw new ArgumentNullException(nameof(webAuthDomain));
+            if (!string.IsNullOrEmpty(clientDomain) && clientSigningKey is null) throw new ArgumentNullException(nameof(clientSigningKey));
 
             if (nonce is null)
             {
@@ -97,11 +98,22 @@ namespace stellar_dotnet_sdk
                 .SetSourceAccount(serverKeypair)
                 .Build();
 
-            var tx = new TransactionBuilder(serverAccount)
+            var txBuilder = new TransactionBuilder(serverAccount)
                 .AddTimeBounds(timeBounds)
                 .AddOperation(operation)
-                .AddOperation(webAuthOperation)
+                .AddOperation(webAuthOperation);
+
+
+            if (!string.IsNullOrEmpty(clientDomain))
+            {
+                var clientDomainOperation = new ManageDataOperation.Builder("client_domain", Encoding.UTF8.GetBytes(clientDomain))
+                .SetSourceAccount(clientSigningKey)
                 .Build();
+
+                txBuilder.AddOperation(clientDomainOperation);
+            }
+
+            var tx = txBuilder.Build();
 
             tx.Sign(serverKeypair, network);
 
@@ -208,12 +220,12 @@ namespace stellar_dotnet_sdk
                     throw new InvalidWebAuthenticationException("The transaction has operations that are not of type 'manageData'");
                 }
 
-                if (op.SourceAccount.AccountId != serverAccountId)
+                var opManageData = (ManageDataOperation)op;
+                if (opManageData.SourceAccount.AccountId != serverAccountId && opManageData.Name != "client_domain")
                 {
                     throw new InvalidWebAuthenticationException("The transaction has operations that are unrecognized");
                 }
 
-                var opManageData = (ManageDataOperation)op;
                 var opDataValue = opManageData.Value != null ? Encoding.UTF8.GetString(opManageData.Value) : null;
 
                 if (opManageData.Name == "web_auth_domain" && (opManageData.Value == null || opDataValue != webAuthDomain))
