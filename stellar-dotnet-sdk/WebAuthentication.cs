@@ -307,17 +307,46 @@ namespace stellar_dotnet_sdk
 
             ReadChallengeTransaction(transaction, serverAccountId, homeDomain, webAuthDomain, network, now);
 
+            // If the client domain is included in the challenge transaction,
+            // verify that the transaction is signed by the operation's source account.
+            KeyPair clientSigningKey = null;
+            foreach (var operation in transaction.Operations)
+            {
+                if (operation is ManageDataOperation && ((ManageDataOperation)operation).Name == "client_domain")
+                {
+                    clientSigningKey = KeyPair.FromAccountId(operation.SourceAccount.AccountId);
+                    break;
+                }
+            }
+
             // Remove server signer if present
             var serverKeypair = KeyPair.FromAccountId(serverAccountId);
             var clientSigners = signers.Where(signer => signer != serverKeypair.Address).ToList();
 
+            List<string> additionalSigners = new List<string>() { serverKeypair.Address };
+            if (clientSigningKey != null)
+            {
+                additionalSigners.Add(clientSigningKey.Address);
+            }
+
             var allSigners = clientSigners.Select(signer => signer.Clone() as string).ToList();
-            allSigners.Add(serverKeypair.Address);
+            allSigners.AddRange(additionalSigners);
+
             var allSignersFound = VerifyTransactionSignatures(transaction, allSigners, network);
 
             var serverSigner = allSignersFound.FirstOrDefault(signer => signer == serverKeypair.Address);
+            bool clientSigningKeyFound = false;
+
+            if (clientSigningKey != null)
+            {
+                clientSigningKeyFound = !string.IsNullOrEmpty(allSignersFound.FirstOrDefault(signer => signer == clientSigningKey.Address));
+            }
+
             if (serverSigner is null)
                 throw new InvalidWebAuthenticationException("Challenge transaction not signed by server");
+
+            if (clientSigningKey != null && !clientSigningKeyFound)
+                throw new InvalidWebAuthenticationException("Challenge Transaction not signed by the source account of the 'client_domain' ");
 
             if (allSignersFound.Count == 1)
                 throw new InvalidWebAuthenticationException("Challenge transaction not signed by client");

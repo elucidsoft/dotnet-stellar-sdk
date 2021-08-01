@@ -12,6 +12,7 @@ namespace stellar_dotnet_sdk_test
     {
         private const string HomeDomain = "thisisatest.sandbox.anchor.anchordomain.com";
         private const string WebAuthDomain = "thisisatest.sandbox.anchor.webauth.com";
+        private const string ClientDomain = "thisisatest.sandbox.anchor.client.com";
 
         private string ManageDataOperationName => $"{HomeDomain} auth";
 
@@ -1659,6 +1660,31 @@ namespace stellar_dotnet_sdk_test
             var readTransactionID = WebAuthentication.ReadChallengeTransaction(transaction, serverKeypair.AccountId, HomeDomain, "", Network.Test());
 
             Assert.AreEqual(clientKeypair.AccountId, readTransactionID);
+        }
+
+        [TestMethod]
+        public void TestVerifyChallengeTransactionWithClientDomain()
+        {
+            var serverKeypair = KeyPair.Random();
+            var clientKeypair = KeyPair.Random();
+
+            Network.UseTestNetwork();
+
+            var now = DateTimeOffset.Now;
+
+            var tx = WebAuthentication.BuildChallengeTransaction(serverKeypair, clientKeypair, HomeDomain, WebAuthDomain, now: now, clientDomain: ClientDomain, clientSigningKey: clientKeypair);
+            var manageDataOperation = (ManageDataOperation)tx.Operations[2];
+
+            var signers = new List<string>();
+            signers.Add(serverKeypair.AccountId);
+            signers.Add(clientKeypair.AccountId);
+
+            Assert.AreEqual(manageDataOperation.Name, "client_domain");
+
+            Assert.ThrowsException<InvalidWebAuthenticationException>(() =>
+            {
+                WebAuthentication.VerifyChallengeTransactionSigners(tx, serverKeypair.AccountId, signers, HomeDomain, WebAuthDomain, now: now);
+            });
         }
     }
 }
