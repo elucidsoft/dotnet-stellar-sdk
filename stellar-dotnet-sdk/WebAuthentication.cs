@@ -49,6 +49,8 @@ namespace stellar_dotnet_sdk
         /// <param name="now">The datetime from which the transaction is valid</param>
         /// <param name="timeout">The transaction lifespan</param>
         /// <param name="network">The network the transaction will be submitted to</param>
+        /// <param name="clientDomain">Optional Client Domain</param> 
+        /// <param name="clientDomain">Client Signing Key (Used with Client Domain)</param>
         /// <returns>The challenge transaction</returns>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
