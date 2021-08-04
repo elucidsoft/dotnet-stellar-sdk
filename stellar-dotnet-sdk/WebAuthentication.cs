@@ -27,7 +27,7 @@ namespace stellar_dotnet_sdk
         /// <exception cref="ArgumentException"></exception>
         public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, string clientAccountId,
             string homeDomain, string webAuthDomain, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
-            Network network = null)
+            Network network = null, string clientDomain = null, KeyPair clientKeypair = null)
         {
             if (string.IsNullOrEmpty(clientAccountId)) throw new ArgumentNullException(nameof(clientAccountId));
 
@@ -35,7 +35,7 @@ namespace stellar_dotnet_sdk
                 throw new InvalidWebAuthenticationException($"{nameof(clientAccountId)} is not a valid account id");
             var clientAccountKeypair = KeyPair.FromAccountId(clientAccountId);
             return BuildChallengeTransaction(serverKeypair, clientAccountKeypair, homeDomain, webAuthDomain, nonce, now, timeout,
-                network);
+                network, clientDomain, clientKeypair);
         }
 
         /// <summary>
@@ -49,17 +49,20 @@ namespace stellar_dotnet_sdk
         /// <param name="now">The datetime from which the transaction is valid</param>
         /// <param name="timeout">The transaction lifespan</param>
         /// <param name="network">The network the transaction will be submitted to</param>
+        /// <param name="clientDomain">Optional Client Domain</param> 
+        /// <param name="clientDomain">Client Signing Key (Used with Client Domain)</param>
         /// <returns>The challenge transaction</returns>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
         public static Transaction BuildChallengeTransaction(KeyPair serverKeypair, KeyPair clientAccountId,
             string homeDomain, string webAuthDomain, byte[] nonce = null, DateTimeOffset? now = null, TimeSpan? timeout = null,
-            Network network = null)
+            Network network = null, string clientDomain = null, KeyPair clientSigningKey = null)
         {
             if (serverKeypair is null) throw new ArgumentNullException(nameof(serverKeypair));
             if (clientAccountId is null) throw new ArgumentNullException(nameof(clientAccountId));
             if (string.IsNullOrEmpty(homeDomain)) throw new ArgumentNullException(nameof(homeDomain));
             if (string.IsNullOrEmpty(webAuthDomain)) throw new ArgumentNullException(nameof(webAuthDomain));
+            if (!string.IsNullOrEmpty(clientDomain) && clientSigningKey is null) throw new ArgumentNullException(nameof(clientSigningKey));
 
             if (nonce is null)
             {
@@ -97,11 +100,22 @@ namespace stellar_dotnet_sdk
                 .SetSourceAccount(serverKeypair)
                 .Build();
 
-            var tx = new TransactionBuilder(serverAccount)
+            var txBuilder = new TransactionBuilder(serverAccount)
                 .AddTimeBounds(timeBounds)
                 .AddOperation(operation)
-                .AddOperation(webAuthOperation)
+                .AddOperation(webAuthOperation);
+
+
+            if (!string.IsNullOrEmpty(clientDomain))
+            {
+                var clientDomainOperation = new ManageDataOperation.Builder("client_domain", Encoding.UTF8.GetBytes(clientDomain))
+                .SetSourceAccount(clientSigningKey)
                 .Build();
+
+                txBuilder.AddOperation(clientDomainOperation);
+            }
+
+            var tx = txBuilder.Build();
 
             tx.Sign(serverKeypair, network);
 
@@ -208,12 +222,12 @@ namespace stellar_dotnet_sdk
                     throw new InvalidWebAuthenticationException("The transaction has operations that are not of type 'manageData'");
                 }
 
-                if (op.SourceAccount.AccountId != serverAccountId)
+                var opManageData = (ManageDataOperation)op;
+                if (opManageData.SourceAccount.AccountId != serverAccountId && opManageData.Name != "client_domain")
                 {
                     throw new InvalidWebAuthenticationException("The transaction has operations that are unrecognized");
                 }
 
-                var opManageData = (ManageDataOperation)op;
                 var opDataValue = opManageData.Value != null ? Encoding.UTF8.GetString(opManageData.Value) : null;
 
                 if (opManageData.Name == "web_auth_domain" && (opManageData.Value == null || opDataValue != webAuthDomain))
@@ -295,17 +309,46 @@ namespace stellar_dotnet_sdk
 
             ReadChallengeTransaction(transaction, serverAccountId, homeDomain, webAuthDomain, network, now);
 
+            // If the client domain is included in the challenge transaction,
+            // verify that the transaction is signed by the operation's source account.
+            KeyPair clientSigningKey = null;
+            foreach (var operation in transaction.Operations)
+            {
+                if (operation is ManageDataOperation && ((ManageDataOperation)operation).Name == "client_domain")
+                {
+                    clientSigningKey = KeyPair.FromAccountId(operation.SourceAccount.AccountId);
+                    break;
+                }
+            }
+
             // Remove server signer if present
             var serverKeypair = KeyPair.FromAccountId(serverAccountId);
             var clientSigners = signers.Where(signer => signer != serverKeypair.Address).ToList();
 
+            List<string> additionalSigners = new List<string>() { serverKeypair.Address };
+            if (clientSigningKey != null)
+            {
+                additionalSigners.Add(clientSigningKey.Address);
+            }
+
             var allSigners = clientSigners.Select(signer => signer.Clone() as string).ToList();
-            allSigners.Add(serverKeypair.Address);
+            allSigners.AddRange(additionalSigners);
+
             var allSignersFound = VerifyTransactionSignatures(transaction, allSigners, network);
 
             var serverSigner = allSignersFound.FirstOrDefault(signer => signer == serverKeypair.Address);
+            bool clientSigningKeyFound = false;
+
+            if (clientSigningKey != null)
+            {
+                clientSigningKeyFound = !string.IsNullOrEmpty(allSignersFound.FirstOrDefault(signer => signer == clientSigningKey.Address));
+            }
+
             if (serverSigner is null)
                 throw new InvalidWebAuthenticationException("Challenge transaction not signed by server");
+
+            if (clientSigningKey != null && !clientSigningKeyFound)
+                throw new InvalidWebAuthenticationException("Challenge Transaction not signed by the source account of the 'client_domain' ");
 
             if (allSignersFound.Count == 1)
                 throw new InvalidWebAuthenticationException("Challenge transaction not signed by client");
