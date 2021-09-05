@@ -64,7 +64,7 @@ namespace stellar_dotnet_sdk.responses.results
                 Buying = Asset.FromXdr(entry.Buying),
                 Amount = stellar_dotnet_sdk.Amount.FromXdr(entry.Amount.InnerValue),
                 Price = Price.FromXdr(entry.Price),
-                Flags = FlagsFromXdr(entry.Flags.InnerValue)
+                Flags = FlagsFromXdr((uint)entry.Flags.InnerValue)
             };
         }
 

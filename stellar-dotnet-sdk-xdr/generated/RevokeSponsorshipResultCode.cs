@@ -16,7 +16,8 @@ namespace stellar_dotnet_sdk.xdr
     //      REVOKE_SPONSORSHIP_DOES_NOT_EXIST = -1,
     //      REVOKE_SPONSORSHIP_NOT_SPONSOR = -2,
     //      REVOKE_SPONSORSHIP_LOW_RESERVE = -3,
-    //      REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE = -4
+    //      REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE = -4,
+    //      REVOKE_SPONSORSHIP_MALFORMED = -5
     //  };
 
     //  ===========================================================================
@@ -29,6 +30,7 @@ namespace stellar_dotnet_sdk.xdr
             REVOKE_SPONSORSHIP_NOT_SPONSOR = -2,
             REVOKE_SPONSORSHIP_LOW_RESERVE = -3,
             REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE = -4,
+            REVOKE_SPONSORSHIP_MALFORMED = -5,
         }
         public RevokeSponsorshipResultCodeEnum InnerValue { get; set; } = default(RevokeSponsorshipResultCodeEnum);
 
@@ -50,6 +52,7 @@ namespace stellar_dotnet_sdk.xdr
                 case -2: return Create(RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_NOT_SPONSOR);
                 case -3: return Create(RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_LOW_RESERVE);
                 case -4: return Create(RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE);
+                case -5: return Create(RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_MALFORMED);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

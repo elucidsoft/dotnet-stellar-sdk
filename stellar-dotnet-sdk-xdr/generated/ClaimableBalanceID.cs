@@ -11,6 +11,8 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case CLAIMABLE_BALANCE_ID_TYPE_V0:
     //      Hash v0;
+    //  case CLAIMABLE_BALANCE_ID_TYPE_FROM_POOL_REVOKE:
+    //      Hash fromPoolRevoke;
     //  };
 
     //  ===========================================================================
@@ -21,6 +23,7 @@ namespace stellar_dotnet_sdk.xdr
         public ClaimableBalanceIDType Discriminant { get; set; } = new ClaimableBalanceIDType();
 
         public Hash V0 { get; set; }
+        public Hash FromPoolRevoke { get; set; }
         public static void Encode(XdrDataOutputStream stream, ClaimableBalanceID encodedClaimableBalanceID)
         {
             stream.WriteInt((int)encodedClaimableBalanceID.Discriminant.InnerValue);
@@ -28,6 +31,9 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case ClaimableBalanceIDType.ClaimableBalanceIDTypeEnum.CLAIMABLE_BALANCE_ID_TYPE_V0:
                     Hash.Encode(stream, encodedClaimableBalanceID.V0);
+                    break;
+                case ClaimableBalanceIDType.ClaimableBalanceIDTypeEnum.CLAIMABLE_BALANCE_ID_TYPE_FROM_POOL_REVOKE:
+                    Hash.Encode(stream, encodedClaimableBalanceID.FromPoolRevoke);
                     break;
             }
         }
@@ -40,6 +46,9 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case ClaimableBalanceIDType.ClaimableBalanceIDTypeEnum.CLAIMABLE_BALANCE_ID_TYPE_V0:
                     decodedClaimableBalanceID.V0 = Hash.Decode(stream);
+                    break;
+                case ClaimableBalanceIDType.ClaimableBalanceIDTypeEnum.CLAIMABLE_BALANCE_ID_TYPE_FROM_POOL_REVOKE:
+                    decodedClaimableBalanceID.FromPoolRevoke = Hash.Decode(stream);
                     break;
             }
             return decodedClaimableBalanceID;

@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk.xdr
     //  struct ManageOfferSuccessResult
     //  {
     //      // offers that got claimed while creating this offer
-    //      ClaimOfferAtom offersClaimed<>;
+    //      ClaimAtom offersClaimed<>;
     //  
     //      union switch (ManageOfferEffect effect)
     //      {
@@ -27,7 +27,7 @@ namespace stellar_dotnet_sdk.xdr
     public class ManageOfferSuccessResult
     {
         public ManageOfferSuccessResult() { }
-        public ClaimOfferAtom[] OffersClaimed { get; set; }
+        public ClaimAtom[] OffersClaimed { get; set; }
         public ManageOfferSuccessResultOffer Offer { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, ManageOfferSuccessResult encodedManageOfferSuccessResult)
@@ -36,7 +36,7 @@ namespace stellar_dotnet_sdk.xdr
             stream.WriteInt(offersClaimedsize);
             for (int i = 0; i < offersClaimedsize; i++)
             {
-                ClaimOfferAtom.Encode(stream, encodedManageOfferSuccessResult.OffersClaimed[i]);
+                ClaimAtom.Encode(stream, encodedManageOfferSuccessResult.OffersClaimed[i]);
             }
             ManageOfferSuccessResultOffer.Encode(stream, encodedManageOfferSuccessResult.Offer);
         }
@@ -44,10 +44,10 @@ namespace stellar_dotnet_sdk.xdr
         {
             ManageOfferSuccessResult decodedManageOfferSuccessResult = new ManageOfferSuccessResult();
             int offersClaimedsize = stream.ReadInt();
-            decodedManageOfferSuccessResult.OffersClaimed = new ClaimOfferAtom[offersClaimedsize];
+            decodedManageOfferSuccessResult.OffersClaimed = new ClaimAtom[offersClaimedsize];
             for (int i = 0; i < offersClaimedsize; i++)
             {
-                decodedManageOfferSuccessResult.OffersClaimed[i] = ClaimOfferAtom.Decode(stream);
+                decodedManageOfferSuccessResult.OffersClaimed[i] = ClaimAtom.Decode(stream);
             }
             decodedManageOfferSuccessResult.Offer = ManageOfferSuccessResultOffer.Decode(stream);
             return decodedManageOfferSuccessResult;

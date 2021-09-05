@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk
             var memo = new xdr.Memo();
             memo.Discriminant = MemoType.Create(MemoType.MemoTypeEnum.MEMO_ID);
             var idXdr = new Uint64();
-            idXdr.InnerValue = IdValue;
+            idXdr.InnerValue = (long)IdValue;
             memo.Id = idXdr;
             return memo;
         }

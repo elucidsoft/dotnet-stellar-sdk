@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk.xdr
     //  struct SCPQuorumSet
     //  {
     //      uint32 threshold;
-    //      PublicKey validators<>;
+    //      NodeID validators<>;
     //      SCPQuorumSet innerSets<>;
     //  };
 
@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk.xdr
     {
         public SCPQuorumSet() { }
         public Uint32 Threshold { get; set; }
-        public PublicKey[] Validators { get; set; }
+        public NodeID[] Validators { get; set; }
         public SCPQuorumSet[] InnerSets { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, SCPQuorumSet encodedSCPQuorumSet)
@@ -29,7 +29,7 @@ namespace stellar_dotnet_sdk.xdr
             stream.WriteInt(validatorssize);
             for (int i = 0; i < validatorssize; i++)
             {
-                PublicKey.Encode(stream, encodedSCPQuorumSet.Validators[i]);
+                NodeID.Encode(stream, encodedSCPQuorumSet.Validators[i]);
             }
             int innerSetssize = encodedSCPQuorumSet.InnerSets.Length;
             stream.WriteInt(innerSetssize);
@@ -43,10 +43,10 @@ namespace stellar_dotnet_sdk.xdr
             SCPQuorumSet decodedSCPQuorumSet = new SCPQuorumSet();
             decodedSCPQuorumSet.Threshold = Uint32.Decode(stream);
             int validatorssize = stream.ReadInt();
-            decodedSCPQuorumSet.Validators = new PublicKey[validatorssize];
+            decodedSCPQuorumSet.Validators = new NodeID[validatorssize];
             for (int i = 0; i < validatorssize; i++)
             {
-                decodedSCPQuorumSet.Validators[i] = PublicKey.Decode(stream);
+                decodedSCPQuorumSet.Validators[i] = NodeID.Decode(stream);
             }
             int innerSetssize = stream.ReadInt();
             decodedSCPQuorumSet.InnerSets = new SCPQuorumSet[innerSetssize];

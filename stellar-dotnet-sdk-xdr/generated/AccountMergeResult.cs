@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk.xdr
     //  union AccountMergeResult switch (AccountMergeResultCode code)
     //  {
     //  case ACCOUNT_MERGE_SUCCESS:
-    //      int64 sourceAccountBalance; // how much got transfered from source account
+    //      int64 sourceAccountBalance; // how much got transferred from source account
     //  default:
     //      void;
     //  };

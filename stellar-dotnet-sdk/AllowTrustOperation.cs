@@ -77,11 +77,11 @@ namespace stellar_dotnet_sdk
 
             if (Authorize)
             {
-                trustlineFlag.InnerValue = (uint)TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_FLAG;
+                trustlineFlag.InnerValue = (int)(uint)TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_FLAG;
             }
             else if (AuthorizeToMaintainLiabilities)
             {
-                trustlineFlag.InnerValue = (uint)TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_TO_MAINTAIN_LIABILITIES_FLAG;
+                trustlineFlag.InnerValue = (int)(uint)TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_TO_MAINTAIN_LIABILITIES_FLAG;
             }
             else
             {
@@ -131,7 +131,7 @@ namespace stellar_dotnet_sdk
                         throw new Exception("Unknown asset code");
                 }
 
-                uint trustlineFlag = op.Authorize.InnerValue;
+                uint trustlineFlag = (uint)op.Authorize.InnerValue;
 
                 if (trustlineFlag == (uint)TrustLineFlags.TrustLineFlagsEnum.AUTHORIZED_FLAG)
                 {

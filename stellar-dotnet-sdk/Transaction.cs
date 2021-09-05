@@ -84,7 +84,7 @@ namespace stellar_dotnet_sdk
                 throw new Exception("TransactionEnvelope V0 expects a KeyPair source account");
 
             // fee
-            var fee = new Uint32 { InnerValue = Fee };
+            var fee = new Uint32 { InnerValue = (int)Fee };
 
             // sequenceNumber
             var sequenceNumberUint = new xdr.Int64(SequenceNumber);
@@ -122,7 +122,7 @@ namespace stellar_dotnet_sdk
         public xdr.Transaction ToXdrV1()
         {
             // fee
-            var fee = new Uint32 { InnerValue = Fee };
+            var fee = new Uint32 { InnerValue = (int)Fee };
 
             // sequenceNumber
             var sequenceNumberUint = new xdr.Int64(SequenceNumber);
@@ -242,7 +242,7 @@ namespace stellar_dotnet_sdk
                 operations[i] = Operation.FromXdr(transactionXdr.Operations[i]);
             }
 
-            Transaction transaction = new Transaction(sourceAccount, fee, sequenceNumber, operations, memo, timeBounds);
+            Transaction transaction = new Transaction(sourceAccount, (uint)fee, sequenceNumber, operations, memo, timeBounds);
 
             foreach (var signature in envelope.Signatures)
             {
@@ -267,7 +267,7 @@ namespace stellar_dotnet_sdk
                 operations[i] = Operation.FromXdr(transactionXdr.Operations[i]);
             }
 
-            Transaction transaction = new Transaction(sourceAccount, fee, sequenceNumber, operations, memo, timeBounds);
+            Transaction transaction = new Transaction(sourceAccount, (uint)fee, sequenceNumber, operations, memo, timeBounds);
 
             foreach (var signature in envelope.Signatures)
             {

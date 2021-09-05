@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk.xdr
     //  struct TrustLineEntry
     //  {
     //      AccountID accountID; // account this trustline belongs to
-    //      Asset asset;         // type of asset (with issuer)
+    //      TrustLineAsset asset;         // type of asset (with issuer)
     //      int64 balance;       // how much of this asset the user has.
     //                           // Asset defines the unit for this;
     //  
@@ -31,6 +31,8 @@ namespace stellar_dotnet_sdk.xdr
     //              {
     //              case 0:
     //                  void;
+    //              case 2:
+    //                  TrustLineEntryExtensionV2 v2;
     //              }
     //              ext;
     //          } v1;
@@ -43,7 +45,7 @@ namespace stellar_dotnet_sdk.xdr
     {
         public TrustLineEntry() { }
         public AccountID AccountID { get; set; }
-        public Asset Asset { get; set; }
+        public TrustLineAsset Asset { get; set; }
         public Int64 Balance { get; set; }
         public Int64 Limit { get; set; }
         public Uint32 Flags { get; set; }
@@ -52,7 +54,7 @@ namespace stellar_dotnet_sdk.xdr
         public static void Encode(XdrDataOutputStream stream, TrustLineEntry encodedTrustLineEntry)
         {
             AccountID.Encode(stream, encodedTrustLineEntry.AccountID);
-            Asset.Encode(stream, encodedTrustLineEntry.Asset);
+            TrustLineAsset.Encode(stream, encodedTrustLineEntry.Asset);
             Int64.Encode(stream, encodedTrustLineEntry.Balance);
             Int64.Encode(stream, encodedTrustLineEntry.Limit);
             Uint32.Encode(stream, encodedTrustLineEntry.Flags);
@@ -62,7 +64,7 @@ namespace stellar_dotnet_sdk.xdr
         {
             TrustLineEntry decodedTrustLineEntry = new TrustLineEntry();
             decodedTrustLineEntry.AccountID = AccountID.Decode(stream);
-            decodedTrustLineEntry.Asset = Asset.Decode(stream);
+            decodedTrustLineEntry.Asset = TrustLineAsset.Decode(stream);
             decodedTrustLineEntry.Balance = Int64.Decode(stream);
             decodedTrustLineEntry.Limit = Int64.Decode(stream);
             decodedTrustLineEntry.Flags = Uint32.Decode(stream);
@@ -130,12 +132,16 @@ namespace stellar_dotnet_sdk.xdr
 
                     public int Discriminant { get; set; } = new int();
 
+                    public TrustLineEntryExtensionV2 V2 { get; set; }
                     public static void Encode(XdrDataOutputStream stream, TrustLineEntryV1Ext encodedTrustLineEntryV1Ext)
                     {
                         stream.WriteInt((int)encodedTrustLineEntryV1Ext.Discriminant);
                         switch (encodedTrustLineEntryV1Ext.Discriminant)
                         {
                             case 0:
+                                break;
+                            case 2:
+                                TrustLineEntryExtensionV2.Encode(stream, encodedTrustLineEntryV1Ext.V2);
                                 break;
                         }
                     }
@@ -147,6 +153,9 @@ namespace stellar_dotnet_sdk.xdr
                         switch (decodedTrustLineEntryV1Ext.Discriminant)
                         {
                             case 0:
+                                break;
+                            case 2:
+                                decodedTrustLineEntryV1Ext.V2 = TrustLineEntryExtensionV2.Decode(stream);
                                 break;
                         }
                         return decodedTrustLineEntryV1Ext;

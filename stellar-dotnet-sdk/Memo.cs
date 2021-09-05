@@ -83,7 +83,7 @@
                 case xdr.MemoType.MemoTypeEnum.MEMO_NONE:
                     return None();
                 case xdr.MemoType.MemoTypeEnum.MEMO_ID:
-                    return Id(memo.Id.InnerValue);
+                    return Id((ulong)memo.Id.InnerValue);
                 case xdr.MemoType.MemoTypeEnum.MEMO_TEXT:
                     return Text(memo.Text);
                 case xdr.MemoType.MemoTypeEnum.MEMO_HASH:

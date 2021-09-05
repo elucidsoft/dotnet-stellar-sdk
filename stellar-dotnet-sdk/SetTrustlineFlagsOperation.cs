@@ -42,8 +42,8 @@ namespace stellar_dotnet_sdk
                 {
                     Asset = Asset.ToXdr(),
                     Trustor = new xdr.AccountID(Trustor.XdrPublicKey),
-                    SetFlags = new xdr.Uint32() { InnerValue = SetFlags.Value },
-                    ClearFlags = new xdr.Uint32() { InnerValue = ClearFlags.Value }
+                    SetFlags = new xdr.Uint32() { InnerValue = (int)SetFlags.Value },
+                    ClearFlags = new xdr.Uint32() { InnerValue = (int)ClearFlags.Value }
                 }
             };
         }
@@ -65,8 +65,8 @@ namespace stellar_dotnet_sdk
             {
                 _asset = Asset.FromXdr(op.Asset);
                 _trustor = KeyPair.FromXdrPublicKey(op.Trustor.InnerValue);
-                _setFlags = op.SetFlags.InnerValue;
-                _clearFlags = op.ClearFlags.InnerValue;
+                _setFlags = (uint?)op.SetFlags.InnerValue;
+                _clearFlags = (uint?)op.ClearFlags.InnerValue;
             }
 
             public Builder(Asset asset, KeyPair trustor, uint? setFlags, uint? clearFlags)

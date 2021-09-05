@@ -30,7 +30,9 @@ namespace stellar_dotnet_sdk.xdr
     //      REVOKE_SPONSORSHIP = 18,
     //      CLAWBACK = 19,
     //      CLAWBACK_CLAIMABLE_BALANCE = 20,
-    //      SET_TRUST_LINE_FLAGS = 21
+    //      SET_TRUST_LINE_FLAGS = 21,
+    //      LIQUIDITY_POOL_DEPOSIT = 22,
+    //      LIQUIDITY_POOL_WITHDRAW = 23
     //  };
 
     //  ===========================================================================
@@ -60,6 +62,8 @@ namespace stellar_dotnet_sdk.xdr
             CLAWBACK = 19,
             CLAWBACK_CLAIMABLE_BALANCE = 20,
             SET_TRUST_LINE_FLAGS = 21,
+            LIQUIDITY_POOL_DEPOSIT = 22,
+            LIQUIDITY_POOL_WITHDRAW = 23,
         }
         public OperationTypeEnum InnerValue { get; set; } = default(OperationTypeEnum);
 
@@ -98,6 +102,8 @@ namespace stellar_dotnet_sdk.xdr
                 case 19: return Create(OperationTypeEnum.CLAWBACK);
                 case 20: return Create(OperationTypeEnum.CLAWBACK_CLAIMABLE_BALANCE);
                 case 21: return Create(OperationTypeEnum.SET_TRUST_LINE_FLAGS);
+                case 22: return Create(OperationTypeEnum.LIQUIDITY_POOL_DEPOSIT);
+                case 23: return Create(OperationTypeEnum.LIQUIDITY_POOL_WITHDRAW);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

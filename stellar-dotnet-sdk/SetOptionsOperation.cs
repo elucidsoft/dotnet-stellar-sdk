@@ -66,42 +66,42 @@ namespace stellar_dotnet_sdk
             if (ClearFlags != null)
             {
                 var clearFlags = new sdkxdr.Uint32();
-                clearFlags.InnerValue = ClearFlags.Value;
+                clearFlags.InnerValue = (int)ClearFlags.Value;
                 op.ClearFlags = clearFlags;
             }
 
             if (SetFlags != null)
             {
                 var setFlags = new sdkxdr.Uint32();
-                setFlags.InnerValue = SetFlags.Value;
+                setFlags.InnerValue = (int)SetFlags.Value;
                 op.SetFlags = setFlags;
             }
 
             if (MasterKeyWeight != null)
             {
                 var uint32 = new sdkxdr.Uint32();
-                uint32.InnerValue = MasterKeyWeight.Value;
+                uint32.InnerValue = (int)MasterKeyWeight.Value;
                 op.MasterWeight = uint32;
             }
 
             if (LowThreshold != null)
             {
                 var uint32 = new sdkxdr.Uint32();
-                uint32.InnerValue = LowThreshold.Value;
+                uint32.InnerValue = (int)LowThreshold.Value;
                 op.LowThreshold = uint32;
             }
 
             if (MediumThreshold != null)
             {
                 var uint32 = new sdkxdr.Uint32();
-                uint32.InnerValue = MediumThreshold.Value;
+                uint32.InnerValue = (int)MediumThreshold.Value;
                 op.MedThreshold = uint32;
             }
 
             if (HighThreshold != null)
             {
                 var uint32 = new sdkxdr.Uint32();
-                uint32.InnerValue = HighThreshold.Value;
+                uint32.InnerValue = (int)HighThreshold.Value;
                 op.HighThreshold = uint32;
             }
 
@@ -116,7 +116,7 @@ namespace stellar_dotnet_sdk
             {
                 var signer = new sdkxdr.Signer();
                 var weight = new sdkxdr.Uint32();
-                weight.InnerValue = SignerWeight.Value & 0xFF;
+                weight.InnerValue = (int)(SignerWeight.Value & 0xFF);
                 signer.Key = Signer;
                 signer.Weight = weight;
                 op.Signer = signer;
@@ -151,23 +151,23 @@ namespace stellar_dotnet_sdk
                 if (op.InflationDest != null)
                     _inflationDestination = KeyPair.FromXdrPublicKey(op.InflationDest.InnerValue);
                 if (op.ClearFlags != null)
-                    _clearFlags = op.ClearFlags.InnerValue;
+                    _clearFlags = (uint?)op.ClearFlags.InnerValue;
                 if (op.SetFlags != null)
-                    _setFlags = op.SetFlags.InnerValue;
+                    _setFlags = (uint?)op.SetFlags.InnerValue;
                 if (op.MasterWeight != null)
-                    _masterKeyWeight = op.MasterWeight.InnerValue;
+                    _masterKeyWeight = (uint?)op.MasterWeight.InnerValue;
                 if (op.LowThreshold != null)
-                    _lowThreshold = op.LowThreshold.InnerValue;
+                    _lowThreshold = (uint?)op.LowThreshold.InnerValue;
                 if (op.MedThreshold != null)
-                    _mediumThreshold = op.MedThreshold.InnerValue;
+                    _mediumThreshold = (uint?)op.MedThreshold.InnerValue;
                 if (op.HighThreshold != null)
-                    _highThreshold = op.HighThreshold.InnerValue;
+                    _highThreshold = (uint?)op.HighThreshold.InnerValue;
                 if (op.HomeDomain != null)
                     _homeDomain = op.HomeDomain.InnerValue;
                 if (op.Signer != null)
                 {
                     _signer = op.Signer.Key;
-                    _signerWeight = op.Signer.Weight.InnerValue & 0xFF;
+                    _signerWeight = (uint?)(op.Signer.Weight.InnerValue & 0xFF);
                 }
             }
 

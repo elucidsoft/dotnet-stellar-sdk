@@ -12,7 +12,7 @@ namespace stellar_dotnet_sdk.xdr
     //  case PATH_PAYMENT_STRICT_SEND_SUCCESS:
     //      struct
     //      {
-    //          ClaimOfferAtom offers<>;
+    //          ClaimAtom offers<>;
     //          SimplePaymentResult last;
     //      } success;
     //  case PATH_PAYMENT_STRICT_SEND_NO_ISSUER:
@@ -67,7 +67,7 @@ namespace stellar_dotnet_sdk.xdr
         public class PathPaymentStrictSendResultSuccess
         {
             public PathPaymentStrictSendResultSuccess() { }
-            public ClaimOfferAtom[] Offers { get; set; }
+            public ClaimAtom[] Offers { get; set; }
             public SimplePaymentResult Last { get; set; }
 
             public static void Encode(XdrDataOutputStream stream, PathPaymentStrictSendResultSuccess encodedPathPaymentStrictSendResultSuccess)
@@ -76,7 +76,7 @@ namespace stellar_dotnet_sdk.xdr
                 stream.WriteInt(offerssize);
                 for (int i = 0; i < offerssize; i++)
                 {
-                    ClaimOfferAtom.Encode(stream, encodedPathPaymentStrictSendResultSuccess.Offers[i]);
+                    ClaimAtom.Encode(stream, encodedPathPaymentStrictSendResultSuccess.Offers[i]);
                 }
                 SimplePaymentResult.Encode(stream, encodedPathPaymentStrictSendResultSuccess.Last);
             }
@@ -84,10 +84,10 @@ namespace stellar_dotnet_sdk.xdr
             {
                 PathPaymentStrictSendResultSuccess decodedPathPaymentStrictSendResultSuccess = new PathPaymentStrictSendResultSuccess();
                 int offerssize = stream.ReadInt();
-                decodedPathPaymentStrictSendResultSuccess.Offers = new ClaimOfferAtom[offerssize];
+                decodedPathPaymentStrictSendResultSuccess.Offers = new ClaimAtom[offerssize];
                 for (int i = 0; i < offerssize; i++)
                 {
-                    decodedPathPaymentStrictSendResultSuccess.Offers[i] = ClaimOfferAtom.Decode(stream);
+                    decodedPathPaymentStrictSendResultSuccess.Offers[i] = ClaimAtom.Decode(stream);
                 }
                 decodedPathPaymentStrictSendResultSuccess.Last = SimplePaymentResult.Decode(stream);
                 return decodedPathPaymentStrictSendResultSuccess;

@@ -41,6 +41,8 @@ namespace stellar_dotnet_sdk.xdr
     //      {
     //      case 0:
     //          void;
+    //      case 1:
+    //          LedgerHeaderExtensionV1 v1;
     //      }
     //      ext;
     //  };
@@ -119,12 +121,16 @@ namespace stellar_dotnet_sdk.xdr
 
             public int Discriminant { get; set; } = new int();
 
+            public LedgerHeaderExtensionV1 V1 { get; set; }
             public static void Encode(XdrDataOutputStream stream, LedgerHeaderExt encodedLedgerHeaderExt)
             {
                 stream.WriteInt((int)encodedLedgerHeaderExt.Discriminant);
                 switch (encodedLedgerHeaderExt.Discriminant)
                 {
                     case 0:
+                        break;
+                    case 1:
+                        LedgerHeaderExtensionV1.Encode(stream, encodedLedgerHeaderExt.V1);
                         break;
                 }
             }
@@ -136,6 +142,9 @@ namespace stellar_dotnet_sdk.xdr
                 switch (decodedLedgerHeaderExt.Discriminant)
                 {
                     case 0:
+                        break;
+                    case 1:
+                        decodedLedgerHeaderExt.V1 = LedgerHeaderExtensionV1.Decode(stream);
                         break;
                 }
                 return decodedLedgerHeaderExt;

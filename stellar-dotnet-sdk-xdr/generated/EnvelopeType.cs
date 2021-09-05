@@ -15,7 +15,8 @@ namespace stellar_dotnet_sdk.xdr
     //      ENVELOPE_TYPE_AUTH = 3,
     //      ENVELOPE_TYPE_SCPVALUE = 4,
     //      ENVELOPE_TYPE_TX_FEE_BUMP = 5,
-    //      ENVELOPE_TYPE_OP_ID = 6
+    //      ENVELOPE_TYPE_OP_ID = 6,
+    //      ENVELOPE_TYPE_POOL_REVOKE_OP_ID = 7
     //  };
 
     //  ===========================================================================
@@ -30,6 +31,7 @@ namespace stellar_dotnet_sdk.xdr
             ENVELOPE_TYPE_SCPVALUE = 4,
             ENVELOPE_TYPE_TX_FEE_BUMP = 5,
             ENVELOPE_TYPE_OP_ID = 6,
+            ENVELOPE_TYPE_POOL_REVOKE_OP_ID = 7,
         }
         public EnvelopeTypeEnum InnerValue { get; set; } = default(EnvelopeTypeEnum);
 
@@ -53,6 +55,7 @@ namespace stellar_dotnet_sdk.xdr
                 case 4: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_SCPVALUE);
                 case 5: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_TX_FEE_BUMP);
                 case 6: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_OP_ID);
+                case 7: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_POOL_REVOKE_OP_ID);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

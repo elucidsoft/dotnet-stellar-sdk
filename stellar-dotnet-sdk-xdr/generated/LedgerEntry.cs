@@ -23,6 +23,8 @@ namespace stellar_dotnet_sdk.xdr
     //          DataEntry data;
     //      case CLAIMABLE_BALANCE:
     //          ClaimableBalanceEntry claimableBalance;
+    //      case LIQUIDITY_POOL:
+    //          LiquidityPoolEntry liquidityPool;
     //      }
     //      data;
     //  
@@ -71,6 +73,7 @@ namespace stellar_dotnet_sdk.xdr
             public OfferEntry Offer { get; set; }
             public DataEntry Data { get; set; }
             public ClaimableBalanceEntry ClaimableBalance { get; set; }
+            public LiquidityPoolEntry LiquidityPool { get; set; }
             public static void Encode(XdrDataOutputStream stream, LedgerEntryData encodedLedgerEntryData)
             {
                 stream.WriteInt((int)encodedLedgerEntryData.Discriminant.InnerValue);
@@ -90,6 +93,9 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE:
                         ClaimableBalanceEntry.Encode(stream, encodedLedgerEntryData.ClaimableBalance);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.LIQUIDITY_POOL:
+                        LiquidityPoolEntry.Encode(stream, encodedLedgerEntryData.LiquidityPool);
                         break;
                 }
             }
@@ -114,6 +120,9 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE:
                         decodedLedgerEntryData.ClaimableBalance = ClaimableBalanceEntry.Decode(stream);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.LIQUIDITY_POOL:
+                        decodedLedgerEntryData.LiquidityPool = LiquidityPoolEntry.Decode(stream);
                         break;
                 }
                 return decodedLedgerEntryData;

@@ -12,7 +12,8 @@ namespace stellar_dotnet_sdk.xdr
     //      LEDGER_UPGRADE_VERSION = 1,
     //      LEDGER_UPGRADE_BASE_FEE = 2,
     //      LEDGER_UPGRADE_MAX_TX_SET_SIZE = 3,
-    //      LEDGER_UPGRADE_BASE_RESERVE = 4
+    //      LEDGER_UPGRADE_BASE_RESERVE = 4,
+    //      LEDGER_UPGRADE_FLAGS = 5
     //  };
 
     //  ===========================================================================
@@ -24,6 +25,7 @@ namespace stellar_dotnet_sdk.xdr
             LEDGER_UPGRADE_BASE_FEE = 2,
             LEDGER_UPGRADE_MAX_TX_SET_SIZE = 3,
             LEDGER_UPGRADE_BASE_RESERVE = 4,
+            LEDGER_UPGRADE_FLAGS = 5,
         }
         public LedgerUpgradeTypeEnum InnerValue { get; set; } = default(LedgerUpgradeTypeEnum);
 
@@ -44,6 +46,7 @@ namespace stellar_dotnet_sdk.xdr
                 case 2: return Create(LedgerUpgradeTypeEnum.LEDGER_UPGRADE_BASE_FEE);
                 case 3: return Create(LedgerUpgradeTypeEnum.LEDGER_UPGRADE_MAX_TX_SET_SIZE);
                 case 4: return Create(LedgerUpgradeTypeEnum.LEDGER_UPGRADE_BASE_RESERVE);
+                case 5: return Create(LedgerUpgradeTypeEnum.LEDGER_UPGRADE_FLAGS);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

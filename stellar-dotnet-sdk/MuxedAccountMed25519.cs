@@ -30,7 +30,7 @@ namespace stellar_dotnet_sdk
         {
             var innerKey = KeyPair.FromPublicKey(muxed.Ed25519.InnerValue);
             var id = muxed.Id.InnerValue;
-            return new MuxedAccountMed25519(innerKey, id);
+            return new MuxedAccountMed25519(innerKey, (ulong)id);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace stellar_dotnet_sdk
                 };
 
                 muxedAccount.Med25519 = new xdr.MuxedAccount.MuxedAccountMed25519();
-                muxedAccount.Med25519.Id = new Uint64(Id);
+                muxedAccount.Med25519.Id = new Uint64((long)Id);
                 muxedAccount.Med25519.Ed25519 = new Uint256(Key.PublicKey);
                 return muxedAccount;
             }
