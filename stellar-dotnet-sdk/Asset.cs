@@ -95,5 +95,64 @@ namespace stellar_dotnet_sdk
         /// Returns the asset canonical name.
         /// </summary>
         public abstract string CanonicalName();
+
+        public static int Compare(Asset assetA, Asset assetB)
+        {
+            if (assetA == null) 
+            {
+                throw new ArgumentNullException(nameof(assetA), "assetA is invalid");
+            }
+
+            if (assetB == null)
+            {
+                throw new ArgumentNullException(nameof(assetB), "assetB is invalid");
+            }
+
+            if (assetA.Equals(assetB))
+            {
+                return 0;
+            }
+
+            // Compare asset types.
+            switch (assetA.GetType())
+            {
+                case "native":
+                    return -1;
+
+                case "credit_alphanum4":
+                    if (assetB.GetType() == "native")
+                    {
+                        return 1;
+                    }
+                    if (assetB.GetType() == "credit_alphanum12")
+                    {
+                        return -1;
+                    }
+                    break;
+
+                case "credit_alphanum12":
+                    if (assetB.GetType() != "credit_alphanum12")
+                    {
+                        return 1;
+                    }
+                    break;
+
+                default:
+                    throw new ArgumentNullException("Unexpected asset type");
+            }
+
+            AssetTypeCreditAlphaNum assetAlphaA = (AssetTypeCreditAlphaNum)assetA;
+            AssetTypeCreditAlphaNum assetAlphaB = (AssetTypeCreditAlphaNum)assetB;
+
+            // Compare asset codes.
+            int result = string.Compare(assetAlphaA.Code, assetAlphaB.Code);
+            if (result != 0)
+            {
+                return result;
+            }
+
+            // Compare asset issuers.
+            return string.Compare(assetAlphaA.Issuer, assetAlphaB.Issuer);
+        }
     }
 }
