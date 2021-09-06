@@ -8,10 +8,6 @@ namespace stellar_dotnet_sdk
 {
     public class Price
     {
-        //@SerializedName("d")
-
-        //@SerializedName("n")
-
         /// <summary>
         ///     Create a new price. Price in Stellar is represented as a fraction.
         /// </summary>
@@ -111,6 +107,11 @@ namespace stellar_dotnet_sdk
         public override int GetHashCode()
         {
             return (Numerator << 2) ^ Denominator;
+        }
+
+        public override string ToString()
+        {
+           return Amount.DecimalToString(decimal.Divide(Numerator, Denominator));
         }
     }
 }
