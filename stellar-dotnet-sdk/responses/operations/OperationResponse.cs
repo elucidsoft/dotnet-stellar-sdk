@@ -37,18 +37,7 @@ namespace stellar_dotnet_sdk.responses.operations
         public string PagingToken { get; private set; }
 
         /// <summary>
-        /// Returns operation type. Possible types:
-        /// crete_account
-        /// payment
-        /// allow_trust
-        /// change_trust
-        /// set_options
-        /// account_merge
-        /// manage_offer
-        /// path_payments
-        /// create_passive_offer
-        /// inflation
-        /// manage_data
+        /// Returns operation type.
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string Type { get; private set; }
