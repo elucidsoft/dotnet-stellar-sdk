@@ -12,7 +12,7 @@ namespace stellar_dotnet_sdk
         public string MinPrice { get; set; }
         public string MaxPrice { get; set; }
 
-        public LiquidityPoolDepositOperation(string liquidityPoolID, string maxAmountA, string maxAmountB, string minPrice, string maxPrice)
+        private LiquidityPoolDepositOperation(string liquidityPoolID, string maxAmountA, string maxAmountB, string minPrice, string maxPrice)
         {
             LiquidityPoolID = liquidityPoolID ?? throw new ArgumentNullException(nameof(liquidityPoolID), "liquidityPoolID cannot be null");
             MaxAmountA = maxAmountA ?? throw new ArgumentNullException(nameof(maxAmountA), "maxAmountA cannot be null");
@@ -64,7 +64,7 @@ namespace stellar_dotnet_sdk
 
             public Builder(xdr.LiquidityPoolDepositOp op)
             {
-                _LiquidityPoolID = xdr.PoolID.op.LiquidityPoolID.InnerValue;
+                _LiquidityPoolID = xdr.PoolID(op.LiquidityPoolID.InnerValue;
                 _MaxAmountA = FromXdrAmount(op.MaxAmountA.InnerValue);
                 _MaxAmountB = FromXdrAmount(op.MaxAmountB.InnerValue);
                 _MinPrice = Price.FromXdr(op.MinPrice).ToString();
