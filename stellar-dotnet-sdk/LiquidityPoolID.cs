@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk
         public LiquidityPoolID(string poolID)
         {
             PoolID = poolID ?? throw new ArgumentNullException(nameof(PoolID), "poolID cannot be null");
-            if(!Regex.IsMatch(poolID, "^[a-f0-9]{64}$"))
+            if (!Regex.IsMatch(poolID, "^[a-f0-9]{64}$"))
             {
                 throw new ArgumentNullException(nameof(poolID), "poolID is not a valid hash");
             }
@@ -21,7 +21,7 @@ namespace stellar_dotnet_sdk
 
         public static LiquidityPoolID FromOperation(xdr.TrustLineAsset trustlineAssetXDR)
         {
-            if(trustlineAssetXDR.Discriminant.InnerValue == xdr.AssetType.AssetTypeEnum.ASSET_TYPE_POOL_SHARE)
+            if (trustlineAssetXDR.Discriminant.InnerValue == xdr.AssetType.AssetTypeEnum.ASSET_TYPE_POOL_SHARE)
             {
                 new LiquidityPoolID(Util.BytesToHex(trustlineAssetXDR.LiquidityPoolID.InnerValue.InnerValue));
             }
@@ -38,8 +38,4 @@ namespace stellar_dotnet_sdk
             return xdrTrustlineAsset;
         }
     }
-
-    getAssetType()
-    {
-        return 'liquidity_pool_shares';
-    }
+}
