@@ -45,23 +45,26 @@ namespace stellar_dotnet_sdk
         /// <summary>
         ///  Generates Asset object from a given XDR object
         ///  </summary>
-        /// <param name="thisXdr"></param>
-        public static Asset FromXdr(xdr.Asset thisXdr)
+        /// <param name="xdrAsset"></param>
+        public static Asset FromXdr(xdr.Asset xdrAsset)
         {
-            switch (thisXdr.Discriminant.InnerValue)
+            switch (xdrAsset.Discriminant.InnerValue)
             {
                 case AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE:
                     return new AssetTypeNative();
+
                 case AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4:
-                    var assetCode4 = Util.PaddedByteArrayToString(thisXdr.AlphaNum4.AssetCode.InnerValue);
-                    var issuer4 = KeyPair.FromXdrPublicKey(thisXdr.AlphaNum4.Issuer.InnerValue);
+                    var assetCode4 = Util.PaddedByteArrayToString(xdrAsset.AlphaNum4.AssetCode.InnerValue);
+                    var issuer4 = KeyPair.FromXdrPublicKey(xdrAsset.AlphaNum4.Issuer.InnerValue);
                     return new AssetTypeCreditAlphaNum4(assetCode4, issuer4.AccountId);
+
                 case AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12:
-                    var assetCode12 = Util.PaddedByteArrayToString(thisXdr.AlphaNum12.AssetCode.InnerValue);
-                    var issuer12 = KeyPair.FromXdrPublicKey(thisXdr.AlphaNum12.Issuer.InnerValue);
+                    var assetCode12 = Util.PaddedByteArrayToString(xdrAsset.AlphaNum12.AssetCode.InnerValue);
+                    var issuer12 = KeyPair.FromXdrPublicKey(xdrAsset.AlphaNum12.Issuer.InnerValue);
                     return new AssetTypeCreditAlphaNum12(assetCode12, issuer12.AccountId);
+
                 default:
-                    throw new ArgumentException("Unknown asset type " + thisXdr.Discriminant.InnerValue);
+                    throw new ArgumentException("Unknown asset type " + xdrAsset.Discriminant.InnerValue);
             }
         }
 
@@ -95,6 +98,8 @@ namespace stellar_dotnet_sdk
         /// Returns the asset canonical name.
         /// </summary>
         public abstract string CanonicalName();
+
+        public abstract xdr.ChangeTrustAsset ToChangeTrustAssetXDR();
 
         public static int Compare(Asset assetA, Asset assetB)
         {
