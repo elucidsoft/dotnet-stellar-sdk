@@ -1,6 +1,5 @@
 ﻿using System;
-using stellar_dotnet_sdk.xdr;
-using sdkxdr = stellar_dotnet_sdk.xdr;
+using xdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
@@ -12,7 +11,7 @@ namespace stellar_dotnet_sdk
     /// </summary>
     public class ChangeTrustOperation : Operation
     {
-        private ChangeTrustOperation(Asset asset, string limit)
+        private ChangeTrustOperation(ChangeTrustAsset asset, string limit)
         {
             Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
             Limit = limit ?? throw new ArgumentNullException(nameof(limit), "limit cannot be null");
@@ -24,16 +23,16 @@ namespace stellar_dotnet_sdk
 
         public const string MaxLimit = "922337203685.4775807";
 
-        public override sdkxdr.Operation.OperationBody ToOperationBody()
+        public override xdr.Operation.OperationBody ToOperationBody()
         {
-            var op = new sdkxdr.ChangeTrustOp();
-            op.Line = Asset.ToXdr();
-            var limit = new sdkxdr.Int64();
+            var op = new xdr.ChangeTrustOp();
+            op.Line = Asset.ToChangeTrustAssetXDR();
+            var limit = new xdr.Int64();
             limit.InnerValue = ToXdrAmount(Limit);
             op.Limit = limit;
 
-            var body = new sdkxdr.Operation.OperationBody();
-            body.Discriminant = sdkxdr.OperationType.Create(sdkxdr.OperationType.OperationTypeEnum.CHANGE_TRUST);
+            var body = new xdr.Operation.OperationBody();
+            body.Discriminant = xdr.OperationType.Create(xdr.OperationType.OperationTypeEnum.CHANGE_TRUST);
             body.ChangeTrustOp = op;
             return body;
         }
@@ -44,14 +43,14 @@ namespace stellar_dotnet_sdk
         /// <see cref="ChangeTrustOperation" />
         public class Builder
         {
-            private readonly Asset _Asset;
+            private readonly ChangeTrustAsset _Asset;
             private readonly string _Limit;
 
             private KeyPair _SourceAccount;
 
-            public Builder(sdkxdr.ChangeTrustOp op)
+            public Builder(xdr.ChangeTrustOp op)
             {
-                _Asset = Asset.FromXdr(op.Line);
+                _Asset = ChangeTrustAsset.FromXDR(op.Line);
                 _Limit = FromXdrAmount(op.Limit.InnerValue);
             }
 
@@ -67,7 +66,7 @@ namespace stellar_dotnet_sdk
             ///     user, the limit is 200.
             /// </param>
             /// <exception cref="ArithmeticException">When limit has more than 7 decimal places.</exception>
-            public Builder(Asset asset, string limit)
+            public Builder(ChangeTrustAsset asset, string limit)
             {
                 _Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
                 _Limit = limit ?? throw new ArgumentNullException(nameof(limit), "limit cannot be null");
@@ -80,7 +79,7 @@ namespace stellar_dotnet_sdk
             ///     The asset of the trustline. For example, if a gateway extends a trustline of up to 200 USD to a
             ///     user, the line is USD.
             /// </param>
-            public Builder(Asset asset)
+            public Builder(ChangeTrustAsset asset)
             {
                 _Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
                 _Limit = MaxLimit;
