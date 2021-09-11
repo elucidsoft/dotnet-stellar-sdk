@@ -33,7 +33,7 @@ namespace stellar_dotnet_sdk
         /// <inheritdoc />
         public override string GetType()
         {
-            return "pool_share";
+            return "liquidity_pool_shares";
         }
 
         /// <inheritdoc />
