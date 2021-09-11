@@ -2,10 +2,6 @@
 
 namespace stellar_dotnet_sdk
 {
-    /// <summary>
-    /// Assets are uniquely identified by the asset code and the issuer. Ultimately, it’s up to the issuer to set the asset code. By convention, however, currencies should be represented by 
-    /// the appropriate ISO 4217 code. For stocks and bonds, use the appropriate ISIN number.
-    /// </summary>
     public class ChangeTrustAsset : Asset
     {
         public Asset AssetA { get; set; }
@@ -15,6 +11,13 @@ namespace stellar_dotnet_sdk
         public string Code { get; set; }
 
         public string Issuer { get; set; }
+
+        public ChangeTrustAsset(Asset assetA, Asset assetB)
+        {
+            AssetA = assetA;
+            AssetB = assetB;
+
+        }
 
         public ChangeTrustAsset(string code)
         {
@@ -30,7 +33,7 @@ namespace stellar_dotnet_sdk
         /// <inheritdoc />
         public override string GetType()
         {
-            throw new NotSupportedException();
+            return "pool_share";
         }
 
         /// <inheritdoc />
@@ -62,7 +65,7 @@ namespace stellar_dotnet_sdk
             return changeTrustAssetXDR;
         }
 
-        public ChangeTrustAsset FromXDR(xdr.ChangeTrustAsset changeTrustAssetXDR)
+        public static ChangeTrustAsset FromXDR(xdr.ChangeTrustAsset changeTrustAssetXDR)
         {
             ChangeTrustAsset result = null;
 
@@ -70,9 +73,24 @@ namespace stellar_dotnet_sdk
             {
                 case xdr.AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE:
                     result = new ChangeTrustAsset("native");
+                    break;
+
+                case xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4:
+                    result = new ChangeTrustAsset(Util.PaddedByteArrayToString(changeTrustAssetXDR.AlphaNum4.AssetCode.InnerValue), KeyPair.FromXdrPublicKey(changeTrustAssetXDR.AlphaNum4.Issuer.InnerValue).AccountId);
+                    break;
+
+                case xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12:
+                    result = new ChangeTrustAsset(Util.PaddedByteArrayToString(changeTrustAssetXDR.AlphaNum12.AssetCode.InnerValue), KeyPair.FromXdrPublicKey(changeTrustAssetXDR.AlphaNum12.Issuer.InnerValue).AccountId);
+                    break;
+
+                case xdr.AssetType.AssetTypeEnum.ASSET_TYPE_POOL_SHARE:
+                    var assetA = Asset.FromXdr(changeTrustAssetXDR.LiquidityPool.ConstantProduct.AssetA);
+                    var assetB = Asset.FromXdr(changeTrustAssetXDR.LiquidityPool.ConstantProduct.AssetB);
+                    result = new ChangeTrustAsset(assetA, assetB);
+                    break;
             }
 
-
+            return result;
         }
     }
 }
