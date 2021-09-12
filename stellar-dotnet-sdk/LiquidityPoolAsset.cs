@@ -66,44 +66,10 @@ namespace stellar_dotnet_sdk
             return changeTrustAssetXDR;
         }
 
+
+        public string GetAssetType()
+        {
+            return "liquidity_pool_shares";
+        }
     }
-}
-/**
- * @returns {LiquidityPoolParameters} Liquidity pool parameters.
- */
-getLiquidityPoolParameters() {
-    return clone({
-    assetA: this.assetA,
-      assetB: this.assetB,
-      fee: this.fee
-    });
-}
-
-/**
- * @see [Assets concept](https://www.stellar.org/developers/guides/concepts/assets.html)
- * @returns {AssetType.liquidityPoolShares} asset type. Can only be `liquidity_pool_shares`.
- */
-getAssetType() {
-    return 'liquidity_pool_shares';
-}
-
-/**
- * @param {LiquidityPoolAsset} other the LiquidityPoolAsset to compare
- * @returns {boolean} `true` if this asset equals the given asset.
- */
-equals(other) {
-    return (
-      this.assetA.equals(other.assetA) &&
-      this.assetB.equals(other.assetB) &&
-      this.fee === other.fee
-    );
-}
-
-toString() {
-    const poolId = getLiquidityPoolId(
-      'constant_product',
-      this.getLiquidityPoolParameters()
-    ).toString('hex');
-    return `liquidity_pool:${ poolId}`;
-}
 }
