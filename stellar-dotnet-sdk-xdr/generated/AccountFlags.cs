@@ -2,66 +2,59 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr
-{
+namespace stellar_dotnet_sdk.xdr {
 
-    // === xdr source ============================================================
+// === xdr source ============================================================
 
-    //  enum AccountFlags
-    //  { // masks for each flag
-    //  
-    //      // Flags set on issuer accounts
-    //      // TrustLines are created with authorized set to "false" requiring
-    //      // the issuer to set it for each TrustLine
-    //      AUTH_REQUIRED_FLAG = 0x1,
-    //      // If set, the authorized flag in TrustLines can be cleared
-    //      // otherwise, authorization cannot be revoked
-    //      AUTH_REVOCABLE_FLAG = 0x2,
-    //      // Once set, causes all AUTH_* flags to be read-only
-    //      AUTH_IMMUTABLE_FLAG = 0x4,
-    //      // Trustlines are created with clawback enabled set to "true",
-    //      // and claimable balances created from those trustlines are created
-    //      // with clawback enabled set to "true"
-    //      AUTH_CLAWBACK_ENABLED_FLAG = 0x8
-    //  };
+//  enum AccountFlags
+//  { // masks for each flag
+//  
+//      // Flags set on issuer accounts
+//      // TrustLines are created with authorized set to "false" requiring
+//      // the issuer to set it for each TrustLine
+//      AUTH_REQUIRED_FLAG = 0x1,
+//      // If set, the authorized flag in TrustLines can be cleared
+//      // otherwise, authorization cannot be revoked
+//      AUTH_REVOCABLE_FLAG = 0x2,
+//      // Once set, causes all AUTH_* flags to be read-only
+//      AUTH_IMMUTABLE_FLAG = 0x4,
+//      // Trustlines are created with clawback enabled set to "true",
+//      // and claimable balances created from those trustlines are created
+//      // with clawback enabled set to "true"
+//      AUTH_CLAWBACK_ENABLED_FLAG = 0x8
+//  };
 
-    //  ===========================================================================
-    public class AccountFlags
-    {
-        public enum AccountFlagsEnum
-        {
-            AUTH_REQUIRED_FLAG = 1,
-            AUTH_REVOCABLE_FLAG = 2,
-            AUTH_IMMUTABLE_FLAG = 4,
-            AUTH_CLAWBACK_ENABLED_FLAG = 8,
-        }
-        public AccountFlagsEnum InnerValue { get; set; } = default(AccountFlagsEnum);
+//  ===========================================================================
+public class AccountFlags  {
+  public enum AccountFlagsEnum {
+  AUTH_REQUIRED_FLAG = 1,
+  AUTH_REVOCABLE_FLAG = 2,
+  AUTH_IMMUTABLE_FLAG = 4,
+  AUTH_CLAWBACK_ENABLED_FLAG = 8,
+  }
+  public AccountFlagsEnum InnerValue {get; set;} = default(AccountFlagsEnum);
 
-        public static AccountFlags Create(AccountFlagsEnum v)
-        {
-            return new AccountFlags
-            {
-                InnerValue = v
-            };
-        }
+  public static AccountFlags Create(AccountFlagsEnum v)
+  {
+    return new AccountFlags {
+      InnerValue = v
+    };
+  }
 
-        public static AccountFlags Decode(XdrDataInputStream stream)
-        {
-            int value = stream.ReadInt();
-            switch (value)
-            {
-                case 1: return Create(AccountFlagsEnum.AUTH_REQUIRED_FLAG);
-                case 2: return Create(AccountFlagsEnum.AUTH_REVOCABLE_FLAG);
-                case 4: return Create(AccountFlagsEnum.AUTH_IMMUTABLE_FLAG);
-                case 8: return Create(AccountFlagsEnum.AUTH_CLAWBACK_ENABLED_FLAG);
-                default:
-                    throw new Exception("Unknown enum value: " + value);
-            }
-        }
-
-        public static void Encode(XdrDataOutputStream stream, AccountFlags value)
-        {
-            stream.WriteInt((int)value.InnerValue);
-        }
+  public static AccountFlags Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
+    switch (value) {
+      case 1: return Create(AccountFlagsEnum.AUTH_REQUIRED_FLAG);
+      case 2: return Create(AccountFlagsEnum.AUTH_REVOCABLE_FLAG);
+      case 4: return Create(AccountFlagsEnum.AUTH_IMMUTABLE_FLAG);
+      case 8: return Create(AccountFlagsEnum.AUTH_CLAWBACK_ENABLED_FLAG);
+      default:
+        throw new Exception("Unknown enum value: " + value);
     }
+  }
+
+  public static void Encode(XdrDataOutputStream stream, AccountFlags value) {
+    stream.WriteInt((int)value.InnerValue);
+  }
+}
 }

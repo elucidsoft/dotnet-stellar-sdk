@@ -2,47 +2,40 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr
-{
+namespace stellar_dotnet_sdk.xdr {
 
-    // === xdr source ============================================================
+// === xdr source ============================================================
 
-    //  enum PublicKeyType
-    //  {
-    //      PUBLIC_KEY_TYPE_ED25519 = KEY_TYPE_ED25519
-    //  };
+//  enum PublicKeyType
+//  {
+//      PUBLIC_KEY_TYPE_ED25519 = KEY_TYPE_ED25519
+//  };
 
-    //  ===========================================================================
-    public class PublicKeyType
-    {
-        public enum PublicKeyTypeEnum
-        {
-            PUBLIC_KEY_TYPE_ED25519 = 0,
-        }
-        public PublicKeyTypeEnum InnerValue { get; set; } = default(PublicKeyTypeEnum);
+//  ===========================================================================
+public class PublicKeyType  {
+  public enum PublicKeyTypeEnum {
+  PUBLIC_KEY_TYPE_ED25519 = 0,
+  }
+  public PublicKeyTypeEnum InnerValue {get; set;} = default(PublicKeyTypeEnum);
 
-        public static PublicKeyType Create(PublicKeyTypeEnum v)
-        {
-            return new PublicKeyType
-            {
-                InnerValue = v
-            };
-        }
+  public static PublicKeyType Create(PublicKeyTypeEnum v)
+  {
+    return new PublicKeyType {
+      InnerValue = v
+    };
+  }
 
-        public static PublicKeyType Decode(XdrDataInputStream stream)
-        {
-            int value = stream.ReadInt();
-            switch (value)
-            {
-                case 0: return Create(PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519);
-                default:
-                    throw new Exception("Unknown enum value: " + value);
-            }
-        }
-
-        public static void Encode(XdrDataOutputStream stream, PublicKeyType value)
-        {
-            stream.WriteInt((int)value.InnerValue);
-        }
+  public static PublicKeyType Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
+    switch (value) {
+      case 0: return Create(PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519);
+      default:
+        throw new Exception("Unknown enum value: " + value);
     }
+  }
+
+  public static void Encode(XdrDataOutputStream stream, PublicKeyType value) {
+    stream.WriteInt((int)value.InnerValue);
+  }
+}
 }

@@ -2,52 +2,45 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr
-{
+namespace stellar_dotnet_sdk.xdr {
 
-    // === xdr source ============================================================
+// === xdr source ============================================================
 
-    //  enum BumpSequenceResultCode
-    //  {
-    //      // codes considered as "success" for the operation
-    //      BUMP_SEQUENCE_SUCCESS = 0,
-    //      // codes considered as "failure" for the operation
-    //      BUMP_SEQUENCE_BAD_SEQ = -1 // `bumpTo` is not within bounds
-    //  };
+//  enum BumpSequenceResultCode
+//  {
+//      // codes considered as "success" for the operation
+//      BUMP_SEQUENCE_SUCCESS = 0,
+//      // codes considered as "failure" for the operation
+//      BUMP_SEQUENCE_BAD_SEQ = -1 // `bumpTo` is not within bounds
+//  };
 
-    //  ===========================================================================
-    public class BumpSequenceResultCode
-    {
-        public enum BumpSequenceResultCodeEnum
-        {
-            BUMP_SEQUENCE_SUCCESS = 0,
-            BUMP_SEQUENCE_BAD_SEQ = -1,
-        }
-        public BumpSequenceResultCodeEnum InnerValue { get; set; } = default(BumpSequenceResultCodeEnum);
+//  ===========================================================================
+public class BumpSequenceResultCode  {
+  public enum BumpSequenceResultCodeEnum {
+  BUMP_SEQUENCE_SUCCESS = 0,
+  BUMP_SEQUENCE_BAD_SEQ = -1,
+  }
+  public BumpSequenceResultCodeEnum InnerValue {get; set;} = default(BumpSequenceResultCodeEnum);
 
-        public static BumpSequenceResultCode Create(BumpSequenceResultCodeEnum v)
-        {
-            return new BumpSequenceResultCode
-            {
-                InnerValue = v
-            };
-        }
+  public static BumpSequenceResultCode Create(BumpSequenceResultCodeEnum v)
+  {
+    return new BumpSequenceResultCode {
+      InnerValue = v
+    };
+  }
 
-        public static BumpSequenceResultCode Decode(XdrDataInputStream stream)
-        {
-            int value = stream.ReadInt();
-            switch (value)
-            {
-                case 0: return Create(BumpSequenceResultCodeEnum.BUMP_SEQUENCE_SUCCESS);
-                case -1: return Create(BumpSequenceResultCodeEnum.BUMP_SEQUENCE_BAD_SEQ);
-                default:
-                    throw new Exception("Unknown enum value: " + value);
-            }
-        }
-
-        public static void Encode(XdrDataOutputStream stream, BumpSequenceResultCode value)
-        {
-            stream.WriteInt((int)value.InnerValue);
-        }
+  public static BumpSequenceResultCode Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
+    switch (value) {
+      case 0: return Create(BumpSequenceResultCodeEnum.BUMP_SEQUENCE_SUCCESS);
+      case -1: return Create(BumpSequenceResultCodeEnum.BUMP_SEQUENCE_BAD_SEQ);
+      default:
+        throw new Exception("Unknown enum value: " + value);
     }
+  }
+
+  public static void Encode(XdrDataOutputStream stream, BumpSequenceResultCode value) {
+    stream.WriteInt((int)value.InnerValue);
+  }
+}
 }

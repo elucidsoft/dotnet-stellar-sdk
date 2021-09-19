@@ -95,5 +95,7 @@ namespace stellar_dotnet_sdk
         /// Returns the asset canonical name.
         /// </summary>
         public abstract string CanonicalName();
+
+        public abstract int CompareTo(Asset asset);
     }
 }

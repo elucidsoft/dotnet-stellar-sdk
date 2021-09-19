@@ -130,6 +130,12 @@ namespace stellar_dotnet_sdk
                 case OperationType.OperationTypeEnum.SET_TRUST_LINE_FLAGS:
                     operation = new SetTrustlineFlagsOperation.Builder(body.SetTrustLineFlagsOp).Build();
                     break;
+                case OperationType.OperationTypeEnum.LIQUIDITY_POOL_DEPOSIT:
+                    operation = new LiquidityPoolDepositOperation.Builder(body.LiquidityPoolDepositOp).Build();
+                    break;
+                case OperationType.OperationTypeEnum.LIQUIDITY_POOL_WITHDRAW:
+                    operation = new LiquidityPoolWithdrawOperation.Builder(body.LiquidityPoolWithdrawOp).Build();
+                    break;
                 default:
                     throw new Exception("Unknown operation body " + body.Discriminant.InnerValue);
             }
