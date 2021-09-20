@@ -59,5 +59,16 @@ namespace stellar_dotnet_sdk.requests
             SetSegments("operations", operationId.ToString(), "effects");
             return this;
         }
+
+        public EffectsRequestBuilder ForLiquidityPool(LiquidityPoolID liquidityPoolID)
+        {
+            return ForLiquidityPool(liquidityPoolID.ToString());
+        }
+
+        public EffectsRequestBuilder ForLiquidityPool(string liquidityPoolID)
+        {
+            SetSegments("liquidity_pools", liquidityPoolID, "effects");
+            return this;
+        }
     }
 }

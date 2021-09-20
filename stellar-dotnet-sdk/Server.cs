@@ -83,6 +83,7 @@ namespace stellar_dotnet_sdk
         public FriendBotRequestBuilder TestNetFriendBot => new FriendBotRequestBuilder(_serverUri, _httpClient);
 
         public TradesAggregationRequestBuilder TradeAggregations => new TradesAggregationRequestBuilder(_serverUri, _httpClient);
+        public LiquidityPoolsRequestBuilder LiquidityPools => new LiquidityPoolsRequestBuilder(_serverUri, _httpClient);
 
         /// <summary>
         /// Submit a transaction to the network.
