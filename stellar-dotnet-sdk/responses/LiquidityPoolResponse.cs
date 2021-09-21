@@ -18,7 +18,7 @@ namespace stellar_dotnet_sdk.responses
         public string TotalTrustlines { get; set; }
         public string TotalShares { get; set; }
         public Reserve[] Reserves { get; set; }
-        public Links Links { get; set; }
+        public LiquidityPoolResponseLinks Links { get; set; }
 
         public class Reserve
         {
@@ -51,37 +51,14 @@ namespace stellar_dotnet_sdk.responses
 
             public override bool Equals(object obj)
             {
-                if(!(obj is LiquidityPoolResponse.Reserve))
+                if(!(obj is Reserve))
                 {
                     return false;
                 }
 
-                LiquidityPoolResponse.Reserve other = (LiquidityPoolResponse.Reserve)obj;
-                return Object.Equals(Asset, other.Asset) && Object.Equals(Amount, other.Amount);
+                Reserve other = (Reserve)obj;
+                return Equals(Asset, other.Asset) && Equals(Amount, other.Amount);
             }
-        }
-
-        public class Links
-        {
-            [JsonProperty(PropertyName = "effects")]
-            public Link Effects { get; set; }
-
-            [JsonProperty(PropertyName = "operations")]
-            public Link Operations { get; set; }
-
-            [JsonProperty(PropertyName = "self")]
-            public Link Self { get; set; }
-
-            [JsonProperty(PropertyName = "transactions")]
-            public Link Transactions { get; set; }
-
-            public Links (Link effects, Link operations, Link self, Link transactions)
-            {
-                Effects = effects;
-                Operations = operations;
-                Self = self;
-                Transactions = transactions;
-            }
-        }
+        }    
     }
 }

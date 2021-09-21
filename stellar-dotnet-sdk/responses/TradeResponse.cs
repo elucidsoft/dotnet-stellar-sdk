@@ -11,38 +11,17 @@ namespace stellar_dotnet_sdk.responses
     /// </summary>
     public class TradeResponse : Response, IPagingToken
     {
-        public TradeResponse(String id, String pagingToken, String ledgerCloseTime, String offerId, bool baseIsSeller, string baseAccount, String baseOfferId, String baseAmount, String baseAssetType, String baseAssetCode, String baseAssetIssuer, string counterAccount, String counterOfferId, String counterAmount, String counterAssetType, String counterAssetCode, String counterAssetIssuer, Price price)
-        {
-            Id = id;
-            PagingToken = pagingToken;
-            LedgerCloseTime = ledgerCloseTime;
-            OfferId = offerId;
-            BaseIsSeller = baseIsSeller;
-            BaseAccount = baseAccount;
-            BaseOfferId = baseOfferId;
-            BaseAmount = baseAmount;
-            BaseAssetType = baseAssetType;
-            BaseAssetCode = baseAssetCode;
-            BaseAssetIssuer = baseAssetIssuer;
-            CounterAccount = counterAccount;
-            CounterOfferId = counterOfferId;
-            CounterAmount = counterAmount;
-            CounterAssetType = counterAssetType;
-            CounterAssetCode = counterAssetCode;
-            CounterAssetIssuer = counterAssetIssuer;
-            Price = price;
-        }
-
-        [JsonProperty(PropertyName = "id")] public String Id { get; }
+        [JsonProperty(PropertyName = "id")] 
+        public string Id { get; }
 
         [JsonProperty(PropertyName = "paging_token")]
-        public String PagingToken { get; }
+        public string PagingToken { get; }
 
         [JsonProperty(PropertyName = "ledger_close_time")]
-        public String LedgerCloseTime { get; }
+        public string LedgerCloseTime { get; }
 
         [JsonProperty(PropertyName = "offer_id")]
-        public String OfferId { get; }
+        public string OfferId { get; }
 
         [JsonProperty(PropertyName = "base_is_seller")]
         public bool BaseIsSeller { get; }
@@ -50,41 +29,47 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "base_account")]
         public string BaseAccount { get; }
 
+        [JsonProperty(PropertyName = "base_liquidity_pool_id")]
+        public LiquidityPoolID BaseLiquidityPoolID { get; set; }
+
         [JsonProperty(PropertyName = "base_offer_id")]
-        public String BaseOfferId { get; }
+        public string BaseOfferId { get; }
 
         [JsonProperty(PropertyName = "base_amount")]
-        public String BaseAmount { get; }
+        public string BaseAmount { get; }
 
         [JsonProperty(PropertyName = "base_asset_type")]
-        public String BaseAssetType { get; }
+        public string BaseAssetType { get; }
 
         [JsonProperty(PropertyName = "base_asset_code")]
-        public String BaseAssetCode { get; }
+        public string BaseAssetCode { get; }
 
         [JsonProperty(PropertyName = "base_asset_issuer")]
-        public String BaseAssetIssuer { get; }
+        public string BaseAssetIssuer { get; }
 
         [JsonProperty(PropertyName = "counter_account")]
         public string CounterAccount { get; }
 
+        [JsonProperty(PropertyName = "counter_liquidity_pool_id")]
+        public LiquidityPoolID CounterLiquidityPoolID { get; }
+
         [JsonProperty(PropertyName = "counter_offer_id")]
-        public String CounterOfferId { get; }
+        public string CounterOfferId { get; }
 
         [JsonProperty(PropertyName = "counter_amount")]
-        public String CounterAmount { get; }
+        public string CounterAmount { get; }
 
         [JsonProperty(PropertyName = "counter_asset_type")]
-        public String CounterAssetType { get; }
+        public string CounterAssetType { get; }
 
         [JsonProperty(PropertyName = "counter_asset_code")]
-        public String CounterAssetCode { get; }
+        public string CounterAssetCode { get; }
 
         [JsonProperty(PropertyName = "counter_asset_issuer")]
-        public String CounterAssetIssuer { get; }
+        public string CounterAssetIssuer { get; }
 
         [JsonProperty(PropertyName = "price")]
-        public Price Price { get; }
+        public TradePrice Price { get; }
 
         [JsonProperty(PropertyName = "_links")]
         public TradeResponseLinks Links { get; }
@@ -98,5 +83,29 @@ namespace stellar_dotnet_sdk.responses
         /// Creates and returns a counter asset.
         /// </summary>
         public Asset CountAsset => Asset.Create(CounterAssetType, CounterAssetCode, CounterAssetIssuer);
+
+        public TradeResponse(string id, string pagingToken, string ledgerCloseTime, string offerId, bool baseIsSeller, string baseAccount, LiquidityPoolID baseLiquidityPoolID, string baseOfferId, string baseAmount, string baseAssetType, string baseAssetCode, string baseAssetIssuer, string counterAccount, LiquidityPoolID counterLiquidityPoolID, string counterOfferId, string counterAmount, string counterAssetType, string counterAssetCode, string counterAssetIssuer, TradePrice price)
+        {
+            Id = id;
+            PagingToken = pagingToken;
+            LedgerCloseTime = ledgerCloseTime;
+            OfferId = offerId;
+            BaseIsSeller = baseIsSeller;
+            BaseAccount = baseAccount;
+            BaseLiquidityPoolID = baseLiquidityPoolID;
+            BaseOfferId = baseOfferId;
+            BaseAmount = baseAmount;
+            BaseAssetType = baseAssetType;
+            BaseAssetCode = baseAssetCode;
+            BaseAssetIssuer = baseAssetIssuer;
+            CounterAccount = counterAccount;
+            CounterLiquidityPoolID = counterLiquidityPoolID;
+            CounterOfferId = counterOfferId;
+            CounterAmount = counterAmount;
+            CounterAssetType = counterAssetType;
+            CounterAssetCode = counterAssetCode;
+            CounterAssetIssuer = counterAssetIssuer;
+            Price = price;
+        }
     }
 }
