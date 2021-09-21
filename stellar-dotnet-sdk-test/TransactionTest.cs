@@ -283,6 +283,29 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        public void TestAddPreSignedSignature()
+        {
+            Network.UsePublicNetwork();
+
+            // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
+            var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
+            var destination = KeyPair.FromAccountId("GDJJRRMBK4IWLEPJGIE6SXD2LP7REGZODU7WDC3I2D6MR37F4XSHBKX2");
+
+            var account = new Account(source.AccountId, 0L);
+            var transaction = new TransactionBuilder(account)
+                .AddOperation(new PaymentOperation.Builder(destination, new AssetTypeNative(), "2000").Build())
+                .Build();
+
+            var signatureBytes = source.Sign(transaction.Hash());
+            var signatureBase64 = Convert.ToBase64String(signatureBytes);
+
+            transaction.Sign(source.AccountId, signatureBase64);
+
+            Assert.IsTrue(transaction.Signatures[0].Signature.InnerValue.SequenceEqual(signatureBytes));
+            Assert.IsTrue(transaction.Signatures[0].Hint.InnerValue.SequenceEqual(source.SignatureHint.InnerValue));
+        }
+
+        [TestMethod]
         public void TestToBase64EnvelopeXdrBuilderNoSignatures()
         {
             // GBPMKIRA2OQW2XZZQUCQILI5TMVZ6JNRKM423BSAISDM7ZFWQ6KWEBC4
