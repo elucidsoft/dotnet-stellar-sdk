@@ -23499,6 +23499,12 @@ references:
   fullName.vb: stellar_dotnet_sdk.TransactionBase.Sign(System.Byte())
   nameWithType: TransactionBase.Sign(Byte[])
   nameWithType.vb: TransactionBase.Sign(Byte())
+- uid: stellar_dotnet_sdk.TransactionBase.Sign(System.String,System.String)
+  name: Sign(String, String)
+  href: api/stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Sign_System_String_System_String_
+  commentId: M:stellar_dotnet_sdk.TransactionBase.Sign(System.String,System.String)
+  fullName: stellar_dotnet_sdk.TransactionBase.Sign(System.String, System.String)
+  nameWithType: TransactionBase.Sign(String, String)
 - uid: stellar_dotnet_sdk.TransactionBase.Sign*
   name: Sign
   href: api/stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Sign_
