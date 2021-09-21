@@ -8,7 +8,7 @@ namespace stellar_dotnet_sdk
     {
         public byte[] Hash { get; set; }
 
-        public LiquidityPoolID(LiquidityPoolType type, Asset assetA, Asset assetB, int fee)
+        public LiquidityPoolID(xdr.LiquidityPoolType.LiquidityPoolTypeEnum type, Asset assetA, Asset assetB, int fee)
         {
             if(assetA.CompareTo(assetB) >= 0)
             {
@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk
 
             try
             {
-                LiquidityPoolParameters.Create(type, assetA, assetB, fee).ToXdr().Encode(xdrDataOutputStream);
+                xdr.LiquidityPoolParameters.Encode(xdrDataOutputStream, LiquidityPoolParameters.Create(type, assetA, assetB, fee).ToXdr());
             }
             catch (Exception e)
             {

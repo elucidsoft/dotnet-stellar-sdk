@@ -82,7 +82,7 @@ namespace stellar_dotnet_sdk
 
         public abstract xdr.TrustLineAsset ToXdr();
 
-        public class Wrapper :TrustlineAsset
+        public class Wrapper : TrustlineAsset
         {
             public Asset Asset { get; set; }
 

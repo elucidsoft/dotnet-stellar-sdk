@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk
 
         public override bool Equals(object obj)
         {
-            if (obj == null || typeof(LiquidityPoolConstantProductParameters).Equals(obj.GetType()) {
+            if (obj == null || typeof(LiquidityPoolConstantProductParameters).Equals(obj.GetType())) {
                 return false;
             }
 
@@ -51,7 +51,7 @@ namespace stellar_dotnet_sdk
 
         public override LiquidityPoolID GetID()
         {
-            return new LiquidityPoolID(LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT, AssetA, AssetB, Fee);
+            return new LiquidityPoolID(xdr.LiquidityPoolType.LiquidityPoolTypeEnum.LIQUIDITY_POOL_CONSTANT_PRODUCT, AssetA, AssetB, Fee);
         }
     }
 }

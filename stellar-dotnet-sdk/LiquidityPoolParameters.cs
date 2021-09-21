@@ -8,9 +8,9 @@ namespace stellar_dotnet_sdk
     {
         public static int Fee = 30;
 
-        public static LiquidityPoolParameters Create(LiquidityPoolType type, Asset assetA, Asset assetB, int feeBP)
+        public static LiquidityPoolParameters Create(xdr.LiquidityPoolType.LiquidityPoolTypeEnum type, Asset assetA, Asset assetB, int feeBP)
         {
-            if (type != LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT)
+            if (type != xdr.LiquidityPoolType.LiquidityPoolTypeEnum.LIQUIDITY_POOL_CONSTANT_PRODUCT)
             {
                 throw new ArgumentException($"Unknown liquidity pool type {type}");
             }

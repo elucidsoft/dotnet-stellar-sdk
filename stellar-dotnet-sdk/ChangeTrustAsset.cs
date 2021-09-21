@@ -22,9 +22,9 @@ namespace stellar_dotnet_sdk
         {
             return new LiquidityPoolShareChangeTrustAsset(parameters);
         }
-        public static ChangeTrustAsset Create(TrustLineAsset.Wrapper wrapper)
+        public static ChangeTrustAsset Create(TrustlineAsset.Wrapper wrapper)
         {
-            return new Wrapper(wrapper.getAsset());
+            return new Wrapper(wrapper.Asset);
         }
 
         public static ChangeTrustAsset CreateNonNativeAsset(string code, string issuer)
@@ -53,7 +53,7 @@ namespace stellar_dotnet_sdk
                     return Create(new AssetTypeCreditAlphaNum12(assetCode, accountID));
 
                 case AssetType.AssetTypeEnum.ASSET_TYPE_POOL_SHARE:
-                    return new LiquidityPoolShareChangeTrustAsset()
+                    return new LiquidityPoolShareChangeTrustAsset(LiquidityPoolParameters.FromXdr(changeTrustXdr.LiquidityPool));
 
                 default:
                     throw new ArgumentException($"Unkown asset type {changeTrustXdr.Discriminant.InnerValue}");
@@ -95,7 +95,7 @@ namespace stellar_dotnet_sdk
 
             public override int CompareTo(ChangeTrustAsset asset)
             {
-                if(asset.GetType() == "pool_share")
+                if (asset.GetType() == "pool_share")
                 {
                     return -1;
                 }
@@ -115,4 +115,5 @@ namespace stellar_dotnet_sdk
                 return changeTrustXdr;
             }
         }
+    }
 }
