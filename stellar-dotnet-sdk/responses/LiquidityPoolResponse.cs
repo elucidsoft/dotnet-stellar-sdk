@@ -51,7 +51,7 @@ namespace stellar_dotnet_sdk.responses
 
             public override bool Equals(object obj)
             {
-                if(!(obj is Reserve))
+                if (!(obj is Reserve))
                 {
                     return false;
                 }
@@ -59,6 +59,6 @@ namespace stellar_dotnet_sdk.responses
                 Reserve other = (Reserve)obj;
                 return Equals(Asset, other.Asset) && Equals(Amount, other.Amount);
             }
-        }    
+        }
     }
 }

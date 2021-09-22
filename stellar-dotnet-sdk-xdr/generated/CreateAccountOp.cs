@@ -2,31 +2,35 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  struct CreateAccountOp
-//  {
-//      AccountID destination; // account to create
-//      int64 startingBalance; // amount they end up with
-//  };
+    //  struct CreateAccountOp
+    //  {
+    //      AccountID destination; // account to create
+    //      int64 startingBalance; // amount they end up with
+    //  };
 
-//  ===========================================================================
-public class CreateAccountOp  {
-  public CreateAccountOp () {}
-  public AccountID Destination {get; set;}
-  public Int64 StartingBalance {get; set;}
+    //  ===========================================================================
+    public class CreateAccountOp
+    {
+        public CreateAccountOp() { }
+        public AccountID Destination { get; set; }
+        public Int64 StartingBalance { get; set; }
 
-  public static void Encode(XdrDataOutputStream stream, CreateAccountOp encodedCreateAccountOp) {
-    AccountID.Encode(stream, encodedCreateAccountOp.Destination);
-    Int64.Encode(stream, encodedCreateAccountOp.StartingBalance);
-  }
-  public static CreateAccountOp Decode(XdrDataInputStream stream) {
-    CreateAccountOp decodedCreateAccountOp = new CreateAccountOp();
-    decodedCreateAccountOp.Destination = AccountID.Decode(stream);
-    decodedCreateAccountOp.StartingBalance = Int64.Decode(stream);
-    return decodedCreateAccountOp;
-  }
-}
+        public static void Encode(XdrDataOutputStream stream, CreateAccountOp encodedCreateAccountOp)
+        {
+            AccountID.Encode(stream, encodedCreateAccountOp.Destination);
+            Int64.Encode(stream, encodedCreateAccountOp.StartingBalance);
+        }
+        public static CreateAccountOp Decode(XdrDataInputStream stream)
+        {
+            CreateAccountOp decodedCreateAccountOp = new CreateAccountOp();
+            decodedCreateAccountOp.Destination = AccountID.Decode(stream);
+            decodedCreateAccountOp.StartingBalance = Int64.Decode(stream);
+            return decodedCreateAccountOp;
+        }
+    }
 }

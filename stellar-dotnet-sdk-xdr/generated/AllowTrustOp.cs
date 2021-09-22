@@ -2,37 +2,41 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  struct AllowTrustOp
-//  {
-//      AccountID trustor;
-//      AssetCode asset;
-//  
-//      // One of 0, AUTHORIZED_FLAG, or AUTHORIZED_TO_MAINTAIN_LIABILITIES_FLAG
-//      uint32 authorize;
-//  };
+    //  struct AllowTrustOp
+    //  {
+    //      AccountID trustor;
+    //      AssetCode asset;
+    //  
+    //      // One of 0, AUTHORIZED_FLAG, or AUTHORIZED_TO_MAINTAIN_LIABILITIES_FLAG
+    //      uint32 authorize;
+    //  };
 
-//  ===========================================================================
-public class AllowTrustOp  {
-  public AllowTrustOp () {}
-  public AccountID Trustor {get; set;}
-  public AssetCode Asset {get; set;}
-  public Uint32 Authorize {get; set;}
+    //  ===========================================================================
+    public class AllowTrustOp
+    {
+        public AllowTrustOp() { }
+        public AccountID Trustor { get; set; }
+        public AssetCode Asset { get; set; }
+        public Uint32 Authorize { get; set; }
 
-  public static void Encode(XdrDataOutputStream stream, AllowTrustOp encodedAllowTrustOp) {
-    AccountID.Encode(stream, encodedAllowTrustOp.Trustor);
-    AssetCode.Encode(stream, encodedAllowTrustOp.Asset);
-    Uint32.Encode(stream, encodedAllowTrustOp.Authorize);
-  }
-  public static AllowTrustOp Decode(XdrDataInputStream stream) {
-    AllowTrustOp decodedAllowTrustOp = new AllowTrustOp();
-    decodedAllowTrustOp.Trustor = AccountID.Decode(stream);
-    decodedAllowTrustOp.Asset = AssetCode.Decode(stream);
-    decodedAllowTrustOp.Authorize = Uint32.Decode(stream);
-    return decodedAllowTrustOp;
-  }
-}
+        public static void Encode(XdrDataOutputStream stream, AllowTrustOp encodedAllowTrustOp)
+        {
+            AccountID.Encode(stream, encodedAllowTrustOp.Trustor);
+            AssetCode.Encode(stream, encodedAllowTrustOp.Asset);
+            Uint32.Encode(stream, encodedAllowTrustOp.Authorize);
+        }
+        public static AllowTrustOp Decode(XdrDataInputStream stream)
+        {
+            AllowTrustOp decodedAllowTrustOp = new AllowTrustOp();
+            decodedAllowTrustOp.Trustor = AccountID.Decode(stream);
+            decodedAllowTrustOp.Asset = AssetCode.Decode(stream);
+            decodedAllowTrustOp.Authorize = Uint32.Decode(stream);
+            return decodedAllowTrustOp;
+        }
+    }
 }

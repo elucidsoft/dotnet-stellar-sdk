@@ -26,8 +26,8 @@ namespace stellar_dotnet_sdk
         }
 
         public override bool Equals(object obj)
-        {        
-            if(!(obj is AssetAmount)) 
+        {
+            if (!(obj is AssetAmount))
             {
                 return false;
             }

@@ -2,45 +2,51 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  union ClawbackClaimableBalanceResult switch (
-//      ClawbackClaimableBalanceResultCode code)
-//  {
-//  case CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
-//      void;
-//  default:
-//      void;
-//  };
+    //  union ClawbackClaimableBalanceResult switch (
+    //      ClawbackClaimableBalanceResultCode code)
+    //  {
+    //  case CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
+    //      void;
+    //  default:
+    //      void;
+    //  };
 
-//  ===========================================================================
-public class ClawbackClaimableBalanceResult  {
-  public ClawbackClaimableBalanceResult () {}
+    //  ===========================================================================
+    public class ClawbackClaimableBalanceResult
+    {
+        public ClawbackClaimableBalanceResult() { }
 
-  public ClawbackClaimableBalanceResultCode Discriminant { get; set; } = new ClawbackClaimableBalanceResultCode();
+        public ClawbackClaimableBalanceResultCode Discriminant { get; set; } = new ClawbackClaimableBalanceResultCode();
 
-  public static void Encode(XdrDataOutputStream stream, ClawbackClaimableBalanceResult encodedClawbackClaimableBalanceResult) {
-  stream.WriteInt((int)encodedClawbackClaimableBalanceResult.Discriminant.InnerValue);
-  switch (encodedClawbackClaimableBalanceResult.Discriminant.InnerValue) {
-  case ClawbackClaimableBalanceResultCode.ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
-  break;
-  default:
-  break;
-  }
-  }
-  public static ClawbackClaimableBalanceResult Decode(XdrDataInputStream stream) {
-  ClawbackClaimableBalanceResult decodedClawbackClaimableBalanceResult = new ClawbackClaimableBalanceResult();
-  ClawbackClaimableBalanceResultCode discriminant = ClawbackClaimableBalanceResultCode.Decode(stream);
-  decodedClawbackClaimableBalanceResult.Discriminant = discriminant;
-  switch (decodedClawbackClaimableBalanceResult.Discriminant.InnerValue) {
-  case ClawbackClaimableBalanceResultCode.ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
-  break;
-  default:
-  break;
-  }
-    return decodedClawbackClaimableBalanceResult;
-  }
-}
+        public static void Encode(XdrDataOutputStream stream, ClawbackClaimableBalanceResult encodedClawbackClaimableBalanceResult)
+        {
+            stream.WriteInt((int)encodedClawbackClaimableBalanceResult.Discriminant.InnerValue);
+            switch (encodedClawbackClaimableBalanceResult.Discriminant.InnerValue)
+            {
+                case ClawbackClaimableBalanceResultCode.ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
+                    break;
+                default:
+                    break;
+            }
+        }
+        public static ClawbackClaimableBalanceResult Decode(XdrDataInputStream stream)
+        {
+            ClawbackClaimableBalanceResult decodedClawbackClaimableBalanceResult = new ClawbackClaimableBalanceResult();
+            ClawbackClaimableBalanceResultCode discriminant = ClawbackClaimableBalanceResultCode.Decode(stream);
+            decodedClawbackClaimableBalanceResult.Discriminant = discriminant;
+            switch (decodedClawbackClaimableBalanceResult.Discriminant.InnerValue)
+            {
+                case ClawbackClaimableBalanceResultCode.ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
+                    break;
+                default:
+                    break;
+            }
+            return decodedClawbackClaimableBalanceResult;
+        }
+    }
 }

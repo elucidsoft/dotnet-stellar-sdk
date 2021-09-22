@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk
 
         public LiquidityPoolID(xdr.LiquidityPoolType.LiquidityPoolTypeEnum type, Asset assetA, Asset assetB, int fee)
         {
-            if(assetA.CompareTo(assetB) >= 0)
+            if (assetA.CompareTo(assetB) >= 0)
             {
                 throw new Exception("Asset A must be < Asset B (Lexicographic Order)");
             }

@@ -2,33 +2,37 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  typedef opaque SignatureHint[4];
+    //  typedef opaque SignatureHint[4];
 
-//  ===========================================================================
-public class SignatureHint  {
-  public byte[] InnerValue {get; set;} = default(byte[]);
+    //  ===========================================================================
+    public class SignatureHint
+    {
+        public byte[] InnerValue { get; set; } = default(byte[]);
 
-  public SignatureHint() {}
+        public SignatureHint() { }
 
-  public SignatureHint(byte[] value)
-  {
-    InnerValue = value;
-  }
+        public SignatureHint(byte[] value)
+        {
+            InnerValue = value;
+        }
 
-  public static void Encode(XdrDataOutputStream stream, SignatureHint  encodedSignatureHint) {
-  int SignatureHintsize = encodedSignatureHint.InnerValue.Length;
-  stream.Write(encodedSignatureHint.InnerValue, 0, SignatureHintsize);
-  }
-  public static SignatureHint Decode(XdrDataInputStream stream) {
-    SignatureHint decodedSignatureHint = new SignatureHint();
-  int SignatureHintsize = 4;
-  decodedSignatureHint.InnerValue = new byte[SignatureHintsize];
-  stream.Read(decodedSignatureHint.InnerValue, 0, SignatureHintsize);
-    return decodedSignatureHint;
-  }
-}
+        public static void Encode(XdrDataOutputStream stream, SignatureHint encodedSignatureHint)
+        {
+            int SignatureHintsize = encodedSignatureHint.InnerValue.Length;
+            stream.Write(encodedSignatureHint.InnerValue, 0, SignatureHintsize);
+        }
+        public static SignatureHint Decode(XdrDataInputStream stream)
+        {
+            SignatureHint decodedSignatureHint = new SignatureHint();
+            int SignatureHintsize = 4;
+            decodedSignatureHint.InnerValue = new byte[SignatureHintsize];
+            stream.Read(decodedSignatureHint.InnerValue, 0, SignatureHintsize);
+            return decodedSignatureHint;
+        }
+    }
 }

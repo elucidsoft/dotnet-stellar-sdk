@@ -47,7 +47,7 @@ namespace stellar_dotnet_sdk
 
         public override int CompareTo(TrustlineAsset asset)
         {
-            if(asset.GetType() != "pool_share")
+            if (asset.GetType() != "pool_share")
             {
                 return 1;
             }

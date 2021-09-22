@@ -2,30 +2,34 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  typedef string string64<64>;
+    //  typedef string string64<64>;
 
-//  ===========================================================================
-public class String64  {
-  public String InnerValue {get; set;} = default(String);
+    //  ===========================================================================
+    public class String64
+    {
+        public String InnerValue { get; set; } = default(String);
 
-  public String64() {}
+        public String64() { }
 
-  public String64(String value)
-  {
-    InnerValue = value;
-  }
+        public String64(String value)
+        {
+            InnerValue = value;
+        }
 
-  public static void Encode(XdrDataOutputStream stream, String64  encodedString64) {
-  stream.WriteString(encodedString64.InnerValue);
-  }
-  public static String64 Decode(XdrDataInputStream stream) {
-    String64 decodedString64 = new String64();
-  decodedString64.InnerValue = stream.ReadString();
-    return decodedString64;
-  }
-}
+        public static void Encode(XdrDataOutputStream stream, String64 encodedString64)
+        {
+            stream.WriteString(encodedString64.InnerValue);
+        }
+        public static String64 Decode(XdrDataInputStream stream)
+        {
+            String64 decodedString64 = new String64();
+            decodedString64.InnerValue = stream.ReadString();
+            return decodedString64;
+        }
+    }
 }

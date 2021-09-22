@@ -2,47 +2,53 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  union ManageSellOfferResult switch (ManageSellOfferResultCode code)
-//  {
-//  case MANAGE_SELL_OFFER_SUCCESS:
-//      ManageOfferSuccessResult success;
-//  default:
-//      void;
-//  };
+    //  union ManageSellOfferResult switch (ManageSellOfferResultCode code)
+    //  {
+    //  case MANAGE_SELL_OFFER_SUCCESS:
+    //      ManageOfferSuccessResult success;
+    //  default:
+    //      void;
+    //  };
 
-//  ===========================================================================
-public class ManageSellOfferResult  {
-  public ManageSellOfferResult () {}
+    //  ===========================================================================
+    public class ManageSellOfferResult
+    {
+        public ManageSellOfferResult() { }
 
-  public ManageSellOfferResultCode Discriminant { get; set; } = new ManageSellOfferResultCode();
+        public ManageSellOfferResultCode Discriminant { get; set; } = new ManageSellOfferResultCode();
 
-  public ManageOfferSuccessResult Success {get; set;}
-  public static void Encode(XdrDataOutputStream stream, ManageSellOfferResult encodedManageSellOfferResult) {
-  stream.WriteInt((int)encodedManageSellOfferResult.Discriminant.InnerValue);
-  switch (encodedManageSellOfferResult.Discriminant.InnerValue) {
-  case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_SUCCESS:
-  ManageOfferSuccessResult.Encode(stream, encodedManageSellOfferResult.Success);
-  break;
-  default:
-  break;
-  }
-  }
-  public static ManageSellOfferResult Decode(XdrDataInputStream stream) {
-  ManageSellOfferResult decodedManageSellOfferResult = new ManageSellOfferResult();
-  ManageSellOfferResultCode discriminant = ManageSellOfferResultCode.Decode(stream);
-  decodedManageSellOfferResult.Discriminant = discriminant;
-  switch (decodedManageSellOfferResult.Discriminant.InnerValue) {
-  case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_SUCCESS:
-  decodedManageSellOfferResult.Success = ManageOfferSuccessResult.Decode(stream);
-  break;
-  default:
-  break;
-  }
-    return decodedManageSellOfferResult;
-  }
-}
+        public ManageOfferSuccessResult Success { get; set; }
+        public static void Encode(XdrDataOutputStream stream, ManageSellOfferResult encodedManageSellOfferResult)
+        {
+            stream.WriteInt((int)encodedManageSellOfferResult.Discriminant.InnerValue);
+            switch (encodedManageSellOfferResult.Discriminant.InnerValue)
+            {
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_SUCCESS:
+                    ManageOfferSuccessResult.Encode(stream, encodedManageSellOfferResult.Success);
+                    break;
+                default:
+                    break;
+            }
+        }
+        public static ManageSellOfferResult Decode(XdrDataInputStream stream)
+        {
+            ManageSellOfferResult decodedManageSellOfferResult = new ManageSellOfferResult();
+            ManageSellOfferResultCode discriminant = ManageSellOfferResultCode.Decode(stream);
+            decodedManageSellOfferResult.Discriminant = discriminant;
+            switch (decodedManageSellOfferResult.Discriminant.InnerValue)
+            {
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_SUCCESS:
+                    decodedManageSellOfferResult.Success = ManageOfferSuccessResult.Decode(stream);
+                    break;
+                default:
+                    break;
+            }
+            return decodedManageSellOfferResult;
+        }
+    }
 }

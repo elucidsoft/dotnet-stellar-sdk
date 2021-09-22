@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk.responses
     /// </summary>
     public class TradeResponse : Response, IPagingToken
     {
-        [JsonProperty(PropertyName = "id")] 
+        [JsonProperty(PropertyName = "id")]
         public string Id { get; }
 
         [JsonProperty(PropertyName = "paging_token")]

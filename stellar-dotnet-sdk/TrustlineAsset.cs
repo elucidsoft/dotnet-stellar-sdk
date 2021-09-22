@@ -51,7 +51,7 @@ namespace stellar_dotnet_sdk
             string accountID;
             string assetCode;
 
-            switch(trustLineAssetXdr.Discriminant.InnerValue)
+            switch (trustLineAssetXdr.Discriminant.InnerValue)
             {
                 case xdr.AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE:
                     return TrustlineAsset.Create(new AssetTypeNative());
@@ -109,7 +109,7 @@ namespace stellar_dotnet_sdk
 
             public override int CompareTo(TrustlineAsset asset)
             {
-                if(asset.GetType() == "pool_share")
+                if (asset.GetType() == "pool_share")
                 {
                     return -1;
                 }

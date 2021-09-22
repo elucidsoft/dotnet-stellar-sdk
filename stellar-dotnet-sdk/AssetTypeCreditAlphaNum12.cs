@@ -30,14 +30,14 @@ namespace stellar_dotnet_sdk
 
         public override int CompareTo(Asset asset)
         {
-            if(asset.GetType() != "credit_alphanum12")
+            if (asset.GetType() != "credit_alphanum12")
             {
                 return 1;
             }
 
             AssetTypeCreditAlphaNum other = (AssetTypeCreditAlphaNum)asset;
 
-            if(Code != other.Code)
+            if (Code != other.Code)
             {
                 return Code.CompareTo(other.Code);
             }

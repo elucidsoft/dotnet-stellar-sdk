@@ -2,31 +2,35 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  struct Price
-//  {
-//      int32 n; // numerator
-//      int32 d; // denominator
-//  };
+    //  struct Price
+    //  {
+    //      int32 n; // numerator
+    //      int32 d; // denominator
+    //  };
 
-//  ===========================================================================
-public class Price  {
-  public Price () {}
-  public Int32 N {get; set;}
-  public Int32 D {get; set;}
+    //  ===========================================================================
+    public class Price
+    {
+        public Price() { }
+        public Int32 N { get; set; }
+        public Int32 D { get; set; }
 
-  public static void Encode(XdrDataOutputStream stream, Price encodedPrice) {
-    Int32.Encode(stream, encodedPrice.N);
-    Int32.Encode(stream, encodedPrice.D);
-  }
-  public static Price Decode(XdrDataInputStream stream) {
-    Price decodedPrice = new Price();
-    decodedPrice.N = Int32.Decode(stream);
-    decodedPrice.D = Int32.Decode(stream);
-    return decodedPrice;
-  }
-}
+        public static void Encode(XdrDataOutputStream stream, Price encodedPrice)
+        {
+            Int32.Encode(stream, encodedPrice.N);
+            Int32.Encode(stream, encodedPrice.D);
+        }
+        public static Price Decode(XdrDataInputStream stream)
+        {
+            Price decodedPrice = new Price();
+            decodedPrice.N = Int32.Decode(stream);
+            decodedPrice.D = Int32.Decode(stream);
+            return decodedPrice;
+        }
+    }
 }

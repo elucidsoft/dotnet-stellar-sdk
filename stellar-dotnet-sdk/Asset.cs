@@ -15,7 +15,7 @@ namespace stellar_dotnet_sdk
             {
                 return new AssetTypeNative();
             }
-            
+
             string[] parts = canonicalForm.Split(':');
             if (parts.Length != 2)
             {

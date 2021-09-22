@@ -34,7 +34,7 @@ namespace stellar_dotnet_sdk
             {
                 return -1;
             }
-            else if(asset.GetType() == "native")
+            else if (asset.GetType() == "native")
             {
                 return 1;
             }

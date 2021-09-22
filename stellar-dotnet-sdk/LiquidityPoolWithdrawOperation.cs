@@ -71,7 +71,7 @@ namespace stellar_dotnet_sdk
                 _liquidityPoolID = liquidityPoolID;
                 return this;
             }
-            
+
             public Builder SetAmount(string amount)
             {
                 _amount = amount;

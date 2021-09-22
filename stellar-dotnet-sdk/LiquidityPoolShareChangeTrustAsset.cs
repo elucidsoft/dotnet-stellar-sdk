@@ -35,7 +35,7 @@ namespace stellar_dotnet_sdk
 
         public override bool Equals(object obj)
         {
-            if (obj == null || typeof(LiquidityPoolShareChangeTrustAsset).Equals(obj.GetType())) 
+            if (obj == null || typeof(LiquidityPoolShareChangeTrustAsset).Equals(obj.GetType()))
             {
                 return false;
             }
@@ -46,7 +46,7 @@ namespace stellar_dotnet_sdk
 
         public override int CompareTo(ChangeTrustAsset asset)
         {
-            if(asset.GetType() != "pool_share")
+            if (asset.GetType() != "pool_share")
             {
                 return 1;
             }

@@ -19,7 +19,8 @@ namespace stellar_dotnet_sdk
 
         public override bool Equals(object obj)
         {
-            if (obj == null || typeof(LiquidityPoolConstantProductParameters).Equals(obj.GetType())) {
+            if (obj == null || typeof(LiquidityPoolConstantProductParameters).Equals(obj.GetType()))
+            {
                 return false;
             }
 

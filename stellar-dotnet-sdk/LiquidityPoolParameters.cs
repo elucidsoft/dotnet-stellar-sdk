@@ -20,7 +20,7 @@ namespace stellar_dotnet_sdk
 
         public static LiquidityPoolParameters FromXdr(xdr.LiquidityPoolParameters liquidityPoolParametersXdr)
         {
-            switch(liquidityPoolParametersXdr.Discriminant.InnerValue)
+            switch (liquidityPoolParametersXdr.Discriminant.InnerValue)
             {
                 case xdr.LiquidityPoolType.LiquidityPoolTypeEnum.LIQUIDITY_POOL_CONSTANT_PRODUCT:
                     return LiquidityPoolConstantProductParameters.FromXdr(liquidityPoolParametersXdr.ConstantProduct);

@@ -2,30 +2,34 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  typedef uint64 TimePoint;
+    //  typedef uint64 TimePoint;
 
-//  ===========================================================================
-public class TimePoint  {
-  public Uint64 InnerValue {get; set;} = default(Uint64);
+    //  ===========================================================================
+    public class TimePoint
+    {
+        public Uint64 InnerValue { get; set; } = default(Uint64);
 
-  public TimePoint() {}
+        public TimePoint() { }
 
-  public TimePoint(Uint64 value)
-  {
-    InnerValue = value;
-  }
+        public TimePoint(Uint64 value)
+        {
+            InnerValue = value;
+        }
 
-  public static void Encode(XdrDataOutputStream stream, TimePoint  encodedTimePoint) {
-  Uint64.Encode(stream, encodedTimePoint.InnerValue);
-  }
-  public static TimePoint Decode(XdrDataInputStream stream) {
-    TimePoint decodedTimePoint = new TimePoint();
-  decodedTimePoint.InnerValue = Uint64.Decode(stream);
-    return decodedTimePoint;
-  }
-}
+        public static void Encode(XdrDataOutputStream stream, TimePoint encodedTimePoint)
+        {
+            Uint64.Encode(stream, encodedTimePoint.InnerValue);
+        }
+        public static TimePoint Decode(XdrDataInputStream stream)
+        {
+            TimePoint decodedTimePoint = new TimePoint();
+            decodedTimePoint.InnerValue = Uint64.Decode(stream);
+            return decodedTimePoint;
+        }
+    }
 }
