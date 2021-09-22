@@ -10,21 +10,21 @@ namespace stellar_dotnet_sdk.xdr {
 
 //  ===========================================================================
 public class Uint64  {
-  public long InnerValue {get; set;} = default(long);
+  public ulong InnerValue {get; set;} = default(ulong);
 
   public Uint64() {}
 
-  public Uint64(long value)
+  public Uint64(ulong value)
   {
     InnerValue = value;
   }
 
   public static void Encode(XdrDataOutputStream stream, Uint64  encodedUint64) {
-  stream.WriteLong(encodedUint64.InnerValue);
+  stream.WriteULong(encodedUint64.InnerValue);
   }
   public static Uint64 Decode(XdrDataInputStream stream) {
     Uint64 decodedUint64 = new Uint64();
-  decodedUint64.InnerValue = stream.ReadLong();
+  decodedUint64.InnerValue = stream.ReadULong();
     return decodedUint64;
   }
 }
