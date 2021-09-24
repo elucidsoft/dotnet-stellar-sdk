@@ -3,9 +3,9 @@ namespace stellar_dotnet_sdk
     public class LedgerKeyTrustline : LedgerKey
     {
         public KeyPair Account { get; }
-        public Asset Asset { get; }
+        public TrustlineAsset Asset { get; }
 
-        public LedgerKeyTrustline(KeyPair account, Asset asset)
+        public LedgerKeyTrustline(KeyPair account, TrustlineAsset asset)
         {
             Account = account;
             Asset = asset;
@@ -28,7 +28,7 @@ namespace stellar_dotnet_sdk
         public static LedgerKeyTrustline FromXdr(xdr.LedgerKey.LedgerKeyTrustLine xdr)
         {
             var account = KeyPair.FromXdrPublicKey(xdr.AccountID.InnerValue);
-            var asset = Asset.FromXdr(xdr.Asset);
+            var asset = TrustlineAsset.FromXdr(xdr.Asset);
             return new LedgerKeyTrustline(account, asset);
         }
     }

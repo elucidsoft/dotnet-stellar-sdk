@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk
         public static LedgerKey ClaimableBalance(byte[] balanceId) => new LedgerKeyClaimableBalance(balanceId);
         public static LedgerKey Data(KeyPair account, string dataName) => new LedgerKeyData(account, dataName);
         public static LedgerKey Offer(KeyPair seller, long offerId) => new LedgerKeyOffer(seller, offerId);
-        public static LedgerKey Trustline(KeyPair account, Asset asset) => new LedgerKeyTrustline(account, asset);
+        public static LedgerKey Trustline(KeyPair account, TrustlineAsset asset) => new LedgerKeyTrustline(account, asset);
 
         public static LedgerKey FromXdr(xdr.LedgerKey xdr)
         {

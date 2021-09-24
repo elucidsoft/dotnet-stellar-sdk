@@ -257,7 +257,7 @@ namespace stellar_dotnet_sdk_test
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
             var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
 
-            Asset asset = new AssetTypeNative();
+            stellar_dotnet_sdk.ChangeTrustAsset asset = stellar_dotnet_sdk.ChangeTrustAsset.Create(new AssetTypeNative());
             var limit = ChangeTrustOperation.MaxLimit;
 
             var operation = new ChangeTrustOperation.Builder(asset, limit)

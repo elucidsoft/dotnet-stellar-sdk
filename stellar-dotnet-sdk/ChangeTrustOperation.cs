@@ -50,7 +50,7 @@ namespace stellar_dotnet_sdk
 
             public Builder(sdkxdr.ChangeTrustOp op)
             {
-                _Asset = Asset.FromXdr(op.Line);
+                _Asset = ChangeTrustAsset.FromXdr(op.Line);
                 _Limit = FromXdrAmount(op.Limit.InnerValue);
             }
 

@@ -33,6 +33,8 @@ namespace stellar_dotnet_sdk
             xdr.Operation.OperationBody body = new xdr.Operation.OperationBody();
             body.Discriminant.InnerValue = xdr.OperationType.OperationTypeEnum.LIQUIDITY_POOL_DEPOSIT;
             body.LiquidityPoolDepositOp = operationXdr;
+
+            return body;
         }
 
         public class Builder
@@ -123,7 +125,7 @@ namespace stellar_dotnet_sdk
 
                     if (_liquidityPoolID == null)
                     {
-                        _liquidityPoolID = new LiquidityPoolID(LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT, _assetA, _assetB, LiquidityPoolParameters.Fee);
+                        _liquidityPoolID = new LiquidityPoolID(xdr.LiquidityPoolType.LiquidityPoolTypeEnum.LIQUIDITY_POOL_CONSTANT_PRODUCT, _assetA, _assetB, LiquidityPoolParameters.Fee);
                     }
                 }
 

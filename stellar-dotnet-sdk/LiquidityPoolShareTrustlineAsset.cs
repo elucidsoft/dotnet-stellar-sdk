@@ -25,7 +25,7 @@ namespace stellar_dotnet_sdk
 
         public override string ToString()
         {
-            ID.ToString();
+            return ID.ToString();
         }
 
         public override int GetHashCode()
@@ -52,7 +52,7 @@ namespace stellar_dotnet_sdk
                 return 1;
             }
 
-            return ToString().CompareTo((LiquidityPoolShareTrustlineAsset)asset).ToString();
+            return ToString().CompareTo(((LiquidityPoolShareTrustlineAsset)asset).ToString());
         }
 
         public override xdr.TrustLineAsset ToXdr()
@@ -60,7 +60,7 @@ namespace stellar_dotnet_sdk
             xdr.TrustLineAsset trustlineAssetXdr = new xdr.TrustLineAsset();
             trustlineAssetXdr.Discriminant.InnerValue = xdr.AssetType.AssetTypeEnum.ASSET_TYPE_POOL_SHARE;
             trustlineAssetXdr.LiquidityPoolID = ID.ToXdr();
-            return xdr;
+            return trustlineAssetXdr;
         }
     }
 }

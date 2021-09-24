@@ -60,7 +60,7 @@ namespace stellar_dotnet_sdk
 
             public Builder(AssetAmount assetA, AssetAmount assetB, string amount)
             {
-                _liquidityPoolID = new LiquidityPoolID(LiquiditypoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT, assetA.Asset, assetB.Asset, LiquidityPoolParameters.Fee);
+                _liquidityPoolID = new LiquidityPoolID(xdr.LiquidityPoolType.LiquidityPoolTypeEnum.LIQUIDITY_POOL_CONSTANT_PRODUCT, assetA.Asset, assetB.Asset, LiquidityPoolParameters.Fee);
                 _amount = amount;
                 _minAmountA = assetA.Amount;
                 _minAmountB = assetB.Amount;

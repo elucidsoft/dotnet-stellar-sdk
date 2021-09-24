@@ -55,7 +55,7 @@ namespace stellar_dotnet_sdk_test
         {
             var keypair = KeyPair.FromAccountId("GCFRHRU5YRI3IN3IMRMYGWWEG2PX2B6MYH2RJW7NEDE2PTYPISPT3RU7");
             var issuer = KeyPair.FromAccountId("GB24C27VKWCBG7NTCT4J2L4MXJGYC3K3SQ4JOTCSPOVVEN7EZEB43XNE");
-            var asset = Asset.CreateNonNativeAsset("ABCD", issuer.AccountId);
+            var asset = TrustlineAsset.CreateNonNativeAsset("ABCD", issuer.AccountId);
             var ledgerKey = LedgerKey.Trustline(keypair, asset);
             var xdr = ledgerKey.ToXdr();
             var back = LedgerKey.FromXdr(xdr);
