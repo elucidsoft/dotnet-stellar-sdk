@@ -21,12 +21,12 @@ namespace stellar_dotnet_sdk_test.responses.results
             Assert.AreEqual("0.02", op.Last.Amount);
             Assert.AreEqual(1, op.Offers.Length);
             var offer = op.Offers[0];
-            Assert.AreEqual("GAVIGRVSL424MPYD6F6J5EZSTFORXESTMKEJUEPEII7BAWQ25BR25DUC", offer.Seller.AccountId);
-            Assert.AreEqual(1234, offer.OfferId);
-            Assert.AreEqual(new AssetTypeNative(), offer.AssetSold);
-            Assert.AreEqual("1", offer.AmountSold);
-            Assert.AreEqual(Asset.CreateNonNativeAsset("USD", "GAVIGRVSL424MPYD6F6J5EZSTFORXESTMKEJUEPEII7BAWQ25BR25DUC"), offer.AssetBought);
-            Assert.AreEqual("0.02", offer.AmountBought);
+            Assert.AreEqual("GAVIGRVSL424MPYD6F6J5EZSTFORXESTMKEJUEPEII7BAWQ25BR25DUC", offer.OrderBook.Seller.AccountId);
+            Assert.AreEqual(1234, offer.OrderBook.OfferId);
+            Assert.AreEqual(new AssetTypeNative(), offer.OrderBook.AssetSold);
+            Assert.AreEqual("1", offer.OrderBook.AmountSold);
+            Assert.AreEqual(Asset.CreateNonNativeAsset("USD", "GAVIGRVSL424MPYD6F6J5EZSTFORXESTMKEJUEPEII7BAWQ25BR25DUC"), offer.OrderBook.AssetBought);
+            Assert.AreEqual("0.02", offer.OrderBook.AmountBought);
         }
 
         [TestMethod]

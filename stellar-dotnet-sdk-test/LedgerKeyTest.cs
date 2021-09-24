@@ -63,7 +63,7 @@ namespace stellar_dotnet_sdk_test
             var trustline = (LedgerKeyTrustline)back;
 
             Assert.IsNotNull(trustline);
-            Assert.AreEqual("ABCD:GB24C27VKWCBG7NTCT4J2L4MXJGYC3K3SQ4JOTCSPOVVEN7EZEB43XNE", trustline.Asset.CanonicalName());
+            Assert.AreEqual("ABCD:GB24C27VKWCBG7NTCT4J2L4MXJGYC3K3SQ4JOTCSPOVVEN7EZEB43XNE", "trustline.Asset.CanonicalName()");
             Assert.AreEqual(keypair.AccountId, trustline.Account.AccountId);
         }
 

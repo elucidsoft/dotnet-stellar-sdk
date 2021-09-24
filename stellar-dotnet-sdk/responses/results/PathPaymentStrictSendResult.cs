@@ -47,9 +47,9 @@ namespace stellar_dotnet_sdk.responses.results
             }
         }
 
-        private static ClaimOfferAtom[] OffersFromXdr(xdr.ClaimOfferAtom[] offers)
+        private static ClaimAtom[] OffersFromXdr(xdr.ClaimAtom[] offers)
         {
-            return offers.Select(ClaimOfferAtom.FromXdr).ToArray();
+            return offers.Select(ClaimAtom.FromXdr).ToArray();
         }
     }
 }

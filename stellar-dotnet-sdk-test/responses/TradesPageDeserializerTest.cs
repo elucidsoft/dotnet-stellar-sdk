@@ -51,8 +51,8 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(tradesPage.Records[0].CounterAssetCode, "SLT");
             Assert.AreEqual(tradesPage.Records[0].CounterAssetIssuer, "GCKA6K5PCQ6PNF5RQBF7PQDJWRHO6UOGFMRLK3DYHDOI244V47XKQ4GP");
             Assert.AreEqual(tradesPage.Records[0].BaseIsSeller, true);
-            Assert.AreEqual(tradesPage.Records[0].Price.Numerator, 10);
-            Assert.AreEqual(tradesPage.Records[0].Price.Denominator, 61);
+            Assert.AreEqual(tradesPage.Records[0].Price.N, 10);
+            Assert.AreEqual(tradesPage.Records[0].Price.D, 61);
 
         }
     }

@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk.responses.results
         /// <summary>
         /// Offers claimed in this payment.
         /// </summary>
-        public ClaimOfferAtom[] Offers { get; set; }
+        public ClaimAtom[] Offers { get; set; }
 
         /// <summary>
         /// Payment result.
