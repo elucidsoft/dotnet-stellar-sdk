@@ -269,7 +269,7 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual(long.MaxValue, xdr.Body.ChangeTrustOp.Limit.InnerValue);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
-            Assert.IsTrue(parsedOperation.Asset is AssetTypeNative);
+            Assert.IsTrue(((stellar_dotnet_sdk.ChangeTrustAsset.Wrapper)parsedOperation.Asset).Asset is AssetTypeNative);
             Assert.AreEqual(limit, parsedOperation.Limit);
             Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
 
@@ -295,7 +295,7 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual(long.MaxValue, xdr.Body.ChangeTrustOp.Limit.InnerValue);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
-            Assert.IsTrue(parsedOperation.Asset is AssetTypeNative);
+            Assert.IsTrue(((stellar_dotnet_sdk.ChangeTrustAsset.Wrapper)parsedOperation.Asset).Asset is AssetTypeNative);
             Assert.AreEqual(ChangeTrustOperation.MaxLimit, parsedOperation.Limit);
             Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
 

@@ -14,9 +14,22 @@ namespace stellar_dotnet_sdk.responses.results
         {
             var claimAtom = new ClaimAtom();
             claimAtom.Type = offer.Discriminant.InnerValue;
-            claimAtom.OrderBook = ClaimOfferAtom.FromXdr(offer.OrderBook);
-            claimAtom.V0 = ClaimOfferAtomV0.FromXdr(offer.V0);
-            claimAtom.LiquidityPool = ClaimLiquidityAtom.FromXdr(offer.LiquidityPool);
+
+            switch(claimAtom.Type)
+            {
+                case xdr.ClaimAtomType.ClaimAtomTypeEnum.CLAIM_ATOM_TYPE_V0:
+                    claimAtom.V0 = ClaimOfferAtomV0.FromXdr(offer.V0);
+                    break;
+
+                case xdr.ClaimAtomType.ClaimAtomTypeEnum.CLAIM_ATOM_TYPE_ORDER_BOOK:
+                    claimAtom.OrderBook = ClaimOfferAtom.FromXdr(offer.OrderBook);
+                    break;
+
+                case xdr.ClaimAtomType.ClaimAtomTypeEnum.CLAIM_ATOM_TYPE_LIQUIDITY_POOL:
+                    claimAtom.LiquidityPool = ClaimLiquidityAtom.FromXdr(offer.LiquidityPool);
+                    break;
+            }
+            
             return claimAtom;
         }
     }

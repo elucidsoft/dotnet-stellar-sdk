@@ -34,7 +34,7 @@ namespace stellar_dotnet_sdk
         /// <summary>
         /// Return the asset issuer
         /// </summary>
-        public String Issuer => _issuer;
+        public string Issuer => _issuer;
 
         /// <inheritdoc />
         public override int GetHashCode()

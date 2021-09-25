@@ -15,8 +15,8 @@ namespace stellar_dotnet_sdk.responses
 
         public TradePrice(string n, string d)
         {
-            n = N;
-            d = D;
+            N = n;
+            D = d;
         }
 
         public override string ToString()
