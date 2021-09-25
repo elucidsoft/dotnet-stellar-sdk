@@ -15,7 +15,7 @@ namespace stellar_dotnet_sdk.responses.results
             var claimAtom = new ClaimAtom();
             claimAtom.Type = offer.Discriminant.InnerValue;
 
-            switch(claimAtom.Type)
+            switch (claimAtom.Type)
             {
                 case xdr.ClaimAtomType.ClaimAtomTypeEnum.CLAIM_ATOM_TYPE_V0:
                     claimAtom.V0 = ClaimOfferAtomV0.FromXdr(offer.V0);
@@ -29,7 +29,7 @@ namespace stellar_dotnet_sdk.responses.results
                     claimAtom.LiquidityPool = ClaimLiquidityAtom.FromXdr(offer.LiquidityPool);
                     break;
             }
-            
+
             return claimAtom;
         }
     }

@@ -6,9 +6,9 @@ namespace stellar_dotnet_sdk.responses.results
     public class ClaimOfferAtomV0
     {
         public KeyPair Seller { get; set; }
-        public long OfferID { get; set; } 
+        public long OfferID { get; set; }
         public Asset AssetSold { get; set; }
-        public string AmountSold {get; set; }
+        public string AmountSold { get; set; }
         public Asset AssetBought { get; set; }
         public string AmountBought { get; set; }
 
