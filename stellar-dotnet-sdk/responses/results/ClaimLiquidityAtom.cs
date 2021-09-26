@@ -1,16 +1,37 @@
 namespace stellar_dotnet_sdk.responses.results
 {
-    /// <summary>
-    /// This result is used when offers are taken during an operation.
-    /// </summary>
     public class ClaimLiquidityAtom
     {
+        /// <summary>
+        /// The Liquidity Pool ID
+        /// </summary>
         public LiquidityPoolID LiquidityPoolID { get; set; }
+
+        /// <summary>
+        /// Asset sold
+        /// </summary>
         public Asset AssetSold { get; set; }
+
+        /// <summary>
+        /// Amount sold
+        /// </summary>
         public string AmountSold { get; set; }
+
+        /// <summary>
+        /// Asset Bought
+        /// </summary>
         public Asset AssetBought { get; set; }
+
+        /// <summary>
+        /// Amount Bought
+        /// </summary>
         public string AmountBought { get; set; }
 
+        /// <summary>
+        /// Get new ClaimLiquityAtom object parsed from an XDR ClaimLiquidityAtom.
+        /// </summary>
+        /// <param name="claimLiquidityAtomXdr"></param>
+        /// <returns></returns>
         public static ClaimLiquidityAtom FromXdr(xdr.ClaimLiquidityAtom claimLiquidityAtomXdr)
         {
             var claimLiquidityAtom = new ClaimLiquidityAtom();
