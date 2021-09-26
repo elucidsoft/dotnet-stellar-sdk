@@ -4,8 +4,7 @@ using stellar_dotnet_sdk.xdr;
 namespace stellar_dotnet_sdk
 {
     /// <summary>
-    /// Asset class represents an asset, either the native asset (XLM) or a asset code / issuer account ID pair.
-    /// An asset code describes an asset code and issuer pair. In the case of the native asset XLM, the issuer will be null.
+    /// Class to have Asset and Amount in the same place.
     /// </summary>
     public class AssetAmount
     {
