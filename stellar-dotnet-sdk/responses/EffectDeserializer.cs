@@ -136,6 +136,24 @@ namespace stellar_dotnet_sdk.responses
                 case 80:
                     return new ClaimableBalanceClawedBackEffectResponse();
 
+                case 90:
+                    return new LiquidityPoolDepositedEffectResponse();
+
+                case 91:
+                    return new LiquidityPoolWithdrewEffectResponse();
+
+                case 92:
+                    return new LiquidityPoolTradeEffectResponse();
+
+                case 93:
+                    return new LiquidityPoolCreatedEffectResponse();
+
+                case 94:
+                    return new LiquidityPoolRemovedEffectResponse();
+
+                case 95:
+                    return new LiquidityPoolRevokedEffectResponse();
+
                 default:
                     throw new JsonSerializationException($"Unknown 'type_i'='{type}'");
             }

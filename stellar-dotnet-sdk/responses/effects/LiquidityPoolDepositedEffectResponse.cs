@@ -16,6 +16,8 @@ namespace stellar_dotnet_sdk.responses.effects
         [JsonProperty(PropertyName = "shares_received")]
         public string SharesReceived { get; }
 
+        public LiquidityPoolDepositedEffectResponse() { }
+
         public LiquidityPoolDepositedEffectResponse(LiquidityPool liquidityPool, AssetAmount[] reservesDeposited, string sharesReceived)
         {
             LiquidityPool = liquidityPool;

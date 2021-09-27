@@ -16,6 +16,8 @@ namespace stellar_dotnet_sdk.responses.effects
         [JsonProperty(PropertyName = "bought")]
         public AssetAmount Bought { get; }
 
+        public LiquidityPoolTradeEffectResponse() { }
+
         public LiquidityPoolTradeEffectResponse(LiquidityPoolID liquidityPoolID, AssetAmount sold, AssetAmount bought)
         {
             LiquidityPoolID = liquidityPoolID;
