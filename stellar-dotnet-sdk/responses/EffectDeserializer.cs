@@ -29,7 +29,7 @@ namespace stellar_dotnet_sdk.responses
         {
             switch (type)
             {
-                // account effects
+                // Account
                 case 0:
                     return new AccountCreatedEffectResponse();
                 case 1:
@@ -47,7 +47,7 @@ namespace stellar_dotnet_sdk.responses
                 case 7:
                     return new AccountInflationDestinationUpdatedEffectResponse();
 
-                // signer effects
+                // Signer
                 case 10:
                     return new SignerCreatedEffectResponse();
                 case 11:
@@ -55,7 +55,7 @@ namespace stellar_dotnet_sdk.responses
                 case 12:
                     return new SignerUpdatedEffectResponse();
 
-                // trustline effects
+                // Trustline
                 case 20:
                     return new TrustlineCreatedEffectResponse();
                 case 21:
@@ -71,7 +71,7 @@ namespace stellar_dotnet_sdk.responses
                 case 26:
                     return new TrustlineFlagsUpdatedEffectResponse();
 
-                // trading effects
+                // Offer
                 case 30:
                     return new OfferCreatedEffectResponse();
                 case 31:
@@ -81,7 +81,7 @@ namespace stellar_dotnet_sdk.responses
                 case 33:
                     return new TradeEffectResponse();
 
-                // data effects
+                // Data
                 case 40:
                     return new DataCreatedEffectResponse();
                 case 41:
@@ -91,6 +91,7 @@ namespace stellar_dotnet_sdk.responses
                 case 43:
                     return new SequenceBumpedEffectResponse();
 
+                // Claimable Balances
                 case 50:
                     return new ClaimableBalanceCreatedEffectResponse();
                 case 51:
@@ -98,6 +99,7 @@ namespace stellar_dotnet_sdk.responses
                 case 52:
                     return new ClaimableBalanceClaimedEffectResponse();
 
+                // Sponsorship
                 case 60:
                     return new AccountSponsorshipCreatedEffectResponse();
                 case 61:
@@ -136,21 +138,17 @@ namespace stellar_dotnet_sdk.responses
                 case 80:
                     return new ClaimableBalanceClawedBackEffectResponse();
 
+                //Liquidity Pools
                 case 90:
                     return new LiquidityPoolDepositedEffectResponse();
-
                 case 91:
                     return new LiquidityPoolWithdrewEffectResponse();
-
                 case 92:
                     return new LiquidityPoolTradeEffectResponse();
-
                 case 93:
                     return new LiquidityPoolCreatedEffectResponse();
-
                 case 94:
                     return new LiquidityPoolRemovedEffectResponse();
-
                 case 95:
                     return new LiquidityPoolRevokedEffectResponse();
 
