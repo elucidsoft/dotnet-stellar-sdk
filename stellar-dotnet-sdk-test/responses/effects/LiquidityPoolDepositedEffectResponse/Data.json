@@ -1,0 +1,49 @@
+{
+  "_links": {
+    "operation": {
+      "href": "https://horizon-protocol18.stellar.org/operations/800066507902977"
+    },
+    "succeeds": {
+      "href": "https://horizon-protocol18.stellar.org/effects?order=desc\u0026cursor=800066507902977-1"
+    },
+    "precedes": {
+      "href": "https://horizon-protocol18.stellar.org/effects?order=asc\u0026cursor=800066507902977-1"
+    }
+  },
+  "id": "0000800066507902977-0000000001",
+  "paging_token": "800066507902977-1",
+  "account": "GDB2ATEJPYNF2KNSK7YZ5C5J5IF2OLYMWCFQ2AAERYKV7Y5BE3XT34UC",
+  "account_muxed": "MDB2ATEJPYNF2KNSK7YZ5C5J5IF2OLYMWCFQ2AAERYKV7Y5BE3XT2AAAAAAAAE4DUGUA4",
+  "account_muxed_id": "1278881",
+  "type": "liquidity_pool_deposited",
+  "type_i": 90,
+  "created_at": "2021-09-13T17:06:59Z",
+  "liquidity_pool": {
+    "id": "4f7f29db33ead1a38c2edf17aa0416c369c207ca081de5c686c050c1ad320385",
+    "fee_bp": 30,
+    "type": "constant_product",
+    "total_trustlines": "1",
+    "total_shares": "1500.0000000",
+    "reserves": [
+      {
+        "asset": "native",
+        "amount": "1500.0000000"
+      },
+      {
+        "asset": "TEST:GC2262FQJAHVJSYWI6XEVQEH5CLPYCVSOLQHCDHNSKVWHTKYEZNAQS25",
+        "amount": "1500.0000000"
+      }
+    ]
+  },
+  "reserves_deposited": [
+    {
+      "asset": "native",
+      "amount": "123.456789"
+    },
+    {
+      "asset": "TEST:GD5Y3PMKI46MPILDG4OQP4SGFMRNKYEPJVDAPR3P3I2BMZ3O7IX6DB2Y",
+      "amount": "478.7867966"
+    }
+  ],
+  "shares_received": "250.0000000"
+}

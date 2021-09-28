@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using stellar_dotnet_sdk.converters;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,6 +14,7 @@ namespace stellar_dotnet_sdk.responses.effects
         [JsonProperty(PropertyName = "fee_bp")]
         public int FeeBP { get; }
 
+        [JsonConverter(typeof(LiquidityPoolTypeEnumJsonConverter))]
         [JsonProperty(PropertyName = "type")]
         public xdr.LiquidityPoolType.LiquidityPoolTypeEnum Type { get; }
 

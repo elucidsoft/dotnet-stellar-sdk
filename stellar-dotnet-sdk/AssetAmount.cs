@@ -1,4 +1,6 @@
 ﻿using System;
+using Newtonsoft.Json;
+using stellar_dotnet_sdk.converters;
 using stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
@@ -6,9 +8,12 @@ namespace stellar_dotnet_sdk
     /// <summary>
     /// Class to have Asset and Amount in the same place.
     /// </summary>
+
+    [JsonConverter(typeof(AssetAmountConverter))]
     public class AssetAmount
     {
         public Asset Asset { get; set; }
+
         public string Amount { get; set; }
 
         public AssetAmount() { }

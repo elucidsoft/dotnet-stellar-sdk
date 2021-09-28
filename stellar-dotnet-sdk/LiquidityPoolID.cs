@@ -1,12 +1,17 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using stellar_dotnet_sdk.converters;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace stellar_dotnet_sdk
 {
+    [JsonConverter(typeof(LiquidityPoolIDJsonConverter))]
     public class LiquidityPoolID
     {
         public byte[] Hash { get; set; }
+
+        public LiquidityPoolID() { }
 
         public LiquidityPoolID(xdr.LiquidityPoolType.LiquidityPoolTypeEnum type, Asset assetA, Asset assetB, int fee)
         {
@@ -46,7 +51,7 @@ namespace stellar_dotnet_sdk
 
         public override string ToString()
         {
-            return Util.BytesToHex(Hash);
+            return Util.BytesToHex(Hash).ToLowerInvariant();
         }
 
         public xdr.PoolID ToXdr()

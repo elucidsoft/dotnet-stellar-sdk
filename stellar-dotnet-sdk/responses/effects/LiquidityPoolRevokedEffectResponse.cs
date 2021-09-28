@@ -7,6 +7,8 @@ namespace stellar_dotnet_sdk.responses.effects
 {
     public class LiquidityPoolRevokedEffectResponse : EffectResponse
     {
+        public override int TypeId => 95;
+
         [JsonProperty(PropertyName = "liquidity_pool")]
         public LiquidityPool LiquidityPool { get; }
 
