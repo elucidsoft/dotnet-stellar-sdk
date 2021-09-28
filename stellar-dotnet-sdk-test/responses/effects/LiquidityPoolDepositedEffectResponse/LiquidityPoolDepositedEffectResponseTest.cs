@@ -41,7 +41,7 @@ namespace stellar_dotnet_sdk_test.responses.effects
             Assert.AreEqual(effect.AccountMuxedID, 1278881);
 
             Assert.AreEqual(effect.LiquidityPool.ID.ToString(), "4f7f29db33ead1a38c2edf17aa0416c369c207ca081de5c686c050c1ad320385");
-            
+
             Assert.AreEqual(effect.LiquidityPool.FeeBP, 30);
             Assert.AreEqual(effect.LiquidityPool.TotalTrustlines, 1);
             Assert.AreEqual(effect.LiquidityPool.TotalShares, "1500.0000000");
@@ -51,7 +51,7 @@ namespace stellar_dotnet_sdk_test.responses.effects
 
             Assert.AreEqual(effect.ReservesDeposited[1].Asset.CanonicalName(), "TEST:GD5Y3PMKI46MPILDG4OQP4SGFMRNKYEPJVDAPR3P3I2BMZ3O7IX6DB2Y");
             Assert.AreEqual(effect.ReservesDeposited[1].Amount, "478.7867966");
-            
+
             Assert.AreEqual(effect.SharesReceived, "250.0000000");
         }
     }
