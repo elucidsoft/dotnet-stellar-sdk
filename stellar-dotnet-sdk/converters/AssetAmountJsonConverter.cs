@@ -6,7 +6,7 @@ using System.Text;
 
 namespace stellar_dotnet_sdk.converters
 {
-    public class AssetAmountConverter : JsonConverter<AssetAmount>
+    public class AssetAmountJsonConverter : JsonConverter<AssetAmount>
     {
         public override AssetAmount ReadJson(JsonReader reader, Type objectType, AssetAmount existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
