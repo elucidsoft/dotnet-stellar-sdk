@@ -8,8 +8,7 @@ namespace stellar_dotnet_sdk
     /// <summary>
     /// Class to have Asset and Amount in the same place.
     /// </summary>
-
-    [JsonConverter(typeof(AssetAmountConverter))]
+    [JsonConverter(typeof(AssetAmountJsonConverter))]
     public class AssetAmount
     {
         public Asset Asset { get; set; }
