@@ -14,6 +14,19 @@ namespace stellar_dotnet_sdk_test.responses.effects
     public class LiquidityPoolDepositedEffectResponseTest
     {
         [TestMethod]
+        public void TestCreation()
+        {
+            var json = File.ReadAllText(Path.Combine("responses/effects/", "LiquidityPoolDepositedEffectResponse/Data.json"));
+            var instance = JsonSingleton.GetInstance<EffectResponse>(json);
+            var response = (LiquidityPoolDepositedEffectResponse)instance;
+            var clone = new LiquidityPoolDepositedEffectResponse(response.LiquidityPool, response.ReservesDeposited, response.SharesReceived);
+
+            Assert.AreEqual(response.LiquidityPool, clone.LiquidityPool);
+            Assert.AreEqual(response.ReservesDeposited, clone.ReservesDeposited);
+            Assert.AreEqual(response.SharesReceived, clone.SharesReceived);
+        }
+
+        [TestMethod]
         public void TestDeserialize()
         {
             var json = File.ReadAllText(Path.Combine("responses/effects/", "LiquidityPoolDepositedEffectResponse/Data.json"));
