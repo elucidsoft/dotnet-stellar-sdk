@@ -10,13 +10,13 @@ namespace stellar_dotnet_sdk.responses.effects
         public override int TypeId => 95;
 
         [JsonProperty(PropertyName = "liquidity_pool")]
-        public LiquidityPool LiquidityPool { get; }
+        public LiquidityPool LiquidityPool { get; set; }
 
         [JsonProperty(PropertyName = "reserves_revoked")]
-        public LiquidityPoolClaimableAssetAmount ReservesRevoked { get; }
+        public LiquidityPoolClaimableAssetAmount ReservesRevoked { get; set; }
 
         [JsonProperty(PropertyName = "shares_revoked")]
-        public string SharesRevoked { get; }
+        public string SharesRevoked { get; set; }
 
         public LiquidityPoolRevokedEffectResponse() { }
 
