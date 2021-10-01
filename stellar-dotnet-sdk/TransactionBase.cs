@@ -105,6 +105,52 @@ namespace stellar_dotnet_sdk
         }
 
         /// <summary>
+        /// Add a signature to the transaction. Useful when a party wants to pre-sign
+        /// a transaction but doesn't want to give access to their secret keys.
+        /// This will also verify whether the signature is valid.
+        /// </summary>
+        /// <param name="publicKey">The public key of the signer</param>
+        /// <param name="signature">The base64 value of the signature XDR</param>
+        public void Sign(string publicKey, string signature)
+        {
+            if (publicKey == null)
+                throw new ArgumentNullException(nameof(publicKey), "public key cannot be null");
+
+            if (signature == null)
+                throw new ArgumentNullException(nameof(signature), "signature cannot be null");
+
+            var signatureBytes = Convert.FromBase64String(signature);
+            var signatureObj = new Signature
+            {
+                InnerValue = signatureBytes
+            };
+
+            // this can throw a bunch of errors. Wrap in Try/Catch for consistent failure.
+            SignatureHint signatureHint;
+            KeyPair keyPair;
+            try
+            {
+                keyPair = KeyPair.FromAccountId(publicKey);
+                signatureHint = keyPair.SignatureHint;
+            }
+            catch
+            {
+                throw new ArgumentException("Invalid public key", nameof(publicKey));
+            }
+
+            if (!keyPair.Verify(Hash(), signatureObj.InnerValue))
+                throw new ArgumentException("Invalid signature", nameof(signature));
+
+            var decoratedSignature = new DecoratedSignature
+            {
+                Hint = signatureHint,
+                Signature = signatureObj
+            };
+
+            Signatures.Add(decoratedSignature);
+        }
+
+        /// <summary>
         ///     Returns transaction hash.
         /// </summary>
         /// <returns></returns>
