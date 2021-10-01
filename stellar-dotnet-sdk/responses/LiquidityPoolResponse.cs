@@ -28,21 +28,6 @@ namespace stellar_dotnet_sdk.responses
             [JsonProperty(PropertyName = "asset")]
             public Asset Asset { get; set; }
 
-            /*
-            public Reserve(string amount, string asset)
-            {
-                Amount = amount;
-
-                if(string.IsNullOrEmpty(asset))
-                {
-                    throw new ArgumentNullException(nameof(asset), "asset cannot be null");
-                }
-                else
-                {
-                    Asset = Asset.(asset);
-                }
-            }*/
-
             public Reserve(string amount, Asset asset)
             {
                 Amount = amount ?? throw new ArgumentNullException(nameof(amount), "amount cannot be null");
