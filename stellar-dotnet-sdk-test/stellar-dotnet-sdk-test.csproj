@@ -245,6 +245,9 @@
     <None Update="testdata\operations\createAccount\createAccountMuxed.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="testdata\operations\endSponsoringFutureReserves\endSponsoringFutureReservesMuxed.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="testdata\operations\payment\paymentMuxed.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -338,7 +341,7 @@
     <None Update="testdata\operations\setOptions\setOptionsNonEd25519Key.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testdata\operations\operationUnknown\operationUnknown.json">
+    <None Update="testdata\operations\unknownOperation\unknownOperation.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="testdata\orderBook.json">

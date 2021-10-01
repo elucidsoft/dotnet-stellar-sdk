@@ -9,6 +9,7 @@ using System.Text;
 
 namespace stellar_dotnet_sdk_test.responses.operations
 {
+    [TestClass]
     public class ClawbackClaimableBalance
     {
         //Clawback Claimable Balance

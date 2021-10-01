@@ -10,6 +10,7 @@ using System.Text;
 
 namespace stellar_dotnet_sdk_test.responses.operations
 {
+    [TestClass]
     public class AllowTrustOperationResponseTest
     {
         //Allow Trust
@@ -40,7 +41,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
 
             Assert.AreEqual(operation.Trustor, "GDZ55LVXECRTW4G36EZPTHI4XIYS5JUC33TUS22UOETVFVOQ77JXWY4F");
             Assert.AreEqual(operation.Trustee, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
-            Assert.AreEqual(operation.TrusteeMuxed, "");
+            Assert.IsNull(operation.TrusteeMuxed);
             Assert.IsNull(operation.TrusteeMuxedID);
             Assert.AreEqual(operation.Authorize, true);
             Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM"));
