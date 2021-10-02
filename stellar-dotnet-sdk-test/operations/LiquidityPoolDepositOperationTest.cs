@@ -107,7 +107,7 @@ namespace stellar_dotnet_sdk_test.operations
                .SetSourceAccount(source)
                .Build();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Assert.AreEqual(e.Message, "Asset A must be < Asset B (Lexicographic Order)");
             }
