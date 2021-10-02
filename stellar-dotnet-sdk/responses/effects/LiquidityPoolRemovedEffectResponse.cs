@@ -10,7 +10,7 @@ namespace stellar_dotnet_sdk.responses.effects
         public override int TypeId => 94;
 
         [JsonProperty(PropertyName = "liquidity_pool_id")]
-        public LiquidityPoolID LiquidityPoolID { get; set; }
+        public LiquidityPoolID LiquidityPoolID { get; private set; }
 
         public LiquidityPoolRemovedEffectResponse() { }
 

@@ -59,5 +59,17 @@ namespace stellar_dotnet_sdk
             xdr.PoolID poolIDXdr = new xdr.PoolID(new xdr.Hash(Hash));
             return poolIDXdr;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || !typeof(LiquidityPoolID).Equals(obj.GetType()))
+            {
+                return false;
+            }
+
+            LiquidityPoolID o = (LiquidityPoolID)obj;
+
+            return Equals(ToString(), o.ToString());
+        }
     }
 }

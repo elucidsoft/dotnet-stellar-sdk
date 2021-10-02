@@ -7,10 +7,10 @@ namespace stellar_dotnet_sdk
     public class LiquidityPoolDepositOperation : Operation
     {
         public LiquidityPoolID LiquidityPoolID { get; set; }
-        public string MaxAmountA { get; set; }
-        public string MaxAmountB { get; set; }
-        public Price MinPrice { get; set; }
-        public Price MaxPrice { get; set; }
+        public string MaxAmountA { get; }
+        public string MaxAmountB { get; }
+        public Price MinPrice { get; }
+        public Price MaxPrice { get; }
 
         private LiquidityPoolDepositOperation(LiquidityPoolID liquidityPoolID, string maxAmountA, string maxAmountB, Price minPrice, Price maxPrice)
         {
@@ -75,32 +75,6 @@ namespace stellar_dotnet_sdk
                 _maxAmountB = maxAmountB;
                 _minPrice = minPrice;
                 _maxPrice = maxPrice;
-            }
-
-            public Builder SetAssetA(Asset asset, string maxAmount)
-            {
-                _assetA = asset;
-                _maxAmountA = maxAmount;
-                return this;
-            }
-
-            public Builder SetAssetB(Asset asset, string maxAmount)
-            {
-                _assetB = asset;
-                _maxAmountB = maxAmount;
-                return this;
-            }
-
-            public Builder SetMinPrice(Price minPrice)
-            {
-                _minPrice = minPrice;
-                return this;
-            }
-
-            public Builder SetMaxPrice(Price maxPrice)
-            {
-                _maxPrice = maxPrice;
-                return this;
             }
 
             /// <summary>
