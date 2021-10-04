@@ -17,7 +17,7 @@ namespace stellar_dotnet_sdk
         {
             if (assetA.CompareTo(assetB) >= 0)
             {
-                throw new Exception("Asset A must be < Asset B (Lexicographic Order)");
+                throw new ArgumentException("Asset A must be < Asset B (Lexicographic Order)");
             }
 
             xdr.XdrDataOutputStream xdrDataOutputStream = new xdr.XdrDataOutputStream();
