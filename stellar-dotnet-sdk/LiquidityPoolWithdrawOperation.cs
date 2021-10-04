@@ -66,30 +66,6 @@ namespace stellar_dotnet_sdk
                 _minAmountB = assetB.Amount;
             }
 
-            public Builder SetLiquidityPoolID(LiquidityPoolID liquidityPoolID)
-            {
-                _liquidityPoolID = liquidityPoolID;
-                return this;
-            }
-
-            public Builder SetAmount(string amount)
-            {
-                _amount = amount;
-                return this;
-            }
-
-            public Builder SetMinAmountA(string minAmountA)
-            {
-                _minAmountA = minAmountA;
-                return this;
-            }
-
-            public Builder SetMinAmountB(string minAmountB)
-            {
-                _minAmountB = minAmountB;
-                return this;
-            }
-
             /// <summary>
             ///     Set source account of this operation
             /// </summary>

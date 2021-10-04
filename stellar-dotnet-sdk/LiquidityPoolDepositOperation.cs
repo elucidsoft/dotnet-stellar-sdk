@@ -94,7 +94,7 @@ namespace stellar_dotnet_sdk
                 {
                     if (_assetA.CompareTo(_assetB) >= 0)
                     {
-                        throw new Exception("Asset A must be < Asset B (Lexicographic Order)");
+                        throw new ArgumentException("Asset A must be < Asset B (Lexicographic Order)");
                     }
 
                     if (_liquidityPoolID == null)

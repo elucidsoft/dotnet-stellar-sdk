@@ -92,8 +92,8 @@ namespace stellar_dotnet_sdk_test.operations
             var keypairAssetA = KeyPair.Random();
             var keypairAssetB = KeyPair.Random();
 
-            var assetA = Asset.Create($"EUR:{keypairAssetA.AccountId}");
-            var assetB = Asset.Create($"USD:{keypairAssetB.AccountId}");
+            var assetA = Asset.Create($"USD:{keypairAssetB.AccountId}");
+            var assetB = Asset.Create($"EUR:{keypairAssetA.AccountId}");
 
             var assetAmountA = new AssetAmount(assetA, "100");
             var assetAmountB = new AssetAmount(assetB, "200");
@@ -101,18 +101,9 @@ namespace stellar_dotnet_sdk_test.operations
             var minPrice = Price.FromString("0.01");
             var maxPrice = Price.FromString("0.02");
 
-            try
-            {
-                var operation = new LiquidityPoolDepositOperation.Builder(assetAmountA, assetAmountB, minPrice, maxPrice)
-               .SetSourceAccount(source)
-               .Build();
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual(e.Message, "Asset A must be < Asset B (Lexicographic Order)");
-            }
+            var op = new LiquidityPoolDepositOperation.Builder(assetAmountA, assetAmountB, minPrice, maxPrice);
+
+            Assert.ThrowsException<ArgumentException>(() => op.Build(), "Asset A must be < Asset B (Lexicographic Order)");
         }
-
-
     }
 }
