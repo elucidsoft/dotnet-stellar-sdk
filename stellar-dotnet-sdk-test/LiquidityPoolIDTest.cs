@@ -28,7 +28,7 @@ namespace stellar_dotnet_sdk_test
             var b = Asset.CreateNonNativeAsset("ABC", "GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3");
             var c = Asset.CreateNonNativeAsset("ABCD", "GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3");
 
-            Assert.ThrowsException<ArgumentException>(()=> new LiquidityPoolID(XDR.LiquidityPoolType.LiquidityPoolTypeEnum.LIQUIDITY_POOL_CONSTANT_PRODUCT, b, a, LiquidityPoolParameters.Fee), "Asset A must be < Asset B (Lexicographic Order)");
+            Assert.ThrowsException<ArgumentException>(() => new LiquidityPoolID(XDR.LiquidityPoolType.LiquidityPoolTypeEnum.LIQUIDITY_POOL_CONSTANT_PRODUCT, b, a, LiquidityPoolParameters.Fee), "Asset A must be < Asset B (Lexicographic Order)");
         }
 
         [TestMethod]
