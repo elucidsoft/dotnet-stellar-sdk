@@ -6,7 +6,7 @@ namespace stellar_dotnet_sdk
 {
     public class LiquidityPoolShareTrustlineAsset : TrustlineAsset
     {
-        public LiquidityPoolID ID { get; set; }
+        public LiquidityPoolID ID { get; private set; }
 
         public LiquidityPoolShareTrustlineAsset(LiquidityPoolParameters parameters)
         {
@@ -33,7 +33,7 @@ namespace stellar_dotnet_sdk
             return ID.GetHashCode();
         }
 
-        public override bool Equals(Object obj)
+        public override bool Equals(object obj)
         {
             if (obj == null || !typeof(LiquidityPoolShareTrustlineAsset).Equals(obj.GetType()))
             {

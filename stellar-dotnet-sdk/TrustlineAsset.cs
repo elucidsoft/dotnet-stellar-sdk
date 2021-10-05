@@ -54,17 +54,17 @@ namespace stellar_dotnet_sdk
             switch (trustLineAssetXdr.Discriminant.InnerValue)
             {
                 case xdr.AssetType.AssetTypeEnum.ASSET_TYPE_NATIVE:
-                    return TrustlineAsset.Create(new AssetTypeNative());
+                    return Create(new AssetTypeNative());
 
                 case xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4:
                     assetCode = Util.PaddedByteArrayToString(trustLineAssetXdr.AlphaNum4.AssetCode.InnerValue);
                     accountID = KeyPair.FromXdrPublicKey(trustLineAssetXdr.AlphaNum4.Issuer.InnerValue).AccountId;
-                    return TrustlineAsset.Create(new AssetTypeCreditAlphaNum4(assetCode, accountID));
+                    return Create(new AssetTypeCreditAlphaNum4(assetCode, accountID));
 
                 case xdr.AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12:
                     assetCode = Util.PaddedByteArrayToString(trustLineAssetXdr.AlphaNum12.AssetCode.InnerValue);
                     accountID = KeyPair.FromXdrPublicKey(trustLineAssetXdr.AlphaNum12.Issuer.InnerValue).AccountId;
-                    return TrustlineAsset.Create(new AssetTypeCreditAlphaNum12(assetCode, accountID));
+                    return Create(new AssetTypeCreditAlphaNum12(assetCode, accountID));
 
                 case xdr.AssetType.AssetTypeEnum.ASSET_TYPE_POOL_SHARE:
                     return new LiquidityPoolShareTrustlineAsset(LiquidityPoolID.FromXdr(trustLineAssetXdr.LiquidityPoolID));
