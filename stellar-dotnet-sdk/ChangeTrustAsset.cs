@@ -14,14 +14,17 @@ namespace stellar_dotnet_sdk
         {
             return new Wrapper(Asset.Create(type, code, issuer));
         }
+
         public static ChangeTrustAsset Create(Asset asset)
         {
             return new Wrapper(asset);
         }
+
         public static ChangeTrustAsset Create(LiquidityPoolParameters parameters)
         {
             return new LiquidityPoolShareChangeTrustAsset(parameters);
         }
+
         public static ChangeTrustAsset Create(TrustlineAsset.Wrapper wrapper)
         {
             return new Wrapper(wrapper.Asset);

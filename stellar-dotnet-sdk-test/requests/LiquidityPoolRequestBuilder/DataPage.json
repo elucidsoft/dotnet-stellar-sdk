@@ -1,0 +1,72 @@
+{
+  "_embedded": {
+    "records": [
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon-testnet.stellar.org/liquidity_pools/b26c0d6545349ad7f44ba758b7c705459537201583f2e524635be04aff84bc69"
+          },
+          "transactions": {
+            "href": "https://horizon-testnet.stellar.org/liquidity_pools/b26c0d6545349ad7f44ba758b7c705459537201583f2e524635be04aff84bc69/transactions{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "https://horizon-testnet.stellar.org/liquidity_pools/b26c0d6545349ad7f44ba758b7c705459537201583f2e524635be04aff84bc69/operations{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "b26c0d6545349ad7f44ba758b7c705459537201583f2e524635be04aff84bc69",
+        "paging_token": "b26c0d6545349ad7f44ba758b7c705459537201583f2e524635be04aff84bc69",
+        "fee_bp": 30,
+        "type": "constant_product",
+        "total_trustlines": "1",
+        "total_shares": "0.0000000",
+        "reserves": [
+          {
+            "asset": "native",
+            "amount": "0.0000000"
+          },
+          {
+            "asset": "OTH:GAKMOAANQHJKF5735OYVSQZL6KC3VMFL4LP4ZYY2LWK256TSUG45IEFB",
+            "amount": "0.0000000"
+          }
+        ],
+        "last_modified_ledger": 351258,
+        "last_modified_time": "2021-10-06T18:10:59Z"
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "https://horizon-testnet.stellar.org/liquidity_pools/b26c0d6545349ad7f44ba758b7c705459537201583f2e524635be04aff84bc69"
+          },
+          "transactions": {
+            "href": "https://horizon-testnet.stellar.org/liquidity_pools/b26c0d6545349ad7f44ba758b7c705459537201583f2e524635be04aff84bc69/transactions{?cursor,limit,order}",
+            "templated": true
+          },
+          "operations": {
+            "href": "https://horizon-testnet.stellar.org/liquidity_pools/b26c0d6545349ad7f44ba758b7c705459537201583f2e524635be04aff84bc69/operations{?cursor,limit,order}",
+            "templated": true
+          }
+        },
+        "id": "b26c0d6545349ad7f44ba758b7c705459537201583f2e524635be04aff84bc69",
+        "paging_token": "b26c0d6545349ad7f44ba758b7c705459537201583f2e524635be04aff84bc69",
+        "fee_bp": 30,
+        "type": "constant_product",
+        "total_trustlines": "2",
+        "total_shares": "0.0000000",
+        "reserves": [
+          {
+            "asset": "native",
+            "amount": "0.0000000"
+          },
+          {
+            "asset": "USDC:GAKMOAANQHJKF5735OYVSQZL6KC3VMFL4LP4ZYY2LWK256TSUG45IEFB",
+            "amount": "0.0000000"
+          }
+        ],
+        "last_modified_ledger": 351258,
+        "last_modified_time": "2021-10-06T18:10:59Z"
+      }
+    ]
+  }
+}

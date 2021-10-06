@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace stellar_dotnet_sdk
 {
-    public class LiquidityPoolsRequestBuilder : RequestBuilder<LiquidityPoolsRequestBuilder>
+    public class LiquidityPoolsRequestBuilder : RequestBuilderStreamable<LiquidityPoolsRequestBuilder, LiquidityPoolResponse>
     {
         public const string RESERVES_PARAMETER_NAME = "reserves";
 

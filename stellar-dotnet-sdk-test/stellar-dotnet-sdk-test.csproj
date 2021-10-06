@@ -26,6 +26,12 @@
     <ProjectReference Include="..\stellar-dotnet-sdk\stellar-dotnet-sdk.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="requests\LiquidityPoolRequestBuilder\Data.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="requests\LiquidityPoolRequestBuilder\DataPage.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="responses\effects\LiquidityPoolCreatedEffectResponse\Data.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
