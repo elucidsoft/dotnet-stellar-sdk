@@ -10,6 +10,7 @@ using System.Text;
 
 namespace stellar_dotnet_sdk_test.responses.operations
 {
+    [TestClass]
     public class ClawbackOperationResponseTest
     {
         //Clawback
@@ -35,7 +36,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
             Assert.AreEqual(operation.AssetIssuer, "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
             Assert.AreEqual(operation.AssetType, "credit_alphanum4");
             Assert.AreEqual(operation.From, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
-            Assert.AreEqual(operation.FromMuxed, "");
+            Assert.IsNull(operation.FromMuxed);
             Assert.IsNull(operation.FromMuxedID);
             Assert.AreEqual(operation.Asset.ToQueryParameterEncodedString(), "EUR:GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
         }

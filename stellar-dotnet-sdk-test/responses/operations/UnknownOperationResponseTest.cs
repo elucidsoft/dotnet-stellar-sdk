@@ -9,12 +9,13 @@ using System.Text;
 
 namespace stellar_dotnet_sdk_test.responses.operations
 {
+    [TestClass]
     public class UnknownOperationResponseTest
     {
         [TestMethod]
         public void TestDeserializeUnknownOperation()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations/unknownOperation", "operationUnknown.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations/unknownOperation", "unknownOperation.json"));
             Assert.ThrowsException<JsonSerializationException>(() =>
                 JsonSingleton.GetInstance<OperationResponse>(json));
         }

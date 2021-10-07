@@ -135,7 +135,7 @@ namespace stellar_dotnet_sdk_test
                         native, "5.00")
                     .SetPath(new[] {gbp, eur})
                     .Build(),
-                new ChangeTrustOperation.Builder(gbp, "10000").Build(),
+                new ChangeTrustOperation.Builder(ChangeTrustAsset.Create(gbp), "10000").Build(),
             };
 
             When()

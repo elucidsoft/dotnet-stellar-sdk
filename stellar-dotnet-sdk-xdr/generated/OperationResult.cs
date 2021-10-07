@@ -56,6 +56,10 @@ namespace stellar_dotnet_sdk.xdr
     //          ClawbackClaimableBalanceResult clawbackClaimableBalanceResult;
     //      case SET_TRUST_LINE_FLAGS:
     //          SetTrustLineFlagsResult setTrustLineFlagsResult;
+    //      case LIQUIDITY_POOL_DEPOSIT:
+    //          LiquidityPoolDepositResult liquidityPoolDepositResult;
+    //      case LIQUIDITY_POOL_WITHDRAW:
+    //          LiquidityPoolWithdrawResult liquidityPoolWithdrawResult;
     //      }
     //      tr;
     //  default:
@@ -126,6 +130,8 @@ namespace stellar_dotnet_sdk.xdr
             public ClawbackResult ClawbackResult { get; set; }
             public ClawbackClaimableBalanceResult ClawbackClaimableBalanceResult { get; set; }
             public SetTrustLineFlagsResult SetTrustLineFlagsResult { get; set; }
+            public LiquidityPoolDepositResult LiquidityPoolDepositResult { get; set; }
+            public LiquidityPoolWithdrawResult LiquidityPoolWithdrawResult { get; set; }
             public static void Encode(XdrDataOutputStream stream, OperationResultTr encodedOperationResultTr)
             {
                 stream.WriteInt((int)encodedOperationResultTr.Discriminant.InnerValue);
@@ -196,6 +202,12 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case OperationType.OperationTypeEnum.SET_TRUST_LINE_FLAGS:
                         SetTrustLineFlagsResult.Encode(stream, encodedOperationResultTr.SetTrustLineFlagsResult);
+                        break;
+                    case OperationType.OperationTypeEnum.LIQUIDITY_POOL_DEPOSIT:
+                        LiquidityPoolDepositResult.Encode(stream, encodedOperationResultTr.LiquidityPoolDepositResult);
+                        break;
+                    case OperationType.OperationTypeEnum.LIQUIDITY_POOL_WITHDRAW:
+                        LiquidityPoolWithdrawResult.Encode(stream, encodedOperationResultTr.LiquidityPoolWithdrawResult);
                         break;
                 }
             }
@@ -271,6 +283,12 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case OperationType.OperationTypeEnum.SET_TRUST_LINE_FLAGS:
                         decodedOperationResultTr.SetTrustLineFlagsResult = SetTrustLineFlagsResult.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.LIQUIDITY_POOL_DEPOSIT:
+                        decodedOperationResultTr.LiquidityPoolDepositResult = LiquidityPoolDepositResult.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.LIQUIDITY_POOL_WITHDRAW:
+                        decodedOperationResultTr.LiquidityPoolWithdrawResult = LiquidityPoolWithdrawResult.Decode(stream);
                         break;
                 }
                 return decodedOperationResultTr;

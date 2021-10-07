@@ -8,10 +8,6 @@ namespace stellar_dotnet_sdk
 {
     public class Price
     {
-        //@SerializedName("d")
-
-        //@SerializedName("n")
-
         /// <summary>
         ///     Create a new price. Price in Stellar is represented as a fraction.
         /// </summary>

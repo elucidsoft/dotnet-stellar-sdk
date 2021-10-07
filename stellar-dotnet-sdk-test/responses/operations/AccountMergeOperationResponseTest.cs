@@ -9,6 +9,7 @@ using System.Text;
 
 namespace stellar_dotnet_sdk_test.responses.operations
 {
+    [TestClass]
     public class AccountMergeOperationResponseTest
     {
         [TestMethod]
@@ -38,7 +39,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
 
             Assert.AreEqual(operation.Account, "GD6GKRABNDVYDETEZJQEPS7IBQMERCN44R5RCI4LJNX6BMYQM2KPGGZ2");
             Assert.AreEqual(operation.Into, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
-            Assert.AreEqual(operation.IntoMuxed, "");
+            Assert.IsNull(operation.IntoMuxed);
             Assert.IsNull(operation.IntoMuxedID);
         }
 

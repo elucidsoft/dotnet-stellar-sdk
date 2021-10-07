@@ -19,13 +19,30 @@ namespace stellar_dotnet_sdk
         {
             var thisXdr = new xdr.Asset();
             thisXdr.Discriminant = AssetType.Create(AssetType.AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12);
-            var credit = new xdr.Asset.AssetAlphaNum12();
+            var credit = new xdr.AlphaNum12();
             credit.AssetCode = new AssetCode12(Util.PaddedByteArray(Code, 12));
             var accountID = new AccountID();
             accountID.InnerValue = KeyPair.FromAccountId(Issuer).XdrPublicKey;
             credit.Issuer = accountID;
             thisXdr.AlphaNum12 = credit;
             return thisXdr;
+        }
+
+        public override int CompareTo(Asset asset)
+        {
+            if (asset.GetType() != "credit_alphanum12")
+            {
+                return 1;
+            }
+
+            AssetTypeCreditAlphaNum other = (AssetTypeCreditAlphaNum)asset;
+
+            if (Code != other.Code)
+            {
+                return Code.CompareTo(other.Code);
+            }
+
+            return Issuer.CompareTo(other.Issuer);
         }
     }
 }

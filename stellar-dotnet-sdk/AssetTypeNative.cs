@@ -31,5 +31,14 @@ namespace stellar_dotnet_sdk
         {
             return "native";
         }
+
+        public override int CompareTo(Asset asset)
+        {
+            if (asset.GetType() == "native")
+            {
+                return 0;
+            }
+            return -1;
+        }
     }
 }

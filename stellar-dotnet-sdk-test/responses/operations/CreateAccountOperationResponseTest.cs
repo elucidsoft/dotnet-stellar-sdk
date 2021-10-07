@@ -9,6 +9,7 @@ using System.Text;
 
 namespace stellar_dotnet_sdk_test.responses.operations
 {
+    [TestClass]
     public class CreateAccountOperationResponseTest
     {
         [TestMethod]
@@ -43,7 +44,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
             Assert.AreEqual(operation.Account, "GAR4DDXYNSN2CORG3XQFLAPWYKTUMLZYHYWV4Y2YJJ4JO6ZJFXMJD7PT");
             Assert.AreEqual(operation.StartingBalance, "299454.904954");
             Assert.AreEqual(operation.Funder, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
-            Assert.AreEqual(operation.FunderMuxed, "");
+            Assert.IsNull(operation.FunderMuxed);
             Assert.IsNull(operation.FunderMuxedID);
 
             Assert.IsTrue(operation.TransactionSuccessful);
@@ -61,7 +62,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
             var json = File.ReadAllText(Path.Combine("testdata/operations/createAccount", "createAccountMuxed.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
 
-            AssertCreateAccountOperationData(instance);
+            AssertCreateAccountOperationDataMuxed(instance);
         }
 
         [TestMethod]
@@ -72,7 +73,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);
 
-            AssertCreateAccountOperationData(back);
+            AssertCreateAccountOperationDataMuxed(back);
         }
 
         public static void AssertCreateAccountOperationDataMuxed(OperationResponse instance)

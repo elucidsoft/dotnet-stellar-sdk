@@ -1,0 +1,38 @@
+{
+  "_links": {
+    "operation": {
+      "href": "https://horizon-protocol18.stellar.org/operations/594281739849729"
+    },
+    "succeeds": {
+      "href": "https://horizon-protocol18.stellar.org/effects?order=desc&cursor=594281739849729-2"
+    },
+    "precedes": {
+      "href": "https://horizon-protocol18.stellar.org/effects?order=asc&cursor=594281739849729-2"
+    }
+  },
+  "id": "0000594281739849729-0000000002",
+  "paging_token": "594281739849729-2",
+  "account": "GDB2ATEJPYNF2KNSK7YZ5C5J5IF2OLYMWCFQ2AAERYKV7Y5BE3XT34UC",
+  "account_muxed": "MDB2ATEJPYNF2KNSK7YZ5C5J5IF2OLYMWCFQ2AAERYKV7Y5BE3XT2AAAAAAAAE4DUGUA4",
+  "account_muxed_id": "1278881",
+  "type": "liquidity_pool_created",
+  "type_i": 93,
+  "created_at": "2021-09-10T22:33:23Z",
+  "liquidity_pool": {
+    "id": "4f7f29db33ead1a38c2edf17aa0416c369c207ca081de5c686c050c1ad320385",
+    "fee_bp": 30,
+    "type": "constant_product",
+    "total_trustlines": "1",
+    "total_shares": "0.0000000",
+    "reserves": [
+      {
+        "asset": "native",
+        "amount": "0.0000000"
+      },
+      {
+        "asset": "TEST:GC2262FQJAHVJSYWI6XEVQEH5CLPYCVSOLQHCDHNSKVWHTKYEZNAQS25",
+        "amount": "0.0000000"
+      }
+    ]
+  }
+}

@@ -9,6 +9,7 @@ using System.Text;
 
 namespace stellar_dotnet_sdk_test.responses.operations
 {
+    [TestClass]
     public class ClaimClaimableBalanceOperationResponseTest
     {
         //Claim Claimable Balance
@@ -31,7 +32,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
             Assert.AreEqual(214525026504705, operation.Id);
             Assert.AreEqual("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7", operation.BalanceID);
             Assert.AreEqual("GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2", operation.Claimant);
-            Assert.AreEqual("", operation.ClaimantMuxed);
+            Assert.IsNull(operation.ClaimantMuxed);
             Assert.IsNull(operation.ClaimantMuxedID);
 
             var back = new ClaimClaimableBalanceOperationResponse(operation.BalanceID, operation.Claimant);
@@ -42,7 +43,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
         [TestMethod]
         public void TestSerializationClaimClaimableBalanceOperationMuxed()
         {
-            var json = File.ReadAllText(Path.Combine("testdata/operations/claimClaimableBalance", "claimClaimableBalance.json"));
+            var json = File.ReadAllText(Path.Combine("testdata/operations/claimClaimableBalance", "claimClaimableBalanceMuxed.json"));
             var instance = JsonSingleton.GetInstance<OperationResponse>(json);
             var serialized = JsonConvert.SerializeObject(instance);
             var back = JsonConvert.DeserializeObject<OperationResponse>(serialized);

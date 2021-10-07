@@ -34,12 +34,5 @@ namespace stellar_dotnet_sdk.responses.operations
         {
 
         }
-
-
-        public AccountMergeOperationResponse(string account, string into)
-        {
-            Account = account;
-            Into = into;
-        }
     }
 }

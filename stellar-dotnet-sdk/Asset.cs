@@ -9,6 +9,21 @@ namespace stellar_dotnet_sdk
     /// </summary>
     public abstract class Asset
     {
+        public static Asset Create(string canonicalForm)
+        {
+            if (canonicalForm == "native")
+            {
+                return new AssetTypeNative();
+            }
+
+            string[] parts = canonicalForm.Split(':');
+            if (parts.Length != 2)
+            {
+                throw new ArgumentException("invalid asset " + canonicalForm);
+            }
+            return CreateNonNativeAsset(parts[0], parts[1]);
+        }
+
         /// <summary>
         /// Create an asset base on the parameters.
         /// </summary>
@@ -24,7 +39,7 @@ namespace stellar_dotnet_sdk
             }
             else
             {
-                return Asset.CreateNonNativeAsset(code, issuer);
+                return CreateNonNativeAsset(code, issuer);
             }
         }
 
@@ -95,5 +110,7 @@ namespace stellar_dotnet_sdk
         /// Returns the asset canonical name.
         /// </summary>
         public abstract string CanonicalName();
+
+        public abstract int CompareTo(Asset asset);
     }
 }

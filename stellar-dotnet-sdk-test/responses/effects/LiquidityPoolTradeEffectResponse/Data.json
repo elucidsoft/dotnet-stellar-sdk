@@ -1,0 +1,44 @@
+{
+  "_links": {
+    "operation": {
+      "href": "https://horizon-protocol18.stellar.org/operations/806925570674689"
+    },
+    "succeeds": {
+      "href": "https://horizon-protocol18.stellar.org/effects?order=desc&cursor=806925570674689-3"
+    },
+    "precedes": {
+      "href": "https://horizon-protocol18.stellar.org/effects?order=asc&cursor=806925570674689-3"
+    }
+  },
+  "id": "0000806925570674689-0000000003",
+  "paging_token": "806925570674689-3",
+  "account": "GDGD3WCFS24TO4R6ZHTVVNRDVMZ3D62PBCFK332NSBYL3TCCOQWL5UAL",
+  "type": "liquidity_pool_trade",
+  "type_i": 92,
+  "created_at": "2021-09-13T19:20:06Z",
+  "liquidity_pool": {
+    "id": "4f7f29db33ead1a38c2edf17aa0416c369c207ca081de5c686c050c1ad320385",
+    "fee_bp": 30,
+    "type": "constant_product",
+    "total_trustlines": "1",
+    "total_shares": "1415.0000000",
+    "reserves": [
+      {
+        "asset": "TEST2:GDQ4273UBKSHIE73RJB5KLBBM7W3ESHWA74YG7ZBXKZLKT5KZGPKKB7E",
+        "amount": "1515.0000000"
+      },
+      {
+        "asset": "TEST:GC2262FQJAHVJSYWI6XEVQEH5CLPYCVSOLQHCDHNSKVWHTKYEZNAQS25",
+        "amount": "1321.8624150"
+      }
+    ]
+  },
+  "sold": {
+    "asset": "TEST:GC2262FQJAHVJSYWI6XEVQEH5CLPYCVSOLQHCDHNSKVWHTKYEZNAQS25",
+    "amount": "93.1375850"
+  },
+  "bought": {
+    "asset": "TEST2:GDQ4273UBKSHIE73RJB5KLBBM7W3ESHWA74YG7ZBXKZLKT5KZGPKKB7E",
+    "amount": "100.0000000"
+  }
+}

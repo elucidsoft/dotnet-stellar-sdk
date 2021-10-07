@@ -13,7 +13,8 @@ namespace stellar_dotnet_sdk.xdr
     //      TRUSTLINE = 1,
     //      OFFER = 2,
     //      DATA = 3,
-    //      CLAIMABLE_BALANCE = 4
+    //      CLAIMABLE_BALANCE = 4,
+    //      LIQUIDITY_POOL = 5
     //  };
 
     //  ===========================================================================
@@ -26,6 +27,7 @@ namespace stellar_dotnet_sdk.xdr
             OFFER = 2,
             DATA = 3,
             CLAIMABLE_BALANCE = 4,
+            LIQUIDITY_POOL = 5,
         }
         public LedgerEntryTypeEnum InnerValue { get; set; } = default(LedgerEntryTypeEnum);
 
@@ -47,6 +49,7 @@ namespace stellar_dotnet_sdk.xdr
                 case 2: return Create(LedgerEntryTypeEnum.OFFER);
                 case 3: return Create(LedgerEntryTypeEnum.DATA);
                 case 4: return Create(LedgerEntryTypeEnum.CLAIMABLE_BALANCE);
+                case 5: return Create(LedgerEntryTypeEnum.LIQUIDITY_POOL);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

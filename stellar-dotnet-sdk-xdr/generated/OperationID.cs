@@ -12,10 +12,19 @@ namespace stellar_dotnet_sdk.xdr
     //  case ENVELOPE_TYPE_OP_ID:
     //      struct
     //      {
-    //          MuxedAccount sourceAccount;
+    //          AccountID sourceAccount;
     //          SequenceNumber seqNum;
     //          uint32 opNum;
     //      } id;
+    //  case ENVELOPE_TYPE_POOL_REVOKE_OP_ID:
+    //      struct
+    //      {
+    //          AccountID sourceAccount;
+    //          SequenceNumber seqNum;
+    //          uint32 opNum;
+    //          PoolID liquidityPoolID;
+    //          Asset asset;
+    //      } revokeId;
     //  };
 
     //  ===========================================================================
@@ -26,6 +35,7 @@ namespace stellar_dotnet_sdk.xdr
         public EnvelopeType Discriminant { get; set; } = new EnvelopeType();
 
         public OperationIDId Id { get; set; }
+        public OperationIDRevokeId RevokeId { get; set; }
         public static void Encode(XdrDataOutputStream stream, OperationID encodedOperationID)
         {
             stream.WriteInt((int)encodedOperationID.Discriminant.InnerValue);
@@ -33,6 +43,9 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_OP_ID:
                     OperationIDId.Encode(stream, encodedOperationID.Id);
+                    break;
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_POOL_REVOKE_OP_ID:
+                    OperationIDRevokeId.Encode(stream, encodedOperationID.RevokeId);
                     break;
             }
         }
@@ -46,6 +59,9 @@ namespace stellar_dotnet_sdk.xdr
                 case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_OP_ID:
                     decodedOperationID.Id = OperationIDId.Decode(stream);
                     break;
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_POOL_REVOKE_OP_ID:
+                    decodedOperationID.RevokeId = OperationIDRevokeId.Decode(stream);
+                    break;
             }
             return decodedOperationID;
         }
@@ -53,23 +69,52 @@ namespace stellar_dotnet_sdk.xdr
         public class OperationIDId
         {
             public OperationIDId() { }
-            public MuxedAccount SourceAccount { get; set; }
+            public AccountID SourceAccount { get; set; }
             public SequenceNumber SeqNum { get; set; }
             public Uint32 OpNum { get; set; }
 
             public static void Encode(XdrDataOutputStream stream, OperationIDId encodedOperationIDId)
             {
-                MuxedAccount.Encode(stream, encodedOperationIDId.SourceAccount);
+                AccountID.Encode(stream, encodedOperationIDId.SourceAccount);
                 SequenceNumber.Encode(stream, encodedOperationIDId.SeqNum);
                 Uint32.Encode(stream, encodedOperationIDId.OpNum);
             }
             public static OperationIDId Decode(XdrDataInputStream stream)
             {
                 OperationIDId decodedOperationIDId = new OperationIDId();
-                decodedOperationIDId.SourceAccount = MuxedAccount.Decode(stream);
+                decodedOperationIDId.SourceAccount = AccountID.Decode(stream);
                 decodedOperationIDId.SeqNum = SequenceNumber.Decode(stream);
                 decodedOperationIDId.OpNum = Uint32.Decode(stream);
                 return decodedOperationIDId;
+            }
+
+        }
+        public class OperationIDRevokeId
+        {
+            public OperationIDRevokeId() { }
+            public AccountID SourceAccount { get; set; }
+            public SequenceNumber SeqNum { get; set; }
+            public Uint32 OpNum { get; set; }
+            public PoolID LiquidityPoolID { get; set; }
+            public Asset Asset { get; set; }
+
+            public static void Encode(XdrDataOutputStream stream, OperationIDRevokeId encodedOperationIDRevokeId)
+            {
+                AccountID.Encode(stream, encodedOperationIDRevokeId.SourceAccount);
+                SequenceNumber.Encode(stream, encodedOperationIDRevokeId.SeqNum);
+                Uint32.Encode(stream, encodedOperationIDRevokeId.OpNum);
+                PoolID.Encode(stream, encodedOperationIDRevokeId.LiquidityPoolID);
+                Asset.Encode(stream, encodedOperationIDRevokeId.Asset);
+            }
+            public static OperationIDRevokeId Decode(XdrDataInputStream stream)
+            {
+                OperationIDRevokeId decodedOperationIDRevokeId = new OperationIDRevokeId();
+                decodedOperationIDRevokeId.SourceAccount = AccountID.Decode(stream);
+                decodedOperationIDRevokeId.SeqNum = SequenceNumber.Decode(stream);
+                decodedOperationIDRevokeId.OpNum = Uint32.Decode(stream);
+                decodedOperationIDRevokeId.LiquidityPoolID = PoolID.Decode(stream);
+                decodedOperationIDRevokeId.Asset = Asset.Decode(stream);
+                return decodedOperationIDRevokeId;
             }
 
         }

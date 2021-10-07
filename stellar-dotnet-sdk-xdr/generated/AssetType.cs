@@ -11,7 +11,8 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //      ASSET_TYPE_NATIVE = 0,
     //      ASSET_TYPE_CREDIT_ALPHANUM4 = 1,
-    //      ASSET_TYPE_CREDIT_ALPHANUM12 = 2
+    //      ASSET_TYPE_CREDIT_ALPHANUM12 = 2,
+    //      ASSET_TYPE_POOL_SHARE = 3
     //  };
 
     //  ===========================================================================
@@ -22,6 +23,7 @@ namespace stellar_dotnet_sdk.xdr
             ASSET_TYPE_NATIVE = 0,
             ASSET_TYPE_CREDIT_ALPHANUM4 = 1,
             ASSET_TYPE_CREDIT_ALPHANUM12 = 2,
+            ASSET_TYPE_POOL_SHARE = 3,
         }
         public AssetTypeEnum InnerValue { get; set; } = default(AssetTypeEnum);
 
@@ -41,6 +43,7 @@ namespace stellar_dotnet_sdk.xdr
                 case 0: return Create(AssetTypeEnum.ASSET_TYPE_NATIVE);
                 case 1: return Create(AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM4);
                 case 2: return Create(AssetTypeEnum.ASSET_TYPE_CREDIT_ALPHANUM12);
+                case 3: return Create(AssetTypeEnum.ASSET_TYPE_POOL_SHARE);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

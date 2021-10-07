@@ -257,7 +257,7 @@ namespace stellar_dotnet_sdk_test
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
             var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
 
-            Asset asset = new AssetTypeNative();
+            stellar_dotnet_sdk.ChangeTrustAsset asset = stellar_dotnet_sdk.ChangeTrustAsset.Create(new AssetTypeNative());
             var limit = ChangeTrustOperation.MaxLimit;
 
             var operation = new ChangeTrustOperation.Builder(asset, limit)
@@ -269,7 +269,7 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual(long.MaxValue, xdr.Body.ChangeTrustOp.Limit.InnerValue);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
-            Assert.IsTrue(parsedOperation.Asset is AssetTypeNative);
+            Assert.IsTrue(((stellar_dotnet_sdk.ChangeTrustAsset.Wrapper)parsedOperation.Asset).Asset is AssetTypeNative);
             Assert.AreEqual(limit, parsedOperation.Limit);
             Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
 
@@ -284,7 +284,7 @@ namespace stellar_dotnet_sdk_test
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
             var source = KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
 
-            Asset asset = new AssetTypeNative();
+            stellar_dotnet_sdk.ChangeTrustAsset asset = stellar_dotnet_sdk.ChangeTrustAsset.Create(new AssetTypeNative());
 
             var operation = new ChangeTrustOperation.Builder(asset)
                 .SetSourceAccount(source)
@@ -295,7 +295,7 @@ namespace stellar_dotnet_sdk_test
 
             Assert.AreEqual(long.MaxValue, xdr.Body.ChangeTrustOp.Limit.InnerValue);
             Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
-            Assert.IsTrue(parsedOperation.Asset is AssetTypeNative);
+            Assert.IsTrue(((stellar_dotnet_sdk.ChangeTrustAsset.Wrapper)parsedOperation.Asset).Asset is AssetTypeNative);
             Assert.AreEqual(ChangeTrustOperation.MaxLimit, parsedOperation.Limit);
             Assert.AreEqual(OperationThreshold.Medium, parsedOperation.Threshold);
 

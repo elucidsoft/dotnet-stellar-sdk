@@ -60,6 +60,10 @@ namespace stellar_dotnet_sdk.xdr
     //          ClawbackClaimableBalanceOp clawbackClaimableBalanceOp;
     //      case SET_TRUST_LINE_FLAGS:
     //          SetTrustLineFlagsOp setTrustLineFlagsOp;
+    //      case LIQUIDITY_POOL_DEPOSIT:
+    //          LiquidityPoolDepositOp liquidityPoolDepositOp;
+    //      case LIQUIDITY_POOL_WITHDRAW:
+    //          LiquidityPoolWithdrawOp liquidityPoolWithdrawOp;
     //      }
     //      body;
     //  };
@@ -122,6 +126,8 @@ namespace stellar_dotnet_sdk.xdr
             public ClawbackOp ClawbackOp { get; set; }
             public ClawbackClaimableBalanceOp ClawbackClaimableBalanceOp { get; set; }
             public SetTrustLineFlagsOp SetTrustLineFlagsOp { get; set; }
+            public LiquidityPoolDepositOp LiquidityPoolDepositOp { get; set; }
+            public LiquidityPoolWithdrawOp LiquidityPoolWithdrawOp { get; set; }
             public static void Encode(XdrDataOutputStream stream, OperationBody encodedOperationBody)
             {
                 stream.WriteInt((int)encodedOperationBody.Discriminant.InnerValue);
@@ -190,6 +196,12 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case OperationType.OperationTypeEnum.SET_TRUST_LINE_FLAGS:
                         SetTrustLineFlagsOp.Encode(stream, encodedOperationBody.SetTrustLineFlagsOp);
+                        break;
+                    case OperationType.OperationTypeEnum.LIQUIDITY_POOL_DEPOSIT:
+                        LiquidityPoolDepositOp.Encode(stream, encodedOperationBody.LiquidityPoolDepositOp);
+                        break;
+                    case OperationType.OperationTypeEnum.LIQUIDITY_POOL_WITHDRAW:
+                        LiquidityPoolWithdrawOp.Encode(stream, encodedOperationBody.LiquidityPoolWithdrawOp);
                         break;
                 }
             }
@@ -263,6 +275,12 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case OperationType.OperationTypeEnum.SET_TRUST_LINE_FLAGS:
                         decodedOperationBody.SetTrustLineFlagsOp = SetTrustLineFlagsOp.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.LIQUIDITY_POOL_DEPOSIT:
+                        decodedOperationBody.LiquidityPoolDepositOp = LiquidityPoolDepositOp.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.LIQUIDITY_POOL_WITHDRAW:
+                        decodedOperationBody.LiquidityPoolWithdrawOp = LiquidityPoolWithdrawOp.Decode(stream);
                         break;
                 }
                 return decodedOperationBody;

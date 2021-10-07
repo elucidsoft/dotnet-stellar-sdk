@@ -14,11 +14,11 @@ namespace stellar_dotnet_sdk.responses.results
         /// <summary>
         /// Offers that got claimed while creating this offer.
         /// </summary>
-        public ClaimOfferAtom[] OffersClaimed { get; set; }
+        public ClaimAtom[] OffersClaimed { get; set; }
 
         public static ManageBuyOfferSuccess FromXdr(xdr.ManageOfferSuccessResult result)
         {
-            var offersClaimed = result.OffersClaimed.Select(ClaimOfferAtom.FromXdr).ToArray();
+            var offersClaimed = result.OffersClaimed.Select(ClaimAtom.FromXdr).ToArray();
 
             switch (result.Offer.Discriminant.InnerValue)
             {

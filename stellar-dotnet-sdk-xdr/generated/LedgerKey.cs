@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk.xdr
     //      struct
     //      {
     //          AccountID accountID;
-    //          Asset asset;
+    //          TrustLineAsset asset;
     //      } trustLine;
     //  
     //  case OFFER:
@@ -41,6 +41,12 @@ namespace stellar_dotnet_sdk.xdr
     //      {
     //          ClaimableBalanceID balanceID;
     //      } claimableBalance;
+    //  
+    //  case LIQUIDITY_POOL:
+    //      struct
+    //      {
+    //          PoolID liquidityPoolID;
+    //      } liquidityPool;
     //  };
 
     //  ===========================================================================
@@ -55,6 +61,7 @@ namespace stellar_dotnet_sdk.xdr
         public LedgerKeyOffer Offer { get; set; }
         public LedgerKeyData Data { get; set; }
         public LedgerKeyClaimableBalance ClaimableBalance { get; set; }
+        public LedgerKeyLiquidityPool LiquidityPool { get; set; }
         public static void Encode(XdrDataOutputStream stream, LedgerKey encodedLedgerKey)
         {
             stream.WriteInt((int)encodedLedgerKey.Discriminant.InnerValue);
@@ -74,6 +81,9 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE:
                     LedgerKeyClaimableBalance.Encode(stream, encodedLedgerKey.ClaimableBalance);
+                    break;
+                case LedgerEntryType.LedgerEntryTypeEnum.LIQUIDITY_POOL:
+                    LedgerKeyLiquidityPool.Encode(stream, encodedLedgerKey.LiquidityPool);
                     break;
             }
         }
@@ -98,6 +108,9 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case LedgerEntryType.LedgerEntryTypeEnum.CLAIMABLE_BALANCE:
                     decodedLedgerKey.ClaimableBalance = LedgerKeyClaimableBalance.Decode(stream);
+                    break;
+                case LedgerEntryType.LedgerEntryTypeEnum.LIQUIDITY_POOL:
+                    decodedLedgerKey.LiquidityPool = LedgerKeyLiquidityPool.Decode(stream);
                     break;
             }
             return decodedLedgerKey;
@@ -124,18 +137,18 @@ namespace stellar_dotnet_sdk.xdr
         {
             public LedgerKeyTrustLine() { }
             public AccountID AccountID { get; set; }
-            public Asset Asset { get; set; }
+            public TrustLineAsset Asset { get; set; }
 
             public static void Encode(XdrDataOutputStream stream, LedgerKeyTrustLine encodedLedgerKeyTrustLine)
             {
                 AccountID.Encode(stream, encodedLedgerKeyTrustLine.AccountID);
-                Asset.Encode(stream, encodedLedgerKeyTrustLine.Asset);
+                TrustLineAsset.Encode(stream, encodedLedgerKeyTrustLine.Asset);
             }
             public static LedgerKeyTrustLine Decode(XdrDataInputStream stream)
             {
                 LedgerKeyTrustLine decodedLedgerKeyTrustLine = new LedgerKeyTrustLine();
                 decodedLedgerKeyTrustLine.AccountID = AccountID.Decode(stream);
-                decodedLedgerKeyTrustLine.Asset = Asset.Decode(stream);
+                decodedLedgerKeyTrustLine.Asset = TrustLineAsset.Decode(stream);
                 return decodedLedgerKeyTrustLine;
             }
 
@@ -194,6 +207,23 @@ namespace stellar_dotnet_sdk.xdr
                 LedgerKeyClaimableBalance decodedLedgerKeyClaimableBalance = new LedgerKeyClaimableBalance();
                 decodedLedgerKeyClaimableBalance.BalanceID = ClaimableBalanceID.Decode(stream);
                 return decodedLedgerKeyClaimableBalance;
+            }
+
+        }
+        public class LedgerKeyLiquidityPool
+        {
+            public LedgerKeyLiquidityPool() { }
+            public PoolID LiquidityPoolID { get; set; }
+
+            public static void Encode(XdrDataOutputStream stream, LedgerKeyLiquidityPool encodedLedgerKeyLiquidityPool)
+            {
+                PoolID.Encode(stream, encodedLedgerKeyLiquidityPool.LiquidityPoolID);
+            }
+            public static LedgerKeyLiquidityPool Decode(XdrDataInputStream stream)
+            {
+                LedgerKeyLiquidityPool decodedLedgerKeyLiquidityPool = new LedgerKeyLiquidityPool();
+                decodedLedgerKeyLiquidityPool.LiquidityPoolID = PoolID.Decode(stream);
+                return decodedLedgerKeyLiquidityPool;
             }
 
         }

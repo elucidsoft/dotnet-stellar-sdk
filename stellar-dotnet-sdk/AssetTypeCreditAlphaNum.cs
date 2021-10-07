@@ -6,7 +6,7 @@ namespace stellar_dotnet_sdk
     /// Assets are uniquely identified by the asset code and the issuer. Ultimately, it’s up to the issuer to set the asset code. By convention, however, currencies should be represented by 
     /// the appropriate ISO 4217 code. For stocks and bonds, use the appropriate ISIN number.
     /// </summary>
-    public class AssetTypeCreditAlphaNum : Asset
+    public abstract class AssetTypeCreditAlphaNum : Asset
     {
         private readonly string _issuer;
 
@@ -34,7 +34,7 @@ namespace stellar_dotnet_sdk
         /// <summary>
         /// Return the asset issuer
         /// </summary>
-        public String Issuer => _issuer;
+        public string Issuer => _issuer;
 
         /// <inheritdoc />
         public override int GetHashCode()

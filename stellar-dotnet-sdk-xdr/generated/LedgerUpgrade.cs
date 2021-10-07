@@ -17,6 +17,8 @@ namespace stellar_dotnet_sdk.xdr
     //      uint32 newMaxTxSetSize; // update maxTxSetSize
     //  case LEDGER_UPGRADE_BASE_RESERVE:
     //      uint32 newBaseReserve; // update baseReserve
+    //  case LEDGER_UPGRADE_FLAGS:
+    //      uint32 newFlags; // update flags
     //  };
 
     //  ===========================================================================
@@ -30,6 +32,7 @@ namespace stellar_dotnet_sdk.xdr
         public Uint32 NewBaseFee { get; set; }
         public Uint32 NewMaxTxSetSize { get; set; }
         public Uint32 NewBaseReserve { get; set; }
+        public Uint32 NewFlags { get; set; }
         public static void Encode(XdrDataOutputStream stream, LedgerUpgrade encodedLedgerUpgrade)
         {
             stream.WriteInt((int)encodedLedgerUpgrade.Discriminant.InnerValue);
@@ -46,6 +49,9 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case LedgerUpgradeType.LedgerUpgradeTypeEnum.LEDGER_UPGRADE_BASE_RESERVE:
                     Uint32.Encode(stream, encodedLedgerUpgrade.NewBaseReserve);
+                    break;
+                case LedgerUpgradeType.LedgerUpgradeTypeEnum.LEDGER_UPGRADE_FLAGS:
+                    Uint32.Encode(stream, encodedLedgerUpgrade.NewFlags);
                     break;
             }
         }
@@ -67,6 +73,9 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case LedgerUpgradeType.LedgerUpgradeTypeEnum.LEDGER_UPGRADE_BASE_RESERVE:
                     decodedLedgerUpgrade.NewBaseReserve = Uint32.Decode(stream);
+                    break;
+                case LedgerUpgradeType.LedgerUpgradeTypeEnum.LEDGER_UPGRADE_FLAGS:
+                    decodedLedgerUpgrade.NewFlags = Uint32.Decode(stream);
                     break;
             }
             return decodedLedgerUpgrade;

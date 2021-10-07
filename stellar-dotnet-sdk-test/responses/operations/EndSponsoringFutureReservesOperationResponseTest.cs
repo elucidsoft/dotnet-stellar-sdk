@@ -9,6 +9,7 @@ using System.Text;
 
 namespace stellar_dotnet_sdk_test.responses.operations
 {
+    [TestClass]
     public class EndSponsoringFutureReservesOperationResponseTest
     {
         //End Sponsoring Future Reserves
@@ -30,7 +31,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
 
             Assert.AreEqual(215542933753859, operation.Id);
             Assert.AreEqual("GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2", operation.BeginSponsor);
-            Assert.AreEqual("", operation.BeginSponsorMuxed);
+            Assert.IsNull(operation.BeginSponsorMuxed);
             Assert.IsNull(operation.BeginSponsorMuxedID);
 
             var back = new EndSponsoringFutureReservesOperationResponse(operation.BeginSponsor);
