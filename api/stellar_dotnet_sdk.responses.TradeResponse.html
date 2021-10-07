@@ -120,15 +120,15 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   
   <a id="stellar_dotnet_sdk_responses_TradeResponse__ctor_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_TradeResponse__ctor_String_String_String_String_System_Boolean_System_String_String_String_String_String_String_System_String_String_String_String_String_String_stellar_dotnet_sdk_Price_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.#ctor(String,String,String,String,System.Boolean,System.String,String,String,String,String,String,System.String,String,String,String,String,String,stellar_dotnet_sdk.Price)"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse__ctor_String_String_String_String_System_Boolean_System_String_String_String_String_String_String_System_String_String_String_String_String_String_stellar_dotnet_sdk_Price_" class="expander" data-toggle="collapse">TradeResponse(String, String, String, String, Boolean, String, String, String, String, String, String, String, String, String, String, String, String, Price)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse__ctor_System_String_System_String_System_String_System_String_System_Boolean_System_String_stellar_dotnet_sdk_LiquidityPoolID_System_String_System_String_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_LiquidityPoolID_System_String_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_responses_TradePrice_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.#ctor(System.String,System.String,System.String,System.String,System.Boolean,System.String,stellar_dotnet_sdk.LiquidityPoolID,System.String,System.String,System.String,System.String,System.String,System.String,stellar_dotnet_sdk.LiquidityPoolID,System.String,System.String,System.String,System.String,System.String,stellar_dotnet_sdk.responses.TradePrice)"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse__ctor_System_String_System_String_System_String_System_String_System_Boolean_System_String_stellar_dotnet_sdk_LiquidityPoolID_System_String_System_String_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_LiquidityPoolID_System_String_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_responses_TradePrice_" class="expander" data-toggle="collapse">TradeResponse(String, String, String, String, Boolean, String, LiquidityPoolID, String, String, String, String, String, String, LiquidityPoolID, String, String, String, String, String, TradePrice)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse__ctor_String_String_String_String_System_Boolean_System_String_String_String_String_String_String_System_String_String_String_String_String_String_stellar_dotnet_sdk_Price_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse__ctor_System_String_System_String_System_String_System_String_System_Boolean_System_String_stellar_dotnet_sdk_LiquidityPoolID_System_String_System_String_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_LiquidityPoolID_System_String_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_responses_TradePrice_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TradeResponse(String id, String pagingToken, String ledgerCloseTime, String offerId, bool baseIsSeller, string baseAccount, String baseOfferId, String baseAmount, String baseAssetType, String baseAssetCode, String baseAssetIssuer, string counterAccount, String counterOfferId, String counterAmount, String counterAssetType, String counterAssetCode, String counterAssetIssuer, Price price)</code></pre>
+    <pre><code class="lang-csharp hljs">public TradeResponse(string id, string pagingToken, string ledgerCloseTime, string offerId, bool baseIsSeller, string baseAccount, LiquidityPoolID baseLiquidityPoolID, string baseOfferId, string baseAmount, string baseAssetType, string baseAssetCode, string baseAssetIssuer, string counterAccount, LiquidityPoolID counterLiquidityPoolID, string counterOfferId, string counterAmount, string counterAssetType, string counterAssetCode, string counterAssetIssuer, TradePrice price)</code></pre>
   </div>
 
   <h5 class="parameters">Parameters</h5>
@@ -141,22 +141,22 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
     </tr>
   </thead>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">id</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pagingToken</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">ledgerCloseTime</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">offerId</span></td>
         <td></td>
       </tr>
@@ -171,27 +171,32 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><a class="xref" href="stellar_dotnet_sdk.LiquidityPoolID.html">LiquidityPoolID</a></td>
+        <td><span class="parametername">baseLiquidityPoolID</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">baseOfferId</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">baseAmount</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">baseAssetType</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">baseAssetCode</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">baseAssetIssuer</span></td>
         <td></td>
       </tr>
@@ -201,32 +206,37 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><a class="xref" href="stellar_dotnet_sdk.LiquidityPoolID.html">LiquidityPoolID</a></td>
+        <td><span class="parametername">counterLiquidityPoolID</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">counterOfferId</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">counterAmount</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">counterAssetType</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">counterAssetCode</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">String</span></td>
+        <td><span class="xref">System.String</span></td>
         <td><span class="parametername">counterAssetIssuer</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.Price.html">Price</a></td>
+        <td><a class="xref" href="stellar_dotnet_sdk.responses.TradePrice.html">TradePrice</a></td>
         <td><span class="parametername">price</span></td>
         <td></td>
       </tr>
@@ -293,7 +303,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String BaseAmount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string BaseAmount { get; }</code></pre>
   </div>
 
   
@@ -304,7 +314,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -366,7 +376,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String BaseAssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string BaseAssetCode { get; }</code></pre>
   </div>
 
   
@@ -377,7 +387,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -402,7 +412,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String BaseAssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string BaseAssetIssuer { get; }</code></pre>
   </div>
 
   
@@ -413,7 +423,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -438,7 +448,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String BaseAssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string BaseAssetType { get; }</code></pre>
   </div>
 
   
@@ -449,7 +459,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -500,17 +510,17 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   </div>
   
   
-  <a id="stellar_dotnet_sdk_responses_TradeResponse_BaseOfferId_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseOfferId*"></a>
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_BaseLiquidityPoolID_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseLiquidityPoolID*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_BaseOfferId" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseOfferId"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseOfferId" class="expander" data-toggle="collapse">BaseOfferId</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_BaseLiquidityPoolID" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseLiquidityPoolID"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseLiquidityPoolID" class="expander" data-toggle="collapse">BaseLiquidityPoolID</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseOfferId" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseLiquidityPoolID" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String BaseOfferId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public LiquidityPoolID BaseLiquidityPoolID { get; set; }</code></pre>
   </div>
 
   
@@ -521,7 +531,43 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <a class="xref" href="stellar_dotnet_sdk.LiquidityPoolID.html">LiquidityPoolID</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_BaseOfferId_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseOfferId*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_BaseOfferId" data-uid="stellar_dotnet_sdk.responses.TradeResponse.BaseOfferId"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseOfferId" class="expander" data-toggle="collapse">BaseOfferId</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_BaseOfferId" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BaseOfferId { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -619,7 +665,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String CounterAmount { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string CounterAmount { get; }</code></pre>
   </div>
 
   
@@ -630,7 +676,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -655,7 +701,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String CounterAssetCode { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string CounterAssetCode { get; }</code></pre>
   </div>
 
   
@@ -666,7 +712,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -691,7 +737,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String CounterAssetIssuer { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string CounterAssetIssuer { get; }</code></pre>
   </div>
 
   
@@ -702,7 +748,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -727,7 +773,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String CounterAssetType { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string CounterAssetType { get; }</code></pre>
   </div>
 
   
@@ -738,7 +784,43 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_responses_TradeResponse_CounterLiquidityPoolID_" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterLiquidityPoolID*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_TradeResponse_CounterLiquidityPoolID" data-uid="stellar_dotnet_sdk.responses.TradeResponse.CounterLiquidityPoolID"><a href="#collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterLiquidityPoolID" class="expander" data-toggle="collapse">CounterLiquidityPoolID</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_TradeResponse_CounterLiquidityPoolID" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LiquidityPoolID CounterLiquidityPoolID { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.LiquidityPoolID.html">LiquidityPoolID</a>
         <p>
       </td>
     </tr>
@@ -763,7 +845,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String CounterOfferId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string CounterOfferId { get; }</code></pre>
   </div>
 
   
@@ -774,7 +856,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -799,7 +881,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String Id { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Id { get; }</code></pre>
   </div>
 
   
@@ -810,7 +892,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -835,7 +917,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String LedgerCloseTime { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string LedgerCloseTime { get; }</code></pre>
   </div>
 
   
@@ -846,7 +928,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -907,7 +989,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String OfferId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string OfferId { get; }</code></pre>
   </div>
 
   
@@ -918,7 +1000,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -943,7 +1025,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public String PagingToken { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string PagingToken { get; }</code></pre>
   </div>
 
   
@@ -954,7 +1036,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <span class="xref">String</span>
+        <span class="xref">System.String</span>
         <p>
       </td>
     </tr>
@@ -962,6 +1044,8 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   
   
   
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="stellar_dotnet_sdk.responses.IPagingToken.html#stellar_dotnet_sdk_responses_IPagingToken_PagingToken">IPagingToken.PagingToken</a></div>
   
   
   
@@ -979,7 +1063,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Price Price { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public TradePrice Price { get; }</code></pre>
   </div>
 
   
@@ -990,7 +1074,7 @@ See: <a href="https://www.stellar.org/developers/horizon/reference/endpoints/tra
   <table>
     <tr>
       <td>
-        <a class="xref" href="stellar_dotnet_sdk.Price.html">Price</a>
+        <a class="xref" href="stellar_dotnet_sdk.responses.TradePrice.html">TradePrice</a>
         <p>
       </td>
     </tr>
