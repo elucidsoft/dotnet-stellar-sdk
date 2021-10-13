@@ -34,33 +34,6 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "_links")]
         public LiquidityPoolResponseLinks Links { get; set; }
 
-        [JsonConverter(typeof(LiquidityPoolResponseReserveJsonConverter))]
-        public class Reserve
-        {
-            [JsonProperty(PropertyName = "amount")]
-            public string Amount { get; set; }
-
-            [JsonProperty(PropertyName = "asset")]
-            public Asset Asset { get; set; }
-
-            public Reserve(string amount, Asset asset)
-            {
-                Amount = amount ?? throw new ArgumentNullException(nameof(amount), "amount cannot be null");
-                Asset = asset ?? throw new ArgumentNullException(nameof(amount), "asset cannot be null");
-            }
-
-            public override bool Equals(object obj)
-            {
-                if (!(obj is Reserve))
-                {
-                    return false;
-                }
-
-                Reserve other = (Reserve)obj;
-                return Equals(Asset, other.Asset) && Equals(Amount, other.Amount);
-            }
-        }
-
         public class LiquidityPoolResponseLinks
         {
             [JsonProperty(PropertyName = "effects")]

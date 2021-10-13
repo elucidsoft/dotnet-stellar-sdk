@@ -73,6 +73,10 @@ namespace stellar_dotnet_sdk.responses
                     return new ClawbackClaimableBalanceOperationResponse();
                 case 21:
                     return new SetTrustlineFlagsOperationResponse();
+                case 22:
+                    return new LiquidityPoolDepositOperationResponse();
+                case 23:
+                    return new LiquidityPoolWithdrawOperationResponse();
                 default:
                     throw new JsonSerializationException($"Invalid operation 'type_i'='{type}'");
             }
