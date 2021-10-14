@@ -53,6 +53,12 @@
     <None Update="responses\LiquidityPoolResponse\Data.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="responses\operations\LiquidityPoolDepositOperationResponse\Data.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="responses\operations\LiquidityPoolWithdrawOperationResponse\Data.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="testdata\account.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

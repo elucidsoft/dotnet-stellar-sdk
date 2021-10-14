@@ -27,7 +27,11 @@ namespace stellar_dotnet_sdk.converters
         public override void WriteJson(JsonWriter writer, Reserve value, JsonSerializer serializer)
         {
             JObject jo = new JObject();
-            jo.Add("asset", value.Asset.CanonicalName());
+            if (value.Asset != null)
+            {
+                jo.Add("asset", value.Asset.CanonicalName());
+            }
+
             jo.Add("amount", value.Amount);
             jo.WriteTo(writer);
         }

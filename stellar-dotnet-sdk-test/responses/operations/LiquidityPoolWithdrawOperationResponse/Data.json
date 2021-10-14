@@ -1,0 +1,49 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon-testnet.stellar.org/operations/1508641622462465"
+    },
+    "transaction": {
+      "href": "https://horizon-testnet.stellar.org/transactions/e8332b8dcada55e2801438c01d20f5abdeac60791260b24eb2f07be01cf57f2a"
+    },
+    "effects": {
+      "href": "https://horizon-testnet.stellar.org/operations/1508641622462465/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon-testnet.stellar.org/effects?order=desc&cursor=1508641622462465"
+    },
+    "precedes": {
+      "href": "https://horizon-testnet.stellar.org/effects?order=asc&cursor=1508641622462465"
+    }
+  },
+  "id": "1508641622462465",
+  "paging_token": "1508641622462465",
+  "transaction_successful": true,
+  "source_account": "GBCB56ASGYTRLYGIQPQMCR7HICUJYXXPTZAMD2CWG3UFB7JPD6YXC66Q",
+  "type": "liquidity_pool_withdraw",
+  "type_i": 23,
+  "created_at": "2021-10-06T18:10:59Z",
+  "transaction_hash": "e8332b8dcada55e2801438c01d20f5abdeac60791260b24eb2f07be01cf57f2a",
+  "liquidity_pool_id": "b26c0d6545349ad7f44ba758b7c705459537201583f2e524635be04aff84bc69",
+  "reserves_min": [
+    {
+      "asset": "native",
+      "amount": "0.0000000"
+    },
+    {
+      "asset": "USDC:GAKMOAANQHJKF5735OYVSQZL6KC3VMFL4LP4ZYY2LWK256TSUG45IEFB",
+      "amount": "0.0000000"
+    }
+  ],
+  "shares": "1000.0000000",
+  "reserves_received": [
+    {
+      "asset": "native",
+      "amount": "1000.0000000"
+    },
+    {
+      "asset": "USDC:GAKMOAANQHJKF5735OYVSQZL6KC3VMFL4LP4ZYY2LWK256TSUG45IEFB",
+      "amount": "1000.0000000"
+    }
+  ]
+}

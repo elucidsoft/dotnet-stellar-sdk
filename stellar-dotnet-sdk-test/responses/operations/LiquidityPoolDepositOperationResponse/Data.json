@@ -1,0 +1,55 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://horizon-testnet.stellar.org/operations/1508315204960257"
+    },
+    "transaction": {
+      "href": "https://horizon-testnet.stellar.org/transactions/618930125efa20b6da220d8750c975580efeed18cf19a928500866fa78dd5d27"
+    },
+    "effects": {
+      "href": "https://horizon-testnet.stellar.org/operations/1508315204960257/effects"
+    },
+    "succeeds": {
+      "href": "https://horizon-testnet.stellar.org/effects?order=desc&cursor=1508315204960257"
+    },
+    "precedes": {
+      "href": "https://horizon-testnet.stellar.org/effects?order=asc&cursor=1508315204960257"
+    }
+  },
+  "id": "1508315204960257",
+  "paging_token": "1508315204960257",
+  "transaction_successful": false,
+  "source_account": "GAIWHTRJ2ISBQRYSNRPAUMFXC66QIPS34R7YMTES7QYG6DYF25IRTSER",
+  "type": "liquidity_pool_deposit",
+  "type_i": 22,
+  "created_at": "2021-10-06T18:04:24Z",
+  "transaction_hash": "618930125efa20b6da220d8750c975580efeed18cf19a928500866fa78dd5d27",
+  "liquidity_pool_id": "b26c0d6545349ad7f44ba758b7c705459537201583f2e524635be04aff84bc69",
+  "reserves_max": [
+    {
+      "amount": "1000.0000000"
+    },
+    {
+      "amount": "1.0000000"
+    }
+  ],
+  "min_price": "1.0000000",
+  "min_price_r": {
+    "n": 1,
+    "d": 1
+  },
+  "max_price": "100000000.0000000",
+  "max_price_r": {
+    "n": 100000000,
+    "d": 1
+  },
+  "reserves_deposited": [
+    {
+      "amount": "0.0000000"
+    },
+    {
+      "amount": "0.0000000"
+    }
+  ],
+  "shares_received": "0.0000000"
+}
