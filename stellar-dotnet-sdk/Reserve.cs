@@ -37,8 +37,8 @@ namespace stellar_dotnet_sdk
         public override int GetHashCode()
         {
             int hashCode = 1588693772;
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Amount);
-            hashCode = hashCode * -1521134295 + EqualityComparer<Asset>.Default.GetHashCode(Asset);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(Amount);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<Asset>.Default.GetHashCode(Asset);
             return hashCode;
         }
     }
