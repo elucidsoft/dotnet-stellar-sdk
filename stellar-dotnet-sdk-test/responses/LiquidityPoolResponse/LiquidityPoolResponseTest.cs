@@ -70,10 +70,10 @@ namespace stellar_dotnet_sdk_test.responses
         [TestMethod]
         public void TestReserveEquality()
         {
-            LiquidityPoolResponse.Reserve a = new LiquidityPoolResponse.Reserve("2000.0000000", Asset.Create("PHP:GAP5LETOV6YIE62YAM56STDANPRDO7ZFDBGSNHJQIYGGKSMOZAHOOS2S"));
-            LiquidityPoolResponse.Reserve b = new LiquidityPoolResponse.Reserve("2000.0000000", Asset.Create("PHP:GAP5LETOV6YIE62YAM56STDANPRDO7ZFDBGSNHJQIYGGKSMOZAHOOS2S"));
-            LiquidityPoolResponse.Reserve c = new LiquidityPoolResponse.Reserve("1000.0000005", Asset.Create("PHP:GAP5LETOV6YIE62YAM56STDANPRDO7ZFDBGSNHJQIYGGKSMOZAHOOS2S"));
-            LiquidityPoolResponse.Reserve d = new LiquidityPoolResponse.Reserve("2000.0000000", Asset.Create("EURT:GAP5LETOV6YIE62YAM56STDANPRDO7ZFDBGSNHJQIYGGKSMOZAHOOS2S"));
+            Reserve a = new Reserve("2000.0000000", Asset.Create("PHP:GAP5LETOV6YIE62YAM56STDANPRDO7ZFDBGSNHJQIYGGKSMOZAHOOS2S"));
+            Reserve b = new Reserve("2000.0000000", Asset.Create("PHP:GAP5LETOV6YIE62YAM56STDANPRDO7ZFDBGSNHJQIYGGKSMOZAHOOS2S"));
+            Reserve c = new Reserve("1000.0000005", Asset.Create("PHP:GAP5LETOV6YIE62YAM56STDANPRDO7ZFDBGSNHJQIYGGKSMOZAHOOS2S"));
+            Reserve d = new Reserve("2000.0000000", Asset.Create("EURT:GAP5LETOV6YIE62YAM56STDANPRDO7ZFDBGSNHJQIYGGKSMOZAHOOS2S"));
 
             Assert.AreEqual(a, b);
             Assert.AreNotEqual(a, c);
