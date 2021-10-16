@@ -1325,6 +1325,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.Reserve.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.Reserve.html",
+          "hash": "Yp1g26FYuu57f/tRdKd90Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.RevokeLedgerEntrySponsorshipOperation.Builder.yml",
       "output": {
         ".html": {
@@ -1685,18 +1697,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.html",
-          "hash": "RCTdiM87NK7E/z0t6k6YXA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.converters.LiquidityPoolTypeEnumJsonConverter.yml",
       "output": {
         ".html": {
@@ -1709,11 +1709,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.converters.ReserveJsonConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.converters.ReserveJsonConverter.html",
+          "hash": "m59dg1n8o3GIOir4CTEFYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.converters.yml",
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.converters.html",
-          "hash": "uHKmcBB18lm54DsoF9ctEg=="
+          "hash": "nJuOqz5HTcsXvm85Oc/7Gw=="
         }
       },
       "is_incremental": false,
@@ -2501,23 +2513,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.html",
-          "hash": "Oewk0jNST5GtNVr4XGFAcA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.yml",
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.html",
-          "hash": "hwa6Mbso1xoyq1PZvvSQNA=="
+          "hash": "Fk93XbvyMQY8wxp2sX8usg=="
         }
       },
       "is_incremental": false,
@@ -3833,6 +3833,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html",
+          "hash": "tMGuq45ZcGw1mDLZPOS+Gw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html",
+          "hash": "4iI9lV/pd4UjQH56mpIEHQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.operations.ManageBuyOfferOperationResponse.yml",
       "output": {
         ".html": {
@@ -3885,7 +3909,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.operations.OperationResponse.html",
-          "hash": "H5q3TY865YGUvV9OkNH/GQ=="
+          "hash": "8HbB04qo7Cf33SwbKIog5g=="
         }
       },
       "is_incremental": false,
@@ -3981,7 +4005,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.operations.html",
-          "hash": "dSgUDC1zf77VhF0YfAMV2A=="
+          "hash": "R1bbP1IkX95aoJmWLI4wlQ=="
         }
       },
       "is_incremental": false,
@@ -6237,7 +6261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.html",
-          "hash": "iu6mcT8FgYCISMCig/ssaw=="
+          "hash": "E+RR5YxcD+LWZhdsTorytw=="
         }
       },
       "is_incremental": false,
@@ -6249,7 +6273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.html",
-          "hash": "WUVNU9MTJXiJyC35ztbcXQ=="
+          "hash": "ECTUJ058RNFa7NrJWrfqqQ=="
         }
       },
       "is_incremental": false,
@@ -6261,7 +6285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "dFhfP4nkW8r7ZuvvDxceLA=="
+          "hash": "wEecXMiV+jYO1JTgnWxYLg=="
         }
       },
       "is_incremental": false,
@@ -6410,7 +6434,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 520,
+          "total_file_count": 522,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

@@ -2450,38 +2450,6 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.converters.LiquidityPoolIDJsonConverter.WriteJson
   nameWithType: LiquidityPoolIDJsonConverter.WriteJson
-- uid: stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter
-  name: LiquidityPoolResponseReserveJsonConverter
-  href: api/stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.html
-  commentId: T:stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter
-  fullName: stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter
-  nameWithType: LiquidityPoolResponseReserveJsonConverter
-- uid: stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.ReadJson(JsonReader,Type,stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve,System.Boolean,JsonSerializer)
-  name: ReadJson(JsonReader, Type, LiquidityPoolResponse.Reserve, Boolean, JsonSerializer)
-  href: api/stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.html#stellar_dotnet_sdk_converters_LiquidityPoolResponseReserveJsonConverter_ReadJson_JsonReader_Type_stellar_dotnet_sdk_responses_LiquidityPoolResponse_Reserve_System_Boolean_JsonSerializer_
-  commentId: M:stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.ReadJson(JsonReader,Type,stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve,System.Boolean,JsonSerializer)
-  fullName: stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.ReadJson(JsonReader, Type, stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve, System.Boolean, JsonSerializer)
-  nameWithType: LiquidityPoolResponseReserveJsonConverter.ReadJson(JsonReader, Type, LiquidityPoolResponse.Reserve, Boolean, JsonSerializer)
-- uid: stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.ReadJson*
-  name: ReadJson
-  href: api/stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.html#stellar_dotnet_sdk_converters_LiquidityPoolResponseReserveJsonConverter_ReadJson_
-  commentId: Overload:stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.ReadJson
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.ReadJson
-  nameWithType: LiquidityPoolResponseReserveJsonConverter.ReadJson
-- uid: stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.WriteJson(JsonWriter,stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve,JsonSerializer)
-  name: WriteJson(JsonWriter, LiquidityPoolResponse.Reserve, JsonSerializer)
-  href: api/stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.html#stellar_dotnet_sdk_converters_LiquidityPoolResponseReserveJsonConverter_WriteJson_JsonWriter_stellar_dotnet_sdk_responses_LiquidityPoolResponse_Reserve_JsonSerializer_
-  commentId: M:stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.WriteJson(JsonWriter,stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve,JsonSerializer)
-  fullName: stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.WriteJson(JsonWriter, stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve, JsonSerializer)
-  nameWithType: LiquidityPoolResponseReserveJsonConverter.WriteJson(JsonWriter, LiquidityPoolResponse.Reserve, JsonSerializer)
-- uid: stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.WriteJson*
-  name: WriteJson
-  href: api/stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.html#stellar_dotnet_sdk_converters_LiquidityPoolResponseReserveJsonConverter_WriteJson_
-  commentId: Overload:stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.WriteJson
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.converters.LiquidityPoolResponseReserveJsonConverter.WriteJson
-  nameWithType: LiquidityPoolResponseReserveJsonConverter.WriteJson
 - uid: stellar_dotnet_sdk.converters.LiquidityPoolTypeEnumJsonConverter
   name: LiquidityPoolTypeEnumJsonConverter
   href: api/stellar_dotnet_sdk.converters.LiquidityPoolTypeEnumJsonConverter.html
@@ -2514,6 +2482,38 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.converters.LiquidityPoolTypeEnumJsonConverter.WriteJson
   nameWithType: LiquidityPoolTypeEnumJsonConverter.WriteJson
+- uid: stellar_dotnet_sdk.converters.ReserveJsonConverter
+  name: ReserveJsonConverter
+  href: api/stellar_dotnet_sdk.converters.ReserveJsonConverter.html
+  commentId: T:stellar_dotnet_sdk.converters.ReserveJsonConverter
+  fullName: stellar_dotnet_sdk.converters.ReserveJsonConverter
+  nameWithType: ReserveJsonConverter
+- uid: stellar_dotnet_sdk.converters.ReserveJsonConverter.ReadJson(JsonReader,Type,stellar_dotnet_sdk.Reserve,System.Boolean,JsonSerializer)
+  name: ReadJson(JsonReader, Type, Reserve, Boolean, JsonSerializer)
+  href: api/stellar_dotnet_sdk.converters.ReserveJsonConverter.html#stellar_dotnet_sdk_converters_ReserveJsonConverter_ReadJson_JsonReader_Type_stellar_dotnet_sdk_Reserve_System_Boolean_JsonSerializer_
+  commentId: M:stellar_dotnet_sdk.converters.ReserveJsonConverter.ReadJson(JsonReader,Type,stellar_dotnet_sdk.Reserve,System.Boolean,JsonSerializer)
+  fullName: stellar_dotnet_sdk.converters.ReserveJsonConverter.ReadJson(JsonReader, Type, stellar_dotnet_sdk.Reserve, System.Boolean, JsonSerializer)
+  nameWithType: ReserveJsonConverter.ReadJson(JsonReader, Type, Reserve, Boolean, JsonSerializer)
+- uid: stellar_dotnet_sdk.converters.ReserveJsonConverter.ReadJson*
+  name: ReadJson
+  href: api/stellar_dotnet_sdk.converters.ReserveJsonConverter.html#stellar_dotnet_sdk_converters_ReserveJsonConverter_ReadJson_
+  commentId: Overload:stellar_dotnet_sdk.converters.ReserveJsonConverter.ReadJson
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.converters.ReserveJsonConverter.ReadJson
+  nameWithType: ReserveJsonConverter.ReadJson
+- uid: stellar_dotnet_sdk.converters.ReserveJsonConverter.WriteJson(JsonWriter,stellar_dotnet_sdk.Reserve,JsonSerializer)
+  name: WriteJson(JsonWriter, Reserve, JsonSerializer)
+  href: api/stellar_dotnet_sdk.converters.ReserveJsonConverter.html#stellar_dotnet_sdk_converters_ReserveJsonConverter_WriteJson_JsonWriter_stellar_dotnet_sdk_Reserve_JsonSerializer_
+  commentId: M:stellar_dotnet_sdk.converters.ReserveJsonConverter.WriteJson(JsonWriter,stellar_dotnet_sdk.Reserve,JsonSerializer)
+  fullName: stellar_dotnet_sdk.converters.ReserveJsonConverter.WriteJson(JsonWriter, stellar_dotnet_sdk.Reserve, JsonSerializer)
+  nameWithType: ReserveJsonConverter.WriteJson(JsonWriter, Reserve, JsonSerializer)
+- uid: stellar_dotnet_sdk.converters.ReserveJsonConverter.WriteJson*
+  name: WriteJson
+  href: api/stellar_dotnet_sdk.converters.ReserveJsonConverter.html#stellar_dotnet_sdk_converters_ReserveJsonConverter_WriteJson_
+  commentId: Overload:stellar_dotnet_sdk.converters.ReserveJsonConverter.WriteJson
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.converters.ReserveJsonConverter.WriteJson
+  nameWithType: ReserveJsonConverter.WriteJson
 - uid: stellar_dotnet_sdk.CreateAccountOperation
   name: CreateAccountOperation
   href: api/stellar_dotnet_sdk.CreateAccountOperation.html
@@ -9544,6 +9544,83 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.requests.TransactionsRequestBuilder.Transaction
   nameWithType: TransactionsRequestBuilder.Transaction
+- uid: stellar_dotnet_sdk.Reserve
+  name: Reserve
+  href: api/stellar_dotnet_sdk.Reserve.html
+  commentId: T:stellar_dotnet_sdk.Reserve
+  fullName: stellar_dotnet_sdk.Reserve
+  nameWithType: Reserve
+- uid: stellar_dotnet_sdk.Reserve.#ctor
+  name: Reserve()
+  href: api/stellar_dotnet_sdk.Reserve.html#stellar_dotnet_sdk_Reserve__ctor
+  commentId: M:stellar_dotnet_sdk.Reserve.#ctor
+  fullName: stellar_dotnet_sdk.Reserve.Reserve()
+  nameWithType: Reserve.Reserve()
+- uid: stellar_dotnet_sdk.Reserve.#ctor(System.String,stellar_dotnet_sdk.Asset)
+  name: Reserve(String, Asset)
+  href: api/stellar_dotnet_sdk.Reserve.html#stellar_dotnet_sdk_Reserve__ctor_System_String_stellar_dotnet_sdk_Asset_
+  commentId: M:stellar_dotnet_sdk.Reserve.#ctor(System.String,stellar_dotnet_sdk.Asset)
+  fullName: stellar_dotnet_sdk.Reserve.Reserve(System.String, stellar_dotnet_sdk.Asset)
+  nameWithType: Reserve.Reserve(String, Asset)
+- uid: stellar_dotnet_sdk.Reserve.#ctor*
+  name: Reserve
+  href: api/stellar_dotnet_sdk.Reserve.html#stellar_dotnet_sdk_Reserve__ctor_
+  commentId: Overload:stellar_dotnet_sdk.Reserve.#ctor
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.Reserve.Reserve
+  nameWithType: Reserve.Reserve
+- uid: stellar_dotnet_sdk.Reserve.Amount
+  name: Amount
+  href: api/stellar_dotnet_sdk.Reserve.html#stellar_dotnet_sdk_Reserve_Amount
+  commentId: P:stellar_dotnet_sdk.Reserve.Amount
+  fullName: stellar_dotnet_sdk.Reserve.Amount
+  nameWithType: Reserve.Amount
+- uid: stellar_dotnet_sdk.Reserve.Amount*
+  name: Amount
+  href: api/stellar_dotnet_sdk.Reserve.html#stellar_dotnet_sdk_Reserve_Amount_
+  commentId: Overload:stellar_dotnet_sdk.Reserve.Amount
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.Reserve.Amount
+  nameWithType: Reserve.Amount
+- uid: stellar_dotnet_sdk.Reserve.Asset
+  name: Asset
+  href: api/stellar_dotnet_sdk.Reserve.html#stellar_dotnet_sdk_Reserve_Asset
+  commentId: P:stellar_dotnet_sdk.Reserve.Asset
+  fullName: stellar_dotnet_sdk.Reserve.Asset
+  nameWithType: Reserve.Asset
+- uid: stellar_dotnet_sdk.Reserve.Asset*
+  name: Asset
+  href: api/stellar_dotnet_sdk.Reserve.html#stellar_dotnet_sdk_Reserve_Asset_
+  commentId: Overload:stellar_dotnet_sdk.Reserve.Asset
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.Reserve.Asset
+  nameWithType: Reserve.Asset
+- uid: stellar_dotnet_sdk.Reserve.Equals(System.Object)
+  name: Equals(Object)
+  href: api/stellar_dotnet_sdk.Reserve.html#stellar_dotnet_sdk_Reserve_Equals_System_Object_
+  commentId: M:stellar_dotnet_sdk.Reserve.Equals(System.Object)
+  fullName: stellar_dotnet_sdk.Reserve.Equals(System.Object)
+  nameWithType: Reserve.Equals(Object)
+- uid: stellar_dotnet_sdk.Reserve.Equals*
+  name: Equals
+  href: api/stellar_dotnet_sdk.Reserve.html#stellar_dotnet_sdk_Reserve_Equals_
+  commentId: Overload:stellar_dotnet_sdk.Reserve.Equals
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.Reserve.Equals
+  nameWithType: Reserve.Equals
+- uid: stellar_dotnet_sdk.Reserve.GetHashCode
+  name: GetHashCode()
+  href: api/stellar_dotnet_sdk.Reserve.html#stellar_dotnet_sdk_Reserve_GetHashCode
+  commentId: M:stellar_dotnet_sdk.Reserve.GetHashCode
+  fullName: stellar_dotnet_sdk.Reserve.GetHashCode()
+  nameWithType: Reserve.GetHashCode()
+- uid: stellar_dotnet_sdk.Reserve.GetHashCode*
+  name: GetHashCode
+  href: api/stellar_dotnet_sdk.Reserve.html#stellar_dotnet_sdk_Reserve_GetHashCode_
+  commentId: Overload:stellar_dotnet_sdk.Reserve.GetHashCode
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.Reserve.GetHashCode
+  nameWithType: Reserve.GetHashCode
 - uid: stellar_dotnet_sdk.responses
   name: stellar_dotnet_sdk.responses
   href: api/stellar_dotnet_sdk.responses.html
@@ -15535,64 +15612,6 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.LiquidityPoolResponse.PagingToken
   nameWithType: LiquidityPoolResponse.PagingToken
-- uid: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve
-  name: LiquidityPoolResponse.Reserve
-  href: api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.html
-  commentId: T:stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve
-  fullName: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve
-  nameWithType: LiquidityPoolResponse.Reserve
-- uid: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.#ctor(System.String,stellar_dotnet_sdk.Asset)
-  name: Reserve(String, Asset)
-  href: api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.html#stellar_dotnet_sdk_responses_LiquidityPoolResponse_Reserve__ctor_System_String_stellar_dotnet_sdk_Asset_
-  commentId: M:stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.#ctor(System.String,stellar_dotnet_sdk.Asset)
-  fullName: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Reserve(System.String, stellar_dotnet_sdk.Asset)
-  nameWithType: LiquidityPoolResponse.Reserve.Reserve(String, Asset)
-- uid: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.#ctor*
-  name: Reserve
-  href: api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.html#stellar_dotnet_sdk_responses_LiquidityPoolResponse_Reserve__ctor_
-  commentId: Overload:stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.#ctor
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Reserve
-  nameWithType: LiquidityPoolResponse.Reserve.Reserve
-- uid: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Amount
-  name: Amount
-  href: api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.html#stellar_dotnet_sdk_responses_LiquidityPoolResponse_Reserve_Amount
-  commentId: P:stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Amount
-  fullName: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Amount
-  nameWithType: LiquidityPoolResponse.Reserve.Amount
-- uid: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Amount*
-  name: Amount
-  href: api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.html#stellar_dotnet_sdk_responses_LiquidityPoolResponse_Reserve_Amount_
-  commentId: Overload:stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Amount
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Amount
-  nameWithType: LiquidityPoolResponse.Reserve.Amount
-- uid: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Asset
-  name: Asset
-  href: api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.html#stellar_dotnet_sdk_responses_LiquidityPoolResponse_Reserve_Asset
-  commentId: P:stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Asset
-  fullName: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Asset
-  nameWithType: LiquidityPoolResponse.Reserve.Asset
-- uid: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Asset*
-  name: Asset
-  href: api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.html#stellar_dotnet_sdk_responses_LiquidityPoolResponse_Reserve_Asset_
-  commentId: Overload:stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Asset
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Asset
-  nameWithType: LiquidityPoolResponse.Reserve.Asset
-- uid: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Equals(System.Object)
-  name: Equals(Object)
-  href: api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.html#stellar_dotnet_sdk_responses_LiquidityPoolResponse_Reserve_Equals_System_Object_
-  commentId: M:stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Equals(System.Object)
-  fullName: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Equals(System.Object)
-  nameWithType: LiquidityPoolResponse.Reserve.Equals(Object)
-- uid: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Equals*
-  name: Equals
-  href: api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.html#stellar_dotnet_sdk_responses_LiquidityPoolResponse_Reserve_Equals_
-  commentId: Overload:stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Equals
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserve.Equals
-  nameWithType: LiquidityPoolResponse.Reserve.Equals
 - uid: stellar_dotnet_sdk.responses.LiquidityPoolResponse.Reserves
   name: Reserves
   href: api/stellar_dotnet_sdk.responses.LiquidityPoolResponse.html#stellar_dotnet_sdk_responses_LiquidityPoolResponse_Reserves
@@ -17184,6 +17203,200 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.InflationOperationResponse.TypeId
   nameWithType: InflationOperationResponse.TypeId
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse
+  name: LiquidityPoolDepositOperationResponse
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html
+  commentId: T:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse
+  nameWithType: LiquidityPoolDepositOperationResponse
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.#ctor
+  name: LiquidityPoolDepositOperationResponse()
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse__ctor
+  commentId: M:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.#ctor
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.LiquidityPoolDepositOperationResponse()
+  nameWithType: LiquidityPoolDepositOperationResponse.LiquidityPoolDepositOperationResponse()
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.#ctor*
+  name: LiquidityPoolDepositOperationResponse
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse__ctor_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.#ctor
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.LiquidityPoolDepositOperationResponse
+  nameWithType: LiquidityPoolDepositOperationResponse.LiquidityPoolDepositOperationResponse
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.LiquidityPoolID
+  name: LiquidityPoolID
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_LiquidityPoolID
+  commentId: P:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.LiquidityPoolID
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.LiquidityPoolID
+  nameWithType: LiquidityPoolDepositOperationResponse.LiquidityPoolID
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.LiquidityPoolID*
+  name: LiquidityPoolID
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_LiquidityPoolID_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.LiquidityPoolID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.LiquidityPoolID
+  nameWithType: LiquidityPoolDepositOperationResponse.LiquidityPoolID
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.MaxPrice
+  name: MaxPrice
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_MaxPrice
+  commentId: P:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.MaxPrice
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.MaxPrice
+  nameWithType: LiquidityPoolDepositOperationResponse.MaxPrice
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.MaxPrice*
+  name: MaxPrice
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_MaxPrice_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.MaxPrice
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.MaxPrice
+  nameWithType: LiquidityPoolDepositOperationResponse.MaxPrice
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.MinPrice
+  name: MinPrice
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_MinPrice
+  commentId: P:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.MinPrice
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.MinPrice
+  nameWithType: LiquidityPoolDepositOperationResponse.MinPrice
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.MinPrice*
+  name: MinPrice
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_MinPrice_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.MinPrice
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.MinPrice
+  nameWithType: LiquidityPoolDepositOperationResponse.MinPrice
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.ReservesDeposited
+  name: ReservesDeposited
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_ReservesDeposited
+  commentId: P:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.ReservesDeposited
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.ReservesDeposited
+  nameWithType: LiquidityPoolDepositOperationResponse.ReservesDeposited
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.ReservesDeposited*
+  name: ReservesDeposited
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_ReservesDeposited_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.ReservesDeposited
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.ReservesDeposited
+  nameWithType: LiquidityPoolDepositOperationResponse.ReservesDeposited
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.ReservesMax
+  name: ReservesMax
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_ReservesMax
+  commentId: P:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.ReservesMax
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.ReservesMax
+  nameWithType: LiquidityPoolDepositOperationResponse.ReservesMax
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.ReservesMax*
+  name: ReservesMax
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_ReservesMax_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.ReservesMax
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.ReservesMax
+  nameWithType: LiquidityPoolDepositOperationResponse.ReservesMax
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.SharesReceived
+  name: SharesReceived
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_SharesReceived
+  commentId: P:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.SharesReceived
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.SharesReceived
+  nameWithType: LiquidityPoolDepositOperationResponse.SharesReceived
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.SharesReceived*
+  name: SharesReceived
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_SharesReceived_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.SharesReceived
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.SharesReceived
+  nameWithType: LiquidityPoolDepositOperationResponse.SharesReceived
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.TypeId
+  name: TypeId
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_TypeId
+  commentId: P:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.TypeId
+  nameWithType: LiquidityPoolDepositOperationResponse.TypeId
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.TypeId*
+  name: TypeId
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolDepositOperationResponse_TypeId_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.TypeId
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolDepositOperationResponse.TypeId
+  nameWithType: LiquidityPoolDepositOperationResponse.TypeId
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse
+  name: LiquidityPoolWithdrawOperationResponse
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html
+  commentId: T:stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse
+  nameWithType: LiquidityPoolWithdrawOperationResponse
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.#ctor
+  name: LiquidityPoolWithdrawOperationResponse()
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolWithdrawOperationResponse__ctor
+  commentId: M:stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.#ctor
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.LiquidityPoolWithdrawOperationResponse()
+  nameWithType: LiquidityPoolWithdrawOperationResponse.LiquidityPoolWithdrawOperationResponse()
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.#ctor*
+  name: LiquidityPoolWithdrawOperationResponse
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolWithdrawOperationResponse__ctor_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.#ctor
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.LiquidityPoolWithdrawOperationResponse
+  nameWithType: LiquidityPoolWithdrawOperationResponse.LiquidityPoolWithdrawOperationResponse
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.LiquidityPoolID
+  name: LiquidityPoolID
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolWithdrawOperationResponse_LiquidityPoolID
+  commentId: P:stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.LiquidityPoolID
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.LiquidityPoolID
+  nameWithType: LiquidityPoolWithdrawOperationResponse.LiquidityPoolID
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.LiquidityPoolID*
+  name: LiquidityPoolID
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolWithdrawOperationResponse_LiquidityPoolID_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.LiquidityPoolID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.LiquidityPoolID
+  nameWithType: LiquidityPoolWithdrawOperationResponse.LiquidityPoolID
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.ReservesMin
+  name: ReservesMin
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolWithdrawOperationResponse_ReservesMin
+  commentId: P:stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.ReservesMin
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.ReservesMin
+  nameWithType: LiquidityPoolWithdrawOperationResponse.ReservesMin
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.ReservesMin*
+  name: ReservesMin
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolWithdrawOperationResponse_ReservesMin_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.ReservesMin
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.ReservesMin
+  nameWithType: LiquidityPoolWithdrawOperationResponse.ReservesMin
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.ReservesReceived
+  name: ReservesReceived
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolWithdrawOperationResponse_ReservesReceived
+  commentId: P:stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.ReservesReceived
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.ReservesReceived
+  nameWithType: LiquidityPoolWithdrawOperationResponse.ReservesReceived
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.ReservesReceived*
+  name: ReservesReceived
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolWithdrawOperationResponse_ReservesReceived_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.ReservesReceived
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.ReservesReceived
+  nameWithType: LiquidityPoolWithdrawOperationResponse.ReservesReceived
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.Shares
+  name: Shares
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolWithdrawOperationResponse_Shares
+  commentId: P:stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.Shares
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.Shares
+  nameWithType: LiquidityPoolWithdrawOperationResponse.Shares
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.Shares*
+  name: Shares
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolWithdrawOperationResponse_Shares_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.Shares
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.Shares
+  nameWithType: LiquidityPoolWithdrawOperationResponse.Shares
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.TypeId
+  name: TypeId
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolWithdrawOperationResponse_TypeId
+  commentId: P:stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.TypeId
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.TypeId
+  nameWithType: LiquidityPoolWithdrawOperationResponse.TypeId
+- uid: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.TypeId*
+  name: TypeId
+  href: api/stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.html#stellar_dotnet_sdk_responses_operations_LiquidityPoolWithdrawOperationResponse_TypeId_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.TypeId
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.LiquidityPoolWithdrawOperationResponse.TypeId
+  nameWithType: LiquidityPoolWithdrawOperationResponse.TypeId
 - uid: stellar_dotnet_sdk.responses.operations.ManageBuyOfferOperationResponse
   name: ManageBuyOfferOperationResponse
   href: api/stellar_dotnet_sdk.responses.operations.ManageBuyOfferOperationResponse.html
