@@ -13,14 +13,14 @@ namespace stellar_dotnet_sdk.responses.effects
         public LiquidityPool LiquidityPool { get; private set; }
 
         [JsonProperty(PropertyName = "reserves_revoked")]
-        public LiquidityPoolClaimableAssetAmount ReservesRevoked { get; private set; }
+        public LiquidityPoolClaimableAssetAmount[] ReservesRevoked { get; private set; }
 
         [JsonProperty(PropertyName = "shares_revoked")]
         public string SharesRevoked { get; private set; }
 
         public LiquidityPoolRevokedEffectResponse() { }
 
-        public LiquidityPoolRevokedEffectResponse(LiquidityPool liquidityPool, LiquidityPoolClaimableAssetAmount reservesRevoked, string sharesRevoked)
+        public LiquidityPoolRevokedEffectResponse(LiquidityPool liquidityPool, LiquidityPoolClaimableAssetAmount[] reservesRevoked, string sharesRevoked)
         {
             LiquidityPool = liquidityPool;
             ReservesRevoked = reservesRevoked;
