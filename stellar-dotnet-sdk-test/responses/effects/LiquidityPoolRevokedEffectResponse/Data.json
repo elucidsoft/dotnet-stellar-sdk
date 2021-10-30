@@ -35,10 +35,12 @@
       }
     ]
   },
-  "reserves_revoked": {
-    "asset": "TEST:GC2262FQJAHVJSYWI6XEVQEH5CLPYCVSOLQHCDHNSKVWHTKYEZNAQS25",
-    "amount": "1500.0000000",
-    "claimable_balance_id": "00000000836f572dd43b76853df6c88ca1b89394b547d74de0c87334ce7f9270cb342203"
-  },
+  "reserves_revoked": [
+    {
+      "asset": "TEST:GC2262FQJAHVJSYWI6XEVQEH5CLPYCVSOLQHCDHNSKVWHTKYEZNAQS25",
+      "amount": "1500.0000000",
+      "claimable_balance_id": "00000000836f572dd43b76853df6c88ca1b89394b547d74de0c87334ce7f9270cb342203"
+    }
+  ],
   "shares_revoked": "100.0000000"
 }

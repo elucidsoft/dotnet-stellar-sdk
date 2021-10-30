@@ -63,9 +63,9 @@ namespace stellar_dotnet_sdk_test.responses.effects
             Assert.AreEqual(effect.LiquidityPool.Reserves[1].Asset.CanonicalName(), "TEST:GC2262FQJAHVJSYWI6XEVQEH5CLPYCVSOLQHCDHNSKVWHTKYEZNAQS25");
             Assert.AreEqual(effect.LiquidityPool.Reserves[1].Amount, "0.0000000");
 
-            Assert.AreEqual(effect.ReservesRevoked.Asset.CanonicalName(), "TEST:GC2262FQJAHVJSYWI6XEVQEH5CLPYCVSOLQHCDHNSKVWHTKYEZNAQS25");
-            Assert.AreEqual(effect.ReservesRevoked.Amount, "1500.0000000");
-            Assert.AreEqual(effect.ReservesRevoked.ClaimableBalanceID, "00000000836f572dd43b76853df6c88ca1b89394b547d74de0c87334ce7f9270cb342203");
+            Assert.AreEqual(effect.ReservesRevoked[0].Asset.CanonicalName(), "TEST:GC2262FQJAHVJSYWI6XEVQEH5CLPYCVSOLQHCDHNSKVWHTKYEZNAQS25");
+            Assert.AreEqual(effect.ReservesRevoked[0].Amount, "1500.0000000");
+            Assert.AreEqual(effect.ReservesRevoked[0].ClaimableBalanceID, "00000000836f572dd43b76853df6c88ca1b89394b547d74de0c87334ce7f9270cb342203");
 
             Assert.AreEqual(effect.SharesRevoked, "100.0000000");
         }
