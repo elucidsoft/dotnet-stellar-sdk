@@ -53,6 +53,15 @@
       "balance": "20.0000300",
       "buying_liabilities": "5.1234567",
       "selling_liabilities": "1.7654321"
+    },
+    {
+      "balance": "500.0000400",
+      "liquidity_pool_id": "1c80ecd9cc567ef5301683af3ca7c2deeba7d519275325549f22514076396469",
+      "limit": "922337203685.4775807",
+      "last_modified_ledger": 975243,
+      "is_authorized": false,
+      "is_authorized_to_maintain_liabilities": false,
+      "asset_type": "liquidity_pool_shares"
     }
   ],
   "signers": [
