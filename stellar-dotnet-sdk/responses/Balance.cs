@@ -8,17 +8,27 @@ namespace stellar_dotnet_sdk.responses
     /// </summary>
     public class Balance
     {
-        public Balance(string assetType, string assetCode, string assetIssuer, string balance, string limit, string buyingLiabilities, string sellingLiabilities, bool isAuthorized, bool isAuthorizedToMaintainLiabilities)
+        public Balance(string assetType, string assetCode, string assetIssuer, string balance, string limit, string buyingLiabilities, string sellingLiabilities, bool isAuthorized, bool isAuthorizedToMaintainLiabilities, string liquidityPoolId)
         {
             AssetType = assetType ?? throw new ArgumentNullException(nameof(assetType), "assertType cannot be null");
             BalanceString = balance ?? throw new ArgumentNullException(nameof(balance), "balance cannot be null");
             Limit = limit;
             AssetCode = assetCode;
             AssetIssuer = assetIssuer;
-            BuyingLiabilities = buyingLiabilities ?? throw new ArgumentNullException(nameof(buyingLiabilities), "buyingLiabilities cannot be null");
-            SellingLiabilities = sellingLiabilities ?? throw new ArgumentNullException(nameof(sellingLiabilities), "sellingLiabilities cannot be null");
+
+            if (assetType != "liquidity_pool_shares")
+            {
+                BuyingLiabilities = buyingLiabilities ?? throw new ArgumentNullException(nameof(buyingLiabilities), "buyingLiabilities cannot be null");
+                SellingLiabilities = sellingLiabilities ?? throw new ArgumentNullException(nameof(sellingLiabilities), "sellingLiabilities cannot be null");
+            }
+
             IsAuthorized = isAuthorized;
             IsAuthorizedToMaintainLiabilities = isAuthorizedToMaintainLiabilities;
+
+            if (assetType == "liquidity_pool_shares")
+            {
+                LiquidityPoolId = liquidityPoolId ?? throw new ArgumentNullException(nameof(liquidityPoolId));
+            }
         }
 
         [JsonProperty(PropertyName = "asset_type")]
@@ -50,5 +60,8 @@ namespace stellar_dotnet_sdk.responses
 
         [JsonProperty(PropertyName = "is_authorized_to_maintain_liabilities")]
         public bool IsAuthorizedToMaintainLiabilities { get; private set; }
+
+        [JsonProperty(PropertyName = "liquidity_pool_id")]
+        public string LiquidityPoolId { get; private set; }
     }
 }

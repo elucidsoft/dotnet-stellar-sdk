@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using stellar_dotnet_sdk;
@@ -74,6 +75,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(account.Flags.AuthRequired, false);
             Assert.AreEqual(account.Flags.AuthRevocable, true);
             Assert.AreEqual(account.Flags.AuthImmutable, true);
+            Assert.AreEqual(account.Flags.AuthClawback, true);
 
             Assert.AreEqual(account.Balances[0].AssetType, "credit_alphanum4");
             Assert.AreEqual(account.Balances[0].AssetCode, "ABC");
@@ -82,6 +84,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsInstanceOfType(asset, typeof(AssetTypeCreditAlphaNum));
             Assert.AreEqual(asset.Code, "ABC");
             Assert.AreEqual(asset.Issuer, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
+
+            account.Balances
+                .Should().HaveCount(3);
 
             Assert.AreEqual(account.Balances[0].BalanceString, "1001.0000000");
             Assert.AreEqual(account.Balances[0].Limit, "12000.4775807");
@@ -97,6 +102,25 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(account.Balances[1].BuyingLiabilities, "5.1234567");
             Assert.AreEqual(account.Balances[1].SellingLiabilities, "1.7654321");
             Assert.AreEqual(account.Balances[1].Limit, null);
+
+            // liquidity pool balance
+            account.Balances[2].AssetType
+                .Should().Be("liquidity_pool_shares");
+
+            account.Balances[2].BalanceString
+                .Should().Be("500.0000400");
+
+            account.Balances[2].Limit
+                .Should().Be("922337203685.4775807");
+
+            account.Balances[2].IsAuthorized
+                .Should().BeFalse();
+
+            account.Balances[2].IsAuthorizedToMaintainLiabilities
+                .Should().BeFalse();
+
+            account.Balances[2].LiquidityPoolId
+                .Should().Be("1c80ecd9cc567ef5301683af3ca7c2deeba7d519275325549f22514076396469");
 
             Assert.AreEqual(account.Signers[0].Key, "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
             Assert.AreEqual(account.Signers[0].Weight, 0);

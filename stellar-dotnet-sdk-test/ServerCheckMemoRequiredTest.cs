@@ -189,10 +189,10 @@ namespace stellar_dotnet_sdk_test
             {
                 Balances = new[]
                 {
-                    new Balance("native", null, null, "12345.6789", null, "0.0", "0.0", false, true),
+                    new Balance("native", null, null, "12345.6789", null, "0.0", "0.0", false, true, "1c80ecd9cc567ef5301683af3ca7c2deeba7d519275325549f22514076396469"),
                 },
                 Data = accountData,
-                Flags = new Flags(false, false, false),
+                Flags = new Flags(false, false, false, false),
                 HomeDomain = null,
                 InflationDestination = null,
                 Signers = new[]

@@ -12,6 +12,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(1, (int)AccountFlag.AuthRequiredFlag);
             Assert.AreEqual(2, (int)AccountFlag.AuthRevocableFlag);
             Assert.AreEqual(4, (int)AccountFlag.AuthImmutableFlag);
+            Assert.AreEqual(8, (int)AccountFlag.AuthClawbackFlag);
         }
     }
 }

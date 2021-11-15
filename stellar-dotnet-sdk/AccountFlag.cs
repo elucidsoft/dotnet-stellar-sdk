@@ -18,8 +18,13 @@ namespace stellar_dotnet_sdk
         AuthRevocableFlag = AccountFlags.AccountFlagsEnum.AUTH_REVOCABLE_FLAG,
 
         /// <summary>
-        /// With this setting, none of the following authorization flags can be changed.
+        /// With this setting, none of the other authorization flags can be changed.
         /// </summary>
-        AuthImmutableFlag = AccountFlags.AccountFlagsEnum.AUTH_IMMUTABLE_FLAG
+        AuthImmutableFlag = AccountFlags.AccountFlagsEnum.AUTH_IMMUTABLE_FLAG,
+
+        /// <summary>
+        /// With this setting, an anchor can unilaterally take away any portion of its issued asset(s) from any asset holder.
+        /// </summary>
+        AuthClawbackFlag = AccountFlags.AccountFlagsEnum.AUTH_CLAWBACK_ENABLED_FLAG
     }
 }
