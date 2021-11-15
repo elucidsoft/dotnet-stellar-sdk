@@ -101,15 +101,15 @@
   
   <a id="stellar_dotnet_sdk_responses_Flags__ctor_" data-uid="stellar_dotnet_sdk.responses.Flags.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_responses_Flags__ctor_System_Boolean_System_Boolean_System_Boolean_" data-uid="stellar_dotnet_sdk.responses.Flags.#ctor(System.Boolean,System.Boolean,System.Boolean)"><a href="#collapsible-stellar_dotnet_sdk_responses_Flags__ctor_System_Boolean_System_Boolean_System_Boolean_" class="expander" data-toggle="collapse">Flags(Boolean, Boolean, Boolean)</a></h4>
+  <h4 id="stellar_dotnet_sdk_responses_Flags__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="stellar_dotnet_sdk.responses.Flags.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean)"><a href="#collapsible-stellar_dotnet_sdk_responses_Flags__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" class="expander" data-toggle="collapse">Flags(Boolean, Boolean, Boolean, Boolean)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_responses_Flags__ctor_System_Boolean_System_Boolean_System_Boolean_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_responses_Flags__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Flags(bool authRequired, bool authRevocable, bool authImmutable)</code></pre>
+    <pre><code class="lang-csharp hljs">public Flags(bool authRequired, bool authRevocable, bool authImmutable, bool authClawback)</code></pre>
   </div>
 
   <h5 class="parameters">Parameters</h5>
@@ -136,6 +136,11 @@
         <td><span class="parametername">authImmutable</span></td>
         <td></td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">authClawback</span></td>
+        <td></td>
+      </tr>
   </table>
   
   
@@ -153,12 +158,50 @@
   </h3>
   
   
+  <a id="stellar_dotnet_sdk_responses_Flags_AuthClawback_" data-uid="stellar_dotnet_sdk.responses.Flags.AuthClawback*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_responses_Flags_AuthClawback" data-uid="stellar_dotnet_sdk.responses.Flags.AuthClawback"><a href="#collapsible-stellar_dotnet_sdk_responses_Flags_AuthClawback" class="expander" data-toggle="collapse">AuthClawback</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_responses_Flags_AuthClawback" class="collapse in">
+  <div class="markdown level1 summary"><p>This account can unilaterally take away any portion of its issued asset(s) from any asset holders.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AuthClawback { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Boolean</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
   <a id="stellar_dotnet_sdk_responses_Flags_AuthImmutable_" data-uid="stellar_dotnet_sdk.responses.Flags.AuthImmutable*"></a>
   
   <h4 id="stellar_dotnet_sdk_responses_Flags_AuthImmutable" data-uid="stellar_dotnet_sdk.responses.Flags.AuthImmutable"><a href="#collapsible-stellar_dotnet_sdk_responses_Flags_AuthImmutable" class="expander" data-toggle="collapse">AuthImmutable</a></h4>
   
   <div id="collapsible-stellar_dotnet_sdk_responses_Flags_AuthImmutable" class="collapse in">
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This account cannot change any of the authorization flags.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
 
@@ -194,7 +237,8 @@
   <h4 id="stellar_dotnet_sdk_responses_Flags_AuthRequired" data-uid="stellar_dotnet_sdk.responses.Flags.AuthRequired"><a href="#collapsible-stellar_dotnet_sdk_responses_Flags_AuthRequired" class="expander" data-toggle="collapse">AuthRequired</a></h4>
   
   <div id="collapsible-stellar_dotnet_sdk_responses_Flags_AuthRequired" class="collapse in">
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This account must approve anyone who wants to hold its asset.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
 
@@ -230,7 +274,8 @@
   <h4 id="stellar_dotnet_sdk_responses_Flags_AuthRevocable" data-uid="stellar_dotnet_sdk.responses.Flags.AuthRevocable"><a href="#collapsible-stellar_dotnet_sdk_responses_Flags_AuthRevocable" class="expander" data-toggle="collapse">AuthRevocable</a></h4>
   
   <div id="collapsible-stellar_dotnet_sdk_responses_Flags_AuthRevocable" class="collapse in">
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This account can set the authorize flag of an existing trustline to freeze the assets held by an asset holder.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
 

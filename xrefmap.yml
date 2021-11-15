@@ -122,6 +122,12 @@ references:
   commentId: T:stellar_dotnet_sdk.AccountFlag
   fullName: stellar_dotnet_sdk.AccountFlag
   nameWithType: AccountFlag
+- uid: stellar_dotnet_sdk.AccountFlag.AuthClawbackFlag
+  name: AuthClawbackFlag
+  href: api/stellar_dotnet_sdk.AccountFlag.html#stellar_dotnet_sdk_AccountFlag_AuthClawbackFlag
+  commentId: F:stellar_dotnet_sdk.AccountFlag.AuthClawbackFlag
+  fullName: stellar_dotnet_sdk.AccountFlag.AuthClawbackFlag
+  nameWithType: AccountFlag.AuthClawbackFlag
 - uid: stellar_dotnet_sdk.AccountFlag.AuthImmutableFlag
   name: AuthImmutableFlag
   href: api/stellar_dotnet_sdk.AccountFlag.html#stellar_dotnet_sdk_AccountFlag_AuthImmutableFlag
@@ -10433,12 +10439,12 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.Balance
   fullName: stellar_dotnet_sdk.responses.Balance
   nameWithType: Balance
-- uid: stellar_dotnet_sdk.responses.Balance.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)
-  name: Balance(String, String, String, String, String, String, String, Boolean, Boolean)
-  href: api/stellar_dotnet_sdk.responses.Balance.html#stellar_dotnet_sdk_responses_Balance__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Boolean_System_Boolean_
-  commentId: M:stellar_dotnet_sdk.responses.Balance.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)
-  fullName: stellar_dotnet_sdk.responses.Balance.Balance(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Boolean, System.Boolean)
-  nameWithType: Balance.Balance(String, String, String, String, String, String, String, Boolean, Boolean)
+- uid: stellar_dotnet_sdk.responses.Balance.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String)
+  name: Balance(String, String, String, String, String, String, String, Boolean, Boolean, String)
+  href: api/stellar_dotnet_sdk.responses.Balance.html#stellar_dotnet_sdk_responses_Balance__ctor_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Boolean_System_Boolean_System_String_
+  commentId: M:stellar_dotnet_sdk.responses.Balance.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String)
+  fullName: stellar_dotnet_sdk.responses.Balance.Balance(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Boolean, System.Boolean, System.String)
+  nameWithType: Balance.Balance(String, String, String, String, String, String, String, Boolean, Boolean, String)
 - uid: stellar_dotnet_sdk.responses.Balance.#ctor*
   name: Balance
   href: api/stellar_dotnet_sdk.responses.Balance.html#stellar_dotnet_sdk_responses_Balance__ctor_
@@ -10563,6 +10569,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.Balance.Limit
   nameWithType: Balance.Limit
+- uid: stellar_dotnet_sdk.responses.Balance.LiquidityPoolId
+  name: LiquidityPoolId
+  href: api/stellar_dotnet_sdk.responses.Balance.html#stellar_dotnet_sdk_responses_Balance_LiquidityPoolId
+  commentId: P:stellar_dotnet_sdk.responses.Balance.LiquidityPoolId
+  fullName: stellar_dotnet_sdk.responses.Balance.LiquidityPoolId
+  nameWithType: Balance.LiquidityPoolId
+- uid: stellar_dotnet_sdk.responses.Balance.LiquidityPoolId*
+  name: LiquidityPoolId
+  href: api/stellar_dotnet_sdk.responses.Balance.html#stellar_dotnet_sdk_responses_Balance_LiquidityPoolId_
+  commentId: Overload:stellar_dotnet_sdk.responses.Balance.LiquidityPoolId
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.Balance.LiquidityPoolId
+  nameWithType: Balance.LiquidityPoolId
 - uid: stellar_dotnet_sdk.responses.Balance.SellingLiabilities
   name: SellingLiabilities
   href: api/stellar_dotnet_sdk.responses.Balance.html#stellar_dotnet_sdk_responses_Balance_SellingLiabilities
@@ -14637,12 +14656,12 @@ references:
   commentId: T:stellar_dotnet_sdk.responses.Flags
   fullName: stellar_dotnet_sdk.responses.Flags
   nameWithType: Flags
-- uid: stellar_dotnet_sdk.responses.Flags.#ctor(System.Boolean,System.Boolean,System.Boolean)
-  name: Flags(Boolean, Boolean, Boolean)
-  href: api/stellar_dotnet_sdk.responses.Flags.html#stellar_dotnet_sdk_responses_Flags__ctor_System_Boolean_System_Boolean_System_Boolean_
-  commentId: M:stellar_dotnet_sdk.responses.Flags.#ctor(System.Boolean,System.Boolean,System.Boolean)
-  fullName: stellar_dotnet_sdk.responses.Flags.Flags(System.Boolean, System.Boolean, System.Boolean)
-  nameWithType: Flags.Flags(Boolean, Boolean, Boolean)
+- uid: stellar_dotnet_sdk.responses.Flags.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  name: Flags(Boolean, Boolean, Boolean, Boolean)
+  href: api/stellar_dotnet_sdk.responses.Flags.html#stellar_dotnet_sdk_responses_Flags__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
+  commentId: M:stellar_dotnet_sdk.responses.Flags.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  fullName: stellar_dotnet_sdk.responses.Flags.Flags(System.Boolean, System.Boolean, System.Boolean, System.Boolean)
+  nameWithType: Flags.Flags(Boolean, Boolean, Boolean, Boolean)
 - uid: stellar_dotnet_sdk.responses.Flags.#ctor*
   name: Flags
   href: api/stellar_dotnet_sdk.responses.Flags.html#stellar_dotnet_sdk_responses_Flags__ctor_
@@ -14650,6 +14669,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.Flags.Flags
   nameWithType: Flags.Flags
+- uid: stellar_dotnet_sdk.responses.Flags.AuthClawback
+  name: AuthClawback
+  href: api/stellar_dotnet_sdk.responses.Flags.html#stellar_dotnet_sdk_responses_Flags_AuthClawback
+  commentId: P:stellar_dotnet_sdk.responses.Flags.AuthClawback
+  fullName: stellar_dotnet_sdk.responses.Flags.AuthClawback
+  nameWithType: Flags.AuthClawback
+- uid: stellar_dotnet_sdk.responses.Flags.AuthClawback*
+  name: AuthClawback
+  href: api/stellar_dotnet_sdk.responses.Flags.html#stellar_dotnet_sdk_responses_Flags_AuthClawback_
+  commentId: Overload:stellar_dotnet_sdk.responses.Flags.AuthClawback
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.Flags.AuthClawback
+  nameWithType: Flags.AuthClawback
 - uid: stellar_dotnet_sdk.responses.Flags.AuthImmutable
   name: AuthImmutable
   href: api/stellar_dotnet_sdk.responses.Flags.html#stellar_dotnet_sdk_responses_Flags_AuthImmutable
