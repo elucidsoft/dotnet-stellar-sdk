@@ -34,7 +34,8 @@
   "flags": {
     "auth_required": false,
     "auth_revocable": true,
-    "auth_immutable": true
+    "auth_immutable": true,
+    "auth_clawback_enabled": true
   },
   "balances": [
     {
