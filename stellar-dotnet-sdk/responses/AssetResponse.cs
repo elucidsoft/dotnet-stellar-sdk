@@ -42,6 +42,18 @@ namespace stellar_dotnet_sdk.responses
         public AssetResponseFlags Flags { get; set; }
 
         /// <summary>
+        /// The number of liquidity pools trading this asset
+        /// </summary>
+        [JsonProperty(PropertyName = "num_liquidity_pools")]
+        public int NumLiquidityPools { get; set; }
+
+        /// <summary>
+        /// The amount of this asset held in liquidity pools
+        /// </summary>
+        [JsonProperty(PropertyName = "liquidity_pools_amount")]
+        public string LiquidityPoolsAmount { get; set; }
+
+        /// <summary>
         /// Describe asset accounts
         /// </summary>
         public class AssetAccounts

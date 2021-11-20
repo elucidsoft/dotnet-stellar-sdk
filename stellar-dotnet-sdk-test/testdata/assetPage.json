@@ -27,6 +27,8 @@
           "authorized_to_maintain_liabilities": 0,
           "unauthorized": 0
         },
+        "liquidity_pools_amount": "70000000.0000000",
+        "num_liquidity_pools": 1,
         "balances": {
           "authorized": "1200000000.0000000",
           "authorized_to_maintain_liabilities": "0.0000000",
