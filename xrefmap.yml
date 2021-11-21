@@ -10295,6 +10295,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.AssetResponse.Links
   nameWithType: AssetResponse.Links
+- uid: stellar_dotnet_sdk.responses.AssetResponse.LiquidityPoolsAmount
+  name: LiquidityPoolsAmount
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_LiquidityPoolsAmount
+  commentId: P:stellar_dotnet_sdk.responses.AssetResponse.LiquidityPoolsAmount
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.LiquidityPoolsAmount
+  nameWithType: AssetResponse.LiquidityPoolsAmount
+- uid: stellar_dotnet_sdk.responses.AssetResponse.LiquidityPoolsAmount*
+  name: LiquidityPoolsAmount
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_LiquidityPoolsAmount_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.LiquidityPoolsAmount
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.LiquidityPoolsAmount
+  nameWithType: AssetResponse.LiquidityPoolsAmount
 - uid: stellar_dotnet_sdk.responses.AssetResponse.NumAccounts
   name: NumAccounts
   href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_NumAccounts
@@ -10321,6 +10334,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.AssetResponse.NumClaimableBalances
   nameWithType: AssetResponse.NumClaimableBalances
+- uid: stellar_dotnet_sdk.responses.AssetResponse.NumLiquidityPools
+  name: NumLiquidityPools
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_NumLiquidityPools
+  commentId: P:stellar_dotnet_sdk.responses.AssetResponse.NumLiquidityPools
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.NumLiquidityPools
+  nameWithType: AssetResponse.NumLiquidityPools
+- uid: stellar_dotnet_sdk.responses.AssetResponse.NumLiquidityPools*
+  name: NumLiquidityPools
+  href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_NumLiquidityPools_
+  commentId: Overload:stellar_dotnet_sdk.responses.AssetResponse.NumLiquidityPools
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AssetResponse.NumLiquidityPools
+  nameWithType: AssetResponse.NumLiquidityPools
 - uid: stellar_dotnet_sdk.responses.AssetResponse.PagingToken
   name: PagingToken
   href: api/stellar_dotnet_sdk.responses.AssetResponse.html#stellar_dotnet_sdk_responses_AssetResponse_PagingToken
