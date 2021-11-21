@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using stellar_dotnet_sdk.responses;
@@ -60,6 +61,12 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(false, assetsPage.Records[0].Flags.AuthRequired);
             Assert.AreEqual(false, assetsPage.Records[0].Flags.AuthRevocable);
             Assert.AreEqual(true, assetsPage.Records[0].Flags.AuthImmutable);
+
+            assetsPage.Records[0].NumLiquidityPools
+                .Should().Be(1);
+
+            assetsPage.Records[0].LiquidityPoolsAmount
+                .Should().Be("70000000.0000000");
         }
     }
 }
