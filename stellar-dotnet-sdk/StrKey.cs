@@ -64,6 +64,8 @@ namespace stellar_dotnet_sdk
             id = BitConverter.ToUInt64(bytes, 0);
             return (id, keyData);
         }
+        
+        
 
         public static byte[] DecodeStellarSecretSeed(string data)
         {

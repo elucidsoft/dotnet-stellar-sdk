@@ -76,6 +76,25 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        public void TestMuxedPaymentOperation()
+        {
+            var source = "MA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVAAAAAAAAAAAAAJLK";
+            var destination = "MDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKAAAAAAMV7V2XYGQO";
+            
+            Asset asset = new AssetTypeNative();
+            var amount = "1000";
+            
+            var operation = new PaymentOperation.Builder(destination, asset, amount)
+                .SetSourceAccount(source)
+                .Build();
+            
+            var xdr = operation.ToXdr();
+            var parsedOperation = (PaymentOperation)Operation.FromXdr(xdr);
+            Assert.AreEqual(destination, parsedOperation.Destination.Address);
+            Assert.AreEqual(source, parsedOperation.SourceAccount.Address);
+        }
+
+        [TestMethod]
         public void TestPathPaymentStrictReceiveOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF

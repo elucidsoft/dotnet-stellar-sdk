@@ -14,7 +14,8 @@ namespace stellar_dotnet_sdk
     {
         private PaymentOperation(IAccountId destination, Asset asset, string amount)
         {
-            Destination = destination ?? throw new ArgumentNullException(nameof(destination), "destination cannot be null");
+            Destination = destination ??
+                          throw new ArgumentNullException(nameof(destination), "destination cannot be null");
             Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
             Amount = amount ?? throw new ArgumentNullException(nameof(amount), "amount cannot be null");
         }
@@ -62,7 +63,7 @@ namespace stellar_dotnet_sdk
         {
             private readonly string _amount;
             private readonly Asset _asset;
-            private readonly IAccountId _destination;
+            private IAccountId _destination;
 
             private IAccountId _sourceAccount;
 
@@ -75,6 +76,19 @@ namespace stellar_dotnet_sdk
                 _destination = MuxedAccount.FromXdrMuxedAccount(op.Destination);
                 _asset = Asset.FromXdr(op.Asset);
                 _amount = FromXdrAmount(op.Amount.InnerValue);
+            }
+
+            ///<summary>
+            /// Creates a new PaymentOperation builder.
+            ///</summary>
+            ///<param name="destination">The Muxed destination</param>
+            ///<param name="asset">The asset to send.</param>
+            ///<param name="amount">The amount to send in lumens.</param>
+            public Builder(string destination, Asset asset, string amount)
+            {
+                _destination = ConvertDestinationToAccountId(destination);
+                _asset = asset;
+                _amount = amount;
             }
 
             ///<summary>
@@ -103,6 +117,18 @@ namespace stellar_dotnet_sdk
             }
 
             ///<summary>
+            /// Sets the source account for this operation.
+            ///</summary>
+            ///<param name="destination">The operation's muxed destination.</param>
+            ///<returns>Builder object so you can chain methods.</returns>
+            ///
+            public Builder SetSourceAccount(string destination)
+            {
+                _sourceAccount = ConvertDestinationToAccountId(destination);
+                return this;
+            }
+
+            ///<summary>
             /// Builds an operation
             ///</summary>
             public PaymentOperation Build()
@@ -111,6 +137,12 @@ namespace stellar_dotnet_sdk
                 if (_sourceAccount != null)
                     operation.SourceAccount = _sourceAccount;
                 return operation;
+            }
+
+            private static IAccountId ConvertDestinationToAccountId(string destination)
+            {
+                var (id, key) = StrKey.DecodeStellarMuxedAccount(destination);
+                return MuxedAccount.FromXdrMuxedAccount(new MuxedAccountMed25519(new KeyPair(key), id).MuxedAccount);
             }
         }
     }
