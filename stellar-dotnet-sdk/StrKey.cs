@@ -30,6 +30,7 @@ namespace stellar_dotnet_sdk
             {
                 Array.Reverse(idBytes);
             }
+
             Buffer.BlockCopy(idBytes, 0, dataToEncode, 0, 8);
             Buffer.BlockCopy(data, 0, dataToEncode, 8, data.Length);
             return EncodeCheck(VersionByte.MUXED_ACCOUNT, dataToEncode);
@@ -64,8 +65,6 @@ namespace stellar_dotnet_sdk
             id = BitConverter.ToUInt64(bytes, 0);
             return (id, keyData);
         }
-        
-        
 
         public static byte[] DecodeStellarSecretSeed(string data)
         {
@@ -78,7 +77,7 @@ namespace stellar_dotnet_sdk
             var versionByte = decoded[0];
             if (!Enum.IsDefined(typeof(VersionByte), versionByte))
                 throw new FormatException("Version byte is invalid");
-            return (VersionByte)versionByte;
+            return (VersionByte) versionByte;
         }
 
         public static string EncodeCheck(VersionByte versionByte, byte[] data)
@@ -108,7 +107,7 @@ namespace stellar_dotnet_sdk
             var checksum = new byte[2];
             Array.Copy(decoded, decoded.Length - 2, checksum, 0, checksum.Length);
 
-            if (decodedVersionByte != (byte)versionByte)
+            if (decodedVersionByte != (byte) versionByte)
                 throw new FormatException("Version byte is invalid");
 
             var expectedChecksum = CalculateChecksum(payload);
@@ -130,9 +129,9 @@ namespace stellar_dotnet_sdk
 
             while (count > 0)
             {
-                code = (int)(uint)crc >> (8 & 0xFF);
+                code = (int) (uint) crc >> (8 & 0xFF);
                 code ^= bytes[i++] & 0xFF;
-                code ^= (int)(uint)code >> 4;
+                code ^= (int) (uint) code >> 4;
                 crc = (crc << 8) & 0xFFFF;
                 crc ^= code;
                 code = (code << 5) & 0xFFFF;
