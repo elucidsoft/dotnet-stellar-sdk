@@ -60,7 +60,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
             Assert.AreEqual("00000000526674017c3cf392614b3f2f500230affd58c7c364625c350c61058fbeacbdf7", operation.BalanceID);
             Assert.AreEqual("GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2", operation.Claimant);
             Assert.AreEqual("MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24", operation.ClaimantMuxed);
-            Assert.AreEqual(5123456789, operation.ClaimantMuxedID);
+            Assert.AreEqual(5123456789UL, operation.ClaimantMuxedID);
 
             var back = new ClaimClaimableBalanceOperationResponse(operation.BalanceID, operation.Claimant);
             Assert.IsNotNull(back);

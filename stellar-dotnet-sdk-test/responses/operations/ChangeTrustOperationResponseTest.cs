@@ -76,7 +76,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
             Assert.AreEqual(operation.Trustee, "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
             Assert.AreEqual(operation.Trustor, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
             Assert.AreEqual(operation.TrustorMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
-            Assert.AreEqual(operation.TrustorMuxedID, 5123456789);
+            Assert.AreEqual(operation.TrustorMuxedID, 5123456789UL);
             Assert.AreEqual(operation.Limit, "922337203685.4775807");
             Assert.AreEqual(operation.Asset, Asset.CreateNonNativeAsset("EUR", "GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM"));
         }

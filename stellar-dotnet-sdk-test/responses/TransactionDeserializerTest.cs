@@ -179,11 +179,11 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual("GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2", transaction.SourceAccount);
             Assert.AreEqual("MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24", transaction.AccountMuxed);
-            Assert.AreEqual(5123456789, transaction.AccountMuxedID);
+            Assert.AreEqual(5123456789UL, transaction.AccountMuxedID);
 
             Assert.AreEqual("GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2", transaction.FeeAccount);
             Assert.AreEqual("MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24", transaction.FeeAccountMuxed);
-            Assert.AreEqual(5123456789, transaction.FeeAccountMuxedID);
+            Assert.AreEqual(5123456789UL, transaction.FeeAccountMuxedID);
         }
     }
 }

@@ -305,6 +305,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestAllowTrustOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -334,6 +335,7 @@ namespace stellar_dotnet_sdk_test
             TestAllowTrustOperationAuthorize(source, trustor, assetCode);
         }
 
+        [Obsolete]
         private static void TestAllowTrustOperationAuthorize(KeyPair source, KeyPair trustor, string assetCode)
         {
             AllowTrustOperation operation = null;

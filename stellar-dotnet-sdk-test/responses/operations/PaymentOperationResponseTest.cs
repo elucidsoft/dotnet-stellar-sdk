@@ -115,13 +115,13 @@ namespace stellar_dotnet_sdk_test.responses.operations
 
             Assert.AreEqual(operation.SourceAccount, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
             Assert.AreEqual(operation.SourceAccountMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
-            Assert.AreEqual(operation.SourceAccountMuxedID, 5123456789);
+            Assert.AreEqual(operation.SourceAccountMuxedID, 5123456789UL);
 
             Assert.AreEqual(operation.Id, 3940808587743233L);
 
             Assert.AreEqual(operation.From, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
             Assert.AreEqual(operation.FromMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
-            Assert.AreEqual(operation.FromMuxedID, 5123456789);
+            Assert.AreEqual(operation.FromMuxedID, 5123456789UL);
             Assert.AreEqual(operation.To, "GDWNY2POLGK65VVKIH5KQSH7VWLKRTQ5M6ADLJAYC2UEHEBEARCZJWWI");
             Assert.AreEqual(operation.Amount, "100.0");
             Assert.AreEqual(operation.Asset, new AssetTypeNative());

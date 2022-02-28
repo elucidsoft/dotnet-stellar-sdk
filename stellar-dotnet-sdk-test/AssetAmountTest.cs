@@ -16,7 +16,7 @@ namespace stellar_dotnet_sdk_test
             {
                 new AssetAmount();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Assert.Fail();
             }

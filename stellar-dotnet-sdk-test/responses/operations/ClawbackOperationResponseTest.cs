@@ -65,7 +65,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
             Assert.AreEqual(operation.AssetType, "credit_alphanum4");
             Assert.AreEqual(operation.From, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
             Assert.AreEqual(operation.FromMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
-            Assert.AreEqual(operation.FromMuxedID, 5123456789);
+            Assert.AreEqual(operation.FromMuxedID, 5123456789UL);
             Assert.AreEqual(operation.Asset.ToQueryParameterEncodedString(), "EUR:GDIROJW2YHMSFZJJ4R5XWWNUVND5I45YEWS5DSFKXCHMADZ5V374U2LM");
         }
     }

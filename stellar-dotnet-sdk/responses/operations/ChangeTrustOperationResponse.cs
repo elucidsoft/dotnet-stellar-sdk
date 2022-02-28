@@ -49,7 +49,7 @@ namespace stellar_dotnet_sdk.responses.operations
         public string TrustorMuxed { get; private set; }
 
         [JsonProperty(PropertyName = "trustor_muxed_id")]
-        public long? TrustorMuxedID { get; private set; }
+        public ulong? TrustorMuxedID { get; private set; }
 
         public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);
     }

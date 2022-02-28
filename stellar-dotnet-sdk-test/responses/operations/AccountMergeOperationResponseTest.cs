@@ -72,7 +72,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
             Assert.AreEqual(operation.Account, "GD6GKRABNDVYDETEZJQEPS7IBQMERCN44R5RCI4LJNX6BMYQM2KPGGZ2");
             Assert.AreEqual(operation.Into, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
             Assert.AreEqual(operation.IntoMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
-            Assert.AreEqual(operation.IntoMuxedID, "5123456789");
+            Assert.AreEqual(operation.IntoMuxedID, 5123456789UL);
         }
     }
 }

@@ -58,7 +58,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
             Assert.AreEqual(215542933753859, operation.Id);
             Assert.AreEqual("GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2", operation.BeginSponsor);
             Assert.AreEqual("MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24", operation.BeginSponsorMuxed);
-            Assert.AreEqual(5123456789, operation.BeginSponsorMuxedID);
+            Assert.AreEqual(5123456789UL, operation.BeginSponsorMuxedID);
 
             var back = new EndSponsoringFutureReservesOperationResponse(operation.BeginSponsor);
             Assert.IsNotNull(back);

@@ -72,7 +72,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// Muxed Account ID from which the asset is clawed back
         /// </summary>
         [JsonProperty(PropertyName = "from_muxed_id")]
-        public long? FromMuxedID { get; private set; }
+        public ulong? FromMuxedID { get; private set; }
 
         /// <summary>
         /// Asset representation (Using the values of the other fields)

@@ -27,7 +27,7 @@ namespace stellar_dotnet_sdk.responses
         public string AccountMuxed { get; private set; }
 
         [JsonProperty(PropertyName = "account_muxed_id")]
-        public long? AccountMuxedID { get; private set; }
+        public ulong? AccountMuxedID { get; private set; }
 
         [JsonProperty(PropertyName = "fee_account")]
         public string FeeAccount { get; set; }
@@ -36,7 +36,7 @@ namespace stellar_dotnet_sdk.responses
         public string FeeAccountMuxed { get; set; }
 
         [JsonProperty(PropertyName = "fee_account_muxed_id")]
-        public long? FeeAccountMuxedID { get; set; }
+        public ulong? FeeAccountMuxedID { get; set; }
 
         [DefaultValue(true)]
         [JsonProperty(PropertyName = "successful", DefaultValueHandling = DefaultValueHandling.Populate)]

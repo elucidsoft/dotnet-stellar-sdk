@@ -89,7 +89,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
             Assert.AreEqual(operation.StartingBalance, "299454.904954");
             Assert.AreEqual(operation.Funder, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
             Assert.AreEqual(operation.FunderMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
-            Assert.AreEqual(operation.FunderMuxedID, 5123456789);
+            Assert.AreEqual(operation.FunderMuxedID, 5123456789UL);
 
             Assert.IsTrue(operation.TransactionSuccessful);
             Assert.AreEqual(operation.Links.Effects.Href, "/operations/3936840037961729/effects{?cursor,limit,order}");
