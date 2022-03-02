@@ -57,7 +57,6 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "trustor")]
         public string Trustor { get; private set; }
 
-
         /// <summary>
         /// Indicates which flags to clear. For details about the flags, please refer to the accounts doc. The bit mask integer adds onto the
         /// existing flags of the account. This allows for setting specific bits without knowledge of existing flags.

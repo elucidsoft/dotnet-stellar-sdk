@@ -30,6 +30,7 @@ namespace stellar_dotnet_sdk_test.responses
         }
 
         [TestMethod]
+        [System.Obsolete]
         public void TestAssetResponseFlagDefaultsToNotImmutable()
         {
             var assetResponseFlags = new AssetResponseFlags(authRequired: true, authRevocable: true);

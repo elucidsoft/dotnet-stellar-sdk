@@ -571,6 +571,7 @@ namespace stellar_dotnet_sdk_test.responses
             AssertTrustlineAuthorizedData(back);
         }
 
+        [Obsolete]
         private static void AssertTrustlineAuthorizedData(EffectResponse instance)
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -593,6 +594,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsNotNull(back);
         }
 
+        [Obsolete]
         private static void AssertTrustlineAuthorizedToMaintainLiabilitiesEffect(EffectResponse instance)
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
@@ -637,6 +639,7 @@ namespace stellar_dotnet_sdk_test.responses
             AssertTrustlineDeauthorizedData(back);
         }
 
+        [Obsolete]
         private static void AssertTrustlineDeauthorizedData(EffectResponse instance)
         {
             //There is a JsonConverter called OperationDeserializer that instantiates the type based on the json type_i element...
