@@ -51,7 +51,7 @@ namespace stellar_dotnet_sdk_test.responses.effects
             Assert.IsTrue(instance is LiquidityPoolDepositedEffectResponse);
             var effect = (LiquidityPoolDepositedEffectResponse)instance;
 
-            Assert.AreEqual(effect.AccountMuxedID, 1278881);
+            Assert.AreEqual(effect.AccountMuxedID, 1278881UL);
 
             Assert.AreEqual(effect.LiquidityPool.ID.ToString(), "4f7f29db33ead1a38c2edf17aa0416c369c207ca081de5c686c050c1ad320385");
 
