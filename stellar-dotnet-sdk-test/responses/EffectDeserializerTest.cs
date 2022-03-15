@@ -39,7 +39,7 @@ namespace stellar_dotnet_sdk_test.responses
 
             Assert.AreEqual(effect.Account, "GCKICEQ2SA3KWH3UMQFJE4BFXCBFHW46BCVJBRCLK76ZY5RO6TY5D7Q2");
             Assert.AreEqual(effect.AccountMuxed, "MAAAAAABGFQ36FMUQEJBVEBWVMPXIZAKSJYCLOECKPNZ4CFKSDCEWV75TR3C55HR2FJ24");
-            Assert.AreEqual(effect.AccountMuxedID, 5123456789);
+            Assert.AreEqual(effect.AccountMuxedID, 5123456789UL);
             Assert.AreEqual(effect.StartingBalance, "30.0");
             Assert.AreEqual(effect.PagingToken, "65571265847297-1");
 
