@@ -2,34 +2,30 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr
-{
+namespace stellar_dotnet_sdk.xdr {
 
-    // === xdr source ============================================================
+// === xdr source ============================================================
 
-    //  typedef int int32;
+//  typedef int int32;
 
-    //  ===========================================================================
-    public class Int32
-    {
-        public int InnerValue { get; set; } = default(int);
+//  ===========================================================================
+public class Int32  {
+  public int InnerValue {get; set;} = default(int);
 
-        public Int32() { }
+  public Int32() {}
 
-        public Int32(int value)
-        {
-            InnerValue = value;
-        }
+  public Int32(int value)
+  {
+    InnerValue = value;
+  }
 
-        public static void Encode(XdrDataOutputStream stream, Int32 encodedInt32)
-        {
-            stream.WriteInt(encodedInt32.InnerValue);
-        }
-        public static Int32 Decode(XdrDataInputStream stream)
-        {
-            Int32 decodedInt32 = new Int32();
-            decodedInt32.InnerValue = stream.ReadInt();
-            return decodedInt32;
-        }
-    }
+  public static void Encode(XdrDataOutputStream stream, Int32  encodedInt32) {
+  stream.WriteInt(encodedInt32.InnerValue);
+  }
+  public static Int32 Decode(XdrDataInputStream stream) {
+    Int32 decodedInt32 = new Int32();
+  decodedInt32.InnerValue = stream.ReadInt();
+    return decodedInt32;
+  }
+}
 }

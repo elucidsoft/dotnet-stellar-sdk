@@ -2,50 +2,44 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr
-{
+namespace stellar_dotnet_sdk.xdr {
 
-    // === xdr source ============================================================
+// === xdr source ============================================================
 
-    //  union ClawbackResult switch (ClawbackResultCode code)
-    //  {
-    //  case CLAWBACK_SUCCESS:
-    //      void;
-    //  default:
-    //      void;
-    //  };
+//  union ClawbackResult switch (ClawbackResultCode code)
+//  {
+//  case CLAWBACK_SUCCESS:
+//      void;
+//  default:
+//      void;
+//  };
 
-    //  ===========================================================================
-    public class ClawbackResult
-    {
-        public ClawbackResult() { }
+//  ===========================================================================
+public class ClawbackResult  {
+  public ClawbackResult () {}
 
-        public ClawbackResultCode Discriminant { get; set; } = new ClawbackResultCode();
+  public ClawbackResultCode Discriminant { get; set; } = new ClawbackResultCode();
 
-        public static void Encode(XdrDataOutputStream stream, ClawbackResult encodedClawbackResult)
-        {
-            stream.WriteInt((int)encodedClawbackResult.Discriminant.InnerValue);
-            switch (encodedClawbackResult.Discriminant.InnerValue)
-            {
-                case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_SUCCESS:
-                    break;
-                default:
-                    break;
-            }
-        }
-        public static ClawbackResult Decode(XdrDataInputStream stream)
-        {
-            ClawbackResult decodedClawbackResult = new ClawbackResult();
-            ClawbackResultCode discriminant = ClawbackResultCode.Decode(stream);
-            decodedClawbackResult.Discriminant = discriminant;
-            switch (decodedClawbackResult.Discriminant.InnerValue)
-            {
-                case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_SUCCESS:
-                    break;
-                default:
-                    break;
-            }
-            return decodedClawbackResult;
-        }
-    }
+  public static void Encode(XdrDataOutputStream stream, ClawbackResult encodedClawbackResult) {
+  stream.WriteInt((int)encodedClawbackResult.Discriminant.InnerValue);
+  switch (encodedClawbackResult.Discriminant.InnerValue) {
+  case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_SUCCESS:
+  break;
+  default:
+  break;
+  }
+  }
+  public static ClawbackResult Decode(XdrDataInputStream stream) {
+  ClawbackResult decodedClawbackResult = new ClawbackResult();
+  ClawbackResultCode discriminant = ClawbackResultCode.Decode(stream);
+  decodedClawbackResult.Discriminant = discriminant;
+  switch (decodedClawbackResult.Discriminant.InnerValue) {
+  case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_SUCCESS:
+  break;
+  default:
+  break;
+  }
+    return decodedClawbackResult;
+  }
+}
 }

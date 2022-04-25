@@ -2,59 +2,52 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr
-{
+namespace stellar_dotnet_sdk.xdr {
 
-    // === xdr source ============================================================
+// === xdr source ============================================================
 
-    //  enum ClawbackClaimableBalanceResultCode
-    //  {
-    //      // codes considered as "success" for the operation
-    //      CLAWBACK_CLAIMABLE_BALANCE_SUCCESS = 0,
-    //  
-    //      // codes considered as "failure" for the operation
-    //      CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST = -1,
-    //      CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER = -2,
-    //      CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED = -3
-    //  };
+//  enum ClawbackClaimableBalanceResultCode
+//  {
+//      // codes considered as "success" for the operation
+//      CLAWBACK_CLAIMABLE_BALANCE_SUCCESS = 0,
+//  
+//      // codes considered as "failure" for the operation
+//      CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST = -1,
+//      CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER = -2,
+//      CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED = -3
+//  };
 
-    //  ===========================================================================
-    public class ClawbackClaimableBalanceResultCode
-    {
-        public enum ClawbackClaimableBalanceResultCodeEnum
-        {
-            CLAWBACK_CLAIMABLE_BALANCE_SUCCESS = 0,
-            CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST = -1,
-            CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER = -2,
-            CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED = -3,
-        }
-        public ClawbackClaimableBalanceResultCodeEnum InnerValue { get; set; } = default(ClawbackClaimableBalanceResultCodeEnum);
+//  ===========================================================================
+public class ClawbackClaimableBalanceResultCode  {
+  public enum ClawbackClaimableBalanceResultCodeEnum {
+  CLAWBACK_CLAIMABLE_BALANCE_SUCCESS = 0,
+  CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST = -1,
+  CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER = -2,
+  CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED = -3,
+  }
+  public ClawbackClaimableBalanceResultCodeEnum InnerValue {get; set;} = default(ClawbackClaimableBalanceResultCodeEnum);
 
-        public static ClawbackClaimableBalanceResultCode Create(ClawbackClaimableBalanceResultCodeEnum v)
-        {
-            return new ClawbackClaimableBalanceResultCode
-            {
-                InnerValue = v
-            };
-        }
+  public static ClawbackClaimableBalanceResultCode Create(ClawbackClaimableBalanceResultCodeEnum v)
+  {
+    return new ClawbackClaimableBalanceResultCode {
+      InnerValue = v
+    };
+  }
 
-        public static ClawbackClaimableBalanceResultCode Decode(XdrDataInputStream stream)
-        {
-            int value = stream.ReadInt();
-            switch (value)
-            {
-                case 0: return Create(ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS);
-                case -1: return Create(ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST);
-                case -2: return Create(ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER);
-                case -3: return Create(ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED);
-                default:
-                    throw new Exception("Unknown enum value: " + value);
-            }
-        }
-
-        public static void Encode(XdrDataOutputStream stream, ClawbackClaimableBalanceResultCode value)
-        {
-            stream.WriteInt((int)value.InnerValue);
-        }
+  public static ClawbackClaimableBalanceResultCode Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
+    switch (value) {
+      case 0: return Create(ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS);
+      case -1: return Create(ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST);
+      case -2: return Create(ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER);
+      case -3: return Create(ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED);
+      default:
+        throw new Exception("Unknown enum value: " + value);
     }
+  }
+
+  public static void Encode(XdrDataOutputStream stream, ClawbackClaimableBalanceResultCode value) {
+    stream.WriteInt((int)value.InnerValue);
+  }
+}
 }

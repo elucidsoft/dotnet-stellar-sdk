@@ -2,35 +2,31 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr
-{
+namespace stellar_dotnet_sdk.xdr {
 
-    // === xdr source ============================================================
+// === xdr source ============================================================
 
-    //  struct AlphaNum4
-    //  {
-    //      AssetCode4 assetCode;
-    //      AccountID issuer;
-    //  };
+//  struct AlphaNum4
+//  {
+//      AssetCode4 assetCode;
+//      AccountID issuer;
+//  };
 
-    //  ===========================================================================
-    public class AlphaNum4
-    {
-        public AlphaNum4() { }
-        public AssetCode4 AssetCode { get; set; }
-        public AccountID Issuer { get; set; }
+//  ===========================================================================
+public class AlphaNum4  {
+  public AlphaNum4 () {}
+  public AssetCode4 AssetCode {get; set;}
+  public AccountID Issuer {get; set;}
 
-        public static void Encode(XdrDataOutputStream stream, AlphaNum4 encodedAlphaNum4)
-        {
-            AssetCode4.Encode(stream, encodedAlphaNum4.AssetCode);
-            AccountID.Encode(stream, encodedAlphaNum4.Issuer);
-        }
-        public static AlphaNum4 Decode(XdrDataInputStream stream)
-        {
-            AlphaNum4 decodedAlphaNum4 = new AlphaNum4();
-            decodedAlphaNum4.AssetCode = AssetCode4.Decode(stream);
-            decodedAlphaNum4.Issuer = AccountID.Decode(stream);
-            return decodedAlphaNum4;
-        }
-    }
+  public static void Encode(XdrDataOutputStream stream, AlphaNum4 encodedAlphaNum4) {
+    AssetCode4.Encode(stream, encodedAlphaNum4.AssetCode);
+    AccountID.Encode(stream, encodedAlphaNum4.Issuer);
+  }
+  public static AlphaNum4 Decode(XdrDataInputStream stream) {
+    AlphaNum4 decodedAlphaNum4 = new AlphaNum4();
+    decodedAlphaNum4.AssetCode = AssetCode4.Decode(stream);
+    decodedAlphaNum4.Issuer = AccountID.Decode(stream);
+    return decodedAlphaNum4;
+  }
+}
 }

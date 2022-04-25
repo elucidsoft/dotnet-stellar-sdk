@@ -2,35 +2,31 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr
-{
+namespace stellar_dotnet_sdk.xdr {
 
-    // === xdr source ============================================================
+// === xdr source ============================================================
 
-    //  struct DontHave
-    //  {
-    //      MessageType type;
-    //      uint256 reqHash;
-    //  };
+//  struct DontHave
+//  {
+//      MessageType type;
+//      uint256 reqHash;
+//  };
 
-    //  ===========================================================================
-    public class DontHave
-    {
-        public DontHave() { }
-        public MessageType Type { get; set; }
-        public Uint256 ReqHash { get; set; }
+//  ===========================================================================
+public class DontHave  {
+  public DontHave () {}
+  public MessageType Type {get; set;}
+  public Uint256 ReqHash {get; set;}
 
-        public static void Encode(XdrDataOutputStream stream, DontHave encodedDontHave)
-        {
-            MessageType.Encode(stream, encodedDontHave.Type);
-            Uint256.Encode(stream, encodedDontHave.ReqHash);
-        }
-        public static DontHave Decode(XdrDataInputStream stream)
-        {
-            DontHave decodedDontHave = new DontHave();
-            decodedDontHave.Type = MessageType.Decode(stream);
-            decodedDontHave.ReqHash = Uint256.Decode(stream);
-            return decodedDontHave;
-        }
-    }
+  public static void Encode(XdrDataOutputStream stream, DontHave encodedDontHave) {
+    MessageType.Encode(stream, encodedDontHave.Type);
+    Uint256.Encode(stream, encodedDontHave.ReqHash);
+  }
+  public static DontHave Decode(XdrDataInputStream stream) {
+    DontHave decodedDontHave = new DontHave();
+    decodedDontHave.Type = MessageType.Decode(stream);
+    decodedDontHave.ReqHash = Uint256.Decode(stream);
+    return decodedDontHave;
+  }
+}
 }

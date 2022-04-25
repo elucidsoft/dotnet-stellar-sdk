@@ -2,53 +2,49 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr
-{
+namespace stellar_dotnet_sdk.xdr {
 
-    // === xdr source ============================================================
+// === xdr source ============================================================
 
-    //  enum SignerKeyType
-    //  {
-    //      SIGNER_KEY_TYPE_ED25519 = KEY_TYPE_ED25519,
-    //      SIGNER_KEY_TYPE_PRE_AUTH_TX = KEY_TYPE_PRE_AUTH_TX,
-    //      SIGNER_KEY_TYPE_HASH_X = KEY_TYPE_HASH_X
-    //  };
+//  enum SignerKeyType
+//  {
+//      SIGNER_KEY_TYPE_ED25519 = KEY_TYPE_ED25519,
+//      SIGNER_KEY_TYPE_PRE_AUTH_TX = KEY_TYPE_PRE_AUTH_TX,
+//      SIGNER_KEY_TYPE_HASH_X = KEY_TYPE_HASH_X,
+//      SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD = KEY_TYPE_ED25519_SIGNED_PAYLOAD
+//  };
 
-    //  ===========================================================================
-    public class SignerKeyType
-    {
-        public enum SignerKeyTypeEnum
-        {
-            SIGNER_KEY_TYPE_ED25519 = 0,
-            SIGNER_KEY_TYPE_PRE_AUTH_TX = 1,
-            SIGNER_KEY_TYPE_HASH_X = 2,
-        }
-        public SignerKeyTypeEnum InnerValue { get; set; } = default(SignerKeyTypeEnum);
+//  ===========================================================================
+public class SignerKeyType  {
+  public enum SignerKeyTypeEnum {
+  SIGNER_KEY_TYPE_ED25519 = 0,
+  SIGNER_KEY_TYPE_PRE_AUTH_TX = 1,
+  SIGNER_KEY_TYPE_HASH_X = 2,
+  SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD = 3,
+  }
+  public SignerKeyTypeEnum InnerValue {get; set;} = default(SignerKeyTypeEnum);
 
-        public static SignerKeyType Create(SignerKeyTypeEnum v)
-        {
-            return new SignerKeyType
-            {
-                InnerValue = v
-            };
-        }
+  public static SignerKeyType Create(SignerKeyTypeEnum v)
+  {
+    return new SignerKeyType {
+      InnerValue = v
+    };
+  }
 
-        public static SignerKeyType Decode(XdrDataInputStream stream)
-        {
-            int value = stream.ReadInt();
-            switch (value)
-            {
-                case 0: return Create(SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519);
-                case 1: return Create(SignerKeyTypeEnum.SIGNER_KEY_TYPE_PRE_AUTH_TX);
-                case 2: return Create(SignerKeyTypeEnum.SIGNER_KEY_TYPE_HASH_X);
-                default:
-                    throw new Exception("Unknown enum value: " + value);
-            }
-        }
-
-        public static void Encode(XdrDataOutputStream stream, SignerKeyType value)
-        {
-            stream.WriteInt((int)value.InnerValue);
-        }
+  public static SignerKeyType Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
+    switch (value) {
+      case 0: return Create(SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519);
+      case 1: return Create(SignerKeyTypeEnum.SIGNER_KEY_TYPE_PRE_AUTH_TX);
+      case 2: return Create(SignerKeyTypeEnum.SIGNER_KEY_TYPE_HASH_X);
+      case 3: return Create(SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD);
+      default:
+        throw new Exception("Unknown enum value: " + value);
     }
+  }
+
+  public static void Encode(XdrDataOutputStream stream, SignerKeyType value) {
+    stream.WriteInt((int)value.InnerValue);
+  }
+}
 }

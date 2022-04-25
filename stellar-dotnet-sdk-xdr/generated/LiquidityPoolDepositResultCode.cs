@@ -2,75 +2,68 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr
-{
+namespace stellar_dotnet_sdk.xdr {
 
-    // === xdr source ============================================================
+// === xdr source ============================================================
 
-    //  enum LiquidityPoolDepositResultCode
-    //  {
-    //      // codes considered as "success" for the operation
-    //      LIQUIDITY_POOL_DEPOSIT_SUCCESS = 0,
-    //  
-    //      // codes considered as "failure" for the operation
-    //      LIQUIDITY_POOL_DEPOSIT_MALFORMED = -1,      // bad input
-    //      LIQUIDITY_POOL_DEPOSIT_NO_TRUST = -2,       // no trust line for one of the
-    //                                                  // assets
-    //      LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED = -3, // not authorized for one of the
-    //                                                  // assets
-    //      LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED = -4,    // not enough balance for one of
-    //                                                  // the assets
-    //      LIQUIDITY_POOL_DEPOSIT_LINE_FULL = -5,      // pool share trust line doesn't
-    //                                                  // have sufficient limit
-    //      LIQUIDITY_POOL_DEPOSIT_BAD_PRICE = -6,      // deposit price outside bounds
-    //      LIQUIDITY_POOL_DEPOSIT_POOL_FULL = -7       // pool reserves are full
-    //  };
+//  enum LiquidityPoolDepositResultCode
+//  {
+//      // codes considered as "success" for the operation
+//      LIQUIDITY_POOL_DEPOSIT_SUCCESS = 0,
+//  
+//      // codes considered as "failure" for the operation
+//      LIQUIDITY_POOL_DEPOSIT_MALFORMED = -1,      // bad input
+//      LIQUIDITY_POOL_DEPOSIT_NO_TRUST = -2,       // no trust line for one of the
+//                                                  // assets
+//      LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED = -3, // not authorized for one of the
+//                                                  // assets
+//      LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED = -4,    // not enough balance for one of
+//                                                  // the assets
+//      LIQUIDITY_POOL_DEPOSIT_LINE_FULL = -5,      // pool share trust line doesn't
+//                                                  // have sufficient limit
+//      LIQUIDITY_POOL_DEPOSIT_BAD_PRICE = -6,      // deposit price outside bounds
+//      LIQUIDITY_POOL_DEPOSIT_POOL_FULL = -7       // pool reserves are full
+//  };
 
-    //  ===========================================================================
-    public class LiquidityPoolDepositResultCode
-    {
-        public enum LiquidityPoolDepositResultCodeEnum
-        {
-            LIQUIDITY_POOL_DEPOSIT_SUCCESS = 0,
-            LIQUIDITY_POOL_DEPOSIT_MALFORMED = -1,
-            LIQUIDITY_POOL_DEPOSIT_NO_TRUST = -2,
-            LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED = -3,
-            LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED = -4,
-            LIQUIDITY_POOL_DEPOSIT_LINE_FULL = -5,
-            LIQUIDITY_POOL_DEPOSIT_BAD_PRICE = -6,
-            LIQUIDITY_POOL_DEPOSIT_POOL_FULL = -7,
-        }
-        public LiquidityPoolDepositResultCodeEnum InnerValue { get; set; } = default(LiquidityPoolDepositResultCodeEnum);
+//  ===========================================================================
+public class LiquidityPoolDepositResultCode  {
+  public enum LiquidityPoolDepositResultCodeEnum {
+  LIQUIDITY_POOL_DEPOSIT_SUCCESS = 0,
+  LIQUIDITY_POOL_DEPOSIT_MALFORMED = -1,
+  LIQUIDITY_POOL_DEPOSIT_NO_TRUST = -2,
+  LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED = -3,
+  LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED = -4,
+  LIQUIDITY_POOL_DEPOSIT_LINE_FULL = -5,
+  LIQUIDITY_POOL_DEPOSIT_BAD_PRICE = -6,
+  LIQUIDITY_POOL_DEPOSIT_POOL_FULL = -7,
+  }
+  public LiquidityPoolDepositResultCodeEnum InnerValue {get; set;} = default(LiquidityPoolDepositResultCodeEnum);
 
-        public static LiquidityPoolDepositResultCode Create(LiquidityPoolDepositResultCodeEnum v)
-        {
-            return new LiquidityPoolDepositResultCode
-            {
-                InnerValue = v
-            };
-        }
+  public static LiquidityPoolDepositResultCode Create(LiquidityPoolDepositResultCodeEnum v)
+  {
+    return new LiquidityPoolDepositResultCode {
+      InnerValue = v
+    };
+  }
 
-        public static LiquidityPoolDepositResultCode Decode(XdrDataInputStream stream)
-        {
-            int value = stream.ReadInt();
-            switch (value)
-            {
-                case 0: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_SUCCESS);
-                case -1: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_MALFORMED);
-                case -2: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_NO_TRUST);
-                case -3: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED);
-                case -4: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED);
-                case -5: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_LINE_FULL);
-                case -6: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_BAD_PRICE);
-                case -7: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_POOL_FULL);
-                default:
-                    throw new Exception("Unknown enum value: " + value);
-            }
-        }
-
-        public static void Encode(XdrDataOutputStream stream, LiquidityPoolDepositResultCode value)
-        {
-            stream.WriteInt((int)value.InnerValue);
-        }
+  public static LiquidityPoolDepositResultCode Decode(XdrDataInputStream stream) {
+    int value = stream.ReadInt();
+    switch (value) {
+      case 0: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_SUCCESS);
+      case -1: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_MALFORMED);
+      case -2: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_NO_TRUST);
+      case -3: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED);
+      case -4: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED);
+      case -5: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_LINE_FULL);
+      case -6: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_BAD_PRICE);
+      case -7: return Create(LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_POOL_FULL);
+      default:
+        throw new Exception("Unknown enum value: " + value);
     }
+  }
+
+  public static void Encode(XdrDataOutputStream stream, LiquidityPoolDepositResultCode value) {
+    stream.WriteInt((int)value.InnerValue);
+  }
+}
 }
