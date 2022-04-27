@@ -310,6 +310,38 @@ namespace stellar_dotnet_sdk
             };
         }
 
+
+        /// <summary>
+        /// Sign the provided payload data for payload signer where the input is the data being signed.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns><see cref="DecoratedSignature"/></returns>
+        
+        public DecoratedSignature SignPayloadDecorated(byte[] signerPayload)
+        {
+            DecoratedSignature payloadSignature = SignDecorated(signerPayload);
+
+            byte[] hint = new byte[4];
+
+            //Copy the last four bytes of the payload into the new hint
+            if (signerPayload.Length >= hint.Length)
+            {
+                Array.Copy(signerPayload, signerPayload.Length - hint.Length, hint, 0, hint.Length);
+            }
+            else
+            {
+                Array.Copy(signerPayload, 0, hint, 0, signerPayload.Length);
+            }
+
+            //XOR the new hint with this keypair's public key hint
+            for (int i = 0; i < hint.Length; i++)
+            {
+                hint[i] ^= payloadSignature.Hint.InnerValue[i];
+            }
+            payloadSignature.Hint.InnerValue = hint;
+            return payloadSignature;
+        }
+
         /// <summary>
         ///     Verify the provided data and signature match this keypair's public key.
         /// </summary>

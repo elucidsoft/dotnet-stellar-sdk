@@ -1,20 +1,20 @@
 ﻿using System;
-using sdkxdr = stellar_dotnet_sdk.xdr;
+using xdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
     /// <summary>
-    ///     Signer is a helper class that creates <see cref="sdkxdr.SignerKey" /> objects.
+    ///     Signer is a helper class that creates <see cref="xdr.SignerKey" /> objects.
     /// </summary>
     public class Signer
     {
         /// <summary>
-        ///     Create <code>ed25519PublicKey</code> <see cref="sdkxdr.SignerKey" /> from
-        ///     a <see cref="sdkxdr.KeyPair" />
+        ///     Create <code>ed25519PublicKey</code> <see cref="xdr.SignerKey" /> from
+        ///     a <see cref="xdr.KeyPair" />
         /// </summary>
         /// <param name="keyPair"></param>
         /// <returns>sdkxdr.SignerKey</returns>
-        public static sdkxdr.SignerKey Ed25519PublicKey(KeyPair keyPair)
+        public static xdr.SignerKey Ed25519PublicKey(KeyPair keyPair)
         {
             if (keyPair == null)
                 throw new ArgumentNullException(nameof(keyPair), "keyPair cannot be null");
@@ -23,44 +23,44 @@ namespace stellar_dotnet_sdk
         }
 
         /// <summary>
-        ///     Create <code>sha256Hash</code> <see cref="sdkxdr.SignerKey" /> from
+        ///     Create <code>sha256Hash</code> <see cref="xdr.SignerKey" /> from
         ///     a sha256 hash of a preimage.
         /// </summary>
         /// <param name="hash"></param>
         /// <returns>sdkxdr.SignerKey</returns>
-        public static sdkxdr.SignerKey Sha256Hash(byte[] hash)
+        public static xdr.SignerKey Sha256Hash(byte[] hash)
         {
             if (hash == null)
                 throw new ArgumentNullException(nameof(hash), "hash cannot be null");
 
-            var signerKey = new sdkxdr.SignerKey();
+            var signerKey = new xdr.SignerKey();
             var value = CreateUint256(hash);
 
-            signerKey.Discriminant = sdkxdr.SignerKeyType.Create(sdkxdr.SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_HASH_X);
+            signerKey.Discriminant = xdr.SignerKeyType.Create(xdr.SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_HASH_X);
             signerKey.HashX = value;
 
             return signerKey;
         }
 
         /// <summary>
-        ///     Create <code>preAuthTx</code> <see cref="sdkxdr.SignerKey" /> from
-        ///     a <see cref="sdkxdr.Transaction" /> hash.
+        ///     Create <code>preAuthTx</code> <see cref="xdr.SignerKey" /> from
+        ///     a <see cref="xdr.Transaction" /> hash.
         /// </summary>
         /// <param name="tx"></param>
         /// <returns>sdkxdr.SignerKey</returns>
-        public static sdkxdr.SignerKey PreAuthTx(Transaction tx)
+        public static xdr.SignerKey PreAuthTx(Transaction tx)
         {
             return PreAuthTx(tx, Network.Current);
         }
 
         /// <summary>
-        ///     Create <code>preAuthTx</code> <see cref="sdkxdr.SignerKey" /> from
-        ///     a <see cref="sdkxdr.Transaction" /> hash.
+        ///     Create <code>preAuthTx</code> <see cref="xdr.SignerKey" /> from
+        ///     a <see cref="xdr.Transaction" /> hash.
         /// </summary>
         /// <param name="tx"></param>
         /// <param name="network"></param>
         /// <returns>sdkxdr.SignerKey</returns>
-        public static sdkxdr.SignerKey PreAuthTx(Transaction tx, Network network)
+        public static xdr.SignerKey PreAuthTx(Transaction tx, Network network)
         {
             if (tx == null)
                 throw new ArgumentNullException(nameof(tx), "tx cannot be null");
@@ -69,21 +69,39 @@ namespace stellar_dotnet_sdk
         }
 
         /// <summary>
-        ///     Create <code>preAuthTx</code> <see cref="sdkxdr.SignerKey" /> from
+        ///     Create <code>preAuthTx</code> <see cref="xdr.SignerKey" /> from
         ///     a transaction hash.
         /// </summary>
         /// <param name="hash"></param>
         /// <returns>sdkxdr.SignerKey</returns>
-        public static sdkxdr.SignerKey PreAuthTx(byte[] hash)
+        public static xdr.SignerKey PreAuthTx(byte[] hash)
         {
             if (hash == null)
                 throw new ArgumentNullException(nameof(hash), "hash cannot be null");
 
-            var signerKey = new sdkxdr.SignerKey();
+            var signerKey = new xdr.SignerKey();
             var value = CreateUint256(hash);
 
-            signerKey.Discriminant = sdkxdr.SignerKeyType.Create(sdkxdr.SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_PRE_AUTH_TX);
+            signerKey.Discriminant = xdr.SignerKeyType.Create(xdr.SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_PRE_AUTH_TX);
             signerKey.PreAuthTx = value;
+
+            return signerKey;
+        }
+
+        /// <summary>
+        /// Create SignerKey from SignedPayloadSigner
+        /// </summary>
+        /// <param name="signedPayloadSigner"></param>
+        /// <returns></returns>
+        public static xdr.SignerKey SignedPayload(SignedPayloadSigner signedPayloadSigner)
+        {
+            xdr.SignerKey signerKey = new xdr.SignerKey();
+            xdr.SignerKey.SignerKeyEd25519SignedPayload payloadSigner = new xdr.SignerKey.SignerKeyEd25519SignedPayload();
+            payloadSigner.Payload = signedPayloadSigner.Payload;
+            payloadSigner.Ed25519 = signedPayloadSigner.SignerAccountID.InnerValue.Ed25519;
+
+            signerKey.Discriminant.InnerValue = xdr.SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD;
+            signerKey.Ed25519SignedPayload = payloadSigner;
 
             return signerKey;
         }
@@ -93,12 +111,12 @@ namespace stellar_dotnet_sdk
         /// </summary>
         /// <param name="hash"></param>
         /// <returns>A Uint256</returns>
-        private static sdkxdr.Uint256 CreateUint256(byte[] hash)
+        private static xdr.Uint256 CreateUint256(byte[] hash)
         {
             if (hash.Length != 32)
                 throw new ArgumentException("hash must be 32 bytes long");
 
-            var value = new sdkxdr.Uint256();
+            var value = new xdr.Uint256();
             value.InnerValue = hash;
             return value;
         }

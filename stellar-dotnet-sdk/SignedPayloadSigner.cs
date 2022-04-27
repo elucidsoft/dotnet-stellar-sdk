@@ -33,7 +33,7 @@ namespace stellar_dotnet_sdk
 
             if (signerAccountID.InnerValue.Discriminant == null || signerAccountID.InnerValue.Discriminant.InnerValue != xdr.PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519)
             {
-                throw new ArgumentException("Invalid payload signer, only ED25519 public key accounts are supported at the moment").
+                throw new ArgumentException("Invalid payload signer, only ED25519 public key accounts are supported at the moment");
             }
 
             SignerAccountID = signerAccountID;
