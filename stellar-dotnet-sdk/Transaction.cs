@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
 using stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
     public class Transaction : TransactionBase
     {
-        [Obsolete("You should be using TransactionBuilder directly, this constructor will be hidden in future releases.")]
-        public Transaction(IAccountId sourceAccount, uint fee, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)
+        internal Transaction(IAccountId sourceAccount, uint fee, long sequenceNumber, Operation[] operations, Memo memo, TransactionPreconditions preconditions)
         {
             SourceAccount = sourceAccount ?? throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
             Fee = fee;
@@ -20,7 +16,7 @@ namespace stellar_dotnet_sdk
                 throw new ArgumentNullException(nameof(operations), "At least one operation required");
 
             Memo = memo ?? Memo.None();
-            TimeBounds = timeBounds;
+            Preconditions = preconditions;
         }
 
         public uint Fee { get; }
@@ -33,7 +29,9 @@ namespace stellar_dotnet_sdk
 
         public Memo Memo { get; }
 
-        public TimeBounds TimeBounds { get; }
+        public TransactionPreconditions Preconditions { get; }
+
+        public TimeBounds TimeBounds => Preconditions.TimeBounds;
 
         /// <summary>
         ///     Returns signature base for the given network.
@@ -147,7 +145,7 @@ namespace stellar_dotnet_sdk
                 SourceAccount = sourceAccount,
                 Operations = operations,
                 Memo = Memo.ToXdr(),
-                TimeBounds = TimeBounds?.ToXdr(),
+                Cond = Preconditions.ToXDR(),
                 Ext = ext
             };
             return transaction;
@@ -233,8 +231,9 @@ namespace stellar_dotnet_sdk
             var fee = transactionXdr.Fee.InnerValue;
             KeyPair sourceAccount = KeyPair.FromPublicKey(transactionXdr.SourceAccountEd25519.InnerValue);
             long sequenceNumber = transactionXdr.SeqNum.InnerValue.InnerValue;
-            Memo memo = Memo.FromXdr(transactionXdr.Memo);
-            TimeBounds timeBounds = TimeBounds.FromXdr(transactionXdr.TimeBounds);
+            Memo memo = Memo.FromXdr(transactionXdr.Memo); 
+            TransactionPreconditions preconditions = new TransactionPreconditions();
+            preconditions.TimeBounds = TimeBounds.FromXdr(transactionXdr.TimeBounds);
 
             Operation[] operations = new Operation[transactionXdr.Operations.Length];
             for (int i = 0; i < transactionXdr.Operations.Length; i++)
@@ -242,7 +241,7 @@ namespace stellar_dotnet_sdk
                 operations[i] = Operation.FromXdr(transactionXdr.Operations[i]);
             }
 
-            Transaction transaction = new Transaction(sourceAccount, fee, sequenceNumber, operations, memo, timeBounds);
+            Transaction transaction = new Transaction(sourceAccount, fee, sequenceNumber, operations, memo, preconditions);
 
             foreach (var signature in envelope.Signatures)
             {
@@ -259,7 +258,7 @@ namespace stellar_dotnet_sdk
             var sourceAccount = MuxedAccount.FromXdrMuxedAccount(transactionXdr.SourceAccount);
             long sequenceNumber = transactionXdr.SeqNum.InnerValue.InnerValue;
             Memo memo = Memo.FromXdr(transactionXdr.Memo);
-            TimeBounds timeBounds = TimeBounds.FromXdr(transactionXdr.TimeBounds);
+            TransactionPreconditions preconditions = TransactionPreconditions.FromXDR(transactionXdr.Cond);
 
             Operation[] operations = new Operation[transactionXdr.Operations.Length];
             for (int i = 0; i < transactionXdr.Operations.Length; i++)
@@ -267,7 +266,7 @@ namespace stellar_dotnet_sdk
                 operations[i] = Operation.FromXdr(transactionXdr.Operations[i]);
             }
 
-            Transaction transaction = new Transaction(sourceAccount, fee, sequenceNumber, operations, memo, timeBounds);
+            Transaction transaction = new Transaction(sourceAccount, fee, sequenceNumber, operations, memo, preconditions);
 
             foreach (var signature in envelope.Signatures)
             {
@@ -275,14 +274,6 @@ namespace stellar_dotnet_sdk
             }
 
             return transaction;
-        }
-
-        [Obsolete("Use TransactionBuilder instead")]
-        public class Builder : TransactionBuilder
-        {
-            public Builder(ITransactionBuilderAccount sourceAccount) : base(sourceAccount)
-            {
-            }
         }
     }
 }

@@ -60,13 +60,18 @@ namespace stellar_dotnet_sdk
         /// <summary>
         /// The sequence number
         /// </summary>
-        public long SequenceNumber { get; set; }
+        public long SequenceNumber { get; private set; }
 
         /// <summary>
         /// Returns the Sequence number incremented by one.
         /// </summary>
         /// <returns>SequenceNumber + 1</returns>
         public long IncrementedSequenceNumber => SequenceNumber + 1;
+
+        public void SetSequenceNumber(long sequenceNumber)
+        {
+            SequenceNumber = sequenceNumber;
+        }
 
         ///<summary>
         /// Increments sequence number in this object by one.

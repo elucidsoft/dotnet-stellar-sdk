@@ -8,14 +8,14 @@ namespace stellar_dotnet_sdk
     public class TransactionPreconditions
     {
         public static long MAX_EXTRA_SIGNERS_COUNT = 2;
-        public static long TIMEOUT_INFINITE = 0;
+        public static ulong TIMEOUT_INFINITE = 0;
 
-        public LedgerBounds LedgerBounds { get; private set; }
-        public ulong MinSeqAge { get; private set; }
-        public long? MinSeqNumber { get; private set; }
-        public uint MinSeqLedgerGap { get; private set; }
-        public List<xdr.SignerKey> ExtraSigners { get; private set; }
-        public TimeBounds TimeBounds { get; private set; }
+        public LedgerBounds LedgerBounds { get; set; }
+        public ulong MinSeqAge { get; set; }
+        public long? MinSeqNumber { get; set; }
+        public uint MinSeqLedgerGap { get; set; }
+        public List<xdr.SignerKey> ExtraSigners { get; set; }
+        public TimeBounds TimeBounds { get; set; }
 
         public void IsValid()
         {
