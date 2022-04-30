@@ -310,7 +310,6 @@ namespace stellar_dotnet_sdk
             };
         }
 
-
         /// <summary>
         /// Sign the provided payload data for payload signer where the input is the data being signed.
         /// </summary>
