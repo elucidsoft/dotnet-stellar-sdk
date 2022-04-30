@@ -24,7 +24,7 @@ namespace stellar_dotnet_sdk
                 throw new FormatException("Invalid preconditions, must define timebounds");
             }
 
-            if (ExtraSigners.Count > MAX_EXTRA_SIGNERS_COUNT)
+            if (ExtraSigners?.Count > MAX_EXTRA_SIGNERS_COUNT)
             {
                 throw new FormatException("Invalid preconditions, too many extra signers, can only have up to " + MAX_EXTRA_SIGNERS_COUNT);
             }
@@ -101,8 +101,10 @@ namespace stellar_dotnet_sdk
                 preconditions.Discriminant.InnerValue = xdr.PreconditionType.PreconditionTypeEnum.PRECOND_V2;
                 
                 var preconditionsV2 = new xdr.PreconditionsV2();
+                preconditions.V2 = preconditionsV2;
 
-                preconditionsV2.ExtraSigners = ExtraSigners == null ? new xdr.SignerKey[] { new xdr.SignerKey() } : ExtraSigners.ToArray();
+                preconditionsV2.ExtraSigners = new xdr.SignerKey[0];
+                preconditionsV2.MinSeqAge = new xdr.Duration(new xdr.Uint64(MinSeqAge));
 
                 if (LedgerBounds != null)
                 {

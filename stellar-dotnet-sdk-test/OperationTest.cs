@@ -521,6 +521,7 @@ namespace stellar_dotnet_sdk_test
             var account = new Account(source.AccountId, sequenceNumber);
             var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new stellar_dotnet_sdk.TimeBounds(0, TransactionPreconditions.TIMEOUT_INFINITE)})
                 .Build();
 
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -534,21 +535,17 @@ namespace stellar_dotnet_sdk_test
             var xdr = operation.ToXdr();
             var parsedOperation = (SetOptionsOperation)Operation.FromXdr(xdr);
 
-            Assert.AreEqual(null, parsedOperation.InflationDestination);
-            Assert.AreEqual(null, parsedOperation.ClearFlags);
-            Assert.AreEqual(null, parsedOperation.SetFlags);
-            Assert.AreEqual(null, parsedOperation.MasterKeyWeight);
-            Assert.AreEqual(null, parsedOperation.LowThreshold);
-            Assert.AreEqual(null, parsedOperation.MediumThreshold);
-            Assert.AreEqual(null, parsedOperation.HighThreshold);
-            Assert.AreEqual(null, parsedOperation.HomeDomain);
+            Assert.AreEqual(operation.InflationDestination, parsedOperation.InflationDestination);
+            Assert.AreEqual(operation.ClearFlags, parsedOperation.ClearFlags);
+            Assert.AreEqual(operation.SetFlags, parsedOperation.SetFlags);
+            Assert.AreEqual(operation.MasterKeyWeight, parsedOperation.MasterKeyWeight);
+            Assert.AreEqual(operation.LowThreshold, parsedOperation.LowThreshold);
+            Assert.AreEqual(operation.MediumThreshold, parsedOperation.MediumThreshold);
+            Assert.AreEqual(operation.HighThreshold, parsedOperation.HighThreshold);
+            Assert.AreEqual(operation.HomeDomain, parsedOperation.HomeDomain);
             Assert.IsTrue(transaction.Hash().SequenceEqual(parsedOperation.Signer.PreAuthTx.InnerValue));
-            Assert.AreEqual(10U, parsedOperation.SignerWeight);
-            Assert.AreEqual(opSource.AccountId, parsedOperation.SourceAccount.AccountId);
-
-            Assert.AreEqual(
-                "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAB1vRBIRC3w7ZH5rQa17hIBKUwZTvBP4kNmSP7jVyw1fQAAAAK",
-                operation.ToXdrBase64());
+            Assert.AreEqual(operation.SignerWeight, parsedOperation.SignerWeight);
+            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
         }
 
         [TestMethod]
