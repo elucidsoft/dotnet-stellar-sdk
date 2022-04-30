@@ -2,62 +2,71 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  struct LedgerHeaderExtensionV1
-//  {
-//      uint32 flags; // LedgerHeaderFlags
-//  
-//      union switch (int v)
-//      {
-//      case 0:
-//          void;
-//      }
-//      ext;
-//  };
+    //  struct LedgerHeaderExtensionV1
+    //  {
+    //      uint32 flags; // LedgerHeaderFlags
+    //  
+    //      union switch (int v)
+    //      {
+    //      case 0:
+    //          void;
+    //      }
+    //      ext;
+    //  };
 
-//  ===========================================================================
-public class LedgerHeaderExtensionV1  {
-  public LedgerHeaderExtensionV1 () {}
-  public Uint32 Flags {get; set;}
-  public LedgerHeaderExtensionV1Ext Ext {get; set;}
+    //  ===========================================================================
+    public class LedgerHeaderExtensionV1
+    {
+        public LedgerHeaderExtensionV1() { }
+        public Uint32 Flags { get; set; }
+        public LedgerHeaderExtensionV1Ext Ext { get; set; }
 
-  public static void Encode(XdrDataOutputStream stream, LedgerHeaderExtensionV1 encodedLedgerHeaderExtensionV1) {
-    Uint32.Encode(stream, encodedLedgerHeaderExtensionV1.Flags);
-    LedgerHeaderExtensionV1Ext.Encode(stream, encodedLedgerHeaderExtensionV1.Ext);
-  }
-  public static LedgerHeaderExtensionV1 Decode(XdrDataInputStream stream) {
-    LedgerHeaderExtensionV1 decodedLedgerHeaderExtensionV1 = new LedgerHeaderExtensionV1();
-    decodedLedgerHeaderExtensionV1.Flags = Uint32.Decode(stream);
-    decodedLedgerHeaderExtensionV1.Ext = LedgerHeaderExtensionV1Ext.Decode(stream);
-    return decodedLedgerHeaderExtensionV1;
-  }
+        public static void Encode(XdrDataOutputStream stream, LedgerHeaderExtensionV1 encodedLedgerHeaderExtensionV1)
+        {
+            Uint32.Encode(stream, encodedLedgerHeaderExtensionV1.Flags);
+            LedgerHeaderExtensionV1Ext.Encode(stream, encodedLedgerHeaderExtensionV1.Ext);
+        }
+        public static LedgerHeaderExtensionV1 Decode(XdrDataInputStream stream)
+        {
+            LedgerHeaderExtensionV1 decodedLedgerHeaderExtensionV1 = new LedgerHeaderExtensionV1();
+            decodedLedgerHeaderExtensionV1.Flags = Uint32.Decode(stream);
+            decodedLedgerHeaderExtensionV1.Ext = LedgerHeaderExtensionV1Ext.Decode(stream);
+            return decodedLedgerHeaderExtensionV1;
+        }
 
-  public class LedgerHeaderExtensionV1Ext {
-    public LedgerHeaderExtensionV1Ext () {}
+        public class LedgerHeaderExtensionV1Ext
+        {
+            public LedgerHeaderExtensionV1Ext() { }
 
-    public int Discriminant { get; set; } = new int();
+            public int Discriminant { get; set; } = new int();
 
-    public static void Encode(XdrDataOutputStream stream, LedgerHeaderExtensionV1Ext encodedLedgerHeaderExtensionV1Ext) {
-    stream.WriteInt((int)encodedLedgerHeaderExtensionV1Ext.Discriminant);
-    switch (encodedLedgerHeaderExtensionV1Ext.Discriminant) {
-    case 0:
-    break;
+            public static void Encode(XdrDataOutputStream stream, LedgerHeaderExtensionV1Ext encodedLedgerHeaderExtensionV1Ext)
+            {
+                stream.WriteInt((int)encodedLedgerHeaderExtensionV1Ext.Discriminant);
+                switch (encodedLedgerHeaderExtensionV1Ext.Discriminant)
+                {
+                    case 0:
+                        break;
+                }
+            }
+            public static LedgerHeaderExtensionV1Ext Decode(XdrDataInputStream stream)
+            {
+                LedgerHeaderExtensionV1Ext decodedLedgerHeaderExtensionV1Ext = new LedgerHeaderExtensionV1Ext();
+                int discriminant = stream.ReadInt();
+                decodedLedgerHeaderExtensionV1Ext.Discriminant = discriminant;
+                switch (decodedLedgerHeaderExtensionV1Ext.Discriminant)
+                {
+                    case 0:
+                        break;
+                }
+                return decodedLedgerHeaderExtensionV1Ext;
+            }
+
+        }
     }
-    }
-    public static LedgerHeaderExtensionV1Ext Decode(XdrDataInputStream stream) {
-    LedgerHeaderExtensionV1Ext decodedLedgerHeaderExtensionV1Ext = new LedgerHeaderExtensionV1Ext();
-    int discriminant =  stream.ReadInt();
-    decodedLedgerHeaderExtensionV1Ext.Discriminant = discriminant;
-    switch (decodedLedgerHeaderExtensionV1Ext.Discriminant) {
-    case 0:
-    break;
-    }
-      return decodedLedgerHeaderExtensionV1Ext;
-    }
-
-  }
-}
 }

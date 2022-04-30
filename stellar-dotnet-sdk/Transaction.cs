@@ -231,7 +231,7 @@ namespace stellar_dotnet_sdk
             var fee = transactionXdr.Fee.InnerValue;
             KeyPair sourceAccount = KeyPair.FromPublicKey(transactionXdr.SourceAccountEd25519.InnerValue);
             long sequenceNumber = transactionXdr.SeqNum.InnerValue.InnerValue;
-            Memo memo = Memo.FromXdr(transactionXdr.Memo); 
+            Memo memo = Memo.FromXdr(transactionXdr.Memo);
             TransactionPreconditions preconditions = new TransactionPreconditions();
             preconditions.TimeBounds = TimeBounds.FromXdr(transactionXdr.TimeBounds);
 

@@ -316,7 +316,7 @@ namespace stellar_dotnet_sdk
         /// </summary>
         /// <param name="message"></param>
         /// <returns><see cref="DecoratedSignature"/></returns>
-        
+
         public DecoratedSignature SignPayloadDecorated(byte[] signerPayload)
         {
             DecoratedSignature payloadSignature = SignDecorated(signerPayload);

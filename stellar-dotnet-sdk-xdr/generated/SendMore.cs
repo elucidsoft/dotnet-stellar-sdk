@@ -2,27 +2,31 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  struct SendMore
-//  {
-//      uint32 numMessages;
-//  };
+    //  struct SendMore
+    //  {
+    //      uint32 numMessages;
+    //  };
 
-//  ===========================================================================
-public class SendMore  {
-  public SendMore () {}
-  public Uint32 NumMessages {get; set;}
+    //  ===========================================================================
+    public class SendMore
+    {
+        public SendMore() { }
+        public Uint32 NumMessages { get; set; }
 
-  public static void Encode(XdrDataOutputStream stream, SendMore encodedSendMore) {
-    Uint32.Encode(stream, encodedSendMore.NumMessages);
-  }
-  public static SendMore Decode(XdrDataInputStream stream) {
-    SendMore decodedSendMore = new SendMore();
-    decodedSendMore.NumMessages = Uint32.Decode(stream);
-    return decodedSendMore;
-  }
-}
+        public static void Encode(XdrDataOutputStream stream, SendMore encodedSendMore)
+        {
+            Uint32.Encode(stream, encodedSendMore.NumMessages);
+        }
+        public static SendMore Decode(XdrDataInputStream stream)
+        {
+            SendMore decodedSendMore = new SendMore();
+            decodedSendMore.NumMessages = Uint32.Decode(stream);
+            return decodedSendMore;
+        }
+    }
 }

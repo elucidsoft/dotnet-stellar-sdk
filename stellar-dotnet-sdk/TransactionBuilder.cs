@@ -73,11 +73,11 @@ namespace stellar_dotnet_sdk
 
         public TransactionBuilder AddPreconditions(TransactionPreconditions preconditions)
         {
-            if(preconditions == null)
+            if (preconditions == null)
             {
                 throw new ArgumentNullException("preconditions cannot be null", nameof(preconditions));
             }
-            
+
             _preconditions = preconditions;
             return this;
         }
@@ -106,7 +106,7 @@ namespace stellar_dotnet_sdk
         /// <returns>Builder object so you can chain methods.</returns>
         public TransactionBuilder AddTimeBounds(TimeBounds timeBounds)
         {
-            if(timeBounds == null)
+            if (timeBounds == null)
             {
                 throw new ArgumentNullException(nameof(timeBounds), "timeBounds cannot be null");
             }

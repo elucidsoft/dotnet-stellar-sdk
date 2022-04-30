@@ -25,6 +25,7 @@ namespace stellar_dotnet_sdk.responses
             return response;
         }
 
+        [Obsolete]
         private static EffectResponse CreateResponse(int type)
         {
             switch (type)

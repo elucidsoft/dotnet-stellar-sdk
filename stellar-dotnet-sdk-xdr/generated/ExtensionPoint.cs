@@ -2,38 +2,44 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  union ExtensionPoint switch (int v)
-//  {
-//  case 0:
-//      void;
-//  };
+    //  union ExtensionPoint switch (int v)
+    //  {
+    //  case 0:
+    //      void;
+    //  };
 
-//  ===========================================================================
-public class ExtensionPoint  {
-  public ExtensionPoint () {}
+    //  ===========================================================================
+    public class ExtensionPoint
+    {
+        public ExtensionPoint() { }
 
-  public int Discriminant { get; set; } = new int();
+        public int Discriminant { get; set; } = new int();
 
-  public static void Encode(XdrDataOutputStream stream, ExtensionPoint encodedExtensionPoint) {
-  stream.WriteInt((int)encodedExtensionPoint.Discriminant);
-  switch (encodedExtensionPoint.Discriminant) {
-  case 0:
-  break;
-  }
-  }
-  public static ExtensionPoint Decode(XdrDataInputStream stream) {
-  ExtensionPoint decodedExtensionPoint = new ExtensionPoint();
-  int discriminant =  stream.ReadInt();
-  decodedExtensionPoint.Discriminant = discriminant;
-  switch (decodedExtensionPoint.Discriminant) {
-  case 0:
-  break;
-  }
-    return decodedExtensionPoint;
-  }
-}
+        public static void Encode(XdrDataOutputStream stream, ExtensionPoint encodedExtensionPoint)
+        {
+            stream.WriteInt((int)encodedExtensionPoint.Discriminant);
+            switch (encodedExtensionPoint.Discriminant)
+            {
+                case 0:
+                    break;
+            }
+        }
+        public static ExtensionPoint Decode(XdrDataInputStream stream)
+        {
+            ExtensionPoint decodedExtensionPoint = new ExtensionPoint();
+            int discriminant = stream.ReadInt();
+            decodedExtensionPoint.Discriminant = discriminant;
+            switch (decodedExtensionPoint.Discriminant)
+            {
+                case 0:
+                    break;
+            }
+            return decodedExtensionPoint;
+        }
+    }
 }

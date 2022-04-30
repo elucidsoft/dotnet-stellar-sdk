@@ -150,7 +150,7 @@ namespace stellar_dotnet_sdk_test
             }
         }
 
-        
+
         [TestMethod]
         public void TestSignPayloadSignerLessThanHint()
         {

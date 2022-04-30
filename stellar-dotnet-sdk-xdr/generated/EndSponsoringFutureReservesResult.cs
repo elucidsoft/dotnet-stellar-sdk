@@ -2,45 +2,51 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  union EndSponsoringFutureReservesResult switch (
-//      EndSponsoringFutureReservesResultCode code)
-//  {
-//  case END_SPONSORING_FUTURE_RESERVES_SUCCESS:
-//      void;
-//  default:
-//      void;
-//  };
+    //  union EndSponsoringFutureReservesResult switch (
+    //      EndSponsoringFutureReservesResultCode code)
+    //  {
+    //  case END_SPONSORING_FUTURE_RESERVES_SUCCESS:
+    //      void;
+    //  default:
+    //      void;
+    //  };
 
-//  ===========================================================================
-public class EndSponsoringFutureReservesResult  {
-  public EndSponsoringFutureReservesResult () {}
+    //  ===========================================================================
+    public class EndSponsoringFutureReservesResult
+    {
+        public EndSponsoringFutureReservesResult() { }
 
-  public EndSponsoringFutureReservesResultCode Discriminant { get; set; } = new EndSponsoringFutureReservesResultCode();
+        public EndSponsoringFutureReservesResultCode Discriminant { get; set; } = new EndSponsoringFutureReservesResultCode();
 
-  public static void Encode(XdrDataOutputStream stream, EndSponsoringFutureReservesResult encodedEndSponsoringFutureReservesResult) {
-  stream.WriteInt((int)encodedEndSponsoringFutureReservesResult.Discriminant.InnerValue);
-  switch (encodedEndSponsoringFutureReservesResult.Discriminant.InnerValue) {
-  case EndSponsoringFutureReservesResultCode.EndSponsoringFutureReservesResultCodeEnum.END_SPONSORING_FUTURE_RESERVES_SUCCESS:
-  break;
-  default:
-  break;
-  }
-  }
-  public static EndSponsoringFutureReservesResult Decode(XdrDataInputStream stream) {
-  EndSponsoringFutureReservesResult decodedEndSponsoringFutureReservesResult = new EndSponsoringFutureReservesResult();
-  EndSponsoringFutureReservesResultCode discriminant = EndSponsoringFutureReservesResultCode.Decode(stream);
-  decodedEndSponsoringFutureReservesResult.Discriminant = discriminant;
-  switch (decodedEndSponsoringFutureReservesResult.Discriminant.InnerValue) {
-  case EndSponsoringFutureReservesResultCode.EndSponsoringFutureReservesResultCodeEnum.END_SPONSORING_FUTURE_RESERVES_SUCCESS:
-  break;
-  default:
-  break;
-  }
-    return decodedEndSponsoringFutureReservesResult;
-  }
-}
+        public static void Encode(XdrDataOutputStream stream, EndSponsoringFutureReservesResult encodedEndSponsoringFutureReservesResult)
+        {
+            stream.WriteInt((int)encodedEndSponsoringFutureReservesResult.Discriminant.InnerValue);
+            switch (encodedEndSponsoringFutureReservesResult.Discriminant.InnerValue)
+            {
+                case EndSponsoringFutureReservesResultCode.EndSponsoringFutureReservesResultCodeEnum.END_SPONSORING_FUTURE_RESERVES_SUCCESS:
+                    break;
+                default:
+                    break;
+            }
+        }
+        public static EndSponsoringFutureReservesResult Decode(XdrDataInputStream stream)
+        {
+            EndSponsoringFutureReservesResult decodedEndSponsoringFutureReservesResult = new EndSponsoringFutureReservesResult();
+            EndSponsoringFutureReservesResultCode discriminant = EndSponsoringFutureReservesResultCode.Decode(stream);
+            decodedEndSponsoringFutureReservesResult.Discriminant = discriminant;
+            switch (decodedEndSponsoringFutureReservesResult.Discriminant.InnerValue)
+            {
+                case EndSponsoringFutureReservesResultCode.EndSponsoringFutureReservesResultCodeEnum.END_SPONSORING_FUTURE_RESERVES_SUCCESS:
+                    break;
+                default:
+                    break;
+            }
+            return decodedEndSponsoringFutureReservesResult;
+        }
+    }
 }

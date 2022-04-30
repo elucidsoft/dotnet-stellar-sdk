@@ -2,41 +2,47 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  struct TransactionV0Envelope
-//  {
-//      TransactionV0 tx;
-//      /* Each decorated signature is a signature over the SHA256 hash of
-//       * a TransactionSignaturePayload */
-//      DecoratedSignature signatures<20>;
-//  };
+    //  struct TransactionV0Envelope
+    //  {
+    //      TransactionV0 tx;
+    //      /* Each decorated signature is a signature over the SHA256 hash of
+    //       * a TransactionSignaturePayload */
+    //      DecoratedSignature signatures<20>;
+    //  };
 
-//  ===========================================================================
-public class TransactionV0Envelope  {
-  public TransactionV0Envelope () {}
-  public TransactionV0 Tx {get; set;}
-  public DecoratedSignature[] Signatures {get; set;}
+    //  ===========================================================================
+    public class TransactionV0Envelope
+    {
+        public TransactionV0Envelope() { }
+        public TransactionV0 Tx { get; set; }
+        public DecoratedSignature[] Signatures { get; set; }
 
-  public static void Encode(XdrDataOutputStream stream, TransactionV0Envelope encodedTransactionV0Envelope) {
-    TransactionV0.Encode(stream, encodedTransactionV0Envelope.Tx);
-    int signaturessize = encodedTransactionV0Envelope.Signatures.Length;
-    stream.WriteInt(signaturessize);
-    for (int i = 0; i < signaturessize; i++) {
-      DecoratedSignature.Encode(stream, encodedTransactionV0Envelope.Signatures[i]);
+        public static void Encode(XdrDataOutputStream stream, TransactionV0Envelope encodedTransactionV0Envelope)
+        {
+            TransactionV0.Encode(stream, encodedTransactionV0Envelope.Tx);
+            int signaturessize = encodedTransactionV0Envelope.Signatures.Length;
+            stream.WriteInt(signaturessize);
+            for (int i = 0; i < signaturessize; i++)
+            {
+                DecoratedSignature.Encode(stream, encodedTransactionV0Envelope.Signatures[i]);
+            }
+        }
+        public static TransactionV0Envelope Decode(XdrDataInputStream stream)
+        {
+            TransactionV0Envelope decodedTransactionV0Envelope = new TransactionV0Envelope();
+            decodedTransactionV0Envelope.Tx = TransactionV0.Decode(stream);
+            int signaturessize = stream.ReadInt();
+            decodedTransactionV0Envelope.Signatures = new DecoratedSignature[signaturessize];
+            for (int i = 0; i < signaturessize; i++)
+            {
+                decodedTransactionV0Envelope.Signatures[i] = DecoratedSignature.Decode(stream);
+            }
+            return decodedTransactionV0Envelope;
+        }
     }
-  }
-  public static TransactionV0Envelope Decode(XdrDataInputStream stream) {
-    TransactionV0Envelope decodedTransactionV0Envelope = new TransactionV0Envelope();
-    decodedTransactionV0Envelope.Tx = TransactionV0.Decode(stream);
-    int signaturessize = stream.ReadInt();
-    decodedTransactionV0Envelope.Signatures = new DecoratedSignature[signaturessize];
-    for (int i = 0; i < signaturessize; i++) {
-      decodedTransactionV0Envelope.Signatures[i] = DecoratedSignature.Decode(stream);
-    }
-    return decodedTransactionV0Envelope;
-  }
-}
 }

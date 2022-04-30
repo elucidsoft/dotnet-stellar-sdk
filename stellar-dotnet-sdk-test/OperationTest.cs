@@ -19,6 +19,7 @@ namespace stellar_dotnet_sdk_test
     public class OperationTest
     {
         [TestMethod]
+        [Obsolete]
         public void TestCreateAccountOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -46,6 +47,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestPaymentOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -76,6 +78,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestPathPaymentStrictReceiveOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -122,6 +125,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestPathPaymentStrictReceiveEmptyPathOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -166,6 +170,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestPathPaymentStrictSendOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -210,6 +215,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestPathPaymentStrictSendEmptyPathOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -252,6 +258,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestChangeTrustOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -279,6 +286,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestChangeTrustOperationNoLimit()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -388,6 +396,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestSetOptionsOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -442,6 +451,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestSetOptionsOperationSingleField()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -475,6 +485,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestSetOptionsOperationSignerSha256()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -509,6 +520,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestSetOptionsOperationPreAuthTxSigner()
         {
             Network.UseTestNetwork();
@@ -521,7 +533,7 @@ namespace stellar_dotnet_sdk_test
             var account = new Account(source.AccountId, sequenceNumber);
             var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
-                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new stellar_dotnet_sdk.TimeBounds(0, TransactionPreconditions.TIMEOUT_INFINITE)})
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new stellar_dotnet_sdk.TimeBounds(0, TransactionPreconditions.TIMEOUT_INFINITE) })
                 .Build();
 
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -574,6 +586,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestManageSellOfferOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -613,6 +626,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestManageBuyOfferOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -675,6 +689,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestCreatePassiveSellOfferOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -711,6 +726,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestAccountMergeOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -735,6 +751,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestManageDataOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -758,6 +775,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestManageDataOperationEmptyValue()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -818,6 +836,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestBumpSequence()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -838,6 +857,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestInflationOperation()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -856,6 +876,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestCreateClaimableBalanceOperation()
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
@@ -888,6 +909,7 @@ namespace stellar_dotnet_sdk_test
         /// This tests that we can still pass in the 32 bytes for compatability and use the default type (0).
         /// </summary>
         [TestMethod]
+        [Obsolete]
         public void TestClaimClaimableBalanceWithLegacyByteIdOperation()
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
@@ -910,6 +932,7 @@ namespace stellar_dotnet_sdk_test
         /// Claim a claimable balance using the byte representation of the balance id.
         /// </summary>
         [TestMethod]
+        [Obsolete]
         public void TestClaimClaimableBalanceWithByteIdOperation()
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
@@ -933,6 +956,7 @@ namespace stellar_dotnet_sdk_test
         /// Claim a claimable balance using the string representation of the balance id.
         /// </summary>
         [TestMethod]
+        [Obsolete]
         public void TestClaimClaimableBalanceWithStringIdOperationValid()
         {
             var balanceId = "000000006d6a0c142516a9cc7885a85c5aba3a1f4af5181cf9e7a809ac7ae5e4a58c825f";
@@ -986,6 +1010,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestBeginSponsoringFutureReservesOperation()
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
@@ -1007,6 +1032,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestEndSponsoringFutureReservesOperation()
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
@@ -1025,6 +1051,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestRevokeLedgerEntrySponsorshipOperation()
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
@@ -1047,6 +1074,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestRevokeSignerSponsorshipOperation()
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
@@ -1082,6 +1110,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestClawbackOperation()
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
@@ -1102,6 +1131,7 @@ namespace stellar_dotnet_sdk_test
 
 
         [TestMethod]
+        [Obsolete]
         public void TestClawbackClaimableBalanceOperation()
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3
@@ -1137,6 +1167,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestSetTrustlineFlagsOperation()
         {
             // GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3

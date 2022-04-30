@@ -2,42 +2,49 @@
 // DO NOT EDIT or your changes may be overwritten
 using System;
 
-namespace stellar_dotnet_sdk.xdr {
+namespace stellar_dotnet_sdk.xdr
+{
 
-// === xdr source ============================================================
+    // === xdr source ============================================================
 
-//  enum ClaimableBalanceFlags
-//  {
-//      // If set, the issuer account of the asset held by the claimable balance may
-//      // clawback the claimable balance
-//      CLAIMABLE_BALANCE_CLAWBACK_ENABLED_FLAG = 0x1
-//  };
+    //  enum ClaimableBalanceFlags
+    //  {
+    //      // If set, the issuer account of the asset held by the claimable balance may
+    //      // clawback the claimable balance
+    //      CLAIMABLE_BALANCE_CLAWBACK_ENABLED_FLAG = 0x1
+    //  };
 
-//  ===========================================================================
-public class ClaimableBalanceFlags  {
-  public enum ClaimableBalanceFlagsEnum {
-  CLAIMABLE_BALANCE_CLAWBACK_ENABLED_FLAG = 1,
-  }
-  public ClaimableBalanceFlagsEnum InnerValue {get; set;} = default(ClaimableBalanceFlagsEnum);
+    //  ===========================================================================
+    public class ClaimableBalanceFlags
+    {
+        public enum ClaimableBalanceFlagsEnum
+        {
+            CLAIMABLE_BALANCE_CLAWBACK_ENABLED_FLAG = 1,
+        }
+        public ClaimableBalanceFlagsEnum InnerValue { get; set; } = default(ClaimableBalanceFlagsEnum);
 
-  public static ClaimableBalanceFlags Create(ClaimableBalanceFlagsEnum v)
-  {
-    return new ClaimableBalanceFlags {
-      InnerValue = v
-    };
-  }
+        public static ClaimableBalanceFlags Create(ClaimableBalanceFlagsEnum v)
+        {
+            return new ClaimableBalanceFlags
+            {
+                InnerValue = v
+            };
+        }
 
-  public static ClaimableBalanceFlags Decode(XdrDataInputStream stream) {
-    int value = stream.ReadInt();
-    switch (value) {
-      case 1: return Create(ClaimableBalanceFlagsEnum.CLAIMABLE_BALANCE_CLAWBACK_ENABLED_FLAG);
-      default:
-        throw new Exception("Unknown enum value: " + value);
+        public static ClaimableBalanceFlags Decode(XdrDataInputStream stream)
+        {
+            int value = stream.ReadInt();
+            switch (value)
+            {
+                case 1: return Create(ClaimableBalanceFlagsEnum.CLAIMABLE_BALANCE_CLAWBACK_ENABLED_FLAG);
+                default:
+                    throw new Exception("Unknown enum value: " + value);
+            }
+        }
+
+        public static void Encode(XdrDataOutputStream stream, ClaimableBalanceFlags value)
+        {
+            stream.WriteInt((int)value.InnerValue);
+        }
     }
-  }
-
-  public static void Encode(XdrDataOutputStream stream, ClaimableBalanceFlags value) {
-    stream.WriteInt((int)value.InnerValue);
-  }
-}
 }

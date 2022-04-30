@@ -83,7 +83,7 @@ namespace stellar_dotnet_sdk
             }
             else
             {
-                if(preconditions.TimeBounds != null)
+                if (preconditions.TimeBounds != null)
                 {
                     transactionPreconditions.TimeBounds = new TimeBounds(preconditions.TimeBounds.MinTime.InnerValue.InnerValue, preconditions.TimeBounds.MaxTime.InnerValue.InnerValue);
                 }
@@ -96,10 +96,10 @@ namespace stellar_dotnet_sdk
         {
             var preconditions = new xdr.Preconditions();
 
-            if(HasV2())
+            if (HasV2())
             {
                 preconditions.Discriminant.InnerValue = xdr.PreconditionType.PreconditionTypeEnum.PRECOND_V2;
-                
+
                 var preconditionsV2 = new xdr.PreconditionsV2();
                 preconditions.V2 = preconditionsV2;
 
@@ -115,21 +115,21 @@ namespace stellar_dotnet_sdk
                     preconditionsV2.LedgerBounds = ledgerBoundsXDR;
                 }
 
-                if(MinSeqNumber != null)
+                if (MinSeqNumber != null)
                 {
                     preconditionsV2.MinSeqNum = new xdr.SequenceNumber(new xdr.Int64(MinSeqNumber.Value));
                 }
 
                 preconditionsV2.MinSeqLedgerGap = new xdr.Uint32(MinSeqLedgerGap);
 
-                if(TimeBounds != null)
+                if (TimeBounds != null)
                 {
                     preconditionsV2.TimeBounds = TimeBounds.ToXdr();
                 }
             }
             else
             {
-                if(TimeBounds == null)
+                if (TimeBounds == null)
                 {
                     preconditions.Discriminant.InnerValue = xdr.PreconditionType.PreconditionTypeEnum.PRECOND_NONE;
                 }
