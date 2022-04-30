@@ -73,5 +73,10 @@ namespace stellar_dotnet_sdk.responses
         {
             return KeyPair.FromAccountId(accountId);
         }
+
+        public void SetSequenceNumber(long sequenceNumber)
+        {
+            SequenceNumber = sequenceNumber;
+        }
     }
 }

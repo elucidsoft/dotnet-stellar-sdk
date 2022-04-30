@@ -148,8 +148,7 @@ namespace stellar_dotnet_sdk
             //var totalFee = operations.Length * _fee;
             var opsCount = Convert.ToUInt32(operations.Length);
             uint totalFee = checked(opsCount * _fee);
-            var transaction = new Transaction(_sourceAccount.MuxedAccount, totalFee,
-                _sourceAccount.IncrementedSequenceNumber, operations, _memo, _preconditions);
+            var transaction = new Transaction(_sourceAccount.MuxedAccount, totalFee, _sourceAccount.IncrementedSequenceNumber, operations, _memo, _preconditions);
             // Increment sequence number when there were no exceptions when creating a transaction
             _sourceAccount.IncrementSequenceNumber();
             return transaction;
