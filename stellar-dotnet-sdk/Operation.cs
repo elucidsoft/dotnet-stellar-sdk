@@ -58,7 +58,6 @@ namespace stellar_dotnet_sdk
         ///</summary>
         /// <returns>new Operation object from Operation XDR object.</returns>
         /// <param name="thisXdr">XDR object</param>
-        [Obsolete]
         public static Operation FromXdr(xdr.Operation thisXdr)
         {
             var body = thisXdr.Body;

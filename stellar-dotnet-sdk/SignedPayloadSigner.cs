@@ -45,8 +45,8 @@ namespace stellar_dotnet_sdk
             var publicKeyXDR = new xdr.PublicKey();
             publicKeyXDR.Discriminant.InnerValue = xdr.PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519;
             publicKeyXDR.Ed25519 = new xdr.Uint256(signerED25519PublicKey);
-            new xdr.AccountID(publicKeyXDR);
-            Payload = payload;
+
+            new SignedPayloadSigner(new xdr.AccountID(publicKeyXDR), payload);
         }
     }
 }
