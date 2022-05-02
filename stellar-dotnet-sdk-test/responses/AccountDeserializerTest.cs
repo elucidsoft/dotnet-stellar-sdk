@@ -65,6 +65,8 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(account.AccountId, "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7");
             Assert.AreEqual(account.SequenceNumber, 2319149195853854);
             Assert.AreEqual(account.SubentryCount, 0);
+            Assert.AreEqual(account.SequenceUpdatedAtLedger, 1234L);
+            Assert.AreEqual(account.SequenceUpdatedAtTime, 4567L);
             Assert.AreEqual(account.InflationDestination, "GAGRSA6QNQJN2OQYCBNQGMFLO4QLZFNEHIFXOMTQVSUTWVTWT66TOFSC");
             Assert.AreEqual(account.HomeDomain, "stellar.org");
 

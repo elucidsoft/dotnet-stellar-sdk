@@ -36,7 +36,7 @@ namespace stellar_dotnet_sdk
                     (MinSeqLedgerGap > 0) ||
                     (MinSeqAge > 0) ||
                     MinSeqNumber != null ||
-                    ExtraSigners?.Count != 0);
+                    ExtraSigners != null && ExtraSigners.Count != 0);
         }
 
         public static TransactionPreconditions FromXDR(xdr.Preconditions preconditions)

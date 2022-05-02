@@ -16,6 +16,20 @@ namespace stellar_dotnet_sdk
 
         public SignedPayloadSigner(xdr.AccountID signerAccountID, byte[] payload)
         {
+            New(signerAccountID, payload);
+        }
+
+        public SignedPayloadSigner(byte[] signerED25519PublicKey, byte[] payload)
+        {
+            var publicKeyXDR = new xdr.PublicKey();
+            publicKeyXDR.Discriminant.InnerValue = xdr.PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519;
+            publicKeyXDR.Ed25519 = new xdr.Uint256(signerED25519PublicKey);
+
+            New(new xdr.AccountID(publicKeyXDR), payload);
+        }
+
+        private SignedPayloadSigner New(xdr.AccountID signerAccountID, byte[] payload)
+        {
             if (signerAccountID == null)
             {
                 throw new ArgumentNullException(nameof(signerAccountID), "signerAccountID cannot be null");
@@ -38,15 +52,8 @@ namespace stellar_dotnet_sdk
 
             SignerAccountID = signerAccountID;
             Payload = payload;
-        }
 
-        public SignedPayloadSigner(byte[] signerED25519PublicKey, byte[] payload)
-        {
-            var publicKeyXDR = new xdr.PublicKey();
-            publicKeyXDR.Discriminant.InnerValue = xdr.PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519;
-            publicKeyXDR.Ed25519 = new xdr.Uint256(signerED25519PublicKey);
-
-            new SignedPayloadSigner(new xdr.AccountID(publicKeyXDR), payload);
+            return this;
         }
     }
 }
