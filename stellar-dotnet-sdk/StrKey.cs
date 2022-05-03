@@ -22,17 +22,18 @@ namespace stellar_dotnet_sdk
             return EncodeCheck(VersionByte.ACCOUNT_ID, data);
         }
 
-        public static String EncodeSignedPayload(byte[] data)
+        public static string EncodeSignedPayload(SignedPayloadSigner signedPayloadSigner)
         {
             try
             {
                 var xdrPayloadSigner = new xdr.SignerKey.SignerKeyEd25519SignedPayload();
-                xdrPayloadSigner.Payload = data;
-                xdrPayloadSigner.Ed25519 = new xdr.Uint256(data);
+                xdrPayloadSigner.Payload = signedPayloadSigner.Payload;
+                xdrPayloadSigner.Ed25519 = signedPayloadSigner.SignerAccountID.InnerValue.Ed25519;
 
-                xdr.SignerKey.SignerKeyEd25519SignedPayload.Encode(new xdr.XdrDataOutputStream(), xdrPayloadSigner);
+                var stream = new xdr.XdrDataOutputStream();
+                xdr.SignerKey.SignerKeyEd25519SignedPayload.Encode(stream, xdrPayloadSigner);
 
-                return EncodeCheck(VersionByte.SIGNED_PAYLOAD, data);
+                return EncodeCheck(VersionByte.SIGNED_PAYLOAD, stream.ToArray());
             }
             catch (Exception e)
             {
