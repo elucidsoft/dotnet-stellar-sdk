@@ -18,9 +18,9 @@ namespace stellar_dotnet_sdk_test
                 new SignedPayloadSigner((xdrSDK.AccountID)null, new byte[] { });
                 Assert.Fail("Test shouldn't be passing, signer AccountID cannot be null");
             }
-            catch (ArgumentNullException e) 
+            catch (ArgumentNullException e)
             {
-               
+
             }
         }
 
@@ -34,7 +34,7 @@ namespace stellar_dotnet_sdk_test
                 new SignedPayloadSigner(StrKey.DecodeStellarAccountId(accountStrKey), payload);
                 Assert.Fail("Test shouldn't be passing, payload length is over 64");
             }
-            catch (ArgumentException e) 
+            catch (ArgumentException e)
             {
 
             }

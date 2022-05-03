@@ -394,7 +394,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(false, parsedOperation.Authorize);
             Assert.AreEqual(false, parsedOperation.AuthorizeToMaintainLiabilities);
         }
- 
+
         [TestMethod]
         public void TestManageOfferOperation()
         {

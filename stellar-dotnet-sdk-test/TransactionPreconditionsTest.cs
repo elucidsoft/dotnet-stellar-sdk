@@ -64,7 +64,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(transactionPreconditions.TimeBounds, new TimeBounds(1L, 2L));
 
             preconditions = transactionPreconditions.ToXDR();
-            
+
             Assert.AreEqual(preconditions.Discriminant.InnerValue, xdrSDK.PreconditionType.PreconditionTypeEnum.PRECOND_TIME);
             Assert.AreEqual(preconditions.TimeBounds.MinTime.InnerValue.InnerValue, xdrTimeBounds.MinTime.InnerValue.InnerValue);
             Assert.AreEqual(preconditions.TimeBounds.MaxTime.InnerValue.InnerValue, xdrTimeBounds.MaxTime.InnerValue.InnerValue);
@@ -85,7 +85,7 @@ namespace stellar_dotnet_sdk_test
             preconditions.TimeBounds = new TimeBounds(1, 2);
             preconditions.MinSeqNumber = 3;
             preconditions.ExtraSigners = new List<xdrSDK.SignerKey> { signerKey, signerKey, signerKey };
-            
+
             var xdr = preconditions.ToXDR();
 
             var stream = new xdrSDK.XdrDataOutputStream();
@@ -150,8 +150,8 @@ namespace stellar_dotnet_sdk_test
                 preconditions.IsValid();
                 Assert.Fail();
             }
-            catch (Exception e) 
-            { 
+            catch (Exception e)
+            {
             }
         }
 
@@ -166,8 +166,8 @@ namespace stellar_dotnet_sdk_test
                 preconditions.IsValid();
                 Assert.Fail();
             }
-            catch (Exception e) 
-            { 
+            catch (Exception e)
+            {
             }
         }
 
