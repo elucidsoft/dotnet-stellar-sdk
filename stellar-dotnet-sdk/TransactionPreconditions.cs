@@ -14,7 +14,7 @@ namespace stellar_dotnet_sdk
         public ulong MinSeqAge { get; set; }
         public long? MinSeqNumber { get; set; }
         public uint MinSeqLedgerGap { get; set; }
-        public List<xdr.SignerKey> ExtraSigners { get; set; }
+        public List<xdr.SignerKey> ExtraSigners { get; set; } = new List<xdr.SignerKey>();
         public TimeBounds TimeBounds { get; set; }
 
         public void IsValid()
@@ -24,7 +24,7 @@ namespace stellar_dotnet_sdk
                 throw new FormatException("Invalid preconditions, must define timebounds");
             }
 
-            if (ExtraSigners?.Count > MAX_EXTRA_SIGNERS_COUNT)
+            if (ExtraSigners.Count > MAX_EXTRA_SIGNERS_COUNT)
             {
                 throw new FormatException("Invalid preconditions, too many extra signers, can only have up to " + MAX_EXTRA_SIGNERS_COUNT);
             }
@@ -36,7 +36,7 @@ namespace stellar_dotnet_sdk
                     (MinSeqLedgerGap > 0) ||
                     (MinSeqAge > 0) ||
                     MinSeqNumber != null ||
-                    ExtraSigners != null && ExtraSigners.Count != 0);
+                    ExtraSigners.Count != 0);
         }
 
         public static TransactionPreconditions FromXDR(xdr.Preconditions preconditions)
@@ -103,7 +103,7 @@ namespace stellar_dotnet_sdk
                 var preconditionsV2 = new xdr.PreconditionsV2();
                 preconditions.V2 = preconditionsV2;
 
-                preconditionsV2.ExtraSigners = new xdr.SignerKey[0];
+                preconditionsV2.ExtraSigners = ExtraSigners.ToArray();
                 preconditionsV2.MinSeqAge = new xdr.Duration(new xdr.Uint64(MinSeqAge));
 
                 if (LedgerBounds != null)
