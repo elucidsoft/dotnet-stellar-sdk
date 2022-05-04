@@ -58,7 +58,7 @@ namespace stellar_dotnet_sdk.responses
 
             if (RelBefore != null)
             {
-                return ClaimPredicate.BeforeRelativeTime(RelBefore.Value);
+                return ClaimPredicate.BeforeRelativeTime(new xdr.Duration(new xdr.Uint64((ulong)RelBefore.Value)));
             }
 
             throw new Exception("Invalid Predicate");

@@ -1,6 +1,7 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
+using xdrSDK = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk_test
 {
@@ -10,7 +11,7 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public void TestClaimPredicateBeforeAbsoluteTime()
         {
-            var predicate = ClaimPredicate.BeforeAbsoluteTime(1600720493);
+            var predicate = ClaimPredicate.BeforeAbsoluteTime(new xdrSDK.TimePoint(new xdrSDK.Uint64(1600720493)));
             var xdr = predicate.ToXdr();
 
             var parsed = (ClaimPredicateBeforeAbsoluteTime)ClaimPredicate.FromXdr(xdr);
@@ -21,29 +22,29 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public void TestClaimPredicateBeforeAbsoluteTimeMaxInt()
         {
-            var predicate = ClaimPredicate.BeforeAbsoluteTime(Int64.MaxValue);
+            var predicate = ClaimPredicate.BeforeAbsoluteTime(new xdrSDK.TimePoint(new xdrSDK.Uint64(UInt64.MaxValue)));
             var xdr = predicate.ToXdr();
 
             var parsed = (ClaimPredicateBeforeAbsoluteTime)ClaimPredicate.FromXdr(xdr);
 
-            Assert.AreEqual(Int64.MaxValue, parsed.UnixTimeSeconds);
+            Assert.AreEqual(UInt64.MaxValue, parsed.TimePoint.InnerValue.InnerValue);
         }
 
         [TestMethod]
         public void TestClaimPredicateBeforeRelativeTime()
         {
-            var predicate = ClaimPredicate.BeforeRelativeTime(120);
+            var predicate = ClaimPredicate.BeforeRelativeTime(new xdrSDK.Duration(new xdrSDK.Uint64(120)));
             var xdr = predicate.ToXdr();
 
             var parsed = (ClaimPredicateBeforeRelativeTime)ClaimPredicate.FromXdr(xdr);
 
-            Assert.AreEqual(120.0, parsed.Duration.TotalSeconds);
+            Assert.AreEqual(120.0, parsed.Duration.InnerValue.InnerValue);
         }
 
         [TestMethod]
         public void TestClaimPredicateNot()
         {
-            var predicate = ClaimPredicate.Not(ClaimPredicate.BeforeRelativeTime(120));
+            var predicate = ClaimPredicate.Not(ClaimPredicate.BeforeRelativeTime(new xdrSDK.Duration(new xdrSDK.Uint64(120))));
             var xdr = predicate.ToXdr();
 
             var parsed = (ClaimPredicateNot)ClaimPredicate.FromXdr(xdr);
@@ -55,8 +56,8 @@ namespace stellar_dotnet_sdk_test
         public void TestClaimPredicateAnd()
         {
             var predicate = ClaimPredicate.And(
-                ClaimPredicate.BeforeRelativeTime(120),
-                ClaimPredicate.BeforeRelativeTime(240));
+                ClaimPredicate.BeforeRelativeTime(new xdrSDK.Duration(new xdrSDK.Uint64(120))),
+                ClaimPredicate.BeforeRelativeTime(new xdrSDK.Duration(new xdrSDK.Uint64(240))));
             var xdr = predicate.ToXdr();
 
             var parsed = (ClaimPredicateAnd)ClaimPredicate.FromXdr(xdr);
@@ -69,8 +70,8 @@ namespace stellar_dotnet_sdk_test
         public void TestClaimPredicateOr()
         {
             var predicate = ClaimPredicate.Or(
-                ClaimPredicate.BeforeRelativeTime(120),
-                ClaimPredicate.BeforeRelativeTime(240));
+                ClaimPredicate.BeforeRelativeTime(new xdrSDK.Duration(new xdrSDK.Uint64(120))),
+                ClaimPredicate.BeforeRelativeTime(new xdrSDK.Duration(new xdrSDK.Uint64(240))));
             var xdr = predicate.ToXdr();
 
             var parsed = (ClaimPredicateOr)ClaimPredicate.FromXdr(xdr);

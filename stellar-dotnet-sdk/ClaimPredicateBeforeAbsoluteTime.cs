@@ -1,20 +1,21 @@
 using System;
+using xdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
     public class ClaimPredicateBeforeAbsoluteTime : ClaimPredicate
     {
-        public DateTimeOffset DateTime { get => DateTimeOffset.FromUnixTimeSeconds(UnixTimeSeconds); }
-        public long UnixTimeSeconds { get; }
+        public DateTimeOffset DateTime { get => DateTimeOffset.FromUnixTimeSeconds((long)TimePoint.InnerValue.InnerValue); }
+        public xdr.TimePoint TimePoint { get; } = new xdr.TimePoint();
 
         public ClaimPredicateBeforeAbsoluteTime(DateTimeOffset dateTime)
         {
-            UnixTimeSeconds = dateTime.ToUnixTimeSeconds();
+            TimePoint.InnerValue = new xdr.Uint64((ulong)dateTime.ToUnixTimeSeconds());
         }
 
-        public ClaimPredicateBeforeAbsoluteTime(long unixTimeSeconds)
+        public ClaimPredicateBeforeAbsoluteTime(xdr.TimePoint timePoint)
         {
-            UnixTimeSeconds = unixTimeSeconds;
+            TimePoint = timePoint;
         }
 
         public override xdr.ClaimPredicate ToXdr()
@@ -25,7 +26,7 @@ namespace stellar_dotnet_sdk
                 {
                     InnerValue = xdr.ClaimPredicateType.ClaimPredicateTypeEnum.CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME
                 },
-                AbsBefore = new xdr.Int64(UnixTimeSeconds),
+                AbsBefore = new xdr.Int64((long)TimePoint.InnerValue.InnerValue),
             };
         }
     }

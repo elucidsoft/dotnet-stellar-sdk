@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
-using stellar_dotnet_sdk.xdr;
+using xdrSDK = stellar_dotnet_sdk.xdr;
 using Asset = stellar_dotnet_sdk.Asset;
 using Claimant = stellar_dotnet_sdk.Claimant;
 using ClaimPredicate = stellar_dotnet_sdk.ClaimPredicate;
@@ -724,7 +724,7 @@ namespace stellar_dotnet_sdk_test
             var claimant = new Claimant
             {
                 Destination = destination,
-                Predicate = ClaimPredicate.Not(ClaimPredicate.BeforeRelativeTime(TimeSpan.FromHours(7.0))),
+                Predicate = ClaimPredicate.Not(ClaimPredicate.BeforeRelativeTime(new xdrSDK.Duration(new xdrSDK.Uint64((UInt64)TimeSpan.FromHours(7.0).TotalSeconds))))
             };
 
             var operation = new CreateClaimableBalanceOperation.Builder(asset, "123.45", new[] { claimant })
