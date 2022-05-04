@@ -10,7 +10,6 @@ namespace stellar_dotnet_sdk_test.operations
     public class LiquidityPoolDepositOperationTest
     {
         [TestMethod]
-        [Obsolete]
         public void TestBuilder1()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
@@ -46,7 +45,6 @@ namespace stellar_dotnet_sdk_test.operations
         }
 
         [TestMethod]
-        [Obsolete]
         public void TestBuilder2()
         {
             // GC5SIC4E3V56VOHJ3OZAX5SJDTWY52JYI2AFK6PUGSXFVRJQYQXXZBZF
