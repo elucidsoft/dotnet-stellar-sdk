@@ -128,75 +128,6 @@
   
   
   
-  <h3 id="constructors">Constructors
-  </h3>
-  
-  
-  <a id="stellar_dotnet_sdk_Transaction__ctor_" data-uid="stellar_dotnet_sdk.Transaction.#ctor*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_Transaction__ctor_stellar_dotnet_sdk_IAccountId_System_UInt32_System_Int64_stellar_dotnet_sdk_Operation___stellar_dotnet_sdk_Memo_stellar_dotnet_sdk_TimeBounds_" data-uid="stellar_dotnet_sdk.Transaction.#ctor(stellar_dotnet_sdk.IAccountId,System.UInt32,System.Int64,stellar_dotnet_sdk.Operation[],stellar_dotnet_sdk.Memo,stellar_dotnet_sdk.TimeBounds)"><a href="#collapsible-stellar_dotnet_sdk_Transaction__ctor_stellar_dotnet_sdk_IAccountId_System_UInt32_System_Int64_stellar_dotnet_sdk_Operation___stellar_dotnet_sdk_Memo_stellar_dotnet_sdk_TimeBounds_" class="expander" data-toggle="collapse">Transaction(IAccountId, UInt32, Int64, Operation[], Memo, TimeBounds)</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_Transaction__ctor_stellar_dotnet_sdk_IAccountId_System_UInt32_System_Int64_stellar_dotnet_sdk_Operation___stellar_dotnet_sdk_Memo_stellar_dotnet_sdk_TimeBounds_" class="collapse in">
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Transaction(IAccountId sourceAccount, uint fee, long sequenceNumber, Operation[] operations, Memo memo, TimeBounds timeBounds)</code></pre>
-  </div>
-
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-      <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.IAccountId.html">IAccountId</a></td>
-        <td><span class="parametername">sourceAccount</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.UInt32</span></td>
-        <td><span class="parametername">fee</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int64</span></td>
-        <td><span class="parametername">sequenceNumber</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.Operation.html">Operation</a>[]</td>
-        <td><span class="parametername">operations</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.Memo.html">Memo</a></td>
-        <td><span class="parametername">memo</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="stellar_dotnet_sdk.TimeBounds.html">TimeBounds</a></td>
-        <td><span class="parametername">timeBounds</span></td>
-        <td></td>
-      </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
   <h3 id="properties">Properties
   </h3>
   
@@ -295,6 +226,42 @@
     <tr>
       <td>
         <a class="xref" href="stellar_dotnet_sdk.Operation.html">Operation</a>[]
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_Preconditions_" data-uid="stellar_dotnet_sdk.Transaction.Preconditions*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_Preconditions" data-uid="stellar_dotnet_sdk.Transaction.Preconditions"><a href="#collapsible-stellar_dotnet_sdk_Transaction_Preconditions" class="expander" data-toggle="collapse">Preconditions</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_Preconditions" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TransactionPreconditions Preconditions { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.TransactionPreconditions.html">TransactionPreconditions</a>
         <p>
       </td>
     </tr>

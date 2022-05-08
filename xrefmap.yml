@@ -116,6 +116,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.Account.SequenceNumber
   nameWithType: Account.SequenceNumber
+- uid: stellar_dotnet_sdk.Account.SetSequenceNumber(System.Int64)
+  name: SetSequenceNumber(Int64)
+  href: api/stellar_dotnet_sdk.Account.html#stellar_dotnet_sdk_Account_SetSequenceNumber_System_Int64_
+  commentId: M:stellar_dotnet_sdk.Account.SetSequenceNumber(System.Int64)
+  fullName: stellar_dotnet_sdk.Account.SetSequenceNumber(System.Int64)
+  nameWithType: Account.SetSequenceNumber(Int64)
+- uid: stellar_dotnet_sdk.Account.SetSequenceNumber*
+  name: SetSequenceNumber
+  href: api/stellar_dotnet_sdk.Account.html#stellar_dotnet_sdk_Account_SetSequenceNumber_
+  commentId: Overload:stellar_dotnet_sdk.Account.SetSequenceNumber
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.Account.SetSequenceNumber
+  nameWithType: Account.SetSequenceNumber
 - uid: stellar_dotnet_sdk.AccountFlag
   name: AccountFlag
   href: api/stellar_dotnet_sdk.AccountFlag.html
@@ -1767,12 +1780,12 @@ references:
   commentId: M:stellar_dotnet_sdk.ClaimPredicate.BeforeAbsoluteTime(DateTimeOffset)
   fullName: stellar_dotnet_sdk.ClaimPredicate.BeforeAbsoluteTime(DateTimeOffset)
   nameWithType: ClaimPredicate.BeforeAbsoluteTime(DateTimeOffset)
-- uid: stellar_dotnet_sdk.ClaimPredicate.BeforeAbsoluteTime(System.Int64)
-  name: BeforeAbsoluteTime(Int64)
-  href: api/stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_BeforeAbsoluteTime_System_Int64_
-  commentId: M:stellar_dotnet_sdk.ClaimPredicate.BeforeAbsoluteTime(System.Int64)
-  fullName: stellar_dotnet_sdk.ClaimPredicate.BeforeAbsoluteTime(System.Int64)
-  nameWithType: ClaimPredicate.BeforeAbsoluteTime(Int64)
+- uid: stellar_dotnet_sdk.ClaimPredicate.BeforeAbsoluteTime(stellar_dotnet_sdk.xdr.TimePoint)
+  name: BeforeAbsoluteTime(TimePoint)
+  href: api/stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_BeforeAbsoluteTime_stellar_dotnet_sdk_xdr_TimePoint_
+  commentId: M:stellar_dotnet_sdk.ClaimPredicate.BeforeAbsoluteTime(stellar_dotnet_sdk.xdr.TimePoint)
+  fullName: stellar_dotnet_sdk.ClaimPredicate.BeforeAbsoluteTime(stellar_dotnet_sdk.xdr.TimePoint)
+  nameWithType: ClaimPredicate.BeforeAbsoluteTime(TimePoint)
 - uid: stellar_dotnet_sdk.ClaimPredicate.BeforeAbsoluteTime*
   name: BeforeAbsoluteTime
   href: api/stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_BeforeAbsoluteTime_
@@ -1780,18 +1793,12 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.ClaimPredicate.BeforeAbsoluteTime
   nameWithType: ClaimPredicate.BeforeAbsoluteTime
-- uid: stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime(System.Int64)
-  name: BeforeRelativeTime(Int64)
-  href: api/stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_System_Int64_
-  commentId: M:stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime(System.Int64)
-  fullName: stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime(System.Int64)
-  nameWithType: ClaimPredicate.BeforeRelativeTime(Int64)
-- uid: stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime(TimeSpan)
-  name: BeforeRelativeTime(TimeSpan)
-  href: api/stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_TimeSpan_
-  commentId: M:stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime(TimeSpan)
-  fullName: stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime(TimeSpan)
-  nameWithType: ClaimPredicate.BeforeRelativeTime(TimeSpan)
+- uid: stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime(stellar_dotnet_sdk.xdr.Duration)
+  name: BeforeRelativeTime(Duration)
+  href: api/stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_stellar_dotnet_sdk_xdr_Duration_
+  commentId: M:stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime(stellar_dotnet_sdk.xdr.Duration)
+  fullName: stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime(stellar_dotnet_sdk.xdr.Duration)
+  nameWithType: ClaimPredicate.BeforeRelativeTime(Duration)
 - uid: stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime*
   name: BeforeRelativeTime
   href: api/stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_
@@ -1934,12 +1941,12 @@ references:
   commentId: M:stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.#ctor(DateTimeOffset)
   fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.ClaimPredicateBeforeAbsoluteTime(DateTimeOffset)
   nameWithType: ClaimPredicateBeforeAbsoluteTime.ClaimPredicateBeforeAbsoluteTime(DateTimeOffset)
-- uid: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.#ctor(System.Int64)
-  name: ClaimPredicateBeforeAbsoluteTime(Int64)
-  href: api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime__ctor_System_Int64_
-  commentId: M:stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.#ctor(System.Int64)
-  fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.ClaimPredicateBeforeAbsoluteTime(System.Int64)
-  nameWithType: ClaimPredicateBeforeAbsoluteTime.ClaimPredicateBeforeAbsoluteTime(Int64)
+- uid: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.#ctor(stellar_dotnet_sdk.xdr.TimePoint)
+  name: ClaimPredicateBeforeAbsoluteTime(TimePoint)
+  href: api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime__ctor_stellar_dotnet_sdk_xdr_TimePoint_
+  commentId: M:stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.#ctor(stellar_dotnet_sdk.xdr.TimePoint)
+  fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.ClaimPredicateBeforeAbsoluteTime(stellar_dotnet_sdk.xdr.TimePoint)
+  nameWithType: ClaimPredicateBeforeAbsoluteTime.ClaimPredicateBeforeAbsoluteTime(TimePoint)
 - uid: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.#ctor*
   name: ClaimPredicateBeforeAbsoluteTime
   href: api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime__ctor_
@@ -1960,6 +1967,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.DateTime
   nameWithType: ClaimPredicateBeforeAbsoluteTime.DateTime
+- uid: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.TimePoint
+  name: TimePoint
+  href: api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_TimePoint
+  commentId: P:stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.TimePoint
+  fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.TimePoint
+  nameWithType: ClaimPredicateBeforeAbsoluteTime.TimePoint
+- uid: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.TimePoint*
+  name: TimePoint
+  href: api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_TimePoint_
+  commentId: Overload:stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.TimePoint
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.TimePoint
+  nameWithType: ClaimPredicateBeforeAbsoluteTime.TimePoint
 - uid: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.ToXdr
   name: ToXdr()
   href: api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_ToXdr
@@ -1973,31 +1993,18 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.ToXdr
   nameWithType: ClaimPredicateBeforeAbsoluteTime.ToXdr
-- uid: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
-  name: UnixTimeSeconds
-  href: api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_UnixTimeSeconds
-  commentId: P:stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
-  fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
-  nameWithType: ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
-- uid: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds*
-  name: UnixTimeSeconds
-  href: api/stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_UnixTimeSeconds_
-  commentId: Overload:stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
-  nameWithType: ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds
 - uid: stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime
   name: ClaimPredicateBeforeRelativeTime
   href: api/stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.html
   commentId: T:stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime
   fullName: stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime
   nameWithType: ClaimPredicateBeforeRelativeTime
-- uid: stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.#ctor(TimeSpan)
-  name: ClaimPredicateBeforeRelativeTime(TimeSpan)
-  href: api/stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeRelativeTime__ctor_TimeSpan_
-  commentId: M:stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.#ctor(TimeSpan)
-  fullName: stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.ClaimPredicateBeforeRelativeTime(TimeSpan)
-  nameWithType: ClaimPredicateBeforeRelativeTime.ClaimPredicateBeforeRelativeTime(TimeSpan)
+- uid: stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.#ctor(stellar_dotnet_sdk.xdr.Duration)
+  name: ClaimPredicateBeforeRelativeTime(Duration)
+  href: api/stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeRelativeTime__ctor_stellar_dotnet_sdk_xdr_Duration_
+  commentId: M:stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.#ctor(stellar_dotnet_sdk.xdr.Duration)
+  fullName: stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.ClaimPredicateBeforeRelativeTime(stellar_dotnet_sdk.xdr.Duration)
+  nameWithType: ClaimPredicateBeforeRelativeTime.ClaimPredicateBeforeRelativeTime(Duration)
 - uid: stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.#ctor*
   name: ClaimPredicateBeforeRelativeTime
   href: api/stellar_dotnet_sdk.ClaimPredicateBeforeRelativeTime.html#stellar_dotnet_sdk_ClaimPredicateBeforeRelativeTime__ctor_
@@ -3999,6 +4006,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.ITransactionBuilderAccount.SequenceNumber
   nameWithType: ITransactionBuilderAccount.SequenceNumber
+- uid: stellar_dotnet_sdk.ITransactionBuilderAccount.SetSequenceNumber(System.Int64)
+  name: SetSequenceNumber(Int64)
+  href: api/stellar_dotnet_sdk.ITransactionBuilderAccount.html#stellar_dotnet_sdk_ITransactionBuilderAccount_SetSequenceNumber_System_Int64_
+  commentId: M:stellar_dotnet_sdk.ITransactionBuilderAccount.SetSequenceNumber(System.Int64)
+  fullName: stellar_dotnet_sdk.ITransactionBuilderAccount.SetSequenceNumber(System.Int64)
+  nameWithType: ITransactionBuilderAccount.SetSequenceNumber(Int64)
+- uid: stellar_dotnet_sdk.ITransactionBuilderAccount.SetSequenceNumber*
+  name: SetSequenceNumber
+  href: api/stellar_dotnet_sdk.ITransactionBuilderAccount.html#stellar_dotnet_sdk_ITransactionBuilderAccount_SetSequenceNumber_
+  commentId: Overload:stellar_dotnet_sdk.ITransactionBuilderAccount.SetSequenceNumber
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.ITransactionBuilderAccount.SetSequenceNumber
+  nameWithType: ITransactionBuilderAccount.SetSequenceNumber
 - uid: stellar_dotnet_sdk.KeyPair
   name: KeyPair
   href: api/stellar_dotnet_sdk.KeyPair.html
@@ -4330,6 +4350,22 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.KeyPair.SigningKey
   nameWithType: KeyPair.SigningKey
+- uid: stellar_dotnet_sdk.KeyPair.SignPayloadDecorated(System.Byte[])
+  name: SignPayloadDecorated(Byte[])
+  href: api/stellar_dotnet_sdk.KeyPair.html#stellar_dotnet_sdk_KeyPair_SignPayloadDecorated_System_Byte___
+  commentId: M:stellar_dotnet_sdk.KeyPair.SignPayloadDecorated(System.Byte[])
+  name.vb: SignPayloadDecorated(Byte())
+  fullName: stellar_dotnet_sdk.KeyPair.SignPayloadDecorated(System.Byte[])
+  fullName.vb: stellar_dotnet_sdk.KeyPair.SignPayloadDecorated(System.Byte())
+  nameWithType: KeyPair.SignPayloadDecorated(Byte[])
+  nameWithType.vb: KeyPair.SignPayloadDecorated(Byte())
+- uid: stellar_dotnet_sdk.KeyPair.SignPayloadDecorated*
+  name: SignPayloadDecorated
+  href: api/stellar_dotnet_sdk.KeyPair.html#stellar_dotnet_sdk_KeyPair_SignPayloadDecorated_
+  commentId: Overload:stellar_dotnet_sdk.KeyPair.SignPayloadDecorated
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.KeyPair.SignPayloadDecorated
+  nameWithType: KeyPair.SignPayloadDecorated
 - uid: stellar_dotnet_sdk.KeyPair.Verify(System.Byte[],stellar_dotnet_sdk.xdr.Signature)
   name: Verify(Byte[], Signature)
   href: api/stellar_dotnet_sdk.KeyPair.html#stellar_dotnet_sdk_KeyPair_Verify_System_Byte___stellar_dotnet_sdk_xdr_Signature_
@@ -4381,6 +4417,77 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.KeyPair.XdrSignerKey
   nameWithType: KeyPair.XdrSignerKey
+- uid: stellar_dotnet_sdk.LedgerBounds
+  name: LedgerBounds
+  href: api/stellar_dotnet_sdk.LedgerBounds.html
+  commentId: T:stellar_dotnet_sdk.LedgerBounds
+  fullName: stellar_dotnet_sdk.LedgerBounds
+  nameWithType: LedgerBounds
+- uid: stellar_dotnet_sdk.LedgerBounds.#ctor(System.UInt32,System.UInt32)
+  name: LedgerBounds(UInt32, UInt32)
+  href: api/stellar_dotnet_sdk.LedgerBounds.html#stellar_dotnet_sdk_LedgerBounds__ctor_System_UInt32_System_UInt32_
+  commentId: M:stellar_dotnet_sdk.LedgerBounds.#ctor(System.UInt32,System.UInt32)
+  fullName: stellar_dotnet_sdk.LedgerBounds.LedgerBounds(System.UInt32, System.UInt32)
+  nameWithType: LedgerBounds.LedgerBounds(UInt32, UInt32)
+- uid: stellar_dotnet_sdk.LedgerBounds.#ctor*
+  name: LedgerBounds
+  href: api/stellar_dotnet_sdk.LedgerBounds.html#stellar_dotnet_sdk_LedgerBounds__ctor_
+  commentId: Overload:stellar_dotnet_sdk.LedgerBounds.#ctor
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.LedgerBounds.LedgerBounds
+  nameWithType: LedgerBounds.LedgerBounds
+- uid: stellar_dotnet_sdk.LedgerBounds.FromXdr(stellar_dotnet_sdk.xdr.LedgerBounds)
+  name: FromXdr(LedgerBounds)
+  href: api/stellar_dotnet_sdk.LedgerBounds.html#stellar_dotnet_sdk_LedgerBounds_FromXdr_stellar_dotnet_sdk_xdr_LedgerBounds_
+  commentId: M:stellar_dotnet_sdk.LedgerBounds.FromXdr(stellar_dotnet_sdk.xdr.LedgerBounds)
+  fullName: stellar_dotnet_sdk.LedgerBounds.FromXdr(stellar_dotnet_sdk.xdr.LedgerBounds)
+  nameWithType: LedgerBounds.FromXdr(LedgerBounds)
+- uid: stellar_dotnet_sdk.LedgerBounds.FromXdr*
+  name: FromXdr
+  href: api/stellar_dotnet_sdk.LedgerBounds.html#stellar_dotnet_sdk_LedgerBounds_FromXdr_
+  commentId: Overload:stellar_dotnet_sdk.LedgerBounds.FromXdr
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.LedgerBounds.FromXdr
+  nameWithType: LedgerBounds.FromXdr
+- uid: stellar_dotnet_sdk.LedgerBounds.MaxLedger
+  name: MaxLedger
+  href: api/stellar_dotnet_sdk.LedgerBounds.html#stellar_dotnet_sdk_LedgerBounds_MaxLedger
+  commentId: P:stellar_dotnet_sdk.LedgerBounds.MaxLedger
+  fullName: stellar_dotnet_sdk.LedgerBounds.MaxLedger
+  nameWithType: LedgerBounds.MaxLedger
+- uid: stellar_dotnet_sdk.LedgerBounds.MaxLedger*
+  name: MaxLedger
+  href: api/stellar_dotnet_sdk.LedgerBounds.html#stellar_dotnet_sdk_LedgerBounds_MaxLedger_
+  commentId: Overload:stellar_dotnet_sdk.LedgerBounds.MaxLedger
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.LedgerBounds.MaxLedger
+  nameWithType: LedgerBounds.MaxLedger
+- uid: stellar_dotnet_sdk.LedgerBounds.MinLedger
+  name: MinLedger
+  href: api/stellar_dotnet_sdk.LedgerBounds.html#stellar_dotnet_sdk_LedgerBounds_MinLedger
+  commentId: P:stellar_dotnet_sdk.LedgerBounds.MinLedger
+  fullName: stellar_dotnet_sdk.LedgerBounds.MinLedger
+  nameWithType: LedgerBounds.MinLedger
+- uid: stellar_dotnet_sdk.LedgerBounds.MinLedger*
+  name: MinLedger
+  href: api/stellar_dotnet_sdk.LedgerBounds.html#stellar_dotnet_sdk_LedgerBounds_MinLedger_
+  commentId: Overload:stellar_dotnet_sdk.LedgerBounds.MinLedger
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.LedgerBounds.MinLedger
+  nameWithType: LedgerBounds.MinLedger
+- uid: stellar_dotnet_sdk.LedgerBounds.ToXdr
+  name: ToXdr()
+  href: api/stellar_dotnet_sdk.LedgerBounds.html#stellar_dotnet_sdk_LedgerBounds_ToXdr
+  commentId: M:stellar_dotnet_sdk.LedgerBounds.ToXdr
+  fullName: stellar_dotnet_sdk.LedgerBounds.ToXdr()
+  nameWithType: LedgerBounds.ToXdr()
+- uid: stellar_dotnet_sdk.LedgerBounds.ToXdr*
+  name: ToXdr
+  href: api/stellar_dotnet_sdk.LedgerBounds.html#stellar_dotnet_sdk_LedgerBounds_ToXdr_
+  commentId: Overload:stellar_dotnet_sdk.LedgerBounds.ToXdr
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.LedgerBounds.ToXdr
+  nameWithType: LedgerBounds.ToXdr
 - uid: stellar_dotnet_sdk.LedgerKey
   name: LedgerKey
   href: api/stellar_dotnet_sdk.LedgerKey.html
@@ -9872,6 +9979,45 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.AccountResponse.SequenceNumber
   nameWithType: AccountResponse.SequenceNumber
+- uid: stellar_dotnet_sdk.responses.AccountResponse.SequenceUpdatedAtLedger
+  name: SequenceUpdatedAtLedger
+  href: api/stellar_dotnet_sdk.responses.AccountResponse.html#stellar_dotnet_sdk_responses_AccountResponse_SequenceUpdatedAtLedger
+  commentId: P:stellar_dotnet_sdk.responses.AccountResponse.SequenceUpdatedAtLedger
+  fullName: stellar_dotnet_sdk.responses.AccountResponse.SequenceUpdatedAtLedger
+  nameWithType: AccountResponse.SequenceUpdatedAtLedger
+- uid: stellar_dotnet_sdk.responses.AccountResponse.SequenceUpdatedAtLedger*
+  name: SequenceUpdatedAtLedger
+  href: api/stellar_dotnet_sdk.responses.AccountResponse.html#stellar_dotnet_sdk_responses_AccountResponse_SequenceUpdatedAtLedger_
+  commentId: Overload:stellar_dotnet_sdk.responses.AccountResponse.SequenceUpdatedAtLedger
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AccountResponse.SequenceUpdatedAtLedger
+  nameWithType: AccountResponse.SequenceUpdatedAtLedger
+- uid: stellar_dotnet_sdk.responses.AccountResponse.SequenceUpdatedAtTime
+  name: SequenceUpdatedAtTime
+  href: api/stellar_dotnet_sdk.responses.AccountResponse.html#stellar_dotnet_sdk_responses_AccountResponse_SequenceUpdatedAtTime
+  commentId: P:stellar_dotnet_sdk.responses.AccountResponse.SequenceUpdatedAtTime
+  fullName: stellar_dotnet_sdk.responses.AccountResponse.SequenceUpdatedAtTime
+  nameWithType: AccountResponse.SequenceUpdatedAtTime
+- uid: stellar_dotnet_sdk.responses.AccountResponse.SequenceUpdatedAtTime*
+  name: SequenceUpdatedAtTime
+  href: api/stellar_dotnet_sdk.responses.AccountResponse.html#stellar_dotnet_sdk_responses_AccountResponse_SequenceUpdatedAtTime_
+  commentId: Overload:stellar_dotnet_sdk.responses.AccountResponse.SequenceUpdatedAtTime
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AccountResponse.SequenceUpdatedAtTime
+  nameWithType: AccountResponse.SequenceUpdatedAtTime
+- uid: stellar_dotnet_sdk.responses.AccountResponse.SetSequenceNumber(System.Int64)
+  name: SetSequenceNumber(Int64)
+  href: api/stellar_dotnet_sdk.responses.AccountResponse.html#stellar_dotnet_sdk_responses_AccountResponse_SetSequenceNumber_System_Int64_
+  commentId: M:stellar_dotnet_sdk.responses.AccountResponse.SetSequenceNumber(System.Int64)
+  fullName: stellar_dotnet_sdk.responses.AccountResponse.SetSequenceNumber(System.Int64)
+  nameWithType: AccountResponse.SetSequenceNumber(Int64)
+- uid: stellar_dotnet_sdk.responses.AccountResponse.SetSequenceNumber*
+  name: SetSequenceNumber
+  href: api/stellar_dotnet_sdk.responses.AccountResponse.html#stellar_dotnet_sdk_responses_AccountResponse_SetSequenceNumber_
+  commentId: Overload:stellar_dotnet_sdk.responses.AccountResponse.SetSequenceNumber
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.AccountResponse.SetSequenceNumber
+  nameWithType: AccountResponse.SetSequenceNumber
 - uid: stellar_dotnet_sdk.responses.AccountResponse.Signers
   name: Signers
   href: api/stellar_dotnet_sdk.responses.AccountResponse.html#stellar_dotnet_sdk_responses_AccountResponse_Signers
@@ -25378,6 +25524,69 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.SetTrustlineFlagsOperation.Trustor
   nameWithType: SetTrustlineFlagsOperation.Trustor
+- uid: stellar_dotnet_sdk.SignedPayloadSigner
+  name: SignedPayloadSigner
+  href: api/stellar_dotnet_sdk.SignedPayloadSigner.html
+  commentId: T:stellar_dotnet_sdk.SignedPayloadSigner
+  fullName: stellar_dotnet_sdk.SignedPayloadSigner
+  nameWithType: SignedPayloadSigner
+- uid: stellar_dotnet_sdk.SignedPayloadSigner.#ctor(stellar_dotnet_sdk.xdr.AccountID,System.Byte[])
+  name: SignedPayloadSigner(AccountID, Byte[])
+  href: api/stellar_dotnet_sdk.SignedPayloadSigner.html#stellar_dotnet_sdk_SignedPayloadSigner__ctor_stellar_dotnet_sdk_xdr_AccountID_System_Byte___
+  commentId: M:stellar_dotnet_sdk.SignedPayloadSigner.#ctor(stellar_dotnet_sdk.xdr.AccountID,System.Byte[])
+  name.vb: SignedPayloadSigner(AccountID, Byte())
+  fullName: stellar_dotnet_sdk.SignedPayloadSigner.SignedPayloadSigner(stellar_dotnet_sdk.xdr.AccountID, System.Byte[])
+  fullName.vb: stellar_dotnet_sdk.SignedPayloadSigner.SignedPayloadSigner(stellar_dotnet_sdk.xdr.AccountID, System.Byte())
+  nameWithType: SignedPayloadSigner.SignedPayloadSigner(AccountID, Byte[])
+  nameWithType.vb: SignedPayloadSigner.SignedPayloadSigner(AccountID, Byte())
+- uid: stellar_dotnet_sdk.SignedPayloadSigner.#ctor(System.Byte[],System.Byte[])
+  name: SignedPayloadSigner(Byte[], Byte[])
+  href: api/stellar_dotnet_sdk.SignedPayloadSigner.html#stellar_dotnet_sdk_SignedPayloadSigner__ctor_System_Byte___System_Byte___
+  commentId: M:stellar_dotnet_sdk.SignedPayloadSigner.#ctor(System.Byte[],System.Byte[])
+  name.vb: SignedPayloadSigner(Byte(), Byte())
+  fullName: stellar_dotnet_sdk.SignedPayloadSigner.SignedPayloadSigner(System.Byte[], System.Byte[])
+  fullName.vb: stellar_dotnet_sdk.SignedPayloadSigner.SignedPayloadSigner(System.Byte(), System.Byte())
+  nameWithType: SignedPayloadSigner.SignedPayloadSigner(Byte[], Byte[])
+  nameWithType.vb: SignedPayloadSigner.SignedPayloadSigner(Byte(), Byte())
+- uid: stellar_dotnet_sdk.SignedPayloadSigner.#ctor*
+  name: SignedPayloadSigner
+  href: api/stellar_dotnet_sdk.SignedPayloadSigner.html#stellar_dotnet_sdk_SignedPayloadSigner__ctor_
+  commentId: Overload:stellar_dotnet_sdk.SignedPayloadSigner.#ctor
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.SignedPayloadSigner.SignedPayloadSigner
+  nameWithType: SignedPayloadSigner.SignedPayloadSigner
+- uid: stellar_dotnet_sdk.SignedPayloadSigner.Payload
+  name: Payload
+  href: api/stellar_dotnet_sdk.SignedPayloadSigner.html#stellar_dotnet_sdk_SignedPayloadSigner_Payload
+  commentId: P:stellar_dotnet_sdk.SignedPayloadSigner.Payload
+  fullName: stellar_dotnet_sdk.SignedPayloadSigner.Payload
+  nameWithType: SignedPayloadSigner.Payload
+- uid: stellar_dotnet_sdk.SignedPayloadSigner.Payload*
+  name: Payload
+  href: api/stellar_dotnet_sdk.SignedPayloadSigner.html#stellar_dotnet_sdk_SignedPayloadSigner_Payload_
+  commentId: Overload:stellar_dotnet_sdk.SignedPayloadSigner.Payload
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.SignedPayloadSigner.Payload
+  nameWithType: SignedPayloadSigner.Payload
+- uid: stellar_dotnet_sdk.SignedPayloadSigner.SIGNED_PAYLOAD_MAX_PAYLOAD_LENGTH
+  name: SIGNED_PAYLOAD_MAX_PAYLOAD_LENGTH
+  href: api/stellar_dotnet_sdk.SignedPayloadSigner.html#stellar_dotnet_sdk_SignedPayloadSigner_SIGNED_PAYLOAD_MAX_PAYLOAD_LENGTH
+  commentId: F:stellar_dotnet_sdk.SignedPayloadSigner.SIGNED_PAYLOAD_MAX_PAYLOAD_LENGTH
+  fullName: stellar_dotnet_sdk.SignedPayloadSigner.SIGNED_PAYLOAD_MAX_PAYLOAD_LENGTH
+  nameWithType: SignedPayloadSigner.SIGNED_PAYLOAD_MAX_PAYLOAD_LENGTH
+- uid: stellar_dotnet_sdk.SignedPayloadSigner.SignerAccountID
+  name: SignerAccountID
+  href: api/stellar_dotnet_sdk.SignedPayloadSigner.html#stellar_dotnet_sdk_SignedPayloadSigner_SignerAccountID
+  commentId: P:stellar_dotnet_sdk.SignedPayloadSigner.SignerAccountID
+  fullName: stellar_dotnet_sdk.SignedPayloadSigner.SignerAccountID
+  nameWithType: SignedPayloadSigner.SignerAccountID
+- uid: stellar_dotnet_sdk.SignedPayloadSigner.SignerAccountID*
+  name: SignerAccountID
+  href: api/stellar_dotnet_sdk.SignedPayloadSigner.html#stellar_dotnet_sdk_SignedPayloadSigner_SignerAccountID_
+  commentId: Overload:stellar_dotnet_sdk.SignedPayloadSigner.SignerAccountID
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.SignedPayloadSigner.SignerAccountID
+  nameWithType: SignedPayloadSigner.SignerAccountID
 - uid: stellar_dotnet_sdk.Signer
   name: Signer
   href: api/stellar_dotnet_sdk.Signer.html
@@ -25441,6 +25650,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.Signer.Sha256Hash
   nameWithType: Signer.Sha256Hash
+- uid: stellar_dotnet_sdk.Signer.SignedPayload(stellar_dotnet_sdk.SignedPayloadSigner)
+  name: SignedPayload(SignedPayloadSigner)
+  href: api/stellar_dotnet_sdk.Signer.html#stellar_dotnet_sdk_Signer_SignedPayload_stellar_dotnet_sdk_SignedPayloadSigner_
+  commentId: M:stellar_dotnet_sdk.Signer.SignedPayload(stellar_dotnet_sdk.SignedPayloadSigner)
+  fullName: stellar_dotnet_sdk.Signer.SignedPayload(stellar_dotnet_sdk.SignedPayloadSigner)
+  nameWithType: Signer.SignedPayload(SignedPayloadSigner)
+- uid: stellar_dotnet_sdk.Signer.SignedPayload*
+  name: SignedPayload
+  href: api/stellar_dotnet_sdk.Signer.html#stellar_dotnet_sdk_Signer_SignedPayload_
+  commentId: Overload:stellar_dotnet_sdk.Signer.SignedPayload
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.Signer.SignedPayload
+  nameWithType: Signer.SignedPayload
 - uid: stellar_dotnet_sdk.SSEEventSource
   name: SSEEventSource
   href: api/stellar_dotnet_sdk.SSEEventSource.html
@@ -25633,6 +25855,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.StrKey.DecodeCheck
   nameWithType: StrKey.DecodeCheck
+- uid: stellar_dotnet_sdk.StrKey.DecodeSignedPayload(System.String)
+  name: DecodeSignedPayload(String)
+  href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_DecodeSignedPayload_System_String_
+  commentId: M:stellar_dotnet_sdk.StrKey.DecodeSignedPayload(System.String)
+  fullName: stellar_dotnet_sdk.StrKey.DecodeSignedPayload(System.String)
+  nameWithType: StrKey.DecodeSignedPayload(String)
+- uid: stellar_dotnet_sdk.StrKey.DecodeSignedPayload*
+  name: DecodeSignedPayload
+  href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_DecodeSignedPayload_
+  commentId: Overload:stellar_dotnet_sdk.StrKey.DecodeSignedPayload
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.StrKey.DecodeSignedPayload
+  nameWithType: StrKey.DecodeSignedPayload
 - uid: stellar_dotnet_sdk.StrKey.DecodeStellarAccountId(System.String)
   name: DecodeStellarAccountId(String)
   href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_DecodeStellarAccountId_System_String_
@@ -25701,6 +25936,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.StrKey.EncodeCheck
   nameWithType: StrKey.EncodeCheck
+- uid: stellar_dotnet_sdk.StrKey.EncodeSignedPayload(stellar_dotnet_sdk.SignedPayloadSigner)
+  name: EncodeSignedPayload(SignedPayloadSigner)
+  href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_EncodeSignedPayload_stellar_dotnet_sdk_SignedPayloadSigner_
+  commentId: M:stellar_dotnet_sdk.StrKey.EncodeSignedPayload(stellar_dotnet_sdk.SignedPayloadSigner)
+  fullName: stellar_dotnet_sdk.StrKey.EncodeSignedPayload(stellar_dotnet_sdk.SignedPayloadSigner)
+  nameWithType: StrKey.EncodeSignedPayload(SignedPayloadSigner)
+- uid: stellar_dotnet_sdk.StrKey.EncodeSignedPayload*
+  name: EncodeSignedPayload
+  href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_EncodeSignedPayload_
+  commentId: Overload:stellar_dotnet_sdk.StrKey.EncodeSignedPayload
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.StrKey.EncodeSignedPayload
+  nameWithType: StrKey.EncodeSignedPayload
 - uid: stellar_dotnet_sdk.StrKey.EncodeStellarAccountId(System.Byte[])
   name: EncodeStellarAccountId(Byte[])
   href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_EncodeStellarAccountId_System_Byte___
@@ -25837,6 +26085,12 @@ references:
   commentId: F:stellar_dotnet_sdk.StrKey.VersionByte.SHA256_HASH
   fullName: stellar_dotnet_sdk.StrKey.VersionByte.SHA256_HASH
   nameWithType: StrKey.VersionByte.SHA256_HASH
+- uid: stellar_dotnet_sdk.StrKey.VersionByte.SIGNED_PAYLOAD
+  name: SIGNED_PAYLOAD
+  href: api/stellar_dotnet_sdk.StrKey.VersionByte.html#stellar_dotnet_sdk_StrKey_VersionByte_SIGNED_PAYLOAD
+  commentId: F:stellar_dotnet_sdk.StrKey.VersionByte.SIGNED_PAYLOAD
+  fullName: stellar_dotnet_sdk.StrKey.VersionByte.SIGNED_PAYLOAD
+  nameWithType: StrKey.VersionByte.SIGNED_PAYLOAD
 - uid: stellar_dotnet_sdk.SubmitTransactionOptions
   name: SubmitTransactionOptions
   href: api/stellar_dotnet_sdk.SubmitTransactionOptions.html
@@ -26012,41 +26266,6 @@ references:
   commentId: T:stellar_dotnet_sdk.Transaction
   fullName: stellar_dotnet_sdk.Transaction
   nameWithType: Transaction
-- uid: stellar_dotnet_sdk.Transaction.#ctor(stellar_dotnet_sdk.IAccountId,System.UInt32,System.Int64,stellar_dotnet_sdk.Operation[],stellar_dotnet_sdk.Memo,stellar_dotnet_sdk.TimeBounds)
-  name: Transaction(IAccountId, UInt32, Int64, Operation[], Memo, TimeBounds)
-  href: api/stellar_dotnet_sdk.Transaction.html#stellar_dotnet_sdk_Transaction__ctor_stellar_dotnet_sdk_IAccountId_System_UInt32_System_Int64_stellar_dotnet_sdk_Operation___stellar_dotnet_sdk_Memo_stellar_dotnet_sdk_TimeBounds_
-  commentId: M:stellar_dotnet_sdk.Transaction.#ctor(stellar_dotnet_sdk.IAccountId,System.UInt32,System.Int64,stellar_dotnet_sdk.Operation[],stellar_dotnet_sdk.Memo,stellar_dotnet_sdk.TimeBounds)
-  name.vb: Transaction(IAccountId, UInt32, Int64, Operation(), Memo, TimeBounds)
-  fullName: stellar_dotnet_sdk.Transaction.Transaction(stellar_dotnet_sdk.IAccountId, System.UInt32, System.Int64, stellar_dotnet_sdk.Operation[], stellar_dotnet_sdk.Memo, stellar_dotnet_sdk.TimeBounds)
-  fullName.vb: stellar_dotnet_sdk.Transaction.Transaction(stellar_dotnet_sdk.IAccountId, System.UInt32, System.Int64, stellar_dotnet_sdk.Operation(), stellar_dotnet_sdk.Memo, stellar_dotnet_sdk.TimeBounds)
-  nameWithType: Transaction.Transaction(IAccountId, UInt32, Int64, Operation[], Memo, TimeBounds)
-  nameWithType.vb: Transaction.Transaction(IAccountId, UInt32, Int64, Operation(), Memo, TimeBounds)
-- uid: stellar_dotnet_sdk.Transaction.#ctor*
-  name: Transaction
-  href: api/stellar_dotnet_sdk.Transaction.html#stellar_dotnet_sdk_Transaction__ctor_
-  commentId: Overload:stellar_dotnet_sdk.Transaction.#ctor
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.Transaction.Transaction
-  nameWithType: Transaction.Transaction
-- uid: stellar_dotnet_sdk.Transaction.Builder
-  name: Transaction.Builder
-  href: api/stellar_dotnet_sdk.Transaction.Builder.html
-  commentId: T:stellar_dotnet_sdk.Transaction.Builder
-  fullName: stellar_dotnet_sdk.Transaction.Builder
-  nameWithType: Transaction.Builder
-- uid: stellar_dotnet_sdk.Transaction.Builder.#ctor(stellar_dotnet_sdk.ITransactionBuilderAccount)
-  name: Builder(ITransactionBuilderAccount)
-  href: api/stellar_dotnet_sdk.Transaction.Builder.html#stellar_dotnet_sdk_Transaction_Builder__ctor_stellar_dotnet_sdk_ITransactionBuilderAccount_
-  commentId: M:stellar_dotnet_sdk.Transaction.Builder.#ctor(stellar_dotnet_sdk.ITransactionBuilderAccount)
-  fullName: stellar_dotnet_sdk.Transaction.Builder.Builder(stellar_dotnet_sdk.ITransactionBuilderAccount)
-  nameWithType: Transaction.Builder.Builder(ITransactionBuilderAccount)
-- uid: stellar_dotnet_sdk.Transaction.Builder.#ctor*
-  name: Builder
-  href: api/stellar_dotnet_sdk.Transaction.Builder.html#stellar_dotnet_sdk_Transaction_Builder__ctor_
-  commentId: Overload:stellar_dotnet_sdk.Transaction.Builder.#ctor
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.Transaction.Builder.Builder
-  nameWithType: Transaction.Builder.Builder
 - uid: stellar_dotnet_sdk.Transaction.Fee
   name: Fee
   href: api/stellar_dotnet_sdk.Transaction.html#stellar_dotnet_sdk_Transaction_Fee
@@ -26131,6 +26350,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.Transaction.Operations
   nameWithType: Transaction.Operations
+- uid: stellar_dotnet_sdk.Transaction.Preconditions
+  name: Preconditions
+  href: api/stellar_dotnet_sdk.Transaction.html#stellar_dotnet_sdk_Transaction_Preconditions
+  commentId: P:stellar_dotnet_sdk.Transaction.Preconditions
+  fullName: stellar_dotnet_sdk.Transaction.Preconditions
+  nameWithType: Transaction.Preconditions
+- uid: stellar_dotnet_sdk.Transaction.Preconditions*
+  name: Preconditions
+  href: api/stellar_dotnet_sdk.Transaction.html#stellar_dotnet_sdk_Transaction_Preconditions_
+  commentId: Overload:stellar_dotnet_sdk.Transaction.Preconditions
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.Transaction.Preconditions
+  nameWithType: Transaction.Preconditions
 - uid: stellar_dotnet_sdk.Transaction.SequenceNumber
   name: SequenceNumber
   href: api/stellar_dotnet_sdk.Transaction.html#stellar_dotnet_sdk_Transaction_SequenceNumber
@@ -26467,6 +26699,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.TransactionBuilder.AddOperation
   nameWithType: TransactionBuilder.AddOperation
+- uid: stellar_dotnet_sdk.TransactionBuilder.AddPreconditions(stellar_dotnet_sdk.TransactionPreconditions)
+  name: AddPreconditions(TransactionPreconditions)
+  href: api/stellar_dotnet_sdk.TransactionBuilder.html#stellar_dotnet_sdk_TransactionBuilder_AddPreconditions_stellar_dotnet_sdk_TransactionPreconditions_
+  commentId: M:stellar_dotnet_sdk.TransactionBuilder.AddPreconditions(stellar_dotnet_sdk.TransactionPreconditions)
+  fullName: stellar_dotnet_sdk.TransactionBuilder.AddPreconditions(stellar_dotnet_sdk.TransactionPreconditions)
+  nameWithType: TransactionBuilder.AddPreconditions(TransactionPreconditions)
+- uid: stellar_dotnet_sdk.TransactionBuilder.AddPreconditions*
+  name: AddPreconditions
+  href: api/stellar_dotnet_sdk.TransactionBuilder.html#stellar_dotnet_sdk_TransactionBuilder_AddPreconditions_
+  commentId: Overload:stellar_dotnet_sdk.TransactionBuilder.AddPreconditions
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.TransactionBuilder.AddPreconditions
+  nameWithType: TransactionBuilder.AddPreconditions
 - uid: stellar_dotnet_sdk.TransactionBuilder.AddTimeBounds(stellar_dotnet_sdk.TimeBounds)
   name: AddTimeBounds(TimeBounds)
   href: api/stellar_dotnet_sdk.TransactionBuilder.html#stellar_dotnet_sdk_TransactionBuilder_AddTimeBounds_stellar_dotnet_sdk_TimeBounds_
@@ -26551,6 +26796,154 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.TransactionBuilder.SetFee
   nameWithType: TransactionBuilder.SetFee
+- uid: stellar_dotnet_sdk.TransactionPreconditions
+  name: TransactionPreconditions
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html
+  commentId: T:stellar_dotnet_sdk.TransactionPreconditions
+  fullName: stellar_dotnet_sdk.TransactionPreconditions
+  nameWithType: TransactionPreconditions
+- uid: stellar_dotnet_sdk.TransactionPreconditions.ExtraSigners
+  name: ExtraSigners
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_ExtraSigners
+  commentId: P:stellar_dotnet_sdk.TransactionPreconditions.ExtraSigners
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.ExtraSigners
+  nameWithType: TransactionPreconditions.ExtraSigners
+- uid: stellar_dotnet_sdk.TransactionPreconditions.ExtraSigners*
+  name: ExtraSigners
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_ExtraSigners_
+  commentId: Overload:stellar_dotnet_sdk.TransactionPreconditions.ExtraSigners
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.ExtraSigners
+  nameWithType: TransactionPreconditions.ExtraSigners
+- uid: stellar_dotnet_sdk.TransactionPreconditions.FromXDR(stellar_dotnet_sdk.xdr.Preconditions)
+  name: FromXDR(Preconditions)
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_FromXDR_stellar_dotnet_sdk_xdr_Preconditions_
+  commentId: M:stellar_dotnet_sdk.TransactionPreconditions.FromXDR(stellar_dotnet_sdk.xdr.Preconditions)
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.FromXDR(stellar_dotnet_sdk.xdr.Preconditions)
+  nameWithType: TransactionPreconditions.FromXDR(Preconditions)
+- uid: stellar_dotnet_sdk.TransactionPreconditions.FromXDR*
+  name: FromXDR
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_FromXDR_
+  commentId: Overload:stellar_dotnet_sdk.TransactionPreconditions.FromXDR
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.FromXDR
+  nameWithType: TransactionPreconditions.FromXDR
+- uid: stellar_dotnet_sdk.TransactionPreconditions.HasV2
+  name: HasV2()
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_HasV2
+  commentId: M:stellar_dotnet_sdk.TransactionPreconditions.HasV2
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.HasV2()
+  nameWithType: TransactionPreconditions.HasV2()
+- uid: stellar_dotnet_sdk.TransactionPreconditions.HasV2*
+  name: HasV2
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_HasV2_
+  commentId: Overload:stellar_dotnet_sdk.TransactionPreconditions.HasV2
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.HasV2
+  nameWithType: TransactionPreconditions.HasV2
+- uid: stellar_dotnet_sdk.TransactionPreconditions.IsValid
+  name: IsValid()
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_IsValid
+  commentId: M:stellar_dotnet_sdk.TransactionPreconditions.IsValid
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.IsValid()
+  nameWithType: TransactionPreconditions.IsValid()
+- uid: stellar_dotnet_sdk.TransactionPreconditions.IsValid*
+  name: IsValid
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_IsValid_
+  commentId: Overload:stellar_dotnet_sdk.TransactionPreconditions.IsValid
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.IsValid
+  nameWithType: TransactionPreconditions.IsValid
+- uid: stellar_dotnet_sdk.TransactionPreconditions.LedgerBounds
+  name: LedgerBounds
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_LedgerBounds
+  commentId: P:stellar_dotnet_sdk.TransactionPreconditions.LedgerBounds
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.LedgerBounds
+  nameWithType: TransactionPreconditions.LedgerBounds
+- uid: stellar_dotnet_sdk.TransactionPreconditions.LedgerBounds*
+  name: LedgerBounds
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_LedgerBounds_
+  commentId: Overload:stellar_dotnet_sdk.TransactionPreconditions.LedgerBounds
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.LedgerBounds
+  nameWithType: TransactionPreconditions.LedgerBounds
+- uid: stellar_dotnet_sdk.TransactionPreconditions.MAX_EXTRA_SIGNERS_COUNT
+  name: MAX_EXTRA_SIGNERS_COUNT
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_MAX_EXTRA_SIGNERS_COUNT
+  commentId: F:stellar_dotnet_sdk.TransactionPreconditions.MAX_EXTRA_SIGNERS_COUNT
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.MAX_EXTRA_SIGNERS_COUNT
+  nameWithType: TransactionPreconditions.MAX_EXTRA_SIGNERS_COUNT
+- uid: stellar_dotnet_sdk.TransactionPreconditions.MinSeqAge
+  name: MinSeqAge
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_MinSeqAge
+  commentId: P:stellar_dotnet_sdk.TransactionPreconditions.MinSeqAge
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.MinSeqAge
+  nameWithType: TransactionPreconditions.MinSeqAge
+- uid: stellar_dotnet_sdk.TransactionPreconditions.MinSeqAge*
+  name: MinSeqAge
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_MinSeqAge_
+  commentId: Overload:stellar_dotnet_sdk.TransactionPreconditions.MinSeqAge
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.MinSeqAge
+  nameWithType: TransactionPreconditions.MinSeqAge
+- uid: stellar_dotnet_sdk.TransactionPreconditions.MinSeqLedgerGap
+  name: MinSeqLedgerGap
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_MinSeqLedgerGap
+  commentId: P:stellar_dotnet_sdk.TransactionPreconditions.MinSeqLedgerGap
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.MinSeqLedgerGap
+  nameWithType: TransactionPreconditions.MinSeqLedgerGap
+- uid: stellar_dotnet_sdk.TransactionPreconditions.MinSeqLedgerGap*
+  name: MinSeqLedgerGap
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_MinSeqLedgerGap_
+  commentId: Overload:stellar_dotnet_sdk.TransactionPreconditions.MinSeqLedgerGap
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.MinSeqLedgerGap
+  nameWithType: TransactionPreconditions.MinSeqLedgerGap
+- uid: stellar_dotnet_sdk.TransactionPreconditions.MinSeqNumber
+  name: MinSeqNumber
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_MinSeqNumber
+  commentId: P:stellar_dotnet_sdk.TransactionPreconditions.MinSeqNumber
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.MinSeqNumber
+  nameWithType: TransactionPreconditions.MinSeqNumber
+- uid: stellar_dotnet_sdk.TransactionPreconditions.MinSeqNumber*
+  name: MinSeqNumber
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_MinSeqNumber_
+  commentId: Overload:stellar_dotnet_sdk.TransactionPreconditions.MinSeqNumber
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.MinSeqNumber
+  nameWithType: TransactionPreconditions.MinSeqNumber
+- uid: stellar_dotnet_sdk.TransactionPreconditions.TimeBounds
+  name: TimeBounds
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_TimeBounds
+  commentId: P:stellar_dotnet_sdk.TransactionPreconditions.TimeBounds
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.TimeBounds
+  nameWithType: TransactionPreconditions.TimeBounds
+- uid: stellar_dotnet_sdk.TransactionPreconditions.TimeBounds*
+  name: TimeBounds
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_TimeBounds_
+  commentId: Overload:stellar_dotnet_sdk.TransactionPreconditions.TimeBounds
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.TimeBounds
+  nameWithType: TransactionPreconditions.TimeBounds
+- uid: stellar_dotnet_sdk.TransactionPreconditions.TIMEOUT_INFINITE
+  name: TIMEOUT_INFINITE
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_TIMEOUT_INFINITE
+  commentId: F:stellar_dotnet_sdk.TransactionPreconditions.TIMEOUT_INFINITE
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.TIMEOUT_INFINITE
+  nameWithType: TransactionPreconditions.TIMEOUT_INFINITE
+- uid: stellar_dotnet_sdk.TransactionPreconditions.ToXDR
+  name: ToXDR()
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_ToXDR
+  commentId: M:stellar_dotnet_sdk.TransactionPreconditions.ToXDR
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.ToXDR()
+  nameWithType: TransactionPreconditions.ToXDR()
+- uid: stellar_dotnet_sdk.TransactionPreconditions.ToXDR*
+  name: ToXDR
+  href: api/stellar_dotnet_sdk.TransactionPreconditions.html#stellar_dotnet_sdk_TransactionPreconditions_ToXDR_
+  commentId: Overload:stellar_dotnet_sdk.TransactionPreconditions.ToXDR
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.TransactionPreconditions.ToXDR
+  nameWithType: TransactionPreconditions.ToXDR
 - uid: stellar_dotnet_sdk.TrustlineAsset
   name: TrustlineAsset
   href: api/stellar_dotnet_sdk.TrustlineAsset.html

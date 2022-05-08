@@ -213,15 +213,15 @@
   
   <a id="stellar_dotnet_sdk_ClaimPredicate_BeforeAbsoluteTime_" data-uid="stellar_dotnet_sdk.ClaimPredicate.BeforeAbsoluteTime*"></a>
   
-  <h4 id="stellar_dotnet_sdk_ClaimPredicate_BeforeAbsoluteTime_System_Int64_" data-uid="stellar_dotnet_sdk.ClaimPredicate.BeforeAbsoluteTime(System.Int64)"><a href="#collapsible-stellar_dotnet_sdk_ClaimPredicate_BeforeAbsoluteTime_System_Int64_" class="expander" data-toggle="collapse">BeforeAbsoluteTime(Int64)</a></h4>
+  <h4 id="stellar_dotnet_sdk_ClaimPredicate_BeforeAbsoluteTime_stellar_dotnet_sdk_xdr_TimePoint_" data-uid="stellar_dotnet_sdk.ClaimPredicate.BeforeAbsoluteTime(stellar_dotnet_sdk.xdr.TimePoint)"><a href="#collapsible-stellar_dotnet_sdk_ClaimPredicate_BeforeAbsoluteTime_stellar_dotnet_sdk_xdr_TimePoint_" class="expander" data-toggle="collapse">BeforeAbsoluteTime(TimePoint)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_ClaimPredicate_BeforeAbsoluteTime_System_Int64_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_ClaimPredicate_BeforeAbsoluteTime_stellar_dotnet_sdk_xdr_TimePoint_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static ClaimPredicate BeforeAbsoluteTime(long unixTimestamp)</code></pre>
+    <pre><code class="lang-csharp hljs">public static ClaimPredicate BeforeAbsoluteTime(TimePoint timePoint)</code></pre>
   </div>
 
   <h5 class="parameters">Parameters</h5>
@@ -234,8 +234,8 @@
     </tr>
   </thead>
       <tr>
-        <td><span class="xref">System.Int64</span></td>
-        <td><span class="parametername">unixTimestamp</span></td>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.TimePoint</span></td>
+        <td><span class="parametername">timePoint</span></td>
         <td></td>
       </tr>
   </table>
@@ -264,15 +264,15 @@
   
   <a id="stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_" data-uid="stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime*"></a>
   
-  <h4 id="stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_System_Int64_" data-uid="stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime(System.Int64)"><a href="#collapsible-stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_System_Int64_" class="expander" data-toggle="collapse">BeforeRelativeTime(Int64)</a></h4>
+  <h4 id="stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_stellar_dotnet_sdk_xdr_Duration_" data-uid="stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime(stellar_dotnet_sdk.xdr.Duration)"><a href="#collapsible-stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_stellar_dotnet_sdk_xdr_Duration_" class="expander" data-toggle="collapse">BeforeRelativeTime(Duration)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_System_Int64_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_stellar_dotnet_sdk_xdr_Duration_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static ClaimPredicate BeforeRelativeTime(long seconds)</code></pre>
+    <pre><code class="lang-csharp hljs">public static ClaimPredicate BeforeRelativeTime(Duration duration)</code></pre>
   </div>
 
   <h5 class="parameters">Parameters</h5>
@@ -285,58 +285,7 @@
     </tr>
   </thead>
       <tr>
-        <td><span class="xref">System.Int64</span></td>
-        <td><span class="parametername">seconds</span></td>
-        <td></td>
-      </tr>
-  </table>
-  
-  <h5 class="returns">Returns</h5>
-  <table>
-    <tr>
-      <td>
-        <a class="xref" href="stellar_dotnet_sdk.ClaimPredicate.html">ClaimPredicate</a>
-        <p>
-      </td>
-    </tr>
-  </table>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
-  
-  
-  <a id="stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_" data-uid="stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime*"></a>
-  
-  <h4 id="stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_TimeSpan_" data-uid="stellar_dotnet_sdk.ClaimPredicate.BeforeRelativeTime(TimeSpan)"><a href="#collapsible-stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_TimeSpan_" class="expander" data-toggle="collapse">BeforeRelativeTime(TimeSpan)</a></h4>
-  
-  <div id="collapsible-stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_TimeSpan_" class="collapse in">
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static ClaimPredicate BeforeRelativeTime(TimeSpan duration)</code></pre>
-  </div>
-
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-      <tr>
-        <td><span class="xref">TimeSpan</span></td>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.Duration</span></td>
         <td><span class="parametername">duration</span></td>
         <td></td>
       </tr>

@@ -97,16 +97,13 @@
       <a class="xref" href="stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_Unconditional">ClaimPredicate.Unconditional()</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_BeforeAbsoluteTime_System_Int64_">ClaimPredicate.BeforeAbsoluteTime(Int64)</a>
+      <a class="xref" href="stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_BeforeAbsoluteTime_stellar_dotnet_sdk_xdr_TimePoint_">ClaimPredicate.BeforeAbsoluteTime(TimePoint)</a>
     </div>
     <div>
       <a class="xref" href="stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_BeforeAbsoluteTime_DateTimeOffset_">ClaimPredicate.BeforeAbsoluteTime(DateTimeOffset)</a>
     </div>
     <div>
-      <a class="xref" href="stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_System_Int64_">ClaimPredicate.BeforeRelativeTime(Int64)</a>
-    </div>
-    <div>
-      <a class="xref" href="stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_TimeSpan_">ClaimPredicate.BeforeRelativeTime(TimeSpan)</a>
+      <a class="xref" href="stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_BeforeRelativeTime_stellar_dotnet_sdk_xdr_Duration_">ClaimPredicate.BeforeRelativeTime(Duration)</a>
     </div>
     <div>
       <a class="xref" href="stellar_dotnet_sdk.ClaimPredicate.html#stellar_dotnet_sdk_ClaimPredicate_FromXdr_stellar_dotnet_sdk_xdr_ClaimPredicate_">ClaimPredicate.FromXdr(ClaimPredicate)</a>
@@ -173,15 +170,15 @@
   
   <a id="stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime__ctor_" data-uid="stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.#ctor*"></a>
   
-  <h4 id="stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime__ctor_System_Int64_" data-uid="stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.#ctor(System.Int64)"><a href="#collapsible-stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime__ctor_System_Int64_" class="expander" data-toggle="collapse">ClaimPredicateBeforeAbsoluteTime(Int64)</a></h4>
+  <h4 id="stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime__ctor_stellar_dotnet_sdk_xdr_TimePoint_" data-uid="stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.#ctor(stellar_dotnet_sdk.xdr.TimePoint)"><a href="#collapsible-stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime__ctor_stellar_dotnet_sdk_xdr_TimePoint_" class="expander" data-toggle="collapse">ClaimPredicateBeforeAbsoluteTime(TimePoint)</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime__ctor_System_Int64_" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime__ctor_stellar_dotnet_sdk_xdr_TimePoint_" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ClaimPredicateBeforeAbsoluteTime(long unixTimeSeconds)</code></pre>
+    <pre><code class="lang-csharp hljs">public ClaimPredicateBeforeAbsoluteTime(TimePoint timePoint)</code></pre>
   </div>
 
   <h5 class="parameters">Parameters</h5>
@@ -194,8 +191,8 @@
     </tr>
   </thead>
       <tr>
-        <td><span class="xref">System.Int64</span></td>
-        <td><span class="parametername">unixTimeSeconds</span></td>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.TimePoint</span></td>
+        <td><span class="parametername">timePoint</span></td>
         <td></td>
       </tr>
   </table>
@@ -251,17 +248,17 @@
   </div>
   
   
-  <a id="stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_UnixTimeSeconds_" data-uid="stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds*"></a>
+  <a id="stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_TimePoint_" data-uid="stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.TimePoint*"></a>
   
-  <h4 id="stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_UnixTimeSeconds" data-uid="stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.UnixTimeSeconds"><a href="#collapsible-stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_UnixTimeSeconds" class="expander" data-toggle="collapse">UnixTimeSeconds</a></h4>
+  <h4 id="stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_TimePoint" data-uid="stellar_dotnet_sdk.ClaimPredicateBeforeAbsoluteTime.TimePoint"><a href="#collapsible-stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_TimePoint" class="expander" data-toggle="collapse">TimePoint</a></h4>
   
-  <div id="collapsible-stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_UnixTimeSeconds" class="collapse in">
+  <div id="collapsible-stellar_dotnet_sdk_ClaimPredicateBeforeAbsoluteTime_TimePoint" class="collapse in">
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long UnixTimeSeconds { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public TimePoint TimePoint { get; }</code></pre>
   </div>
 
   
@@ -272,7 +269,7 @@
   <table>
     <tr>
       <td>
-        <span class="xref">System.Int64</span>
+        <span class="xref">stellar_dotnet_sdk.xdr.TimePoint</span>
         <p>
       </td>
     </tr>
