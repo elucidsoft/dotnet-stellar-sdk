@@ -17,6 +17,14 @@ namespace stellar_dotnet_sdk.xdr
     //  case SIGNER_KEY_TYPE_HASH_X:
     //      /* Hash of random 256 bit preimage X */
     //      uint256 hashX;
+    //  case SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD:
+    //      struct
+    //      {
+    //          /* Public key that must sign the payload. */
+    //          uint256 ed25519;
+    //          /* Payload to be raw signed by ed25519. */
+    //          opaque payload<64>;
+    //      } ed25519SignedPayload;
     //  };
 
     //  ===========================================================================
@@ -29,6 +37,7 @@ namespace stellar_dotnet_sdk.xdr
         public Uint256 Ed25519 { get; set; }
         public Uint256 PreAuthTx { get; set; }
         public Uint256 HashX { get; set; }
+        public SignerKeyEd25519SignedPayload Ed25519SignedPayload { get; set; }
         public static void Encode(XdrDataOutputStream stream, SignerKey encodedSignerKey)
         {
             stream.WriteInt((int)encodedSignerKey.Discriminant.InnerValue);
@@ -42,6 +51,9 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_HASH_X:
                     Uint256.Encode(stream, encodedSignerKey.HashX);
+                    break;
+                case SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD:
+                    SignerKeyEd25519SignedPayload.Encode(stream, encodedSignerKey.Ed25519SignedPayload);
                     break;
             }
         }
@@ -61,8 +73,36 @@ namespace stellar_dotnet_sdk.xdr
                 case SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_HASH_X:
                     decodedSignerKey.HashX = Uint256.Decode(stream);
                     break;
+                case SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD:
+                    decodedSignerKey.Ed25519SignedPayload = SignerKeyEd25519SignedPayload.Decode(stream);
+                    break;
             }
             return decodedSignerKey;
+        }
+
+        public class SignerKeyEd25519SignedPayload
+        {
+            public SignerKeyEd25519SignedPayload() { }
+            public Uint256 Ed25519 { get; set; }
+            public byte[] Payload { get; set; }
+
+            public static void Encode(XdrDataOutputStream stream, SignerKeyEd25519SignedPayload encodedSignerKeyEd25519SignedPayload)
+            {
+                Uint256.Encode(stream, encodedSignerKeyEd25519SignedPayload.Ed25519);
+                int payloadsize = encodedSignerKeyEd25519SignedPayload.Payload.Length;
+                stream.WriteInt(payloadsize);
+                stream.Write(encodedSignerKeyEd25519SignedPayload.Payload, 0, payloadsize);
+            }
+            public static SignerKeyEd25519SignedPayload Decode(XdrDataInputStream stream)
+            {
+                SignerKeyEd25519SignedPayload decodedSignerKeyEd25519SignedPayload = new SignerKeyEd25519SignedPayload();
+                decodedSignerKeyEd25519SignedPayload.Ed25519 = Uint256.Decode(stream);
+                int payloadsize = stream.ReadInt();
+                decodedSignerKeyEd25519SignedPayload.Payload = new byte[payloadsize];
+                stream.Read(decodedSignerKeyEd25519SignedPayload.Payload, 0, payloadsize);
+                return decodedSignerKeyEd25519SignedPayload;
+            }
+
         }
     }
 }

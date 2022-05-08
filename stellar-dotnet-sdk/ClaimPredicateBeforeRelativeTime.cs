@@ -1,12 +1,13 @@
 using System;
+using xdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
     public class ClaimPredicateBeforeRelativeTime : ClaimPredicate
     {
-        public TimeSpan Duration { get; }
+        public xdr.Duration Duration { get; }
 
-        public ClaimPredicateBeforeRelativeTime(TimeSpan duration)
+        public ClaimPredicateBeforeRelativeTime(xdr.Duration duration)
         {
             Duration = duration;
         }
@@ -19,7 +20,7 @@ namespace stellar_dotnet_sdk
                 {
                     InnerValue = xdr.ClaimPredicateType.ClaimPredicateTypeEnum.CLAIM_PREDICATE_BEFORE_RELATIVE_TIME
                 },
-                RelBefore = new xdr.Int64(Convert.ToInt64(Duration.TotalSeconds)),
+                RelBefore = new xdr.Int64((long)Duration.InnerValue.InnerValue)
             };
         }
     }

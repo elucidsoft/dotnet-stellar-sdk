@@ -4,19 +4,20 @@ using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
+using xdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk_test
 {
     [TestClass]
     public class KeyPairTest
     {
-        private const string Seed = "1123740522f11bfef6b3671f51e159ccf589ccf8965262dd5f97d1721d383dd4";
+        private const string SEED = "1123740522f11bfef6b3671f51e159ccf589ccf8965262dd5f97d1721d383dd4";
 
         [TestMethod]
         public void TestSign()
         {
             const string expectedSig = "587d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
-            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(Seed));
+            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
             const string data = "hello world";
 
             var bytes = Encoding.UTF8.GetBytes(data);
@@ -30,7 +31,7 @@ namespace stellar_dotnet_sdk_test
         {
             const string sig = "587d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
             const string data = "hello world";
-            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(Seed));
+            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
 
             var bytes = Encoding.UTF8.GetBytes(data);
             Assert.IsTrue(keyPair.Verify(bytes, Util.HexToBytes(sig)));
@@ -42,7 +43,7 @@ namespace stellar_dotnet_sdk_test
             const string badSig = "687d4b472eeef7d07aafcd0b049640b0bb3f39784118c2e2b73a04fa2f64c9c538b4b2d0f5335e968a480021fdc23e98c0ddf424cb15d8131df8cb6c4bb58309";
             byte[] corrupt = { 0x00 };
             const string data = "hello world";
-            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(Seed));
+            var keyPair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
 
             var bytes = Encoding.UTF8.GetBytes(data);
             Assert.IsFalse(keyPair.Verify(bytes, Util.HexToBytes(badSig)));
@@ -131,6 +132,39 @@ namespace stellar_dotnet_sdk_test
             var otherKeyPair = KeyPair.FromAccountId(keyPair.AccountId);
 
             Assert.IsTrue(keyPair.Equals(otherKeyPair));
+        }
+
+        [TestMethod]
+        public void TestSignPayloadSigner()
+        {
+            KeyPair keypair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
+            // the hint from this keypair is [254,66,4,55]
+
+            byte[] payload = new byte[] { 1, 2, 3, 4, 5 };
+            var sig = keypair.SignPayloadDecorated(payload);
+            var bytes = new byte[] { (byte)(0xFF & 252), 65, 0, 50 };
+
+            for (int i = 0; i < sig.Hint.InnerValue.Length; i++)
+            {
+                sig.Hint.InnerValue[i] = bytes[i];
+            }
+        }
+
+
+        [TestMethod]
+        public void TestSignPayloadSignerLessThanHint()
+        {
+            KeyPair keypair = KeyPair.FromSecretSeed(Util.HexToBytes(SEED));
+            // the hint from this keypair is [254,66,4,55]
+
+            byte[] payload = new byte[] { 1, 2, 3 };
+            var sig = keypair.SignPayloadDecorated(payload);
+            var bytes = new byte[] { (byte)(255), 64, 7, 55 };
+
+            for (int i = 0; i < sig.Hint.InnerValue.Length; i++)
+            {
+                sig.Hint.InnerValue[i] = bytes[i];
+            }
         }
     }
 }

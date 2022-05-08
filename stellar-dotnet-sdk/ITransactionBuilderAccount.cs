@@ -8,6 +8,8 @@
         IAccountId MuxedAccount { get; }
         long SequenceNumber { get; }
 
+        void SetSequenceNumber(long sequenceNumber);
+
         ///<summary>
         /// Returns sequence number incremented by one, but does not increment internal counter.
         ///</summary>

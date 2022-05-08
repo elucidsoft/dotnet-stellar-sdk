@@ -7,8 +7,7 @@ namespace stellar_dotnet_sdk.xdr
 
     // === xdr source ============================================================
 
-    //  union LiquidityPoolWithdrawResult switch (
-    //      LiquidityPoolWithdrawResultCode code)
+    //  union LiquidityPoolWithdrawResult switch (LiquidityPoolWithdrawResultCode code)
     //  {
     //  case LIQUIDITY_POOL_WITHDRAW_SUCCESS:
     //      void;

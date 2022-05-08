@@ -45,6 +45,8 @@ namespace stellar_dotnet_sdk.xdr
     //      SCPEnvelope envelope;
     //  case GET_SCP_STATE:
     //      uint32 getSCPLedgerSeq; // ledger seq requested ; if 0, requests the latest
+    //  case SEND_MORE:
+    //      SendMore sendMoreMessage;
     //  };
 
     //  ===========================================================================
@@ -68,6 +70,7 @@ namespace stellar_dotnet_sdk.xdr
         public SCPQuorumSet QSet { get; set; }
         public SCPEnvelope Envelope { get; set; }
         public Uint32 GetSCPLedgerSeq { get; set; }
+        public SendMore SendMoreMessage { get; set; }
         public static void Encode(XdrDataOutputStream stream, StellarMessage encodedStellarMessage)
         {
             stream.WriteInt((int)encodedStellarMessage.Discriminant.InnerValue);
@@ -121,6 +124,9 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case MessageType.MessageTypeEnum.GET_SCP_STATE:
                     Uint32.Encode(stream, encodedStellarMessage.GetSCPLedgerSeq);
+                    break;
+                case MessageType.MessageTypeEnum.SEND_MORE:
+                    SendMore.Encode(stream, encodedStellarMessage.SendMoreMessage);
                     break;
             }
         }
@@ -179,6 +185,9 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case MessageType.MessageTypeEnum.GET_SCP_STATE:
                     decodedStellarMessage.GetSCPLedgerSeq = Uint32.Decode(stream);
+                    break;
+                case MessageType.MessageTypeEnum.SEND_MORE:
+                    decodedStellarMessage.SendMoreMessage = SendMore.Decode(stream);
                     break;
             }
             return decodedStellarMessage;

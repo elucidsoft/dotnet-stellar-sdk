@@ -31,7 +31,9 @@ namespace stellar_dotnet_sdk.xdr
     //      HELLO = 13,
     //  
     //      SURVEY_REQUEST = 14,
-    //      SURVEY_RESPONSE = 15
+    //      SURVEY_RESPONSE = 15,
+    //  
+    //      SEND_MORE = 16
     //  };
 
     //  ===========================================================================
@@ -54,6 +56,7 @@ namespace stellar_dotnet_sdk.xdr
             HELLO = 13,
             SURVEY_REQUEST = 14,
             SURVEY_RESPONSE = 15,
+            SEND_MORE = 16,
         }
         public MessageTypeEnum InnerValue { get; set; } = default(MessageTypeEnum);
 
@@ -85,6 +88,7 @@ namespace stellar_dotnet_sdk.xdr
                 case 13: return Create(MessageTypeEnum.HELLO);
                 case 14: return Create(MessageTypeEnum.SURVEY_REQUEST);
                 case 15: return Create(MessageTypeEnum.SURVEY_RESPONSE);
+                case 16: return Create(MessageTypeEnum.SEND_MORE);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

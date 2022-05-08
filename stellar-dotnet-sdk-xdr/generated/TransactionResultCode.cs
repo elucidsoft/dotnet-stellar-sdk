@@ -28,7 +28,10 @@ namespace stellar_dotnet_sdk.xdr
     //  
     //      txNOT_SUPPORTED = -12,         // transaction type not supported
     //      txFEE_BUMP_INNER_FAILED = -13, // fee bump inner transaction failed
-    //      txBAD_SPONSORSHIP = -14        // sponsorship not confirmed
+    //      txBAD_SPONSORSHIP = -14,       // sponsorship not confirmed
+    //      txBAD_MIN_SEQ_AGE_OR_GAP =
+    //          -15, // minSeqAge or minSeqLedgerGap conditions not met
+    //      txMALFORMED = -16 // precondition is invalid
     //  };
 
     //  ===========================================================================
@@ -52,6 +55,8 @@ namespace stellar_dotnet_sdk.xdr
             txNOT_SUPPORTED = -12,
             txFEE_BUMP_INNER_FAILED = -13,
             txBAD_SPONSORSHIP = -14,
+            txBAD_MIN_SEQ_AGE_OR_GAP = -15,
+            txMALFORMED = -16,
         }
         public TransactionResultCodeEnum InnerValue { get; set; } = default(TransactionResultCodeEnum);
 
@@ -84,6 +89,8 @@ namespace stellar_dotnet_sdk.xdr
                 case -12: return Create(TransactionResultCodeEnum.txNOT_SUPPORTED);
                 case -13: return Create(TransactionResultCodeEnum.txFEE_BUMP_INNER_FAILED);
                 case -14: return Create(TransactionResultCodeEnum.txBAD_SPONSORSHIP);
+                case -15: return Create(TransactionResultCodeEnum.txBAD_MIN_SEQ_AGE_OR_GAP);
+                case -16: return Create(TransactionResultCodeEnum.txMALFORMED);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

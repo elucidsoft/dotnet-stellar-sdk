@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace stellar_dotnet_sdk_test
 {
@@ -107,6 +109,48 @@ namespace stellar_dotnet_sdk_test
             var result = StrKey.IsValidEd25519SecretSeed(seed);
 
             Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void TestValidSignedPayloadEncode()
+        {
+            var payload = Util.HexToBytes("0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20");
+            var signedPayloadSigner = new SignedPayloadSigner(StrKey.DecodeStellarAccountId("GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVSGZ"), payload);
+            var encoded = StrKey.EncodeSignedPayload(signedPayloadSigner);
+            Assert.AreEqual(encoded, "PA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJUAAAAAQACAQDAQCQMBYIBEFAWDANBYHRAEISCMKBKFQXDAMRUGY4DUPB6IBZGM");
+
+            // Valid signed payload with an ed25519 public key and a 29-byte payload.
+            payload = Util.HexToBytes("0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d");
+            signedPayloadSigner = new SignedPayloadSigner(StrKey.DecodeStellarAccountId("GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVSGZ"), payload);
+            encoded = StrKey.EncodeSignedPayload(signedPayloadSigner);
+            Assert.AreEqual(encoded, "PA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJUAAAAAOQCAQDAQCQMBYIBEFAWDANBYHRAEISCMKBKFQXDAMRUGY4DUAAAAFGBU");
+        }
+
+        [TestMethod]
+        public void TestRoundTripSignedPayloadVersionByte()
+        {
+            var data = new List<byte>()
+            {
+                //ED25519
+                0x36, 0x3e, 0xaa, 0x38, 0x67, 0x84, 0x1f, 0xba,
+                0xd0, 0xf4, 0xed, 0x88, 0xc7, 0x79, 0xe4, 0xfe,
+                0x66, 0xe5, 0x6a, 0x24, 0x70, 0xdc, 0x98, 0xc0,
+                0xec, 0x9c, 0x07, 0x3d, 0x05, 0xc7, 0xb1, 0x03,
+
+                //Payload length
+                0x00, 0x00, 0x00, 0x09,
+
+                //Payload
+                0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                0x00,
+
+                //Padding
+                0x00, 0x00, 0x00
+            }.ToArray();
+
+            var hashX = "PA3D5KRYM6CB7OWQ6TWYRR3Z4T7GNZLKERYNZGGA5SOAOPIFY6YQGAAAAAEQAAAAAAAAAAAAAAAAAABBXA";
+            Assert.AreEqual(hashX, StrKey.EncodeCheck(StrKey.VersionByte.SIGNED_PAYLOAD, data));
+            Assert.IsTrue(data.SequenceEqual(StrKey.DecodeCheck(StrKey.VersionByte.SIGNED_PAYLOAD, hashX)));
         }
     }
 }

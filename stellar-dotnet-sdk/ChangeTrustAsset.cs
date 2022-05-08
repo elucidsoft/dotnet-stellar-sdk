@@ -63,7 +63,7 @@ namespace stellar_dotnet_sdk
             }
         }
 
-        public abstract string GetType();
+        public new abstract string GetType();
 
         public new abstract bool Equals(Object obj);
 

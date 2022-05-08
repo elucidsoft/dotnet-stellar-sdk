@@ -2,7 +2,7 @@ namespace stellar_dotnet_sdk
 {
     public class LedgerKeyTrustline : LedgerKey
     {
-        public KeyPair Account { get; }
+        public new KeyPair Account { get; }
         public TrustlineAsset Asset { get; }
 
         public LedgerKeyTrustline(KeyPair account, TrustlineAsset asset)

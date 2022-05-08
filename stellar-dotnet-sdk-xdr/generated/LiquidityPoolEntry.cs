@@ -21,7 +21,8 @@ namespace stellar_dotnet_sdk.xdr
     //              int64 reserveA;        // amount of A in the pool
     //              int64 reserveB;        // amount of B in the pool
     //              int64 totalPoolShares; // total number of pool shares issued
-    //              int64 poolSharesTrustLineCount; // number of trust lines for the associated pool shares
+    //              int64 poolSharesTrustLineCount; // number of trust lines for the
+    //                                              // associated pool shares
     //          } constantProduct;
     //      }
     //      body;

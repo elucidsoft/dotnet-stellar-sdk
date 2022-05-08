@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using xdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
@@ -12,12 +13,32 @@ namespace stellar_dotnet_sdk
             MUXED_ACCOUNT = 12 << 3,
             SEED = 18 << 3,
             PRE_AUTH_TX = 19 << 3,
-            SHA256_HASH = 23 << 3
+            SHA256_HASH = 23 << 3,
+            SIGNED_PAYLOAD = 15 << 3
         }
 
         public static string EncodeStellarAccountId(byte[] data)
         {
             return EncodeCheck(VersionByte.ACCOUNT_ID, data);
+        }
+
+        public static string EncodeSignedPayload(SignedPayloadSigner signedPayloadSigner)
+        {
+            try
+            {
+                var xdrPayloadSigner = new xdr.SignerKey.SignerKeyEd25519SignedPayload();
+                xdrPayloadSigner.Payload = signedPayloadSigner.Payload;
+                xdrPayloadSigner.Ed25519 = signedPayloadSigner.SignerAccountID.InnerValue.Ed25519;
+
+                var stream = new xdr.XdrDataOutputStream();
+                xdr.SignerKey.SignerKeyEd25519SignedPayload.Encode(stream, xdrPayloadSigner);
+
+                return EncodeCheck(VersionByte.SIGNED_PAYLOAD, stream.ToArray());
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
         public static string EncodeStellarMuxedAccount(byte[] data, ulong id)
@@ -43,6 +64,22 @@ namespace stellar_dotnet_sdk
         public static byte[] DecodeStellarAccountId(string data)
         {
             return DecodeCheck(VersionByte.ACCOUNT_ID, data);
+        }
+
+        public static SignedPayloadSigner DecodeSignedPayload(string data)
+        {
+            try
+            {
+                byte[] signedPayloadRaw = DecodeCheck(VersionByte.SIGNED_PAYLOAD, data);
+
+                var xdrPayloadSigner = xdr.SignerKey.SignerKeyEd25519SignedPayload.Decode(new xdr.XdrDataInputStream(signedPayloadRaw));
+
+                return new SignedPayloadSigner(xdrPayloadSigner.Ed25519.InnerValue, xdrPayloadSigner.Payload);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
         public static (ulong, byte[]) DecodeStellarMuxedAccount(string data)

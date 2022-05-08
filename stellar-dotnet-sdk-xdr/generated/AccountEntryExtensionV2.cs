@@ -17,6 +17,8 @@ namespace stellar_dotnet_sdk.xdr
     //      {
     //      case 0:
     //          void;
+    //      case 3:
+    //          AccountEntryExtensionV3 v3;
     //      }
     //      ext;
     //  };
@@ -63,12 +65,16 @@ namespace stellar_dotnet_sdk.xdr
 
             public int Discriminant { get; set; } = new int();
 
+            public AccountEntryExtensionV3 V3 { get; set; }
             public static void Encode(XdrDataOutputStream stream, AccountEntryExtensionV2Ext encodedAccountEntryExtensionV2Ext)
             {
                 stream.WriteInt((int)encodedAccountEntryExtensionV2Ext.Discriminant);
                 switch (encodedAccountEntryExtensionV2Ext.Discriminant)
                 {
                     case 0:
+                        break;
+                    case 3:
+                        AccountEntryExtensionV3.Encode(stream, encodedAccountEntryExtensionV2Ext.V3);
                         break;
                 }
             }
@@ -80,6 +86,9 @@ namespace stellar_dotnet_sdk.xdr
                 switch (decodedAccountEntryExtensionV2Ext.Discriminant)
                 {
                     case 0:
+                        break;
+                    case 3:
+                        decodedAccountEntryExtensionV2Ext.V3 = AccountEntryExtensionV3.Decode(stream);
                         break;
                 }
                 return decodedAccountEntryExtensionV2Ext;

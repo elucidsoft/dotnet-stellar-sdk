@@ -9,8 +9,7 @@ namespace stellar_dotnet_sdk.xdr
 
     //  enum ClaimableBalanceIDType
     //  {
-    //      CLAIMABLE_BALANCE_ID_TYPE_V0 = 0,
-    //      CLAIMABLE_BALANCE_ID_TYPE_FROM_POOL_REVOKE = 1
+    //      CLAIMABLE_BALANCE_ID_TYPE_V0 = 0
     //  };
 
     //  ===========================================================================
@@ -19,7 +18,6 @@ namespace stellar_dotnet_sdk.xdr
         public enum ClaimableBalanceIDTypeEnum
         {
             CLAIMABLE_BALANCE_ID_TYPE_V0 = 0,
-            CLAIMABLE_BALANCE_ID_TYPE_FROM_POOL_REVOKE = 1,
         }
         public ClaimableBalanceIDTypeEnum InnerValue { get; set; } = default(ClaimableBalanceIDTypeEnum);
 
@@ -37,7 +35,6 @@ namespace stellar_dotnet_sdk.xdr
             switch (value)
             {
                 case 0: return Create(ClaimableBalanceIDTypeEnum.CLAIMABLE_BALANCE_ID_TYPE_V0);
-                case 1: return Create(ClaimableBalanceIDTypeEnum.CLAIMABLE_BALANCE_ID_TYPE_FROM_POOL_REVOKE);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

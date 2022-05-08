@@ -18,8 +18,8 @@ namespace stellar_dotnet_sdk.xdr
     //      // sequence number to consume in the account
     //      SequenceNumber seqNum;
     //  
-    //      // validity range (inclusive) for the last ledger close time
-    //      TimeBounds* timeBounds;
+    //      // validity conditions
+    //      Preconditions cond;
     //  
     //      Memo memo;
     //  
@@ -41,7 +41,7 @@ namespace stellar_dotnet_sdk.xdr
         public MuxedAccount SourceAccount { get; set; }
         public Uint32 Fee { get; set; }
         public SequenceNumber SeqNum { get; set; }
-        public TimeBounds TimeBounds { get; set; }
+        public Preconditions Cond { get; set; }
         public Memo Memo { get; set; }
         public Operation[] Operations { get; set; }
         public TransactionExt Ext { get; set; }
@@ -51,15 +51,7 @@ namespace stellar_dotnet_sdk.xdr
             MuxedAccount.Encode(stream, encodedTransaction.SourceAccount);
             Uint32.Encode(stream, encodedTransaction.Fee);
             SequenceNumber.Encode(stream, encodedTransaction.SeqNum);
-            if (encodedTransaction.TimeBounds != null)
-            {
-                stream.WriteInt(1);
-                TimeBounds.Encode(stream, encodedTransaction.TimeBounds);
-            }
-            else
-            {
-                stream.WriteInt(0);
-            }
+            Preconditions.Encode(stream, encodedTransaction.Cond);
             Memo.Encode(stream, encodedTransaction.Memo);
             int operationssize = encodedTransaction.Operations.Length;
             stream.WriteInt(operationssize);
@@ -75,11 +67,7 @@ namespace stellar_dotnet_sdk.xdr
             decodedTransaction.SourceAccount = MuxedAccount.Decode(stream);
             decodedTransaction.Fee = Uint32.Decode(stream);
             decodedTransaction.SeqNum = SequenceNumber.Decode(stream);
-            int TimeBoundsPresent = stream.ReadInt();
-            if (TimeBoundsPresent != 0)
-            {
-                decodedTransaction.TimeBounds = TimeBounds.Decode(stream);
-            }
+            decodedTransaction.Cond = Preconditions.Decode(stream);
             decodedTransaction.Memo = Memo.Decode(stream);
             int operationssize = stream.ReadInt();
             decodedTransaction.Operations = new Operation[operationssize];

@@ -543,6 +543,7 @@ namespace stellar_dotnet_sdk_test.responses
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestDeserializeTrustlineAuthorizedEffect()
         {
             var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineAuthorized.json"));
@@ -552,6 +553,7 @@ namespace stellar_dotnet_sdk_test.responses
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestDeserializeTrustlineAuthorizedToMaintainLiabilitiesEffect()
         {
             var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineAuthorizedToMaintainLiabilities.json"));
@@ -561,6 +563,7 @@ namespace stellar_dotnet_sdk_test.responses
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestSerializeDeserializeTrustlineAuthorizedEffect()
         {
             var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineAuthorized.json"));
@@ -620,6 +623,7 @@ namespace stellar_dotnet_sdk_test.responses
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestDeserializeTrustlineDeauthorizedEffect()
         {
             var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineDeAuthorized.json"));
@@ -629,6 +633,7 @@ namespace stellar_dotnet_sdk_test.responses
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestSerializeDeserializeTrustlineDeauthorizedEffect()
         {
             var json = File.ReadAllText(Path.Combine("testdata/effects/trustline", "trustlineDeAuthorized.json"));

@@ -83,6 +83,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionReturnsTrueForValidTransaction()
         {
             var serverKeypair = KeyPair.Random();
@@ -98,6 +99,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionThrowsIfSequenceIsNotZero()
         {
             var serverKeypair = KeyPair.Random();
@@ -119,6 +121,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionThrowsIfServerAccountIdIsDifferent()
         {
             var serverKeypair = KeyPair.Random();
@@ -138,6 +141,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionThrowsIfTransactionHasNoManageDataOperation()
         {
             var serverKeypair = KeyPair.Random();
@@ -161,6 +165,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionThrowsIfOperationHasNoSourceAccount()
         {
             var serverKeypair = KeyPair.Random();
@@ -182,6 +187,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionThrowsIfOperationDataIsNotBase64Encoded()
         {
             var serverKeypair = KeyPair.Random();
@@ -206,6 +212,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionThrowsIfNotSignedByServer()
         {
             var serverKeypair = KeyPair.Random();
@@ -226,6 +233,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionThrowsIfSignedByServerOnDifferentNetwork()
         {
             var serverKeypair = KeyPair.Random();
@@ -245,6 +253,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionThrowsIfNotSignedByClient()
         {
             var serverKeypair = KeyPair.Random();
@@ -263,6 +272,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionThrowsIfSignedByClientOnDifferentNetwork()
         {
             var serverKeypair = KeyPair.Random();
@@ -282,6 +292,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionThrowsIfItsTooEarly()
         {
             var serverKeypair = KeyPair.Random();
@@ -301,6 +312,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionThrowsIfItsTooLate()
         {
             var serverKeypair = KeyPair.Random();
@@ -320,6 +332,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionThrowsIfServerIsMuxedAccount()
         {
             // It's impossible to build a wrong tx from our api. Use an xdr instead.
@@ -336,6 +349,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
+        [Obsolete]
         public void TestVerifyChallengeTransactionThrowsIfClientIsMuxedAccount()
         {
             // It's impossible to build a wrong tx from our api. Use an xdr instead.
@@ -388,7 +402,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -417,7 +431,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -444,7 +458,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             try
@@ -475,7 +489,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -507,7 +521,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -536,7 +550,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new BumpSequenceOperation.Builder(100).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -565,9 +579,12 @@ namespace stellar_dotnet_sdk_test
             var base64Data = Encoding.ASCII.GetBytes(Convert.ToBase64String(plainTextBytes));
 
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).Build();
-            var transaction = new TransactionBuilder(txSource).AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
-                .Build();
+            Transaction transaction = new TransactionBuilder(txSource)
+                                          .SetFee(100)
+                                          .AddOperation(operation)
+                                          .AddMemo(Memo.None())
+                                          .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
+                                          .Build();
 
             transaction.Sign(serverKeypair);
 
@@ -598,7 +615,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             try
@@ -628,7 +645,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(clientKeypair);
@@ -666,7 +683,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -709,7 +726,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -756,7 +773,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -804,7 +821,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -848,7 +865,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -892,7 +909,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -933,7 +950,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -978,7 +995,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             //transaction.Sign(serverKeypair);
@@ -1022,7 +1039,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1055,7 +1072,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1093,7 +1110,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1132,7 +1149,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1177,7 +1194,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1222,7 +1239,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1264,7 +1281,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1307,7 +1324,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1345,7 +1362,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1388,7 +1405,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1432,7 +1449,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1471,7 +1488,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1511,7 +1528,7 @@ namespace stellar_dotnet_sdk_test
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
                 .AddOperation(notValidOperation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1547,7 +1564,7 @@ namespace stellar_dotnet_sdk_test
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
                 .AddOperation(notValidOperation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);
@@ -1603,7 +1620,6 @@ namespace stellar_dotnet_sdk_test
         public void TestReadChallengeTransactionNoTransaction()
         {
             var serverKeypair = KeyPair.Random();
-            var clientAccountId = "GBDIT5GUJ7R5BXO3GJHFXJ6AZ5UQK6MNOIDMPQUSMXLIHTUNR2Q5CFNF";
 
             Network.UseTestNetwork();
             try
@@ -1651,7 +1667,7 @@ namespace stellar_dotnet_sdk_test
             var operation = new ManageDataOperation.Builder(ManageDataOperationName, base64Data).SetSourceAccount(opSource.KeyPair).Build();
             var transaction = new TransactionBuilder(txSource)
                 .AddOperation(operation)
-                .AddTimeBounds(new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)))
+                .AddPreconditions(new TransactionPreconditions() { TimeBounds = new TimeBounds(DateTimeOffset.Now, DateTimeOffset.Now.AddSeconds(1000)) })
                 .Build();
 
             transaction.Sign(serverKeypair);

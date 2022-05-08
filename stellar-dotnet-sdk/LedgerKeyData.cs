@@ -2,7 +2,7 @@ namespace stellar_dotnet_sdk
 {
     public class LedgerKeyData : LedgerKey
     {
-        public KeyPair Account { get; }
+        public new KeyPair Account { get; }
         public string DataName { get; }
 
         public LedgerKeyData(KeyPair account, string dataName)

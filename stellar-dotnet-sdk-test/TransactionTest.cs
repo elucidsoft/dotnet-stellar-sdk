@@ -38,7 +38,7 @@ namespace stellar_dotnet_sdk_test
             var account = new Account(source.AccountId, sequenceNumber);
             // Test that we do not break the old api. So suppress the warning for now.
 #pragma warning disable 0618
-            var transaction = new Transaction.Builder(account)
+            var transaction = new TransactionBuilder(account)
                 .AddOperation(new CreateAccountOperation.Builder(destination, "2000").Build())
                 .Build();
 #pragma warning restore 0618
@@ -174,8 +174,8 @@ namespace stellar_dotnet_sdk_test
             // Convert transaction to binary XDR and back again to make sure timebounds are correctly de/serialized.
             var decodedTransaction = transaction.ToEnvelopeXdr().V1.Tx;
 
-            Assert.AreEqual(decodedTransaction.TimeBounds.MinTime.InnerValue.InnerValue, 42U);
-            Assert.AreEqual(decodedTransaction.TimeBounds.MaxTime.InnerValue.InnerValue, 1337U);
+            Assert.AreEqual(decodedTransaction.Cond.TimeBounds.MinTime.InnerValue.InnerValue, 42U);
+            Assert.AreEqual(decodedTransaction.Cond.TimeBounds.MaxTime.InnerValue.InnerValue, 1337U);
 
             var transaction2 = Transaction.FromEnvelopeXdr(transaction.ToEnvelopeXdr());
 

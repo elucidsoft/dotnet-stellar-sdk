@@ -8,7 +8,7 @@ namespace stellar_dotnet_sdk
     {
         public Asset AssetA { get; set; }
         public Asset AssetB { get; set; }
-        public int Fee { get; set; }
+        public new int Fee { get; set; }
 
         public LiquidityPoolConstantProductParameters(Asset assetA, Asset assetB, int feeBP)
         {

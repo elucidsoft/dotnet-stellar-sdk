@@ -29,6 +29,12 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "subentry_count")]
         public int SubentryCount { get; set; }
 
+        [JsonProperty(PropertyName = "sequence_ledger")]
+        public long? SequenceUpdatedAtLedger { get; set; }
+
+        [JsonProperty(PropertyName = "sequence_time")]
+        public long? SequenceUpdatedAtTime { get; set; }
+
         [JsonProperty(PropertyName = "inflation_destination")]
         public string InflationDestination { get; set; }
 
@@ -66,6 +72,11 @@ namespace stellar_dotnet_sdk.responses
         public KeyPair GetKeyPair(string accountId)
         {
             return KeyPair.FromAccountId(accountId);
+        }
+
+        public void SetSequenceNumber(long sequenceNumber)
+        {
+            SequenceNumber = sequenceNumber;
         }
     }
 }

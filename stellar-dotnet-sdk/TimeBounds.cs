@@ -18,7 +18,7 @@ namespace stellar_dotnet_sdk
         ///<param name="maxTime"> 64bit Unix timestamp, 0 if unset</param>
         public TimeBounds(ulong minTime, ulong maxTime)
         {
-            if (maxTime != 0 && minTime >= maxTime)
+            if (maxTime != TransactionPreconditions.TIMEOUT_INFINITE && minTime >= maxTime)
                 throw new ArgumentException("minTime must be < maxTime");
 
             _minTime = minTime;

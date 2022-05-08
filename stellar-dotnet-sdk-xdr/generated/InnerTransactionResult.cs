@@ -31,6 +31,8 @@ namespace stellar_dotnet_sdk.xdr
     //      case txNOT_SUPPORTED:
     //      // txFEE_BUMP_INNER_FAILED is not included
     //      case txBAD_SPONSORSHIP:
+    //      case txBAD_MIN_SEQ_AGE_OR_GAP:
+    //      case txMALFORMED:
     //          void;
     //      }
     //      result;
@@ -100,6 +102,8 @@ namespace stellar_dotnet_sdk.xdr
                     case TransactionResultCode.TransactionResultCodeEnum.txINTERNAL_ERROR:
                     case TransactionResultCode.TransactionResultCodeEnum.txNOT_SUPPORTED:
                     case TransactionResultCode.TransactionResultCodeEnum.txBAD_SPONSORSHIP:
+                    case TransactionResultCode.TransactionResultCodeEnum.txBAD_MIN_SEQ_AGE_OR_GAP:
+                    case TransactionResultCode.TransactionResultCodeEnum.txMALFORMED:
                         break;
                 }
             }
@@ -131,6 +135,8 @@ namespace stellar_dotnet_sdk.xdr
                     case TransactionResultCode.TransactionResultCodeEnum.txINTERNAL_ERROR:
                     case TransactionResultCode.TransactionResultCodeEnum.txNOT_SUPPORTED:
                     case TransactionResultCode.TransactionResultCodeEnum.txBAD_SPONSORSHIP:
+                    case TransactionResultCode.TransactionResultCodeEnum.txBAD_MIN_SEQ_AGE_OR_GAP:
+                    case TransactionResultCode.TransactionResultCodeEnum.txMALFORMED:
                         break;
                 }
                 return decodedInnerTransactionResultResult;

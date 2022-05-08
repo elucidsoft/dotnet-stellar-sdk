@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk
         private readonly BlockingCollection<Operation> _operations;
         private readonly ITransactionBuilderAccount _sourceAccount;
         private Memo _memo;
-        private TimeBounds _timeBounds;
+        private TransactionPreconditions _preconditions;
         private uint _fee;
 
         /// <summary>
@@ -27,6 +27,7 @@ namespace stellar_dotnet_sdk
                              throw new ArgumentNullException(nameof(sourceAccount), "sourceAccount cannot be null");
             _operations = new BlockingCollection<Operation>();
             _fee = BaseFee;
+            _preconditions = new TransactionPreconditions();
         }
 
         public static FeeBumpTransaction BuildFeeBumpTransaction(IAccountId feeSource, Transaction inner, long fee)
@@ -70,6 +71,17 @@ namespace stellar_dotnet_sdk
             return this;
         }
 
+        public TransactionBuilder AddPreconditions(TransactionPreconditions preconditions)
+        {
+            if (preconditions == null)
+            {
+                throw new ArgumentNullException("preconditions cannot be null", nameof(preconditions));
+            }
+
+            _preconditions = preconditions;
+            return this;
+        }
+
         /// <summary>
         ///     Adds a memo to this transaction.
         ///     See: https://www.stellar.org/developers/learn/concepts/transactions.html
@@ -94,11 +106,17 @@ namespace stellar_dotnet_sdk
         /// <returns>Builder object so you can chain methods.</returns>
         public TransactionBuilder AddTimeBounds(TimeBounds timeBounds)
         {
-            if (_timeBounds != null)
-                throw new ArgumentException("TimeBounds has been already added.", nameof(timeBounds));
+            if (timeBounds == null)
+            {
+                throw new ArgumentNullException(nameof(timeBounds), "timeBounds cannot be null");
+            }
 
-            _timeBounds = timeBounds ??
-                          throw new ArgumentNullException(nameof(timeBounds), "timeBounds cannot be null");
+            if (_preconditions.TimeBounds != null)
+            {
+                throw new Exception("TimeBounds already set.");
+            }
+
+            _preconditions.TimeBounds = timeBounds;
 
             return this;
         }
@@ -130,8 +148,7 @@ namespace stellar_dotnet_sdk
             //var totalFee = operations.Length * _fee;
             var opsCount = Convert.ToUInt32(operations.Length);
             uint totalFee = checked(opsCount * _fee);
-            var transaction = new Transaction(_sourceAccount.MuxedAccount, totalFee,
-                _sourceAccount.IncrementedSequenceNumber, operations, _memo, _timeBounds);
+            var transaction = new Transaction(_sourceAccount.MuxedAccount, totalFee, _sourceAccount.IncrementedSequenceNumber, operations, _memo, _preconditions);
             // Increment sequence number when there were no exceptions when creating a transaction
             _sourceAccount.IncrementSequenceNumber();
             return transaction;

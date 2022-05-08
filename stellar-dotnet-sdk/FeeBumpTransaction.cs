@@ -1,6 +1,6 @@
 ﻿using stellar_dotnet_sdk.xdr;
 using System;
-using Int64 = stellar_dotnet_sdk.xdr.Int64;
+using xdr = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
@@ -45,7 +45,7 @@ namespace stellar_dotnet_sdk
 
         public xdr.FeeBumpTransaction ToXdr()
         {
-            var fee = new Int64 { InnerValue = Fee };
+            var fee = new xdr.Int64 { InnerValue = Fee };
             var feeSource = FeeSource.MuxedAccount;
 
             var inner = new xdr.FeeBumpTransaction.FeeBumpTransactionInnerTx
