@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using xdr = stellar_dotnet_sdk.xdr;
+using xdrSDK = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
@@ -41,19 +41,20 @@ namespace stellar_dotnet_sdk
             }
         }
 
-        public static string EncodeStellarMuxedAccount(byte[] data, ulong id)
+        public static string EncodeStellarMuxedAccount(xdrSDK.MuxedAccount muxedAccount)
         {
-            // 8 bytes for 64 bit id + data
-            var dataToEncode = new byte[8 + data.Length];
-            // Prepend the id in network byte order to the data
-            var idBytes = BitConverter.GetBytes(id);
-            if (BitConverter.IsLittleEndian)
+            switch (muxedAccount.Discriminant.InnerValue)
             {
-                Array.Reverse(idBytes);
+                case xdrSDK.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_MUXED_ED25519:
+                    var bytes = muxedAccount.Med25519.Ed25519.InnerValue.Concat(Util.ToByteArray(muxedAccount.Med25519.Id.InnerValue)).ToArray();
+                    return EncodeCheck(VersionByte.MUXED_ACCOUNT, bytes);
+
+                case xdrSDK.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_ED25519:
+                    return EncodeCheck(VersionByte.ACCOUNT_ID, muxedAccount.Ed25519.InnerValue);
+
+                default:
+                    throw new ArgumentException("invalid discriminant");
             }
-            Buffer.BlockCopy(idBytes, 0, dataToEncode, 0, 8);
-            Buffer.BlockCopy(data, 0, dataToEncode, 8, data.Length);
-            return EncodeCheck(VersionByte.MUXED_ACCOUNT, dataToEncode);
         }
 
         public static string EncodeStellarSecretSeed(byte[] data)

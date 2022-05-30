@@ -67,7 +67,7 @@ namespace stellar_dotnet_sdk
         /// <summary>
         /// Get the MuxedAccount address, starting with M.
         /// </summary>
-        public string Address => StrKey.EncodeStellarMuxedAccount(Key.PublicKey, Id);
+        public string Address => StrKey.EncodeStellarMuxedAccount(MuxedAccount);
 
         /// <summary>
         /// Get the MuxedAccount account id, starting with M.

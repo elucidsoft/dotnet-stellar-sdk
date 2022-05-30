@@ -94,6 +94,18 @@ namespace stellar_dotnet_sdk
                 arr[i] = value;
         }
 
+        public static byte[] ToByteArray(ulong value)
+        {
+
+            byte[] result = new byte[8];
+            for (int i = 7; i >= 0; i--)
+            {
+                result[i] = (byte)(value & 0xffL);
+                value >>= 8;
+            }
+            return result;
+        }
+
         public static int ComputeByteArrayHash(params byte[] data)
         {
             unchecked

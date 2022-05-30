@@ -2,6 +2,7 @@
 using stellar_dotnet_sdk;
 using System.Collections.Generic;
 using System.Linq;
+using xdrSDK = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk_test
 {
@@ -43,7 +44,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(0UL, id);
             var encodedKey = StrKey.EncodeStellarAccountId(key);
             Assert.AreEqual("GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVSGZ", encodedKey);
-            Assert.AreEqual(address, StrKey.EncodeStellarMuxedAccount(key, id));
+            Assert.AreEqual(address, StrKey.EncodeStellarMuxedAccount(new MuxedAccountMed25519(KeyPair.FromPublicKey(key), id).MuxedAccount));
         }
 
         [TestMethod]
@@ -55,7 +56,7 @@ namespace stellar_dotnet_sdk_test
             Assert.AreEqual(9223372036854775808UL, id);
             var encodedKey = StrKey.EncodeStellarAccountId(key);
             Assert.AreEqual("GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVSGZ", encodedKey);
-            Assert.AreEqual(address, StrKey.EncodeStellarMuxedAccount(key, id));
+            Assert.AreEqual(address, StrKey.EncodeStellarMuxedAccount(new MuxedAccountMed25519(KeyPair.FromPublicKey(key), id).MuxedAccount));
         }
 
         [TestMethod]
