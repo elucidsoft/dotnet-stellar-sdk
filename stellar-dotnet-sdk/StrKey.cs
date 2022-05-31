@@ -83,24 +83,50 @@ namespace stellar_dotnet_sdk
             }
         }
 
-        public static (ulong, byte[]) DecodeStellarMuxedAccount(string data)
+        public static xdrSDK.MuxedAccount DecodeStellarMuxedAccount(string data)
         {
-            var bytes = DecodeCheck(VersionByte.MUXED_ACCOUNT, data);
-            var keyData = new byte[bytes.Length - 8];
-            ulong id;
-            Buffer.BlockCopy(bytes, 8, keyData, 0, keyData.Length);
+            xdrSDK.MuxedAccount muxed = new xdrSDK.MuxedAccount();
 
-            if (BitConverter.IsLittleEndian)
+            if (data.Length == 0)
             {
-                var idBuffer = new byte[8];
-                Buffer.BlockCopy(bytes, 0, idBuffer, 0, 8);
-                Array.Reverse(idBuffer);
-                id = BitConverter.ToUInt64(idBuffer, 0);
-                return (id, keyData);
+                throw new ArgumentException("Address is empty");
             }
 
-            id = BitConverter.ToUInt64(bytes, 0);
-            return (id, keyData);
+            switch (DecodeVersionByte(data))
+            {
+                case VersionByte.ACCOUNT_ID:
+                    muxed.Discriminant.InnerValue = xdrSDK.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_ED25519;
+
+                    try
+                    {
+                        muxed.Ed25519 = xdrSDK.Uint256.Decode(new xdrSDK.XdrDataInputStream(DecodeStellarAccountId(data)));
+                    }
+                    catch (InvalidOperationException e)
+                    {
+                        throw new ArgumentException("invalid address: " + data, e);
+                    }
+                    break;
+
+                case VersionByte.MUXED_ACCOUNT:
+                    xdrSDK.XdrDataInputStream input = new xdrSDK.XdrDataInputStream(DecodeCheck(VersionByte.MUXED_ACCOUNT, data));
+                    muxed.Discriminant.InnerValue = xdrSDK.CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_MUXED_ED25519;
+                    xdrSDK.MuxedAccount.MuxedAccountMed25519 med = new xdrSDK.MuxedAccount.MuxedAccountMed25519();
+
+                    try
+                    {
+                        med.Ed25519 = xdrSDK.Uint256.Decode(input);
+                        med.Id = xdrSDK.Uint64.Decode(input);
+                    }
+                    catch (InvalidOperationException e)
+                    {
+                        throw new ArgumentException("invalid address: " + data, e);
+                    }
+                    muxed.Med25519 = med;
+                    break;
+                default:
+                    throw new FormatException("Version byte is invalid");
+            }
+            return muxed;
         }
 
         public static byte[] DecodeStellarSecretSeed(string data)
