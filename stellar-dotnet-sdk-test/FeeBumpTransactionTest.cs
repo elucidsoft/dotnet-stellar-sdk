@@ -145,28 +145,21 @@ namespace stellar_dotnet_sdk_test
             var network = Network.Test();
             var innerTx = CreateInnerTransaction(100, network);
 
-            Assert.AreEqual(
-                "95dcf35a43a1a05bcd50f3eb148b31127829a9460dc32a17c4a7f7c4677409d4",
-                Util.BytesToHex(innerTx.Hash(network)).ToLowerInvariant());
+            Assert.AreEqual("2a8ead3351faa7797b284f59027355ddd69c21adb8e4da0b9bb95531f7f32681", Util.BytesToHex(innerTx.Hash(network)).ToLowerInvariant());
 
             var feeSource = KeyPair.FromAccountId("GDQNY3PBOJOKYZSRMK2S7LHHGWZIUISD4QORETLMXEWXBI7KFZZMKTL3");
             var feeBumpTx = TransactionBuilder.BuildFeeBumpTransaction(feeSource, innerTx, 200);
 
-            Assert.AreEqual(
-                "382b1588ee8b315177a34ae96ebcaeb81c0ad3e04fee7c6b5a583b826517e1e4",
-                Util.BytesToHex(feeBumpTx.Hash(network)).ToLowerInvariant());
+            Assert.AreEqual("58266712c0c1d1cd98faa0e0159605a361cf2a5ca44ad69650eeb1d27ee62334", Util.BytesToHex(feeBumpTx.Hash(network)).ToLowerInvariant());
         }
 
         private Transaction CreateInnerTransaction(uint fee, Network network)
         {
             var source = KeyPair.FromSecretSeed("SCH27VUZZ6UAKB67BDNF6FA42YMBMQCBKXWGMFD5TZ6S5ZZCZFLRXKHS");
-            var destination =
-                MuxedAccountMed25519.FromMuxedAccountId(
-                    "MCAAAAAAAAAAAAB7BQ2L7E5NBWMXDUCMZSIPOBKRDSBYVLMXGSSKF6YNPIB7Y77ITKNOG");
+            var destination = KeyPair.FromAccountId("GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVSGZ");
             var account = new Account(source, 2908908335136768L);
             var innerTx = new TransactionBuilder(account)
-                .AddOperation(
-                    new PaymentOperation.Builder(destination, new AssetTypeNative(), "200.0").Build())
+                .AddOperation(new PaymentOperation.Builder(destination, new AssetTypeNative(), "200.0").Build())
                 .SetFee(fee)
                 .AddTimeBounds(new TimeBounds(10, 11))
                 .Build();

@@ -2,6 +2,7 @@
 using stellar_dotnet_sdk;
 using System.Collections.Generic;
 using System.Linq;
+using xdrSDK = stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk_test
 {
@@ -37,25 +38,26 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public void TestDecodeEncodeMuxedAccount()
         {
-            var address = "MAAAAAAAAAAAAAB7BQ2L7E5NBWMXDUCMZSIPOBKRDSBYVLMXGSSKF6YNPIB7Y77ITLVL6";
-            var (id, key) = StrKey.DecodeStellarMuxedAccount(address);
+            var address = "MA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJUAAAAAAAAAAAACJUQ";
+            var muxed = StrKey.DecodeStellarMuxedAccount(address);
             Assert.IsTrue(StrKey.IsValidMuxedAccount(address));
-            Assert.AreEqual(0UL, id);
-            var encodedKey = StrKey.EncodeStellarAccountId(key);
+            Assert.AreEqual(0UL, muxed.Med25519.Id.InnerValue);
+
+            var encodedKey = StrKey.EncodeStellarAccountId(muxed.Med25519.Ed25519.InnerValue);
             Assert.AreEqual("GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVSGZ", encodedKey);
-            Assert.AreEqual(address, StrKey.EncodeStellarMuxedAccount(key, id));
+            Assert.AreEqual(address, StrKey.EncodeStellarMuxedAccount(new MuxedAccountMed25519(KeyPair.FromPublicKey(muxed.Med25519.Ed25519.InnerValue), muxed.Med25519.Id.InnerValue).MuxedAccount));
         }
 
         [TestMethod]
         public void TestDecodeEncodeMuxedAccountWithLargeId()
         {
-            var address = "MCAAAAAAAAAAAAB7BQ2L7E5NBWMXDUCMZSIPOBKRDSBYVLMXGSSKF6YNPIB7Y77ITKNOG";
-            var (id, key) = StrKey.DecodeStellarMuxedAccount(address);
+            var address = "MA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVAAAAAAAAAAAAAJLK";
+            var muxed = StrKey.DecodeStellarMuxedAccount(address);
             Assert.IsTrue(StrKey.IsValidMuxedAccount(address));
-            Assert.AreEqual(9223372036854775808UL, id);
-            var encodedKey = StrKey.EncodeStellarAccountId(key);
+            Assert.AreEqual(9223372036854775808UL, muxed.Med25519.Id.InnerValue);
+            var encodedKey = StrKey.EncodeStellarAccountId(muxed.Med25519.Ed25519.InnerValue);
             Assert.AreEqual("GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVSGZ", encodedKey);
-            Assert.AreEqual(address, StrKey.EncodeStellarMuxedAccount(key, id));
+            Assert.AreEqual(address, StrKey.EncodeStellarMuxedAccount(new MuxedAccountMed25519(KeyPair.FromPublicKey(muxed.Med25519.Ed25519.InnerValue), muxed.Med25519.Id.InnerValue).MuxedAccount));
         }
 
         [TestMethod]

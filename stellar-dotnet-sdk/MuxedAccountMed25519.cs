@@ -40,9 +40,9 @@ namespace stellar_dotnet_sdk
         /// <returns></returns>
         public static MuxedAccountMed25519 FromMuxedAccountId(string muxedAccountId)
         {
-            var (id, data) = StrKey.DecodeStellarMuxedAccount(muxedAccountId);
-            var key = KeyPair.FromPublicKey(data);
-            return new MuxedAccountMed25519(key, id);
+            var muxedAccount = StrKey.DecodeStellarMuxedAccount(muxedAccountId);
+            var key = KeyPair.FromPublicKey(muxedAccount.Med25519.Ed25519.InnerValue);
+            return new MuxedAccountMed25519(key, muxedAccount.Med25519.Id.InnerValue);
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace stellar_dotnet_sdk
         /// <summary>
         /// Get the MuxedAccount address, starting with M.
         /// </summary>
-        public string Address => StrKey.EncodeStellarMuxedAccount(Key.PublicKey, Id);
+        public string Address => StrKey.EncodeStellarMuxedAccount(MuxedAccount);
 
         /// <summary>
         /// Get the MuxedAccount account id, starting with M.
