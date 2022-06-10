@@ -25965,15 +25965,12 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.StrKey.EncodeStellarAccountId
   nameWithType: StrKey.EncodeStellarAccountId
-- uid: stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount(System.Byte[],System.UInt64)
-  name: EncodeStellarMuxedAccount(Byte[], UInt64)
-  href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_EncodeStellarMuxedAccount_System_Byte___System_UInt64_
-  commentId: M:stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount(System.Byte[],System.UInt64)
-  name.vb: EncodeStellarMuxedAccount(Byte(), UInt64)
-  fullName: stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount(System.Byte[], System.UInt64)
-  fullName.vb: stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount(System.Byte(), System.UInt64)
-  nameWithType: StrKey.EncodeStellarMuxedAccount(Byte[], UInt64)
-  nameWithType.vb: StrKey.EncodeStellarMuxedAccount(Byte(), UInt64)
+- uid: stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount(stellar_dotnet_sdk.xdr.MuxedAccount)
+  name: EncodeStellarMuxedAccount(MuxedAccount)
+  href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_EncodeStellarMuxedAccount_stellar_dotnet_sdk_xdr_MuxedAccount_
+  commentId: M:stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount(stellar_dotnet_sdk.xdr.MuxedAccount)
+  fullName: stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount(stellar_dotnet_sdk.xdr.MuxedAccount)
+  nameWithType: StrKey.EncodeStellarMuxedAccount(MuxedAccount)
 - uid: stellar_dotnet_sdk.StrKey.EncodeStellarMuxedAccount*
   name: EncodeStellarMuxedAccount
   href: api/stellar_dotnet_sdk.StrKey.html#stellar_dotnet_sdk_StrKey_EncodeStellarMuxedAccount_
@@ -27349,6 +27346,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.Util.PaddedByteArrayToString
   nameWithType: Util.PaddedByteArrayToString
+- uid: stellar_dotnet_sdk.Util.ToByteArray(System.UInt64)
+  name: ToByteArray(UInt64)
+  href: api/stellar_dotnet_sdk.Util.html#stellar_dotnet_sdk_Util_ToByteArray_System_UInt64_
+  commentId: M:stellar_dotnet_sdk.Util.ToByteArray(System.UInt64)
+  fullName: stellar_dotnet_sdk.Util.ToByteArray(System.UInt64)
+  nameWithType: Util.ToByteArray(UInt64)
+- uid: stellar_dotnet_sdk.Util.ToByteArray*
+  name: ToByteArray
+  href: api/stellar_dotnet_sdk.Util.html#stellar_dotnet_sdk_Util_ToByteArray_
+  commentId: Overload:stellar_dotnet_sdk.Util.ToByteArray
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.Util.ToByteArray
+  nameWithType: Util.ToByteArray
 - uid: stellar_dotnet_sdk.WebAuthentication
   name: WebAuthentication
   href: api/stellar_dotnet_sdk.WebAuthentication.html
