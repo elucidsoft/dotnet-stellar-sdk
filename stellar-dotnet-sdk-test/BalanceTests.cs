@@ -5,6 +5,7 @@ using FsCheck.NUnit;
 using stellar_dotnet_sdk;
 using stellar_dotnet_sdk.responses;
 using System;
+using stellar_dotnet_sdk_test.Generators;
 
 namespace stellar_dotnet_sdk_test
 {
