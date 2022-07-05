@@ -63,7 +63,7 @@ namespace stellar_dotnet_sdk
             }
         }
 
-        public new abstract string GetType();
+        public abstract string Type { get; }
 
         public new abstract bool Equals(Object obj);
 
@@ -80,10 +80,8 @@ namespace stellar_dotnet_sdk
                 Asset = asset ?? throw new ArgumentNullException(nameof(asset), "asset cannot be null");
             }
 
-            public override string GetType()
-            {
-                return Asset.GetType();
-            }
+
+            public override string Type => Asset.Type;
 
             public override bool Equals(object obj)
             {
@@ -98,7 +96,7 @@ namespace stellar_dotnet_sdk
 
             public override int CompareTo(ChangeTrustAsset asset)
             {
-                if (asset.GetType() == "pool_share")
+                if (asset.Type == "pool_share")
                 {
                     return -1;
                 }

@@ -86,9 +86,10 @@ namespace stellar_dotnet_sdk
         ///   <li>native See <see cref="AssetTypeNative"/> for more information.</li>
         ///   <li>credit_alphanum4 See <see cref="AssetTypeCreditAlphaNum4"/> for more information.</li>
         ///   <li>credit_alphanum12 See <see cref="AssetTypeCreditAlphaNum12"/> for more information.</li>
+        ///   <li>liquidity_pool_shares</li>
         /// </ul>
         ///</summary>
-        public new abstract string GetType();
+        public abstract string Type { get; }
 
         ///<summary>
         /// Generates XDR object from a given Asset object

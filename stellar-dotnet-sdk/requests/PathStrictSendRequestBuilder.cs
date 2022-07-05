@@ -28,7 +28,7 @@ namespace stellar_dotnet_sdk.requests
 
         public PathStrictSendRequestBuilder SourceAsset(Asset asset)
         {
-            UriBuilder.SetQueryParam("source_asset_type", asset.GetType());
+            UriBuilder.SetQueryParam("source_asset_type", asset.Type);
 
             if (asset is AssetTypeCreditAlphaNum)
             {

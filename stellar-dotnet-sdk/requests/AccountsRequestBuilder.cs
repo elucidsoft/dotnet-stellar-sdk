@@ -130,7 +130,7 @@ namespace stellar_dotnet_sdk.requests
                 case AssetTypeCreditAlphaNum credit:
                     return $"{credit.Code}:{credit.Issuer}";
                 default:
-                    throw new ArgumentException($"Unknown Asset type {asset.GetType()}");
+                    throw new ArgumentException($"Unknown Asset type {asset.Type}");
             }
         }
 

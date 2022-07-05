@@ -18,7 +18,7 @@ namespace stellar_dotnet_sdk.requests
 
         public TradesRequestBuilder BaseAsset(Asset asset)
         {
-            UriBuilder.SetQueryParam("base_asset_type", asset.GetType());
+            UriBuilder.SetQueryParam("base_asset_type", asset.Type);
             if (asset is AssetTypeCreditAlphaNum creditAlphaNumAsset)
             {
                 UriBuilder.SetQueryParam("base_asset_code", creditAlphaNumAsset.Code);
@@ -36,7 +36,7 @@ namespace stellar_dotnet_sdk.requests
 
         public TradesRequestBuilder CounterAsset(Asset asset)
         {
-            UriBuilder.SetQueryParam("counter_asset_type", asset.GetType());
+            UriBuilder.SetQueryParam("counter_asset_type", asset.Type);
             if (asset is AssetTypeCreditAlphaNum creditAlphaNumAsset)
             {
                 UriBuilder.SetQueryParam("counter_asset_code", creditAlphaNumAsset.Code);
