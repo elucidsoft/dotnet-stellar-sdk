@@ -15,7 +15,7 @@ namespace stellar_dotnet_sdk
                 var creditAsset = (AssetTypeCreditAlphaNum)asset;
                 return $"{creditAsset.Code}:{creditAsset.Issuer}";
             }
-            return asset.GetType();
+            return asset.Type;
         }
     }
 }

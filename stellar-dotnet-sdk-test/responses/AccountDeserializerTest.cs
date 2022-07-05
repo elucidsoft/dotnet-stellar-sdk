@@ -79,6 +79,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(account.Flags.AuthImmutable, true);
             Assert.AreEqual(account.Flags.AuthClawback, true);
 
+            account.Balances
+                .Should().HaveCount(3);
+
             Assert.AreEqual(account.Balances[0].AssetType, "credit_alphanum4");
             Assert.AreEqual(account.Balances[0].AssetCode, "ABC");
             Assert.AreEqual(account.Balances[0].AssetIssuer, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
@@ -86,10 +89,6 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.IsInstanceOfType(asset, typeof(AssetTypeCreditAlphaNum));
             Assert.AreEqual(asset.Code, "ABC");
             Assert.AreEqual(asset.Issuer, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
-
-            account.Balances
-                .Should().HaveCount(3);
-
             Assert.AreEqual(account.Balances[0].BalanceString, "1001.0000000");
             Assert.AreEqual(account.Balances[0].Limit, "12000.4775807");
             Assert.AreEqual(account.Balances[0].BuyingLiabilities, "100.1234567");
@@ -106,6 +105,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(account.Balances[1].Limit, null);
 
             // liquidity pool balance
+            account.Balances[2].Asset
+                .Should().BeNull();
+
             account.Balances[2].AssetType
                 .Should().Be("liquidity_pool_shares");
 

@@ -43,11 +43,15 @@ namespace stellar_dotnet_sdk
 
         public RootResponse Root()
         {
-            ResponseHandler<RootResponse> responseHandler = new ResponseHandler<RootResponse>();
+            return RootAsync().Result;
+        }
 
-            var response = _httpClient.GetAsync(_serverUri).Result;
+        public async Task<RootResponse> RootAsync()
+        {
+            var responseHandler = new ResponseHandler<RootResponse>();
+            var response = await _httpClient.GetAsync(_serverUri);
 
-            return responseHandler.HandleResponse(response).Result;
+            return await responseHandler.HandleResponse(response);
         }
 
         public AccountsRequestBuilder Accounts => new AccountsRequestBuilder(_serverUri, _httpClient);

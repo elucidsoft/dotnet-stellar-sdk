@@ -36,7 +36,7 @@ namespace stellar_dotnet_sdk.requests
 
         public PathsRequestBuilder DestinationAsset(Asset asset)
         {
-            UriBuilder.SetQueryParam("destination_asset_type", asset.GetType());
+            UriBuilder.SetQueryParam("destination_asset_type", asset.Type);
 
             if (asset is AssetTypeCreditAlphaNum)
             {
