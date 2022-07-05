@@ -6,7 +6,7 @@ namespace stellar_dotnet_sdk_test.Generators
 {
     public static class AlphaNum4Generator
     {
-        public static Arbitrary<string> Generate() 
+        public static Arbitrary<string> Generate()
         {
             var regexGenerator = new Xeger("([a-zA-Z0-9]){1,4}");
 
