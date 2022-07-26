@@ -1,0 +1,899 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Transaction
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Transaction
+   ">
+    <meta name="generator" content="docfx 2.59.2.0">
+    
+    <link rel="shortcut icon" href="../favicon">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="stellar_dotnet_sdk.Transaction">
+  <h1 id="stellar_dotnet_sdk_Transaction" data-uid="stellar_dotnet_sdk.Transaction">Class Transaction
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="stellar_dotnet_sdk.TransactionBase.html">TransactionBase</a></div>
+    <div class="level2"><span class="xref">Transaction</span></div>
+  </div>
+  
+  
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Signatures">TransactionBase.Signatures</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_SignatureBase">TransactionBase.SignatureBase()</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Sign_stellar_dotnet_sdk_IAccountId_">TransactionBase.Sign(IAccountId)</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Sign_stellar_dotnet_sdk_IAccountId_stellar_dotnet_sdk_Network_">TransactionBase.Sign(IAccountId, Network)</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Sign_System_Byte___">TransactionBase.Sign(Byte[])</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Sign_System_String_System_String_">TransactionBase.Sign(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Hash">TransactionBase.Hash()</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_Hash_stellar_dotnet_sdk_Network_">TransactionBase.Hash(Network)</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_ToUnsignedEnvelopeXdrBase64_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_">TransactionBase.ToUnsignedEnvelopeXdrBase64(TransactionBase.TransactionXdrVersion)</a>
+    </div>
+    <div>
+      <a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_ToEnvelopeXdrBase64_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_">TransactionBase.ToEnvelopeXdrBase64(TransactionBase.TransactionXdrVersion)</a>
+    </div>
+  </div>
+  
+  <h6><strong>Namespace</strong>: System.Dynamic.ExpandoObject</h6>
+  <h6><strong>Assembly</strong>: stellar-dotnet-sdk.dll</h6>
+  
+  <h5 id="stellar_dotnet_sdk_Transaction_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Transaction : TransactionBase</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_Fee_" data-uid="stellar_dotnet_sdk.Transaction.Fee*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_Fee" data-uid="stellar_dotnet_sdk.Transaction.Fee"><a href="#collapsible-stellar_dotnet_sdk_Transaction_Fee" class="expander" data-toggle="collapse">Fee</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_Fee" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint Fee { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.UInt32</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_Memo_" data-uid="stellar_dotnet_sdk.Transaction.Memo*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_Memo" data-uid="stellar_dotnet_sdk.Transaction.Memo"><a href="#collapsible-stellar_dotnet_sdk_Transaction_Memo" class="expander" data-toggle="collapse">Memo</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_Memo" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Memo Memo { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Memo.html">Memo</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_Operations_" data-uid="stellar_dotnet_sdk.Transaction.Operations*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_Operations" data-uid="stellar_dotnet_sdk.Transaction.Operations"><a href="#collapsible-stellar_dotnet_sdk_Transaction_Operations" class="expander" data-toggle="collapse">Operations</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_Operations" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Operation[] Operations { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Operation.html">Operation</a>[]
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_Preconditions_" data-uid="stellar_dotnet_sdk.Transaction.Preconditions*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_Preconditions" data-uid="stellar_dotnet_sdk.Transaction.Preconditions"><a href="#collapsible-stellar_dotnet_sdk_Transaction_Preconditions" class="expander" data-toggle="collapse">Preconditions</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_Preconditions" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TransactionPreconditions Preconditions { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.TransactionPreconditions.html">TransactionPreconditions</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_SequenceNumber_" data-uid="stellar_dotnet_sdk.Transaction.SequenceNumber*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_SequenceNumber" data-uid="stellar_dotnet_sdk.Transaction.SequenceNumber"><a href="#collapsible-stellar_dotnet_sdk_Transaction_SequenceNumber" class="expander" data-toggle="collapse">SequenceNumber</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_SequenceNumber" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long SequenceNumber { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Int64</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_SourceAccount_" data-uid="stellar_dotnet_sdk.Transaction.SourceAccount*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_SourceAccount" data-uid="stellar_dotnet_sdk.Transaction.SourceAccount"><a href="#collapsible-stellar_dotnet_sdk_Transaction_SourceAccount" class="expander" data-toggle="collapse">SourceAccount</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_SourceAccount" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IAccountId SourceAccount { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.IAccountId.html">IAccountId</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_TimeBounds_" data-uid="stellar_dotnet_sdk.Transaction.TimeBounds*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_TimeBounds" data-uid="stellar_dotnet_sdk.Transaction.TimeBounds"><a href="#collapsible-stellar_dotnet_sdk_Transaction_TimeBounds" class="expander" data-toggle="collapse">TimeBounds</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_TimeBounds" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeBounds TimeBounds { get; }</code></pre>
+  </div>
+
+  
+  
+  
+  
+  <h5 class="propertyValue">Property Value</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.TimeBounds.html">TimeBounds</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdr_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdr*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdr_stellar_dotnet_sdk_xdr_TransactionEnvelope_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdr(stellar_dotnet_sdk.xdr.TransactionEnvelope)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_FromEnvelopeXdr_stellar_dotnet_sdk_xdr_TransactionEnvelope_" class="expander" data-toggle="collapse">FromEnvelopeXdr(TransactionEnvelope)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_FromEnvelopeXdr_stellar_dotnet_sdk_xdr_TransactionEnvelope_" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Transaction FromEnvelopeXdr(TransactionEnvelope envelope)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.TransactionEnvelope</span></td>
+        <td><span class="parametername">envelope</span></td>
+        <td></td>
+      </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Transaction.html">Transaction</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdr_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdr*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdr_System_String_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdr(System.String)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_FromEnvelopeXdr_System_String_" class="expander" data-toggle="collapse">FromEnvelopeXdr(String)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_FromEnvelopeXdr_System_String_" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Transaction FromEnvelopeXdr(string envelope)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">envelope</span></td>
+        <td></td>
+      </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Transaction.html">Transaction</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV0_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdrV0*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV0_stellar_dotnet_sdk_xdr_TransactionV0Envelope_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdrV0(stellar_dotnet_sdk.xdr.TransactionV0Envelope)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV0_stellar_dotnet_sdk_xdr_TransactionV0Envelope_" class="expander" data-toggle="collapse">FromEnvelopeXdrV0(TransactionV0Envelope)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV0_stellar_dotnet_sdk_xdr_TransactionV0Envelope_" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Transaction FromEnvelopeXdrV0(TransactionV0Envelope envelope)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.TransactionV0Envelope</span></td>
+        <td><span class="parametername">envelope</span></td>
+        <td></td>
+      </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Transaction.html">Transaction</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV1_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdrV1*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV1_stellar_dotnet_sdk_xdr_TransactionV1Envelope_" data-uid="stellar_dotnet_sdk.Transaction.FromEnvelopeXdrV1(stellar_dotnet_sdk.xdr.TransactionV1Envelope)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV1_stellar_dotnet_sdk_xdr_TransactionV1Envelope_" class="expander" data-toggle="collapse">FromEnvelopeXdrV1(TransactionV1Envelope)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_FromEnvelopeXdrV1_stellar_dotnet_sdk_xdr_TransactionV1Envelope_" class="collapse in">
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Transaction FromEnvelopeXdrV1(TransactionV1Envelope envelope)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><span class="xref">stellar_dotnet_sdk.xdr.TransactionV1Envelope</span></td>
+        <td><span class="parametername">envelope</span></td>
+        <td></td>
+      </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <a class="xref" href="stellar_dotnet_sdk.Transaction.html">Transaction</a>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_SignatureBase_" data-uid="stellar_dotnet_sdk.Transaction.SignatureBase*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_SignatureBase_stellar_dotnet_sdk_Network_" data-uid="stellar_dotnet_sdk.Transaction.SignatureBase(stellar_dotnet_sdk.Network)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_SignatureBase_stellar_dotnet_sdk_Network_" class="expander" data-toggle="collapse">SignatureBase(Network)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_SignatureBase_stellar_dotnet_sdk_Network_" class="collapse in">
+  <div class="markdown level1 summary"><p>Returns signature base for the given network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override byte[] SignatureBase(Network network)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a></td>
+        <td><span class="parametername">network</span></td>
+        <td><p>The network <a class="xref" href="stellar_dotnet_sdk.Network.html">Network</a> the transaction will be sent to.</p>
+</td>
+      </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Byte</span>[]
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_SignatureBase_stellar_dotnet_sdk_Network_">TransactionBase.SignatureBase(Network)</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_ToEnvelopeXdr_" data-uid="stellar_dotnet_sdk.Transaction.ToEnvelopeXdr*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_ToEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_" data-uid="stellar_dotnet_sdk.Transaction.ToEnvelopeXdr(stellar_dotnet_sdk.TransactionBase.TransactionXdrVersion)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_ToEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_" class="expander" data-toggle="collapse">ToEnvelopeXdr(TransactionBase.TransactionXdrVersion)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_ToEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_" class="collapse in">
+  <div class="markdown level1 summary"><p>Generates TransactionEnvelope XDR object. Transaction need to have at least one signature.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override TransactionEnvelope ToEnvelopeXdr(TransactionBase.TransactionXdrVersion version = TransactionBase.TransactionXdrVersion.V1)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.TransactionBase.TransactionXdrVersion.html">TransactionBase.TransactionXdrVersion</a></td>
+        <td><span class="parametername">version</span></td>
+        <td></td>
+      </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">stellar_dotnet_sdk.xdr.TransactionEnvelope</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_ToEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_">TransactionBase.ToEnvelopeXdr(TransactionBase.TransactionXdrVersion)</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdr_" data-uid="stellar_dotnet_sdk.Transaction.ToUnsignedEnvelopeXdr*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_" data-uid="stellar_dotnet_sdk.Transaction.ToUnsignedEnvelopeXdr(stellar_dotnet_sdk.TransactionBase.TransactionXdrVersion)"><a href="#collapsible-stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_" class="expander" data-toggle="collapse">ToUnsignedEnvelopeXdr(TransactionBase.TransactionXdrVersion)</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_ToUnsignedEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_" class="collapse in">
+  <div class="markdown level1 summary"><p>Generates TransactionEnvelope XDR object. This transaction MUST be signed before being useful</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override TransactionEnvelope ToUnsignedEnvelopeXdr(TransactionBase.TransactionXdrVersion version = TransactionBase.TransactionXdrVersion.V1)</code></pre>
+  </div>
+
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+      <tr>
+        <td><a class="xref" href="stellar_dotnet_sdk.TransactionBase.TransactionXdrVersion.html">TransactionBase.TransactionXdrVersion</a></td>
+        <td><span class="parametername">version</span></td>
+        <td></td>
+      </tr>
+  </table>
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">stellar_dotnet_sdk.xdr.TransactionEnvelope</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="stellar_dotnet_sdk.TransactionBase.html#stellar_dotnet_sdk_TransactionBase_ToUnsignedEnvelopeXdr_stellar_dotnet_sdk_TransactionBase_TransactionXdrVersion_">TransactionBase.ToUnsignedEnvelopeXdr(TransactionBase.TransactionXdrVersion)</a></div>
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_ToXdr_" data-uid="stellar_dotnet_sdk.Transaction.ToXdr*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_ToXdr" data-uid="stellar_dotnet_sdk.Transaction.ToXdr"><a href="#collapsible-stellar_dotnet_sdk_Transaction_ToXdr" class="expander" data-toggle="collapse">ToXdr()</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_ToXdr" class="collapse in">
+  <div class="markdown level1 summary"><p>Generates Transaction XDR object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TransactionV0 ToXdr()</code></pre>
+  </div>
+
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">stellar_dotnet_sdk.xdr.TransactionV0</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_ToXdrV0_" data-uid="stellar_dotnet_sdk.Transaction.ToXdrV0*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_ToXdrV0" data-uid="stellar_dotnet_sdk.Transaction.ToXdrV0"><a href="#collapsible-stellar_dotnet_sdk_Transaction_ToXdrV0" class="expander" data-toggle="collapse">ToXdrV0()</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_ToXdrV0" class="collapse in">
+  <div class="markdown level1 summary"><p>Generates Transaction XDR object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TransactionV0 ToXdrV0()</code></pre>
+  </div>
+
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">stellar_dotnet_sdk.xdr.TransactionV0</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  <a id="stellar_dotnet_sdk_Transaction_ToXdrV1_" data-uid="stellar_dotnet_sdk.Transaction.ToXdrV1*"></a>
+  
+  <h4 id="stellar_dotnet_sdk_Transaction_ToXdrV1" data-uid="stellar_dotnet_sdk.Transaction.ToXdrV1"><a href="#collapsible-stellar_dotnet_sdk_Transaction_ToXdrV1" class="expander" data-toggle="collapse">ToXdrV1()</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_Transaction_ToXdrV1" class="collapse in">
+  <div class="markdown level1 summary"><p>Generates Transaction XDR object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transaction ToXdrV1()</code></pre>
+  </div>
+
+  
+  <h5 class="returns">Returns</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">stellar_dotnet_sdk.xdr.Transaction</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+</article>
+          </div>
+          <div class="contribution-panel mobile-hide">
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
