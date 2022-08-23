@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using stellar_dotnet_sdk.responses.operations;
 
 namespace stellar_dotnet_sdk.requests
 {
@@ -20,6 +19,7 @@ namespace stellar_dotnet_sdk.requests
         private readonly List<string> _segments;
         private bool _segmentsAdded;
         protected UriBuilder UriBuilder;
+        private readonly string _serverPathPrefix;
 
         public static HttpClient HttpClient { get; set; }
 
@@ -40,6 +40,9 @@ namespace stellar_dotnet_sdk.requests
         {
             UriBuilder = new UriBuilder(serverUri);
             _segments = new List<string>();
+
+            // Store the required path part of the serverUri
+            _serverPathPrefix = UriBuilder.Path;
 
             if (!string.IsNullOrEmpty(defaultSegment))
                 SetSegments(defaultSegment);
@@ -120,10 +123,10 @@ namespace stellar_dotnet_sdk.requests
         {
             if (_segments.Count > 0)
             {
-                var path = "";
+                var path = _serverPathPrefix;
 
                 foreach (var segment in _segments)
-                    path += "/" + segment;
+                    path += (path.EndsWith("/") ? string.Empty : "/") + segment;
 
                 UriBuilder.Path = path;
 
