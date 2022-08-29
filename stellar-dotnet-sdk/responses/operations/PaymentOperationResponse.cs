@@ -64,7 +64,7 @@ namespace stellar_dotnet_sdk.responses.operations
         /// <summary>
         /// Account address that receives the payment.
         /// </summary>
-        public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);
+        public Asset Asset => Asset.Create(AssetType, AssetCode, AssetIssuer);
 
         public PaymentOperationResponse()
         {
