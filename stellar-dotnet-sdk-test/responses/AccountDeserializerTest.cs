@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -87,7 +88,7 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(asset.Code, "ABC");
             Assert.AreEqual(asset.Issuer, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
 
-            account.Balances
+            ((IEnumerable<Balance>)account.Balances)
                 .Should().HaveCount(3);
 
             Assert.AreEqual(account.Balances[0].BalanceString, "1001.0000000");

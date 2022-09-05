@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk
 
         public override bool Equals(object obj)
         {
-            if (obj == null || typeof(LiquidityPoolConstantProductParameters).Equals(obj.GetType()))
+            if (obj == null || typeof(LiquidityPoolConstantProductParameters) == obj.GetType())
             {
                 return false;
             }
@@ -27,6 +27,8 @@ namespace stellar_dotnet_sdk
             LiquidityPoolConstantProductParameters other = (LiquidityPoolConstantProductParameters)obj;
             return Equals(AssetA, other.AssetA) && Equals(AssetB, other.AssetB) && Equals(Fee, other.Fee);
         }
+
+        public override int GetHashCode() => this.AssetA.GetHashCode() ^ this.AssetB.GetHashCode() ^ this.Fee;
 
         public override xdr.LiquidityPoolParameters ToXdr()
         {
