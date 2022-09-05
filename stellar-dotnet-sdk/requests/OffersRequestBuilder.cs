@@ -104,7 +104,7 @@ namespace stellar_dotnet_sdk.requests
 
         private void AddAssetFilterQueryParam(string side, Asset asset)
         {
-            UriBuilder.SetQueryParam($"{side}_asset_type", asset.GetType());
+            UriBuilder.SetQueryParam($"{side}_asset_type", asset.Type);
             switch (asset)
             {
                 case AssetTypeNative _:
@@ -114,7 +114,7 @@ namespace stellar_dotnet_sdk.requests
                     UriBuilder.SetQueryParam($"{side}_asset_issuer", credit.Issuer);
                     return;
                 default:
-                    throw new ArgumentException($"Unknown Asset type {asset.GetType()}");
+                    throw new ArgumentException($"Unknown Asset type {asset.Type}");
             }
         }
 

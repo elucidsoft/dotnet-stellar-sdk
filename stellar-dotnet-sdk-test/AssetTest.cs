@@ -47,7 +47,7 @@ namespace stellar_dotnet_sdk_test
             var parsedAsset = (AssetTypeCreditAlphaNum12)Asset.FromXdr(thisXdr);
             Assert.AreEqual(code, asset.Code);
             Assert.AreEqual(issuer.AccountId, parsedAsset.Issuer);
-            Assert.AreEqual(asset.GetType(), "credit_alphanum12");
+            Assert.AreEqual(asset.Type, "credit_alphanum12");
         }
 
         [TestMethod]

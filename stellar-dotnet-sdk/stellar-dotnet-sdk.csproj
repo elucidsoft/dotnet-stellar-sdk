@@ -30,7 +30,7 @@
     <PackageReference Include="dotnetstandard-bip39" Version="1.0.2" />
     <PackageReference Include="LaunchDarkly.EventSource" Version="3.3.2" />
     <PackageReference Include="Nett" Version="0.10.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NSec.Cryptography" Version="19.5.0" />
   </ItemGroup>
 
@@ -40,5 +40,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\stellar-dotnet-sdk-xdr\stellar-dotnet-sdk-xdr.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 </Project>

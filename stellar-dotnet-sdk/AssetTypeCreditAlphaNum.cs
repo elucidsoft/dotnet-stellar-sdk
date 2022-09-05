@@ -63,18 +63,6 @@ namespace stellar_dotnet_sdk
         }
 
         /// <inheritdoc />
-        public override string GetType()
-        {
-            throw new NotSupportedException();
-        }
-
-        /// <inheritdoc />
-        public override xdr.Asset ToXdr()
-        {
-            throw new NotSupportedException();
-        }
-
-        /// <inheritdoc />
         public override string CanonicalName()
         {
             return $"{Code}:{Issuer}";

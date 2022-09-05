@@ -88,6 +88,6 @@ namespace stellar_dotnet_sdk.responses.operations
         /// <summary>
         /// The asset to allow trust.
         /// </summary>
-        public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);
+        public AssetTypeCreditAlphaNum Asset => stellar_dotnet_sdk.Asset.CreateNonNativeAsset(AssetCode, AssetIssuer);
     }
 }

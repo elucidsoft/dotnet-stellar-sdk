@@ -80,6 +80,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(account.Flags.AuthImmutable, true);
             Assert.AreEqual(account.Flags.AuthClawback, true);
 
+            ((IEnumerable<Balance>)account.Balances)
+                .Should().HaveCount(3);
+
             Assert.AreEqual(account.Balances[0].AssetType, "credit_alphanum4");
             Assert.AreEqual(account.Balances[0].AssetCode, "ABC");
             Assert.AreEqual(account.Balances[0].AssetIssuer, "GCRA6COW27CY5MTKIA7POQ2326C5ABYCXODBN4TFF5VL4FMBRHOT3YHU");
@@ -107,6 +110,9 @@ namespace stellar_dotnet_sdk_test.responses
             Assert.AreEqual(account.Balances[1].Limit, null);
 
             // liquidity pool balance
+            ((object)account.Balances[2].Asset)
+                .Should().BeNull();
+
             account.Balances[2].AssetType
                 .Should().Be("liquidity_pool_shares");
 

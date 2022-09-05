@@ -58,8 +58,8 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "selling_asset_issuer")]
         public string SellingAssetIssuer { get; private set; }
 
-        public Asset BuyingAsset => Asset.CreateNonNativeAsset(BuyingAssetType, BuyingAssetIssuer, BuyingAssetCode);
+        public Asset BuyingAsset => Asset.Create(BuyingAssetType, BuyingAssetCode, BuyingAssetIssuer);
 
-        public Asset SellingAsset => Asset.CreateNonNativeAsset(SellingAssetType, SellingAssetIssuer, SellingAssetCode);
+        public Asset SellingAsset => Asset.Create(SellingAssetType, SellingAssetCode, SellingAssetIssuer);
     }
 }

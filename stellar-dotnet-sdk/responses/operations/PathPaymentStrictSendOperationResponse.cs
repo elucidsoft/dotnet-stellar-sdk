@@ -126,11 +126,11 @@ namespace stellar_dotnet_sdk.responses.operations
         /// <summary>
         /// Destination Asset
         /// </summary>
-        public Asset DestinationAsset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);
+        public Asset DestinationAsset => Asset.Create(AssetType, AssetCode, AssetIssuer);
 
         /// <summary>
         /// Source Asset
         /// </summary>
-        public Asset SourceAsset => Asset.CreateNonNativeAsset(SourceAssetType, SourceAssetIssuer, SourceAssetCode);
+        public Asset SourceAsset => Asset.Create(SourceAssetType, SourceAssetCode, SourceAssetIssuer);
     }
 }

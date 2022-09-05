@@ -4,16 +4,15 @@ namespace stellar_dotnet_sdk
 {
     public class AssetTypeCreditAlphaNum4 : AssetTypeCreditAlphaNum
     {
+        public const string RestApiType = "credit_alphanum4";
+
         public AssetTypeCreditAlphaNum4(string code, string issuer) : base(code, issuer)
         {
             if (code.Length < 1 || code.Length > 4)
                 throw new AssetCodeLengthInvalidException();
         }
 
-        public override string GetType()
-        {
-            return "credit_alphanum4";
-        }
+        public override string Type => RestApiType;
 
         public override xdr.Asset ToXdr()
         {
@@ -30,11 +29,11 @@ namespace stellar_dotnet_sdk
 
         public override int CompareTo(Asset asset)
         {
-            if (asset.GetType() == "credit_alphanum12")
+            if (asset.Type == AssetTypeCreditAlphaNum12.RestApiType)
             {
                 return -1;
             }
-            else if (asset.GetType() == "native")
+            else if (asset.Type == AssetTypeNative.RestApiType)
             {
                 return 1;
             }

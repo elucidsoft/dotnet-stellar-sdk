@@ -24,7 +24,7 @@ namespace stellar_dotnet_sdk_test
         }
 
         [TestMethod]
-        public void TestGetType()
+        public void TestType()
         {
             var keypair = KeyPair.Random();
             var keypair2 = KeyPair.Random();
@@ -34,7 +34,7 @@ namespace stellar_dotnet_sdk_test
 
             var trustlineAsset = (LiquidityPoolShareTrustlineAsset)TrustlineAsset.Create(LiquidityPoolParameters.Create(stellar_dotnet_sdk.xdr.LiquidityPoolType.LiquidityPoolTypeEnum.LIQUIDITY_POOL_CONSTANT_PRODUCT, assetA, assetB, 30));
             var trustlineAsset2 = new LiquidityPoolShareTrustlineAsset(trustlineAsset.ID);
-            Assert.AreEqual(trustlineAsset.GetType(), "pool_share");
+            Assert.AreEqual(trustlineAsset.Type, "pool_share");
         }
     }
 }
