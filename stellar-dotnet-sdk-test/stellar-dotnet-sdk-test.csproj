@@ -16,11 +16,15 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="coveralls.io" Version="1.4.2" />
+    <PackageReference Include="FakeItEasy" Version="7.2.0" />
+    <PackageReference Include="Fare" Version="2.1.2" />
     <PackageReference Include="FluentAssertions" Version="5.10.3" />
+    <PackageReference Include="FsCheck.NUnit" Version="2.16.3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="Moq" Version="4.10.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.1.0" />
     <PackageReference Include="SpecFlow.MsTest" Version="3.0.213" />
   </ItemGroup>
   <ItemGroup>

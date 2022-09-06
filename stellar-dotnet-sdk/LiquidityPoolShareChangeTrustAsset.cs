@@ -6,6 +6,8 @@ namespace stellar_dotnet_sdk
 {
     public class LiquidityPoolShareChangeTrustAsset : ChangeTrustAsset
     {
+        public const string RestApiType = "pool_share";
+
         public LiquidityPoolParameters Parameters { get; set; }
 
         public LiquidityPoolShareChangeTrustAsset(LiquidityPoolParameters parameters)
@@ -18,10 +20,7 @@ namespace stellar_dotnet_sdk
             return Parameters.GetID();
         }
 
-        public override string GetType()
-        {
-            return "pool_share";
-        }
+        public override string Type => RestApiType;
 
         public override string ToString()
         {
@@ -46,7 +45,7 @@ namespace stellar_dotnet_sdk
 
         public override int CompareTo(ChangeTrustAsset asset)
         {
-            if (asset.GetType() != "pool_share")
+            if (asset.Type != RestApiType)
             {
                 return 1;
             }
