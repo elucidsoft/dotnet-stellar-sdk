@@ -8,15 +8,17 @@ namespace stellar_dotnet_sdk.responses
     /// </summary>
     public class Balance
     {
+        private const string LiquidityPoolSharesAssetType = "liquidity_pool_shares";
+
         public Balance(string assetType, string assetCode, string assetIssuer, string balance, string limit, string buyingLiabilities, string sellingLiabilities, bool isAuthorized, bool isAuthorizedToMaintainLiabilities, string liquidityPoolId)
         {
-            AssetType = assetType ?? throw new ArgumentNullException(nameof(assetType), "assertType cannot be null");
+            AssetType = assetType ?? throw new ArgumentNullException(nameof(assetType), "asset type cannot be null");
             BalanceString = balance ?? throw new ArgumentNullException(nameof(balance), "balance cannot be null");
             Limit = limit;
             AssetCode = assetCode;
             AssetIssuer = assetIssuer;
 
-            if (assetType != "liquidity_pool_shares")
+            if (assetType != LiquidityPoolSharesAssetType)
             {
                 BuyingLiabilities = buyingLiabilities ?? throw new ArgumentNullException(nameof(buyingLiabilities), "buyingLiabilities cannot be null");
                 SellingLiabilities = sellingLiabilities ?? throw new ArgumentNullException(nameof(sellingLiabilities), "sellingLiabilities cannot be null");
@@ -25,7 +27,7 @@ namespace stellar_dotnet_sdk.responses
             IsAuthorized = isAuthorized;
             IsAuthorizedToMaintainLiabilities = isAuthorizedToMaintainLiabilities;
 
-            if (assetType == "liquidity_pool_shares")
+            if (assetType == LiquidityPoolSharesAssetType)
             {
                 LiquidityPoolId = liquidityPoolId ?? throw new ArgumentNullException(nameof(liquidityPoolId));
             }
@@ -41,7 +43,7 @@ namespace stellar_dotnet_sdk.responses
         public string AssetIssuer { get; private set; }
 
         [JsonIgnore]
-        public Asset Asset => Asset.Create(AssetType, AssetCode, AssetIssuer);
+        public Asset Asset => AssetType != LiquidityPoolSharesAssetType ? Asset.Create(AssetType, AssetCode, AssetIssuer) : null;
 
         [JsonProperty(PropertyName = "limit")]
         public string Limit { get; private set; }

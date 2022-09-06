@@ -4,15 +4,14 @@ namespace stellar_dotnet_sdk
 {
     public class AssetTypeNative : Asset
     {
+        public const string RestApiType = "native";
+
         public override int GetHashCode()
         {
             return 0;
         }
 
-        public override string GetType()
-        {
-            return "native";
-        }
+        public override string Type => RestApiType;
 
         public override bool Equals(object obj)
         {
@@ -34,7 +33,7 @@ namespace stellar_dotnet_sdk
 
         public override int CompareTo(Asset asset)
         {
-            if (asset.GetType() == "native")
+            if (asset.Type == RestApiType)
             {
                 return 0;
             }

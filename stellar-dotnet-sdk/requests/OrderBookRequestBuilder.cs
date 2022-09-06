@@ -15,7 +15,7 @@ namespace stellar_dotnet_sdk.requests
 
         public OrderBookRequestBuilder BuyingAsset(Asset asset)
         {
-            UriBuilder.SetQueryParam("buying_asset_type", asset.GetType());
+            UriBuilder.SetQueryParam("buying_asset_type", asset.Type);
             if (asset is AssetTypeCreditAlphaNum creditAlphaNumAsset)
             {
                 UriBuilder.SetQueryParam("buying_asset_code", creditAlphaNumAsset.Code);
@@ -27,7 +27,7 @@ namespace stellar_dotnet_sdk.requests
 
         public OrderBookRequestBuilder SellingAsset(Asset asset)
         {
-            UriBuilder.SetQueryParam("selling_asset_type", asset.GetType());
+            UriBuilder.SetQueryParam("selling_asset_type", asset.Type);
             if (asset is AssetTypeCreditAlphaNum creditAlphaNumAsset)
             {
                 UriBuilder.SetQueryParam("selling_asset_code", creditAlphaNumAsset.Code);
