@@ -74,6 +74,6 @@ namespace stellar_dotnet_sdk.responses.operations
         /// <summary>
         /// Asset representation (Using the values of the other fields)
         /// </summary>
-        public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);
+        public AssetTypeCreditAlphaNum Asset => stellar_dotnet_sdk.Asset.CreateNonNativeAsset(AssetCode, AssetIssuer);
     }
 }

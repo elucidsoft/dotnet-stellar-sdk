@@ -51,6 +51,6 @@ namespace stellar_dotnet_sdk.responses.operations
         [JsonProperty(PropertyName = "trustor_muxed_id")]
         public ulong? TrustorMuxedID { get; private set; }
 
-        public Asset Asset => Asset.CreateNonNativeAsset(AssetType, AssetIssuer, AssetCode);
+        public AssetTypeCreditAlphaNum Asset => stellar_dotnet_sdk.Asset.CreateNonNativeAsset(AssetCode, AssetIssuer);
     }
 }

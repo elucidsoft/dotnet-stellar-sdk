@@ -55,7 +55,7 @@ namespace stellar_dotnet_sdk_test.responses.operations
             Assert.AreEqual(operation.SourceAmount, operationTest.SourceAmount);
             Assert.AreEqual(operation.DestinationMin, operationTest.DestinationMin);
             Assert.AreEqual(operation.DestinationAsset, Asset.Create(operationTest.AssetType, "", ""));
-            Assert.AreEqual(operation.SourceAsset, Asset.CreateNonNativeAsset(operationTest.SourceAssetType, operationTest.SourceAssetIssuer, operationTest.SourceAssetCode));
+            Assert.AreEqual(operation.SourceAsset, Asset.CreateNonNativeAsset(operationTest.SourceAssetCode, operationTest.SourceAssetIssuer));
         }
     }
 }

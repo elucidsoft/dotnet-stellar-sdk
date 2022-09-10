@@ -35,8 +35,8 @@ namespace stellar_dotnet_sdk.responses
         [JsonProperty(PropertyName = "_links")]
         public PathResponseLinks Links { get; private set; }
 
-        public Asset DestinationAsset => Asset.CreateNonNativeAsset(DestinationAssetType, DestinationAssetIssuer, DestinationAssetCode);
-        public Asset SourceAsset => Asset.CreateNonNativeAsset(SourceAssetType, SourceAssetIssuer, SourceAssetCode);
+        public AssetTypeCreditAlphaNum DestinationAsset => Asset.CreateNonNativeAsset(DestinationAssetCode, DestinationAssetIssuer);
+        public AssetTypeCreditAlphaNum SourceAsset => Asset.CreateNonNativeAsset(SourceAssetCode, SourceAssetIssuer);
 
         public PathResponse()
         {

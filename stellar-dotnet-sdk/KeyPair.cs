@@ -271,9 +271,9 @@ namespace stellar_dotnet_sdk
         public static KeyPair Random()
         {
             byte[] b = new byte[32];
-            using (RNGCryptoServiceProvider rngCrypto = new RNGCryptoServiceProvider())
+            using (var rng = RandomNumberGenerator.Create())
             {
-                rngCrypto.GetBytes(b);
+                rng.GetBytes(b);
             }
 
             return FromSecretSeed(b);

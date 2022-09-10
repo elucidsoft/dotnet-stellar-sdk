@@ -48,7 +48,7 @@ namespace stellar_dotnet_sdk
         /// </summary>
         /// <param name="code">Asset code</param>
         /// <param name="issuer">Asset issuer</param>
-        public static Asset CreateNonNativeAsset(string code, string issuer)
+        public static AssetTypeCreditAlphaNum CreateNonNativeAsset(string code, string issuer)
         {
             if (code.Length >= 1 && code.Length <= 4)
                 return new AssetTypeCreditAlphaNum4(code, issuer);
@@ -95,17 +95,6 @@ namespace stellar_dotnet_sdk
         /// Generates XDR object from a given Asset object
         ///</summary>
         public abstract xdr.Asset ToXdr();
-
-        ///<summary>
-        /// Creates one of AssetTypeCreditAlphaNum4 or AssetTypeCreditAlphaNum12 object based on a code length
-        /// </summary>
-        public static Asset CreateNonNativeAsset(string assetType, string accountId, string code)
-        {
-            if (assetType == "native")
-                return new AssetTypeNative();
-
-            return CreateNonNativeAsset(code, accountId);
-        }
 
         /// <summary>
         /// Returns the asset canonical name.

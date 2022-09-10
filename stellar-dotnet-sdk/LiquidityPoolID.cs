@@ -62,7 +62,7 @@ namespace stellar_dotnet_sdk
 
         public override bool Equals(object obj)
         {
-            if (obj == null || !typeof(LiquidityPoolID).Equals(obj.GetType()))
+            if (obj == null || typeof(LiquidityPoolID) != obj.GetType())
             {
                 return false;
             }
@@ -71,5 +71,7 @@ namespace stellar_dotnet_sdk
 
             return Equals(ToString(), o.ToString());
         }
+
+        public override int GetHashCode() => this.ToString().GetHashCode();
     }
 }

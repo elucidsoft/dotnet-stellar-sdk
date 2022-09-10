@@ -1,7 +1,7 @@
-version: 8.0.{build} 
+version: 9.0.{build} 
 pull_requests:
   do_not_increment_build_number: true
-os: Visual Studio 2019
+os: Visual Studio 2022
 
 before_build:
   - cmd: dotnet restore stellar-dotnet-sdk.sln
@@ -24,7 +24,7 @@ build:
   parallel: true
   verbosity: minimal
 test_script:
-  - cmd: dotnet format --check
+  - cmd: dotnet format --verify-no-changes
   - cmd: dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:ExcludeByFile=\"../stellar-dotnet-sdk/chaos.nacl/**/*.cs\" -p:ExcludeByFile=\"../stellar-dotnet-sdk-xdr/generated/*.cs\" ./stellar-dotnet-sdk-test --test-adapter-path:. --logger:Appveyor
 after_test:
   - cmd: packages\coveralls.io\1.4.2\tools\coveralls.net.exe --opencover "./stellar-dotnet-sdk-test/coverage.opencover.xml" -r %COVERALLS_REPO_TOKEN%
