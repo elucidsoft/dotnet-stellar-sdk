@@ -24,10 +24,10 @@
   "id": 1127729562914817,
   "offer_id": 9,
   "paging_token": "1127729562914817",
-  "price": "1.0",
+  "price": "1.2",
   "price_r": {
-    "d": 1,
-    "n": 1
+    "d": 10,
+    "n": 11
   },
   "selling_asset_type": "native",
   "type_i": 4,
