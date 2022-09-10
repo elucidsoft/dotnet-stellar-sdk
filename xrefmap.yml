@@ -550,12 +550,6 @@ references:
   commentId: M:stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,System.String)
   fullName: stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String, System.String)
   nameWithType: Asset.CreateNonNativeAsset(String, String)
-- uid: stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,System.String,System.String)
-  name: CreateNonNativeAsset(String, String, String)
-  href: api/stellar_dotnet_sdk.Asset.html#stellar_dotnet_sdk_Asset_CreateNonNativeAsset_System_String_System_String_System_String_
-  commentId: M:stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String,System.String,System.String)
-  fullName: stellar_dotnet_sdk.Asset.CreateNonNativeAsset(System.String, System.String, System.String)
-  nameWithType: Asset.CreateNonNativeAsset(String, String, String)
 - uid: stellar_dotnet_sdk.Asset.CreateNonNativeAsset*
   name: CreateNonNativeAsset
   href: api/stellar_dotnet_sdk.Asset.html#stellar_dotnet_sdk_Asset_CreateNonNativeAsset_
@@ -4996,6 +4990,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.LiquidityPoolConstantProductParameters.FromXdr
   nameWithType: LiquidityPoolConstantProductParameters.FromXdr
+- uid: stellar_dotnet_sdk.LiquidityPoolConstantProductParameters.GetHashCode
+  name: GetHashCode()
+  href: api/stellar_dotnet_sdk.LiquidityPoolConstantProductParameters.html#stellar_dotnet_sdk_LiquidityPoolConstantProductParameters_GetHashCode
+  commentId: M:stellar_dotnet_sdk.LiquidityPoolConstantProductParameters.GetHashCode
+  fullName: stellar_dotnet_sdk.LiquidityPoolConstantProductParameters.GetHashCode()
+  nameWithType: LiquidityPoolConstantProductParameters.GetHashCode()
+- uid: stellar_dotnet_sdk.LiquidityPoolConstantProductParameters.GetHashCode*
+  name: GetHashCode
+  href: api/stellar_dotnet_sdk.LiquidityPoolConstantProductParameters.html#stellar_dotnet_sdk_LiquidityPoolConstantProductParameters_GetHashCode_
+  commentId: Overload:stellar_dotnet_sdk.LiquidityPoolConstantProductParameters.GetHashCode
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.LiquidityPoolConstantProductParameters.GetHashCode
+  nameWithType: LiquidityPoolConstantProductParameters.GetHashCode
 - uid: stellar_dotnet_sdk.LiquidityPoolConstantProductParameters.GetID
   name: GetID()
   href: api/stellar_dotnet_sdk.LiquidityPoolConstantProductParameters.html#stellar_dotnet_sdk_LiquidityPoolConstantProductParameters_GetID
@@ -5229,6 +5236,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.LiquidityPoolID.FromXdr
   nameWithType: LiquidityPoolID.FromXdr
+- uid: stellar_dotnet_sdk.LiquidityPoolID.GetHashCode
+  name: GetHashCode()
+  href: api/stellar_dotnet_sdk.LiquidityPoolID.html#stellar_dotnet_sdk_LiquidityPoolID_GetHashCode
+  commentId: M:stellar_dotnet_sdk.LiquidityPoolID.GetHashCode
+  fullName: stellar_dotnet_sdk.LiquidityPoolID.GetHashCode()
+  nameWithType: LiquidityPoolID.GetHashCode()
+- uid: stellar_dotnet_sdk.LiquidityPoolID.GetHashCode*
+  name: GetHashCode
+  href: api/stellar_dotnet_sdk.LiquidityPoolID.html#stellar_dotnet_sdk_LiquidityPoolID_GetHashCode_
+  commentId: Overload:stellar_dotnet_sdk.LiquidityPoolID.GetHashCode
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.LiquidityPoolID.GetHashCode
+  nameWithType: LiquidityPoolID.GetHashCode
 - uid: stellar_dotnet_sdk.LiquidityPoolID.Hash
   name: Hash
   href: api/stellar_dotnet_sdk.LiquidityPoolID.html#stellar_dotnet_sdk_LiquidityPoolID_Hash
