@@ -533,30 +533,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.html",
-          "hash": "xCreAlJ9HPqXok3qaUG6DOYtM/RTArUJbPImSaiXQyw="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/stellar_dotnet_sdk.CreatePassiveOfferOperation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/stellar_dotnet_sdk.CreatePassiveOfferOperation.html",
-          "hash": "iWZ+8i+5PAE/EogcrZ9z85csh0b1dIa4sOQwJLaGuww="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.CreatePassiveSellOfferOperation.Builder.yml",
       "output": {
         ".html": {
@@ -1233,7 +1209,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.Operation.html",
-          "hash": "7AqknQ5ogMC2s8OgqT01i2Xv03dz/HqNu3raoeYs28Q="
+          "hash": "veGcgGUwh1STj9XfUYdMz6f7Rvv2FN8bxnpW30HB78c="
         }
       },
       "is_incremental": false,
@@ -2553,7 +2529,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.OfferResponse.html",
-          "hash": "FZtmTMWXu4BYgVdRKiH/VOAdlIB1H9osr0cs3FoSxTE="
+          "hash": "MnBQiNTBzPK4QWp1Pqag55RTBMXVdrDPCiW1QY1Q1ns="
         }
       },
       "is_incremental": false,
@@ -2589,7 +2565,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.OrderBookResponse.Row.html",
-          "hash": "AxfGG4dboouv/sdL2Eo24r70mUrCPqbA7FDV/bKeCJc="
+          "hash": "xuG4Up/HRCy/eTUfm+jpmVopqdZXk8q2fIRoVRQF1R4="
         }
       },
       "is_incremental": false,
@@ -2753,23 +2729,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/stellar_dotnet_sdk.responses.TradePrice.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/stellar_dotnet_sdk.responses.TradePrice.html",
-          "hash": "HGLS7uJpAcOTSv9vO+yYSWDb7an4iTHJf30WujyTcLo="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.TradeResponse.yml",
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.TradeResponse.html",
-          "hash": "Z3/dwsrzSCo9j1dVyDIq4Ju3ySIT3OPFMNFaq57Bfk0="
+          "hash": "e0UWKhoJeHV4EBq6SP4gfzZZqu8uPvSKJX7OSBR6zE0="
         }
       },
       "is_incremental": false,
@@ -3825,7 +3789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.html",
-          "hash": "JEzEyEs0EDPAEBlsNbR7nMPWUZ+UZbXu3pc8sGBESN0="
+          "hash": "j+8qpWBwyn6xWrb08V8fmrQZJTzSW/b499Qb9Qmz1H0="
         }
       },
       "is_incremental": false,
@@ -3885,7 +3849,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.operations.ManageBuyOfferOperationResponse.html",
-          "hash": "xjC05b6zy552OM5pGc+ywLfeyRV+p3dg6jhvg1ayJIc="
+          "hash": "dNcGtOdCWjY7rDhS9mxJ/ySHjbM8ecExUBEZTuwjFdQ="
         }
       },
       "is_incremental": false,
@@ -3909,7 +3873,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.html",
-          "hash": "T6EgodM3c4DR4AMOggyyHSXUMjARAttO15pfY3NcLtg="
+          "hash": "zBZN636p1OYpQNTbRybMMSv8BNT0g3QwBtHYpS34Fr8="
         }
       },
       "is_incremental": false,
@@ -3921,7 +3885,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.operations.ManageSellOfferOperationResponse.html",
-          "hash": "7iNea0OAKfZEK7NX/TP8XzUWK2i8fmbkdHBgdlGBE+k="
+          "hash": "c5OqYO3lGY1DAC7H0RlF3HE1hNOpHC+ZQQ4kWdBJinY="
         }
       },
       "is_incremental": false,
@@ -6285,7 +6249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.html",
-          "hash": "Gbeh/dd8jAiK5WmLqxiEspw8LS4fPPVahUDRR/p4UDk="
+          "hash": "MAXNkJYUg8sKVKZg5udiDPKIZiRDUB39+OpEKfuhzuc="
         }
       },
       "is_incremental": false,
@@ -6297,7 +6261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.html",
-          "hash": "VhWp6mDhxo+A+aA6g21KspwGaGkCasTwH+zSTUE6RDs="
+          "hash": "9RoVEzYzCT8h7WyCoPEhOieaz9pafuAiqu2TqjGxsfI="
         }
       },
       "is_incremental": false,
@@ -6309,7 +6273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "7A3XTIaUkgDNsSR+kq3ZCYWhWHsLQpk6AWoemPE1Wbo="
+          "hash": "PjdRHTfSfYAC+fJDqqeQpazOOfC5JUsE0MVQaY/OImU="
         }
       },
       "is_incremental": false,
@@ -6458,7 +6422,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 524,
+          "total_file_count": 521,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

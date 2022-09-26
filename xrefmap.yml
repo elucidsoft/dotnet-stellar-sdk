@@ -2734,128 +2734,6 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.CreateClaimableBalanceOperation.ToOperationBody
   nameWithType: CreateClaimableBalanceOperation.ToOperationBody
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation
-  name: CreatePassiveOfferOperation
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.html
-  commentId: T:stellar_dotnet_sdk.CreatePassiveOfferOperation
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation
-  nameWithType: CreatePassiveOfferOperation
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Amount
-  name: Amount
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Amount
-  commentId: P:stellar_dotnet_sdk.CreatePassiveOfferOperation.Amount
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Amount
-  nameWithType: CreatePassiveOfferOperation.Amount
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Amount*
-  name: Amount
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Amount_
-  commentId: Overload:stellar_dotnet_sdk.CreatePassiveOfferOperation.Amount
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Amount
-  nameWithType: CreatePassiveOfferOperation.Amount
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder
-  name: CreatePassiveOfferOperation.Builder
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.html
-  commentId: T:stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder
-  nameWithType: CreatePassiveOfferOperation.Builder
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.#ctor(stellar_dotnet_sdk.Asset,stellar_dotnet_sdk.Asset,System.String,System.String)
-  name: Builder(Asset, Asset, String, String)
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder__ctor_stellar_dotnet_sdk_Asset_stellar_dotnet_sdk_Asset_System_String_System_String_
-  commentId: M:stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.#ctor(stellar_dotnet_sdk.Asset,stellar_dotnet_sdk.Asset,System.String,System.String)
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.Builder(stellar_dotnet_sdk.Asset, stellar_dotnet_sdk.Asset, System.String, System.String)
-  nameWithType: CreatePassiveOfferOperation.Builder.Builder(Asset, Asset, String, String)
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.CreatePassiveSellOfferOp)
-  name: Builder(CreatePassiveSellOfferOp)
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder__ctor_stellar_dotnet_sdk_xdr_CreatePassiveSellOfferOp_
-  commentId: M:stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.#ctor(stellar_dotnet_sdk.xdr.CreatePassiveSellOfferOp)
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.Builder(stellar_dotnet_sdk.xdr.CreatePassiveSellOfferOp)
-  nameWithType: CreatePassiveOfferOperation.Builder.Builder(CreatePassiveSellOfferOp)
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.#ctor*
-  name: Builder
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder__ctor_
-  commentId: Overload:stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.#ctor
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.Builder
-  nameWithType: CreatePassiveOfferOperation.Builder.Builder
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.Build
-  name: Build()
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder_Build
-  commentId: M:stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.Build
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.Build()
-  nameWithType: CreatePassiveOfferOperation.Builder.Build()
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.Build*
-  name: Build
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder_Build_
-  commentId: Overload:stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.Build
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.Build
-  nameWithType: CreatePassiveOfferOperation.Builder.Build
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
-  name: SetSourceAccount(KeyPair)
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder_SetSourceAccount_stellar_dotnet_sdk_KeyPair_
-  commentId: M:stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.SetSourceAccount(stellar_dotnet_sdk.KeyPair)
-  nameWithType: CreatePassiveOfferOperation.Builder.SetSourceAccount(KeyPair)
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.SetSourceAccount*
-  name: SetSourceAccount
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Builder_SetSourceAccount_
-  commentId: Overload:stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.SetSourceAccount
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Builder.SetSourceAccount
-  nameWithType: CreatePassiveOfferOperation.Builder.SetSourceAccount
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Buying
-  name: Buying
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Buying
-  commentId: P:stellar_dotnet_sdk.CreatePassiveOfferOperation.Buying
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Buying
-  nameWithType: CreatePassiveOfferOperation.Buying
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Buying*
-  name: Buying
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Buying_
-  commentId: Overload:stellar_dotnet_sdk.CreatePassiveOfferOperation.Buying
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Buying
-  nameWithType: CreatePassiveOfferOperation.Buying
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Price
-  name: Price
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Price
-  commentId: P:stellar_dotnet_sdk.CreatePassiveOfferOperation.Price
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Price
-  nameWithType: CreatePassiveOfferOperation.Price
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Price*
-  name: Price
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Price_
-  commentId: Overload:stellar_dotnet_sdk.CreatePassiveOfferOperation.Price
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Price
-  nameWithType: CreatePassiveOfferOperation.Price
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Selling
-  name: Selling
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Selling
-  commentId: P:stellar_dotnet_sdk.CreatePassiveOfferOperation.Selling
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Selling
-  nameWithType: CreatePassiveOfferOperation.Selling
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.Selling*
-  name: Selling
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_Selling_
-  commentId: Overload:stellar_dotnet_sdk.CreatePassiveOfferOperation.Selling
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.Selling
-  nameWithType: CreatePassiveOfferOperation.Selling
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.ToOperationBody
-  name: ToOperationBody()
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_ToOperationBody
-  commentId: M:stellar_dotnet_sdk.CreatePassiveOfferOperation.ToOperationBody
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.ToOperationBody()
-  nameWithType: CreatePassiveOfferOperation.ToOperationBody()
-- uid: stellar_dotnet_sdk.CreatePassiveOfferOperation.ToOperationBody*
-  name: ToOperationBody
-  href: api/stellar_dotnet_sdk.CreatePassiveOfferOperation.html#stellar_dotnet_sdk_CreatePassiveOfferOperation_ToOperationBody_
-  commentId: Overload:stellar_dotnet_sdk.CreatePassiveOfferOperation.ToOperationBody
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.CreatePassiveOfferOperation.ToOperationBody
-  nameWithType: CreatePassiveOfferOperation.ToOperationBody
 - uid: stellar_dotnet_sdk.CreatePassiveSellOfferOperation
   name: CreatePassiveSellOfferOperation
   href: api/stellar_dotnet_sdk.CreatePassiveSellOfferOperation.html
@@ -16018,6 +15896,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.OfferResponse.Price
   nameWithType: OfferResponse.Price
+- uid: stellar_dotnet_sdk.responses.OfferResponse.PriceRatio
+  name: PriceRatio
+  href: api/stellar_dotnet_sdk.responses.OfferResponse.html#stellar_dotnet_sdk_responses_OfferResponse_PriceRatio
+  commentId: P:stellar_dotnet_sdk.responses.OfferResponse.PriceRatio
+  fullName: stellar_dotnet_sdk.responses.OfferResponse.PriceRatio
+  nameWithType: OfferResponse.PriceRatio
+- uid: stellar_dotnet_sdk.responses.OfferResponse.PriceRatio*
+  name: PriceRatio
+  href: api/stellar_dotnet_sdk.responses.OfferResponse.html#stellar_dotnet_sdk_responses_OfferResponse_PriceRatio_
+  commentId: Overload:stellar_dotnet_sdk.responses.OfferResponse.PriceRatio
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.OfferResponse.PriceRatio
+  nameWithType: OfferResponse.PriceRatio
 - uid: stellar_dotnet_sdk.responses.OfferResponse.Seller
   name: Seller
   href: api/stellar_dotnet_sdk.responses.OfferResponse.html#stellar_dotnet_sdk_responses_OfferResponse_Seller
@@ -17247,19 +17138,32 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.OfferId
   nameWithType: CreatePassiveOfferOperationResponse.OfferId
-- uid: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.Price1
-  name: Price1
-  href: api/stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.html#stellar_dotnet_sdk_responses_operations_CreatePassiveOfferOperationResponse_Price1
-  commentId: P:stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.Price1
-  fullName: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.Price1
-  nameWithType: CreatePassiveOfferOperationResponse.Price1
-- uid: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.Price1*
-  name: Price1
-  href: api/stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.html#stellar_dotnet_sdk_responses_operations_CreatePassiveOfferOperationResponse_Price1_
-  commentId: Overload:stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.Price1
+- uid: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.Price
+  name: Price
+  href: api/stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.html#stellar_dotnet_sdk_responses_operations_CreatePassiveOfferOperationResponse_Price
+  commentId: P:stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.Price
+  fullName: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.Price
+  nameWithType: CreatePassiveOfferOperationResponse.Price
+- uid: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.Price*
+  name: Price
+  href: api/stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.html#stellar_dotnet_sdk_responses_operations_CreatePassiveOfferOperationResponse_Price_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.Price
   isSpec: "True"
-  fullName: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.Price1
-  nameWithType: CreatePassiveOfferOperationResponse.Price1
+  fullName: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.Price
+  nameWithType: CreatePassiveOfferOperationResponse.Price
+- uid: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.PriceRatio
+  name: PriceRatio
+  href: api/stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.html#stellar_dotnet_sdk_responses_operations_CreatePassiveOfferOperationResponse_PriceRatio
+  commentId: P:stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.PriceRatio
+  fullName: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.PriceRatio
+  nameWithType: CreatePassiveOfferOperationResponse.PriceRatio
+- uid: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.PriceRatio*
+  name: PriceRatio
+  href: api/stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.html#stellar_dotnet_sdk_responses_operations_CreatePassiveOfferOperationResponse_PriceRatio_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.PriceRatio
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.PriceRatio
+  nameWithType: CreatePassiveOfferOperationResponse.PriceRatio
 - uid: stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.SellingAsset
   name: SellingAsset
   href: api/stellar_dotnet_sdk.responses.operations.CreatePassiveOfferOperationResponse.html#stellar_dotnet_sdk_responses_operations_CreatePassiveOfferOperationResponse_SellingAsset
@@ -17827,6 +17731,19 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.Price
   nameWithType: ManageOfferOperationResponse.Price
+- uid: stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.PriceRatio
+  name: PriceRatio
+  href: api/stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.html#stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_PriceRatio
+  commentId: P:stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.PriceRatio
+  fullName: stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.PriceRatio
+  nameWithType: ManageOfferOperationResponse.PriceRatio
+- uid: stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.PriceRatio*
+  name: PriceRatio
+  href: api/stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.html#stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_PriceRatio_
+  commentId: Overload:stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.PriceRatio
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.PriceRatio
+  nameWithType: ManageOfferOperationResponse.PriceRatio
 - uid: stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.SellingAsset
   name: SellingAsset
   href: api/stellar_dotnet_sdk.responses.operations.ManageOfferOperationResponse.html#stellar_dotnet_sdk_responses_operations_ManageOfferOperationResponse_SellingAsset
@@ -23102,76 +23019,18 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.TradeAggregationResponse.TradeCount
   nameWithType: TradeAggregationResponse.TradeCount
-- uid: stellar_dotnet_sdk.responses.TradePrice
-  name: TradePrice
-  href: api/stellar_dotnet_sdk.responses.TradePrice.html
-  commentId: T:stellar_dotnet_sdk.responses.TradePrice
-  fullName: stellar_dotnet_sdk.responses.TradePrice
-  nameWithType: TradePrice
-- uid: stellar_dotnet_sdk.responses.TradePrice.#ctor(System.String,System.String)
-  name: TradePrice(String, String)
-  href: api/stellar_dotnet_sdk.responses.TradePrice.html#stellar_dotnet_sdk_responses_TradePrice__ctor_System_String_System_String_
-  commentId: M:stellar_dotnet_sdk.responses.TradePrice.#ctor(System.String,System.String)
-  fullName: stellar_dotnet_sdk.responses.TradePrice.TradePrice(System.String, System.String)
-  nameWithType: TradePrice.TradePrice(String, String)
-- uid: stellar_dotnet_sdk.responses.TradePrice.#ctor*
-  name: TradePrice
-  href: api/stellar_dotnet_sdk.responses.TradePrice.html#stellar_dotnet_sdk_responses_TradePrice__ctor_
-  commentId: Overload:stellar_dotnet_sdk.responses.TradePrice.#ctor
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.responses.TradePrice.TradePrice
-  nameWithType: TradePrice.TradePrice
-- uid: stellar_dotnet_sdk.responses.TradePrice.D
-  name: D
-  href: api/stellar_dotnet_sdk.responses.TradePrice.html#stellar_dotnet_sdk_responses_TradePrice_D
-  commentId: P:stellar_dotnet_sdk.responses.TradePrice.D
-  fullName: stellar_dotnet_sdk.responses.TradePrice.D
-  nameWithType: TradePrice.D
-- uid: stellar_dotnet_sdk.responses.TradePrice.D*
-  name: D
-  href: api/stellar_dotnet_sdk.responses.TradePrice.html#stellar_dotnet_sdk_responses_TradePrice_D_
-  commentId: Overload:stellar_dotnet_sdk.responses.TradePrice.D
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.responses.TradePrice.D
-  nameWithType: TradePrice.D
-- uid: stellar_dotnet_sdk.responses.TradePrice.N
-  name: N
-  href: api/stellar_dotnet_sdk.responses.TradePrice.html#stellar_dotnet_sdk_responses_TradePrice_N
-  commentId: P:stellar_dotnet_sdk.responses.TradePrice.N
-  fullName: stellar_dotnet_sdk.responses.TradePrice.N
-  nameWithType: TradePrice.N
-- uid: stellar_dotnet_sdk.responses.TradePrice.N*
-  name: N
-  href: api/stellar_dotnet_sdk.responses.TradePrice.html#stellar_dotnet_sdk_responses_TradePrice_N_
-  commentId: Overload:stellar_dotnet_sdk.responses.TradePrice.N
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.responses.TradePrice.N
-  nameWithType: TradePrice.N
-- uid: stellar_dotnet_sdk.responses.TradePrice.ToString
-  name: ToString()
-  href: api/stellar_dotnet_sdk.responses.TradePrice.html#stellar_dotnet_sdk_responses_TradePrice_ToString
-  commentId: M:stellar_dotnet_sdk.responses.TradePrice.ToString
-  fullName: stellar_dotnet_sdk.responses.TradePrice.ToString()
-  nameWithType: TradePrice.ToString()
-- uid: stellar_dotnet_sdk.responses.TradePrice.ToString*
-  name: ToString
-  href: api/stellar_dotnet_sdk.responses.TradePrice.html#stellar_dotnet_sdk_responses_TradePrice_ToString_
-  commentId: Overload:stellar_dotnet_sdk.responses.TradePrice.ToString
-  isSpec: "True"
-  fullName: stellar_dotnet_sdk.responses.TradePrice.ToString
-  nameWithType: TradePrice.ToString
 - uid: stellar_dotnet_sdk.responses.TradeResponse
   name: TradeResponse
   href: api/stellar_dotnet_sdk.responses.TradeResponse.html
   commentId: T:stellar_dotnet_sdk.responses.TradeResponse
   fullName: stellar_dotnet_sdk.responses.TradeResponse
   nameWithType: TradeResponse
-- uid: stellar_dotnet_sdk.responses.TradeResponse.#ctor(System.String,System.String,System.String,System.String,System.Boolean,System.String,stellar_dotnet_sdk.LiquidityPoolID,System.String,System.String,System.String,System.String,System.String,System.String,stellar_dotnet_sdk.LiquidityPoolID,System.String,System.String,System.String,System.String,System.String,stellar_dotnet_sdk.responses.TradePrice)
-  name: TradeResponse(String, String, String, String, Boolean, String, LiquidityPoolID, String, String, String, String, String, String, LiquidityPoolID, String, String, String, String, String, TradePrice)
-  href: api/stellar_dotnet_sdk.responses.TradeResponse.html#stellar_dotnet_sdk_responses_TradeResponse__ctor_System_String_System_String_System_String_System_String_System_Boolean_System_String_stellar_dotnet_sdk_LiquidityPoolID_System_String_System_String_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_LiquidityPoolID_System_String_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_responses_TradePrice_
-  commentId: M:stellar_dotnet_sdk.responses.TradeResponse.#ctor(System.String,System.String,System.String,System.String,System.Boolean,System.String,stellar_dotnet_sdk.LiquidityPoolID,System.String,System.String,System.String,System.String,System.String,System.String,stellar_dotnet_sdk.LiquidityPoolID,System.String,System.String,System.String,System.String,System.String,stellar_dotnet_sdk.responses.TradePrice)
-  fullName: stellar_dotnet_sdk.responses.TradeResponse.TradeResponse(System.String, System.String, System.String, System.String, System.Boolean, System.String, stellar_dotnet_sdk.LiquidityPoolID, System.String, System.String, System.String, System.String, System.String, System.String, stellar_dotnet_sdk.LiquidityPoolID, System.String, System.String, System.String, System.String, System.String, stellar_dotnet_sdk.responses.TradePrice)
-  nameWithType: TradeResponse.TradeResponse(String, String, String, String, Boolean, String, LiquidityPoolID, String, String, String, String, String, String, LiquidityPoolID, String, String, String, String, String, TradePrice)
+- uid: stellar_dotnet_sdk.responses.TradeResponse.#ctor(System.String,System.String,System.String,System.String,System.Boolean,System.String,stellar_dotnet_sdk.LiquidityPoolID,System.String,System.String,System.String,System.String,System.String,System.String,stellar_dotnet_sdk.LiquidityPoolID,System.String,System.String,System.String,System.String,System.String,stellar_dotnet_sdk.Price)
+  name: TradeResponse(String, String, String, String, Boolean, String, LiquidityPoolID, String, String, String, String, String, String, LiquidityPoolID, String, String, String, String, String, Price)
+  href: api/stellar_dotnet_sdk.responses.TradeResponse.html#stellar_dotnet_sdk_responses_TradeResponse__ctor_System_String_System_String_System_String_System_String_System_Boolean_System_String_stellar_dotnet_sdk_LiquidityPoolID_System_String_System_String_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_LiquidityPoolID_System_String_System_String_System_String_System_String_System_String_stellar_dotnet_sdk_Price_
+  commentId: M:stellar_dotnet_sdk.responses.TradeResponse.#ctor(System.String,System.String,System.String,System.String,System.Boolean,System.String,stellar_dotnet_sdk.LiquidityPoolID,System.String,System.String,System.String,System.String,System.String,System.String,stellar_dotnet_sdk.LiquidityPoolID,System.String,System.String,System.String,System.String,System.String,stellar_dotnet_sdk.Price)
+  fullName: stellar_dotnet_sdk.responses.TradeResponse.TradeResponse(System.String, System.String, System.String, System.String, System.Boolean, System.String, stellar_dotnet_sdk.LiquidityPoolID, System.String, System.String, System.String, System.String, System.String, System.String, stellar_dotnet_sdk.LiquidityPoolID, System.String, System.String, System.String, System.String, System.String, stellar_dotnet_sdk.Price)
+  nameWithType: TradeResponse.TradeResponse(String, String, String, String, Boolean, String, LiquidityPoolID, String, String, String, String, String, String, LiquidityPoolID, String, String, String, String, String, Price)
 - uid: stellar_dotnet_sdk.responses.TradeResponse.#ctor*
   name: TradeResponse
   href: api/stellar_dotnet_sdk.responses.TradeResponse.html#stellar_dotnet_sdk_responses_TradeResponse__ctor_
