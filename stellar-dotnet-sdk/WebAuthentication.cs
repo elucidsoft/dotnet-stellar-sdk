@@ -12,6 +12,11 @@ namespace stellar_dotnet_sdk
     public static class WebAuthentication
     {
         /// <summary>
+        /// Give a small grace period for the transaction time to account for clock drift.
+        /// </summary>
+        public const int GracePeriod = 60 * 5;
+        
+        /// <summary>
         /// Build a challenge transaction you can use for Stellar Web Authentication.
         /// </summary>
         /// <param name="serverKeypair">Server signing keypair</param>
