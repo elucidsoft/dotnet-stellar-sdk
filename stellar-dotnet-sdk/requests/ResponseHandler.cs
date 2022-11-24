@@ -14,8 +14,12 @@ namespace stellar_dotnet_sdk.requests
 
             if ((int)statusCode == 429)
             {
-                var retryAfter = int.Parse(response.Headers.GetValues("Retry-After").First());
-                throw new TooManyRequestsException(retryAfter);
+                var retryAfterHeaderValue = response.Headers.GetValues("Retry-After").FirstOrDefault();
+                if (retryAfterHeaderValue != null)
+                {
+                    var retryAfter = int.Parse(retryAfterHeaderValue);
+                    throw new TooManyRequestsException(retryAfter);
+                }
             }
 
             if ((int)statusCode >= 300)
