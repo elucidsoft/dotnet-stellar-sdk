@@ -15,7 +15,7 @@ namespace stellar_dotnet_sdk
         /// Give a small grace period for the transaction time to account for clock drift.
         /// </summary>
         public const int GracePeriod = 60 * 5;
-        
+
         /// <summary>
         /// Build a challenge transaction you can use for Stellar Web Authentication.
         /// </summary>
