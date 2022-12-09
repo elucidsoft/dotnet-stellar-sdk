@@ -36,10 +36,10 @@
         },
         "amount": "10.0000000",
         "price_r": {
-          "n": 10,
-          "d": 1
+          "n": 11,
+          "d": 10
         },
-        "price": "11.0000000",
+        "price": "1.1000000",
         "last_modified_ledger": 22200794,
         "last_modified_time": "2019-01-28T12:30:38Z"
       }

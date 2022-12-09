@@ -3,14 +3,21 @@ using stellar_dotnet_sdk.xdr;
 
 namespace stellar_dotnet_sdk
 {
+    /// <summary>
+    ///     An individual command that modifies the ledger. Operations are used to send payments, enter orders into the decentralized exchange,
+    ///     change settings on accounts, and authorize accounts to hold assets.
+    /// </summary>
     public abstract class Operation
     {
-        private IAccountId _sourceAccount;
+        private IAccountId? _sourceAccount;
 
-        public IAccountId SourceAccount
+        /// <summary>
+        ///     The account to execute this operation upon.
+        /// </summary>
+        public IAccountId? SourceAccount
         {
             get => _sourceAccount;
-            set => _sourceAccount = value ?? throw new ArgumentNullException(nameof(value), "keypair cannot be null");
+            set => _sourceAccount = value ?? throw new ArgumentNullException(nameof(SourceAccount), "source account cannot be null");
         }
 
         /// <summary>

@@ -39,7 +39,7 @@ namespace stellar_dotnet_sdk_test
                 ExpectedLiquidityPoolId);
 
             // expected
-            this.SUT.Asset
+            ((object)this.SUT.Asset)
                 .Should().BeNull();
 
             this.SUT.AssetType
@@ -102,7 +102,7 @@ namespace stellar_dotnet_sdk_test
                 null);
 
             // expected
-            this.SUT.Asset
+            ((object)this.SUT.Asset)
                 .Should().BeOfType(expectedAssetDataType);
 
             this.SUT.AssetCode
@@ -198,7 +198,7 @@ namespace stellar_dotnet_sdk_test
             var actual = this.SUT.Asset;
 
             // expected
-            actual
+            ((object)actual)
                 .Should().BeOfType<AssetTypeNative>();
         }
 
@@ -224,7 +224,7 @@ namespace stellar_dotnet_sdk_test
             var actual = this.SUT.Asset;
 
             // expected
-            actual
+            ((object)actual)
                 .Should().BeNull();
         }
 

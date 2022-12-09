@@ -26,6 +26,21 @@ namespace stellar_dotnet_sdk_test.requests
         }
 
         [TestMethod]
+        public void TestAccountsBuildUriPathPrefix()
+        {
+            using (var server = new Server("https://nodeapi.com/xlm/authkey/"))
+            {
+                var uri = server.Accounts
+                    .Cursor("13537736921089")
+                    .Limit(200)
+                    .Order(OrderDirection.ASC)
+                    .BuildUri();
+
+                Assert.AreEqual("https://nodeapi.com/xlm/authkey/accounts?cursor=13537736921089&limit=200&order=asc", uri.ToString());
+            }
+        }
+
+        [TestMethod]
         public async Task TestAccountsAccount()
         {
             var jsonResponse = File.ReadAllText(Path.Combine("testdata", "account.json"));

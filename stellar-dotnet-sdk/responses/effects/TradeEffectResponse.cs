@@ -69,8 +69,8 @@ namespace stellar_dotnet_sdk.responses.effects
         [JsonProperty(PropertyName = "bought_asset_issuer")]
         public string BoughtAssetIssuer { get; private set; }
 
-        public Asset BoughtAsset => Asset.CreateNonNativeAsset(BoughtAssetType, BoughtAssetIssuer, BoughtAssetCode);
+        public AssetTypeCreditAlphaNum BoughtAsset => Asset.CreateNonNativeAsset(BoughtAssetCode, BoughtAssetIssuer);
 
-        public Asset SoldAsset => Asset.CreateNonNativeAsset(SoldAssetType, SoldAssetIssuer, SoldAssetCode);
+        public AssetTypeCreditAlphaNum SoldAsset => Asset.CreateNonNativeAsset(SoldAssetCode, SoldAssetIssuer);
     }
 }
