@@ -24,7 +24,6 @@ build:
   parallel: true
   verbosity: minimal
 test_script:
-  - cmd: dotnet format --verify-no-changes
   - cmd: dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:ExcludeByFile=\"../stellar-dotnet-sdk/chaos.nacl/**/*.cs\" -p:ExcludeByFile=\"../stellar-dotnet-sdk-xdr/generated/*.cs\" ./stellar-dotnet-sdk-test --test-adapter-path:. --logger:Appveyor
 after_test:
   - cmd: packages\coveralls.io\1.4.2\tools\coveralls.net.exe --opencover "./stellar-dotnet-sdk-test/coverage.opencover.xml" -r %COVERALLS_REPO_TOKEN%
