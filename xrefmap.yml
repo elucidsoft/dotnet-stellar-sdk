@@ -27286,6 +27286,12 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.WebAuthentication.BuildChallengeTransaction
   nameWithType: WebAuthentication.BuildChallengeTransaction
+- uid: stellar_dotnet_sdk.WebAuthentication.GracePeriod
+  name: GracePeriod
+  href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_GracePeriod
+  commentId: F:stellar_dotnet_sdk.WebAuthentication.GracePeriod
+  fullName: stellar_dotnet_sdk.WebAuthentication.GracePeriod
+  nameWithType: WebAuthentication.GracePeriod
 - uid: stellar_dotnet_sdk.WebAuthentication.ReadChallengeTransaction(stellar_dotnet_sdk.Transaction,System.String,System.String,System.String,stellar_dotnet_sdk.Network,System.Nullable{DateTimeOffset})
   name: ReadChallengeTransaction(Transaction, String, String, String, Network, Nullable<DateTimeOffset>)
   href: api/stellar_dotnet_sdk.WebAuthentication.html#stellar_dotnet_sdk_WebAuthentication_ReadChallengeTransaction_stellar_dotnet_sdk_Transaction_System_String_System_String_System_String_stellar_dotnet_sdk_Network_System_Nullable_DateTimeOffset__

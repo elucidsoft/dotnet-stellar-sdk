@@ -96,6 +96,44 @@
   
   
   
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  
+  <h4 id="stellar_dotnet_sdk_WebAuthentication_GracePeriod" data-uid="stellar_dotnet_sdk.WebAuthentication.GracePeriod"><a href="#collapsible-stellar_dotnet_sdk_WebAuthentication_GracePeriod" class="expander" data-toggle="collapse">GracePeriod</a></h4>
+  
+  <div id="collapsible-stellar_dotnet_sdk_WebAuthentication_GracePeriod" class="collapse in">
+  <div class="markdown level1 summary"><p>Give a small grace period for the transaction time to account for clock drift.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int GracePeriod = null</code></pre>
+  </div>
+
+  
+  
+  
+  <h5 class="fieldValue">Field Value</h5>
+  <table>
+    <tr>
+      <td>
+        <span class="xref">System.Int32</span>
+        <p>
+      </td>
+    </tr>
+  </table>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
   <h3 id="methods">Methods
   </h3>
   
@@ -479,7 +517,7 @@
       <tr>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">DateTimeOffset</span>&gt;</td>
         <td><span class="parametername">now</span></td>
-        <td><p>Current time, defaults to DateTimeOffset.Now</p>
+        <td><p>Current time, defaults to DateTimeOffset.Now + GracePeriod</p>
 </td>
       </tr>
   </table>
