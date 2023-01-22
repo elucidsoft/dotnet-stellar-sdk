@@ -11,7 +11,13 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case ACCOUNT_MERGE_SUCCESS:
     //      int64 sourceAccountBalance; // how much got transferred from source account
-    //  default:
+    //  case ACCOUNT_MERGE_MALFORMED:
+    //  case ACCOUNT_MERGE_NO_ACCOUNT:
+    //  case ACCOUNT_MERGE_IMMUTABLE_SET:
+    //  case ACCOUNT_MERGE_HAS_SUB_ENTRIES:
+    //  case ACCOUNT_MERGE_SEQNUM_TOO_FAR:
+    //  case ACCOUNT_MERGE_DEST_FULL:
+    //  case ACCOUNT_MERGE_IS_SPONSOR:
     //      void;
     //  };
 
@@ -31,7 +37,13 @@ namespace stellar_dotnet_sdk.xdr
                 case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SUCCESS:
                     Int64.Encode(stream, encodedAccountMergeResult.SourceAccountBalance);
                     break;
-                default:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_MALFORMED:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_NO_ACCOUNT:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_IMMUTABLE_SET:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_HAS_SUB_ENTRIES:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SEQNUM_TOO_FAR:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_DEST_FULL:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_IS_SPONSOR:
                     break;
             }
         }
@@ -45,7 +57,13 @@ namespace stellar_dotnet_sdk.xdr
                 case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SUCCESS:
                     decodedAccountMergeResult.SourceAccountBalance = Int64.Decode(stream);
                     break;
-                default:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_MALFORMED:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_NO_ACCOUNT:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_IMMUTABLE_SET:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_HAS_SUB_ENTRIES:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_SEQNUM_TOO_FAR:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_DEST_FULL:
+                case AccountMergeResultCode.AccountMergeResultCodeEnum.ACCOUNT_MERGE_IS_SPONSOR:
                     break;
             }
             return decodedAccountMergeResult;

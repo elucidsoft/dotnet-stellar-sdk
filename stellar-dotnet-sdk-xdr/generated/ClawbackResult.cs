@@ -11,7 +11,10 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case CLAWBACK_SUCCESS:
     //      void;
-    //  default:
+    //  case CLAWBACK_MALFORMED:
+    //  case CLAWBACK_NOT_CLAWBACK_ENABLED:
+    //  case CLAWBACK_NO_TRUST:
+    //  case CLAWBACK_UNDERFUNDED:
     //      void;
     //  };
 
@@ -29,7 +32,10 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_SUCCESS:
                     break;
-                default:
+                case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_MALFORMED:
+                case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_NOT_CLAWBACK_ENABLED:
+                case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_NO_TRUST:
+                case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_UNDERFUNDED:
                     break;
             }
         }
@@ -42,7 +48,10 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_SUCCESS:
                     break;
-                default:
+                case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_MALFORMED:
+                case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_NOT_CLAWBACK_ENABLED:
+                case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_NO_TRUST:
+                case ClawbackResultCode.ClawbackResultCodeEnum.CLAWBACK_UNDERFUNDED:
                     break;
             }
             return decodedClawbackResult;

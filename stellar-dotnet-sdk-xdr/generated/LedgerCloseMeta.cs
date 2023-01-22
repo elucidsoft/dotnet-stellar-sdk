@@ -11,6 +11,10 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case 0:
     //      LedgerCloseMetaV0 v0;
+    //  case 1:
+    //      LedgerCloseMetaV1 v1;
+    //  case 2:
+    //      LedgerCloseMetaV2 v2;
     //  };
 
     //  ===========================================================================
@@ -21,6 +25,8 @@ namespace stellar_dotnet_sdk.xdr
         public int Discriminant { get; set; } = new int();
 
         public LedgerCloseMetaV0 V0 { get; set; }
+        public LedgerCloseMetaV1 V1 { get; set; }
+        public LedgerCloseMetaV2 V2 { get; set; }
         public static void Encode(XdrDataOutputStream stream, LedgerCloseMeta encodedLedgerCloseMeta)
         {
             stream.WriteInt((int)encodedLedgerCloseMeta.Discriminant);
@@ -28,6 +34,12 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case 0:
                     LedgerCloseMetaV0.Encode(stream, encodedLedgerCloseMeta.V0);
+                    break;
+                case 1:
+                    LedgerCloseMetaV1.Encode(stream, encodedLedgerCloseMeta.V1);
+                    break;
+                case 2:
+                    LedgerCloseMetaV2.Encode(stream, encodedLedgerCloseMeta.V2);
                     break;
             }
         }
@@ -40,6 +52,12 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case 0:
                     decodedLedgerCloseMeta.V0 = LedgerCloseMetaV0.Decode(stream);
+                    break;
+                case 1:
+                    decodedLedgerCloseMeta.V1 = LedgerCloseMetaV1.Decode(stream);
+                    break;
+                case 2:
+                    decodedLedgerCloseMeta.V2 = LedgerCloseMetaV2.Decode(stream);
                     break;
             }
             return decodedLedgerCloseMeta;

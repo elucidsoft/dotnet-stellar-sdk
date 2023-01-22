@@ -18,6 +18,7 @@ namespace stellar_dotnet_sdk.xdr
     //  
     //      GET_TX_SET = 6, // gets a particular txset by hash
     //      TX_SET = 7,
+    //      GENERALIZED_TX_SET = 17,
     //  
     //      TRANSACTION = 8, // pass on a tx you have heard about
     //  
@@ -33,7 +34,9 @@ namespace stellar_dotnet_sdk.xdr
     //      SURVEY_REQUEST = 14,
     //      SURVEY_RESPONSE = 15,
     //  
-    //      SEND_MORE = 16
+    //      SEND_MORE = 16,
+    //      FLOOD_ADVERT = 18,
+    //      FLOOD_DEMAND = 19
     //  };
 
     //  ===========================================================================
@@ -48,6 +51,7 @@ namespace stellar_dotnet_sdk.xdr
             PEERS = 5,
             GET_TX_SET = 6,
             TX_SET = 7,
+            GENERALIZED_TX_SET = 17,
             TRANSACTION = 8,
             GET_SCP_QUORUMSET = 9,
             SCP_QUORUMSET = 10,
@@ -57,6 +61,8 @@ namespace stellar_dotnet_sdk.xdr
             SURVEY_REQUEST = 14,
             SURVEY_RESPONSE = 15,
             SEND_MORE = 16,
+            FLOOD_ADVERT = 18,
+            FLOOD_DEMAND = 19,
         }
         public MessageTypeEnum InnerValue { get; set; } = default(MessageTypeEnum);
 
@@ -80,6 +86,7 @@ namespace stellar_dotnet_sdk.xdr
                 case 5: return Create(MessageTypeEnum.PEERS);
                 case 6: return Create(MessageTypeEnum.GET_TX_SET);
                 case 7: return Create(MessageTypeEnum.TX_SET);
+                case 17: return Create(MessageTypeEnum.GENERALIZED_TX_SET);
                 case 8: return Create(MessageTypeEnum.TRANSACTION);
                 case 9: return Create(MessageTypeEnum.GET_SCP_QUORUMSET);
                 case 10: return Create(MessageTypeEnum.SCP_QUORUMSET);
@@ -89,6 +96,8 @@ namespace stellar_dotnet_sdk.xdr
                 case 14: return Create(MessageTypeEnum.SURVEY_REQUEST);
                 case 15: return Create(MessageTypeEnum.SURVEY_RESPONSE);
                 case 16: return Create(MessageTypeEnum.SEND_MORE);
+                case 18: return Create(MessageTypeEnum.FLOOD_ADVERT);
+                case 19: return Create(MessageTypeEnum.FLOOD_DEMAND);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

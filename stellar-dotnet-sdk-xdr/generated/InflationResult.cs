@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case INFLATION_SUCCESS:
     //      InflationPayout payouts<>;
-    //  default:
+    //  case INFLATION_NOT_TIME:
     //      void;
     //  };
 
@@ -36,7 +36,7 @@ namespace stellar_dotnet_sdk.xdr
                         InflationPayout.Encode(stream, encodedInflationResult.Payouts[i]);
                     }
                     break;
-                default:
+                case InflationResultCode.InflationResultCodeEnum.INFLATION_NOT_TIME:
                     break;
             }
         }
@@ -55,7 +55,7 @@ namespace stellar_dotnet_sdk.xdr
                         decodedInflationResult.Payouts[i] = InflationPayout.Decode(stream);
                     }
                     break;
-                default:
+                case InflationResultCode.InflationResultCodeEnum.INFLATION_NOT_TIME:
                     break;
             }
             return decodedInflationResult;

@@ -12,7 +12,11 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case CREATE_CLAIMABLE_BALANCE_SUCCESS:
     //      ClaimableBalanceID balanceID;
-    //  default:
+    //  case CREATE_CLAIMABLE_BALANCE_MALFORMED:
+    //  case CREATE_CLAIMABLE_BALANCE_LOW_RESERVE:
+    //  case CREATE_CLAIMABLE_BALANCE_NO_TRUST:
+    //  case CREATE_CLAIMABLE_BALANCE_NOT_AUTHORIZED:
+    //  case CREATE_CLAIMABLE_BALANCE_UNDERFUNDED:
     //      void;
     //  };
 
@@ -32,7 +36,11 @@ namespace stellar_dotnet_sdk.xdr
                 case CreateClaimableBalanceResultCode.CreateClaimableBalanceResultCodeEnum.CREATE_CLAIMABLE_BALANCE_SUCCESS:
                     ClaimableBalanceID.Encode(stream, encodedCreateClaimableBalanceResult.BalanceID);
                     break;
-                default:
+                case CreateClaimableBalanceResultCode.CreateClaimableBalanceResultCodeEnum.CREATE_CLAIMABLE_BALANCE_MALFORMED:
+                case CreateClaimableBalanceResultCode.CreateClaimableBalanceResultCodeEnum.CREATE_CLAIMABLE_BALANCE_LOW_RESERVE:
+                case CreateClaimableBalanceResultCode.CreateClaimableBalanceResultCodeEnum.CREATE_CLAIMABLE_BALANCE_NO_TRUST:
+                case CreateClaimableBalanceResultCode.CreateClaimableBalanceResultCodeEnum.CREATE_CLAIMABLE_BALANCE_NOT_AUTHORIZED:
+                case CreateClaimableBalanceResultCode.CreateClaimableBalanceResultCodeEnum.CREATE_CLAIMABLE_BALANCE_UNDERFUNDED:
                     break;
             }
         }
@@ -46,7 +54,11 @@ namespace stellar_dotnet_sdk.xdr
                 case CreateClaimableBalanceResultCode.CreateClaimableBalanceResultCodeEnum.CREATE_CLAIMABLE_BALANCE_SUCCESS:
                     decodedCreateClaimableBalanceResult.BalanceID = ClaimableBalanceID.Decode(stream);
                     break;
-                default:
+                case CreateClaimableBalanceResultCode.CreateClaimableBalanceResultCodeEnum.CREATE_CLAIMABLE_BALANCE_MALFORMED:
+                case CreateClaimableBalanceResultCode.CreateClaimableBalanceResultCodeEnum.CREATE_CLAIMABLE_BALANCE_LOW_RESERVE:
+                case CreateClaimableBalanceResultCode.CreateClaimableBalanceResultCodeEnum.CREATE_CLAIMABLE_BALANCE_NO_TRUST:
+                case CreateClaimableBalanceResultCode.CreateClaimableBalanceResultCodeEnum.CREATE_CLAIMABLE_BALANCE_NOT_AUTHORIZED:
+                case CreateClaimableBalanceResultCode.CreateClaimableBalanceResultCodeEnum.CREATE_CLAIMABLE_BALANCE_UNDERFUNDED:
                     break;
             }
             return decodedCreateClaimableBalanceResult;

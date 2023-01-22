@@ -60,9 +60,16 @@ namespace stellar_dotnet_sdk.xdr
     //          LiquidityPoolDepositResult liquidityPoolDepositResult;
     //      case LIQUIDITY_POOL_WITHDRAW:
     //          LiquidityPoolWithdrawResult liquidityPoolWithdrawResult;
+    //      case INVOKE_HOST_FUNCTION:
+    //          InvokeHostFunctionResult invokeHostFunctionResult;
     //      }
     //      tr;
-    //  default:
+    //  case opBAD_AUTH:
+    //  case opNO_ACCOUNT:
+    //  case opNOT_SUPPORTED:
+    //  case opTOO_MANY_SUBENTRIES:
+    //  case opEXCEEDED_WORK_LIMIT:
+    //  case opTOO_MANY_SPONSORING:
     //      void;
     //  };
 
@@ -82,7 +89,12 @@ namespace stellar_dotnet_sdk.xdr
                 case OperationResultCode.OperationResultCodeEnum.opINNER:
                     OperationResultTr.Encode(stream, encodedOperationResult.Tr);
                     break;
-                default:
+                case OperationResultCode.OperationResultCodeEnum.opBAD_AUTH:
+                case OperationResultCode.OperationResultCodeEnum.opNO_ACCOUNT:
+                case OperationResultCode.OperationResultCodeEnum.opNOT_SUPPORTED:
+                case OperationResultCode.OperationResultCodeEnum.opTOO_MANY_SUBENTRIES:
+                case OperationResultCode.OperationResultCodeEnum.opEXCEEDED_WORK_LIMIT:
+                case OperationResultCode.OperationResultCodeEnum.opTOO_MANY_SPONSORING:
                     break;
             }
         }
@@ -96,7 +108,12 @@ namespace stellar_dotnet_sdk.xdr
                 case OperationResultCode.OperationResultCodeEnum.opINNER:
                     decodedOperationResult.Tr = OperationResultTr.Decode(stream);
                     break;
-                default:
+                case OperationResultCode.OperationResultCodeEnum.opBAD_AUTH:
+                case OperationResultCode.OperationResultCodeEnum.opNO_ACCOUNT:
+                case OperationResultCode.OperationResultCodeEnum.opNOT_SUPPORTED:
+                case OperationResultCode.OperationResultCodeEnum.opTOO_MANY_SUBENTRIES:
+                case OperationResultCode.OperationResultCodeEnum.opEXCEEDED_WORK_LIMIT:
+                case OperationResultCode.OperationResultCodeEnum.opTOO_MANY_SPONSORING:
                     break;
             }
             return decodedOperationResult;
@@ -132,6 +149,7 @@ namespace stellar_dotnet_sdk.xdr
             public SetTrustLineFlagsResult SetTrustLineFlagsResult { get; set; }
             public LiquidityPoolDepositResult LiquidityPoolDepositResult { get; set; }
             public LiquidityPoolWithdrawResult LiquidityPoolWithdrawResult { get; set; }
+            public InvokeHostFunctionResult InvokeHostFunctionResult { get; set; }
             public static void Encode(XdrDataOutputStream stream, OperationResultTr encodedOperationResultTr)
             {
                 stream.WriteInt((int)encodedOperationResultTr.Discriminant.InnerValue);
@@ -208,6 +226,9 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case OperationType.OperationTypeEnum.LIQUIDITY_POOL_WITHDRAW:
                         LiquidityPoolWithdrawResult.Encode(stream, encodedOperationResultTr.LiquidityPoolWithdrawResult);
+                        break;
+                    case OperationType.OperationTypeEnum.INVOKE_HOST_FUNCTION:
+                        InvokeHostFunctionResult.Encode(stream, encodedOperationResultTr.InvokeHostFunctionResult);
                         break;
                 }
             }
@@ -289,6 +310,9 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case OperationType.OperationTypeEnum.LIQUIDITY_POOL_WITHDRAW:
                         decodedOperationResultTr.LiquidityPoolWithdrawResult = LiquidityPoolWithdrawResult.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.INVOKE_HOST_FUNCTION:
+                        decodedOperationResultTr.InvokeHostFunctionResult = InvokeHostFunctionResult.Decode(stream);
                         break;
                 }
                 return decodedOperationResultTr;

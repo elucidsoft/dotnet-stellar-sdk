@@ -11,7 +11,10 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case CREATE_ACCOUNT_SUCCESS:
     //      void;
-    //  default:
+    //  case CREATE_ACCOUNT_MALFORMED:
+    //  case CREATE_ACCOUNT_UNDERFUNDED:
+    //  case CREATE_ACCOUNT_LOW_RESERVE:
+    //  case CREATE_ACCOUNT_ALREADY_EXIST:
     //      void;
     //  };
 
@@ -29,7 +32,10 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case CreateAccountResultCode.CreateAccountResultCodeEnum.CREATE_ACCOUNT_SUCCESS:
                     break;
-                default:
+                case CreateAccountResultCode.CreateAccountResultCodeEnum.CREATE_ACCOUNT_MALFORMED:
+                case CreateAccountResultCode.CreateAccountResultCodeEnum.CREATE_ACCOUNT_UNDERFUNDED:
+                case CreateAccountResultCode.CreateAccountResultCodeEnum.CREATE_ACCOUNT_LOW_RESERVE:
+                case CreateAccountResultCode.CreateAccountResultCodeEnum.CREATE_ACCOUNT_ALREADY_EXIST:
                     break;
             }
         }
@@ -42,7 +48,10 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case CreateAccountResultCode.CreateAccountResultCodeEnum.CREATE_ACCOUNT_SUCCESS:
                     break;
-                default:
+                case CreateAccountResultCode.CreateAccountResultCodeEnum.CREATE_ACCOUNT_MALFORMED:
+                case CreateAccountResultCode.CreateAccountResultCodeEnum.CREATE_ACCOUNT_UNDERFUNDED:
+                case CreateAccountResultCode.CreateAccountResultCodeEnum.CREATE_ACCOUNT_LOW_RESERVE:
+                case CreateAccountResultCode.CreateAccountResultCodeEnum.CREATE_ACCOUNT_ALREADY_EXIST:
                     break;
             }
             return decodedCreateAccountResult;

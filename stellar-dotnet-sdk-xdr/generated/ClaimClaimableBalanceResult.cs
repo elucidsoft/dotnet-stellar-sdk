@@ -11,7 +11,11 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case CLAIM_CLAIMABLE_BALANCE_SUCCESS:
     //      void;
-    //  default:
+    //  case CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
+    //  case CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM:
+    //  case CLAIM_CLAIMABLE_BALANCE_LINE_FULL:
+    //  case CLAIM_CLAIMABLE_BALANCE_NO_TRUST:
+    //  case CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED:
     //      void;
     //  };
 
@@ -29,7 +33,11 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case ClaimClaimableBalanceResultCode.ClaimClaimableBalanceResultCodeEnum.CLAIM_CLAIMABLE_BALANCE_SUCCESS:
                     break;
-                default:
+                case ClaimClaimableBalanceResultCode.ClaimClaimableBalanceResultCodeEnum.CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
+                case ClaimClaimableBalanceResultCode.ClaimClaimableBalanceResultCodeEnum.CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM:
+                case ClaimClaimableBalanceResultCode.ClaimClaimableBalanceResultCodeEnum.CLAIM_CLAIMABLE_BALANCE_LINE_FULL:
+                case ClaimClaimableBalanceResultCode.ClaimClaimableBalanceResultCodeEnum.CLAIM_CLAIMABLE_BALANCE_NO_TRUST:
+                case ClaimClaimableBalanceResultCode.ClaimClaimableBalanceResultCodeEnum.CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED:
                     break;
             }
         }
@@ -42,7 +50,11 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case ClaimClaimableBalanceResultCode.ClaimClaimableBalanceResultCodeEnum.CLAIM_CLAIMABLE_BALANCE_SUCCESS:
                     break;
-                default:
+                case ClaimClaimableBalanceResultCode.ClaimClaimableBalanceResultCodeEnum.CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
+                case ClaimClaimableBalanceResultCode.ClaimClaimableBalanceResultCodeEnum.CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM:
+                case ClaimClaimableBalanceResultCode.ClaimClaimableBalanceResultCodeEnum.CLAIM_CLAIMABLE_BALANCE_LINE_FULL:
+                case ClaimClaimableBalanceResultCode.ClaimClaimableBalanceResultCodeEnum.CLAIM_CLAIMABLE_BALANCE_NO_TRUST:
+                case ClaimClaimableBalanceResultCode.ClaimClaimableBalanceResultCodeEnum.CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED:
                     break;
             }
             return decodedClaimClaimableBalanceResult;

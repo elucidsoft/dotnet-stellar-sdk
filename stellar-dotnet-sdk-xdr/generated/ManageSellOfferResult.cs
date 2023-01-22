@@ -11,7 +11,18 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case MANAGE_SELL_OFFER_SUCCESS:
     //      ManageOfferSuccessResult success;
-    //  default:
+    //  case MANAGE_SELL_OFFER_MALFORMED:
+    //  case MANAGE_SELL_OFFER_SELL_NO_TRUST:
+    //  case MANAGE_SELL_OFFER_BUY_NO_TRUST:
+    //  case MANAGE_SELL_OFFER_SELL_NOT_AUTHORIZED:
+    //  case MANAGE_SELL_OFFER_BUY_NOT_AUTHORIZED:
+    //  case MANAGE_SELL_OFFER_LINE_FULL:
+    //  case MANAGE_SELL_OFFER_UNDERFUNDED:
+    //  case MANAGE_SELL_OFFER_CROSS_SELF:
+    //  case MANAGE_SELL_OFFER_SELL_NO_ISSUER:
+    //  case MANAGE_SELL_OFFER_BUY_NO_ISSUER:
+    //  case MANAGE_SELL_OFFER_NOT_FOUND:
+    //  case MANAGE_SELL_OFFER_LOW_RESERVE:
     //      void;
     //  };
 
@@ -31,7 +42,18 @@ namespace stellar_dotnet_sdk.xdr
                 case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_SUCCESS:
                     ManageOfferSuccessResult.Encode(stream, encodedManageSellOfferResult.Success);
                     break;
-                default:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_MALFORMED:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_SELL_NO_TRUST:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_BUY_NO_TRUST:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_SELL_NOT_AUTHORIZED:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_BUY_NOT_AUTHORIZED:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_LINE_FULL:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_UNDERFUNDED:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_CROSS_SELF:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_SELL_NO_ISSUER:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_BUY_NO_ISSUER:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_NOT_FOUND:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_LOW_RESERVE:
                     break;
             }
         }
@@ -45,7 +67,18 @@ namespace stellar_dotnet_sdk.xdr
                 case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_SUCCESS:
                     decodedManageSellOfferResult.Success = ManageOfferSuccessResult.Decode(stream);
                     break;
-                default:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_MALFORMED:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_SELL_NO_TRUST:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_BUY_NO_TRUST:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_SELL_NOT_AUTHORIZED:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_BUY_NOT_AUTHORIZED:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_LINE_FULL:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_UNDERFUNDED:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_CROSS_SELF:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_SELL_NO_ISSUER:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_BUY_NO_ISSUER:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_NOT_FOUND:
+                case ManageSellOfferResultCode.ManageSellOfferResultCodeEnum.MANAGE_SELL_OFFER_LOW_RESERVE:
                     break;
             }
             return decodedManageSellOfferResult;

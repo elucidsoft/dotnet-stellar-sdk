@@ -7,10 +7,12 @@ namespace stellar_dotnet_sdk.xdr
 
     // === xdr source ============================================================
 
-    //  union SurveyResponseBody switch (SurveyMessageCommandType type)
+    //  union SurveyResponseBody switch (SurveyMessageResponseType type)
     //  {
-    //  case SURVEY_TOPOLOGY:
-    //      TopologyResponseBody topologyResponseBody;
+    //  case SURVEY_TOPOLOGY_RESPONSE_V0:
+    //      TopologyResponseBodyV0 topologyResponseBodyV0;
+    //  case SURVEY_TOPOLOGY_RESPONSE_V1:
+    //      TopologyResponseBodyV1 topologyResponseBodyV1;
     //  };
 
     //  ===========================================================================
@@ -18,28 +20,35 @@ namespace stellar_dotnet_sdk.xdr
     {
         public SurveyResponseBody() { }
 
-        public SurveyMessageCommandType Discriminant { get; set; } = new SurveyMessageCommandType();
+        public SurveyMessageResponseType Discriminant { get; set; } = new SurveyMessageResponseType();
 
-        public TopologyResponseBody TopologyResponseBody { get; set; }
+        public TopologyResponseBodyV0 TopologyResponseBodyV0 { get; set; }
+        public TopologyResponseBodyV1 TopologyResponseBodyV1 { get; set; }
         public static void Encode(XdrDataOutputStream stream, SurveyResponseBody encodedSurveyResponseBody)
         {
             stream.WriteInt((int)encodedSurveyResponseBody.Discriminant.InnerValue);
             switch (encodedSurveyResponseBody.Discriminant.InnerValue)
             {
-                case SurveyMessageCommandType.SurveyMessageCommandTypeEnum.SURVEY_TOPOLOGY:
-                    TopologyResponseBody.Encode(stream, encodedSurveyResponseBody.TopologyResponseBody);
+                case SurveyMessageResponseType.SurveyMessageResponseTypeEnum.SURVEY_TOPOLOGY_RESPONSE_V0:
+                    TopologyResponseBodyV0.Encode(stream, encodedSurveyResponseBody.TopologyResponseBodyV0);
+                    break;
+                case SurveyMessageResponseType.SurveyMessageResponseTypeEnum.SURVEY_TOPOLOGY_RESPONSE_V1:
+                    TopologyResponseBodyV1.Encode(stream, encodedSurveyResponseBody.TopologyResponseBodyV1);
                     break;
             }
         }
         public static SurveyResponseBody Decode(XdrDataInputStream stream)
         {
             SurveyResponseBody decodedSurveyResponseBody = new SurveyResponseBody();
-            SurveyMessageCommandType discriminant = SurveyMessageCommandType.Decode(stream);
+            SurveyMessageResponseType discriminant = SurveyMessageResponseType.Decode(stream);
             decodedSurveyResponseBody.Discriminant = discriminant;
             switch (decodedSurveyResponseBody.Discriminant.InnerValue)
             {
-                case SurveyMessageCommandType.SurveyMessageCommandTypeEnum.SURVEY_TOPOLOGY:
-                    decodedSurveyResponseBody.TopologyResponseBody = TopologyResponseBody.Decode(stream);
+                case SurveyMessageResponseType.SurveyMessageResponseTypeEnum.SURVEY_TOPOLOGY_RESPONSE_V0:
+                    decodedSurveyResponseBody.TopologyResponseBodyV0 = TopologyResponseBodyV0.Decode(stream);
+                    break;
+                case SurveyMessageResponseType.SurveyMessageResponseTypeEnum.SURVEY_TOPOLOGY_RESPONSE_V1:
+                    decodedSurveyResponseBody.TopologyResponseBodyV1 = TopologyResponseBodyV1.Decode(stream);
                     break;
             }
             return decodedSurveyResponseBody;

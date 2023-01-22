@@ -11,7 +11,11 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case REVOKE_SPONSORSHIP_SUCCESS:
     //      void;
-    //  default:
+    //  case REVOKE_SPONSORSHIP_DOES_NOT_EXIST:
+    //  case REVOKE_SPONSORSHIP_NOT_SPONSOR:
+    //  case REVOKE_SPONSORSHIP_LOW_RESERVE:
+    //  case REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE:
+    //  case REVOKE_SPONSORSHIP_MALFORMED:
     //      void;
     //  };
 
@@ -29,7 +33,11 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case RevokeSponsorshipResultCode.RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_SUCCESS:
                     break;
-                default:
+                case RevokeSponsorshipResultCode.RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_DOES_NOT_EXIST:
+                case RevokeSponsorshipResultCode.RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_NOT_SPONSOR:
+                case RevokeSponsorshipResultCode.RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_LOW_RESERVE:
+                case RevokeSponsorshipResultCode.RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE:
+                case RevokeSponsorshipResultCode.RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_MALFORMED:
                     break;
             }
         }
@@ -42,7 +50,11 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case RevokeSponsorshipResultCode.RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_SUCCESS:
                     break;
-                default:
+                case RevokeSponsorshipResultCode.RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_DOES_NOT_EXIST:
+                case RevokeSponsorshipResultCode.RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_NOT_SPONSOR:
+                case RevokeSponsorshipResultCode.RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_LOW_RESERVE:
+                case RevokeSponsorshipResultCode.RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE:
+                case RevokeSponsorshipResultCode.RevokeSponsorshipResultCodeEnum.REVOKE_SPONSORSHIP_MALFORMED:
                     break;
             }
             return decodedRevokeSponsorshipResult;

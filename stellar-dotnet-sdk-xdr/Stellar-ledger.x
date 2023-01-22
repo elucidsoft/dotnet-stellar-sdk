@@ -47,13 +47,17 @@ struct StellarValue
     ext;
 };
 
-const MASK_LEDGER_HEADER_FLAGS = 0x7;
+const MASK_LEDGER_HEADER_FLAGS = 0x7F;
 
 enum LedgerHeaderFlags
 {
     DISABLE_LIQUIDITY_POOL_TRADING_FLAG = 0x1,
     DISABLE_LIQUIDITY_POOL_DEPOSIT_FLAG = 0x2,
-    DISABLE_LIQUIDITY_POOL_WITHDRAWAL_FLAG = 0x4
+    DISABLE_LIQUIDITY_POOL_WITHDRAWAL_FLAG = 0x4,
+    DISABLE_CONTRACT_CREATE = 0x8,
+    DISABLE_CONTRACT_UPDATE = 0x10,
+    DISABLE_CONTRACT_REMOVE = 0x20,
+    DISABLE_CONTRACT_INVOKE = 0x40
 };
 
 struct LedgerHeaderExtensionV1
@@ -122,7 +126,8 @@ enum LedgerUpgradeType
     LEDGER_UPGRADE_BASE_FEE = 2,
     LEDGER_UPGRADE_MAX_TX_SET_SIZE = 3,
     LEDGER_UPGRADE_BASE_RESERVE = 4,
-    LEDGER_UPGRADE_FLAGS = 5
+    LEDGER_UPGRADE_FLAGS = 5,
+    LEDGER_UPGRADE_CONFIG = 6
 };
 
 union LedgerUpgrade switch (LedgerUpgradeType type)
@@ -137,6 +142,12 @@ case LEDGER_UPGRADE_BASE_RESERVE:
     uint32 newBaseReserve; // update baseReserve
 case LEDGER_UPGRADE_FLAGS:
     uint32 newFlags; // update flags
+case LEDGER_UPGRADE_CONFIG:
+    struct
+    {
+        ConfigSettingID id; // id to update
+        ConfigSetting setting; // new value
+    } configSetting;
 };
 
 /* Entries used to define the bucket list */
@@ -176,12 +187,48 @@ case METAENTRY:
     BucketMetadata metaEntry;
 };
 
+enum TxSetComponentType
+{
+  // txs with effective fee <= bid derived from a base fee (if any).
+  // If base fee is not specified, no discount is applied.
+  TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE = 0
+};
+
+union TxSetComponent switch (TxSetComponentType type)
+{
+case TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE:
+  struct
+  {
+    int64* baseFee;
+    TransactionEnvelope txs<>;
+  } txsMaybeDiscountedFee;
+};
+
+union TransactionPhase switch (int v)
+{
+case 0:
+    TxSetComponent v0Components<>;
+};
+
 // Transaction sets are the unit used by SCP to decide on transitions
 // between ledgers
 struct TransactionSet
 {
     Hash previousLedgerHash;
     TransactionEnvelope txs<>;
+};
+
+struct TransactionSetV1
+{
+    Hash previousLedgerHash;
+    TransactionPhase phases<>;
+};
+
+union GeneralizedTransactionSet switch (int v)
+{
+// We consider the legacy TransactionSet to be v0.
+case 1:
+    TransactionSetV1 v1TxSet;
 };
 
 struct TransactionResultPair
@@ -203,6 +250,22 @@ struct TransactionHistoryEntry
     uint32 ledgerSeq;
     TransactionSet txSet;
 
+    // when v != 0, txSet must be empty
+    union switch (int v)
+    {
+    case 0:
+        void;
+    case 1:
+        GeneralizedTransactionSet generalizedTxSet;
+    }
+    ext;
+};
+
+struct TransactionHistoryResultEntry
+{
+    uint32 ledgerSeq;
+    TransactionResultSet txResultSet;
+
     // reserved for future use
     union switch (int v)
     {
@@ -212,10 +275,22 @@ struct TransactionHistoryEntry
     ext;
 };
 
-struct TransactionHistoryResultEntry
+struct TransactionResultPairV2
+{
+    Hash transactionHash;
+    Hash hashOfMetaHashes; // hash of hashes in TransactionMetaV3
+                           // TransactionResult is in the meta
+};
+
+struct TransactionResultSetV2
+{
+    TransactionResultPairV2 results<>;
+};
+
+struct TransactionHistoryResultEntryV2
 {
     uint32 ledgerSeq;
-    TransactionResultSet txResultSet;
+    TransactionResultSetV2 txResultSet;
 
     // reserved for future use
     union switch (int v)
@@ -310,6 +385,53 @@ struct TransactionMetaV2
                                         // applied if any
 };
 
+enum ContractEventType
+{
+    SYSTEM = 0,
+    CONTRACT = 1
+};
+
+struct ContractEvent
+{
+    // We can use this to add more fields, or because it
+    // is first, to change ContractEvent into a union.
+    ExtensionPoint ext;
+
+    Hash* contractID;
+    ContractEventType type;
+
+    union switch (int v)
+    {
+    case 0:
+        struct
+        {
+            SCVec topics;
+            SCVal data;
+        } v0;
+    }
+    body;
+};
+
+struct OperationEvents
+{
+    ContractEvent events<>;
+};
+
+struct TransactionMetaV3
+{
+    LedgerEntryChanges txChangesBefore; // tx level changes before operations
+                                        // are applied if any
+    OperationMeta operations<>;         // meta for each operation
+    LedgerEntryChanges txChangesAfter;  // tx level changes after operations are
+                                        // applied if any
+    OperationEvents events<>;           // custom events populated by the
+                                        // contracts themselves. One list per operation.
+    TransactionResult txResult;
+
+    Hash hashes[3];                     // stores sha256(txChangesBefore, operations, txChangesAfter),
+                                        // sha256(events), and sha256(txResult)
+};
+
 // this is the meta produced when applying transactions
 // it does not include pre-apply updates such as fees
 union TransactionMeta switch (int v)
@@ -320,6 +442,8 @@ case 1:
     TransactionMetaV1 v1;
 case 2:
     TransactionMetaV2 v2;
+case 3:
+    TransactionMetaV3 v3;
 };
 
 // This struct groups together changes on a per transaction basis
@@ -328,6 +452,13 @@ case 2:
 struct TransactionResultMeta
 {
     TransactionResultPair result;
+    LedgerEntryChanges feeProcessing;
+    TransactionMeta txApplyProcessing;
+};
+
+struct TransactionResultMetaV2
+{
+    TransactionResultPairV2 result;
     LedgerEntryChanges feeProcessing;
     TransactionMeta txApplyProcessing;
 };
@@ -358,9 +489,50 @@ struct LedgerCloseMetaV0
     SCPHistoryEntry scpInfo<>;
 };
 
+struct LedgerCloseMetaV1
+{
+    LedgerHeaderHistoryEntry ledgerHeader;
+
+    GeneralizedTransactionSet txSet;
+
+    // NB: transactions are sorted in apply order here
+    // fees for all transactions are processed first
+    // followed by applying transactions
+    TransactionResultMeta txProcessing<>;
+
+    // upgrades are applied last
+    UpgradeEntryMeta upgradesProcessing<>;
+
+    // other misc information attached to the ledger close
+    SCPHistoryEntry scpInfo<>;
+};
+
+// only difference between V1 and V2 is this uses TransactionResultMetaV2
+struct LedgerCloseMetaV2
+{
+    LedgerHeaderHistoryEntry ledgerHeader;
+    
+    GeneralizedTransactionSet txSet;
+
+    // NB: transactions are sorted in apply order here
+    // fees for all transactions are processed first
+    // followed by applying transactions
+    TransactionResultMetaV2 txProcessing<>;
+
+    // upgrades are applied last
+    UpgradeEntryMeta upgradesProcessing<>;
+
+    // other misc information attached to the ledger close
+    SCPHistoryEntry scpInfo<>;
+};
+
 union LedgerCloseMeta switch (int v)
 {
 case 0:
     LedgerCloseMetaV0 v0;
+case 1:
+    LedgerCloseMetaV1 v1;
+case 2:
+    LedgerCloseMetaV2 v2;
 };
 }

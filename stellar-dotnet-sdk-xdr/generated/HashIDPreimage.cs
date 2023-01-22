@@ -25,6 +25,40 @@ namespace stellar_dotnet_sdk.xdr
     //          PoolID liquidityPoolID;
     //          Asset asset;
     //      } revokeID;
+    //  case ENVELOPE_TYPE_CONTRACT_ID_FROM_ED25519:
+    //      struct
+    //      {
+    //          Hash networkID;
+    //          uint256 ed25519;
+    //          uint256 salt;
+    //      } ed25519ContractID;
+    //  case ENVELOPE_TYPE_CONTRACT_ID_FROM_CONTRACT:
+    //      struct
+    //      {
+    //          Hash networkID;
+    //          Hash contractID;
+    //          uint256 salt;
+    //      } contractID;
+    //  case ENVELOPE_TYPE_CONTRACT_ID_FROM_ASSET:
+    //      struct
+    //      {
+    //          Hash networkID;
+    //          Asset asset;
+    //      } fromAsset;
+    //  case ENVELOPE_TYPE_CONTRACT_ID_FROM_SOURCE_ACCOUNT:
+    //      struct
+    //      {
+    //          Hash networkID;
+    //          AccountID sourceAccount;
+    //          uint256 salt;
+    //      } sourceAccountContractID;
+    //  case ENVELOPE_TYPE_CREATE_CONTRACT_ARGS:
+    //      struct
+    //      {
+    //          Hash networkID;
+    //          SCContractCode source;
+    //          uint256 salt;
+    //      } createContractArgs;        
     //  };
 
     //  ===========================================================================
@@ -36,6 +70,11 @@ namespace stellar_dotnet_sdk.xdr
 
         public HashIDPreimageOperationID OperationID { get; set; }
         public HashIDPreimageRevokeID RevokeID { get; set; }
+        public HashIDPreimageEd25519ContractID Ed25519ContractID { get; set; }
+        public HashIDPreimageContractID ContractID { get; set; }
+        public HashIDPreimageFromAsset FromAsset { get; set; }
+        public HashIDPreimageSourceAccountContractID SourceAccountContractID { get; set; }
+        public HashIDPreimageCreateContractArgs CreateContractArgs { get; set; }
         public static void Encode(XdrDataOutputStream stream, HashIDPreimage encodedHashIDPreimage)
         {
             stream.WriteInt((int)encodedHashIDPreimage.Discriminant.InnerValue);
@@ -46,6 +85,21 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_POOL_REVOKE_OP_ID:
                     HashIDPreimageRevokeID.Encode(stream, encodedHashIDPreimage.RevokeID);
+                    break;
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_CONTRACT_ID_FROM_ED25519:
+                    HashIDPreimageEd25519ContractID.Encode(stream, encodedHashIDPreimage.Ed25519ContractID);
+                    break;
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_CONTRACT_ID_FROM_CONTRACT:
+                    HashIDPreimageContractID.Encode(stream, encodedHashIDPreimage.ContractID);
+                    break;
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_CONTRACT_ID_FROM_ASSET:
+                    HashIDPreimageFromAsset.Encode(stream, encodedHashIDPreimage.FromAsset);
+                    break;
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_CONTRACT_ID_FROM_SOURCE_ACCOUNT:
+                    HashIDPreimageSourceAccountContractID.Encode(stream, encodedHashIDPreimage.SourceAccountContractID);
+                    break;
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_CREATE_CONTRACT_ARGS:
+                    HashIDPreimageCreateContractArgs.Encode(stream, encodedHashIDPreimage.CreateContractArgs);
                     break;
             }
         }
@@ -61,6 +115,21 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_POOL_REVOKE_OP_ID:
                     decodedHashIDPreimage.RevokeID = HashIDPreimageRevokeID.Decode(stream);
+                    break;
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_CONTRACT_ID_FROM_ED25519:
+                    decodedHashIDPreimage.Ed25519ContractID = HashIDPreimageEd25519ContractID.Decode(stream);
+                    break;
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_CONTRACT_ID_FROM_CONTRACT:
+                    decodedHashIDPreimage.ContractID = HashIDPreimageContractID.Decode(stream);
+                    break;
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_CONTRACT_ID_FROM_ASSET:
+                    decodedHashIDPreimage.FromAsset = HashIDPreimageFromAsset.Decode(stream);
+                    break;
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_CONTRACT_ID_FROM_SOURCE_ACCOUNT:
+                    decodedHashIDPreimage.SourceAccountContractID = HashIDPreimageSourceAccountContractID.Decode(stream);
+                    break;
+                case EnvelopeType.EnvelopeTypeEnum.ENVELOPE_TYPE_CREATE_CONTRACT_ARGS:
+                    decodedHashIDPreimage.CreateContractArgs = HashIDPreimageCreateContractArgs.Decode(stream);
                     break;
             }
             return decodedHashIDPreimage;
@@ -115,6 +184,118 @@ namespace stellar_dotnet_sdk.xdr
                 decodedHashIDPreimageRevokeID.LiquidityPoolID = PoolID.Decode(stream);
                 decodedHashIDPreimageRevokeID.Asset = Asset.Decode(stream);
                 return decodedHashIDPreimageRevokeID;
+            }
+
+        }
+        public class HashIDPreimageEd25519ContractID
+        {
+            public HashIDPreimageEd25519ContractID() { }
+            public Hash NetworkID { get; set; }
+            public Uint256 Ed25519 { get; set; }
+            public Uint256 Salt { get; set; }
+
+            public static void Encode(XdrDataOutputStream stream, HashIDPreimageEd25519ContractID encodedHashIDPreimageEd25519ContractID)
+            {
+                Hash.Encode(stream, encodedHashIDPreimageEd25519ContractID.NetworkID);
+                Uint256.Encode(stream, encodedHashIDPreimageEd25519ContractID.Ed25519);
+                Uint256.Encode(stream, encodedHashIDPreimageEd25519ContractID.Salt);
+            }
+            public static HashIDPreimageEd25519ContractID Decode(XdrDataInputStream stream)
+            {
+                HashIDPreimageEd25519ContractID decodedHashIDPreimageEd25519ContractID = new HashIDPreimageEd25519ContractID();
+                decodedHashIDPreimageEd25519ContractID.NetworkID = Hash.Decode(stream);
+                decodedHashIDPreimageEd25519ContractID.Ed25519 = Uint256.Decode(stream);
+                decodedHashIDPreimageEd25519ContractID.Salt = Uint256.Decode(stream);
+                return decodedHashIDPreimageEd25519ContractID;
+            }
+
+        }
+        public class HashIDPreimageContractID
+        {
+            public HashIDPreimageContractID() { }
+            public Hash NetworkID { get; set; }
+            public Hash ContractID { get; set; }
+            public Uint256 Salt { get; set; }
+
+            public static void Encode(XdrDataOutputStream stream, HashIDPreimageContractID encodedHashIDPreimageContractID)
+            {
+                Hash.Encode(stream, encodedHashIDPreimageContractID.NetworkID);
+                Hash.Encode(stream, encodedHashIDPreimageContractID.ContractID);
+                Uint256.Encode(stream, encodedHashIDPreimageContractID.Salt);
+            }
+            public static HashIDPreimageContractID Decode(XdrDataInputStream stream)
+            {
+                HashIDPreimageContractID decodedHashIDPreimageContractID = new HashIDPreimageContractID();
+                decodedHashIDPreimageContractID.NetworkID = Hash.Decode(stream);
+                decodedHashIDPreimageContractID.ContractID = Hash.Decode(stream);
+                decodedHashIDPreimageContractID.Salt = Uint256.Decode(stream);
+                return decodedHashIDPreimageContractID;
+            }
+
+        }
+        public class HashIDPreimageFromAsset
+        {
+            public HashIDPreimageFromAsset() { }
+            public Hash NetworkID { get; set; }
+            public Asset Asset { get; set; }
+
+            public static void Encode(XdrDataOutputStream stream, HashIDPreimageFromAsset encodedHashIDPreimageFromAsset)
+            {
+                Hash.Encode(stream, encodedHashIDPreimageFromAsset.NetworkID);
+                Asset.Encode(stream, encodedHashIDPreimageFromAsset.Asset);
+            }
+            public static HashIDPreimageFromAsset Decode(XdrDataInputStream stream)
+            {
+                HashIDPreimageFromAsset decodedHashIDPreimageFromAsset = new HashIDPreimageFromAsset();
+                decodedHashIDPreimageFromAsset.NetworkID = Hash.Decode(stream);
+                decodedHashIDPreimageFromAsset.Asset = Asset.Decode(stream);
+                return decodedHashIDPreimageFromAsset;
+            }
+
+        }
+        public class HashIDPreimageSourceAccountContractID
+        {
+            public HashIDPreimageSourceAccountContractID() { }
+            public Hash NetworkID { get; set; }
+            public AccountID SourceAccount { get; set; }
+            public Uint256 Salt { get; set; }
+
+            public static void Encode(XdrDataOutputStream stream, HashIDPreimageSourceAccountContractID encodedHashIDPreimageSourceAccountContractID)
+            {
+                Hash.Encode(stream, encodedHashIDPreimageSourceAccountContractID.NetworkID);
+                AccountID.Encode(stream, encodedHashIDPreimageSourceAccountContractID.SourceAccount);
+                Uint256.Encode(stream, encodedHashIDPreimageSourceAccountContractID.Salt);
+            }
+            public static HashIDPreimageSourceAccountContractID Decode(XdrDataInputStream stream)
+            {
+                HashIDPreimageSourceAccountContractID decodedHashIDPreimageSourceAccountContractID = new HashIDPreimageSourceAccountContractID();
+                decodedHashIDPreimageSourceAccountContractID.NetworkID = Hash.Decode(stream);
+                decodedHashIDPreimageSourceAccountContractID.SourceAccount = AccountID.Decode(stream);
+                decodedHashIDPreimageSourceAccountContractID.Salt = Uint256.Decode(stream);
+                return decodedHashIDPreimageSourceAccountContractID;
+            }
+
+        }
+        public class HashIDPreimageCreateContractArgs
+        {
+            public HashIDPreimageCreateContractArgs() { }
+            public Hash NetworkID { get; set; }
+            public SCContractCode Source { get; set; }
+            public Uint256 Salt { get; set; }
+
+            public static void Encode(XdrDataOutputStream stream, HashIDPreimageCreateContractArgs encodedHashIDPreimageCreateContractArgs)
+            {
+                Hash.Encode(stream, encodedHashIDPreimageCreateContractArgs.NetworkID);
+                SCContractCode.Encode(stream, encodedHashIDPreimageCreateContractArgs.Source);
+                Uint256.Encode(stream, encodedHashIDPreimageCreateContractArgs.Salt);
+            }
+            public static HashIDPreimageCreateContractArgs Decode(XdrDataInputStream stream)
+            {
+                HashIDPreimageCreateContractArgs decodedHashIDPreimageCreateContractArgs = new HashIDPreimageCreateContractArgs();
+                decodedHashIDPreimageCreateContractArgs.NetworkID = Hash.Decode(stream);
+                decodedHashIDPreimageCreateContractArgs.Source = SCContractCode.Decode(stream);
+                decodedHashIDPreimageCreateContractArgs.Salt = Uint256.Decode(stream);
+                return decodedHashIDPreimageCreateContractArgs;
             }
 
         }

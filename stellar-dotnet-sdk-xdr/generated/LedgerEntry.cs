@@ -25,6 +25,12 @@ namespace stellar_dotnet_sdk.xdr
     //          ClaimableBalanceEntry claimableBalance;
     //      case LIQUIDITY_POOL:
     //          LiquidityPoolEntry liquidityPool;
+    //      case CONTRACT_DATA:
+    //          ContractDataEntry contractData;
+    //      case CONTRACT_CODE:
+    //          ContractCodeEntry contractCode;
+    //      case CONFIG_SETTING:
+    //          ConfigSettingEntry configSetting;
     //      }
     //      data;
     //  
@@ -74,6 +80,9 @@ namespace stellar_dotnet_sdk.xdr
             public DataEntry Data { get; set; }
             public ClaimableBalanceEntry ClaimableBalance { get; set; }
             public LiquidityPoolEntry LiquidityPool { get; set; }
+            public ContractDataEntry ContractData { get; set; }
+            public ContractCodeEntry ContractCode { get; set; }
+            public ConfigSettingEntry ConfigSetting { get; set; }
             public static void Encode(XdrDataOutputStream stream, LedgerEntryData encodedLedgerEntryData)
             {
                 stream.WriteInt((int)encodedLedgerEntryData.Discriminant.InnerValue);
@@ -96,6 +105,15 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case LedgerEntryType.LedgerEntryTypeEnum.LIQUIDITY_POOL:
                         LiquidityPoolEntry.Encode(stream, encodedLedgerEntryData.LiquidityPool);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.CONTRACT_DATA:
+                        ContractDataEntry.Encode(stream, encodedLedgerEntryData.ContractData);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.CONTRACT_CODE:
+                        ContractCodeEntry.Encode(stream, encodedLedgerEntryData.ContractCode);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.CONFIG_SETTING:
+                        ConfigSettingEntry.Encode(stream, encodedLedgerEntryData.ConfigSetting);
                         break;
                 }
             }
@@ -123,6 +141,15 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case LedgerEntryType.LedgerEntryTypeEnum.LIQUIDITY_POOL:
                         decodedLedgerEntryData.LiquidityPool = LiquidityPoolEntry.Decode(stream);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.CONTRACT_DATA:
+                        decodedLedgerEntryData.ContractData = ContractDataEntry.Decode(stream);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.CONTRACT_CODE:
+                        decodedLedgerEntryData.ContractCode = ContractCodeEntry.Decode(stream);
+                        break;
+                    case LedgerEntryType.LedgerEntryTypeEnum.CONFIG_SETTING:
+                        decodedLedgerEntryData.ConfigSetting = ConfigSettingEntry.Decode(stream);
                         break;
                 }
                 return decodedLedgerEntryData;

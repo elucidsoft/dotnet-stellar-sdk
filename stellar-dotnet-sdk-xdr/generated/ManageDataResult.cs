@@ -11,7 +11,10 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case MANAGE_DATA_SUCCESS:
     //      void;
-    //  default:
+    //  case MANAGE_DATA_NOT_SUPPORTED_YET:
+    //  case MANAGE_DATA_NAME_NOT_FOUND:
+    //  case MANAGE_DATA_LOW_RESERVE:
+    //  case MANAGE_DATA_INVALID_NAME:
     //      void;
     //  };
 
@@ -29,7 +32,10 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case ManageDataResultCode.ManageDataResultCodeEnum.MANAGE_DATA_SUCCESS:
                     break;
-                default:
+                case ManageDataResultCode.ManageDataResultCodeEnum.MANAGE_DATA_NOT_SUPPORTED_YET:
+                case ManageDataResultCode.ManageDataResultCodeEnum.MANAGE_DATA_NAME_NOT_FOUND:
+                case ManageDataResultCode.ManageDataResultCodeEnum.MANAGE_DATA_LOW_RESERVE:
+                case ManageDataResultCode.ManageDataResultCodeEnum.MANAGE_DATA_INVALID_NAME:
                     break;
             }
         }
@@ -42,7 +48,10 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case ManageDataResultCode.ManageDataResultCodeEnum.MANAGE_DATA_SUCCESS:
                     break;
-                default:
+                case ManageDataResultCode.ManageDataResultCodeEnum.MANAGE_DATA_NOT_SUPPORTED_YET:
+                case ManageDataResultCode.ManageDataResultCodeEnum.MANAGE_DATA_NAME_NOT_FOUND:
+                case ManageDataResultCode.ManageDataResultCodeEnum.MANAGE_DATA_LOW_RESERVE:
+                case ManageDataResultCode.ManageDataResultCodeEnum.MANAGE_DATA_INVALID_NAME:
                     break;
             }
             return decodedManageDataResult;

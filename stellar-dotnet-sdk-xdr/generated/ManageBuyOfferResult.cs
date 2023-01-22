@@ -11,7 +11,18 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case MANAGE_BUY_OFFER_SUCCESS:
     //      ManageOfferSuccessResult success;
-    //  default:
+    //  case MANAGE_BUY_OFFER_MALFORMED:
+    //  case MANAGE_BUY_OFFER_SELL_NO_TRUST:
+    //  case MANAGE_BUY_OFFER_BUY_NO_TRUST:
+    //  case MANAGE_BUY_OFFER_SELL_NOT_AUTHORIZED:
+    //  case MANAGE_BUY_OFFER_BUY_NOT_AUTHORIZED:
+    //  case MANAGE_BUY_OFFER_LINE_FULL:
+    //  case MANAGE_BUY_OFFER_UNDERFUNDED:
+    //  case MANAGE_BUY_OFFER_CROSS_SELF:
+    //  case MANAGE_BUY_OFFER_SELL_NO_ISSUER:
+    //  case MANAGE_BUY_OFFER_BUY_NO_ISSUER:
+    //  case MANAGE_BUY_OFFER_NOT_FOUND:
+    //  case MANAGE_BUY_OFFER_LOW_RESERVE:
     //      void;
     //  };
 
@@ -31,7 +42,18 @@ namespace stellar_dotnet_sdk.xdr
                 case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_SUCCESS:
                     ManageOfferSuccessResult.Encode(stream, encodedManageBuyOfferResult.Success);
                     break;
-                default:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_MALFORMED:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_SELL_NO_TRUST:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_BUY_NO_TRUST:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_SELL_NOT_AUTHORIZED:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_BUY_NOT_AUTHORIZED:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_LINE_FULL:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_UNDERFUNDED:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_CROSS_SELF:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_SELL_NO_ISSUER:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_BUY_NO_ISSUER:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_NOT_FOUND:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_LOW_RESERVE:
                     break;
             }
         }
@@ -45,7 +67,18 @@ namespace stellar_dotnet_sdk.xdr
                 case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_SUCCESS:
                     decodedManageBuyOfferResult.Success = ManageOfferSuccessResult.Decode(stream);
                     break;
-                default:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_MALFORMED:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_SELL_NO_TRUST:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_BUY_NO_TRUST:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_SELL_NOT_AUTHORIZED:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_BUY_NOT_AUTHORIZED:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_LINE_FULL:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_UNDERFUNDED:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_CROSS_SELF:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_SELL_NO_ISSUER:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_BUY_NO_ISSUER:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_NOT_FOUND:
+                case ManageBuyOfferResultCode.ManageBuyOfferResultCodeEnum.MANAGE_BUY_OFFER_LOW_RESERVE:
                     break;
             }
             return decodedManageBuyOfferResult;

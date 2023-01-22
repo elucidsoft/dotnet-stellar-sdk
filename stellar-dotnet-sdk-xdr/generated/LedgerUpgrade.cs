@@ -19,6 +19,12 @@ namespace stellar_dotnet_sdk.xdr
     //      uint32 newBaseReserve; // update baseReserve
     //  case LEDGER_UPGRADE_FLAGS:
     //      uint32 newFlags; // update flags
+    //  case LEDGER_UPGRADE_CONFIG:
+    //      struct
+    //      {
+    //          ConfigSettingID id; // id to update
+    //          ConfigSetting setting; // new value
+    //      } configSetting;
     //  };
 
     //  ===========================================================================
@@ -33,6 +39,7 @@ namespace stellar_dotnet_sdk.xdr
         public Uint32 NewMaxTxSetSize { get; set; }
         public Uint32 NewBaseReserve { get; set; }
         public Uint32 NewFlags { get; set; }
+        public LedgerUpgradeConfigSetting LedgerConfigSetting { get; set; }
         public static void Encode(XdrDataOutputStream stream, LedgerUpgrade encodedLedgerUpgrade)
         {
             stream.WriteInt((int)encodedLedgerUpgrade.Discriminant.InnerValue);
@@ -52,6 +59,9 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case LedgerUpgradeType.LedgerUpgradeTypeEnum.LEDGER_UPGRADE_FLAGS:
                     Uint32.Encode(stream, encodedLedgerUpgrade.NewFlags);
+                    break;
+                case LedgerUpgradeType.LedgerUpgradeTypeEnum.LEDGER_UPGRADE_CONFIG:
+                    LedgerUpgradeConfigSetting.Encode(stream, encodedLedgerUpgrade.LedgerConfigSetting);
                     break;
             }
         }
@@ -77,8 +87,32 @@ namespace stellar_dotnet_sdk.xdr
                 case LedgerUpgradeType.LedgerUpgradeTypeEnum.LEDGER_UPGRADE_FLAGS:
                     decodedLedgerUpgrade.NewFlags = Uint32.Decode(stream);
                     break;
+                case LedgerUpgradeType.LedgerUpgradeTypeEnum.LEDGER_UPGRADE_CONFIG:
+                    decodedLedgerUpgrade.LedgerConfigSetting = LedgerUpgradeConfigSetting.Decode(stream);
+                    break;
             }
             return decodedLedgerUpgrade;
+        }
+
+        public class LedgerUpgradeConfigSetting
+        {
+            public LedgerUpgradeConfigSetting() { }
+            public ConfigSettingID Id { get; set; }
+            public ConfigSetting Setting { get; set; }
+
+            public static void Encode(XdrDataOutputStream stream, LedgerUpgradeConfigSetting encodedLedgerUpgradeConfigSetting)
+            {
+                ConfigSettingID.Encode(stream, encodedLedgerUpgradeConfigSetting.Id);
+                ConfigSetting.Encode(stream, encodedLedgerUpgradeConfigSetting.Setting);
+            }
+            public static LedgerUpgradeConfigSetting Decode(XdrDataInputStream stream)
+            {
+                LedgerUpgradeConfigSetting decodedLedgerUpgradeConfigSetting = new LedgerUpgradeConfigSetting();
+                decodedLedgerUpgradeConfigSetting.Id = ConfigSettingID.Decode(stream);
+                decodedLedgerUpgradeConfigSetting.Setting = ConfigSetting.Decode(stream);
+                return decodedLedgerUpgradeConfigSetting;
+            }
+
         }
     }
 }

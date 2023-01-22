@@ -11,7 +11,7 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case BUMP_SEQUENCE_SUCCESS:
     //      void;
-    //  default:
+    //  case BUMP_SEQUENCE_BAD_SEQ:
     //      void;
     //  };
 
@@ -29,7 +29,7 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_SUCCESS:
                     break;
-                default:
+                case BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_BAD_SEQ:
                     break;
             }
         }
@@ -42,7 +42,7 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_SUCCESS:
                     break;
-                default:
+                case BumpSequenceResultCode.BumpSequenceResultCodeEnum.BUMP_SEQUENCE_BAD_SEQ:
                     break;
             }
             return decodedBumpSequenceResult;

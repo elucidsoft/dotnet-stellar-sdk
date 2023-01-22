@@ -16,7 +16,12 @@ namespace stellar_dotnet_sdk.xdr
     //      ENVELOPE_TYPE_SCPVALUE = 4,
     //      ENVELOPE_TYPE_TX_FEE_BUMP = 5,
     //      ENVELOPE_TYPE_OP_ID = 6,
-    //      ENVELOPE_TYPE_POOL_REVOKE_OP_ID = 7
+    //      ENVELOPE_TYPE_POOL_REVOKE_OP_ID = 7,
+    //      ENVELOPE_TYPE_CONTRACT_ID_FROM_ED25519 = 8,
+    //      ENVELOPE_TYPE_CONTRACT_ID_FROM_CONTRACT = 9,
+    //      ENVELOPE_TYPE_CONTRACT_ID_FROM_ASSET = 10,
+    //      ENVELOPE_TYPE_CONTRACT_ID_FROM_SOURCE_ACCOUNT = 11,
+    //      ENVELOPE_TYPE_CREATE_CONTRACT_ARGS = 12
     //  };
 
     //  ===========================================================================
@@ -32,6 +37,11 @@ namespace stellar_dotnet_sdk.xdr
             ENVELOPE_TYPE_TX_FEE_BUMP = 5,
             ENVELOPE_TYPE_OP_ID = 6,
             ENVELOPE_TYPE_POOL_REVOKE_OP_ID = 7,
+            ENVELOPE_TYPE_CONTRACT_ID_FROM_ED25519 = 8,
+            ENVELOPE_TYPE_CONTRACT_ID_FROM_CONTRACT = 9,
+            ENVELOPE_TYPE_CONTRACT_ID_FROM_ASSET = 10,
+            ENVELOPE_TYPE_CONTRACT_ID_FROM_SOURCE_ACCOUNT = 11,
+            ENVELOPE_TYPE_CREATE_CONTRACT_ARGS = 12,
         }
         public EnvelopeTypeEnum InnerValue { get; set; } = default(EnvelopeTypeEnum);
 
@@ -56,6 +66,11 @@ namespace stellar_dotnet_sdk.xdr
                 case 5: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_TX_FEE_BUMP);
                 case 6: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_OP_ID);
                 case 7: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_POOL_REVOKE_OP_ID);
+                case 8: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_CONTRACT_ID_FROM_ED25519);
+                case 9: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_CONTRACT_ID_FROM_CONTRACT);
+                case 10: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_CONTRACT_ID_FROM_ASSET);
+                case 11: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_CONTRACT_ID_FROM_SOURCE_ACCOUNT);
+                case 12: return Create(EnvelopeTypeEnum.ENVELOPE_TYPE_CREATE_CONTRACT_ARGS);
                 default:
                     throw new Exception("Unknown enum value: " + value);
             }

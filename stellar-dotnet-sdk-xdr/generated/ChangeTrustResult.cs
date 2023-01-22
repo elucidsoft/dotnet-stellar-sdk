@@ -11,7 +11,14 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case CHANGE_TRUST_SUCCESS:
     //      void;
-    //  default:
+    //  case CHANGE_TRUST_MALFORMED:
+    //  case CHANGE_TRUST_NO_ISSUER:
+    //  case CHANGE_TRUST_INVALID_LIMIT:
+    //  case CHANGE_TRUST_LOW_RESERVE:
+    //  case CHANGE_TRUST_SELF_NOT_ALLOWED:
+    //  case CHANGE_TRUST_TRUST_LINE_MISSING:
+    //  case CHANGE_TRUST_CANNOT_DELETE:
+    //  case CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES:
     //      void;
     //  };
 
@@ -29,7 +36,14 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SUCCESS:
                     break;
-                default:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_MALFORMED:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_NO_ISSUER:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_INVALID_LIMIT:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_LOW_RESERVE:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SELF_NOT_ALLOWED:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_TRUST_LINE_MISSING:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_CANNOT_DELETE:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES:
                     break;
             }
         }
@@ -42,7 +56,14 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SUCCESS:
                     break;
-                default:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_MALFORMED:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_NO_ISSUER:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_INVALID_LIMIT:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_LOW_RESERVE:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_SELF_NOT_ALLOWED:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_TRUST_LINE_MISSING:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_CANNOT_DELETE:
+                case ChangeTrustResultCode.ChangeTrustResultCodeEnum.CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES:
                     break;
             }
             return decodedChangeTrustResult;

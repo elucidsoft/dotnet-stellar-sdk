@@ -3,11 +3,11 @@
 // of this distribution or at http://www.apache.org/licenses/LICENSE-2.0
 
 %#include "xdr/Stellar-types.h"
+%#include "xdr/Stellar-contract.h"
 
 namespace stellar
 {
 
-typedef PublicKey AccountID;
 typedef opaque Thresholds[4];
 typedef string string32<32>;
 typedef string string64<64>;
@@ -98,7 +98,10 @@ enum LedgerEntryType
     OFFER = 2,
     DATA = 3,
     CLAIMABLE_BALANCE = 4,
-    LIQUIDITY_POOL = 5
+    LIQUIDITY_POOL = 5,
+    CONTRACT_DATA = 6,
+    CONTRACT_CODE = 7,
+    CONFIG_SETTING = 8
 };
 
 struct Signer
@@ -491,6 +494,48 @@ struct LiquidityPoolEntry
     body;
 };
 
+struct ContractDataEntry {
+    Hash contractID;
+    SCVal key;
+    SCVal val;
+};
+
+struct ContractCodeEntry {
+    ExtensionPoint ext;
+
+    Hash hash;
+    opaque code<SCVAL_LIMIT>;
+};
+
+enum ConfigSettingType
+{
+    CONFIG_SETTING_TYPE_UINT32 = 0
+};
+
+union ConfigSetting switch (ConfigSettingType type)
+{
+case CONFIG_SETTING_TYPE_UINT32:
+    uint32 uint32Val;
+};
+
+enum ConfigSettingID
+{
+    CONFIG_SETTING_CONTRACT_MAX_SIZE = 0
+};
+
+struct ConfigSettingEntry
+{
+    union switch (int v)
+    {
+    case 0:
+        void;
+    }
+    ext;
+
+    ConfigSettingID configSettingID;
+    ConfigSetting setting;
+};
+
 struct LedgerEntryExtensionV1
 {
     SponsorshipDescriptor sponsoringID;
@@ -521,6 +566,12 @@ struct LedgerEntry
         ClaimableBalanceEntry claimableBalance;
     case LIQUIDITY_POOL:
         LiquidityPoolEntry liquidityPool;
+    case CONTRACT_DATA:
+        ContractDataEntry contractData;
+    case CONTRACT_CODE:
+        ContractCodeEntry contractCode;
+    case CONFIG_SETTING:
+        ConfigSettingEntry configSetting;
     }
     data;
 
@@ -575,6 +626,22 @@ case LIQUIDITY_POOL:
     {
         PoolID liquidityPoolID;
     } liquidityPool;
+case CONTRACT_DATA:
+    struct
+    {
+        Hash contractID;
+        SCVal key;
+    } contractData;
+case CONTRACT_CODE:
+    struct
+    {
+        Hash hash;
+    } contractCode;
+case CONFIG_SETTING:
+    struct
+    {
+        ConfigSettingID configSettingID;
+    } configSetting;
 };
 
 // list of all envelope types used in the application
@@ -589,6 +656,11 @@ enum EnvelopeType
     ENVELOPE_TYPE_SCPVALUE = 4,
     ENVELOPE_TYPE_TX_FEE_BUMP = 5,
     ENVELOPE_TYPE_OP_ID = 6,
-    ENVELOPE_TYPE_POOL_REVOKE_OP_ID = 7
+    ENVELOPE_TYPE_POOL_REVOKE_OP_ID = 7,
+    ENVELOPE_TYPE_CONTRACT_ID_FROM_ED25519 = 8,
+    ENVELOPE_TYPE_CONTRACT_ID_FROM_CONTRACT = 9,
+    ENVELOPE_TYPE_CONTRACT_ID_FROM_ASSET = 10,
+    ENVELOPE_TYPE_CONTRACT_ID_FROM_SOURCE_ACCOUNT = 11,
+    ENVELOPE_TYPE_CREATE_CONTRACT_ARGS = 12
 };
 }

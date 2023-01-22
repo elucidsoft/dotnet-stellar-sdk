@@ -12,11 +12,13 @@ namespace stellar_dotnet_sdk.xdr
     //      uint32 ledgerSeq;
     //      TransactionSet txSet;
     //  
-    //      // reserved for future use
+    //      // when v != 0, txSet must be empty
     //      union switch (int v)
     //      {
     //      case 0:
     //          void;
+    //      case 1:
+    //          GeneralizedTransactionSet generalizedTxSet;
     //      }
     //      ext;
     //  };
@@ -50,12 +52,16 @@ namespace stellar_dotnet_sdk.xdr
 
             public int Discriminant { get; set; } = new int();
 
+            public GeneralizedTransactionSet GeneralizedTxSet { get; set; }
             public static void Encode(XdrDataOutputStream stream, TransactionHistoryEntryExt encodedTransactionHistoryEntryExt)
             {
                 stream.WriteInt((int)encodedTransactionHistoryEntryExt.Discriminant);
                 switch (encodedTransactionHistoryEntryExt.Discriminant)
                 {
                     case 0:
+                        break;
+                    case 1:
+                        GeneralizedTransactionSet.Encode(stream, encodedTransactionHistoryEntryExt.GeneralizedTxSet);
                         break;
                 }
             }
@@ -67,6 +73,9 @@ namespace stellar_dotnet_sdk.xdr
                 switch (decodedTransactionHistoryEntryExt.Discriminant)
                 {
                     case 0:
+                        break;
+                    case 1:
+                        decodedTransactionHistoryEntryExt.GeneralizedTxSet = GeneralizedTransactionSet.Decode(stream);
                         break;
                 }
                 return decodedTransactionHistoryEntryExt;

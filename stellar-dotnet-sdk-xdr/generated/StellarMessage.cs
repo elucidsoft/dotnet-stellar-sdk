@@ -26,6 +26,8 @@ namespace stellar_dotnet_sdk.xdr
     //      uint256 txSetHash;
     //  case TX_SET:
     //      TransactionSet txSet;
+    //  case GENERALIZED_TX_SET:
+    //      GeneralizedTransactionSet generalizedTxSet;
     //  
     //  case TRANSACTION:
     //      TransactionEnvelope transaction;
@@ -47,6 +49,12 @@ namespace stellar_dotnet_sdk.xdr
     //      uint32 getSCPLedgerSeq; // ledger seq requested ; if 0, requests the latest
     //  case SEND_MORE:
     //      SendMore sendMoreMessage;
+    //  
+    //  // Pull mode
+    //  case FLOOD_ADVERT:
+    //       FloodAdvert floodAdvert;
+    //  case FLOOD_DEMAND:
+    //       FloodDemand floodDemand;
     //  };
 
     //  ===========================================================================
@@ -63,6 +71,7 @@ namespace stellar_dotnet_sdk.xdr
         public PeerAddress[] Peers { get; set; }
         public Uint256 TxSetHash { get; set; }
         public TransactionSet TxSet { get; set; }
+        public GeneralizedTransactionSet GeneralizedTxSet { get; set; }
         public TransactionEnvelope Transaction { get; set; }
         public SignedSurveyRequestMessage SignedSurveyRequestMessage { get; set; }
         public SignedSurveyResponseMessage SignedSurveyResponseMessage { get; set; }
@@ -71,6 +80,8 @@ namespace stellar_dotnet_sdk.xdr
         public SCPEnvelope Envelope { get; set; }
         public Uint32 GetSCPLedgerSeq { get; set; }
         public SendMore SendMoreMessage { get; set; }
+        public FloodAdvert FloodAdvert { get; set; }
+        public FloodDemand FloodDemand { get; set; }
         public static void Encode(XdrDataOutputStream stream, StellarMessage encodedStellarMessage)
         {
             stream.WriteInt((int)encodedStellarMessage.Discriminant.InnerValue);
@@ -104,6 +115,9 @@ namespace stellar_dotnet_sdk.xdr
                 case MessageType.MessageTypeEnum.TX_SET:
                     TransactionSet.Encode(stream, encodedStellarMessage.TxSet);
                     break;
+                case MessageType.MessageTypeEnum.GENERALIZED_TX_SET:
+                    GeneralizedTransactionSet.Encode(stream, encodedStellarMessage.GeneralizedTxSet);
+                    break;
                 case MessageType.MessageTypeEnum.TRANSACTION:
                     TransactionEnvelope.Encode(stream, encodedStellarMessage.Transaction);
                     break;
@@ -127,6 +141,12 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case MessageType.MessageTypeEnum.SEND_MORE:
                     SendMore.Encode(stream, encodedStellarMessage.SendMoreMessage);
+                    break;
+                case MessageType.MessageTypeEnum.FLOOD_ADVERT:
+                    FloodAdvert.Encode(stream, encodedStellarMessage.FloodAdvert);
+                    break;
+                case MessageType.MessageTypeEnum.FLOOD_DEMAND:
+                    FloodDemand.Encode(stream, encodedStellarMessage.FloodDemand);
                     break;
             }
         }
@@ -165,6 +185,9 @@ namespace stellar_dotnet_sdk.xdr
                 case MessageType.MessageTypeEnum.TX_SET:
                     decodedStellarMessage.TxSet = TransactionSet.Decode(stream);
                     break;
+                case MessageType.MessageTypeEnum.GENERALIZED_TX_SET:
+                    decodedStellarMessage.GeneralizedTxSet = GeneralizedTransactionSet.Decode(stream);
+                    break;
                 case MessageType.MessageTypeEnum.TRANSACTION:
                     decodedStellarMessage.Transaction = TransactionEnvelope.Decode(stream);
                     break;
@@ -188,6 +211,12 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case MessageType.MessageTypeEnum.SEND_MORE:
                     decodedStellarMessage.SendMoreMessage = SendMore.Decode(stream);
+                    break;
+                case MessageType.MessageTypeEnum.FLOOD_ADVERT:
+                    decodedStellarMessage.FloodAdvert = FloodAdvert.Decode(stream);
+                    break;
+                case MessageType.MessageTypeEnum.FLOOD_DEMAND:
+                    decodedStellarMessage.FloodDemand = FloodDemand.Decode(stream);
                     break;
             }
             return decodedStellarMessage;

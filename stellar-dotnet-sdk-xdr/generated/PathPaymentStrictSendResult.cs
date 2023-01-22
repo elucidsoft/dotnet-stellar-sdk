@@ -15,9 +15,20 @@ namespace stellar_dotnet_sdk.xdr
     //          ClaimAtom offers<>;
     //          SimplePaymentResult last;
     //      } success;
+    //  case PATH_PAYMENT_STRICT_SEND_MALFORMED:
+    //  case PATH_PAYMENT_STRICT_SEND_UNDERFUNDED:
+    //  case PATH_PAYMENT_STRICT_SEND_SRC_NO_TRUST:
+    //  case PATH_PAYMENT_STRICT_SEND_SRC_NOT_AUTHORIZED:
+    //  case PATH_PAYMENT_STRICT_SEND_NO_DESTINATION:
+    //  case PATH_PAYMENT_STRICT_SEND_NO_TRUST:
+    //  case PATH_PAYMENT_STRICT_SEND_NOT_AUTHORIZED:
+    //  case PATH_PAYMENT_STRICT_SEND_LINE_FULL:
+    //      void;
     //  case PATH_PAYMENT_STRICT_SEND_NO_ISSUER:
     //      Asset noIssuer; // the asset that caused the error
-    //  default:
+    //  case PATH_PAYMENT_STRICT_SEND_TOO_FEW_OFFERS:
+    //  case PATH_PAYMENT_STRICT_SEND_OFFER_CROSS_SELF:
+    //  case PATH_PAYMENT_STRICT_SEND_UNDER_DESTMIN:
     //      void;
     //  };
 
@@ -38,10 +49,21 @@ namespace stellar_dotnet_sdk.xdr
                 case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_SUCCESS:
                     PathPaymentStrictSendResultSuccess.Encode(stream, encodedPathPaymentStrictSendResult.Success);
                     break;
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_MALFORMED:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_UNDERFUNDED:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_SRC_NO_TRUST:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_SRC_NOT_AUTHORIZED:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_NO_DESTINATION:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_NO_TRUST:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_NOT_AUTHORIZED:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_LINE_FULL:
+                    break;
                 case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_NO_ISSUER:
                     Asset.Encode(stream, encodedPathPaymentStrictSendResult.NoIssuer);
                     break;
-                default:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_TOO_FEW_OFFERS:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_OFFER_CROSS_SELF:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_UNDER_DESTMIN:
                     break;
             }
         }
@@ -55,10 +77,21 @@ namespace stellar_dotnet_sdk.xdr
                 case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_SUCCESS:
                     decodedPathPaymentStrictSendResult.Success = PathPaymentStrictSendResultSuccess.Decode(stream);
                     break;
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_MALFORMED:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_UNDERFUNDED:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_SRC_NO_TRUST:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_SRC_NOT_AUTHORIZED:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_NO_DESTINATION:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_NO_TRUST:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_NOT_AUTHORIZED:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_LINE_FULL:
+                    break;
                 case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_NO_ISSUER:
                     decodedPathPaymentStrictSendResult.NoIssuer = Asset.Decode(stream);
                     break;
-                default:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_TOO_FEW_OFFERS:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_OFFER_CROSS_SELF:
+                case PathPaymentStrictSendResultCode.PathPaymentStrictSendResultCodeEnum.PATH_PAYMENT_STRICT_SEND_UNDER_DESTMIN:
                     break;
             }
             return decodedPathPaymentStrictSendResult;

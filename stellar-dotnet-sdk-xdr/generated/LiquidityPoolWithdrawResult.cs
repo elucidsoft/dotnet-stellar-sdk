@@ -11,7 +11,11 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case LIQUIDITY_POOL_WITHDRAW_SUCCESS:
     //      void;
-    //  default:
+    //  case LIQUIDITY_POOL_WITHDRAW_MALFORMED:
+    //  case LIQUIDITY_POOL_WITHDRAW_NO_TRUST:
+    //  case LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED:
+    //  case LIQUIDITY_POOL_WITHDRAW_LINE_FULL:
+    //  case LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM:
     //      void;
     //  };
 
@@ -29,7 +33,11 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case LiquidityPoolWithdrawResultCode.LiquidityPoolWithdrawResultCodeEnum.LIQUIDITY_POOL_WITHDRAW_SUCCESS:
                     break;
-                default:
+                case LiquidityPoolWithdrawResultCode.LiquidityPoolWithdrawResultCodeEnum.LIQUIDITY_POOL_WITHDRAW_MALFORMED:
+                case LiquidityPoolWithdrawResultCode.LiquidityPoolWithdrawResultCodeEnum.LIQUIDITY_POOL_WITHDRAW_NO_TRUST:
+                case LiquidityPoolWithdrawResultCode.LiquidityPoolWithdrawResultCodeEnum.LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED:
+                case LiquidityPoolWithdrawResultCode.LiquidityPoolWithdrawResultCodeEnum.LIQUIDITY_POOL_WITHDRAW_LINE_FULL:
+                case LiquidityPoolWithdrawResultCode.LiquidityPoolWithdrawResultCodeEnum.LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM:
                     break;
             }
         }
@@ -42,7 +50,11 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case LiquidityPoolWithdrawResultCode.LiquidityPoolWithdrawResultCodeEnum.LIQUIDITY_POOL_WITHDRAW_SUCCESS:
                     break;
-                default:
+                case LiquidityPoolWithdrawResultCode.LiquidityPoolWithdrawResultCodeEnum.LIQUIDITY_POOL_WITHDRAW_MALFORMED:
+                case LiquidityPoolWithdrawResultCode.LiquidityPoolWithdrawResultCodeEnum.LIQUIDITY_POOL_WITHDRAW_NO_TRUST:
+                case LiquidityPoolWithdrawResultCode.LiquidityPoolWithdrawResultCodeEnum.LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED:
+                case LiquidityPoolWithdrawResultCode.LiquidityPoolWithdrawResultCodeEnum.LIQUIDITY_POOL_WITHDRAW_LINE_FULL:
+                case LiquidityPoolWithdrawResultCode.LiquidityPoolWithdrawResultCodeEnum.LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM:
                     break;
             }
             return decodedLiquidityPoolWithdrawResult;

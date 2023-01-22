@@ -11,7 +11,11 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case SET_TRUST_LINE_FLAGS_SUCCESS:
     //      void;
-    //  default:
+    //  case SET_TRUST_LINE_FLAGS_MALFORMED:
+    //  case SET_TRUST_LINE_FLAGS_NO_TRUST_LINE:
+    //  case SET_TRUST_LINE_FLAGS_CANT_REVOKE:
+    //  case SET_TRUST_LINE_FLAGS_INVALID_STATE:
+    //  case SET_TRUST_LINE_FLAGS_LOW_RESERVE:
     //      void;
     //  };
 
@@ -29,7 +33,11 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case SetTrustLineFlagsResultCode.SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_SUCCESS:
                     break;
-                default:
+                case SetTrustLineFlagsResultCode.SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_MALFORMED:
+                case SetTrustLineFlagsResultCode.SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_NO_TRUST_LINE:
+                case SetTrustLineFlagsResultCode.SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_CANT_REVOKE:
+                case SetTrustLineFlagsResultCode.SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_INVALID_STATE:
+                case SetTrustLineFlagsResultCode.SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_LOW_RESERVE:
                     break;
             }
         }
@@ -42,7 +50,11 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case SetTrustLineFlagsResultCode.SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_SUCCESS:
                     break;
-                default:
+                case SetTrustLineFlagsResultCode.SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_MALFORMED:
+                case SetTrustLineFlagsResultCode.SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_NO_TRUST_LINE:
+                case SetTrustLineFlagsResultCode.SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_CANT_REVOKE:
+                case SetTrustLineFlagsResultCode.SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_INVALID_STATE:
+                case SetTrustLineFlagsResultCode.SetTrustLineFlagsResultCodeEnum.SET_TRUST_LINE_FLAGS_LOW_RESERVE:
                     break;
             }
             return decodedSetTrustLineFlagsResult;

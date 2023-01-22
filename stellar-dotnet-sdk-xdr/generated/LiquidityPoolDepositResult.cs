@@ -11,7 +11,13 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case LIQUIDITY_POOL_DEPOSIT_SUCCESS:
     //      void;
-    //  default:
+    //  case LIQUIDITY_POOL_DEPOSIT_MALFORMED:
+    //  case LIQUIDITY_POOL_DEPOSIT_NO_TRUST:
+    //  case LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED:
+    //  case LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED:
+    //  case LIQUIDITY_POOL_DEPOSIT_LINE_FULL:
+    //  case LIQUIDITY_POOL_DEPOSIT_BAD_PRICE:
+    //  case LIQUIDITY_POOL_DEPOSIT_POOL_FULL:
     //      void;
     //  };
 
@@ -29,7 +35,13 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_SUCCESS:
                     break;
-                default:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_MALFORMED:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_NO_TRUST:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_LINE_FULL:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_BAD_PRICE:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_POOL_FULL:
                     break;
             }
         }
@@ -42,7 +54,13 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_SUCCESS:
                     break;
-                default:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_MALFORMED:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_NO_TRUST:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_LINE_FULL:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_BAD_PRICE:
+                case LiquidityPoolDepositResultCode.LiquidityPoolDepositResultCodeEnum.LIQUIDITY_POOL_DEPOSIT_POOL_FULL:
                     break;
             }
             return decodedLiquidityPoolDepositResult;

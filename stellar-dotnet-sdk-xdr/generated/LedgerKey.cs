@@ -47,6 +47,22 @@ namespace stellar_dotnet_sdk.xdr
     //      {
     //          PoolID liquidityPoolID;
     //      } liquidityPool;
+    //  case CONTRACT_DATA:
+    //      struct
+    //      {
+    //          Hash contractID;
+    //          SCVal key;
+    //      } contractData;
+    //  case CONTRACT_CODE:
+    //      struct
+    //      {
+    //          Hash hash;
+    //      } contractCode;
+    //  case CONFIG_SETTING:
+    //      struct
+    //      {
+    //          ConfigSettingID configSettingID;
+    //      } configSetting;
     //  };
 
     //  ===========================================================================
@@ -62,6 +78,9 @@ namespace stellar_dotnet_sdk.xdr
         public LedgerKeyData Data { get; set; }
         public LedgerKeyClaimableBalance ClaimableBalance { get; set; }
         public LedgerKeyLiquidityPool LiquidityPool { get; set; }
+        public LedgerKeyContractData ContractData { get; set; }
+        public LedgerKeyContractCode ContractCode { get; set; }
+        public LedgerKeyConfigSetting ConfigSetting { get; set; }
         public static void Encode(XdrDataOutputStream stream, LedgerKey encodedLedgerKey)
         {
             stream.WriteInt((int)encodedLedgerKey.Discriminant.InnerValue);
@@ -84,6 +103,15 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case LedgerEntryType.LedgerEntryTypeEnum.LIQUIDITY_POOL:
                     LedgerKeyLiquidityPool.Encode(stream, encodedLedgerKey.LiquidityPool);
+                    break;
+                case LedgerEntryType.LedgerEntryTypeEnum.CONTRACT_DATA:
+                    LedgerKeyContractData.Encode(stream, encodedLedgerKey.ContractData);
+                    break;
+                case LedgerEntryType.LedgerEntryTypeEnum.CONTRACT_CODE:
+                    LedgerKeyContractCode.Encode(stream, encodedLedgerKey.ContractCode);
+                    break;
+                case LedgerEntryType.LedgerEntryTypeEnum.CONFIG_SETTING:
+                    LedgerKeyConfigSetting.Encode(stream, encodedLedgerKey.ConfigSetting);
                     break;
             }
         }
@@ -111,6 +139,15 @@ namespace stellar_dotnet_sdk.xdr
                     break;
                 case LedgerEntryType.LedgerEntryTypeEnum.LIQUIDITY_POOL:
                     decodedLedgerKey.LiquidityPool = LedgerKeyLiquidityPool.Decode(stream);
+                    break;
+                case LedgerEntryType.LedgerEntryTypeEnum.CONTRACT_DATA:
+                    decodedLedgerKey.ContractData = LedgerKeyContractData.Decode(stream);
+                    break;
+                case LedgerEntryType.LedgerEntryTypeEnum.CONTRACT_CODE:
+                    decodedLedgerKey.ContractCode = LedgerKeyContractCode.Decode(stream);
+                    break;
+                case LedgerEntryType.LedgerEntryTypeEnum.CONFIG_SETTING:
+                    decodedLedgerKey.ConfigSetting = LedgerKeyConfigSetting.Decode(stream);
                     break;
             }
             return decodedLedgerKey;
@@ -224,6 +261,60 @@ namespace stellar_dotnet_sdk.xdr
                 LedgerKeyLiquidityPool decodedLedgerKeyLiquidityPool = new LedgerKeyLiquidityPool();
                 decodedLedgerKeyLiquidityPool.LiquidityPoolID = PoolID.Decode(stream);
                 return decodedLedgerKeyLiquidityPool;
+            }
+
+        }
+        public class LedgerKeyContractData
+        {
+            public LedgerKeyContractData() { }
+            public Hash ContractID { get; set; }
+            public SCVal Key { get; set; }
+
+            public static void Encode(XdrDataOutputStream stream, LedgerKeyContractData encodedLedgerKeyContractData)
+            {
+                Hash.Encode(stream, encodedLedgerKeyContractData.ContractID);
+                SCVal.Encode(stream, encodedLedgerKeyContractData.Key);
+            }
+            public static LedgerKeyContractData Decode(XdrDataInputStream stream)
+            {
+                LedgerKeyContractData decodedLedgerKeyContractData = new LedgerKeyContractData();
+                decodedLedgerKeyContractData.ContractID = Hash.Decode(stream);
+                decodedLedgerKeyContractData.Key = SCVal.Decode(stream);
+                return decodedLedgerKeyContractData;
+            }
+
+        }
+        public class LedgerKeyContractCode
+        {
+            public LedgerKeyContractCode() { }
+            public Hash Hash { get; set; }
+
+            public static void Encode(XdrDataOutputStream stream, LedgerKeyContractCode encodedLedgerKeyContractCode)
+            {
+                Hash.Encode(stream, encodedLedgerKeyContractCode.Hash);
+            }
+            public static LedgerKeyContractCode Decode(XdrDataInputStream stream)
+            {
+                LedgerKeyContractCode decodedLedgerKeyContractCode = new LedgerKeyContractCode();
+                decodedLedgerKeyContractCode.Hash = Hash.Decode(stream);
+                return decodedLedgerKeyContractCode;
+            }
+
+        }
+        public class LedgerKeyConfigSetting
+        {
+            public LedgerKeyConfigSetting() { }
+            public ConfigSettingID ConfigSettingID { get; set; }
+
+            public static void Encode(XdrDataOutputStream stream, LedgerKeyConfigSetting encodedLedgerKeyConfigSetting)
+            {
+                ConfigSettingID.Encode(stream, encodedLedgerKeyConfigSetting.ConfigSettingID);
+            }
+            public static LedgerKeyConfigSetting Decode(XdrDataInputStream stream)
+            {
+                LedgerKeyConfigSetting decodedLedgerKeyConfigSetting = new LedgerKeyConfigSetting();
+                decodedLedgerKeyConfigSetting.ConfigSettingID = ConfigSettingID.Decode(stream);
+                return decodedLedgerKeyConfigSetting;
             }
 
         }

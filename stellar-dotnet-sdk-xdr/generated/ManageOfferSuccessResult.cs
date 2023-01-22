@@ -17,7 +17,7 @@ namespace stellar_dotnet_sdk.xdr
     //      case MANAGE_OFFER_CREATED:
     //      case MANAGE_OFFER_UPDATED:
     //          OfferEntry offer;
-    //      default:
+    //      case MANAGE_OFFER_DELETED:
     //          void;
     //      }
     //      offer;
@@ -69,7 +69,7 @@ namespace stellar_dotnet_sdk.xdr
                     case ManageOfferEffect.ManageOfferEffectEnum.MANAGE_OFFER_UPDATED:
                         OfferEntry.Encode(stream, encodedManageOfferSuccessResultOffer.Offer);
                         break;
-                    default:
+                    case ManageOfferEffect.ManageOfferEffectEnum.MANAGE_OFFER_DELETED:
                         break;
                 }
             }
@@ -84,7 +84,7 @@ namespace stellar_dotnet_sdk.xdr
                     case ManageOfferEffect.ManageOfferEffectEnum.MANAGE_OFFER_UPDATED:
                         decodedManageOfferSuccessResultOffer.Offer = OfferEntry.Decode(stream);
                         break;
-                    default:
+                    case ManageOfferEffect.ManageOfferEffectEnum.MANAGE_OFFER_DELETED:
                         break;
                 }
                 return decodedManageOfferSuccessResultOffer;

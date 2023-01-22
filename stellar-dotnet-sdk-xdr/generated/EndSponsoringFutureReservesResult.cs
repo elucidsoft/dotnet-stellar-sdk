@@ -12,7 +12,7 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case END_SPONSORING_FUTURE_RESERVES_SUCCESS:
     //      void;
-    //  default:
+    //  case END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED:
     //      void;
     //  };
 
@@ -30,7 +30,7 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case EndSponsoringFutureReservesResultCode.EndSponsoringFutureReservesResultCodeEnum.END_SPONSORING_FUTURE_RESERVES_SUCCESS:
                     break;
-                default:
+                case EndSponsoringFutureReservesResultCode.EndSponsoringFutureReservesResultCodeEnum.END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED:
                     break;
             }
         }
@@ -43,7 +43,7 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case EndSponsoringFutureReservesResultCode.EndSponsoringFutureReservesResultCodeEnum.END_SPONSORING_FUTURE_RESERVES_SUCCESS:
                     break;
-                default:
+                case EndSponsoringFutureReservesResultCode.EndSponsoringFutureReservesResultCodeEnum.END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED:
                     break;
             }
             return decodedEndSponsoringFutureReservesResult;

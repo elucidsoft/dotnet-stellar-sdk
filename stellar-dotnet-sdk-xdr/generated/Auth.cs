@@ -9,25 +9,23 @@ namespace stellar_dotnet_sdk.xdr
 
     //  struct Auth
     //  {
-    //      // Empty message, just to confirm
-    //      // establishment of MAC keys.
-    //      int unused;
+    //      int flags;
     //  };
 
     //  ===========================================================================
     public class Auth
     {
         public Auth() { }
-        public int Unused { get; set; }
+        public int Flags { get; set; }
 
         public static void Encode(XdrDataOutputStream stream, Auth encodedAuth)
         {
-            stream.WriteInt(encodedAuth.Unused);
+            stream.WriteInt(encodedAuth.Flags);
         }
         public static Auth Decode(XdrDataInputStream stream)
         {
             Auth decodedAuth = new Auth();
-            decodedAuth.Unused = stream.ReadInt();
+            decodedAuth.Flags = stream.ReadInt();
             return decodedAuth;
         }
     }

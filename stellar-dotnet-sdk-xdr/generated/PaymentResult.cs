@@ -11,7 +11,15 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case PAYMENT_SUCCESS:
     //      void;
-    //  default:
+    //  case PAYMENT_MALFORMED:
+    //  case PAYMENT_UNDERFUNDED:
+    //  case PAYMENT_SRC_NO_TRUST:
+    //  case PAYMENT_SRC_NOT_AUTHORIZED:
+    //  case PAYMENT_NO_DESTINATION:
+    //  case PAYMENT_NO_TRUST:
+    //  case PAYMENT_NOT_AUTHORIZED:
+    //  case PAYMENT_LINE_FULL:
+    //  case PAYMENT_NO_ISSUER:
     //      void;
     //  };
 
@@ -29,7 +37,15 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SUCCESS:
                     break;
-                default:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_MALFORMED:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_UNDERFUNDED:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NO_TRUST:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NOT_AUTHORIZED:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_DESTINATION:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_TRUST:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NOT_AUTHORIZED:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_LINE_FULL:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_ISSUER:
                     break;
             }
         }
@@ -42,7 +58,15 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SUCCESS:
                     break;
-                default:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_MALFORMED:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_UNDERFUNDED:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NO_TRUST:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_SRC_NOT_AUTHORIZED:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_DESTINATION:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_TRUST:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NOT_AUTHORIZED:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_LINE_FULL:
+                case PaymentResultCode.PaymentResultCodeEnum.PAYMENT_NO_ISSUER:
                     break;
             }
             return decodedPaymentResult;

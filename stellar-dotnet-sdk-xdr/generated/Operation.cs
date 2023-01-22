@@ -64,6 +64,8 @@ namespace stellar_dotnet_sdk.xdr
     //          LiquidityPoolDepositOp liquidityPoolDepositOp;
     //      case LIQUIDITY_POOL_WITHDRAW:
     //          LiquidityPoolWithdrawOp liquidityPoolWithdrawOp;
+    //      case INVOKE_HOST_FUNCTION:
+    //          InvokeHostFunctionOp invokeHostFunctionOp;
     //      }
     //      body;
     //  };
@@ -128,6 +130,7 @@ namespace stellar_dotnet_sdk.xdr
             public SetTrustLineFlagsOp SetTrustLineFlagsOp { get; set; }
             public LiquidityPoolDepositOp LiquidityPoolDepositOp { get; set; }
             public LiquidityPoolWithdrawOp LiquidityPoolWithdrawOp { get; set; }
+            public InvokeHostFunctionOp InvokeHostFunctionOp { get; set; }
             public static void Encode(XdrDataOutputStream stream, OperationBody encodedOperationBody)
             {
                 stream.WriteInt((int)encodedOperationBody.Discriminant.InnerValue);
@@ -202,6 +205,9 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case OperationType.OperationTypeEnum.LIQUIDITY_POOL_WITHDRAW:
                         LiquidityPoolWithdrawOp.Encode(stream, encodedOperationBody.LiquidityPoolWithdrawOp);
+                        break;
+                    case OperationType.OperationTypeEnum.INVOKE_HOST_FUNCTION:
+                        InvokeHostFunctionOp.Encode(stream, encodedOperationBody.InvokeHostFunctionOp);
                         break;
                 }
             }
@@ -281,6 +287,9 @@ namespace stellar_dotnet_sdk.xdr
                         break;
                     case OperationType.OperationTypeEnum.LIQUIDITY_POOL_WITHDRAW:
                         decodedOperationBody.LiquidityPoolWithdrawOp = LiquidityPoolWithdrawOp.Decode(stream);
+                        break;
+                    case OperationType.OperationTypeEnum.INVOKE_HOST_FUNCTION:
+                        decodedOperationBody.InvokeHostFunctionOp = InvokeHostFunctionOp.Decode(stream);
                         break;
                 }
                 return decodedOperationBody;

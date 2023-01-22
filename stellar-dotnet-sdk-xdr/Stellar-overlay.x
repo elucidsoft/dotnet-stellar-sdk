@@ -47,11 +47,20 @@ struct Hello
     uint256 nonce;
 };
 
+
+// During the roll-out phrase, pull mode will be optional.
+// Therefore, we need a way to communicate with other nodes
+// that we want/don't want pull mode.
+// However, the goal is for everyone to enable it by default,
+// so we don't want to introduce a new member variable.
+// For now, we'll use the `flags` field (originally named
+// `unused`) in `Auth`.
+// 100 is just a number that is not 0.
+const AUTH_MSG_FLAG_PULL_MODE_REQUESTED = 100;
+
 struct Auth
 {
-    // Empty message, just to confirm
-    // establishment of MAC keys.
-    int unused;
+    int flags;
 };
 
 enum IPAddrType
@@ -74,6 +83,7 @@ struct PeerAddress
     uint32 numFailures;
 };
 
+// Next ID: 18
 enum MessageType
 {
     ERROR_MSG = 0,
@@ -85,6 +95,7 @@ enum MessageType
 
     GET_TX_SET = 6, // gets a particular txset by hash
     TX_SET = 7,
+    GENERALIZED_TX_SET = 17,
 
     TRANSACTION = 8, // pass on a tx you have heard about
 
@@ -100,7 +111,9 @@ enum MessageType
     SURVEY_REQUEST = 14,
     SURVEY_RESPONSE = 15,
 
-    SEND_MORE = 16
+    SEND_MORE = 16,
+    FLOOD_ADVERT = 18,
+    FLOOD_DEMAND = 19
 };
 
 struct DontHave
@@ -112,6 +125,12 @@ struct DontHave
 enum SurveyMessageCommandType
 {
     SURVEY_TOPOLOGY = 0
+};
+
+enum SurveyMessageResponseType
+{
+    SURVEY_TOPOLOGY_RESPONSE_V0 = 0,
+    SURVEY_TOPOLOGY_RESPONSE_V1 = 1
 };
 
 struct SurveyRequestMessage
@@ -168,7 +187,7 @@ struct PeerStats
 
 typedef PeerStats PeerStatList<25>;
 
-struct TopologyResponseBody
+struct TopologyResponseBodyV0
 {
     PeerStatList inboundPeers;
     PeerStatList outboundPeers;
@@ -177,10 +196,40 @@ struct TopologyResponseBody
     uint32 totalOutboundPeerCount;
 };
 
-union SurveyResponseBody switch (SurveyMessageCommandType type)
+struct TopologyResponseBodyV1
 {
-case SURVEY_TOPOLOGY:
-    TopologyResponseBody topologyResponseBody;
+    PeerStatList inboundPeers;
+    PeerStatList outboundPeers;
+
+    uint32 totalInboundPeerCount;
+    uint32 totalOutboundPeerCount;
+
+    uint32 maxInboundPeerCount;
+    uint32 maxOutboundPeerCount;
+};
+
+union SurveyResponseBody switch (SurveyMessageResponseType type)
+{
+case SURVEY_TOPOLOGY_RESPONSE_V0:
+    TopologyResponseBodyV0 topologyResponseBodyV0;
+case SURVEY_TOPOLOGY_RESPONSE_V1:
+    TopologyResponseBodyV1 topologyResponseBodyV1;
+};
+
+const TX_ADVERT_VECTOR_MAX_SIZE = 1000;
+typedef Hash TxAdvertVector<TX_ADVERT_VECTOR_MAX_SIZE>;
+
+struct FloodAdvert
+{
+    TxAdvertVector txHashes;
+};
+
+const TX_DEMAND_VECTOR_MAX_SIZE = 1000;
+typedef Hash TxDemandVector<TX_DEMAND_VECTOR_MAX_SIZE>;
+
+struct FloodDemand
+{
+    TxDemandVector txHashes;
 };
 
 union StellarMessage switch (MessageType type)
@@ -202,6 +251,8 @@ case GET_TX_SET:
     uint256 txSetHash;
 case TX_SET:
     TransactionSet txSet;
+case GENERALIZED_TX_SET:
+    GeneralizedTransactionSet generalizedTxSet;
 
 case TRANSACTION:
     TransactionEnvelope transaction;
@@ -223,6 +274,12 @@ case GET_SCP_STATE:
     uint32 getSCPLedgerSeq; // ledger seq requested ; if 0, requests the latest
 case SEND_MORE:
     SendMore sendMoreMessage;
+
+// Pull mode
+case FLOOD_ADVERT:
+     FloodAdvert floodAdvert;
+case FLOOD_DEMAND:
+     FloodDemand floodDemand;
 };
 
 union AuthenticatedMessage switch (uint32 v)

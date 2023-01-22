@@ -12,7 +12,9 @@ namespace stellar_dotnet_sdk.xdr
     //  {
     //  case CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
     //      void;
-    //  default:
+    //  case CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
+    //  case CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER:
+    //  case CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED:
     //      void;
     //  };
 
@@ -30,7 +32,9 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case ClawbackClaimableBalanceResultCode.ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
                     break;
-                default:
+                case ClawbackClaimableBalanceResultCode.ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
+                case ClawbackClaimableBalanceResultCode.ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER:
+                case ClawbackClaimableBalanceResultCode.ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED:
                     break;
             }
         }
@@ -43,7 +47,9 @@ namespace stellar_dotnet_sdk.xdr
             {
                 case ClawbackClaimableBalanceResultCode.ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
                     break;
-                default:
+                case ClawbackClaimableBalanceResultCode.ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
+                case ClawbackClaimableBalanceResultCode.ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER:
+                case ClawbackClaimableBalanceResultCode.ClawbackClaimableBalanceResultCodeEnum.CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED:
                     break;
             }
             return decodedClawbackClaimableBalanceResult;

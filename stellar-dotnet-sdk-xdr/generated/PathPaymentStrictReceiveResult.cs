@@ -16,9 +16,20 @@ namespace stellar_dotnet_sdk.xdr
     //          ClaimAtom offers<>;
     //          SimplePaymentResult last;
     //      } success;
+    //  case PATH_PAYMENT_STRICT_RECEIVE_MALFORMED:
+    //  case PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED:
+    //  case PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST:
+    //  case PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED:
+    //  case PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION:
+    //  case PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST:
+    //  case PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED:
+    //  case PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL:
+    //      void;
     //  case PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER:
     //      Asset noIssuer; // the asset that caused the error
-    //  default:
+    //  case PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS:
+    //  case PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF:
+    //  case PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX:
     //      void;
     //  };
 
@@ -39,10 +50,21 @@ namespace stellar_dotnet_sdk.xdr
                 case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_SUCCESS:
                     PathPaymentStrictReceiveResultSuccess.Encode(stream, encodedPathPaymentStrictReceiveResult.Success);
                     break;
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_MALFORMED:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL:
+                    break;
                 case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER:
                     Asset.Encode(stream, encodedPathPaymentStrictReceiveResult.NoIssuer);
                     break;
-                default:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX:
                     break;
             }
         }
@@ -56,10 +78,21 @@ namespace stellar_dotnet_sdk.xdr
                 case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_SUCCESS:
                     decodedPathPaymentStrictReceiveResult.Success = PathPaymentStrictReceiveResultSuccess.Decode(stream);
                     break;
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_MALFORMED:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL:
+                    break;
                 case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER:
                     decodedPathPaymentStrictReceiveResult.NoIssuer = Asset.Decode(stream);
                     break;
-                default:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF:
+                case PathPaymentStrictReceiveResultCode.PathPaymentStrictReceiveResultCodeEnum.PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX:
                     break;
             }
             return decodedPathPaymentStrictReceiveResult;
