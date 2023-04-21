@@ -23,7 +23,7 @@ namespace stellar_dotnet_sdk.requests
             }
 
             if ((int)statusCode >= 300)
-                throw new HttpResponseException((int)statusCode, response.ReasonPhrase);
+                throw new HttpResponseException((int)statusCode, content);
 
             if (string.IsNullOrWhiteSpace(content))
                 throw new ClientProtocolException("Response contains no content");

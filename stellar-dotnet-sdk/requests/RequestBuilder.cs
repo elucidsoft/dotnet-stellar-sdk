@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace stellar_dotnet_sdk.requests
 {
@@ -23,11 +26,42 @@ namespace stellar_dotnet_sdk.requests
 
         public static HttpClient HttpClient { get; set; }
 
-        public async Task<TZ> Execute<TZ>(Uri uri) where TZ : class
+        public async Task<TZ> Execute<TZ>(Uri uri, string? jwt = null) where TZ : class
         {
             var responseHandler = new ResponseHandler<TZ>();
 
+            if (jwt != null)
+            {
+                HttpClient.DefaultRequestHeaders.Authorization
+                    = new AuthenticationHeaderValue("Bearer", jwt);
+            }
+
             var response = await HttpClient.GetAsync(uri);
+            return await responseHandler.HandleResponse(response);
+        }
+
+        public async Task<TZ> ExecutePost<TZ>(Uri uri, string? jwt = null,
+            MultipartFormDataContent? multipartContent = null, object? data = null) where TZ : class
+        {
+            var responseHandler = new ResponseHandler<TZ>();
+
+            if (jwt != null)
+            {
+                HttpClient.DefaultRequestHeaders.Authorization
+                    = new AuthenticationHeaderValue("Bearer", jwt);
+            }
+
+            HttpContent content;
+            if (multipartContent != null)
+            {
+                content = multipartContent;
+            }
+            else
+            {
+                content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
+            }
+
+            var response = await HttpClient.PostAsync(uri, content);
             return await responseHandler.HandleResponse(response);
         }
 
@@ -63,6 +97,16 @@ namespace stellar_dotnet_sdk.requests
 
             foreach (var segment in segments)
                 _segments.Add(segment);
+
+            return this;
+        }
+
+        protected RequestBuilder<T> SetQueryParameters(Dictionary<string, string> queryParams)
+        {
+            foreach (var param in queryParams)
+            {
+                UriBuilder.SetQueryParam(param.Key, param.Value);
+            }
 
             return this;
         }
@@ -121,26 +165,17 @@ namespace stellar_dotnet_sdk.requests
         ///     <returns>EventSource object, so you can close() connection when not needed anymore</returns>
         public Uri BuildUri()
         {
+            var path = _serverPathPrefix;
+
             if (_segments.Count > 0)
             {
-                var path = _serverPathPrefix;
-
                 foreach (var segment in _segments)
                     path += (path.EndsWith("/") ? string.Empty : "/") + segment;
-
-                UriBuilder.Path = path;
-
-                try
-                {
-                    return UriBuilder.Uri;
-                }
-                catch (UriFormatException)
-                {
-                    throw;
-                }
             }
 
-            throw new NotSupportedException("No segments defined.");
+            UriBuilder.Path = path;
+
+            return UriBuilder.Uri;
         }
     }
 }

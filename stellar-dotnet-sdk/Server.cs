@@ -11,6 +11,8 @@ namespace stellar_dotnet_sdk
 {
     public class Server : IDisposable
     {
+        public static string SdkVersionNumber = "2.0.0";
+
         private readonly Uri _serverUri;
         private readonly HttpClient _httpClient;
         private readonly bool _ownHttpClient;
