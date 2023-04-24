@@ -17,28 +17,32 @@ namespace stellar_dotnet_sdk
     public class TransferServerServiceSep24
     {
         private HttpClient HttpClient { get; set; }
+
+        private StellarToml StellarToml { get; set; }
         private string TransferServiceSep24Domain { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the TransferServerServiceSep24 class.
         /// </summary>
         /// <param name="transferServiceSep24Domain">The domain of the anchor server.</param>
-        private TransferServerServiceSep24(string transferServiceSep24Domain)
+        private TransferServerServiceSep24(string transferServiceSep24Domain, StellarToml stellarToml,
+            HttpClient? httpClient = null)
         {
-            HttpClient = new HttpClient();
+            HttpClient = httpClient ?? new HttpClient();
+            StellarToml = stellarToml;
             TransferServiceSep24Domain = transferServiceSep24Domain;
         }
 
-        public static async Task<TransferServerServiceSep24> FromDomain(string domain)
+        public static async Task<TransferServerServiceSep24> FromDomain(string domain, StellarToml? stellarToml = null,HttpClient? httpClient = null)
         {
-            var stellarToml = await StellarToml.FromDomain(domain).ConfigureAwait(false);
+            stellarToml ??= await StellarToml.FromDomain(domain).ConfigureAwait(false);
             var transferServerSep24 = stellarToml.GeneralInformation.TransferServerSep24;
             if (transferServerSep24 == null)
             {
                 throw new Exception($"{transferServerSep24} not found in stellar toml of {domain}");
             }
 
-            return new TransferServerServiceSep24(transferServerSep24);
+            return new TransferServerServiceSep24(transferServerSep24, stellarToml, httpClient);
         }
 
         /// <summary>
@@ -1314,7 +1318,7 @@ namespace stellar_dotnet_sdk
         public async Task<AnchorTransactionsResponse> Execute(string? jwt, Dictionary<string, string> queryParams)
         {
             SetQueryParameters(queryParams);
-             return await Execute<AnchorTransactionsResponse>(BuildUri(), jwt: jwt);
+            return await Execute<AnchorTransactionsResponse>(BuildUri(), jwt: jwt);
         }
     }
 

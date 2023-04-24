@@ -20,6 +20,8 @@
     <PackageReference Include="Fare" Version="2.2.1" />
     <PackageReference Include="FluentAssertions" Version="6.7.0" />
     <PackageReference Include="FsCheck.NUnit" Version="2.16.5" />
+    <PackageReference Include="libsodium" Version="1.0.18.4" />
+    <PackageReference Include="NSec.Cryptography" Version="22.4.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.1" />
     <PackageReference Include="Moq" Version="4.18.2" />

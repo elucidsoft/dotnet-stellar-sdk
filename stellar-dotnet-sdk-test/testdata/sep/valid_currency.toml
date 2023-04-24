@@ -1,0 +1,17 @@
+code = "USD"
+issuer = "GDUKMGUGDZQK6YHYA5Z6AY2G4XDSZPSZ3SW5UN3ARVMO6QSRDWP5YLEX"
+status = "live"
+display_decimals = 2
+name = "US Dollar"
+desc = "U.S. Dollar"
+image = "https://example.com/images/usd.png"
+fixed_number = 1000000000
+max_number = 2000000000
+is_unlimited = false
+is_asset_anchored = true
+anchor_asset_type = "fiat"
+anchor_asset = "USD"
+redemption_instructions = "Use our website to redeem your tokens."
+regulated = true
+approval_server = "https://example.com/approval_server"
+approval_criteria = "All transactions require approval."

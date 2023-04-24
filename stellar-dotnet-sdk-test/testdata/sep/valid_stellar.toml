@@ -1,0 +1,33 @@
+NETWORK_PASSPHRASE = "Test Stellar Network ; April 2023"
+ACCOUNTS = ["GABCDEF1234567SORX7DNYMGRRNXAXF62RPTGGVEXM2RLXIUIUU5DNZWWH", "GHIJKLM9876543CJUKUX4X54CY3OFACYRCUKNOSSEEXGBACM4MWLXN34GY",]
+TRANSFER_SERVER = "https://test.anchor.example.com/sep6"
+TRANSFER_SERVER_SEP0024 = "https://test.anchor.example.com/sep24"
+WEB_AUTH_ENDPOINT = "https://test.anchor.example.com/auth"
+SIGNING_KEY = "G1234567890GFZO4EYX45ZFYJCUTH7NYEM6GT66YK74U32U4TZVWVZUF"
+KYC_SERVER = "https://test.anchor.example.com/kyc"
+DIRECT_PAYMENT_SERVER = "https://test.anchor.example.com/sep31"
+
+[[CURRENCIES]]
+code = "ETH"
+issuer = "GCIYG7FLD7RDLBKJXQX4I4Q4N22C4ZJWS24Z7WGPZS3S4S3EYRJ4IRXW"
+status = "live"
+display_decimals = 8
+name = "Ethereum"
+desc = "Ethereum"
+image = "https://example.com/images/eth.png"
+
+[[PRINCIPALS]]
+name = "Jane Doe"
+email = "jane@example.com"
+keybase = "jane"
+telegram = "jane"
+twitter = "jane"
+github = "jane"
+id_photo_hash = "3b1a9e3f3d2329746f7e8a8c49e6b990f6c1b6bf"
+verification_photo_hash = "9e0d6b2e2b981c6f73ff7e8495c5a5a5f5d3fe3a"
+
+[[VALIDATORS]]
+name = "Stellar Validator"
+host = "validator.example.com"
+public_key = "GAK6Z5UVGUVSEULL67SRYO4X4G32Y6OPODJG7RVB4KLQACQRQXOAAKCY"
+history = "https://example.com/stellar-history.json"

@@ -237,11 +237,11 @@ namespace stellar_dotnet_sdk
         /// <param name="toml">The URL of the currency TOML file.</param>
         /// <returns>A Currency instance.</returns>
         /// <exception cref="Exception">Thrown when the TOML file is not found.</exception>
-        public static async Task<Currency> CurrencyFromUrl(string toml)
+        public static async Task<Currency> CurrencyFromUrl(string toml, HttpClient? client = null)
         {
             Uri uri = new Uri(toml);
 
-            using var client = new HttpClient();
+            client ??= new HttpClient();
             client.DefaultRequestHeaders.Add("X-Client-Name", "dotnet-stellar-sdk");
             client.DefaultRequestHeaders.Add("X-Client-Version", Server.SdkVersionNumber);
             var response = await client.GetAsync(uri);
