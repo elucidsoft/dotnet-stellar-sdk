@@ -4,7 +4,7 @@ using stellar_dotnet_sdk.responses.results;
 namespace stellar_dotnet_sdk.responses
 {
     /// <summary>
-    /// All operations succeded.
+    /// All operations succeeded.
     /// </summary>
     public class TransactionResultSuccess : TransactionResult
     {
