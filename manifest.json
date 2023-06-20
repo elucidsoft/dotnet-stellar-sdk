@@ -1581,7 +1581,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.TransactionBuilder.html",
-          "hash": "JQzYSB4jYhar4P79D/5f2vN77VmyNDHZeHhbqHIBK/4="
+          "hash": "ElVYkkLa3KMWFE8rjYDbxjJ1aiUz3EdCNVfxCJLplzg="
         }
       },
       "is_incremental": false,
@@ -2345,6 +2345,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.html",
+          "hash": "LFzKiUsSZTYKDyMiAd5DPUh0PdyMb9FKCQEPsVi+Kbk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.html",
+          "hash": "I71eX3qOtJJGhDge5vgnO9Z1zyOlE/t+vQauiNCMbnE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/stellar_dotnet_sdk.responses.FeeStatsResponse.FeeStatsResponseData.yml",
       "output": {
         ".html": {
@@ -2410,6 +2434,18 @@
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.IPagingToken.html",
           "hash": "DTWigHdTp1qD98MoJllw/EdwNQ6P+QN99fEf8yV89QI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/stellar_dotnet_sdk.responses.InnerTransactionResultPair.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/stellar_dotnet_sdk.responses.InnerTransactionResultPair.html",
+          "hash": "6EAGzzIMpmtRSwxa6CYbFGUSLer3t/ZDk2l65OGVnPA="
         }
       },
       "is_incremental": false,
@@ -2805,7 +2841,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.TransactionResult.html",
-          "hash": "XpQ7mGuAjus8kjvgom+D4XO89kpM+F4r2r2U4rUXJSw="
+          "hash": "iaE/n0KegPIdJNuEh5wxQ3Is0PZ5B3oH3j6Y/3X0E4c="
         }
       },
       "is_incremental": false,
@@ -2925,7 +2961,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.TransactionResultSuccess.html",
-          "hash": "dCv9k39R4MDl3erNBgDlkco2DyjLS3qm+o2VWO3crIQ="
+          "hash": "PHBPV7Q/K2LUCb8GZimos4gXDR0K51fQzBPqkSe0fQk="
         }
       },
       "is_incremental": false,
@@ -6249,7 +6285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/stellar_dotnet_sdk.responses.html",
-          "hash": "MAXNkJYUg8sKVKZg5udiDPKIZiRDUB39+OpEKfuhzuc="
+          "hash": "jHzFalS5mpwBsMKjWSJ+JGOEO7WjIjWVSHG6bWd1AXk="
         }
       },
       "is_incremental": false,
@@ -6273,7 +6309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "PjdRHTfSfYAC+fJDqqeQpazOOfC5JUsE0MVQaY/OImU="
+          "hash": "AkHgUbTGI7ZVTCgh9p1pEvuK6JO28imsKkAA4Jq2BMc="
         }
       },
       "is_incremental": false,
@@ -6422,7 +6458,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 521,
+          "total_file_count": 524,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

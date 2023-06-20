@@ -14439,6 +14439,70 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.effects.TrustlineUpdatedEffectResponse.TypeId
   nameWithType: TrustlineUpdatedEffectResponse.TypeId
+- uid: stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed
+  name: FeeBumpTransactionResultFailed
+  href: api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.html
+  commentId: T:stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed
+  fullName: stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed
+  nameWithType: FeeBumpTransactionResultFailed
+- uid: stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.InnerResultPair
+  name: InnerResultPair
+  href: api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.html#stellar_dotnet_sdk_responses_FeeBumpTransactionResultFailed_InnerResultPair
+  commentId: P:stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.InnerResultPair
+  fullName: stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.InnerResultPair
+  nameWithType: FeeBumpTransactionResultFailed.InnerResultPair
+- uid: stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.InnerResultPair*
+  name: InnerResultPair
+  href: api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.html#stellar_dotnet_sdk_responses_FeeBumpTransactionResultFailed_InnerResultPair_
+  commentId: Overload:stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.InnerResultPair
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.InnerResultPair
+  nameWithType: FeeBumpTransactionResultFailed.InnerResultPair
+- uid: stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.IsSuccess
+  name: IsSuccess
+  href: api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.html#stellar_dotnet_sdk_responses_FeeBumpTransactionResultFailed_IsSuccess
+  commentId: P:stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.IsSuccess
+  fullName: stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.IsSuccess
+  nameWithType: FeeBumpTransactionResultFailed.IsSuccess
+- uid: stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.IsSuccess*
+  name: IsSuccess
+  href: api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.html#stellar_dotnet_sdk_responses_FeeBumpTransactionResultFailed_IsSuccess_
+  commentId: Overload:stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.IsSuccess
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.FeeBumpTransactionResultFailed.IsSuccess
+  nameWithType: FeeBumpTransactionResultFailed.IsSuccess
+- uid: stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess
+  name: FeeBumpTransactionResultSuccess
+  href: api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.html
+  commentId: T:stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess
+  fullName: stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess
+  nameWithType: FeeBumpTransactionResultSuccess
+- uid: stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.InnerResultPair
+  name: InnerResultPair
+  href: api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.html#stellar_dotnet_sdk_responses_FeeBumpTransactionResultSuccess_InnerResultPair
+  commentId: P:stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.InnerResultPair
+  fullName: stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.InnerResultPair
+  nameWithType: FeeBumpTransactionResultSuccess.InnerResultPair
+- uid: stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.InnerResultPair*
+  name: InnerResultPair
+  href: api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.html#stellar_dotnet_sdk_responses_FeeBumpTransactionResultSuccess_InnerResultPair_
+  commentId: Overload:stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.InnerResultPair
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.InnerResultPair
+  nameWithType: FeeBumpTransactionResultSuccess.InnerResultPair
+- uid: stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.IsSuccess
+  name: IsSuccess
+  href: api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.html#stellar_dotnet_sdk_responses_FeeBumpTransactionResultSuccess_IsSuccess
+  commentId: P:stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.IsSuccess
+  fullName: stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.IsSuccess
+  nameWithType: FeeBumpTransactionResultSuccess.IsSuccess
+- uid: stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.IsSuccess*
+  name: IsSuccess
+  href: api/stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.html#stellar_dotnet_sdk_responses_FeeBumpTransactionResultSuccess_IsSuccess_
+  commentId: Overload:stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.IsSuccess
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.FeeBumpTransactionResultSuccess.IsSuccess
+  nameWithType: FeeBumpTransactionResultSuccess.IsSuccess
 - uid: stellar_dotnet_sdk.responses.FeeStatsResponse
   name: FeeStatsResponse
   href: api/stellar_dotnet_sdk.responses.FeeStatsResponse.html
@@ -14963,6 +15027,57 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.responses.FriendBotResponseLinks.Transaction
   nameWithType: FriendBotResponseLinks.Transaction
+- uid: stellar_dotnet_sdk.responses.InnerTransactionResultPair
+  name: InnerTransactionResultPair
+  href: api/stellar_dotnet_sdk.responses.InnerTransactionResultPair.html
+  commentId: T:stellar_dotnet_sdk.responses.InnerTransactionResultPair
+  fullName: stellar_dotnet_sdk.responses.InnerTransactionResultPair
+  nameWithType: InnerTransactionResultPair
+- uid: stellar_dotnet_sdk.responses.InnerTransactionResultPair.FromXdr(stellar_dotnet_sdk.xdr.InnerTransactionResultPair)
+  name: FromXdr(InnerTransactionResultPair)
+  href: api/stellar_dotnet_sdk.responses.InnerTransactionResultPair.html#stellar_dotnet_sdk_responses_InnerTransactionResultPair_FromXdr_stellar_dotnet_sdk_xdr_InnerTransactionResultPair_
+  commentId: M:stellar_dotnet_sdk.responses.InnerTransactionResultPair.FromXdr(stellar_dotnet_sdk.xdr.InnerTransactionResultPair)
+  fullName: stellar_dotnet_sdk.responses.InnerTransactionResultPair.FromXdr(stellar_dotnet_sdk.xdr.InnerTransactionResultPair)
+  nameWithType: InnerTransactionResultPair.FromXdr(InnerTransactionResultPair)
+- uid: stellar_dotnet_sdk.responses.InnerTransactionResultPair.FromXdr(System.String)
+  name: FromXdr(String)
+  href: api/stellar_dotnet_sdk.responses.InnerTransactionResultPair.html#stellar_dotnet_sdk_responses_InnerTransactionResultPair_FromXdr_System_String_
+  commentId: M:stellar_dotnet_sdk.responses.InnerTransactionResultPair.FromXdr(System.String)
+  fullName: stellar_dotnet_sdk.responses.InnerTransactionResultPair.FromXdr(System.String)
+  nameWithType: InnerTransactionResultPair.FromXdr(String)
+- uid: stellar_dotnet_sdk.responses.InnerTransactionResultPair.FromXdr*
+  name: FromXdr
+  href: api/stellar_dotnet_sdk.responses.InnerTransactionResultPair.html#stellar_dotnet_sdk_responses_InnerTransactionResultPair_FromXdr_
+  commentId: Overload:stellar_dotnet_sdk.responses.InnerTransactionResultPair.FromXdr
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.InnerTransactionResultPair.FromXdr
+  nameWithType: InnerTransactionResultPair.FromXdr
+- uid: stellar_dotnet_sdk.responses.InnerTransactionResultPair.Result
+  name: Result
+  href: api/stellar_dotnet_sdk.responses.InnerTransactionResultPair.html#stellar_dotnet_sdk_responses_InnerTransactionResultPair_Result
+  commentId: P:stellar_dotnet_sdk.responses.InnerTransactionResultPair.Result
+  fullName: stellar_dotnet_sdk.responses.InnerTransactionResultPair.Result
+  nameWithType: InnerTransactionResultPair.Result
+- uid: stellar_dotnet_sdk.responses.InnerTransactionResultPair.Result*
+  name: Result
+  href: api/stellar_dotnet_sdk.responses.InnerTransactionResultPair.html#stellar_dotnet_sdk_responses_InnerTransactionResultPair_Result_
+  commentId: Overload:stellar_dotnet_sdk.responses.InnerTransactionResultPair.Result
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.InnerTransactionResultPair.Result
+  nameWithType: InnerTransactionResultPair.Result
+- uid: stellar_dotnet_sdk.responses.InnerTransactionResultPair.TransactionHash
+  name: TransactionHash
+  href: api/stellar_dotnet_sdk.responses.InnerTransactionResultPair.html#stellar_dotnet_sdk_responses_InnerTransactionResultPair_TransactionHash
+  commentId: P:stellar_dotnet_sdk.responses.InnerTransactionResultPair.TransactionHash
+  fullName: stellar_dotnet_sdk.responses.InnerTransactionResultPair.TransactionHash
+  nameWithType: InnerTransactionResultPair.TransactionHash
+- uid: stellar_dotnet_sdk.responses.InnerTransactionResultPair.TransactionHash*
+  name: TransactionHash
+  href: api/stellar_dotnet_sdk.responses.InnerTransactionResultPair.html#stellar_dotnet_sdk_responses_InnerTransactionResultPair_TransactionHash_
+  commentId: Overload:stellar_dotnet_sdk.responses.InnerTransactionResultPair.TransactionHash
+  isSpec: "True"
+  fullName: stellar_dotnet_sdk.responses.InnerTransactionResultPair.TransactionHash
+  nameWithType: InnerTransactionResultPair.TransactionHash
 - uid: stellar_dotnet_sdk.responses.IPagingToken
   name: IPagingToken
   href: api/stellar_dotnet_sdk.responses.IPagingToken.html
@@ -26631,6 +26746,12 @@ references:
   isSpec: "True"
   fullName: stellar_dotnet_sdk.TransactionBuilder.Build
   nameWithType: TransactionBuilder.Build
+- uid: stellar_dotnet_sdk.TransactionBuilder.BuildFeeBumpTransaction(stellar_dotnet_sdk.IAccountId,stellar_dotnet_sdk.Transaction)
+  name: BuildFeeBumpTransaction(IAccountId, Transaction)
+  href: api/stellar_dotnet_sdk.TransactionBuilder.html#stellar_dotnet_sdk_TransactionBuilder_BuildFeeBumpTransaction_stellar_dotnet_sdk_IAccountId_stellar_dotnet_sdk_Transaction_
+  commentId: M:stellar_dotnet_sdk.TransactionBuilder.BuildFeeBumpTransaction(stellar_dotnet_sdk.IAccountId,stellar_dotnet_sdk.Transaction)
+  fullName: stellar_dotnet_sdk.TransactionBuilder.BuildFeeBumpTransaction(stellar_dotnet_sdk.IAccountId, stellar_dotnet_sdk.Transaction)
+  nameWithType: TransactionBuilder.BuildFeeBumpTransaction(IAccountId, Transaction)
 - uid: stellar_dotnet_sdk.TransactionBuilder.BuildFeeBumpTransaction(stellar_dotnet_sdk.IAccountId,stellar_dotnet_sdk.Transaction,System.Int64)
   name: BuildFeeBumpTransaction(IAccountId, Transaction, Int64)
   href: api/stellar_dotnet_sdk.TransactionBuilder.html#stellar_dotnet_sdk_TransactionBuilder_BuildFeeBumpTransaction_stellar_dotnet_sdk_IAccountId_stellar_dotnet_sdk_Transaction_System_Int64_
