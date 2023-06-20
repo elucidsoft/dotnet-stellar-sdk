@@ -30,26 +30,33 @@ namespace stellar_dotnet_sdk
             _preconditions = new TransactionPreconditions();
         }
 
+        public static FeeBumpTransaction BuildFeeBumpTransaction(IAccountId feeSource, Transaction inner)
+        {
+            if (inner.Operations.Length == 0)
+            {
+                throw new Exception("Invalid fee bump transaction, it should contain at least one operation");
+            }
+            
+            long innerFee = inner.Fee / inner.Operations.Length;
+            var feeBumpFee = checked(innerFee * (inner.Operations.Length + 1));
+
+            return new FeeBumpTransaction(feeSource, inner, feeBumpFee);
+        }
+
         public static FeeBumpTransaction BuildFeeBumpTransaction(IAccountId feeSource, Transaction inner, long fee)
         {
-            long innerOps = inner.Operations.Length;
-            long innerBaseFeeRate = inner.Fee;
-            if (innerOps > 0)
+            if (inner.Operations.Length == 0)
             {
-                innerBaseFeeRate = innerBaseFeeRate / innerOps;
+                throw new Exception("Invalid fee bump transaction, it should contain at least one operation");
+            }
+            
+            long innerFee = inner.Fee / inner.Operations.Length;
+            if (fee < innerFee)
+            {
+                throw new Exception($"Invalid fee, it should be at least {innerFee} stroops");
             }
 
-            if (fee < innerBaseFeeRate)
-            {
-                throw new Exception($"Invalid fee, it should be at least {innerBaseFeeRate} stroops");
-            }
-
-            if (fee < BaseFee)
-            {
-                throw new Exception($"Invalid fee, it should be at least {BaseFee} stroops");
-            }
-
-            var feeBumpFee = checked(fee * (innerOps + 1));
+            var feeBumpFee = checked(fee * (inner.Operations.Length + 1));
 
             return new FeeBumpTransaction(feeSource, inner, feeBumpFee);
         }
