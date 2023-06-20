@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using stellar_dotnet_sdk.responses.results;
+using stellar_dotnet_sdk.xdr;
+using OperationResult = stellar_dotnet_sdk.responses.results.OperationResult;
 
 namespace stellar_dotnet_sdk.responses
 {
@@ -88,6 +89,18 @@ namespace stellar_dotnet_sdk.responses
                     return new TransactionResultInternalError
                     {
                         FeeCharged = feeCharged
+                    };
+                case xdr.TransactionResultCode.TransactionResultCodeEnum.txFEE_BUMP_INNER_SUCCESS:
+                    return new FeeBumpTransactionResultSuccess
+                    {
+                        FeeCharged = feeCharged,
+                        InnerResultPair = InnerTransactionResultPair.FromXdr(result.Result.InnerResultPair),
+                    };
+                case xdr.TransactionResultCode.TransactionResultCodeEnum.txFEE_BUMP_INNER_FAILED:
+                    return new FeeBumpTransactionResultFailed
+                    {
+                        FeeCharged = feeCharged,
+                        InnerResultPair = InnerTransactionResultPair.FromXdr(result.Result.InnerResultPair),
                     };
                 default:
                     throw new SystemException("Unknown TransactionResult type");
