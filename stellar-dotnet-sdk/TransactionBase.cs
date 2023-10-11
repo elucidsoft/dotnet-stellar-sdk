@@ -112,7 +112,7 @@ namespace stellar_dotnet_sdk
         /// <param name="publicKey">The public key of the signer</param>
         /// <param name="signature">The base64 value of the signature XDR</param>
         /// <param name="network">The network <see cref="Network"/> the transaction will be sent to.</param>
-        public void Sign(string publicKey, string signature, Network network = null)
+        public void Sign(string publicKey, string signature, Network? network = null)
         {
             if (publicKey == null)
                 throw new ArgumentNullException(nameof(publicKey), "public key cannot be null");
@@ -139,7 +139,7 @@ namespace stellar_dotnet_sdk
                 throw new ArgumentException("Invalid public key", nameof(publicKey));
             }
 
-            if (!keyPair.Verify(Hash(network), signatureObj.InnerValue))
+            if (!keyPair.Verify(Hash(network ?? Network.Current), signatureObj.InnerValue))
                 throw new ArgumentException("Invalid signature", nameof(signature));
 
             var decoratedSignature = new DecoratedSignature
