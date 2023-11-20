@@ -10,4 +10,8 @@
     <ProjectReference Include="..\stellar-dotnet-sdk\stellar-dotnet-sdk.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NSec.Cryptography" Version="22.4.0" />
+  </ItemGroup>
+
 </Project>

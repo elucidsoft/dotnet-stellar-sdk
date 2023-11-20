@@ -34,7 +34,7 @@
     <PackageReference Include="LaunchDarkly.EventSource" Version="3.3.2" />
     <PackageReference Include="Nett" Version="0.10.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-    <PackageReference Include="NSec.Cryptography" Version="19.5.0" />
+    <PackageReference Include="NSec.Cryptography" Version="22.4.0" />
   </ItemGroup>
 
   <ItemGroup>
