@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using stellar_dotnet_sdk;
 using xdrSDK = stellar_dotnet_sdk.xdr;
-using System;
 using System.Linq;
 using System.Text;
 
@@ -44,22 +43,22 @@ namespace stellar_dotnet_sdk_test.operations
                 .SetSourceAccount(source)
                 .Build();
 
-            var xdr = operation.ToXdr();
-            var parsedOperation = (SetOptionsOperation)Operation.FromXdr(xdr);
+            var operationXdrBase64 = operation.ToXdrBase64();
+            var decodedOperation = SetOptionsOperation.FromOperationXdrBase64(operationXdrBase64);
 
-            Assert.AreEqual(inflationDestination.AccountId, parsedOperation.InflationDestination.AccountId);
-            Assert.AreEqual(1U, parsedOperation.ClearFlags);
-            Assert.AreEqual(1U, parsedOperation.SetFlags);
-            Assert.AreEqual(1U, parsedOperation.MasterKeyWeight);
-            Assert.AreEqual(2U, parsedOperation.LowThreshold);
-            Assert.AreEqual(3U, parsedOperation.MediumThreshold);
-            Assert.AreEqual(4U, parsedOperation.HighThreshold);
-            Assert.AreEqual(homeDomain, parsedOperation.HomeDomain);
-            Assert.AreEqual(signer.Discriminant.InnerValue, parsedOperation.Signer.Discriminant.InnerValue);
-            Assert.AreEqual(signer.Ed25519.InnerValue, parsedOperation.Signer.Ed25519.InnerValue);
-            Assert.AreEqual(1U, parsedOperation.SignerWeight);
-            Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
-            Assert.AreEqual(OperationThreshold.High, parsedOperation.Threshold);
+            Assert.AreEqual(inflationDestination.AccountId, decodedOperation.InflationDestination.AccountId);
+            Assert.AreEqual(1U, decodedOperation.ClearFlags);
+            Assert.AreEqual(1U, decodedOperation.SetFlags);
+            Assert.AreEqual(1U, decodedOperation.MasterKeyWeight);
+            Assert.AreEqual(2U, decodedOperation.LowThreshold);
+            Assert.AreEqual(3U, decodedOperation.MediumThreshold);
+            Assert.AreEqual(4U, decodedOperation.HighThreshold);
+            Assert.AreEqual(homeDomain, decodedOperation.HomeDomain);
+            Assert.AreEqual(signer.Discriminant.InnerValue, decodedOperation.Signer.Discriminant.InnerValue);
+            CollectionAssert.AreEqual(signer.Ed25519.InnerValue, decodedOperation.Signer.Ed25519.InnerValue);
+            Assert.AreEqual(1U, decodedOperation.SignerWeight);
+            Assert.AreEqual(source.AccountId, decodedOperation.SourceAccount.AccountId);
+            Assert.AreEqual(OperationThreshold.High, decodedOperation.Threshold);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAUAAAABAAAAAO3gUmG83C+VCqO6FztuMtXJF/l7grZA7MjRzqdZ9W8QAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAIAAAABAAAAAwAAAAEAAAAEAAAAAQAAAAtzdGVsbGFyLm9yZwAAAAABAAAAAET+21WXwEtXRyxb/GBe1tc5V/WUzIOW4yJp+XQgNUUiAAAAAQ==",
@@ -79,24 +78,24 @@ namespace stellar_dotnet_sdk_test.operations
                 .SetSourceAccount(source)
                 .Build();
 
-            var xdr = operation.ToXdr();
-            var parsedOperation = (SetOptionsOperation)Operation.FromXdr(xdr);
+            var operationXdrBase64 = operation.ToXdrBase64();
+            var decodedOperation = SetOptionsOperation.FromOperationXdrBase64(operationXdrBase64);
 
-            Assert.AreEqual(null, parsedOperation.InflationDestination);
-            Assert.AreEqual(null, parsedOperation.ClearFlags);
-            Assert.AreEqual(null, parsedOperation.SetFlags);
-            Assert.AreEqual(null, parsedOperation.MasterKeyWeight);
-            Assert.AreEqual(null, parsedOperation.LowThreshold);
-            Assert.AreEqual(null, parsedOperation.MediumThreshold);
-            Assert.AreEqual(null, parsedOperation.HighThreshold);
-            Assert.AreEqual(homeDomain, parsedOperation.HomeDomain);
-            Assert.AreEqual(null, parsedOperation.Signer);
-            Assert.AreEqual(null, parsedOperation.SignerWeight);
-            Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
+            Assert.AreEqual(null, decodedOperation.InflationDestination);
+            Assert.AreEqual(null, decodedOperation.ClearFlags);
+            Assert.AreEqual(null, decodedOperation.SetFlags);
+            Assert.AreEqual(null, decodedOperation.MasterKeyWeight);
+            Assert.AreEqual(null, decodedOperation.LowThreshold);
+            Assert.AreEqual(null, decodedOperation.MediumThreshold);
+            Assert.AreEqual(null, decodedOperation.HighThreshold);
+            Assert.AreEqual(homeDomain, decodedOperation.HomeDomain);
+            Assert.AreEqual(null, decodedOperation.Signer);
+            Assert.AreEqual(null, decodedOperation.SignerWeight);
+            Assert.AreEqual(source.AccountId, decodedOperation.SourceAccount.AccountId);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAtzdGVsbGFyLm9yZwAAAAAA",
-                operation.ToXdrBase64());
+                operationXdrBase64);
         }
 
         [TestMethod]
@@ -113,24 +112,24 @@ namespace stellar_dotnet_sdk_test.operations
                 .SetSourceAccount(source)
                 .Build();
 
-            var xdr = operation.ToXdr();
-            var parsedOperation = (SetOptionsOperation)Operation.FromXdr(xdr);
+            var operationXdrBase64 = operation.ToXdrBase64();
+            var decodedOperation = SetOptionsOperation.FromOperationXdrBase64(operationXdrBase64);
 
-            Assert.AreEqual(null, parsedOperation.InflationDestination);
-            Assert.AreEqual(null, parsedOperation.ClearFlags);
-            Assert.AreEqual(null, parsedOperation.SetFlags);
-            Assert.AreEqual(null, parsedOperation.MasterKeyWeight);
-            Assert.AreEqual(null, parsedOperation.LowThreshold);
-            Assert.AreEqual(null, parsedOperation.MediumThreshold);
-            Assert.AreEqual(null, parsedOperation.HighThreshold);
-            Assert.AreEqual(null, parsedOperation.HomeDomain);
-            Assert.IsTrue(hash.SequenceEqual(parsedOperation.Signer.HashX.InnerValue));
-            Assert.AreEqual(10U, parsedOperation.SignerWeight);
-            Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
+            Assert.AreEqual(null, decodedOperation.InflationDestination);
+            Assert.AreEqual(null, decodedOperation.ClearFlags);
+            Assert.AreEqual(null, decodedOperation.SetFlags);
+            Assert.AreEqual(null, decodedOperation.MasterKeyWeight);
+            Assert.AreEqual(null, decodedOperation.LowThreshold);
+            Assert.AreEqual(null, decodedOperation.MediumThreshold);
+            Assert.AreEqual(null, decodedOperation.HighThreshold);
+            Assert.AreEqual(null, decodedOperation.HomeDomain);
+            Assert.IsTrue(hash.SequenceEqual(decodedOperation.Signer.HashX.InnerValue));
+            Assert.AreEqual(10U, decodedOperation.SignerWeight);
+            Assert.AreEqual(source.AccountId, decodedOperation.SourceAccount.AccountId);
 
             Assert.AreEqual(
                 "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACbpRqMkaQAfCYSk/n3xIl4fCoHfKqxF34ht2iuvSYEJQAAAAK",
-                operation.ToXdrBase64());
+                operationXdrBase64);
         }
 
         [TestMethod]
@@ -157,50 +156,53 @@ namespace stellar_dotnet_sdk_test.operations
                 .SetSourceAccount(opSource)
                 .Build();
 
-            var xdr = operation.ToXdr();
-            var parsedOperation = (SetOptionsOperation)Operation.FromXdr(xdr);
+            var operationXdrBase64 = operation.ToXdrBase64();
+            var decodedOperation = SetOptionsOperation.FromOperationXdrBase64(operationXdrBase64);
 
-            Assert.AreEqual(operation.InflationDestination, parsedOperation.InflationDestination);
-            Assert.AreEqual(operation.ClearFlags, parsedOperation.ClearFlags);
-            Assert.AreEqual(operation.SetFlags, parsedOperation.SetFlags);
-            Assert.AreEqual(operation.MasterKeyWeight, parsedOperation.MasterKeyWeight);
-            Assert.AreEqual(operation.LowThreshold, parsedOperation.LowThreshold);
-            Assert.AreEqual(operation.MediumThreshold, parsedOperation.MediumThreshold);
-            Assert.AreEqual(operation.HighThreshold, parsedOperation.HighThreshold);
-            Assert.AreEqual(operation.HomeDomain, parsedOperation.HomeDomain);
-            Assert.IsTrue(transaction.Hash().SequenceEqual(parsedOperation.Signer.PreAuthTx.InnerValue));
-            Assert.AreEqual(operation.SignerWeight, parsedOperation.SignerWeight);
-            Assert.AreEqual(operation.SourceAccount.AccountId, parsedOperation.SourceAccount.AccountId);
+            Assert.AreEqual(operation.InflationDestination, decodedOperation.InflationDestination);
+            Assert.AreEqual(operation.ClearFlags, decodedOperation.ClearFlags);
+            Assert.AreEqual(operation.SetFlags, decodedOperation.SetFlags);
+            Assert.AreEqual(operation.MasterKeyWeight, decodedOperation.MasterKeyWeight);
+            Assert.AreEqual(operation.LowThreshold, decodedOperation.LowThreshold);
+            Assert.AreEqual(operation.MediumThreshold, decodedOperation.MediumThreshold);
+            Assert.AreEqual(operation.HighThreshold, decodedOperation.HighThreshold);
+            Assert.AreEqual(operation.HomeDomain, decodedOperation.HomeDomain);
+            Assert.IsTrue(transaction.Hash().SequenceEqual(decodedOperation.Signer.PreAuthTx.InnerValue));
+            Assert.AreEqual(operation.SignerWeight, decodedOperation.SignerWeight);
+            Assert.AreEqual(operation.SourceAccount.AccountId, decodedOperation.SourceAccount.AccountId);
         }
 
         [TestMethod]
         public void TestPayloadSignerKey()
         {
-            SetOptionsOperation.Builder builder = new SetOptionsOperation.Builder();
-            String payloadSignerStrKey = "GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVSGZ";
+            // Arrange
+            const string payloadSignerStrKey = "GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVSGZ";
+            
+            var builder = new SetOptionsOperation.Builder();
 
-            byte[] payload = Util.HexToBytes("0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20");
-            SignedPayloadSigner signedPayloadSigner = new SignedPayloadSigner(StrKey.DecodeStellarAccountId(payloadSignerStrKey), payload);
-            xdrSDK.SignerKey signerKey = Signer.SignedPayload(signedPayloadSigner);
+            var payload = Util.HexToBytes("0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20");
+            var signedPayloadSigner = new SignedPayloadSigner(StrKey.DecodeStellarAccountId(payloadSignerStrKey), payload);
+            var signerKey = Signer.SignedPayload(signedPayloadSigner);
 
             builder.SetSigner(signerKey, 1);
             builder.SetSourceAccount(source);
 
-            SetOptionsOperation operation = builder.Build();
+            var operation = builder.Build();
+            
+            // Act
+            var operationXdrBase64 = operation.ToXdrBase64();
+            var decodedOperation = SetOptionsOperation.FromOperationXdrBase64(operationXdrBase64);
 
-            xdrSDK.Operation xdrOperation = operation.ToXdr();
-            SetOptionsOperation parsedOperation = (SetOptionsOperation)Operation.FromXdr(xdrOperation);
-
-            // verify round trip between xdr and pojo
-            Assert.AreEqual(source.AccountId, parsedOperation.SourceAccount.AccountId);
-            Assert.AreEqual(signedPayloadSigner.SignerAccountID.InnerValue.Ed25519, parsedOperation.Signer.Ed25519SignedPayload.Ed25519);
-            Assert.IsTrue(signedPayloadSigner.Payload.SequenceEqual(parsedOperation.Signer.Ed25519SignedPayload.Payload));
-
+            // Assert
             // verify serialized xdr emitted with signed payload
-            Assert.AreEqual("AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" +
-                            "AAAAAAAAAAAAAAAEAAAADPww0v5OtDZlx0EzMkPcFURyDiq2XNKSi+w16A/x/6JoAAAAgAQIDBAUGBwgJCgsMDQ4PEBES" +
-                            "ExQVFhcYGRobHB0eHyAAAAAB",
-                            operation.ToXdrBase64());
+            Assert.AreEqual(
+                "AAAAAQAAAAC7JAuE3XvquOnbsgv2SRztjuk4RoBVefQ0rlrFMMQvfAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAADPww0v5OtDZlx0EzMkPcFURyDiq2XNKSi+w16A/x/6JoAAAAgAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAAAAAB",
+                operationXdrBase64);
+            
+            // verify round trip between xdr and pojo
+            Assert.AreEqual(source.AccountId, decodedOperation.SourceAccount.AccountId);
+            CollectionAssert.AreEqual(signedPayloadSigner.SignerAccountID.InnerValue.Ed25519.InnerValue, decodedOperation.Signer.Ed25519SignedPayload.Ed25519.InnerValue);
+            CollectionAssert.AreEqual(signedPayloadSigner.Payload, decodedOperation.Signer.Ed25519SignedPayload.Payload);
         }
     }
 }

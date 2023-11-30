@@ -34,6 +34,19 @@ namespace stellar_dotnet_sdk
         {
             return Amount.FromXdr(value);
         }
+        
+        /// <summary>
+        /// Creates a new Operation object from the given Operation XDR base64 string.
+        /// </summary>
+        /// <param name="xdrBase64"></param>
+        /// <returns>Operation object</returns>
+        public static Operation FromXdrBase64(string xdrBase64)
+        {
+            var bytes = Convert.FromBase64String(xdrBase64);
+            var reader = new XdrDataInputStream(bytes);
+            var thisXdr = xdr.Operation.Decode(reader);
+            return FromXdr(thisXdr);
+        }
 
         ///<summary>
         /// Generates Operation XDR object.
@@ -83,9 +96,6 @@ namespace stellar_dotnet_sdk
                 case OperationType.OperationTypeEnum.MANAGE_SELL_OFFER:
                     operation = new ManageSellOfferOperation.Builder(body.ManageSellOfferOp).Build();
                     break;
-                case OperationType.OperationTypeEnum.MANAGE_BUY_OFFER:
-                    operation = new ManageBuyOfferOperation.Builder(body.ManageBuyOfferOp).Build();
-                    break;
                 case OperationType.OperationTypeEnum.CREATE_PASSIVE_SELL_OFFER:
                     operation = new CreatePassiveSellOfferOperation.Builder(body.CreatePassiveSellOfferOp).Build();
                     break;
@@ -101,14 +111,17 @@ namespace stellar_dotnet_sdk
                 case OperationType.OperationTypeEnum.ACCOUNT_MERGE:
                     operation = new AccountMergeOperation.Builder(body).Build();
                     break;
+                case OperationType.OperationTypeEnum.INFLATION:
+                    operation = new InflationOperation.Builder().Build();
+                    break;
                 case OperationType.OperationTypeEnum.MANAGE_DATA:
                     operation = new ManageDataOperation.Builder(body.ManageDataOp).Build();
                     break;
                 case OperationType.OperationTypeEnum.BUMP_SEQUENCE:
                     operation = new BumpSequenceOperation.Builder(body.BumpSequenceOp).Build();
                     break;
-                case OperationType.OperationTypeEnum.INFLATION:
-                    operation = new InflationOperation.Builder().Build();
+                case OperationType.OperationTypeEnum.MANAGE_BUY_OFFER:
+                    operation = new ManageBuyOfferOperation.Builder(body.ManageBuyOfferOp).Build();
                     break;
                 case OperationType.OperationTypeEnum.PATH_PAYMENT_STRICT_SEND:
                     operation = new PathPaymentStrictSendOperation.Builder(body.PathPaymentStrictSendOp).Build();
@@ -143,6 +156,23 @@ namespace stellar_dotnet_sdk
                 case OperationType.OperationTypeEnum.LIQUIDITY_POOL_WITHDRAW:
                     operation = new LiquidityPoolWithdrawOperation.Builder(body.LiquidityPoolWithdrawOp).Build();
                     break;
+                case OperationType.OperationTypeEnum.INVOKE_HOST_FUNCTION:
+                    operation = body.InvokeHostFunctionOp.HostFunction.Discriminant.InnerValue switch
+                    {
+                        HostFunctionType.HostFunctionTypeEnum.HOST_FUNCTION_TYPE_INVOKE_CONTRACT =>
+                            new InvokeContractOperation.Builder(body.InvokeHostFunctionOp).Build(),
+                        HostFunctionType.HostFunctionTypeEnum.HOST_FUNCTION_TYPE_CREATE_CONTRACT =>
+                            new CreateContractOperation.Builder(body.InvokeHostFunctionOp).Build(),
+                        HostFunctionType.HostFunctionTypeEnum.HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM =>
+                            new UploadContractOperation.Builder(body.InvokeHostFunctionOp).Build(),
+                    };
+                    break;
+                // case OperationType.OperationTypeEnum.EXTEND_FOOTPRINT_TTL:
+                //     operation = new 
+                //     break;
+                // case OperationType.OperationTypeEnum.RESTORE_FOOTPRINT:
+                //     operation = new 
+                //     break;
                 default:
                     throw new Exception("Unknown operation body " + body.Discriminant.InnerValue);
             }

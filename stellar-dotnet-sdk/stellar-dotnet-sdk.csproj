@@ -47,5 +47,6 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="soroban\" />
   </ItemGroup>
 </Project>

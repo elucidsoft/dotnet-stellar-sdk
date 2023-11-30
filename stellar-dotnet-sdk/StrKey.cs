@@ -14,7 +14,8 @@ namespace stellar_dotnet_sdk
             SEED = 18 << 3,
             PRE_AUTH_TX = 19 << 3,
             SHA256_HASH = 23 << 3,
-            SIGNED_PAYLOAD = 15 << 3
+            SIGNED_PAYLOAD = 15 << 3,
+            CONTRACT = 2 << 3,
         }
 
         public static string EncodeStellarAccountId(byte[] data)
@@ -60,6 +61,11 @@ namespace stellar_dotnet_sdk
         public static string EncodeStellarSecretSeed(byte[] data)
         {
             return EncodeCheck(VersionByte.SEED, data);
+        }
+        
+        public static string EncodeContractId(byte[] data)
+        {
+            return EncodeCheck(VersionByte.CONTRACT, data);
         }
 
         public static byte[] DecodeStellarAccountId(string data)
@@ -132,6 +138,11 @@ namespace stellar_dotnet_sdk
         public static byte[] DecodeStellarSecretSeed(string data)
         {
             return DecodeCheck(VersionByte.SEED, data);
+        }
+        
+        public static byte[] DecodeContractId(string data)
+        {
+            return DecodeCheck(VersionByte.CONTRACT, data);
         }
 
         public static VersionByte DecodeVersionByte(string encoded)
@@ -245,6 +256,11 @@ namespace stellar_dotnet_sdk
         public static bool IsValidEd25519SecretSeed(string seed)
         {
             return IsValid(VersionByte.SEED, seed);
+        }
+        
+        public static bool IsValidContractId(string contract)
+        {
+            return IsValid(VersionByte.CONTRACT, contract);
         }
 
         private static byte[] CheckedBase32Decode(string encoded)

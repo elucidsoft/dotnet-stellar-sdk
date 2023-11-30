@@ -53,6 +53,24 @@ namespace stellar_dotnet_sdk
             get => OperationThreshold.High;
         }
 
+        /// <summary>
+        /// Creates a new SetOptionsOperation object from the given base64-encoded XDR Operation.
+        /// </summary>
+        /// <param name="xdrBase64"></param>
+        /// <returns>SetOptionsOperation object</returns>
+        /// <exception cref="InvalidOperationException">Thrown when the base64-encoded XDR value is invalid.</exception>
+        public static SetOptionsOperation FromOperationXdrBase64(string xdrBase64)
+        {
+            var operation = Operation.FromXdrBase64(xdrBase64);
+            if (operation == null)
+                throw new InvalidOperationException("Operation XDR is invalid");
+        
+            if (operation is not SetOptionsOperation setOptionsOperation)
+                throw new InvalidOperationException("Operation is not SetOptionsOperation");
+
+            return setOptionsOperation;
+        }
+
         public override sdkxdr.Operation.OperationBody ToOperationBody()
         {
             var op = new sdkxdr.SetOptionsOp();

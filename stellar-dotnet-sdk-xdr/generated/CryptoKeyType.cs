@@ -43,16 +43,15 @@ public class CryptoKeyType
     public static CryptoKeyType Decode(XdrDataInputStream stream)
     {
         var value = stream.ReadInt();
-        switch (value)
+        return value switch
         {
-            case 0: return Create(CryptoKeyTypeEnum.KEY_TYPE_ED25519);
-            case 1: return Create(CryptoKeyTypeEnum.KEY_TYPE_PRE_AUTH_TX);
-            case 2: return Create(CryptoKeyTypeEnum.KEY_TYPE_HASH_X);
-            case 3: return Create(CryptoKeyTypeEnum.KEY_TYPE_ED25519_SIGNED_PAYLOAD);
-            case 256: return Create(CryptoKeyTypeEnum.KEY_TYPE_MUXED_ED25519);
-            default:
-                throw new Exception("Unknown enum value: " + value);
-        }
+            0 => Create(CryptoKeyTypeEnum.KEY_TYPE_ED25519),
+            1 => Create(CryptoKeyTypeEnum.KEY_TYPE_PRE_AUTH_TX),
+            2 => Create(CryptoKeyTypeEnum.KEY_TYPE_HASH_X),
+            3 => Create(CryptoKeyTypeEnum.KEY_TYPE_ED25519_SIGNED_PAYLOAD),
+            256 => Create(CryptoKeyTypeEnum.KEY_TYPE_MUXED_ED25519),
+            _ => throw new Exception("Unknown enum value: " + value)
+        };
     }
 
     public static void Encode(XdrDataOutputStream stream, CryptoKeyType value)
