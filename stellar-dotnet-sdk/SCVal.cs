@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Text;
 using System.Xml.Schema;
 using stellar_dotnet_sdk.xdr;
 
@@ -66,10 +67,38 @@ public abstract class SCVal
             _ => throw new InvalidOperationException("Unknown SCVal type")
         };
     }
+    
+    /// <summary>
+    /// Creates a new SCVal object from the given SCVal XDR base64 string.
+    /// </summary>
+    /// <param name="xdrBase64"></param>
+    /// <returns>SCVal object</returns>
+    public static SCVal FromXdrBase64(string xdrBase64)
+    {
+        var bytes = Convert.FromBase64String(xdrBase64);
+        var reader = new XdrDataInputStream(bytes);
+        var thisXdr = xdr.SCVal.Decode(reader);
+        return FromXdr(thisXdr);
+    }
+    
+    ///<summary>
+    /// Returns base64-encoded SCVal XDR object.
+    ///</summary>
+    public string ToXdrBase64()
+    {
+        var xdrValue = ToXdr();
+        var writer = new XdrDataOutputStream();
+        xdr.SCVal.Encode(writer, xdrValue);
+        return Convert.ToBase64String(writer.ToArray());
+    }
 }
 
 public class SCBool : SCVal
 {
+    public SCBool(bool value)
+    {
+        InnerValue = value;
+    }
     public bool InnerValue { get; set; }
 
     public new bool ToXdr()
@@ -91,10 +120,7 @@ public class SCBool : SCVal
     
     public static SCBool FromXdr(bool xdrBool)
     {
-        return new SCBool
-        {
-            InnerValue = xdrBool,
-        };
+        return new SCBool(xdrBool);
     }
     
     public static SCBool FromSCValXdr(xdr.SCVal xdrVal)
@@ -137,6 +163,7 @@ public class SCVoid : SCVal
 
 public abstract class SCError : SCVal
 {
+    public SCErrorCode.SCErrorCodeEnum Code { get; set; }
     public xdr.SCError ToXdr()
     {
         return this switch
@@ -196,14 +223,15 @@ public abstract class SCError : SCVal
 
 public class SCContractError : SCError
 {
+    public SCContractError(uint value)
+    {
+        ContractCode = value;
+    }
     public uint ContractCode { get; set; }
 
     public static SCContractError FromSCErrorXdr(xdr.SCError xdrSCError)
     {
-        return new SCContractError
-        {
-            ContractCode = xdrSCError.ContractCode.InnerValue,
-        };
+        return new SCContractError(xdrSCError.ContractCode.InnerValue);
     }
     
     public xdr.SCError ToSCErrorXdr()
@@ -223,7 +251,10 @@ public class SCWasmVmError : SCError
 {
     public static SCWasmVmError FromSCErrorXdr(xdr.SCError xdrSCError)
     {
-        return new SCWasmVmError();
+        return new SCWasmVmError()
+        {
+            Code = xdrSCError.Code.InnerValue
+        };
     }
     
     public xdr.SCError ToSCErrorXdr()
@@ -234,6 +265,7 @@ public class SCWasmVmError : SCError
             {
                 InnerValue = xdr.SCErrorType.SCErrorTypeEnum.SCE_WASM_VM,
             },
+            Code = SCErrorCode.Create(Code)
         };
     }
 }
@@ -242,7 +274,10 @@ public class SCContextError : SCError
 {
     public static SCContextError FromSCErrorXdr(xdr.SCError xdrSCError)
     {
-        return new SCContextError();
+        return new SCContextError()
+        {
+            Code = xdrSCError.Code.InnerValue
+        };
     }
     
     public xdr.SCError ToSCErrorXdr()
@@ -253,6 +288,7 @@ public class SCContextError : SCError
             {
                 InnerValue = xdr.SCErrorType.SCErrorTypeEnum.SCE_CONTEXT,
             },
+            Code = SCErrorCode.Create(Code)
         };
     }
 }
@@ -261,7 +297,10 @@ public class SCStorageError : SCError
 {
     public static SCStorageError FromSCErrorXdr(xdr.SCError xdrSCError)
     {
-        return new SCStorageError();
+        return new SCStorageError()
+        {
+            Code = xdrSCError.Code.InnerValue
+        };
     }
     
     public xdr.SCError ToSCErrorXdr()
@@ -272,6 +311,7 @@ public class SCStorageError : SCError
             {
                 InnerValue = xdr.SCErrorType.SCErrorTypeEnum.SCE_STORAGE,
             },
+            Code = SCErrorCode.Create(Code)
         };
     }
 }
@@ -280,7 +320,10 @@ public class SCObjectError : SCError
 {
     public static SCObjectError FromSCErrorXdr(xdr.SCError xdrSCError)
     {
-        return new SCObjectError();
+        return new SCObjectError
+        {
+            Code = xdrSCError.Code.InnerValue
+        };
     }
     
     public xdr.SCError ToSCErrorXdr()
@@ -291,6 +334,7 @@ public class SCObjectError : SCError
             {
                 InnerValue = xdr.SCErrorType.SCErrorTypeEnum.SCE_OBJECT,
             },
+            Code = SCErrorCode.Create(Code)
         };
     }
 }
@@ -299,7 +343,10 @@ public class SCCryptoError : SCError
 {
     public static SCCryptoError FromSCErrorXdr(xdr.SCError xdrSCError)
     {
-        return new SCCryptoError();
+        return new SCCryptoError
+        {
+            Code = xdrSCError.Code.InnerValue
+        };
     }
     
     public xdr.SCError ToSCErrorXdr()
@@ -310,6 +357,7 @@ public class SCCryptoError : SCError
             {
                 InnerValue = xdr.SCErrorType.SCErrorTypeEnum.SCE_CRYPTO,
             },
+            Code = SCErrorCode.Create(Code)
         };
     }
 }
@@ -318,7 +366,10 @@ public class SCEventsError : SCError
 {
     public static SCEventsError FromSCErrorXdr(xdr.SCError xdrSCError)
     {
-        return new SCEventsError();
+        return new SCEventsError
+        {
+            Code = xdrSCError.Code.InnerValue
+        };
     }
     
     public xdr.SCError ToSCErrorXdr()
@@ -329,6 +380,7 @@ public class SCEventsError : SCError
             {
                 InnerValue = xdr.SCErrorType.SCErrorTypeEnum.SCE_EVENTS,
             },
+            Code = SCErrorCode.Create(Code)
         };
     }
 }
@@ -337,7 +389,10 @@ public class SCBudgetError : SCError
 {
     public static SCBudgetError FromSCErrorXdr(xdr.SCError xdrSCError)
     {
-        return new SCBudgetError();
+        return new SCBudgetError
+        {
+            Code = xdrSCError.Code.InnerValue
+        };
     }
     
     public xdr.SCError ToSCErrorXdr()
@@ -348,6 +403,7 @@ public class SCBudgetError : SCError
             {
                 InnerValue = xdr.SCErrorType.SCErrorTypeEnum.SCE_BUDGET,
             },
+            Code = SCErrorCode.Create(Code)
         };
     }
 }
@@ -356,7 +412,10 @@ public class SCValueError : SCError
 {
     public static SCValueError FromSCErrorXdr(xdr.SCError xdrSCError)
     {
-        return new SCValueError();
+        return new SCValueError()
+        {
+            Code = xdrSCError.Code.InnerValue
+        };
     }
     
     public xdr.SCError ToSCErrorXdr()
@@ -367,19 +426,18 @@ public class SCValueError : SCError
             {
                 InnerValue = xdr.SCErrorType.SCErrorTypeEnum.SCE_VALUE,
             },
+            Code = SCErrorCode.Create(Code)
         };
     }
 }
 
 public class SCAuthError : SCError
 {
-    public SCErrorCode.SCErrorCodeEnum Code { get; set; }
-
     public static SCAuthError FromSCErrorXdr(xdr.SCError xdrSCError)
     {
         return new SCAuthError
         {
-            Code = xdrSCError.Code.InnerValue,
+            Code = xdrSCError.Code.InnerValue
         };
     }
     
@@ -391,16 +449,18 @@ public class SCAuthError : SCError
             {
                 InnerValue = xdr.SCErrorType.SCErrorTypeEnum.SCE_AUTH,
             },
-            Code = new xdr.SCErrorCode
-            {
-                InnerValue = Code,
-            },
+            Code = SCErrorCode.Create(Code)
         };
     }
 }
 
 public class SCUint32 : SCVal
 {
+    public SCUint32(uint value)
+    {
+        InnerValue = value;
+    }
+    
     public uint InnerValue { get; set; }
     
     public xdr.Uint32 ToXdr()
@@ -422,10 +482,7 @@ public class SCUint32 : SCVal
     
     public static SCUint32 FromXdr(xdr.Uint32 xdrUint32)
     {
-        return new SCUint32
-        {
-            InnerValue = xdrUint32.InnerValue,
-        };
+        return new SCUint32(xdrUint32.InnerValue);
     }
     
     public static SCUint32 FromSCValXdr(xdr.SCVal xdrVal)
@@ -517,6 +574,11 @@ public class SCUint64 : SCVal
 
 public class SCInt64 : SCVal
 {
+    public SCInt64(long value)
+    {
+        InnerValue = value;
+    }
+    
     public long InnerValue { get; set; }
     
     public xdr.Int64 ToXdr()
@@ -538,10 +600,7 @@ public class SCInt64 : SCVal
     
     public static SCInt64 FromXdr(xdr.Int64 xdrInt64)
     {
-        return new SCInt64
-        {
-            InnerValue = xdrInt64.InnerValue,
-        };
+        return new SCInt64(xdrInt64.InnerValue);
     }
     
     public static SCInt64 FromSCValXdr(xdr.SCVal xdrVal)
@@ -555,6 +614,11 @@ public class SCInt64 : SCVal
 
 public class SCTimePoint : SCVal
 {
+    public SCTimePoint(ulong value)
+    {
+        InnerValue = value;
+    }
+    
     public ulong InnerValue { get; set; }
     
     public xdr.TimePoint ToXdr()
@@ -576,10 +640,7 @@ public class SCTimePoint : SCVal
     
     public static SCTimePoint FromXdr(xdr.TimePoint xdrTimePoint)
     {
-        return new SCTimePoint
-        {
-            InnerValue = xdrTimePoint.InnerValue.InnerValue,
-        };
+        return new SCTimePoint(xdrTimePoint.InnerValue.InnerValue);
     }
     
     public static SCTimePoint FromSCValXdr(xdr.SCVal xdrVal)
@@ -593,6 +654,11 @@ public class SCTimePoint : SCVal
 
 public class SCDuration : SCVal
 {
+    public SCDuration(ulong value)
+    {
+        InnerValue = value;
+    }
+    
     public ulong InnerValue { get; set; }
     
     public xdr.Duration ToXdr()
@@ -614,10 +680,7 @@ public class SCDuration : SCVal
     
     public static SCDuration FromXdr(xdr.Duration xdrDuration)
     {
-        return new SCDuration
-        {
-            InnerValue = xdrDuration.InnerValue.InnerValue,
-        };
+        return new SCDuration(xdrDuration.InnerValue.InnerValue);
     }
     
     public static SCDuration FromSCValXdr(xdr.SCVal xdrVal)
@@ -827,6 +890,10 @@ public class SCInt256 : SCVal
 
 public class SCBytes : SCVal
 {
+    public SCBytes(byte[] value)
+    {
+        InnerValue = value;
+    }
     public byte[] InnerValue { get; set; }
     
     public xdr.SCBytes ToXdr()
@@ -848,10 +915,7 @@ public class SCBytes : SCVal
     
     public static SCBytes FromXdr(xdr.SCBytes xdrSCBytes)
     {
-        return new SCBytes
-        {
-            InnerValue = xdrSCBytes.InnerValue,
-        };
+        return new SCBytes(xdrSCBytes.InnerValue);
     }
     
     public static SCBytes FromSCValXdr(xdr.SCVal xdrVal)
@@ -865,6 +929,11 @@ public class SCBytes : SCVal
 
 public class SCString : SCVal
 {
+    public SCString(string value)
+    {
+        InnerValue = value;
+    }
+
     public string InnerValue { get; set; }
     
     public xdr.SCString ToXdr()
@@ -886,10 +955,7 @@ public class SCString : SCVal
     
     public static SCString FromXdr(xdr.SCString xdrSCString)
     {
-        return new SCString
-        {
-            InnerValue = xdrSCString.InnerValue,
-        };
+        return new SCString(xdrSCString.InnerValue);
     }
     
     public static SCString FromSCValXdr(xdr.SCVal xdrVal)
@@ -943,6 +1009,11 @@ public class SCSymbol : SCVal
 
 public class SCVec : SCVal
 {
+    public SCVec(SCVal[] value)
+    {
+        InnerValue = value;
+    }
+    
     public SCVal[] InnerValue { get; set; }
     
     public xdr.SCVec ToXdr()
@@ -964,10 +1035,7 @@ public class SCVec : SCVal
     
     public static SCVec FromXdr(xdr.SCVec xdrSCVec)
     {
-        return new SCVec
-        {
-            InnerValue = xdrSCVec.InnerValue.Select(SCVal.FromXdr).ToArray(),
-        };
+        return new SCVec(xdrSCVec.InnerValue.Select(SCVal.FromXdr).ToArray());
     }
     
     public static SCVec FromSCValXdr(xdr.SCVal xdrVal)
@@ -981,11 +1049,11 @@ public class SCVec : SCVal
 
 public class SCMap : SCVal
 {
-    public SCMapEntry[] Entries { get; set; }
+    public SCMapEntry[] Entries { get; set; } = Array.Empty<SCMapEntry>();
     
     public xdr.SCMap ToXdr()
     {
-        return new xdr.SCMap(Entries.Select(a => a.ToXdr()).ToArray());
+        return Entries.Length == 0 ? new xdr.SCMap { InnerValue = Array.Empty<xdr.SCMapEntry>() } : new xdr.SCMap(Entries.Select(a => a.ToXdr()).ToArray());
     }
     
     public xdr.SCVal ToSCValXdr()
@@ -1002,6 +1070,7 @@ public class SCMap : SCVal
     
     public static SCMap FromXdr(xdr.SCMap xdrSCMap)
     {
+        if (xdrSCMap == null) return new SCMap();
         return new SCMap
         {
             Entries = xdrSCMap.InnerValue.Select(SCMapEntry.FromXdr).ToArray(),
@@ -1121,7 +1190,7 @@ public class SCContractId : SCAddress
     
     public static SCContractId FromXdr(xdr.SCAddress xdr)
     {
-        var value = Convert.ToHexString(xdr.ContractId.InnerValue);
+        var value = StrKey.EncodeContractId(xdr.ContractId.InnerValue);
 
         if (!StrKey.IsValidContractId(value))
             throw new InvalidOperationException("Invalid contract id");
@@ -1138,9 +1207,9 @@ public class SCContractId : SCAddress
         {
             Discriminant = new xdr.SCAddressType
             {
-                InnerValue = xdr.SCAddressType.SCAddressTypeEnum.SC_ADDRESS_TYPE_ACCOUNT,
+                InnerValue = xdr.SCAddressType.SCAddressTypeEnum.SC_ADDRESS_TYPE_CONTRACT,
             },
-            ContractId = new xdr.Hash(Convert.FromHexString(InnerValue)),
+            ContractId = new xdr.Hash(StrKey.DecodeContractId(InnerValue))
         };
     }
 }
@@ -1177,7 +1246,7 @@ public class SCLedgerKeyContractInstance : SCVal
 public class SCContractInstance : SCVal
 {
     public ContractExecutable Executable { get; set; }
-    public SCMap Storage { get; set; }
+    public SCMap Storage { get; set; } = new();
     
     public static SCContractInstance FromXdr(xdr.SCContractInstance xdr)
     {
@@ -1218,36 +1287,77 @@ public class SCContractInstance : SCVal
     }
 }
 
-public class ContractExecutable
+public abstract class ContractExecutable
 {
-    public ContractExecutableType Discriminant { get; set; }
     public string WasmHash { get; set; }
     
-    public static ContractExecutable FromXdr(xdr.ContractExecutable xdr)
+    public static ContractExecutable FromXdr(xdr.ContractExecutable xdrContractExecutable)
     {
-        return new ContractExecutable
+        return xdrContractExecutable.Discriminant.InnerValue switch
         {
-            Discriminant = new ContractExecutableType
-            {
-                InnerValue = xdr.Discriminant.InnerValue,
-            },
-            WasmHash = Convert.ToHexString(xdr.WasmHash.InnerValue),
+            ContractExecutableType.ContractExecutableTypeEnum.CONTRACT_EXECUTABLE_WASM => ContractExecutableWasm.FromXdr(xdrContractExecutable),
+            ContractExecutableType.ContractExecutableTypeEnum.CONTRACT_EXECUTABLE_STELLAR_ASSET => ContractExecutableStellarAsset.FromXdr(xdrContractExecutable)
         };
     }
+    public abstract xdr.ContractExecutable ToXdr();
+}
 
-    public xdr.ContractExecutable ToXdr()
+public class ContractExecutableWasm : ContractExecutable
+{
+    public ContractExecutableWasm(string value)
     {
-        var xdr = new xdr.ContractExecutable
+        WasmHash = value;
+    }
+
+    public static ContractExecutableWasm FromXdr(xdr.ContractExecutable xdr)
+    {
+        return new ContractExecutableWasm(Convert.ToBase64String(xdr.WasmHash.InnerValue));
+    }
+
+    public override xdr.ContractExecutable ToXdr()
+    {
+        return new xdr.ContractExecutable
         {
-            Discriminant = Discriminant,
-            WasmHash = new Hash(Convert.FromHexString(WasmHash)),
+            Discriminant = new xdr.ContractExecutableType()
+            {
+                InnerValue = xdr.ContractExecutableType.ContractExecutableTypeEnum.CONTRACT_EXECUTABLE_WASM,
+            },
+            WasmHash = new Hash(Convert.FromBase64String(WasmHash)),
         };
-        return xdr;
+    }
+}
+
+public class ContractExecutableStellarAsset : ContractExecutable
+{
+    public ContractExecutableStellarAsset(string value)
+    {
+        WasmHash = value;
+    }
+    public static ContractExecutableStellarAsset FromXdr(xdr.ContractExecutable xdr)
+    {
+        return new ContractExecutableStellarAsset(Convert.ToBase64String(xdr.WasmHash.InnerValue));
+    }
+
+    public override xdr.ContractExecutable ToXdr()
+    {
+        return new xdr.ContractExecutable
+        {
+            Discriminant = new xdr.ContractExecutableType()
+            {
+                InnerValue = xdr.ContractExecutableType.ContractExecutableTypeEnum.CONTRACT_EXECUTABLE_WASM,
+            },
+            WasmHash = new Hash(Convert.FromBase64String(WasmHash)),
+        };
     }
 }
 
 public class SCNonceKey : SCVal
 {
+    public SCNonceKey(long value)
+    {
+        Nonce = value;
+    }
+    
     public long Nonce { get; set; }
     
     public xdr.SCNonceKey ToXdr()
@@ -1272,10 +1382,7 @@ public class SCNonceKey : SCVal
     
     public static SCNonceKey FromXdr(xdr.SCNonceKey xdr)
     {
-        return new SCNonceKey
-        {
-            Nonce = xdr.Nonce.InnerValue,
-        };
+        return new SCNonceKey(xdr.Nonce.InnerValue);
     }
     
     public static SCNonceKey FromSCValXdr(xdr.SCVal xdrVal)
