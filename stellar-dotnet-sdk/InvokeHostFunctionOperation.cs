@@ -31,13 +31,13 @@ public class InvokeContractOperation : InvokeHostFunctionOperation
     /// <exception cref="InvalidOperationException">Thrown when the base64-encoded XDR value is invalid.</exception>
     public static InvokeContractOperation FromOperationXdrBase64(string xdrBase64)
     {
-        var bytes = Convert.FromBase64String(xdrBase64);
-        var reader = new XdrDataInputStream(bytes);
-        var thisXdr = xdr.InvokeHostFunctionOp.Decode(reader);
-        if (thisXdr == null)
+        var operation = FromXdrBase64(xdrBase64);
+        if (operation == null)
             throw new InvalidOperationException("Operation XDR is invalid");
-
-        return FromInvokeHostFunctionOperationXdr(thisXdr);
+        
+        if (operation is not InvokeContractOperation invokeHostFunctionOperation)
+            throw new InvalidOperationException("Operation is not InvokeHostFunctionOperation");
+        return invokeHostFunctionOperation;
     }
 
     public static InvokeContractOperation FromInvokeHostFunctionOperationXdr(xdr.InvokeHostFunctionOp xdrInvokeHostFunctionOp)
@@ -173,7 +173,7 @@ public class InvokeContractOperation : InvokeHostFunctionOperation
     
         public InvokeContractOperation Build()
         {
-            if (_contractAddress == null)
+            if (_contractAddress == null)   
                 throw new InvalidOperationException("Contract address cannot be null");
             if (_functionName == null)
                 throw new InvalidOperationException("Function name cannot be null");
@@ -214,13 +214,14 @@ public class CreateContractOperation : InvokeHostFunctionOperation
     /// <exception cref="InvalidOperationException">Thrown when the base64-encoded XDR value is invalid.</exception>
     public static CreateContractOperation FromOperationXdrBase64(string xdrBase64)
     {
-        var bytes = Convert.FromBase64String(xdrBase64);
-        var reader = new XdrDataInputStream(bytes);
-        var thisXdr = xdr.InvokeHostFunctionOp.Decode(reader);
-        if (thisXdr == null)
+        var operation = FromXdrBase64(xdrBase64);
+        if (operation == null)
             throw new InvalidOperationException("Operation XDR is invalid");
+        
+        if (operation is not CreateContractOperation invokeHostFunctionOperation)
+            throw new InvalidOperationException("Operation is not InvokeHostFunctionOperation");
 
-        return FromInvokeHostFunctionOperationXdr(thisXdr);
+        return invokeHostFunctionOperation;
     }
 
     public static CreateContractOperation FromInvokeHostFunctionOperationXdr(xdr.InvokeHostFunctionOp xdrInvokeHostFunctionOp)
@@ -662,6 +663,17 @@ public class CreateContractHostFunction : HostFunction
             CreateContract = ToXdr(),
         };
     }
+    
+    ///<summary>
+    /// Returns base64-encoded CreateContractHostFunction XDR object.
+    ///</summary>
+    public string ToXdrBase64()
+    {
+        var xdrValue = ToXdr();
+        var writer = new XdrDataOutputStream();
+        xdr.CreateContractArgs.Encode(writer, xdrValue);
+        return Convert.ToBase64String(writer.ToArray());
+    }
 }
 
 public class UploadContractHostFunction : HostFunction
@@ -723,6 +735,30 @@ public class SorobanAuthorizationEntry
             RootInvocation = SorobanAuthorizedInvocation.FromXdr(xdr.RootInvocation)
         };
     }
+    
+    /// <summary>
+    /// Creates a new SorobanAuthorizationEntry object from the given SorobanAuthorizationEntry XDR base64 string.
+    /// </summary>
+    /// <param name="xdrBase64"></param>
+    /// <returns>SorobanAuthorizationEntry object</returns>
+    public static SorobanAuthorizationEntry FromXdrBase64(string xdrBase64)
+    {
+        var bytes = Convert.FromBase64String(xdrBase64);
+        var reader = new XdrDataInputStream(bytes);
+        var thisXdr = xdr.SorobanAuthorizationEntry.Decode(reader);
+        return FromXdr(thisXdr);
+    }
+    
+    ///<summary>
+    /// Returns base64-encoded SorobanAuthorizationEntry XDR object.
+    ///</summary>
+    public string ToXdrBase64()
+    {
+        var xdrValue = ToXdr();
+        var writer = new XdrDataOutputStream();
+        xdr.SorobanAuthorizationEntry.Encode(writer, xdrValue);
+        return Convert.ToBase64String(writer.ToArray());
+    }
 }
 
 public abstract class SorobanCredentials
@@ -745,6 +781,30 @@ public abstract class SorobanCredentials
             xdr.SorobanCredentialsType.SorobanCredentialsTypeEnum.SOROBAN_CREDENTIALS_ADDRESS => SorobanAddressCredentials.FromSorobanCredentialsXdr(xdrSorobanCredentials),
             _ => throw new InvalidOperationException("Unknown SorobanCredentials type")
         };
+    }
+    
+    /// <summary>
+    /// Creates a new SorobanCredentials object from the given SorobanCredentials XDR base64 string.
+    /// </summary>
+    /// <param name="xdrBase64"></param>
+    /// <returns>SorobanCredentials object</returns>
+    public static SorobanCredentials FromXdrBase64(string xdrBase64)
+    {
+        var bytes = Convert.FromBase64String(xdrBase64);
+        var reader = new XdrDataInputStream(bytes);
+        var thisXdr = xdr.SorobanCredentials.Decode(reader);
+        return FromXdr(thisXdr);
+    }
+    
+    ///<summary>
+    /// Returns base64-encoded SorobanCredentials XDR object.
+    ///</summary>
+    public string ToXdrBase64()
+    {
+        var xdrValue = ToXdr();
+        var writer = new XdrDataOutputStream();
+        xdr.SorobanCredentials.Encode(writer, xdrValue);
+        return Convert.ToBase64String(writer.ToArray());
     }
 }
 
@@ -771,7 +831,7 @@ public class SorobanSourceAccountCredentials : SorobanCredentials
 }
 
 public class SorobanAddressCredentials : SorobanCredentials
-{ 
+{
     public SCAddress Address { get; set; }
     public long Nonce { get; set; }
     public uint SignatureExpirationLedger { get; set; }
@@ -793,6 +853,22 @@ public class SorobanAddressCredentials : SorobanCredentials
     
     public xdr.SorobanCredentials ToSorobanCredentialsXdr()
     {
+        if (Address == null)
+        {
+            throw new InvalidOperationException("Address cannot be null");
+        }
+        if (Nonce == null)
+        {
+            throw new InvalidOperationException("Nonce cannot be null");
+        }
+        if (SignatureExpirationLedger == null)
+        {
+            throw new InvalidOperationException("SignatureExpirationLedger cannot be null");
+        }
+        if (Signature == null)
+        {
+            throw new InvalidOperationException("Signature cannot be null");
+        }
         return new xdr.SorobanCredentials
         {
             Discriminant = new xdr.SorobanCredentialsType

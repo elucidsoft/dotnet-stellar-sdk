@@ -8,31 +8,19 @@ namespace stellar_dotnet_sdk_test
     public class AddressTest
     {
         [TestMethod]
-        public void TestInvalidAccountId()
+        public void TestInvalidAccountConstructorId()
         {
             const string invalidAccountId = "Invalidid";
-            try
-            {
-                new SCAccountId(invalidAccountId);
-            }
-            catch (InvalidOperationException exception)
-            {
-                Assert.AreEqual("Invalid account id", exception.Message);
-            }
+            var ex = Assert.ThrowsException<InvalidOperationException>(() => new SCAccountId(invalidAccountId));
+            Assert.AreEqual("Invalid account id", ex.Message);
         }
         
         [TestMethod]
         public void TestInvalidContractId()
         {
             const string invalidContractId = "Invalidid";
-            try
-            {
-                new SCContractId(invalidContractId);
-            }
-            catch (InvalidOperationException exception)
-            {
-                Assert.AreEqual("Invalid contract id", exception.Message);
-            }
+            var ex = Assert.ThrowsException<InvalidOperationException>(() => new SCAccountId(invalidContractId));
+            Assert.AreEqual("Invalid contract id", ex.Message);
         }
         
         [TestMethod]
