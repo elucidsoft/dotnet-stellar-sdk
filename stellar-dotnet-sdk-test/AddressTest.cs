@@ -19,7 +19,7 @@ namespace stellar_dotnet_sdk_test
         public void TestInvalidContractId()
         {
             const string invalidContractId = "Invalidid";
-            var ex = Assert.ThrowsException<InvalidOperationException>(() => new SCAccountId(invalidContractId));
+            var ex = Assert.ThrowsException<InvalidOperationException>(() => new SCContractId(invalidContractId));
             Assert.AreEqual("Invalid contract id", ex.Message);
         }
         
