@@ -9,20 +9,65 @@ namespace stellar_dotnet_sdk_test.operations
     [TestClass]
     public class InvokeHostFunctionOperationTest
     {
-        private KeyPair sourceAccount =
+        private readonly KeyPair _sourceAccount =
             KeyPair.FromSecretSeed("SC4CGETADVYTCR5HEAVZRB3DZQY5Y4J7RFNJTRA6ESMHIPEZUSTE2QDK");
 
         private const string WasmHash = "ZBYoEJT3IaPMMk3FoRmnEQHoDxewPZL+Uor+xWI4uII=";
+        private readonly SCAddress _accountAddress = new SCAccountId("GAEBBKKHGCAD53X244CFGTVEKG7LWUQOAEW4STFHMGYHHFS5WOQZZTMP");
+        private readonly SCAddress _contractAddress = new SCContractId("CDJ4RICANSXXZ275W2OY2U7RO73HYURBGBRHVW2UUXZNGEBIVBNRKEF7");
+        private readonly SCSymbol _functionName = new("hello");
+        private readonly SCVal[] _args = { new SCString("world"), new SCBytes(new byte[] { 0x00, 0x01, 0x02 }) };
+        private const long Nonce = -9223372036854775807;
+        private const uint SignatureExpirationLedger = 1319013123;
+        private readonly SCString _signature = new("Signature");
+        
+        private SorobanAddressCredentials InitCredentials()
+        {
+            return new SorobanAddressCredentials
+            {
+                Address = _accountAddress,
+                Nonce = Nonce,
+                SignatureExpirationLedger = SignatureExpirationLedger,
+                Signature = _signature
+            };
+        }
+
+        private SorobanAuthorizationEntry InitAuthEntry()
+        {
+            var authorizedContractFn = new SorobanAuthorizedContractFunction
+            {
+                HostFunction = new InvokeContractHostFunction(_contractAddress, _functionName, _args)
+            };
+
+            var rootInvocation = new SorobanAuthorizedInvocation
+            {
+                Function = authorizedContractFn,
+                SubInvocations = new SorobanAuthorizedInvocation[]
+                {
+                    new()
+                    {
+                        Function = authorizedContractFn,
+                        SubInvocations = Array.Empty<SorobanAuthorizedInvocation>()
+                    }
+                }
+            };
+
+            return new SorobanAuthorizationEntry
+            {
+                RootInvocation = rootInvocation,
+                Credentials = InitCredentials()
+            };    
+        }
+        
         [TestMethod]
         public void TestCreateEmptySourceAccountContractOperation()
         {
             var contractExecutableWasm = new ContractExecutableWasm(WasmHash);
-            SCAddress address = new SCAccountId("GAEBBKKHGCAD53X244CFGTVEKG7LWUQOAEW4STFHMGYHHFS5WOQZZTMP");
             var random32Bytes = new byte[32];
             RandomNumberGenerator.Create().GetBytes(random32Bytes);
             var contractIdAddressPreimage = new ContractIDAddressPreimage
             {
-                Address = address,
+                Address = _accountAddress,
                 Salt = new xdrSDK.Uint256(random32Bytes)
             };
             var builder = new CreateContractOperation.Builder();
@@ -44,8 +89,8 @@ namespace stellar_dotnet_sdk_test.operations
                 ((ContractIDAddressPreimage)operation.HostFunction.ContractIDPreimage).Salt.InnerValue,
                 ((ContractIDAddressPreimage)decodedOperation.HostFunction.ContractIDPreimage).Salt.InnerValue);
             Assert.AreEqual(
-                operation.HostFunction.Executable.WasmHash,
-                decodedOperation.HostFunction.Executable.WasmHash);
+                ((ContractExecutableWasm)operation.HostFunction.Executable).WasmHash,
+                ((ContractExecutableWasm)decodedOperation.HostFunction.Executable).WasmHash);
             Assert.IsTrue(operation.Auth.Length == 0);
             Assert.AreEqual(operation.SourceAccount?.AccountId, decodedOperation.SourceAccount?.AccountId);
         }
@@ -55,7 +100,7 @@ namespace stellar_dotnet_sdk_test.operations
         {
             var contractExecutableWasm = new ContractExecutableWasm(WasmHash);
             var builder = new CreateContractOperation.Builder();
-            builder.SetSourceAccount(sourceAccount);
+            builder.SetSourceAccount(_sourceAccount);
             builder.SetExecutable(contractExecutableWasm);
             var ex = Assert.ThrowsException<InvalidOperationException>(() => builder.Build());
             Assert.AreEqual("Contract ID preimage cannot be null", ex.Message);
@@ -64,35 +109,33 @@ namespace stellar_dotnet_sdk_test.operations
         [TestMethod]
         public void TestCreateEmptyExecutableContractOperation()
         {
-            SCAddress address = new SCAccountId("GAEBBKKHGCAD53X244CFGTVEKG7LWUQOAEW4STFHMGYHHFS5WOQZZTMP");
             var random32Bytes = new byte[32];
             RandomNumberGenerator.Create().GetBytes(random32Bytes);
             var contractIdAddressPreimage = new ContractIDAddressPreimage
             {
-                Address = address,
+                Address = _accountAddress,
                 Salt = new xdrSDK.Uint256(random32Bytes)
             };
             var builder = new CreateContractOperation.Builder();
-            builder.SetSourceAccount(sourceAccount);
+            builder.SetSourceAccount(_sourceAccount);
             builder.SetContractIDPreimage(contractIdAddressPreimage);
             var ex = Assert.ThrowsException<InvalidOperationException>(() => builder.Build());
             Assert.AreEqual("Executable cannot be null", ex.Message);
         }
 
         [TestMethod]
-        public void TestCreateContractFromAddressOperation()
+        public void TestCreateEmptyAuthEntryContractFromAddressOperation()
         {
-            SCAddress address = new SCAccountId("GAEBBKKHGCAD53X244CFGTVEKG7LWUQOAEW4STFHMGYHHFS5WOQZZTMP");
             var contractExecutableWasm = new ContractExecutableWasm(WasmHash);
             var random32Bytes = new byte[32];
             RandomNumberGenerator.Create().GetBytes(random32Bytes);
             var contractIdAddressPreimage = new ContractIDAddressPreimage
             {
-                Address = address,
+                Address = _accountAddress,
                 Salt = new xdrSDK.Uint256(random32Bytes)
             };
             var builder = new CreateContractOperation.Builder();
-            builder.SetSourceAccount(sourceAccount);
+            builder.SetSourceAccount(_sourceAccount);
             builder.SetExecutable(contractExecutableWasm);
             builder.SetContractIDPreimage(contractIdAddressPreimage);
             var operation = builder.Build();
@@ -112,27 +155,69 @@ namespace stellar_dotnet_sdk_test.operations
                 ((ContractIDAddressPreimage)operation.HostFunction.ContractIDPreimage).Salt.InnerValue,
                 ((ContractIDAddressPreimage)decodedOperation.HostFunction.ContractIDPreimage).Salt.InnerValue);
             Assert.AreEqual(
-                operation.HostFunction.Executable.WasmHash,
-                decodedOperation.HostFunction.Executable.WasmHash);
-            Assert.IsTrue(operation.Auth.Length == 0);
+                ((ContractExecutableWasm)operation.HostFunction.Executable).WasmHash,
+                ((ContractExecutableWasm)decodedOperation.HostFunction.Executable).WasmHash);
+            Assert.AreEqual(operation.Auth.Length, decodedOperation.Auth.Length);
+            Assert.AreEqual(operation.SourceAccount?.AccountId, decodedOperation.SourceAccount?.AccountId);
+        }
+        
+        [TestMethod]
+        public void TestCreateContractFromAddressOperation()
+        {
+            var contractExecutableWasm = new ContractExecutableWasm(WasmHash);
+            var random32Bytes = new byte[32];
+            RandomNumberGenerator.Create().GetBytes(random32Bytes);
+            var contractIdAddressPreimage = new ContractIDAddressPreimage
+            {
+                Address = _accountAddress,
+                Salt = new xdrSDK.Uint256(random32Bytes)
+            };
+            var builder = new CreateContractOperation.Builder();
+            builder.SetSourceAccount(_sourceAccount);
+            builder.SetExecutable(contractExecutableWasm);
+            builder.SetContractIDPreimage(contractIdAddressPreimage);
+            builder.SetAuth(new[] { InitAuthEntry() });
+            var operation = builder.Build();
+
+            // Act
+            var operationXdrBase64 = operation.ToXdrBase64();
+
+            var decodedOperation = CreateContractOperation.FromOperationXdrBase64(operationXdrBase64);
+
+            // Assert
+            Assert.AreEqual(
+                ((SCAccountId)((ContractIDAddressPreimage)operation.HostFunction.ContractIDPreimage).Address)
+                .InnerValue,
+                ((SCAccountId)((ContractIDAddressPreimage)decodedOperation.HostFunction.ContractIDPreimage).Address)
+                .InnerValue);
+            CollectionAssert.AreEqual(
+                ((ContractIDAddressPreimage)operation.HostFunction.ContractIDPreimage).Salt.InnerValue,
+                ((ContractIDAddressPreimage)decodedOperation.HostFunction.ContractIDPreimage).Salt.InnerValue);
+            Assert.AreEqual(
+                ((ContractExecutableWasm)operation.HostFunction.Executable).WasmHash,
+                ((ContractExecutableWasm)decodedOperation.HostFunction.Executable).WasmHash);
+            Assert.AreEqual(
+                operation.Auth.Length,
+                decodedOperation.Auth.Length);
+            for (var i = 0; i < operation.Auth.Length; i++)
+            {
+                Assert.AreEqual(operation.Auth[i].ToXdrBase64(), decodedOperation.Auth[i].ToXdrBase64());
+            }
             Assert.AreEqual(operation.SourceAccount?.AccountId, decodedOperation.SourceAccount?.AccountId);
         }
 
         [TestMethod]
         public void TestCreateStellarAssetContractOperation()
         {
-            var contractExecutableStellarAsset = new ContractExecutableStellarAsset(WasmHash);
-            Asset asset =
-                new AssetTypeCreditAlphaNum4("VNDC", "GAEBBKKHGCAD53X244CFGTVEKG7LWUQOAEW4STFHMGYHHFS5WOQZZTMP");
-
-            var contractIdAssetPreimage = new ContractIDAssetPreimage()
-            {
-                Asset = asset,
-            };
             var builder = new CreateContractOperation.Builder();
-            builder.SetSourceAccount(sourceAccount);
-            builder.SetExecutable(contractExecutableStellarAsset);
-            builder.SetContractIDPreimage(contractIdAssetPreimage);
+            builder.SetSourceAccount(_sourceAccount);
+            builder.SetExecutable(new ContractExecutableStellarAsset());
+            builder.SetContractIDPreimage(new ContractIDAssetPreimage()
+            {
+                Asset =
+                    new AssetTypeCreditAlphaNum4("VNDC",
+                        "GAEBBKKHGCAD53X244CFGTVEKG7LWUQOAEW4STFHMGYHHFS5WOQZZTMP"),
+            });
             var operation = builder.Build();
 
             // Act
@@ -151,9 +236,7 @@ namespace stellar_dotnet_sdk_test.operations
                 .Issuer,
                 ((AssetTypeCreditAlphaNum4)((ContractIDAssetPreimage)decodedOperation.HostFunction.ContractIDPreimage)
                     .Asset).Issuer);
-            Assert.AreEqual(
-                operation.HostFunction.Executable.WasmHash,
-                decodedOperation.HostFunction.Executable.WasmHash);
+          
             Assert.IsTrue(operation.Auth.Length == 0);
             Assert.AreEqual(operation.SourceAccount?.AccountId, decodedOperation.SourceAccount?.AccountId);
         }
@@ -195,14 +278,14 @@ namespace stellar_dotnet_sdk_test.operations
         }
 
         [TestMethod]
-        public void TestUploadContractOperation()
+        public void TestUploadEmptyAuthEntryContractOperation()
         {
             // Arrange
             byte[] wasm = { 0x00, 0x01, 0x02, 0x03, 0x34, 0x45, 0x66, 0x46 };
 
             var builder = new UploadContractOperation.Builder();
             builder.SetWasm(wasm);
-            builder.SetSourceAccount(sourceAccount);
+            builder.SetSourceAccount(_sourceAccount);
 
             var operation = builder.Build();
 
@@ -219,20 +302,53 @@ namespace stellar_dotnet_sdk_test.operations
                 operation.Auth.Length,
                 decodedOperation.Auth.Length);
             Assert.AreEqual(
-                sourceAccount.AccountId,
+                _sourceAccount.AccountId,
+                decodedOperation.SourceAccount!.AccountId);
+        }
+        
+        [TestMethod]
+        public void TestUploadContractOperation()
+        {
+            // Arrange
+            byte[] wasm = { 0x00, 0x01, 0x02, 0x03, 0x34, 0x45, 0x66, 0x46 };
+
+            var builder = new UploadContractOperation.Builder();
+            builder.SetWasm(wasm);
+            builder.SetSourceAccount(_sourceAccount);
+            var authEntry = InitAuthEntry();
+            builder.AddAuth(authEntry);
+            builder.AddAuth(authEntry);
+            builder.RemoveAuth(authEntry);
+            var operation = builder.Build();
+
+            // Act
+            var operationXdrBase64 = operation.ToXdrBase64();
+
+            var decodedOperation = UploadContractOperation.FromOperationXdrBase64(operationXdrBase64);
+
+            // Assert
+            CollectionAssert.AreEqual(
+                operation.HostFunction.Wasm,
+                decodedOperation.HostFunction.Wasm);
+            Assert.AreEqual(
+                operation.Auth.Length,
+                decodedOperation.Auth.Length);
+            for (var i = 0; i < operation.Auth.Length; i++)
+            {
+                Assert.AreEqual(operation.Auth[i].ToXdrBase64(), decodedOperation.Auth[i].ToXdrBase64());
+            }
+            Assert.AreEqual(
+                _sourceAccount.AccountId,
                 decodedOperation.SourceAccount!.AccountId);
         }
         
         [TestMethod]
         public void TestInvokeEmptyAddressContractOperation()
         {
-            var functionName = new SCSymbol("hello");
-            SCString arg = new SCString("world"); 
-            SCVal[] args = { arg };
             var builder = new InvokeContractOperation.Builder();
-            builder.SetSourceAccount(sourceAccount);
-            builder.SetFunctionName(functionName);
-            builder.SetArgs(args);
+            builder.SetSourceAccount(_sourceAccount);
+            builder.SetFunctionName(_functionName);
+            builder.SetArgs(_args);
 
             var ex = Assert.ThrowsException<InvalidOperationException>(() => builder.Build());
             Assert.AreEqual("Contract address cannot be null", ex.Message);
@@ -241,13 +357,12 @@ namespace stellar_dotnet_sdk_test.operations
         [TestMethod]
         public void TestInvokeEmptyFunctionNameContractOperation()
         {
-            SCAddress contractId = new SCContractId("CDJ4RICANSXXZ275W2OY2U7RO73HYURBGBRHVW2UUXZNGEBIVBNRKEF7");
             var arg = new SCString("world"); 
             SCVal[] args = { arg };
             var builder = new InvokeContractOperation.Builder();
-            builder.SetSourceAccount(sourceAccount);
+            builder.SetSourceAccount(_sourceAccount);
             builder.SetArgs(args);
-            builder.SetContractAddress(contractId);
+            builder.SetContractAddress(_contractAddress);
 
             var ex = Assert.ThrowsException<InvalidOperationException>(() => builder.Build());
             Assert.AreEqual("Function name cannot be null", ex.Message);
@@ -256,16 +371,11 @@ namespace stellar_dotnet_sdk_test.operations
         [TestMethod]
         public void TestInvokeEmptyAuthEntryContractOperation()
         {
-            SCAddress contractId = new SCContractId("CDJ4RICANSXXZ275W2OY2U7RO73HYURBGBRHVW2UUXZNGEBIVBNRKEF7");
-            SCSymbol functionName = new SCSymbol("hello");
-            SCString arg = new SCString("world"); 
-            SCVal[] args = { arg };
-         
             var builder = new InvokeContractOperation.Builder();
-            builder.SetSourceAccount(sourceAccount);
-            builder.SetFunctionName(functionName);
-            builder.SetArgs(args);
-            builder.SetContractAddress(contractId);
+            builder.SetSourceAccount(_sourceAccount);
+            builder.SetFunctionName(_functionName);
+            builder.SetArgs(_args);
+            builder.SetContractAddress(_contractAddress);
 
             var operation = builder.Build();
             
@@ -293,76 +403,19 @@ namespace stellar_dotnet_sdk_test.operations
                 decodedOperation.Auth.Length);
             
             Assert.AreEqual(
-                sourceAccount.AccountId,
+                _sourceAccount.AccountId,
                 decodedOperation.SourceAccount!.AccountId);
         }
         
         [TestMethod]
         public void TestInvokeContractOperation()
         {
-            SCAddress contractId = new SCContractId("CDJ4RICANSXXZ275W2OY2U7RO73HYURBGBRHVW2UUXZNGEBIVBNRKEF7");
-            SCSymbol functionName = new SCSymbol("hello");
-            SCString arg = new SCString("world"); 
-            SCVal[] args = { arg };
-            
-            var random32Bytes = new byte[32];
-            RandomNumberGenerator.Create().GetBytes(random32Bytes);
-            
-            SCAddress accountAddress = new SCAccountId("GAEBBKKHGCAD53X244CFGTVEKG7LWUQOAEW4STFHMGYHHFS5WOQZZTMP");
-            
-            var contractIDAddressPreimage = new ContractIDAddressPreimage
-            {
-                Address = accountAddress,
-                Salt = new xdrSDK.Uint256(random32Bytes)
-            };
-            var contractExecutableWasm =
-                new ContractExecutableWasm("ZBYoEJT3IaPMMk3FoRmnEQHoDxewPZL+Uor+xWI4uII=");
-            
-            var createContractHostFunction = new CreateContractHostFunction(contractIDAddressPreimage, contractExecutableWasm);
-
-            var authorizedCreateContractFn = new SorobanAuthorizedCreateContractFunction
-            {
-                HostFunction = createContractHostFunction
-            };
-            
-            var rootInvocation = new SorobanAuthorizedInvocation
-            {
-                Function = authorizedCreateContractFn
-            };
-
-            var subInvocations = new SorobanAuthorizedInvocation[]
-            {
-                new()
-                {
-                    Function = authorizedCreateContractFn,
-                    SubInvocations = Array.Empty<SorobanAuthorizedInvocation>()
-                }
-            };
-
-            rootInvocation.SubInvocations = subInvocations;
-            const long nonce = -9223372036854775807;
-            const uint signatureExpirationLedger = 1319013123;
-            SCString signature = new("Signature");
-            var credentials = new SorobanAddressCredentials
-            {
-                Address = accountAddress,
-                Nonce = nonce,
-                SignatureExpirationLedger = signatureExpirationLedger,
-                Signature = signature
-            };
-
-            var authEntry = new SorobanAuthorizationEntry()
-            {
-                Credentials = credentials,
-                RootInvocation = rootInvocation
-            };
-            
             var builder = new InvokeContractOperation.Builder();
-            builder.SetSourceAccount(sourceAccount);
-            builder.SetFunctionName(functionName);
-            builder.SetArgs(args);
-            builder.SetContractAddress(contractId);
-            builder.AddAuth(authEntry);
+            builder.SetSourceAccount(_sourceAccount);
+            builder.SetFunctionName(_functionName);
+            builder.SetArgs(_args);
+            builder.SetContractAddress(_contractAddress);
+            builder.AddAuth(InitAuthEntry());
 
             var operation = builder.Build();
             
@@ -373,11 +426,11 @@ namespace stellar_dotnet_sdk_test.operations
             
             // Assert
             Assert.AreEqual(
-                ((SCContractId)operation.HostFunction.ContractAddress).InnerValue,
-                ((SCContractId)decodedOperation.HostFunction.ContractAddress).InnerValue);
+                operation.HostFunction.ContractAddress.ToXdrBase64(),
+                decodedOperation.HostFunction.ContractAddress.ToXdrBase64());
             Assert.AreEqual(
-                operation.HostFunction.FunctionName.InnerValue,
-                decodedOperation.HostFunction.FunctionName.InnerValue);
+                operation.HostFunction.FunctionName.ToXdrBase64(),
+                decodedOperation.HostFunction.FunctionName.ToXdrBase64());
             Assert.AreEqual(
                 operation.HostFunction.Args.Length,
                 decodedOperation.HostFunction.Args.Length);
@@ -394,7 +447,7 @@ namespace stellar_dotnet_sdk_test.operations
             }
             
             Assert.AreEqual(
-                sourceAccount.AccountId,
+                _sourceAccount.AccountId,
                 decodedOperation.SourceAccount!.AccountId);
         }
     }

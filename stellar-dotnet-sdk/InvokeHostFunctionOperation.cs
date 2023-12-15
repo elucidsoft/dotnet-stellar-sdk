@@ -609,6 +609,17 @@ public class InvokeContractHostFunction : HostFunction
             InvokeContract = ToXdr(),
         };
     }
+    
+    ///<summary>
+    /// Returns base64-encoded InvokeContractArgs XDR object.
+    ///</summary>
+    public string ToXdrBase64()
+    {
+        var xdrValue = ToXdr();
+        var writer = new XdrDataOutputStream();
+        xdr.InvokeContractArgs.Encode(writer, xdrValue);
+        return Convert.ToBase64String(writer.ToArray());
+    }
 }
 
 public class CreateContractHostFunction : HostFunction
@@ -665,7 +676,7 @@ public class CreateContractHostFunction : HostFunction
     }
     
     ///<summary>
-    /// Returns base64-encoded CreateContractHostFunction XDR object.
+    /// Returns base64-encoded CreateContractArgs XDR object.
     ///</summary>
     public string ToXdrBase64()
     {

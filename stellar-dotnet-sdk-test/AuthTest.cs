@@ -59,7 +59,7 @@ namespace stellar_dotnet_sdk_test
             // Assert
             Assert.AreEqual(((SCAccountId)sorobanCredentials.Address).InnerValue, ((SCAccountId)decodedCredentials.Address).InnerValue);
             Assert.AreEqual(sorobanCredentials.Nonce, decodedCredentials.Nonce);
-            Assert.AreEqual(((SCString)sorobanCredentials.Signature).ToXdrBase64(), ((SCString)decodedCredentials.Signature).ToXdrBase64());
+            Assert.AreEqual(sorobanCredentials.Signature.ToXdrBase64(), decodedCredentials.Signature.ToXdrBase64());
             Assert.AreEqual(sorobanCredentials.SignatureExpirationLedger, decodedCredentials.SignatureExpirationLedger);
         }
         
@@ -137,16 +137,13 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public void TestEmptySubInvocationsSorobanAuthorizationEntry()
         {
-            var createContractHostFunction = new CreateContractHostFunction(InitContractIDAddressPreimage(), _contractExecutableWasm);
-            
-            var authorizedCreateContractFn = new SorobanAuthorizedCreateContractFunction
-            {
-                HostFunction = createContractHostFunction
-            };
-
             var rootInvocation = new SorobanAuthorizedInvocation
             {
-                Function = authorizedCreateContractFn,
+                Function = new SorobanAuthorizedCreateContractFunction
+                {
+                    HostFunction =
+                        new CreateContractHostFunction(InitContractIDAddressPreimage(), _contractExecutableWasm)
+                },
                 SubInvocations = Array.Empty<SorobanAuthorizedInvocation>()
             };
             
@@ -159,37 +156,32 @@ namespace stellar_dotnet_sdk_test
             var authEntryXdrBase64 = authEntry.ToXdrBase64();
             var decodedAuthEntry = SorobanAuthorizationEntry.FromXdrBase64(authEntryXdrBase64);
             
-            Assert.AreEqual(authEntry.RootInvocation.SubInvocations.Length, decodedAuthEntry.RootInvocation.SubInvocations.Length);
-            Assert.AreEqual(((SorobanAuthorizedCreateContractFunction)authEntry.RootInvocation.Function).HostFunction.ToXdrBase64(), ((SorobanAuthorizedCreateContractFunction)decodedAuthEntry.RootInvocation.Function).HostFunction.ToXdrBase64());
+            TestEqualInvocations(authEntry.RootInvocation, decodedAuthEntry.RootInvocation);
+            
             Assert.AreEqual(authEntry.Credentials.ToXdrBase64(), decodedAuthEntry.Credentials.ToXdrBase64());
         }
         
         [TestMethod]
-        public void TestSorobanAuthorizationEntry()
+        public void TestAuthorizedCreateContractSorobanAuthorizationEntry()
         {
-            var createContractHostFunction = new CreateContractHostFunction(InitContractIDAddressPreimage(), _contractExecutableWasm);
-            
             var authorizedCreateContractFn = new SorobanAuthorizedCreateContractFunction
             {
-                HostFunction = createContractHostFunction
+                HostFunction = new CreateContractHostFunction(InitContractIDAddressPreimage(), _contractExecutableWasm)
             };
 
             var rootInvocation = new SorobanAuthorizedInvocation
             {
                 Function = authorizedCreateContractFn,
-                SubInvocations = Array.Empty<SorobanAuthorizedInvocation>()
-            };
-            
-            var subInvocations = new SorobanAuthorizedInvocation[]
-            {
-                new()
+                SubInvocations = new SorobanAuthorizedInvocation[]
                 {
-                    Function = authorizedCreateContractFn,
-                    SubInvocations = Array.Empty<SorobanAuthorizedInvocation>()
+                    new()
+                    {
+                        Function = authorizedCreateContractFn,
+                        SubInvocations = Array.Empty<SorobanAuthorizedInvocation>()
+                    }
                 }
             };
 
-            rootInvocation.SubInvocations = subInvocations;
             var authEntry = new SorobanAuthorizationEntry
             {
                 RootInvocation = rootInvocation,
@@ -198,11 +190,68 @@ namespace stellar_dotnet_sdk_test
 
             var authEntryXdrBase64 = authEntry.ToXdrBase64();
             var decodedAuthEntry = SorobanAuthorizationEntry.FromXdrBase64(authEntryXdrBase64);
+       
+            TestEqualInvocations(authEntry.RootInvocation, decodedAuthEntry.RootInvocation);
             
-            Assert.AreEqual(authEntry.RootInvocation.SubInvocations.Length, decodedAuthEntry.RootInvocation.SubInvocations.Length);
-
-            Assert.AreEqual(((SorobanAuthorizedCreateContractFunction)authEntry.RootInvocation.Function).HostFunction.ToXdrBase64(), ((SorobanAuthorizedCreateContractFunction)decodedAuthEntry.RootInvocation.Function).HostFunction.ToXdrBase64());
             Assert.AreEqual(authEntry.Credentials.ToXdrBase64(), decodedAuthEntry.Credentials.ToXdrBase64());
+        }
+
+        [TestMethod]
+        public void TestAuthorizedContractSorobanAuthorizationEntry()
+        {
+            var contractAddress = new SCContractId("CDJ4RICANSXXZ275W2OY2U7RO73HYURBGBRHVW2UUXZNGEBIVBNRKEF7");
+            var authorizedContractFn = new SorobanAuthorizedContractFunction
+            {
+                HostFunction = new InvokeContractHostFunction(contractAddress, new SCSymbol("hello"),
+                    new SCVal[] { new SCBool(false), new SCString("world") })
+            };
+
+            var rootInvocation = new SorobanAuthorizedInvocation
+            {
+                Function = authorizedContractFn,
+                SubInvocations = new SorobanAuthorizedInvocation[]
+                {
+                    new()
+                    {
+                        Function = authorizedContractFn,
+                        SubInvocations = Array.Empty<SorobanAuthorizedInvocation>()
+                    }
+                }
+            };
+
+            var authEntry = new SorobanAuthorizationEntry
+            {
+                RootInvocation = rootInvocation,
+                Credentials = InitCredentials()
+            };
+
+            var authEntryXdrBase64 = authEntry.ToXdrBase64();
+            var decodedAuthEntry = SorobanAuthorizationEntry.FromXdrBase64(authEntryXdrBase64);
+       
+            TestEqualInvocations(authEntry.RootInvocation, decodedAuthEntry.RootInvocation);
+            
+            Assert.AreEqual(authEntry.Credentials.ToXdrBase64(), decodedAuthEntry.Credentials.ToXdrBase64());
+        }
+        
+        private void TestEqualInvocations(SorobanAuthorizedInvocation expected, SorobanAuthorizedInvocation actual)
+        {
+            Assert.AreEqual(expected.Function.GetType(), actual.Function.GetType());
+            switch (expected.Function)
+            {
+                case SorobanAuthorizedContractFunction contractFn:
+                    Assert.AreEqual(contractFn.HostFunction.ToXdrBase64(),
+                        ((SorobanAuthorizedContractFunction)actual.Function).HostFunction.ToXdrBase64());
+                    break;
+                case SorobanAuthorizedCreateContractFunction createContractFn:
+                    Assert.AreEqual(createContractFn.HostFunction.ToXdrBase64(),
+                        ((SorobanAuthorizedCreateContractFunction)actual.Function).HostFunction.ToXdrBase64());
+                    break;
+            }
+            Assert.AreEqual(expected.SubInvocations.Length, actual.SubInvocations.Length);
+            for (var i = 0; i < expected.SubInvocations.Length; i++)
+            {
+                TestEqualInvocations(expected.SubInvocations[0], actual.SubInvocations[0]);
+            }
         }
     }
 }

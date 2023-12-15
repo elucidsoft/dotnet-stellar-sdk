@@ -1289,8 +1289,6 @@ public class SCContractInstance : SCVal
 
 public abstract class ContractExecutable
 {
-    public string WasmHash { get; set; }
-    
     public static ContractExecutable FromXdr(xdr.ContractExecutable xdrContractExecutable)
     {
         return xdrContractExecutable.Discriminant.InnerValue switch
@@ -1304,6 +1302,8 @@ public abstract class ContractExecutable
 
 public class ContractExecutableWasm : ContractExecutable
 {
+    public string WasmHash { get; set; }
+
     public ContractExecutableWasm(string value)
     {
         WasmHash = value;
@@ -1329,13 +1329,9 @@ public class ContractExecutableWasm : ContractExecutable
 
 public class ContractExecutableStellarAsset : ContractExecutable
 {
-    public ContractExecutableStellarAsset(string value)
-    {
-        WasmHash = value;
-    }
     public static ContractExecutableStellarAsset FromXdr(xdr.ContractExecutable xdr)
     {
-        return new ContractExecutableStellarAsset(Convert.ToBase64String(xdr.WasmHash.InnerValue));
+        return new ContractExecutableStellarAsset();
     }
 
     public override xdr.ContractExecutable ToXdr()
@@ -1344,9 +1340,8 @@ public class ContractExecutableStellarAsset : ContractExecutable
         {
             Discriminant = new xdr.ContractExecutableType()
             {
-                InnerValue = xdr.ContractExecutableType.ContractExecutableTypeEnum.CONTRACT_EXECUTABLE_WASM,
-            },
-            WasmHash = new Hash(Convert.FromBase64String(WasmHash)),
+                InnerValue = xdr.ContractExecutableType.ContractExecutableTypeEnum.CONTRACT_EXECUTABLE_STELLAR_ASSET,
+            }
         };
     }
 }

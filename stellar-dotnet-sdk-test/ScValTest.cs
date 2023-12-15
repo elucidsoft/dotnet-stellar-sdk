@@ -7,6 +7,7 @@ namespace stellar_dotnet_sdk_test
     [TestClass]
     public class ScValTest
     {
+        private const string WasmHash = "ZBYoEJT3IaPMMk3FoRmnEQHoDxewPZL+Uor+xWI4uII=";
         [TestMethod]
         public void TestScBool()
         {
@@ -558,8 +559,7 @@ namespace stellar_dotnet_sdk_test
         [TestMethod]
         public void TestSCContractExecutableWasmWithEmptyStorage()
         {
-            const string wasmHash = "ZBYoEJT3IaPMMk3FoRmnEQHoDxewPZL+Uor+xWI4uII=";
-            var contractExecutable = new ContractExecutableWasm(wasmHash);
+            var contractExecutable = new ContractExecutableWasm(WasmHash);
 
             var contractInstance = new SCContractInstance
             {
@@ -569,15 +569,14 @@ namespace stellar_dotnet_sdk_test
             var contractInstanceXdrBase64 = contractInstance.ToXdrBase64();
             var fromXdrBase64ContractInstance = (SCContractInstance)SCVal.FromXdrBase64(contractInstanceXdrBase64);
             
-            Assert.AreEqual(contractInstance.Executable.WasmHash, fromXdrBase64ContractInstance.Executable.WasmHash);
+            Assert.AreEqual(((ContractExecutableWasm)contractInstance.Executable).WasmHash, ((ContractExecutableWasm)fromXdrBase64ContractInstance.Executable).WasmHash);
             Assert.AreEqual(contractInstance.Storage.Entries.Length, fromXdrBase64ContractInstance.Storage.Entries.Length);
         }
         
         [TestMethod]
         public void TestSCContractExecutableWasm()
         {
-            const string wasmHash = "ZBYoEJT3IaPMMk3FoRmnEQHoDxewPZL+Uor+xWI4uII=";
-            var contractExecutable = new ContractExecutableWasm(wasmHash);
+            var contractExecutable = new ContractExecutableWasm(WasmHash);
             
             var entry1 = new SCMapEntry()
             {
@@ -606,22 +605,34 @@ namespace stellar_dotnet_sdk_test
             
             var contractInstanceXdrBase64 = contractInstance.ToXdrBase64();
             var fromXdrBase64ContractInstance = (SCContractInstance)SCVal.FromXdrBase64(contractInstanceXdrBase64);
-            
-            Assert.AreEqual(contractInstance.Executable.WasmHash, fromXdrBase64ContractInstance.Executable.WasmHash);
+
+            Assert.AreEqual(((ContractExecutableWasm)contractInstance.Executable).WasmHash,
+                ((ContractExecutableWasm)fromXdrBase64ContractInstance.Executable).WasmHash);
             Assert.AreEqual(contractInstance.Storage.Entries.Length, fromXdrBase64ContractInstance.Storage.Entries.Length);
             for (var i = 0; i < contractInstance.Storage.Entries.Length; i++)
             {
                 Assert.AreEqual(contractInstance.Storage.Entries[i].Key.ToXdrBase64(), fromXdrBase64ContractInstance.Storage.Entries[i].Key.ToXdrBase64());    
                 Assert.AreEqual(contractInstance.Storage.Entries[i].Value.ToXdrBase64(), fromXdrBase64ContractInstance.Storage.Entries[i].Value.ToXdrBase64());
             }
+        }
+
+        [TestMethod]
+        public void TestSCContractExecutableStellarAssetWithEmptyStorage()
+        {
+            var contractInstance = new SCContractInstance
+            {
+                Executable = new ContractExecutableStellarAsset()
+            };
+            
+            var contractInstanceXdrBase64 = contractInstance.ToXdrBase64();
+            var fromXdrBase64ContractInstance = (SCContractInstance)SCVal.FromXdrBase64(contractInstanceXdrBase64);
+            
+            Assert.AreEqual(contractInstance.Storage.Entries.Length, fromXdrBase64ContractInstance.Storage.Entries.Length);
         }
 
         [TestMethod]
         public void TestSCContractExecutableStellarAsset()
         {
-            const string wasmHash = "ZBYoEJT3IaPMMk3FoRmnEQHoDxewPZL+Uor+xWI4uII=";
-            var contractExecutable = new ContractExecutableStellarAsset(wasmHash);
-            
             var entry1 = new SCMapEntry()
             {
                 Key = new SCString("key 1"),
@@ -643,38 +654,20 @@ namespace stellar_dotnet_sdk_test
 
             var contractInstance = new SCContractInstance
             {
-                Executable = contractExecutable,
+                Executable = new ContractExecutableStellarAsset(),
                 Storage = scMap
             };
             
             var contractInstanceXdrBase64 = contractInstance.ToXdrBase64();
             var fromXdrBase64ContractInstance = (SCContractInstance)SCVal.FromXdrBase64(contractInstanceXdrBase64);
-            
-            Assert.AreEqual(contractInstance.Executable.WasmHash, fromXdrBase64ContractInstance.Executable.WasmHash);
-            Assert.AreEqual(contractInstance.Storage.Entries.Length, fromXdrBase64ContractInstance.Storage.Entries.Length);
+
+            Assert.AreEqual(contractInstance.Storage.Entries.Length,
+                fromXdrBase64ContractInstance.Storage.Entries.Length);
             for (var i = 0; i < contractInstance.Storage.Entries.Length; i++)
             {
                 Assert.AreEqual(contractInstance.Storage.Entries[i].Key.ToXdrBase64(), fromXdrBase64ContractInstance.Storage.Entries[i].Key.ToXdrBase64());    
                 Assert.AreEqual(contractInstance.Storage.Entries[i].Value.ToXdrBase64(), fromXdrBase64ContractInstance.Storage.Entries[i].Value.ToXdrBase64());
             }
-        }
-        
-        [TestMethod]
-        public void TestSCContractExecutableStellarAssetWithEmptyStorage()
-        {
-            const string wasmHash = "ZBYoEJT3IaPMMk3FoRmnEQHoDxewPZL+Uor+xWI4uII=";
-            var contractExecutable = new ContractExecutableStellarAsset(wasmHash);
-
-            var contractInstance = new SCContractInstance
-            {
-                Executable = contractExecutable
-            };
-            
-            var contractInstanceXdrBase64 = contractInstance.ToXdrBase64();
-            var fromXdrBase64ContractInstance = (SCContractInstance)SCVal.FromXdrBase64(contractInstanceXdrBase64);
-            
-            Assert.AreEqual(contractInstance.Executable.WasmHash, fromXdrBase64ContractInstance.Executable.WasmHash);
-            Assert.AreEqual(contractInstance.Storage.Entries.Length, fromXdrBase64ContractInstance.Storage.Entries.Length);
         }
         
         [TestMethod]
